@@ -1,0 +1,30 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a jointed paper-puppet PARTS KIT sheet for a children's paper-cut theater. LANDSCAPE 3:2 orientation, request 1536x1024, with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND (the full-body standing man) is the FINAL approved character master: Uncle A-Le, an adult of about 6.15 head-heights tall. The kit must match the SECOND image exactly: same face, short dark hair with a little gray, short stubble, warm gentle closed-mouth smile, deep navy-blue bib work apron with a front pocket holding small closed red scissors and thin bamboo strips, warm beige shirt with sleeves rolled up below the elbows, olive-brown trousers with rolled cuffs, brown leather boots, same colors, same fixed-width white paper-core border around every piece's outer outline with the thin dark inner line.
+
+COMPLETELY FLAT COLOR (very important): every fabric is ONE flat color with only a light paper-fiber texture and thin drawn seam/stitch lines. NO shading of any kind: no darker side on the apron, no diagonal shadow bands, no dark fold shadows on the trousers or sleeves, no gradients, no highlights, no rim light. Stage lighting is added later by software.
+
+PROPORTIONS (use the head piece height, top of hair to chin, as 1 unit = H; these follow the master):
+- shoulder joint to hip joint on the torso = 2.4 H (the torso is long, an adult torso, not a child's);
+- upper arm, shoulder to elbow = 1.0 H; forearm, elbow to wrist = 0.95 H; hand, wrist to fingertip = 0.45 H;
+- thigh, hip to knee = 1.1 H; lower leg, knee to sole = 1.4 H;
+- the apron skirt hangs from the waist down to the MIDDLE OF THE THIGH (about 0.55 H below the hip joint).
+
+THE KIT: the figure is taken apart into exactly 13 separate flat cardstock pieces, each shown flat, upright and facing the viewer. Each body area appears on ONE piece only, never duplicated:
+1. head with neck: the neck continues downward into a rounded tab.
+2. torso WITHOUT ANY ARMS OR SLEEVES: the shirt body with collar plus the apron BIB, straps with small metal rings and the waist tie band with its bow; below the waist tie the torso continues in plain navy apron fabric down to the hip line (this lower part will be hidden behind piece 3). Rounded shoulder tabs at the top corners, two rounded hip tabs at the bottom. Torso height (shoulder to hip) = 2.4 H.
+3. APRON SKIRT: the lower part of the navy apron as its own piece, from just under the waist tie down to mid-thigh, with the front pocket (closed red scissors and thin bamboo strips sticking out of it) and stitched hem; its top edge is a slightly rounded tab that tucks under the waist tie. It is about as wide as the hips plus a little, and about 1.6 H tall.
+4. and 5. right and left upper arm: plain shirt sleeve from the shoulder to just above the elbow, no rolled cuff; rounded at both ends.
+6. and 7. right and left forearm: the rolled-up sleeve cuff at the elbow end, then the bare forearm down to the wrist; rounded tab at the wrist end.
+8. and 9. right and left hand, open with relaxed slightly spread fingers, rounded tab at the wrist.
+10. and 11. right and left thigh: plain olive-brown trouser fabric from the hip to the knee, no cuff; rounded at both ends.
+12. and 13. right and left lower leg INCLUDING the boot: trouser fabric from the knee down, the rolled trouser cuff at the ankle, then the brown leather boot; rounded at the knee end.
+JOINTS: every joint end is a rounded semicircular overlap tab that extends PAST the joint, like a classic jointed paper doll, filled with the SAME color and texture as that piece. Do not draw pins, brads, holes or strings.
+LAYOUT: pieces must NOT overlap and must NOT touch: at least 40 px of empty transparent space between every pair of pieces and from the canvas edges. Two tidy rows. TOP ROW, left to right: head, torso, apron skirt, right upper arm, left upper arm. BOTTOM ROW, left to right: right forearm, left forearm, right hand, left hand, right thigh, left thigh, right lower leg with boot, left lower leg with boot. All pieces at the same scale (one adult body): the head piece is about 190 px tall, the torso about 470 px tall.
+STYLE RULES: flat even shadowless lighting; no cast shadow, no drop shadow, no ground; transparent background with nothing else in the image (no labels, no numbers, no guide lines, no frame, no checkerboard drawn in). Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no symbols that look like writing, no watermark.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions may be generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/kit_ale_v02.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G2/raw/kit_ale_v02.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

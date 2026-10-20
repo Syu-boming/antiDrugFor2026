@@ -1,0 +1,69 @@
+{
+  "src": "review/G2/raw/master_xiaoqing.png",
+  "dst": "assets/generated/chr-xiaoqing_master_v02.png",
+  "preset": "xiaoqing",
+  "alpha_floor": 24,
+  "method": "CIELAB 明暗場（排除線條後中位數濾波）減去區塊中位數",
+  "regions": [
+    {
+      "region": "湖水綠吊帶褲",
+      "pixels": 151751,
+      "sigma": 6,
+      "lab_median_before": [
+        42.7,
+        -19.56,
+        -5.83
+      ],
+      "lowfreq_L_spread_p5_p95_before": 4.95,
+      "lab_median_after": [
+        42.74,
+        -19.58,
+        -5.86
+      ],
+      "median_deltaE76": 0.05,
+      "lowfreq_L_spread_p5_p95_after": 1.42,
+      "hex_median_before": "#316E6E",
+      "hex_median_after": "#316E6E"
+    },
+    {
+      "region": "吊帶褲反摺",
+      "pixels": 15989,
+      "sigma": 6,
+      "lab_median_before": [
+        55.65,
+        -15.66,
+        -0.02
+      ],
+      "lowfreq_L_spread_p5_p95_before": 4.24,
+      "lab_median_after": [
+        55.62,
+        -15.67,
+        -0.05
+      ],
+      "median_deltaE76": 0.05,
+      "lowfreq_L_spread_p5_p95_after": 1.04,
+      "hex_median_before": "#658D85",
+      "hex_median_after": "#658D85"
+    },
+    {
+      "region": "芥末黃上衣",
+      "pixels": 28303,
+      "sigma": 9,
+      "lab_median_before": [
+        73.97,
+        17.09,
+        70.41
+      ],
+      "lowfreq_L_spread_p5_p95_before": 11.94,
+      "lab_median_after": [
+        74.1,
+        17.08,
+        70.53
+      ],
+      "median_deltaE76": 0.18,
+      "lowfreq_L_spread_p5_p95_after": 1.93,
+      "hex_median_before": "#F1A827",
+      "hex_median_after": "#F1A827"
+    }
+  ]
+}

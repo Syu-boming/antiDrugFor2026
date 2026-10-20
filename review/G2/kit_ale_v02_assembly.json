@@ -1,0 +1,322 @@
+{
+ "global_scale_g": 0.8438,
+ "head_registration": {
+  "sy": 0.925,
+  "sx": 0.925,
+  "rot": 0.0,
+  "iou_with_master_head": 0.943,
+  "kit_len": null,
+  "master_len": null,
+  "border_kit_px": 1.0
+ },
+ "fits": {
+  "torso": {
+   "sy": 1.8283,
+   "kit_len": 361.0,
+   "master_len": 660.0047,
+   "sx": 1.1367,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -1.378
+  },
+  "apron_skirt": {
+   "sy": 1.8966,
+   "kit_len": 226.7239,
+   "master_len": 430.0,
+   "sx": 1.0704,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.925
+  },
+  "upper_arm_r": {
+   "sy": 0.8405,
+   "kit_len": 269.3413,
+   "master_len": 226.3846,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": 0.003
+  },
+  "forearm_r": {
+   "sy": 0.7831,
+   "kit_len": 284.1529,
+   "master_len": 222.5062,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": 0.067
+  },
+  "hand_r": {
+   "sy": 0.431,
+   "kit_len": 204.227,
+   "master_len": 88.0227,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": 0.327
+  },
+  "upper_arm_l": {
+   "sy": 0.847,
+   "kit_len": 269.3633,
+   "master_len": 228.1622,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.003
+  },
+  "forearm_l": {
+   "sy": 0.7868,
+   "kit_len": 284.1805,
+   "master_len": 223.6068,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": 0.063
+  },
+  "hand_l": {
+   "sy": 0.3931,
+   "kit_len": 205.1076,
+   "master_len": 80.6226,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": 0.358
+  },
+  "thigh_r": {
+   "sy": 0.9917,
+   "kit_len": 262.2242,
+   "master_len": 260.0481,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.15
+  },
+  "shin_r": {
+   "sy": 4.7412,
+   "kit_len": 50.7625,
+   "master_len": 240.6741,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.767
+  },
+  "thigh_l": {
+   "sy": 0.9914,
+   "kit_len": 262.2719,
+   "master_len": 260.0077,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.15
+  },
+  "shin_l": {
+   "sy": 4.7197,
+   "kit_len": 50.8622,
+   "master_len": 240.0521,
+   "sx": 0.8438,
+   "border_kit_px": 1.0,
+   "len_error_at_g_H": -0.764
+  },
+  "head": {
+   "sy": 0.925,
+   "sx": 0.925,
+   "rot": 0.0,
+   "iou_with_master_head": 0.943,
+   "kit_len": null,
+   "master_len": null,
+   "border_kit_px": 1.0
+  }
+ },
+ "assembly": {
+  "A": {
+   "iou": 0.655,
+   "missing_px": 180270,
+   "extra_px": 24546,
+   "parts": {
+    "torso": {
+     "outline_px": 537,
+     "mean_abs_px": 53.4,
+     "p95_abs_px": 135.7,
+     "mean_abs_H": 0.207,
+     "outside_area_px": 6329
+    },
+    "head": {
+     "outline_px": 560,
+     "mean_abs_px": 11.8,
+     "p95_abs_px": 17.0,
+     "mean_abs_H": 0.046,
+     "outside_area_px": 6
+    },
+    "apron_skirt": {
+     "outline_px": 524,
+     "mean_abs_px": 86.0,
+     "p95_abs_px": 168.4,
+     "mean_abs_H": 0.333,
+     "outside_area_px": 5
+    },
+    "upper_arm_r": {
+     "outline_px": 497,
+     "mean_abs_px": 51.0,
+     "p95_abs_px": 128.1,
+     "mean_abs_H": 0.198,
+     "outside_area_px": 0
+    },
+    "forearm_r": {
+     "outline_px": 479,
+     "mean_abs_px": 26.5,
+     "p95_abs_px": 85.0,
+     "mean_abs_H": 0.103,
+     "outside_area_px": 6
+    },
+    "hand_r": {
+     "outline_px": 375,
+     "mean_abs_px": 32.9,
+     "p95_abs_px": 74.4,
+     "mean_abs_H": 0.127,
+     "outside_area_px": 5681
+    },
+    "upper_arm_l": {
+     "outline_px": 319,
+     "mean_abs_px": 28.1,
+     "p95_abs_px": 91.7,
+     "mean_abs_H": 0.109,
+     "outside_area_px": 5409
+    },
+    "forearm_l": {
+     "outline_px": 324,
+     "mean_abs_px": 15.5,
+     "p95_abs_px": 46.9,
+     "mean_abs_H": 0.06,
+     "outside_area_px": 343
+    },
+    "hand_l": {
+     "outline_px": 407,
+     "mean_abs_px": 32.1,
+     "p95_abs_px": 63.0,
+     "mean_abs_H": 0.124,
+     "outside_area_px": 6736
+    },
+    "thigh_r": {
+     "outline_px": 243,
+     "mean_abs_px": 17.0,
+     "p95_abs_px": 55.7,
+     "mean_abs_H": 0.066,
+     "outside_area_px": 36
+    },
+    "shin_r": {
+     "outline_px": 595,
+     "mean_abs_px": 48.3,
+     "p95_abs_px": 144.3,
+     "mean_abs_H": 0.187,
+     "outside_area_px": 0
+    },
+    "thigh_l": {
+     "outline_px": 240,
+     "mean_abs_px": 22.9,
+     "p95_abs_px": 65.7,
+     "mean_abs_H": 0.089,
+     "outside_area_px": 0
+    },
+    "shin_l": {
+     "outline_px": 633,
+     "mean_abs_px": 49.9,
+     "p95_abs_px": 146.7,
+     "mean_abs_H": 0.194,
+     "outside_area_px": 0
+    }
+   }
+  },
+  "B": {
+   "iou": 0.791,
+   "missing_px": 73565,
+   "extra_px": 57592,
+   "parts": {
+    "torso": {
+     "outline_px": 656,
+     "mean_abs_px": 44.7,
+     "p95_abs_px": 81.8,
+     "mean_abs_H": 0.173,
+     "outside_area_px": 36621
+    },
+    "head": {
+     "outline_px": 182,
+     "mean_abs_px": 7.1,
+     "p95_abs_px": 9.5,
+     "mean_abs_H": 0.028,
+     "outside_area_px": 7464
+    },
+    "apron_skirt": {
+     "outline_px": 188,
+     "mean_abs_px": 7.8,
+     "p95_abs_px": 21.7,
+     "mean_abs_H": 0.03,
+     "outside_area_px": 2057
+    },
+    "upper_arm_r": {
+     "outline_px": 270,
+     "mean_abs_px": 8.4,
+     "p95_abs_px": 20.6,
+     "mean_abs_H": 0.033,
+     "outside_area_px": 926
+    },
+    "forearm_r": {
+     "outline_px": 226,
+     "mean_abs_px": 8.4,
+     "p95_abs_px": 20.8,
+     "mean_abs_H": 0.033,
+     "outside_area_px": 258
+    },
+    "hand_r": {
+     "outline_px": 148,
+     "mean_abs_px": 10.7,
+     "p95_abs_px": 21.1,
+     "mean_abs_H": 0.041,
+     "outside_area_px": 1188
+    },
+    "upper_arm_l": {
+     "outline_px": 216,
+     "mean_abs_px": 32.2,
+     "p95_abs_px": 42.0,
+     "mean_abs_H": 0.125,
+     "outside_area_px": 8103
+    },
+    "forearm_l": {
+     "outline_px": 197,
+     "mean_abs_px": 7.0,
+     "p95_abs_px": 18.0,
+     "mean_abs_H": 0.027,
+     "outside_area_px": 1224
+    },
+    "hand_l": {
+     "outline_px": 97,
+     "mean_abs_px": 11.4,
+     "p95_abs_px": 22.2,
+     "mean_abs_H": 0.044,
+     "outside_area_px": 1031
+    },
+    "thigh_r": {
+     "outline_px": 212,
+     "mean_abs_px": 9.7,
+     "p95_abs_px": 21.0,
+     "mean_abs_H": 0.038,
+     "outside_area_px": 827
+    },
+    "shin_r": {
+     "outline_px": 940,
+     "mean_abs_px": 27.8,
+     "p95_abs_px": 48.1,
+     "mean_abs_H": 0.108,
+     "outside_area_px": 4956
+    },
+    "thigh_l": {
+     "outline_px": 220,
+     "mean_abs_px": 2.9,
+     "p95_abs_px": 7.6,
+     "mean_abs_H": 0.011,
+     "outside_area_px": 134
+    },
+    "shin_l": {
+     "outline_px": 955,
+     "mean_abs_px": 28.1,
+     "p95_abs_px": 48.3,
+     "mean_abs_H": 0.109,
+     "outside_area_px": 10394
+    }
+   }
+  }
+ },
+ "notes": [
+  "A＝生成部件原樣、全部同一縮放 g（看生成比例誤差）；B＝逐件依母版關節距離校正長寬、重做白邊後的 rig 部件（舞台實際使用）。",
+  "輪廓誤差＝組裝外輪廓上、屬於該部件的邊緣像素到母版輪廓的距離（母版像素；母版頭高 258 px）。",
+  "圍裙下襬依第 1 輪美術總監意見刻意加長到大腿中段（母版下襬 y≈1030 → 1120），所以 B 欄圍裙下襬超出母版輪廓屬於刻意差異。"
+ ]
+}

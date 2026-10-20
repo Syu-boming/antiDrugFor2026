@@ -1,0 +1,255 @@
+{
+  "note": "明度對比為 WCAG 相對亮度比，量測在 tools/projsim.py 的投影模擬（壓縮對比、抬高黑位、降彩度）之後；主色＝各角色指定服裝色（MAIN_COSTUME）；相鄰背景＝輪廓外 6–34 px 環帶（不含其他角色），分成景片（地平線以上）與地面兩部分。",
+  "stage_grade": {
+    "horizon_y": 760,
+    "lift": 0.5,
+    "desat": 0.75,
+    "ground_gain": 0.9,
+    "drop_shadow": 0.22
+  },
+  "child_ratio": 0.65,
+  "adult_height_px": 660,
+  "feet_y": 900,
+  "characters": {
+    "ale": {
+      "placed_box": [
+        460,
+        240,
+        233,
+        660
+      ],
+      "main_costume": "深藍工作圍裙",
+      "main_pixels": 24575,
+      "main_color_proj": [
+        77,
+        81,
+        94
+      ],
+      "main_lum": 0.0827,
+      "ring_backdrop": {
+        "pixels": 32140,
+        "median_lum": 0.4857,
+        "p10_lum": 0.3323,
+        "contrast_median": 4.04,
+        "contrast_p10": 2.88
+      },
+      "ring_ground": {
+        "pixels": 9749,
+        "median_lum": 0.3516,
+        "p10_lum": 0.277,
+        "contrast_median": 3.03,
+        "contrast_p10": 2.46
+      },
+      "ring_all": {
+        "pixels": 41889,
+        "median_lum": 0.4549,
+        "p10_lum": 0.3114,
+        "contrast_median": 3.8,
+        "contrast_p10": 2.72
+      },
+      "white_edge_at_feet_lum": 0.6981,
+      "ground_under_feet_lum": 0.2965,
+      "contrast_white_edge_vs_ground": 2.16
+    },
+    "xiaoqing": {
+      "placed_box": [
+        944,
+        471,
+        148,
+        429
+      ],
+      "main_costume": "湖水綠吊帶褲",
+      "main_pixels": 14028,
+      "main_color_proj": [
+        82,
+        115,
+        114
+      ],
+      "main_lum": 0.1527,
+      "ring_backdrop": {
+        "pixels": 18942,
+        "median_lum": 0.405,
+        "p10_lum": 0.3056,
+        "contrast_median": 2.24,
+        "contrast_p10": 1.75
+      },
+      "ring_ground": {
+        "pixels": 9028,
+        "median_lum": 0.349,
+        "p10_lum": 0.2911,
+        "contrast_median": 1.97,
+        "contrast_p10": 1.68
+      },
+      "ring_all": {
+        "pixels": 27970,
+        "median_lum": 0.3813,
+        "p10_lum": 0.3007,
+        "contrast_median": 2.13,
+        "contrast_p10": 1.73
+      },
+      "white_edge_at_feet_lum": 0.5998,
+      "ground_under_feet_lum": 0.302,
+      "contrast_white_edge_vs_ground": 1.85
+    },
+    "xiaoyu": {
+      "placed_box": [
+        1269,
+        471,
+        150,
+        429
+      ],
+      "main_costume": "橘紅連帽外套",
+      "main_pixels": 11364,
+      "main_color_proj": [
+        151,
+        88,
+        68
+      ],
+      "main_lum": 0.1398,
+      "ring_backdrop": {
+        "pixels": 18895,
+        "median_lum": 0.4144,
+        "p10_lum": 0.3096,
+        "contrast_median": 2.45,
+        "contrast_p10": 1.9
+      },
+      "ring_ground": {
+        "pixels": 9909,
+        "median_lum": 0.3354,
+        "p10_lum": 0.2663,
+        "contrast_median": 2.03,
+        "contrast_p10": 1.67
+      },
+      "ring_all": {
+        "pixels": 28804,
+        "median_lum": 0.3678,
+        "p10_lum": 0.2884,
+        "contrast_median": 2.2,
+        "contrast_p10": 1.78
+      },
+      "white_edge_at_feet_lum": 0.7246,
+      "ground_under_feet_lum": 0.2894,
+      "contrast_white_edge_vs_ground": 2.28
+    }
+  },
+  "rope": {
+    "width_px": 8,
+    "note": "繩心為中灰；在淺色背景靠深灰邊線、在深色衣服靠左上受光邊拉開明度，cross_section 為橫切面最暗／最亮。",
+    "head_clearance_px": 47.8,
+    "attach": "右膝正面（紙環）",
+    "samples": [
+      {
+        "at": [
+          705,
+          77
+        ],
+        "over_character": false,
+        "core_lum": 0.1842,
+        "side_lum": [
+          0.525,
+          0.525
+        ],
+        "contrast": [
+          2.45,
+          2.45
+        ],
+        "cross_section_lum": [
+          0.067,
+          0.6024
+        ],
+        "best_contrast_vs_sides": [
+          4.91,
+          4.91
+        ]
+      },
+      {
+        "at": [
+          701,
+          175
+        ],
+        "over_character": false,
+        "core_lum": 0.2156,
+        "side_lum": [
+          0.4112,
+          0.5552
+        ],
+        "contrast": [
+          1.74,
+          2.28
+        ],
+        "cross_section_lum": [
+          0.1095,
+          0.573
+        ],
+        "best_contrast_vs_sides": [
+          2.89,
+          3.8
+        ]
+      },
+      {
+        "at": [
+          661,
+          512
+        ],
+        "over_character": true,
+        "core_lum": 0.1878,
+        "side_lum": [
+          0.4849,
+          0.5856
+        ],
+        "contrast": [
+          2.25,
+          2.67
+        ],
+        "cross_section_lum": [
+          0.0886,
+          0.3288
+        ],
+        "best_contrast_vs_sides": [
+          3.86,
+          4.59
+        ]
+      },
+      {
+        "at": [
+          637,
+          624
+        ],
+        "over_character": true,
+        "core_lum": 0.177,
+        "side_lum": [
+          0.3603,
+          0.0854
+        ],
+        "contrast": [
+          1.81,
+          1.68
+        ],
+        "cross_section_lum": [
+          0.0581,
+          0.4179
+        ],
+        "best_contrast_vs_sides": [
+          3.8,
+          3.46
+        ]
+      }
+    ]
+  },
+  "subtitle": {
+    "font": "PingFang TC Semibold",
+    "px": 64,
+    "strip": [
+      456,
+      940,
+      1008,
+      110
+    ],
+    "text_bbox": [
+      512,
+      964,
+      896,
+      62
+    ]
+  }
+}

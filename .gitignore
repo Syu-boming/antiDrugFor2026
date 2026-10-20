@@ -10,3 +10,7 @@ probe/dl/
 .playwright-mcp/
 audio/_test/
 assets/generated/_test/
+tools/.venv/
+review/_capture_test*/
+app/dist/
+__pycache__/

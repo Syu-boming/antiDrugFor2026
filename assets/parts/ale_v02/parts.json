@@ -1,0 +1,520 @@
+{
+  "source": "review/G2/raw/kit_ale_v02.png",
+  "size": [
+    1536,
+    1024
+  ],
+  "alpha_threshold": 40,
+  "convention": "左／右＝角色自身的左右",
+  "dropped_specks": [],
+  "notes": [],
+  "parts": {
+    "torso": {
+      "label": 1,
+      "zh": "軀幹",
+      "file": "torso.png",
+      "box_in_kit": [
+        369,
+        9,
+        705,
+        554
+      ],
+      "size": [
+        352,
+        561
+      ],
+      "area_px": 151590,
+      "centroid": [
+        537.1,
+        285.3
+      ],
+      "joint_ends": {
+        "length_px": 544.3,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 80.0,
+            "w15": 311.0,
+            "ratio": 0.26,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 275.0,
+            "w15": 320.0,
+            "ratio": 0.86,
+            "rounded": false
+          }
+        ]
+      }
+    },
+    "head": {
+      "label": 2,
+      "zh": "頭（含頸部舌片）",
+      "file": "head.png",
+      "box_in_kit": [
+        34,
+        88,
+        334,
+        500
+      ],
+      "size": [
+        316,
+        428
+      ],
+      "area_px": 79535,
+      "centroid": [
+        180.7,
+        268.1
+      ],
+      "joint_ends": {
+        "length_px": 416.3,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 124.5,
+            "w15": 242.2,
+            "ratio": 0.51,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 73.5,
+            "w15": 134.9,
+            "ratio": 0.55,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "upper_arm_r": {
+      "label": 3,
+      "zh": "右上臂",
+      "file": "upper_arm_r.png",
+      "box_in_kit": [
+        1103,
+        130,
+        1260,
+        481
+      ],
+      "size": [
+        173,
+        367
+      ],
+      "area_px": 42091,
+      "centroid": [
+        1181.7,
+        307.8
+      ],
+      "joint_ends": {
+        "length_px": 350.3,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 58.1,
+            "w15": 103.0,
+            "ratio": 0.56,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 65.0,
+            "w15": 107.0,
+            "ratio": 0.61,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "upper_arm_l": {
+      "label": 4,
+      "zh": "左上臂",
+      "file": "upper_arm_l.png",
+      "box_in_kit": [
+        1332,
+        130,
+        1488,
+        481
+      ],
+      "size": [
+        172,
+        367
+      ],
+      "area_px": 41896,
+      "centroid": [
+        1408.5,
+        308.2
+      ],
+      "joint_ends": {
+        "length_px": 350.2,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 59.0,
+            "w15": 100.0,
+            "ratio": 0.59,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 65.1,
+            "w15": 107.0,
+            "ratio": 0.61,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "apron_skirt": {
+      "label": 5,
+      "zh": "圍裙下襬",
+      "file": "apron_skirt.png",
+      "box_in_kit": [
+        727,
+        161,
+        1085,
+        527
+      ],
+      "size": [
+        374,
+        382
+      ],
+      "area_px": 104239,
+      "centroid": [
+        905.7,
+        366.1
+      ],
+      "joint_ends": {
+        "length_px": 368.4,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 67.1,
+            "w15": 256.6,
+            "ratio": 0.26,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 296.6,
+            "w15": 353.9,
+            "ratio": 0.84,
+            "rounded": false
+          }
+        ]
+      }
+    },
+    "shin_r": {
+      "label": 6,
+      "zh": "右小腿含鞋",
+      "file": "shin_r.png",
+      "box_in_kit": [
+        1107,
+        526,
+        1280,
+        1001
+      ],
+      "size": [
+        189,
+        491
+      ],
+      "area_px": 61189,
+      "centroid": [
+        1202.5,
+        774.9
+      ],
+      "joint_ends": {
+        "length_px": 476.7,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 70.2,
+            "w15": 130.9,
+            "ratio": 0.54,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 130.3,
+            "w15": 152.5,
+            "ratio": 0.85,
+            "rounded": false
+          }
+        ]
+      }
+    },
+    "shin_l": {
+      "label": 7,
+      "zh": "左小腿含鞋",
+      "file": "shin_l.png",
+      "box_in_kit": [
+        1353,
+        526,
+        1524,
+        1001
+      ],
+      "size": [
+        187,
+        491
+      ],
+      "area_px": 61082,
+      "centroid": [
+        1428.9,
+        774.9
+      ],
+      "joint_ends": {
+        "length_px": 475.9,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 71.1,
+            "w15": 129.6,
+            "ratio": 0.55,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 131.2,
+            "w15": 153.2,
+            "ratio": 0.86,
+            "rounded": false
+          }
+        ]
+      }
+    },
+    "thigh_r": {
+      "label": 8,
+      "zh": "右大腿",
+      "file": "thigh_r.png",
+      "box_in_kit": [
+        726,
+        559,
+        874,
+        932
+      ],
+      "size": [
+        164,
+        389
+      ],
+      "area_px": 44834,
+      "centroid": [
+        800.8,
+        743.1
+      ],
+      "joint_ends": {
+        "length_px": 372.2,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 67.0,
+            "w15": 128.0,
+            "ratio": 0.52,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 67.0,
+            "w15": 121.0,
+            "ratio": 0.55,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "thigh_l": {
+      "label": 9,
+      "zh": "左大腿",
+      "file": "thigh_l.png",
+      "box_in_kit": [
+        918,
+        559,
+        1066,
+        931
+      ],
+      "size": [
+        164,
+        388
+      ],
+      "area_px": 44949,
+      "centroid": [
+        989.9,
+        743.1
+      ],
+      "joint_ends": {
+        "length_px": 371.3,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 66.0,
+            "w15": 128.0,
+            "ratio": 0.52,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 67.0,
+            "w15": 122.0,
+            "ratio": 0.55,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "forearm_l": {
+      "label": 10,
+      "zh": "左前臂",
+      "file": "forearm_l.png",
+      "box_in_kit": [
+        200,
+        575,
+        336,
+        935
+      ],
+      "size": [
+        152,
+        376
+      ],
+      "area_px": 32553,
+      "centroid": [
+        264.0,
+        742.0
+      ],
+      "joint_ends": {
+        "length_px": 359.4,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 62.0,
+            "w15": 122.1,
+            "ratio": 0.51,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 59.0,
+            "w15": 84.1,
+            "ratio": 0.7,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "forearm_r": {
+      "label": 11,
+      "zh": "右前臂",
+      "file": "forearm_r.png",
+      "box_in_kit": [
+        30,
+        576,
+        165,
+        935
+      ],
+      "size": [
+        151,
+        375
+      ],
+      "area_px": 32183,
+      "centroid": [
+        98.9,
+        742.4
+      ],
+      "joint_ends": {
+        "length_px": 358.3,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 61.0,
+            "w15": 121.0,
+            "ratio": 0.5,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 59.0,
+            "w15": 83.0,
+            "ratio": 0.71,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "hand_r": {
+      "label": 12,
+      "zh": "右手",
+      "file": "hand_r.png",
+      "box_in_kit": [
+        359,
+        678,
+        515,
+        920
+      ],
+      "size": [
+        172,
+        258
+      ],
+      "area_px": 24268,
+      "centroid": [
+        431.0,
+        807.1
+      ],
+      "joint_ends": {
+        "length_px": 241.0,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 49.0,
+            "w15": 69.0,
+            "ratio": 0.71,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 63.0,
+            "w15": 102.0,
+            "ratio": 0.62,
+            "rounded": true
+          }
+        ]
+      }
+    },
+    "hand_l": {
+      "label": 13,
+      "zh": "左手",
+      "file": "hand_l.png",
+      "box_in_kit": [
+        537,
+        678,
+        692,
+        921
+      ],
+      "size": [
+        171,
+        259
+      ],
+      "area_px": 24168,
+      "centroid": [
+        619.2,
+        807.1
+      ],
+      "joint_ends": {
+        "length_px": 242.0,
+        "ends": [
+          {
+            "end": "top",
+            "w3": 49.0,
+            "w15": 70.0,
+            "ratio": 0.7,
+            "rounded": true
+          },
+          {
+            "end": "bottom",
+            "w3": 62.0,
+            "w15": 102.0,
+            "ratio": 0.61,
+            "rounded": true
+          }
+        ]
+      }
+    }
+  }
+}

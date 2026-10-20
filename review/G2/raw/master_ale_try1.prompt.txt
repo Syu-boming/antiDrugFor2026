@@ -1,0 +1,22 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body character master sheet for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a transparent background.
+
+CHARACTER: Uncle A-Le, a gentle neighbor in his 40s who is a paper-lantern craftsman (the man in the attached reference image, now STANDING, with realistic adult proportions).
+- Proportions (very important): adult body about 6.25 heads tall (allowed range 6 to 6.5). The head (top of hair to chin) is about 16% of the total figure height; legs from crotch to soles are about 47% of total height. Natural adult storybook proportions, not chibi.
+- Face and hair: short dark hair with a little gray, short stubble beard, warm gentle kind smile (closed mouth), friendly eyes.
+- Clothing: deep navy-blue work bib apron (about #22345E) tied at the waist, reaching mid-thigh, with a front pocket holding a small pair of scissors (closed, handles up) and a few thin bamboo strips; under it a warm beige shirt with sleeves rolled up to just below the elbows (bare forearms visible); olive-brown trousers (about #5E5A35); brown leather work shoes.
+- Pose: single character, standing upright, three-quarter front view (body turned about 30 degrees), arms held slightly away from the body (a hand-width gap between each hand and the hips/apron), relaxed open hands, feet slightly apart, both feet flat on an imaginary floor. Neutral gentle closed-mouth smile, eyes open looking forward. The whole figure from the top of the hair to the soles is visible with empty margin all around (nothing cropped).
+
+ART STYLE (match the attached reference image's "3D pop-up picture book made of thick matte cardstock" style and character design, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Colors: same palette family as the reference, but every main color is ONE STEP DARKER in value and slightly MORE SATURATED than the reference, so the figure reads clearly against a light, pale background on a classroom projector. Avoid washed-out pastels on clothing.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design; friendly calm expression.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/master_ale.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G2/raw/master_ale.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

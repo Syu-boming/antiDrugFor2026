@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
+    "build:dev": "node build.mjs --dev",
     "typecheck": "tsc --noEmit -p .",
     "serve": "node ../tools/serve.mjs dist 8787",
     "pack": "node ../tools/pack.mjs",

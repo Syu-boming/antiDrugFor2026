@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15979-9a8e-7ae0-91a7-540714f9f2e2/exec-ad5ad5fc-9504-4844-9a2a-4a5cd275d852.png`
+- Destination: [review/G2/raw/master_xiaoqing.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/master_xiaoqing.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte; unmodified.

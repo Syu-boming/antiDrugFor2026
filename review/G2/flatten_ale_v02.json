@@ -1,0 +1,89 @@
+{
+  "src": "assets/generated/chr-ale_master_v01.png",
+  "dst": "assets/generated/chr-ale_master_v02.png",
+  "preset": "ale",
+  "alpha_floor": 24,
+  "method": "CIELAB 明暗場（排除線條後中位數濾波）減去區塊中位數",
+  "regions": [
+    {
+      "region": "深藍圍裙",
+      "pixels": 153565,
+      "sigma": 9,
+      "lab_median_before": [
+        24.74,
+        3.87,
+        -16.41
+      ],
+      "lowfreq_L_spread_p5_p95_before": 8.42,
+      "lab_median_after": [
+        24.95,
+        3.9,
+        -16.49
+      ],
+      "median_deltaE76": 0.23,
+      "lowfreq_L_spread_p5_p95_after": 1.73,
+      "hex_median_before": "#323A54",
+      "hex_median_after": "#323A54"
+    },
+    {
+      "region": "橄欖褐褲管",
+      "pixels": 98686,
+      "sigma": 9,
+      "lab_median_before": [
+        38.2,
+        5.09,
+        23.17
+      ],
+      "lowfreq_L_spread_p5_p95_before": 12.43,
+      "lab_median_after": [
+        38.33,
+        5.12,
+        23.25
+      ],
+      "median_deltaE76": 0.16,
+      "lowfreq_L_spread_p5_p95_after": 1.26,
+      "hex_median_before": "#6E5634",
+      "hex_median_after": "#6E5635"
+    },
+    {
+      "region": "褲管反摺",
+      "pixels": 13792,
+      "sigma": 6,
+      "lab_median_before": [
+        47.62,
+        5.87,
+        22.68
+      ],
+      "lowfreq_L_spread_p5_p95_before": 21.76,
+      "lab_median_after": [
+        47.92,
+        5.93,
+        22.77
+      ],
+      "median_deltaE76": 0.32,
+      "lowfreq_L_spread_p5_p95_after": 2.31,
+      "hex_median_before": "#886C4B",
+      "hex_median_after": "#886D4C"
+    },
+    {
+      "region": "米色襯衫",
+      "pixels": 86349,
+      "sigma": 9,
+      "lab_median_before": [
+        87.32,
+        5.36,
+        18.89
+      ],
+      "lowfreq_L_spread_p5_p95_before": 11.08,
+      "lab_median_after": [
+        87.51,
+        5.32,
+        18.86
+      ],
+      "median_deltaE76": 0.2,
+      "lowfreq_L_spread_p5_p95_after": 2.52,
+      "hex_median_before": "#F3D6B8",
+      "hex_median_after": "#F3D7B8"
+    }
+  ]
+}

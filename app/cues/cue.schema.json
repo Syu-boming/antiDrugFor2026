@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "antidrug-cues/1",
+  "title": "反毒剪紙劇場 cue 檔",
+  "description": "與 app/src/types/cue.ts 描述同一個結構（G4 後凍結）；執行期與打包期都會用 app/src/cues/validate.ts 驗證。",
+  "type": "object",
+  "required": ["format", "id", "title", "cues"],
+  "properties": {
+    "format": { "const": "antidrug-cues/1" },
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "characters": {
+      "description": "角色名冊：角色 id → 顯示名稱（台詞的 speaker 用顯示名稱，對應到舞台上的紙偶）",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object", "required": ["name"],
+        "properties": { "name": { "type": "string" }, "rig": { "type": "string" } }
+      }
+    },
+    "cues": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/cue" } }
+  },
+  "definitions": {
+    "timeRef": {
+      "description": "秒數，或 \"台詞編號\"、\"台詞編號.end\"、\"end\"，可加 +秒／-秒",
+      "oneOf": [{ "type": "number" }, { "type": "string", "pattern": "^([a-z0-9_]+?)(\\.end|\\.start)?([+-]\\d+(\\.\\d+)?)?$" }]
+    },
+    "line": {
+      "type": "object",
+      "required": ["id", "speaker", "text"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^a\\d_c\\d{3}_\\d{2}$", "description": "台詞編號 a{幕}_c{三位數}_{兩位數}" },
+        "speaker": { "type": "string" },
+        "text": { "type": "string", "minLength": 1, "description": "字幕文字，與配音逐字相同" },
+        "audioId": { "type": "string", "description": "省略時為 vo_<台詞編號>（audio/vo/vo_<台詞編號>_vNN.wav）" },
+        "start": { "$ref": "#/definitions/timeRef", "description": "字幕時間點" },
+        "lipsyncId": { "type": "string", "description": "對嘴資料 id，省略時同台詞編號" },
+        "skippableWhenBehind": { "type": "boolean" }
+      }
+    },
+    "animation": {
+      "type": "object",
+      "required": ["name", "start"],
+      "properties": {
+        "name": { "type": "string" },
+        "target": { "type": "string" },
+        "start": { "$ref": "#/definitions/timeRef" },
+        "duration": { "type": "number", "minimum": 0 },
+        "ease": { "enum": ["linear", "in", "out", "inOut", "sine", "heavy"] },
+        "params": { "type": "object" }
+      }
+    },
+    "characterStart": {
+      "type": "object",
+      "properties": {
+        "x": { "type": "number" }, "y": { "type": "number" }, "z": { "type": "number" },
+        "facing": { "enum": [1, -1] },
+        "visible": { "type": "boolean" },
+        "pose": { "type": "string" },
+        "strings": { "type": "array", "items": { "enum": ["wrist", "elbow", "knee"] } },
+        "stringTension": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "quiz": {
+      "type": "object",
+      "required": ["qid", "number", "question", "options", "answer"],
+      "properties": {
+        "qid": { "type": "string" },
+        "number": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "question": { "type": "string" },
+        "options": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "string" } },
+        "answer": { "enum": [1, 2, 3] }
+      }
+    },
+    "cue": {
+      "type": "object",
+      "required": ["id", "sceneId", "kind", "initialState", "animation", "audioId", "lines", "next", "prevStable", "skippable", "compression", "fx", "teacherNote", "checkpoint"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^a\\d_c\\d{3}$", "description": "cue 編號 a{幕}_c{三位數}" },
+        "sceneId": { "type": "string" },
+        "kind": { "enum": ["title", "curtain", "scene", "quiz", "reveal", "wait", "lamp"], "description": "種類" },
+        "title": { "type": "string" },
+        "initialState": {
+          "description": "角色起始狀態（含舞台狀態）",
+          "type": "object",
+          "properties": {
+            "stage": {
+              "type": "object",
+              "properties": {
+                "curtain": { "enum": ["open", "closed"] },
+                "titleCard": { "type": "boolean" },
+                "camera": { "type": "string" },
+                "light": { "type": "number", "minimum": 0, "maximum": 1 },
+                "quiz": { "type": "boolean" }
+              }
+            },
+            "characters": { "type": "object", "additionalProperties": { "$ref": "#/definitions/characterStart" } }
+          }
+        },
+        "animation": { "type": "array", "items": { "$ref": "#/definitions/animation" } },
+        "audioId": { "type": ["string", "null"], "description": "段落配樂／環境音；null＝沿用；\"none\"＝停止" },
+        "lines": { "type": "array", "items": { "$ref": "#/definitions/line" } },
+        "next": { "type": ["string", "null"], "description": "下一節點" },
+        "prevStable": { "type": ["string", "null"], "description": "上一穩定節點" },
+        "skippable": { "type": "boolean", "description": "是否可略過" },
+        "compression": { "enum": [0, 1, 2], "description": "壓縮級別" },
+        "fx": { "type": "array", "items": { "type": "string", "pattern": "^FX\\d+$" }, "description": "特效編號" },
+        "teacherNote": { "type": "string", "description": "教師提示" },
+        "checkpoint": {
+          "description": "查核點",
+          "oneOf": [{ "type": "null" }, { "type": "object", "required": ["label", "atMinute"], "properties": { "label": { "type": "string" }, "atMinute": { "type": "number" } } }]
+        },
+        "minDuration": { "type": "number", "minimum": 0 },
+        "voStart": { "type": "number", "minimum": 0 },
+        "tail": { "type": "number", "minimum": 0 },
+        "autoAdvance": { "type": "boolean" },
+        "quiz": { "$ref": "#/definitions/quiz" },
+        "lamp": { "type": "integer", "minimum": 1, "maximum": 8 },
+        "sfx": { "type": "array", "items": { "type": "object", "required": ["id", "at"], "properties": { "id": { "type": "string" }, "at": { "$ref": "#/definitions/timeRef" }, "gain": { "type": "number" } } } },
+        "shortVersion": { "type": "string" }
+      }
+    }
+  }
+}

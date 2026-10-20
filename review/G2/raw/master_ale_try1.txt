@@ -1,0 +1,5 @@
+- Source: [/Users/boming/.codex/generated_images/01a15975-afd7-7b62-b16e-c9bad6a055e9/exec-890fc401-3d0c-4ad8-ae17-e7d533f48194.png](/Users/boming/.codex/generated_images/01a15975-afd7-7b62-b16e-c9bad6a055e9/exec-890fc401-3d0c-4ad8-ae17-e7d533f48194.png)
+- Destination: [review/G2/raw/master_ale.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/master_ale.png>)
+- Dimensions: **1024 × 1536 px**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

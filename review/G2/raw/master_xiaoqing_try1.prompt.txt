@@ -1,0 +1,22 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body character master sheet for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a transparent background.
+
+CHARACTER: Xiaoqing, a 9-year-old girl (the girl in the attached reference image, redesigned with taller, more realistic child proportions).
+- Proportions (very important): child body exactly about 4.25 heads tall (allowed range 4 to 4.5). The head (top of hair to chin) is only about 23-24% of the total figure height; legs from crotch to soles are about 42-45% of total height. Clearly LESS big-headed than the chibi reference: a slim, natural 9-year-old storybook child.
+- Hair: dark brown, shoulder-length short bob. On one side of her head, one origami paper-star hair clip whose folded facets/creases are clearly visible (a folded paper star, deep golden-mustard paper).
+- Clothing: mustard-yellow short-sleeve top (deep mustard, about #C99A1E), lake-green / teal dungaree overalls (deep teal, about #1E7F78) with a bib and front pocket; a small spiral-bound notebook peeks out of the bib pocket, its wire coil binding clearly visible, its cover completely plain with no marks at all. White socks, simple sneakers (deep mustard with white soles).
+- Pose: single character, standing, three-quarter front view (body turned about 30 degrees), arms held slightly away from the body (a hand-width gap between each hand and the hips), relaxed open hands, feet slightly apart, both feet flat on an imaginary floor. Neutral gentle closed-mouth smile, eyes open looking forward. The whole figure from the top of the hair to the soles is visible with empty margin all around (nothing cropped).
+
+ART STYLE (match the attached reference image's "3D pop-up picture book made of thick matte cardstock" style and character design, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Colors: same palette family as the reference, but every main color is ONE STEP DARKER in value and slightly MORE SATURATED than the reference, so the figure reads clearly against a light, pale background on a classroom projector. Avoid washed-out pastels on clothing.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design; friendly calm expression.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/master_xiaoqing.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G2/raw/master_xiaoqing.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

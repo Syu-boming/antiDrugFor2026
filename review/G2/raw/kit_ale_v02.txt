@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a1599b-ff03-7323-9e91-bea4713ba7f4/exec-cca59d5e-223f-43d8-8060-aa572c0059da.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/kit_ale_v02.png`
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, transparent pixels verified.
+- Copy: byte-for-byte identical.

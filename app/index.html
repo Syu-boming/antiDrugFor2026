@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>反毒剪紙劇場｜許博明老師製作</title>
+<link rel="icon" href="data:,">
+<style>/*CSS*/</style>
+<script>
+  // 資料包登錄：data/*.js 是傳統 script，載入時呼叫 window.__pack(id, 內容)。
+  // 這樣 file://、http 與 Electron 都能讀素材（file:// 不能用 fetch 與 ES module）。
+  window.__packs = window.__packs || {};
+  window.__pack = function (id, data) { window.__packs[id] = data; };
+</script>
+<script src="data/manifest.js"></script>
+</head>
+<body>
+<div id="viewport">
+  <div id="stage-box">
+    <div id="title-card" class="layer" hidden></div>
+    <div id="quiz-card" class="layer" hidden></div>
+    <div id="badge-placeholder" class="badge" hidden></div>
+    <div id="badge-pause" class="badge" hidden></div>
+  </div>
+  <div id="subtitle-box"></div>
+</div>
+<div id="ready-screen" class="screen"></div>
+<div id="lost-screen" class="screen" hidden></div>
+<div id="teacher-menu" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

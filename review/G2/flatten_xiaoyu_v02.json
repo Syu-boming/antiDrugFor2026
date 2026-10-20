@@ -1,0 +1,89 @@
+{
+  "src": "review/G2/raw/master_xiaoyu_propfix.png",
+  "dst": "assets/generated/chr-xiaoyu_master_v02.png",
+  "preset": "xiaoyu",
+  "alpha_floor": 24,
+  "method": "CIELAB 明暗場（排除線條後中位數濾波）減去區塊中位數",
+  "regions": [
+    {
+      "region": "橘紅外套",
+      "pixels": 106655,
+      "sigma": 9,
+      "lab_median_before": [
+        53.23,
+        49.87,
+        50.23
+      ],
+      "lowfreq_L_spread_p5_p95_before": 12.2,
+      "lab_median_after": [
+        53.42,
+        50.0,
+        50.32
+      ],
+      "median_deltaE76": 0.25,
+      "lowfreq_L_spread_p5_p95_after": 1.9,
+      "hex_median_before": "#D95429",
+      "hex_median_after": "#DA5529"
+    },
+    {
+      "region": "卡其短褲",
+      "pixels": 36172,
+      "sigma": 9,
+      "lab_median_before": [
+        56.29,
+        12.09,
+        33.13
+      ],
+      "lowfreq_L_spread_p5_p95_before": 13.3,
+      "lab_median_after": [
+        56.34,
+        12.13,
+        33.19
+      ],
+      "median_deltaE76": 0.09,
+      "lowfreq_L_spread_p5_p95_after": 1.32,
+      "hex_median_before": "#AC7E4D",
+      "hex_median_after": "#AC7E4D"
+    },
+    {
+      "region": "短褲反摺",
+      "pixels": 13792,
+      "sigma": 6,
+      "lab_median_before": [
+        60.39,
+        11.17,
+        32.36
+      ],
+      "lowfreq_L_spread_p5_p95_before": 11.88,
+      "lab_median_after": [
+        60.42,
+        11.22,
+        32.44
+      ],
+      "median_deltaE76": 0.1,
+      "lowfreq_L_spread_p5_p95_after": 1.41,
+      "hex_median_before": "#B68959",
+      "hex_median_after": "#B68959"
+    },
+    {
+      "region": "腿部（膚色）",
+      "pixels": 23319,
+      "sigma": 9,
+      "lab_median_before": [
+        79.25,
+        18.66,
+        39.33
+      ],
+      "lowfreq_L_spread_p5_p95_before": 1.46,
+      "lab_median_after": [
+        79.32,
+        18.66,
+        39.39
+      ],
+      "median_deltaE76": 0.09,
+      "lowfreq_L_spread_p5_p95_after": 0.42,
+      "hex_median_before": "#FBB67C",
+      "hex_median_after": "#FBB67C"
+    }
+  ]
+}

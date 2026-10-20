@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15983-a0c8-77e0-b180-57df44f13571/exec-4740e913-6b54-41fb-8b9c-ad0a25645d8d.png`
+- Destination: [review/G2/raw/kit_ale.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/kit_ale.png>) — copied unmodified.
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, transparent pixels verified.

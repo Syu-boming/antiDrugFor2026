@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15975-afd8-7161-8dd4-aa7949afb143/exec-4af799e6-8d5e-44fe-bc04-332fa8e543d9.png`
+- Destination: [review/G2/raw/master_xiaoyu.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/master_xiaoyu.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

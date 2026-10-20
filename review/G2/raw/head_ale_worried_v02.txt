@@ -1,0 +1,4 @@
+- Source: [/Users/boming/.codex/generated_images/01a15997-2f18-7ef0-a8db-eae8e8c2761a/exec-8ae1a8d6-2d45-4e93-a763-7673e5718962.png](/Users/boming/.codex/generated_images/01a15997-2f18-7ef0-a8db-eae8e8c2761a/exec-8ae1a8d6-2d45-4e93-a763-7673e5718962.png)
+- Destination: [review/G2/raw/head_ale_worried_v02.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/head_ale_worried_v02.png>)
+- Dimensions: **1254 × 1254**. Requested 1024 × 1024; preserved the tool’s output unmodified.
+- Alpha: **Yes**, verified real transparency.
