@@ -5,3 +5,6 @@ dist/
 probe/build/
 app/dist/
 review/**/frames/
+.env
+probe/dl/
+.playwright-mcp/

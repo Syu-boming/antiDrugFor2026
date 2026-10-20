@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>反毒剪紙劇場｜硬體探針</title>
+<style>
+  :root { --bg:#14111c; --fg:#f3ece0; --acc:#e5b23a; --dim:#a79f93; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--fg); font-family:"Microsoft JhengHei","PingFang TC","Noto Sans TC",sans-serif; }
+  header { display:flex; flex-wrap:wrap; gap:10px; padding:12px; background:#221c2e; position:relative; z-index:3; }
+  header h1 { font-size:20px; margin:0 16px 0 4px; align-self:center; }
+  button { font:inherit; font-size:18px; padding:10px 16px; border-radius:10px; border:2px solid #4a405c; background:#2e2640; color:var(--fg); cursor:pointer; }
+  button.primary { background:var(--acc); color:#1a1306; border-color:var(--acc); font-weight:bold; }
+  #stage { position:fixed; inset:0; z-index:1; display:none; background:#000; }
+  body.running #stage { display:block; }
+  body.running header, body.running main { visibility:hidden; }
+  #progress { position:fixed; left:16px; bottom:12px; z-index:4; font-size:22px; color:#fff; text-shadow:0 0 6px #000; }
+  main { padding:16px 20px 60px; }
+  .panel { display:none; } .panel.on { display:block; }
+  #summarytext div { font-size:20px; line-height:1.55; border-bottom:1px solid #2c2538; padding:3px 0; }
+  .help { color:var(--dim); font-size:17px; line-height:1.6; }
+  #keylog div { font-size:26px; padding:4px 0; }
+  #cardspanel canvas { width:100%; max-height:82vh; object-fit:contain; background:#000; }
+  .row { display:flex; flex-wrap:wrap; gap:10px; margin:12px 0; }
+  #audiostatus { font-size:22px; margin-top:12px; color:var(--acc); }
+</style>
+</head>
+<body>
+<header>
+  <h1>硬體探針 v01</h1>
+  <button id="btn-full">全螢幕</button>
+  <button id="btn-quick" class="primary">① 快速測試（約 2 分鐘）</button>
+  <button id="btn-60">60 秒測試</button>
+  <button id="btn-thermal">10 分鐘耐熱</button>
+  <button id="btn-keys">② 按鍵測試</button>
+  <button id="btn-audio">③ 聲音測試</button>
+  <button id="btn-cards">④ 投影圖卡</button>
+  <button id="btn-summary">結果</button>
+  <button id="btn-download" class="primary">下載結果檔</button>
+  <button id="btn-reset">清除</button>
+</header>
+<div id="stage"></div>
+<div id="progress"></div>
+<main>
+  <section id="summary" class="panel on">
+    <p class="help">請依序按 ①～④。測試中畫面會全部切成動畫，請不要動滑鼠。最後按「下載結果檔」，或直接用手機拍下這一頁。這個程式不連網、不使用攝影機與麥克風、不蒐集個人資料。</p>
+    <div id="summarytext"></div>
+  </section>
+  <section id="keys" class="panel">
+    <p class="help">拿簡報筆，依序按：下一頁、上一頁、放映鍵（按兩次）、黑屏鍵，以及其他所有按鍵；每顆鍵也試一次「長按」。下方會顯示收到的按鍵。若按了某顆鍵後頁面重新整理，重新開啟後「結果」頁會註明。</p>
+    <div id="keylog"></div>
+  </section>
+  <section id="audio" class="panel">
+    <p class="help">請接上實際上課要用的音響（或投影機 HDMI）。坐到最後一排聽：</p>
+    <div class="row">
+      <button id="a-left">左聲道</button><button id="a-right">右聲道</button><button id="a-both">雙聲道 1kHz</button><button id="a-sweep">音階</button><button id="a-swallow">靜音 8 秒後嗶一聲</button>
+    </div>
+    <div id="audiostatus"></div>
+    <p class="help">請記下：左右是否正確、最後一排聽不聽得清楚、「靜音 8 秒後嗶一聲」的嗶聲是否完整（被吃掉開頭＝會吞音）。</p>
+  </section>
+  <section id="cardspanel" class="panel">
+    <p class="help">請按「全螢幕」後坐到最後一排看：灰階每一格是否分得開、哪一個字級還看得清楚、1／2／3 色塊、灰色線在三種背景上是否看得見、各個框線有沒有被切掉。可以用手機從最後一排拍一張。</p>
+    <canvas id="cards"></canvas>
+  </section>
+</main>
+<!--SCRIPT-->
+</body>
+</html>
