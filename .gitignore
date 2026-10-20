@@ -8,3 +8,5 @@ review/**/frames/
 .env
 probe/dl/
 .playwright-mcp/
+audio/_test/
+assets/generated/_test/
