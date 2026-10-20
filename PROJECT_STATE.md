@@ -5,11 +5,11 @@
 | 關卡 | 狀態 | 版本／證據 | 時間上限 |
 |---|---|---|---|
 | 探針包 | 已交付使用者（等待學校實測結果） | probe/build/AntidrugProbe_v01.zip；Mac 冒煙測試 9/9 通過 | 第 1 天上午交付 |
-| G1 劇本 | 未開始 | script/ | 第 1 天 22:00 凍結 |
-| G2a 風格 | 未開始 | review/G2a/ | — |
-| G2 母版與試作 | 未開始 | review/G2/ | 第 1 天 22:00 |
-| G3 聲音 | 未開始 | review/G3/ | — |
-| G4 代表鏡頭 | 未開始 | review/G4/ | 第 2 天 13:00 |
+| G1 劇本 | 帶一般問題放行，凍結 v03（主線小修 3 句） | script/*_v03.md；REVIEW.md | 第 1 天 22:00 凍結 |
+| G2a 風格 | 選定 S4 立體童書厚卡紙 | review/G2a/ | — |
+| G2 母版與試作 | 以退路通過（D-G2-06；畫面品質併入 G4 驗收） | review/G2/*_v04；contrast_v04.json | 第 1 天 22:00（超時約 5 小時） |
+| G3 聲音 | 進行中 | review/G3/ | 第 2 天 13:00 前 |
+| G4 代表鏡頭 | 進行中 | review/G4/ | 第 2 天 13:00 |
 | G5 各幕 | 未開始 | review/G5/ | 第 3 天 09:00 |
 | G6 全劇 | 未開始 | review/G6/ | 第 3 天 15:00 |
 | G7 交付 | 未開始 | review/G7/ | 第 3 天晚上 |
@@ -17,10 +17,10 @@
 ## 技術骨架（2026-10-20 完成）
 app/ 引擎骨架：build／typecheck／engine-test 45/45／capture 通過；技術 QA 無嚴重問題。G4 前待修：demo Q2 選項同步 script v02、字幕詞語邊界斷行、WAIT_GUARD 350ms、開幕後角色瞬間出現、布幕移動約 1.6 秒（規格約 2 秒）、光敏報告列出接近上限的區域、紙偶名單改讀 cue。
 
-## 本時段目標
-開工設定、探針包、劇本（主線 A）、風格樣張。
+## 本時段目標（第 2 天凌晨起）
+G3 試音（ElevenLabs 台灣聲線＋edge-tts 比較）、自製配樂主題（操偶線動機、開幕布幕）、G4 代表鏡頭（a2 操偶線段 30–45 秒，含引擎 QA 修正）。
 
 ## 使用者事項
 1. 探針：2026-10-20 19:16 已交付 AntidrugProbe_v01.zip（含 Electron 版、Edge kiosk .bat、file:// 單檔版），等待結果。
-2. 金鑰：ElevenLabs 金鑰已存於 .env（不進 Git），但缺 text_to_speech 與 voices_read 權限，需使用者重建金鑰；Artlist MCP 接在桌面版，Claude Code 尚無法使用。
+2. 金鑰：ElevenLabs 新金鑰可用（TTS、讀聲線、聲線設計），存於 .env（不進 Git）。配樂與音效改自製，Artlist 不再需要。
 3. 第 3 天實機彩排：待排。

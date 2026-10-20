@@ -1,0 +1,15 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image, LANDSCAPE 3:2 (request 1536x1024), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached: the FIRST is the art-style reference; the SECOND is the previous version of this theater backdrop (use it for the look of its cut-paper street trees).
+IMAGE: TWO separate street trees standing side by side, NOT touching each other (at least 120 px of empty transparent space between them and from the canvas edges), each one its own flat cut-out: a slim warm-brown cardstock trunk with one or two branches, and a rounded crown built from 3 stacked layers of green paper (darker olive green at the back, mid green, a few light yellow-green leaves at the front) with scalloped cut edges. Each tree is about 90% of the canvas height. The bottom of each trunk is a straight horizontal cut. No ground, no planter, no grass, no lanterns, no flowers.
+
+STYLE: match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" look and its warm, muted late-morning daylight palette (yellow-orange daylight bias, NOT sunset, NOT pink, NOT washed-out). The piece is ONE flat cut-out of thick matte cardstock seen perfectly straight-on (frontal elevation, no perspective, no vanishing point), with subtle paper-fiber texture and crisp knife-cut outlines.
+- Show ONLY the FRONT FACE of the card: do NOT draw the card's side thickness, do NOT draw any cast shadow, drop shadow, ground shadow or directional shading - flat even lighting only (the theater software adds card thickness and one consistent light direction later).
+- TRANSPARENT background (real alpha channel) everywhere outside the piece; no ground, no sky, no frame, no checkerboard drawn in.
+- STRICT: absolutely NO text anywhere - no signboards, no plaques, no letters, no Chinese characters, no numbers, no logos, no posters, no banners, no watermark. No people, no animals, no vehicles, no red crosses, no smoke.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/bgL4_trees_v03.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G2/raw/bgL4_trees_v03.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

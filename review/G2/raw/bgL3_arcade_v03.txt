@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3a-7b12-8e60-d25c29e5834e/exec-9f6f03e8-d7eb-42d2-9d89-d9823642af3a.png`
+- Destination: [review/G2/raw/bgL3_arcade_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL3_arcade_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, verified transparent pixels.
+- Copy: **Unmodified, byte-for-byte verified.**

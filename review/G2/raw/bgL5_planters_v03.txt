@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-7401-9bec-55871dd4941e/call_8eb1256753634b2dafd808755e79a2fd.png`
+- Destination: [review/G2/raw/bgL5_planters_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL5_planters_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, actual transparency verified.
+- Copied unmodified.

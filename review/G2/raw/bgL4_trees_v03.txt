@@ -1,0 +1,7 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b38-7db0-b29e-5468698b816f/exec-bbef7145-fc6c-49ca-81cf-fdfedfa33573.png`
+- Destination: [review/G2/raw/bgL4_trees_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL4_trees_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, real transparency verified.
+- Copy: **Unmodified, byte-for-byte identical.**
+
+The generated image does not meet the requested 120 px transparent margins.

@@ -1,0 +1,5 @@
+Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-7a02-a15b-ddf16a579b9b/call_eece285a71af412e9e5f9a616a4dce7d.png`
+
+Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL0_sky_v03.png`
+
+**1536 × 1024 pixels**, fully opaque. Copied unmodified.

@@ -1,0 +1,11 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image, LANDSCAPE 3:2 (request 1536x1024), fully OPAQUE (no transparency).
+
+TWO reference images are attached: the FIRST is the art-style reference; the SECOND is the previous version of this theater backdrop (use it only for the color mood of its sky).
+IMAGE: the farthest flat of a paper-cut theater set: a plain SKY made of translucent washi paper with visible soft paper fibers, a calm gradient from soft warm light blue at the top to a pale warm cream near the bottom, with 4-5 small hand-torn white paper clouds (fibrous torn edges) in the upper half. Low saturation, light value, very calm. NOTHING else: no mountains, no buildings, no trees, no ground, no sun disc, no birds, no lanterns.
+- Flat even lighting, no shadows. Absolutely NO text, letters, numbers, logos or watermark.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/bgL0_sky_v03.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight review/G2/raw/bgL0_sky_v03.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height.

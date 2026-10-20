@@ -30,19 +30,19 @@ H = 258.0            # 母版頭高（頭頂 33 → 下巴 291）
 BORDER = 11          # 母版尺度的白色紙芯邊寬
 FONT = ("/System/Library/AssetsV2/com_apple_MobileAsset_Font8/86ba2c91f017a3749571a82f2c6d890ac7ffb2fb.asset/AssetData/PingFang.ttc", 10)
 
-MJ = dict(neck=(505, 330), shoulder_r=(330, 415), elbow_r=(305, 640), wrist_r=(320, 862), fingertip_r=(318, 950),
-          shoulder_l=(655, 415), elbow_l=(678, 642), wrist_l=(718, 862), fingertip_l=(728, 942),
-          hip_r=(420, 990), knee_r=(415, 1250), ankle_r=(397, 1490),
-          hip_l=(595, 990), knee_l=(597, 1250), ankle_l=(602, 1490),
-          waist=(515, 690), apron_hem=(515, 1120))
+MJ = dict(neck=(505, 330), shoulder_r=(330, 415), elbow_r=(305, 640), wrist_r=(320, 845), fingertip_r=(318, 955),
+          shoulder_l=(655, 415), elbow_l=(678, 642), wrist_l=(720, 852), fingertip_l=(728, 940),
+          hip_r=(420, 1005), knee_r=(415, 1255), ankle_r=(397, 1490),
+          hip_l=(595, 1005), knee_l=(597, 1255), ankle_l=(602, 1490),
+          waist=(515, 690), apron_top=(515, 706), apron_hem=(515, 1120))
 HIP_MID = ((MJ["hip_r"][0] + MJ["hip_l"][0]) / 2, MJ["hip_r"][1])
 APRON_HEM_WIDTH = 380   # 圍裙下襬（含白邊）目標寬：母版下襬 370 px，加長到大腿中段後略外擴
 
 # 部件：父件、近端關節、遠端關節（母版）、kit 端點偵測方式
 PARTS = {
-    "torso": dict(parent=None, prox="neck", dist="hip_mid"),
+    "torso": dict(parent=None, prox="neck", dist="waist"),
     "head": dict(parent="torso", prox="neck", dist=None),
-    "apron_skirt": dict(parent="torso", prox="waist", dist="apron_hem"),
+    "apron_skirt": dict(parent="torso", prox="apron_top", dist="apron_hem"),
     "upper_arm_r": dict(parent="torso", prox="shoulder_r", dist="elbow_r"),
     "forearm_r": dict(parent="upper_arm_r", prox="elbow_r", dist="wrist_r"),
     "hand_r": dict(parent="forearm_r", prox="wrist_r", dist="fingertip_r"),
@@ -54,9 +54,10 @@ PARTS = {
     "thigh_l": dict(parent="torso", prox="hip_l", dist="knee_l"),
     "shin_l": dict(parent="thigh_l", prox="knee_l", dist="ankle_l"),
 }
-# 由後往前的層序（遠側＝角色左手、左腳；近側＝右手、右腳；大腿壓住小腿的膝舌片；圍裙下襬壓住大腿）
+# 由後往前的層序（遠側＝角色左手、左腳；近側＝右手、右腳；大腿壓住小腿的膝舌片；圍裙下襬壓住大腿；
+# 軀幹只到腰帶，所以壓在圍裙下襬上面＝圍裙上緣舌片塞在腰帶下、蝴蝶結垂帶在圍裙前）
 LAYERS = ["upper_arm_l", "forearm_l", "hand_l", "shin_l", "thigh_l", "shin_r", "thigh_r",
-          "torso", "apron_skirt", "head", "upper_arm_r", "forearm_r", "hand_r"]
+          "apron_skirt", "torso", "head", "upper_arm_r", "forearm_r", "hand_r"]
 ZH = {"head": "頭", "torso": "軀幹", "apron_skirt": "圍裙下襬", "upper_arm_r": "右上臂", "upper_arm_l": "左上臂",
       "forearm_r": "右前臂", "forearm_l": "左前臂", "hand_r": "右手", "hand_l": "左手",
       "thigh_r": "右大腿", "thigh_l": "左大腿", "shin_r": "右小腿含鞋", "shin_l": "左小腿含鞋"}
@@ -169,7 +170,9 @@ def boot_top(rgb, mask):
     mx, mn = a.max(-1), a.min(-1)
     sat = (mx - mn) / (mx + 1e-6)
     r, g, b = a[..., 0], a[..., 1], a[..., 2]
-    brown = mask & (r > g * 1.18) & (sat > 0.35) & (mx < 0.62)
+    d = mx - mn + 1e-6
+    hue = np.where(mx == r, ((g - b) / d) % 6, np.where(mx == g, (b - r) / d + 2, (r - g) / d + 4)) * 60
+    brown = mask & (hue < 33) & (sat > 0.40) & (mx < 0.62)   # 皮鞋（紅棕，色相 <33°）；褲管橄欖褐約 40–45°
     rows = np.nonzero(mask.sum(1))[0]
     for y in rows:
         if mask[y].sum() > 10 and brown[y].sum() > 0.45 * mask[y].sum():
@@ -183,7 +186,7 @@ def border_width(arr):
     m = arr[..., 3] > 128
     dist = ndimage.distance_transform_edt(m)
     v = arr[..., :3].max(-1) / 255.0
-    dark = m & (v < 0.42) & (dist < 30)
+    dark = m & (v < 0.42) & (dist > 3) & (dist < 30)   # 外緣 1–2 px 的灰色抗鋸齒線不算
     if dark.sum() < 20:
         return 10.0
     return float(np.percentile(dist[dark], 5))
@@ -228,14 +231,84 @@ def torso_points(mask):
     return neck, hip_mid, sh_r, sh_l
 
 
+TORSO_TIE_ROWS = (360, 398)
+TORSO_NECK = (176, 80)    # 對應母版 neck=(505,330)：下巴下方、衣領高度
+TORSO_BOW_POLYS = [  # 軀幹裁切圖（assets/parts/ale_v02/torso.png）上腰帶以下要保留的蝴蝶結垂帶與右側繩圈（目視描點）
+    [(246, 395), (272, 395), (272, 440), (270, 492), (228, 492), (236, 440)],
+    [(272, 395), (305, 400), (322, 425), (322, 447), (300, 452), (282, 430)],
+]
+APRON_PLAIN_BAND = (0.775, 0.885)
+APRON_WAISTBAND_FRAC = 0.17
+APRON_POCKET_BAND = (0.47, 0.775)   # 口袋本體（不含剪刀與竹篾）
+APRON_POCKET_STRETCH = 1.2   # 圍裙下襬裁切圖上腰頭的高度（佔高比例，目視量測）  # 圍裙下襬裁切圖上「口袋下緣到下襬縫線」的素色帶（佔高比例，目視量測）
+
+
+def top_tab_center_run(mask):
+    """上方舌片圓心：逐列取「含中心欄的那一段」寬度，找第一個寬度 ≤ 2d 的 d（避免肩舌片干擾）。"""
+    ys, xs = np.nonzero(mask)
+    y0 = ys.min()
+    cx = int(round(xs[ys < y0 + 4].mean()))
+    prev = None
+    widths = []
+    for d in range(1, 200):
+        row = mask[y0 + d]
+        if not row[cx]:
+            continue
+        l = cx
+        while l > 0 and row[l - 1]:
+            l -= 1
+        r = cx
+        while r < len(row) - 1 and row[r + 1]:
+            r += 1
+        w = r - l + 1
+        if r - l + 1 <= 2 * d:
+            return np.array([(l + r) / 2, y0 + d], float)
+        if prev is not None and w > prev * 1.35 + 6:   # 舌片和衣身相連處寬度突增：以突增前的寬度當直徑
+            dia = max(widths)
+            return np.array([cx, y0 + dia / 2], float)
+        widths.append(w)
+        prev = w
+    return np.array([cx, y0 + 30.0])
+
+
+def navy_mask(arr):
+    rgb = arr[..., :3].astype(int)
+    return (arr[..., 3] > 128) & (rgb[..., 2] > rgb[..., 0] + 15) & (rgb[..., 2] >= rgb[..., 1])
+
+
+def tie_band(arr):
+    """軀幹的圍裙腰帶：由上往下第一段「深藍佔該列不透明寬度 ≥85%」的連續列（圍兜比襯衫窄，腰帶橫跨全寬）。"""
+    m = arr[..., 3] > 128
+    nv = navy_mask(arr)
+    inner = ndimage.binary_erosion(m, iterations=14)
+    frac = nv.sum(1) / np.maximum(inner.sum(1), 1)
+    rows = np.nonzero((frac > 0.85) & (inner.sum(1) > 40))[0]
+    top = int(rows.min())
+    bot = top
+    while bot + 1 < len(frac) and frac[bot + 1] > 0.85:
+        bot += 1
+    bot = min(bot, top + 45)
+    return top, bot
+
+
 def kit_points(name, arr):
     m = arr[..., 3] > 128
     m = ndimage.binary_fill_holes(m)
     if name == "torso":
-        neck, hip_mid, sh_r, sh_l = torso_points(m)
-        return dict(prox=neck, dist=hip_mid, sh_r=sh_r, sh_l=sh_l)
+        _, _, sh_r, sh_l = torso_points(m)
+        neck = np.array(TORSO_NECK, float)   # 頸舌片是外擴形、和衣領相連，圓心自動偵測不穩；取衣領高度的頸部中點（目視量測）
+        tie_top, tie_bot = TORSO_TIE_ROWS   # 腰帶列：kit 軀幹裁切圖上目視量測（圍兜下緣外擴處會誤判，所以不用自動偵測）
+        xs = np.nonzero(m[(tie_top + tie_bot) // 2])[0]
+        waist = np.array([(xs.min() + xs.max()) / 2, (tie_top + tie_bot) / 2])
+        return dict(prox=neck, dist=waist, sh_r=sh_r, sh_l=sh_l, tie_top=tie_top, tie_bot=tie_bot)
     if name == "apron_skirt":
-        return dict(prox=tab_center(m, "top"), dist=extreme(m, "bottom"))
+        # 近端＝下襬上緣的腰頭中點（舌片塞在軀幹腰帶下），遠端＝下襬底邊中點（白邊內側）
+        ys, xs = np.nonzero(m)
+        hh = arr.shape[0]
+        yb = ys.max() - 12
+        xb = xs[ys > ys.max() - 30]
+        cx = (xb.min() + xb.max()) / 2
+        return dict(prox=np.array([cx, APRON_WAISTBAND_FRAC * hh]), dist=np.array([cx, float(yb)]))
     if name.startswith("hand"):
         return dict(prox=tab_center(m, "top"), dist=extreme(m, "bottom"))
     if name.startswith("shin"):
@@ -312,7 +385,7 @@ def recolor_tab(arr, center, radius):
     yy, xx = np.mgrid[0:arr.shape[0], 0:arr.shape[1]]
     near = np.hypot(xx - center[0], yy - center[1]) < radius
     skin = m & (sat > 0.33) & (mx > 0.75) & (dist_edge > 14)
-    cream = m & near & (sat < 0.24) & (mx > 0.70) & (dist_edge > 13)
+    cream = m & near & (sat < 0.30) & (mx > 0.66) & (dist_edge > 12)
     if skin.sum() < 50 or cream.sum() < 20:
         return arr, 0
     skin_med = np.median(rgb[skin], 0)
@@ -325,24 +398,64 @@ def recolor_tab(arr, center, radius):
     return out.clip(0, 255).astype(np.uint8), int(cream.sum())
 
 
-def normalize_part(arr, M_scale, b_kit, pts, tab=None):
-    """部件以 M_scale（2x2，沿主軸縮放）重取樣，去掉舊白邊後重做固定寬度白邊。回傳新陣列與換算後的點。"""
+def normalize_part(arr, scale, b_kit, pts, tab=None, zones=None, keep=None):
+    """部件重取樣成 rig 部件：
+    - scale：等比縮放（不做橫向／縱向不等比，避免紙紋與白邊變形）；
+    - zones：[(y0, y1, f)] kit 列範圍再縱向拉長 f 倍（只選素色帶，例如圍兜中段、圍裙下襬口袋以下），同 tools/fix_proportion.py；
+    - keep：kit 座標的保留遮罩（例如軀幹只留到腰帶＋蝴蝶結）；新切口沿內緣補 2 px 深色內描線；
+    - 舊白邊去掉後重做固定寬度 BORDER 的白色紙芯邊。回傳 (陣列, 換算後的點)。"""
     if tab is not None:
         arr, _ = recolor_tab(arr, tab[0], tab[1])
-    m = arr[..., 3] > 128
+    m = ndimage.binary_fill_holes(arr[..., 3] > 128)
     content = ndimage.binary_erosion(m, iterations=max(int(round(b_kit - 2)), 1))
+    cut_edge = np.zeros_like(content)
+    if keep is not None:
+        kept = content & keep
+        cut_edge = kept & ~ndimage.binary_erosion(kept, iterations=2) & ndimage.binary_dilation(content & ~keep, iterations=2)
+        content = kept
     src = arr.copy()
+    if cut_edge.any():
+        src[..., :3] = np.where(cut_edge[..., None], (src[..., :3] * 0.32 + np.array([40, 34, 30]) * 0.4).astype(np.uint8), src[..., :3])
     src[..., 3] = (ndimage.gaussian_filter(content.astype(float), 0.6) * 255).astype(np.uint8)
     h, w = m.shape
-    corners = np.array([[0, 0], [w, 0], [0, h], [w, h]], float) @ M_scale.T
-    lo, hi = corners.min(0), corners.max(0)
     pad = BORDER + 6
-    off = -lo + pad
-    size = tuple(np.ceil(hi - lo + 2 * pad).astype(int))
-    A = affine(M_scale, off)
+    size = (int(np.ceil(w * scale + 2 * pad)), int(np.ceil(h * scale + 2 * pad)))
+    A = affine(np.eye(2) * scale, np.array([pad, pad], float))
     warped = np.array(warp_rgba(Image.fromarray(src, "RGBA"), A, size))
+    ymap = lambda y: y  # noqa: E731
+    if zones:
+        # 依序拉長素色帶（座標已是縮放後）
+        bands, cur, segs = [], 0, []
+        zs = sorted([(pad + z0 * scale, pad + z1 * scale, f) for z0, z1, f in zones])
+        img = Image.fromarray(warped, "RGBA")
+        out_y = 0
+        for z0, z1, f in zs:
+            z0, z1 = int(round(z0)), int(round(z1))
+            bands.append(img.crop((0, cur, img.width, z0)))
+            segs.append((cur, z0, out_y, 1.0))
+            out_y += z0 - cur
+            band = img.crop((0, z0, img.width, z1))
+            nh = int(round((z1 - z0) * f))
+            bands.append(band.resize((img.width, nh), Image.LANCZOS))
+            segs.append((z0, z1, out_y, nh / (z1 - z0)))
+            out_y += nh
+            cur = z1
+        bands.append(img.crop((0, cur, img.width, img.height)))
+        segs.append((cur, img.height, out_y, 1.0))
+        tot = sum(bb.height for bb in bands)
+        canvas = Image.new("RGBA", (img.width, tot), (0, 0, 0, 0))
+        yy = 0
+        for bb in bands:
+            canvas.paste(bb, (0, yy))
+            yy += bb.height
+        warped = np.array(canvas)
+
+        def ymap(y):
+            for s0, s1, o0, k in segs:
+                if s0 <= y <= s1:
+                    return o0 + (y - s0) * k
+            return y
     cm = warped[..., 3] > 127
-    # 新白邊：內容外擴 BORDER px，紙芯白＋極淡纖維雜訊
     dist = ndimage.distance_transform_edt(~cm)
     ring_soft = np.clip(BORDER + 0.5 - dist, 0, 1)
     rng = np.random.default_rng(11)
@@ -352,7 +465,10 @@ def normalize_part(arr, M_scale, b_kit, pts, tab=None):
     wa = warped[..., 3:4].astype(float) / 255
     rgb = warped[..., :3] * wa + paper * (1 - wa)
     out = np.concatenate([rgb, outa[..., None] * 255], -1).clip(0, 255).astype(np.uint8)
-    new_pts = {k: apply(A, v)[0] for k, v in pts.items()}
+    new_pts = {}
+    for k, v in pts.items():
+        q = apply(A, v)[0]
+        new_pts[k] = np.array([q[0], ymap(q[1])])
     return out, new_pts
 
 
@@ -377,29 +493,33 @@ def build():
     kp = {n: kit_points(n, a) for n, a in parts.items()}
     bw = {n: border_width(a) for n, a in parts.items()}
     fits = {}
-    # 1) 先算每件需要的沿軸縮放 sy
+    # 1) 每件需要的縮放：關節距離（母版）÷ 關節距離（kit）
     for name, spec in PARTS.items():
         if name == "head":
             continue
         p, q = kp[name]["prox"], kp[name]["dist"]
         mp, mq = mj(spec["prox"]), mj(spec["dist"])
-        _, sy, _ = seg_map(p, q, mp, mq)
-        fits[name] = dict(sy=sy, kit_len=float(np.linalg.norm(q - p)), master_len=float(np.linalg.norm(mq - mp)))
+        fits[name] = dict(sy=float(np.linalg.norm(mq - mp) / np.linalg.norm(q - p)),
+                          kit_len=float(np.linalg.norm(q - p)), master_len=float(np.linalg.norm(mq - mp)))
     limb = [n for n in fits if n not in ("torso", "apron_skirt")]
     g = float(np.median([fits[n]["sy"] for n in limb]))
-    # 2) 橫向縮放
+    # 2) 縮放策略：四肢與手腳等比（sx＝sy）；軀幹等比（頸→腰帶）；圍裙下襬以下襬寬定比例，口袋以下素色帶拉長到大腿中段
     for name in fits:
-        if name == "torso":
-            k = kp["torso"]
-            sx = float(np.linalg.norm(mj("shoulder_l") - mj("shoulder_r")) / np.linalg.norm(k["sh_l"] - k["sh_r"]))
-        elif name == "apron_skirt":
-            m = parts[name][..., 3] > 128
-            ys, xs = np.nonzero(m)
-            hem_w = np.ptp(xs[ys > ys.max() - 25])
-            sx = float(APRON_HEM_WIDTH / hem_w)
-        else:
-            sx = g
-        fits[name]["sx"] = sx
+        fits[name]["sx"] = fits[name]["sy"]
+        fits[name]["zones"] = None
+    m_ap = parts["apron_skirt"][..., 3] > 128
+    ys_, xs_ = np.nonzero(m_ap)
+    hem_w = float(np.ptp(xs_[ys_ > ys_.max() - 25]))
+    s_ap = APRON_HEM_WIDTH / hem_w
+    hgt = parts["apron_skirt"].shape[0]
+    z0, z1 = APRON_PLAIN_BAND[0] * hgt, APRON_PLAIN_BAND[1] * hgt
+    k0, k1 = APRON_POCKET_BAND[0] * hgt, APRON_POCKET_BAND[1] * hgt
+    p, q = kp["apron_skirt"]["prox"], kp["apron_skirt"]["dist"]
+    need = fits["apron_skirt"]["master_len"] / s_ap - (q[1] - p[1])   # 要補的長度（kit 像素）
+    need -= (APRON_POCKET_STRETCH - 1) * (k1 - k0)                    # 口袋帶先分擔一點（×1.2）
+    f_ap = 1 + need / (z1 - z0)
+    fits["apron_skirt"].update(sx=float(s_ap), sy=float(s_ap),
+                               zones=[(float(k0), float(k1), APRON_POCKET_STRETCH), (float(z0), float(z1), float(f_ap))])
     # 3) 頭：輪廓 IoU 對齊（只比頭與頸，不含衣領）
     hk = ndimage.binary_fill_holes(parts["head"][..., 3] > 128)
     hk_top = head_region(hk, 0.72)
@@ -412,46 +532,47 @@ def build():
     best = register_similarity(hk_top, hm_top, np.linspace(0.70, 1.05, 15), np.arange(-10, 10.5, 2), ck, cm_)
     iou_head, A_head, s_head, th_head = best
     fits["head"] = dict(sy=float(s_head), sx=float(s_head), rot=float(th_head), iou_with_master_head=round(float(iou_head), 3),
-                        kit_len=None, master_len=None)
+                        kit_len=None, master_len=None, zones=None)
 
-    # 4) A：同一縮放 g（不校正長寬）；B：逐件校正後的 rig 部件
+    # 4) A：同一縮放 g（不校正）；B：逐件校正後的 rig 部件
     canvas = (mim.width, mim.height)
     placedA, placedB, rig = {}, {}, {}
     RIG_DIR.mkdir(parents=True, exist_ok=True)
     for name, spec in PARTS.items():
         arr = parts[name]
         if name == "head":
-            Ah = A_head
-            AA = affine(A_head[:2, :2] / s_head * g, A_head[:2, 2])  # 同中心點、改用 g
-            c_k = ck
-            AA = affine(rot(th_head) * g, apply(A_head, c_k)[0] - (rot(th_head) * g) @ c_k)
+            AA = affine(rot(th_head) * g, apply(A_head, ck)[0] - (rot(th_head) * g) @ ck)
             placedA[name] = warp_rgba(Image.fromarray(arr, "RGBA"), AA, canvas)
-            M_scale = np.eye(2) * s_head
             pts = dict(prox=kp[name]["prox"], top=kp[name]["top"])
-            out, npts = normalize_part(arr, M_scale, bw[name] , pts)
-            # rest：旋轉 th_head、平移到母版位置
+            out, npts = normalize_part(arr, s_head, bw[name], pts)
             A_rest = affine(rot(th_head), apply(A_head, kp[name]["prox"])[0] - rot(th_head) @ npts["prox"])
         else:
             p, q = kp[name]["prox"], kp[name]["dist"]
             mp, mq = mj(spec["prox"]), mj(spec["dist"])
             AA, _, _ = seg_map(p, q, mp, mp + (mq - mp) / np.linalg.norm(mq - mp) * np.linalg.norm(q - p) * g, sx_over=g)
             placedA[name] = warp_rgba(Image.fromarray(arr, "RGBA"), AA, canvas)
-            ak, nk = axis_frame(p, q)
-            F = np.stack([ak, nk], 1)
-            M_scale = F @ np.diag([fits[name]["sy"], fits[name]["sx"]]) @ F.T
             pts = dict(prox=p, dist=q)
-            tab = None
+            tab, keep = None, None
             if name.startswith("hand"):
-                tab = (p, 0.9 * np.linalg.norm(q - p) * 0.45)
+                tab = (p, 0.50 * np.linalg.norm(q - p))
             elif name.startswith("forearm"):
                 tab = (q, 0.30 * np.linalg.norm(q - p))
-            out, npts = normalize_part(arr, M_scale, bw[name], pts, tab=tab)
-            # rest：剛體旋轉把（已校正的）部件主軸對到母版關節連線
+            if name == "torso":
+                # 腰帶以下由圍裙下襬蓋住：只留到腰帶下緣，加上垂下的蝴蝶結與綁帶
+                hh, ww = arr.shape[:2]
+                keep = np.zeros((hh, ww), bool)
+                keep[:kp["torso"]["tie_bot"] + 3] = True
+                poly = Image.new("L", (ww, hh), 0)
+                for pg in TORSO_BOW_POLYS:
+                    ImageDraw.Draw(poly).polygon(pg, fill=255)
+                keep |= np.array(poly) > 0
+            out, npts = normalize_part(arr, fits[name]["sy"], bw[name], pts, tab=tab, zones=fits[name]["zones"], keep=keep)
             a_now, _ = axis_frame(npts["prox"], npts["dist"])
             am, _ = axis_frame(mp, mq)
             ang = math.degrees(math.atan2(am[1], am[0]) - math.atan2(a_now[1], a_now[0]))
             R = rot(ang)
             A_rest = affine(R, mp - R @ npts["prox"])
+            fits[name]["rest_rot_deg"] = round(ang, 2)
         Image.fromarray(out, "RGBA").save(RIG_DIR / f"{name}.png")
         rig[name] = dict(file=f"rig/{name}.png", parent=spec["parent"], joint=spec["prox"],
                          pivot_local=[round(float(v), 2) for v in npts["prox"]],
@@ -490,6 +611,7 @@ def build():
     for n in fits:
         f = fits[n]
         f["border_kit_px"] = round(bw[n], 1)
+        f["scale_vs_g"] = round(f["sy"] / g, 3)
         if f.get("kit_len"):
             f["len_error_at_g_H"] = round((f["kit_len"] * g - f["master_len"]) / H, 3)
     rig_json = dict(source_kit="review/G2/raw/kit_ale_v02.png", master="assets/generated/chr-ale_master_v02.png",
@@ -576,7 +698,7 @@ def assembly_sheet(mim, mmask, placedA, placedB, fits, report, g):
     y = head_h + ph + 16
     d.text((20, y), "白線＝母版輪廓；彩色線＝各部件輪廓；標籤數字＝該件外輪廓到母版輪廓的平均距離（母版像素，頭高 258 px）。", font=f3, fill=(220, 220, 220))
     y += 30
-    cols = ["部件", "kit 關節距 px", "母版關節距 px", "② 長度誤差（頭高）", "沿軸縮放 sy", "橫向 sx", "② 輪廓 平均/95% px", "③ 輪廓 平均/95% px", "備註"]
+    cols = ["部件", "kit 關節距 px", "母版關節距 px", "② 長度誤差（頭高）", "rig 縮放", "相對 g", "② 輪廓 平均/95% px", "③ 輪廓 平均/95% px", "備註"]
     xs_ = [20, 150, 300, 450, 640, 780, 900, 1110, 1320]
     for x, c in zip(xs_, cols):
         d.text((x, y), c, font=f3, fill=(255, 220, 120))
@@ -589,11 +711,11 @@ def assembly_sheet(mim, mmask, placedA, placedB, fits, report, g):
         if n == "head":
             note = f"輪廓 IoU 對齊（{f['iou_with_master_head']:.2f}）、等比 {f['sy']:.3f}"
         if n == "apron_skirt":
-            note = "刻意加長到大腿中段"
+            note = "口袋帶 ×%.2f、口袋以下素色帶 ×%.2f；刻意加長到大腿中段" % (f["zones"][0][2], f["zones"][1][2])
         if n == "torso":
-            note = "肩到臀 = %.2f 頭高（母版）" % (f["master_len"] / H if f.get("master_len") else 0)
+            note = "頸→腰帶；腰帶以下改由圍裙下襬蓋住"
         vals = [ZH[n], f"{f['kit_len']:.0f}" if f.get("kit_len") else "—", f"{f['master_len']:.0f}" if f.get("master_len") else "—",
-                f"{f.get('len_error_at_g_H', 0):+.2f}" if f.get("kit_len") else "—", f"{f['sy']:.3f}", f"{f['sx']:.3f}",
+                f"{f.get('len_error_at_g_H', 0):+.2f}" if f.get("kit_len") else "—", f"{f['sy']:.3f}", f"×{f['sy'] / g:.2f}",
                 f"{rA['mean_abs_px']:.0f} / {rA['p95_abs_px']:.0f}" if rA else "（被遮住）",
                 f"{rB['mean_abs_px']:.0f} / {rB['p95_abs_px']:.0f}" if rB else "（被遮住）", note]
         for x, v in zip(xs_, vals):
@@ -662,7 +784,7 @@ def make_worried_head():
     iou, A_ws, s, th = register_similarity(w_top, s_top, np.linspace(ratio * 0.9, ratio * 1.1, 9), np.arange(-30, 31, 3), cw, cs)
     # 重取樣到 smile 頭的尺度（等比 s），並重做白邊
     bwk = border_width(w)
-    out, npts = normalize_part(w, np.eye(2) * s, bwk, dict(c=cw))
+    out, npts = normalize_part(w, float(s), bwk, dict(c=cw))
     # A：worried rig 像素 → smile 局部 → 母版
     R = rot(th)
     A_local = affine(R, apply(A_ws, cw)[0] - R @ npts["c"])
@@ -671,10 +793,20 @@ def make_worried_head():
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["build"])
+    ap.add_argument("cmd", choices=["build", "worried"])
     args = ap.parse_args()
     if args.cmd == "build":
         build()
+        args.cmd = "worried"
+    if args.cmd == "worried":
+        # 換片頭（困惑、需要幫忙）：對齊到微笑頭後存成 rig 部件，A_rest 寫進 rig.json 的 alt_heads
+        im, A, info = make_worried_head()
+        im.save(RIG_DIR / "head_worried.png")
+        cfg = json.loads((KIT_DIR / "rig.json").read_text())
+        cfg["alt_heads"] = {"worried": dict(file="rig/head_worried.png", source="assets/generated/chr-ale_head-worried_v02.png",
+                                            A_rest=[[round(float(v), 5) for v in row] for row in A[:2]], alignment=info)}
+        (KIT_DIR / "rig.json").write_text(json.dumps(cfg, ensure_ascii=False, indent=1))
+        print("worried head", info)
 
 
 if __name__ == "__main__":

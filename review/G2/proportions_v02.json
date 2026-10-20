@@ -1,0 +1,79 @@
+{
+  "note": "G2 第 2 輪：v02 母版（去烘焙光影；小宇外套還原基準色）。chin_y 與第 1 輪相同（v02 沒有改幾何）。阿樂叔叔正式母版＝chr-ale_master_v02.png（6.15 頭身）；review/G2/raw/master_ale.png 是未採用的原始生成（5.68 頭身，第 1 輪意見寫約 5.3）。",
+  "child_ratio": 0.65,
+  "characters": {
+    "xiaoqing": {
+      "file": "assets/generated/chr-xiaoqing_master_v02.png",
+      "chin_y": 382,
+      "source": "review/G2/raw/master_xiaoqing.png → tools/flatten_shading.py --preset xiaoqing"
+    },
+    "xiaoyu": {
+      "file": "assets/generated/chr-xiaoyu_master_v02.png",
+      "chin_y": 368,
+      "source": "review/G2/raw/master_xiaoyu_propfix.png（原生成色）→ tools/flatten_shading.py --preset xiaoyu"
+    },
+    "ale": {
+      "file": "assets/generated/chr-ale_master_v02.png",
+      "chin_y": 291,
+      "source": "assets/generated/chr-ale_master_v01.png（= raw/master_ale_propfix.png，6.15 頭身）→ tools/flatten_shading.py --preset ale"
+    }
+  },
+  "measured": {
+    "xiaoqing": {
+      "top": 59,
+      "bottom": 1497,
+      "chin": 382,
+      "head_px": 323,
+      "height_px": 1438,
+      "heads": 4.452012383900929,
+      "alpha_top": 49,
+      "alpha_bottom": 1506,
+      "border_top_px": 10,
+      "border_bottom_px": 9,
+      "ok": true,
+      "target": [
+        4.0,
+        4.5
+      ],
+      "display_scale": 0.4249,
+      "head_vs_adult_head_on_stage": 0.898
+    },
+    "xiaoyu": {
+      "top": 56,
+      "bottom": 1445,
+      "chin": 368,
+      "head_px": 312,
+      "height_px": 1389,
+      "heads": 4.451923076923077,
+      "alpha_top": 45,
+      "alpha_bottom": 1456,
+      "border_top_px": 11,
+      "border_bottom_px": 11,
+      "ok": true,
+      "target": [
+        4.0,
+        4.5
+      ],
+      "display_scale": 0.4399,
+      "head_vs_adult_head_on_stage": 0.898
+    },
+    "ale": {
+      "top": 33,
+      "bottom": 1619,
+      "chin": 291,
+      "head_px": 258,
+      "height_px": 1586,
+      "heads": 6.147286821705427,
+      "alpha_top": 22,
+      "alpha_bottom": 1630,
+      "border_top_px": 11,
+      "border_bottom_px": 11,
+      "ok": true,
+      "target": [
+        6.0,
+        6.5
+      ],
+      "display_scale": 0.5927
+    }
+  }
+}

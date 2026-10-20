@@ -1,0 +1,329 @@
+{
+ "source": "assets/generated/chr-ale_master_v02.png",
+ "canvas": [
+  1024,
+  1656
+ ],
+ "method": "以正式母版直接切件（逐像素分配＋關節舌片補色），無縮放",
+ "border_strip_px": 12.5,
+ "line_rgb": [
+  84,
+  75,
+  67
+ ],
+ "pivots": {
+  "neck": [
+   530,
+   330
+  ],
+  "shoulder_r": [
+   335,
+   425
+  ],
+  "elbow_r": [
+   305,
+   655
+  ],
+  "wrist_r": [
+   306,
+   840
+  ],
+  "shoulder_l": [
+   664,
+   425
+  ],
+  "elbow_l": [
+   694,
+   652
+  ],
+  "wrist_l": [
+   718,
+   850
+  ],
+  "hip_r": [
+   425,
+   1000
+  ],
+  "knee_r": [
+   420,
+   1255
+  ],
+  "hip_l": [
+   595,
+   1000
+  ],
+  "knee_l": [
+   597,
+   1255
+  ]
+ },
+ "tab_radius": {
+  "shoulder_r": 60,
+  "elbow_r": 68,
+  "wrist_r": 40,
+  "shoulder_l": 50,
+  "elbow_l": 56,
+  "wrist_l": 36,
+  "hip_r": 78,
+  "hip_l": 78,
+  "knee_r": 64,
+  "knee_l": 64
+ },
+ "layers": [
+  "shin_l",
+  "thigh_l",
+  "shin_r",
+  "thigh_r",
+  "upper_arm_l",
+  "head",
+  "upper_arm_r",
+  "torso",
+  "forearm_l",
+  "hand_l",
+  "forearm_r",
+  "hand_r"
+ ],
+ "convention": "左／右＝角色自身的左右（右側在畫面左邊）",
+ "parts": {
+  "shin_l": {
+   "zh": "左小腿含鞋",
+   "file": "shin_l.png",
+   "bbox": [
+    527,
+    1191,
+    780,
+    1587
+   ],
+   "source_px": 42027,
+   "synth_px": 12552,
+   "seam_px": 354,
+   "parent": "thigh_l",
+   "joint": "knee_l",
+   "pivot": [
+    597,
+    1255
+   ],
+   "tab_radius": 64
+  },
+  "thigh_l": {
+   "zh": "左大腿",
+   "file": "thigh_l.png",
+   "bbox": [
+    517,
+    922,
+    674,
+    1320
+   ],
+   "source_px": 33521,
+   "synth_px": 15046,
+   "seam_px": 1003,
+   "parent": "torso",
+   "joint": "hip_l",
+   "pivot": [
+    595,
+    1000
+   ],
+   "tab_radius": 78
+  },
+  "shin_r": {
+   "zh": "右小腿含鞋",
+   "file": "shin_r.png",
+   "bbox": [
+    324,
+    1191,
+    476,
+    1620
+   ],
+   "source_px": 39122,
+   "synth_px": 12303,
+   "seam_px": 378,
+   "parent": "thigh_r",
+   "joint": "knee_r",
+   "pivot": [
+    420,
+    1255
+   ],
+   "tab_radius": 64
+  },
+  "thigh_r": {
+   "zh": "右大腿",
+   "file": "thigh_r.png",
+   "bbox": [
+    340,
+    922,
+    504,
+    1320
+   ],
+   "source_px": 34192,
+   "synth_px": 15084,
+   "seam_px": 889,
+   "parent": "torso",
+   "joint": "hip_r",
+   "pivot": [
+    425,
+    1000
+   ],
+   "tab_radius": 78
+  },
+  "upper_arm_l": {
+   "zh": "左上臂",
+   "file": "upper_arm_l.png",
+   "bbox": [
+    614,
+    378,
+    735,
+    709
+   ],
+   "source_px": 3924,
+   "synth_px": 17271,
+   "seam_px": 858,
+   "parent": "torso",
+   "joint": "shoulder_l",
+   "pivot": [
+    664,
+    425
+   ],
+   "tab_radius": 50
+  },
+  "head": {
+   "zh": "頭（含頸部舌片）",
+   "file": "head.png",
+   "bbox": [
+    394,
+    34,
+    641,
+    426
+   ],
+   "source_px": 50120,
+   "synth_px": 11911,
+   "seam_px": 1005,
+   "parent": "torso",
+   "joint": "neck",
+   "pivot": [
+    530,
+    330
+   ],
+   "tab_radius": null
+  },
+  "upper_arm_r": {
+   "zh": "右上臂",
+   "file": "upper_arm_r.png",
+   "bbox": [
+    238,
+    365,
+    399,
+    724
+   ],
+   "source_px": 22405,
+   "synth_px": 20766,
+   "seam_px": 1113,
+   "parent": "torso",
+   "joint": "shoulder_r",
+   "pivot": [
+    335,
+    425
+   ],
+   "tab_radius": 60
+  },
+  "torso": {
+   "zh": "軀幹＋圍裙",
+   "file": "torso.png",
+   "bbox": [
+    283,
+    267,
+    695,
+    1042
+   ],
+   "source_px": 218644,
+   "synth_px": 6745,
+   "seam_px": 3285,
+   "parent": null,
+   "joint": null,
+   "pivot": null,
+   "tab_radius": null
+  },
+  "forearm_l": {
+   "zh": "左前臂（含袖口）",
+   "file": "forearm_l.png",
+   "bbox": [
+    639,
+    615,
+    755,
+    887
+   ],
+   "source_px": 14843,
+   "synth_px": 3060,
+   "seam_px": 834,
+   "parent": "upper_arm_l",
+   "joint": "elbow_l",
+   "pivot": [
+    694,
+    652
+   ],
+   "tab_radius": 56
+  },
+  "hand_l": {
+   "zh": "左手",
+   "file": "hand_l.png",
+   "bbox": [
+    680,
+    834,
+    767,
+    949
+   ],
+   "source_px": 7848,
+   "synth_px": 34,
+   "seam_px": 294,
+   "parent": "forearm_l",
+   "joint": "wrist_l",
+   "pivot": [
+    718,
+    850
+   ],
+   "tab_radius": 36
+  },
+  "forearm_r": {
+   "zh": "右前臂（含袖口）",
+   "file": "forearm_r.png",
+   "bbox": [
+    238,
+    618,
+    386,
+    881
+   ],
+   "source_px": 20084,
+   "synth_px": 3400,
+   "seam_px": 694,
+   "parent": "upper_arm_r",
+   "joint": "elbow_r",
+   "pivot": [
+    305,
+    655
+   ],
+   "tab_radius": 68
+  },
+  "hand_r": {
+   "zh": "右手",
+   "file": "hand_r.png",
+   "bbox": [
+    273,
+    824,
+    376,
+    963
+   ],
+   "source_px": 11002,
+   "synth_px": 8,
+   "seam_px": 427,
+   "parent": "forearm_r",
+   "joint": "wrist_r",
+   "pivot": [
+    306,
+    840
+   ],
+   "tab_radius": 40
+  }
+ },
+ "master_core_px": 569046,
+ "stripped_border_px": 70503,
+ "unassigned_body_px": 0
+}

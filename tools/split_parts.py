@@ -3,6 +3,8 @@
 用法：
   /opt/anaconda3/bin/python3 tools/split_parts.py [套件圖] [--out assets/parts/ale] [--sheet review/G2/kit_ale_parts_sheet.png]
   [--override 對照.json]  # 若自動命名錯誤，可給 {"元件編號": "部件名"} 人工覆寫
+  --layout master_v03：G2 第 3 輪起不再拆生成的套件圖，改以正式母版 chr-ale_master_v02.png 直接切件
+    （tools/master_cut.py；輸出 assets/parts/ale_v03/、review/G2/kit_ale_v03_parts_sheet.png、kit_ale_v03_cutmap.png）
 
 命名規則（依位置與形狀）：
   - 先以 alpha 做連通區標記（8 連通），去掉小於畫面 0.05% 的碎屑。
@@ -90,9 +92,16 @@ def main():
     ap.add_argument("--sheet", default=str(ROOT / "review/G2/kit_ale_parts_sheet.png"))
     ap.add_argument("--override", default=None)
     ap.add_argument("--alpha-thr", type=int, default=40)
-    ap.add_argument("--layout", default="v01", choices=sorted(LAYOUTS))
+    ap.add_argument("--layout", default="v01", choices=sorted(LAYOUTS) + ["master_v03"])
     ap.add_argument("--alpha-floor", type=int, default=0, help="部件 PNG 中 alpha 低於此值的淡霧清成全透明")
     args = ap.parse_args()
+    if args.layout == "master_v03":
+        import master_cut
+        m = master_cut.cut()
+        print(json.dumps({k: dict(source_px=v["source_px"], synth_px=v["synth_px"]) for k, v in m["parts"].items()},
+                         ensure_ascii=False))
+        print("未分配像素：", m["unassigned_body_px"])
+        return
     global LAYOUT
     LAYOUT = LAYOUTS[args.layout]
     n_expect = sum(len(r) for r in LAYOUT)

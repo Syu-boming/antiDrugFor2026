@@ -1,0 +1,1305 @@
+{
+ "version": "v02",
+ "scene": "a2_c002「線落下來」：阿樂叔叔想揮手、手被拉偏；小晴往前「叔叔，小心！」、小宇退半步",
+ "note": "WCAG 相對亮度比。投影 v1＝第 1 輪參數；投影 v2＝第 2 輪加強版（彩度×0.65、黑位 0.18、白位 0.87：黑位相對亮度 0.027、最亮 0.729）。低對比＝CSS contrast(50%)（近似 Chrome DevTools Reduced contrast）。環帶＝該服裝色靠外緣部分往外 6–34 px 的景板（含影子，不含角色、繩、字幕）。",
+ "stage_grade": {
+  "far_desat": 0.8,
+  "wash": {
+   "top": 330,
+   "feather": 110,
+   "lift": 0.62,
+   "desat": 0.6,
+   "warm": [
+    246,
+    238,
+    222
+   ],
+   "mix": 0.2,
+   "v_lo": 0.42,
+   "v_hi": 0.7,
+   "s_lo": 0.22,
+   "s_span": 0.3
+  },
+  "shadow": {
+   "base_strength": 0.07,
+   "base_offset": [
+    60,
+    45
+   ],
+   "base_sigma": 13.0,
+   "contact_strength": 0.3
+  },
+  "note": "舞台調色只動景板；角色像素直接取自 v02 母版／rig。"
+ },
+ "layout": {
+  "ale": {
+   "cx": 0.318,
+   "feet": 828,
+   "scale": 1.0,
+   "mirror": false,
+   "lean": 0.0,
+   "depth": 1.0
+  },
+  "xiaoqing": {
+   "cx": 0.54,
+   "feet": 840,
+   "scale": 1.03,
+   "mirror": true,
+   "lean": -4.0,
+   "depth": 1.35
+  },
+  "xiaoyu": {
+   "cx": 0.722,
+   "feet": 808,
+   "scale": 0.95,
+   "mirror": true,
+   "lean": 3.0,
+   "depth": 0.75
+  }
+ },
+ "ale_pose": {
+  "upper_arm_r": 84,
+  "forearm_r": 62,
+  "hand_r": -112,
+  "upper_arm_l": -21,
+  "forearm_l": -6,
+  "thigh_r": -10,
+  "shin_r": 12,
+  "head": -4,
+  "root": [
+   0,
+   0,
+   -1.5,
+   "hip_mid"
+  ]
+ },
+ "worried_head_alignment": {
+  "iou": 0.892,
+  "scale": 0.32,
+  "rot": -6.0
+ },
+ "per_color": [
+  {
+   "character": "阿樂叔叔",
+   "color": "深藍圍裙",
+   "main": true,
+   "touches_background": true,
+   "costume_pixels": 31931,
+   "ring_pixels": 9512,
+   "sample_costume_xy": [
+    558,
+    550
+   ],
+   "sample_bg_xy": [
+    526,
+    550
+   ],
+   "original": {
+    "costume_hex": "#2F3953",
+    "costume_lum": 0.0416,
+    "ring_median_lum": 0.6833,
+    "ring_p10_lum": 0.4217,
+    "ring_p90_lum": 0.8491,
+    "contrast_median": 8.01,
+    "contrast_worst": 5.15,
+    "sample_contrast_10x10": 9.86
+   },
+   "proj_v1": {
+    "costume_hex": "#4A505E",
+    "costume_lum": 0.08,
+    "ring_median_lum": 0.5698,
+    "ring_p10_lum": 0.3783,
+    "ring_p90_lum": 0.6781,
+    "contrast_median": 4.77,
+    "contrast_worst": 3.29,
+    "sample_contrast_10x10": 5.69
+   },
+   "proj_v2": {
+    "costume_hex": "#525662",
+    "costume_lum": 0.0933,
+    "ring_median_lum": 0.5377,
+    "ring_p10_lum": 0.3677,
+    "ring_p90_lum": 0.6342,
+    "contrast_median": 4.1,
+    "contrast_worst": 2.91,
+    "sample_contrast_10x10": 4.82
+   },
+   "lowc": {
+    "costume_hex": "#575C69",
+    "costume_lum": 0.107,
+    "ring_median_lum": 0.4066,
+    "ring_p10_lum": 0.304,
+    "ring_p90_lum": 0.4667,
+    "contrast_median": 2.91,
+    "contrast_worst": 2.25,
+    "sample_contrast_10x10": 3.32
+   }
+  },
+  {
+   "character": "阿樂叔叔",
+   "color": "米色襯衫",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 18243,
+   "ring_pixels": 24627,
+   "sample_costume_xy": [
+    470,
+    336
+   ],
+   "sample_bg_xy": [
+    470,
+    304
+   ],
+   "original": {
+    "costume_hex": "#EED9BE",
+    "costume_lum": 0.7152,
+    "ring_median_lum": 0.4202,
+    "ring_p10_lum": 0.1412,
+    "ring_p90_lum": 0.8201,
+    "contrast_median": 1.63,
+    "contrast_worst": 1.14,
+    "sample_contrast_10x10": 1.69
+   },
+   "proj_v1": {
+    "costume_hex": "#D3C8B9",
+    "costume_lum": 0.5866,
+    "ring_median_lum": 0.3683,
+    "ring_p10_lum": 0.158,
+    "ring_p90_lum": 0.6596,
+    "contrast_median": 1.52,
+    "contrast_worst": 1.11,
+    "sample_contrast_10x10": 1.57
+   },
+   "proj_v2": {
+    "costume_hex": "#CCC3B7",
+    "costume_lum": 0.5529,
+    "ring_median_lum": 0.3575,
+    "ring_p10_lum": 0.1658,
+    "ring_p90_lum": 0.6168,
+    "contrast_median": 1.48,
+    "contrast_worst": 1.11,
+    "sample_contrast_10x10": 1.52
+   },
+   "lowc": {
+    "costume_hex": "#B6AC9E",
+    "costume_lum": 0.4192,
+    "ring_median_lum": 0.2975,
+    "ring_p10_lum": 0.1672,
+    "ring_p90_lum": 0.4562,
+    "contrast_median": 1.35,
+    "contrast_worst": 1.08,
+    "sample_contrast_10x10": 1.37
+   }
+  },
+  {
+   "character": "阿樂叔叔",
+   "color": "橄欖褐長褲",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 10874,
+   "ring_pixels": 7159,
+   "sample_costume_xy": [
+    663,
+    658
+   ],
+   "sample_bg_xy": [
+    694,
+    658
+   ],
+   "original": {
+    "costume_hex": "#765F3A",
+    "costume_lum": 0.1234,
+    "ring_median_lum": 0.7977,
+    "ring_p10_lum": 0.6143,
+    "ring_p90_lum": 0.866,
+    "contrast_median": 4.89,
+    "contrast_worst": 3.83,
+    "sample_contrast_10x10": 5.08
+   },
+   "proj_v1": {
+    "costume_hex": "#776A56",
+    "costume_lum": 0.149,
+    "ring_median_lum": 0.647,
+    "ring_p10_lum": 0.5211,
+    "ring_p90_lum": 0.6911,
+    "contrast_median": 3.5,
+    "contrast_worst": 2.87,
+    "sample_contrast_10x10": 3.58
+   },
+   "proj_v2": {
+    "costume_hex": "#786E5D",
+    "costume_lum": 0.1594,
+    "ring_median_lum": 0.6062,
+    "ring_p10_lum": 0.4961,
+    "ring_p90_lum": 0.6426,
+    "contrast_median": 3.13,
+    "contrast_worst": 2.61,
+    "sample_contrast_10x10": 3.21
+   },
+   "lowc": {
+    "costume_hex": "#7A6F5C",
+    "costume_lum": 0.1628,
+    "ring_median_lum": 0.448,
+    "ring_p10_lum": 0.3814,
+    "ring_p90_lum": 0.472,
+    "contrast_median": 2.34,
+    "contrast_worst": 2.03,
+    "sample_contrast_10x10": 2.4
+   }
+  },
+  {
+   "character": "小晴",
+   "color": "湖水綠吊帶褲",
+   "main": true,
+   "touches_background": true,
+   "costume_pixels": 15024,
+   "ring_pixels": 6485,
+   "sample_costume_xy": [
+    1051,
+    640
+   ],
+   "sample_bg_xy": [
+    1096,
+    618
+   ],
+   "original": {
+    "costume_hex": "#336E6D",
+    "costume_lum": 0.1296,
+    "ring_median_lum": 0.772,
+    "ring_p10_lum": 0.4445,
+    "ring_p90_lum": 0.8817,
+    "contrast_median": 4.58,
+    "contrast_worst": 2.75,
+    "sample_contrast_10x10": 3.4
+   },
+   "proj_v1": {
+    "costume_hex": "#527372",
+    "costume_lum": 0.1527,
+    "ring_median_lum": 0.6285,
+    "ring_p10_lum": 0.3885,
+    "ring_p90_lum": 0.7043,
+    "contrast_median": 3.35,
+    "contrast_worst": 2.16,
+    "sample_contrast_10x10": 2.64
+   },
+   "proj_v2": {
+    "costume_hex": "#5A7474",
+    "costume_lum": 0.1593,
+    "ring_median_lum": 0.5879,
+    "ring_p10_lum": 0.3744,
+    "ring_p90_lum": 0.6549,
+    "contrast_median": 3.05,
+    "contrast_worst": 2.03,
+    "sample_contrast_10x10": 2.44
+   },
+   "lowc": {
+    "costume_hex": "#597676",
+    "costume_lum": 0.1639,
+    "ring_median_lum": 0.4386,
+    "ring_p10_lum": 0.3123,
+    "ring_p90_lum": 0.4777,
+    "contrast_median": 2.28,
+    "contrast_worst": 1.69,
+    "sample_contrast_10x10": 1.91
+   }
+  },
+  {
+   "character": "小晴",
+   "color": "芥末黃上衣",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 3925,
+   "ring_pixels": 7862,
+   "sample_costume_xy": [
+    985,
+    556
+   ],
+   "sample_bg_xy": [
+    955,
+    545
+   ],
+   "original": {
+    "costume_hex": "#EDA526",
+    "costume_lum": 0.4505,
+    "ring_median_lum": 0.7814,
+    "ring_p10_lum": 0.4555,
+    "ring_p90_lum": 0.8652,
+    "contrast_median": 1.66,
+    "contrast_worst": 1.01,
+    "sample_contrast_10x10": 1.73
+   },
+   "proj_v1": {
+    "costume_hex": "#C49D57",
+    "costume_lum": 0.3654,
+    "ring_median_lum": 0.6362,
+    "ring_p10_lum": 0.4032,
+    "ring_p90_lum": 0.6914,
+    "contrast_median": 1.65,
+    "contrast_worst": 1.09,
+    "sample_contrast_10x10": 1.71
+   },
+   "proj_v2": {
+    "costume_hex": "#BB9B62",
+    "costume_lum": 0.3489,
+    "ring_median_lum": 0.5956,
+    "ring_p10_lum": 0.3896,
+    "ring_p90_lum": 0.6426,
+    "contrast_median": 1.62,
+    "contrast_worst": 1.1,
+    "sample_contrast_10x10": 1.68
+   },
+   "lowc": {
+    "costume_hex": "#B69252",
+    "costume_lum": 0.3111,
+    "ring_median_lum": 0.4433,
+    "ring_p10_lum": 0.3173,
+    "ring_p90_lum": 0.472,
+    "contrast_median": 1.37,
+    "contrast_worst": 1.02,
+    "sample_contrast_10x10": 1.4
+   }
+  },
+  {
+   "character": "小晴",
+   "color": "深棕頭髮",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 5654,
+   "ring_pixels": 7747,
+   "sample_costume_xy": [
+    1010,
+    428
+   ],
+   "sample_bg_xy": [
+    1010,
+    396
+   ],
+   "original": {
+    "costume_hex": "#553A2F",
+    "costume_lum": 0.0516,
+    "ring_median_lum": 0.5188,
+    "ring_p10_lum": 0.2312,
+    "ring_p90_lum": 0.8751,
+    "contrast_median": 5.6,
+    "contrast_worst": 2.77,
+    "sample_contrast_10x10": 4.99
+   },
+   "proj_v1": {
+    "costume_hex": "#5F514B",
+    "costume_lum": 0.0883,
+    "ring_median_lum": 0.4418,
+    "ring_p10_lum": 0.2357,
+    "ring_p90_lum": 0.6975,
+    "contrast_median": 3.56,
+    "contrast_worst": 2.07,
+    "sample_contrast_10x10": 3.26
+   },
+   "proj_v2": {
+    "costume_hex": "#635752",
+    "costume_lum": 0.1008,
+    "ring_median_lum": 0.423,
+    "ring_p10_lum": 0.2386,
+    "ring_p90_lum": 0.6485,
+    "contrast_median": 3.14,
+    "contrast_worst": 1.91,
+    "sample_contrast_10x10": 2.89
+   },
+   "lowc": {
+    "costume_hex": "#6A5C57",
+    "costume_lum": 0.1141,
+    "ring_median_lum": 0.3406,
+    "ring_p10_lum": 0.2169,
+    "ring_p90_lum": 0.4761,
+    "contrast_median": 2.38,
+    "contrast_worst": 1.63,
+    "sample_contrast_10x10": 2.22
+   }
+  },
+  {
+   "character": "小宇",
+   "color": "橘紅外套",
+   "main": true,
+   "touches_background": true,
+   "costume_pixels": 9568,
+   "ring_pixels": 6381,
+   "sample_costume_xy": [
+    1441,
+    600
+   ],
+   "sample_bg_xy": [
+    1469,
+    586
+   ],
+   "original": {
+    "costume_hex": "#D75329",
+    "costume_lum": 0.2079,
+    "ring_median_lum": 0.4654,
+    "ring_p10_lum": 0.1589,
+    "ring_p90_lum": 0.7129,
+    "contrast_median": 2.0,
+    "contrast_worst": 1.23,
+    "sample_contrast_10x10": 2.01
+   },
+   "proj_v1": {
+    "costume_hex": "#B16952",
+    "costume_lum": 0.2006,
+    "ring_median_lum": 0.4022,
+    "ring_p10_lum": 0.1757,
+    "ring_p90_lum": 0.5893,
+    "contrast_median": 1.8,
+    "contrast_worst": 1.11,
+    "sample_contrast_10x10": 1.88
+   },
+   "proj_v2": {
+    "costume_hex": "#A96E5B",
+    "costume_lum": 0.2034,
+    "ring_median_lum": 0.3881,
+    "ring_p10_lum": 0.1832,
+    "ring_p90_lum": 0.557,
+    "contrast_median": 1.73,
+    "contrast_worst": 1.09,
+    "sample_contrast_10x10": 1.79
+   },
+   "lowc": {
+    "costume_hex": "#AB6954",
+    "costume_lum": 0.194,
+    "ring_median_lum": 0.3226,
+    "ring_p10_lum": 0.182,
+    "ring_p90_lum": 0.4172,
+    "contrast_median": 1.53,
+    "contrast_worst": 1.05,
+    "sample_contrast_10x10": 1.54
+   }
+  },
+  {
+   "character": "小宇",
+   "color": "卡其短褲",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 4066,
+   "ring_pixels": 1537,
+   "sample_costume_xy": [
+    1420,
+    657
+   ],
+   "sample_bg_xy": [
+    1446,
+    684
+   ],
+   "original": {
+    "costume_hex": "#AC7D4D",
+    "costume_lum": 0.2397,
+    "ring_median_lum": 0.5306,
+    "ring_p10_lum": 0.1094,
+    "ring_p90_lum": 0.6573,
+    "contrast_median": 2.0,
+    "contrast_worst": 1.82,
+    "sample_contrast_10x10": 2.11
+   },
+   "proj_v1": {
+    "costume_hex": "#9C8268",
+    "costume_lum": 0.2403,
+    "ring_median_lum": 0.4639,
+    "ring_p10_lum": 0.1391,
+    "ring_p90_lum": 0.5521,
+    "contrast_median": 1.77,
+    "contrast_worst": 1.54,
+    "sample_contrast_10x10": 1.85
+   },
+   "proj_v2": {
+    "costume_hex": "#99846E",
+    "costume_lum": 0.244,
+    "ring_median_lum": 0.4453,
+    "ring_p10_lum": 0.1488,
+    "ring_p90_lum": 0.523,
+    "contrast_median": 1.68,
+    "contrast_worst": 1.48,
+    "sample_contrast_10x10": 1.76
+   },
+   "lowc": {
+    "costume_hex": "#957E66",
+    "costume_lum": 0.2227,
+    "ring_median_lum": 0.3483,
+    "ring_p10_lum": 0.1531,
+    "ring_p90_lum": 0.3968,
+    "contrast_median": 1.46,
+    "contrast_worst": 1.34,
+    "sample_contrast_10x10": 1.51
+   }
+  },
+  {
+   "character": "小宇",
+   "color": "深棕頭髮",
+   "main": false,
+   "touches_background": true,
+   "costume_pixels": 3257,
+   "ring_pixels": 5277,
+   "sample_costume_xy": [
+    1379,
+    434
+   ],
+   "sample_bg_xy": [
+    1361,
+    409
+   ],
+   "original": {
+    "costume_hex": "#4D352A",
+    "costume_lum": 0.0429,
+    "ring_median_lum": 0.4181,
+    "ring_p10_lum": 0.1336,
+    "ring_p90_lum": 0.6441,
+    "contrast_median": 5.04,
+    "contrast_worst": 1.98,
+    "sample_contrast_10x10": 6.57
+   },
+   "proj_v1": {
+    "costume_hex": "#5A4C46",
+    "costume_lum": 0.0778,
+    "ring_median_lum": 0.3679,
+    "ring_p10_lum": 0.1564,
+    "ring_p90_lum": 0.5272,
+    "contrast_median": 3.27,
+    "contrast_worst": 1.61,
+    "sample_contrast_10x10": 4.01
+   },
+   "proj_v2": {
+    "costume_hex": "#5E534E",
+    "costume_lum": 0.0912,
+    "ring_median_lum": 0.3565,
+    "ring_p10_lum": 0.1646,
+    "ring_p90_lum": 0.4975,
+    "contrast_median": 2.88,
+    "contrast_worst": 1.52,
+    "sample_contrast_10x10": 3.45
+   },
+   "lowc": {
+    "costume_hex": "#665A54",
+    "costume_lum": 0.1078,
+    "ring_median_lum": 0.3028,
+    "ring_p10_lum": 0.1684,
+    "ring_p90_lum": 0.3909,
+    "contrast_median": 2.24,
+    "contrast_worst": 1.38,
+    "sample_contrast_10x10": 2.6
+   }
+  }
+ ],
+ "outline_vs_background_proj_v2": {
+  "小宇": {
+   "edge_dark_p20_lum": 0.2006,
+   "ring_median_lum": 0.4618,
+   "contrast": 2.04
+  },
+  "小晴": {
+   "edge_dark_p20_lum": 0.1995,
+   "ring_median_lum": 0.5879,
+   "contrast": 2.56
+  },
+  "阿樂叔叔": {
+   "edge_dark_p20_lum": 0.2346,
+   "ring_median_lum": 0.4963,
+   "contrast": 1.92
+  }
+ },
+ "ropes": {
+  "wrist": {
+   "attach_point": "腕背（右）",
+   "attach": [
+    411.5,
+    282.7
+   ],
+   "anchor_offscreen": [
+    411.5,
+    -60
+   ],
+   "min_clearance_px_to_hands_face_bow_kids": 24.2,
+   "crosses_other_rope": false,
+   "tilt_deg_from_vertical": 0.0,
+   "samples_over_hand": 0,
+   "samples_over_face": 0,
+   "samples_proj_v2": [
+    {
+     "at": [
+      411,
+      256
+     ],
+     "over_character": false,
+     "core_lum": 0.3662,
+     "side_lum": [
+      0.344,
+      0.5883
+     ],
+     "cross_section_min_max": [
+      0.0706,
+      0.5457
+     ],
+     "best_contrast_vs_each_side": [
+      3.27,
+      5.29
+     ]
+    },
+    {
+     "at": [
+      411,
+      215
+     ],
+     "over_character": false,
+     "core_lum": 0.3813,
+     "side_lum": [
+      0.3178,
+      0.4617
+     ],
+     "cross_section_min_max": [
+      0.0725,
+      0.5906
+     ],
+     "best_contrast_vs_each_side": [
+      3.0,
+      4.18
+     ]
+    },
+    {
+     "at": [
+      411,
+      163
+     ],
+     "over_character": false,
+     "core_lum": 0.3916,
+     "side_lum": [
+      0.4083,
+      0.3581
+     ],
+     "cross_section_min_max": [
+      0.0706,
+      0.3956
+     ],
+     "best_contrast_vs_each_side": [
+      3.8,
+      3.38
+     ]
+    },
+    {
+     "at": [
+      411,
+      112
+     ],
+     "over_character": false,
+     "core_lum": 0.3853,
+     "side_lum": [
+      0.4153,
+      0.2391
+     ],
+     "cross_section_min_max": [
+      0.0725,
+      0.5841
+     ],
+     "best_contrast_vs_each_side": [
+      3.8,
+      2.36
+     ]
+    },
+    {
+     "at": [
+      411,
+      43
+     ],
+     "over_character": false,
+     "core_lum": 0.3813,
+     "side_lum": [
+      0.2049,
+      0.2226
+     ],
+     "cross_section_min_max": [
+      0.0706,
+      0.6172
+     ],
+     "best_contrast_vs_each_side": [
+      2.62,
+      2.45
+     ]
+    }
+   ]
+  },
+  "elbow": {
+   "attach_point": "肘外（右）",
+   "attach": [
+    455.2,
+    323.5
+   ],
+   "anchor_offscreen": [
+    455.2,
+    -60
+   ],
+   "min_clearance_px_to_hands_face_bow_kids": 56.0,
+   "crosses_other_rope": false,
+   "tilt_deg_from_vertical": 0.0,
+   "samples_over_hand": 0,
+   "samples_over_face": 0,
+   "samples_proj_v2": [
+    {
+     "at": [
+      455,
+      293
+     ],
+     "over_character": false,
+     "core_lum": 0.3956,
+     "side_lum": [
+      0.5934,
+      0.298
+     ],
+     "cross_section_min_max": [
+      0.0838,
+      0.4678
+     ],
+     "best_contrast_vs_each_side": [
+      4.81,
+      2.6
+     ]
+    },
+    {
+     "at": [
+      455,
+      247
+     ],
+     "over_character": false,
+     "core_lum": 0.3868,
+     "side_lum": [
+      0.5873,
+      0.2975
+     ],
+     "cross_section_min_max": [
+      0.0858,
+      0.5776
+     ],
+     "best_contrast_vs_each_side": [
+      4.69,
+      2.56
+     ]
+    },
+    {
+     "at": [
+      455,
+      190
+     ],
+     "over_character": false,
+     "core_lum": 0.3916,
+     "side_lum": [
+      0.5919,
+      0.1806
+     ],
+     "cross_section_min_max": [
+      0.0816,
+      0.5711
+     ],
+     "best_contrast_vs_each_side": [
+      4.88,
+      2.69
+     ]
+    },
+    {
+     "at": [
+      455,
+      132
+     ],
+     "over_character": false,
+     "core_lum": 0.3813,
+     "side_lum": [
+      0.4661,
+      0.3236
+     ],
+     "cross_section_min_max": [
+      0.0871,
+      0.5776
+     ],
+     "best_contrast_vs_each_side": [
+      3.76,
+      2.72
+     ]
+    },
+    {
+     "at": [
+      455,
+      55
+     ],
+     "over_character": false,
+     "core_lum": 0.3956,
+     "side_lum": [
+      0.4424,
+      0.3569
+     ],
+     "cross_section_min_max": [
+      0.0876,
+      0.4357
+     ],
+     "best_contrast_vs_each_side": [
+      3.58,
+      2.96
+     ]
+    }
+   ]
+  },
+  "knee": {
+   "attach_point": "膝前（左）",
+   "attach": [
+    652.9,
+    702.4
+   ],
+   "anchor_offscreen": [
+    902.9,
+    -60
+   ],
+   "min_clearance_px_to_hands_face_bow_kids": 32.0,
+   "crosses_other_rope": false,
+   "tilt_deg_from_vertical": -18.2,
+   "samples_over_hand": 0,
+   "samples_over_face": 0,
+   "samples_proj_v2": [
+    {
+     "at": [
+      673,
+      642
+     ],
+     "over_character": true,
+     "core_lum": 0.3613,
+     "side_lum": [
+      0.1617,
+      0.6
+     ],
+     "cross_section_min_max": [
+      0.072,
+      0.5906
+     ],
+     "best_contrast_vs_each_side": [
+      3.03,
+      5.33
+     ]
+    },
+    {
+     "at": [
+      703,
+      551
+     ],
+     "over_character": false,
+     "core_lum": 0.3613,
+     "side_lum": [
+      0.5864,
+      0.3581
+     ],
+     "cross_section_min_max": [
+      0.0687,
+      0.6105
+     ],
+     "best_contrast_vs_each_side": [
+      5.36,
+      3.44
+     ]
+    },
+    {
+     "at": [
+      740,
+      436
+     ],
+     "over_character": true,
+     "core_lum": 0.3956,
+     "side_lum": [
+      0.5524,
+      0.1113
+     ],
+     "cross_section_min_max": [
+      0.0745,
+      0.5776
+     ],
+     "best_contrast_vs_each_side": [
+      4.84,
+      3.89
+     ]
+    },
+    {
+     "at": [
+      778,
+      322
+     ],
+     "over_character": false,
+     "core_lum": 0.3691,
+     "side_lum": [
+      0.2276,
+      0.2817
+     ],
+     "cross_section_min_max": [
+      0.1104,
+      0.4548
+     ],
+     "best_contrast_vs_each_side": [
+      1.82,
+      2.07
+     ]
+    },
+    {
+     "at": [
+      828,
+      169
+     ],
+     "over_character": false,
+     "core_lum": 0.3702,
+     "side_lum": [
+      0.4111,
+      0.5426
+     ],
+     "cross_section_min_max": [
+      0.0746,
+      0.5911
+     ],
+     "best_contrast_vs_each_side": [
+      3.7,
+      4.75
+     ]
+    },
+    {
+     "at": [
+      878,
+      16
+     ],
+     "over_character": false,
+     "core_lum": 0.3564,
+     "side_lum": [
+      0.3541,
+      0.3626
+     ],
+     "cross_section_min_max": [
+      0.1073,
+      0.6038
+     ],
+     "best_contrast_vs_each_side": [
+      2.57,
+      2.62
+     ]
+    }
+   ]
+  }
+ },
+ "subtitle": {
+  "16x9_1920x1080": {
+   "font": "PingFang TC Semibold",
+   "px": 70,
+   "strip": [
+    561,
+    842,
+    798,
+    216
+   ],
+   "line_boxes": [
+    [
+     680,
+     872,
+     560,
+     66
+    ],
+    [
+     610,
+     961,
+     700,
+     67
+    ]
+   ],
+   "chars_per_line": [
+    8,
+    10
+   ],
+   "ink_height_px_measured": [
+    64,
+    65
+   ],
+   "text_vs_strip": {
+    "original": {
+     "bg_hex": "#4C4748",
+     "contrast": 9.12
+    },
+    "proj_v2": {
+     "bg_hex": "#615F5F",
+     "contrast": 4.67
+    }
+   }
+  },
+  "4x3_1440x1080": {
+   "font": "PingFang TC Semibold",
+   "px": 70,
+   "strip": [
+    321,
+    836,
+    798,
+    216
+   ],
+   "line_boxes": [
+    [
+     440,
+     866,
+     560,
+     66
+    ],
+    [
+     370,
+     955,
+     700,
+     67
+    ]
+   ],
+   "chars_per_line": [
+    8,
+    10
+   ],
+   "stage_rows": [
+    0,
+    810
+   ],
+   "black_band_rows": [
+    810,
+    1080
+   ],
+   "band_fraction": 0.25,
+   "px_equiv_1080": 70.0,
+   "ink_height_px_measured": [
+    64,
+    65
+   ],
+   "text_vs_band": {
+    "original": {
+     "bg_hex": "#000000",
+     "contrast": 21.0
+    },
+    "proj_v2": {
+     "bg_hex": "#2D2D2D",
+     "contrast": 10.14
+    }
+   }
+  },
+  "4x3_1024x768": {
+   "font": "PingFang TC Semibold",
+   "px": 50,
+   "strip": [
+    227,
+    595,
+    570,
+    154
+   ],
+   "line_boxes": [
+    [
+     312,
+     616,
+     400,
+     48
+    ],
+    [
+     262,
+     680,
+     500,
+     48
+    ]
+   ],
+   "chars_per_line": [
+    8,
+    10
+   ],
+   "stage_rows": [
+    0,
+    576
+   ],
+   "black_band_rows": [
+    576,
+    768
+   ],
+   "band_fraction": 0.25,
+   "px_equiv_1080": 70.3,
+   "ink_height_px_measured": [
+    46,
+    46
+   ]
+  },
+  "text": [
+   "咦？我想揮手……",
+   "手怎麼跑到旁邊去了？"
+  ],
+  "rule": "v1.2 §16.2：字身 64–72 px@1080（取 70）；每行 ≤16 字、最多兩行；4:3 依 §16.1 舞台靠上、下方黑邊放字幕，不縮字"
+ },
+ "jacket": {
+  "swatches": {
+   "基準（原始生成 raw）": {
+    "hex": "#DA5429",
+    "L_star": 53.4,
+    "rel_lum": 0.2141,
+    "proj_v2_lum": 0.2078
+   },
+   "第 1 輪壓暗版 v01": {
+    "hex": "#B23E19",
+    "L_star": 42.7,
+    "rel_lum": 0.1298,
+    "proj_v2_lum": 0.1494
+   },
+   "第 2 輪 v02（還原基準＋去烘焙光影）": {
+    "hex": "#D95429",
+    "L_star": 53.2,
+    "rel_lum": 0.2125,
+    "proj_v2_lum": 0.2067
+   },
+   "舞台合成 stage_composite_v02（同一件外套）": {
+    "hex": "#D75329",
+    "L_star": 52.7,
+    "rel_lum": 0.2079
+   }
+  },
+  "same_position_dE00": [
+   {
+    "master_uv": [
+     112,
+     507
+    ],
+    "stage_xy": [
+     1438,
+     557
+    ],
+    "stage_hex": "#D75228",
+    "raw_hex": "#DA5327",
+    "v02_hex": "#D95429",
+    "v01_hex": "#B33D17",
+    "dE00_stage_vs_raw": 0.77,
+    "dE00_stage_vs_v02": 0.69,
+    "dE00_v01_vs_raw": 10.47
+   },
+   {
+    "master_uv": [
+     216,
+     498
+    ],
+    "stage_xy": [
+     1409,
+     553
+    ],
+    "stage_hex": "#C44621",
+    "raw_hex": "#D85528",
+    "v02_hex": "#D95429",
+    "v01_hex": "#B14018",
+    "dE00_stage_vs_raw": 6.11,
+    "dE00_stage_vs_v02": 6.04,
+    "dE00_v01_vs_raw": 10.36
+   },
+   {
+    "master_uv": [
+     272,
+     485
+    ],
+    "stage_xy": [
+     1393,
+     548
+    ],
+    "stage_hex": "#D65329",
+    "raw_hex": "#DB5629",
+    "v02_hex": "#D95529",
+    "v01_hex": "#B44019",
+    "dE00_stage_vs_raw": 1.42,
+    "dE00_stage_vs_v02": 0.9,
+    "dE00_v01_vs_raw": 10.54
+   },
+   {
+    "master_uv": [
+     357,
+     498
+    ],
+    "stage_xy": [
+     1369,
+     551
+    ],
+    "stage_hex": "#D7552A",
+    "raw_hex": "#DA5529",
+    "v02_hex": "#DA552A",
+    "v01_hex": "#B33F19",
+    "dE00_stage_vs_raw": 0.6,
+    "dE00_stage_vs_v02": 0.59,
+    "dE00_v01_vs_raw": 10.52
+   },
+   {
+    "master_uv": [
+     372,
+     484
+    ],
+    "stage_xy": [
+     1365,
+     547
+    ],
+    "stage_hex": "#D75429",
+    "raw_hex": "#DA5428",
+    "v02_hex": "#D95529",
+    "v01_hex": "#B33E18",
+    "dE00_stage_vs_raw": 0.6,
+    "dE00_stage_vs_v02": 0.53,
+    "dE00_v01_vs_raw": 10.49
+   }
+  ],
+  "deeper_trial_not_applied": [
+   {
+    "dL": -6,
+    "hex": "#C6441A",
+    "proj_v2_lum": 0.1679,
+    "contrast_vs_same_ring": 2.01
+   },
+   {
+    "dL": -10,
+    "hex": "#B93910",
+    "proj_v2_lum": 0.1452,
+    "contrast_vs_same_ring": 2.24
+   },
+   {
+    "dL": -14,
+    "hex": "#AD2D04",
+    "proj_v2_lum": 0.1239,
+    "contrast_vs_same_ring": 2.52
+   }
+  ]
+ },
+ "intent_force_demo": {
+  "file": "intent_force_demo_v02.png",
+  "ropes_per_panel": [
+   {
+    "wrist": [
+     "腕背（右）",
+     6.0
+    ],
+    "elbow": [
+     "肘外（右）",
+     34.0
+    ],
+    "knee": [
+     "膝前（右）",
+     33.5
+    ]
+   },
+   {
+    "wrist": [
+     "腕背（右）",
+     28.3
+    ],
+    "elbow": [
+     "肘外（右）",
+     70.0
+    ],
+    "knee": [
+     "膝前（右）",
+     32.3
+    ]
+   },
+   {
+    "wrist": [
+     "腕背（右）",
+     32.2
+    ],
+    "elbow": [
+     "肘外（右）",
+     71.0
+    ],
+    "knee": [
+     "膝前（左）",
+     33.5
+    ]
+   }
+  ]
+ },
+ "conflict_note": "數學限制：在投影 v2 下，景板最亮約 0.729、最暗約 0.027。服裝色亮度 L 要對同一面景板 ≥3:1，景板須 ≥3L+0.1 或 ≤(L+0.05)/3−0.05。湖水綠（L≈0.16）與深藍（≈0.10）只能靠很亮的景板達標；芥末黃（≈0.37）、米色襯衫（≈0.55）、卡其（≈0.25）只能靠很暗的景板達標，兩類顏色不可能同時對同一塊相鄰背景 ≥3:1。基準橘紅外套（L≈0.21）需要景板 ≥0.72，超過投影 v2 的白位上限，所以在不改母版服色的前提下無法達到 3:1；加深外套的試算見 jacket.deeper_trial_not_applied（未套用，待驗收決定）。"
+}

@@ -1,0 +1,59 @@
+started pose_xiaoqing_reach_v03 pid 91112
+started pose_xiaoyu_stepback_v03 pid 91115
+started bgL0_sky_v03 pid 91118
+started bgL1_mountains_v03 pid 91122
+started bgL2_backrow_v03 pid 91126
+started bgL3_arcade_v03 pid 91130
+started bgL4_trees_v03 pid 91134
+started bgL5_planters_v03 pid 91138
+== pose_xiaoqing_reach_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-74c3-b576-ca218b632b93/exec-93e2b799-436b-4c42-be94-2fa1a48f57db.png`
+- Destination: [review/G2/raw/pose_xiaoqing_reach_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoqing_reach_v03.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes**, transparent pixels verified.
+- Copy: **Byte-for-byte identical**, unmodified.-rw-r--r--@ 1 boming  staff  1915713 10月 21 02:22 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoqing_reach_v03.png
+== pose_xiaoyu_stepback_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3a-7d73-bc1a-4f78966b11ae/exec-b35d0467-706f-40a9-990b-8b0e926c3e45.png`
+- Destination: [review/G2/raw/pose_xiaoyu_stepback_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoyu_stepback_v03.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte identity verified.-rw-r--r--@ 1 boming  staff  1784390 10月 21 02:21 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoyu_stepback_v03.png
+== bgL0_sky_v03
+Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-7a02-a15b-ddf16a579b9b/call_eece285a71af412e9e5f9a616a4dce7d.png`
+
+Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL0_sky_v03.png`
+
+**1536 × 1024 pixels**, fully opaque. Copied unmodified.-rw-r--r--@ 1 boming  staff  2484228 10月 21 02:20 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL0_sky_v03.png
+== bgL1_mountains_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3c-7a62-872d-e32673a5c9a0/exec-04af0d52-f579-41ae-bdd2-d74535e51e88.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL1_mountains_v03.png`
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, with transparent pixels. A soft halo remains around the hills.
+
+Copied byte-for-byte without modification.-rw-r--r--@ 1 boming  staff  1990206 10月 21 02:21 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL1_mountains_v03.png
+== bgL2_backrow_v03
+- Source: [/Users/boming/.codex/generated_images/01a15a8a-4b3b-7550-8591-4d5ea957217d/call_40ec8115c81043c58eb335acc91b972f.png](/Users/boming/.codex/generated_images/01a15a8a-4b3b-7550-8591-4d5ea957217d/call_40ec8115c81043c58eb335acc91b972f.png)
+- Destination: [review/G2/raw/bgL2_backrow_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL2_backrow_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.-rw-r--r--@ 1 boming  staff  2018562 10月 21 02:21 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL2_backrow_v03.png
+== bgL3_arcade_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3a-7b12-8e60-d25c29e5834e/exec-9f6f03e8-d7eb-42d2-9d89-d9823642af3a.png`
+- Destination: [review/G2/raw/bgL3_arcade_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL3_arcade_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, verified transparent pixels.
+- Copy: **Unmodified, byte-for-byte verified.**-rw-r--r--@ 1 boming  staff  2070833 10月 21 02:21 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL3_arcade_v03.png
+== bgL4_trees_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b38-7db0-b29e-5468698b816f/exec-bbef7145-fc6c-49ca-81cf-fdfedfa33573.png`
+- Destination: [review/G2/raw/bgL4_trees_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL4_trees_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, real transparency verified.
+- Copy: **Unmodified, byte-for-byte identical.**
+
+The generated image does not meet the requested 120 px transparent margins.-rw-r--r--@ 1 boming  staff  2172478 10月 21 02:22 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL4_trees_v03.png
+== bgL5_planters_v03
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-7401-9bec-55871dd4941e/call_8eb1256753634b2dafd808755e79a2fd.png`
+- Destination: [review/G2/raw/bgL5_planters_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL5_planters_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, actual transparency verified.
+- Copied unmodified.-rw-r--r--@ 1 boming  staff  1401189 10月 21 02:21 /Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL5_planters_v03.png

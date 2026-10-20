@@ -1,0 +1,220 @@
+{
+ "iou_rest_vs_master": 0.9984,
+ "target": {
+  "iou": ">=0.93",
+  "contour_p95": "<=30 px"
+ },
+ "rgb_maxdiff_le2_fraction": 0.9812,
+ "note": "站姿與母版只差在部件之間的深色細接縫（2.5 px）與重畫的外輪廓白邊；所有部件縮放＝1.000。",
+ "parts": {
+  "shin_l": {
+   "zh": "左小腿含鞋",
+   "mean_px": 0.1,
+   "p95_px": 0.0,
+   "synth_px": 12552,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "thigh_l": {
+   "zh": "左大腿",
+   "mean_px": 0.0,
+   "p95_px": 0.0,
+   "synth_px": 15046,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "shin_r": {
+   "zh": "右小腿含鞋",
+   "mean_px": 0.1,
+   "p95_px": 0.0,
+   "synth_px": 12303,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "thigh_r": {
+   "zh": "右大腿",
+   "mean_px": 0.0,
+   "p95_px": 0.0,
+   "synth_px": 15084,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "upper_arm_l": {
+   "zh": "左上臂",
+   "mean_px": 0.0,
+   "p95_px": 0.0,
+   "synth_px": 17271,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "head": {
+   "zh": "頭（含頸部舌片）",
+   "mean_px": 0.3,
+   "p95_px": 1.4,
+   "synth_px": 11911,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "upper_arm_r": {
+   "zh": "右上臂",
+   "mean_px": 0.1,
+   "p95_px": 0.0,
+   "synth_px": 20766,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "torso": {
+   "zh": "軀幹＋圍裙",
+   "mean_px": 0.8,
+   "p95_px": 6.8,
+   "synth_px": 6745,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "forearm_l": {
+   "zh": "左前臂（含袖口）",
+   "mean_px": 0.1,
+   "p95_px": 1.0,
+   "synth_px": 3060,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "hand_l": {
+   "zh": "左手",
+   "mean_px": 0.2,
+   "p95_px": 1.0,
+   "synth_px": 34,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "forearm_r": {
+   "zh": "右前臂（含袖口）",
+   "mean_px": 0.1,
+   "p95_px": 1.0,
+   "synth_px": 3400,
+   "scale": "1.000（等比，無縮放）"
+  },
+  "hand_r": {
+   "zh": "右手",
+   "mean_px": 0.0,
+   "p95_px": 0.0,
+   "synth_px": 8,
+   "scale": "1.000（等比，無縮放）"
+  }
+ },
+ "scale_all_parts": 1.0,
+ "pivots": {
+  "neck": [
+   530.0,
+   330.0
+  ],
+  "shoulder_r": [
+   335.0,
+   425.0
+  ],
+  "elbow_r": [
+   305.0,
+   655.0
+  ],
+  "wrist_r": [
+   306.0,
+   840.0
+  ],
+  "shoulder_l": [
+   664.0,
+   425.0
+  ],
+  "elbow_l": [
+   694.0,
+   652.0
+  ],
+  "wrist_l": [
+   718.0,
+   850.0
+  ],
+  "hip_r": [
+   425.0,
+   1000.0
+  ],
+  "knee_r": [
+   420.0,
+   1255.0
+  ],
+  "hip_l": [
+   595.0,
+   1000.0
+  ],
+  "knee_l": [
+   597.0,
+   1255.0
+  ]
+ },
+ "layers": [
+  "shin_l",
+  "thigh_l",
+  "shin_r",
+  "thigh_r",
+  "upper_arm_l",
+  "head",
+  "upper_arm_r",
+  "torso",
+  "forearm_l",
+  "hand_l",
+  "forearm_r",
+  "hand_r"
+ ],
+ "poses": {
+  "wave": {
+   "pose": {
+    "upper_arm_r": 150,
+    "forearm_r": 12,
+    "hand_r": 6,
+    "upper_arm_l": 16,
+    "forearm_l": 128,
+    "hand_l": 22,
+    "head": 3,
+    "thigh_l": -4,
+    "shin_l": 6
+   },
+   "joint_hole_px": {
+    "shoulder_r": 0,
+    "elbow_r": 0,
+    "wrist_r": 0,
+    "shoulder_l": 0,
+    "elbow_l": 0,
+    "wrist_l": 0,
+    "hip_r": 0,
+    "knee_r": 0,
+    "hip_l": 0,
+    "knee_l": 0
+   }
+  },
+  "pulled": {
+   "pose": {
+    "upper_arm_r": 84,
+    "forearm_r": 10,
+    "hand_r": -92,
+    "upper_arm_l": 16,
+    "forearm_l": 128,
+    "hand_l": 22,
+    "thigh_l": -18,
+    "shin_l": 38,
+    "head": 2,
+    "root": [
+     0,
+     0,
+     1.0,
+     "hip_mid"
+    ]
+   },
+   "joint_hole_px": {
+    "shoulder_r": 0,
+    "elbow_r": 0,
+    "wrist_r": 0,
+    "shoulder_l": 0,
+    "elbow_l": 0,
+    "wrist_l": 0,
+    "hip_r": 0,
+    "knee_r": 0,
+    "hip_l": 0,
+    "knee_l": 0
+   }
+  }
+ },
+ "worried_head": {
+  "iou_top70": 0.97,
+  "scale": 0.298,
+  "rot_deg": 0,
+  "border_px": 38.5
+ }
+}

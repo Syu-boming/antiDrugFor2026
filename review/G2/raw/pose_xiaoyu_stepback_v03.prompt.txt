@@ -1,0 +1,24 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body POSE sheet of an existing character for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND (the standing boy) is the FINAL approved character master: Xiaoyu. Draw THE SAME BOY - identical face, identical design and identical colors - only the pose and expression change:
+- 9-year-old boy, short slightly curly dark brown hair kept close to the head, round thin dark-framed glasses (clear lenses, no glare); ORANGE-RED zip-up hooded jacket in EXACTLY the same orange-red as the second reference (about #D95429; do NOT darken it to brick red, do NOT lighten it), hood down; khaki shorts; small slate blue-gray backpack worn on both shoulders (straps visible); white socks; navy sneakers with white soles.
+- Proportions exactly like the master: 4.45 heads tall (head including hair = about 22.5% of the full height), slim natural 9-year-old picture-book child, NOT chibi, NOT big-headed.
+
+POSE (very important): a side-leaning three-quarter view, his body turned toward the VIEWER'S LEFT (he faces someone standing to the left of the picture). He has just taken HALF A STEP BACK in surprise: his weight is on the back foot (the foot on the right side of the picture, planted behind him), the front foot (left side of the picture) rests lightly forward on the floor; his upper body leans slightly backward. Both hands are drawn up close to his chest (loosely curled, near the jacket zipper). His head is turned up-left, eyes looking up-left at something above head height to his left.
+EXPRESSION: surprised: eyebrows raised high, eyes wide open behind the round glasses, small round open mouth. Gentle storybook surprise, NOT scared, NOT crying.
+The whole figure from the top of the hair to the soles is visible with empty transparent margin all around (nothing cropped).
+
+ART STYLE (match the attached reference image's "3D pop-up picture book made of thick matte cardstock" style and character design, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Colors: EXACTLY the same flat colors as the SECOND reference image (the approved master) - do not shift, darken, lighten or re-saturate any color.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G2/raw/pose_xiaoyu_stepback_v03.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G2/raw/pose_xiaoyu_stepback_v03.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

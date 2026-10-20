@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b39-74c3-b576-ca218b632b93/exec-93e2b799-436b-4c42-be94-2fa1a48f57db.png`
+- Destination: [review/G2/raw/pose_xiaoqing_reach_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoqing_reach_v03.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes**, transparent pixels verified.
+- Copy: **Byte-for-byte identical**, unmodified.

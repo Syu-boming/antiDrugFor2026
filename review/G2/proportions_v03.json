@@ -1,0 +1,79 @@
+{
+  "note": "G2 第 3 輪：合成試作改用兩張孩子的表演姿勢圖（v03）；阿樂叔叔用分件 rig（以母版 chr-ale_master_v02.png 直接切件，站姿與母版 IoU 0.998，所以比例沿用母版量測）。姿勢圖的 chin_y 在 10 px 格線放大圖上人工量測；孩子是前傾／後退半步的姿勢，頭頂到鞋底的垂直高度比站姿略短，頭身數會略低於站姿母版。",
+  "child_ratio": 0.65,
+  "characters": {
+    "xiaoqing": {
+      "file": "assets/generated/chr-xiaoqing_pose-reach-worried_v03.png",
+      "chin_y": 410,
+      "source": "review/G2/raw/pose_xiaoqing_reach_v03.png（Codex image_gen，未修改）"
+    },
+    "xiaoyu": {
+      "file": "assets/generated/chr-xiaoyu_pose-stepback-surprised_v03.png",
+      "chin_y": 428,
+      "source": "review/G2/raw/pose_xiaoyu_stepback_v03.png（Codex image_gen，未修改）"
+    },
+    "ale": {
+      "file": "assets/generated/chr-ale_master_v02.png",
+      "chin_y": 291,
+      "source": "正式母版（rig v03 由此直接切件）"
+    }
+  },
+  "measured": {
+    "xiaoqing": {
+      "top": 108,
+      "bottom": 1467,
+      "chin": 410,
+      "head_px": 302,
+      "height_px": 1359,
+      "heads": 4.5,
+      "alpha_top": 97,
+      "alpha_bottom": 1478,
+      "border_top_px": 11,
+      "border_bottom_px": 11,
+      "ok": true,
+      "target": [
+        4.0,
+        4.5
+      ],
+      "display_scale": 0.4496,
+      "head_vs_adult_head_on_stage": 0.888
+    },
+    "xiaoyu": {
+      "top": 93,
+      "bottom": 1473,
+      "chin": 428,
+      "head_px": 335,
+      "height_px": 1380,
+      "heads": 4.119402985074627,
+      "alpha_top": 81,
+      "alpha_bottom": 1485,
+      "border_top_px": 12,
+      "border_bottom_px": 12,
+      "ok": true,
+      "target": [
+        4.0,
+        4.5
+      ],
+      "display_scale": 0.4428,
+      "head_vs_adult_head_on_stage": 0.97
+    },
+    "ale": {
+      "top": 33,
+      "bottom": 1619,
+      "chin": 291,
+      "head_px": 258,
+      "height_px": 1586,
+      "heads": 6.147286821705427,
+      "alpha_top": 22,
+      "alpha_bottom": 1630,
+      "border_top_px": 11,
+      "border_bottom_px": 11,
+      "ok": true,
+      "target": [
+        6.0,
+        6.5
+      ],
+      "display_scale": 0.5927
+    }
+  }
+}

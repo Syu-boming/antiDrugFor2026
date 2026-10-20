@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3a-7d73-bc1a-4f78966b11ae/exec-b35d0467-706f-40a9-990b-8b0e926c3e45.png`
+- Destination: [review/G2/raw/pose_xiaoyu_stepback_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/pose_xiaoyu_stepback_v03.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte identity verified.

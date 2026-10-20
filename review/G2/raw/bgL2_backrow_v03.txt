@@ -1,0 +1,5 @@
+- Source: [/Users/boming/.codex/generated_images/01a15a8a-4b3b-7550-8591-4d5ea957217d/call_40ec8115c81043c58eb335acc91b972f.png](/Users/boming/.codex/generated_images/01a15a8a-4b3b-7550-8591-4d5ea957217d/call_40ec8115c81043c58eb335acc91b972f.png)
+- Destination: [review/G2/raw/bgL2_backrow_v03.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL2_backrow_v03.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

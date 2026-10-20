@@ -41,5 +41,6 @@
 ## 工具備忘
 - 圖像：`codex exec` 使用內建 image_gen（ChatGPT 額度），輸出在 `~/.codex/generated_images/`，採用的圖複製進 `assets/generated/` 並加版本號；不切換到需要 API key 的 CLI 模式。
 - 配音：`uvx --from edge-tts==7.3.1 edge-tts`（zh-TW 只有 HsiaoChen、HsiaoYu、YunJhe）；有 Azure 金鑰則改用 Azure（同聲線）。
+- 配樂與音效：自製。MIDI 作曲（`tools/.venv` 內的 pretty_midi／mido）→ FluidSynth＋MIT 授權音色庫算成 WAV；音效用程式合成。不使用來源不明的音樂。
 - Python：`/opt/anaconda3/bin/python3`（Pillow、NumPy、SciPy）；ffmpeg 9；Node 24；Blender 5.1.1；長時間指令加 `caffeinate -i`。
 - Claude 聽不到音訊；學校硬體只能靠使用者實測。

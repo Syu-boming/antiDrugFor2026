@@ -1,0 +1,619 @@
+{
+ "question": {
+  "qid": "Q1",
+  "question": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+  "options": [
+   "可以，包裝漂亮就很安全。",
+   "不行，外觀不能證明安全。",
+   "可以，聞起來香就沒問題。"
+  ],
+  "answer": 2
+ },
+ "line_break_note": "題目在句號後換行（「……很安全」。／可以相信嗎？」）。劇場程式目前以 textContent 自動斷行，會斷在「可以／相信」之間；建議主線讓 QuizData.question 支援 \\n 換行（共用元件，G4 前由主線處理）。",
+ "states": {
+  "question": {
+   "option_font_px": 80.028,
+   "question_font_px": 68.04,
+   "font_family_resolved": "\"Microsoft JhengHei\", \"PingFang TC\", \"Noto Sans TC\", \"Heiti TC\", sans-serif",
+   "card": [
+    96,
+    163,
+    1728,
+    754
+   ],
+   "rows": [
+    {
+     "num": [
+      163,
+      411,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      427,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      441,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      418,
+      1303,
+      98
+     ],
+     "opacity": "1"
+    },
+    {
+     "num": [
+      163,
+      549,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      565,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      579,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      556,
+      1303,
+      98
+     ],
+     "opacity": "1"
+    },
+    {
+     "num": [
+      163,
+      687,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      703,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      717,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      694,
+      1303,
+      98
+     ],
+     "opacity": "1"
+    }
+   ],
+   "file": "review/G2/quizcard_q1_question_v03.png",
+   "contrast": {
+    "原圖": {
+     "paper_hex": "#F1E6D3",
+     "rows": [
+      {
+       "num": 12.85,
+       "hand": 6.06,
+       "shape": 2.7,
+       "text": 12.85,
+       "row_opacity": "1"
+      },
+      {
+       "num": 12.85,
+       "hand": 6.06,
+       "shape": 3.68,
+       "text": 12.85,
+       "row_opacity": "1"
+      },
+      {
+       "num": 12.85,
+       "hand": 6.06,
+       "shape": 4.43,
+       "text": 12.85,
+       "row_opacity": "1"
+      }
+     ]
+    },
+    "投影 v2": {
+     "paper_hex": "#D0CBC3",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 3.54,
+       "shape": 2.19,
+       "text": 5.96,
+       "row_opacity": "1"
+      },
+      {
+       "num": 5.96,
+       "hand": 3.54,
+       "shape": 2.59,
+       "text": 5.96,
+       "row_opacity": "1"
+      },
+      {
+       "num": 5.96,
+       "hand": 3.54,
+       "shape": 2.65,
+       "text": 5.96,
+       "row_opacity": "1"
+      }
+     ]
+    },
+    "低對比 contrast(50%)": {
+     "paper_hex": "#B8B2A9",
+     "rows": [
+      {
+       "num": 1.03,
+       "hand": 2.59,
+       "shape": 1.77,
+       "text": 3.83,
+       "row_opacity": "1"
+      },
+      {
+       "num": 3.83,
+       "hand": 2.59,
+       "shape": 2.06,
+       "text": 3.83,
+       "row_opacity": "1"
+      },
+      {
+       "num": 3.83,
+       "hand": 2.59,
+       "shape": 2.26,
+       "text": 3.83,
+       "row_opacity": "1"
+      }
+     ]
+    },
+    "灰階": {
+     "paper_hex": "#E7E7E7",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 6.12,
+       "shape": 2.72,
+       "text": 12.87,
+       "row_opacity": "1"
+      },
+      {
+       "num": 12.87,
+       "hand": 6.12,
+       "shape": 3.67,
+       "text": 12.87,
+       "row_opacity": "1"
+      },
+      {
+       "num": 12.87,
+       "hand": 6.12,
+       "shape": 4.44,
+       "text": 12.87,
+       "row_opacity": "1"
+      }
+     ]
+    }
+   }
+  },
+  "reveal": {
+   "option_font_px": 80.028,
+   "question_font_px": 68.04,
+   "font_family_resolved": "\"Microsoft JhengHei\", \"PingFang TC\", \"Noto Sans TC\", \"Heiti TC\", sans-serif",
+   "card": [
+    96,
+    163,
+    1728,
+    754
+   ],
+   "rows": [
+    {
+     "num": [
+      163,
+      411,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      427,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      441,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      418,
+      1303,
+      98
+     ],
+     "opacity": "0.36"
+    },
+    {
+     "num": [
+      163,
+      549,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      565,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      579,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      556,
+      1303,
+      98
+     ],
+     "opacity": "1"
+    },
+    {
+     "num": [
+      163,
+      687,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      703,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      717,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      694,
+      1303,
+      98
+     ],
+     "opacity": "0.36"
+    }
+   ],
+   "file": "review/G2/quizcard_q1_reveal_v03.png",
+   "contrast": {
+    "原圖": {
+     "paper_hex": "#F1E6D3",
+     "rows": [
+      {
+       "num": 2.01,
+       "hand": 1.65,
+       "shape": 1.35,
+       "text": 2.02,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 12.85,
+       "hand": 6.06,
+       "shape": 3.68,
+       "text": 12.85,
+       "row_opacity": "1"
+      },
+      {
+       "num": 2.07,
+       "hand": 1.69,
+       "shape": 1.57,
+       "text": 2.1,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "投影 v2": {
+     "paper_hex": "#D0CBC3",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 1.44,
+       "shape": 1.26,
+       "text": 1.67,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 5.96,
+       "hand": 3.54,
+       "shape": 2.59,
+       "text": 5.96,
+       "row_opacity": "1"
+      },
+      {
+       "num": 1.69,
+       "hand": 1.47,
+       "shape": 1.36,
+       "text": 1.71,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "低對比 contrast(50%)": {
+     "paper_hex": "#B8B2A9",
+     "rows": [
+      {
+       "num": 1.03,
+       "hand": 1.34,
+       "shape": 1.19,
+       "text": 1.49,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 3.83,
+       "hand": 2.59,
+       "shape": 2.06,
+       "text": 3.83,
+       "row_opacity": "1"
+      },
+      {
+       "num": 1.51,
+       "hand": 1.35,
+       "shape": 1.3,
+       "text": 1.53,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "灰階": {
+     "paper_hex": "#E7E7E7",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 1.66,
+       "shape": 1.35,
+       "text": 2.02,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 12.87,
+       "hand": 6.12,
+       "shape": 3.67,
+       "text": 12.87,
+       "row_opacity": "1"
+      },
+      {
+       "num": 2.09,
+       "hand": 1.7,
+       "shape": 1.57,
+       "text": 2.09,
+       "row_opacity": "0.36"
+      }
+     ]
+    }
+   }
+  },
+  "lamp": {
+   "option_font_px": 80.028,
+   "question_font_px": 68.04,
+   "font_family_resolved": "\"Microsoft JhengHei\", \"PingFang TC\", \"Noto Sans TC\", \"Heiti TC\", sans-serif",
+   "card": [
+    96,
+    163,
+    1728,
+    754
+   ],
+   "rows": [
+    {
+     "num": [
+      163,
+      411,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      427,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      441,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      418,
+      1303,
+      98
+     ],
+     "opacity": "0.36"
+    },
+    {
+     "num": [
+      163,
+      549,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      565,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      579,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      556,
+      1303,
+      98
+     ],
+     "opacity": "1"
+    },
+    {
+     "num": [
+      163,
+      687,
+      92,
+      112
+     ],
+     "hand": [
+      279,
+      703,
+      74,
+      80
+     ],
+     "shape": [
+      377,
+      717,
+      53,
+      53
+     ],
+     "text": [
+      454,
+      694,
+      1303,
+      98
+     ],
+     "opacity": "0.36"
+    }
+   ],
+   "file": "review/G2/quizcard_q1_lamp_v03.png",
+   "contrast": {
+    "原圖": {
+     "paper_hex": "#F1E6D3",
+     "rows": [
+      {
+       "num": 2.01,
+       "hand": 1.65,
+       "shape": 1.35,
+       "text": 2.02,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 12.85,
+       "hand": 6.06,
+       "shape": 3.68,
+       "text": 12.85,
+       "row_opacity": "1"
+      },
+      {
+       "num": 2.07,
+       "hand": 1.69,
+       "shape": 1.57,
+       "text": 2.1,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "投影 v2": {
+     "paper_hex": "#D0CBC3",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 1.44,
+       "shape": 1.26,
+       "text": 1.67,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 5.96,
+       "hand": 3.54,
+       "shape": 2.59,
+       "text": 5.96,
+       "row_opacity": "1"
+      },
+      {
+       "num": 1.69,
+       "hand": 1.47,
+       "shape": 1.36,
+       "text": 1.71,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "低對比 contrast(50%)": {
+     "paper_hex": "#B8B2A9",
+     "rows": [
+      {
+       "num": 1.03,
+       "hand": 1.34,
+       "shape": 1.19,
+       "text": 1.49,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 3.83,
+       "hand": 2.59,
+       "shape": 2.06,
+       "text": 3.83,
+       "row_opacity": "1"
+      },
+      {
+       "num": 1.51,
+       "hand": 1.35,
+       "shape": 1.3,
+       "text": 1.53,
+       "row_opacity": "0.36"
+      }
+     ]
+    },
+    "灰階": {
+     "paper_hex": "#E7E7E7",
+     "rows": [
+      {
+       "num": 1.05,
+       "hand": 1.66,
+       "shape": 1.35,
+       "text": 2.02,
+       "row_opacity": "0.36"
+      },
+      {
+       "num": 12.87,
+       "hand": 6.12,
+       "shape": 3.67,
+       "text": 12.87,
+       "row_opacity": "1"
+      },
+      {
+       "num": 2.09,
+       "hand": 1.7,
+       "shape": 1.57,
+       "text": 2.09,
+       "row_opacity": "0.36"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "note": "選項字身 80 px@1080（app/src/ui/theater.css：var(--H)×0.0741），題目 68 px；每列＝大號數字＋手指圖示（伸出 1/2/3 根）＋形狀標記（1 圓、2 三角、3 方），不只靠顏色。contrast＝元素最暗 15% 像素對題卡紙底的 WCAG 比；揭答後非正解列刻意變淡（不透明度 0.36）。"
+}

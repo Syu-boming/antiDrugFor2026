@@ -1,0 +1,6 @@
+- Source: `/Users/boming/.codex/generated_images/01a15a8a-4b3c-7a62-872d-e32673a5c9a0/exec-04af0d52-f579-41ae-bdd2-d74535e51e88.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G2/raw/bgL1_mountains_v03.png`
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, with transparent pixels. A soft halo remains around the hills.
+
+Copied byte-for-byte without modification.
