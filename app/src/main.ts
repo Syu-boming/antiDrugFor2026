@@ -34,6 +34,14 @@ export interface EngineAPI {
     restoreContext(): boolean;
     keyLog(): unknown[];
     setAvOffset(ms: number): void;
+    /** 配樂基準音量與避讓增益（ducking 測試用） */
+    audioLevels(): { musicBus: number; duck: number; master: number; musicId: string | null; time: number };
+    /** 操偶線與角色在畫面上的位置（擷取量測用，繪圖緩衝像素） */
+    probe(): ReturnType<Stage['probe']>;
+    /** 隱藏所有角色後重畫目前這一格（量背景亮度用）；off 恢復 */
+    hideActors(on: boolean): void;
+    /** 目前每個角色的臉部換片狀態 */
+    faces(): Record<string, { eyes: string; mouth: string } | null>;
   };
 }
 
@@ -114,6 +122,10 @@ function boot(): void {
       restoreContext: () => stage.restoreContextForTest(),
       keyLog: () => [...input.log],
       setAvOffset: (ms) => eng.setAvOffset(ms),
+      audioLevels: () => ({ ...mixer.levels(), musicId: mixer.musicId, time: mixer.ctx?.currentTime ?? 0 }),
+      probe: () => stage.probe(),
+      hideActors: (on) => { stage.hideActorsForProbe = on; eng.renderNow(performance.now()); },
+      faces: () => Object.fromEntries([...stage.actors].map(([id, a]) => { const f = a.kind === 'rig' ? (a.activeFace ?? a.face) : a.face; return [id, f ? f.current : null]; })),
     },
   };
 

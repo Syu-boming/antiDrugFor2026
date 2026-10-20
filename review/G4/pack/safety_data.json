@@ -1,0 +1,120 @@
+{
+ "string_anchors_in_cues": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "attach_points_primary": {
+  "wrist_back": {
+   "part": "forearm_r",
+   "local_px": [
+    69.0,
+    210.0
+   ]
+  },
+  "elbow_out": {
+   "part": "upper_arm_r",
+   "local_px": [
+    39.0,
+    279.0
+   ]
+  },
+  "knee_front": {
+   "part": "thigh_l",
+   "local_px": [
+    87.5,
+    330.0
+   ]
+  }
+ },
+ "probe_frames_with_strings": 435,
+ "string_path_min_dist_to_ale_head_box_px": 26.9,
+ "per_anchor": {
+  "wrist": {
+   "min_dist_to_head_box_px": 30.9,
+   "frames": 435,
+   "at": "a2_c002 t=7.3"
+  },
+  "elbow": {
+   "min_dist_to_head_box_px": 44.0,
+   "frames": 424,
+   "at": "a2_c002 t=8.3"
+  },
+  "knee": {
+   "min_dist_to_head_box_px": 26.9,
+   "frames": 413,
+   "at": "a8_c002 t=2.9"
+  }
+ },
+ "string_path_intersects_child_box": [],
+ "string_path_intersects_child_box_count": 0,
+ "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎同一條二次貝茲曲線投影成 13 點；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
+ "required_narration_1": {
+  "claude_md": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+  "script_v03": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+  "cue_text_plain": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+  "script_equals_claude_md": true,
+  "cue_equals_script": true
+ },
+ "subtitles": [
+  {
+   "id": "a2_c002_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16,
+   "rows": [
+    [
+     "咦？",
+     "我想揮手……手怎麼跑到旁邊去了？"
+    ]
+   ]
+  },
+  {
+   "id": "a2_c002_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 6,
+   "rows": [
+    [
+     "叔叔，小心！"
+    ]
+   ]
+  },
+  {
+   "id": "a2_c004_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14,
+   "rows": [
+    [
+     "阿樂叔叔身上這一條一條的線，",
+     "叫做操偶線。"
+    ]
+   ]
+  },
+  {
+   "id": "a2_c004_02",
+   "pages": 3,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13,
+   "rows": [
+    [
+     "這些線是故事的比喻。"
+    ],
+    [
+     "毒品可能讓人的頭腦",
+     "和身體受到影響，不聽使喚。"
+    ],
+    [
+     "人不會真的變成喪屍。"
+    ]
+   ]
+  }
+ ],
+ "subtitle_max_chars_per_row": 16,
+ "subtitle_max_rows_per_page": 2,
+ "app_js_getUserMedia_count": 0,
+ "app_js_mediaDevices_count": 0,
+ "capture_external_requests": 0,
+ "capture_console_errors": 0
+}

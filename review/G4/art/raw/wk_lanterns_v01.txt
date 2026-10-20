@@ -1,0 +1,6 @@
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-77e0-b51e-a259ab8fbc43/exec-169ec1a2-c3f9-43a9-ae65-ca84c57f885d.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_lanterns_v01.png`
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, but the bottom 60% contains 4,614 nontransparent pixels.
+
+Copied byte-for-byte without modification.

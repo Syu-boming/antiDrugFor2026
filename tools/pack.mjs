@@ -4,7 +4,7 @@
 //
 // 用法（在專案根目錄或 app/ 皆可）：
 //   node tools/pack.mjs
-//   node tools/pack.mjs --audio-dir <資料夾> --assets-dir <資料夾> --out <資料夾>   （測試用，覆寫來源）
+//   node tools/pack.mjs --audio-dir <資料夾> --assets-dir <資料夾> --out <資料夾> [--sources <json>]   （測試用，覆寫來源）
 // 只讀取素材，不會改動 assets/ 與 audio/。
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
@@ -87,7 +87,7 @@ export async function runPack(opts = {}) {
   const rel = (p) => relative(ROOT, p).split('\\').join('/');
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
-  const manifest = { format: 'antidrug-packs/1', builtAt: new Date().toISOString(), cueSets: {}, audio: {}, images: {}, lipsync: {} };
+  const manifest = { format: 'antidrug-packs/1', builtAt: new Date().toISOString(), cueSets: {}, audio: {}, images: {}, lipsync: {}, json: {} };
   let total = 0;
   const warnings = [];
 
@@ -137,25 +137,67 @@ export async function runPack(opts = {}) {
     for (const l of lips) manifest.lipsync[l.id] = { file: 'lipsync.js' };
   }
 
-  // 5. 圖像：assets/final/**（依檔名第一段分包，例如 chr-ale_*.png → img_chr-ale.js）
+  // 5. 圖像：assets/final/**。圖像 id＝相對 assets/final 的路徑（去掉副檔名與 _vNN 版本號），
+  //    例如 chr-ale_head_v03.png → chr-ale_head；face/ale/mouth_closed.png → face/ale/mouth_closed。
+  //    依路徑第一段（子資料夾）或檔名第一段分包：img_chr-ale.js、img_face_ale.js。
+  //    另外 app/asset-sources.json 列出「正式素材還沒到時」的退路來源（例如 assets/parts/ale_v03），
+  //    只有 assets/final 沒有同一個 id 時才打包退路來源（manifest 標示 fallback: true）。
+  const relId = (p) => {
+    const r = relative(assetsDir, p).split('\\').join('/');
+    const dir = r.includes('/') ? r.slice(0, r.lastIndexOf('/') + 1) : '';
+    const { id, version } = splitVersion(basename(p, extname(p)));
+    return { id: dir + id, version, group: dir ? dir.slice(0, -1).split('/').slice(0, 2).join('_') : (id.split('_')[0] || 'misc') };
+  };
   const imgs = walk(assetsDir).filter((p) => IMAGE_EXT.has(extname(p).toLowerCase()));
   const groups = new Map();
-  for (const p of imgs) {
-    const { id, version } = splitVersion(basename(p, extname(p)));
-    const group = id.split('_')[0] || 'misc';
+  const addImage = (id, version, group, path, fallback) => {
     if (!groups.has(group)) groups.set(group, new Map());
     const g = groups.get(group);
-    if (!g.has(id) || g.get(id).version < version) g.set(id, { id, version, path: p });
+    if (!g.has(id) || g.get(id).version < version) g.set(id, { id, version, path, fallback });
+  };
+  for (const p of imgs) { const r = relId(p); addImage(r.id, r.version, r.group, p, false); }
+  manifest.json = {};
+  const jsonEntries = [];
+  const jsons = walk(assetsDir).filter((p) => extname(p).toLowerCase() === '.json');
+  const bestJson = new Map();
+  for (const p of jsons) {
+    const r = relId(p);
+    const cur = bestJson.get(r.id);
+    if (!cur || cur.version < r.version) bestJson.set(r.id, { ...r, path: p });
   }
+  for (const j of bestJson.values()) {
+    try { jsonEntries.push([`json:${j.id}`, JSON.parse(readFileSync(j.path, 'utf8'))]); manifest.json[j.id] = { file: 'assets_json.js', source: rel(j.path) }; }
+    catch (err) { warnings.push(`素材 JSON 解析失敗 ${rel(j.path)}：${err.message}`); }
+  }
+  const srcFile = opts.sourcesFile ?? join(ROOT, 'app/asset-sources.json');
+  if (existsSync(srcFile)) {
+    const src = JSON.parse(readFileSync(srcFile, 'utf8'));
+    const have = new Set([...groups.values()].flatMap((g) => [...g.keys()]));
+    for (const [id, path] of Object.entries(src.images ?? {})) {
+      if (have.has(id)) continue;
+      const abs = join(ROOT, path);
+      if (!existsSync(abs)) { warnings.push(`退路圖像不存在：${path}`); continue; }
+      addImage(id, -1, `fallback_${id.split('/')[0].split('_')[0]}`, abs, true);
+    }
+    for (const [id, path] of Object.entries(src.json ?? {})) {
+      if (manifest.json[id]) continue;
+      const abs = join(ROOT, path);
+      if (!existsSync(abs)) { warnings.push(`退路 JSON 不存在：${path}`); continue; }
+      jsonEntries.push([`json:${id}`, JSON.parse(readFileSync(abs, 'utf8'))]);
+      manifest.json[id] = { file: 'assets_json.js', source: rel(abs), fallback: true };
+    }
+  }
+  if (jsonEntries.length) total += writePack(join(outDir, 'assets_json.js'), jsonEntries);
   for (const [group, m] of groups) {
-    const file = `img_${group}.js`;
+    const file = `img_${group.replace(/[^A-Za-z0-9_-]/g, '_')}.js`;
     total += writePack(join(outDir, file), [...m.values()].map((i) => [`img:${i.id}`, dataUrl(i.path)]));
-    for (const i of m.values()) manifest.images[i.id] = { file, source: rel(i.path) };
+    for (const i of m.values()) manifest.images[i.id] = { file, source: rel(i.path), ...(i.fallback ? { fallback: true } : {}) };
   }
 
   total += writePack(join(outDir, 'manifest.js'), [['manifest', manifest]]);
   const nAudio = Object.keys(manifest.audio).length;
-  console.log(`[pack] cue 檔 ${Object.keys(manifest.cueSets).length}、音檔 ${nAudio}（配音 ${vo.length}）、對嘴 ${lips.length}、圖像 ${Object.keys(manifest.images).length}；資料包共 ${(total / 1024 / 1024).toFixed(2)} MB → ${rel(outDir)}`);
+  const nFallback = Object.values(manifest.images).filter((i) => i.fallback).length;
+  console.log(`[pack] cue 檔 ${Object.keys(manifest.cueSets).length}、音檔 ${nAudio}（配音 ${vo.length}）、對嘴 ${lips.length}、圖像 ${Object.keys(manifest.images).length}（退路 ${nFallback}）、素材 JSON ${Object.keys(manifest.json).length}；資料包共 ${(total / 1024 / 1024).toFixed(2)} MB → ${rel(outDir)}`);
   for (const w of warnings) console.warn(`[pack] 提醒：${w}`);
   return manifest;
 }
@@ -165,6 +207,6 @@ if (process.argv[1] && pathToFileURL(process.argv[1]).href === import.meta.url) 
   const args = process.argv.slice(2);
   const opt = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };
   const abs = (p) => (p ? resolve(process.cwd(), p) : undefined);
-  runPack({ audioDir: abs(opt('--audio-dir')), assetsDir: abs(opt('--assets-dir')), outDir: abs(opt('--out')), cuesDir: abs(opt('--cues-dir')) })
+  runPack({ audioDir: abs(opt('--audio-dir')), assetsDir: abs(opt('--assets-dir')), outDir: abs(opt('--out')), cuesDir: abs(opt('--cues-dir')), sourcesFile: abs(opt('--sources')) })
     .catch((err) => { console.error(`[pack] ${err.message}`); process.exit(1); });
 }

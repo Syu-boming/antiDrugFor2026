@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-75a0-a197-a0421d2dfdaf/exec-82e7f48b-42bb-43db-b202-b19aff3f0715.png`
+- Destination: [review/G4/art/raw/wk_wing_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_wing_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, with actual transparent pixels. However, the right 45% is not completely transparent.

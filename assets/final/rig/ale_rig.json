@@ -1,0 +1,441 @@
+{
+ "source": "assets/parts/ale_v03（母版 chr-ale_master_v02 直接切件）→ G4 v04 接縫修正",
+ "master_canvas": [
+  1024,
+  1656
+ ],
+ "pad_px": 16,
+ "units": "像素＝母版像素（站姿總高約 1610 px，含白邊 1632 px）",
+ "angle_convention": "姿勢角度：度，正值＝畫面上順時針（影像 y 向下）。three.js（y 向上、逆時針為正）請用 rad = -deg·π/180。",
+ "outline": "白色紙芯邊只畫在擺好姿勢後的整體外輪廓：每個部件的 -outline 圖與部件同尺寸、同變換，全部描邊放在該角色所有部件的最後面（renderOrder 最小），部件之間就不會出現白邊。",
+ "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs），例如 rig/chr-ale_torso；本檔的 JSON id＝rig/ale_rig。",
+ "layers_back_to_front": [
+  "shin_l",
+  "thigh_l",
+  "shin_r",
+  "thigh_r",
+  "upper_arm_l",
+  "head",
+  "upper_arm_r",
+  "torso",
+  "forearm_l",
+  "hand_l",
+  "forearm_r",
+  "hand_r"
+ ],
+ "parts": {
+  "shin_l": {
+   "zh": "左小腿含鞋",
+   "file": "chr-ale_shin-l_v04.png",
+   "image_id": "rig/chr-ale_shin-l",
+   "outline_file": "chr-ale_shin-l-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_shin-l-outline",
+   "size": [
+    285,
+    428
+   ],
+   "origin_master": [
+    511,
+    1175
+   ],
+   "parent": "thigh_l",
+   "joint": "knee_l",
+   "pivot_local": [
+    86.0,
+    80.0
+   ],
+   "pivot_master": [
+    597.0,
+    1255.0
+   ],
+   "tab_radius": 64,
+   "layer_index": 0,
+   "joint_in_parent_local": [
+    96.0,
+    349.0
+   ]
+  },
+  "thigh_l": {
+   "zh": "左大腿",
+   "file": "chr-ale_thigh-l_v04.png",
+   "image_id": "rig/chr-ale_thigh-l",
+   "outline_file": "chr-ale_thigh-l-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_thigh-l-outline",
+   "size": [
+    189,
+    430
+   ],
+   "origin_master": [
+    501,
+    906
+   ],
+   "parent": "torso",
+   "joint": "hip_l",
+   "pivot_local": [
+    94.0,
+    94.0
+   ],
+   "pivot_master": [
+    595.0,
+    1000.0
+   ],
+   "tab_radius": 78,
+   "layer_index": 1,
+   "joint_in_parent_local": [
+    328.0,
+    749.0
+   ]
+  },
+  "shin_r": {
+   "zh": "右小腿含鞋",
+   "file": "chr-ale_shin-r_v04.png",
+   "image_id": "rig/chr-ale_shin-r",
+   "outline_file": "chr-ale_shin-r-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_shin-r-outline",
+   "size": [
+    184,
+    461
+   ],
+   "origin_master": [
+    308,
+    1175
+   ],
+   "parent": "thigh_r",
+   "joint": "knee_r",
+   "pivot_local": [
+    112.0,
+    80.0
+   ],
+   "pivot_master": [
+    420.0,
+    1255.0
+   ],
+   "tab_radius": 64,
+   "layer_index": 2,
+   "joint_in_parent_local": [
+    96.0,
+    349.0
+   ]
+  },
+  "thigh_r": {
+   "zh": "右大腿",
+   "file": "chr-ale_thigh-r_v04.png",
+   "image_id": "rig/chr-ale_thigh-r",
+   "outline_file": "chr-ale_thigh-r-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_thigh-r-outline",
+   "size": [
+    196,
+    430
+   ],
+   "origin_master": [
+    324,
+    906
+   ],
+   "parent": "torso",
+   "joint": "hip_r",
+   "pivot_local": [
+    101.0,
+    94.0
+   ],
+   "pivot_master": [
+    425.0,
+    1000.0
+   ],
+   "tab_radius": 78,
+   "layer_index": 3,
+   "joint_in_parent_local": [
+    158.0,
+    749.0
+   ]
+  },
+  "upper_arm_l": {
+   "zh": "左上臂",
+   "file": "chr-ale_upper-arm-l_v04.png",
+   "image_id": "rig/chr-ale_upper-arm-l",
+   "outline_file": "chr-ale_upper-arm-l-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_upper-arm-l-outline",
+   "size": [
+    153,
+    363
+   ],
+   "origin_master": [
+    598,
+    362
+   ],
+   "parent": "torso",
+   "joint": "shoulder_l",
+   "pivot_local": [
+    66.0,
+    63.0
+   ],
+   "pivot_master": [
+    664.0,
+    425.0
+   ],
+   "tab_radius": 50,
+   "layer_index": 4,
+   "joint_in_parent_local": [
+    397.0,
+    174.0
+   ]
+  },
+  "head": {
+   "zh": "頭（含頸部舌片）",
+   "file": "chr-ale_head_v04.png",
+   "image_id": "rig/chr-ale_head",
+   "outline_file": "chr-ale_head-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_head-outline",
+   "size": [
+    279,
+    424
+   ],
+   "origin_master": [
+    378,
+    18
+   ],
+   "parent": "torso",
+   "joint": "neck",
+   "pivot_local": [
+    152.0,
+    312.0
+   ],
+   "pivot_master": [
+    530.0,
+    330.0
+   ],
+   "tab_radius": null,
+   "layer_index": 5,
+   "joint_in_parent_local": [
+    263.0,
+    79.0
+   ]
+  },
+  "upper_arm_r": {
+   "zh": "右上臂",
+   "file": "chr-ale_upper-arm-r_v04.png",
+   "image_id": "rig/chr-ale_upper-arm-r",
+   "outline_file": "chr-ale_upper-arm-r-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_upper-arm-r-outline",
+   "size": [
+    193,
+    391
+   ],
+   "origin_master": [
+    222,
+    349
+   ],
+   "parent": "torso",
+   "joint": "shoulder_r",
+   "pivot_local": [
+    113.0,
+    76.0
+   ],
+   "pivot_master": [
+    335.0,
+    425.0
+   ],
+   "tab_radius": 60,
+   "layer_index": 6,
+   "joint_in_parent_local": [
+    68.0,
+    174.0
+   ]
+  },
+  "torso": {
+   "zh": "軀幹＋圍裙",
+   "file": "chr-ale_torso_v04.png",
+   "image_id": "rig/chr-ale_torso",
+   "outline_file": "chr-ale_torso-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_torso-outline",
+   "size": [
+    444,
+    807
+   ],
+   "origin_master": [
+    267,
+    251
+   ],
+   "parent": null,
+   "joint": null,
+   "pivot_local": null,
+   "pivot_master": null,
+   "tab_radius": null,
+   "layer_index": 7
+  },
+  "forearm_l": {
+   "zh": "左前臂（含袖口）",
+   "file": "chr-ale_forearm-l_v04.png",
+   "image_id": "rig/chr-ale_forearm-l",
+   "outline_file": "chr-ale_forearm-l-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_forearm-l-outline",
+   "size": [
+    148,
+    304
+   ],
+   "origin_master": [
+    623,
+    599
+   ],
+   "parent": "upper_arm_l",
+   "joint": "elbow_l",
+   "pivot_local": [
+    71.0,
+    53.0
+   ],
+   "pivot_master": [
+    694.0,
+    652.0
+   ],
+   "tab_radius": 56,
+   "layer_index": 8,
+   "joint_in_parent_local": [
+    96.0,
+    290.0
+   ]
+  },
+  "hand_l": {
+   "zh": "左手",
+   "file": "chr-ale_hand-l_v04.png",
+   "image_id": "rig/chr-ale_hand-l",
+   "outline_file": "chr-ale_hand-l-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_hand-l-outline",
+   "size": [
+    119,
+    147
+   ],
+   "origin_master": [
+    664,
+    818
+   ],
+   "parent": "forearm_l",
+   "joint": "wrist_l",
+   "pivot_local": [
+    54.0,
+    32.0
+   ],
+   "pivot_master": [
+    718.0,
+    850.0
+   ],
+   "tab_radius": 36,
+   "layer_index": 9,
+   "joint_in_parent_local": [
+    95.0,
+    251.0
+   ]
+  },
+  "forearm_r": {
+   "zh": "右前臂（含袖口）",
+   "file": "chr-ale_forearm-r_v04.png",
+   "image_id": "rig/chr-ale_forearm-r",
+   "outline_file": "chr-ale_forearm-r-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_forearm-r-outline",
+   "size": [
+    180,
+    295
+   ],
+   "origin_master": [
+    222,
+    602
+   ],
+   "parent": "upper_arm_r",
+   "joint": "elbow_r",
+   "pivot_local": [
+    83.0,
+    53.0
+   ],
+   "pivot_master": [
+    305.0,
+    655.0
+   ],
+   "tab_radius": 68,
+   "layer_index": 10,
+   "joint_in_parent_local": [
+    83.0,
+    306.0
+   ]
+  },
+  "hand_r": {
+   "zh": "右手",
+   "file": "chr-ale_hand-r_v04.png",
+   "image_id": "rig/chr-ale_hand-r",
+   "outline_file": "chr-ale_hand-r-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_hand-r-outline",
+   "size": [
+    135,
+    171
+   ],
+   "origin_master": [
+    257,
+    808
+   ],
+   "parent": "forearm_r",
+   "joint": "wrist_r",
+   "pivot_local": [
+    49.0,
+    32.0
+   ],
+   "pivot_master": [
+    306.0,
+    840.0
+   ],
+   "tab_radius": 40,
+   "layer_index": 11,
+   "joint_in_parent_local": [
+    84.0,
+    238.0
+   ]
+  },
+  "head_worried": {
+   "zh": "困惑頭（含頸部舌片；換頭用，與 head 同樞紐）",
+   "file": "chr-ale_head-worried_v04.png",
+   "image_id": "rig/chr-ale_head-worried",
+   "outline_file": "chr-ale_head-worried-outline_v04.png",
+   "outline_image_id": "rig/chr-ale_head-worried-outline",
+   "size": [
+    283,
+    424
+   ],
+   "origin_master": [
+    375,
+    18
+   ],
+   "parent": "torso",
+   "joint": "neck",
+   "pivot_local": [
+    155.0,
+    312.0
+   ],
+   "pivot_master": [
+    530.0,
+    330.0
+   ],
+   "tab_radius": null,
+   "layer_index": 5,
+   "joint_in_parent_local": [
+    263.0,
+    79.0
+   ]
+  }
+ },
+ "fix_log": {
+  "torso": {
+   "shoulder_r": 1426,
+   "shoulder_l": 1137
+  },
+  "thigh_l": 901,
+  "thigh_r": 892,
+  "head_worried": {
+   "neck_outside_body_px": 0,
+   "neck_lines_recolored_px": 440,
+   "inner_white_specks_px": 226,
+   "stray_px_removed": 71,
+   "align": {
+    "iou_top70": 0.97,
+    "scale": 0.298,
+    "rot_deg": 0,
+    "border_px": 38.5
+   }
+  }
+ }
+}

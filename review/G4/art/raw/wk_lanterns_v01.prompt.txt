@@ -1,0 +1,18 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image, LANDSCAPE 3:2 (request 1536x1024), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached: the FIRST is the art-style reference (use it for the look of its paper lanterns, but UNLIT); the SECOND is the current stage composite (for the daylight value level and character colors).
+IMAGE: the mid-ground HANGING-LANTERN piece of a paper-cut theater set. One straight horizontal pale bamboo pole runs across the FULL WIDTH of the canvas near the very top (its center about 6% below the top edge, touching the left and right canvas edges). From the pole hang FIVE UNLIT paper lanterns on SHORT cords (each cord no longer than 6% of the canvas height), left to right: a large round cream lantern, a small oval pale apricot lantern, a medium round pale butter-yellow lantern, a small round pale celadon-green lantern, a medium oval cream lantern. Unevenly spaced with clear gaps between them, slightly different hanging heights, but ALL lanterns stay inside the TOP 40% of the canvas; the bottom 60% of the canvas is completely EMPTY and TRANSPARENT.
+- Each lantern: washi paper with thin vertical bamboo rib lines and small plain wooden top and bottom caps; completely plain, NO characters, NO symbols, NO patterns that look like writing, no tassels.
+- UNLIT: no inner light, no glow, no halo, no bright center.
+- TRANSPARENT background (real alpha channel) everywhere outside the pole, cords and lanterns; no ceiling, no wall, no frame, no checkerboard drawn in.
+
+STYLE: match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" look, but use a calm, warm, LIGHT late-morning DAYLIGHT palette (soft warm cream and honey tones, NOT sunset, NOT orange glow, NOT pink, NOT dark). The SECOND attached image shows the current stage and character colors: the new piece must stay LIGHTER and LESS SATURATED than the characters so the characters read clearly in front of it. The piece is a flat cut-out of thick matte cardstock seen perfectly straight-on (frontal elevation, no perspective, no vanishing point), with subtle paper-fiber texture and crisp knife-cut outlines with a thin warm-gray outline.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no glow, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow (the theater software adds one consistent light later).
+- STRICT: absolutely NO text anywhere - no signboards, no shop signs, no plaques, no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no posters, no calendars, no watermark, no signature. No people, no hands, no animals, no faces, no red crosses, no smoke, no vehicles.
+- Show ONLY the front face of each piece; do not draw card side thickness for this piece.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G4/art/raw/wk_lanterns_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G4/art/raw/wk_lanterns_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

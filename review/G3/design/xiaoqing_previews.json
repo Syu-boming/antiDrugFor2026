@@ -1,0 +1,18 @@
+{
+  "purpose": "G3 聲線設計 xiaoqing",
+  "endpoint": "text-to-voice/design",
+  "model": "eleven_ttv_v3",
+  "text_chars": 107,
+  "description_chars": 421,
+  "ok": false,
+  "http": 403,
+  "billed": null,
+  "request_id": null,
+  "detail": {
+    "type": "authorization_error",
+    "code": "feature_not_available",
+    "message": "Creating a voice through the API is only available on a paid plan.",
+    "status": "feature_unavailable",
+    "request_id": "a9d2ab02ecc7809dec782df4b9db5b5e"
+  }
+}

@@ -17,8 +17,10 @@ export interface PackManifest {
   cueSets: Record<string, string>;
   /** 音檔 id（例如 vo_a2_c002_01）→ 所在資料包與長度 */
   audio: Record<string, { file: string; duration: number | null; source: string; bus: 'vo' | 'music' | 'sfx' }>;
-  /** 圖片 id → 所在資料包 */
-  images: Record<string, { file: string; source: string }>;
+  /** 圖片 id → 所在資料包（fallback＝來自 app/asset-sources.json 的退路來源） */
+  images: Record<string, { file: string; source: string; fallback?: boolean }>;
+  /** 素材 JSON id（例如 g4_manifest、face/ale/face、rig/ale_attach）→ 所在資料包 */
+  json?: Record<string, { file: string; source: string; fallback?: boolean }>;
   /** 對嘴資料 id → 所在資料包 */
   lipsync: Record<string, { file: string }>;
 }

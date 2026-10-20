@@ -1,0 +1,54 @@
+{
+ "xiaoqing": {
+  "head_file": "assets/final/chr-xiaoqing_pose-reach-worried-head_v04.png",
+  "body_file": "assets/final/chr-xiaoqing_pose-reach-worried-body_v04.png",
+  "head_offset_px": [
+   256,
+   11
+  ],
+  "head_size": [
+   475,
+   424
+  ],
+  "pivot_px_full": [
+   445,
+   352
+  ],
+  "pivot_px_head": [
+   189,
+   341
+  ],
+  "turn_range_deg": [
+   -2.5,
+   2.5
+  ],
+  "rest_diff_px_vs_original": 12,
+  "note": "身體層與原圖同尺寸、同座標；頭層貼在 head_offset_px，繞 pivot 旋轉。0° 時兩層疊起來與原圖相同。"
+ },
+ "xiaoyu": {
+  "head_file": "assets/final/chr-xiaoyu_pose-stepback-surprised-head_v04.png",
+  "body_file": "assets/final/chr-xiaoyu_pose-stepback-surprised-body_v04.png",
+  "head_offset_px": [
+   149,
+   11
+  ],
+  "head_size": [
+   414,
+   379
+  ],
+  "pivot_px_full": [
+   330,
+   378
+  ],
+  "pivot_px_head": [
+   181,
+   367
+  ],
+  "turn_range_deg": [
+   -2.5,
+   2.5
+  ],
+  "rest_diff_px_vs_original": 10,
+  "note": "身體層與原圖同尺寸、同座標；頭層貼在 head_offset_px，繞 pivot 旋轉。0° 時兩層疊起來與原圖相同。"
+ }
+}

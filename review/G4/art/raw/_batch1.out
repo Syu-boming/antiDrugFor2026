@@ -1,0 +1,27 @@
+started wk_back_v01 pid 97884
+started wk_lanterns_v01 pid 97886
+started wk_table_v01 pid 97888
+started wk_wing_v01 pid 97890
+== wk_back_v01
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-7dc3-a1c6-6e389b6652d5/exec-13ebd2bc-6eec-469d-9886-e891bb50b1a6.png`
+- Destination: [review/G4/art/raw/wk_back_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_back_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **No — fully opaque**
+- Copy verified byte-for-byte identical.-rw-r--r--@ 1 boming  staff  2334822 10月 21 03:18 /Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_back_v01.png
+== wk_lanterns_v01
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-77e0-b51e-a259ab8fbc43/exec-169ec1a2-c3f9-43a9-ae65-ca84c57f885d.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_lanterns_v01.png`
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, but the bottom 60% contains 4,614 nontransparent pixels.
+
+Copied byte-for-byte without modification.-rw-r--r--@ 1 boming  staff  1292451 10月 21 03:19 /Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_lanterns_v01.png
+== wk_table_v01
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-7e02-9cf0-00a962178fe8/exec-897b636d-60fd-4b55-b891-efa72206552c.png`
+- Destination: [review/G4/art/raw/wk_table_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_table_v01.png>) — copied unmodified.
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, with verified transparent pixels.-rw-r--r--@ 1 boming  staff  1944055 10月 21 03:19 /Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_table_v01.png
+== wk_wing_v01
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-75a0-a197-a0421d2dfdaf/exec-82e7f48b-42bb-43db-b202-b19aff3f0715.png`
+- Destination: [review/G4/art/raw/wk_wing_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_wing_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, with actual transparent pixels. However, the right 45% is not completely transparent.-rw-r--r--@ 1 boming  staff  1767538 10月 21 03:18 /Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_wing_v01.png

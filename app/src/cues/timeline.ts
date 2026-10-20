@@ -1,7 +1,7 @@
 // 把 cue 資料展開成時間軸：每句台詞的開始／結束、字幕分頁、動畫起訖、cue 總長。
 // 有正式音檔就用音檔長度；沒有就進「暫代模式」，依字數估計長度。
 import type { Cue, CueAnimation, CueFile, CueLine, QuizData, TimeRef } from '../types/cue';
-import { layoutSubtitle, spokenChars, charLen } from '../ui/textlayout';
+import { layoutSubtitle, spokenChars, charLen, plainText } from '../ui/textlayout';
 
 export interface SubtitlePage { start: number; end: number; rows: string[] }
 
@@ -28,6 +28,7 @@ export interface ResolvedAnim {
 }
 
 export interface ResolvedSfx { id: string; at: number; gain: number }
+export interface ResolvedMusic { id: string; at: number; loop: boolean; fade: number; gain: number; offset: number }
 
 export interface CueTimeline {
   cue: Cue;
@@ -36,6 +37,8 @@ export interface CueTimeline {
   lines: ResolvedLine[];
   anims: ResolvedAnim[];
   sfx: ResolvedSfx[];
+  /** 段落內的配樂切換 */
+  music: ResolvedMusic[];
   /** 這段有任何一句找不到音檔 */
   placeholder: boolean;
   quiz: QuizData | null;
@@ -50,9 +53,14 @@ export const TIMING = { voStart: 0.5, gap: 0.45, tail: 0.9, charsPerSec: 4, minL
 
 /** 各動畫的預設長度（秒） */
 const ANIM_DEFAULT_DURATION: Record<string, number> = {
-  'title.fadeOut': 1.0, 'title.fadeIn': 0.9, 'curtain.open': 2.0, 'curtain.close': 2.0,
+  'title.fadeOut': 1.0, 'title.fadeIn': 0.9, 'curtain.open': 2.2, 'curtain.close': 2.2,
   'quiz.show': 0.6, 'quiz.hide': 0.5, 'quiz.reveal': 0.45, 'lamp.light': 1.2,
   'light.dim': 1.0, 'light.restore': 1.0, 'camera.move': 2.5, 'camera.cut': 0,
+  'set.popup': 3.0, 'set.fold': 2.4, 'fx.desat': 3.0, 'fx.spot': 2.0,
+  'strings.drop': 3.0, 'strings.tension': 0.5, 'strings.loosen': 3.0, 'strings.fade': 3.0, 'strings.detach': 2.0,
+  'puppet.popup': 1.1, 'puppet.enter': 2.0, 'puppet.exit': 2.0, 'puppet.sit': 1.0, 'puppet.waveTry': 3.4, 'puppet.kneeTug': 3.2,
+  'puppet.reach': 0.8, 'puppet.wave': 2.0, 'puppet.chest': 0.8, 'puppet.grab': 0.8, 'puppet.lean': 0.8, 'puppet.move': 1.5,
+  'puppet.tilt': 0.8, 'puppet.pose': 0.24, 'puppet.face': 0, 'puppet.blink': 0,
 };
 
 export function estimateLineDuration(text: string): number {
@@ -64,7 +72,7 @@ export const audioIdOf = (line: CueLine): string => line.audioId ?? `vo_${line.i
 /** 依字數比例分配字幕頁的時間 */
 function paginate(text: string, start: number, end: number): SubtitlePage[] {
   const pages = layoutSubtitle(text);
-  const weights = pages.map((p) => Math.max(1, charLen(p.join(''))));
+  const weights = pages.map((p) => Math.max(1, charLen(plainText(p.join('')))));
   const total = weights.reduce((a, b) => a + b, 0);
   let t = start;
   return pages.map((rows, i) => {
@@ -154,6 +162,9 @@ export function buildTimelines(file: CueFile, durationOf: (audioId: string) => n
     const sfx: ResolvedSfx[] = (cue.sfx ?? []).map((e) => ({
       id: e.id, at: Math.max(0, resolveRef(e.at, lines, duration, `${cue.id}/sfx`) ?? 0), gain: e.gain ?? 1,
     }));
+    const music: ResolvedMusic[] = (cue.music ?? []).map((e) => ({
+      id: e.id, at: Math.max(0, resolveRef(e.at, lines, duration, `${cue.id}/music`) ?? 0), loop: e.loop ?? true, fade: e.fade ?? 1.5, gain: e.gain ?? 1, offset: e.offset ?? 0,
+    }));
 
     // 4. 題目資料：reveal 沒寫就沿用前一個 quiz
     let quiz: QuizData | null = cue.quiz ?? null;
@@ -172,7 +183,7 @@ export function buildTimelines(file: CueFile, durationOf: (audioId: string) => n
     else if (cue.next === undefined && i + 1 < cues.length) nextIndex = i + 1;
 
     return {
-      cue, index: i, duration, lines: resolved, anims: out, sfx,
+      cue, index: i, duration, lines: resolved, anims: out, sfx, music,
       placeholder: resolved.some((l) => l.placeholder), quiz, prevStableIndex, nextIndex,
     };
   });

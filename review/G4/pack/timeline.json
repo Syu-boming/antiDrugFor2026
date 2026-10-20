@@ -1,0 +1,768 @@
+{
+ "note": "由 app/src/cues/timeline.ts 的 buildTimelines 解析（與引擎相同），音檔長度取自 app/dist/data/manifest.js。schedule＝播放錄製用的排程；hold＝教師按鍵間隔假設（秒）。",
+ "cueFile": "app/cues/g4.json",
+ "musicLevelDefaults": {
+  "title": 0,
+  "curtain": 0.8,
+  "scene": 0.8,
+  "wait": 0.35,
+  "quiz": 0.06,
+  "reveal": 0.06,
+  "lamp": 0.5
+ },
+ "cues": [
+  {
+   "id": "a0_c000",
+   "kind": "title",
+   "title": "署名卡待機",
+   "duration": 0,
+   "autoAdvance": false,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0,
+   "lines": [],
+   "sfx": [],
+   "music": [],
+   "anims": []
+  },
+  {
+   "id": "a0_c001",
+   "kind": "curtain",
+   "title": "開幕（G4 代表段落）",
+   "duration": 10.6,
+   "autoAdvance": false,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "lines": [],
+   "sfx": [
+    {
+     "id": "sfx_curtain_open",
+     "at": 1,
+     "gain": 1
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 4,
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 6,
+     "gain": 0.45
+    }
+   ],
+   "music": [
+    {
+     "id": "music_opening",
+     "at": 0,
+     "loop": false,
+     "fade": 0.2,
+     "gain": 1,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "title.fadeOut",
+     "target": null,
+     "start": 0,
+     "end": 1,
+     "params": {}
+    },
+    {
+     "name": "light.dim",
+     "target": null,
+     "start": 0,
+     "end": 1,
+     "params": {
+      "to": 0.82
+     }
+    },
+    {
+     "name": "fx.spot",
+     "target": null,
+     "start": 0.1,
+     "end": 2.7,
+     "params": {
+      "to": 0.7,
+      "sweep": [
+       [
+        -6,
+        4,
+        4
+       ],
+       [
+        3.5,
+        4.4,
+        4
+       ]
+      ]
+     }
+    },
+    {
+     "name": "curtain.open",
+     "target": null,
+     "start": 1,
+     "end": 3,
+     "params": {}
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 1.6,
+     "end": 4.2,
+     "params": {
+      "to": "g4_wide"
+     }
+    },
+    {
+     "name": "light.restore",
+     "target": null,
+     "start": 2.4,
+     "end": 4,
+     "params": {}
+    },
+    {
+     "name": "set.popup",
+     "target": null,
+     "start": 3,
+     "end": 7.5,
+     "params": {}
+    },
+    {
+     "name": "puppet.popup",
+     "target": "ale",
+     "start": 4.15,
+     "end": 5.15,
+     "params": {}
+    },
+    {
+     "name": "puppet.popup",
+     "target": "xiaoyu",
+     "start": 5.05,
+     "end": 6.05,
+     "params": {}
+    },
+    {
+     "name": "puppet.popup",
+     "target": "xiaoqing",
+     "start": 5.2,
+     "end": 6.2,
+     "params": {}
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 7.6,
+     "end": 10.4,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2_c002",
+   "kind": "scene",
+   "title": "線落下來（代表鏡頭）",
+   "duration": 22.83,
+   "autoAdvance": false,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.75,
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "speaker": "阿樂叔叔",
+     "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+     "audioId": "vo_a2_c002_01",
+     "start": 13,
+     "end": 17.26,
+     "duration": 4.26,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 13,
+       "end": 17.26,
+       "rows": [
+        "咦？",
+        "我想揮手……手怎麼跑到旁邊去了？"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a2_c002_02",
+     "speaker": "小晴",
+     "text": "叔叔，小心！",
+     "audioId": "vo_a2_c002_02",
+     "start": 19.11,
+     "end": 20.83,
+     "duration": 1.72,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 19.11,
+       "end": 20.83,
+       "rows": [
+        "叔叔，小心！"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_string_drop",
+     "at": 6.98,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_drop",
+     "at": 7.98,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_drop",
+     "at": 8.98,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 11,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 18.26,
+     "gain": 0.8
+    }
+   ],
+   "music": [
+    {
+     "id": "music_m4_strings",
+     "at": 0,
+     "loop": false,
+     "fade": 1,
+     "gain": 1,
+     "offset": 4
+    }
+   ],
+   "anims": [
+    {
+     "name": "fx.desat",
+     "target": null,
+     "start": 0.5,
+     "end": 6,
+     "params": {
+      "to": 0.5
+     }
+    },
+    {
+     "name": "light.dim",
+     "target": null,
+     "start": 1,
+     "end": 4.5,
+     "params": {
+      "to": 0.94
+     }
+    },
+    {
+     "name": "fx.spot",
+     "target": null,
+     "start": 2,
+     "end": 5.5,
+     "params": {
+      "to": 1,
+      "target": "ale"
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 5.6,
+     "end": 8.8,
+     "params": {
+      "to": "g4_mid_up"
+     }
+    },
+    {
+     "name": "strings.drop",
+     "target": "ale",
+     "start": 6.5,
+     "end": 9.7,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stagger": 1,
+      "each": 1.2
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 7.4,
+     "end": 7.4,
+     "params": {
+      "emotion": "surprised"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 7.5,
+     "end": 7.74,
+     "params": {
+      "pose": "stepback"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 8.6,
+     "end": 8.6,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 9.4,
+     "end": 12,
+     "params": {
+      "to": "g4_mid"
+     }
+    },
+    {
+     "name": "puppet.waveTry",
+     "target": "ale",
+     "start": 9.9,
+     "end": 13.5,
+     "params": {
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "puppet.kneeTug",
+     "target": "ale",
+     "start": 17.51,
+     "end": 21.11,
+     "params": {
+      "at": [
+       -1.82,
+       1.4
+      ]
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 17.66,
+     "end": 21.86,
+     "params": {
+      "to": "g4_push"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 18.71,
+     "end": 18.95,
+     "params": {
+      "pose": "reach"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a2_c004",
+   "kind": "scene",
+   "title": "操偶線（必要旁白一）",
+   "duration": 19.5,
+   "autoAdvance": false,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "lines": [
+    {
+     "id": "a2_c004_01",
+     "speaker": "旁白",
+     "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+     "audioId": "vo_a2_c004_01",
+     "start": 0.8,
+     "end": 5.48,
+     "duration": 4.68,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 0.8,
+       "end": 5.48,
+       "rows": [
+        "阿樂叔叔身上這一條一條的線，",
+        "叫做操偶線。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a2_c004_02",
+     "speaker": "旁白",
+     "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+     "audioId": "vo_a2_c004_02",
+     "start": 5.93,
+     "end": 17.5,
+     "duration": 11.57,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 5.93,
+       "end": 8.685,
+       "rows": [
+        "這些線是故事的比喻。"
+       ]
+      },
+      {
+       "start": 8.685,
+       "end": 14.745,
+       "rows": [
+        "毒品可能讓人的頭腦",
+        "和身體受到影響，不聽使喚。"
+       ]
+      },
+      {
+       "start": 14.745,
+       "end": 17.5,
+       "rows": [
+        "人不會真的變成喪屍。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [],
+   "music": [
+    {
+     "id": "music_m4_light",
+     "at": 0,
+     "loop": true,
+     "fade": 2.5,
+     "gain": 1,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 0.3,
+     "end": 4.5,
+     "params": {
+      "to": "anchor:ale.wrist",
+      "dist": 12.5
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 4.7,
+     "end": 6.3,
+     "params": {
+      "to": "anchor:ale.elbow",
+      "dist": 12.5
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 6.5,
+     "end": 10.3,
+     "params": {
+      "to": "anchor:ale.knee",
+      "dist": 12.5
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 10.5,
+     "end": 14.1,
+     "params": {
+      "to": "anchor:ale.up",
+      "dist": 13.5
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 15.5,
+     "end": 19.1,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ]
+  },
+  {
+   "id": "a8_c002",
+   "kind": "curtain",
+   "title": "布幕合攏",
+   "duration": 3.1,
+   "autoAdvance": true,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "lines": [],
+   "sfx": [
+    {
+     "id": "sfx_curtain_close",
+     "at": 0.9,
+     "gain": 1
+    }
+   ],
+   "music": [
+    {
+     "id": "music_closing",
+     "at": 0.9,
+     "loop": false,
+     "fade": 0.8,
+     "gain": 1,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "fx.spot",
+     "target": null,
+     "start": 0,
+     "end": 1.6,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "light.restore",
+     "target": null,
+     "start": 0,
+     "end": 1.6,
+     "params": {}
+    },
+    {
+     "name": "fx.desat",
+     "target": null,
+     "start": 0,
+     "end": 2,
+     "params": {
+      "to": 0.2
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 0,
+     "end": 3,
+     "params": {
+      "to": "g4_stage"
+     }
+    },
+    {
+     "name": "curtain.close",
+     "target": null,
+     "start": 0.9,
+     "end": 2.9,
+     "params": {}
+    }
+   ]
+  },
+  {
+   "id": "a8_c003",
+   "kind": "title",
+   "title": "片尾署名卡",
+   "duration": 1.4,
+   "autoAdvance": false,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "lines": [],
+   "sfx": [],
+   "music": [],
+   "anims": [
+    {
+     "name": "title.fadeIn",
+     "target": null,
+     "start": 0,
+     "end": 0.8,
+     "params": {}
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "id": "a0_c000",
+   "kind": "title",
+   "start": 0,
+   "duration": 0,
+   "hold": 3,
+   "autoAdvance": false
+  },
+  {
+   "id": "a0_c001",
+   "kind": "curtain",
+   "start": 3,
+   "duration": 10.6,
+   "hold": 2,
+   "autoAdvance": false
+  },
+  {
+   "id": "a2_c002",
+   "kind": "scene",
+   "start": 15.6,
+   "duration": 22.83,
+   "hold": 2,
+   "autoAdvance": false
+  },
+  {
+   "id": "a2_c004",
+   "kind": "scene",
+   "start": 40.43,
+   "duration": 19.5,
+   "hold": 2,
+   "autoAdvance": false
+  },
+  {
+   "id": "a8_c002",
+   "kind": "curtain",
+   "start": 61.93,
+   "duration": 3.1,
+   "hold": 0,
+   "autoAdvance": true
+  },
+  {
+   "id": "a8_c003",
+   "kind": "title",
+   "start": 65.03,
+   "duration": 1.4,
+   "hold": 6.5,
+   "autoAdvance": false
+  }
+ ],
+ "totalPlaybackSec": 72.93,
+ "audio": {
+  "vo_a2_c001_01": {
+   "source": "audio/vo/vo_a2_c001_01_v01.wav",
+   "duration": 3.52,
+   "bus": "vo"
+  },
+  "vo_a2_c001_02": {
+   "source": "audio/vo/vo_a2_c001_02_v01.wav",
+   "duration": 3.16,
+   "bus": "vo"
+  },
+  "vo_a2_c001_03": {
+   "source": "audio/vo/vo_a2_c001_03_v01.wav",
+   "duration": 5.43,
+   "bus": "vo"
+  },
+  "vo_a2_c002_01": {
+   "source": "audio/vo/vo_a2_c002_01_v01.wav",
+   "duration": 4.26,
+   "bus": "vo"
+  },
+  "vo_a2_c002_02": {
+   "source": "audio/vo/vo_a2_c002_02_v01.wav",
+   "duration": 1.72,
+   "bus": "vo"
+  },
+  "vo_a2_c004_01": {
+   "source": "audio/vo/vo_a2_c004_01_v01.wav",
+   "duration": 4.68,
+   "bus": "vo"
+  },
+  "vo_a2_c004_02": {
+   "source": "audio/vo/vo_a2_c004_02_v01.wav",
+   "duration": 11.57,
+   "bus": "vo"
+  },
+  "music_closing": {
+   "source": "audio/music/music_closing_v01.wav",
+   "duration": 10,
+   "bus": "music"
+  },
+  "music_m4_light": {
+   "source": "audio/music/music_m4_light_v01.wav",
+   "duration": 32,
+   "bus": "music"
+  },
+  "music_m4_strings": {
+   "source": "audio/music/music_m4_strings_v01.wav",
+   "duration": 46,
+   "bus": "music"
+  },
+  "music_opening": {
+   "source": "audio/music/music_opening_v01.wav",
+   "duration": 15,
+   "bus": "music"
+  },
+  "music_town": {
+   "source": "audio/music/music_town_v01.wav",
+   "duration": 30,
+   "bus": "music"
+  },
+  "sfx_card_in": {
+   "source": "audio/sfx/sfx_card_in_v01.wav",
+   "duration": 1.35,
+   "bus": "sfx"
+  },
+  "sfx_curtain_close": {
+   "source": "audio/sfx/sfx_curtain_close_v01.wav",
+   "duration": 2.3,
+   "bus": "sfx"
+  },
+  "sfx_curtain_open": {
+   "source": "audio/sfx/sfx_curtain_open_v01.wav",
+   "duration": 2.3,
+   "bus": "sfx"
+  },
+  "sfx_fold": {
+   "source": "audio/sfx/sfx_fold_v01.wav",
+   "duration": 0.95,
+   "bus": "sfx"
+  },
+  "sfx_lamp_on": {
+   "source": "audio/sfx/sfx_lamp_on_v01.wav",
+   "duration": 3.4,
+   "bus": "sfx"
+  },
+  "sfx_paper_rustle": {
+   "source": "audio/sfx/sfx_paper_rustle_v01.wav",
+   "duration": 1.3,
+   "bus": "sfx"
+  },
+  "sfx_quiet_fold": {
+   "source": "audio/sfx/sfx_quiet_fold_v01.wav",
+   "duration": 2.8,
+   "bus": "sfx"
+  },
+  "sfx_stamp": {
+   "source": "audio/sfx/sfx_stamp_v01.wav",
+   "duration": 0.75,
+   "bus": "sfx"
+  },
+  "sfx_string_drop": {
+   "source": "audio/sfx/sfx_string_drop_v01.wav",
+   "duration": 1,
+   "bus": "sfx"
+  },
+  "sfx_string_taut": {
+   "source": "audio/sfx/sfx_string_taut_v01.wav",
+   "duration": 0.75,
+   "bus": "sfx"
+  }
+ },
+ "fps": 30
+}

@@ -1,0 +1,164 @@
+{
+ "camera": "medium（layers.ts CAMERA_PRESETS.medium）",
+ "projector": "tools/projsim.py v2",
+ "pose": "hold（a2_c002 停格）",
+ "contrast": {
+  "xiaoqing": {
+   "bg_torso_band_median_lum": 0.586,
+   "bg_torso_band_p10_lum": 0.49,
+   "requirement_bg_lum": ">=0.50（兒童）",
+   "costumes": {
+    "湖水綠吊帶褲": {
+     "pixels": 18718,
+     "proj_v2_lum": 0.128,
+     "contrast_vs_bg_median": 3.57,
+     "contrast_vs_bg_p10": 3.03
+    },
+    "芥末黃上衣": {
+     "pixels": 5145,
+     "proj_v2_lum": 0.366,
+     "contrast_vs_bg_median": 1.53,
+     "contrast_vs_bg_p10": 1.3
+    }
+   }
+  },
+  "xiaoyu": {
+   "bg_torso_band_median_lum": 0.585,
+   "bg_torso_band_p10_lum": 0.478,
+   "requirement_bg_lum": ">=0.50（兒童）",
+   "costumes": {
+    "橘紅外套": {
+     "pixels": 9361,
+     "proj_v2_lum": 0.124,
+     "contrast_vs_bg_median": 3.65,
+     "contrast_vs_bg_p10": 3.04
+    },
+    "卡其短褲": {
+     "pixels": 4674,
+     "proj_v2_lum": 0.286,
+     "contrast_vs_bg_median": 1.89,
+     "contrast_vs_bg_p10": 1.57
+    }
+   }
+  },
+  "ale": {
+   "bg_torso_band_median_lum": 0.594,
+   "bg_torso_band_p10_lum": 0.581,
+   "requirement_bg_lum": ">=0.50（兒童）",
+   "costumes": {
+    "深藍圍裙": {
+     "pixels": 10402,
+     "proj_v2_lum": 0.095,
+     "contrast_vs_bg_median": 4.44,
+     "contrast_vs_bg_p10": 4.35
+    }
+   }
+  }
+ },
+ "string_pixels_on_kids": {
+  "wrist_back": {
+   "xiaoqing": 0,
+   "xiaoyu": 0
+  },
+  "elbow_out": {
+   "xiaoqing": 0,
+   "xiaoyu": 0
+  },
+  "knee_front": {
+   "xiaoqing": 0,
+   "xiaoyu": 0
+  }
+ },
+ "figure_extent_px": {
+  "xiaoqing": {
+   "top_px": 483,
+   "bottom_px": 929
+  },
+  "xiaoyu": {
+   "top_px": 523,
+   "bottom_px": 913
+  },
+  "ale": {
+   "top_px": 324,
+   "bottom_px": 923
+  }
+ },
+ "placement": {
+  "back": {
+   "id": "bg-workshop-back",
+   "z": -5.0,
+   "world_w": 22.0,
+   "world_h": 10.503,
+   "left_top": [
+    -11.0,
+    10.503
+   ]
+  },
+  "lanterns": {
+   "id": "bg-workshop-lanterns",
+   "z": -0.9,
+   "world_w": 6.6,
+   "left_top": [
+    0.7,
+    6.506
+   ],
+   "pole_y": 6.45
+  },
+  "ale": {
+   "id": "ale_rig",
+   "z": 0.0,
+   "master_px_to_units": 0.002857,
+   "body_center_x": -2.2,
+   "floor_master_y": 1631,
+   "standing_height_units": 4.6
+  },
+  "xiaoqing": {
+   "id": "chr-xiaoqing_pose-reach-worried",
+   "z": 0.4,
+   "units_per_px": 0.002292,
+   "feet_anchor_px": [
+    489.0,
+    1398
+   ],
+   "feet_world_x": 0.95,
+   "height_units": 3.168
+  },
+  "xiaoyu": {
+   "id": "chr-xiaoyu_pose-stepback-surprised",
+   "z": -0.35,
+   "units_per_px": 0.002042,
+   "feet_anchor_px": [
+    187.0,
+    1421
+   ],
+   "feet_world_x": 2.75,
+   "height_units": 2.869
+  },
+  "table": {
+   "id": "bg-workshop-table",
+   "z": 0.3,
+   "units_per_px": 0.003953,
+   "left_top": [
+    -7.449,
+    3.127
+   ],
+   "world_w": 5.846,
+   "top_surface_y": 2.289,
+   "right_end_x": -1.643
+  },
+  "wings": {
+   "id": "bg-workshop-wing",
+   "z": 2.4,
+   "world_h": 7.2,
+   "world_w": 2.808,
+   "left": [
+    -6.55,
+    7.2
+   ],
+   "right_mirrored": [
+    4.342,
+    7.2
+   ]
+  }
+ }
+}

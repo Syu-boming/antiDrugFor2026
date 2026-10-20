@@ -7,6 +7,12 @@ export const LINE_ID_RE = /^a\d_c\d{3}_\d{2}$/;
 export const CUE_KINDS: readonly CueKind[] = ['title', 'curtain', 'scene', 'quiz', 'reveal', 'wait', 'lamp'];
 const REQUIRED_KEYS = ['id', 'sceneId', 'kind', 'initialState', 'animation', 'audioId', 'lines', 'next', 'prevStable',
   'skippable', 'compression', 'fx', 'teacherNote', 'checkpoint'];
+/** 已知動畫名稱（與 engine/world.ts 的 STAGE_ANIMS、ACTOR_ANIMS 相同；這裡不能 import 值，所以另列一份） */
+export const KNOWN_ANIMS = ['title.fadeOut', 'title.fadeIn', 'curtain.open', 'curtain.close', 'set.popup', 'set.fold', 'light.dim', 'light.restore',
+  'fx.desat', 'fx.spot', 'camera.move', 'camera.cut', 'quiz.show', 'quiz.hide', 'quiz.reveal', 'lamp.light',
+  'strings.drop', 'strings.tension', 'strings.loosen', 'strings.fade', 'strings.detach',
+  'puppet.popup', 'puppet.enter', 'puppet.exit', 'puppet.sit', 'puppet.waveTry', 'puppet.kneeTug', 'puppet.reach', 'puppet.wave',
+  'puppet.chest', 'puppet.grab', 'puppet.lean', 'puppet.move', 'puppet.tilt', 'puppet.pose', 'puppet.face', 'puppet.blink'];
 
 export interface ValidationResult { ok: boolean; errors: string[]; warnings: string[] }
 
@@ -42,7 +48,13 @@ export function validateCueFile(data: unknown): ValidationResult {
     else c.animation.forEach((a, j) => {
       if (!isObj(a) || typeof a.name !== 'string' || !isTimeRef(a.start)) errors.push(`${at} animation[${j}] 需要 name 與 start`);
       else if (a.duration !== undefined && (typeof a.duration !== 'number' || a.duration < 0)) errors.push(`${at} animation[${j}] duration 必須是非負數`);
+      else if (!KNOWN_ANIMS.includes(a.name)) warnings.push(`${at} animation[${j}] 未知的動畫名稱 ${a.name}（會被忽略）`);
+      else if (a.target !== undefined && typeof a.target === 'string' && isObj(data.characters) && !(a.target in (data.characters as Obj))) warnings.push(`${at} animation[${j}] 的對象 ${a.target} 不在角色名冊`);
     });
+    if (c.music !== undefined) {
+      if (!Array.isArray(c.music)) errors.push(`${at} music 必須是陣列`);
+      else c.music.forEach((m, j) => { if (!isObj(m) || typeof m.id !== 'string' || !isTimeRef(m.at)) errors.push(`${at} music[${j}] 需要 id 與 at`); });
+    }
     if (c.audioId !== null && typeof c.audioId !== 'string') errors.push(`${at} audioId 必須是字串或 null`);
     if (!Array.isArray(c.lines)) errors.push(`${at} lines 必須是陣列`);
     else c.lines.forEach((l, j) => {

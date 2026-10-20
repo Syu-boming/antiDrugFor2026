@@ -1,0 +1,251 @@
+{
+ "character": "xiaoqing",
+ "zh": "小晴",
+ "version": "v01",
+ "head_image": {
+  "file": "assets/final/chr-xiaoqing_pose-reach-worried-head_v04.png",
+  "image_id": "chr-xiaoqing_pose-reach-worried-head",
+  "size": [
+   475,
+   424
+  ],
+  "pivot_px": [
+   189,
+   341
+  ],
+  "offset_in_pose_image_px": [
+   256,
+   11
+  ],
+  "note": "頭層（可繞 pivot 轉 ±2.5°）；身體層 assets/final/chr-xiaoqing_pose-reach-worried-body_v04.png 與整張姿勢圖同座標"
+ },
+ "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs）；本檔的 JSON id＝face/<角色>/face。",
+ "coords": "anchor_px＝換片左上角在『頭層』上的像素座標（y 向下）；anchor_px_pose_image＝在整張姿勢圖上的座標（不拆頭時用）。同一組（嘴、眼）所有換片同錨點、同尺寸。",
+ "z_order": "頭部圖 < 眼睛換片 < 嘴巴換片（兩組不重疊）；換片永遠畫在頭部圖正上方、同一變換。",
+ "swap_rule": "硬切換（不做透明度交叉淡化，角色表 0.6）；眨眼：eyes_closed 停 2–3 格（12 fps），每 3–6 秒一次；轉頭／情緒轉折時加眨一次。",
+ "lipsync_map": {
+  "0": "mouth_closed",
+  "1": "mouth_half",
+  "2": "mouth_open",
+  "3": "mouth_round"
+ },
+ "rest_mouth": "mouth_worried",
+ "rest_eyes": "eyes_open",
+ "groups": {
+  "mouth": {
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "eyes": {
+   "anchor_px": [
+    82,
+    147
+   ],
+   "size": [
+    172,
+    124
+   ],
+   "anchor_px_pose_image": [
+    338,
+    158
+   ]
+  }
+ },
+ "pieces": {
+  "mouth_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_closed_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_mouth_closed",
+   "group": "mouth",
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 686,
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "mouth_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_half_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_mouth_half",
+   "group": "mouth",
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 691,
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "mouth_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_mouth_open",
+   "group": "mouth",
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 816,
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "mouth_worried": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_worried_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_mouth_worried",
+   "group": "mouth",
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 686,
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "mouth_round": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_round_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_mouth_round",
+   "group": "mouth",
+   "anchor_px": [
+    98,
+    239
+   ],
+   "size": [
+    78,
+    74
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0,
+   "anchor_px_pose_image": [
+    354,
+    250
+   ]
+  },
+  "eyes_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_eyes_open",
+   "group": "eyes",
+   "anchor_px": [
+    82,
+    147
+   ],
+   "size": [
+    172,
+    124
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0,
+   "anchor_px_pose_image": [
+    338,
+    158
+   ]
+  },
+  "eyes_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_half_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_eyes_half",
+   "group": "eyes",
+   "anchor_px": [
+    82,
+    147
+   ],
+   "size": [
+    172,
+    124
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 2530,
+   "anchor_px_pose_image": [
+    338,
+    158
+   ]
+  },
+  "eyes_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_closed_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_eyes_closed",
+   "group": "eyes",
+   "anchor_px": [
+    82,
+    147
+   ],
+   "size": [
+    172,
+    124
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 3922,
+   "anchor_px_pose_image": [
+    338,
+    158
+   ]
+  }
+ },
+ "colors": {
+  "line": [
+   78,
+   31,
+   13
+  ],
+  "inside": [
+   197,
+   85,
+   59
+  ],
+  "tongue": [
+   251,
+   197,
+   148
+  ],
+  "lash": [
+   38,
+   19,
+   9
+  ]
+ },
+ "stage_scale_hint": 0.32,
+ "expression_hint": "姿勢圖本身是擔心眉；X4 驚訝＝eyes_open＋mouth_round（原圖）；X5 擔心＝eyes_open＋mouth_worried；說話時 lipsync。",
+ "pose_image": {
+  "file": "assets/final/chr-xiaoqing_pose-reach-worried_v04.png",
+  "image_id": "chr-xiaoqing_pose-reach-worried",
+  "size": [
+   802,
+   1415
+  ],
+  "note": "頭部圖＝整張姿勢圖 chr-xiaoqing_pose-reach-worried（裁切後；座標以裁切後的圖為準）"
+ }
+}

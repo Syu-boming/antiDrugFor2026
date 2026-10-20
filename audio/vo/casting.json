@@ -1,0 +1,233 @@
+{
+  "_說明": "配音選角與參數（tools/vo_build.py 讀這份）。spec＝目前採用的聲線；alt＝備用聲線（--service <名稱> 切換；azure 未列時自動沿用 edge 的聲線與參數）；overrides＝依台詞編號（正規式）覆寫部分參數；post.sentence_gap_ms＝依句號分句合成、句間停頓改成指定毫秒（必要旁白「句間多停半拍」）；post.telephone＝300–3400 Hz 電話音色；post.max_pause_ms＝句中靜音停頓上限（只剪靜音、不變速）；loudness_offset_db＝單句響度偏移（畫外音放低一點）。依據：review/G3/casting.md（G3 選角提案）、script/角色表_v03.md 第 3 節。聽感一律未驗證，第 3 天彩排可改參數後一鍵重建。",
+  "version": "2026-10-21 G3 提案 v01",
+  "defaults": {
+    "version": "v01",
+    "sample_rate": 48000,
+    "head_ms": 120,
+    "tail_ms": 250,
+    "target_lufs": -18.0,
+    "true_peak_max": -1.5,
+    "short_line_s": 3.0,
+    "lipsync_fps": 12
+  },
+  "services": {
+    "edge": {
+      "tool": "uvx --from edge-tts==7.3.1 edge-tts",
+      "license": "非官方工具，微軟條款未明確授權；v1.2 第 20.2 節只作暫用；v1.3 第 6 節在記錄風險下可用，之後以 Azure 同名聲線一鍵重建（--service azure）"
+    },
+    "azure": {
+      "env": [
+        "AZURE_SPEECH_KEY",
+        "AZURE_SPEECH_REGION"
+      ],
+      "license": "Azure AI Speech 正式授權（需使用者帳號）；後端已寫好、尚未實測"
+    },
+    "elevenlabs": {
+      "env": [
+        "ELEVENLABS_API_KEY"
+      ],
+      "output_format": "mp3_44100_128",
+      "plan": "免費方案（API 不可用共享聲線與聲線設計；pcm／mp3 192k 需付費方案）",
+      "license": "依帳號方案條款（免費方案：限非商業用途並須標註 ElevenLabs）"
+    }
+  },
+  "roles": {
+    "旁白": {
+      "code": "narrator",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoChenNeural",
+        "rate": "-14%",
+        "pitch": "+0Hz"
+      },
+      "overrides": [
+        {
+          "match": "a2_c004_02|a2_c008_05",
+          "set": {
+            "rate": "-8%",
+            "post": {
+              "sentence_gap_ms": 1300
+            }
+          },
+          "note": "必要旁白兩句：放慢到約 3.5 字／秒、句間多停半拍（edge 原本句間約 1.0 秒 → 1.3 秒）"
+        }
+      ],
+      "alt": {
+        "elevenlabs": {
+          "service": "elevenlabs",
+          "voice_id": "EXAVITQu4vr4xnSDxMaL",
+          "voice_name": "Sarah",
+          "model": "eleven_v3",
+          "settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75
+          },
+          "seed": 20261021,
+          "language_code": "zh",
+          "output_format": "mp3_44100_128"
+        }
+      }
+    },
+    "折折": {
+      "code": "zhezhe",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoYuNeural",
+        "rate": "+22%",
+        "pitch": "+60Hz",
+        "post": {
+          "max_pause_ms": 550
+        }
+      },
+      "note": "全劇最高；與小宇同底聲（HsiaoYu），音高差 ≥8%（+60Hz 對 +20Hz）、語速差 ≥5%（+22% 對 +12%）"
+    },
+    "小晴": {
+      "code": "xiaoqing",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoChenNeural",
+        "rate": "+0%",
+        "pitch": "+40Hz",
+        "post": {
+          "max_pause_ms": 550
+        }
+      },
+      "note": "G3 B 版童聲調整（角色表起始值 +25Hz → +40Hz，約 +20%）"
+    },
+    "小宇": {
+      "code": "xiaoyu",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoYuNeural",
+        "rate": "+12%",
+        "pitch": "+20Hz",
+        "post": {
+          "max_pause_ms": 550
+        }
+      },
+      "note": "G3 B 版童聲調整（角色表起始值 −10Hz → +20Hz）；比小晴低、與小晴不同底聲"
+    },
+    "阿樂叔叔": {
+      "code": "ale",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-YunJheNeural",
+        "rate": "+0%",
+        "pitch": "+0Hz",
+        "post": {
+          "max_pause_ms": 900
+        }
+      },
+      "overrides": [
+        {
+          "match": "a2_c0(0[1-9]|1[0-2])_\\d{2}|a4_c001_\\d{2}|a4_c008_\\d{2}",
+          "set": {
+            "rate": "-6%"
+          },
+          "note": "受影響段（a2_c001–a2_c012、a4_c001、a4_c008）：慢、困惑但咬字清楚；目標 3.3–3.5 字／秒"
+        }
+      ],
+      "alt": {
+        "elevenlabs": {
+          "service": "elevenlabs",
+          "voice_id": "7Sk22fdUzAroSHJkVoXB",
+          "voice_name": "Juin（台灣中年男聲，需 ElevenLabs 付費方案）",
+          "model": "eleven_multilingual_v2",
+          "settings": {
+            "stability": 0.5,
+            "similarity_boost": 0.75,
+            "style": 0.0,
+            "use_speaker_boost": true,
+            "speed": 0.92
+          },
+          "seed": 20261021,
+          "output_format": "mp3_44100_128"
+        }
+      },
+      "note": "一般段 +0%（G4 未量測，G5 依 3.6–3.8 字／秒調整）；受影響段 −6%（G4 量測 −12% 時 3.03／3.23 字／秒，低於目標 3.3–3.5）"
+    },
+    "品安": {
+      "code": "pinan",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoYuNeural",
+        "rate": "-10%",
+        "pitch": "+40Hz",
+        "post": {
+          "max_pause_ms": 550
+        }
+      },
+      "note": "G3 未試音（G4 不需要）；角色表起始值 +15Hz 會和小宇（+20Hz）同底聲又太近，暫訂 +40Hz，G5 前量測確認"
+    },
+    "葉護理師": {
+      "code": "ye",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-YunJheNeural",
+        "rate": "+5%",
+        "pitch": "+12Hz",
+        "post": {
+          "max_pause_ms": 650
+        }
+      },
+      "note": "比阿樂高（+12Hz，F0 約 127 Hz 對阿樂約 100）；語速 +5%（與阿樂一般段 +0% 差 5%；G3 量 −3% 為 3.46、+3% 為 3.94 字／秒）"
+    },
+    "林老師": {
+      "code": "lin",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoChenNeural",
+        "rate": "-5%",
+        "pitch": "-20Hz",
+        "post": {
+          "max_pause_ms": 650
+        }
+      },
+      "loudness_offset_db": {
+        "a5_c001_03": -4.0
+      },
+      "note": "與旁白、小晴同底聲（HsiaoChen）：音高 −20Hz（F0 約 165 Hz，旁白約 200、小晴約 260），語速 −5%（與小晴 +0% 差 5%，目標 4.0 字／秒）"
+    },
+    "陳伯伯": {
+      "code": "chen",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-YunJheNeural",
+        "rate": "-10%",
+        "pitch": "-12Hz",
+        "post": {
+          "max_pause_ms": 650
+        }
+      },
+      "note": "G3 未試音；角色表起始值"
+    },
+    "邀請者": {
+      "code": "inviter",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-YunJheNeural",
+        "rate": "+10%",
+        "pitch": "+25Hz",
+        "post": {
+          "max_pause_ms": 650
+        }
+      },
+      "note": "G3 未試音；角色表起始值 +25Hz；語速改 +10%（與葉護理師 +5% 差 5%）；G5 前以 F0 落在中性區（約 145–175 Hz）為準，必要時改 HsiaoChen −30Hz"
+    },
+    "執勤人員": {
+      "code": "dispatcher",
+      "spec": {
+        "service": "edge",
+        "voice": "zh-TW-HsiaoChenNeural",
+        "rate": "+5%",
+        "pitch": "-8Hz",
+        "post": {
+          "max_pause_ms": 650,
+          "telephone": true
+        }
+      },
+      "note": "G3 未試音；角色表起始值＋電話音色"
+    }
+  }
+}

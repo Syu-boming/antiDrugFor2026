@@ -38,4 +38,19 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   string_up: { pos: [-2.3, 4.2, 16], target: [-2.4, 4.45, 0], fov: 20 },
   /** 題卡模式：鏡頭後拉露出台口 */
   quiz: { pos: [0, 4.6, 36], target: [0, 4.4, 0], fov: 20 },
+
+  // ---- G4 燈籠店（workshop_g4）：阿樂叔叔坐在工作台左端（x≈−2.4），小晴、小宇在右側（安全方位）
+  /** 開幕後的大全景（台口內的整個工作室，景片立起時用） */
+  g4_wide: { pos: [0, 3.6, 27], target: [0, 3.2, 0], fov: 20 },
+  /** 代表鏡頭固定中景：三人同框，下方 20% 留給字幕 */
+  g4_mid: { pos: [-0.35, 2.35, 16.4], target: [-0.35, 2.12, 0], fov: 20 },
+  /** 線落下時微上搖：讓線往上延伸出畫面 */
+  g4_mid_up: { pos: [-0.55, 2.6, 16.4], target: [-0.75, 2.85, 0], fov: 20 },
+  /** 停格前慢推：偏向阿樂叔叔 */
+  g4_push: { pos: [-1.05, 2.35, 14.8], target: [-1.05, 2.1, 0], fov: 20 },
+  /** 閉幕前回到台口全景 */
+  g4_stage: { pos: [0, 4.4, 30], target: [0, 4.2, 0], fov: 20 },
 };
+
+/** 錨點鏡位的預設距離（"anchor:ale.wrist" 這類鏡位，dist 可在 camera.move 的 params 覆寫） */
+export const ANCHOR_CAMERA = { dist: 12.5, dy: 0.15, fov: 20 };

@@ -1,0 +1,23 @@
+{
+ "file": "assets/final/bg-workshop-back_v02.jpg",
+ "size": [
+  2964,
+  1415
+ ],
+ "px_per_unit": 134.74,
+ "world_size_units": [
+  22,
+  10.5
+ ],
+ "original_placed_at_px": [
+  1024,
+  391
+ ],
+ "doorway_px": [
+  2419,
+  2560
+ ],
+ "floor_line_px": 1415,
+ "posts_lightened": 0.4,
+ "note": "下緣＝地板線（世界 y=0）；水平中心＝世界 x=0；層架在世界 y 4.8–7.3（中景畫面上方）"
+}

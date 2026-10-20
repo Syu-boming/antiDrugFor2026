@@ -1,0 +1,127 @@
+{
+ "version": "v04",
+ "rig": "assets/final/rig/ale_rig.json",
+ "coords": "local_px＝部件圖（assets/final/rig/chr-ale_<部件>_v04.png）左上角起算的像素，y 向下；from_pivot_px＝相對該部件樞紐；master_px＝母版座標。",
+ "safety": "只扣手腕背側、手肘外側、膝蓋正面（兒童安全界線第 2 條）；線往上延伸出畫面；不繞脖子、不接頭胸腰；不畫操控者。",
+ "ring": "紙環由劇場程式畫（淡灰紙繩＋深灰邊），環的直徑約為前臂寬的 0.55；扣點在部件邊緣往內，環不會懸空。",
+ "a2_primary": [
+  "wrist_back",
+  "elbow_out",
+  "knee_front"
+ ],
+ "string_direction_hint": {
+  "wrist_back": "往上偏畫面左（危險方位）",
+  "elbow_out": "往上偏畫面左",
+  "knee_front": "近乎垂直往上，走身體外側（畫面右），不經過頭頸"
+ },
+ "points": {
+  "wrist_back": {
+   "part": "forearm_r",
+   "image_id": "rig/chr-ale_forearm-r",
+   "local_px": [
+    69.0,
+    210.0
+   ],
+   "master_px": [
+    291.0,
+    812.0
+   ],
+   "from_pivot_px": [
+    -14.0,
+    157.0
+   ],
+   "zh": "右手腕背側（前臂靠手腕、外側緣往內 9 px）",
+   "primary": true
+  },
+  "elbow_out": {
+   "part": "upper_arm_r",
+   "image_id": "rig/chr-ale_upper-arm-r",
+   "local_px": [
+    39.0,
+    279.0
+   ],
+   "master_px": [
+    261.0,
+    628.0
+   ],
+   "from_pivot_px": [
+    -74.0,
+    203.0
+   ],
+   "zh": "右手肘外側（上臂靠手肘、外側緣往內 10 px；不扣手肘內側）",
+   "primary": true
+  },
+  "knee_front": {
+   "part": "thigh_l",
+   "image_id": "rig/chr-ale_thigh-l",
+   "local_px": [
+    87.5,
+    330.0
+   ],
+   "master_px": [
+    588.5,
+    1236.0
+   ],
+   "from_pivot_px": [
+    -6.5,
+    236.0
+   ],
+   "zh": "左膝蓋正面（大腿下端膝頭中央；坐姿時從桌子右端露出）",
+   "primary": true
+  },
+  "wrist_back_l": {
+   "part": "forearm_l",
+   "image_id": "rig/chr-ale_forearm-l",
+   "local_px": [
+    117.0,
+    223.0
+   ],
+   "master_px": [
+    740.0,
+    822.0
+   ],
+   "from_pivot_px": [
+    46.0,
+    170.0
+   ],
+   "zh": "左手腕背側（外側＝畫面右緣）",
+   "primary": false
+  },
+  "elbow_out_l": {
+   "part": "upper_arm_l",
+   "image_id": "rig/chr-ale_upper-arm-l",
+   "local_px": [
+    118.0,
+    266.0
+   ],
+   "master_px": [
+    716.0,
+    628.0
+   ],
+   "from_pivot_px": [
+    52.0,
+    203.0
+   ],
+   "zh": "左手肘外側",
+   "primary": false
+  },
+  "knee_front_r": {
+   "part": "thigh_r",
+   "image_id": "rig/chr-ale_thigh-r",
+   "local_px": [
+    83.5,
+    330.0
+   ],
+   "master_px": [
+    407.5,
+    1236.0
+   ],
+   "from_pivot_px": [
+    -17.5,
+    236.0
+   ],
+   "zh": "右膝蓋正面（a2 坐姿被桌子擋住）",
+   "primary": false
+  }
+ }
+}

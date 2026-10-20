@@ -14,3 +14,12 @@ tools/.venv/
 review/_capture_test*/
 app/dist/
 __pycache__/
+tools/sf/
+# 可由 tools/ 腳本重建的大型驗收檔（驗收包留在磁碟，不進版本庫）
+review/G4/art/sim/
+review/G4/pack/proj/
+review/G4/pack/capture/probe_bg/
+review/G4/pack/keyframes_4x3/
+review/**/*.mp4
+review/G4/pack/audio/*.wav
+audio/vo/_raw/

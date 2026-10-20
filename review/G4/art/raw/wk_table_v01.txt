@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-7e02-9cf0-00a962178fe8/exec-897b636d-60fd-4b55-b891-efa72206552c.png`
+- Destination: [review/G4/art/raw/wk_table_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_table_v01.png>) — copied unmodified.
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, with verified transparent pixels.

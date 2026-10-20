@@ -199,6 +199,17 @@ def main():
 
     regL, regR = np.array(regL), np.array(regR)
     flagged, worst = [], {"luma": 0, "red": 0}
+    near = []  # 接近上限（每秒 2–3 次）的區域，列給驗收者看
+
+    def where(t):
+        acc = 0.0
+        for c in meta["cueList"]:
+            if t < acc + c["duration"] + 1e-6:
+                return c["id"], round(t - acc, 2)
+            acc += c["duration"]
+        return meta["cueList"][-1]["id"], None
+
+    W0, H0 = meta["width"], meta["height"]
     whole = transitions(times, luma, LUMA_TH, LUMA_DARK)
     wc, wat = max_per_second(whole)
     worst["luma"] = wc
@@ -212,6 +223,10 @@ def main():
                 worst[kind] = max(worst[kind], c)
                 if c > LIMIT_PER_SEC:
                     flagged.append({"type": kind, "region": f"x{gx}_y{gy}", "count_per_sec": c, "window_start": at})
+                elif c >= 2:
+                    cue, ct = where(at) if at is not None else (None, None)
+                    near.append({"type": kind, "region": f"x{gx}_y{gy}", "px": [gx * W0 // GRID_W, gy * H0 // GRID_H, (gx + 1) * W0 // GRID_W, (gy + 1) * H0 // GRID_H],
+                                 "count_per_sec": c, "window_start": at, "cue": cue, "cue_t": ct})
     boundaries, acc = [], 0.0
     for c in meta["cueList"]:
         boundaries.append((acc, c["id"]))
@@ -225,6 +240,9 @@ def main():
         "max_changes_per_sec": worst,
         "flagged": sorted(flagged, key=lambda x: -x["count_per_sec"])[:200],
         "flagged_total": len(flagged),
+        "near_limit": sorted(near, key=lambda x: (-x["count_per_sec"], x["window_start"] or 0))[:200],
+        "near_limit_total": len(near),
+        "near_limit_note": "每秒 2–3 次變化的區域（未超標，但接近上限）；px＝區域在 1920×1080 畫面上的範圍，cue_t＝該 cue 內的秒數。字幕換頁、嘴型與眨眼也會被計入。",
         "mean_luma_range": [round(min(luma), 4), round(max(luma), 4)] if luma else None,
         "max_sat_red_ratio": round(max(red), 5) if red else None,
         "limits": "取樣率決定可偵測的最高變化頻率；字幕換頁也算區域變化。聽感與實際投影的光感無法由此驗證。",
@@ -233,7 +251,7 @@ def main():
     kp = contact_keyframes(out, meta)
     tp = contact_timeline(out, meta)
     pp = plot(out, meta, times, luma, red, boundaries, sorted({f["window_start"] for f in flagged if f["window_start"] is not None}))
-    status = "通過" if report["ok"] else f"有 {len(flagged)} 個區域超標"
+    status = ("通過" if report["ok"] else f"有 {len(flagged)} 個區域超標") + f"；接近上限（每秒 2–3 次）的區域 {len(near)} 個"
     print(f"[analyze] 光敏檢查：{status}（每秒最多變化：明暗 {worst['luma']}、紅色 {worst['red']}；分析 {len(fr)} 格）")
     print(f"[analyze] 接觸表：{kp.name}、{', '.join(p.name for p in tp)}；時間序列：luma_series.csv、{pp.name}；報告：flash_report.json")
 

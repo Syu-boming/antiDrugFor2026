@@ -1,0 +1,24 @@
+{
+  "_說明": "正式素材（assets/final）還沒到時的退路來源。tools/pack.mjs 只在 assets/final 沒有同一個 id 時才打包這些檔。整合代理接上正式素材後，assets/final 的同名 id 會自動優先。",
+  "images": {
+    "rig/ale_v03/torso": "assets/parts/ale_v03/torso.png",
+    "rig/ale_v03/head": "assets/parts/ale_v03/head.png",
+    "rig/ale_v03/upper_arm_r": "assets/parts/ale_v03/upper_arm_r.png",
+    "rig/ale_v03/forearm_r": "assets/parts/ale_v03/forearm_r.png",
+    "rig/ale_v03/hand_r": "assets/parts/ale_v03/hand_r.png",
+    "rig/ale_v03/upper_arm_l": "assets/parts/ale_v03/upper_arm_l.png",
+    "rig/ale_v03/forearm_l": "assets/parts/ale_v03/forearm_l.png",
+    "rig/ale_v03/hand_l": "assets/parts/ale_v03/hand_l.png",
+    "rig/ale_v03/thigh_r": "assets/parts/ale_v03/thigh_r.png",
+    "rig/ale_v03/shin_r": "assets/parts/ale_v03/shin_r.png",
+    "rig/ale_v03/thigh_l": "assets/parts/ale_v03/thigh_l.png",
+    "rig/ale_v03/shin_l": "assets/parts/ale_v03/shin_l.png",
+    "chr-xiaoqing_master": "assets/generated/chr-xiaoqing_master_v04.png",
+    "chr-xiaoqing_pose-reach-worried": "assets/generated/chr-xiaoqing_pose-reach-worried_v04.png",
+    "chr-xiaoyu_master": "assets/generated/chr-xiaoyu_master_v04.png",
+    "chr-xiaoyu_pose-stepback-surprised": "assets/generated/chr-xiaoyu_pose-stepback-surprised_v04.png"
+  },
+  "json": {
+    "rig/ale_v03/parts": "assets/parts/ale_v03/parts.json"
+  }
+}

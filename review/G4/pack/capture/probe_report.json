@@ -1,0 +1,437 @@
+{
+ "rule": {
+  "string_width_px_closeup": ">= 8",
+  "deltaL": ">= 25（投影模擬後 >= 15）",
+  "child_bg_proj_lum": ">= 0.50"
+ },
+ "strings": [
+  {
+   "cue": "a2_c002",
+   "t": 11.415,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 12.48,
+   "deltaL": 11.6,
+   "deltaL_proj": 7.8
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.415,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 12.49,
+   "deltaL": 17.7,
+   "deltaL_proj": 11.4
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.415,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 12.14,
+   "deltaL": 12.1,
+   "deltaL_proj": 8.0
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 13.8,
+   "deltaL": 40.4,
+   "deltaL_proj": 28.0
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 13.86,
+   "deltaL": 41.7,
+   "deltaL_proj": 28.9
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 13.44,
+   "deltaL": 11.0,
+   "deltaL_proj": 7.3
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 13.8,
+   "deltaL": 40.3,
+   "deltaL_proj": 27.9
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 13.86,
+   "deltaL": 41.6,
+   "deltaL_proj": 28.8
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 13.44,
+   "deltaL": 11.0,
+   "deltaL_proj": 7.3
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 16.41,
+   "deltaL": 40.2,
+   "deltaL_proj": 27.8
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 16.48,
+   "deltaL": 39.3,
+   "deltaL_proj": 26.9
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 15.95,
+   "deltaL": 9.4,
+   "deltaL_proj": 6.4
+  },
+  {
+   "cue": "a2_c004",
+   "t": 19.5,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 12.44,
+   "deltaL": 40.2,
+   "deltaL_proj": 27.8
+  },
+  {
+   "cue": "a2_c004",
+   "t": 19.5,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 12.49,
+   "deltaL": 41.6,
+   "deltaL_proj": 28.8
+  },
+  {
+   "cue": "a2_c004",
+   "t": 19.5,
+   "key": "after",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 12.13,
+   "deltaL": 10.3,
+   "deltaL_proj": 6.8
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 12.44,
+   "deltaL": 40.5,
+   "deltaL_proj": 28.0
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 12.49,
+   "deltaL": 42.1,
+   "deltaL_proj": 29.1
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 12.13,
+   "deltaL": 10.3,
+   "deltaL_proj": 6.8
+  }
+ ],
+ "child_background": [
+  {
+   "cue": "a0_c001",
+   "t": 5.3,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "region": [
+    1105,
+    807,
+    1194,
+    874
+   ],
+   "proj_lum_median": 0.42,
+   "proj_lum_p10": 0.336
+  },
+  {
+   "cue": "a0_c001",
+   "t": 5.3,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "region": [
+    1270,
+    734,
+    1347,
+    840
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.423
+  },
+  {
+   "cue": "a0_c001",
+   "t": 10.6,
+   "key": "after",
+   "actor": "xiaoqing",
+   "region": [
+    1280,
+    607,
+    1420,
+    831
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.542
+  },
+  {
+   "cue": "a0_c001",
+   "t": 10.6,
+   "key": "after",
+   "actor": "xiaoyu",
+   "region": [
+    1544,
+    613,
+    1661,
+    816
+   ],
+   "proj_lum_median": 0.566,
+   "proj_lum_p10": 0.468
+  },
+  {
+   "cue": "a2_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoqing",
+   "region": [
+    1280,
+    607,
+    1420,
+    831
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.542
+  },
+  {
+   "cue": "a2_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoyu",
+   "region": [
+    1544,
+    614,
+    1661,
+    816
+   ],
+   "proj_lum_median": 0.566,
+   "proj_lum_p10": 0.468
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.415,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "region": [
+    1290,
+    626,
+    1431,
+    848
+   ],
+   "proj_lum_median": 0.57,
+   "proj_lum_p10": 0.479
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.415,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "region": [
+    1553,
+    631,
+    1670,
+    833
+   ],
+   "proj_lum_median": 0.556,
+   "proj_lum_p10": 0.463
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "after",
+   "actor": "xiaoqing",
+   "region": [
+    1466,
+    615,
+    1624,
+    860
+   ],
+   "proj_lum_median": 0.569,
+   "proj_lum_p10": 0.431
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "after",
+   "actor": "xiaoyu",
+   "region": [
+    1744,
+    616,
+    1874,
+    840
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.464
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoqing",
+   "region": [
+    1465,
+    610,
+    1621,
+    859
+   ],
+   "proj_lum_median": 0.569,
+   "proj_lum_p10": 0.433
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoyu",
+   "region": [
+    1744,
+    617,
+    1874,
+    841
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.463
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "region": [
+    1865,
+    418,
+    1920,
+    714
+   ],
+   "proj_lum_median": 0.573,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a2_c004",
+   "t": 19.5,
+   "key": "after",
+   "actor": "xiaoqing",
+   "region": [
+    1280,
+    611,
+    1421,
+    832
+   ],
+   "proj_lum_median": 0.57,
+   "proj_lum_p10": 0.515
+  },
+  {
+   "cue": "a2_c004",
+   "t": 19.5,
+   "key": "after",
+   "actor": "xiaoyu",
+   "region": [
+    1543,
+    612,
+    1659,
+    816
+   ],
+   "proj_lum_median": 0.556,
+   "proj_lum_p10": 0.466
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoqing",
+   "region": [
+    1280,
+    607,
+    1420,
+    831
+   ],
+   "proj_lum_median": 0.571,
+   "proj_lum_p10": 0.535
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoyu",
+   "region": [
+    1544,
+    614,
+    1661,
+    816
+   ],
+   "proj_lum_median": 0.556,
+   "proj_lum_p10": 0.466
+  }
+ ],
+ "summary": {
+  "min_string_width_px": 12.13,
+  "min_deltaL": 9.4,
+  "min_deltaL_proj": 6.4,
+  "min_child_bg_median": 0.42,
+  "min_child_bg_p10": 0.336
+ },
+ "limits": "ΔL* 以線兩側緊鄰像素計（可能是皮膚、袖口或背景）；實際投影無法由此驗證。"
+}

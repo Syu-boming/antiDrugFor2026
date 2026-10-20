@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15ac2-dc9e-7392-baaf-b4c79a31474f/exec-e46d401a-48ea-4597-b098-3860bbf4888c.png`
+- Destination: [review/G4/art/raw/wk_table_v02.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_table_v02.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte verified.

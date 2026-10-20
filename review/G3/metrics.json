@@ -1,0 +1,3318 @@
+{
+ "samples": {
+  "A_ale_a2_c002_01_bill-v2-s0.90.wav": {
+   "version": "A",
+   "role": "ale",
+   "role_zh": "阿樂叔叔",
+   "line": "a2_c002_01",
+   "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "label": "bill-v2-s0.90",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "pqHfZKP75CvOlQylNhV4",
+    "voice_name": "bill",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 0.9
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 0,
+   "raw_tail_silence_ms": 275,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 6.39,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_ale_a2_c002_01_bill-v2-s0.90.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.25,
+   "speech_seconds": 4.89,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -1.9,
+   "lra": 0.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "han_chars": 14,
+   "rate_cps": 2.86,
+   "rate_cps_net": 3.83,
+   "pauses_ms": [
+    490,
+    740
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 131.4,
+   "f0_p10": 92.4,
+   "f0_p90": 227.4,
+   "voiced_ratio": 0.53,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "咦?我想回收!手怎麼跑到旁邊去了?",
+      "hyp_trad": "咦我想回收手怎麼跑到旁邊去了",
+      "cer": 0.143,
+      "per": 0.143,
+      "diffs": [
+       {
+        "ref": "揮手",
+        "hyp": "回收",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "咦?我想回收?手怎麼跑到旁邊去了?",
+      "hyp_trad": "咦我想回收手怎麼跑到旁邊去了",
+      "cer": 0.143,
+      "per": 0.143,
+      "diffs": [
+       {
+        "ref": "揮手",
+        "hyp": "回收",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     }
+    },
+    "per_min": 0.143,
+    "cer_min": 0.143,
+    "both_models_diff": [
+     "揮手"
+    ],
+    "verdict": "需複查：兩個模型都在「揮手」出現非同音差異"
+   }
+  },
+  "A_ale_a2_c002_01_brian-v2-s0.90.wav": {
+   "version": "A",
+   "role": "ale",
+   "role_zh": "阿樂叔叔",
+   "line": "a2_c002_01",
+   "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "label": "brian-v2-s0.90",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "nPczCjzI2devNBz1zQrb",
+    "voice_name": "brian",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 0.9
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 227,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.67,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_ale_a2_c002_01_brian-v2-s0.90.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.87,
+   "speech_seconds": 4.51,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.3,
+   "lra": 1.3,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 240,
+   "han_chars": 14,
+   "rate_cps": 3.1,
+   "rate_cps_net": 3.41,
+   "pauses_ms": [
+    410
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 108.7,
+   "f0_p10": 82.9,
+   "f0_p90": 190.2,
+   "voiced_ratio": 0.59,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "一,我想回收威爾,收怎麼拋到旁邊去了?",
+      "hyp_trad": "一我想回收威爾收怎麼拋到旁邊去了",
+      "cer": 0.5,
+      "per": 0.5,
+      "diffs": [
+       {
+        "ref": "咦",
+        "hyp": "一",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "揮手手",
+        "hyp": "回收威爾收",
+        "kind": "字不同"
+       },
+       {
+        "ref": "跑",
+        "hyp": "拋",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "咦,我想回收維爾,收怎麼拋到旁邊去了?",
+      "hyp_trad": "咦我想回收維爾收怎麼拋到旁邊去了",
+      "cer": 0.429,
+      "per": 0.429,
+      "diffs": [
+       {
+        "ref": "揮手手",
+        "hyp": "回收維爾收",
+        "kind": "字不同"
+       },
+       {
+        "ref": "跑",
+        "hyp": "拋",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     }
+    },
+    "per_min": 0.429,
+    "cer_min": 0.429,
+    "both_models_diff": [
+     "揮手手",
+     "跑"
+    ],
+    "verdict": "需複查：兩個模型都在「揮手手、跑」出現非同音差異"
+   }
+  },
+  "A_narrator_a2_c004_02_lily-v2.wav": {
+   "version": "A",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "lily-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "pFZP5JQG7iQjIQuC4Bku",
+    "voice_name": "lily",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 20,
+   "raw_tail_silence_ms": 271,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.99,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_narrator_a2_c004_02_lily-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 10.11,
+   "speech_seconds": 9.74,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.9,
+   "rate_cps_net": 4.4,
+   "pauses_ms": [
+    510,
+    590
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 186.6,
+   "f0_p10": 141.8,
+   "f0_p90": 268.3,
+   "voiced_ratio": 0.54,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻, 毒品可能讓人的偷腦和身體受到影響,不停釋歡, 人不會真的變成喪事。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的偷腦和身體受到影響不停釋歡人不會真的變成喪事",
+      "cer": 0.184,
+      "per": 0.158,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "頭",
+        "hyp": "偷",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽使喚",
+        "hyp": "停釋歡",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "屍",
+        "hyp": "事",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "使喚",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使歡,人不會真的變成喪失。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使歡人不會真的變成喪失",
+      "cer": 0.132,
+      "per": 0.079,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽",
+        "hyp": "停",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "喚",
+        "hyp": "歡",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "屍",
+        "hyp": "失",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "同音轉寫（讀音一致）"
+       },
+       {
+        "word": "使喚",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.079,
+    "cer_min": 0.132,
+    "both_models_diff": [
+     "線是"
+    ],
+    "verdict": "需複查：兩個模型都在「線是」出現非同音差異"
+   }
+  },
+  "A_narrator_a2_c004_02_sarah-v2.wav": {
+   "version": "A",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "sarah-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "EXAVITQu4vr4xnSDxMaL",
+    "voice_name": "sarah",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 0,
+   "raw_tail_silence_ms": 190,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/A_narrator_a2_c004_02_sarah-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 9.05,
+   "speech_seconds": 8.69,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.8,
+   "lra": 2.1,
+   "clipped_samples": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 4.37,
+   "rate_cps_net": 4.37,
+   "pauses_ms": [
+    210
+   ],
+   "pause_count_ge250": 0,
+   "f0_median": 197.0,
+   "f0_p10": 167.8,
+   "f0_p90": 261.7,
+   "voiced_ratio": 0.62,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停時緩,人不會真的變成喪失。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停時緩人不會真的變成喪失",
+      "cer": 0.158,
+      "per": 0.105,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽使喚",
+        "hyp": "停時緩",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "屍",
+        "hyp": "失",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "同音轉寫（讀音一致）"
+       },
+       {
+        "word": "使喚",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使喚,人不會真的變成喪食。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪食",
+      "cer": 0.105,
+      "per": 0.079,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽",
+        "hyp": "停",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "屍",
+        "hyp": "食",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.079,
+    "cer_min": 0.105,
+    "both_models_diff": [
+     "線是"
+    ],
+    "verdict": "需複查：兩個模型都在「線是」出現非同音差異"
+   }
+  },
+  "A_narrator_a2_c004_02_sarah-v3.wav": {
+   "version": "A",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "sarah-v3",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "EXAVITQu4vr4xnSDxMaL",
+    "voice_name": "sarah",
+    "model": "eleven_v3",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128",
+    "language_code": "zh"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 0,
+   "raw_tail_silence_ms": 0,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/A_narrator_a2_c004_02_sarah-v3.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 10.05,
+   "speech_seconds": 9.69,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -3.5,
+   "lra": 2.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.92,
+   "rate_cps_net": 4.62,
+   "pauses_ms": [
+    630,
+    350,
+    490
+   ],
+   "pause_count_ge250": 3,
+   "f0_median": 203.1,
+   "f0_p10": 170.0,
+   "f0_p90": 268.3,
+   "voiced_ratio": 0.62,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些線是故事的比喻。 毒品可能讓人的頭腦和身體受到影響,不聽使寬。 人不會真的變成喪屍。",
+      "hyp_trad": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使寬人不會真的變成喪屍",
+      "cer": 0.026,
+      "per": 0.026,
+      "diffs": [
+       {
+        "ref": "喚",
+        "hyp": "寬",
+        "kind": "字不同"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些線是故事的比喻,毒品可能讓人的頭腦和身體受到影響,不聽使寬,人不會真的變成喪屍。",
+      "hyp_trad": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使寬人不會真的變成喪屍",
+      "cer": 0.026,
+      "per": 0.026,
+      "diffs": [
+       {
+        "ref": "喚",
+        "hyp": "寬",
+        "kind": "字不同"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.026,
+    "cer_min": 0.026,
+    "both_models_diff": [
+     "喚"
+    ],
+    "verdict": "需複查：兩個模型都在「喚」出現非同音差異"
+   }
+  },
+  "A_xiaoqing_a1_c004_03_jessica-v2.wav": {
+   "version": "A",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a1_c004_03",
+   "text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "label": "jessica-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "cgSgspJ2msm6clMCkdW9",
+    "voice_name": "jessica",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 80,
+   "raw_tail_silence_ms": 242,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.52,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_xiaoqing_a1_c004_03_jessica-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.67,
+   "speech_seconds": 3.3,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.6,
+   "lra": 1.1,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 4.55,
+   "rate_cps_net": 4.55,
+   "pauses_ms": [],
+   "pause_count_ge250": 0,
+   "f0_median": 194.6,
+   "f0_p10": 160.6,
+   "f0_p90": 267.5,
+   "voiced_ratio": 0.67,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,文氣來想,都不能證明安全。",
+      "hyp_trad": "包裝漂亮文氣來想都不能證明安全",
+      "cer": 0.2,
+      "per": 0.133,
+      "diffs": [
+       {
+        "ref": "聞起",
+        "hyp": "文氣",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "香",
+        "hyp": "想",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,文氣來想都不能證明安全。",
+      "hyp_trad": "包裝漂亮文氣來想都不能證明安全",
+      "cer": 0.2,
+      "per": 0.133,
+      "diffs": [
+       {
+        "ref": "聞起",
+        "hyp": "文氣",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "香",
+        "hyp": "想",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.133,
+    "cer_min": 0.2,
+    "both_models_diff": [
+     "聞起",
+     "香"
+    ],
+    "verdict": "需複查：兩個模型都在「聞起、香」出現非同音差異"
+   }
+  },
+  "A_xiaoqing_a2_c002_02_jessica-v2.wav": {
+   "version": "A",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a2_c002_02",
+   "text": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "label": "jessica-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "cgSgspJ2msm6clMCkdW9",
+    "voice_name": "jessica",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 273,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 3.8,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_xiaoqing_a2_c002_02_jessica-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 1.48,
+   "speech_seconds": 1.11,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 4,
+   "rate_cps": 3.6,
+   "rate_cps_net": 3.6,
+   "pauses_ms": [],
+   "pause_count_ge250": 0,
+   "f0_median": 261.1,
+   "f0_p10": 176.1,
+   "f0_p90": 396.3,
+   "voiced_ratio": 0.45,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔小心!",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心!",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "A_xiaoyu_a3_c002_02_laura-v2.wav": {
+   "version": "A",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "line": "a3_c002_02",
+   "text": "不用，我不試。我先離開。",
+   "synth_text": "不用，我不試。我先離開。",
+   "label": "laura-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+    "voice_name": "laura",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 90,
+   "raw_tail_silence_ms": 171,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 5.2,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_xiaoyu_a3_c002_02_laura-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 2.57,
+   "speech_seconds": 2.2,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 4.09,
+   "rate_cps_net": 4.66,
+   "pauses_ms": [
+    270
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 161.1,
+   "f0_p10": 136.1,
+   "f0_p90": 280.3,
+   "voiced_ratio": 0.5,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用 我不是 我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是,我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.111,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "A_ye_a2_c012_01_will-v2.wav": {
+   "version": "A",
+   "role": "ye",
+   "role_zh": "葉護理師",
+   "line": "a2_c012_01",
+   "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "synth_text": "阿勒，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "label": "will-v2",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "bIHbv24MWmeRgasZH58o",
+    "voice_name": "will",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.0
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 30,
+   "raw_tail_silence_ms": 248,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 6.3,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_ye_a2_c012_01_will-v2.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.9,
+   "speech_seconds": 3.54,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 0.8,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 240,
+   "han_chars": 17,
+   "rate_cps": 4.8,
+   "rate_cps_net": 5.47,
+   "pauses_ms": [
+    430
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 107.0,
+   "f0_p10": 88.8,
+   "f0_p90": 143.1,
+   "voiced_ratio": 0.54,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿勒,你哪裡不舒服?我陪你去看一聲,好嗎?",
+      "hyp_trad": "阿勒你哪裡不舒服我陪你去看一聲好嗎",
+      "cer": 0.176,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "樂",
+        "hyp": "勒",
+        "kind": "同音字（讀音一致）"
+       },
+       {
+        "ref": "醫生",
+        "hyp": "一聲",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "同音轉寫（讀音一致）"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿樂,你哪裡不舒服?我陪你去看醫生,好嗎?",
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "A_zhezhe_a2_c001_03_laura-v3.wav": {
+   "version": "A",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "line": "a2_c001_03",
+   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "label": "laura-v3",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "FGY2WhTYpPnrIDTdsKH5",
+    "voice_name": "laura",
+    "model": "eleven_v3",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128",
+    "language_code": "zh"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 20,
+   "raw_tail_silence_ms": 0,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": -0.28,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/A_zhezhe_a2_c001_03_laura-v3.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 6.67,
+   "speech_seconds": 6.3,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "lra": 2.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 22,
+   "rate_cps": 3.49,
+   "rate_cps_net": 4.17,
+   "pauses_ms": [
+    340,
+    690
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 209.5,
+   "f0_p10": 162.0,
+   "f0_p90": 274.4,
+   "voiced_ratio": 0.55,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看, 收縮的手上是不是多了什麼?看到的舉手!",
+      "hyp_trad": "大家仔細看收縮的手上是不是多了什麼看到的舉手",
+      "cer": 0.091,
+      "per": 0.091,
+      "diffs": [
+       {
+        "ref": "叔叔",
+        "hyp": "收縮",
+        "kind": "字不同"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,收鼠的手上是不是多了什麼?看到的舉手!",
+      "hyp_trad": "大家仔細看收鼠的手上是不是多了什麼看到的舉手",
+      "cer": 0.091,
+      "per": 0.091,
+      "diffs": [
+       {
+        "ref": "叔叔",
+        "hyp": "收鼠",
+        "kind": "字不同"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.091,
+    "cer_min": 0.091,
+    "both_models_diff": [
+     "叔叔"
+    ],
+    "verdict": "需複查：兩個模型都在「叔叔」出現非同音差異"
+   }
+  },
+  "B_xiaoqing_a1_c004_03_hsiaochen+40Hz.wav": {
+   "version": "B",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a1_c004_03",
+   "text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "label": "hsiaochen+40Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+40Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 200,
+   "raw_tail_silence_ms": 802,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/B_xiaoqing_a1_c004_03_hsiaochen+40Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.0,
+   "speech_seconds": 3.63,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.3,
+   "lra": 1.4,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 4.13,
+   "rate_cps_net": 4.45,
+   "pauses_ms": [
+    210,
+    260
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 259.5,
+   "f0_p10": 213.0,
+   "f0_p90": 366.4,
+   "voiced_ratio": 0.65,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "B_xiaoqing_a2_c002_02_hsiaochen+40Hz.wav": {
+   "version": "B",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a2_c002_02",
+   "text": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "label": "hsiaochen+40Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+40Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 190,
+   "raw_tail_silence_ms": 740,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 2.5,
+    "normalization_type": null,
+    "limited": null
+   },
+   "file": "review/G3/samples/B_xiaoqing_a2_c002_02_hsiaochen+40Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 1.72,
+   "speech_seconds": 1.35,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.6,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 4,
+   "rate_cps": 2.96,
+   "rate_cps_net": 2.96,
+   "pauses_ms": [
+    240
+   ],
+   "pause_count_ge250": 0,
+   "f0_median": 363.3,
+   "f0_p10": 211.3,
+   "f0_p90": 384.3,
+   "voiced_ratio": 0.36,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "B_xiaoyu_a3_c002_02_hsiaoyu+20Hz.wav": {
+   "version": "B",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "line": "a3_c002_02",
+   "text": "不用，我不試。我先離開。",
+   "synth_text": "不用，我不試。我先離開。",
+   "label": "hsiaoyu+20Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+5%",
+    "pitch": "+20Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 170,
+   "raw_tail_silence_ms": 778,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.87,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/B_xiaoyu_a3_c002_02_hsiaoyu+20Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.67,
+   "speech_seconds": 3.3,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.3,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 2.73,
+   "rate_cps_net": 3.8,
+   "pauses_ms": [
+    930
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 227.0,
+   "f0_p10": 186.7,
+   "f0_p90": 270.7,
+   "voiced_ratio": 0.48,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。 我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.111,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "B_zhezhe_a2_c001_03_hsiaoyu+55Hz.wav": {
+   "version": "B",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "line": "a2_c001_03",
+   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "label": "hsiaoyu+55Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+55Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 150,
+   "raw_tail_silence_ms": 712,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.03,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/B_zhezhe_a2_c001_03_hsiaoyu+55Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 6.06,
+   "speech_seconds": 5.69,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 22,
+   "rate_cps": 3.87,
+   "rate_cps_net": 4.48,
+   "pauses_ms": [
+    780
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 270.8,
+   "f0_p10": 207.7,
+   "f0_p90": 357.2,
+   "voiced_ratio": 0.52,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上,是不是多了什麼?看到的舉手",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上是不是多了什麼?看到的舉手。",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "B_zhezhe_a2_c001_03_jessica-v2-s1.10.wav": {
+   "version": "B",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "line": "a2_c001_03",
+   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "label": "jessica-v2-s1.10",
+   "spec": {
+    "service": "elevenlabs",
+    "voice_id": "cgSgspJ2msm6clMCkdW9",
+    "voice_name": "jessica",
+    "model": "eleven_multilingual_v2",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": 0.0,
+     "use_speaker_boost": true,
+     "speed": 1.1
+    },
+    "seed": 20261021,
+    "output_format": "mp3_44100_128"
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 80,
+   "raw_tail_silence_ms": 221,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.4,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/B_zhezhe_a2_c001_03_jessica-v2-s1.10.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.27,
+   "speech_seconds": 4.91,
+   "integrated_lufs": -18.2,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.4,
+   "clipped_samples": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "han_chars": 22,
+   "rate_cps": 4.48,
+   "rate_cps_net": 5.39,
+   "pauses_ms": [
+    290,
+    170,
+    540
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 217.9,
+   "f0_p10": 159.2,
+   "f0_p90": 312.3,
+   "voiced_ratio": 0.52,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手傷是不是多了什麼?看到的巨獸。",
+      "hyp_trad": "大家仔細看叔叔的手傷是不是多了什麼看到的巨獸",
+      "cer": 0.136,
+      "per": 0.136,
+      "diffs": [
+       {
+        "ref": "上",
+        "hyp": "傷",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "舉手",
+        "hyp": "巨獸",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上是不是多了什麼?看到的巨獸。",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的巨獸",
+      "cer": 0.091,
+      "per": 0.091,
+      "diffs": [
+       {
+        "ref": "舉手",
+        "hyp": "巨獸",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.091,
+    "cer_min": 0.091,
+    "both_models_diff": [
+     "舉手"
+    ],
+    "verdict": "需複查：兩個模型都在「舉手」出現非同音差異"
+   }
+  },
+  "C_ale_a2_c002_01_yunjhe-15%.wav": {
+   "version": "C",
+   "role": "ale",
+   "role_zh": "阿樂叔叔",
+   "line": "a2_c002_01",
+   "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "label": "yunjhe-15%",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-15%",
+    "pitch": "+0Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 280,
+   "raw_tail_silence_ms": 928,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 4.69,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/C_ale_a2_c002_01_yunjhe-15%.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.85,
+   "speech_seconds": 4.48,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.6,
+   "lra": 1.8,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 14,
+   "rate_cps": 3.12,
+   "rate_cps_net": 4.71,
+   "pauses_ms": [
+    1250,
+    260
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 105.9,
+   "f0_p10": 86.5,
+   "f0_p90": 154.7,
+   "voiced_ratio": 0.38,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "1. 我想揮手,手怎麼跑到旁邊去了?",
+      "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.071,
+      "per": 0.071,
+      "diffs": [
+       {
+        "ref": "咦",
+        "hyp": "一",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "1.我想揮手,手怎麼跑到旁邊去了?",
+      "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.071,
+      "per": 0.071,
+      "diffs": [
+       {
+        "ref": "咦",
+        "hyp": "一",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     }
+    },
+    "per_min": 0.071,
+    "cer_min": 0.071,
+    "both_models_diff": [
+     "咦"
+    ],
+    "verdict": "需複查：兩個模型都在「咦」出現非同音差異"
+   }
+  },
+  "C_lin_a3_c003_02_hsiaochen-20Hz.wav": {
+   "version": "C",
+   "role": "lin",
+   "role_zh": "林老師",
+   "line": "a3_c003_02",
+   "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+   "synth_text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+   "label": "hsiaochen-20Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "-20Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 180,
+   "raw_tail_silence_ms": 850,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/C_lin_a3_c003_02_hsiaochen-20Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.34,
+   "speech_seconds": 4.97,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -3.5,
+   "lra": 0.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 20,
+   "rate_cps": 4.02,
+   "rate_cps_net": 4.91,
+   "pauses_ms": [
+    900
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 165.1,
+   "f0_p10": 144.6,
+   "f0_p90": 245.9,
+   "voiced_ratio": 0.53,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp": "謝謝你們告訴我。 老師會請警衛伯伯和警察處理。",
+      "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "C_narrator_a2_c004_02_hsiaochen-10%-gap1300.wav": {
+   "version": "C",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "hsiaochen-10%-gap1300",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-10%",
+    "pitch": "+0Hz",
+    "post": {
+     "sentence_gap_ms": 1300
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/C_narrator_a2_c004_02_hsiaochen-10%-gap1300.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 11.77,
+   "speech_seconds": 11.4,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -3.4,
+   "lra": 3.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.33,
+   "rate_cps_net": 4.58,
+   "pauses_ms": [
+    1410,
+    280,
+    1420
+   ],
+   "pause_count_ge250": 3,
+   "f0_median": 196.2,
+   "f0_p10": 159.7,
+   "f0_p90": 278.2,
+   "voiced_ratio": 0.5,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍",
+      "cer": 0.079,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽",
+        "hyp": "停",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現世故事的比喻。毒品可能讓人的頭腦和身體受到影響,不聽使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現世故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍",
+      "cer": 0.053,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現世",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.053,
+    "both_models_diff": [],
+    "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+   }
+  },
+  "C_narrator_a2_c004_02_hsiaochen-5%.wav": {
+   "version": "C",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "hsiaochen-5%",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-5%",
+    "pitch": "+0Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 200,
+   "raw_tail_silence_ms": 864,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/C_narrator_a2_c004_02_hsiaochen-5%.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 10.49,
+   "speech_seconds": 10.12,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -3.5,
+   "lra": 1.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.75,
+   "rate_cps_net": 4.84,
+   "pauses_ms": [
+    990,
+    270,
+    1010
+   ],
+   "pause_count_ge250": 3,
+   "f0_median": 197.6,
+   "f0_p10": 161.9,
+   "f0_p90": 278.7,
+   "voiced_ratio": 0.54,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍",
+      "cer": 0.079,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽",
+        "hyp": "停",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現世故事的比喻。毒品可能讓人的頭腦和身體受到影響,不聽使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現世故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍",
+      "cer": 0.053,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現世",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.053,
+    "both_models_diff": [],
+    "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+   }
+  },
+  "C_xiaoqing_a1_c004_03_hsiaochen+25Hz.wav": {
+   "version": "C",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a1_c004_03",
+   "text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "label": "hsiaochen+25Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+25Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 200,
+   "raw_tail_silence_ms": 802,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/C_xiaoqing_a1_c004_03_hsiaochen+25Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.0,
+   "speech_seconds": 3.63,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.1,
+   "lra": 1.4,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 4.13,
+   "rate_cps_net": 4.46,
+   "pauses_ms": [
+    210,
+    270
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 236.8,
+   "f0_p10": 195.4,
+   "f0_p90": 335.5,
+   "voiced_ratio": 0.65,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "C_xiaoqing_a2_c002_02_hsiaochen+25Hz.wav": {
+   "version": "C",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a2_c002_02",
+   "text": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "label": "hsiaochen+25Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+25Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 190,
+   "raw_tail_silence_ms": 750,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 2.6,
+    "normalization_type": null,
+    "limited": null
+   },
+   "file": "review/G3/samples/C_xiaoqing_a2_c002_02_hsiaochen+25Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 1.71,
+   "speech_seconds": 1.34,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.5,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 4,
+   "rate_cps": 2.99,
+   "rate_cps_net": 2.99,
+   "pauses_ms": [
+    240
+   ],
+   "pause_count_ge250": 0,
+   "f0_median": 334.2,
+   "f0_p10": 197.9,
+   "f0_p90": 353.1,
+   "voiced_ratio": 0.35,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "C_xiaoyu_a3_c002_02_hsiaoyu+5%-10Hz.wav": {
+   "version": "C",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "line": "a3_c002_02",
+   "text": "不用，我不試。我先離開。",
+   "synth_text": "不用，我不試。我先離開。",
+   "label": "hsiaoyu+5%-10Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+5%",
+    "pitch": "-10Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 160,
+   "raw_tail_silence_ms": 788,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.95,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/C_xiaoyu_a3_c002_02_hsiaoyu+5%-10Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.67,
+   "speech_seconds": 3.3,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.2,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 2.73,
+   "rate_cps_net": 3.8,
+   "pauses_ms": [
+    930
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 186.8,
+   "f0_p10": 154.9,
+   "f0_p90": 222.3,
+   "voiced_ratio": 0.49,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.111,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "C_ye_a2_c012_01_yunjhe-3%+12Hz.wav": {
+   "version": "C",
+   "role": "ye",
+   "role_zh": "葉護理師",
+   "line": "a2_c012_01",
+   "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "synth_text": "阿勒，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "label": "yunjhe-3%+12Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-3%",
+    "pitch": "+12Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 240,
+   "raw_tail_silence_ms": 840,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.24,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/C_ye_a2_c012_01_yunjhe-3%+12Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.29,
+   "speech_seconds": 4.92,
+   "integrated_lufs": -18.2,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 17,
+   "rate_cps": 3.46,
+   "rate_cps_net": 4.99,
+   "pauses_ms": [
+    380,
+    1130,
+    240
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 128.3,
+   "f0_p10": 91.2,
+   "f0_p90": 166.3,
+   "voiced_ratio": 0.41,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿樂,你哪裡不舒服? 我陪你去看醫生,好嗎?",
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿樂,你哪裡不舒服?我陪你去看醫生,好嗎?",
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "C_zhezhe_a2_c001_03_hsiaoyu+10%+35Hz.wav": {
+   "version": "C",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "line": "a2_c001_03",
+   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "label": "hsiaoyu+10%+35Hz",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+10%",
+    "pitch": "+35Hz",
+    "post": {}
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 160,
+   "raw_tail_silence_ms": 732,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.21,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/C_zhezhe_a2_c001_03_hsiaoyu+10%+35Hz.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 6.15,
+   "speech_seconds": 5.78,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 22,
+   "rate_cps": 3.81,
+   "rate_cps_net": 4.42,
+   "pauses_ms": [
+    800
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 243.5,
+   "f0_p10": 188.8,
+   "f0_p90": 322.8,
+   "voiced_ratio": 0.51,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上,是不是多了什麼?看到的舉手",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上,是不是多了什麼?看到的舉手。",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_ale_a2_c002_01_yunjhe-6%-cap900.wav": {
+   "version": "P",
+   "role": "ale",
+   "role_zh": "阿樂叔叔",
+   "line": "a2_c002_01",
+   "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+   "label": "yunjhe-6%-cap900",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "post": {
+     "max_pause_ms": 900
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 250,
+   "raw_tail_silence_ms": 826,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.05,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/P_ale_a2_c002_01_yunjhe-6%-cap900.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.26,
+   "speech_seconds": 3.89,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.6,
+   "lra": 1.2,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 14,
+   "rate_cps": 3.6,
+   "rate_cps_net": 4.78,
+   "pauses_ms": [
+    960,
+    230
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 109.0,
+   "f0_p10": 86.9,
+   "f0_p90": 158.3,
+   "voiced_ratio": 0.37,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "1. 我想揮手,手怎麼跑到旁邊去了?",
+      "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.071,
+      "per": 0.071,
+      "diffs": [
+       {
+        "ref": "咦",
+        "hyp": "一",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "hyp": "1.我想揮手,手怎麼跑到旁邊去了?",
+      "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.071,
+      "per": 0.071,
+      "diffs": [
+       {
+        "ref": "咦",
+        "hyp": "一",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": []
+     }
+    },
+    "per_min": 0.071,
+    "cer_min": 0.071,
+    "both_models_diff": [
+     "咦"
+    ],
+    "verdict": "需複查：兩個模型都在「咦」出現非同音差異"
+   }
+  },
+  "P_lin_a3_c003_02_hsiaochen-5%-20Hz-cap650.wav": {
+   "version": "P",
+   "role": "lin",
+   "role_zh": "林老師",
+   "line": "a3_c003_02",
+   "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+   "synth_text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+   "label": "hsiaochen-5%-20Hz-cap650",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-5%",
+    "pitch": "-20Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 190,
+   "raw_tail_silence_ms": 902,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/P_lin_a3_c003_02_hsiaochen-5%-20Hz-cap650.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.32,
+   "speech_seconds": 4.95,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -4.0,
+   "lra": 1.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 20,
+   "rate_cps": 4.04,
+   "rate_cps_net": 4.68,
+   "pauses_ms": [
+    680
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 164.3,
+   "f0_p10": 144.5,
+   "f0_p90": 243.7,
+   "voiced_ratio": 0.56,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_narrator_a2_c004_02_hsiaochen-8%-gap1300.wav": {
+   "version": "P",
+   "role": "narrator",
+   "role_zh": "旁白",
+   "line": "a2_c004_02",
+   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "label": "hsiaochen-8%-gap1300",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-8%",
+    "pitch": "+0Hz",
+    "post": {
+     "sentence_gap_ms": 1300
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/P_narrator_a2_c004_02_hsiaochen-8%-gap1300.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 11.57,
+   "speech_seconds": 11.2,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.4,
+   "lra": 2.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.39,
+   "rate_cps_net": 4.7,
+   "pauses_ms": [
+    1410,
+    280,
+    1420
+   ],
+   "pause_count_ge250": 3,
+   "f0_median": 197.3,
+   "f0_p10": 161.8,
+   "f0_p90": 278.9,
+   "voiced_ratio": 0.5,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍",
+      "cer": 0.079,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現實",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       },
+       {
+        "ref": "聽",
+        "hyp": "停",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "hyp": "這些現世故事的比喻。毒品可能讓人的頭腦和身體受到影響,不聽使喚。人不會真的變成喪屍。",
+      "hyp_trad": "這些現世故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍",
+      "cer": 0.053,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "線是",
+        "hyp": "現世",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "和",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "喪屍",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "使喚",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不會",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不聽",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.053,
+    "both_models_diff": [],
+    "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+   }
+  },
+  "P_xiaoqing_a1_c004_03_hsiaochen+40Hz-cap550.wav": {
+   "version": "P",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a1_c004_03",
+   "text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "label": "hsiaochen+40Hz-cap550",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+40Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 200,
+   "raw_tail_silence_ms": 802,
+   "master": {
+    "method": "loudnorm_two_pass",
+    "gain_db": null,
+    "normalization_type": "linear",
+    "limited": null
+   },
+   "file": "review/G3/samples/P_xiaoqing_a1_c004_03_hsiaochen+40Hz-cap550.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.0,
+   "speech_seconds": 3.63,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.3,
+   "lra": 1.4,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 4.13,
+   "rate_cps_net": 4.45,
+   "pauses_ms": [
+    210,
+    260
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 259.5,
+   "f0_p10": 213.0,
+   "f0_p90": 366.4,
+   "voiced_ratio": 0.65,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+      "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+      "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不能",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_xiaoqing_a2_c002_02_hsiaochen+40Hz-cap550.wav": {
+   "version": "P",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "line": "a2_c002_02",
+   "text": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "label": "hsiaochen+40Hz-cap550",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+40Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 190,
+   "raw_tail_silence_ms": 740,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 2.5,
+    "normalization_type": null,
+    "limited": null
+   },
+   "file": "review/G3/samples/P_xiaoqing_a2_c002_02_hsiaochen+40Hz-cap550.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 1.72,
+   "speech_seconds": 1.35,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.6,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 4,
+   "rate_cps": 2.96,
+   "rate_cps_net": 2.96,
+   "pauses_ms": [
+    240
+   ],
+   "pause_count_ge250": 0,
+   "f0_median": 363.3,
+   "f0_p10": 211.3,
+   "f0_p90": 384.3,
+   "voiced_ratio": 0.36,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     },
+     "large-v3-turbo": {
+      "ref": "叔叔，小心！",
+      "hyp": "叔叔,小心。",
+      "hyp_trad": "叔叔小心",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": []
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_xiaoyu_a3_c002_02_hsiaoyu+12%+20Hz-cap550.wav": {
+   "version": "P",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "line": "a3_c002_02",
+   "text": "不用，我不試。我先離開。",
+   "synth_text": "不用，我不試。我先離開。",
+   "label": "hsiaoyu+12%+20Hz-cap550",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 160,
+   "raw_tail_silence_ms": 734,
+   "master": {
+    "method": "measured_gain",
+    "gain_db": 3.6,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/P_xiaoyu_a3_c002_02_hsiaoyu+12%+20Hz-cap550.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.14,
+   "speech_seconds": 2.77,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 20.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 3.25,
+   "rate_cps_net": 4.07,
+   "pauses_ms": [
+    560
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 226.9,
+   "f0_p10": 188.6,
+   "f0_p90": 270.3,
+   "voiced_ratio": 0.54,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "不用，我不試。我先離開。",
+      "hyp": "不用,我不是。我先離開。",
+      "hyp_trad": "不用我不是我先離開",
+      "cer": 0.111,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "試",
+        "hyp": "是",
+        "kind": "同音字（讀音一致）"
+       }
+      ],
+      "checks": [
+       {
+        "word": "不試",
+        "status": "未驗證（變調轉寫看不出）"
+       },
+       {
+        "word": "不用",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.111,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_ye_a2_c012_01_yunjhe+5%+12Hz-cap650.wav": {
+   "version": "P",
+   "role": "ye",
+   "role_zh": "葉護理師",
+   "line": "a2_c012_01",
+   "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "synth_text": "阿勒，你哪裡不舒服？我陪你去看醫生，好嗎？",
+   "label": "yunjhe+5%+12Hz-cap650",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+5%",
+    "pitch": "+12Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 220,
+   "raw_tail_silence_ms": 774,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 6.04,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/P_ye_a2_c012_01_yunjhe+5%+12Hz-cap650.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.62,
+   "speech_seconds": 4.26,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.1,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 240,
+   "han_chars": 17,
+   "rate_cps": 3.99,
+   "rate_cps_net": 5.38,
+   "pauses_ms": [
+    350,
+    750,
+    230
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 125.4,
+   "f0_p10": 91.3,
+   "f0_p90": 164.5,
+   "voiced_ratio": 0.44,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿樂,你哪裡不舒服? 我陪你去看醫生,好嗎?",
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "hyp": "阿樂,你哪裡不舒服?我陪你去看醫生,好嗎?",
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "阿樂",
+        "status": "轉寫一致"
+       },
+       {
+        "word": "不舒服",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  },
+  "P_zhezhe_a2_c001_03_hsiaoyu+22%+60Hz-cap550.wav": {
+   "version": "P",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "line": "a2_c001_03",
+   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "label": "hsiaoyu+22%+60Hz-cap550",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+60Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "el_chars_billed": 0,
+   "raw_head_silence_ms": 150,
+   "raw_tail_silence_ms": 664,
+   "master": {
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.31,
+    "normalization_type": null,
+    "limited": true
+   },
+   "file": "review/G3/samples/P_zhezhe_a2_c001_03_hsiaoyu+22%+60Hz-cap550.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.43,
+   "speech_seconds": 5.07,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 240,
+   "han_chars": 22,
+   "rate_cps": 4.34,
+   "rate_cps_net": 4.88,
+   "pauses_ms": [
+    560
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 278.8,
+   "f0_p10": 216.7,
+   "f0_p90": 366.3,
+   "voiced_ratio": 0.52,
+   "transcript": {
+    "models": {
+     "small": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上,是不是多了什麼。看到的舉手。",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "hyp": "大家仔細看,叔叔的手上是不是多了什麼?看到的舉手。",
+      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "checks": [
+       {
+        "word": "不是",
+        "status": "未驗證（變調轉寫看不出）"
+       }
+      ]
+     }
+    },
+    "per_min": 0.0,
+    "cer_min": 0.0,
+    "both_models_diff": [],
+    "verdict": "兩個模型都轉寫一致或只有同音字"
+   }
+  }
+ },
+ "elevenlabs": {
+  "plan_detected": "免費方案（API 回應：pcm_44100 需 Pro、mp3_44100_192 需 Creator、共享聲線與聲線設計需付費方案）",
+  "subscription_readable": false,
+  "budget_rule": "G3 ≤ 剩餘字數 15%；金鑰沒有 user_read 權限查不到剩餘字數，取免費方案 10,000 × 15% = 1,500 為上限",
+  "g3_chars_billed": 283
+ }
+}

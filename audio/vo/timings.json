@@ -1,0 +1,65 @@
+{
+ "a2_c001_01": {
+  "seconds": 3.52,
+  "speech_start": 0.12,
+  "speech_end": 3.27,
+  "file": "audio/vo/vo_a2_c001_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_01_v01.json",
+  "role": "小宇",
+  "text": "叔叔，你還好嗎？竹篾掉了。"
+ },
+ "a2_c001_02": {
+  "seconds": 3.16,
+  "speech_start": 0.12,
+  "speech_end": 2.91,
+  "file": "audio/vo/vo_a2_c001_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_02_v01.json",
+  "role": "阿樂叔叔",
+  "text": "沒事、沒事，手滑了一下。"
+ },
+ "a2_c001_03": {
+  "seconds": 5.43,
+  "speech_start": 0.12,
+  "speech_end": 5.18,
+  "file": "audio/vo/vo_a2_c001_03_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_03_v01.json",
+  "role": "折折",
+  "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。"
+ },
+ "a2_c002_01": {
+  "seconds": 4.26,
+  "speech_start": 0.12,
+  "speech_end": 4.01,
+  "file": "audio/vo/vo_a2_c002_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c002_01_v01.json",
+  "role": "阿樂叔叔",
+  "text": "咦？我想揮手……手怎麼跑到旁邊去了？"
+ },
+ "a2_c002_02": {
+  "seconds": 1.72,
+  "speech_start": 0.12,
+  "speech_end": 1.47,
+  "file": "audio/vo/vo_a2_c002_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c002_02_v01.json",
+  "role": "小晴",
+  "text": "叔叔，小心！"
+ },
+ "a2_c004_01": {
+  "seconds": 4.68,
+  "speech_start": 0.12,
+  "speech_end": 4.43,
+  "file": "audio/vo/vo_a2_c004_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c004_01_v01.json",
+  "role": "旁白",
+  "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。"
+ },
+ "a2_c004_02": {
+  "seconds": 11.57,
+  "speech_start": 0.12,
+  "speech_end": 11.32,
+  "file": "audio/vo/vo_a2_c004_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c004_02_v01.json",
+  "role": "旁白",
+  "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
+ }
+}

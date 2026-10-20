@@ -3,13 +3,11 @@
 // - 切換節點時先停掉舊台詞，避免重疊。
 // - 不用 HTMLMediaElement；所有聲音都排在 AudioContext 的時間上，跟畫面同一個時鐘。
 import { dataUrlToArrayBuffer } from '../data/packs';
+import { duckingPlan } from './ducking';
 
 export type Bus = 'vo' | 'music' | 'sfx';
 
 interface Voice { src: AudioBufferSourceNode; gain: GainNode; bus: Bus; id: string }
-
-/** 對白時配樂壓到這個比例（約 -10 dB） */
-const DUCK_LEVEL = 0.32;
 
 export class Mixer {
   readonly ctx: AudioContext | null = null;
@@ -116,6 +114,49 @@ export class Mixer {
 
   get musicId(): string | null { return this.music?.id ?? null; }
 
+  /**
+   * 配樂交叉淡入淡出：在 when 開始把目前的配樂淡出、新的淡入（fade 秒）。id 為 "none" 只淡出。
+   * 找不到音檔時回傳 false（呼叫端記為缺檔，照常演出）。
+   */
+  crossfadeMusic(id: string, when: number, opts: { loop?: boolean; fade?: number; gain?: number; offset?: number } = {}): boolean {
+    const ctx = this.ctx;
+    if (!ctx) return false;
+    const fade = Math.max(0.05, opts.fade ?? 1.5);
+    const t = Math.max(when, ctx.currentTime);
+    for (const v of [...this.voices]) {
+      if (v.bus !== 'music') continue;
+      try {
+        v.gain.gain.cancelScheduledValues(t);
+        v.gain.gain.setValueAtTime(v.gain.gain.value, t);
+        v.gain.gain.linearRampToValueAtTime(0, t + fade);
+        v.src.stop(t + fade + 0.05);
+      } catch { /* 已經停了 */ }
+    }
+    if (id === 'none') return true;
+    const buf = this.buffers.get(id);
+    const out = this.buses.music;
+    if (!buf || !out) return false;
+    const src = ctx.createBufferSource();
+    src.buffer = buf;
+    src.loop = opts.loop ?? true;
+    const gain = ctx.createGain();
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(opts.gain ?? 1, t + fade);
+    src.connect(gain).connect(out);
+    const v: Voice = { src, gain, bus: 'music', id };
+    src.onended = () => { this.voices.delete(v); if (this.music === v) this.music = null; };
+    const late = Math.max(0, ctx.currentTime - when);
+    src.start(t, ((opts.offset ?? 0) + late) % Math.max(0.01, buf.duration));
+    this.voices.add(v);
+    this.music = v;
+    return true;
+  }
+
+  /** 測試用：目前的配樂基準音量與避讓增益 */
+  levels(): { musicBus: number; duck: number; master: number } {
+    return { musicBus: this.buses.music?.gain.value ?? 0, duck: this.musicDuck?.gain.value ?? 1, master: this.master?.gain.value ?? 0 };
+  }
+
   /** 設定配樂基準音量（劇情約 0.8；題目與發獎 0.06；署名卡待機 0） */
   setMusicLevel(level: number, when?: number, timeConstant = 0.35): void {
     const ctx = this.ctx;
@@ -126,7 +167,7 @@ export class Mixer {
     g.gain.setTargetAtTime(level, t, timeConstant);
   }
 
-  /** 依台詞區間排好配樂避讓：說話前 0.15 秒壓低，說完 0.3 秒後回升（相鄰句子之間不回升） */
+  /** 依台詞區間排好配樂避讓（排程規則見 ducking.ts 的 duckingPlan，可單獨測試） */
   scheduleDucking(intervals: [number, number][]): void {
     const ctx = this.ctx;
     const d = this.musicDuck;
@@ -134,13 +175,7 @@ export class Mixer {
     const now = ctx.currentTime;
     d.gain.cancelScheduledValues(now);
     d.gain.setValueAtTime(d.gain.value, now);
-    const sorted = [...intervals].sort((a, b) => a[0] - b[0]);
-    for (let i = 0; i < sorted.length; i++) {
-      const [s, e] = sorted[i];
-      d.gain.setTargetAtTime(DUCK_LEVEL, Math.max(now, s - 0.15), 0.06);
-      const nextStart = sorted[i + 1]?.[0];
-      if (nextStart === undefined || nextStart - e > 0.9) d.gain.setTargetAtTime(1, Math.max(now, e + 0.3), 0.25);
-    }
+    for (const step of duckingPlan(intervals, now)) d.gain.setTargetAtTime(step.value, step.at, step.tc);
   }
 
   resetDucking(): void {

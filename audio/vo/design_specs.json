@@ -1,0 +1,49 @@
+{
+  "_說明": "G3 B 版童聲方案：ElevenLabs 聲線設計（text-to-voice/design）。description 為英文描述（≥100 字元）；preview_lines 是該角色劇本台詞（套替身字後串成試聽文字，需 ≥100 字元）。試聽 3 個，依轉寫正確率與 F0 選一個儲存。",
+  "xiaoqing": {
+    "role": "小晴",
+    "model": "eleven_ttv_v3",
+    "seed": 20261021,
+    "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Calm, observant and sensible; speaks in short, confident sentences at a medium pace. Bright, clear, mid-high child voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+    "preview_lines": [
+      "a2_c002_02",
+      "a1_c004_03",
+      "a1_c004_02",
+      "a1_c003_02",
+      "a1_c001_01",
+      "a3_c003_01",
+      "a2_c008_04"
+    ]
+  },
+  "xiaoyu": {
+    "role": "小宇",
+    "model": "eleven_ttv_v3",
+    "seed": 20261021,
+    "description": "A nine-year-old boy from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Curious, lively and quick, with a friendly, energetic tone; his voice has not broken yet, a clear child voice in the middle range, a little lower and rounder than a girl's. Not squeaky, not cartoonish, not baby talk. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+    "preview_lines": [
+      "a3_c002_02",
+      "a2_c001_01",
+      "a1_c001_03",
+      "a3_c002_01",
+      "a3_c001_01",
+      "a0_c004_01",
+      "a4_c012_03",
+      "a5_c006_04"
+    ]
+  },
+  "zhezhe": {
+    "role": "折折",
+    "model": "eleven_ttv_v3",
+    "seed": 20261021,
+    "description": "A playful origami paper cat, the cheerful host character of a children's paper puppet theater in Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Bright, light, youthful and gender-neutral voice, the highest-pitched voice in the cast, lively with a slight upward lilt at the end of sentences, friendly and warm but never shrill, squeaky or babyish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+    "preview_lines": [
+      "a2_c001_03",
+      "a0_c002_01",
+      "a1_c005_01",
+      "a1_c007_01",
+      "a2_c007_01",
+      "a3_c007_01",
+      "a1_c001_04"
+    ]
+  }
+}

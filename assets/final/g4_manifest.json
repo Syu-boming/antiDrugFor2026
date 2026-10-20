@@ -1,0 +1,1018 @@
+{
+ "format": "antidrug-g4-art/1",
+ "version": "v01",
+ "date": "2026-10-21",
+ "coords": "世界座標照 app/src/stage/layers.ts：x 向右、y 向上、z 朝觀眾；地面 y=0。world＝錨點的建議世界座標 [x, y, z]；units_per_px＝圖上 1 px 的世界長度。數值來自 review/G4/art/a2_layout_test.png 的 Python 試排（相機＝CAMERA_PRESETS.medium，1920×1080）。圖片像素座標 y 向下。",
+ "pack_ids": "tools/pack.mjs：圖像 id＝相對 assets/final 的路徑去掉副檔名與 _vNN（例 bg-workshop-back、rig/chr-ale_torso、face/ale/chr-ale_mouth_open）；素材 JSON id 同理（rig/ale_rig、rig/ale_attach、face/xiaoqing/face、face/xiaoyu/face、face/ale/face、g4_manifest）。本檔 assets[].id 就是打包 id。",
+ "layers": {
+  "遠": "backdrop z=-5（後牆）＋地板平面",
+  "中": "mid z=-0.9（懸掛燈籠）",
+  "角色": "actors z=0（阿樂 0、小晴 +0.4、小宇 -0.35）",
+  "前景": "工作台 z=+0.3（阿樂前面）；側翼 fore z=2.4",
+  "台口": "curtain z=4.0",
+  "介面": "正交疊層"
+ },
+ "draw_order_actors": [
+  "chr-xiaoyu（z -0.35）",
+  "rig/ale_rig（outline 全部 → 部件依 layers_back_to_front）",
+  "bg-workshop-table（z 0.3）",
+  "chr-xiaoqing（z 0.4）",
+  "操偶線（strings.order 390；紙環畫在部件上面）"
+ ],
+ "safe_area": {
+  "subtitle_band": "畫面下 20%（y ≥ 864 @1080）",
+  "safe_frame_90": [
+   96,
+   54,
+   1824,
+   1026
+  ],
+  "faces_px_in_test": {
+   "xiaoqing": {
+    "top_px": 483,
+    "bottom_px": 929
+   },
+   "xiaoyu": {
+    "top_px": 523,
+    "bottom_px": 913
+   },
+   "ale": {
+    "top_px": 324,
+    "bottom_px": 923
+   }
+  },
+  "note": "試排中三人的臉都在 y 300–620 之間，沒有進入字幕區。"
+ },
+ "contrast_proj_v2": {
+  "xiaoqing": {
+   "bg_torso_band_median_lum": 0.586,
+   "bg_torso_band_p10_lum": 0.49,
+   "costumes": {
+    "湖水綠吊帶褲": {
+     "pixels": 18718,
+     "proj_v2_lum": 0.128,
+     "contrast_vs_bg_median": 3.57,
+     "contrast_vs_bg_p10": 3.03
+    },
+    "芥末黃上衣": {
+     "pixels": 5145,
+     "proj_v2_lum": 0.366,
+     "contrast_vs_bg_median": 1.53,
+     "contrast_vs_bg_p10": 1.3
+    }
+   }
+  },
+  "xiaoyu": {
+   "bg_torso_band_median_lum": 0.585,
+   "bg_torso_band_p10_lum": 0.478,
+   "costumes": {
+    "橘紅外套": {
+     "pixels": 9361,
+     "proj_v2_lum": 0.124,
+     "contrast_vs_bg_median": 3.65,
+     "contrast_vs_bg_p10": 3.04
+    },
+    "卡其短褲": {
+     "pixels": 4674,
+     "proj_v2_lum": 0.286,
+     "contrast_vs_bg_median": 1.89,
+     "contrast_vs_bg_p10": 1.57
+    }
+   }
+  },
+  "ale": {
+   "bg_torso_band_median_lum": 0.594,
+   "bg_torso_band_p10_lum": 0.581,
+   "costumes": {
+    "深藍圍裙": {
+     "pixels": 10402,
+     "proj_v2_lum": 0.095,
+     "contrast_vs_bg_median": 4.44,
+     "contrast_vs_bg_p10": 4.35
+    }
+   }
+  }
+ },
+ "string_check": {
+  "pixels_of_strings_on_kids": {
+   "wrist_back": {
+    "xiaoqing": 0,
+    "xiaoyu": 0
+   },
+   "elbow_out": {
+    "xiaoqing": 0,
+    "xiaoyu": 0
+   },
+   "knee_front": {
+    "xiaoqing": 0,
+    "xiaoyu": 0
+   }
+  },
+  "note": "腕、肘的線近乎垂直往上（偏畫面左）、膝的線往右上斜出，三條都不經過孩子、不經過阿樂的頭頸。"
+ },
+ "a2_ale_key_poses": {
+  "sit": {
+   "deg_screen_cw": {
+    "upper_arm_r": 25,
+    "forearm_r": 37,
+    "hand_r": 18,
+    "upper_arm_l": 10,
+    "forearm_l": -14,
+    "hand_l": 6,
+    "thigh_l": -45,
+    "shin_l": 45,
+    "thigh_r": 44,
+    "shin_r": -44,
+    "head": 0
+   },
+   "root": {
+    "dx_px": 0,
+    "dy_px": 80,
+    "deg_screen_cw": 0,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -0.4363,
+    "forearm_r": -0.6458,
+    "hand_r": -0.3142,
+    "upper_arm_l": -0.1745,
+    "forearm_l": 0.2443,
+    "hand_l": -0.1047,
+    "thigh_l": 0.7854,
+    "shin_l": -0.7854,
+    "thigh_r": -0.7679,
+    "shin_r": 0.7679,
+    "head": 0.0
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.47,
+     2.482,
+     0.0
+    ],
+    "elbow_out": [
+     -3.137,
+     2.781,
+     0.0
+    ],
+    "knee_front": [
+     -1.494,
+     1.084,
+     0.0
+    ],
+    "neck": [
+     -2.143,
+     3.488,
+     0.0
+    ]
+   }
+  },
+  "wave": {
+   "deg_screen_cw": {
+    "upper_arm_r": 150,
+    "forearm_r": 12,
+    "hand_r": 6,
+    "upper_arm_l": 10,
+    "forearm_l": -14,
+    "hand_l": 6,
+    "thigh_l": -45,
+    "shin_l": 45,
+    "thigh_r": 44,
+    "shin_r": -44,
+    "head": 3
+   },
+   "root": {
+    "dx_px": 0,
+    "dy_px": 80,
+    "deg_screen_cw": 0,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -2.618,
+    "forearm_r": -0.2094,
+    "hand_r": -0.1047,
+    "upper_arm_l": -0.1745,
+    "forearm_l": 0.2443,
+    "hand_l": -0.1047,
+    "thigh_l": 0.7854,
+    "shin_l": -0.7854,
+    "thigh_r": -0.7679,
+    "shin_r": 0.7679,
+    "head": -0.0524
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.055,
+     4.268,
+     0.0
+    ],
+    "elbow_out": [
+     -2.807,
+     3.825,
+     0.0
+    ],
+    "knee_front": [
+     -1.494,
+     1.084,
+     0.0
+    ],
+    "neck": [
+     -2.143,
+     3.488,
+     0.0
+    ]
+   }
+  },
+  "pulled": {
+   "deg_screen_cw": {
+    "upper_arm_r": 92,
+    "forearm_r": 18,
+    "hand_r": -70,
+    "upper_arm_l": 10,
+    "forearm_l": -14,
+    "hand_l": 6,
+    "thigh_l": -45,
+    "shin_l": 45,
+    "thigh_r": 47,
+    "shin_r": -47,
+    "head": 2
+   },
+   "root": {
+    "dx_px": 0,
+    "dy_px": 80,
+    "deg_screen_cw": -2,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -1.6057,
+    "forearm_r": -0.3142,
+    "hand_r": 1.2217,
+    "upper_arm_l": -0.1745,
+    "forearm_l": 0.2443,
+    "hand_l": -0.1047,
+    "thigh_l": 0.7854,
+    "shin_l": -0.7854,
+    "thigh_r": -0.8203,
+    "shin_r": 0.8203,
+    "head": -0.0349
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.828,
+     3.461,
+     0.0
+    ],
+    "elbow_out": [
+     -3.337,
+     3.41,
+     0.0
+    ],
+    "knee_front": [
+     -1.477,
+     1.109,
+     0.0
+    ],
+    "neck": [
+     -2.21,
+     3.489,
+     0.0
+    ]
+   }
+  },
+  "halfstand": {
+   "deg_screen_cw": {
+    "upper_arm_r": 92,
+    "forearm_r": 18,
+    "hand_r": -70,
+    "upper_arm_l": 4,
+    "forearm_l": -10,
+    "hand_l": 4,
+    "thigh_l": -38,
+    "shin_l": 40,
+    "thigh_r": 26,
+    "shin_r": -26,
+    "head": 2
+   },
+   "root": {
+    "dx_px": 8,
+    "dy_px": 50,
+    "deg_screen_cw": 4,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -1.6057,
+    "forearm_r": -0.3142,
+    "hand_r": 1.2217,
+    "upper_arm_l": -0.0698,
+    "forearm_l": 0.1745,
+    "hand_l": -0.0698,
+    "thigh_l": 0.6632,
+    "shin_l": -0.6981,
+    "thigh_r": -0.4538,
+    "shin_r": 0.4538,
+    "head": -0.0349
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.599,
+     3.706,
+     0.0
+    ],
+    "elbow_out": [
+     -3.116,
+     3.604,
+     0.0
+    ],
+    "knee_front": [
+     -1.573,
+     1.074,
+     0.0
+    ],
+    "neck": [
+     -1.987,
+     3.565,
+     0.0
+    ]
+   }
+  },
+  "kneetug": {
+   "deg_screen_cw": {
+    "upper_arm_r": 96,
+    "forearm_r": 16,
+    "hand_r": -72,
+    "upper_arm_l": -30,
+    "forearm_l": 82,
+    "hand_l": -114,
+    "thigh_l": -68,
+    "shin_l": 74,
+    "thigh_r": 37,
+    "shin_r": -37,
+    "head": -3
+   },
+   "root": {
+    "dx_px": 0,
+    "dy_px": 40,
+    "deg_screen_cw": -5,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -1.6755,
+    "forearm_r": -0.2793,
+    "hand_r": 1.2566,
+    "upper_arm_l": 0.5236,
+    "forearm_l": -1.4312,
+    "hand_l": 1.9897,
+    "thigh_l": 1.1868,
+    "shin_l": -1.2915,
+    "thigh_r": -0.6458,
+    "shin_r": 0.6458,
+    "head": 0.0524
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.914,
+     3.548,
+     0.0
+    ],
+    "elbow_out": [
+     -3.417,
+     3.503,
+     0.0
+    ],
+    "knee_front": [
+     -1.319,
+     1.495,
+     0.0
+    ],
+    "neck": [
+     -2.31,
+     3.6,
+     0.0
+    ]
+   }
+  },
+  "hold": {
+   "deg_screen_cw": {
+    "upper_arm_r": 94,
+    "forearm_r": 18,
+    "hand_r": -72,
+    "upper_arm_l": -19,
+    "forearm_l": 94,
+    "hand_l": -159,
+    "thigh_l": -52,
+    "shin_l": 52,
+    "thigh_r": 47,
+    "shin_r": -47,
+    "head": 4
+   },
+   "root": {
+    "dx_px": 4,
+    "dy_px": 100,
+    "deg_screen_cw": 2,
+    "pivot": "hip_mid"
+   },
+   "rad_threejs": {
+    "upper_arm_r": -1.6406,
+    "forearm_r": -0.3142,
+    "hand_r": 1.2566,
+    "upper_arm_l": 0.3316,
+    "forearm_l": -1.6406,
+    "hand_l": 2.7751,
+    "thigh_l": 0.9076,
+    "shin_l": -0.9076,
+    "thigh_r": -0.8203,
+    "shin_r": 0.8203,
+    "head": -0.0698
+   },
+   "attach_world": {
+    "wrist_back": [
+     -3.669,
+     3.549,
+     0.0
+    ],
+    "elbow_out": [
+     -3.186,
+     3.447,
+     0.0
+    ],
+    "knee_front": [
+     -1.441,
+     1.061,
+     0.0
+    ],
+    "neck": [
+     -2.065,
+     3.428,
+     0.0
+    ]
+   }
+  }
+ },
+ "camera_hints": "a2_c001 慢推到手腕近景：看 a2_ale_key_poses.sit.attach_world.wrist_back；a2_c004 沿線移動：hold 姿勢的 wrist_back → elbow_out → knee_front → 再往上（線往上延伸出畫面）。",
+ "a2_c002_timing_hint": [
+  {
+   "t": "0.0–2.0 s",
+   "pose": "sit",
+   "note": "坐姿（承接 a2_c001），降彩開始"
+  },
+  {
+   "t": "2.0–7.0 s",
+   "pose": "sit",
+   "note": "三條線依序落下扣上（腕背 → 肘外 → 膝前），每條間隔約 1.2 s，紙繩輕沙沙聲"
+  },
+  {
+   "t": "7.0–9.0 s",
+   "pose": "sit → wave",
+   "note": "想揮手：手先抬起（意圖），阿樂台詞 a2_c002_01 開始"
+  },
+  {
+   "t": "9.0–10.5 s",
+   "pose": "wave → pulled",
+   "note": "線先繃緊、手再被拉向畫面左（受力）"
+  },
+  {
+   "t": "11.5–13.5 s",
+   "pose": "pulled → halfstand",
+   "note": "想站起來"
+  },
+  {
+   "t": "13.5–14.5 s",
+   "pose": "halfstand → kneetug",
+   "note": "膝蓋被線一扯：左腳離地、身體往後晃"
+  },
+  {
+   "t": "14.5–16.0 s",
+   "pose": "kneetug → hold",
+   "note": "左手趕快扶住桌面；小晴 a2_c002_02「叔叔，小心！」"
+  },
+  {
+   "t": "16.0 s～",
+   "pose": "hold",
+   "note": "停格（呼吸與眨眼照常，線只做很小的擺盪）"
+  }
+ ],
+ "assets": [
+  {
+   "id": "bg-workshop-back",
+   "file": "assets/final/bg-workshop-back_v02.jpg",
+   "layer": "遠",
+   "engine_layer": "backdrop",
+   "z": -5.0,
+   "size_px": [
+    2964,
+    1415
+   ],
+   "world_size": [
+    22.0,
+    10.503
+   ],
+   "anchor": {
+    "px": [
+     1482.0,
+     1415
+    ],
+    "meaning": "下緣中點＝地板線",
+    "world": [
+     0.0,
+     0.0,
+     -5.0
+    ]
+   },
+   "units_per_px": 0.007422,
+   "notes": "騎樓下燈籠工作室後牆（淺暖米色灰泥＋淺木柱、上方層架放未點亮的紙燈籠與竹篾）。蓋滿中景與大全景。右側門洞（世界 x≈6.9–7.9）是孩子 a2_c012 往右跑出去的方向。柱子已提亮 40%，角色軀幹高度一帶投影 v2 亮度中位 0.59。不透明 JPG，色彩空間 sRGB。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004",
+    "a2_c008",
+    "a2_c012"
+   ]
+  },
+  {
+   "id": "bg-workshop-floor",
+   "file": "assets/final/bg-workshop-floor_v01.jpg",
+   "layer": "遠",
+   "engine_layer": "backdrop（地板平面）",
+   "z": null,
+   "size_px": [
+    1024,
+    512
+   ],
+   "world_size": [
+    8.0,
+    4.0
+   ],
+   "anchor": {
+    "px": [
+     0,
+     0
+    ],
+    "meaning": "四方連續貼圖",
+    "world": null
+   },
+   "units_per_px": 0.007812,
+   "notes": "取代 sets.ts 的程式地板（#b98d62 偏暗）。y=0 地板平面，RepeatWrapping；1 單位＝128 px（木板寬約 0.5 單位，沿 x 方向）。淺暖色讓孩子的腳與鞋分得開。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004"
+   ]
+  },
+  {
+   "id": "bg-workshop-lanterns",
+   "file": "assets/final/bg-workshop-lanterns_v01.png",
+   "layer": "中",
+   "engine_layer": "mid",
+   "z": -0.9,
+   "size_px": [
+    1536,
+    414
+   ],
+   "world_size": [
+    6.6,
+    1.779
+   ],
+   "anchor": {
+    "px": [
+     0,
+     0
+    ],
+    "meaning": "左上角",
+    "world": [
+     0.7,
+     6.506,
+     -0.9
+    ]
+   },
+   "units_per_px": 0.004297,
+   "notes": "竹竿上掛 5 盞未點亮的紙燈籠（透明 PNG）。建議只放在畫面右半（孩子上方）、竹竿在中景畫面上緣下方約 0.3 單位，讓阿樂上方留白給落下的操偶線；燈籠繩很短、竹竿一定要在畫面內，避免被看成操偶線。可選層：大全景時可往左移。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004"
+   ]
+  },
+  {
+   "id": "bg-workshop-table",
+   "file": "assets/final/bg-workshop-table_v02.png",
+   "layer": "前景",
+   "engine_layer": "actors 層內、阿樂前面（不是 fore 層）",
+   "z": 0.3,
+   "size_px": [
+    1479,
+    791
+   ],
+   "world_size": [
+    5.846,
+    3.127
+   ],
+   "anchor": {
+    "px": [
+     1469,
+     212
+    ],
+    "meaning": "桌面上緣右端（阿樂左手扶的位置）",
+    "world": [
+     -1.643,
+     2.289,
+     0.3
+    ]
+   },
+   "units_per_px": 0.003953,
+   "notes": "燈籠師傅工作台（厚卡紙，看得到桌面切口的紙層；桌上竹篾、燈籠紙、小剪刀、未糊紙的燈籠骨架；右三分之一桌面淨空給手扶）。放在阿樂前面 z≈0.3（同一層、不要放 fore z=2.4，否則推鏡、搖鏡時視差會讓『手扶桌面』對不上）。桌面高＝阿樂母版 y=830（世界 y≈2.29）、右端＝母版 x=705。坐姿時桌子擋住阿樂的右腿與臀部，左腿從桌子右端露出（膝前紙環看得到）。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004",
+    "a2_c008"
+   ]
+  },
+  {
+   "id": "bg-workshop-wing",
+   "file": "assets/final/bg-workshop-wing_v01.png",
+   "layer": "前景",
+   "engine_layer": "fore",
+   "z": 2.4,
+   "size_px": [
+    599,
+    1536
+   ],
+   "world_size": [
+    2.808,
+    7.2
+   ],
+   "anchor": {
+    "px": [
+     0,
+     1536
+    ],
+    "meaning": "左下角",
+    "world": [
+     -6.55,
+     0.0,
+     2.4
+    ]
+   },
+   "units_per_px": 0.004687,
+   "mirror_copy": {
+    "flip_x": true,
+    "anchor_meaning": "右下角",
+    "world": [
+     7.1499999999999995,
+     0.0,
+     2.4
+    ]
+   },
+   "notes": "側翼前景：一束竹子＋腳邊紙屑（透明 PNG）。左邊原圖、右邊水平鏡射一份。只佔畫面左右邊緣，不擋說話者的臉；紙屑在字幕區但不擋字幕底板中央。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004"
+   ]
+  },
+  {
+   "id": "tex-curtain-paper",
+   "file": "assets/final/tex-curtain-paper_v01.png",
+   "layer": "台口",
+   "engine_layer": "curtain",
+   "z": 4.0,
+   "size_px": [
+    512,
+    1024
+   ],
+   "world_size": null,
+   "anchor": {
+    "px": [
+     0,
+     0
+    ],
+    "meaning": "左右四方連續貼圖（RepeatWrapping S）",
+    "world": null
+   },
+   "units_per_px": null,
+   "notes": "摺層紙布幕貼圖（酒紅和紙、直向纖維、下緣深色滾邊＋芥末黃紙條）。不烘焙光影，摺層明暗由 curtain.ts 的幾何與燈光產生。無字。",
+   "cues": [
+    "片頭",
+    "片尾"
+   ]
+  },
+  {
+   "id": "tex-titlecard-paper",
+   "file": "assets/final/tex-titlecard-paper_v01.png",
+   "layer": "介面",
+   "engine_layer": "overlay（署名卡）",
+   "z": null,
+   "size_px": [
+    1600,
+    900
+   ],
+   "world_size": null,
+   "anchor": {
+    "px": [
+     800,
+     450
+    ],
+    "meaning": "中心",
+    "world": null
+   },
+   "units_per_px": null,
+   "notes": "署名卡底紙（奶油色厚卡紙＋細框＋四角幾何剪紙花）。圖裡沒有任何字：「許博明老師製作」一定由劇場程式用字型排在中央。片頭、片尾用同一張。",
+   "cues": [
+    "片頭",
+    "片尾"
+   ]
+  },
+  {
+   "id": "chr-xiaoqing_pose-reach-worried",
+   "file": "assets/final/chr-xiaoqing_pose-reach-worried_v04.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.4,
+   "size_px": [
+    802,
+    1415
+   ],
+   "world_size": [
+    1.838,
+    3.243
+   ],
+   "anchor": {
+    "px": [
+     489.0,
+     1398
+    ],
+    "meaning": "腳底中點（最低 40 列的左右範圍中點）",
+    "world": [
+     0.95,
+     0.0,
+     0.4
+    ]
+   },
+   "units_per_px": 0.002292,
+   "height_units": 3.168,
+   "split_layers": {
+    "body": {
+     "id": "chr-xiaoqing_pose-reach-worried-body",
+     "file": "assets/final/chr-xiaoqing_pose-reach-worried-body_v04.png",
+     "same_frame_as_full": true
+    },
+    "head": {
+     "id": "chr-xiaoqing_pose-reach-worried-head",
+     "file": "assets/final/chr-xiaoqing_pose-reach-worried-head_v04.png",
+     "offset_px": [
+      256,
+      11
+     ],
+     "pivot_px_head": [
+      189,
+      341
+     ],
+     "pivot_px_full": [
+      445,
+      352
+     ],
+     "turn_range_deg": [
+      -2.5,
+      2.5
+     ]
+    }
+   },
+   "face": "assets/final/face/xiaoqing/face.json",
+   "notes": "小晴：a2_c002 伸手提醒（指向叔叔手腕的線）。整張圖或『身體＋頭』兩層擇一（兩層 0° 疊回與原圖只差 ≤12 px 邊緣）。呼吸：身體層以腳底為錨點 scaleY 1.000–1.008、週期 3–4 秒；轉頭：頭層繞 pivot ±2.5° 以內；眨眼與對嘴見 face.json。",
+   "cues": [
+    "a2_c002",
+    "a2_c004"
+   ]
+  },
+  {
+   "id": "chr-xiaoyu_pose-stepback-surprised",
+   "file": "assets/final/chr-xiaoyu_pose-stepback-surprised_v04.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": -0.35,
+   "size_px": [
+    644,
+    1439
+   ],
+   "world_size": [
+    1.315,
+    2.938
+   ],
+   "anchor": {
+    "px": [
+     187.0,
+     1421
+    ],
+    "meaning": "腳底中點（最低 40 列的左右範圍中點）",
+    "world": [
+     2.75,
+     0.0,
+     -0.35
+    ]
+   },
+   "units_per_px": 0.002042,
+   "height_units": 2.869,
+   "split_layers": {
+    "body": {
+     "id": "chr-xiaoyu_pose-stepback-surprised-body",
+     "file": "assets/final/chr-xiaoyu_pose-stepback-surprised-body_v04.png",
+     "same_frame_as_full": true
+    },
+    "head": {
+     "id": "chr-xiaoyu_pose-stepback-surprised-head",
+     "file": "assets/final/chr-xiaoyu_pose-stepback-surprised-head_v04.png",
+     "offset_px": [
+      149,
+      11
+     ],
+     "pivot_px_head": [
+      181,
+      367
+     ],
+     "pivot_px_full": [
+      330,
+      378
+     ],
+     "turn_range_deg": [
+      -2.5,
+      2.5
+     ]
+    }
+   },
+   "face": "assets/final/face/xiaoyu/face.json",
+   "notes": "小宇：a2_c002 擔心後退半步。整張圖或『身體＋頭』兩層擇一（兩層 0° 疊回與原圖只差 ≤12 px 邊緣）。呼吸：身體層以腳底為錨點 scaleY 1.000–1.008、週期 3–4 秒；轉頭：頭層繞 pivot ±2.5° 以內；眨眼與對嘴見 face.json。",
+   "cues": [
+    "a2_c002",
+    "a2_c004"
+   ]
+  },
+  {
+   "id": "chr-xiaoqing_master",
+   "file": "assets/final/chr-xiaoqing_master_v04.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.4,
+   "size_px": [
+    535,
+    1492
+   ],
+   "world_size": [
+    1.161,
+    3.239
+   ],
+   "anchor": {
+    "px": [
+     442.5,
+     1474
+    ],
+    "meaning": "腳底中點",
+    "world": [
+     0.95,
+     0.0,
+     0.4
+    ]
+   },
+   "units_per_px": 0.002171,
+   "height_units": 3.168,
+   "notes": "小晴站姿／中性（v04 母版）。G4 代表鏡頭不一定用到；需要站姿時用，臉部換片目前只做在姿勢圖頭上（母版是微笑臉，換片待 G5）。",
+   "cues": [
+    "a2_c001（可選）"
+   ]
+  },
+  {
+   "id": "chr-xiaoyu_master",
+   "file": "assets/final/chr-xiaoyu_master_v04.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": -0.35,
+   "size_px": [
+    528,
+    1446
+   ],
+   "world_size": [
+    1.071,
+    2.934
+   ],
+   "anchor": {
+    "px": [
+     408.0,
+     1429
+    ],
+    "meaning": "腳底中點",
+    "world": [
+     2.75,
+     0.0,
+     -0.35
+    ]
+   },
+   "units_per_px": 0.002029,
+   "height_units": 2.869,
+   "notes": "小宇站姿／中性（v04 母版）。G4 代表鏡頭不一定用到；需要站姿時用，臉部換片目前只做在姿勢圖頭上（母版是微笑臉，換片待 G5）。",
+   "cues": [
+    "a2_c001（可選）"
+   ]
+  },
+  {
+   "id": "rig/ale_rig",
+   "file": "assets/final/rig/ale_rig.json",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.0,
+   "size_px": [
+    1024,
+    1656
+   ],
+   "world_size": null,
+   "anchor": {
+    "px": [
+     510,
+     1631
+    ],
+    "meaning": "母版座標：身體中線、腳底（地板）",
+    "world": [
+     -2.2,
+     0.0,
+     0.0
+    ]
+   },
+   "units_per_px": 0.002857,
+   "height_units": 4.6,
+   "parts": {
+    "shin_l": {
+     "id": "rig/chr-ale_shin-l",
+     "file": "assets/final/rig/chr-ale_shin-l_v04.png",
+     "outline_id": "rig/chr-ale_shin-l-outline"
+    },
+    "thigh_l": {
+     "id": "rig/chr-ale_thigh-l",
+     "file": "assets/final/rig/chr-ale_thigh-l_v04.png",
+     "outline_id": "rig/chr-ale_thigh-l-outline"
+    },
+    "shin_r": {
+     "id": "rig/chr-ale_shin-r",
+     "file": "assets/final/rig/chr-ale_shin-r_v04.png",
+     "outline_id": "rig/chr-ale_shin-r-outline"
+    },
+    "thigh_r": {
+     "id": "rig/chr-ale_thigh-r",
+     "file": "assets/final/rig/chr-ale_thigh-r_v04.png",
+     "outline_id": "rig/chr-ale_thigh-r-outline"
+    },
+    "upper_arm_l": {
+     "id": "rig/chr-ale_upper-arm-l",
+     "file": "assets/final/rig/chr-ale_upper-arm-l_v04.png",
+     "outline_id": "rig/chr-ale_upper-arm-l-outline"
+    },
+    "head": {
+     "id": "rig/chr-ale_head",
+     "file": "assets/final/rig/chr-ale_head_v04.png",
+     "outline_id": "rig/chr-ale_head-outline"
+    },
+    "upper_arm_r": {
+     "id": "rig/chr-ale_upper-arm-r",
+     "file": "assets/final/rig/chr-ale_upper-arm-r_v04.png",
+     "outline_id": "rig/chr-ale_upper-arm-r-outline"
+    },
+    "torso": {
+     "id": "rig/chr-ale_torso",
+     "file": "assets/final/rig/chr-ale_torso_v04.png",
+     "outline_id": "rig/chr-ale_torso-outline"
+    },
+    "forearm_l": {
+     "id": "rig/chr-ale_forearm-l",
+     "file": "assets/final/rig/chr-ale_forearm-l_v04.png",
+     "outline_id": "rig/chr-ale_forearm-l-outline"
+    },
+    "hand_l": {
+     "id": "rig/chr-ale_hand-l",
+     "file": "assets/final/rig/chr-ale_hand-l_v04.png",
+     "outline_id": "rig/chr-ale_hand-l-outline"
+    },
+    "forearm_r": {
+     "id": "rig/chr-ale_forearm-r",
+     "file": "assets/final/rig/chr-ale_forearm-r_v04.png",
+     "outline_id": "rig/chr-ale_forearm-r-outline"
+    },
+    "hand_r": {
+     "id": "rig/chr-ale_hand-r",
+     "file": "assets/final/rig/chr-ale_hand-r_v04.png",
+     "outline_id": "rig/chr-ale_hand-r-outline"
+    },
+    "head_worried": {
+     "id": "rig/chr-ale_head-worried",
+     "file": "assets/final/rig/chr-ale_head-worried_v04.png",
+     "outline_id": "rig/chr-ale_head-worried-outline"
+    }
+   },
+   "attach": "assets/final/rig/ale_attach.json",
+   "face": "assets/final/face/ale/face.json",
+   "readme": "assets/final/rig/README.md",
+   "notes": "阿樂叔叔分件紙偶 v04（ale_v03 接縫修正＋乾淨困惑頭）。a2 用困惑頭 head_worried；白色紙芯邊用各部件的 -outline 圖在所有部件後面畫一次（整體外輪廓）。站姿身高 4.6 單位＝中景 640 px，與 G2 v04 合成相同比例。",
+   "cues": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c004"
+   ]
+  }
+ ]
+}

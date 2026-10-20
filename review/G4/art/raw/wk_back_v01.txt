@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15abe-8e22-7dc3-a1c6-6e389b6652d5/exec-13ebd2bc-6eec-469d-9886-e891bb50b1a6.png`
+- Destination: [review/G4/art/raw/wk_back_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/wk_back_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **No — fully opaque**
+- Copy verified byte-for-byte identical.

@@ -1,55 +1,123 @@
-// 操偶線（v1.2 第 15.2 節，介面與佔位版）：
-// - 灰色扭紋紙繩，1080p 中景約 6–10 px，深灰邊線＋淡色受光邊，明度與背景拉開。
-// - 從畫面上方外面垂下，下端以紙環扣在錨點；不畫操控者的手或人影。
+// 操偶線（v1.2 第 15.2 節、G2 一般問題第 2 項）：
+// - 平面紙繩：中灰紙帶＋紙纖維、兩側深灰邊線、左側一道受光邊；不做扭絞鋼索紋。
+//   明度：紙帶 L*≈48，對阿樂的皮膚（L*≈76）與袖口（L*≈88）ΔL* ≥ 25；深灰邊 L*≈22。
+//   用不受光照影響的材質（亮度只跟舞台燈總量走），擷取量得到的 ΔL* 才穩定。
+// - 寬度：中景約 9 px、近景 ≥ 8 px（1080p）。
+// - 從畫面上方外面垂下，下端以紙環扣在錨點（紙環是包住肢體的一圈紙帶）；不畫操控者的手或人影。
 // - 受力順序：線先繃緊（弧度消失），肢體才被拉動；擺盪用固定步長的彈簧阻尼模擬，每個 cue 開始時重設，
 //   所以重播與上一步會得到一模一樣的畫面。
+// - 復原 API：鬆（tension→0、弧度變大）、淡（opacity）、脫落（紙環打開、線往上飄出畫面）；沒有「剪斷」。
 import {
-  BufferAttribute, BufferGeometry, CanvasTexture, DoubleSide, Mesh, MeshStandardMaterial, RepeatWrapping, RingGeometry,
-  Vector3, type Material,
+  BufferAttribute, BufferGeometry, CanvasTexture, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, RepeatWrapping, Vector3,
 } from 'three';
-import { finishTexture, makeCanvas, fibers } from './paper';
+import { finishTexture, makeCanvas } from './paper';
+import { seeded } from '../util/math';
 
-/** 扭紋紙繩貼圖（沿 v 方向重複） */
+export const ROPE_COLORS = { body: '#77746f', edge: '#3a3835', lit: '#c9c5bc', fiberDark: 'rgba(40,38,34,0.16)', fiberLight: 'rgba(235,232,224,0.18)' };
+
+/** 平面紙繩貼圖（u＝橫跨寬度，v＝沿長度重複） */
 export function ropeTexture(): CanvasTexture {
-  const [c, g] = makeCanvas(32, 128);
-  g.fillStyle = '#9d9b95';
-  g.fillRect(0, 0, 32, 128);
-  // 扭紋：斜向的深淺條
-  for (let y = -32; y < 160; y += 16) {
-    g.fillStyle = 'rgba(70,68,64,0.55)';
-    g.beginPath(); g.moveTo(0, y); g.lineTo(32, y + 12); g.lineTo(32, y + 17); g.lineTo(0, y + 5); g.closePath(); g.fill();
-    g.fillStyle = 'rgba(235,232,224,0.35)';
-    g.beginPath(); g.moveTo(0, y + 7); g.lineTo(32, y + 19); g.lineTo(32, y + 21); g.lineTo(0, y + 9); g.closePath(); g.fill();
+  const W = 64, H = 256;
+  const [c, g] = makeCanvas(W, H);
+  g.fillStyle = ROPE_COLORS.body;
+  g.fillRect(0, 0, W, H);
+  // 紙纖維：沿長度方向的細短線與斑點（不成螺旋）
+  const r = seeded(913);
+  for (let i = 0; i < 260; i++) {
+    const x = 9 + r() * (W - 18), y = r() * H, len = 4 + r() * 14;
+    g.strokeStyle = r() < 0.5 ? ROPE_COLORS.fiberDark : ROPE_COLORS.fiberLight;
+    g.lineWidth = 0.7 + r() * 0.8;
+    g.beginPath(); g.moveTo(x, y); g.lineTo(x + (r() - 0.5) * 3, y + len); g.stroke();
   }
-  fibers(g, 32, 128, 77, 2);
-  // 邊線：左深灰、右淡色受光邊
-  g.fillStyle = '#3f3e3b'; g.fillRect(0, 0, 4, 128); g.fillRect(29, 0, 3, 128);
-  g.fillStyle = 'rgba(240,238,230,0.75)'; g.fillRect(4, 0, 2, 128);
+  // 兩側深灰邊線（各約 15%）＋左側受光邊
+  g.fillStyle = ROPE_COLORS.edge;
+  g.fillRect(0, 0, 9, H);
+  g.fillRect(W - 10, 0, 10, H);
+  g.fillStyle = ROPE_COLORS.lit;
+  g.fillRect(9, 0, 4, H);
+  g.fillStyle = 'rgba(0,0,0,0.10)';
+  g.fillRect(W - 16, 0, 6, H); // 右側背光
   const t = finishTexture(new CanvasTexture(c));
   t.wrapS = RepeatWrapping;
   t.wrapT = RepeatWrapping;
   return t;
 }
 
-export function ropeMaterial(): MeshStandardMaterial {
-  return new MeshStandardMaterial({ map: ropeTexture(), side: DoubleSide, roughness: 0.95, metalness: 0 });
+/** 紙環貼圖：米白紙帶、上下深色紙邊、中間一道摺痕、上緣中央綁線的小結 */
+export function ringTexture(): CanvasTexture {
+  const W = 128, H = 48;
+  const [c, g] = makeCanvas(W, H);
+  g.fillStyle = '#efe6d3';
+  g.fillRect(0, 0, W, H);
+  g.fillStyle = 'rgba(120,96,70,0.18)';
+  g.fillRect(0, H * 0.48, W, 3);
+  g.fillStyle = '#4d4034';
+  g.fillRect(0, 0, W, 5);
+  g.fillRect(0, H - 5, W, 5);
+  g.fillRect(0, 0, 4, H);
+  g.fillRect(W - 4, 0, 4, H);
+  // 兩端略暗（紙帶繞到肢體後面）
+  const grd = g.createLinearGradient(0, 0, W, 0);
+  grd.addColorStop(0, 'rgba(60,45,30,0.35)'); grd.addColorStop(0.18, 'rgba(60,45,30,0)');
+  grd.addColorStop(0.82, 'rgba(60,45,30,0)'); grd.addColorStop(1, 'rgba(60,45,30,0.35)');
+  g.fillStyle = grd;
+  g.fillRect(0, 0, W, H);
+  // 綁線的小結（灰色）
+  g.fillStyle = ROPE_COLORS.edge;
+  g.beginPath(); g.ellipse(W / 2, 9, 9, 7, 0, 0, Math.PI * 2); g.fill();
+  g.fillStyle = ROPE_COLORS.body;
+  g.beginPath(); g.ellipse(W / 2, 9, 5.5, 4, 0, 0, Math.PI * 2); g.fill();
+  return finishTexture(new CanvasTexture(c));
 }
 
-export function ringMaterial(): MeshStandardMaterial {
-  return new MeshStandardMaterial({ color: '#ece4d2', side: DoubleSide, roughness: 0.9, metalness: 0 });
+let ropeTex: CanvasTexture | null = null;
+let ringTex: CanvasTexture | null = null;
+
+export function ropeMaterial(): MeshBasicMaterial {
+  ropeTex ??= ropeTexture();
+  return new MeshBasicMaterial({ map: ropeTex, side: DoubleSide });
 }
 
-const SEGMENTS = 28;
+export function ringMaterial(): MeshBasicMaterial {
+  ringTex ??= ringTexture();
+  return new MeshBasicMaterial({ map: ringTex, side: DoubleSide });
+}
+
+const SEGMENTS = 36;
 const tmpA = new Vector3();
+
+export interface StringPose {
+  top: Vector3;
+  bottom: Vector3;
+  /** 鬆垂弧度（世界單位，0＝繃直；正負決定往哪邊彎） */
+  bow: number;
+  /** 線寬（世界單位） */
+  width: number;
+  /** 0–1 不透明度（變淡） */
+  opacity: number;
+  /** 紙環：0＝沒扣上、1＝扣好；脫落時從 1 往 0 */
+  ring: number;
+  /** 紙環方向（世界角度，弧度：肢體方向）與寬度（包住的肢體寬度） */
+  ringAngle: number;
+  ringWidth: number;
+  /** 舞台燈總量（紙繩不受光照，亮度跟著舞台燈走） */
+  light: number;
+}
 
 /** 一條紙繩：二次貝茲曲線的帶狀網格＋下端紙環 */
 export class PaperString {
   readonly mesh: Mesh;
   readonly ring: Mesh;
+  readonly ropeMat: MeshBasicMaterial;
+  readonly ringMat: MeshBasicMaterial;
   private pos: Float32Array;
   private uv: Float32Array;
+  /** 最近一次的螢幕取樣資訊（測試與擷取量測用） */
+  last: { top: Vector3; bottom: Vector3; width: number; visible: boolean; bow: number } = { top: new Vector3(), bottom: new Vector3(), width: 0, visible: false, bow: 0 };
 
-  constructor(material: Material, ringMat: Material, renderOrder: number) {
+  constructor(renderOrder: number) {
+    this.ropeMat = ropeMaterial();
+    this.ringMat = ringMaterial();
     const geo = new BufferGeometry();
     this.pos = new Float32Array((SEGMENTS + 1) * 2 * 3);
     this.uv = new Float32Array((SEGMENTS + 1) * 2 * 2);
@@ -61,42 +129,39 @@ export class PaperString {
     geo.setAttribute('position', new BufferAttribute(this.pos, 3));
     geo.setAttribute('uv', new BufferAttribute(this.uv, 2));
     geo.setIndex(idx);
-    this.mesh = new Mesh(geo, material);
+    this.mesh = new Mesh(geo, this.ropeMat);
     this.mesh.renderOrder = renderOrder;
     this.mesh.frustumCulled = false;
     this.mesh.castShadow = true;
-    this.ring = new Mesh(new RingGeometry(0.04, 0.072, 24), ringMat);
+    this.ring = new Mesh(new PlaneGeometry(1, 1), this.ringMat);
     this.ring.renderOrder = renderOrder + 1;
     this.ring.castShadow = true;
+    this.ring.frustumCulled = false;
   }
 
-  /**
-   * @param top 上端（畫面外）
-   * @param bottom 下端（錨點或正在落下的位置）
-   * @param bow 鬆垂弧度（世界單位，0＝繃直）
-   * @param width 紙繩寬度
-   */
-  update(top: Vector3, bottom: Vector3, bow: number, width: number, showRing: boolean, visible: boolean): void {
-    this.mesh.visible = visible;
-    this.ring.visible = visible && showRing;
-    if (!visible) return;
+  hide(): void { this.mesh.visible = false; this.ring.visible = false; this.last.visible = false; }
+
+  update(p: StringPose): void {
+    if (p.opacity <= 0.002) { this.hide(); return; }
+    this.mesh.visible = true;
+    const { top, bottom } = p;
     const dx = bottom.x - top.x, dy = bottom.y - top.y;
     const len = Math.hypot(dx, dy) || 1;
-    // 垂直於線的方向（在 xy 平面）
     const nx = -dy / len, ny = dx / len;
-    const cx = (top.x + bottom.x) / 2 + nx * bow, cy = (top.y + bottom.y) / 2 + ny * bow;
+    const cx = (top.x + bottom.x) / 2 + nx * p.bow, cy = (top.y + bottom.y) / 2 + ny * p.bow;
     const cz = (top.z + bottom.z) / 2;
-    const vRepeat = len / (width * 5);
+    const vRepeat = len / (p.width * 4);
     for (let i = 0; i <= SEGMENTS; i++) {
       const t = i / SEGMENTS, it = 1 - t;
       const px = it * it * top.x + 2 * it * t * cx + t * t * bottom.x;
       const py = it * it * top.y + 2 * it * t * cy + t * t * bottom.y;
       const pz = it * it * top.z + 2 * it * t * cz + t * t * bottom.z;
-      // 切線
       const tx = 2 * it * (cx - top.x) + 2 * t * (bottom.x - cx);
       const ty = 2 * it * (cy - top.y) + 2 * t * (bottom.y - cy);
       const tl = Math.hypot(tx, ty) || 1;
-      const ox = (-ty / tl) * width / 2, oy = (tx / tl) * width / 2;
+      // 紙帶寬度：u=0 在畫面左側（受光邊在左）
+      let ox = (-ty / tl) * p.width / 2, oy = (tx / tl) * p.width / 2;
+      if (ox > 0) { ox = -ox; oy = -oy; }
       const k = i * 6;
       this.pos[k] = px + ox; this.pos[k + 1] = py + oy; this.pos[k + 2] = pz;
       this.pos[k + 3] = px - ox; this.pos[k + 4] = py - oy; this.pos[k + 5] = pz;
@@ -107,10 +172,26 @@ export class PaperString {
     const geo = this.mesh.geometry;
     geo.attributes.position.needsUpdate = true;
     geo.attributes.uv.needsUpdate = true;
-    geo.computeVertexNormals();
-    geo.computeBoundingSphere();
-    tmpA.copy(bottom);
-    this.ring.position.set(tmpA.x, tmpA.y, tmpA.z + 0.012);
+    const L = Math.max(0.2, Math.min(1.2, p.light));
+    this.ropeMat.color.setScalar(L);
+    this.ringMat.color.setScalar(L);
+    const fade = p.opacity < 0.999;
+    if (this.ropeMat.transparent !== fade) { this.ropeMat.transparent = fade; this.ringMat.transparent = fade; this.ropeMat.needsUpdate = true; this.ringMat.needsUpdate = true; }
+    this.ropeMat.opacity = p.opacity;
+    this.ringMat.opacity = p.opacity;
+    this.ropeMat.depthWrite = !fade;
+    this.ringMat.depthWrite = !fade;
+    this.last = { top: top.clone(), bottom: bottom.clone(), width: p.width, visible: true, bow: p.bow };
+
+    // 紙環：包住肢體的紙帶（長邊垂直於肢體方向），扣上時由 0.6 倍彈到原尺寸
+    this.ring.visible = p.ring > 0.01;
+    if (this.ring.visible) {
+      tmpA.copy(bottom);
+      const pop = p.ring < 1 ? 0.6 + 0.4 * p.ring : 1;
+      this.ring.position.set(tmpA.x, tmpA.y, tmpA.z + 0.02);
+      this.ring.rotation.set(0, 0, p.ringAngle + Math.PI / 2);
+      this.ring.scale.set((p.ringWidth + 0.04) * pop, Math.max(0.06, p.width * 1.05) * pop, 1);
+    }
   }
 }
 
@@ -155,3 +236,4 @@ export class StringSim {
 
   get(key: string): SimChannel { return this.ch.get(key) ?? { ox: 0, oy: 0, vx: 0, vy: 0 }; }
 }
+

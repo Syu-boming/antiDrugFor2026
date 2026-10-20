@@ -5,6 +5,12 @@ export class TitleCardView {
   constructor(private el: HTMLElement) {
     el.innerHTML = `<div class="sig-card"><div class="sig-text">許博明老師製作</div></div>`;
   }
+  /** 換上素材的署名卡紙（assets/final/tex-titlecard-paper；字仍由程式排版） */
+  setPaper(dataUrl: string): void {
+    const card = this.el.querySelector<HTMLElement>('.sig-card')!;
+    card.classList.add('papered');
+    card.style.backgroundImage = `url("${dataUrl}")`;
+  }
   update(opacity: number): void {
     this.el.hidden = opacity <= 0.001;
     this.el.style.opacity = String(opacity);

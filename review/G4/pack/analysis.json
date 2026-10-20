@@ -1,0 +1,505 @@
+{
+ "proj": {
+  "16x9": [
+   {
+    "src": "capture/keyframes/a0_c000_000.00_before-mid-after.png",
+    "proj": "proj/16x9/a0_c000_000.00_before-mid-after_proj.png",
+    "sheet": "proj/16x9/a0_c000_000.00_before-mid-after_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a0_c001_000.00_before.png",
+    "proj": "proj/16x9/a0_c001_000.00_before_proj.png",
+    "sheet": "proj/16x9/a0_c001_000.00_before_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a0_c001_005.30_mid.png",
+    "proj": "proj/16x9/a0_c001_005.30_mid_proj.png",
+    "sheet": "proj/16x9/a0_c001_005.30_mid_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a0_c001_010.60_after.png",
+    "proj": "proj/16x9/a0_c001_010.60_after_proj.png",
+    "sheet": "proj/16x9/a0_c001_010.60_after_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c002_000.00_before.png",
+    "proj": "proj/16x9/a2_c002_000.00_before_proj.png",
+    "sheet": "proj/16x9/a2_c002_000.00_before_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c002_011.41_mid.png",
+    "proj": "proj/16x9/a2_c002_011.41_mid_proj.png",
+    "sheet": "proj/16x9/a2_c002_011.41_mid_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c002_022.83_after.png",
+    "proj": "proj/16x9/a2_c002_022.83_after_proj.png",
+    "sheet": "proj/16x9/a2_c002_022.83_after_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c004_000.00_before.png",
+    "proj": "proj/16x9/a2_c004_000.00_before_proj.png",
+    "sheet": "proj/16x9/a2_c004_000.00_before_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c004_009.75_mid.png",
+    "proj": "proj/16x9/a2_c004_009.75_mid_proj.png",
+    "sheet": "proj/16x9/a2_c004_009.75_mid_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a2_c004_019.50_after.png",
+    "proj": "proj/16x9/a2_c004_019.50_after_proj.png",
+    "sheet": "proj/16x9/a2_c004_019.50_after_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c002_000.00_before.png",
+    "proj": "proj/16x9/a8_c002_000.00_before_proj.png",
+    "sheet": "proj/16x9/a8_c002_000.00_before_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c002_001.55_mid.png",
+    "proj": "proj/16x9/a8_c002_001.55_mid_proj.png",
+    "sheet": "proj/16x9/a8_c002_001.55_mid_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c002_003.10_after.png",
+    "proj": "proj/16x9/a8_c002_003.10_after_proj.png",
+    "sheet": "proj/16x9/a8_c002_003.10_after_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c003_000.00_before.png",
+    "proj": "proj/16x9/a8_c003_000.00_before_proj.png",
+    "sheet": "proj/16x9/a8_c003_000.00_before_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c003_000.70_mid.png",
+    "proj": "proj/16x9/a8_c003_000.70_mid_proj.png",
+    "sheet": "proj/16x9/a8_c003_000.70_mid_sheet.png"
+   },
+   {
+    "src": "capture/keyframes/a8_c003_001.40_after.png",
+    "proj": "proj/16x9/a8_c003_001.40_after_proj.png",
+    "sheet": "proj/16x9/a8_c003_001.40_after_sheet.png"
+   }
+  ],
+  "1024x768": [
+   {
+    "src": "keyframes_4x3/1024x768/a0_c000_000.00_after.png",
+    "proj": "proj/1024x768/a0_c000_000.00_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a0_c000_000.00_before.png",
+    "proj": "proj/1024x768/a0_c000_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a0_c000_000.00_mid.png",
+    "proj": "proj/1024x768/a0_c000_000.00_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a0_c001_000.00_before.png",
+    "proj": "proj/1024x768/a0_c001_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a0_c001_005.30_mid.png",
+    "proj": "proj/1024x768/a0_c001_005.30_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a0_c001_010.60_after.png",
+    "proj": "proj/1024x768/a0_c001_010.60_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c002_000.00_before.png",
+    "proj": "proj/1024x768/a2_c002_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c002_011.41_mid.png",
+    "proj": "proj/1024x768/a2_c002_011.41_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c002_022.83_after.png",
+    "proj": "proj/1024x768/a2_c002_022.83_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c004_000.00_before.png",
+    "proj": "proj/1024x768/a2_c004_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c004_009.75_mid.png",
+    "proj": "proj/1024x768/a2_c004_009.75_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a2_c004_019.50_after.png",
+    "proj": "proj/1024x768/a2_c004_019.50_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c002_000.00_before.png",
+    "proj": "proj/1024x768/a8_c002_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c002_001.55_mid.png",
+    "proj": "proj/1024x768/a8_c002_001.55_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c002_003.10_after.png",
+    "proj": "proj/1024x768/a8_c002_003.10_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c003_000.00_before.png",
+    "proj": "proj/1024x768/a8_c003_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c003_000.70_mid.png",
+    "proj": "proj/1024x768/a8_c003_000.70_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1024x768/a8_c003_001.40_after.png",
+    "proj": "proj/1024x768/a8_c003_001.40_after_proj.png"
+   }
+  ],
+  "1440x1080": [
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c000_000.00_after.png",
+    "proj": "proj/1440x1080/a0_c000_000.00_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c000_000.00_before.png",
+    "proj": "proj/1440x1080/a0_c000_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c000_000.00_mid.png",
+    "proj": "proj/1440x1080/a0_c000_000.00_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c001_000.00_before.png",
+    "proj": "proj/1440x1080/a0_c001_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c001_005.30_mid.png",
+    "proj": "proj/1440x1080/a0_c001_005.30_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a0_c001_010.60_after.png",
+    "proj": "proj/1440x1080/a0_c001_010.60_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c002_000.00_before.png",
+    "proj": "proj/1440x1080/a2_c002_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c002_011.41_mid.png",
+    "proj": "proj/1440x1080/a2_c002_011.41_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c002_022.83_after.png",
+    "proj": "proj/1440x1080/a2_c002_022.83_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c004_000.00_before.png",
+    "proj": "proj/1440x1080/a2_c004_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c004_009.75_mid.png",
+    "proj": "proj/1440x1080/a2_c004_009.75_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a2_c004_019.50_after.png",
+    "proj": "proj/1440x1080/a2_c004_019.50_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c002_000.00_before.png",
+    "proj": "proj/1440x1080/a8_c002_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c002_001.55_mid.png",
+    "proj": "proj/1440x1080/a8_c002_001.55_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c002_003.10_after.png",
+    "proj": "proj/1440x1080/a8_c002_003.10_after_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c003_000.00_before.png",
+    "proj": "proj/1440x1080/a8_c003_000.00_before_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c003_000.70_mid.png",
+    "proj": "proj/1440x1080/a8_c003_000.70_mid_proj.png"
+   },
+   {
+    "src": "keyframes_4x3/1440x1080/a8_c003_001.40_after.png",
+    "proj": "proj/1440x1080/a8_c003_001.40_after_proj.png"
+   }
+  ]
+ },
+ "strip_pages": [
+  "strip_a2_c002/strip_a2_c002_8fps_p01.png",
+  "strip_a2_c002/strip_a2_c002_8fps_p02.png",
+  "strip_a2_c002/strip_a2_c002_8fps_p03.png"
+ ],
+ "compare_g2": [
+  "compare_g2v04_g4_16x9.png",
+  "compare_g2v04_g4_1440x1080.png",
+  "compare_g2v04_g4_1024x768.png"
+ ],
+ "audio": {
+  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設，照引擎混音規則（三條匯流排、配樂基準音量 setTargetAtTime 0.35 s、對白避讓 duckingPlan、交叉淡入淡出、換 cue 停台詞與音效 30 ms 淡出）以 48 kHz 離線混音；總音量 1.0。",
+  "file": "audio/g4_mix.wav",
+  "duration_sec": 72.93,
+  "sample_peak_dBFS": -1.49,
+  "clipped_samples": 0,
+  "full_playback": {
+   "I_LUFS": -18.5,
+   "LRA_LU": 12.3,
+   "TP_dBTP": -1.5
+  },
+  "a2_c002_to_a2_c004": {
+   "I_LUFS": -17.4,
+   "LRA_LU": 11.9,
+   "TP_dBTP": -1.5,
+   "from_sec": 15.6,
+   "to_sec": 59.93
+  },
+  "music_stem_full": {
+   "I_LUFS": -24.4,
+   "LRA_LU": 20.2,
+   "TP_dBTP": -7.7
+  },
+  "line_vo_file_I_spread_LU": 0.2,
+  "line_mix_I_spread_LU": 0.3,
+  "momentary_max_LUFS": -11.4,
+  "momentary_max_at_sec": 30.8,
+  "momentary_max_rise_within_1s_LU": 34.8,
+  "momentary_max_rise_per_100ms_LU": 22.8,
+  "momentary_full_mix": {
+   "max_LUFS": -11.4,
+   "max_at_sec": 30.8,
+   "max_rise_within_1s_LU": 34.8,
+   "max_rise_within_1s_at_sec": 4.1,
+   "max_rise_per_100ms_LU": 22.8,
+   "max_rise_per_100ms_at_sec": 46.6
+  },
+  "momentary_music_sfx_only": {
+   "max_LUFS": -15.7,
+   "max_at_sec": 63.9,
+   "max_rise_within_1s_LU": 34.8,
+   "max_rise_within_1s_at_sec": 4.1,
+   "max_rise_per_100ms_LU": 18.6,
+   "max_rise_per_100ms_at_sec": 3.2
+  },
+  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算；music_sfx_only＝不含配音的配樂＋音效分軌（含基準音量與避讓）。",
+  "ducking_constants": {
+   "DUCK_LEVEL": 0.32,
+   "DUCK_LEAD": 0.15,
+   "DUCK_TC_DOWN": 0.06,
+   "DUCK_RELEASE": 0.3,
+   "DUCK_TC_UP": 0.25,
+   "DUCK_BRIDGE": 0.9
+  }
+ },
+ "flash_playback": {
+  "ok": true,
+  "max_changes_per_sec": {
+   "luma": 3,
+   "red": 3
+  },
+  "near_limit_total": 111,
+  "frames_analyzed": 2188
+ },
+ "video": {
+  "file": "g4_playback.mp4",
+  "frames": 2188,
+  "ffprobe": {
+   "programs": [],
+   "stream_groups": [],
+   "streams": [
+    {
+     "codec_name": "h264",
+     "width": 1920,
+     "height": 1080,
+     "r_frame_rate": "30/1",
+     "nb_frames": "2187",
+     "side_data_list": [
+      {}
+     ]
+    },
+    {
+     "codec_name": "aac",
+     "r_frame_rate": "0/0",
+     "nb_frames": "3420"
+    }
+   ],
+   "format": {
+    "duration": "72.930000",
+    "size": "46058632"
+   }
+  }
+ },
+ "durations": {
+  "cues": {
+   "a0_c000": 0,
+   "a0_c001": 10.6,
+   "a2_c002": 22.83,
+   "a2_c004": 19.5,
+   "a8_c002": 3.1,
+   "a8_c003": 1.4
+  },
+  "a2_c002_plus_a2_c004_sec": 42.33,
+  "target_sec": [
+   30,
+   45
+  ],
+  "all_cues_sum_sec": 57.43,
+  "opening_a0_c001_sec": 10.6,
+  "closing_a8_c002_plus_a8_c003_sec": 4.5,
+  "playback_with_holds_sec": 72.93,
+  "holds_assumed_sec": {
+   "a0_c000": 3,
+   "a0_c001": 2,
+   "a2_c002": 2,
+   "a2_c004": 2,
+   "a8_c002": 0,
+   "a8_c003": 6.5
+  },
+  "video_duration_sec": 72.93,
+  "vo_seconds_in_a2_c002_a2_c004": 22.23
+ },
+ "safety": {
+  "string_anchors_in_cues": [
+   "elbow",
+   "knee",
+   "wrist"
+  ],
+  "attach_points_primary": {
+   "wrist_back": {
+    "part": "forearm_r",
+    "local_px": [
+     69.0,
+     210.0
+    ]
+   },
+   "elbow_out": {
+    "part": "upper_arm_r",
+    "local_px": [
+     39.0,
+     279.0
+    ]
+   },
+   "knee_front": {
+    "part": "thigh_l",
+    "local_px": [
+     87.5,
+     330.0
+    ]
+   }
+  },
+  "probe_frames_with_strings": 435,
+  "string_path_min_dist_to_ale_head_box_px": 26.9,
+  "per_anchor": {
+   "wrist": {
+    "min_dist_to_head_box_px": 30.9,
+    "frames": 435,
+    "at": "a2_c002 t=7.3"
+   },
+   "elbow": {
+    "min_dist_to_head_box_px": 44.0,
+    "frames": 424,
+    "at": "a2_c002 t=8.3"
+   },
+   "knee": {
+    "min_dist_to_head_box_px": 26.9,
+    "frames": 413,
+    "at": "a8_c002 t=2.9"
+   }
+  },
+  "string_path_intersects_child_box": [],
+  "string_path_intersects_child_box_count": 0,
+  "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎同一條二次貝茲曲線投影成 13 點；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
+  "required_narration_1": {
+   "claude_md": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "script_v03": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "cue_text_plain": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+   "script_equals_claude_md": true,
+   "cue_equals_script": true
+  },
+  "subtitles": [
+   {
+    "id": "a2_c002_01",
+    "pages": 1,
+    "max_rows_per_page": 2,
+    "max_chars_per_row": 16,
+    "rows": [
+     [
+      "咦？",
+      "我想揮手……手怎麼跑到旁邊去了？"
+     ]
+    ]
+   },
+   {
+    "id": "a2_c002_02",
+    "pages": 1,
+    "max_rows_per_page": 1,
+    "max_chars_per_row": 6,
+    "rows": [
+     [
+      "叔叔，小心！"
+     ]
+    ]
+   },
+   {
+    "id": "a2_c004_01",
+    "pages": 1,
+    "max_rows_per_page": 2,
+    "max_chars_per_row": 14,
+    "rows": [
+     [
+      "阿樂叔叔身上這一條一條的線，",
+      "叫做操偶線。"
+     ]
+    ]
+   },
+   {
+    "id": "a2_c004_02",
+    "pages": 3,
+    "max_rows_per_page": 2,
+    "max_chars_per_row": 13,
+    "rows": [
+     [
+      "這些線是故事的比喻。"
+     ],
+     [
+      "毒品可能讓人的頭腦",
+      "和身體受到影響，不聽使喚。"
+     ],
+     [
+      "人不會真的變成喪屍。"
+     ]
+    ]
+   }
+  ],
+  "subtitle_max_chars_per_row": 16,
+  "subtitle_max_rows_per_page": 2,
+  "app_js_getUserMedia_count": 0,
+  "app_js_mediaDevices_count": 0,
+  "capture_external_requests": 0,
+  "capture_console_errors": 0
+ },
+ "frames_meta": {
+  "strip": {
+   "cue": "a2_c002",
+   "from": 6.5,
+   "to": 22.83,
+   "fps": 8,
+   "count": 132,
+   "fromAnim": "strings.drop.start"
+  },
+  "errors": [],
+  "engineDurations": {
+   "a0_c000": 0,
+   "a0_c001": 10.6,
+   "a2_c002": 22.83,
+   "a2_c004": 19.5,
+   "a8_c002": 3.1,
+   "a8_c003": 1.4
+  }
+ }
+}

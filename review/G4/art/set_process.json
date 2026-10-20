@@ -1,0 +1,93 @@
+{
+ "bg-workshop-back": {
+  "raw": "review/G4/art/raw/wk_back_v02.png",
+  "generated": "assets/generated/bg-workshop-back_v02.png",
+  "raw_size": [
+   1536,
+   1024
+  ],
+  "proj_v2_rel_lum": {
+   "lower_two_thirds": {
+    "median": 0.593,
+    "p10": 0.506
+   },
+   "kids_torso_band_right_half": {
+    "median": 0.591,
+    "p10": 0.427
+   },
+   "upper_shelves": {
+    "median": 0.519,
+    "p10": 0.364
+   }
+  },
+  "final": "assets/final/bg-workshop-back_v02.jpg",
+  "final_size": [
+   2304,
+   1536
+  ]
+ },
+ "bg-workshop-lanterns": {
+  "raw": "review/G4/art/raw/wk_lanterns_v01.png",
+  "generated": "assets/generated/bg-workshop-lanterns_v01.png",
+  "raw_size": [
+   1536,
+   1024
+  ],
+  "final": "assets/final/bg-workshop-lanterns_v01.png",
+  "final_size": [
+   1536,
+   414
+  ],
+  "crop_from_raw": [
+   0,
+   40
+  ],
+  "stray_px_removed": 0,
+  "semi_white_edge_px": 0,
+  "lowest_lantern_px": 404
+ },
+ "bg-workshop-table": {
+  "raw": "review/G4/art/raw/wk_table_v02.png",
+  "generated": "assets/generated/bg-workshop-table_v02.png",
+  "raw_size": [
+   1536,
+   1024
+  ],
+  "final": "assets/final/bg-workshop-table_v02.png",
+  "final_size": [
+   1479,
+   791
+  ],
+  "crop_from_raw": [
+   29,
+   233
+  ],
+  "stray_px_removed": 1,
+  "semi_white_edge_px": 0,
+  "table_top_y_px": 212,
+  "table_body_x_px": [
+   11,
+   1469
+  ],
+  "table_body_h_px": 579
+ },
+ "bg-workshop-wing": {
+  "raw": "review/G4/art/raw/wk_wing_v01.png",
+  "generated": "assets/generated/bg-workshop-wing_v01.png",
+  "raw_size": [
+   1024,
+   1536
+  ],
+  "final": "assets/final/bg-workshop-wing_v01.png",
+  "final_size": [
+   599,
+   1536
+  ],
+  "crop_from_raw": [
+   0,
+   0
+  ],
+  "stray_px_removed": 1,
+  "semi_white_edge_px": 0
+ }
+}

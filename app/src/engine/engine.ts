@@ -15,6 +15,7 @@ import type { Cue, CueFile } from '../types/cue';
 import { validateCueFile, type ValidationResult } from '../cues/validate';
 import { buildTimelines, type CueTimeline } from '../cues/timeline';
 import { getPack, loadPackFile, loadPackFiles, type PackManifest } from '../data/packs';
+import { AssetStore } from '../data/assets';
 import { AudioClock, PerformanceClock, VirtualClock, type Clock } from './clock';
 import { evaluateWorld, type WorldState } from './world';
 import type { Mixer } from '../audio/mixer';
@@ -45,6 +46,8 @@ export interface EngineState {
   cueId: string | null; cueIndex: number; kind: string | null; title: string;
   cueTime: number; cueDuration: number; revealed: boolean; quizVisible: boolean; lampsLit: number[];
   placeholderAudio: boolean; activeVoices: number; voiceIds: string[]; subtitle: string;
+  missingAudio: string[]; castReport: string[]; set: string; actors: string[];
+  world: { curtain: number; titleCard: number; set: number; desat: number; spot: number; light: number } | null;
   clock: string; audioState: string; avOffsetMs: number; quality: Quality; lock30: boolean; playId: number;
   ignoredInputs: number; ignoredRepeats: number; blockedKeys: number; lastBlockedKey: string | null;
   fps: number; contextLost: boolean; errors: string[]; warnings: string[]; gpu: string;
@@ -71,6 +74,9 @@ export class Engine {
   private lampsCache = new Map<number, number[]>();
   private lipsync = new Map<string, LipsyncData>();
   manifest: PackManifest | null = null;
+  readonly assets = new AssetStore();
+  /** 配樂與音效缺檔（照常演出，準備畫面列出） */
+  missingAudio: string[] = [];
   validation: ValidationResult | null = null;
   errors: string[] = [];
   avOffsetMs: number;
@@ -115,13 +121,22 @@ export class Engine {
       if (!this.validation.ok || !file) throw new Error(`cue 檔有錯誤：\n${this.validation.errors.join('\n')}`);
       this.file = file;
 
-      // 音檔與對嘴資料：找得到就載入並解碼，找不到的句子進暫代模式
+      // 素材（圖像、分件資料、臉部換片），然後依 cue 檔建立景與演員
+      this.ui.ready.setStatus([{ label: '素材', value: '載入中…', ok: null }]);
+      await this.assets.load(man, (d, n) => this.ui.ready.setStatus([{ label: '素材', value: `${d}／${n}`, ok: null }]));
+      this.stage.setScene(file, this.assets);
+      const paper = getPack<string>('img:tex-titlecard-paper');
+      if (paper) this.ui.title.setPaper(paper);
+
+      // 音檔與對嘴資料：找得到就載入並解碼，找不到的句子進暫代模式；配樂與音效缺檔照常演出
       const audioIds = new Set<string>();
       const lipIds = new Set<string>();
+      const nonVo = new Set<string>();
       for (const c of file.cues) {
         for (const l of c.lines) { audioIds.add(l.audioId ?? `vo_${l.id}`); lipIds.add(l.lipsyncId ?? l.id); }
-        if (c.audioId && c.audioId !== 'none') audioIds.add(c.audioId);
-        for (const s of c.sfx ?? []) audioIds.add(s.id);
+        if (c.audioId && c.audioId !== 'none') { audioIds.add(c.audioId); nonVo.add(c.audioId); }
+        for (const s of c.sfx ?? []) { audioIds.add(s.id); nonVo.add(s.id); }
+        for (const m of c.music ?? []) if (m.id !== 'none') { audioIds.add(m.id); nonVo.add(m.id); }
       }
       const files = new Set<string>();
       for (const id of audioIds) if (man.audio[id]) files.add(man.audio[id].file);
@@ -133,6 +148,7 @@ export class Engine {
         if (data && await this.mixer.decode(id, data)) decoded++;
       }));
       for (const id of lipIds) { const d = getPack<LipsyncData>(`lip:${id}`); if (d) this.lipsync.set(id, d); }
+      this.missingAudio = [...nonVo].filter((id) => !man.audio[id] || (this.mixer.available && !this.mixer.has(id))).sort();
 
       this.timelines = buildTimelines(file, (id) => this.mixer.duration(id));
       this.idIndex = new Map(this.timelines.map((t) => [t.cue.id, t.index]));
@@ -146,6 +162,8 @@ export class Engine {
         { label: 'cue 檔', value: `${file.title}（${file.cues.length} 個 cue）`, ok: true },
         { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊`, ok: voReal === voTotal ? true : null },
         { label: '音訊', value: this.mixer.available ? `可用（已解碼 ${decoded} 個音檔）` : '無法建立音訊（只顯示字幕）', ok: this.mixer.available },
+        { label: '配樂音效', value: this.missingAudio.length ? `缺 ${this.missingAudio.length} 個檔（照常演出、該處無聲）：${this.missingAudio.join('、')}` : '全部就緒', ok: this.missingAudio.length ? null : true },
+        { label: '紙偶', value: `${[...this.stage.actors.keys()].join('、') || '無'}${this.stage.castReport.length ? `；${this.stage.castReport.join('；')}` : ''}`, ok: this.stage.castReport.length ? null : true },
         { label: '顯示卡', value: this.stage.gpuInfo, ok: !/SwiftShader|llvmpipe|Software/i.test(this.stage.gpuInfo) },
         ...(this.validation.warnings.length ? [{ label: '提醒', value: this.validation.warnings.join('；'), ok: null }] : []),
       ]);
@@ -291,9 +309,10 @@ export class Engine {
     }
     for (const s of tl.sfx) this.mixer.playAt('sfx', s.id, at(s.at), { gain: s.gain });
     const music = tl.cue.audioId;
-    if (music === 'none') this.mixer.stop('music', 1.0);
-    else if (music && this.mixer.musicId !== music) { this.mixer.stop('music', 1.0); this.mixer.playAt('music', music, at(0), { loop: true }); }
-    this.mixer.setMusicLevel(MUSIC_LEVEL[tl.cue.kind] ?? 0.6, at(0));
+    if (music === 'none') this.mixer.crossfadeMusic('none', at(0), { fade: 1.0 });
+    else if (music && this.mixer.musicId !== music) this.mixer.crossfadeMusic(music, at(0), { loop: tl.cue.musicLoop ?? true, fade: 1.0 });
+    for (const m of tl.music) this.mixer.crossfadeMusic(m.id, at(m.at), { loop: m.loop, fade: m.fade, gain: m.gain, offset: m.offset });
+    this.mixer.setMusicLevel(tl.cue.musicLevel ?? MUSIC_LEVEL[tl.cue.kind] ?? 0.6, at(0));
     this.mixer.scheduleDucking(intervals);
   }
 
@@ -303,7 +322,7 @@ export class Engine {
     this.mode = 'waiting';
     this.playId++;
     this.waitEnteredAt = performance.now();
-    if (!opts.keepAudio && this.clock.kind === 'audio') this.mixer.setMusicLevel(MUSIC_LEVEL[this.timelines[i].cue.kind] ?? 0.6);
+    if (!opts.keepAudio && this.clock.kind === 'audio') { const c = this.timelines[i].cue; this.mixer.setMusicLevel(c.musicLevel ?? MUSIC_LEVEL[c.kind] ?? 0.6); }
     this.renderNow(performance.now());
   }
 
@@ -394,7 +413,7 @@ export class Engine {
     const tl = this.timelines[this.index];
     if (!tl) return;
     const t = this.displayTime();
-    const world = evaluateWorld(tl, t, this.lampsBefore(this.index));
+    const world = evaluateWorld(tl, t, this.lampsBefore(this.index), this.stage.cameraResolver(tl));
     this.lastWorld = world;
     this.stage.apply(world, tl, t, String(this.playId));
     this.ui.update({
@@ -459,7 +478,10 @@ export class Engine {
       quizVisible: !!w && w.quizVisible > 0.5,
       lampsLit: w ? w.lamps.map((v, i) => (v >= 0.99 ? i + 1 : 0)).filter(Boolean) : [],
       placeholderAudio: !!tl?.placeholder, activeVoices: this.mixer.activeVoices, voiceIds: this.mixer.activeIds(),
-      subtitle: this.ui.subs.currentText, clock: this.clock.kind, audioState: this.mixer.state, avOffsetMs: this.avOffsetMs,
+      subtitle: this.ui.subs.currentText, missingAudio: [...this.missingAudio], castReport: [...this.stage.castReport], set: this.stage.setName,
+      actors: [...this.stage.actors.keys()],
+      world: w ? { curtain: w.curtain, titleCard: w.titleCard, set: w.set, desat: w.desat, spot: w.spot, light: w.light } : null,
+      clock: this.clock.kind, audioState: this.mixer.state, avOffsetMs: this.avOffsetMs,
       quality: this.stage.quality, lock30: this.lock30, playId: this.playId,
       ignoredInputs: this.ignoredInputs, ignoredRepeats: this.input.ignoredRepeats, blockedKeys: this.input.blocked,
       lastBlockedKey: this.input.lastBlockedKey, fps: Math.round(this.fpsEma * 10) / 10, contextLost: this.stage.contextLost,

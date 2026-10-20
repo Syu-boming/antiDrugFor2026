@@ -10,6 +10,11 @@
 //   --width 1920 --height 1080   擷取解析度
 //   --q A|B               畫質等級
 //   --only a2_c002,a2_c004       只擷取指定 cue
+//   --dense a2_c002,a2_c004      指定 cue 的高密度逐格（每格都存 JPEG，frames_dense/<cue>/；可做影片或逐格檢查）
+//   --dense-fps 30        高密度逐格的每秒格數（預設 30）
+//   --probe               量測：每個關鍵影格與每秒一格記錄操偶線螢幕位置與線寬（probe.json），
+//                         並在關鍵影格隱藏角色重畫一次，量兒童站位背景的亮度（投影 v2 模擬）與線的 ΔL*
+//   --video               把高密度逐格組成 H.264 預覽影片（無聲，需要 ffmpeg）
 //   --keep-analysis       保留分析用的中間影格（預設分析完刪除，節省空間）
 // 輸出：keyframes/（PNG）、frames/（每秒 2 格 JPEG）、contact_keyframes.png、contact_timeline_NN.png、
 //       luma_series.csv、flash_report.json、luma_plot.png、capture.json
@@ -35,16 +40,20 @@ const width = Number(opt('--width', '1920'));
 const height = Number(opt('--height', '1080'));
 const quality = opt('--q', 'A');
 const only = opt('--only', '') ? new Set(opt('--only', '').split(',')) : null;
+const dense = opt('--dense', '') ? new Set(opt('--dense', '').split(',')) : new Set();
+const denseFps = Number(opt('--dense-fps', '30'));
+const probe = has('--probe');
+const video = has('--video');
 
 const dist = join(ROOT, 'app/dist/index.html');
 if (!existsSync(dist)) { console.error('[capture] 找不到 app/dist/index.html，請先在 app/ 執行 npm run build'); process.exit(1); }
 
-for (const d of ['keyframes', 'frames', 'frames/analysis']) {
+for (const d of ['keyframes', 'frames', 'frames/analysis', 'frames_dense', 'probe_bg']) {
   rmSync(join(out, d), { recursive: true, force: true });
   mkdirSync(join(out, d), { recursive: true });
 }
 
-const url = `${pathToFileURL(dist).href}?capture=1&cues=${encodeURIComponent(cues)}&q=${quality}&step=${afps}`;
+const url = `${pathToFileURL(dist).href}?capture=1&cues=${encodeURIComponent(cues)}&q=${quality}&step=${Math.max(afps, dense.size ? denseFps : 0)}`;
 const t0 = Date.now();
 const browser = await chromium.launch({
   channel: 'chrome', headless: true,
@@ -65,6 +74,8 @@ console.log(`[capture] ${cues}：${list.length} 個 cue，總長 ${list.reduce((
 
 const r3 = (x) => Math.round(x * 1000) / 1000;
 const frames = [];
+const probes = [];
+let denseCount = 0;
 let globalT = 0;
 let n = 0;
 for (const c of list) {
@@ -82,11 +93,38 @@ for (const c of list) {
   for (let k = 0; k <= Math.floor(D * afps + 1e-6); k++) add(k / afps, null);
   for (let k = 0; k <= Math.floor(D * fps + 1e-6); k++) add(k / fps, 'save');
   add(0, 'before'); add(D / 2, 'mid'); add(D, 'after');
+  // 高密度逐格：每格都存（另一個資料夾，不進接觸表）
+  const denseTimes = new Set();
+  if (dense.has(c.id)) {
+    mkdirSync(join(out, 'frames_dense', c.id), { recursive: true });
+    for (let k = 0; k <= Math.floor(D * denseFps + 1e-6); k++) { const k3 = r3(k / denseFps); denseTimes.add(k3); if (!times.has(k3)) times.set(k3, { t: k3, key: null, save: false, denseOnly: true }); }
+  }
   for (const e of [...times.values()].sort((a, b) => a.t - b.t)) {
     // 「後」一律取到 cue 結束之後一點點，確保已進入停住（等待）狀態
     const seekT = e.key && e.key.includes('after') ? D + 0.001 : e.t;
     const r = await page.evaluate((t) => window.__engine.capture.seek(t), seekT);
     const tag = `${c.id}_${e.t.toFixed(2).padStart(6, '0')}`;
+    if (denseTimes.has(e.t)) {
+      const df = `frames_dense/${c.id}/${String(Math.round(e.t * denseFps)).padStart(5, '0')}.jpg`;
+      await page.screenshot({ path: join(out, df), type: 'jpeg', quality: 88 });
+      denseCount++;
+      if (e.denseOnly) continue;
+    }
+    // 量測：關鍵影格＋每秒一格記錄操偶線位置；關鍵影格另外隱藏角色量背景
+    if (probe && (e.key || Math.abs(e.t - Math.round(e.t)) < 1e-6)) {
+      const pr = await page.evaluate(() => window.__engine.debug.probe());
+      const rec = { cueId: c.id, t: e.t, key: e.key, ...pr };
+      if (e.key) {
+        const shot = `keyframes/${tag}_${e.key.replace(/\+/g, '-')}.png`;
+        rec.frame = shot;
+        await page.evaluate(() => window.__engine.debug.hideActors(true));
+        rec.bgFrame = `probe_bg/${tag}_${e.key.replace(/\+/g, '-')}.png`;
+        await page.screenshot({ path: join(out, rec.bgFrame), type: 'png' });
+        await page.evaluate(() => window.__engine.debug.hideActors(false));
+        await page.evaluate((t) => window.__engine.capture.seek(t), seekT);
+      }
+      probes.push(rec);
+    }
     let file;
     if (e.key) {
       file = `keyframes/${tag}_${e.key.replace(/\+/g, '-')}.png`;
@@ -114,11 +152,25 @@ const meta = {
   note: '虛擬時鐘逐格擷取（固定步長），與即時播放共用同一套 cue 與動畫函式；製作代理不挑畫面。',
 };
 writeFileSync(join(out, 'capture.json'), JSON.stringify(meta, null, 2));
+if (probe) writeFileSync(join(out, 'probe.json'), JSON.stringify({ note: '座標為繪圖緩衝像素（與截圖相同）；bgFrame＝同一格隱藏角色後的背景', probes }, null, 1));
+if (dense.size) console.log(`[capture] 高密度逐格 ${denseCount} 格（${denseFps} 格／秒）→ frames_dense/`);
+if (video && dense.size) {
+  for (const id of dense) {
+    const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-framerate', String(denseFps), '-i', join(out, 'frames_dense', id, '%05d.jpg'), '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', '18', join(out, `preview_${id}.mp4`)], { stdio: 'inherit' });
+    console.log(`[capture] 預覽影片 preview_${id}.mp4 ${r.status === 0 ? '完成' : '失敗'}`);
+  }
+}
 console.log(`[capture] 擷取 ${n} 格，${((Date.now() - t0) / 1000).toFixed(0)} 秒；外部網路請求 ${requests.length} 個；主控台錯誤／警告 ${consoleErrors.length} 則`);
 for (const e of consoleErrors.slice(0, 10)) console.log(`  ${e}`);
 
 // 交給 Python（Pillow）組接觸表與光敏分析
 const py = spawnSync(PYTHON, [join(ROOT, 'tools/capture_analyze.py'), out], { stdio: 'inherit' });
+if (probe && py.status === 0) {
+  const pp = spawnSync(PYTHON, [join(ROOT, 'tools/capture_probe.py'), out], { stdio: 'inherit' });
+  if (pp.status !== 0) console.error('[capture] 量測分析失敗');
+}
 if (py.status !== 0) { console.error('[capture] 分析失敗'); process.exit(py.status ?? 1); }
 if (!has('--keep-analysis')) rmSync(join(out, 'frames/analysis'), { recursive: true, force: true });
+if (!probe) rmSync(join(out, 'probe_bg'), { recursive: true, force: true });
+if (!dense.size) rmSync(join(out, 'frames_dense'), { recursive: true, force: true });
 console.log(`[capture] 完成 → ${out}`);

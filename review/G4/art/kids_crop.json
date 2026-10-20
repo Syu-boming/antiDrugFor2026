@@ -1,0 +1,74 @@
+{
+ "chr-xiaoqing_pose-reach-worried_v04.png": {
+  "source": "assets/generated/chr-xiaoqing_pose-reach-worried_v04.png",
+  "offset_from_source": [
+   102,
+   80
+  ],
+  "size": [
+   802,
+   1415
+  ],
+  "feet_bottom_px": [
+   706.0,
+   1398
+  ],
+  "height_px": 1382,
+  "stray_px_removed": 0,
+  "semi_white_fringe_px_before": 0
+ },
+ "chr-xiaoyu_pose-stepback-surprised_v04.png": {
+  "source": "assets/generated/chr-xiaoyu_pose-stepback-surprised_v04.png",
+  "offset_from_source": [
+   239,
+   64
+  ],
+  "size": [
+   644,
+   1439
+  ],
+  "feet_bottom_px": [
+   204.0,
+   1421
+  ],
+  "height_px": 1405,
+  "stray_px_removed": 0,
+  "semi_white_fringe_px_before": 0
+ },
+ "chr-xiaoqing_master_v04.png": {
+  "source": "assets/generated/chr-xiaoqing_master_v04.png",
+  "offset_from_source": [
+   245,
+   32
+  ],
+  "size": [
+   535,
+   1492
+  ],
+  "feet_bottom_px": [
+   442.5,
+   1474
+  ],
+  "height_px": 1459,
+  "stray_px_removed": 0,
+  "semi_white_fringe_px_before": 0
+ },
+ "chr-xiaoyu_master_v04.png": {
+  "source": "assets/generated/chr-xiaoyu_master_v04.png",
+  "offset_from_source": [
+   241,
+   28
+  ],
+  "size": [
+   528,
+   1446
+  ],
+  "feet_bottom_px": [
+   408.0,
+   1429
+  ],
+  "height_px": 1414,
+  "stray_px_removed": 0,
+  "semi_white_fringe_px_before": 0
+ }
+}

@@ -78,6 +78,14 @@ export interface CharacterStart {
   strings?: string[];
   /** 操偶線張力 0–1（0＝鬆垂，1＝繃緊） */
   stringTension?: number;
+  /** 立起程度：0＝平躺（等待隨景片立起，見 puppet.popup），1＝站好（預設） */
+  popup?: number;
+  /** 坐姿程度（正面分件紙偶）：1＝坐、0.5＝半站、0＝站（預設 0；pose:"sit" 也會設成 1） */
+  sit?: number;
+  /** 起始情緒：smile／neutral／confused／worried／surprised（臉部換片） */
+  emotion?: string;
+  /** B 側手的起始位置：chest（手放胸前）／grab（扶著桌邊）／lap（放膝上，預設） */
+  hand?: 'chest' | 'grab' | 'lap';
 }
 
 /** 舞台起始狀態 */
@@ -90,6 +98,13 @@ export interface StageStart {
   light?: number;
   /** 題卡是否已經在畫面上（quiz 之後的 reveal 用） */
   quiz?: boolean;
+  /** 立體書景片：0＝平躺（開幕前）、1＝立好（預設） */
+  set?: number;
+  /** FX8 場景降彩 0–1（只作用於景片，不作用於角色、操偶線、字幕與題卡） */
+  desat?: number;
+  /** FX4 柔和追光 0–1 與追光對象（角色 id） */
+  spot?: number;
+  spotTarget?: string;
 }
 
 export interface CueInitialState {
@@ -119,6 +134,19 @@ export interface SfxEvent {
   id: string;
   at: TimeRef;
   gain?: number;
+}
+
+/** 段落內的配樂切換（交叉淡入淡出）。id 為 "none" 時淡出停止 */
+export interface MusicEvent {
+  id: string;
+  at: TimeRef;
+  /** 是否循環（預設 true；片頭、片尾這類一次性的曲子設 false） */
+  loop?: boolean;
+  /** 交叉淡入淡出秒數（預設 1.5） */
+  fade?: number;
+  gain?: number;
+  /** 從曲子的第幾秒開始播（對齊配樂同步點用） */
+  offset?: number;
 }
 
 export interface Cue {
@@ -156,19 +184,32 @@ export interface Cue {
   /** 這個 cue 點亮第幾盞燈（1–8） */
   lamp?: number;
   sfx?: SfxEvent[];
+  /** 段落內的配樂切換（在 audioId 之後套用） */
+  music?: MusicEvent[];
+  /** 配樂基準音量（0–1）；省略時依 cue 種類（劇情 0.8、題卡 0.06、署名卡 0） */
+  musicLevel?: number;
+  /** audioId 的配樂是否循環（預設 true） */
+  musicLoop?: boolean;
   /** 落後 6 分鐘時的短版說明（壓縮級別 2 用） */
   shortVersion?: string;
 }
 
 /** 角色名冊（cue 檔內）：角色 id → 顯示名稱 */
 export interface CharacterRoster {
-  [id: string]: { name: string; rig?: string };
+  /**
+   * rig：紙偶種類。adult／child＝程式佔位紙偶（側面）；ale_v03＝圖片分件（parts.json）；
+   * standee:<角色>＝整張圖立牌（例如 standee:xiaoqing）。assets/final/g4_manifest.json 的 characters 可覆寫。
+   * x、z、facing：預設站位（cue 的 initialState.characters 可再覆寫）。
+   */
+  [id: string]: { name: string; rig?: string; x?: number; z?: number; facing?: 1 | -1 };
 }
 
 export interface CueFile {
   format: 'antidrug-cues/1';
   id: string;
   title: string;
+  /** 舞台景（workshop＝技術骨架佔位景；workshop_g4＝G4 燈籠店立體書景） */
+  set?: string;
   characters?: CharacterRoster;
   cues: Cue[];
 }

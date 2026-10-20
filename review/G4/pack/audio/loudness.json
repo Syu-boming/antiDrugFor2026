@@ -1,0 +1,174 @@
+{
+ "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設，照引擎混音規則（三條匯流排、配樂基準音量 setTargetAtTime 0.35 s、對白避讓 duckingPlan、交叉淡入淡出、換 cue 停台詞與音效 30 ms 淡出）以 48 kHz 離線混音；總音量 1.0。",
+ "file": "audio/g4_mix.wav",
+ "duration_sec": 72.93,
+ "sample_peak_dBFS": -1.49,
+ "clipped_samples": 0,
+ "full_playback": {
+  "I_LUFS": -18.5,
+  "LRA_LU": 12.3,
+  "TP_dBTP": -1.5
+ },
+ "a2_c002_to_a2_c004": {
+  "I_LUFS": -17.4,
+  "LRA_LU": 11.9,
+  "TP_dBTP": -1.5,
+  "from_sec": 15.6,
+  "to_sec": 59.93
+ },
+ "per_cue": {
+  "a0_c001": {
+   "I_LUFS": -20.1,
+   "LRA_LU": 2.4,
+   "TP_dBTP": -7.3
+  },
+  "a2_c002": {
+   "I_LUFS": -20.3,
+   "LRA_LU": 11.2,
+   "TP_dBTP": -1.5
+  },
+  "a2_c004": {
+   "I_LUFS": -15.0,
+   "LRA_LU": 2.8,
+   "TP_dBTP": -2.9
+  },
+  "a8_c002": {
+   "I_LUFS": -19.2,
+   "LRA_LU": 20.0,
+   "TP_dBTP": -7.3
+  },
+  "a8_c003": {
+   "I_LUFS": -21.3,
+   "LRA_LU": 0.0,
+   "TP_dBTP": -11.8
+  }
+ },
+ "music_stem_full": {
+  "I_LUFS": -24.4,
+  "LRA_LU": 20.2,
+  "TP_dBTP": -7.7
+ },
+ "lines": [
+  {
+   "id": "a2_c002_01",
+   "cue": "a2_c002",
+   "speaker": "阿樂叔叔",
+   "start": 28.6,
+   "end": 32.86,
+   "vo_file": "audio/vo/vo_a2_c002_01_v01.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -1.6,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -37.0,
+   "vo_minus_background_LU": 22.0
+  },
+  {
+   "id": "a2_c002_02",
+   "cue": "a2_c002",
+   "speaker": "小晴",
+   "start": 34.71,
+   "end": 36.43,
+   "vo_file": "audio/vo/vo_a2_c002_02_v01.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -3.6,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -34.4,
+   "vo_minus_background_LU": 19.4
+  },
+  {
+   "id": "a2_c004_01",
+   "cue": "a2_c004",
+   "speaker": "旁白",
+   "start": 41.23,
+   "end": 45.91,
+   "vo_file": "audio/vo/vo_a2_c004_01_v01.wav",
+   "vo_file_I_LUFS": -17.8,
+   "vo_file_TP_dBTP": -3.0,
+   "mix_I_LUFS": -14.7,
+   "vo_in_mix_I_LUFS": -14.8,
+   "background_I_LUFS": -39.7,
+   "vo_minus_background_LU": 24.9
+  },
+  {
+   "id": "a2_c004_02",
+   "cue": "a2_c004",
+   "speaker": "旁白",
+   "start": 46.36,
+   "end": 57.93,
+   "vo_file": "audio/vo/vo_a2_c004_02_v01.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -3.4,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -14.9,
+   "background_I_LUFS": -40.1,
+   "vo_minus_background_LU": 25.2
+  }
+ ],
+ "line_vo_file_I_spread_LU": 0.2,
+ "line_mix_I_spread_LU": 0.3,
+ "momentary_max_LUFS": -11.4,
+ "momentary_max_at_sec": 30.8,
+ "momentary_max_rise_within_1s_LU": 34.8,
+ "momentary_max_rise_per_100ms_LU": 22.8,
+ "momentary_full_mix": {
+  "max_LUFS": -11.4,
+  "max_at_sec": 30.8,
+  "max_rise_within_1s_LU": 34.8,
+  "max_rise_within_1s_at_sec": 4.1,
+  "max_rise_per_100ms_LU": 22.8,
+  "max_rise_per_100ms_at_sec": 46.6
+ },
+ "momentary_music_sfx_only": {
+  "max_LUFS": -15.7,
+  "max_at_sec": 63.9,
+  "max_rise_within_1s_LU": 34.8,
+  "max_rise_within_1s_at_sec": 4.1,
+  "max_rise_per_100ms_LU": 18.6,
+  "max_rise_per_100ms_at_sec": 3.2
+ },
+ "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算；music_sfx_only＝不含配音的配樂＋音效分軌（含基準音量與避讓）。",
+ "ducking_constants": {
+  "DUCK_LEVEL": 0.32,
+  "DUCK_LEAD": 0.15,
+  "DUCK_TC_DOWN": 0.06,
+  "DUCK_RELEASE": 0.3,
+  "DUCK_TC_UP": 0.25,
+  "DUCK_BRIDGE": 0.9
+ },
+ "events": [
+  {
+   "t": 3,
+   "music": "music_opening",
+   "loop": false,
+   "fade": 0.2,
+   "gain": 1,
+   "offset": 0
+  },
+  {
+   "t": 15.6,
+   "music": "music_m4_strings",
+   "loop": false,
+   "fade": 1,
+   "gain": 1,
+   "offset": 4
+  },
+  {
+   "t": 40.43,
+   "music": "music_m4_light",
+   "loop": true,
+   "fade": 2.5,
+   "gain": 1,
+   "offset": 0
+  },
+  {
+   "t": 62.83,
+   "music": "music_closing",
+   "loop": false,
+   "fade": 0.8,
+   "gain": 1,
+   "offset": 0
+  }
+ ]
+}
