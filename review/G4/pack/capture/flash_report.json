@@ -2,8 +2,8 @@
   "ok": true,
   "rule": "任一區域明暗或飽和紅色每秒變化 ≤ 3 次（不採面積豁免）",
   "method": "16×9 區域＋全畫面；亮度門檻 0.1（較暗端 < 0.8）；紅色門檻 20.0；取樣 30 格／秒",
-  "frames_analyzed": 1966,
-  "duration_sec": 65.24,
+  "frames_analyzed": 1974,
+  "duration_sec": 65.49,
   "max_changes_per_sec": {
     "luma": 2,
     "red": 2
@@ -329,9 +329,9 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 32.6,
+      "window_start": 32.867,
       "cue": "a2_c002",
-      "cue_t": 21.0
+      "cue_t": 21.27
     },
     {
       "type": "luma",
@@ -343,9 +343,9 @@
         360
       ],
       "count_per_sec": 2,
-      "window_start": 33.967,
+      "window_start": 32.9,
       "cue": "a2_c002",
-      "cue_t": 22.37
+      "cue_t": 21.3
     },
     {
       "type": "luma",
@@ -357,7 +357,7 @@
         480
       ],
       "count_per_sec": 2,
-      "window_start": 59.007,
+      "window_start": 59.257,
       "cue": "a8_c002",
       "cue_t": 0.57
     },
@@ -371,7 +371,7 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 59.04,
+      "window_start": 59.29,
       "cue": "a8_c002",
       "cue_t": 0.6
     },
@@ -385,7 +385,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 59.107,
+      "window_start": 59.357,
       "cue": "a8_c002",
       "cue_t": 0.67
     },
@@ -399,7 +399,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 59.273,
+      "window_start": 59.523,
       "cue": "a8_c002",
       "cue_t": 0.83
     },
@@ -413,7 +413,7 @@
         240
       ],
       "count_per_sec": 2,
-      "window_start": 59.34,
+      "window_start": 59.59,
       "cue": "a8_c002",
       "cue_t": 0.9
     },
@@ -427,7 +427,7 @@
         360
       ],
       "count_per_sec": 2,
-      "window_start": 60.407,
+      "window_start": 60.657,
       "cue": "a8_c002",
       "cue_t": 1.97
     },
@@ -441,7 +441,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 60.44,
+      "window_start": 60.69,
       "cue": "a8_c002",
       "cue_t": 2.0
     },
@@ -455,7 +455,7 @@
         960
       ],
       "count_per_sec": 2,
-      "window_start": 61.44,
+      "window_start": 61.69,
       "cue": "a8_c002",
       "cue_t": 3.0
     },
@@ -469,7 +469,7 @@
         240
       ],
       "count_per_sec": 2,
-      "window_start": 61.807,
+      "window_start": 62.057,
       "cue": "a8_c002",
       "cue_t": 3.37
     },
@@ -483,7 +483,7 @@
         120
       ],
       "count_per_sec": 2,
-      "window_start": 61.84,
+      "window_start": 62.09,
       "cue": "a8_c002",
       "cue_t": 3.4
     },
@@ -497,7 +497,7 @@
         120
       ],
       "count_per_sec": 2,
-      "window_start": 62.007,
+      "window_start": 62.257,
       "cue": "a8_c002",
       "cue_t": 3.57
     },
@@ -511,7 +511,7 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 62.107,
+      "window_start": 62.357,
       "cue": "a8_c002",
       "cue_t": 3.67
     },
@@ -525,7 +525,7 @@
         960
       ],
       "count_per_sec": 2,
-      "window_start": 62.107,
+      "window_start": 62.357,
       "cue": "a8_c002",
       "cue_t": 3.67
     },
@@ -539,7 +539,7 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 62.273,
+      "window_start": 62.523,
       "cue": "a8_c002",
       "cue_t": 3.83
     },
@@ -553,7 +553,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 62.307,
+      "window_start": 62.557,
       "cue": "a8_c002",
       "cue_t": 3.87
     },
@@ -567,7 +567,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 62.307,
+      "window_start": 62.557,
       "cue": "a8_c002",
       "cue_t": 3.87
     },
@@ -581,7 +581,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 62.307,
+      "window_start": 62.557,
       "cue": "a8_c002",
       "cue_t": 3.87
     },
@@ -595,7 +595,7 @@
         120
       ],
       "count_per_sec": 2,
-      "window_start": 62.573,
+      "window_start": 62.823,
       "cue": "a8_c002",
       "cue_t": 4.13
     },
@@ -609,7 +609,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 62.573,
+      "window_start": 62.823,
       "cue": "a8_c002",
       "cue_t": 4.13
     },
@@ -623,7 +623,7 @@
         240
       ],
       "count_per_sec": 2,
-      "window_start": 63.073,
+      "window_start": 63.323,
       "cue": "a8_c002",
       "cue_t": 4.63
     },
@@ -637,7 +637,7 @@
         600
       ],
       "count_per_sec": 2,
-      "window_start": 63.24,
+      "window_start": 63.49,
       "cue": "a8_c002",
       "cue_t": 4.8
     },
@@ -651,7 +651,7 @@
         600
       ],
       "count_per_sec": 2,
-      "window_start": 63.24,
+      "window_start": 63.49,
       "cue": "a8_c002",
       "cue_t": 4.8
     },
@@ -665,7 +665,7 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 63.24,
+      "window_start": 63.49,
       "cue": "a8_c002",
       "cue_t": 4.8
     },
@@ -679,7 +679,7 @@
         720
       ],
       "count_per_sec": 2,
-      "window_start": 63.273,
+      "window_start": 63.523,
       "cue": "a8_c002",
       "cue_t": 4.83
     },
@@ -693,7 +693,7 @@
         840
       ],
       "count_per_sec": 2,
-      "window_start": 63.273,
+      "window_start": 63.523,
       "cue": "a8_c002",
       "cue_t": 4.83
     }

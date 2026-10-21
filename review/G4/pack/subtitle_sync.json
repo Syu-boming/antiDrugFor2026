@@ -21,8 +21,8 @@
    "line": "a2_c002_02",
    "page": 1,
    "text": "叔叔，小心！",
-   "subtitle_start_s": 21.23,
-   "voice_start_s": 21.353,
+   "subtitle_start_s": 21.48,
+   "voice_start_s": 21.603,
    "diff_s": -0.123,
    "pass": true,
    "audio": "audio/vo/vo_a2_c002_02_v04.wav"

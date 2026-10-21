@@ -2,20 +2,20 @@
  "cues": {
   "a0_c000": 0,
   "a0_c001": 11.6,
-  "a2_c002": 24.93,
+  "a2_c002": 25.18,
   "a2_c004": 21.91,
   "a8_c002": 5.4,
   "a8_c003": 1.4
  },
- "a2_c002_plus_a2_c004_sec": 46.84,
+ "a2_c002_plus_a2_c004_sec": 47.09,
  "target_sec": [
   30,
   45
  ],
- "all_cues_sum_sec": 65.24,
+ "all_cues_sum_sec": 65.49,
  "opening_a0_c001_sec": 11.6,
  "closing_a8_c002_plus_a8_c003_sec": 6.8,
- "playback_with_holds_sec": 84.74,
+ "playback_with_holds_sec": 84.99,
  "holds_assumed_sec": {
   "a0_c000": 3,
   "a0_c001": 2,
@@ -24,6 +24,6 @@
   "a8_c002": 0,
   "a8_c003": 6.5
  },
- "video_duration_sec": 84.733333,
+ "video_duration_sec": 84.99,
  "vo_seconds_in_a2_c002_a2_c004": 26.39
 }

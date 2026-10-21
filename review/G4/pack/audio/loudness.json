@@ -1,7 +1,7 @@
 {
  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設，照引擎混音規則（三條匯流排、配樂基準音量 setTargetAtTime 0.35 s、對白避讓 duckingPlan、教師停格時配樂降到基準 ×HOLD_MUSIC_RATIO、交叉淡入淡出、換 cue 停台詞與音效 30 ms 淡出）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
  "file": "audio/g4_mix.wav",
- "duration_sec": 84.74,
+ "duration_sec": 84.99,
  "sample_peak_dBFS": -1.44,
  "clipped_samples": 0,
  "full_playback": {
@@ -11,10 +11,10 @@
  },
  "a2_c002_to_a2_c004": {
   "I_LUFS": -17.3,
-  "LRA_LU": 11.8,
+  "LRA_LU": 11.7,
   "TP_dBTP": -1.4,
   "from_sec": 16.6,
-  "to_sec": 67.44
+  "to_sec": 67.69
  },
  "per_cue": {
   "a0_c001": {
@@ -23,7 +23,7 @@
    "TP_dBTP": -7.3
   },
   "a2_c002": {
-   "I_LUFS": -19.9,
+   "I_LUFS": -20.0,
    "LRA_LU": 10.9,
    "TP_dBTP": -1.4
   },
@@ -67,22 +67,22 @@
    "id": "a2_c002_02",
    "cue": "a2_c002",
    "speaker": "小晴",
-   "start": 37.83,
-   "end": 39.53,
+   "start": 38.08,
+   "end": 39.78,
    "vo_file": "audio/vo/vo_a2_c002_02_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -4.1,
    "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -32.0,
-   "vo_minus_background_LU": 17.0
+   "background_I_LUFS": -32.5,
+   "vo_minus_background_LU": 17.5
   },
   {
    "id": "a2_c004_01",
    "cue": "a2_c004",
    "speaker": "旁白",
-   "start": 46.33,
-   "end": 51.54,
+   "start": 46.58,
+   "end": 51.79,
    "vo_file": "audio/vo/vo_a2_c004_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.3,
@@ -95,8 +95,8 @@
    "id": "a2_c004_02",
    "cue": "a2_c004",
    "speaker": "旁白",
-   "start": 51.99,
-   "end": 65.44,
+   "start": 52.24,
+   "end": 65.69,
    "vo_file": "audio/vo/vo_a2_c004_02_v04.wav",
    "vo_file_I_LUFS": -17.9,
    "vo_file_TP_dBTP": -2.4,
@@ -109,12 +109,12 @@
  "line_vo_file_I_spread_LU": 0.2,
  "line_mix_I_spread_LU": 0.2,
  "momentary_max_LUFS": -10.2,
- "momentary_max_at_sec": 46.8,
+ "momentary_max_at_sec": 47.1,
  "momentary_max_rise_within_1s_LU": 34.8,
  "momentary_max_rise_per_100ms_LU": 18.6,
  "momentary_full_mix": {
   "max_LUFS": -10.2,
-  "max_at_sec": 46.8,
+  "max_at_sec": 47.1,
   "max_rise_within_1s_LU": 34.8,
   "max_rise_within_1s_at_sec": 4.1,
   "max_rise_per_100ms_LU": 18.6,
@@ -122,7 +122,7 @@
  },
  "momentary_music_sfx_only": {
   "max_LUFS": -15.7,
-  "max_at_sec": 75.9,
+  "max_at_sec": 76.1,
   "max_rise_within_1s_LU": 34.8,
   "max_rise_within_1s_at_sec": 4.1,
   "max_rise_per_100ms_LU": 18.6,
@@ -142,19 +142,19 @@
  "freeze_holds": [
   {
    "cue": "a2_c002",
-   "hold_from_sec": 41.53,
+   "hold_from_sec": 41.78,
    "hold_sec": 4,
-   "momentary_at_hold_start_LUFS": -28.6,
+   "momentary_at_hold_start_LUFS": -28.5,
    "momentary_at_3s_LUFS": -45.3,
-   "momentary_max_after_3s_LUFS": -45.0,
+   "momentary_max_after_3s_LUFS": -44.8,
    "pass_le_-35": true
   },
   {
    "cue": "a2_c004",
-   "hold_from_sec": 67.44,
+   "hold_from_sec": 67.69,
    "hold_sec": 4,
-   "momentary_at_hold_start_LUFS": -27.8,
-   "momentary_at_3s_LUFS": -45.0,
+   "momentary_at_hold_start_LUFS": -28.3,
+   "momentary_at_3s_LUFS": -45.1,
    "momentary_max_after_3s_LUFS": -41.8,
    "pass_le_-35": true
   }
@@ -168,18 +168,18 @@
    "a8_c002": -21.0,
    "a8_c003": -21.5
   },
-  "underscore_lu": 1.5,
+  "underscore_lu": 1.8,
   "underscore_I_LUFS": {
-   "a2_c002": -25.4,
+   "a2_c002": -25.1,
    "a2_c004": -26.9
   },
   "layers_note": "分層依 review/G3/loudness_scope_r2.json proposed_rule：素材檔（配音逐句檔）、各句對白在混音中、主奏段（沒有台詞的 cue 整段）、劇情襯底段（有台詞的 cue 扣掉每句台詞前 0.3 秒到後 0.5 秒）；各自最大−最小 ≤ 2 LU。",
   "all_cues_lu": 6.2,
-  "dialogue_cues_lu": 4.6,
+  "dialogue_cues_lu": 4.7,
   "dialogue_lines_lu": 0.2,
   "per_cue_I_LUFS": {
    "a0_c001": -20.1,
-   "a2_c002": -19.9,
+   "a2_c002": -20.0,
    "a2_c004": -15.3,
    "a8_c002": -21.0,
    "a8_c003": -21.5
@@ -214,7 +214,7 @@
    "offset": 7
   },
   {
-   "t": 45.53,
+   "t": 45.78,
    "music": "music_m4_light",
    "loop": true,
    "fade": 2.5,
@@ -222,7 +222,7 @@
    "offset": 0
   },
   {
-   "t": 74.74,
+   "t": 74.99,
    "music": "music_closing",
    "loop": false,
    "fade": 0.8,

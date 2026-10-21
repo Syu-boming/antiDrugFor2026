@@ -28,22 +28,22 @@
    ]
   }
  },
- "probe_frames_with_strings": 545,
+ "probe_frames_with_strings": 548,
  "string_path_min_dist_to_ale_head_box_px": 21.6,
  "per_anchor": {
   "wrist": {
    "min_dist_to_head_box_px": 24.2,
-   "frames": 545,
+   "frames": 548,
    "at": "a2_c002 t=4.3"
   },
   "elbow": {
    "min_dist_to_head_box_px": 34.3,
-   "frames": 535,
+   "frames": 538,
    "at": "a2_c002 t=5.2"
   },
   "knee": {
    "min_dist_to_head_box_px": 21.6,
-   "frames": 525,
+   "frames": 528,
    "at": "a8_c002 t=5.4"
   }
  },

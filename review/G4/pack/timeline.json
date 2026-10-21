@@ -168,7 +168,7 @@
    "id": "a2_c002",
    "kind": "scene",
    "title": "線落下來（代表鏡頭）",
-   "duration": 24.93,
+   "duration": 25.18,
    "autoAdvance": false,
    "audioId": null,
    "musicLoop": true,
@@ -199,14 +199,14 @@
      "speaker": "小晴",
      "text": "叔叔，小心！",
      "audioId": "vo_a2_c002_02",
-     "start": 21.23,
-     "end": 22.93,
+     "start": 21.48,
+     "end": 23.18,
      "duration": 1.7,
      "placeholder": false,
      "pages": [
       {
-       "start": 21.23,
-       "end": 22.93,
+       "start": 21.48,
+       "end": 23.18,
        "rows": [
         "叔叔，小心！"
        ]
@@ -382,8 +382,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 20.93,
-     "end": 21.17,
+     "start": 21.18,
+     "end": 21.42,
      "params": {
       "pose": "palm"
      }
@@ -391,8 +391,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 22.28,
-     "end": 22.52,
+     "start": 22.53,
+     "end": 22.77,
      "params": {
       "pose": "worried"
      }
@@ -809,14 +809,14 @@
    "id": "a2_c002",
    "kind": "scene",
    "start": 16.6,
-   "duration": 24.93,
+   "duration": 25.18,
    "hold": 4,
    "autoAdvance": false
   },
   {
    "id": "a2_c004",
    "kind": "scene",
-   "start": 45.53,
+   "start": 45.78,
    "duration": 21.91,
    "hold": 4,
    "autoAdvance": false
@@ -824,7 +824,7 @@
   {
    "id": "a8_c002",
    "kind": "curtain",
-   "start": 71.44,
+   "start": 71.69,
    "duration": 5.4,
    "hold": 0,
    "autoAdvance": true
@@ -832,13 +832,13 @@
   {
    "id": "a8_c003",
    "kind": "title",
-   "start": 76.84,
+   "start": 77.09,
    "duration": 1.4,
    "hold": 6.5,
    "autoAdvance": false
   }
  ],
- "totalPlaybackSec": 84.74,
+ "totalPlaybackSec": 84.99,
  "audio": {
   "vo_a0_c001_01": {
    "source": "audio/vo/vo_a0_c001_01_v04.wav",
