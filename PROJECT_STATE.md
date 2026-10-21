@@ -8,7 +8,7 @@
 | G1 劇本 | 帶一般問題放行，凍結 v03（主線小修 3 句） | script/*_v03.md；REVIEW.md | 第 1 天 22:00 凍結 |
 | G2a 風格 | 選定 S4 立體童書厚卡紙 | review/G2a/ | — |
 | G2 母版與試作 | 以退路通過（D-G2-06；畫面品質併入 G4 驗收） | review/G2/*_v04；contrast_v04.json | 第 1 天 22:00（超時約 5 小時） |
-| G3 聲音 | 帶一般問題放行（13:50）；全劇配音改 ElevenLabs（使用者 D-G3-07），v04 已上線；a2_c003_02「電子煙／喪屍煙彈」待使用者從試聽頁選版 | REVIEW.md G3 關卡決定；review/G3/el/full/；audio/vo/promoted_el.json | 第 2 天 13:00 前 |
+| G3 聲音 | 帶一般問題放行（13:50）；全劇配音改 ElevenLabs（使用者 D-G3-07），v04 已上線；a2_c003_02 使用者選 5 號（D-G3-08）；試聽頁 A–G 使用者確認 OK | REVIEW.md G3 關卡決定；review/G3/el/full/；audio/vo/promoted_el.json | 第 2 天 13:00 前 |
 | G4 代表鏡頭 | 帶一般問題放行（13:00）；嚴重問題（小宇站姿眨眼）主線修正、新代理複驗通過；共用元件凍結 | REVIEW.md G4 關卡決定；review/G4/qa/recheck_r4/ | 第 2 天 13:00 |
 | G5 各幕 | 未開始 | review/G5/ | 第 3 天 09:00 |
 | G6 全劇 | 未開始 | review/G6/ | 第 3 天 15:00 |
@@ -25,5 +25,5 @@ G5 各幕兩批（第 3 天 09:00）：素材量產、六幕 cue 與表演、教
 1. 探針：2026-10-20 19:16 已交付 AntidrugProbe_v01.zip（含 Electron 版、Edge kiosk .bat、file:// 單檔版），等待結果。
 2. 金鑰：ElevenLabs 新金鑰可用（TTS、讀聲線、聲線設計），存於 .env（不進 Git）。配樂與音效改自製，Artlist 不再需要。
 3. 第 3 天實機彩排：待排。
-4. 試聽頁 https://claude.ai/artifact/35yBSYoPKVCWFSDB8m6r3y ：選 a2_c003_02 的版本，並確認 A–G 七句（阿樂高音片段、邀請者口音、小宇音高、必要旁白停頓）。
+4. 試聽頁 https://claude.ai/artifact/35yBSYoPKVCWFSDB8m6r3y ：已完成（5 號定版；A–G 使用者回覆 OK）。
 5. ElevenLabs 兒童用途書面核准：取得後轉給主線記進 ASSETS.md。
