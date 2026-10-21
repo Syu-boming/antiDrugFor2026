@@ -17,6 +17,8 @@
 //           puppet.pose {pose}                      立牌換姿勢（紙片翻面）
 //           puppet.face {emotion}                   情緒換片（smile／greet／neutral／confused／worried／surprised），轉折時加眨一次
 //           puppet.blink                            加眨一次
+//           puppet.nod {count, depth}               點頭（G5 修正第 1 輪）：頭部小幅下移＋前傾約 7°，每次約 1 秒（duration 省略＝count × 1 秒），
+//                                                   count 次數（預設 1）、depth 幅度倍率（預設 1）；整張立牌沒有頭層時以腳底為支點輕輕點一下（上身微縮＋前傾約 3°）
 import { Group, Vector2, Vector3, type Object3D } from 'three';
 import type { CharacterStart } from '../types/cue';
 import type { CueTimeline, ResolvedAnim } from '../cues/timeline';
@@ -36,6 +38,15 @@ export const STRING_WIDTH = 0.043;
 /** 線在 1080p 畫面上最細的寬度（px）：鏡頭拉遠時（例如閉幕拉回台口）線寬改用這個下限，不會細到看不見（規格 6–10 px） */
 export const MIN_STRING_PX = 6.3;
 /**
+ * G5 修正第 1 輪（主線裁定 5）：全劇模式非 G4 cue 的螢幕空間最小線寬（1080p）。依扣點到相機的深度換算成「每世界單位幾 px」（ppu）：
+ * ppu ≥ ppuMid（中景以上，例如 show_mid 約 146、medium 約 139）→ 8 px；ppu ≤ ppuFar（遠景）→ 7 px；中間線性。
+ * 線寬＝max(STRING_WIDTH, 下限 ÷ ppu)：近景（g4_mid 約 186 ppu 時 0.043 已經是 8 px）外觀不變。
+ */
+export const STRING_MIN_PX = { mid: 8, far: 7, ppuMid: 120, ppuFar: 90 };
+
+/** 舞台每格給 PuppetDirector 的相機資訊（全劇非 G4 cue 才有；null＝舊算法） */
+export interface StringView { pos: Vector3; fwd: Vector3; tanHalf: number }
+/**
  * 線鬆時的側向弧度（世界單位，乘上 1−張力）：張力 0.2（剛落下、還鬆）時 bow＝0.16，
  * g4 中景畫面裡那一段線的中點偏離直線約 20–30 px（strings.ts sagShape）；張力 1 時 bow＝0（直線）。
  */
@@ -46,6 +57,11 @@ const GRAB_WRIST_DY = 0.02;
 const GRAB_LEAN = 0.05;
 /** 揮手時手腕左右擺動的幅度（世界單位） */
 const WAVE_AMP = 0.06;
+/**
+ * 點頭（puppet.nod）：pitch＝頭部前傾（弧度，約 7°）、drop＝頭部下移（世界單位，中景約 4–5 px）；
+ * 整張立牌沒有頭層時：bodyPitch 以腳底為支點前傾（約 3°）、bodySquash 上身微縮。每次點頭的形狀 sin²（起止都平順，不抖）。
+ */
+export const NOD = { pitch: 0.122, drop: 0.028, bodyPitch: 0.05, bodySquash: 0.016, each: 1.0 };
 
 export interface LipsyncData { fps: number; frames: number[] }
 
@@ -101,6 +117,8 @@ export interface Intent {
   /** A 側手揮手（0–1 包絡）與揮手起點（cue 秒） */
   waveA: number; waveT0: number;
   headTilt: number;
+  /** 點頭幅度 0–1（puppet.nod） */
+  nod: number;
   drop: Rec<number>; landAt: Rec<number>; tension: Rec<number>; fade: Rec<number>; detach: Rec<number>;
   pull: Rec<V2>; swing: Rec<number>; bodyPush: V2;
   pose: string; flip: number; emotion: string; events: number[];
@@ -162,7 +180,7 @@ export function evalIntent(place: ActorPlacement, view: 'front' | 'side', start:
     visible: start ? start.visible !== false : false,
     x: start?.x ?? place.x, y: start?.y ?? 0, z: start?.z ?? place.z, facing: start?.facing ?? place.facing,
     dx: 0, lift: 0, lean: 0, popup: start?.popup ?? 1, walk: 0,
-    sit: start?.sit ?? 0, armRaise: 0, reachB: 0, waveB: 0, chestB: 0, grabB: 0, grabAt: null, step: 0, headTilt: 0, waveA: 0, waveT0: 0,
+    sit: start?.sit ?? 0, armRaise: 0, reachB: 0, waveB: 0, chestB: 0, grabB: 0, grabAt: null, step: 0, headTilt: 0, nod: 0, waveA: 0, waveT0: 0,
     drop: rec(() => 0), landAt: rec(() => -99), tension: rec(() => start?.stringTension ?? 0.3), fade: rec(() => 1), detach: rec(() => 0),
     pull: rec<V2>(() => [0, 0]), swing: rec(() => 0), bodyPush: [0, 0],
     pose: defaultPose, flip: 0, emotion: start?.emotion ?? 'smile', events: [], quiet: [],
@@ -325,11 +343,29 @@ export function evalIntent(place: ActorPlacement, view: 'front' | 'side', start:
       }
       case 'puppet.face': if (t >= a.start) { it.emotion = String(a.params.emotion ?? it.emotion); } it.events.push(a.start); break;
       case 'puppet.blink': it.events.push(a.start); break;
+      case 'puppet.nod': {
+        // count 次，每次 sin²(πu)：頭往下、前傾，再回正；點頭開始時加眨一次（自然）
+        const n = Math.max(1, Math.round(Number(a.params.count ?? 1)));
+        const each = Math.max(0.3, a.duration / n);
+        const s = t - a.start;
+        if (s >= 0) it.events.push(a.start);
+        if (s > 0 && s < each * n) { const u = (s % each) / each; it.nod = Math.max(it.nod, Number(a.params.depth ?? 1) * Math.sin(Math.PI * u) ** 2); }
+        break;
+      }
       default: break;
     }
   }
   if (it.popup < 0.02) it.visible = false;
   return it;
+}
+
+/** 螢幕空間最小線寬（世界單位）：扣點 p 在相機前方的深度 → 1080p 每世界單位幾 px → STRING_MIN_PX 的下限 */
+export function stringMinWidth(v: StringView, p: Vector3): number {
+  const depth = Math.max(0.5, (p.x - v.pos.x) * v.fwd.x + (p.y - v.pos.y) * v.fwd.y + (p.z - v.pos.z) * v.fwd.z);
+  const ppu = 1080 / (2 * depth * v.tanHalf);
+  const M = STRING_MIN_PX;
+  const px = M.far + (M.mid - M.far) * clamp((ppu - M.ppuFar) / (M.ppuMid - M.ppuFar));
+  return px / ppu;
 }
 
 const v2 = new Vector2();
@@ -387,6 +423,8 @@ export class PuppetDirector {
   light = 1;
   /** 目前鏡位下線寬的世界單位下限（Stage.apply 依相機距離算：MIN_STRING_PX 在 1080p 的世界寬度） */
   minStringWidth = 0;
+  /** 全劇非 G4 cue：依扣點深度換算的螢幕空間最小線寬（STRING_MIN_PX）；null＝用 minStringWidth（G4） */
+  stringView: StringView | null = null;
 
   constructor(public actors: Map<string, Performer>, private lipsync: (id: string) => LipsyncData | undefined = () => undefined) {}
 
@@ -450,7 +488,7 @@ export class PuppetDirector {
   /** 嘴型：有對嘴資料就照資料（每秒 12 格，0 閉、1 半開、2 大開、3 圓唇），沒有就依字幕時間產生佔位開合 */
   mouthOpen(actorId: string, tl: CueTimeline, t: number): MouthShape | null {
     for (const l of tl.lines) {
-      if (l.actorId !== actorId || t < l.start || t >= l.end) continue;
+      if (!l.actorIds.includes(actorId) || t < l.start || t >= l.end) continue;
       const lip = this.lipsync(l.line.lipsyncId ?? l.line.id);
       const local = t - l.start;
       if (lip) {
@@ -502,10 +540,15 @@ export class PuppetDirector {
         if (u > 0 && u < 1) nod = Math.max(nod, Math.sin(Math.PI * u));
       }
       head.rotation.z = clamp(-listen * 0.03 + it.headTilt + 0.006 * Math.sin((t / 4.2 + phase) * Math.PI * 2) - nod * 0.012, -0.044, 0.044);
-      head.position.y = (head.userData.y0 ??= head.position.y) - nod * 0.01;
+      head.position.y = (head.userData.y0 ??= head.position.y) - nod * 0.01 - NOD.drop * it.nod;
+      head.rotation.x = NOD.pitch * it.nod;
       a.body.rotation.z = 0.004 * Math.sin((t / 5.3 + phase) * Math.PI * 2) - listen * 0.01 - it.lean;
+      a.body.rotation.x = 0;
     } else {
       a.body.rotation.z = 0.005 * Math.sin((t / 5.3 + phase) * Math.PI * 2) - listen * 0.025 - it.lean;
+      // 沒有頭層的整張立牌：點頭＝以腳底為支點輕輕前傾、上身微縮（puppet.nod）
+      a.body.rotation.x = NOD.bodyPitch * it.nod;
+      if (it.nod > 0) a.body.scale.y *= 1 - NOD.bodySquash * it.nod;
     }
     const face = a.face;
     if (face) {
@@ -542,6 +585,15 @@ export class PuppetDirector {
     if (torso) rig.setRot(torso, 0.006 * breath - it.lean - body.ox * 0.1);
     const head = rig.role('head');
     if (head) rig.setRot(head, 0.012 * Math.sin((t / 4.6 + phase) * Math.PI * 2) + it.headTilt + body.ox * 0.15);
+    // 點頭：頭部樞紐（頸部）往下、前傾（rotation.x 正值＝頭頂往鏡頭方向）；沒有點頭的 cue 完全不動（G4 畫面不變）
+    if (head) {
+      const hp = rig.part(head).pivot;
+      if (it.nod > 0 || hp.userData.nodY0 !== undefined) {
+        const y0 = (hp.userData.nodY0 ??= hp.position.y) as number;
+        hp.position.y = y0 - NOD.drop * it.nod;
+        hp.rotation.x = NOD.pitch * it.nod;
+      }
+    }
     rig.root.updateMatrixWorld(true);
 
     // A 側手臂（操偶線那隻）：意圖位置＋線的拉力位移（模擬）
@@ -690,7 +742,7 @@ export class PuppetDirector {
       const bow = ((1 - it.tension[n]) * SLACK_BOW * drop + sw + det * 0.5) * (n === 'knee' ? 1 : -1) * f;
       const landed = drop >= 0.999 && det < 0.15 ? clamp((t - it.landAt[n]) / 0.12) : 0;
       // 紙環中心＝扣點（bot3）；線的下端由 PaperString 退到紙環上緣。鏡頭拉遠時線寬用下限（紙環等比例放大）
-      const width = Math.max(STRING_WIDTH, this.minStringWidth);
+      const width = Math.max(STRING_WIDTH, this.stringView ? stringMinWidth(this.stringView, bot3) : this.minStringWidth);
       s.update({ top: top3, bottom: bot3, bow, width, opacity: it.fade[n], ring: det > 0 ? Math.max(0, 1 - det * 6) : landed, ringDiameter: RING_DIAMETER * (width / STRING_WIDTH), light: this.light });
     }
   }

@@ -107,6 +107,52 @@ def compare_g4(out: Path):
     return {"sheets": made, "g4_refs": [rel(r, ROOT) for r in refs], "size": [tw, th]}
 
 
+# ====================================================================== 字幕與語音時間差（G5 修正第 1 輪：靜音偵測 −40 dB、最短 0.05 秒）
+SYNC_NOISE_DB, SYNC_MIN_SIL = -40, 0.05
+
+
+def voice_onsets_g5(path: Path):
+    """配音檔的語音起點：ffmpeg silencedetect noise=−40 dB、d=0.05 s（G4 是 −45 dB、0.1 s，抓不到句中短停頓，b1 驗收兩處誤判）"""
+    import re
+    import subprocess
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", f"silencedetect=noise={SYNC_NOISE_DB}dB:d={SYNC_MIN_SIL}", "-f", "null", "-"],
+                       capture_output=True, text=True)
+    starts = [float(x) for x in re.findall(r"silence_start: (-?[\d.]+)", r.stderr)]
+    ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r.stderr)]
+    out = []
+    if not starts or starts[0] > 0.01:
+        out.append(0.0)
+    return out + ends
+
+
+def subtitle_sync_g5(out: Path, tl: dict):
+    """字幕頁起點 − 該頁語音起點；方法同 g4_review_pack.subtitle_sync，只把靜音偵測改成 −40 dB、0.05 秒"""
+    LO, HI = -0.8, 0.1
+    rows = []
+    for c in tl["cues"]:
+        for l in c["lines"]:
+            if l["audioId"] not in tl["audio"]:
+                continue
+            src = ROOT / tl["audio"][l["audioId"]]["source"]
+            ons = voice_onsets_g5(src)
+            for k, pg in enumerate(l["pages"]):
+                relt = pg["start"] - l["start"]
+                if k == 0:
+                    on = ons[0]
+                else:
+                    cand = [o for o in ons if o >= relt + LO]
+                    on = min(cand, key=lambda o: abs(o - relt)) if cand else ons[-1]
+                d = round(pg["start"] - (l["start"] + on), 3)
+                rows.append({"cue": c["id"], "line": l["id"], "page": k + 1, "text": "／".join(pg["rows"]), "subtitle_start_s": pg["start"],
+                             "voice_start_s": round(l["start"] + on, 3), "diff_s": d, "pass": LO <= d <= HI, "audio": rel(src, ROOT)})
+    res = {"method": f"ffmpeg silencedetect noise={SYNC_NOISE_DB} dB、d={SYNC_MIN_SIL} s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，"
+                     "b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+           "silencedetect": {"noise_dB": SYNC_NOISE_DB, "min_silence_s": SYNC_MIN_SIL},
+           "range_s": [LO, HI], "rows": rows, "all_pass": all(r["pass"] for r in rows)}
+    (out / "subtitle_sync.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
+    return res
+
+
 # ====================================================================== 混音與響度（通用版）
 def audio_analysis(out: Path, tl: dict):
     import numpy as np
@@ -150,6 +196,9 @@ def audio_analysis(out: Path, tl: dict):
         Mc = np.maximum(M, -70.0)
         rise1 = max(float(Mc[i] - Mc[max(0, i - 10):i].min()) for i in range(1, len(Mc)))
         rise01 = float(np.max(Mc[1:] - Mc[:-1]))
+    # 只有配樂與音效（不含配音）的分軌（G5 修正第 1 輪；G4 驗收包的 momentary_music_sfx_only 同算法）：
+    # 瞬間響度最大、100 ms 最大上升、1 秒內最大上升、峰值——讓驗收能用數字排除「音效或配樂的突發巨響」（語音起音不算）
+    bg_stats = music_sfx_only_stats(bg, mom_times=None, tl=tl)
     holds = []
     for s_ in tl["schedule"]:
         if s_["kind"] != "scene" or s_["hold"] < 3.2:
@@ -173,6 +222,8 @@ def audio_analysis(out: Path, tl: dict):
         "momentary_max_LUFS": round(float(M.max()), 1) if len(M) else None,
         "momentary_max_rise_within_1s_LU": round(rise1, 1) if rise1 is not None else None,
         "momentary_max_rise_per_100ms_LU": round(rise01, 1) if rise01 is not None else None,
+        "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
+        "music_sfx_only": bg_stats,
         "freeze_holds": holds,
         "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
         "ducking_constants": dk,
@@ -376,6 +427,51 @@ def safety_data(out: Path, tl: dict):
     return res
 
 
+def music_sfx_only_stats(bg, mom_times=None, tl=None):
+    """配樂＋音效分軌（不含配音）：瞬間響度最大、100 ms 最大上升、1 秒內最大上升、取樣峰值、真峰值；各附發生的秒數與 cue。
+    參考：G4 驗收包 momentary_music_sfx_only（review/G4/pack/audio/loudness.json）。"""
+    import numpy as np
+    import g4_review_pack as g4
+    SR = g4.SR
+    mm = g4.momentary(bg)
+    if len(mm) < 11:
+        return None
+    Mv = np.maximum(np.array([m[1] for m in mm]), -70.0)
+    Tv = np.array([m[0] for m in mm])
+    r1 = [float(Mv[i] - Mv[max(0, i - 10):i].min()) for i in range(1, len(Mv))]
+    i1 = int(np.argmax(r1)) + 1
+    r01 = Mv[1:] - Mv[:-1]
+    i01 = int(np.argmax(r01)) + 1
+    imax = int(np.argmax(Mv))
+    mono = bg.mean(axis=1) if bg.ndim == 2 else bg
+    ipk = int(np.argmax(np.abs(mono))) if len(mono) else 0
+    eb = g4.ebur(bg)
+
+    def cue_at(t):
+        if not tl:
+            return None
+        for s_ in tl["schedule"]:
+            if s_["start"] - s_.get("preroll", 0) <= t < s_["start"] + s_["duration"] + s_["hold"]:
+                return {"cue": s_["id"], "cue_t": round(t - s_["start"], 2)}
+        return None
+    ref = None
+    try:
+        g4l = json.loads((ROOT / "review/G4/pack/audio/loudness.json").read_text(encoding="utf-8")).get("momentary_music_sfx_only")
+        ref = {k: g4l.get(k) for k in ("max_LUFS", "max_rise_within_1s_LU", "max_rise_per_100ms_LU")} if g4l else None
+    except OSError:
+        ref = None
+    peak = float(np.abs(bg).max()) if len(bg) else 0.0
+    res = {"max_LUFS": round(float(Mv.max()), 1), "max_at_sec": round(float(Tv[imax]), 1), "max_at": cue_at(float(Tv[imax])),
+           "max_rise_per_100ms_LU": round(float(r01[i01 - 1]), 1), "max_rise_per_100ms_at_sec": round(float(Tv[i01]), 1), "max_rise_per_100ms_at": cue_at(float(Tv[i01])),
+           "max_rise_within_1s_LU": round(r1[i1 - 1], 1), "max_rise_within_1s_at_sec": round(float(Tv[i1]), 1),
+           "sample_peak_dBFS": round(20 * np.log10(max(peak, 1e-9)), 2), "sample_peak_at_sec": round(ipk / SR, 2), "sample_peak_at": cue_at(ipk / SR),
+           "true_peak_dBTP": eb.get("TP_dBTP"), "I_LUFS": eb.get("I_LUFS"),
+           "g4_reference": ref,
+           "within_g4_max_LUFS": (float(Mv.max()) <= ref["max_LUFS"] + 1e-6) if ref and ref.get("max_LUFS") is not None else None,
+           "note": "不含配音的配樂＋音效分軌；上升量以 −70 LUFS 為下限（從靜音起音會算成大上升，要看發生的 cue 與聲音是否本來就是輕的起音）；聽感未驗證。"}
+    return res
+
+
 def analyze(out: Path):
     import g4_review_pack as g4
     tl = json.loads((out / "timeline.json").read_text(encoding="utf-8"))
@@ -393,7 +489,7 @@ def analyze(out: Path):
     res["flash_playback"] = {k: fl[k] for k in ("ok", "max_changes_per_sec", "near_limit_total", "frames_analyzed")}
     fv = g4.flash_variants(out, seq)
     res["flash_variants"] = {k: {kk: v[kk] for kk in ("max_changes_per_sec", "near_limit_3_total")} for k, v in fv["variants"].items()}
-    res["subtitle_sync"] = {k: v for k, v in g4.subtitle_sync(out, tl).items() if k != "rows"}
+    res["subtitle_sync"] = {k: v for k, v in subtitle_sync_g5(out, tl).items() if k != "rows"}
     print("[actpack.py] 影片")
     res["video"] = make_video(out, seq, act)
     res["durations"] = durations(out, tl)
@@ -499,6 +595,16 @@ def index(out: Path):
           f"- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 {fmt((fl.get('max_changes_per_sec') or {}).get('luma'))}、紅色 {fmt((fl.get('max_changes_per_sec') or {}).get('red'))}；超標 {len(fl.get('flagged', []))}；接近上限（2–3 次）{fl.get('near_limit_total', '—')}；分析 {fl.get('frames_analyzed', '—')} 格。"]
     for k, v in (fv.get("variants") or {}).items():
         L.append(f"- {k}：每秒最多 明暗 {v['max_changes_per_sec']['luma']}、紅色 {v['max_changes_per_sec']['red']}；超標 {len(v['flagged'])}；3 次 {v['near_limit_3_total']}。")
+    # 通過條件（主線裁定 1，G5 修正第 1 輪起）：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3（不採面積豁免；64×36 不要求）
+    def _pass(mc):
+        return None if not mc else (mc.get("luma", 99) <= 3 and mc.get("red", 99) <= 3)
+    p169 = _pass(fl.get("max_changes_per_sec"))
+    fine = (fv.get("variants") or {}).get("fine_32x18") or {}
+    pfine = _pass(fine.get("max_changes_per_sec"))
+    word = lambda b: "—" if b is None else ("通過" if b else "不通過")
+    L.append(f"- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 {word(p169)}；fine_32x18 {word(pfine)}"
+             + (f"（明暗 {fine['max_changes_per_sec']['luma']}、紅色 {fine['max_changes_per_sec']['red']}；超標格 {len(fine.get('flagged', []))}"
+                + (f"，最早 {fine['flagged'][0].get('cue')} {fine['flagged'][0].get('cue_t')} 秒" if fine.get('flagged') else "") + "）" if fine else "") + "；整段 " + word(None if p169 is None or pfine is None else (p169 and pfine)) + "。")
     L.append(f"- capture.mjs 逐 cue（{cap.get('analysisFps', '—')} 格／秒）：{json.dumps({k: cflash.get(k) for k in ('ok', 'max_changes_per_sec')}, ensure_ascii=False) if cflash else '—'}")
     seams = fl.get("cue_seams", [])
     if seams:
@@ -507,13 +613,24 @@ def index(out: Path):
           f"- 整段：{fmt((loud.get('full_playback') or {}).get('I_LUFS'))} LUFS、真峰值 {fmt((loud.get('full_playback') or {}).get('TP_dBTP'))} dBTP、取樣峰值 {fmt(loud.get('sample_peak_dBFS'), 2)} dBFS、削波 {loud.get('clipped_samples', '—')} 個。",
           f"- 各句對白：配音檔響度差 {fmt(loud.get('line_vo_file_I_spread_LU'), 2)} LU、混音中響度差 {fmt(loud.get('line_mix_I_spread_LU'), 2)} LU。",
           f"- 瞬間響度最大 {fmt(loud.get('momentary_max_LUFS'))} LUFS；1 秒內最大上升 {fmt(loud.get('momentary_max_rise_within_1s_LU'))} LU；100 ms 最大上升 {fmt(loud.get('momentary_max_rise_per_100ms_LU'))} LU。",
-          f"- 教師停格 3 秒後配樂 ≤ −35 LUFS：{sum(1 for h in loud.get('freeze_holds', []) if h.get('pass_le_-35'))}／{len(loud.get('freeze_holds', []))} 段通過。", "",
+          f"- 教師停格 3 秒後配樂 ≤ −35 LUFS：{sum(1 for h in loud.get('freeze_holds', []) if h.get('pass_le_-35'))}／{len(loud.get('freeze_holds', []))} 段通過。"]
+    ms = loud.get("music_sfx_only") or {}
+    if ms:
+        g4r = ms.get("g4_reference") or {}
+        at = lambda k: (f"（{ms[k]['cue']} {ms[k]['cue_t']} 秒）" if ms.get(k) else "")
+        L.append(f"- 只有配樂與音效（不含配音）：瞬間響度最大 {fmt(ms.get('max_LUFS'))} LUFS{at('max_at')}；100 ms 最大上升 {fmt(ms.get('max_rise_per_100ms_LU'))} LU{at('max_rise_per_100ms_at')}；"
+                 f"1 秒內最大上升 {fmt(ms.get('max_rise_within_1s_LU'))} LU；取樣峰值 {fmt(ms.get('sample_peak_dBFS'), 2)} dBFS{at('sample_peak_at')}、真峰值 {fmt(ms.get('true_peak_dBTP'))} dBTP"
+                 f"（G4 基準：瞬間最大 {fmt(g4r.get('max_LUFS'))} LUFS、100 ms 上升 {fmt(g4r.get('max_rise_per_100ms_LU'))} LU；不高於 G4 最大值：{ms.get('within_g4_max_LUFS')}）。")
+    L += ["",
           "| 台詞 | 說話者 | 配音檔 LUFS | 混音中 LUFS | 對白−背景 LU |", "|---|---|---|---|---|"]
     for l in loud.get("lines", []):
         L.append(f"| {l['id']} | {l['speaker']} | {fmt(l['vo_file_I_LUFS'])} | {fmt(l['mix_I_LUFS'])} | {fmt(l['vo_minus_background_LU'])} |")
     rows = ss.get("rows", [])
+    sd = ss.get("silencedetect") or {}
     L += ["", "## 字幕與語音時間差（字幕頁起點 − 語音起點，範圍 −0.8～+0.1 秒）", "",
-          f"- {sum(1 for r in rows if r['pass'])}／{len(rows)} 頁在範圍內；最大 {fmt(max((r['diff_s'] for r in rows), default=None), 3)} 秒、最小 {fmt(min((r['diff_s'] for r in rows), default=None), 3)} 秒。"]
+          f"- {sum(1 for r in rows if r['pass'])}／{len(rows)} 頁在範圍內；最大 {fmt(max((r['diff_s'] for r in rows), default=None), 3)} 秒、最小 {fmt(min((r['diff_s'] for r in rows), default=None), 3)} 秒。",
+          f"- 語音起點偵測：ffmpeg silencedetect {sd.get('noise_dB', -45)} dB、最短靜音 {sd.get('min_silence_s', 0.1)} 秒"
+          + ("（G5 修正第 1 輪起；G4 是 −45 dB、0.1 秒，抓不到句中短停頓）。" if sd else "（G4 方法）。")]
     L += ["", "## 逐字稿（v04 配音）", ""]
     if tr:
         rws = tr["rows"]

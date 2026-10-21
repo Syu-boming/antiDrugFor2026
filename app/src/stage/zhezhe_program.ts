@@ -51,7 +51,7 @@ class ZhezheProgram implements ProgramPerformer {
           default: break;
         }
       }
-      for (const l of tl.lines) if (l.actorId === this.id) { const lip = ctx.lipsync(l.line.lipsyncId ?? l.line.id); if (lip) this.zz.say(lip, l.start); }
+      for (const l of tl.lines) if (l.actorIds.includes(this.id)) { const lip = ctx.lipsync(l.line.lipsyncId ?? l.line.id); if (lip) this.zz.say(lip, l.start); }
     }
     // 題卡模式舞台燈調暗時提高存在感（light 0.55→1 對應 presence 0.2→0.06）
     this.zz.update(t, { presence: 0.06 + 0.14 * Math.min(1, Math.max(0, (1 - ctx.light) / 0.45)) });

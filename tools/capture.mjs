@@ -47,8 +47,9 @@ const probe = has('--probe');
 const probeTimes = new Map((opt('--probe-times', '') || '').split(';').filter(Boolean).map((x) => { const [id, ts] = x.split(':'); return [id, ts.split(',').map(Number).filter((v) => Number.isFinite(v))]; }));
 const video = has('--video');
 
-const dist = join(ROOT, 'app/dist/index.html');
-if (!existsSync(dist)) { console.error('[capture] 找不到 app/dist/index.html，請先在 app/ 執行 npm run build'); process.exit(1); }
+// --dist <資料夾>：用另一份建置（例如私人建置）代替 app/dist（預設 app/dist）
+const dist = opt('--dist', '') ? join(resolve(process.cwd(), opt('--dist', '')), 'index.html') : join(ROOT, 'app/dist/index.html');
+if (!existsSync(dist)) { console.error(`[capture] 找不到 ${dist}，請先在 app/ 執行 npm run build`); process.exit(1); }
 
 for (const d of ['keyframes', 'frames', 'frames/analysis', 'frames_dense', 'probe_bg', 'probe_frames']) {
   rmSync(join(out, d), { recursive: true, force: true });
@@ -117,7 +118,9 @@ for (const c of list) {
     // 量測：關鍵影格＋每秒一格記錄操偶線位置；關鍵影格另外隱藏角色量背景
     if (probe && (e.key || e.probeBg || Math.abs(e.t - Math.round(e.t)) < 1e-6)) {
       const pr = await page.evaluate(() => window.__engine.debug.probe());
-      const rec = { cueId: c.id, t: e.t, key: e.key ?? (e.probeBg ? 'probe' : null), ...pr };
+      // dim＝換景漸暗（world.dim）、quiz＝題卡不透明度（DOM 題卡蓋住舞台）：capture_probe 量兒童身後亮度與線的 ΔL* 時排除 dim > 0.05、quiz > 0.5 的格子
+      const wNow = await page.evaluate(() => { const w = window.__engine.getState().world; return { dim: w?.dim ?? 0, quiz: w?.quizVisible ?? 0 }; });
+      const rec = { cueId: c.id, t: e.t, key: e.key ?? (e.probeBg ? 'probe' : null), dim: wNow.dim, quiz: wNow.quiz, ...pr };
       if (e.key || e.probeBg) {
         const label = e.key ? e.key.replace(/\+/g, '-') : 'probe';
         let shot = `keyframes/${tag}_${label}.png`;

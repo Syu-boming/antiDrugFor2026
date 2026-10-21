@@ -10,11 +10,17 @@ import { buildWorkshopG4 } from '../stage/workshop';
 import { KRAFT_STAGE } from './kraftStage';
 import { A2_MEMORY } from './a2_memory';   // 第二幕（a2 代理）
 import { A2_WINDOW } from './a2_window';   // 第二幕（a2 代理）
+import { A2_SHOP } from './a2_shop';   // 第二幕（a2 代理，修正第 1 輪）
 import { imageSetEntry, readLayout } from './imageSet';
 import { GATE } from './gate';
 import { A4_ROADMAP } from './a4_roadmap';
 import { WORKSHOP_A0 } from './workshop_a0';
 import { SQUARE_A1 } from './square_a1';
+import { A6_SQUARE_NIGHT } from './a6_square_night'; // 第六幕代理
+import { A6_WINDOW } from './a6_window'; // 第六幕代理
+import { A6_SHOP } from './a6_shop'; // 第六幕代理（a6_c009、a7、a8）
+import { A5_GATE } from './a5_gate';   // 第五幕（a5 代理）
+import { A3_ARCADE, A3_CARD, A3_CLASSROOM, A3_GATE } from './a3';   // 第三幕（a3 代理）
 import type { BuiltSet, SetContext, SetEntry } from './types';
 import type { CameraPreset } from '../stage/layers';
 
@@ -47,8 +53,17 @@ export const SET_REGISTRY: Record<string, SetEntry> = {
   a4_roadmap: A4_ROADMAP, // 第四幕代理：紙上的路（牛皮紙地圖、小車、背光剪影幕）
   a2_memory: A2_MEMORY, // 第二幕 a2_c003 回想小窗
   a2_window: A2_WINDOW, // 第二幕 a2_c013 店外傍晚（窗內、剪影小窗、筆記本）
+  a2_shop: A2_SHOP, // 第二幕 a2_c001、a2_c004–a2_c012：G4 燈籠店＋L1 短線、竹篾、手部近景、求助站（a2_c004 與 workshop_g4 相同）
   workshop_a0: WORKSHOP_A0, // 開場（a0_c002–a0_c005）：G4 燈籠店＋設計圖、空底座、風鈴、八盞燈、回憶小窗、筆記本
+  a3_arcade: A3_ARCADE, // 第三幕：騎樓上學路（square＋紅磚柱、邀請者的手、回想小圓窗）
+  a3_gate: A3_GATE, // 第三幕：早上的校門口（gate.ts 建構器，拿掉小貨車）
+  a3_card: A3_CARD, // 第三幕：台口前緣練習卡（a3_gate＋立起的大紙卡）
+  a3_classroom: A3_CLASSROOM, // 第三幕：教室午後
+  a5_gate: A5_GATE, // 第五幕（a5）：gate 建構器＋街角、轉角小朋友、救護車、擔架、電話圖示、阿樂叔叔閉眼（醫院走廊是資料驅動景 a5_hospital/layout.json）
   square_a1: SQUARE_A1, // 第一幕（a1）：廣場（square 的 layout.json）＋紅磚柱、邀請者的手、盒子特寫、包裝紙、燈籠店窗前
+  a6_square_night: A6_SQUARE_NIGHT, // 第六幕（a6_c001–a6_c007）：紙燈節晚上的廣場＋主燈、騎樓燈籠串、台口八盞燈、求助站
+  a6_window: A6_WINDOW, // 第六幕 a6_c008：四季窗景
+  a6_shop: A6_SHOP, // 第六幕 a6_c009＋複習（a7）＋閉幕（a8）：G4 燈籠店＋小折折燈、三張大紙卡、口訣卡、謝幕微光
 };
 
 /** 全劇預設的佔位景 */

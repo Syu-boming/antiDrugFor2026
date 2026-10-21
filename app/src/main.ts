@@ -51,6 +51,8 @@ export interface EngineAPI {
     /** 每段開頭的靜音（毫秒） */
     setLeadIn(ms: number): void;
     warmMs(): number;
+    /** 台口八盞燈（全劇模式）：是否啟用、每盞亮度、畫面外框（繪圖緩衝像素） */
+    stageLamps(): ReturnType<Stage['lamps']['state']>;
     /** 指定 cue 解析後的動畫與台詞時間（秒；測試用） */
     timeline(id: string): { anims: { name: string; target: string | null; start: number; end: number; params: Record<string, unknown> }[]; lines: { id: string; start: number; end: number }[] } | null;
   };
@@ -147,6 +149,7 @@ function boot(): void {
       systemResumeAudio: async () => { await mixer.ctx?.resume(); return mixer.state; },
       setLeadIn: (ms) => eng.setLeadIn(ms),
       warmMs: () => eng.warmMs,
+      stageLamps: () => stage.lamps.state((p) => stage.project(p)),
       timeline: (id) => {
         const tl = eng.timelines.find((x) => x.cue.id === id);
         if (!tl) return null;

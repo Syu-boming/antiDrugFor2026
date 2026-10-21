@@ -55,3 +55,5 @@ review/G5/*/pack/audio/*.wav
 review/G5/*/pack/probe_dense.json
 review/G5/**/preview/data.js
 review/G5/*/pack/proj/16x9/
+review/G5/*/dist/
+review/G5/**/PROGRESS*.md.bak

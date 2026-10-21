@@ -710,6 +710,92 @@ def sfx_footsteps():
     return onset(x, 6, tail_ms=60)
 
 
+# ---------------------------------------------------------------- S17–S20（G5 修正第 1 輪：audio/sfx/_placeholders.txt 的四個佔位檔）
+def sfx_gust():
+    """一陣風（2.6 s）：低中頻氣流聲中心頻率 350 → 900（1.0 s 最強）→ 450 Hz，鐘形包絡，一點落葉紙屑細沙；
+    不呼嘯、沒有口哨聲（低通 4.5 kHz）。起音 ≥ 0.25 s（慢慢起風），最後 0.6 s 退去。"""
+    rng = _rng(31)
+    n = secs(2.6)
+    w = pink(n, rng)
+    out = np.zeros(n)
+    hop = secs(0.02)
+    win = np.hanning(2 * hop)
+    for s0 in range(0, n - 2 * hop, hop):
+        u = s0 / SR
+        fc = 350 + 550 * np.exp(-0.5 * ((u - 1.0) / 0.45) ** 2) + 100 * (u > 1.0) * (u - 1.0)
+        out[s0:s0 + 2 * hop] += bp(np.pad(w[s0:s0 + 2 * hop], 256), fc * 0.5, fc * 1.8)[256:-256] * win
+    e = env_points(n, [(0, 0), (0.35, 0.35), (1.0, 1.0), (1.6, 0.55), (2.0, 0.25), (2.6, 0)])
+    dens = env_points(n, [(0, 0), (0.6, 8), (1.0, 22), (1.6, 6), (2.2, 0)])
+    leaves = scatter(n, rng, dens, 1600, 4000, dur_ms=(4, 10), amp=(0.04, 0.12))
+    x = lp(hp(out * e + leaves * e, 80), 4500)
+    return onset(x, 30, tail_ms=80)
+
+
+def sfx_phone_noanswer():
+    """手機撥號、沒人接（2.6 s）：兩聲柔和的「嘟嚕」鈴（0.05–0.85 s、1.35–2.15 s；520／650 Hz 正弦＋每秒 14 次的柔和顫音），
+    經過 300–3400 Hz 的電話線音色，底下一層很輕的線路聲。刻意不用任何電信業者的回鈴音、撥號音或忙線音
+    （臺灣回鈴音是 440＋480 Hz、響 1 秒停 2 秒；這裡音高、節奏都不同）。每聲起音 40 ms、收尾 120 ms，沒有突發巨響。"""
+    rng = _rng(32)
+    n = secs(2.6)
+    t = np.arange(n) / SR
+    x = np.zeros(n)
+    for t0 in (0.05, 1.35):
+        m = secs(0.8)
+        i0 = secs(t0)
+        tt = np.arange(m) / SR
+        trem = 0.6 + 0.4 * (0.5 - 0.5 * np.cos(2 * np.pi * 14 * tt))
+        tone = (np.sin(2 * np.pi * 520 * tt) + 0.8 * np.sin(2 * np.pi * 650 * tt + 0.7)) * trem
+        e = env_points(m, [(0, 0), (0.04, 1.0), (0.68, 0.9), (0.8, 0)])
+        x[i0:i0 + m] += tone * e
+    line = bp(rng.standard_normal(n), 300, 3400, order=4) * 0.012
+    x = bp(x, 300, 3400, order=4) + line * env_points(n, [(0, 0), (0.05, 1), (2.45, 1), (2.6, 0)])
+    return onset(x, 10, tail_ms=60)
+
+
+def sfx_truck_arrive():
+    """小貨車輕聲開近、停下、怠速（5.0 s；不按喇叭、沒有煞車尖響）：0–3.0 s 由約 40 m 開到 8 m（越近越慢）、
+    3.0–3.6 s 轉速降下停住、3.6–5.0 s 怠速（檔尾 0.4 s 淡出）。小引擎＝點火頻率諧波（約 50 → 33 Hz）＋輕路噪，
+    遠時高頻少；1/r 但最大值受控（build_all 依峰值與瞬間響度上限正規化）。"""
+    rng = _rng(33)
+    n = secs(5.0)
+    t = np.arange(n) / SR
+    u = np.clip(t / 3.0, 0, 1)
+    s = 1 - (1 - u) ** 2.0
+    dist = 40 - 32 * s
+    speed = -np.gradient(dist, 1 / SR)
+    doppler = 1 / (1 - np.clip(speed, 0, 20) / 343.0)
+    rpm = 33 + 17 * np.clip(1 - (t - 2.8) / 0.8, 0, 1)
+    ph = 2 * np.pi * np.cumsum(rpm * doppler) / SR
+    jit = 1 + 0.06 * lp(rng.standard_normal(n), 30)
+    eng = np.zeros(n)
+    for h in range(1, 24):
+        a = 1 / (1 + ((h * 40 - 220) / 180.0) ** 2) * (1.0 if h % 2 else 0.6)
+        eng += a * np.sin(h * ph + rng.uniform(0, 6))
+    eng *= jit
+    road = bp(pink(n, rng), 160, 1500) * np.clip(speed / 8.0, 0, 1) * 0.5
+    near = eng + road
+    w = np.clip((40 - dist) / 32, 0, 1)
+    x = lp(near, 650) * (1 - w) + near * w
+    x = x * np.minimum(8.0 / dist, 1.0)
+    x = lp(hp(x, 50), 3500)
+    e = env_points(n, [(0, 0), (0.5, 1), (4.6, 1), (5.0, 0)])
+    return onset(x * e, 40, tail_ms=60)
+
+
+def sfx_crowd_short():
+    """廣場人聲短版（4.0 s）：約 10 個聲音（大人與小孩）重疊說話，只有母音共振峰、低通 2.2 kHz、加殘響推遠 → 聽不出任何字；
+    0.6 s 淡入、最後 0.8 s 淡出（一次播完，不循環）。"""
+    rng = _rng(34)
+    L = secs(4.0)
+    adults = babble(L, rng, voices=6, f0=(95, 210), fshift=(0.95, 1.1), talk=0.75)
+    kids = babble(L, rng, voices=4, f0=(220, 330), fshift=(1.15, 1.3), talk=0.65)
+    x = lp(adults + 0.7 * kids, 2200)
+    x = circ_reverb(x, rng, rt=1.4, wet=0.5)
+    x = x - np.mean(x)
+    e = env_points(L, [(0, 0), (0.6, 1), (3.2, 1), (4.0, 0)])
+    return onset(x * e, 20, tail_ms=40)
+
+
 # 個別音量規格（沒列的照 G3：樣本峰值 −8 dBFS、最大瞬間響度 ≤ −20 LUFS）
 #   peak：正規化的樣本峰值；mmax：最大瞬間響度上限；lufs：環境聲改用整合響度目標（循環檔只做線性增益）
 SFX_LEVEL = {
@@ -724,6 +810,11 @@ SFX_LEVEL = {
     'sfx_plane_whoosh': {'peak': -12.0, 'mmax': -26.0},
     'sfx_crowd_far': {'lufs': -34.0},
     'sfx_footsteps': {'peak': -12.0, 'mmax': -26.0},
+    # G5 修正第 1 輪（佔位檔換正式）
+    'sfx_gust': {'peak': -14.0, 'mmax': -28.0},
+    'sfx_phone_noanswer': {'peak': -14.0, 'mmax': -28.0},
+    'sfx_truck_arrive': {'peak': -12.0, 'mmax': -27.0},
+    'sfx_crowd_short': {'peak': -14.0, 'mmax': -30.0},
 }
 # 可循環的音效（一圈秒數）；不做淡入淡出、不經過限制器，接縫量測見 build_all.py
 SFX_LOOPS = {'sfx_wind': WIND_LOOP, 'sfx_gate_ambience': GATE_LOOP, 'sfx_phone_bed': PHONE_LOOP, 'sfx_crowd_far': CROWD_LOOP}
@@ -752,4 +843,9 @@ SFX = {
     'sfx_plane_whoosh': (sfx_plane_whoosh, 'S14 紙飛機咻聲：1.6 s，最近點 0.6 s'),
     'sfx_crowd_far': (sfx_crowd_far, 'S15 廣場人聲遠景：40.0 s 可循環；只有母音、聽不出字；檔頭 1.5 s 從低谷起來'),
     'sfx_footsteps': (sfx_footsteps, 'S16 紙偶腳步：8 步、每步 0.50 s（120 BPM），第 k 步 0.02＋0.5k 秒'),
+    # G5 修正第 1 輪：audio/sfx/_placeholders.txt 的佔位檔原檔名換成正式音效
+    'sfx_gust': (sfx_gust, 'S17 一陣風：2.6 s，1.0 s 最強，最後 0.6 s 退去；不呼嘯'),
+    'sfx_phone_noanswer': (sfx_phone_noanswer, 'S18 撥號沒人接：兩聲柔和鈴 0.05／1.35 s（各 0.8 s），電話線音色；不用真實電信音調'),
+    'sfx_truck_arrive': (sfx_truck_arrive, 'S19 小貨車輕聲開近：0–3.0 s 開近、3.0–3.6 s 停下、3.6–5.0 s 怠速；不按喇叭、沒有煞車尖響'),
+    'sfx_crowd_short': (sfx_crowd_short, 'S20 廣場人聲短版：4.0 s，0.6 s 淡入、最後 0.8 s 淡出；只有母音、聽不出字'),
 }

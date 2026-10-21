@@ -2,63 +2,123 @@
  "format": "antidrug-cues/1",
  "id": "a7",
  "title": "複習與收束",
- "set": "kraft_stage",
+ "set": "a6_shop",
  "characters": {
   "xiaoqing": {
    "name": "小晴",
    "rig": "standee:xiaoqing",
-   "x": 1.85,
-   "z": 0.45,
+   "x": -5.0,
+   "z": 0.95,
    "facing": 1,
    "fallback": "child"
   },
   "xiaoyu": {
    "name": "小宇",
    "rig": "standee:xiaoyu",
-   "x": 3.35,
-   "z": -0.5,
-   "facing": -1,
+   "x": 5.1,
+   "z": 0.95,
+   "facing": 1,
    "fallback": "child"
   },
   "zhezhe": {
    "name": "折折",
    "rig": "zhezhe",
-   "x": 0.55,
-   "z": 1.2,
+   "x": -2.2,
+   "z": 2.5,
    "facing": 1,
    "fallback": "child"
   },
   "pinan": {
    "name": "品安",
    "rig": "standee:pinan",
-   "x": 4.5,
-   "z": -0.1,
-   "facing": -1,
+   "x": 0.55,
+   "z": 1.35,
+   "facing": 1,
    "fallback": "child"
   }
  },
- "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "_note": "G5 第六幕代理排戲（review/G5/a6/scripts/make_a678.py 產生；台詞、題卡、流程欄位、storyboard 照底稿）。景：a6_square_night（紙燈節晚上的廣場，app/src/sets/a6_square_night.ts）、a6_window（四季窗景）、a6_shop（一年後的燈籠店、複習紙卡、謝幕；G4 燈籠店＋程式景片）。storyboard 是劇本與節拍表的摘錄，引擎不讀。",
  "cues": [
   {
    "id": "a7_c001",
-   "sceneId": "kraft_stage",
+   "sceneId": "a6_shop",
    "kind": "scene",
    "title": "三張大圖",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
+     "camera": "a7_wide",
      "light": 1
     },
     "characters": {
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": -2.2,
+      "z": 2.5,
+      "emotion": "happy"
      }
     }
    },
-   "animation": [],
-   "audioId": "music_town",
+   "animation": [
+    {
+     "name": "zhezhe.look",
+     "start": 0.4,
+     "duration": 0.6,
+     "target": "zhezhe",
+     "params": {
+      "yaw": -0.45
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a7_c001_01.start-0.20",
+     "duration": 0.5,
+     "target": "zhezhe",
+     "params": {
+      "yaw": 0.0
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a7_c001_01.end+1.00",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": "a7_c001_01.end+1.20",
+     "duration": 0.75,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -0.85,
+       0,
+       2.55
+      ],
+      "height": 0.5
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a7_c001_01.end+3.30",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a7_c001_02.end+0.20",
+     "duration": 0.6,
+     "target": "zhezhe",
+     "params": {
+      "yaw": 0.45
+     }
+    }
+   ],
+   "audioId": "music_zhezhe",
    "lines": [
     {
      "id": "a7_c001_01",
@@ -68,7 +128,8 @@
     {
      "id": "a7_c001_02",
      "speaker": "折折",
-     "text": "第二張，安全接送：覺得不對勁，先不上車，回去找大人。"
+     "text": "第二張，安全接送：覺得不對勁，先不上車，回去找大人。",
+     "start": "a7_c001_01.end+4.00"
     },
     {
      "id": "a7_c001_03",
@@ -90,10 +151,31 @@
    "level2": {
     "lines": [
      "a7_c001_03"
+    ],
+    "voStart": 2.0,
+    "tail": 2.4,
+    "animation": [
+     {
+      "name": "zhezhe.look",
+      "start": 0.4,
+      "duration": 0.6,
+      "target": "zhezhe",
+      "params": {
+       "yaw": 0.45
+      }
+     },
+     {
+      "name": "zhezhe.emote",
+      "start": 0.5,
+      "target": "zhezhe",
+      "params": {
+       "emotion": "happy"
+      }
+     }
     ]
    },
-   "voStart": 2.3,
-   "tail": 6.7,
+   "voStart": 2.2,
+   "tail": 2.2,
    "storyboard": {
     "beat": "折折攤開三張大紙卡依序立起：拒絕與離開、安全接送、找大人求助（「先找大人；找不到大人，就打 119」，與 a5_c005 的劇情同步）；第二張先上下顛倒，折折趕快翻正",
     "cast": "折折",
@@ -104,35 +186,110 @@
     ],
     "estimateSec": 27.0,
     "actionSec": 9.0
-   }
+   },
+   "set": "a6_shop",
+   "setFade": 0.8,
+   "music": [
+    {
+     "id": "music_town",
+     "at": "a7_c001_03.start",
+     "loop": true,
+     "fade": 3.0,
+     "gain": 0.75
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_fold",
+     "at": 0.5,
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_fold",
+     "at": "a7_c001_01.end+0.25",
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": "a7_c001_01.end+1.95",
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_fold",
+     "at": "a7_c001_02.end+0.20",
+     "gain": 0.5
+    }
+   ]
   },
   {
    "id": "a7_c002",
-   "sceneId": "kraft_stage",
+   "sceneId": "a6_shop",
    "kind": "scene",
    "title": "一起做口訣",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
+     "camera": "a7_wide",
      "light": 1
     },
     "characters": {
+     "zhezhe": {
+      "visible": true,
+      "x": -0.85,
+      "z": 2.55,
+      "emotion": "happy"
+     },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": -7.4,
+      "z": 0.95,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "stand"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "zhezhe": {
-      "visible": true,
-      "emotion": "smile"
+      "x": 7.7,
+      "z": 0.95,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "standwatch"
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "zhezhe.walkTo",
+     "start": 2.4,
+     "duration": 1.3,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -3.7,
+       0,
+       2.6
+      ]
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 3.8,
+     "duration": 1.7,
+     "target": "xiaoqing",
+     "params": {
+      "dx": 2.4
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 3.9,
+     "duration": 1.7,
+     "target": "xiaoyu",
+     "params": {
+      "dx": -2.6
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -150,8 +307,8 @@
    ],
    "teacherNote": "帶全場說口訣、做動作一次（約 30 秒）：「不碰、不試；先離開，找大人。」做完做安靜手勢，再按下一步。",
    "checkpoint": null,
-   "voStart": 1.5,
-   "tail": 4.5,
+   "voStart": 3.9,
+   "tail": 2.0,
    "storyboard": {
     "beat": "口訣卡出現；小晴、小宇站兩側準備示範；畫面停住",
     "cast": "小晴、小宇：準備姿勢 X2（示範動作重用 a3_c004：P-QG1／P-XY1、H3、H2、H4）",
@@ -163,39 +320,138 @@
     ],
     "estimateSec": 9.0,
     "actionSec": 6.0
-   }
+   },
+   "set": "a6_shop",
+   "music": [
+    {
+     "id": "music_courage",
+     "at": 0,
+     "loop": true,
+     "fade": 1.5,
+     "gain": 0.6
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_paper_rustle",
+     "at": 0.1,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 2.4,
+     "gain": 0.6
+    }
+   ]
   },
   {
    "id": "a7_c003",
-   "sceneId": "kraft_stage",
+   "sceneId": "a6_shop",
    "kind": "scene",
    "title": "最後的話",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
+     "camera": "a7_wide",
      "light": 1
     },
     "characters": {
+     "zhezhe": {
+      "visible": true,
+      "x": -3.7,
+      "z": 2.6,
+      "emotion": "happy"
+     },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": -5.0,
+      "z": 0.95,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "stand"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 5.1,
+      "z": 0.95,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "standwatch"
      },
      "pinan": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "zhezhe": {
-      "visible": true,
-      "emotion": "smile"
+      "x": 9.0,
+      "z": 1.35,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "stand"
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "zhezhe.hush",
+     "start": 0.0,
+     "target": "zhezhe"
+    },
+    {
+     "name": "zhezhe.walkTo",
+     "start": 0.5,
+     "duration": 1.3,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -2.5,
+       0,
+       2.6
+      ]
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.2,
+     "duration": 0.02,
+     "target": "xiaoqing",
+     "params": {
+      "dx": 4.25
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.2,
+     "duration": 0.02,
+     "target": "xiaoyu",
+     "params": {
+      "dx": -3.25
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.2,
+     "duration": 0.02,
+     "target": "pinan",
+     "params": {
+      "dx": -8.45
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 2.2,
+     "duration": 0.01,
+     "params": {
+      "to": "a7_front"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a7_c003_02.start-0.30",
+     "duration": 0.5,
+     "target": "zhezhe",
+     "params": {
+      "yaw": 0.0
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -216,8 +472,8 @@
    "fx": [],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 1.5,
-   "tail": 4.5,
+   "voStart": 2.9,
+   "tail": 1.6,
    "storyboard": {
     "beat": "收摺音效；小晴、小宇、品安走到台前，品安往前半步說秘密也可以找大人說；折折謝謝大家點亮八盞燈（只有兩句）",
     "cast": "小晴 X2；小宇 X2；品安 X7；折折",
@@ -228,7 +484,31 @@
     ],
     "estimateSec": 14.0,
     "actionSec": 6.0
-   }
+   },
+   "set": "a6_shop",
+   "music": [
+    {
+     "id": "none",
+     "at": 0,
+     "loop": true,
+     "fade": 0.8,
+     "gain": 1.0
+    },
+    {
+     "id": "music_town",
+     "at": "a7_c003_02.start",
+     "loop": true,
+     "fade": 3.0,
+     "gain": 0.75
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0.55,
+     "gain": 1.0
+    }
+   ]
   }
  ]
 }

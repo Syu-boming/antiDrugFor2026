@@ -15,9 +15,17 @@
 //   g4 中景線鬆（張力 0.2）時，畫面中段偏離直線約 20–30 px；張力 1 時 bow＝0，整條線是直線。
 //   網格在下段細分 30 段、上段（直線）6 段；中心線世界座標存在 last.path，擷取量測（Stage.probe）直接投影這條線。
 // - 復原 API：鬆（tension→0、弧度變大）、淡（opacity）、脫落（紙環打開、線往上飄出畫面）；沒有「剪斷」。
+// - G5 修正第 1 輪（主線裁定 5；只在全劇模式的非 G4 cue 生效，G4 cue 與 ?cues=g4 完全不變）：
+//   1. 螢幕空間最小線寬：PuppetDirector 依扣點到相機的深度換算（1080p 中景 ≥ 8 px、遠景 ≥ 7 px，見 perform.ts STRING_MIN_PX）。
+//   2. 深灰邊至少 2 px：線細到貼圖本身的深灰邊（18.75%）不到 2 px 時，著色器以螢幕導數 fwidth 把兩側各 2 px 補成深灰
+//      （ropeBoldUniform＝1 時；線寬 ≥ 約 11 px 的近景不受影響，外觀不變）。廣角鏡頭的線因此在淺色（白襯衫、天空）與
+//      深色背景前都看得出界線（繩身淡灰對深色、深灰邊對淺色）。
+//   3. 影子只落在近景層與地面：舞台另有一盞不發光、只算影子的平行光（keyNoStrings），它的影子貼圖不含操偶線
+//      （onBeforeShadow 把線的繪製範圍設成 0）；景片材質在世界 z < STRING_SHADOW_FAR_Z（遠景、天空）時改用這張影子貼圖
+//      ——操偶線的影子不會投到 100–300 px 外的天空與遠景層形成「第二組線」（重影），角色與道具的影子照舊。
 import {
   BufferAttribute, BufferGeometry, CanvasTexture, DoubleSide, LinearFilter, LinearMipmapLinearFilter, Mesh, MeshBasicMaterial, PlaneGeometry,
-  RepeatWrapping, SRGBColorSpace, Texture, Vector3,
+  RepeatWrapping, ShaderChunk, SRGBColorSpace, Texture, Vector3, type Material,
 } from 'three';
 import { finishTexture, makeCanvas } from './paper';
 import { seeded } from '../util/math';
@@ -67,6 +75,60 @@ export function ringTexture(): CanvasTexture {
 let ropeTex: Texture | null = null;
 let ringTex: Texture | null = null;
 
+/** 深灰邊補到 2 px（1＝開；舞台每格依 cue 設定：全劇非 G4 cue＝1，G4 cue＝0） */
+export const ropeBoldUniform = { value: 0 };
+/** 全劇模式才把紙繩材質換成支援深灰邊補寬的著色器（G4 模式材質與著色器完全不變） */
+let ropeBoldEnabled = false;
+export function setRopeBoldEnabled(on: boolean): void { ropeBoldEnabled = on; }
+/** 補寬的深灰邊顏色（線性色彩空間；sRGB #363230，比貼圖的邊 #403d3a 略深，細線在淺色背景前更清楚） */
+const EDGE_LINEAR = [0.0369, 0.0331, 0.0296];
+/** 深灰邊的螢幕寬度（px） */
+export const ROPE_EDGE_PX = 2.0;
+
+/** 遠景與天空的世界 z 上限：景片在這之後（z 更小）不接收操偶線的影子 */
+export const STRING_SHADOW_FAR_Z = -1.8;
+/** 只算影子的平行光（不含操偶線）的影子相機：由 Stage 在全劇模式設定；null＝沒有（G4） */
+let noStringShadowCamera: object | null = null;
+export function setNoStringShadowCamera(cam: object | null): void { noStringShadowCamera = cam; }
+/** 遠景與天空改用不含操偶線的影子貼圖（1＝開；舞台每格依 cue 與線是否在台上設定） */
+export const noStringShadowUniform = { value: 0 };
+const SHADOW_LINE = 'directLight.color *= ( directLight.visible && receiveShadow ) ? getShadow( directionalShadowMap[ i ], directionalLightShadow.shadowMapSize, directionalLightShadow.shadowIntensity, directionalLightShadow.shadowBias, directionalLightShadow.shadowRadius, vDirectionalShadowCoord[ i ] ) : 1.0;';
+const NS_SHADOW = 'getShadow( directionalShadowMap[ 1 ], directionalLightShadows[ 1 ].shadowMapSize, directionalLightShadows[ 1 ].shadowIntensity, directionalLightShadows[ 1 ].shadowBias, directionalLightShadows[ 1 ].shadowRadius, vDirectionalShadowCoord[ 1 ] )';
+let warnedChunk = false;
+
+/**
+ * 景片材質：世界 z < STRING_SHADOW_FAR_Z 的像素（遠景、天空）在 noStringShadowUniform＝1 時，主光（平行光第 0 盞）的影子改查
+ * 第 1 盞（只算影子、不含操偶線）的影子貼圖。只在全劇模式由 Stage 對景片材質呼叫；uniform＝0 時和原本的計算完全相同。
+ * three.js 版本的著色器片段對不上時不改（操偶線影子照舊），並在主控台提醒一次。
+ */
+export function enableNoStringShadow(mat: Material): void {
+  const m = mat as Material & { userData: Record<string, unknown> };
+  if (m.userData.noStrShadow) return;
+  m.userData.noStrShadow = true;
+  const prev = m.onBeforeCompile;
+  const prevKey = m.customProgramCacheKey(); // 包裝前的鍵（例如 FX8 降彩的 desat1）
+  m.onBeforeCompile = (shader, renderer) => {
+    prev?.call(m, shader, renderer);
+    if (!shader.fragmentShader.includes('#include <lights_fragment_begin>') || !shader.vertexShader.includes('#include <project_vertex>')) return;
+    const chunk = ShaderChunk.lights_fragment_begin;
+    if (!chunk.includes(SHADOW_LINE)) { if (!warnedChunk) { warnedChunk = true; console.warn('[strings] three.js 著色器片段改了：操偶線影子不分遠近'); } return; }
+    shader.uniforms.uNoStrShadow = noStringShadowUniform;
+    shader.vertexShader = shader.vertexShader
+      .replace('void main() {', 'varying float vStrWZ;\nvoid main() {')
+      .replace('#include <project_vertex>', '#include <project_vertex>\n\tvStrWZ = ( modelMatrix * vec4( transformed, 1.0 ) ).z;');
+    const patched = `#if ( UNROLLED_LOOP_INDEX == 0 ) && ( NUM_DIR_LIGHT_SHADOWS > 1 )
+\t\tdirectLight.color *= ( directLight.visible && receiveShadow ) ? ( ( uNoStrShadow > 0.5 && vStrWZ < ${STRING_SHADOW_FAR_Z.toFixed(2)} ) ? ${NS_SHADOW} : getShadow( directionalShadowMap[ i ], directionalLightShadow.shadowMapSize, directionalLightShadow.shadowIntensity, directionalLightShadow.shadowBias, directionalLightShadow.shadowRadius, vDirectionalShadowCoord[ i ] ) ) : 1.0;
+\t\t#else
+\t\t${SHADOW_LINE}
+\t\t#endif`;
+    shader.fragmentShader = shader.fragmentShader
+      .replace('void main() {', 'uniform float uNoStrShadow;\nvarying float vStrWZ;\nvoid main() {')
+      .replace('#include <lights_fragment_begin>', chunk.replace(SHADOW_LINE, patched));
+  };
+  m.customProgramCacheKey = () => `${prevKey}+nss1`;
+  m.needsUpdate = true;
+}
+
 /**
  * 換用素材貼圖（Stage.setScene 在建立紙偶前呼叫）：rope＝tex-string-rope、ring＝tex-string-ring；缺圖時用程式畫的退路。
  * anisotropy：細長的紙繩斜著貼時保留扭紋（渲染器支援的上限內）。
@@ -90,7 +152,28 @@ export function configureStringTextures(rope: CanvasImageSource | undefined, rin
 
 export function ropeMaterial(): MeshBasicMaterial {
   ropeTex ??= ropeTexture();
-  return new MeshBasicMaterial({ map: ropeTex, side: DoubleSide });
+  const m = new MeshBasicMaterial({ map: ropeTex, side: DoubleSide });
+  if (ropeBoldEnabled) {
+    m.onBeforeCompile = (shader) => {
+      shader.uniforms.uRopeBold = ropeBoldUniform;
+      shader.fragmentShader = shader.fragmentShader
+        .replace('void main() {', 'uniform float uRopeBold;\nvoid main() {')
+        .replace('#include <map_fragment>', `#include <map_fragment>
+#ifdef USE_MAP
+{
+  // 深灰邊補到 ${ROPE_EDGE_PX.toFixed(1)} px：band＝2 px 換成 u 的寬度；比貼圖本身的邊（0.1875）寬時才補（近景不變）
+  float fw = max(fwidth(vMapUv.x), 1e-5);
+  float band = ${ROPE_EDGE_PX.toFixed(1)} * fw;
+  float on = uRopeBold * smoothstep(0.17, 0.21, band);
+  float e = min(vMapUv.x, 1.0 - vMapUv.x);
+  float inEdge = 1.0 - smoothstep(band - 0.5 * fw, band + 0.5 * fw, e);
+  diffuseColor.rgb = mix(diffuseColor.rgb, vec3(${EDGE_LINEAR.map((v) => v.toFixed(4)).join(', ')}) * diffuse, on * inEdge);
+}
+#endif`);
+    };
+    m.customProgramCacheKey = () => 'rope-bold1';
+  }
+  return m;
 }
 
 /**
@@ -181,7 +264,21 @@ export class PaperString {
     this.ring.renderOrder = renderOrder + 1;
     this.ring.castShadow = true;
     this.ring.frustumCulled = false;
+    // 只算影子的平行光（不含操偶線）畫影子貼圖時，線與紙環不畫（繪製範圍 0）；之後恢復
+    for (const m of [this.mesh, this.ring]) {
+      m.onBeforeShadow = (_r, _o, _c, shadowCamera, geometry) => { if (noStringShadowCamera && shadowCamera === noStringShadowCamera) geometry.setDrawRange(0, 0); };
+      m.onAfterShadow = (_r, _o, _c, shadowCamera, geometry) => { if (noStringShadowCamera && shadowCamera === noStringShadowCamera) geometry.setDrawRange(0, Infinity); };
+    }
   }
+
+  /** 量測用：第 i 段（0＝上端 … SEGMENTS＝下端）紙帶左右兩側的世界座標 */
+  edgePair(i: number): [Vector3, Vector3] {
+    const k = Math.max(0, Math.min(SEGMENTS, i)) * 6;
+    return [new Vector3(this.pos[k], this.pos[k + 1], this.pos[k + 2]), new Vector3(this.pos[k + 3], this.pos[k + 4], this.pos[k + 5])];
+  }
+
+  /** 下段裡、紙環上方約 1/5 下段長的那一段（量測線寬用） */
+  static readonly PROBE_SEGMENT = SEGMENTS - 6;
 
   hide(): void { this.mesh.visible = false; this.ring.visible = false; this.last.visible = false; }
 

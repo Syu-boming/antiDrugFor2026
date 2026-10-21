@@ -164,7 +164,7 @@ class PaperScrapPerformer implements ProgramPerformer {
     const it = evalIntent(this.place, 'front', start, tl.anims, t);
     this.root.visible = it.visible;
     if (!it.visible) return;
-    const speaking = tl.lines.some((l) => l.actorId === this.place.id && t >= l.start && t < l.end);
+    const speaking = tl.lines.some((l) => l.actorIds.includes(this.place.id) && t >= l.start && t < l.end);
     const bob = speaking ? Math.abs(Math.sin(t * Math.PI * 4)) * 0.05 : 0;
     this.root.position.set(it.x + it.dx, it.y + it.lift + (it.walk ? Math.abs(Math.sin(t * Math.PI * 3.2)) * 0.04 : 0), it.z);
     this.root.rotation.set(-(1 - Math.min(1, it.popup)) * Math.PI / 2, 0, 0);

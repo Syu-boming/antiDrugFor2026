@@ -3,15 +3,19 @@
 // 而且只有 cue 寫了 setTrack 才動（沒寫的 cue＝和 layout.json 原樣相同，第三、五幕不受影響；騎樓小燈籠一直掛著、無風時幾乎不動）：
 //   { "do": "truck",   "from": -9, "start": …, "duration": 4 }          小貨車從畫面左外開進來、慢慢停在 layout 的位置（輪子轉；車聲另排）
 //   { "do": "lin",     "to": 1 }                                          警衛室窗內林老師的小背影（背對街道講電話；1 顯示、0 不顯示）
-//   { "do": "walkers", "kind": "a", "x0": -4, "x1": 14, "z": -2.9, "start": …, "duration": 8 }   遠景家長牽孩子離開（往右走出畫面）
+//   { "do": "walkers", "kind": "a", "x0": -4, "x1": 14, "z": -2.9, "z1": -3.2, "start": …, "duration": 8 }   遠景家長牽孩子離開（淺紙色背影小紙人；z1 省略＝不往後走）
 //   { "do": "wind",    "to": 1, "start": …, "duration": 1.5 }            風（騎樓小燈籠擺動幅度，慢、小）
 //   { "do": "key",     "hold": "ale.A|ale.B|chen.receive|chen.stand|none", "start": …, "duration": 0.4 }   車鑰匙跟著誰的手
 //   { "do": "flag",    "to": 1 }                                          陳伯伯另一手拿導護旗
 //   { "do": "map",     "to": 1, "start": …, "duration": 1.6 }            街道摺平後淡成牛皮紙地圖（俯視；a4_roadmap 同一張圖同一位置）
 //   { "do": "farUp",   "to": 1 }                                          遠景（遠山、對街騎樓、校舍、校內圍牆）一直站著，set.popup 只立起近處景片
 //                                                                         （同一區域不會在 1 秒內有太多景片接連立起：光敏）
+//   { "do": "catEar",  "to": 1 }                                          小貨車換第四幕版貼圖：帆布下露出竹編貓頭骨架（1＝兩隻尖耳＋一小段頭框，同 a0 設計圖輪廓；
+//                                                                         0.5＝帆布蓋住、只露左耳尖一小角；0＝layout 原圖）。G5 修正第 1 輪；第五幕要同一個骨架時在 a5 cue 的 setTrack 也寫 to 1
+//   { "do": "brick",   "to": 0.3, "start": …, "duration": 0.8 }         對街紅磚騎樓降彩（0＝原色、1＝全灰；鏡頭移動時約 0.3，細格紅色光敏）
 // setTrack 的時間參照同 animation.start；所有量都是時間的純函式。
-import { CanvasTexture, Color, Matrix4, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SRGBColorSpace, Vector3, type Material, type Object3D } from 'three';
+import { CanvasTexture, Color, LinearMipmapLinearFilter, Matrix4, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SRGBColorSpace, Vector3, type Material, type Object3D, type Texture } from 'three';
+import { finishTexture, makeCanvas } from '../stage/paper';
 import { buildImageSet, readLayout } from './imageSet';
 import { A4_MAP_CAMERAS, imagePlane, mapOverlay, trackOf, trackValue } from './a4_roadmap';
 import { clamp, ease, lerp } from '../util/math';
@@ -57,16 +61,23 @@ export const GATE_A4_CAMERAS: Record<string, CameraPreset> = {
   a4_fold_high: { pos: [-4.6, 9.0, 3.75], target: [-4.8, 0, -1.3], fov: 20 },
   /** 警衛室門口四人中景 */
   a4_guard: { pos: [3.6, 1.75, 15.6], target: [3.6, 1.6, 0.6], fov: 20 },
-  /** 長椅中景（陳伯伯、阿樂叔叔） */
-  a4_bench: { pos: [-1.9, 1.6, 12.6], target: [-1.9, 1.45, 0], fov: 20 },
+  /** 長椅中景（陳伯伯、阿樂叔叔；G5 修正第 1 輪陳伯伯往右 0.65，鏡位跟著往右、退後一點） */
+  a4_bench: { pos: [-1.55, 1.6, 12.9], target: [-1.55, 1.45, 0], fov: 20 },
   /** 收鑰匙近景 */
-  a4_keyclose: { pos: [-1.8, 1.95, 10.4], target: [-1.85, 1.82, 0.3], fov: 20 },
+  a4_keyclose: { pos: [-1.45, 1.95, 10.9], target: [-1.5, 1.82, 0.3], fov: 20 },
   /** 長椅與小貨車（帶到後車窗的中途：先橫移、再慢慢推近） */
   a4_truck_mid: { pos: [-1.5, 2.2, 13.0], target: [-4.4, 2.0, -1.0], fov: 20 },
   /** 慢慢帶到小貨車後車窗（貓耳形的竹骨架；從右邊看過去，畫面不碰到台口摺幕） */
   a4_truck_window: { pos: [-4.3, 2.55, 8.3], target: [-6.6, 2.25, -2.4], fov: 17 },
+  /** 小貨車車斗近景（只有車、沒有人、看不到阿樂叔叔的線；a4_c013 直接切過來，再慢慢推近到貓耳）
+   *  畫面左緣在台口摺幕內（z 4 處 x ≥ −6.7），貓耳在畫面中央偏上、約佔畫面高 18% */
+  a4_truck_close: { pos: [-4.6, 2.8, 7.3], target: [-7.5, 1.95, -2.4], fov: 18 },
+  /** 貓耳骨架停格（a4_c013 最後；兩耳＋頭框約佔畫面高 20%，在畫面中央偏右上、字幕區外） */
+  a4_ears: { pos: [-5.0, 2.75, 6.6], target: [-7.7, 2.0, -2.4], fov: 17 },
   /** 俯視（和 a4_roadmap 同一個鏡位） */
   a4_map_top: A4_MAP_CAMERAS.a4_map_top,
+  /** 俯視整張地圖（a4_c002 街道在這個鏡位摺平；a4_c003 起點同一個鏡位） */
+  a4_map: A4_MAP_CAMERAS.a4_map,
 };
 const GATE_CAMERAS: Record<string, CameraPreset> = { ...LAYOUT_CAMERAS, ...GATE_A4_CAMERAS };
 
@@ -81,6 +92,28 @@ const LIN_HAND: [number, number] = [0.288, 1.462];
 
 /** farUp 時一直站著的遠景景片（layout.json 的 id） */
 const FAR_PIECES = ['sq-mountains', 'sq-backrow', 'school-building', 'school-wall', 'sq-tree-a'];
+/** 第四幕版小貨車的竹編貓頭骨架露出部分中心（車圖底邊中央為原點的世界座標；review/G5/a4/art_meta.json fix1.truck_catear） */
+const CAT_EAR_LOCAL: [number, number] = [0.178, 2.277];
+
+/** 景片貼圖（同 imageSet.ts：往右下烘進卡紙厚度 thick px；gray＝先轉成灰階） */
+function cardTexture(image: HTMLImageElement, thick = 5, gray = false): Texture {
+  const W = image.naturalWidth, H = image.naturalHeight;
+  const pad = thick + 2;
+  const [c, g] = makeCanvas(W + pad, H + pad);
+  const [art, ag] = makeCanvas(W, H);
+  if (gray) ag.filter = 'saturate(0)';
+  ag.drawImage(image, 0, 0);
+  const [sil, sg] = makeCanvas(W, H);
+  sg.drawImage(art, 0, 0);
+  sg.globalCompositeOperation = 'source-in';
+  sg.fillStyle = '#7a5a3c';
+  sg.fillRect(0, 0, W, H);
+  for (let k = thick; k >= 1; k--) g.drawImage(sil, k * 0.75, k);
+  g.drawImage(art, 0, 0);
+  const t = finishTexture(new CanvasTexture(c));
+  t.minFilter = LinearMipmapLinearFilter;
+  return t;
+}
 
 const tmpV = new Vector3();
 const tmpM = new Matrix4();
@@ -130,6 +163,33 @@ export function buildGate(ctx: SetContext): BuiltSet {
     }
   }
 
+  // ---- 第四幕版小貨車貼圖（setTrack catEar：帆布下的竹編貓頭骨架；同尺寸，只換貼圖）
+  const truckMat = (truck?.hinge.children[0] as Mesh | undefined)?.material as MeshStandardMaterial | undefined;
+  const truckTex0 = truckMat?.map ?? null;
+  const catImg = ctx.image('sets/gate/set-gate_a4-truck'), tipImg = ctx.image('sets/gate/set-gate_a4-truck-tip');
+  const truckTexA4 = catImg ? cardTexture(catImg) : null;
+  const truckTexTip = tipImg ? cardTexture(tipImg) : truckTexA4;
+  let catOn = 0;
+
+  // ---- 對街紅磚騎樓的灰階疊層（setTrack brick：不透明度＝降彩量；跟著同一個鉸鏈立起、摺下）
+  const backrow = base.pieces?.find((p) => p.name === 'sq-backrow');
+  let brickOv: Mesh | null = null;
+  {
+    const src = backrow?.hinge.children[0] as Mesh | undefined;
+    const brickImg = ctx.image('sets/square/set-square_backrow');
+    if (backrow && src && brickImg) {
+      const sm = src.material as MeshStandardMaterial;
+      const bm = new MeshStandardMaterial({ map: cardTexture(brickImg, 5, true), side: sm.side, roughness: sm.roughness, metalness: 0, color: sm.color.clone(), transparent: true, opacity: 0, depthWrite: false });
+      mats.push(bm);
+      brickOv = new Mesh(src.geometry, bm);
+      brickOv.name = 'gate:brickGray';
+      brickOv.renderOrder = src.renderOrder + 0.5;
+      brickOv.receiveShadow = src.receiveShadow;
+      brickOv.visible = false;
+      backrow.hinge.add(brickOv);
+    }
+  }
+
   // ---- 警衛室窗內的小背影（林老師）
   const lin = prop('sets/gate/set-gate_a4-lin-back', 0.8);
   if (lin) { lin.position.set(4.3, 1.08, -1.12); lin.renderOrder = 205; lin.visible = false; group.add(lin); }
@@ -137,7 +197,7 @@ export function buildGate(ctx: SetContext): BuiltSet {
   // ---- 遠景家長剪影
   const walkers: Record<string, Mesh> = {};
   for (const k of ['a', 'b']) {
-    const m = prop(`sets/gate/set-gate_a4-walkers-${k}`, 1.7);
+    const m = prop(`sets/gate/set-gate_a4-walkers-${k}`, 1.5);
     if (m) { m.visible = false; m.renderOrder = 150; group.add(m); walkers[k] = m; }
   }
 
@@ -182,8 +242,8 @@ export function buildGate(ctx: SetContext): BuiltSet {
     const c = document.createElement('canvas');
     c.width = 512; c.height = 256;
     const g2 = c.getContext('2d')!;
-    // 平面 16×8（x −14～2、y 0～8）＝512×256 px；洞的中心＝貓耳地標（layout landmarks.truckCatEar）
-    const ear = (layout.landmarks?.truckCatEar ?? { x0: -6.707, y: 2.338 }) as { x0: number; y: number };
+    // 平面 16×8（x −14～2、y 0～8）＝512×256 px；洞的中心＝第四幕版貼圖的竹編貓頭骨架（在車前 0.25，往右偏一點抵掉斜看的視差）
+    const ear = { x0: truckX0 + CAT_EAR_LOCAL[0] + 0.05, y: ((layout.layers ?? []).find((l) => l.id === 'prop-truck')?.y ?? 0) + CAT_EAR_LOCAL[1] };
     const cx = ((ear.x0 + 14) / 16) * 512, cy = (1 - ear.y / 8) * 256;
     const gr = g2.createRadialGradient(cx, cy, 0, cx, cy, 80);   // 車窗與貓耳（約 0.9 單位內）全亮，2.5 單位外最暗
     gr.addColorStop(0, 'rgba(40,28,20,0)');
@@ -254,6 +314,16 @@ export function buildGate(ctx: SetContext): BuiltSet {
         truck.hinge.position.y = (layout.layers ?? []).find((l) => l.id === 'prop-truck')?.y ?? 0;
         for (const w of wheels) w.rotation.z = dx / wr;
       }
+      if (truckMat && truckTexA4) {
+        const v = trackValue(tl, 'catEar', t, 0, 'linear');
+        const on = v > 0.75 ? 2 : v > 0.25 ? 1 : 0;
+        if (on !== catOn) { truckMat.map = on === 2 ? truckTexA4 : on === 1 ? truckTexTip : truckTex0; truckMat.needsUpdate = true; catOn = on; }
+      }
+      if (brickOv) {
+        const k = clamp(trackValue(tl, 'brick', t, 0));
+        (brickOv.material as MeshStandardMaterial).opacity = k;
+        brickOv.visible = k > 0.002;
+      }
       if (lin) lin.visible = trackValue(tl, 'lin', t, 0, 'linear') > 0.5;
       for (const [k, m] of Object.entries(walkers)) {
         m.visible = false;
@@ -261,7 +331,8 @@ export function buildGate(ctx: SetContext): BuiltSet {
           if (e.do !== 'walkers' || e.p.kind !== k || t < e.start || t > e.start + e.duration) continue;
           const u = (t - e.start) / Math.max(1e-6, e.duration);
           m.visible = true;
-          m.position.set(lerp(Number(e.p.x0 ?? -4), Number(e.p.x1 ?? 14), u), Math.abs(Math.sin((t - e.start) * Math.PI * 2.1)) * 0.03, Number(e.p.z ?? -2.9));
+          const z0 = Number(e.p.z ?? -2.9);
+          m.position.set(lerp(Number(e.p.x0 ?? -4), Number(e.p.x1 ?? 14), u), Math.abs(Math.sin((t - e.start) * Math.PI * 2.1)) * 0.03, lerp(z0, Number(e.p.z1 ?? z0), u));
         }
       }
       const wind = trackValue(tl, 'wind', t, 0);

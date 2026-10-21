@@ -14,7 +14,9 @@ export const KNOWN_ANIMS = ['title.fadeOut', 'title.fadeIn', 'curtain.open', 'cu
   'puppet.popup', 'puppet.enter', 'puppet.exit', 'puppet.sit', 'puppet.waveTry', 'puppet.kneeTug', 'puppet.reach', 'puppet.wave',
   'puppet.chest', 'puppet.grab', 'puppet.lean', 'puppet.move', 'puppet.tilt', 'puppet.pose', 'puppet.face', 'puppet.blink',
   // G5 全劇：換景、亮度漸變
-  'set.swap', 'fade.out', 'fade.in'];
+  'set.swap', 'fade.out', 'fade.in',
+  // G5 修正第 1 輪：點頭
+  'puppet.nod'];
 /** 程式角色的動畫前綴（<程式名>.<動作>，例如 zhezhe.fold）：由程式角色自己解讀，驗證時不當未知動畫 */
 export const PROGRAM_ANIM_PREFIXES = ['zhezhe.'];
 /** 換景亮度漸變的下限（秒；v1.2 第 17.3 節） */

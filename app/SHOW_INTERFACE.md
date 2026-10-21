@@ -274,3 +274,47 @@ registerProgramRig('zhezhe', (o) => new ZhezheProgram(o.place, o));
 3. （可選）`main.ts` 的 `debug.faces` 併入 `stage.programs`（`zz.probe()` 的眼睛、嘴型），驗收包才量得到折折的眨眼與對嘴。
 4. `npm run typecheck && npm run build`；準備畫面的「紙偶」不再出現「程式角色 zhezhe 還沒接上」；`node ../tools/engine-test.mjs` 全過；`?cues=show&capture=1` 看 a0_c002 折折登場。
 5. 各幕 cue 的折折動作改寫成 `zhezhe.*` 動畫（第 6.3 節）；佔位小紙片支援的 `puppet.enter／exit／move` 仍可用，但真正的折折以 `zhezhe.walkTo` 等為準。
+
+## 12. 主線補充（G5 第一批之後，2026-10-21 21:3x）
+
+- **題卡模式的折折（八題統一）**：出題 cue（kind quiz）折折一律上台，站在台口左前、`quiz` 鏡位裡看得到的位置（建議 x≈−4.7、z≈3.4，依實際鏡位微調：折折高度不超過畫面約 40%，不擋 DOM 題卡、不進下方字幕區）。動作：`zhezhe.hush` 在 −0.55 秒（對 `sfx_quiet_fold` at 0）→ `zhezhe.fold {form:'card'}` 約 0.1 秒開始、1.3 秒內攤開（對 `sfx_card_in`）→ DOM 題卡 `quiz.show` 在 0.7 秒。揭答（reveal）與點燈（lamp）cue 折折留在同一位置、恢復 idle（`zhezhe.fold {form:'idle'}`），不做大動作（思考與揭答時畫面安靜）。折折的出題台詞（「第 N 題來囉！」）因此有嘴型。題卡模式舞台燈 0.55 時，zhezhe_program 會自動把存在感調高。
+- **兩人一起說**：說話者寫「小晴、小宇」這類以「、」分隔的名字時，時間軸會把每個人都解析出來（ResolvedLine.actorIds），兩人同時對嘴。以前用 emotion 圓嘴代替的寫法可以拿掉。
+- **景自己的程式動作 setTrack**：第四幕的 gate.ts、a4_roadmap.ts 讀 cue 的 `setTrack` 陣列（引擎不讀、validate 不檢查）；格式寫在兩個景的檔頭。別的景要用同樣做法時照抄格式。
+
+## 13. 共用元件 G5 修正第 1 輪（主線授權，2026-10-21 夜）
+
+只在全劇模式（`?cues=show`）生效；`?cues=g4` 畫面與 G4 驗收包逐像素相同（`review/G5/engine/scripts/g4hash.mjs` 140 格比對 0 格不同）。
+
+### 13.1 台口八盞燈（主線裁定 3；`src/stage/lamps.ts`）
+
+- 台口外框上方、開口上緣之上，一條窄木條上並排坐著 8 盞剪紙紙燈（不從上方垂繩，避免和操偶線的意象混淆）；跟換景無關，所有景都在。
+- 亮度綁定 `world.lamps`（`lamp.light {index}` 的進度＋`lampsBefore`）：未亮＝灰白紙色＋深棕細邊；亮＝暖黃紙色＋柔和泛光（加法混色光暈），只隨亮度單向漸變、不閃。亮了一直亮到劇終；上一步、章節跳轉依 lampsBefore 還原。題卡上的小燈列保留。
+- 看得到的鏡位：`quiz`（題卡模式後拉，燈在題卡上緣之上，1080p 約 y 13–90 px，整排寬約畫面 60%）。故事鏡位（show_mid、show_wide、g4_mid…）、`wide`、`g4_stage` 都在畫面上緣之外（wide 剛好在外）。要在故事中讓孩子看到台口燈（例如 a0_c005「台口上這八盞燈」、謝幕），鏡頭要拉到 `quiz` 或自訂 `{pos:[0,4.6,≥34], target:[0,4.4,0], fov:20}`。
+- 量測：`window.__engine.debug.stageLamps()` → `{ enabled, lit[8], boxes[8] }`（繪圖緩衝像素）。
+
+### 13.2 `puppet.nod`（點頭）
+
+| 名稱 | 參數 | 說明 |
+|---|---|---|
+| `puppet.nod` | `count`（次數，預設 1）、`depth`（幅度倍率，預設 1）；duration 省略＝count × 1 秒 | 頭部小幅下移（約 0.028 世界單位，中景 4–5 px）＋前傾約 7°，每次 sin² 形狀（起止平順、不抖）；點頭開始時加眨一次。分件紙偶（rig）動頭部樞紐；有頭層的立牌動頭層；整張立牌（沒有頭層）以腳底為支點輕輕前傾約 3°、上身微縮 1.6%。 |
+
+已加進 `validate.ts` 的 KNOWN_ANIMS、`world.ts` 的 ACTOR_ANIMS、timeline 預設長度。
+
+### 13.3 字幕說話者頭像（補齊）
+
+`assets/final/ui/ui-speaker_<id>_v01.png`（同 G4 款：淡色圓盤＋白紙芯邊＋深色細線，128×128）：既有 narrator（燈籠）、ale、xiaoqing、xiaoyu；新增 zhezhe（折折程式畫面裁）、pinan、nurse（葉護理師）、teacher（林老師）、guard（陳伯伯）（各自母版裁頭肩，不重新生成）、inviter（邀請者：中性灰紙手掌，沒有臉、膚色、飾品）。執勤人員（只有聲音）沒有頭像；「小晴、小宇」一起說時沒有頭像（只有名牌）。字幕樣式本身沒有改。產生：`review/G5/engine/scripts/make_speaker_icons_fix1.py`；檢查圖 `review/G5/engine/art/speaker_icons_fix1.png`。
+
+### 13.4 操偶線可見度（主線裁定 5）
+
+全劇模式的非 G4 cue（G4 原樣搬進來的 a0_c000、a0_c001、a2_c002、a2_c004、a8_c002、a8_c003 照 G4 算法）：
+
+1. **螢幕空間最小線寬**（`perform.ts` `STRING_MIN_PX`、`stringMinWidth`）：依扣點在相機前方的深度換算 1080p 每世界單位幾 px（ppu）；ppu ≥ 120（中景以上）→ 8 px、ppu ≤ 90（遠景，例如 quiz 鏡位）→ 7 px、中間線性。線寬＝max(0.043, 下限 ÷ ppu)，紙環等比例放大。近景（線本來就 ≥ 8 px）不變。
+2. **深灰邊至少 2 px**（`strings.ts` 紙繩著色器）：線細到貼圖本身的深灰邊（18.75%）不到 2 px 時，用螢幕導數把兩側各 2 px 補成深灰（#363230）；線寬 ≥ 約 11 px 的近景不受影響。繩身淡灰對深色背景、深灰邊對淺色背景（白襯衫、天空），兩種背景前都看得出界線。
+3. **影子只落在近景層與地面**：舞台多一盞不發光、只算影子的平行光（`keyNoStrings`，影子貼圖不含操偶線）；景片材質在世界 z < −1.8（遠景、天空、燈籠店背牆）且線在台上時改用這張影子貼圖。操偶線的影子不再投到 100–300 px 外的天空與遠景層（a4 校門口的「第二組線」重影）；角色與道具的影子照舊；中景景片（z ≥ −1.8）、角色身上、近處地面仍有線的影子。
+4. 量測：`debug.probe().strings[].widthTruePx`＝實際畫出的紙帶寬（紙環上方那段紙帶兩側頂點的螢幕距離，垂直於線的分量）；舊的 `widthPx`（水平投影寬 × |cos|，線斜時偏小）保留給 G4 測試。`tools/capture_probe.py` 的 `widthPx` 改用實際紙帶寬（舊量法列 `widthPxLegacy`）。
+5. 實測（`tools/capture.mjs --probe`，scratchpad）：a4_c008 中段線寬 7.97–8.01 px、ΔL* 36.0–38.5（投影 22.6–24.9；修正前 5.4 px、10.3／6.7）；a4_c013 中段 8.0 px、ΔL* 35.6–42.6（投影 23.3–27.2；修正前 6.4／4.7）；a4_c001 停格 ΔL* 31.9–42.9（投影 22.7–29.9）；a4_c011 quiz 鏡位 7 px、28.0–36.7（投影 17.6–25.3）；a2_c001 中段 32.6／21.5（修正前 19.4／12.7）。
+
+### 13.5 驗收包工具
+
+- `tools/act_review_pack.py`：字幕同步改用 `subtitle_sync_g5`（silencedetect −40 dB、最短 0.05 秒，報告與 INDEX.md 註明）；`audio/loudness.json` 新增 `music_sfx_only`（只有配樂＋音效的分軌：瞬間響度最大、100 ms 最大上升、1 秒內最大上升、取樣峰值、真峰值，附發生的 cue 與 G4 基準 −15.7 LUFS 對照）；INDEX.md 光敏節加「16×9 與 fine_32x18 每秒 ≤ 3（明暗與紅色）」的通過／不通過。
+- `tools/capture.mjs`：每筆量測記 `dim`（換景漸暗）與 `quiz`（DOM 題卡不透明度）；`tools/capture_probe.py` 在 dim > 0.05 或題卡 > 0.5 的格不量兒童身後亮度、也不量線的 ΔL*（列 `excluded_dim`）。

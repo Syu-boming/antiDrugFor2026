@@ -1,12 +1,15 @@
 // 第一幕（a1）的小鎮廣場：沿用 square 的 layout.json（buildImageSet），再疊上第一幕的程式景片。G5 開場＋第一幕代理。
-//   - 騎樓下的小燈籠串、遠景布置的鎮民剪影（中性、沒有五官）
-//   - 畫面左側的紅磚柱子；邀請者的手（chr-inviter_hand-box，只有手與貼紙盒，從柱子後面＝畫面左側伸出）＋手周圍略偏冷的柔光（FX8）
-//   - 盒子特寫小窗（a1_c003「找找看 1」：老師指得到貼紙一層蓋一層、邊角翹起、一小截灰色線頭、沒有任何說明）
-//   - 被風吹來的撕破包裝紙（a1_c008，FX12）；燈籠店門面與窗內阿樂叔叔的剪影（FX10：舉竹篾 → 手往旁一歪 → 竹篾落下；看不到線）
+//   - 騎樓下的小燈籠串（修正第 1 輪：拿掉半透明灰色的鎮民剪影，裁定 6）
+//   - 畫面左側的紅磚柱子；邀請者的手（chr-inviter_hand-box，只有手與貼紙盒，從柱子後面＝畫面左側伸出）
+//     ＋手周圍的背景略偏冷、略降彩（FX8：手後面一層冷灰藍半透明紙，右緣漸淡；盒子與手在它前面，不降彩）
+//   - 盒子特寫小窗（a1_c003「找找看 1」：老師指得到貼紙一層蓋一層、邊角翹起、一小截灰色線頭、沒有任何說明；放在畫面左上，不蓋住品安）
+//   - 被風吹來的撕破包裝紙（a1_c008，FX12：停在孩子身後左下方，離孩子一個身寬以上）；
+//     燈籠店門面與窗內阿樂叔叔的剪影（FX10：兩階深色剪影看得出圍裙與髮型；手垂著 → 舉起竹條 → 手被往旁邊一帶、往左歪 →
+//     竹條慢慢落下（在窗內看得到）、窗光漸亮一點；看不到線）。右側行道樹移到窗戶右邊，窗戶整個露出來
 // 每格 update 只依（cue、cue 內秒數、鏡頭）決定畫面＝時間的純函式；動作時間錨在台詞上。
 // 素材：assets/final/sets/square_a1/*（review/G5/a0/scripts/build_a01_art.py 程式繪製）、chr-inviter_hand-box、props/prop-sticker-box。
 import {
-  CanvasTexture, Color, DoubleSide, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, type Material,
+  CanvasTexture, Color, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, type Material,
 } from 'three';
 import { buildImageSet, readLayout } from './imageSet';
 import { finishTexture, makeCanvas } from '../stage/paper';
@@ -33,24 +36,33 @@ export const SQUARE_A1_CAMERAS: Record<string, CameraPreset> = {
   a1_follow2: C([0.45, 1.72, 13.8], [0.45, 1.5, 0]),
   /** 往燈籠店的街上 */
   a1_street: C([3.42, 1.72, 13.6], [3.42, 1.5, 0]),
-  /** 包裝紙特寫（推近） */
-  a1_wrapper: C([2.3, 0.7, 5.6], [2.3, 0.5, 0.9]),
+  /** 往燈籠店的街上（修正第 1 輪）：包裝紙停在左下（孩子身後一個身寬以外），右邊已經看得到燈籠店的窗 */
+  a1_street2: C([2.2, 1.72, 13.6], [2.2, 1.5, 0]),
+  /** 品安回頭看柱子（a1_c004 結尾，a6 秘密的伏筆）：左緣是紅磚柱子，品安在右半 */
+  a1_pinan: C([-3.55, 1.6, 9.8], [-3.55, 1.42, 0]),
+  /** 包裝紙特寫（推近）：中心是紙邊裡那團灰色紙線，折折在左側三分之一 */
+  a1_wrapper: C([-0.46, 0.62, 6.4], [-0.46, 0.32, 1.4]),
   /** 包裝紙特寫的起點（硬切進來後再慢慢推近到 a1_wrapper） */
-  a1_wrapper0: C([2.35, 0.78, 6.5], [2.35, 0.56, 0.9]),
+  a1_wrapper0: C([-0.44, 0.72, 7.3], [-0.44, 0.36, 1.4]),
   /** 燈籠店窗前中景 */
   a1_window: C([4.3, 1.95, 12.0], [4.3, 1.78, 0]),
 };
 
 // ───────────────────────────── 位置（世界座標） ─────────────────────────────
 const PILLAR = { x: -5.75, z: 0.9, w: 1.15 };
+/** 手後面的冷色層（世界座標；右緣 x0→x1 漸淡；在品安〔x −2.75～−2.05〕左邊就淡完） */
+const COOLBAND = { xl: -10.5, x0: -3.9, x1: -2.95, y0: -0.3, y1: 6.5, z: 0.4 };
 const HAND = { y: 1.08, z: 0.74, w: 2.3, xHide: -6.95, xOut: -4.8 };
 /** 騎樓最右邊那一間的燈籠店窗（掛在騎樓景片前面） */
-const SHOP = { x: 5.0, y: 1.0, z: -1.54, w: 2.5 };
+const SHOP = { x: 5.0, y: 1.3, z: -1.54, w: 2.5 };
 /** 窗框圖的窗洞（世界單位，相對窗框圖左上角；build_a01_art.py 的 window_units_from_topleft） */
 const WIN = { x0: 0.147, y0: 0.56, x1: 2.353, y1: 2.24, imgH: 2.547 };
 const SIL = { w: 0.9, ppu: 453 * 1.06 / 0.9 };
-const WRAP = { w: 0.8, z: 0.95, xStop: 2.65, xFrom: -3.2 };
-const COOL = new Color('#9aa8c4');
+/** 剪影時間（小晴「不要碰…」說完後幾秒）：lit＝走到窗下時窗光 1.2 秒漸亮（鏡頭跟拍平移時窗紙不亮，窗格明暗小）；
+ *  raise＝舉起竹條（a1.json 的 sfx_bamboo_drop 對 raise＋2.35） */
+export const SIL_T = { lit: 4.4, raise: 5.6 };
+const WRAP = { w: 0.8, z: 1.4, xStop: -0.5, xFrom: -4.6, t0: 2.0, dur: 2.0 };
+const COOL = new Color('#7c889f');
 
 /** 盒子特寫的紙卡（白色紙卡＋深色細邊＋盒子圖） */
 function boxCard(img: HTMLImageElement | undefined): CanvasTexture | null {
@@ -69,16 +81,17 @@ function boxCard(img: HTMLImageElement | undefined): CanvasTexture | null {
   return finishTexture(new CanvasTexture(c));
 }
 
-/** 手周圍略偏冷的柔光（徑向漸層，半透明） */
-function coolGlow(): CanvasTexture {
-  const S = 256;
-  const [c, g] = makeCanvas(S, S);
-  const grd = g.createRadialGradient(S / 2, S / 2, 4, S / 2, S / 2, S / 2);
+/** 冷色層的透明度：左邊全滿，右緣（COOLBAND.x0→x1）漸淡到 0 */
+function coolBand(): CanvasTexture {
+  const W = 512;
+  const [c, g] = makeCanvas(W, 4);
+  const span = COOLBAND.x1 - COOLBAND.xl, f0 = (COOLBAND.x0 - COOLBAND.xl) / span;
+  const grd = g.createLinearGradient(0, 0, W, 0);
   grd.addColorStop(0, 'rgba(255,255,255,1)');
-  grd.addColorStop(0.55, 'rgba(255,255,255,0.55)');
+  grd.addColorStop(f0, 'rgba(255,255,255,1)');
   grd.addColorStop(1, 'rgba(255,255,255,0)');
   g.fillStyle = grd;
-  g.fillRect(0, 0, S, S);
+  g.fillRect(0, 0, W, 4);
   return finishTexture(new CanvasTexture(c));
 }
 
@@ -86,7 +99,9 @@ export const SQUARE_A1: SetEntry = {
   title: '小鎮廣場（第一幕：square＋紅磚柱、邀請者的手、盒子特寫、包裝紙、燈籠店窗前）',
   cameras: SQUARE_A1_CAMERAS,
   build(ctx: SetContext): BuiltSet {
-    const layout = readLayout(ctx, 'square') ?? { format: 'antidrug-set/1' };
+    const layout0 = readLayout(ctx, 'square') ?? { format: 'antidrug-set/1' };
+    // 本景的副本：右側行道樹移到燈籠店窗戶右邊（a1_c008 窗戶整個露出來；共用的 square layout.json 不動）
+    const layout = { ...layout0, layers: (layout0.layers ?? []).map((l) => (l.id === 'tree-b' ? { ...l, x: 8.9 } : l)) };
     const base = buildImageSet({ ...ctx, name: 'square' }, layout);
     const group = base.group;
     group.name = 'set:square_a1';
@@ -95,18 +110,17 @@ export const SQUARE_A1: SetEntry = {
     const im = (id: string): HTMLImageElement | undefined => { const i = ctx.image(id); if (!i) report.push(`景 square_a1：缺圖 ${id}`); return i; };
     const add = (m: Mesh | null, x: number, y: number, z: number): Mesh | null => { if (m) { m.position.set(x, y, z); group.add(m); } return m; };
 
-    // 騎樓下的小燈籠串、遠景布置的鎮民
+    // 騎樓下的小燈籠串
     add(imagePiece(im('sets/square_a1/garland'), { w: 9.0, pivot: [0.5, 1], order: LAYER.mid.order - 40, emissive: 0.15 }, mats), -1.7, 3.62, -1.5);
-    add(imagePiece(im('sets/square_a1/townsfolk'), { w: 5.2, order: LAYER.far.order + 30, emissive: 0.5 }, mats), 8.4, -0.06, -2.95);
     // 紅磚柱子（畫面左側）
     add(imagePiece(im('sets/square_a1/pillar'), { w: PILLAR.w, order: LAYER.mid.order + 60, shadow: true }, mats), PILLAR.x, -0.03, PILLAR.z);
     // 邀請者的手＋貼紙盒（不降彩：俗豔的貼紙層就是要看起來很亮；固定反光，不閃）
     const handMats: Material[] = [];
     const hand = add(imagePiece(im('chr-inviter_hand-box'), { w: HAND.w, order: LAYER.mid.order + 55, shadow: true }, handMats), HAND.xHide, HAND.y, HAND.z);
-    // 手周圍略偏冷的柔光
-    const glowMat = new MeshBasicMaterial({ map: coolGlow(), color: COOL, transparent: true, opacity: 0, depthWrite: false });
-    const glow = new Mesh(new PlaneGeometry(4.6, 4.0), glowMat);
-    glow.position.set(-5.4, 1.7, 0.5);
+    // 手後面的背景略偏冷、略降彩：一層冷灰藍半透明（在柱子、手、品安後面，在騎樓、行道樹、長椅左端前面）
+    const glowMat = new MeshBasicMaterial({ map: coolBand(), color: COOL, transparent: true, opacity: 0, depthWrite: false });
+    const glow = new Mesh(new PlaneGeometry(COOLBAND.x1 - COOLBAND.xl, COOLBAND.y1 - COOLBAND.y0), glowMat);
+    glow.position.set((COOLBAND.xl + COOLBAND.x1) / 2, (COOLBAND.y0 + COOLBAND.y1) / 2, COOLBAND.z);
     glow.renderOrder = LAYER.mid.order + 50;
     glow.visible = false;
     group.add(glow);
@@ -132,17 +146,10 @@ export const SQUARE_A1: SetEntry = {
     sil.add(shoulder);
     const arm = imagePiece(im('sets/square_a1/silarm'), { w: 300 / P, pivot: [240 / 300, 1 - 250 / 300], order: LAYER.mid.order - 27, transparent: true }, silMat);
     if (arm) shoulder.add(arm);
-    const bamboo = imagePiece(im('sets/square_a1/silbamboo'), { w: 60 / P, pivot: [0.5, 0.5], order: LAYER.mid.order - 26, transparent: true }, silMat);
+    const bamboo = imagePiece(im('sets/square_a1/silbamboo'), { w: 60 / P, pivot: [0.5, 0.3], order: LAYER.mid.order - 26, transparent: true }, silMat);
     const hand0 = { x: (110 - 240) / P, y: (250 - 60) / P };
     if (bamboo) sil.add(bamboo);
-    // 窗紙前再一層半透明紙（剪影是投在紙上的影子，邊緣柔一點）
-    const veilMat = new MeshStandardMaterial({ color: '#fff0d6', transparent: true, opacity: 0.32, depthWrite: false, side: DoubleSide, roughness: 1, metalness: 0 });
-    veilMat.emissive.set('#ffe6bf'); veilMat.emissiveIntensity = 0.35;
-    const veil = new Mesh(new PlaneGeometry(ww + 0.1, wy1 - wy0 + 0.1), veilMat);
-    veil.position.set(wx, (wy0 + wy1) / 2, SHOP.z - 0.012);
-    veil.renderOrder = LAYER.mid.order - 24;
-    group.add(veil);
-    mats.push(veilMat);
+    // （修正第 1 輪：拿掉窗紙前那層半透明紙——剪影要夠深，和窗光的明度差 ΔL* ≥ 40）
 
     // 被風吹來的撕破包裝紙（直立的小紙片，像其他景片一樣是一張卡紙）
     const wrapGroup = new Group();
@@ -184,8 +191,10 @@ export const SQUARE_A1: SetEntry = {
           hand.position.y = HAND.y + 0.035 * Math.sin(Math.PI * 2 * 0.9 * t) * bob;
           hand.rotation.z = 0.025 * bob * Math.sin(Math.PI * 2 * 0.45 * t);
         }
-        glow.visible = out > 0.002;
-        glowMat.opacity = 0.26 * out;
+        // 冷色層：a1_c002 手伸出時 1.5 秒漸入；a1_c003 全開；a1_c004 跟著手縮回漸淡
+        const cool = id === 'a1_c002' ? sine01((t - 0.6) / 1.5) : id === 'a1_c003' ? 1 : id === 'a1_c004' ? out : 0;
+        glow.visible = cool > 0.002;
+        glowMat.opacity = 0.26 * cool;
         // ---- 盒子特寫小窗：a1_c003 小晴「這盒子上面什麼都沒寫」→ 打開，停到 cue 結束（老師指線索）；a1_c004 一開始收起
         let cv = 0;
         if (id === 'a1_c003') cv = sine01((t - (lineTime(tl, ['a1_c003_02'], 'start', 3) + 0.35)) / 0.5);
@@ -193,15 +202,16 @@ export const SQUARE_A1: SetEntry = {
         if (card) {
           card.visible = cv > 0.002;
           if (card.visible) {
-            placeOnCamera(card, camera, -0.2, 0.09, 0.6 * (0.95 + 0.05 * cv), cardAspect, 0.82);
+            // 畫面左上（真的盒子在它下方左緣），高 38%：品安的頭和燈籠、兩個孩子都留在畫面裡（修正第 1 輪）
+            placeOnCamera(card, camera, -0.31, 0.27, 0.38 * (0.95 + 0.05 * cv), cardAspect, 0.82);
             (card.material as MeshBasicMaterial).opacity = cv;
           }
         }
-        // ---- 包裝紙（a1_c008）：風從左邊吹來，翻滾著停在孩子腳邊
+        // ---- 包裝紙（a1_c008）：風從左邊吹來，翻滾著停在孩子身後左下方（離小晴一個身寬以上，畫面左下）
         if (wrap) {
           let vis = false, x = WRAP.xStop, y = 0, rz = 0;
           if (id === 'a1_c008') {
-            const t0 = 0.9, dur = 2.6;
+            const t0 = WRAP.t0, dur = WRAP.dur;
             const u = clamp((t - t0) / dur);
             vis = t >= t0;
             const e = 1 - Math.pow(1 - u, 2.2);
@@ -213,25 +223,31 @@ export const SQUARE_A1: SetEntry = {
           wrapGroup.position.set(x, y, WRAP.z);
           wrapGroup.rotation.z = rz;
         }
-        // ---- 窗內剪影（a1_c008）：舉著竹篾 → 手往旁一歪 → 竹篾輕輕掉下去
-        let tilt = 0, fall = 0;
+        // ---- 窗內剪影（a1_c008）：手垂著拿竹條 → 舉起（0.8 秒）→ 手被往旁邊一帶、往左歪（0.5 秒）→ 竹條慢慢落下（1 秒，
+        //      在窗內看得到，落到窗台下被窗框擋住）→ 窗光漸亮約 12%（1.2 秒）。時間錨在小晴「不要碰…」說完（cue 的音效同一個錨）
+        let raise = 0, tilt = 0, fall = 0, lit = 0, on = 0;
         sil.visible = id === 'a1_c008';      // 剪影只在窗前這一段出現（前面幾段窗裡只有窗紙）
-        // 白天的窗紙不發亮（窗格明暗對比小，鏡頭移動時不會一格一格閃過）；窗前這一段屋裡點著燈
-        if (paperMat) paperMat.emissiveIntensity = id === 'a1_c008' ? 0.75 : 0.2;
         if (id === 'a1_c008') {
-          const td = lineTime(tl, ['a1_c008_02'], 'end', 9) + 5.8;
-          tilt = sine01((t - td) / 0.45);
-          fall = clamp((t - td - 0.25) / 0.7);
+          const t02 = lineTime(tl, ['a1_c008_02'], 'end', 9);
+          on = sine01((t - t02 - SIL_T.lit) / 1.2);
+          const T0 = t02 + SIL_T.raise;
+          raise = sine01((t - T0) / 0.8);
+          tilt = sine01((t - T0 - 0.85) / 0.5);
+          fall = clamp((t - T0 - 1.4) / 1.0);
+          lit = sine01((t - T0 - 1.4) / 1.2);
         }
-        const th = 0.02 * Math.sin(Math.PI * 2 * 0.22 * t) + 0.62 * tilt;
+        // 白天的窗紙不發亮（窗格明暗對比小，鏡頭移動時不會一格一格閃過）；窗前這一段屋裡點著燈，竹條落下時再亮一點（焦點）
+        if (paperMat) paperMat.emissiveIntensity = id === 'a1_c008' ? 0.2 + 0.55 * on + 0.12 * lit : 0.2;
+        const th = lerp(1.7, -0.15, raise) + 0.9 * tilt + 0.02 * Math.sin(Math.PI * 2 * 0.22 * t);
         shoulder.rotation.z = th;
         if (bamboo) {
-          // 手的位置（剪影座標）＝肩膀＋旋轉後的手；竹篾從手上鬆開後往下掉（窗台下方被門面擋住）
+          // 手的位置（剪影座標）＝肩膀＋旋轉後的手；竹條從手上鬆開後往下掉（落到窗台下方被窗框擋住）
           const hx = shoulder.position.x + hand0.x * Math.cos(th) - hand0.y * Math.sin(th);
           const hy = shoulder.position.y + hand0.x * Math.sin(th) + hand0.y * Math.cos(th);
           const g = fall * fall;
-          bamboo.position.set(hx - 0.1 * fall, hy - 1.5 * g, 0.004);
-          bamboo.rotation.z = 0.25 * tilt + 1.2 * g;
+          const drop = hy + 0.35;            // 從手的高度落到窗台（剪影原點＝窗洞下緣）下方 0.35
+          bamboo.position.set(hx - 0.12 * fall, hy - drop * g, 0.004);
+          bamboo.rotation.z = lerp(0.35 * th, 0.25, raise) + 1.1 * g;
           bamboo.visible = fall < 0.999;
         }
       },

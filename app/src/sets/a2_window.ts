@@ -6,6 +6,9 @@
 //      a2_c013_01 開始後小窗立起 → 一隻手（剪影）捧著同樣的盒子從左邊伸進來 → a2_c013_02 時阿樂叔叔的手（剪影）從右下慢慢伸過去，
 //      在碰到之前（「伸手接過的那一刻」）小窗就收起（0.35 秒）。不出現打開或使用。
 //   3. 筆記本特寫：x=30 的獨立小台；cue 用 camera.cut 切到 a2_win_note 時，0.4 秒後鉛筆在第一個問號旁邊畫出第二個問號（1.4 秒）。
+//   4. 開著的店門（G5 修正第 1 輪）：店面圖的門洞上蓋一張暖光門口（門板往裡打開、店內暖黃燈光），孩子站在門前
+//      （兒童身後投影亮度 ≥ 0.50；傍晚外牆在投影後太暗）。不受舞台燈影響、不閃。
+//   接盒子的剪影手 v02：五指分開的手掌剪影（build_a2_art.py sil_ale_hand_v2），指尖停在盒子右緣外約 28 px 就收起小窗。
 import {
   CanvasTexture, Group, LinearFilter, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, type Material,
 } from 'three';
@@ -20,7 +23,7 @@ type V3 = [number, number, number];
 const SHOW_PENCIL = false;
 const CAMERAS: Record<string, { pos: V3; target: V3; fov: number }> = {
   a2_win_wide: { pos: [-0.6, 2.05, 20], target: [-0.6, 1.9, 0], fov: 20 },
-  a2_win_kids: { pos: [-0.45, 1.98, 13.0], target: [-0.45, 1.88, 0], fov: 20 },
+  a2_win_kids: { pos: [2.1, 1.98, 13.0], target: [2.1, 1.88, 0], fov: 20 },
   a2_win_note: { pos: [30, 1.5, 5.9], target: [30, 1.5, 0], fov: 20 },
 };
 
@@ -86,7 +89,7 @@ export const A2_WINDOW: SetEntry = {
     inset.renderOrder = LAYER.fore.order + 60;
     const insetHinge = new Group();
     insetHinge.name = 'a2:silInset';
-    insetHinge.position.set(3.15, 2.55, 2.3);
+    insetHinge.position.set(3.35, 2.75, 2.3);
     insetHinge.add(inset);
     base.group.add(insetHinge);
     let insetKey = '';
@@ -105,13 +108,42 @@ export const A2_WINDOW: SetEntry = {
         ig.drawImage(boxImg, boxX, 262, bw, bh);
       }
       if (handImg && hand > 0) {
-        const hw = 300, hh = hw * handImg.naturalHeight / handImg.naturalWidth;
-        const x = lerp(760, 548, hand), y = lerp(IH + 10, 318, hand);
-        ig.drawImage(handImg, x, y, hw, hh);
+        // v02 圖：指尖在圖上 (25, 202)；畫成寬 500（比例約同遞盒子的手），指尖從右下畫面外移到 (560, 318)
+        const hw = 500, k = hw / handImg.naturalWidth, hh = handImg.naturalHeight * k;
+        const tx = lerp(1010, 560, hand), ty = lerp(800, 318, hand);
+        ig.drawImage(handImg, tx - 25 * k, ty - 202 * k, hw, hh);
       }
       ig.restore();
       itex.needsUpdate = true;
     };
+
+    // ---- 4. 開著的店門：門洞（世界 x 1.62–3.78、y 0.18–3.58，店面 z −0.6）上蓋一張暖光門口
+    const DW = 540, DH = 850;
+    const [dc, dg] = makeCanvas(DW, DH);
+    {
+      const glow = dg.createLinearGradient(0, 0, 0, DH);
+      glow.addColorStop(0, '#fff2d6'); glow.addColorStop(0.7, '#ffe7bd'); glow.addColorStop(1, '#f7d8a6');
+      dg.fillStyle = glow; dg.fillRect(0, 0, DW, DH);
+      // 店內遠處：吊燈籠（暖色淡圓）、工作台的影子（很淡）
+      dg.fillStyle = 'rgba(244,196,128,0.45)';
+      for (const [x, y, r] of [[150, 140, 46], [330, 120, 52], [470, 150, 40]] as const) { dg.beginPath(); dg.ellipse(x, y, r, r * 1.15, 0, 0, Math.PI * 2); dg.fill(); }
+      dg.fillStyle = 'rgba(214,170,118,0.35)'; dg.fillRect(60, DH * 0.62, DW - 120, DH * 0.06);
+      dg.fillStyle = 'rgba(226,190,140,0.5)'; dg.fillRect(0, DH * 0.86, DW, DH * 0.14);          // 店內地板
+      // 往裡打開的兩扇門板（窄、深一點的木色，邊上有細線）
+      const leaf = (x0: number, x1: number, inX0: number, inX1: number): void => {
+        dg.fillStyle = '#9a6f52';
+        dg.beginPath(); dg.moveTo(x0, 0); dg.lineTo(x1, DH * 0.04); dg.lineTo(inX1, DH * 0.97); dg.lineTo(inX0, DH); dg.closePath(); dg.fill();
+        dg.strokeStyle = '#5c3f2e'; dg.lineWidth = 4; dg.stroke();
+      };
+      leaf(0, 70, 66, 0);
+      leaf(DW, DW - 70, DW - 66, DW);
+    }
+    const dtex = finishTexture(new CanvasTexture(dc));
+    const doorMat = new MeshBasicMaterial({ map: dtex, toneMapped: false });
+    const door = new Mesh(new PlaneGeometry(3.78 - 1.62, 3.58 - 0.18), doorMat);
+    door.position.set((1.62 + 3.78) / 2, (0.18 + 3.58) / 2, -0.585);
+    door.renderOrder = LAYER.mid.order + 41;
+    base.group.add(door);
 
     // ---- 筆記本特寫（x=30 的獨立小台）
     const noteImg = ctx.image('sets/a2_window/notebook');
@@ -133,7 +165,7 @@ export const A2_WINDOW: SetEntry = {
     desk.position.set(30, 1.5, -0.05);
     desk.renderOrder = LAYER.mid.order + 49;
     base.group.add(desk);
-    const extraMats: Material[] = [insetMat, noteMat, deskMat];
+    const extraMats: Material[] = [insetMat, noteMat, deskMat, doorMat];
     const Q2 = qmarkPath(NW * 0.84, NH * 0.46, 0.92);
     const segLen: number[] = [];
     let total = 0;

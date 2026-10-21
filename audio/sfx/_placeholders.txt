@@ -1,4 +1,0 @@
-sfx_gust_v01.wav
-sfx_phone_noanswer_v01.wav
-sfx_truck_arrive_v01.wav
-sfx_crowd_short_v01.wav

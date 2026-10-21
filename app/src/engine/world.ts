@@ -175,4 +175,4 @@ export function setAt(tl: CueTimeline, t: number): string {
 /** 已知的角色動畫名稱 */
 export const ACTOR_ANIMS = ['strings.drop', 'strings.tension', 'strings.loosen', 'strings.fade', 'strings.detach',
   'puppet.popup', 'puppet.enter', 'puppet.exit', 'puppet.sit', 'puppet.waveTry', 'puppet.kneeTug', 'puppet.reach', 'puppet.wave',
-  'puppet.chest', 'puppet.grab', 'puppet.lean', 'puppet.move', 'puppet.tilt', 'puppet.pose', 'puppet.face', 'puppet.blink'];
+  'puppet.chest', 'puppet.grab', 'puppet.lean', 'puppet.move', 'puppet.tilt', 'puppet.pose', 'puppet.face', 'puppet.blink', 'puppet.nod'];

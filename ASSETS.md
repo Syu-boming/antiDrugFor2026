@@ -384,3 +384,131 @@ G5 開工前的多幕共用角色與景。image_gen 用量：19 張角色／道�
 | audio/sfx/sfx_footsteps_v01.wav | 音效（4.0 s，單聲道） | 通用 | S16 紙偶腳步（8 步、每步 0.5 s） | 走路往右的 cue | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -31.0 LUFS、峰值 -12.0 dBFS、-12.0 dBTP；起音 7.0 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
 
 另：`audio/sfx/_placeholders.txt` 已清空（11 個音效與 music_town_night 都有正式檔）。
+
+## G5 修正第 1 輪與第二批（主線 2026-10-22 06:0x 合併）
+
+### 來源：review/G5/engine/ASSETS_rows_fix1.md
+
+# G5 修正第 1 輪｜共用元件代理｜ASSETS.md 待合併列（主線合併）
+
+| 檔名 | 類型 | 角色／場景 | 部件 | 使用 cue | 來源 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/ui/ui-speaker_{zhezhe,pinan,nurse,teacher,guard,inviter}_v01.png | 字幕說話者小頭像（128×128 透明圓形徽章） | 折折、品安、葉護理師、林老師、陳伯伯、邀請者 | 折折＝從折折程式畫面（review/G5/zhezhe/look.png）裁頭部；品安、葉護理師、林老師、陳伯伯＝從正式母版 chr-*_master_v01.png 裁頭肩；邀請者＝中性灰紙手掌（程式畫，沒有臉、膚色、飾品） | 全劇字幕（v1.2 第 15.3 節；b1_art a2 一般問題 5） | review/G5/engine/scripts/make_speaker_icons_fix1.py（沿用 G4 make_speaker_icons.py 的徽章） | 原創（程式產生）／使用者 ChatGPT 方案生成（母版裁切） | 圖中無字；字幕框深底上與投影 v2 都清楚（review/G5/engine/art/speaker_icons_fix1.png） | v01 |
+| app/src/stage/lamps.ts（程式繪製，沒有圖檔） | 台口八盞燈（剪紙紙燈＋木條＋柔和光暈） | 全劇台口 | 未亮灰白紙色＋深棕細邊；亮＝暖黃＋加法光暈 | 全劇（quiz 鏡位看得到） | 程式繪製（canvas） | 原創 | quiz 鏡位 1080p y≈13–90 px、寬約畫面 60%；只隨 world.lamps 單向漸變 | — |
+
+### 來源：review/G5/audio/ASSETS_rows_fix1.md
+
+# G5 修正第 1 輪｜短音效（佔位檔換正式）｜ASSETS.md 待合併列（主線合併）
+
+放在 ASSETS.md「配樂與音效」表下面（同欄位）。原檔名原地覆寫 audio/sfx/_placeholders.txt 列的四個佔位檔（之前是 1.3 秒紙張摩擦的複本），做完已清空 _placeholders.txt。
+重建：`caffeinate -i tools/.venv/bin/python tools/music/build_all.py --only sfx_gust,sfx_phone_noanswer,sfx_truck_arrive,sfx_crowd_short`；
+量測：review/G5/audio/metrics.json（44 檔，其他 40 檔數值不變）；圖：review/G5/audio/waveforms_sfx.png。規格照 G3／G5：樣本峰值、最大瞬間響度個別上限（sfx.py SFX_LEVEL）、真峰值 ≤ −2 dBTP、起音 ≥ 5 ms、6 kHz 以上能量很低、沒有突發巨響。聽感全部未驗證（Claude 聽不到音訊）。
+
+| 檔名 | 類型 | 角色／場景 | 部件 | 使用 cue | 來源 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| audio/sfx/sfx_gust_v01.wav | 音效（2.6 s，單聲道） | 廣場、校門口 | S17 一陣風（1.0 s 最強、最後 0.6 s 退去；不呼嘯、低通 4.5 kHz） | 目前沒有 cue 使用（各幕可用） | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -28.0 LUFS、峰值 -17.0 dBFS、-17.0 dBTP；起音 558.6 ms；100 ms 最大跳升 10.4 dB；聽感未驗證 | v01（G5 修正第 1 輪原地覆寫佔位） |
+| audio/sfx/sfx_phone_noanswer_v01.wav | 音效（2.6 s，單聲道） | 求助站（葉護理師打電話） | S18 撥號沒人接（兩聲柔和鈴 520／650 Hz＋14 Hz 顫音，0.05／1.35 s 各 0.8 s；電話線音色；不用真實電信業者的回鈴音、撥號音、忙線音） | a2_c012 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -28.0 LUFS、峰值 -19.4 dBFS、-19.4 dBTP；起音 17.8 ms；100 ms 最大跳升 21.4 dB（從靜音到 -28 LUFS 的輕鈴）；聽感未驗證 | v01（G5 修正第 1 輪原地覆寫佔位） |
+| audio/sfx/sfx_truck_arrive_v01.wav | 音效（5.0 s，單聲道） | 校門口（阿樂叔叔的小貨車） | S19 小貨車輕聲開近、停下、怠速（0–3.0 s 開近、3.0–3.6 s 停、3.6–5.0 s 怠速；不按喇叭、沒有煞車尖響） | a4_c001 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -27.0 LUFS、峰值 -17.1 dBFS、-17.1 dBTP；起音 1509.7 ms；100 ms 最大跳升 3.5 dB；聽感未驗證 | v01（G5 修正第 1 輪原地覆寫佔位） |
+| audio/sfx/sfx_crowd_short_v01.wav | 音效（4.0 s，單聲道） | 廣場 | S20 廣場人聲短版（約 10 個聲音只有母音、低通 2.2 kHz、殘響推遠，聽不出任何字；0.6 s 淡入、最後 0.8 s 淡出） | a2_c012 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -30.0 LUFS、峰值 -18.8 dBFS、-18.8 dBTP；起音 645.4 ms；100 ms 最大跳升 5.3 dB；聽感未驗證 | v01（G5 修正第 1 輪原地覆寫佔位） |
+
+### 來源：review/G5/a3/ASSETS_rows.md
+
+# 第三幕（a3）新素材：資產表列（給主線併進 ASSETS.md）
+
+2026-10-21 第 2 天晚上，G5 第三幕代理（第二批）。Codex image_gen 只用在角色新姿勢 3 張（上限 4，沒有重抽；紀錄 `review/G5/a3/codex_log.md`）；景片、練習卡、回想小窗、教室全部程式繪製（Pillow＋G2 同款紙紋 `review/G5/shared_art/scripts/paperdraw.py`；腳本 `review/G5/a3/scripts/build_a3_art.py`、`build_a3_art2.py` 可重跑）。生成圖與景片裡沒有任何文字、數字、標誌、紅十字、真實品牌或物流配色；練習卡上的字是程式排版（Noto Sans TC，SIL OFL 1.1，字型檔只在建置時用，放在 `review/G5/a3/fonts/`，不隨演出打包）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/chr-xiaoqing_pose-pointr_v07.png（原檔 assets/generated/ 同名） | 角色姿勢（透明；883×1458） | 小晴 | 「先離開」手指向右（H2；舞台角色指向安全方向） | a3_c004（練習卡口訣第 3 個動作）；練習卡小圖 | Codex image_gen（母版 chr-xiaoqing_master_v04 為參考）；星星髮夾生成在另一側，程式搬回母版同側（scripts/fix_star.py，原位以頭髮內插補上） | 使用者 ChatGPT 方案生成 | 白邊 11 px、霧邊 0、吊帶褲 ΔE 1.8、上衣 ΔE 2.2；退路眨眼兩眼同閉通過（review/G5/a3/blink_check.json） | v07 |
+| assets/final/chr-xiaoyu_pose-pointr_v07.png（原檔 assets/generated/ 同名） | 角色姿勢（透明） | 小宇（戴兒童手錶） | 「先離開」戴手錶的手指向右 | a3_c004 | Codex image_gen（母版 chr-xiaoyu_master_v04、standwatch 為參考） | 使用者 ChatGPT 方案生成 | 白邊 12 px、霧邊 0、ΔE 3.7／7.0；兩眼同閉通過 | v07 |
+| assets/final/chr-xiaoyu_pose-glasses_v07.png（原檔 assets/generated/ 同名） | 角色姿勢（透明） | 小宇 | 推推眼鏡想一想（H8，臉朝畫面左） | a3_c002「等一下，我想一想」 | Codex image_gen | 使用者 ChatGPT 方案生成 | 白邊 12 px、霧邊 0、ΔE 4.2／4.7；指尖在鼻樑；退路眨眼人工量框、兩眼同閉通過 | v07 |
+| assets/final/chr-xiaoqing_pose-forehead-l_v01.png | 角色姿勢（透明；665×1485） | 小晴 | chr-xiaoqing_pose-forehead_v06 左右翻轉：手放額前朝畫面左張望，星星髮夾回到母版同一側 | a3_c004（練習卡口訣第 4 個動作「找大人」） | 程式鏡射（build_a3_art.py poses） | 本專案自製（來源為本專案姿勢圖） | 和 stand／cross／palmno／pointr 同一場時髮夾不跳邊 | v01 |
+| assets/final/chr-lin_pose-stand-m_v01.png | 角色姿勢（透明；456×1546） | 林老師 | 站姿左右翻轉（臉朝畫面左）；退路眼框、嘴框依 lin:stand 鏡射（show_characters.json fallbackFaces lin:stand_m） | a3_c008（站在孩子右邊跟全班說話；走出教室時翻回 stand 朝右） | 程式鏡射（build_a3_art2.py） | 本專案自製 | — | v01 |
+| assets/final/sets/a3_gate/card_v01.png | 景片（透明；2400×1360，世界寬 6.0） | 台口前緣練習卡 a3_card | 攤開的大紙卡：上排拒絕句「不用，我不試。我先離開。」、下排口訣四格（不碰／不試／先離開／找大人，每格有動作小圖＋口訣） | a3_c004（1.9 秒起立起）、a3_c005 出題時收平 | 程式排版（Noto Sans TC 粗體 weight 850）；動作小圖取自本專案姿勢圖（小晴 cross、小宇 palmno、小晴 pointr、小宇 forehead）膝蓋以上 | 本專案自製；字型 SIL OFL 1.1 | 字是程式排版、不是生成；投影下字高約 45–50 px（1080p） | v01 |
+| assets/final/sets/a3_arcade/memory_v01.png | 畫面疊層（透明；640×640） | 騎樓上學路 a3_arcade | 回想小圓窗：第二幕 a2_c002 結尾被操偶線拉偏的手（腕背、肘外兩個紙環、往上延伸的線），褪色、奶油色手撕紙框；**不含阿樂叔叔的臉** | a3_c002（0.8 秒打開、「我想一想」說完收起） | 程式加工：第二幕驗收包關鍵影格 review/G5/a2/pack/capture/keyframes/a2_c002_025.18_after.png 裁切（build_a3_art.py memory） | 本專案自製（來源為本專案引擎畫面） | 扣點只有腕背、肘外（同第二幕）；不恐怖、不吊掛 | v01 |
+| assets/final/sets/a3_classroom/outside_v01.png | 背景（不透明；1040×360） | 教室 a3_classroom | 窗外：午後淡藍天空、雲、對面騎樓屋頂（小窗格，沒有招牌） | a3_c008 | 程式繪製（outside） | 本專案自製 | 無文字 | v01 |
+| assets/final/sets/a3_classroom/backwall_v01.png | 景片（透明窗洞；2400×800，世界寬 24） | 教室 | 後牆：奶油色上牆＋鼠尾草綠護牆板、三扇十字窗（玻璃挖空）、沒有數字的時鐘、布告欄（燈籠、貓、房子三張畫，沒有字）、開著的後門 | a3_c008 | 程式繪製（backwall） | 本專案自製 | 無文字、無數字 | v01 |
+| assets/final/sets/a3_classroom/board_v01.png | 景片（透明；420×224） | 教室 | 黑板（淺墨綠）＋粉筆畫燈籠、三顆星、燈籠串；**沒有字** | a3_c008 | 程式繪製（board） | 本專案自製 | 無文字 | v01 |
+| assets/final/sets/a3_classroom/desk_v01.png、teacherdesk_v01.png | 道具（透明；170×125、160×155） | 教室 | 課桌椅一組；講桌（作業簿封面空白、小燈籠） | a3_c008 | 程式繪製（desk、teacherdesk） | 本專案自製 | 無文字 | v01 |
+| assets/final/sets/a3_classroom/students_v02.png | 景片（透明；700×240） | 教室後排 | 同學的背影 6 人：頭髮蓋住整個後腦（背面，本來就看不到臉）、低彩度衣服、有的背書包；不透明紙片小人（取代 v01 的灰色無五官人形，主線裁定第 6 條） | a3_c008（遠景，講桌後） | 程式繪製（build_a3_art2.py students） | 本專案自製 | 中性設計：不以年齡、族群、髮色作標記 | v02 |
+| assets/final/sets/a3_classroom/floor_v01.png、garland_v01.png | 地板（2048×512）；景片（透明；600×70） | 教室 | 橫向木地板；窗外燈籠串（7 盞粉彩，沿用 square_a1 燈籠串配色） | a3_c008（燈籠串週期 3.4 秒、幅度 ≤0.024 rad 輕擺） | 程式繪製（floor、garland） | 本專案自製 | 不發光、不閃 | v01 |
+
+沿用（沒有新增檔）：sets/square/*（騎樓景，a3_arcade 拿掉長椅、改早晨色彩分級）、sets/square_a1/pillar、garland、chr-inviter_hand-box（邀請者的手）、sets/gate/*（a3_gate／a3_card 用 gate.ts 建構器，拿掉小貨車）、sets/gate/set-gate_a4-phone（林老師的手機）。
+
+未打包的中間檔：assets/final/sets/a3_classroom/students_v01.png（被 v02 取代，pack 只取最新版本；可刪）。
+
+### 來源：review/G5/a5/ASSETS_rows.md
+
+# 第五幕（a5）新素材：資產表列（給主線併入 ASSETS.md）
+
+2026-10-21，G5 第五幕代理。Codex image_gen 5 張（上限 8；review/G5/a5/codex_log.md），其餘用 Pillow＋G2 同款紙紋程式繪製（review/G5/a5/scripts/build_a5_art.py、phone_icon_v2.py，借用 review/G5/shared_art/scripts/paperdraw.py）。圖裡沒有任何文字、數字、品牌、標誌、紅十字；救護車、救護人員臂章、醫院走廊都只用自訂的「手捧愛心」圖示。show_characters.json 新增：chen.poses.standr／shoutr、xiaoqing.poses.sitb、xiaoyu.poses.sitb、characters.medic_a／medic_b，以及 fallbackFaces chen:standr、chen:shoutr、xiaoqing:sitb、xiaoyu:sitb、medic_a:stand、medic_b:stand（眼嘴範圍由圖量得；鏡射者由母版換算）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/a5_gate/a5-corner_v01.png | 景片（透明）；286×594 | a5_gate（校門口） | 街角兩層小店（轉角柱在右緣、拉下的鐵捲門、雨遮；沒有招牌字）；陳伯伯與小朋友轉過去就被擋住 | a5_c001、a5_c005、a5_c007 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-student_v01.png | 遠景小人（透明）；209×450 | a5_gate | 轉角的低年級小朋友：黃色小帽、深藍上衣、灰短褲、綠書包；中性、沒有五官細節（只有一點眼睛） | a5_c001 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-student-arm_v01.png | 部件（透明）；66×136 | a5_gate | 小朋友揮手的手臂（以肩為支點擺動） | a5_c001 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-ambulance_v01.png | 道具（透明）；840×375 | a5_gate | 救護車側面（車頭朝右）：米白車身、鼠尾草綠腰帶、車廂側面白底圓牌「手捧愛心」自訂圖示；沒有紅十字、沒有文字、沒有真實救護單位的配色與標誌；輪子另疊（借 props/prop-truck-wheel） | a5_c007 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-ambulance-light_v01.png | 道具（透明）；330×84 | a5_gate | 救護車駕駛艙頂燈條：暖米黃、恆亮（不是紅藍警示燈、不閃） | a5_c007 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-gurney_v01.png | 道具（透明）；440×210 | a5_gate | 擔架床（側面）：淺灰金屬架、米白床墊、鼠尾草綠摺好的毯子；空的（不畫躺著的人） | a5_c007 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-phone_v02.png | 圖示（透明）；260×260 | a5_gate | 119 執勤人員的紙剪電話圖示：米白圓牌＋深青綠話筒剪影（自畫幾何）；v01 兩端畫成楔形像彎箭頭，已刪 | a5_c006 | 程式繪製（review/G5/a5/scripts/phone_icon_v2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v02 |
+| assets/final/sets/a5_gate/a5-phone-arc1_v01.png | 圖示（透明）；88×88 | a5_gate | 電話聲波弧線（小） | a5_c006 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-phone-arc2_v01.png | 圖示（透明）；140×140 | a5_gate | 電話聲波弧線（中） | a5_c006 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_gate/a5-phone-arc3_v01.png | 圖示（透明）；192×192 | a5_gate | 電話聲波弧線（大） | a5_c006 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_hospital/wall_v01.png | 背牆（不透明）；1536×1024 | a5_hospital（醫院走廊，傍晚） | 暖黃走廊牆：兩扇窗外是傍晚天空與屋頂、風景小畫、木扶手、右側診間木門（霧面窗）、時鐘、門旁空白小牌；沒有文字、沒有紅十字 | a5_c008 | Codex 生成（review/G5/a5/raw/a5_hosp_wall_v01，codex_log 第 5 次）→ assets/generated/bg-hospital-wall_v01.png | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_hospital/floor_v01.png | 地板（不透明）；1024×512 | a5_hospital | 長條木紋地板 | a5_c008 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a5_hospital/bench_v01.png | 景片（透明）；919×380 | a5_hospital | 候診長椅（四個連座：淺木色座面與椅背、鐵灰橫樑與椅腳；座面上緣世界 0.94） | a5_c008 | 程式繪製（review/G5/a5/scripts/build_a5_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-chen_pose-shoutr_v01.png | 表演姿勢圖（透明）；724×1530 | chen | shoutr：手圍在嘴邊朝畫面右（辦公室方向）大聲交代、嘴張開；另一手握拳垂下 | a5_c001 | Codex 生成（附 chr-chen_master_v01 當參考；codex_log 第 1 次）→ assets/generated/chr-chen_pose-shoutr_v01.png；review/G5/a5/scripts/process_a5.py 去背、白邊、主色 ΔE 檢查（背心 4.9、制服 1.9） | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-chen_pose-standr_v01.png | 表演姿勢圖（透明）；649×1522 | chen | standr：站姿左右鏡射（臉朝畫面右：看校門、聽林老師回答） | a5_c001、a5_c007 | assets/final/chr-chen_master_v01.png 左右鏡射（build_a5_art.py chen_standr） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-xiaoqing_pose-sitb_v01.png | 表演姿勢圖（透明）；575×1332 | xiaoqing | sitb＝P-QG2：坐醫院長椅、低頭自責（臉朝畫面右下）、雙手放膝上 | a5_c008 | Codex 生成（附 chr-xiaoqing_master_v04 當參考；codex_log 第 2 次）；吊帶褲重新上色到母版 L*（ΔE 1.4、上衣 4.3） | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-xiaoyu_pose-sitb_v01.png | 表演姿勢圖（透明）；675×1366 | xiaoyu | sitb＝P-XY3：坐醫院長椅（臉朝畫面右）、戴兒童手錶 | a5_c008 | Codex 生成（附 chr-xiaoyu_master_v04 當參考；codex_log 第 3 次）；外套重新上色到母版 L*（ΔE 5.4、短褲 4.5） | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-medic-a_stand_v01.png | 角色立牌（透明）；434×1040 | medic_a（救護人員 A） | 站姿：深灰藍工作服、反光條、臂章只有手捧愛心圖示（無紅十字、無真實單位標誌）；臉朝畫面右 | a5_c007 | Codex 生成（一張兩人，codex_log 第 4 次）→ assets/generated/chr-medic_pair_v01.png 切開；外圍 alpha<32 淡霧清掉 | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-medic-b_stand_v01.png | 角色立牌（透明）；351×964 | medic_b（救護人員 B） | 站姿：同 A 的工作服、手捧愛心臂章；綁馬尾；臉朝畫面右 | a5_c007 | 同上（切開的右半） | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍 review/G5/a5/checks/snaps、引擎擷取 review/G5/a5/pack/）；投影與聽感依驗收包 | v01 |
+
+另外：assets/generated/ 的 Codex 原圖（bg-hospital-wall_v01、chr-chen_pose-shoutr_v01、chr-xiaoqing_pose-sitb_v01、chr-xiaoyu_pose-sitb_v01、chr-medic_pair_v01）是上表的生成來源，不直接進演出。
+
+### 來源：review/G5/a6/ASSETS_rows.md
+
+# 第六幕＋複習＋閉幕（a6／a7／a8）新素材：資產表列（給主線併入 ASSETS.md）
+
+2026-10-21，G5 第六幕代理。Codex image_gen 共 3 張（上限 6；紀錄 review/G5/a6/codex_log.md）：謝幕鞠躬兩張拼版（孩子、大人）、阿琴阿姨站姿。其餘全部 Pillow＋G2 同款紙紋程式繪製（review/G5/a6/scripts/build_a6_art.py、build_a6_art2.py、make_cards.py，借用 review/G5/shared_art/scripts/paperdraw.py；可重跑）。圖裡沒有任何文字、數字、品牌、標誌、紅十字；紙卡標題與口訣文字由 app/src/sets/a6_shop.ts 在執行時排版。程式景片（主燈大摺紙貓、騎樓燈籠串、光流、小折折燈、謝幕微光）在 app/src/sets/a6_square_night.ts、a6_shop.ts，沒有圖檔。
+show_characters.json 只新增：xiaoqing/xiaoyu/pinan/chen/lin/ye 的 bow、xiaoqing.stand_m、xiaoyu.standwatch_m、pinan.stand_m／walk_straps_m、新角色 aqin，與對應 fallbackFaces（aqin:stand、xiaoqing:stand_m、xiaoyu:standwatch_m、pinan:stand_m、pinan:walk_straps_m）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/chr-xiaoqing_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；419×976 | 小晴 | bow：謝幕鞠躬（上身前傾約 30°、雙手垂在大腿前、閉眼微笑）；headTop 虛擬頭頂讓頭寬和站姿母版同大 | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_kids_v01.png；提示 bow_kids_v01.prompt.txt；參考 S4＋三位兒童母版；切件、白邊與 alpha 整理 review/G5/a6/scripts/process_a6_chars.py；小晴吊帶褲、小宇外套主色調回 v04 色票 | 使用者 ChatGPT 方案生成 | 無文字；三人分開；白邊完整；主色 ΔE 見 review/G5/a6/chars_import.json | v01 |
+| assets/final/chr-xiaoyu_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；382×985 | 小宇 | bow：謝幕鞠躬（上身前傾約 30°、雙手垂在大腿前、閉眼微笑）；headTop 虛擬頭頂讓頭寬和站姿母版同大 | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_kids_v01.png；提示 bow_kids_v01.prompt.txt；參考 S4＋三位兒童母版；切件、白邊與 alpha 整理 review/G5/a6/scripts/process_a6_chars.py；小晴吊帶褲、小宇外套主色調回 v04 色票 | 使用者 ChatGPT 方案生成 | 無文字；三人分開；白邊完整；主色 ΔE 見 review/G5/a6/chars_import.json | v01 |
+| assets/final/chr-pinan_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；410×974 | 品安 | bow：謝幕鞠躬（上身前傾約 30°、雙手垂在大腿前、閉眼微笑）；headTop 虛擬頭頂讓頭寬和站姿母版同大 | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_kids_v01.png；提示 bow_kids_v01.prompt.txt；參考 S4＋三位兒童母版；切件、白邊與 alpha 整理 review/G5/a6/scripts/process_a6_chars.py；小晴吊帶褲、小宇外套主色調回 v04 色票 | 使用者 ChatGPT 方案生成 | 無文字；三人分開；白邊完整；主色 ΔE 見 review/G5/a6/chars_import.json | v01 |
+| assets/final/chr-chen_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；435×963 | 陳伯伯 | bow：謝幕鞠躬（上身前傾、閉眼微笑） | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_adults_v01.png；提示 bow_adults_v01.prompt.txt；參考 S4＋三位大人母版；切件 process_a6_chars.py | 使用者 ChatGPT 方案生成 | 無文字、無紅十字（葉護理師識別證只有手捧愛心圖示）；三人分開 | v01 |
+| assets/final/chr-lin_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；312×948 | 林老師 | bow：謝幕鞠躬（上身前傾、閉眼微笑） | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_adults_v01.png；提示 bow_adults_v01.prompt.txt；參考 S4＋三位大人母版；切件 process_a6_chars.py | 使用者 ChatGPT 方案生成 | 無文字、無紅十字（葉護理師識別證只有手捧愛心圖示）；三人分開 | v01 |
+| assets/final/chr-ye_pose-bow_v01.png | 表演姿勢圖（透明，白邊）；398×954 | 葉護理師 | bow：謝幕鞠躬（上身前傾、閉眼微笑） | a8_c001 | Codex image_gen（第 1 次，1 張拼版切件）；原檔 review/G5/a6/raw/bow_adults_v01.png；提示 bow_adults_v01.prompt.txt；參考 S4＋三位大人母版；切件 process_a6_chars.py | 使用者 ChatGPT 方案生成 | 無文字、無紅十字（葉護理師識別證只有手捧愛心圖示）；三人分開 | v01 |
+| assets/final/chr-aqin_master_v01.png | 角色母版（透明，白邊）；456×1526 | 阿琴阿姨（新角色，不說話） | stand：四分之三側面朝畫面左、雙手輕握在腰前；深棕開襟外套、燕麥色圍巾、耳下短髮兩鬢微白 | a6_c001、a6_c007、a6_c008 | Codex image_gen（第 1 次）；原檔 review/G5/a6/raw/chr_aqin_stand_v01.png；參考 S4＋阿樂叔叔＋林老師母版；處理 process_a6_chars.py | 使用者 ChatGPT 方案生成 | 無文字、無標誌；6.2 頭身；退路眨眼兩眼殘留 ≤0.4%（fallbackFaces aqin:stand） | v01 |
+| assets/final/chr-pinan_pose-stand-m_v01.png | 表演姿勢圖（透明，白邊）；573×1515 | pinan | stand_m：品安站姿左右鏡射（朝畫面右） | a6、a7 | 由專案母版 PIL 左右鏡射（process_a6_chars.py、add_xq_stand_m.py）；退路臉部範圍鏡射登記 fallbackFaces | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-pinan_pose-walk-straps-m_v01.png | 表演姿勢圖（透明，白邊）；765×1486 | pinan | walk_straps_m：抓背帶低頭走路左右鏡射（往畫面右） | a6、a7 | 由專案母版 PIL 左右鏡射（process_a6_chars.py、add_xq_stand_m.py）；退路臉部範圍鏡射登記 fallbackFaces | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-xiaoyu_pose-standwatch-m_v01.png | 表演姿勢圖（透明，白邊）；528×1446 | xiaoyu | standwatch_m：小宇戴錶站姿左右鏡射（朝畫面右） | a6、a7 | 由專案母版 PIL 左右鏡射（process_a6_chars.py、add_xq_stand_m.py）；退路臉部範圍鏡射登記 fallbackFaces | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-xiaoqing_pose-stand-m_v01.png | 表演姿勢圖（透明，白邊）；535×1492 | xiaoqing | stand_m：小晴站姿左右鏡射（朝畫面左；紙片翻面用） | a6、a7 | 由專案母版 PIL 左右鏡射（process_a6_chars.py、add_xq_stand_m.py）；退路臉部範圍鏡射登記 fallbackFaces | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/sky_v01.png | 背牆（不透明）；2048×1024 | a6_square_night | 紙燈節夜空：靛藍→暖紫→地平線暖色；剪紙雲、剪紙月亮、紙星星（固定、不發光） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/rack_v02.png | 景片（透明）；1100×1100 | a6_square_night | 燈籠架：兩根竹竿＋橫樑、五盞圓紙燈籠、晾著的燈籠紙（燈籠在孩子頭頂上方；孩子站在架子後的角落） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/folk-a_v01.png | 景片（透明，白邊）；584×1004 | a6_square_night | 一起糊燈籠紙的鎮民：背影、兩手往右上把燈籠紙貼到骨架上（不透明紙片小人、沒有五官、中性設計） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/folk-b_v01.png | 景片（透明，白邊）；584×1004 | a6_square_night | 鎮民背影（灰髮、往左上貼紙；layout flipX） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/folk-c_v01.png | 景片（透明，白邊）；384×784 | a6_square_night | 孩子背影（雙手舉著燈籠紙） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/folk-d_v01.png | 景片（透明，白邊）；444×1004 | a6_square_night | 鎮民背影（雙手垂下，在糊紙桌旁看） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_square_night/table_v01.png | 景片（透明）；900×380 | a6_square_night | 糊紙用的長桌：漿糊碗、紙捲、一疊剪好的燈籠紙（無字） | a6_c001–a6_c007 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/room_v01.png | 景片（窗洞透明）；2080×1088 | a6_window | 室內牆：暖米色紙、木腰板、踢腳板、木窗框十字窗櫺、窗台、兩側束起的布簾 | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/sky-autumn_v01.png | 景片（不透明）；1024×640 | a6_window | 窗外天空・秋（淡藍到暖黃、剪紙雲） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/sky-winter_v01.png | 景片（不透明）；1024×640 | a6_window | 窗外天空・冬（灰藍、雲多） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/sky-spring_v01.png | 景片（不透明）；1024×640 | a6_window | 窗外天空・春（淡藍） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/sky-summer_v01.png | 景片（不透明）；1024×640 | a6_window | 窗外天空・夏（晴藍、剪紙太陽） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/tree-autumn_v01.png | 景片（透明）；663×977 | a6_window | 窗外的樹・秋（sets/square/set-square_tree-a 葉子重新上色成橘黃） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/tree-summer_v01.png | 景片（透明）；663×977 | a6_window | 窗外的樹・夏（同一棵樹、綠葉加深） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/tree-winter_v02.png | 景片（透明）；663×977 | a6_window | 窗外的樹・冬（去葉、程式畫的光禿枝條從樹幹分岔長出） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/tree-spring_v02.png | 景片（透明）；663×977 | a6_window | 窗外的樹・春（冬天的枝條＋枝梢淺綠新芽與淡粉小花） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/shelf_v01.png | 景片（透明）；520×560 | a6_window | 室內矮櫃＋沒點的小紙燈籠＋一疊摺紙 | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/plant_v01.png | 景片（透明）；420×700 | a6_window | 室內盆栽 | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_window/leaf_v01.png | 景片（透明）；120×90 | a6_window | 秋天飄落的葉子（一片，窗外） | a6_c008 | 程式繪製（review/G5/a6/scripts/build_a6_art2.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_shop/card-1_v01.png | 紙卡（透明）；1050×810 | a6_shop | 大紙卡 1「拒絕與離開」：a3_c002 小宇在騎樓下說不要的畫面重製成紙卡插畫；上方空白標題列（標題程式排版） | a7_c001 | make_cards.py（來源 review/G5/a6/cards_src/a3_c002_9.0.png，capture_cards.mjs 從引擎擷取、不含字幕） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_shop/card-2_v01.png | 紙卡（透明）；1050×810 | a6_shop | 大紙卡 2「安全接送」：a4_c012 兩個孩子回到校門（陳伯伯旁）的畫面重製 | a7_c001 | make_cards.py（來源 cards_src/a4_c012_6.0.png） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_shop/card-3_v01.png | 紙卡（透明）；1050×810 | a6_shop | 大紙卡 3「找大人求助」：a5_c006 小宇用手錶打 119 的畫面重製 | a7_c001 | make_cards.py（來源 cards_src/a5_c006_6.0.png） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a6_shop/card-mnemonic_v01.png | 紙卡（透明）；1400×620 | a6_shop | 口訣卡：四格動作小圖（小晴雙手交叉＝不碰、小宇掌心向外＝不試、小晴指右＝先離開、小宇手放額前＝找大人；取自現有姿勢圖）；文字「不碰、不試；先離開，找大人」程式排版 | a7_c002、a7_c003 | make_cards.py（姿勢圖 chr-xiaoqing_pose-cross_v06、chr-xiaoyu_pose-palmno_v06、chr-xiaoqing_pose-pointr_v07、chr-xiaoyu_pose-forehead_v06） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
+
+另有原始生成圖（不改、已複製進 assets/generated/）：assets/generated/chr-{xiaoqing,xiaoyu,pinan,chen,lin,ye}_pose-bow_v01.png（拼版依透明連通區切開的原像素）、assets/generated/chr-aqin_master_v01.png。

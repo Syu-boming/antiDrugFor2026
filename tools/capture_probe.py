@@ -4,6 +4,8 @@
 
 量什麼：
 1. 操偶線線寬（px，1080p 繪圖緩衝）：劇場程式回報的螢幕線寬（垂直於線的方向）。規格（G4 修正第 22 項）：中景 6–10 px。
+   G5 修正第 1 輪起 widthPx＝實際畫出的紙帶寬（紙環上方那段紙帶兩側頂點的螢幕距離、垂直於線的分量，程式的 widthTruePx）；
+   舊量法（水平投影寬 × |cos|，線斜時偏小）另列 widthPxLegacy。G5 規格（主線裁定 5）：中景 ≥ 8 px、遠景 ≥ 6–7 px。
 2. 操偶線與相鄰處的明度差 ΔL*（CIELAB）：沿線在紙環上方 14–60 px 取樣，線兩側緊鄰（線寬一半＋3 px 外）的像素當背景；
    - 繩身 ΔL*：線中心像素 vs 背景；深灰邊 ΔL*：線內側距邊 1 px 的像素 vs 同一側的背景；兩側取較小者，再取沿線中位數。
    - 判定用 ΔL*：每一側取「繩身或該側深灰邊對該側背景」的較大者（看得出那一側的界線），再取兩側較小者
@@ -15,6 +17,9 @@
 4. 兒童站位背景亮度：同一格隱藏角色後重畫（probe_bg/），在每個兒童外框的軀幹帶（寬 50%、高 30–75%）量 WCAG 相對亮度，
    套投影 v2 模擬後取中位數與第 10 百分位。規格（D-G2-06）：≥ 0.50。開幕立起過程另外以 --probe-times 加密量測；
    upright＝外框高度 ÷ 該角色在整個擷取中的最大外框高度（立起程度）。
+5. 換景漸暗中、題卡蓋住舞台的格（G5 修正第 1 輪）：capture.mjs 在每筆量測記下 world.dim（換景漸暗 0＝正常、1＝全暗）與
+   world.quizVisible（DOM 題卡）；dim > 0.05 或題卡 > 0.5 的格不量兒童身後亮度、也不量操偶線 ΔL*（畫面是暗的或被題卡蓋住，
+   數字沒有意義；列 dim、quiz 值與 excluded_dim）。
 輸出：probe_report.json，並在終端機印摘要。
 """
 import json
@@ -25,6 +30,8 @@ import numpy as np
 from PIL import Image
 
 PROJ = (0.65, 0.18, 0.87)
+# 換景漸暗（world.dim）超過這個值的格不量兒童背景與線的 ΔL*
+DIM_MAX = 0.05
 
 
 def to_linear(a):
@@ -84,7 +91,7 @@ def along_path(s, d):
 def string_contrast(img, proj, s):
     """回傳沿線中位數：繩身 ΔL*、深灰邊 ΔL*、best（每一側取繩身或深灰邊較大者，再取兩側較小者）；各含投影 v2。
     取樣點沿引擎回報的中心線（path，線鬆時是彎的）走，不沿直線。"""
-    w = max(2.0, s["widthPx"])
+    w = max(2.0, s.get("widthTruePx") or s["widthPx"])
     acc = {"body": [], "edge": [], "body_p": [], "edge_p": [], "best": [], "best_p": []}
     for d in range(14, 61, 3):
         cx, cy, dx, dy = along_path(s, d)
@@ -201,16 +208,20 @@ def main():
         proj = projector(img)
         bgp = out / rec.get("bgFrame", "")
         bg = np.asarray(Image.open(bgp).convert("RGB")) if rec.get("bgFrame") and bgp.exists() else None
+        dimmed = (rec.get("dim") or 0) > DIM_MAX or (rec.get("quiz") or 0) > 0.5
         for s in rec["strings"]:
             if not s["visible"] or rec.get("curtain", 1) < 0.95:  # 布幕沒全開（線在布幕後面）不量
                 continue
-            c = string_contrast(img, proj, s)
-            row = {"cue": rec["cueId"], "t": rec["t"], "key": rec["key"], "actor": s["actor"], "anchor": s["anchor"], "widthPx": round(s["widthPx"], 2)}
+            c = None if dimmed else string_contrast(img, proj, s)
+            row = {"cue": rec["cueId"], "t": rec["t"], "key": rec["key"], "actor": s["actor"], "anchor": s["anchor"],
+                   "widthPx": round(s.get("widthTruePx") or s["widthPx"], 2), "widthPxLegacy": round(s["widthPx"], 2)}
             if c:
                 row.update({"deltaL_body": round(c["body"], 1), "deltaL_edge": round(c["edge"], 1), "deltaL": round(c["best"], 1),
                             "deltaL_proj_body": round(c["body_p"], 1), "deltaL_proj_edge": round(c["edge_p"], 1), "deltaL_proj": round(c["best_p"], 1)})
             else:
                 row.update({"deltaL": None, "deltaL_proj": None})
+            if dimmed:
+                row.update({"dim": rec.get("dim"), "quiz": rec.get("quiz"), "excluded_dim": True})
             rows.append(row)
             if s.get("ringPx") and bg is not None:
                 dv, inside = ring_inside(img, bg, s["ringPx"])
@@ -236,7 +247,7 @@ def main():
                         rb = (int(cx) - 24, int(cy) - 48, int(cx) + 24, int(cy) + 48)
                         Image.open(fp).convert("RGB").crop(rb).resize((192, 384), Image.NEAREST).save(out / "rope_crop_4x.png")
                         rope_crop_done = True
-        if bg is not None and rec.get("curtain", 1) >= 0.95:  # 布幕沒全開時不量背景
+        if bg is not None and rec.get("curtain", 1) >= 0.95 and not dimmed:  # 布幕沒全開、換景漸暗中（dim > 0.05）不量背景
             H, W = bg.shape[:2]
             for a in rec["actors"]:
                 if a["id"] not in ("xiaoqing", "xiaoyu") or not a["visible"]:
@@ -257,8 +268,9 @@ def main():
     close = [r for r in rows if r.get("deltaL") is not None]
     up = [r for r in bg_rows if r["upright"] >= 0.6]
     report = {
-        "rule": {"string_width_px": "6–10（中景，G4 修正第 22 項）", "deltaL": ">= 25（投影模擬後 >= 15）；ΔL*＝每一側取繩身或該側深灰邊對背景的較大者、再取兩側較小者（判定方式待主線確認）",
-                 "ring_center_inside_silhouette": "全部 true（G4 修正第 23 項）", "child_bg_proj_lum": ">= 0.50"},
+        "rule": {"string_width_px": "6–10（中景，G4 修正第 22 項）；G5 修正第 1 輪：全劇非 G4 cue 中景 ≥ 8、遠景 ≥ 6–7（widthPx＝實際紙帶寬）", "deltaL": ">= 25（投影模擬後 >= 15）；ΔL*＝每一側取繩身或該側深灰邊對背景的較大者、再取兩側較小者（判定方式待主線確認）",
+                 "ring_center_inside_silhouette": "全部 true（G4 修正第 23 項）", "child_bg_proj_lum": ">= 0.50",
+                 "dim_excluded": f"換景漸暗中 world.dim > {DIM_MAX}、或題卡 quizVisible > 0.5（DOM 題卡蓋住舞台）的格不量兒童背景與線的 ΔL*"},
         "strings": rows,
         "rings": ring_rows,
         "ring_crops": {"sheet": sheet, "dir": "ring_crops/", "rope_crop_4x": "rope_crop_4x.png" if rope_crop_done else None},
@@ -287,6 +299,7 @@ def main():
             "min_child_bg_p10": min((r["proj_lum_p10"] for r in bg_rows), default=None),
             "min_child_bg_median_upright": min((r["proj_lum_median"] for r in up), default=None),
             "child_bg_frames": len(bg_rows),
+            "frames_excluded_dim": sum(1 for r in data["probes"] if ((r.get("dim") or 0) > DIM_MAX or (r.get("quiz") or 0) > 0.5) and r.get("frame")),
         },
         "limits": "ΔL* 以線兩側緊鄰像素計（可能是皮膚、袖口或背景）；紙環剪影判定只看紙環中心；實際投影無法由此驗證。",
     }

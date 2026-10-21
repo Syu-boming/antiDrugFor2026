@@ -1,0 +1,26 @@
+{
+ "format": "antidrug-set/1",
+ "title": "醫院走廊（傍晚）",
+ "wall": { "image": "wall", "width": 12.5, "y": -0.44, "z": -1.8, "emissive": 0.34 },
+ "floor": { "image": "floor", "repeat": [4, 2], "width": 32, "depth": 10, "z": 6.0, "color": "#d6ba92" },
+ "layers": [
+  { "id": "bench", "image": "bench", "x": -1.0, "y": -0.02, "z": -0.35, "width": 4.6, "layer": "mid", "thick": 4,
+    "_note": "候診長椅（四個座位；座面上緣世界 0.94；座位中心約 x −2.65、−1.55、−0.45、0.65）" }
+ ],
+ "grade": { "tint": "#fdf0de", "saturation": 0.96 },
+ "light": { "key": [5, 10, 14], "keyColor": "#ffe2b8", "hemiSky": "#fff1dc", "hemiGround": "#7a6450" },
+ "marks": {
+  "lin": { "x": -2.65, "z": -0.2 },
+  "xiaoyu": { "x": -1.55, "z": -0.15 },
+  "xiaoqing": { "x": -0.45, "z": -0.12 },
+  "ye": { "x": 1.75, "z": 0.9 }
+ },
+ "landmarks": { "benchSeat": { "x0": -3.2, "x1": 1.2, "y": 0.94, "z": -0.35 }, "door": { "x0": 2.3, "x1": 4.8, "y": 0, "z": -1.8 } },
+ "cameras": {
+  "hosp_wide": { "pos": [0.3, 1.85, 17.5], "target": [0.3, 1.65, 0], "fov": 20 },
+  "hosp_mid": { "pos": [-0.35, 1.25, 11.6], "target": [-0.35, 1.15, 0], "fov": 20 },
+  "hosp_kids": { "pos": [1.0, 1.2, 9.6], "target": [1.0, 1.1, 0], "fov": 20 }
+ },
+ "_made_by": "G5 第五幕代理：wall＝Codex 生成（review/G5/a5/codex_log.md 第 5 次）、floor／bench＝review/G5/a5/scripts/build_a5_art.py 程式繪製；牆上沒有文字、沒有紅十字（右邊的門＝診間，門旁的小牌是空白）。",
+ "_staging": "孩子與林老師坐長椅（林老師 sit、小宇 sitb、小晴 sitb，由左到右）；葉護理師在右前方蹲下（crouch，朝畫面左、掌心朝上）平視孩子。"
+}

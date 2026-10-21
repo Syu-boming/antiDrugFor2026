@@ -5,6 +5,13 @@ import type { Cue, CueAnimation, CueFile, CueLine, QuizData, TimeRef } from '../
 import { layoutSubtitle, spokenChars, charLen, plainText } from '../ui/textlayout';
 import { rosterFor } from './show';
 
+/** 說話者轉成舞台角色 id：整個名字在名冊就用它，否則依「、」分開找（例如「小晴、小宇」兩人一起說） */
+function speakersOf(speaker: string, roster: Map<string, string>): string[] {
+  const whole = roster.get(speaker);
+  if (whole) return [whole];
+  return speaker.split('、').map((n) => roster.get(n.trim())).filter((id): id is string => !!id);
+}
+
 export interface SubtitlePage { start: number; end: number; rows: string[] }
 
 export interface ResolvedLine {
@@ -12,6 +19,8 @@ export interface ResolvedLine {
   audioId: string;
   /** 說話者在舞台上的角色 id（旁白等沒有紙偶的為 null） */
   actorId: string | null;
+  /** 一起說的所有角色 id（說話者寫「小晴、小宇」時兩人都對嘴；只有一人時＝[actorId]） */
+  actorIds: string[];
   start: number;
   end: number;
   duration: number;
@@ -80,7 +89,7 @@ const ANIM_DEFAULT_DURATION: Record<string, number> = {
   'strings.drop': 3.0, 'strings.tension': 0.5, 'strings.loosen': 3.0, 'strings.fade': 3.0, 'strings.detach': 2.0,
   'puppet.popup': 1.1, 'puppet.enter': 2.0, 'puppet.exit': 2.0, 'puppet.sit': 1.0, 'puppet.waveTry': 3.4, 'puppet.kneeTug': 3.2,
   'puppet.reach': 0.8, 'puppet.wave': 2.0, 'puppet.chest': 0.8, 'puppet.grab': 0.8, 'puppet.lean': 0.8, 'puppet.move': 1.5,
-  'puppet.tilt': 0.8, 'puppet.pose': 0.24, 'puppet.face': 0, 'puppet.blink': 0,
+  'puppet.tilt': 0.8, 'puppet.pose': 0.24, 'puppet.face': 0, 'puppet.blink': 0, 'puppet.nod': 1.0,
   'set.swap': 0, 'fade.out': 0.8, 'fade.in': 0.8,
 };
 
@@ -163,9 +172,10 @@ export function buildTimelines(file: CueFile, durationOf: (audioId: string) => n
       const duration = on ? real ?? estimateLineDuration(line.text) : 0;
       const s = line.start !== undefined ? (resolveRef(line.start, lines, null, line.id) ?? cursor) : cursor;
       const r: ResolvedLine = {
-        line, audioId, actorId: roster.get(line.speaker) ?? null,
+        line, audioId, actorId: roster.get(line.speaker) ?? null, actorIds: speakersOf(line.speaker, roster),
         start: s, end: s + duration, duration, placeholder: on && real === undefined, pages: [],
       };
+      if (r.actorId === null && r.actorIds.length) r.actorId = r.actorIds[0];
       lines.set(line.id, r);
       if (!on) { dropped.push(line.id); continue; }
       r.pages = paginate(line.text, r.start, r.end);
@@ -183,7 +193,8 @@ export function buildTimelines(file: CueFile, durationOf: (audioId: string) => n
     const pending: { a: CueAnimation; dur: number }[] = [];
     const out: ResolvedAnim[] = [];
     for (const a of anims) {
-      const dur = a.duration ?? ANIM_DEFAULT_DURATION[a.name] ?? 1;
+      // puppet.nod 沒寫長度＝次數 × 1 秒
+      const dur = a.duration ?? (a.name === 'puppet.nod' ? Math.max(1, Math.round(Number(a.params?.count ?? 1))) * ANIM_DEFAULT_DURATION['puppet.nod'] : ANIM_DEFAULT_DURATION[a.name] ?? 1);
       const s = resolveRef(a.start, lines, null, `${cue.id}/${a.name}`);
       if (s === null) { pending.push({ a, dur }); continue; }
       out.push({ name: a.name, target: a.target, start: s, duration: dur, end: s + dur, ease: a.ease, params: a.params ?? {} });

@@ -7,7 +7,8 @@
 // 對白聲音 ≤ 1、字幕與語音時間差 ≤ 50 ms（G4 修正第 29 項）。
 // 八、G5 全劇（?cues=show，app/cues/show/）：201 句配音都在且都是 v04、八題順序與答案、題目→揭答→等待→續演、八盞燈、
 // 兩句必要旁白一字不差、每個 cue 都有景、G4 已完成的 cue 原樣搬進全劇、整齣從片頭按到片尾（每句字幕都出現）、
-// 換景亮度漸變與舊景釋放、跨檔上一步與章節跳轉、壓縮級別與查核點、上一步換景時即時漸暗漸亮。
+// 換景亮度漸變與舊景釋放、跨檔上一步與章節跳轉、壓縮級別與查核點、上一步換景時即時漸暗漸亮；
+// G5 修正第 1 輪：台口八盞燈（全劇才有、quiz 鏡位看得到、亮度跟 world.lamps、上一步還原）、puppet.nod、操偶線螢幕最小寬度。
 // 前兩段與第七段用即時時鐘（不是虛擬時鐘）跑；全部約 6 分鐘。
 //
 // 用法：node tools/engine-test.mjs [--headed]
@@ -380,6 +381,9 @@ console.log('\n四、G4 虛擬時鐘：重播一致、布幕時間、角色進�
   await seek(5.0); await seek(12.0); const B = await shot();
   await play('a2_c002'); await seek(12.0); const C = await shot();
   check('重播一致：同一 cue 同一時間的畫面逐像素相同（倒回、重播都一樣）', A === B && B === C, `${A === B}/${B === C}`);
+  // G5 修正第 1 輪：台口八盞燈只在全劇模式；G4 不建立（畫面與 G4 驗收包相同）
+  const g4Lamps = await page.evaluate(() => window.__engine.debug.stageLamps?.());
+  check('G4 cue 集沒有台口八盞燈（只有全劇模式才有）', g4Lamps && g4Lamps.enabled === false && g4Lamps.boxes.length === 0, JSON.stringify(g4Lamps?.enabled));
 
   // 署名卡約 1 秒淡出、布幕約 2 秒打開（在署名卡淡出之後）
   await play('a0_c001');
@@ -543,6 +547,7 @@ console.log('\n六、字幕斷行、對白避讓排程（純函式）');
   check('避讓排程：間隔 0.5 秒的兩句之間不回升；間隔 3 秒的會回升', at(4.3) < dk.DUCK_LEVEL + 0.08 && at(8.5) > 0.85, `${at(4.3).toFixed(2)} / ${at(8.5).toFixed(2)}`);
   check('避讓排程：最後一句說完 0.3 秒後回升', at(10.2) < dk.DUCK_LEVEL + 0.08 && at(11.5) > 0.9, `${at(10.2).toFixed(2)} / ${at(11.5).toFixed(2)}`);
   const val = await import(pathToFileURL(join(ROOT, 'app/src/cues/validate.ts')).href);
+  check('puppet.nod（點頭，G5 修正第 1 輪）在動畫白名單裡', val.KNOWN_ANIMS.includes('puppet.nod'));
   for (const f of readdirSync(join(ROOT, 'app/cues')).filter((x) => x.endsWith('.json') && !x.includes('schema'))) {
     const v = val.validateCueFile(JSON.parse(readFileSync(join(ROOT, 'app/cues', f), 'utf8')));
     check(`cue 檔 ${f} 驗證通過、沒有未知動畫名稱`, v.ok && v.warnings.length === 0, [...v.errors, ...v.warnings].slice(0, 3).join(' | '));
@@ -662,7 +667,7 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   check('每個 cue 都有景（登記表或 assets/final/sets/<景名>/layout.json）', noSet.length === 0 && merged.cues.length > 0, noSet.slice(0, 5).join('、') || [...new Set(merged.cues.map((c) => c.set))].join('、'));
   // G4 已完成的 cue 原樣搬進全劇（表演、鏡頭、配樂、音效、時間不動；流程與授課時鐘欄位除外）
   const g4 = JSON.parse(readFileSync(join(ROOT, 'app/cues/g4.json'), 'utf8'));
-  const allow = { a0_c001: ['lines', 'title', 'teacherNote'], a2_c004: ['checkpoint'], a8_c002: ['initialState', 'teacherNote'], a8_c003: ['checkpoint'] };
+  const allow = { a0_c001: ['lines', 'title', 'teacherNote', 'initialState', 'animation']  /* 主線裁定（REVIEW.md G5 第一批驗收第 1 輪 2）：無角色＋劇名紙條 */, a2_c004: ['checkpoint'], a8_c002: ['initialState', 'teacherNote'], a8_c003: ['checkpoint'] };
   const g4Bad = [];
   for (const c of g4.cues) {
     const sc = byId.get(c.id);
@@ -674,6 +679,7 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   const { page, st, errors } = await open(join(DIST, 'index.html'), 'capture=1&cues=show&step=30');
   await page.waitForFunction(() => window.__engine.getState().mode === 'waiting', null, { timeout: 120000 });
   const cues = await page.evaluate(() => window.__engine.getCues());
+  const chh0 = await page.evaluate(() => document.getElementById('stage-canvas').height);
   check('全劇載入：71 個 cue、沒有暫代音訊（201 句音檔都解碼）、每個 cue 都有景', cues.length === merged.cues.length && cues.every((c) => !c.placeholder && c.set), `${cues.length} 個 cue；暫代 ${cues.filter((c) => c.placeholder).map((c) => c.id).join('、') || '無'}`);
   // 整齣從片頭按到片尾：每段播到結束；每句台詞在句中出現字幕（題卡在畫面上時以題卡為準）
   const seek = (t) => page.evaluate((x) => window.__engine.capture.seek(x), t);
@@ -719,7 +725,72 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
     if (!ok) qflow.push(`${q.quiz.qid}（${a.phase}/${b.phase}/${c.phase}/${stamp}/${e.phase}/${f.phase}）`);
   }
   check('八題實際操作：題目不自動揭答 → 揭答停住、正解印章 → 點燈停住 → 續演', qflow.length === 0, qflow.join('、') || '8 題');
-  // 換景：a1_c008（牛皮紙佔位景）→ a2_c001（燈籠店）
+  // 台口八盞燈（G5 修正第 1 輪，主線裁定 3）：quiz 鏡位看得到（題卡上緣之上、寬約畫面 60%）、故事鏡位在畫面外；
+  // 亮度綁定 world.lamps：點燈約 1.5 秒單向漸亮、亮了一直亮；上一步回到點燈前恢復未亮
+  {
+    const lampsNow = () => page.evaluate(() => window.__engine.debug.stageLamps());
+    const cw = await page.evaluate(() => document.getElementById('stage-canvas').width);
+    const chh = await page.evaluate(() => document.getElementById('stage-canvas').height);
+    await page.evaluate(() => window.__engine.capture.playCue('a1_c007'));
+    const tl7 = await page.evaluate(() => window.__engine.debug.timeline('a1_c007'));
+    const la = tl7.anims.find((x) => x.name === 'lamp.light');
+    const ramp = [];
+    for (const u of [-0.05, 0.25, 0.5, 0.75, 1.0]) { await seek(la.start + (la.end - la.start) * u + (u === 1 ? 0.02 : 0)); ramp.push((await lampsNow()).lit[0]); }
+    await seek(la.start + 0.05);
+    const q = await lampsNow();
+    const inTop = q.boxes.every((b) => b[1] >= 0 && b[3] <= chh * 0.13 && b[0] >= 0 && b[2] <= cw);
+    const span = (q.boxes[7][2] - q.boxes[0][0]) / cw;
+    const mono = ramp.every((v, i) => i === 0 || v >= ramp[i - 1] - 1e-6);
+    check('台口八盞燈：全劇模式 8 盞、quiz 鏡位在題卡上緣之上（畫面上方 13% 內）、寬約畫面 60%', q.enabled && q.boxes.length === 8 && inTop && span >= 0.55 && span <= 0.7,
+      `上緣 ${Math.min(...q.boxes.map((b) => b[1])).toFixed(0)}–下緣 ${Math.max(...q.boxes.map((b) => b[3])).toFixed(0)} px／${chh}；寬 ${(span * 100).toFixed(0)}%`);
+    check('台口燈亮度綁定 world.lamps：點燈單向漸亮（約 1.5 秒）、其他盞不動', ramp[0] === 0 && mono && ramp[2] > 0.2 && ramp[2] < 0.8 && ramp[4] >= 0.99 && q.lit.slice(1).every((v) => v === 0) && la.end - la.start >= 1.2,
+      `${ramp.map((v) => v.toFixed(2)).join('→')}（${(la.end - la.start).toFixed(2)} 秒）`);
+    await page.evaluate(() => window.__engine.capture.playCue('a1_c008'));
+    await seek(2);
+    const s8 = await lampsNow();
+    check('台口燈亮了一直亮；故事鏡位時在畫面上緣之外', s8.lit[0] >= 0.99 && s8.boxes.every((b) => b[3] < 0), `第 1 盞 ${s8.lit[0]}；下緣 ${Math.max(...s8.boxes.map((b) => b[3])).toFixed(0)} px`);
+    await page.evaluate(() => window.__engine.gotoCue('a1_c007', { mode: 'before' }));
+    const pb = await lampsNow();
+    await page.evaluate(() => window.__engine.gotoCue('a8_c003', { mode: 'after' }));
+    const fin = await lampsNow();
+    check('台口燈依 lampsBefore 還原：跳回第 1 盞點燈前＝未亮；跳到片尾＝8 盞都亮', pb.lit.every((v) => v === 0) && fin.lit.every((v) => v >= 0.99), `點燈前 ${JSON.stringify(pb.lit)}；片尾 ${JSON.stringify(fin.lit.map((v) => Math.round(v * 100) / 100))}`);
+  }
+  // 操偶線可見度（G5 修正第 1 輪，主線裁定 5）：全劇非 G4 cue 的線寬（實際紙帶寬）1080p ≥ 7 px（中景 8、遠景 7）；
+  // G4 cue（a2_c004）照 G4 算法（和 G4 cue 集同一個值）
+  {
+    const vis = async (id, t) => { await page.evaluate((x) => window.__engine.capture.playCue(x), id); await seek(t); return (await page.evaluate(() => window.__engine.debug.probe())).strings.filter((x) => x.visible && x.ringPx); };
+    const k = 1080 / chh0;
+    const rows = [];
+    for (const c of merged.cues.filter((x) => !['a2_c002', 'a2_c004'].includes(x.id) && (x.animation.some((a) => a.name === 'strings.drop') || x.initialState?.characters?.ale?.strings?.length))) {
+      const tl = await page.evaluate((x) => window.__engine.debug.timeline(x), c.id);
+      if (!tl) continue;
+      const D = Math.max(...tl.anims.map((a) => a.end), ...tl.lines.map((l) => l.end), 1);
+      for (const t of [D * 0.5, D * 0.95]) for (const x of await vis(c.id, t)) rows.push({ id: c.id, t, w: (x.widthTruePx ?? x.widthPx) * k });
+    }
+    const minW = Math.min(...rows.map((r) => r.w));
+    const worst = rows.reduce((m, r) => (r.w < m.w ? r : m), rows[0] ?? { id: '-', t: 0, w: 0 });
+    check('操偶線螢幕最小線寬：全劇非 G4 cue 每條看得到的線 ≥ 7 px@1080（實際紙帶寬）', rows.length > 0 && minW >= 6.9, `${rows.length} 條次；最細 ${minW.toFixed(2)} px（${worst.id} ${worst.t.toFixed(1)} 秒）`);
+    const g4w = (await vis('a2_c004', 9.0)).map((x) => x.widthPx * k);
+    check('G4 cue（a2_c004）的線寬照 G4 算法（6–10 px@1080，不加螢幕最小線寬）', g4w.length === 3 && Math.min(...g4w) >= 6 && Math.max(...g4w) <= 10, g4w.map((v) => v.toFixed(2)).join('、'));
+    // 點頭：全劇有 cue 用 puppet.nod 時，點頭中段頭部外框比開始前低
+    const nodCue = merged.cues.find((c) => c.animation.some((a) => a.name === 'puppet.nod' && a.target));
+    const na = nodCue ? (await page.evaluate((x) => window.__engine.debug.timeline(x), nodCue.id))?.anims.find((a) => a.name === 'puppet.nod' && a.target) : null;
+    if (nodCue && na) {
+      await page.evaluate((x) => window.__engine.capture.playCue(x), nodCue.id);
+      // 量「頭頂到骨盆的距離 ÷ 頭高」（分件紙偶）或「外框高 ÷ 寬」（立牌）：和鏡頭遠近無關；點頭時變小
+      const m = async (t) => {
+        await seek(t);
+        const a = (await page.evaluate(() => window.__engine.debug.probe())).actors.find((x) => x.id === na.target);
+        if (!a || !a.visible) return null;
+        if (a.headBox && a.joints?.hip) return (a.joints.hip[1] - a.headBox[1]) / Math.max(1, a.headBox[3] - a.headBox[1]);
+        return (a.box[3] - a.box[1]) / Math.max(1, a.box[2] - a.box[0]);
+      };
+      const each = (na.end - na.start) / Math.max(1, Math.round(Number(na.params.count ?? 1)));
+      const m0 = await m(na.start + 0.01), m1 = await m(na.start + each / 2);
+      check(`puppet.nod：${nodCue.id} ${na.target} 點頭中段頭部往下（頭頂到骨盆距離變短）`, m0 !== null && m1 !== null && m1 < m0 - 0.005, `${m0?.toFixed(3)} → ${m1?.toFixed(3)}`);
+    } else check('puppet.nod：全劇還沒有 cue 使用（白名單、引擎已支援）', !nodCue, nodCue ? `${nodCue.id} 的 puppet.nod 沒有出現在時間軸` : '略過');
+  }
+  // 換景：a1_c008（第一幕的景）→ a2_c001（第二幕的景；兩段景名由各幕決定，只要求不同）
   await page.evaluate(() => window.__engine.gotoCue('a2_c001', { mode: 'before' }));
   const w0 = await st();
   const sets0 = await page.evaluate(() => window.__engineShow.sets());
@@ -731,9 +802,9 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   await seek(p0.enterFade + 0.02); const p4 = await st();
   const sets1 = await page.evaluate(() => window.__engineShow.sets());
   check('換景亮度漸變：先把舊景漸暗（預捲 ≥ 0.6 秒），在全暗時換景，再漸亮（≥ 0.6 秒）', w0.cueId === 'a1_c008' && w0.set !== 'workshop_g4' && p0.prerollSec >= 0.6 && p0.enterFade >= 0.6
-    && p1.set === w0.set && p1.dim > 0.2 && p1.dim < 0.8 && p2.set === 'workshop_g4' && p2.dim >= 0.99 && p3.dim > 0.2 && p3.dim < 0.8 && p4.dim <= 0.01,
+    && p1.set === w0.set && p1.dim > 0.2 && p1.dim < 0.8 && p2.set !== w0.set && p2.dim >= 0.99 && p3.dim > 0.2 && p3.dim < 0.8 && p4.dim <= 0.01,
   `預捲 ${p0.prerollSec} 秒（中點 ${p1.set} dim ${p1.dim}）→ 0 秒 ${p2.set} dim ${p2.dim} → ${p0.enterFade / 2} 秒 dim ${p3.dim} → ${p0.enterFade} 秒 dim ${p4.dim}`);
-  check('換景時舊景釋放（場景裡只留一個景、釋放次數增加）', sets1.liveSetGroups === 1 && sets1.disposed > sets0.disposed && sets1.active === 'workshop_g4', JSON.stringify(sets1));
+  check('換景時舊景釋放（場景裡只留一個景、釋放次數增加）', sets1.liveSetGroups === 1 && sets1.disposed > sets0.disposed && sets1.active === p2.set, JSON.stringify(sets1));
   // 跨檔上一步：a2_c001 播放中按上一步 → 回到 a1_c008（第一幕最後一個穩定節點）
   await page.evaluate(() => window.__engine.prev());
   const pv = await st();
@@ -783,7 +854,7 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   const n1 = await live.st();
   await sleep(1500);
   const n2 = await live.st();
-  check('即時播放的章節跳轉換景：先漸暗（0.25 秒時還是舊景、已變暗），1.75 秒後新景完全亮', n1.set !== 'workshop_g4' && n1.dim > 0.05 && n1.dim < 0.95 && n2.set === 'workshop_g4' && n2.dim === 0,
+  check('即時播放的章節跳轉換景：先漸暗（0.25 秒時還是舊景、已變暗），1.75 秒後新景完全亮', n1.set !== n2.set && n1.dim > 0.05 && n1.dim < 0.95 && n2.dim === 0,
     `0.25 秒 ${n1.set} dim ${n1.dim}；1.75 秒 ${n2.set} dim ${n2.dim}`);
   check('全劇即時測試沒有頁面錯誤', live.errors.length === 0, live.errors.slice(0, 3).join(' | '));
   await live.page.close();

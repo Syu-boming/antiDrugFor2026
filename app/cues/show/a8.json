@@ -2,7 +2,7 @@
  "format": "antidrug-cues/1",
  "id": "a8",
  "title": "閉幕",
- "set": "workshop_g4",
+ "set": "a6_shop",
  "characters": {
   "ale": {
    "name": "阿樂叔叔",
@@ -15,65 +15,65 @@
   "xiaoqing": {
    "name": "小晴",
    "rig": "standee:xiaoqing",
-   "x": 1.85,
-   "z": 0.45,
-   "facing": 1,
+   "x": 3.1,
+   "z": 0.65,
+   "facing": -1,
    "fallback": "child"
   },
   "xiaoyu": {
    "name": "小宇",
    "rig": "standee:xiaoyu",
-   "x": 3.35,
-   "z": -0.5,
-   "facing": -1,
+   "x": 2.0,
+   "z": 0.35,
+   "facing": 1,
    "fallback": "child"
   },
   "zhezhe": {
    "name": "折折",
    "rig": "zhezhe",
-   "x": 0.55,
-   "z": 1.2,
+   "x": -0.6,
+   "z": 1.6,
    "facing": 1,
    "fallback": "child"
   },
   "pinan": {
    "name": "品安",
    "rig": "standee:pinan",
-   "x": 4.6,
-   "z": 0.3,
-   "facing": -1,
+   "x": 0.9,
+   "z": 0.6,
+   "facing": 1,
    "fallback": "child"
   },
   "lin": {
    "name": "林老師",
    "rig": "standee:lin",
-   "x": -3.6,
-   "z": 0.9,
-   "facing": 1,
+   "x": -4.3,
+   "z": 0.8,
+   "facing": -1,
    "fallback": "adult"
   },
   "ye": {
    "name": "葉護理師",
    "rig": "standee:ye",
-   "x": 5.6,
-   "z": 0.2,
+   "x": 4.6,
+   "z": 0.3,
    "facing": -1,
    "fallback": "adult"
   },
   "chen": {
    "name": "陳伯伯",
    "rig": "standee:chen",
-   "x": -4.4,
-   "z": 0.4,
-   "facing": 1,
+   "x": -5.3,
+   "z": 0.5,
+   "facing": -1,
    "fallback": "adult"
   }
  },
- "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "_note": "G5 第六幕代理排戲（review/G5/a6/scripts/make_a678.py 產生；台詞、題卡、流程欄位、storyboard 照底稿）。景：a6_square_night（紙燈節晚上的廣場，app/src/sets/a6_square_night.ts）、a6_window（四季窗景）、a6_shop（一年後的燈籠店、複習紙卡、謝幕；G4 燈籠店＋程式景片）。storyboard 是劇本與節拍表的摘錄，引擎不讀。 a8_c002、a8_c003 是 G4 cue，原樣保留（a8_c002 的景＝本段的 a6_shop，畫面＝G4 燈籠店）。",
  "cues": [
   {
    "id": "a8_c001",
-   "sceneId": "workshop_g4",
+   "sceneId": "a6_shop",
    "kind": "scene",
    "title": "謝幕",
    "initialState": {
@@ -85,41 +85,362 @@
     "characters": {
      "chen": {
       "visible": true,
-      "emotion": "smile"
+      "x": -5.3,
+      "z": 0.5,
+      "facing": -1,
+      "emotion": "smile",
+      "pose": "stand"
      },
      "lin": {
       "visible": true,
-      "emotion": "smile"
+      "x": -4.3,
+      "z": 0.8,
+      "facing": -1,
+      "emotion": "smile",
+      "pose": "stand"
      },
      "ye": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "ale": {
-      "visible": true,
+      "x": 4.6,
+      "z": 0.3,
+      "facing": -1,
       "emotion": "smile",
-      "pose": "sit"
+      "pose": "stand"
      },
      "pinan": {
       "visible": true,
-      "emotion": "smile"
+      "x": 0.9,
+      "z": 0.6,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "stand"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.0,
+      "z": 0.35,
+      "facing": 1,
+      "emotion": "smile",
+      "pose": "standwatch"
      },
      "xiaoqing": {
       "visible": true,
+      "x": 3.1,
+      "z": 0.65,
+      "facing": -1,
+      "emotion": "smile",
+      "pose": "stand"
+     },
+     "ale": {
+      "visible": true,
+      "x": -2.6,
+      "z": 0,
+      "facing": 1,
+      "pose": "sit",
       "emotion": "smile"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": -0.6,
+      "z": 1.6,
+      "emotion": "happy"
      }
     }
    },
-   "animation": [],
-   "audioId": "music_town",
+   "animation": [
+    {
+     "name": "puppet.pose",
+     "start": 0.88,
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 2.1,
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 0.88,
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 2.1,
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 2.88,
+     "duration": 0.24,
+     "target": "ye",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 4.1,
+     "duration": 0.24,
+     "target": "ye",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 6.88,
+     "duration": 0.24,
+     "target": "pinan",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 8.1,
+     "duration": 0.24,
+     "target": "pinan",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 8.88,
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 10.1,
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 10.88,
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 12.1,
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 4.85,
+     "target": "ale",
+     "params": {
+      "emotion": "greet"
+     }
+    },
+    {
+     "name": "puppet.wave",
+     "start": 4.9,
+     "duration": 1.7,
+     "target": "ale"
+    },
+    {
+     "name": "puppet.face",
+     "start": 6.7,
+     "target": "ale",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 3.6,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": 12.85,
+     "duration": 0.7,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -0.6,
+       0,
+       1.6
+      ],
+      "height": 0.4
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 13.0,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "ye",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "ye",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "pinan",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "pinan",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 14.88,
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "bow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 16.5,
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": 14.8,
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": 16.4,
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "zhezhe.hush",
+     "start": 14.85,
+     "target": "zhezhe"
+    }
+   ],
+   "audioId": "music_bows",
    "lines": [
     {
      "id": "a8_c001_01",
@@ -139,7 +460,7 @@
    "checkpoint": null,
    "shortVersion": "全體一起鞠躬一次，約 8 秒",
    "voStart": 3.8,
-   "tail": 11.2,
+   "tail": 11.15,
    "storyboard": {
     "beat": "燈光回舞台；依序走到台前鞠躬：陳伯伯和林老師、葉護理師、阿樂（捧著小折折燈）、品安、小宇、小晴，最後折折；燈籠微光輕飄（亮度固定、不閃，見上）。短版：全體一起鞠躬一次約 8 秒",
     "cast": "鞠躬一律用分件旋轉（軀幹繞髖前傾約 25°、頭再前傾約 10°），表情 X2；阿樂 P-AL3、L6",
@@ -151,7 +472,150 @@
     ],
     "estimateSec": 19.0,
     "actionSec": 15.0
-   }
+   },
+   "set": "a6_shop",
+   "setFade": 1.0,
+   "level2": {
+    "voStart": 1.0,
+    "tail": 3.95,
+    "minDuration": 8.0,
+    "animation": [
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "chen",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "chen",
+      "params": {
+       "pose": "stand"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "lin",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "lin",
+      "params": {
+       "pose": "stand"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "ye",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "ye",
+      "params": {
+       "pose": "stand"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "pinan",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "pinan",
+      "params": {
+       "pose": "stand"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "xiaoyu",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "xiaoyu",
+      "params": {
+       "pose": "standwatch"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 4.88,
+      "duration": 0.24,
+      "target": "xiaoqing",
+      "params": {
+       "pose": "bow"
+      }
+     },
+     {
+      "name": "puppet.pose",
+      "start": 6.5,
+      "duration": 0.24,
+      "target": "xiaoqing",
+      "params": {
+       "pose": "stand"
+      }
+     },
+     {
+      "name": "puppet.chest",
+      "start": 4.8,
+      "duration": 0.6,
+      "target": "ale",
+      "params": {
+       "to": 1
+      }
+     },
+     {
+      "name": "puppet.chest",
+      "start": 6.4,
+      "duration": 0.6,
+      "target": "ale",
+      "params": {
+       "to": 0
+      }
+     },
+     {
+      "name": "zhezhe.hush",
+      "start": 4.85,
+      "target": "zhezhe"
+     }
+    ]
+   },
+   "musicLoop": false,
+   "music": [],
+   "sfx": []
   },
   {
    "id": "a8_c002",

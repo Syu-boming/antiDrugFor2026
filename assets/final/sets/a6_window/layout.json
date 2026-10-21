@@ -1,0 +1,11 @@
+{
+ "format": "antidrug-set/1",
+ "title": "四季窗景（第六幕 a6_c008）",
+ "wall": { "color": "#cfdde6", "width": 24, "y": -1.0, "z": -5.0, "emissive": 0.4 },
+ "floor": { "color": "#b98f62", "z": 9.0, "depth": 10.2, "width": 26 },
+ "layers": [],
+ "grade": { "preset": "day_warm" },
+ "light": { "key": [-5, 11, 15], "keyColor": "#ffe6c4", "keyIntensity": 0.95, "hemiSky": "#fff1dc", "hemiGround": "#6b5440", "hemiIntensity": 1.0 },
+ "_made_by": "review/G5/a6/scripts/build_a6_art.py、build_a6_art2.py（第六幕代理，程式繪製）；窗、天空、樹、室內小物由 app/src/sets/a6_window.ts 依季節擺放",
+ "_note": "樹取 sets/square/set-square_tree-a 重新上色（秋、夏）與程式枝條（冬、春）；圖裡沒有任何文字。"
+}

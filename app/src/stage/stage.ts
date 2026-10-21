@@ -15,7 +15,8 @@ import { applyPopup, type PopPiece } from './workshop';
 import { ANCHOR_CAMERA, CAMERA_PRESETS, LAYER, STAGE_OPENING, type CameraPreset } from './layers';
 import { MIN_STRING_PX, PuppetDirector, type LipsyncData, type Performer } from './perform';
 import { buildCastPool, castKey, retargetOrder, type AnyPerformer, type CastEntry, type ProgramPerformer } from './cast';
-import { configureStringTextures } from './strings';
+import { configureStringTextures, enableNoStringShadow, noStringShadowUniform, PaperString, ropeBoldUniform, setNoStringShadowCamera, setRopeBoldEnabled } from './strings';
+import { ProsceniumLamps } from './lamps';
 import { setTextureDensity, makeCanvas } from './paper';
 import { desatUniform, enableDesat, FollowSpot } from './fx';
 import type { AnchorName } from './rig';
@@ -43,6 +44,11 @@ const BASE = { hemi: 1.35, key: 2.2, fill: 0.5 };
 const LIGHT_DEFAULT = { key: [-7, 13, 16] as [number, number, number], keyColor: '#ffe9c8', hemiSky: '#fff3dc', hemiGround: '#6b5846' };
 /** 換景調暗：貼在相機前面的全畫面深色片（不測深度、最後畫），不透明度＝world.dim；字幕與題卡是 HTML，不受影響 */
 const DIMMER = { z: -0.6, order: 10000, color: '#0b0806' };
+/**
+ * G4 代表鏡頭（cues/g4.json）原樣搬進全劇的 cue：全劇模式也維持 G4 的操偶線算法（不加螢幕最小線寬、深灰邊補寬、影子分遠近），
+ * 畫面和 G4 一樣。其他 cue（全劇模式）用 G5 修正第 1 輪的操偶線可見度設定。
+ */
+const G4_CUE_IDS = new Set(['a0_c000', 'a0_c001', 'a2_c002', 'a2_c004', 'a8_c002', 'a8_c003']);
 
 /** 釋放一個物件樹裡的幾何、材質與貼圖（換景時舊景用） */
 function disposeTree(root: Object3D): void {
@@ -86,6 +92,10 @@ export class Stage {
   private hemi = new HemisphereLight('#fff3dc', '#6b5846', BASE.hemi);
   private key = new DirectionalLight('#ffe9c8', BASE.key);
   private fill = new DirectionalLight('#d6e4ff', BASE.fill);
+  /** 只算影子、不發光的平行光（影子貼圖不含操偶線；全劇模式才開）：遠景與天空用它，操偶線影子只落在近景層與地面 */
+  private keyNoStrings: DirectionalLight | null = null;
+  /** 全劇模式（cue 集有段落） */
+  private showMode = false;
   readonly spot = new FollowSpot();
   private lip: Mesh;
   private setGroup = new Group();
@@ -105,6 +115,8 @@ export class Stage {
   private setMarks: Record<string, { x: number; z: number }> | undefined;
   private lightMul = { key: 1, hemi: 1, fill: 1 };
   private dimmer: Mesh;
+  /** 台口八盞燈（全劇模式才啟用；G5 修正第 1 輪） */
+  readonly lamps = new ProsceniumLamps();
   private setReports = new Set<string>();
   private castPoolReport: string[] = [];
   /** 景的建立與釋放次數（測試「舊景釋放資源」用） */
@@ -154,6 +166,7 @@ export class Stage {
       renderOrder: LAYER.curtain.order,
     });
     this.scene.add(this.curtain.group);
+    this.scene.add(this.lamps.group);
     for (const o of [pros.group, this.curtain.group]) o.traverse((m) => { const mat = (m as Mesh).material as Material | undefined; if (mat) enableDesat(mat); });
     // 換景亮度漸變：相機前面一張全畫面深色片（整個畫面一起漸暗、漸亮）；dim 0 時不畫（畫面與 G4 相同）
     this.dimmer = new Mesh(new PlaneGeometry(4, 4), new MeshBasicMaterial({ color: DIMMER.color, transparent: true, opacity: 0, depthWrite: false, depthTest: false }));
@@ -181,6 +194,12 @@ export class Stage {
     this.setReports.clear();
     this.file = file;
     this.assets = assets;
+    this.showMode = !!file.segments?.length;
+    // 操偶線可見度（G5 修正第 1 輪）：全劇模式才換紙繩著色器、開「只算影子」的平行光；要在建景與建紙偶之前
+    setRopeBoldEnabled(this.showMode);
+    if (this.showMode) this.ensureNoStringShadowLight();
+    // 台口八盞燈：只有全劇（有段落的 cue 集）才有；G4、demo 不建立（畫面不變）
+    this.lamps.setEnabled(!!file.segments?.length);
     const first = file.cues[0];
     this.ensureSet(first?.set ?? file.set ?? 'workshop');
     // 操偶線紙繩與紙環貼圖（素材優先，缺圖用程式畫的退路）：要在建立紙偶之前設定
@@ -239,6 +258,11 @@ export class Stage {
     this.setGroup.add(built.group);
     if (built.materials) built.materials.forEach(enableDesat);
     else built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableDesat); });
+    // 全劇模式：景片材質支援「遠景與天空不接收操偶線影子」（uniform＝0 時計算和原本相同）
+    if (this.showMode) {
+      if (built.materials) built.materials.forEach(enableNoStringShadow);
+      built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableNoStringShadow); });
+    }
     this.pieces = built.pieces ?? [];
     this.tableEdge = built.tableEdge ?? null;
     this.landmarks = built.landmarks ?? {};
@@ -250,6 +274,28 @@ export class Stage {
     this.setStats.built++;
     this.setStats.lastBuildMs = performance.now() - t0;
     this.setStats.buildMs += this.setStats.lastBuildMs;
+  }
+
+  /** 建立只算影子的平行光（全劇模式第一次 setScene 時）：位置、影子相機和主光相同，強度 0；影子貼圖不含操偶線 */
+  private ensureNoStringShadowLight(): void {
+    if (this.keyNoStrings) return;
+    const l = new DirectionalLight('#000000', 0);
+    l.name = 'keyNoStrings';
+    l.castShadow = true;
+    const a = this.key.shadow, b = l.shadow;
+    const ac = a.camera, bc = b.camera;
+    bc.left = ac.left; bc.right = ac.right; bc.top = ac.top; bc.bottom = ac.bottom; bc.near = ac.near; bc.far = ac.far;
+    bc.updateProjectionMatrix();
+    b.bias = a.bias; b.normalBias = a.normalBias; b.radius = a.radius; b.intensity = a.intensity;
+    b.mapSize.copy(a.mapSize);
+    b.autoUpdate = false;
+    b.needsUpdate = true;
+    l.position.copy(this.key.position);
+    l.target.position.copy(this.key.target.position);
+    this.keyNoStrings = l;
+    // 加在主光之後：平行光影子的順序＝主光 0、這盞 1（strings.ts enableNoStringShadow 依這個順序）
+    this.scene.add(l, l.target);
+    setNoStringShadowCamera(bc);
   }
 
   private disposeActiveSet(): void {
@@ -425,11 +471,29 @@ export class Stage {
     this.fill.intensity = BASE.fill * lerp(0.6, 1, L) * this.lightMul.fill;
     (this.lip.material as MeshStandardMaterial).emissiveIntensity = Math.max(0, (1 - L) * 2.2);
     desatUniform.value = world.desat;
+    this.lamps.update(world.lamps, L);
     this.director.light = lerp(0.55, 1, L) + world.spot * 0.08;
     // 線寬下限：相機到注視點的距離 → 1080p 每世界單位幾 px（純函式，重播一致）
     const camDist = Math.hypot(c.pos[0] - c.target[0], c.pos[1] - c.target[1], c.pos[2] - c.target[2]);
     this.director.minStringWidth = MIN_STRING_PX * (2 * camDist * Math.tan((c.fov * Math.PI) / 360)) / 1080;
+    // G5 修正第 1 輪：全劇非 G4 cue 用螢幕空間最小線寬（依扣點深度）與 2 px 深灰邊；G4 cue 照舊
+    const boost = this.showMode && !G4_CUE_IDS.has(tl.cue.id);
+    if (boost) {
+      const fwd = new Vector3(c.target[0] - c.pos[0], c.target[1] - c.pos[1], c.target[2] - c.pos[2]).normalize();
+      this.director.stringView = { pos: new Vector3(...c.pos), fwd, tanHalf: Math.tan((c.fov * Math.PI) / 360) };
+    } else this.director.stringView = null;
+    ropeBoldUniform.value = boost ? 1 : 0;
     this.director.apply(tl, t, playKey);
+    // 操偶線影子分遠近：線在台上的全劇非 G4 cue，遠景與天空改用不含線的影子貼圖（這一格重算那張貼圖）
+    if (this.keyNoStrings) {
+      let strung = false;
+      if (boost) this.actors.forEach((a) => { if (a.kind === 'rig' && a.root.visible) a.strings.forEach((st) => { if (st.last.visible) strung = true; }); });
+      noStringShadowUniform.value = strung ? 1 : 0;
+      const kn = this.keyNoStrings;
+      kn.position.copy(this.key.position);
+      kn.target.position.copy(this.key.target.position);
+      if (strung) kn.shadow.needsUpdate = true;
+    }
     // 程式角色（折折等）：不經過 PuppetDirector
     const chars = tl.cue.initialState.characters ?? {};
     this.programs.forEach((p, id) => p.apply(tl, t, chars[id], { light: this.director.light, playKey: `${tl.cue.id}#${playKey}`, lipsync: this.opts.lipsync ?? (() => undefined) }));
@@ -515,13 +579,20 @@ export class Stage {
     // 陰影貼圖屬於舊的 GL context，丟掉讓新渲染器重建
     this.key.shadow.map?.dispose();
     (this.key.shadow as unknown as { map: unknown }).map = null;
+    if (this.keyNoStrings) {
+      this.keyNoStrings.shadow.map?.dispose();
+      (this.keyNoStrings.shadow as unknown as { map: unknown }).map = null;
+      this.keyNoStrings.shadow.needsUpdate = true;
+    }
     this.createRenderer();
+    if (this.keyNoStrings) this.keyNoStrings.shadow.mapSize.copy(this.key.shadow.mapSize);
   }
 
   setQuality(q: Quality): void {
     if (q === this.quality) return;
     this.quality = q;
     this.key.shadow.radius = q === 'A' ? 4 : 2.5;
+    if (this.keyNoStrings) this.keyNoStrings.shadow.radius = this.key.shadow.radius;
     this.recreateRenderer();
     void this.precompile();
   }
@@ -581,8 +652,8 @@ export class Stage {
   }
 
   /** 擷取量測：操偶線（錨點、螢幕線寬）與角色外框（像素，繪圖緩衝座標） */
-  probe(): { curtain: number; strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[]; actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number]; parts?: Record<string, [number, number, number, number]>; opaque?: Record<string, [number, number, number, number]>; joints?: Record<string, [number, number]>; eyesBox?: [number, number, number, number] }[]; landmarks: Record<string, [[number, number], [number, number]]> } {
-    const strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[] = [];
+  probe(): { curtain: number; strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; widthTruePx?: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[]; actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number]; parts?: Record<string, [number, number, number, number]>; opaque?: Record<string, [number, number, number, number]>; joints?: Record<string, [number, number]>; eyesBox?: [number, number, number, number] }[]; landmarks: Record<string, [[number, number], [number, number]]> } {
+    const strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; widthTruePx?: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[] = [];
     const actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number]; parts?: Record<string, [number, number, number, number]>; opaque?: Record<string, [number, number, number, number]>; joints?: Record<string, [number, number]>; eyesBox?: [number, number, number, number] }[] = [];
     // 驗收量測用：物件與所有上層都可見才算顯示中
     const shown = (o: Object3D | null): boolean => { for (let q = o; q; q = q.parent) if (!q.visible) return false; return true; };
@@ -657,8 +728,15 @@ export class Stage {
         const side = L.bottom.clone().add(new Vector3(L.width, 0, 0));
         const sp = this.project(side);
         const dx = u[0] - b[0], dy = u[1] - b[1], dl = Math.hypot(dx, dy) || 1;
-        // 線寬（垂直於線的方向）＝水平投影寬度 × |cos|
+        // 線寬（垂直於線的方向）＝水平投影寬度 × |cos|（G4 起的量法；線斜時偏小）
         const widthPx = Math.abs(sp[0] - b[0]) * Math.abs(dy / dl);
+        // 實際畫出來的紙帶寬（G5 修正第 1 輪）：紙環上方那一段紙帶左右兩側頂點的螢幕距離，取垂直於線的分量
+        const ps = PaperString.PROBE_SEGMENT;
+        const [e0, e1] = s.edgePair(ps);
+        const q0 = this.project(e0), q1 = this.project(e1);
+        const ca = path[Math.max(0, ps - 1)] ?? b, cb = path[Math.min(path.length - 1, ps + 1)] ?? b;
+        const tdx = ca[0] - cb[0], tdy = ca[1] - cb[1], tdl = Math.hypot(tdx, tdy) || 1;
+        const widthTruePx = Math.round(Math.abs((q1[0] - q0[0]) * (tdy / tdl) - (q1[1] - q0[1]) * (tdx / tdl)) * 100) / 100;
         // 紙環中心與半徑（螢幕像素）：驗收包檢查扣點是否落在肢體剪影內
         let ringPx: [number, number] | undefined, ringRadiusPx: number | undefined;
         if (L.ring) {
@@ -666,7 +744,7 @@ export class Stage {
           const e = this.project(L.ring.clone().add(new Vector3(L.ringD / 2, 0, 0)));
           ringRadiusPx = Math.abs(e[0] - ringPx[0]);
         }
-        strings.push({ actor: id, anchor: n, anchorPx: b, widthPx, visible: true, dir: [dx / dl, dy / dl], path, ringPx, ringRadiusPx });
+        strings.push({ actor: id, anchor: n, anchorPx: b, widthPx, widthTruePx, visible: true, dir: [dx / dl, dy / dl], path, ringPx, ringRadiusPx });
       });
     });
     // 程式角色（折折等）：只量外框

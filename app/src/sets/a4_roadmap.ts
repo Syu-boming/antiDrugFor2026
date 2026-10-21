@@ -237,8 +237,8 @@ export const A4_MAP_CAMERAS: Record<string, CameraPreset> = {
   a4_map_rise: { pos: [-1.6, 7.2, 3.85], target: [-1.6, 1.5, -1.1], fov: 20 },
   /** 低一點的斜看（a4_c008 剪影幕收回地圖、地圖變回街道；鏡頭在台口外但低於台口上緣） */
   a4_map_low: { pos: [-1.8, 6.2, 13.8], target: [-1.8, 0.3, 0], fov: 20 },
-  /** 剪影幕正面（a4_c004） */
-  a4_sil: { pos: [-1.5, 2.95, 16.0], target: [-1.5, 2.75, -0.75], fov: 20 },
+  /** 剪影幕正面（a4_c004）：G5 修正第 1 輪拉近、放平，整個畫面都是背光的幕（下緣不再露出地圖；剪影在字幕區之上） */
+  a4_sil: { pos: [-2.1, 2.55, 13.25], target: [-2.1, 2.55, -0.75], fov: 20 },
 };
 
 // ------------------------------------------------------------------ 景
@@ -358,22 +358,37 @@ export function buildA4Roadmap(ctx: SetContext): BuiltSet {
   trail.position.y = MAP_Y + 0.009;
   trail.renderOrder = LAYER.backdrop.order + 5;
   group.add(trail);
-  // 紙剪小車（俯視，平躺在地圖上；有一點厚度的影子）
+  // 紙剪小車（俯視，平躺在地圖上）＋影子：車身剪影的 alpha 羽化（G5 修正第 1 輪：原本是一張長方形半透明卡片）
+  // 影子跟著車子轉向，偏移量固定在畫面右下（世界 +x、+z 約 0.022＝俯視鏡位 6–8 px），不透明度 0.25
   const carHolder = new Group();
-  const car = keep(imagePlane(img('car'), 1.0));
-  const carShadow = new Mesh(new PlaneGeometry(1.0, 0.56), new MeshBasicMaterial({ color: 0x3a2a1c, transparent: true, opacity: 0.28, depthWrite: false }));
-  if (car) {
+  const carImg = img('car');
+  const car = keep(imagePlane(carImg, 1.0));
+  const shadowHolder = new Group();
+  if (car && carImg) {
     car.geometry.translate(0, -(car.userData.h as number) / 2, 0);
     car.rotation.x = -Math.PI / 2;
     car.position.y = 0.05;
     car.castShadow = true;
     car.renderOrder = LAYER.mid.order + 50;
-    carShadow.rotation.x = -Math.PI / 2;
-    carShadow.position.set(0.04, 0.02, 0.05);
-    carShadow.renderOrder = LAYER.backdrop.order + 6;
-    carHolder.add(carShadow, car);
+    carHolder.add(car);
+    const pad = 16;
+    const [c, g] = makeCanvas(carImg.naturalWidth + pad * 2, carImg.naturalHeight + pad * 2);
+    g.filter = 'blur(6px)';
+    g.drawImage(carImg, pad, pad);
+    g.filter = 'none';
+    g.globalCompositeOperation = 'source-in';
+    g.fillStyle = '#2a1b10';
+    g.fillRect(0, 0, c.width, c.height);
+    const sm = new MeshBasicMaterial({ map: finishTexture(new CanvasTexture(c)), transparent: true, opacity: 0.25, depthWrite: false });
+    mats.push(sm);
+    const k = 1.0 / carImg.naturalWidth;
+    const sh = new Mesh(new PlaneGeometry(c.width * k, c.height * k), sm);
+    sh.rotation.x = -Math.PI / 2;
+    sh.position.y = 0.012;
+    sh.renderOrder = LAYER.backdrop.order + 6;
+    shadowHolder.add(sh);
   }
-  group.add(carHolder);
+  group.add(shadowHolder, carHolder);
   // 立體書小屋
   const pops: { g: Group; from: number; to: number; walker: boolean }[] = [];
   for (const [u, v, name, w, from, to] of POPS) {
@@ -454,6 +469,10 @@ export function buildA4Roadmap(ctx: SetContext): BuiltSet {
       carHolder.rotation.y = -Math.atan2(smp.dir[1], smp.dir[0]);
       carHolder.scale.setScalar(Math.max(0.001, popEase(carPop)));
       carHolder.visible = carPop > 0.002;
+      shadowHolder.position.set(carHolder.position.x + 0.022, MAP_Y, carHolder.position.z + 0.022);
+      shadowHolder.rotation.y = carHolder.rotation.y;
+      shadowHolder.scale.copy(carHolder.scale);
+      shadowHolder.visible = carHolder.visible;
       // 鉛筆線：畫到車尾
       const tail = Math.max(0, s - 0.42);
       let n = 0;
