@@ -399,7 +399,7 @@
   "since": "2026-10-21",
   "decision": "DECISIONS.md D-G3-07（使用者：全部改用 ElevenLabs，不用 edge-tts）",
   "build": "tools/vo_el_prod.py（合成＋自動檢查）→ tools/vo_el_promote.py（升為 audio/vo 的 v04）",
-  "license": "Starter 付費方案；兒童用途書面核准待 ElevenLabs 回覆（review/G3/el/license_evidence.md）",
+  "license": "Starter 付費方案（商用授權）；兒童用途：2026-10-21 已取得 ElevenLabs 書面回覆（教育用途＋監督＋聲線庫聲線），見 review/G3/el/elevenlabs_reply_20261021.md",
   "roles": {
    "阿樂叔叔": {
     "code": "ale",

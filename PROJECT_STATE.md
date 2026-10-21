@@ -16,7 +16,7 @@
 
 ## 技術骨架（2026-10-20 完成）
 app/ 引擎：G4 版（影像紙偶、整體描邊、紙繩操偶線、摺疊布幕、FX4／FX8、臉部換片與對嘴）；typecheck／build 通過，engine-test 86/86，capture 0 錯誤 0 外部請求。第 1 天 QA 待修 7 項已全部修完（commit bc116ad）。
-配音（2026-10-21 更新）：Starter 付費方案；全劇 201 句 ElevenLabs eleven_v3（11 個聲線庫聲線），tools/vo_el_prod.py 合成＋自動檢查 → tools/vo_el_promote.py 升為 audio/vo 的 v04；edge-tts 舊檔封存在 audio/_archive_edge/、不打包。兒童用途書面核准待 ElevenLabs 回覆。配樂與音效全部自製（FluidR3_GM，MIT）。engine-test 102/102。
+配音（2026-10-21 更新）：Starter 付費方案；全劇 201 句 ElevenLabs eleven_v3（11 個聲線庫聲線），tools/vo_el_prod.py 合成＋自動檢查 → tools/vo_el_promote.py 升為 audio/vo 的 v04；edge-tts 舊檔封存在 audio/_archive_edge/、不打包。兒童用途已取得 ElevenLabs 書面回覆（review/G3/el/elevenlabs_reply_20261021.md）。配樂與音效全部自製（FluidR3_GM，MIT）。engine-test 102/102。
 
 ## 本時段目標（第 2 天下午起）
 G5 各幕兩批（第 3 天 09:00）：素材量產、六幕 cue 與表演、教師控制台。G4 未達 4 分的美術項目不當基準，改用 REVIEW.md G4 關卡決定列的目標（操偶線平面紙繩 v02 已做好；同場角色組成群體與前後景深）。
@@ -26,4 +26,4 @@ G5 各幕兩批（第 3 天 09:00）：素材量產、六幕 cue 與表演、教
 2. 金鑰：ElevenLabs 新金鑰可用（TTS、讀聲線、聲線設計），存於 .env（不進 Git）。配樂與音效改自製，Artlist 不再需要。
 3. 第 3 天實機彩排：待排。
 4. 試聽頁 https://claude.ai/artifact/35yBSYoPKVCWFSDB8m6r3y ：已完成（5 號定版；A–G 使用者回覆 OK）。
-5. ElevenLabs 兒童用途書面核准：取得後轉給主線記進 ASSETS.md。
+5. ElevenLabs 兒童用途書面回覆：已取得（2026-10-21），請保存原始郵件（含寄件地址、日期）；課前知會學務處、輔導室時一併說明配音使用 AI 聲線庫。
