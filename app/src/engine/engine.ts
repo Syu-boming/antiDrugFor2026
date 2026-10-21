@@ -23,6 +23,7 @@ import type { Stage, Quality } from '../stage/stage';
 import type { UI } from '../ui/ui';
 import type { InputController } from './input';
 import type { LipsyncData } from '../stage/perform';
+import { HOLD_MUSIC_RATIO, HOLD_TC } from '../audio/ducking';
 import { saveSettings, type Config } from '../config';
 
 export type Mode = 'loading' | 'preparing' | 'waiting' | 'playing' | 'context_lost' | 'error';
@@ -45,10 +46,10 @@ export interface EngineState {
   mode: Mode; phase: Phase; phaseLabel: string; paused: boolean; pauseReason: string | null;
   cueId: string | null; cueIndex: number; kind: string | null; title: string;
   cueTime: number; cueDuration: number; revealed: boolean; quizVisible: boolean; lampsLit: number[];
-  placeholderAudio: boolean; activeVoices: number; voiceIds: string[]; subtitle: string;
+  placeholderAudio: boolean; activeVoices: number; voiceIds: string[]; voSounding: number; subtitle: string;
   missingAudio: string[]; castReport: string[]; set: string; actors: string[];
   world: { curtain: number; titleCard: number; set: number; desat: number; spot: number; light: number } | null;
-  clock: string; audioState: string; avOffsetMs: number; quality: Quality; lock30: boolean; playId: number;
+  clock: string; audioState: string; avOffsetMs: number; leadInMs: number; quality: Quality; lock30: boolean; playId: number;
   ignoredInputs: number; ignoredRepeats: number; blockedKeys: number; lastBlockedKey: string | null;
   fps: number; contextLost: boolean; errors: string[]; warnings: string[]; gpu: string;
 }
@@ -80,11 +81,14 @@ export class Engine {
   validation: ValidationResult | null = null;
   errors: string[] = [];
   avOffsetMs: number;
+  /** 每段開頭的靜音（毫秒；HDMI 吞音時加長） */
+  leadInMs: number;
   lock30: boolean;
   private lastWorld: WorldState | null = null;
 
   constructor(private cfg: Config, private stage: Stage, private ui: UI, private mixer: Mixer, private input: InputController) {
     this.avOffsetMs = cfg.avOffsetMs;
+    this.leadInMs = cfg.leadInMs;
     this.lock30 = cfg.lock30;
     this.clock = cfg.capture ? new VirtualClock(1 / cfg.stepFps) : new PerformanceClock(() => this.avOffsetMs);
     stage.onContextLost = () => this.onContextLost();
@@ -95,8 +99,11 @@ export class Engine {
     document.addEventListener('freeze', () => this.autoPause('freeze'));
     if (mixer.ctx) {
       mixer.ctx.addEventListener('statechange', () => {
-        const st = mixer.ctx!.state as string;
-        if (this.clock.kind === 'audio' && !this.clock.paused && st !== 'running') this.autoPause('audio');
+        const st = mixer.ctx!.state as string; // suspended／interrupted（Safari）／closed 都當成被系統停掉
+        if (this.clock.kind !== 'audio') return;
+        if (!this.clock.paused && st !== 'running') this.autoPause('audio');
+        // 系統自己恢復了音訊、但引擎還在暫停（等老師按鍵）：再停一次，聲音與畫面保持同一個時鐘
+        else if (this.paused && st === 'running') void mixer.ctx!.suspend().catch(() => undefined);
       });
     }
   }
@@ -199,6 +206,7 @@ export class Engine {
     }
     if (this.stage.contextLost) await this.stage.rebuild();
     else await this.stage.precompile();
+    this.warmUp();
     this.ui.ready.show(false);
     this.enterWaiting(0);
   }
@@ -279,6 +287,25 @@ export class Engine {
     if (this.mode === 'playing' && !this.paused && !this.capturing) this.pause(reason);
   }
 
+  /**
+   * 預熱（G4 修正第 28 項）：開演前在準備畫面後面把每個 cue 的開頭、中間、結尾各畫一次，
+   * 讓錨點鏡位、紙偶姿勢、臉部換片與陰影的貼圖上傳和著色器變體都先做完，播放中不會第一次才做而卡一下。
+   */
+  private warmUp(): void {
+    if (this.stage.contextLost || !this.timelines.length) return;
+    const t0 = performance.now();
+    for (const tl of this.timelines) {
+      for (const t of [0, tl.duration * 0.5, tl.duration]) {
+        const world = evaluateWorld(tl, t, this.lampsBefore(tl.index), this.stage.cameraResolver(tl));
+        this.stage.apply(world, tl, t, `warm#${tl.index}`);
+        this.stage.render();
+      }
+    }
+    this.stage.director.reset();
+    this.warmMs = performance.now() - t0;
+  }
+  warmMs = 0;
+
   // ---------------------------------------------------------------- 狀態轉換
 
   private playCue(i: number): void {
@@ -294,7 +321,8 @@ export class Engine {
     else {
       // 瀏覽器在背景時可能把 AudioContext 停掉；按鍵當下恢復
       if (this.clock.kind === 'audio' && this.mixer.ctx && this.mixer.ctx.state !== 'running') void this.mixer.ctx.resume();
-      this.cueStart = this.clock.now() + this.clock.lead();
+      // 每段開頭的靜音（HDMI 吞音時由教師選單加長）：畫面停在第一格、聲音一起延後
+      this.cueStart = this.clock.now() + this.clock.lead() + this.leadInMs / 1000;
     }
     this.scheduleAudio(tl);
     this.renderNow(performance.now());
@@ -312,7 +340,10 @@ export class Engine {
     if (music === 'none') this.mixer.crossfadeMusic('none', at(0), { fade: 1.0 });
     else if (music && this.mixer.musicId !== music) this.mixer.crossfadeMusic(music, at(0), { loop: tl.cue.musicLoop ?? true, fade: 1.0 });
     for (const m of tl.music) this.mixer.crossfadeMusic(m.id, at(m.at), { loop: m.loop, fade: m.fade, gain: m.gain, offset: m.offset });
-    this.mixer.setMusicLevel(tl.cue.musicLevel ?? MUSIC_LEVEL[tl.cue.kind] ?? 0.6, at(0));
+    const level = tl.cue.musicLevel ?? MUSIC_LEVEL[tl.cue.kind] ?? 0.6;
+    this.mixer.setMusicLevel(level, at(0));
+    // 教師停格：劇情段落播完、停住等老師時，配樂慢慢降到約 −20 dB（3 秒內 ≤ −35 LUFS）
+    if (tl.cue.kind === 'scene' && !tl.cue.autoAdvance) this.mixer.scheduleMusicLevel(level * HOLD_MUSIC_RATIO, at(tl.duration), HOLD_TC);
     this.mixer.scheduleDucking(intervals);
   }
 
@@ -439,6 +470,30 @@ export class Engine {
   // ---------------------------------------------------------------- 設定
 
   setAvOffset(ms: number): void { this.avOffsetMs = Math.round(ms); saveSettings({ avOffsetMs: this.avOffsetMs }); }
+  setLeadIn(ms: number): void { this.leadInMs = Math.max(0, Math.min(2000, Math.round(ms))); saveSettings({ leadInMs: this.leadInMs }); }
+
+  /**
+   * 測試用：每個正在播的配音「現在被聽到的檔內秒數」與字幕時間軸的差（毫秒）。
+   * 聽到的位置＝AudioContext 時間 − 輸出延遲 − 開始時間＋檔內起點；字幕時間軸＝目前 cue 時間 − 該句起點。
+   */
+  voiceSync(): { id: string; heard: number; expected: number; diffMs: number }[] {
+    const ctx = this.mixer.ctx as (AudioContext & { outputLatency?: number }) | null;
+    const tl = this.timelines[this.index];
+    if (!ctx || !tl) return [];
+    const lat = ctx.outputLatency || ctx.baseLatency || 0;
+    const t = this.displayTime();
+    const out: { id: string; heard: number; expected: number; diffMs: number }[] = [];
+    for (const v of this.mixer.voiceTimings()) {
+      if (v.bus !== 'vo') continue;
+      const l = tl.lines.find((x) => x.audioId === v.id);
+      if (!l) continue;
+      const heard = ctx.currentTime - lat - v.when + v.offset;
+      if (heard < 0 || t < l.start) continue; // 還沒開始
+      const expected = t - l.start;
+      out.push({ id: v.id, heard: Math.round(heard * 1000) / 1000, expected: Math.round(expected * 1000) / 1000, diffMs: Math.round((heard - expected) * 1000) });
+    }
+    return out;
+  }
   setLock30(on: boolean): void { this.lock30 = on; saveSettings({ lock30: on }); }
   setQuality(q: Quality): void { this.stage.setQuality(q); saveSettings({ quality: q }); this.resize(); }
 
@@ -477,11 +532,11 @@ export class Engine {
       revealed: !!w && tl?.cue.kind === 'reveal' && w.quizReveal >= 0.5,
       quizVisible: !!w && w.quizVisible > 0.5,
       lampsLit: w ? w.lamps.map((v, i) => (v >= 0.99 ? i + 1 : 0)).filter(Boolean) : [],
-      placeholderAudio: !!tl?.placeholder, activeVoices: this.mixer.activeVoices, voiceIds: this.mixer.activeIds(),
+      placeholderAudio: !!tl?.placeholder, activeVoices: this.mixer.activeVoices, voiceIds: this.mixer.activeIds(), voSounding: this.mixer.sounding('vo'),
       subtitle: this.ui.subs.currentText, missingAudio: [...this.missingAudio], castReport: [...this.stage.castReport], set: this.stage.setName,
       actors: [...this.stage.actors.keys()],
       world: w ? { curtain: w.curtain, titleCard: w.titleCard, set: w.set, desat: w.desat, spot: w.spot, light: w.light } : null,
-      clock: this.clock.kind, audioState: this.mixer.state, avOffsetMs: this.avOffsetMs,
+      clock: this.clock.kind, audioState: this.mixer.state, avOffsetMs: this.avOffsetMs, leadInMs: this.leadInMs,
       quality: this.stage.quality, lock30: this.lock30, playId: this.playId,
       ignoredInputs: this.ignoredInputs, ignoredRepeats: this.input.ignoredRepeats, blockedKeys: this.input.blocked,
       lastBlockedKey: this.input.lastBlockedKey, fps: Math.round(this.fpsEma * 10) / 10, contextLost: this.stage.contextLost,

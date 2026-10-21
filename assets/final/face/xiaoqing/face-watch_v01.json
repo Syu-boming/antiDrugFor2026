@@ -1,0 +1,210 @@
+{
+ "character": "xiaoqing",
+ "zh": "小晴",
+ "version": "v01",
+ "head_image": {
+  "file": "assets/final/chr-xiaoqing_pose-watch_v05.png",
+  "image_id": "chr-xiaoqing_pose-watch",
+  "size": [
+   544,
+   1520
+  ],
+  "note": "頭部圖＝整張姿勢圖 chr-xiaoqing_pose-watch（沒有拆頭層；座標以 assets/final 裁切後的圖為準）"
+ },
+ "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs）；本檔的 JSON id＝face/<角色>/face。",
+ "coords": "anchor_px＝換片左上角在頭部圖上的像素座標（y 向下）；同一組（嘴、眼）所有換片同錨點、同尺寸，直接疊在頭部圖上即可。",
+ "z_order": "頭部圖 < 眼睛換片 < 嘴巴換片（兩組不重疊）；換片永遠畫在頭部圖正上方、同一變換。",
+ "swap_rule": "硬切換（不做透明度交叉淡化，角色表 0.6）；眨眼：eyes_closed 停 2–3 格（12 fps），每 3–6 秒一次；轉頭／情緒轉折時加眨一次。",
+ "lipsync_map": {
+  "0": "mouth_closed",
+  "1": "mouth_half",
+  "2": "mouth_open",
+  "3": "mouth_round"
+ },
+ "rest_mouth": "mouth_smile",
+ "rest_eyes": "eyes_open",
+ "groups": {
+  "mouth": {
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ]
+  },
+  "eyes": {
+   "anchor_px": [
+    118,
+    186
+   ],
+   "size": [
+    158,
+    100
+   ]
+  }
+ },
+ "pieces": {
+  "mouth_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_closed_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_closed",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 217
+  },
+  "mouth_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_half_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_half",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 399
+  },
+  "mouth_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_open",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 794
+  },
+  "mouth_round": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_round_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_round",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 386
+  },
+  "mouth_worried": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_worried_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_worried",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 210
+  },
+  "mouth_smile": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_smile_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-mouth_smile",
+   "group": "mouth",
+   "anchor_px": [
+    136,
+    272
+   ],
+   "size": [
+    70,
+    56
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-eyes_open",
+   "group": "eyes",
+   "anchor_px": [
+    118,
+    186
+   ],
+   "size": [
+    158,
+    100
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_half_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-eyes_half",
+   "group": "eyes",
+   "anchor_px": [
+    118,
+    186
+   ],
+   "size": [
+    158,
+    100
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 2151
+  },
+  "eyes_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_closed_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_watch-eyes_closed",
+   "group": "eyes",
+   "anchor_px": [
+    118,
+    186
+   ],
+   "size": [
+    158,
+    100
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 3324
+  }
+ },
+ "colors": {
+  "line": [
+   78,
+   40,
+   23
+  ],
+  "inside": [
+   190,
+   80,
+   62
+  ],
+  "tongue": [
+   236,
+   140,
+   120
+  ],
+  "lash": [
+   36,
+   19,
+   10
+  ]
+ },
+ "stage_scale_hint": 0.32,
+ "expression_hint": "姿勢圖本身是擔心眉；X4 驚訝＝eyes_open＋mouth_round（原圖）；X5 擔心＝eyes_open＋mouth_worried；說話時 lipsync。",
+ "pose": "watch"
+}

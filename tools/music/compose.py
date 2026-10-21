@@ -381,12 +381,13 @@ def m4_light(name='music_m4_light', reps: int = 1):
         s.note('cel', 'F#5', base + 6.0, 2.0, 24)
         s.note('cel', 'D5', base + 22.0, 2.0, 24)
     return {
-        'song': s, 'kind': 'loop', 'length': loop, 'target': -27.0,
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
         'render': dict(reverb_room=0.7, reverb_level=0.55, reverb_damp=0.45),
         'tempo': '自由速度（長音 16 秒換一次和弦）', 'key': 'B 小調 → G 大調',
         'mood': '很輕的靜止張力；停格等老師時也不打擾',
         'instruments': '低音提琴長音、慢速弦樂墊、大提琴撥弦（極輕）、鋼片琴微光',
-        'sync': '一圈 32.0 秒；0.0 s Bm、16.0 s G；撥弦短句 2.0、9.0、18.0、25.0 s；循環接縫在 32.0 s。整合響度刻意比底樂低 3 LU（−27 LUFS）。',
+        'sync': '一圈 32.0 秒；0.0 s Bm、16.0 s G；撥弦短句 2.0、9.0、18.0、25.0 s；循環接縫在 32.0 s。v01 整合響度刻意比底樂低 3 LU（−27 LUFS）；v02（G3 修正第 1 輪）改回底樂同級 −24 LUFS：'
+                '避讓 0.56 下必要旁白比背景高約 17 LU、句間停頓背景約 −32 LUFS（v01 是 20 LU、−35～−37），停格時改由引擎淡到 0.10×。',
     }
 
 

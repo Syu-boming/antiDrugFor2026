@@ -1,0 +1,32 @@
+{
+ "a3_c004_02": {
+  "seconds": 5.57,
+  "speech_start": 0.12,
+  "speech_end": 5.32,
+  "speech_segments": [
+   [
+    0.11,
+    5.32
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/out/vo_a3_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/lipsync/a3_c004_02_el01.json",
+  "role": "折折",
+  "text": "再加上口訣和動作：不碰、不試；先離開，找大人。"
+ },
+ "a7_c002_01": {
+  "seconds": 2.68,
+  "speech_start": 0.12,
+  "speech_end": 2.43,
+  "speech_segments": [
+   [
+    0.12,
+    2.43
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/out/vo_a7_c002_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/lipsync/a7_c002_01_el01.json",
+  "role": "折折",
+  "text": "最後，大家一起做一次口訣！"
+ }
+}

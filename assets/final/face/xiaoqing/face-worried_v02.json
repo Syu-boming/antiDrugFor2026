@@ -1,0 +1,196 @@
+{
+ "character": "xiaoqing",
+ "zh": "小晴",
+ "version": "v02",
+ "head_image": {
+  "file": "assets/final/chr-xiaoqing_pose-worried_v05.png",
+  "image_id": "chr-xiaoqing_pose-worried",
+  "size": [
+   528,
+   1468
+  ],
+  "note": "頭部圖＝整張姿勢圖 chr-xiaoqing_pose-worried（沒有拆頭層；座標以 assets/final 裁切後的圖為準）"
+ },
+ "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs）；本檔的 JSON id＝face/<角色>/face。",
+ "coords": "anchor_px＝換片左上角在頭部圖上的像素座標（y 向下）；同一組（嘴、眼）所有換片同錨點、同尺寸，直接疊在頭部圖上即可。",
+ "z_order": "頭部圖 < 眼睛換片 < 嘴巴換片（兩組不重疊）；換片永遠畫在頭部圖正上方、同一變換。",
+ "swap_rule": "硬切換（不做透明度交叉淡化，角色表 0.6）；眨眼：eyes_closed 停 2–3 格（12 fps），每 3–6 秒一次；轉頭／情緒轉折時加眨一次。",
+ "lipsync_map": {
+  "0": "mouth_closed",
+  "1": "mouth_half",
+  "2": "mouth_open",
+  "3": "mouth_round"
+ },
+ "rest_mouth": "mouth_worried",
+ "rest_eyes": "eyes_open",
+ "groups": {
+  "mouth": {
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ]
+  },
+  "eyes": {
+   "anchor_px": [
+    102,
+    184
+   ],
+   "size": [
+    152,
+    100
+   ]
+  }
+ },
+ "pieces": {
+  "mouth_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_closed_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-mouth_closed",
+   "group": "mouth",
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 164
+  },
+  "mouth_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_half_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-mouth_half",
+   "group": "mouth",
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 325
+  },
+  "mouth_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-mouth_open",
+   "group": "mouth",
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 738
+  },
+  "mouth_round": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_round_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-mouth_round",
+   "group": "mouth",
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 319
+  },
+  "mouth_worried": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_worried_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-mouth_worried",
+   "group": "mouth",
+   "anchor_px": [
+    118,
+    280
+   ],
+   "size": [
+    64,
+    52
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_open": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_open_v01.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-eyes_open",
+   "group": "eyes",
+   "anchor_px": [
+    102,
+    184
+   ],
+   "size": [
+    152,
+    100
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_half": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_half_v02.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-eyes_half",
+   "group": "eyes",
+   "anchor_px": [
+    102,
+    184
+   ],
+   "size": [
+    152,
+    100
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 2637
+  },
+  "eyes_closed": {
+   "file": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_closed_v02.png",
+   "image_id": "face/xiaoqing/chr-xiaoqing_worried-eyes_closed",
+   "group": "eyes",
+   "anchor_px": [
+    102,
+    184
+   ],
+   "size": [
+    152,
+    100
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 4033
+  }
+ },
+ "colors": {
+  "line": [
+   75,
+   23,
+   7
+  ],
+  "inside": [
+   190,
+   80,
+   62
+  ],
+  "tongue": [
+   236,
+   140,
+   120
+  ],
+  "lash": [
+   49,
+   25,
+   12
+  ]
+ },
+ "stage_scale_hint": 0.32,
+ "expression_hint": "姿勢圖本身是擔心眉；X4 驚訝＝eyes_open＋mouth_round（原圖）；X5 擔心＝eyes_open＋mouth_worried；說話時 lipsync。",
+ "pose": "worried",
+ "change_log": "v02／v04（G4 修正第 2 輪）：eyes_half、eyes_closed 兩眼都換成同款線（閉眼＝中性閉眼線、半閉＝上半眼改眼皮），修正第 1 輪遠側眼沒閉（眨單眼）與淡化殘影；嘴巴換片與睜眼原圖不變。檢查：review/G4/art/blink_check_r2.json"
+}

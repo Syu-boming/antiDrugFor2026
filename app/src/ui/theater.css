@@ -65,7 +65,8 @@ body.show-cursor, body.capture { cursor: default; }
     -0.025em -0.025em #120d0a, 0.025em -0.025em #120d0a, -0.025em 0.025em #120d0a, 0.025em 0.025em #120d0a;
 }
 .sub-tag { display: flex; flex-direction: column; align-items: center; gap: 0.08em; font-size: 0.42em; min-width: 3.4em; }
-.sub-avatar { width: 1.9em; height: 1.9em; border-radius: 0.3em; border: 0.12em solid rgba(255, 255, 255, 0.75); }
+.sub-avatar { width: 2.1em; height: 2.1em; border-radius: 50%; background: center / contain no-repeat; }
+.sub-avatar[hidden] { display: none; }
 .sub-name { white-space: nowrap; font-weight: 700; letter-spacing: 0.04em; }
 .sub-row { white-space: nowrap; }
 

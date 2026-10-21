@@ -87,12 +87,14 @@ export interface TeacherMenuHandlers {
   setQuality(q: 'A' | 'B'): void;
   getLock30(): boolean;
   setLock30(on: boolean): void;
+  getLeadIn(): number;
+  setLeadIn(ms: number): void;
   cues(): { id: string; title: string }[];
   gotoCue(id: string): void;
   status(): string;
 }
 
-/** 教師選單（M 鍵開關，預設隱藏）：聲畫偏移、畫質、鎖 30 fps、跳到 cue、按鍵測試 */
+/** 教師選單（M 鍵開關，預設隱藏）：聲畫偏移、開頭靜音（HDMI 吞音）、畫質、鎖 30 fps、跳到 cue、按鍵測試 */
 export class TeacherMenu {
   private keyLine: HTMLElement;
   private statusLine: HTMLElement;
@@ -101,6 +103,7 @@ export class TeacherMenu {
     el.innerHTML = `
       <div class="tm-title">教師選單（M 鍵關閉）</div>
       <div class="tm-row"><span>聲畫偏移</span><button data-av="-10">−10</button><b class="tm-av"></b><button data-av="10">＋10</button><span class="tm-hint">毫秒，正值＝畫面提前</span></div>
+      <div class="tm-row"><span>開頭靜音</span><button data-lead="0">0</button><button data-lead="200">200</button><button data-lead="400">400</button><span class="tm-hint">毫秒；接投影機時第一個字被吃掉就加長</span></div>
       <div class="tm-row"><span>畫質</span><button data-q="A">A 級</button><button data-q="B">B 級</button></div>
       <div class="tm-row"><span>更新率</span><button data-lock="1">鎖 30 fps</button><button data-lock="0">不鎖</button></div>
       <div class="tm-row"><span>跳到</span><select class="tm-cue"></select><button data-go="1">前往</button></div>
@@ -114,6 +117,7 @@ export class TeacherMenu {
       if (!b) return;
       if (b.dataset.av) h.setAvOffset(h.getAvOffset() + Number(b.dataset.av));
       if (b.dataset.q) h.setQuality(b.dataset.q as 'A' | 'B');
+      if (b.dataset.lead) h.setLeadIn(Number(b.dataset.lead));
       if (b.dataset.lock) h.setLock30(b.dataset.lock === '1');
       if (b.dataset.go) h.gotoCue((el.querySelector('.tm-cue') as HTMLSelectElement).value);
       b.blur();
@@ -133,6 +137,7 @@ export class TeacherMenu {
     this.avValue.textContent = String(this.h.getAvOffset());
     this.statusLine.textContent = this.h.status();
     this.el.querySelectorAll<HTMLButtonElement>('button[data-q]').forEach((b) => b.classList.toggle('on', b.dataset.q === this.h.getQuality()));
+    this.el.querySelectorAll<HTMLButtonElement>('button[data-lead]').forEach((b) => b.classList.toggle('on', Number(b.dataset.lead) === this.h.getLeadIn()));
     this.el.querySelectorAll<HTMLButtonElement>('button[data-lock]').forEach((b) => b.classList.toggle('on', (b.dataset.lock === '1') === this.h.getLock30()));
   }
 }

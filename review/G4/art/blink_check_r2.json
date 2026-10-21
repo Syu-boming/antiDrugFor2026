@@ -1,0 +1,196 @@
+{
+ "rule": "每張 eyes_half／eyes_closed 換片疊回頭部圖後，兩隻眼分別檢查：remain_ratio＝原本眼白／眼珠像素在換片後仍看得到的比例（半閉只算上半眼，下半眼是刻意保留）；lid_line_dark_px＝橢圓內新眼皮線的深色像素數。門檻：每隻眼 remain_ratio ≤ 0.03 且線 ≥ 40 px。",
+ "closed_style": "中性閉眼線：近乎平直、略往下彎（closed_curve 0.05），不是向上拱的笑眼",
+ "results": {
+  "xiaoqing-reach": {
+   "eyes_half": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1622,
+     "checked_px": 752,
+     "remain_px": 2,
+     "remain_ratio": 0.0027,
+     "lid_line_dark_px": 246
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2243,
+     "checked_px": 994,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 315
+    }
+   ],
+   "eyes_closed": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1622,
+     "checked_px": 1325,
+     "remain_px": 2,
+     "remain_ratio": 0.0015,
+     "lid_line_dark_px": 139
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2243,
+     "checked_px": 1838,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 180
+    }
+   ]
+  },
+  "xiaoyu-stepback": {
+   "eyes_half": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1265,
+     "checked_px": 563,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 203
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 1725,
+     "checked_px": 765,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 248
+    }
+   ],
+   "eyes_closed": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1265,
+     "checked_px": 1006,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 115
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 1725,
+     "checked_px": 1396,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 147
+    }
+   ]
+  },
+  "xiaoqing-watch": {
+   "eyes_half": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1100,
+     "checked_px": 482,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 189
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2146,
+     "checked_px": 959,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 315
+    }
+   ],
+   "eyes_closed": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1100,
+     "checked_px": 873,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 103
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2146,
+     "checked_px": 1740,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 179
+    }
+   ]
+  },
+  "xiaoqing-palm": {
+   "eyes_half": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1687,
+     "checked_px": 769,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 251
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2467,
+     "checked_px": 1143,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 328
+    }
+   ],
+   "eyes_closed": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1687,
+     "checked_px": 1392,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 139
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2467,
+     "checked_px": 2047,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 186
+    }
+   ]
+  },
+  "xiaoqing-worried": {
+   "eyes_half": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1347,
+     "checked_px": 588,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 220
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2298,
+     "checked_px": 1037,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 312
+    }
+   ],
+   "eyes_closed": [
+    {
+     "eye": "左（畫面左）",
+     "core_px": 1347,
+     "checked_px": 1088,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 113
+    },
+    {
+     "eye": "右（畫面右）",
+     "core_px": 2298,
+     "checked_px": 1889,
+     "remain_px": 0,
+     "remain_ratio": 0.0,
+     "lid_line_dark_px": 182
+    }
+   ]
+  }
+ }
+}

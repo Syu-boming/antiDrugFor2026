@@ -1,0 +1,167 @@
+{
+ "code": "narrator",
+ "lines": [],
+ "attempts": 2,
+ "variants": {
+  "Door_v3_head": {
+   "role": "旁白",
+   "code": "narrator",
+   "status": "active",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "voice_name": "Door Chow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.92,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "電紫煙",
+    "使喚": "使換",
+    "家長": "家掌"
+   },
+   "post": {
+    "auto_stretch": {
+     "target": 4.2,
+     "tolerance": 0.5,
+     "min": 0.93,
+     "max": 1.15
+    }
+   },
+   "adaptive_speed": {
+    "enabled": false,
+    "step": 0.03,
+    "min": 0.85,
+    "max": 1.1,
+    "note": "eleven_v3 不理會 speed：同文字 speed 0.7 與 1.2 正文長度 1.64／1.63 秒（2026-10-21 試跑，audio/vo_el/_raw/x_speedtest/）；換成 v2 再開"
+   },
+   "targets": {
+    "rate_nominal": [
+     3.8,
+     4.0
+    ],
+    "rate_cps_net": [
+     3.3,
+     4.5
+    ],
+    "f0_nominal": 185.0,
+    "f0_hz": [
+     164.8,
+     207.7
+    ],
+    "source": "角色表第 3 節（3.8–4.0；必要旁白約 3.5）；casting.json 旁白 note（F0 185 Hz）"
+   },
+   "lines": {
+    "a0_c001_01": {
+     "text_subs": {
+      "小燈鎮": "小登鎮",
+      "鎮上": "震上"
+     }
+    }
+   },
+   "source": "任務指定起點 Door v3；review/G3/el/library/INDEX.md 3.1（Door v3 eleven_v3 排名第一）；試聲線 review/G3/el/full/voice_trials/narrator/",
+   "note": "Door v3 在試聲線中：「電子煙」兩次都轉成「電洗煙」→ 合成用「電紫煙」（2/2 兩個模型都轉寫正確）；「使喚」4/4 轉成「使款／使寬」→ 合成用「使換」（同音 shǐ huàn）；「家長」林老師兩個聲線都轉成「家場／交響」→ 合成用「家掌」。auto_stretch：淨語速超出 3.3–4.5 才放慢／加快到 4.2（夾在 0.93–1.15 倍）。",
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "trial_lines": [
+    "a2_c010_01",
+    "a0_c001_01"
+   ]
+  },
+  "Door_v3_head_zj": {
+   "role": "旁白",
+   "code": "narrator",
+   "status": "active",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "voice_name": "Door Chow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.92,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "電紫煙",
+    "使喚": "使換",
+    "家長": "家掌",
+    "正解": "正姐"
+   },
+   "post": {
+    "auto_stretch": {
+     "target": 4.2,
+     "tolerance": 0.5,
+     "min": 0.93,
+     "max": 1.15
+    }
+   },
+   "adaptive_speed": {
+    "enabled": false,
+    "step": 0.03,
+    "min": 0.85,
+    "max": 1.1,
+    "note": "eleven_v3 不理會 speed：同文字 speed 0.7 與 1.2 正文長度 1.64／1.63 秒（2026-10-21 試跑，audio/vo_el/_raw/x_speedtest/）；換成 v2 再開"
+   },
+   "targets": {
+    "rate_nominal": [
+     3.8,
+     4.0
+    ],
+    "rate_cps_net": [
+     3.3,
+     4.5
+    ],
+    "f0_nominal": 185.0,
+    "f0_hz": [
+     164.8,
+     207.7
+    ],
+    "source": "角色表第 3 節（3.8–4.0；必要旁白約 3.5）；casting.json 旁白 note（F0 185 Hz）"
+   },
+   "lines": {
+    "a0_c001_01": {
+     "text_subs": {
+      "小燈鎮": "小登鎮",
+      "鎮上": "震上"
+     }
+    }
+   },
+   "source": "任務指定起點 Door v3；review/G3/el/library/INDEX.md 3.1（Door v3 eleven_v3 排名第一）；試聲線 review/G3/el/full/voice_trials/narrator/",
+   "note": "Door v3 在試聲線中：「電子煙」兩次都轉成「電洗煙」→ 合成用「電紫煙」（2/2 兩個模型都轉寫正確）；「使喚」4/4 轉成「使款／使寬」→ 合成用「使換」（同音 shǐ huàn）；「家長」林老師兩個聲線都轉成「家場／交響」→ 合成用「家掌」。auto_stretch：淨語速超出 3.3–4.5 才放慢／加快到 4.2（夾在 0.93–1.15 倍）。",
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "trial_lines": [
+    "a2_c010_01"
+   ]
+  }
+ }
+}

@@ -1,0 +1,1605 @@
+{
+ "AndrewLo_v3|a1_c002_02": {
+  "variant": "AndrewLo_v3",
+  "line": "a1_c002_02",
+  "voice": "Andrew Lo",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "sent": "亮晶晶的，聞起來香香的，很安全喔。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c002_02/inviter_a0_s0_b10f37f16f13.mp3",
+      "request_id": "PZhF5NWYWrQ2v6ywuGwH",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -33.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -6.6,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.5,
+       "t_fill_s": 3.2,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.65,
+        3.37
+       ],
+       "decay_end_s": 2.67,
+       "cut_s": 2.77,
+       "floor_rel_db": -31.6,
+       "removed_s": 1.15
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/AndrewLo_v3/a1_c002_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/AndrewLo_v3/a1_c002_02_a1.wav",
+     "seconds": 3.14,
+     "speech_seconds": 2.78,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -6.4,
+     "clipped_samples": 0,
+     "rate_cps": 5.04,
+     "rate_cps_net": 5.04,
+     "rate_cps_net_r": 5.07,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 131.0,
+     "f0_p10": 112.8,
+     "f0_p90": 160.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 5.07,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "晶晶的聞起來香香的很安全喔",
+     "large-v3-turbo": "靜靜的聞起來香香的很安全哦"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "亮",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "亮晶晶",
+          "hyp": "靜靜",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         },
+         {
+          "ref": "喔",
+          "hyp": "哦",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           13,
+           14
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -33.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 5.07,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -6.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 3.17,
+    "fail_detail": "(a) small：亮→∅（漏字）；large-v3-turbo：亮晶晶→靜靜（字不同）、喔→哦（聲調不同（疑讀錯，或轉寫偏好））；(d) 5.07 字／秒（範圍 3.5–4.9）",
+    "billed": 8
+   }
+  ]
+ },
+ "AndrewLo_v3|a3_c001_03": {
+  "variant": "AndrewLo_v3",
+  "line": "a3_c001_03",
+  "voice": "Andrew Lo",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "sent": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c001_03/inviter_a0_s0_3d03f4cc8c59.mp3",
+      "request_id": "rMsjNceQdihu21pWldxV",
+      "billed": 12,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -30.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -11.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.02,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        5.0,
+        6.12
+       ],
+       "decay_end_s": 5.05,
+       "cut_s": 5.15,
+       "floor_rel_db": -29.7,
+       "removed_s": 1.73
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.66,
+         1.8
+        ],
+        "cut_s": 1.89,
+        "depth_rel_db": -30.4,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/AndrewLo_v3/a3_c001_03_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/AndrewLo_v3/a3_c001_03_a1.wav",
+     "seconds": 5.92,
+     "speech_seconds": 5.55,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -4.8,
+     "clipped_samples": 0,
+     "rate_cps": 3.78,
+     "rate_cps_net": 4.09,
+     "rate_cps_net_r": 4.1,
+     "pauses_ms": [
+      410
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 118.7,
+     "f0_p10": 98.2,
+     "f0_p90": 315.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.1,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "large-v3-turbo": "昨天那個再給你看看試一次沒關係啦以下下就好"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "一",
+          "hyp": "以",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           16,
+           17
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -30.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.1,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 21,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       410
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.66,
+         1.8
+        ],
+        "cut_s": 1.89,
+        "depth_rel_db": -30.4,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.8,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 1.0,
+    "fail_detail": "(a) large-v3-turbo：一→以（聲調不同（疑讀錯，或轉寫偏好））",
+    "billed": 12
+   }
+  ]
+ },
+ "Yu_v3|a1_c002_02": {
+  "variant": "Yu_v3",
+  "line": "a1_c002_02",
+  "voice": "Yu - Youthful, Energetic and Engaging",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "sent": "亮晶晶的，聞起來香香的，很安全喔。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c002_02/inviter_a0_s0_8f836357b8ed.mp3",
+      "request_id": "Sg6dRY3VvMlGtitKJYJw",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -26.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -21.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.06,
+       "t_fill_s": 3.74,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        3.12,
+        3.93
+       ],
+       "decay_end_s": 3.15,
+       "cut_s": 3.25,
+       "floor_rel_db": -27.8,
+       "removed_s": 2.83
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Yu_v3/a1_c002_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Yu_v3/a1_c002_02_a1.wav",
+     "seconds": 3.62,
+     "speech_seconds": 3.26,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.1,
+     "clipped_samples": 0,
+     "rate_cps": 4.29,
+     "rate_cps_net": 4.29,
+     "rate_cps_net_r": 4.31,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 118.9,
+     "f0_p10": 110.5,
+     "f0_p90": 132.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.31,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "晃晶晶的聞起來香香的很安全喔",
+     "large-v3-turbo": "晶晶晶的聞起來香香的很安全喔"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "亮",
+          "hyp": "晃",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "亮",
+          "hyp": "晶",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -26.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.31,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.1,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 2.0,
+    "fail_detail": "(a) small：亮→晃（字不同）；large-v3-turbo：亮→晶（字不同）",
+    "billed": 8
+   }
+  ]
+ },
+ "Yu_v3|a3_c001_03": {
+  "variant": "Yu_v3",
+  "line": "a3_c001_03",
+  "voice": "Yu - Youthful, Energetic and Engaging",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "sent": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c001_03/inviter_a0_s0_de7d846e784e.mp3",
+      "request_id": "KWyNY4xpBJGZZL1tc2mW",
+      "billed": 12,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -29.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -33.7,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.96,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.93,
+        4.52
+       ],
+       "decay_end_s": 3.97,
+       "cut_s": 4.07,
+       "floor_rel_db": -30.6,
+       "removed_s": 1.29
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.56,
+         1.88
+        ],
+        "cut_s": 1.71,
+        "depth_rel_db": -30.1,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Yu_v3/a3_c001_03_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Yu_v3/a3_c001_03_a1.wav",
+     "seconds": 4.84,
+     "speech_seconds": 4.46,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -1.8,
+     "clipped_samples": 0,
+     "rate_cps": 4.71,
+     "rate_cps_net": 5.21,
+     "rate_cps_net_r": 5.21,
+     "pauses_ms": [
+      430
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 130.2,
+     "f0_p10": 115.8,
+     "f0_p90": 179.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 130,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 5.21,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "large-v3-turbo": "昨天那個再給你看看試一次沒關係啦一下下就好"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -29.0,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 5.21,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 21,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       430
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.56,
+         1.88
+        ],
+        "cut_s": 1.71,
+        "depth_rel_db": -30.1,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.8,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "d"
+    ],
+    "detail_score": 0.31,
+    "fail_detail": "(d) 5.21 字／秒（範圍 3.5–4.9）",
+    "billed": 12
+   }
+  ]
+ },
+ "Chihiro_v3|a1_c002_02": {
+  "variant": "Chihiro_v3",
+  "line": "a1_c002_02",
+  "voice": "Chihiro Yoko - Clear, Soothing and Sweet",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "sent": "亮晶晶的，聞起來香香的，很安全喔。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c002_02/inviter_a0_s0_cf2774901314.mp3",
+      "request_id": "dufmQ0QSHSFCrZ9jOZRK",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -34.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -27.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.48,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.53,
+        4.6
+       ],
+       "decay_end_s": 3.55,
+       "cut_s": 3.65,
+       "floor_rel_db": -35.4,
+       "removed_s": 1.39
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Chihiro_v3/a1_c002_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Chihiro_v3/a1_c002_02_a1.wav",
+     "seconds": 4.01,
+     "speech_seconds": 3.65,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.84,
+     "rate_cps_net": 4.33,
+     "rate_cps_net_r": 3.85,
+     "pauses_ms": [
+      210,
+      420
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 169.5,
+     "f0_p10": 142.1,
+     "f0_p90": 189.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.85,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "放筋筋的混起來香香的很安全哦",
+     "large-v3-turbo": "放晶晶的混起來香香的很安全哦"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 6,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "亮晶晶",
+          "hyp": "放筋筋",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         },
+         {
+          "ref": "聞",
+          "hyp": "混",
+          "kind": "字不同",
+          "span": [
+           4,
+           5
+          ]
+         },
+         {
+          "ref": "喔",
+          "hyp": "哦",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           13,
+           14
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "亮",
+          "hyp": "放",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         },
+         {
+          "ref": "聞",
+          "hyp": "混",
+          "kind": "字不同",
+          "span": [
+           4,
+           5
+          ]
+         },
+         {
+          "ref": "喔",
+          "hyp": "哦",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           13,
+           14
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -34.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.85,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 6.0,
+    "fail_detail": "(a) small：亮晶晶→放筋筋（字不同）、聞→混（字不同）、喔→哦（聲調不同（疑讀錯，或轉寫偏好））；large-v3-turbo：亮→放（字不同）、聞→混（字不同）、喔→哦（聲調不同（疑讀錯，或轉寫偏好））",
+    "billed": 8
+   }
+  ]
+ },
+ "Chihiro_v3|a3_c001_03": {
+  "variant": "Chihiro_v3",
+  "line": "a3_c001_03",
+  "voice": "Chihiro Yoko - Clear, Soothing and Sweet",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "sent": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c001_03/inviter_a0_s0_48b4f7093e10.mp3",
+      "request_id": "7AtmAX5Urn8G6hPMDe1k",
+      "billed": 12,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -34.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -17.7,
+       "last60ms_voiced": 0.25,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.48,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        5.34,
+        6.85
+       ],
+       "decay_end_s": 5.45,
+       "cut_s": 5.55,
+       "floor_rel_db": -31.4,
+       "removed_s": 3.01
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.74
+        ],
+        "cut_s": 2.15,
+        "depth_rel_db": -39.0,
+        "existing_pause_ms": 90,
+        "inserted_ms": 310,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Chihiro_v3/a3_c001_03_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Chihiro_v3/a3_c001_03_a1.wav",
+     "seconds": 6.22,
+     "speech_seconds": 5.86,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.58,
+     "rate_cps_net": 3.85,
+     "rate_cps_net_r": 3.83,
+     "pauses_ms": [
+      400
+     ],
+     "pauses_ms_r": [
+      340
+     ],
+     "f0_median": 165.7,
+     "f0_p10": 144.1,
+     "f0_p90": 192.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.83,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "large-v3-turbo": "昨天那個再給你看看試一次沒關係啦一下下就好"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -34.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.83,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 21,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       400
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.74
+        ],
+        "cut_s": 2.15,
+        "depth_rel_db": -39.0,
+        "existing_pause_ms": 90,
+        "inserted_ms": 310,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.6,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 12
+   }
+  ]
+ },
+ "Jane_v3|a1_c002_02": {
+  "variant": "Jane_v3",
+  "line": "a1_c002_02",
+  "voice": "Jane - Low, Calm and Slow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "sent": "亮晶晶的，聞起來香香的，很安全喔。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c002_02/inviter_a0_s0_e3448a48bc47.mp3",
+      "request_id": "l79camQcuYP4twmwbhiT",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -19.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -12.8,
+       "last60ms_voiced": 0.25,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.82,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.93,
+        4.39
+       ],
+       "decay_end_s": 3.94,
+       "cut_s": 4.04,
+       "floor_rel_db": -18.8,
+       "removed_s": 1.4
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Jane_v3/a1_c002_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Jane_v3/a1_c002_02_a1.wav",
+     "seconds": 4.41,
+     "speech_seconds": 4.05,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.5,
+     "clipped_samples": 0,
+     "rate_cps": 3.46,
+     "rate_cps_net": 3.46,
+     "rate_cps_net_r": 3.47,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 183.1,
+     "f0_p10": 91.8,
+     "f0_p90": 249.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.47,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "亮晶晶的聞起來香香的很安全喔",
+     "large-v3-turbo": "這樣靜靜的聞起來香香的很安全哦"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "亮晶晶",
+          "hyp": "這樣靜靜",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         },
+         {
+          "ref": "喔",
+          "hyp": "哦",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           13,
+           14
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -19.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.47,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.5,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 2.03,
+    "fail_detail": "(a) large-v3-turbo：亮晶晶→這樣靜靜（字不同）、喔→哦（聲調不同（疑讀錯，或轉寫偏好））；(d) 3.47 字／秒（範圍 3.5–4.9）",
+    "billed": 8
+   }
+  ]
+ },
+ "Jane_v3|a3_c001_03": {
+  "variant": "Jane_v3",
+  "line": "a3_c001_03",
+  "voice": "Jane - Low, Calm and Slow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "inviter": 20261021
+    },
+    "settings": {
+     "inviter": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "inviter",
+      "i": 0,
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "sent": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c001_03/inviter_a0_s0_345a2c9e5cdc.mp3",
+      "request_id": "2Tw6gYQn3LPdOCuXFJlQ",
+      "billed": 12,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -19.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -14.7,
+       "last60ms_voiced": 0.5,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.9,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        4.79,
+        6.03
+       ],
+       "decay_end_s": 4.81,
+       "cut_s": 4.91,
+       "floor_rel_db": -19.2,
+       "removed_s": 2.05
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.96,
+         2.64
+        ],
+        "cut_s": 2.3,
+        "depth_rel_db": -22.6,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/inviter/Jane_v3/a3_c001_03_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/inviter/Jane_v3/a3_c001_03_a1.wav",
+     "seconds": 5.68,
+     "speech_seconds": 5.32,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.95,
+     "rate_cps_net": 4.27,
+     "rate_cps_net_r": 4.27,
+     "pauses_ms": [
+      400
+     ],
+     "pauses_ms_r": [
+      390
+     ],
+     "f0_median": 196.0,
+     "f0_p10": 90.9,
+     "f0_p90": 256.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.27,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "昨天那個再給你看看睡一次沒關係了一下下就好",
+     "large-v3-turbo": "昨天那個再給你看看睡一次沒關係了一下下就好"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 4,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "試",
+          "hyp": "睡",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         },
+         {
+          "ref": "啦",
+          "hyp": "了",
+          "kind": "字不同",
+          "span": [
+           15,
+           16
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "試",
+          "hyp": "睡",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         },
+         {
+          "ref": "啦",
+          "hyp": "了",
+          "kind": "字不同",
+          "span": [
+           15,
+           16
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -19.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.27,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 21,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       400
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.96,
+         2.64
+        ],
+        "cut_s": 2.3,
+        "depth_rel_db": -22.6,
+        "existing_pause_ms": 0,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 4.0,
+    "fail_detail": "(a) small：試→睡（字不同）、啦→了（字不同）；large-v3-turbo：試→睡（字不同）、啦→了（字不同）",
+    "billed": 12
+   }
+  ]
+ }
+}

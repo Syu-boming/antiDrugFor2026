@@ -1,0 +1,956 @@
+{
+ "texture_face": {
+  "mean_srgb": [
+   250.3,
+   241.4,
+   221.4
+  ],
+  "luma": 241.8,
+  "min_channel_mean": 221.4,
+  "hue_deg": 41.6,
+  "saturation": 0.115,
+  "n_px": 4968
+ },
+ "texture_layout": {
+  "外半徑": 0.88,
+  "孔半徑": 0.42,
+  "外描邊寬": 0.065,
+  "內描邊寬": 0.055,
+  "陰影偏移_px": [
+   5.0,
+   6.0
+  ],
+  "紙色": [
+   251.0,
+   242.0,
+   222.0
+  ],
+  "描邊色": [
+   74.0,
+   52.0,
+   38.0
+  ],
+  "側邊陰影色": [
+   132.0,
+   106.0,
+   78.0
+  ]
+ },
+ "capture_v01_band": {
+  "luma_median": 194.4,
+  "sat_median": 0.074,
+  "hue_median": 39.7,
+  "rows": [
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "wrist",
+    "mean_srgb": [
+     200.9,
+     193.9,
+     183.1
+    ],
+    "luma": 194.8,
+    "min_channel_mean": 183.1,
+    "hue_deg": 36.7,
+    "saturation": 0.089,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "elbow",
+    "mean_srgb": [
+     200.7,
+     195.8,
+     186.0
+    ],
+    "luma": 196.2,
+    "min_channel_mean": 186.0,
+    "hue_deg": 39.9,
+    "saturation": 0.073,
+    "n_px": 57
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "knee",
+    "mean_srgb": [
+     202.7,
+     198.8,
+     189.9
+    ],
+    "luma": 199.0,
+    "min_channel_mean": 189.9,
+    "hue_deg": 41.9,
+    "saturation": 0.063,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "wrist",
+    "mean_srgb": [
+     200.8,
+     195.6,
+     185.7
+    ],
+    "luma": 196.0,
+    "min_channel_mean": 185.7,
+    "hue_deg": 39.1,
+    "saturation": 0.075,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "elbow",
+    "mean_srgb": [
+     198.1,
+     193.0,
+     183.2
+    ],
+    "luma": 193.4,
+    "min_channel_mean": 183.2,
+    "hue_deg": 39.6,
+    "saturation": 0.075,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "knee",
+    "mean_srgb": [
+     202.7,
+     198.8,
+     189.9
+    ],
+    "luma": 199.0,
+    "min_channel_mean": 189.9,
+    "hue_deg": 41.9,
+    "saturation": 0.063,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "wrist",
+    "mean_srgb": [
+     202.8,
+     192.4,
+     178.4
+    ],
+    "luma": 193.9,
+    "min_channel_mean": 178.4,
+    "hue_deg": 34.6,
+    "saturation": 0.12,
+    "n_px": 71
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "elbow",
+    "mean_srgb": [
+     196.8,
+     191.8,
+     182.3
+    ],
+    "luma": 192.2,
+    "min_channel_mean": 182.3,
+    "hue_deg": 39.6,
+    "saturation": 0.074,
+    "n_px": 70
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "knee",
+    "mean_srgb": [
+     197.0,
+     193.3,
+     184.6
+    ],
+    "luma": 193.4,
+    "min_channel_mean": 184.6,
+    "hue_deg": 42.4,
+    "saturation": 0.063,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "wrist",
+    "mean_srgb": [
+     194.6,
+     189.7,
+     180.2
+    ],
+    "luma": 190.1,
+    "min_channel_mean": 180.2,
+    "hue_deg": 39.8,
+    "saturation": 0.074,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "elbow",
+    "mean_srgb": [
+     201.3,
+     195.7,
+     185.3
+    ],
+    "luma": 196.2,
+    "min_channel_mean": 185.3,
+    "hue_deg": 39.0,
+    "saturation": 0.079,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "knee",
+    "mean_srgb": [
+     199.4,
+     195.7,
+     187.0
+    ],
+    "luma": 195.9,
+    "min_channel_mean": 187.0,
+    "hue_deg": 42.1,
+    "saturation": 0.062,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "wrist",
+    "mean_srgb": [
+     198.3,
+     190.4,
+     178.4
+    ],
+    "luma": 191.4,
+    "min_channel_mean": 178.4,
+    "hue_deg": 36.1,
+    "saturation": 0.1,
+    "n_px": 73
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "elbow",
+    "mean_srgb": [
+     198.8,
+     193.8,
+     184.1
+    ],
+    "luma": 194.2,
+    "min_channel_mean": 184.1,
+    "hue_deg": 39.9,
+    "saturation": 0.074,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "knee",
+    "mean_srgb": [
+     199.4,
+     195.7,
+     187.0
+    ],
+    "luma": 195.9,
+    "min_channel_mean": 187.0,
+    "hue_deg": 42.1,
+    "saturation": 0.062,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "wrist",
+    "mean_srgb": [
+     199.4,
+     191.3,
+     178.9
+    ],
+    "luma": 192.3,
+    "min_channel_mean": 178.9,
+    "hue_deg": 36.2,
+    "saturation": 0.103,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "elbow",
+    "mean_srgb": [
+     203.6,
+     198.0,
+     187.5
+    ],
+    "luma": 198.5,
+    "min_channel_mean": 187.5,
+    "hue_deg": 39.0,
+    "saturation": 0.079,
+    "n_px": 70
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "knee",
+    "mean_srgb": [
+     198.9,
+     195.2,
+     186.4
+    ],
+    "luma": 195.3,
+    "min_channel_mean": 186.4,
+    "hue_deg": 42.3,
+    "saturation": 0.063,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "wrist",
+    "mean_srgb": [
+     199.7,
+     191.5,
+     179.3
+    ],
+    "luma": 192.6,
+    "min_channel_mean": 179.3,
+    "hue_deg": 35.9,
+    "saturation": 0.102,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "elbow",
+    "mean_srgb": [
+     200.7,
+     195.2,
+     184.9
+    ],
+    "luma": 195.6,
+    "min_channel_mean": 184.9,
+    "hue_deg": 39.1,
+    "saturation": 0.079,
+    "n_px": 71
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "knee",
+    "mean_srgb": [
+     198.4,
+     194.7,
+     185.9
+    ],
+    "luma": 194.8,
+    "min_channel_mean": 185.9,
+    "hue_deg": 42.3,
+    "saturation": 0.063,
+    "n_px": 68
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "wrist",
+    "mean_srgb": [
+     197.5,
+     190.8,
+     179.7
+    ],
+    "luma": 191.5,
+    "min_channel_mean": 179.7,
+    "hue_deg": 37.5,
+    "saturation": 0.09,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "elbow",
+    "mean_srgb": [
+     198.6,
+     194.1,
+     184.8
+    ],
+    "luma": 194.4,
+    "min_channel_mean": 184.8,
+    "hue_deg": 40.6,
+    "saturation": 0.07,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "knee",
+    "mean_srgb": [
+     201.2,
+     197.5,
+     188.6
+    ],
+    "luma": 197.6,
+    "min_channel_mean": 188.6,
+    "hue_deg": 42.0,
+    "saturation": 0.063,
+    "n_px": 50
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "wrist",
+    "mean_srgb": [
+     199.8,
+     193.3,
+     182.3
+    ],
+    "luma": 194.0,
+    "min_channel_mean": 182.3,
+    "hue_deg": 37.5,
+    "saturation": 0.087,
+    "n_px": 55
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "elbow",
+    "mean_srgb": [
+     199.3,
+     193.9,
+     183.9
+    ],
+    "luma": 194.4,
+    "min_channel_mean": 183.9,
+    "hue_deg": 39.1,
+    "saturation": 0.077,
+    "n_px": 53
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "knee",
+    "mean_srgb": [
+     201.2,
+     197.5,
+     188.6
+    ],
+    "luma": 197.6,
+    "min_channel_mean": 188.6,
+    "hue_deg": 42.0,
+    "saturation": 0.063,
+    "n_px": 50
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "wrist",
+    "mean_srgb": [
+     194.3,
+     190.6,
+     182.2
+    ],
+    "luma": 190.7,
+    "min_channel_mean": 182.2,
+    "hue_deg": 41.8,
+    "saturation": 0.062,
+    "n_px": 32
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "elbow",
+    "mean_srgb": [
+     189.0,
+     184.1,
+     174.8
+    ],
+    "luma": 184.5,
+    "min_channel_mean": 174.8,
+    "hue_deg": 39.4,
+    "saturation": 0.075,
+    "n_px": 31
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "knee",
+    "mean_srgb": [
+     195.7,
+     192.0,
+     183.4
+    ],
+    "luma": 192.2,
+    "min_channel_mean": 183.4,
+    "hue_deg": 41.9,
+    "saturation": 0.063,
+    "n_px": 31
+   }
+  ]
+ },
+ "preview_v02_band": {
+  "luma_median": 237.9,
+  "luma_min": 227.3,
+  "sat_median": 0.118,
+  "hue_median": 41.05,
+  "rows": [
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "wrist",
+    "mean_srgb": [
+     249.6,
+     240.6,
+     220.6
+    ],
+    "luma": 241.0,
+    "min_channel_mean": 220.6,
+    "hue_deg": 41.4,
+    "saturation": 0.116,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "elbow",
+    "mean_srgb": [
+     245.6,
+     236.4,
+     216.5
+    ],
+    "luma": 236.9,
+    "min_channel_mean": 216.5,
+    "hue_deg": 40.9,
+    "saturation": 0.119,
+    "n_px": 57
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.41,
+    "anchor": "knee",
+    "mean_srgb": [
+     240.5,
+     231.0,
+     211.3
+    ],
+    "luma": 231.6,
+    "min_channel_mean": 211.3,
+    "hue_deg": 40.4,
+    "saturation": 0.122,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "wrist",
+    "mean_srgb": [
+     249.5,
+     240.5,
+     220.5
+    ],
+    "luma": 240.9,
+    "min_channel_mean": 220.5,
+    "hue_deg": 41.3,
+    "saturation": 0.116,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "elbow",
+    "mean_srgb": [
+     245.2,
+     235.9,
+     216.0
+    ],
+    "luma": 236.4,
+    "min_channel_mean": 216.0,
+    "hue_deg": 40.9,
+    "saturation": 0.119,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c002",
+    "t": 11.905,
+    "anchor": "knee",
+    "mean_srgb": [
+     240.5,
+     231.0,
+     211.3
+    ],
+    "luma": 231.6,
+    "min_channel_mean": 211.3,
+    "hue_deg": 40.4,
+    "saturation": 0.122,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "wrist",
+    "mean_srgb": [
+     238.3,
+     228.5,
+     208.8
+    ],
+    "luma": 229.2,
+    "min_channel_mean": 208.8,
+    "hue_deg": 40.0,
+    "saturation": 0.123,
+    "n_px": 71
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "elbow",
+    "mean_srgb": [
+     248.5,
+     239.4,
+     219.4
+    ],
+    "luma": 239.8,
+    "min_channel_mean": 219.4,
+    "hue_deg": 41.2,
+    "saturation": 0.117,
+    "n_px": 70
+   },
+   {
+    "cue": "a2_c002",
+    "t": 22.83,
+    "anchor": "knee",
+    "mean_srgb": [
+     237.6,
+     227.7,
+     208.1
+    ],
+    "luma": 228.4,
+    "min_channel_mean": 208.1,
+    "hue_deg": 39.8,
+    "saturation": 0.124,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "wrist",
+    "mean_srgb": [
+     250.0,
+     241.0,
+     221.1
+    ],
+    "luma": 241.4,
+    "min_channel_mean": 221.1,
+    "hue_deg": 41.4,
+    "saturation": 0.116,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "elbow",
+    "mean_srgb": [
+     249.3,
+     240.2,
+     220.2
+    ],
+    "luma": 240.6,
+    "min_channel_mean": 220.2,
+    "hue_deg": 41.3,
+    "saturation": 0.116,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c002",
+    "t": 23.81,
+    "anchor": "knee",
+    "mean_srgb": [
+     239.7,
+     229.9,
+     210.3
+    ],
+    "luma": 230.6,
+    "min_channel_mean": 210.3,
+    "hue_deg": 40.1,
+    "saturation": 0.123,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "wrist",
+    "mean_srgb": [
+     236.5,
+     226.5,
+     207.0
+    ],
+    "luma": 227.3,
+    "min_channel_mean": 207.0,
+    "hue_deg": 39.8,
+    "saturation": 0.125,
+    "n_px": 73
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "elbow",
+    "mean_srgb": [
+     248.9,
+     239.8,
+     219.8
+    ],
+    "luma": 240.2,
+    "min_channel_mean": 219.8,
+    "hue_deg": 41.3,
+    "saturation": 0.117,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 0,
+    "anchor": "knee",
+    "mean_srgb": [
+     239.7,
+     229.9,
+     210.3
+    ],
+    "luma": 230.6,
+    "min_channel_mean": 210.3,
+    "hue_deg": 40.1,
+    "saturation": 0.123,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "wrist",
+    "mean_srgb": [
+     244.3,
+     234.9,
+     215.1
+    ],
+    "luma": 235.5,
+    "min_channel_mean": 215.1,
+    "hue_deg": 40.7,
+    "saturation": 0.12,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "elbow",
+    "mean_srgb": [
+     242.8,
+     233.2,
+     213.5
+    ],
+    "luma": 233.8,
+    "min_channel_mean": 213.5,
+    "hue_deg": 40.5,
+    "saturation": 0.121,
+    "n_px": 70
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.75,
+    "anchor": "knee",
+    "mean_srgb": [
+     247.5,
+     238.4,
+     218.5
+    ],
+    "luma": 238.9,
+    "min_channel_mean": 218.5,
+    "hue_deg": 41.2,
+    "saturation": 0.117,
+    "n_px": 65
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "wrist",
+    "mean_srgb": [
+     245.4,
+     236.1,
+     216.2
+    ],
+    "luma": 236.6,
+    "min_channel_mean": 216.2,
+    "hue_deg": 40.8,
+    "saturation": 0.119,
+    "n_px": 69
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "elbow",
+    "mean_srgb": [
+     242.8,
+     233.3,
+     213.6
+    ],
+    "luma": 233.9,
+    "min_channel_mean": 213.6,
+    "hue_deg": 40.5,
+    "saturation": 0.121,
+    "n_px": 71
+   },
+   {
+    "cue": "a2_c004",
+    "t": 9.77,
+    "anchor": "knee",
+    "mean_srgb": [
+     248.4,
+     239.4,
+     219.4
+    ],
+    "luma": 239.8,
+    "min_channel_mean": 219.4,
+    "hue_deg": 41.3,
+    "saturation": 0.117,
+    "n_px": 68
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "wrist",
+    "mean_srgb": [
+     250.0,
+     241.0,
+     221.0
+    ],
+    "luma": 241.4,
+    "min_channel_mean": 221.0,
+    "hue_deg": 41.4,
+    "saturation": 0.116,
+    "n_px": 52
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "elbow",
+    "mean_srgb": [
+     250.0,
+     241.0,
+     221.0
+    ],
+    "luma": 241.4,
+    "min_channel_mean": 221.0,
+    "hue_deg": 41.4,
+    "saturation": 0.116,
+    "n_px": 53
+   },
+   {
+    "cue": "a2_c004",
+    "t": 19.54,
+    "anchor": "knee",
+    "mean_srgb": [
+     239.6,
+     229.9,
+     210.2
+    ],
+    "luma": 230.6,
+    "min_channel_mean": 210.2,
+    "hue_deg": 40.1,
+    "saturation": 0.123,
+    "n_px": 50
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "wrist",
+    "mean_srgb": [
+     247.6,
+     238.5,
+     218.5
+    ],
+    "luma": 238.9,
+    "min_channel_mean": 218.5,
+    "hue_deg": 41.2,
+    "saturation": 0.117,
+    "n_px": 55
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "elbow",
+    "mean_srgb": [
+     249.9,
+     240.9,
+     220.9
+    ],
+    "luma": 241.3,
+    "min_channel_mean": 220.9,
+    "hue_deg": 41.4,
+    "saturation": 0.116,
+    "n_px": 53
+   },
+   {
+    "cue": "a8_c002",
+    "t": 0,
+    "anchor": "knee",
+    "mean_srgb": [
+     239.6,
+     229.9,
+     210.2
+    ],
+    "luma": 230.6,
+    "min_channel_mean": 210.2,
+    "hue_deg": 40.1,
+    "saturation": 0.123,
+    "n_px": 50
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "wrist",
+    "mean_srgb": [
+     249.2,
+     240.2,
+     220.2
+    ],
+    "luma": 240.6,
+    "min_channel_mean": 220.2,
+    "hue_deg": 41.3,
+    "saturation": 0.116,
+    "n_px": 32
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "elbow",
+    "mean_srgb": [
+     247.6,
+     238.5,
+     218.5
+    ],
+    "luma": 238.9,
+    "min_channel_mean": 218.5,
+    "hue_deg": 41.2,
+    "saturation": 0.117,
+    "n_px": 31
+   },
+   {
+    "cue": "a8_c002",
+    "t": 2.7,
+    "anchor": "knee",
+    "mean_srgb": [
+     248.6,
+     239.5,
+     219.6
+    ],
+    "luma": 240.0,
+    "min_channel_mean": 219.6,
+    "hue_deg": 41.2,
+    "saturation": 0.117,
+    "n_px": 31
+   }
+  ],
+  "note": "示意：舊影格清掉舊環後以 light＝1.0 疊上 v02（引擎 strings.ts 會把顏色乘上 director.light，G4 全亮時約 1.0）。正式驗證要等引擎用 v02 重擷取 ring_crops.png，再跑本腳本 --measure。"
+ },
+ "light_note": "環身 luma 在 light 0.92 時仍 ≥ 220（貼圖 luma×0.92）"
+}

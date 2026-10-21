@@ -1,0 +1,67 @@
+{
+ "a2_c002_01": {
+  "seconds": 6.03,
+  "speech_start": 0.12,
+  "speech_end": 5.78,
+  "speech_segments": [
+   [
+    0.11,
+    0.41
+   ],
+   [
+    1.09,
+    2.42
+   ],
+   [
+    3.27,
+    5.78
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a2_c002_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a2_c002_01_el01.json",
+  "role": "阿樂叔叔",
+  "text": "咦？我想揮手……手怎麼跑到旁邊去了？"
+ },
+ "a4_c008_01": {
+  "seconds": 2.78,
+  "speech_start": 0.12,
+  "speech_end": 2.53,
+  "speech_segments": [
+   [
+    0.12,
+    1.38
+   ],
+   [
+    1.71,
+    2.53
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a4_c008_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a4_c008_01_el01.json",
+  "role": "阿樂叔叔",
+  "text": "小晴、小宇……上車吧。"
+ },
+ "a6_c009_03": {
+  "seconds": 8.0,
+  "speech_start": 0.12,
+  "speech_end": 7.75,
+  "speech_segments": [
+   [
+    0.11,
+    3.44
+   ],
+   [
+    4.93,
+    5.89
+   ],
+   [
+    6.62,
+    7.76
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a6_c009_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a6_c009_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。"
+ }
+}

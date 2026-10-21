@@ -1,0 +1,4 @@
+- Source: [/Users/boming/.codex/generated_images/01a15b9e-5680-7d10-92a8-281a9de649e4/exec-45a4fa74-c88d-48df-8710-68d9ccbf4718.png](/Users/boming/.codex/generated_images/01a15b9e-5680-7d10-92a8-281a9de649e4/exec-45a4fa74-c88d-48df-8710-68d9ccbf4718.png)
+- Destination: [review/G4/art/raw/pose_xq_worried_v05.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/pose_xq_worried_v05.png>) — copied unmodified.
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes — real transparency verified.**

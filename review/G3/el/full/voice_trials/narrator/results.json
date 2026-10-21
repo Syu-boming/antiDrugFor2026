@@ -1,0 +1,3508 @@
+{
+ "Door_v3|a0_c001_01": {
+  "variant": "Door_v3",
+  "line": "a0_c001_01",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。",
+      "sent": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c001_01/narrator_a0_s0_09743f0fa5c1.mp3",
+      "request_id": "hvfSMtjncxPgBbfqhS1t",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -18.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -24.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.64,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        4.44,
+        4.59
+       ],
+       "decay_end_s": 4.45,
+       "cut_s": 4.55,
+       "floor_rel_db": -15.5,
+       "removed_s": 2.33
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.32,
+         2.0
+        ],
+        "cut_s": 1.84,
+        "depth_rel_db": -78.0,
+        "existing_pause_ms": 490,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a0_c001_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a0_c001_01_a1.wav",
+     "seconds": 4.92,
+     "speech_seconds": 4.56,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.95,
+     "rate_cps_net": 4.42,
+     "rate_cps_net_r": 4.43,
+     "pauses_ms": [
+      490
+     ],
+     "pauses_ms_r": [
+      490
+     ],
+     "f0_median": 219.2,
+     "f0_p10": 184.1,
+     "f0_p90": 313.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.43,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "這裡是小燈證每年秋天正常都會辦紙登記",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈集"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 4,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "鎮",
+          "hyp": "證",
+          "kind": "字不同",
+          "span": [
+           5,
+           6
+          ]
+         },
+         {
+          "ref": "鎮上",
+          "hyp": "正常",
+          "kind": "字不同",
+          "span": [
+           10,
+           12
+          ]
+         },
+         {
+          "ref": "燈節",
+          "hyp": "登記",
+          "kind": "字不同",
+          "span": [
+           16,
+           18
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "節",
+          "hyp": "集",
+          "kind": "字不同",
+          "span": [
+           17,
+           18
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "紙燈節": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "紙燈節"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -18.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.43,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 18,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       490
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.32,
+         2.0
+        ],
+        "cut_s": 1.84,
+        "depth_rel_db": -78.0,
+        "existing_pause_ms": 490,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "detail_score": 5.0,
+    "fail_detail": "(a) small：鎮→證（字不同）、鎮上→正常（字不同）、燈節→登記（字不同）；large-v3-turbo：節→集（字不同）；(b) 紙燈節（不一致（需複查）／不一致（需複查））",
+    "billed": 10
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。",
+      "sent": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c001_01/narrator_a1_s0_ef73d6728c38.mp3",
+      "request_id": "WClTtK3wUrddUrEt8DiH",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -38.8,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -5.7,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.86,
+       "t_fill_s": 3.86,
+       "asr_tail": "燈節嗯",
+       "guard": "ok",
+       "pause_s": [
+        3.82,
+        3.94
+       ],
+       "decay_end_s": 3.87,
+       "cut_s": 3.92,
+       "floor_rel_db": -35.8,
+       "removed_s": 2.64
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.36
+        ],
+        "cut_s": 1.23,
+        "depth_rel_db": -74.7,
+        "existing_pause_ms": 520,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a0_c001_01_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a0_c001_01_a2.wav",
+     "seconds": 4.27,
+     "speech_seconds": 3.89,
+     "integrated_lufs": -17.8,
+     "true_peak_dbtp": -2.1,
+     "clipped_samples": 0,
+     "rate_cps": 4.63,
+     "rate_cps_net": 5.34,
+     "rate_cps_net_r": 5.39,
+     "pauses_ms": [
+      520
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 201.8,
+     "f0_p10": 158.6,
+     "f0_p90": 277.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 260,
+     "rate_net_syll": 5.39,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "這裡是小鄧鎮每年秋天鎮上都會辦紙",
+     "large-v3-turbo": "這裡是小凳鎮每年秋天鎮上都會辦紙"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 4,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "燈",
+          "hyp": "鄧",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           4,
+           5
+          ]
+         },
+         {
+          "ref": "燈節",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           16,
+           18
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "燈",
+          "hyp": "凳",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           4,
+           5
+          ]
+         },
+         {
+          "ref": "燈節",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           16,
+           18
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "紙燈節": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "紙燈節"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -38.8,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 5.39,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 18,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.36
+        ],
+        "cut_s": 1.23,
+        "depth_rel_db": -74.7,
+        "existing_pause_ms": 520,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.8,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.1,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "d"
+    ],
+    "detail_score": 5.89,
+    "fail_detail": "(a) small：燈→鄧（聲調不同（疑讀錯，或轉寫偏好））、燈節→∅（漏字）；large-v3-turbo：燈→凳（聲調不同（疑讀錯，或轉寫偏好））、燈節→∅（漏字）；(b) 紙燈節（不一致（需複查）／不一致（需複查））；(d) 5.39 字／秒（範圍 3.3–4.5）",
+    "billed": 10
+   }
+  ]
+ },
+ "Door_v3|a2_c004_02": {
+  "variant": "Door_v3",
+  "line": "a2_c004_02",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "sent": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c004_02/narrator_a0_s0_d79ba508c3c9.mp3",
+      "request_id": "DihIMaDc9xDNhNM4EAuV",
+      "billed": 18,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -13.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.76,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        8.9,
+        9.69
+       ],
+       "decay_end_s": 8.97,
+       "cut_s": 9.07,
+       "floor_rel_db": -73.6,
+       "removed_s": 1.33
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.62,
+         1.82
+        ],
+        "cut_s": 1.68,
+        "depth_rel_db": -42.7,
+        "existing_pause_ms": 90,
+        "inserted_ms": 1210,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.28,
+         6.58
+        ],
+        "cut_s": 6.61,
+        "depth_rel_db": -45.1,
+        "existing_pause_ms": 320,
+        "inserted_ms": 980,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c004_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c004_02_a1.wav",
+     "seconds": 11.48,
+     "speech_seconds": 11.11,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.7,
+     "clipped_samples": 0,
+     "rate_cps": 3.42,
+     "rate_cps_net": 4.9,
+     "rate_cps_net_r": 4.4,
+     "pauses_ms": [
+      1300,
+      320,
+      430,
+      1300
+     ],
+     "pauses_ms_r": [
+      1300,
+      1160
+     ],
+     "f0_median": 205.0,
+     "f0_p10": 149.3,
+     "f0_p90": 324.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.4,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍",
+     "large-v3-turbo": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使款人不會真的變成喪失"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "喚",
+          "hyp": "款",
+          "kind": "字不同",
+          "span": [
+           28,
+           29
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.0,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.4,
+      "range": [
+       3.0,
+       4.0
+      ],
+      "syllables": 38,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1300,
+       1300
+      ],
+      "threshold_ms": 1300,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.62,
+         1.82
+        ],
+        "cut_s": 1.68,
+        "depth_rel_db": -42.7,
+        "existing_pause_ms": 90,
+        "inserted_ms": 1210,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.28,
+         6.58
+        ],
+        "cut_s": 6.61,
+        "depth_rel_db": -45.1,
+        "existing_pause_ms": 320,
+        "inserted_ms": 980,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 1.4,
+    "fail_detail": "(a) large-v3-turbo：喚→款（字不同）；(d) 4.4 字／秒（範圍 3.0–4.0）",
+    "billed": 18
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "sent": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c004_02/narrator_a1_s0_496656b7e252.mp3",
+      "request_id": "CoLlQHMst3nJATP7lZ2X",
+      "billed": 18,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -74.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -15.2,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 9.12,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        9.3,
+        9.76
+       ],
+       "decay_end_s": 9.41,
+       "cut_s": 9.51,
+       "floor_rel_db": -74.0,
+       "removed_s": 0.65
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.74,
+         1.94
+        ],
+        "cut_s": 1.86,
+        "depth_rel_db": -45.7,
+        "existing_pause_ms": 400,
+        "inserted_ms": 900,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.6,
+         7.0
+        ],
+        "cut_s": 7.11,
+        "depth_rel_db": -41.5,
+        "existing_pause_ms": 120,
+        "inserted_ms": 1180,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c004_02_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c004_02_a2.wav",
+     "seconds": 11.79,
+     "speech_seconds": 11.43,
+     "integrated_lufs": -18.2,
+     "true_peak_dbtp": -3.4,
+     "clipped_samples": 0,
+     "rate_cps": 3.32,
+     "rate_cps_net": 4.46,
+     "rate_cps_net_r": 4.33,
+     "pauses_ms": [
+      1300,
+      310,
+      210,
+      1300
+     ],
+     "pauses_ms_r": [
+      1080,
+      310,
+      1250
+     ],
+     "f0_median": 204.8,
+     "f0_p10": 151.7,
+     "f0_p90": 312.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.33,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "這些線是故事的比喻讀品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍",
+     "large-v3-turbo": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪失"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "聽",
+          "hyp": "停",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           26,
+           27
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "聽",
+          "hyp": "停",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           26,
+           27
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.6,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.33,
+      "range": [
+       3.0,
+       4.0
+      ],
+      "syllables": 38,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1300,
+       1300
+      ],
+      "threshold_ms": 1300,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.74,
+         1.94
+        ],
+        "cut_s": 1.86,
+        "depth_rel_db": -45.7,
+        "existing_pause_ms": 400,
+        "inserted_ms": 900,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.6,
+         7.0
+        ],
+        "cut_s": 7.11,
+        "depth_rel_db": -41.5,
+        "existing_pause_ms": 120,
+        "inserted_ms": 1180,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.2,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 2.33,
+    "fail_detail": "(a) small：聽→停（聲調不同（疑讀錯，或轉寫偏好））；large-v3-turbo：聽→停（聲調不同（疑讀錯，或轉寫偏好））；(d) 4.33 字／秒（範圍 3.0–4.0）",
+    "billed": 18
+   }
+  ]
+ },
+ "Door_v3|a2_c003_02": {
+  "variant": "Door_v3",
+  "line": "a2_c003_02",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。",
+      "sent": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c003_02/narrator_a0_s0_23f1e7384315.mp3",
+      "request_id": "xo2qJmXkQd8buC7E6ChB",
+      "billed": 15,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -40.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -29.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.18,
+       "t_fill_s": 9.58,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        7.97,
+        8.06
+       ],
+       "decay_end_s": 7.99,
+       "cut_s": 8.04,
+       "floor_rel_db": -34.0,
+       "removed_s": 2.84
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c003_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c003_02_a1.wav",
+     "seconds": 8.39,
+     "speech_seconds": 8.02,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.7,
+     "clipped_samples": 0,
+     "rate_cps": 3.49,
+     "rate_cps_net": 4.26,
+     "rate_cps_net_r": 4.24,
+     "pauses_ms": [
+      370,
+      410,
+      660
+     ],
+     "pauses_ms_r": [
+      350,
+      410,
+      580
+     ],
+     "f0_median": 198.3,
+     "f0_p10": 145.1,
+     "f0_p90": 261.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.24,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "有一種鹽蛋外表上電洗鹽裡面卻可能加了毒品有人叫它桑絲鹽蛋",
+     "large-v3-turbo": "有一種鹽蛋外表上墊洗菸裡面卻可能加了毒品有人叫它喪失菸蛋"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 6,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "煙彈",
+          "hyp": "鹽蛋",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           3,
+           5
+          ]
+         },
+         {
+          "ref": "像",
+          "hyp": "上",
+          "kind": "字不同",
+          "span": [
+           7,
+           8
+          ]
+         },
+         {
+          "ref": "子煙",
+          "hyp": "洗鹽",
+          "kind": "字不同",
+          "span": [
+           9,
+           11
+          ]
+         },
+         {
+          "ref": "喪屍煙彈",
+          "hyp": "桑絲鹽蛋",
+          "kind": "字不同",
+          "span": [
+           24,
+           28
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "煙彈",
+          "hyp": "鹽蛋",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           3,
+           5
+          ]
+         },
+         {
+          "ref": "像電子煙",
+          "hyp": "上墊洗菸",
+          "kind": "字不同",
+          "span": [
+           7,
+           11
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "喪屍煙彈": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "喪屍煙彈",
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -40.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.24,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 28,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "detail_score": 8.0,
+    "fail_detail": "(a) small：煙彈→鹽蛋（聲調不同（疑讀錯，或轉寫偏好））、像→上（字不同）、子煙→洗鹽（字不同）、喪屍煙彈→桑絲鹽蛋（字不同）；large-v3-turbo：煙彈→鹽蛋（聲調不同（疑讀錯，或轉寫偏好））、像電子煙→上墊洗菸（字不同）；(b) 喪屍煙彈（不一致（需複查）／同音轉寫（讀音一致））、電子煙（不一致（需複查）／不一致（需複查））",
+    "billed": 15
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。",
+      "sent": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c003_02/narrator_a1_s0_b1e0427fea53.mp3",
+      "request_id": "Y6jvgSRIJE1C0iSGPuN0",
+      "billed": 15,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -74.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -37.8,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.08,
+       "t_fill_s": 9.24,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        8.07,
+        9.58
+       ],
+       "decay_end_s": 8.27,
+       "cut_s": 8.37,
+       "floor_rel_db": -73.2,
+       "removed_s": 2.59
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c003_02_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3/a2_c003_02_a2.wav",
+     "seconds": 8.52,
+     "speech_seconds": 8.15,
+     "integrated_lufs": -18.2,
+     "true_peak_dbtp": -3.8,
+     "clipped_samples": 0,
+     "rate_cps": 3.44,
+     "rate_cps_net": 4.29,
+     "rate_cps_net_r": 3.89,
+     "pauses_ms": [
+      420,
+      390,
+      550,
+      260
+     ],
+     "pauses_ms_r": [
+      410,
+      240,
+      240
+     ],
+     "f0_median": 203.8,
+     "f0_p10": 160.0,
+     "f0_p90": 289.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.89,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "有一種煙彈外表像電洗煙裡面卻可能加了毒品有人叫它桑絲煙彈",
+     "large-v3-turbo": "有一種煙蛋外表像電洗煙裡面卻可能加了毒品有人叫它喪屍煙蛋"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "子",
+          "hyp": "洗",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         },
+         {
+          "ref": "喪屍",
+          "hyp": "桑絲",
+          "kind": "字不同",
+          "span": [
+           24,
+           26
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "子",
+          "hyp": "洗",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "喪屍煙彈": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "喪屍煙彈",
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.89,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 28,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.2,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.8,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "detail_score": 5.0,
+    "fail_detail": "(a) small：子→洗（字不同）、喪屍→桑絲（字不同）；large-v3-turbo：子→洗（字不同）；(b) 喪屍煙彈（不一致（需複查）／同音轉寫（讀音一致））、電子煙（不一致（需複查）／不一致（需複查））",
+    "billed": 15
+   }
+  ]
+ },
+ "Door_v3_stab1|a2_c004_02": {
+  "variant": "Door_v3_stab1",
+  "line": "a2_c004_02",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "sent": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c004_02/narrator_a0_s0_fa5504685899.mp3",
+      "request_id": "EcNJbShTO2GLEVFjqH9j",
+      "billed": 18,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -73.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -25.7,
+       "last60ms_voiced": 1.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 9.0,
+       "t_fill_s": 9.32,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        9.21,
+        9.73
+       ],
+       "decay_end_s": 9.33,
+       "cut_s": 9.43,
+       "floor_rel_db": -73.5,
+       "removed_s": 0.73
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.66,
+         1.8
+        ],
+        "cut_s": 1.9,
+        "depth_rel_db": -78.6,
+        "existing_pause_ms": 510,
+        "inserted_ms": 790,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.66,
+         7.22
+        ],
+        "cut_s": 7.18,
+        "depth_rel_db": -45.9,
+        "existing_pause_ms": 160,
+        "inserted_ms": 1140,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_stab1/a2_c004_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_stab1/a2_c004_02_a1.wav",
+     "seconds": 11.58,
+     "speech_seconds": 11.22,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -3.3,
+     "clipped_samples": 0,
+     "rate_cps": 3.39,
+     "rate_cps_net": 4.82,
+     "rate_cps_net_r": 4.76,
+     "pauses_ms": [
+      1300,
+      440,
+      300,
+      1300
+     ],
+     "pauses_ms_r": [
+      1290,
+      420,
+      240,
+      1230
+     ],
+     "f0_median": 198.2,
+     "f0_p10": 145.9,
+     "f0_p90": 319.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.76,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不停使寬人不會真的變成喪屍",
+     "large-v3-turbo": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使款人不會真的變成喪失"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "聽",
+          "hyp": "停",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           26,
+           27
+          ]
+         },
+         {
+          "ref": "喚",
+          "hyp": "寬",
+          "kind": "字不同",
+          "span": [
+           28,
+           29
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "喚",
+          "hyp": "款",
+          "kind": "字不同",
+          "span": [
+           28,
+           29
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -73.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.76,
+      "range": [
+       3.0,
+       4.0
+      ],
+      "syllables": 38,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1300,
+       1300
+      ],
+      "threshold_ms": 1300,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.66,
+         1.8
+        ],
+        "cut_s": 1.9,
+        "depth_rel_db": -78.6,
+        "existing_pause_ms": 510,
+        "inserted_ms": 790,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         6.66,
+         7.22
+        ],
+        "cut_s": 7.18,
+        "depth_rel_db": -45.9,
+        "existing_pause_ms": 160,
+        "inserted_ms": 1140,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.3,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 3.76,
+    "fail_detail": "(a) small：聽→停（聲調不同（疑讀錯，或轉寫偏好））、喚→寬（字不同）；large-v3-turbo：喚→款（字不同）；(d) 4.76 字／秒（範圍 3.0–4.0）",
+    "billed": 18
+   }
+  ]
+ },
+ "Door_v3_comma|a2_c004_02": {
+  "variant": "Door_v3_comma",
+  "line": "a2_c004_02",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這些線，是故事的比喻。毒品，可能讓人的頭腦和身體，受到影響，不聽使喚。人，不會真的變成喪屍。",
+      "sent": "這些線，是故事的比喻。毒品，可能讓人的頭腦和身體，受到影響，不聽使喚。人，不會真的變成喪屍。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c004_02/narrator_a0_s0_d3f83499d6b1.mp3",
+      "request_id": "JrNLqxwZC6WbjwPLYIKo",
+      "billed": 20,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -45.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -24.6,
+       "last60ms_voiced": 0.5,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 10.62,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        10.75,
+        11.64
+       ],
+       "decay_end_s": 10.78,
+       "cut_s": 10.88,
+       "floor_rel_db": -42.6,
+       "removed_s": 1.28
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.24
+        ],
+        "cut_s": 2.05,
+        "depth_rel_db": -50.4,
+        "existing_pause_ms": 610,
+        "inserted_ms": 690,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         7.66,
+         8.38
+        ],
+        "cut_s": 8.4,
+        "depth_rel_db": -47.2,
+        "existing_pause_ms": 280,
+        "inserted_ms": 1020,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_comma/a2_c004_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_comma/a2_c004_02_a1.wav",
+     "seconds": 12.87,
+     "speech_seconds": 12.51,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.04,
+     "rate_cps_net": 4.12,
+     "rate_cps_net_r": 3.91,
+     "pauses_ms": [
+      1300,
+      290,
+      400,
+      1300
+     ],
+     "pauses_ms_r": [
+      1240,
+      280,
+      1250
+     ],
+     "f0_median": 196.2,
+     "f0_p10": 162.7,
+     "f0_p90": 290.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.91,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "這些縣是故事的比喻毒品可能讓人的頭腦和身體受到影響不停使寬人不會真的變成喪屍",
+     "large-v3-turbo": "這些線是故事的比喻毒品可能讓人的頭腦和身體受到影響不停使款人不會真的變成喪屍"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 4,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "聽",
+          "hyp": "停",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           26,
+           27
+          ]
+         },
+         {
+          "ref": "喚",
+          "hyp": "寬",
+          "kind": "字不同",
+          "span": [
+           28,
+           29
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "聽",
+          "hyp": "停",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           26,
+           27
+          ]
+         },
+         {
+          "ref": "喚",
+          "hyp": "款",
+          "kind": "字不同",
+          "span": [
+           28,
+           29
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -45.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.91,
+      "range": [
+       3.0,
+       4.0
+      ],
+      "syllables": 38,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1300,
+       1300
+      ],
+      "threshold_ms": 1300,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.24
+        ],
+        "cut_s": 2.05,
+        "depth_rel_db": -50.4,
+        "existing_pause_ms": 610,
+        "inserted_ms": 690,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         7.66,
+         8.38
+        ],
+        "cut_s": 8.4,
+        "depth_rel_db": -47.2,
+        "existing_pause_ms": 280,
+        "inserted_ms": 1020,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 4.0,
+    "fail_detail": "(a) small：聽→停（聲調不同（疑讀錯，或轉寫偏好））、喚→寬（字不同）；large-v3-turbo：聽→停（聲調不同（疑讀錯，或轉寫偏好））、喚→款（字不同）",
+    "billed": 20
+   }
+  ]
+ },
+ "Door_v3_comma|a2_c008_05": {
+  "variant": "Door_v3_comma",
+  "line": "a2_c008_05",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "不過，看見一個人站不穩，不能，就說他吸毒，也可能，有其他身體狀況。我們，要先找大人幫忙。",
+      "sent": "不過，看見一個人站不穩，不能，就說他吸毒，也可能，有其他身體狀況。我們，要先找大人幫忙。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c008_05/narrator_a0_s0_29c36f06fddd.mp3",
+      "request_id": "wx0x4Kc0rC9VVfE3EvLF",
+      "billed": 19,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.8,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -14.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.44,
+       "t_fill_s": 8.86,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        8.52,
+        9.09
+       ],
+       "decay_end_s": 8.61,
+       "cut_s": 8.71,
+       "floor_rel_db": -74.4,
+       "removed_s": 0.97
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         5.82,
+         6.46
+        ],
+        "cut_s": 6.45,
+        "depth_rel_db": -79.8,
+        "existing_pause_ms": 660,
+        "inserted_ms": 640,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_comma/a2_c008_05_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_comma/a2_c008_05_a1.wav",
+     "seconds": 9.56,
+     "speech_seconds": 9.19,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -4.0,
+     "clipped_samples": 0,
+     "rate_cps": 3.92,
+     "rate_cps_net": 4.56,
+     "rate_cps_net_r": 4.72,
+     "pauses_ms": [
+      220,
+      1300
+     ],
+     "pauses_ms_r": [
+      220,
+      1300
+     ],
+     "f0_median": 219.4,
+     "f0_p10": 167.8,
+     "f0_p90": 320.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.72,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "不過看見一個人站不穩不能就說他吸毒也可能有其他身體狀況我們要先找大人幫忙",
+     "large-v3-turbo": "不過看見一個人站不倫不能就說他吸毒也可能有其他身體狀況我們要先找大人幫忙"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "穩",
+          "hyp": "倫",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.8,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.72,
+      "range": [
+       3.0,
+       4.0
+      ],
+      "syllables": 36,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1300
+      ],
+      "threshold_ms": 1300,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         5.82,
+         6.46
+        ],
+        "cut_s": 6.45,
+        "depth_rel_db": -79.8,
+        "existing_pause_ms": 660,
+        "inserted_ms": 640,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.0,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 1.72,
+    "fail_detail": "(a) large-v3-turbo：穩→倫（字不同）；(d) 4.72 字／秒（範圍 3.0–4.0）",
+    "billed": 19
+   }
+  ]
+ },
+ "Door_v3_zi|a2_c003_02": {
+  "variant": "Door_v3_zi",
+  "line": "a2_c003_02",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "有一種煙彈，外表像電紫煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。",
+      "sent": "有一種煙彈，外表像電紫煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c003_02/narrator_a0_s0_65e4e27d6511.mp3",
+      "request_id": "KBOqC92edgYhd2PBmaDA",
+      "billed": 15,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -75.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -10.6,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 7.94,
+       "t_fill_s": 9.28,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        8.04,
+        9.6
+       ],
+       "decay_end_s": 8.2,
+       "cut_s": 8.3,
+       "floor_rel_db": -74.4,
+       "removed_s": 2.02
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_zi/a2_c003_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_zi/a2_c003_02_a1.wav",
+     "seconds": 8.4,
+     "speech_seconds": 8.03,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -2.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.49,
+     "rate_cps_net": 4.16,
+     "rate_cps_net_r": 3.91,
+     "pauses_ms": [
+      340,
+      440,
+      520
+     ],
+     "pauses_ms_r": [
+      330,
+      510
+     ],
+     "f0_median": 209.7,
+     "f0_p10": 161.9,
+     "f0_p90": 278.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.91,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "有一種鮮蛋外表像電子煙裡面卻可能加了毒品有人叫它桑絲煙蛋",
+     "large-v3-turbo": "有一種鮮蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "煙彈",
+          "hyp": "鮮蛋",
+          "kind": "字不同",
+          "span": [
+           3,
+           5
+          ]
+         },
+         {
+          "ref": "喪屍",
+          "hyp": "桑絲",
+          "kind": "字不同",
+          "span": [
+           24,
+           26
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "煙彈",
+          "hyp": "鮮蛋",
+          "kind": "字不同",
+          "span": [
+           3,
+           5
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "喪屍煙彈": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "電子煙": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "喪屍煙彈"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -75.6,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.91,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 28,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "detail_score": 4.0,
+    "fail_detail": "(a) small：煙彈→鮮蛋（字不同）、喪屍→桑絲（字不同）；large-v3-turbo：煙彈→鮮蛋（字不同）；(b) 喪屍煙彈（不一致（需複查）／同音轉寫（讀音一致））",
+    "billed": 15
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "有一種煙彈，外表像電紫煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。",
+      "sent": "有一種煙彈，外表像電紫煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c003_02/narrator_a1_s0_74354ea95f92.mp3",
+      "request_id": "b8EoAQ1fiIC6rofXyoLN",
+      "billed": 15,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -77.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -36.7,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 7.48,
+       "t_fill_s": 8.84,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        7.39,
+        9.11
+       ],
+       "decay_end_s": 7.72,
+       "cut_s": 7.82,
+       "floor_rel_db": -74.3,
+       "removed_s": 2.02
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_zi/a2_c003_02_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_zi/a2_c003_02_a2.wav",
+     "seconds": 7.83,
+     "speech_seconds": 7.46,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -3.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.75,
+     "rate_cps_net": 3.75,
+     "rate_cps_net_r": 3.79,
+     "pauses_ms": [
+      190,
+      190,
+      220
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 224.5,
+     "f0_p10": 156.6,
+     "f0_p90": 305.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.79,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它桑絲煙彈",
+     "large-v3-turbo": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "喪屍",
+          "hyp": "桑絲",
+          "kind": "字不同",
+          "span": [
+           24,
+           26
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "喪屍煙彈": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "電子煙": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "喪屍煙彈"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -77.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.79,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 28,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "detail_score": 2.0,
+    "fail_detail": "(a) small：喪屍→桑絲（字不同）；(b) 喪屍煙彈（不一致（需複查）／同音轉寫（讀音一致））",
+    "billed": 15
+   }
+  ]
+ },
+ "Door_v3_head|a2_c010_01": {
+  "variant": "Door_v3_head",
+  "line": "a2_c010_01",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "正解是一：不能，要先找大人來幫忙。",
+      "sent": "嗯。正解是一：不能，要先找大人來幫忙。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c010_01/narrator_a0_s0_411a85cb5bb1.mp3",
+      "request_id": "D0QL2QAgdnOZVN4NogBe",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.8,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -9.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.96,
+       "t_fill_s": 6.14,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        5.09,
+        6.19
+       ],
+       "decay_end_s": 5.18,
+       "cut_s": 5.28,
+       "floor_rel_db": -73.1,
+       "removed_s": 1.92
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 0.78,
+       "asr_head": "嗯正解釋",
+       "how": "轉寫時間戳",
+       "guard": "ok",
+       "pause_s": [
+        0.48,
+        0.8
+       ],
+       "cut_s": 0.77
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a2_c010_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a2_c010_01_a1.wav",
+     "seconds": 4.75,
+     "speech_seconds": 4.38,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -2.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.2,
+     "rate_cps_net": 3.87,
+     "rate_cps_net_r": 3.88,
+     "pauses_ms": [
+      760
+     ],
+     "pauses_ms_r": [
+      750
+     ],
+     "f0_median": 204.7,
+     "f0_p10": 151.1,
+     "f0_p90": 285.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.88,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "正解示意不能要先找大人來幫忙",
+     "large-v3-turbo": "正解釋一不能要先找大人來幫忙"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "是一",
+          "hyp": "示意",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           2,
+           4
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.8,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.88,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 1.0,
+    "fail_detail": "(a) small：是一→示意（聲調不同（疑讀錯，或轉寫偏好））",
+    "billed": 9
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "正解是一：不能，要先找大人來幫忙。",
+      "sent": "嗯。正解是一：不能，要先找大人來幫忙。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c010_01/narrator_a1_s0_7ceda05b96a8.mp3",
+      "request_id": "GKAPbLY5zHYlNaGkiJ5t",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -74.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -32.2,
+       "last60ms_voiced": 0.5,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.32,
+       "t_fill_s": 4.94,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.39,
+        5.15
+       ],
+       "decay_end_s": 4.5,
+       "cut_s": 4.6,
+       "floor_rel_db": -73.0,
+       "removed_s": 1.08
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 0.68,
+       "asr_head": "正解釋一",
+       "how": "第一段停頓",
+       "guard": "ok",
+       "pause_s": [
+        0.6,
+        0.97
+       ],
+       "cut_s": 0.94
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a2_c010_01_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a2_c010_01_a2.wav",
+     "seconds": 3.88,
+     "speech_seconds": 3.51,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.1,
+     "clipped_samples": 0,
+     "rate_cps": 3.99,
+     "rate_cps_net": 3.99,
+     "rate_cps_net_r": 4.03,
+     "pauses_ms": [
+      190,
+      160
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 195.8,
+     "f0_p10": 136.1,
+     "f0_p90": 271.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.03,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "正解釋醫不能要先找大人來幫忙",
+     "large-v3-turbo": "正解釋一不能要先找大人來幫忙"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.03,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.1,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 9
+   }
+  ]
+ },
+ "Door_v3_head|a0_c001_01": {
+  "variant": "Door_v3_head",
+  "line": "a0_c001_01",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這裡是小登鎮。每年秋天，震上都會辦紙登結。",
+      "sent": "嗯。這裡是小登鎮。每年秋天，震上都會辦紙登結。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c001_01/narrator_a0_s0_e97b7ae4c777.mp3",
+      "request_id": "dosNJL5ywirAekG7QmIJ",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -46.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -15.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 6.34,
+       "t_fill_s": 7.04,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        6.6,
+        7.48
+       ],
+       "decay_end_s": 6.66,
+       "cut_s": 6.76,
+       "floor_rel_db": -43.9,
+       "removed_s": 1.48
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 1.0,
+       "asr_head": "嗯這裡是",
+       "how": "轉寫時間戳",
+       "guard": "ok",
+       "pause_s": [
+        0.45,
+        1.01
+       ],
+       "cut_s": 0.98
+      },
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.6,
+         1.8
+        ],
+        "cut_s": 1.93,
+        "depth_rel_db": -74.4,
+        "existing_pause_ms": 570,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a0_c001_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a0_c001_01_a1.wav",
+     "seconds": 6.05,
+     "speech_seconds": 5.68,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.2,
+     "clipped_samples": 0,
+     "rate_cps": 3.17,
+     "rate_cps_net": 3.52,
+     "rate_cps_net_r": 3.53,
+     "pauses_ms": [
+      570
+     ],
+     "pauses_ms_r": [
+      540
+     ],
+     "f0_median": 214.4,
+     "f0_p10": 170.7,
+     "f0_p90": 292.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.53,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "這裡是小燈證每年秋天正上都會辦紙燈節",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "鎮",
+          "hyp": "證",
+          "kind": "字不同",
+          "span": [
+           5,
+           6
+          ]
+         },
+         {
+          "ref": "鎮",
+          "hyp": "正",
+          "kind": "字不同",
+          "span": [
+           10,
+           11
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "紙燈節": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -46.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.53,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 18,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       570
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.6,
+         1.8
+        ],
+        "cut_s": 1.93,
+        "depth_rel_db": -74.4,
+        "existing_pause_ms": 570,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 2.0,
+    "fail_detail": "(a) small：鎮→證（字不同）、鎮→正（字不同）",
+    "billed": 11
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "narrator": 20261022
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "這裡是小登鎮。每年秋天，震上都會辦紙登結。",
+      "sent": "嗯。這裡是小登鎮。每年秋天，震上都會辦紙登結。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c001_01/narrator_a1_s0_83aaa91f6bba.mp3",
+      "request_id": "KwtCMuljaIWoRTI8epkf",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -74.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -22.9,
+       "last60ms_voiced": 0.25,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.62,
+       "t_fill_s": 6.98,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        5.78,
+        7.27
+       ],
+       "decay_end_s": 5.9,
+       "cut_s": 6.0,
+       "floor_rel_db": -72.1,
+       "removed_s": 1.84
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 1.02,
+       "asr_head": "嗯這裡是",
+       "how": "轉寫時間戳",
+       "guard": "ok",
+       "pause_s": [
+        0.28,
+        1.05
+       ],
+       "cut_s": 1.02
+      },
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.06,
+         1.68
+        ],
+        "cut_s": 1.52,
+        "depth_rel_db": -42.8,
+        "existing_pause_ms": 520,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a0_c001_01_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_head/a0_c001_01_a2.wav",
+     "seconds": 5.23,
+     "speech_seconds": 4.87,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.4,
+     "clipped_samples": 0,
+     "rate_cps": 3.7,
+     "rate_cps_net": 4.42,
+     "rate_cps_net_r": 3.75,
+     "pauses_ms": [
+      520,
+      280
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 213.9,
+     "f0_p10": 171.2,
+     "f0_p90": 289.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.75,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "這裡是小燈證每年秋天正上都會辦紙燈節",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "鎮",
+          "hyp": "證",
+          "kind": "字不同",
+          "span": [
+           5,
+           6
+          ]
+         },
+         {
+          "ref": "鎮",
+          "hyp": "正",
+          "kind": "字不同",
+          "span": [
+           10,
+           11
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "紙燈節": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.75,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 18,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.06,
+         1.68
+        ],
+        "cut_s": 1.52,
+        "depth_rel_db": -42.8,
+        "existing_pause_ms": 520,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 2.0,
+    "fail_detail": "(a) small：鎮→證（字不同）、鎮→正（字不同）",
+    "billed": 11
+   }
+  ]
+ },
+ "Door_v3_head_zj|a2_c010_01": {
+  "variant": "Door_v3_head_zj",
+  "line": "a2_c010_01",
+  "voice": "Door Chow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "narrator": 20261021
+    },
+    "settings": {
+     "narrator": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "narrator",
+      "i": 0,
+      "text": "正姐是一：不能，要先找大人來幫忙。",
+      "sent": "嗯。正姐是一：不能，要先找大人來幫忙。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c010_01/narrator_a0_s0_e1e50372aea5.mp3",
+      "request_id": "mBcdyXTRhzCGPbpKlUMy",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -24.3,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.54,
+       "t_fill_s": 5.0,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.6,
+        5.28
+       ],
+       "decay_end_s": 4.71,
+       "cut_s": 4.81,
+       "floor_rel_db": -73.4,
+       "removed_s": 1.11
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 0.74,
+       "asr_head": "嗯正解是",
+       "how": "轉寫時間戳",
+       "guard": "ok",
+       "pause_s": [
+        0.31,
+        0.75
+       ],
+       "cut_s": 0.72
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/narrator/Door_v3_head_zj/a2_c010_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/narrator/Door_v3_head_zj/a2_c010_01_a1.wav",
+     "seconds": 4.29,
+     "speech_seconds": 3.92,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -4.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.57,
+     "rate_cps_net": 4.38,
+     "rate_cps_net_r": 3.88,
+     "pauses_ms": [
+      440,
+      280
+     ],
+     "pauses_ms_r": [
+      270
+     ],
+     "f0_median": 209.8,
+     "f0_p10": 156.8,
+     "f0_p90": 333.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.88,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "正解是一不能要先找大人來幫忙",
+     "large-v3-turbo": "正解釋一不能要先找大人來幫忙"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.88,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.6,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 9
+   }
+  ]
+ }
+}

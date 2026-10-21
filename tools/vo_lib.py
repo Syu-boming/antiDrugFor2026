@@ -268,8 +268,211 @@ def speech_bounds(x: np.ndarray, rel_db: float = -45.0) -> tuple[int, int]:
     return start, end
 
 
+# ---------------------------------------------------------------- 停頓標記、淡入淡出、去爆音（G3 修正第 1 輪）
+BREAK_RE = re.compile(r"\[\[break:(\d+)\]\]")
+
+
+def split_breaks(text: str) -> list[tuple[str, int | None]]:
+    """「咦？[[break:450]]我想揮手……[[break:650]]手怎麼…」→ [(文字, 之後停頓毫秒或 None), ...]。
+
+    [[break:N]] 等同 SSML <break time="Nms"/>。edge-tts 7.3.1 會把文字裡的 SSML 跳脫（不接受自訂 SSML），
+    所以三種服務一律「分段合成 → 各段 ≥10 ms 淡入淡出 → 段間 N ms 靜音」，停頓長度可量測、與服務無關。
+    """
+    parts = BREAK_RE.split(text)
+    out: list[tuple[str, int | None]] = []
+    for i in range(0, len(parts), 2):
+        t = parts[i]
+        gap = int(parts[i + 1]) if i + 1 < len(parts) else None
+        if t.strip():
+            out.append((t, gap))
+        elif out and gap is not None:
+            out[-1] = (out[-1][0], (out[-1][1] or 0) + gap)
+    return out
+
+
+def strip_breaks(text: str) -> str:
+    return BREAK_RE.sub("", text)
+
+
+def _cos_ramp(n: int, up: bool = True) -> np.ndarray:
+    r = 0.5 - 0.5 * np.cos(np.linspace(0, np.pi, max(1, n), dtype=np.float64))
+    return (r if up else r[::-1]).astype(np.float32)
+
+
+def fade_edges(x: np.ndarray, fin_ms: float = 10.0, fout_ms: float = 20.0) -> np.ndarray:
+    """升餘弦淡入／淡出（剪接點一律用，不直接接全零樣本）。"""
+    y = x.astype(np.float32).copy()
+    fi = min(len(y), int(fin_ms / 1000 * SR))
+    fo = min(len(y), int(fout_ms / 1000 * SR))
+    if fi:
+        y[:fi] *= _cos_ramp(fi, True)
+    if fo:
+        y[-fo:] *= _cos_ramp(fo, False)
+    return y
+
+
+def _blocks_db(x: np.ndarray, blk: int = 48) -> np.ndarray:
+    """每 1 ms 的峰值（dBFS）。"""
+    m = len(x) // blk
+    if m == 0:
+        return np.array([-150.0])
+    return 20 * np.log10(np.abs(x[:m * blk]).reshape(m, blk).max(axis=1) + 1e-9)
+
+
+def declick(x: np.ndarray, min_dbfs: float = -70.0, max_ms: int = 8, ctx_ms: int = 20, margin_db: float = 15.0,
+            ramp_ms: int = 10, ctx_quiet_dbfs: float = -50.0) -> tuple[np.ndarray, list]:
+    """去掉靜音裡的孤立爆音（edge-tts 在內部句界的靜音前後會留下約 1–5 ms、−47 dBFS 的突波；
+    mp3 解碼在靜音裡也會每 24 ms 留下約 −60 dBFS 的小脈衝）。
+
+    判定：連續 ≤ max_ms 的 1 ms 區塊峰值 > min_dbfs；前後各 ctx_ms（隔 1 ms）的峰值中位數比它低 ≥ margin_db、
+    最大值比它低 ≥6 dB，而且前後最大值 < ctx_quiet_dbfs（周圍是靜音，不是語音；爆破音後面接母音不會被誤判）。
+    處理：該段前後各 ramp_ms 升餘弦漸降到 −60 dB（只衰減、不插入全零），周圍本來就是靜音，所以不影響語音。
+    回傳 (新訊號, [(秒, 原峰值 dBFS), ...])。
+    """
+    db = _blocks_db(x)
+    n = len(db)
+    y = x.astype(np.float32).copy()
+    log = []
+    i = 0
+    while i < n:
+        if db[i] <= min_dbfs:
+            i += 1
+            continue
+        j = i
+        while j + 1 < n and db[j + 1] > min_dbfs and j + 1 - i < max_ms:
+            j += 1
+        if j + 1 < n and db[j + 1] > min_dbfs:      # 比 max_ms 長：不是爆音
+            while j + 1 < n and db[j + 1] > min_dbfs:
+                j += 1
+            i = j + 1
+            continue
+        pk = db[i:j + 1].max()
+        pre = db[max(0, i - 1 - ctx_ms):max(0, i - 1)]
+        post = db[min(n, j + 2):min(n, j + 2 + ctx_ms)]
+        ctx = np.concatenate([pre, post]) if len(pre) + len(post) else np.array([-150.0])
+        if pk - np.median(ctx) >= margin_db and ctx.max() <= pk - 6 and ctx.max() < ctx_quiet_dbfs:
+            a, b = (i - 1) * 48, (j + 2) * 48
+            r = int(ramp_ms / 1000 * SR)
+            g = np.ones(len(y), dtype=np.float32)
+            floor = 10 ** (-60 / 20)
+            a0, b1 = max(0, a - r), min(len(y), b + r)
+            g[a0:a] = floor + (1 - floor) * _cos_ramp(a - a0, False)
+            g[max(0, a):min(len(y), b)] = floor
+            g[b:b1] = floor + (1 - floor) * _cos_ramp(b1 - b, True)
+            y *= g
+            log.append((round(i / 1000, 3), round(float(pk), 1)))
+        i = j + 1
+    return y, log
+
+
+def pause_cores(y: np.ndarray, rel_db: float = -35.0, min_ms: int = 150, quiet_dbfs: float = -66.0) -> list[tuple[int, int]]:
+    """句中停頓的「核心」（樣本範圍）：停頓＝語音區間內 10 ms RMS 低於最大值 rel_db、長 ≥ min_ms 的段；
+    核心＝停頓裡第一個到最後一個峰值 < quiet_dbfs 的 1 ms 區塊之間（排除前一個字的自然衰減與下一個字的起音）。"""
+    db = frame_db(y)
+    thr = db.max() + rel_db
+    s, e = speech_bounds(y)
+    sf, ef = s // 480, e // 480
+    out, i = [], sf
+    while i < ef:
+        if db[i] < thr:
+            j = i
+            while j < ef and db[j] < thr:
+                j += 1
+            if (j - i) * 10 >= min_ms:
+                ps, pe = i * 480, (j - 1) * 480 + 960
+                b = _blocks_db(y[ps:pe])
+                # 10 ms 滑動最大值；連續 20 ms 都低於 quiet_dbfs 才算衰減結束（起音前同理，從尾端往回找）
+                env = np.array([b[max(0, k - 5):k + 5].max() for k in range(len(b))])
+                quiet = env < quiet_dbfs
+                c0 = c1 = None
+                for k in range(len(b) - 20):
+                    if quiet[k:k + 20].all():
+                        c0 = k
+                        break
+                for k in range(len(b), 20, -1):
+                    if quiet[k - 20:k].all():
+                        c1 = k
+                        break
+                if c0 is not None and c1 is not None and c1 - c0 >= 30:
+                    out.append((ps + c0 * 48, ps + c1 * 48))
+            i = j
+        else:
+            i += 1
+    return out
+
+
+def pause_spikes(y: np.ndarray, thr_dbfs: float = -60.0, above_median_db: float = 15.0, guard_ms: int = 10) -> dict:
+    """停頓突波檢查（G3 修正第 1 輪第 5 項）：停頓核心內（前後各留 guard_ms）任何 1 ms 區塊峰值 > thr_dbfs、
+    且比該核心中位數高 ≥ above_median_db，就算一個突波。回傳 {pauses, spikes, max_core_peak_dbfs, detail}。"""
+    det, spikes, mx = [], 0, -150.0
+    for a, b in pause_cores(y):
+        a2, b2 = a + guard_ms * 48, b - guard_ms * 48
+        if b2 - a2 < 48 * 5:
+            continue
+        blk = _blocks_db(y[a2:b2])
+        med = float(np.median(blk))
+        bad = np.nonzero((blk > thr_dbfs) & (blk - med >= above_median_db))[0]
+        spikes += len(bad)
+        mx = max(mx, float(blk.max()))
+        det.append({"from_s": round(a / SR, 3), "to_s": round(b / SR, 3), "core_peak_dbfs": round(float(blk.max()), 1),
+                    "core_median_dbfs": round(med, 1), "spikes": int(len(bad))})
+    return {"pauses_checked": len(det), "spikes": spikes, "max_core_peak_dbfs": round(mx, 1) if det else None, "detail": det}
+
+
+def apply_contour(x: np.ndarray, points: list, floor: float = 60.0, ceil: float = 400.0) -> tuple[np.ndarray, dict]:
+    """把這段（通常是單音節，如「咦？」）有聲部分的 F0 改成指定走勢（Praat PSOLA；不改長度、不變速）。
+
+    points：[[相對位置 0–1, 倍數], ...]，倍數乘在原本起點 F0（有聲段前 20% 中位數）上。
+    例：[[0, 1.0], [0.35, 0.97], [1.0, 1.28]] ＝二聲：起點、略降、終點比起點高 28%。
+    """
+    import parselmouth
+    from parselmouth.praat import call
+    snd = parselmouth.Sound(x.astype(np.float64), sampling_frequency=SR)
+    pitch = snd.to_pitch_ac(time_step=0.01, pitch_floor=floor, pitch_ceiling=ceil)
+    f = pitch.selected_array["frequency"]
+    ts = pitch.xs()
+    v = np.nonzero(f > 0)[0]
+    if len(v) < 5:
+        return x, {"applied": False, "reason": "有聲段太短"}
+    s, e = v[0], v[-1]
+    seg = f[s:e + 1][f[s:e + 1] > 0]
+    n = max(1, len(seg) // 5)
+    f_start = float(np.median(seg[:n]))
+    man = call(snd, "To Manipulation", 0.01, floor, ceil)
+    tier = call(man, "Extract pitch tier")
+    call(tier, "Remove points between", 0, snd.duration)
+    t0, t1 = float(ts[s]), float(ts[e])
+    for p, k in points:
+        call(tier, "Add point", t0 + p * (t1 - t0), f_start * k)
+    call([tier, man], "Replace pitch tier")
+    out = call(man, "Get resynthesis (overlap-add)")
+    y = out.values[0].astype(np.float32)
+    y = y[:len(x)] if len(y) >= len(x) else np.pad(y, (0, len(x) - len(y)))
+    return y, {"applied": True, "f_start_hz": round(f_start, 1), "t0": round(t0, 3), "t1": round(t1, 3), "points": points}
+
+
+def first_syllable_rise(x: np.ndarray, floor: float = 60.0, ceil: float = 500.0) -> dict:
+    """第一個有聲段的 F0 起點／終點（各取前、後 20% 中位數）與比值（tone_check 用）。"""
+    import parselmouth
+    snd = parselmouth.Sound(x.astype(np.float64), sampling_frequency=SR)
+    p = snd.to_pitch_ac(time_step=0.01, pitch_floor=floor, pitch_ceiling=ceil)
+    f, ts = p.selected_array["frequency"], p.xs()
+    v = f > 0
+    idx = np.nonzero(v)[0]
+    if not len(idx):
+        return {}
+    s = e = idx[0]
+    while e + 1 < len(f) and v[e + 1]:
+        e += 1
+    seg = f[s:e + 1]
+    n = max(1, len(seg) // 5)
+    a, b = float(np.median(seg[:n])), float(np.median(seg[-n:]))
+    return {"t0": round(float(ts[s]), 3), "t1": round(float(ts[e]), 3), "start_hz": round(a, 1), "end_hz": round(b, 1),
+            "end_over_start": round(b / a, 3), "contour_hz_20ms": [round(float(q)) for q in seg[::2]]}
+
+
 def cap_pauses(x: np.ndarray, max_ms: int, rel_db: float = -40.0) -> tuple[np.ndarray, list]:
-    """句中停頓上限：語音區間內低於最大值 rel_db、長於 max_ms 的靜音段，從中間剪到 max_ms（10 ms 交叉淡化）。
+    """句中停頓上限：語音區間內低於最大值 rel_db、長於 max_ms 的靜音段，從中間剪到 max_ms（20 ms 升餘弦交叉淡化）。
 
     只剪靜音、不變速（v1.2 第 20.4 節「不後製變速」）。edge-tts 的句號／問號停頓約 0.8–1.2 秒，對兒童角色的對話偏長。
     回傳 (新訊號, [(原毫秒, 新毫秒), ...])。
@@ -292,7 +495,7 @@ def cap_pauses(x: np.ndarray, max_ms: int, rel_db: float = -40.0) -> tuple[np.nd
     if not runs:
         return x, []
     out, last, log = [], 0, []
-    xf = int(0.010 * SR)
+    xf = int(0.020 * SR)
     for a, b in runs:
         a_s, b_s = a * 480 + 480, b * 480     # 靜音段樣本範圍（保守內縮一格）
         keep = int(max_ms / 1000 * SR)
@@ -302,7 +505,7 @@ def cap_pauses(x: np.ndarray, max_ms: int, rel_db: float = -40.0) -> tuple[np.nd
         mid = a_s + keep // 2
         seg1 = x[last:mid].copy()
         nxt = mid + cut_len
-        ramp = np.linspace(1, 0, xf, dtype=np.float32)
+        ramp = _cos_ramp(xf, False)
         seg1[-xf:] = seg1[-xf:] * ramp + x[nxt - xf:nxt] * (1 - ramp)
         out.append(seg1)
         last = nxt
@@ -323,11 +526,7 @@ def trim_pad(x: np.ndarray, head_ms: int = 120, tail_ms: int = 250) -> tuple[np.
     lead = int(0.010 * SR)
     a = max(0, s - lead)
     b = min(len(x), e + keep_tail)
-    seg = x[a:b].copy()
-    fi = min(len(seg), int(0.005 * SR))
-    seg[:fi] *= np.linspace(0, 1, fi)
-    fo = min(len(seg), int(0.030 * SR))
-    seg[-fo:] *= np.linspace(1, 0, fo)
+    seg = fade_edges(x[a:b], fin_ms=10, fout_ms=30)
     head = np.zeros(int(head_ms / 1000 * SR) - (s - a), dtype=np.float32)
     tail = np.zeros(int(tail_ms / 1000 * SR) - (b - e), dtype=np.float32)
     y = np.concatenate([head, seg, tail]).astype(np.float32)
@@ -472,6 +671,10 @@ def master(x: np.ndarray, target: float = -18.0, tp_max: float = -1.5, head_ms: 
             info["limited"] = True
         y, m = y2, m2
         info["trim_passes"] = info.get("trim_passes", 0) + 1
+    # 停頓突波安全網：母帶增益之後再去一次孤立爆音（只衰減靜音中的突波；G3 修正第 1 輪第 5 項）
+    y, clicks = declick(y)
+    if clicks:
+        info["declick_after_gain"] = clicks
     info["I"] = m["I"]
     info["TP"] = m["TP"]
     return y, info
@@ -502,6 +705,21 @@ def measure(path: Path, text: str) -> dict:
     speech_s = (e - s) / SR
     n = han_count(text)
     long_pause = sum(p for p in pauses if p >= 250) / 1000
+    # 驗收者算法（review/G3/qa/配音導演/measure.py）：−40 dB 門檻、≥200 ms 的停頓扣掉後的淨語速、只數漢字
+    thr40 = db.max() - 40
+    act = np.nonzero(db > thr40)[0]
+    pauses_r, run = [], 0
+    if len(act):
+        for v in db[act[0]:act[-1] + 1]:
+            if v <= thr40:
+                run += 1
+            else:
+                if run >= 20:
+                    pauses_r.append(run * 10)
+                run = 0
+    span_r = ((act[-1] + 1) - act[0]) * 0.01 if len(act) else speech_s
+    n_cjk = len(re.findall(r"[一-鿿]", text))
+    ps = pause_spikes(x)
     snd = parselmouth.Sound(str(path))
     pitch = snd.to_pitch_ac(time_step=0.01, pitch_floor=75, pitch_ceiling=700)
     f0 = pitch.selected_array["frequency"]
@@ -510,18 +728,47 @@ def measure(path: Path, text: str) -> dict:
     head_sil = s / SR * 1000
     tail_sil = (len(x) - e) / SR * 1000
     return {
-        "file": str(path.relative_to(ROOT)), "sample_rate": sr, "bits": bits, "channels": ch,
+        "file": str(path.relative_to(ROOT)) if path.is_relative_to(ROOT) else str(path), "sample_rate": sr, "bits": bits, "channels": ch,
         "seconds": round(len(x) / SR, 3), "speech_seconds": round(speech_s, 3),
         "integrated_lufs": m["I"], "true_peak_dbtp": m["TP"], "lra": m["LRA"], "clipped_samples": clip,
         "head_silence_ms": round(head_sil), "tail_silence_ms": round(tail_sil),
         "han_chars": n, "rate_cps": round(n / speech_s, 2) if speech_s else None,
         "rate_cps_net": round(n / max(0.1, speech_s - long_pause), 2) if speech_s else None,
         "pauses_ms": pauses, "pause_count_ge250": sum(1 for p in pauses if p >= 250),
+        "rate_cps_net_r": round(n_cjk / max(0.1, span_r - sum(pauses_r) / 1000), 2) if len(act) else None,
+        "pauses_ms_r": pauses_r,
+        "pause_spikes": ps["spikes"], "pause_core_peak_dbfs": ps["max_core_peak_dbfs"], "pauses_checked": ps["pauses_checked"],
         "f0_median": round(float(np.median(f0)), 1) if len(f0) else None,
         "f0_p10": round(float(np.percentile(f0, 10)), 1) if len(f0) else None,
         "f0_p90": round(float(np.percentile(f0, 90)), 1) if len(f0) else None,
         "voiced_ratio": round(len(f0) / max(1, len(pitch.selected_array["frequency"])), 2),
     }
+
+
+def speech_segments(y: np.ndarray, rel_db: float = -35.0, min_pause_ms: int = 150) -> list[list[float]]:
+    """語音段落（秒）：以 ≥ min_pause_ms 的停頓（10 ms RMS 低於最大值 rel_db）切開。給動畫對時間用（例如「咦」「揮手」）。"""
+    db = frame_db(y)
+    thr = db.max() + rel_db
+    s, e = speech_bounds(y)
+    sf, ef = s // 480, max(s // 480 + 1, e // 480 - 1)
+    segs, cur, i = [], sf, sf
+    while i < ef:
+        if db[i] < thr:
+            j = i
+            while j < ef and db[j] < thr:
+                j += 1
+            if (j - i) * 10 >= min_pause_ms:
+                if j >= ef:
+                    # 修正第 2 輪：低於門檻一路延續到語音終點＝句尾自然衰減（−45～−58 dB），不是新段落；
+                    # 以前會在最後多出一個 10 ms 的假段落（例如 [3.37, 3.38]）。最後一段一律收在 speech_end。
+                    break
+                segs.append([round(cur * 480 / SR, 3), round((i * 480 + 480) / SR, 3)])
+                cur = j
+            i = j
+        else:
+            i += 1
+    segs.append([round(cur * 480 / SR, 3), round(e / SR, 3)])
+    return segs
 
 
 # ---------------------------------------------------------------- 對嘴
@@ -650,8 +897,19 @@ def _to_trad(s: str) -> str:
         return s
 
 
+_TW_PHRASES_LOADED = False
+TW_PHRASES = {  # 台灣華語讀音（教育部辭典）；pypinyin 預設是大陸讀音
+    "喪屍": [["sāng"], ["shī"]], "垃圾": [["lè"], ["sè"]], "在乎": [["zài"], ["hū"]], "阿樂": [["ā"], ["lè"]],
+    "竹篾": [["zhú"], ["miè"]], "鑰匙": [["yào"], ["shi"]],
+}
+
+
 def _pinyin(s: str, tone: bool = True) -> list[str]:
-    from pypinyin import Style, lazy_pinyin
+    from pypinyin import Style, lazy_pinyin, load_phrases_dict
+    global _TW_PHRASES_LOADED
+    if not _TW_PHRASES_LOADED:
+        load_phrases_dict(TW_PHRASES)
+        _TW_PHRASES_LOADED = True
     s = re.sub(r"119", "一一九", s)
     return lazy_pinyin(s, style=Style.TONE3 if tone else Style.NORMAL, neutral_tone_with_five=True,
                        errors=lambda x: list(x))
@@ -698,7 +956,7 @@ def compare(ref_text: str, synth_text: str, hyp: str) -> dict:
         else:
             kind = "多字"
             pedits += len(h_seg)
-        diffs.append({"ref": r_seg, "hyp": h_seg, "kind": kind})
+        diffs.append({"ref": r_seg, "hyp": h_seg, "kind": kind, "_i": (i1, i2)})
     cer = edits / max(1, len(ref_cmp))
     per = pedits / max(1, len(ref_cmp))
     ph_all = " ".join(_pinyin(hyp_cmp))
@@ -706,12 +964,23 @@ def compare(ref_text: str, synth_text: str, hyp: str) -> dict:
     checks = []
     for w in CHECK_WORDS:
         if w in ref_text:
-            if w.replace("119", "一一九") in hyp_cmp:
+            wc = w.replace("119", "一一九")
+            if wc in hyp_cmp:
                 st = "轉寫一致"
             else:
-                syn_w = apply_pronounce(w, pron, "global") if pron else w
-                st = "同音轉寫（讀音一致）" if " ".join(_pinyin(syn_w)) in ph_all else "不一致（需複查）"
+                # 依逐字對齊：檢查詞範圍內的差異都是同音字 → 同音轉寫（修正第 1 輪：不再用整句拼音比對，
+                # 避免 pypinyin 依上下文把轉寫裡的「喪」標成 sang4 而誤判）
+                pos = [k for k in range(len(ref_cmp)) if ref_cmp.startswith(wc, k)]
+                spans = [(k, k + len(wc)) for k in pos]
+                over = [d for d in diffs for a, b in spans if d["_i"][0] < b and d["_i"][1] > a]
+                if spans and over and all(d["kind"] == "同音字（讀音一致）" for d in over):
+                    st = "同音轉寫（讀音一致）"
+                else:
+                    syn_w = apply_pronounce(w, pron, "global") if pron else w
+                    st = "同音轉寫（讀音一致）" if " ".join(_pinyin(syn_w)) in ph_all else "不一致（需複查）"
             checks.append({"word": w, "status": st})
+    for d in diffs:
+        d.pop("_i", None)
     for w in SANDHI_WORDS:
         if w in ref_text:
             checks.append({"word": w, "status": "未驗證（變調轉寫看不出）"})

@@ -1,0 +1,374 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "zhezhe",
+ "role_zh": "折折",
+ "cand": "zhezhe_Lulu-BT0S",
+ "model": "eleven_v3",
+ "line": "a0_c003_01",
+ "voice": "Lulu - Cute Little Witch ",
+ "整句（替身字，正式管線）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v3__a0_c003_01.wav",
+  "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是紙燈節今年的主凳是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.84,
+     1.04
+    ],
+    [
+     1.04,
+     1.24
+    ],
+    [
+     1.24,
+     1.48
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    149,
+    498
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 0.965,
+    "t1": 1.065,
+    "mean_hz": 191.2,
+    "start_hz": 210.8,
+    "end_hz": 179.6,
+    "min_hz": 174.0,
+    "min_pos": 0.7,
+    "end_over_start": 0.852,
+    "end_over_min": 1.032,
+    "contour_hz_20ms": [
+     209,
+     206,
+     196,
+     183,
+     174,
+     182
+    ]
+   },
+   "燈": {
+    "t0": 1.115,
+    "t1": 1.305,
+    "mean_hz": 260.1,
+    "start_hz": 228.4,
+    "end_hz": 267.8,
+    "min_hz": 225.0,
+    "min_pos": 0.0,
+    "end_over_start": 1.173,
+    "end_over_min": 1.19,
+    "contour_hz_20ms": [
+     224,
+     231,
+     240,
+     249,
+     261,
+     269,
+     279,
+     287,
+     293,
+     268
+    ]
+   },
+   "節": {
+    "t0": 1.395,
+    "t1": 1.555,
+    "mean_hz": 205.1,
+    "start_hz": 212.4,
+    "end_hz": 217.3,
+    "min_hz": 194.0,
+    "min_pos": 0.5,
+    "end_over_start": 1.023,
+    "end_over_min": 1.12,
+    "contour_hz_20ms": [
+     212,
+     210,
+     200,
+     200,
+     192,
+     197,
+     204,
+     214,
+     221
+    ]
+   },
+   "燈_end_over_start": 1.173,
+   "燈_over_紙_mean": 1.36,
+   "節_end_over_min": 1.12,
+   "節_min_pos": 0.5,
+   "燈_一聲": true,
+   "節_二聲": true,
+   "pass": true
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "同音轉寫（讀音一致）",
+    "large-v3-turbo": "轉寫一致"
+   },
+   "hyp_by_model": {
+    "small": "明天就是指燈節今年的主動是照著我的樣子做的",
+    "large-v3-turbo": "明天就是紙燈節今年的主凳是照著我的樣子做的"
+   },
+   "both_models_ok": true
+  }
+ },
+ "整句（原字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v3__tone_a0_c003_01_orig.wav",
+  "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是紙洞節今年的主洞是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.96,
+     1.26
+    ],
+    [
+     1.26,
+     1.44
+    ],
+    [
+     1.44,
+     1.72
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    141,
+    470
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 1.145,
+    "t1": 1.235,
+    "mean_hz": 179.9,
+    "start_hz": 196.4,
+    "end_hz": 173.3,
+    "min_hz": 165.8,
+    "min_pos": 0.78,
+    "end_over_start": 0.882,
+    "end_over_min": 1.045,
+    "contour_hz_20ms": [
+     200,
+     192,
+     179,
+     168,
+     166
+    ]
+   },
+   "燈": {
+    "t0": 1.305,
+    "t1": 1.495,
+    "mean_hz": 255.7,
+    "start_hz": 236.1,
+    "end_hz": 229.3,
+    "min_hz": 226.2,
+    "min_pos": 1.0,
+    "end_over_start": 0.971,
+    "end_over_min": 1.014,
+    "contour_hz_20ms": [
+     222,
+     241,
+     261,
+     284,
+     285,
+     281,
+     268,
+     251,
+     237,
+     223
+    ]
+   },
+   "節": {
+    "t0": 1.605,
+    "t1": 1.795,
+    "mean_hz": 194.6,
+    "start_hz": 188.6,
+    "end_hz": 205.4,
+    "min_hz": 187.4,
+    "min_pos": 0.0,
+    "end_over_start": 1.089,
+    "end_over_min": 1.096,
+    "contour_hz_20ms": [
+     186,
+     189,
+     191,
+     192,
+     191,
+     193,
+     195,
+     194,
+     200,
+     208
+    ]
+   },
+   "燈_end_over_start": 0.971,
+   "燈_over_紙_mean": 1.421,
+   "節_end_over_min": 1.096,
+   "節_min_pos": 0.0,
+   "燈_一聲": true,
+   "節_二聲": true,
+   "pass": true
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是指凍節今年的主動是照著我的樣子做的",
+    "large-v3-turbo": "明天就是紙洞節今年的主洞是照著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v3__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "タミトン雑",
+   "error": "轉寫無法逐字對齊到「紙燈節」"
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "Tamitonjutsu",
+    "large-v3-turbo": "タミトン雑"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v3__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "髪土結",
+   "whisper_spans": [
+    [
+     0.0,
+     0.48
+    ],
+    [
+     0.48,
+     0.6
+    ],
+    [
+     0.6,
+     0.9
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    141,
+    469
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.195,
+    "t1": 0.505,
+    "mean_hz": 267.6,
+    "start_hz": 227.6,
+    "end_hz": 276.0,
+    "min_hz": 225.8,
+    "min_pos": 0.13,
+    "end_over_start": 1.212,
+    "end_over_min": 1.222,
+    "contour_hz_20ms": [
+     240,
+     228,
+     226,
+     228,
+     231,
+     242,
+     249,
+     257,
+     273,
+     295,
+     309,
+     323,
+     325,
+     322,
+     286,
+     245
+    ]
+   },
+   "燈": {
+    "t0": 0.535,
+    "t1": 0.665,
+    "mean_hz": 218.0,
+    "start_hz": 271.3,
+    "end_hz": 182.0,
+    "min_hz": 182.0,
+    "min_pos": 1.0,
+    "end_over_start": 0.671,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     275,
+     250,
+     230,
+     215,
+     202,
+     193,
+     187
+    ]
+   },
+   "節": {
+    "t0": 0.765,
+    "t1": 0.825,
+    "mean_hz": 177.6,
+    "start_hz": 189.5,
+    "end_hz": 169.0,
+    "min_hz": 168.8,
+    "min_pos": 1.0,
+    "end_over_start": 0.892,
+    "end_over_min": 1.002,
+    "contour_hz_20ms": [
+     190,
+     182,
+     172,
+     169
+    ]
+   },
+   "燈_end_over_start": 0.671,
+   "燈_over_紙_mean": 0.815,
+   "節_end_over_min": 1.002,
+   "節_min_pos": 1.0,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "Kamidoketsu",
+    "large-v3-turbo": "髪土結"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v3__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "神とガチ",
+   "error": "轉寫無法逐字對齊到「紙等街」"
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "神和神",
+    "large-v3-turbo": "神とガチ"
+   }
+  }
+ }
+}

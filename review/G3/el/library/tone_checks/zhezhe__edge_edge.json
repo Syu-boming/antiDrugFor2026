@@ -1,0 +1,440 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "zhezhe",
+ "role_zh": "折折",
+ "cand": "edge",
+ "model": "edge-tts 7.3.1",
+ "line": "a0_c003_01",
+ "voice": "edge 基準（casting.json）",
+ "整句（替身字，正式管線）": {
+  "file": "samples/zhezhe/zhezhe__edge__a0_c003_01.wav",
+  "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.86,
+     1.14
+    ],
+    [
+     1.14,
+     1.34
+    ],
+    [
+     1.34,
+     1.52
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    176,
+    588
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 0.86,
+    "t1": 0.96,
+    "mean_hz": 319.4,
+    "start_hz": 378.0,
+    "end_hz": 255.2,
+    "min_hz": 255.2,
+    "min_pos": 1.0,
+    "end_over_start": 0.675,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     396,
+     351,
+     335,
+     312,
+     284,
+     252
+    ]
+   },
+   "燈": {
+    "t0": 1.22,
+    "t1": 1.38,
+    "mean_hz": 290.4,
+    "start_hz": 287.3,
+    "end_hz": 301.5,
+    "min_hz": 283.2,
+    "min_pos": 0.0,
+    "end_over_start": 1.05,
+    "end_over_min": 1.065,
+    "contour_hz_20ms": [
+     279,
+     287,
+     284,
+     284,
+     283,
+     293,
+     299,
+     309,
+     287
+    ]
+   },
+   "節": {
+    "t0": 1.47,
+    "t1": 1.6,
+    "mean_hz": 237.1,
+    "start_hz": 266.2,
+    "end_hz": 226.0,
+    "min_hz": 224.9,
+    "min_pos": 0.77,
+    "end_over_start": 0.849,
+    "end_over_min": 1.005,
+    "contour_hz_20ms": [
+     270,
+     253,
+     238,
+     233,
+     227,
+     224,
+     225
+    ]
+   },
+   "燈_end_over_start": 1.05,
+   "燈_over_紙_mean": 0.909,
+   "節_end_over_min": 1.005,
+   "節_min_pos": 0.77,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "轉寫一致",
+    "large-v3-turbo": "轉寫一致"
+   },
+   "hyp_by_model": {
+    "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+    "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+   },
+   "both_models_ok": true
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/zhezhe/zhezhe__edge__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "子彈節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.3
+    ],
+    [
+     0.3,
+     0.54
+    ],
+    [
+     0.54,
+     0.74
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    172,
+    574
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.33,
+    "mean_hz": 270.4,
+    "start_hz": 307.3,
+    "end_hz": 222.5,
+    "min_hz": 222.5,
+    "min_pos": 1.0,
+    "end_over_start": 0.724,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     311,
+     298,
+     290,
+     275,
+     258,
+     238,
+     224
+    ]
+   },
+   "燈": {
+    "t0": 0.4,
+    "t1": 0.57,
+    "mean_hz": 349.2,
+    "start_hz": 340.3,
+    "end_hz": 357.3,
+    "min_hz": 336.4,
+    "min_pos": 0.12,
+    "end_over_start": 1.05,
+    "end_over_min": 1.062,
+    "contour_hz_20ms": [
+     355,
+     336,
+     339,
+     341,
+     346,
+     353,
+     359,
+     364,
+     351
+    ]
+   },
+   "節": {
+    "t0": 0.65,
+    "t1": 0.81,
+    "mean_hz": 259.6,
+    "start_hz": 296.9,
+    "end_hz": 244.7,
+    "min_hz": 244.7,
+    "min_pos": 0.81,
+    "end_over_start": 0.824,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     320,
+     287,
+     266,
+     254,
+     247,
+     246,
+     244,
+     245,
+     245
+    ]
+   },
+   "燈_end_over_start": 1.05,
+   "燈_over_紙_mean": 1.291,
+   "節_end_over_min": 1.0,
+   "節_min_pos": 0.81,
+   "燈_一聲": true,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.295
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "擠單節",
+    "large-v3-turbo": "子彈節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/zhezhe/zhezhe__edge__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "子彈結",
+   "whisper_spans": [
+    [
+     0.0,
+     0.28
+    ],
+    [
+     0.28,
+     0.52
+    ],
+    [
+     0.52,
+     0.72
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    172,
+    572
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.33,
+    "mean_hz": 271.8,
+    "start_hz": 307.8,
+    "end_hz": 223.4,
+    "min_hz": 223.4,
+    "min_pos": 1.0,
+    "end_over_start": 0.726,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     312,
+     299,
+     291,
+     276,
+     263,
+     243,
+     224
+    ]
+   },
+   "燈": {
+    "t0": 0.4,
+    "t1": 0.56,
+    "mean_hz": 347.0,
+    "start_hz": 336.0,
+    "end_hz": 354.4,
+    "min_hz": 334.5,
+    "min_pos": 0.12,
+    "end_over_start": 1.055,
+    "end_over_min": 1.059,
+    "contour_hz_20ms": [
+     344,
+     333,
+     338,
+     341,
+     346,
+     353,
+     360,
+     362,
+     347
+    ]
+   },
+   "節": {
+    "t0": 0.65,
+    "t1": 0.8,
+    "mean_hz": 257.8,
+    "start_hz": 291.4,
+    "end_hz": 248.2,
+    "min_hz": 244.5,
+    "min_pos": 0.73,
+    "end_over_start": 0.852,
+    "end_over_min": 1.015,
+    "contour_hz_20ms": [
+     306,
+     281,
+     262,
+     249,
+     245,
+     245,
+     245,
+     248
+    ]
+   },
+   "燈_end_over_start": 1.055,
+   "燈_over_紙_mean": 1.277,
+   "節_end_over_min": 1.015,
+   "節_min_pos": 0.73,
+   "燈_一聲": true,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.287
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "擠單節",
+    "large-v3-turbo": "子彈結"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/zhezhe/zhezhe__edge__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "直等街",
+   "whisper_spans": [
+    [
+     0.0,
+     0.28
+    ],
+    [
+     0.28,
+     0.5
+    ],
+    [
+     0.5,
+     0.68
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    189,
+    629
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.32,
+    "mean_hz": 324.8,
+    "start_hz": 297.9,
+    "end_hz": 327.6,
+    "min_hz": 297.9,
+    "min_pos": 0.0,
+    "end_over_start": 1.1,
+    "end_over_min": 1.1,
+    "contour_hz_20ms": [
+     299,
+     298,
+     317,
+     332,
+     361,
+     330
+    ]
+   },
+   "燈": {
+    "t0": 0.37,
+    "t1": 0.53,
+    "mean_hz": 269.6,
+    "start_hz": 364.9,
+    "end_hz": 220.9,
+    "min_hz": 216.6,
+    "min_pos": 0.75,
+    "end_over_start": 0.605,
+    "end_over_min": 1.02,
+    "contour_hz_20ms": [
+     411,
+     339,
+     310,
+     275,
+     246,
+     226,
+     217,
+     218,
+     223
+    ]
+   },
+   "節": {
+    "t0": 0.62,
+    "t1": 0.76,
+    "mean_hz": 314.2,
+    "start_hz": 314.5,
+    "end_hz": 318.3,
+    "min_hz": 311.4,
+    "min_pos": 0.29,
+    "end_over_start": 1.012,
+    "end_over_min": 1.022,
+    "contour_hz_20ms": [
+     322,
+     312,
+     311,
+     312,
+     313,
+     313,
+     315,
+     323
+    ]
+   },
+   "燈_end_over_start": 0.605,
+   "燈_over_紙_mean": 0.83,
+   "節_end_over_min": 1.022,
+   "節_min_pos": 0.29,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "只等街",
+    "large-v3-turbo": "直等街"
+   }
+  }
+ }
+}

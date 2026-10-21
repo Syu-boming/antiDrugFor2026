@@ -21,6 +21,13 @@ ROOT = Path(__file__).resolve().parents[4]
 FACE_DIR = ROOT / "assets/final/face"
 FONT = "/System/Library/AssetsV2/com_apple_MobileAsset_Font8/86ba2c91f017a3749571a82f2c6d890ac7ffb2fb.asset/AssetData/PingFang.ttc"
 SS = 4  # 超取樣倍數
+# 輸出設定（預設＝G4 v01 行為；build_faces_v05.py 會改這幾個值，只輸出指定換片的新版本，不覆寫 v01）
+PIECE_VER = {}          # 換片 → 版本字串（未列出＝"v01"）
+WRITE = None            # None＝全部寫檔；集合＝只寫這些換片
+FACE_JSON = "face.json"
+FACE_VERSION = "v01"
+PREFIX = ""             # 同一角色多張姿勢圖時，換片檔名加姿勢前綴（例 "watch-" → chr-xiaoqing_watch-mouth_closed_v01.png）
+SHEET = ROOT / "review/G4/art/face_sheet.png"
 
 CHARS = {
     "xiaoqing": dict(
@@ -296,6 +303,11 @@ def build(name, cfg):
         redish = px[(Lp > np.percentile(Lp, 25)) & (Lp < np.percentile(Lp, 55))]
         inside = np.median(redish, 0)
         tongue = np.median(px[Lp > np.percentile(Lp, 80)], 0)
+    if cfg.get("mouth_colors"):     # 原圖嘴是閉著的細線（量不到口腔、舌頭色）時，用同角色其他姿勢量到的顏色
+        mc = cfg["mouth_colors"]
+        line = np.array(mc.get("line", line), np.float32)
+        inside = np.array(mc["inside"], np.float32)
+        tongue = np.array(mc["tongue"], np.float32)
     cols = (line, inside, tongue)
     rec["colors"] = {"line": [int(x) for x in line], "inside": [int(x) for x in inside], "tongue": [int(x) for x in tongue]}
     protect_m = protect_all & ~ndimage.binary_dilation(mouth_m, iterations=1)
@@ -390,7 +402,10 @@ def build(name, cfg):
             else:
                 vm = v0 + 0.62 * hh
                 u = np.linspace(uc - hw_ * 0.95, uc + hw_ * 0.95, 40)
-                v = vm - 0.16 * hh * np.clip(1 - ((u - uc) / (hw_ * 0.95)) ** 2, 0, 1) ** 0.8
+                # closed_curve < 0：往上拱的弧（笑眼）；> 0：往下彎的中性閉眼（眼皮蓋下來）
+                cc = cfg.get("closed_curve", -0.16)
+                vm = v0 + cfg.get("closed_v", 0.62) * hh
+                v = vm + cc * hh * np.clip(1 - ((u - uc) / (hw_ * 0.95)) ** 2, 0, 1) ** 0.8
                 X, Y = to_img(c, tilt, u, v)
                 cv.stroke(X, Y, cfg["lid_lw"], tuple(int(x) for x in lash) + (255,), taper=True)
         img = clean_e.copy()
@@ -400,7 +415,7 @@ def build(name, cfg):
     write_group(name, "eyes", eb, a, clean_e, eyes_m, protect_e, pieces_e, out_dir, rec)
 
     face = {
-        "character": name, "zh": cfg["zh"], "version": "v01",
+        "character": name, "zh": cfg["zh"], "version": FACE_VERSION,
         "head_image": {"file": str(cfg["head"].relative_to(ROOT)), "image_id": pack_id(cfg["head"]), "size": [W, H], "note": cfg["head_note"]},
         "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs）；本檔的 JSON id＝face/<角色>/face。",
         "coords": "anchor_px＝換片左上角在頭部圖上的像素座標（y 向下）；同一組（嘴、眼）所有換片同錨點、同尺寸，直接疊在頭部圖上即可。",
@@ -415,7 +430,7 @@ def build(name, cfg):
         face["expression_hint"] = "X10 困惑＝eyes_half＋（眉在頭部圖上已是擔心眉）＋mouth_worried（說話時 lipsync）；X11 疲倦＝eyes_half＋mouth_closed；X12 閉眼靠著＝eyes_closed＋mouth_closed。"
     else:
         face["expression_hint"] = "姿勢圖本身是擔心眉；X4 驚訝＝eyes_open＋mouth_round（原圖）；X5 擔心＝eyes_open＋mouth_worried；說話時 lipsync。"
-    (out_dir / "face.json").write_text(json.dumps(face, ensure_ascii=False, indent=1))
+    (out_dir / FACE_JSON).write_text(json.dumps(face, ensure_ascii=False, indent=1))
     return face, a
 
 
@@ -455,12 +470,13 @@ def write_group(name, group, box, orig, clean, feat_m, protect_m, pieces, out_di
         alpha = np.where(ndimage.binary_erosion(cover, iterations=1), 1.0, np.clip(alpha * 1.4, 0, 1))
         alpha *= (orig[y0:y1, x0:x1, 3] > 128)
         crop[..., 3] = (alpha * 255).astype(np.uint8)
-        fn = f"chr-{name}_{var}_v01.png"
-        Image.fromarray(crop, "RGBA").save(out_dir / fn, optimize=True)
+        fn = f"chr-{name}_{PREFIX}{var}_{PIECE_VER.get(var, 'v01')}.png"
+        if WRITE is None or var in WRITE:
+            Image.fromarray(crop, "RGBA").save(out_dir / fn, optimize=True)
         # 換片後與原圖的差異範圍（只應在特徵框內）
         comp = orig[y0:y1, x0:x1, :3].astype(np.float32) * (1 - alpha[..., None]) + crop[..., :3] * alpha[..., None]
         diff = np.abs(comp - orig[y0:y1, x0:x1, :3]).max(-1) > 12
-        rec["pieces"][var] = {"file": f"assets/final/face/{name}/{fn}", "image_id": f"face/{name}/chr-{name}_{var}", "group": group,
+        rec["pieces"][var] = {"file": f"assets/final/face/{name}/{fn}", "image_id": f"face/{name}/chr-{name}_{PREFIX}{var}", "group": group,
                               "anchor_px": [x0, y0], "size": [x1 - x0, y1 - y0],
                               "source": "原圖（未改）" if data is None else "原圖局部填補＋程式畫剪紙風線條",
                               "changed_px": int(diff.sum())}
@@ -523,7 +539,7 @@ def face_sheet(faces):
             S.paste(s.convert("RGB"), (x, y))
             x += max(s.width, 60) + 16
         y += max(s.height for _, s in small) + 40
-    S.save(ROOT / "review/G4/art/face_sheet.png")
+    S.save(SHEET)
 
 
 def rebase_to_head_layer(name, face):
@@ -543,7 +559,7 @@ def rebase_to_head_layer(name, face):
         pc["anchor_px"] = [pc["anchor_px"][0] - ox, pc["anchor_px"][1] - oy]
     face["coords"] = ("anchor_px＝換片左上角在『頭層』上的像素座標（y 向下）；anchor_px_pose_image＝在整張姿勢圖上的座標（不拆頭時用）。"
                       "同一組（嘴、眼）所有換片同錨點、同尺寸。")
-    (FACE_DIR / name / "face.json").write_text(json.dumps(face, ensure_ascii=False, indent=1))
+    (FACE_DIR / name / FACE_JSON).write_text(json.dumps(face, ensure_ascii=False, indent=1))
 
 
 def shift_cfg(cfg, off):

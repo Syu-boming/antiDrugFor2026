@@ -1,0 +1,55 @@
+{
+ "code": "chen",
+ "lines": [
+  "a4_c012_05",
+  "a5_c001_02"
+ ],
+ "attempts": 2,
+ "variants": {
+  "Neil_v3": {
+   "voice_id": "auoHciLZJwKTwYUoRTYz",
+   "voice_name": "Neil Chuang - Deep, Trustworthy and Rich",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.88,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 450,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.5,
+     3.7
+    ],
+    "rate_cps_net": [
+     3.0,
+     4.2
+    ],
+    "f0_nominal": 91.7,
+    "f0_hz": [
+     81.7,
+     102.9
+    ]
+   },
+   "lines": {}
+  }
+ }
+}

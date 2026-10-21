@@ -1,233 +1,484 @@
 {
-  "_說明": "配音選角與參數（tools/vo_build.py 讀這份）。spec＝目前採用的聲線；alt＝備用聲線（--service <名稱> 切換；azure 未列時自動沿用 edge 的聲線與參數）；overrides＝依台詞編號（正規式）覆寫部分參數；post.sentence_gap_ms＝依句號分句合成、句間停頓改成指定毫秒（必要旁白「句間多停半拍」）；post.telephone＝300–3400 Hz 電話音色；post.max_pause_ms＝句中靜音停頓上限（只剪靜音、不變速）；loudness_offset_db＝單句響度偏移（畫外音放低一點）。依據：review/G3/casting.md（G3 選角提案）、script/角色表_v03.md 第 3 節。聽感一律未驗證，第 3 天彩排可改參數後一鍵重建。",
-  "version": "2026-10-21 G3 提案 v01",
-  "defaults": {
-    "version": "v01",
-    "sample_rate": 48000,
-    "head_ms": 120,
-    "tail_ms": 250,
-    "target_lufs": -18.0,
-    "true_peak_max": -1.5,
-    "short_line_s": 3.0,
-    "lipsync_fps": 12
+ "_說明": "配音選角與參數（tools/vo_build.py 讀這份）。spec＝目前採用的聲線；alt＝備用聲線（--service <名稱> 切換；azure 未列時自動沿用 edge 的聲線與參數）；overrides＝依台詞編號（正規式）覆寫部分參數；post.sentence_gap_ms＝依句號分句合成、句間停頓改成指定毫秒（必要旁白「句間多停半拍」）；post.telephone＝300–3400 Hz 電話音色；post.max_pause_ms＝句中靜音停頓上限（只剪靜音、不變速）；loudness_offset_db＝單句響度偏移（畫外音放低一點）。依據：review/G3/casting.md（G3 選角提案）、script/角色表_v03.md 第 3 節。聽感一律未驗證，第 3 天彩排可改參數後一鍵重建。 修正第 1 輪（v02）：spec.synth_text＝單句合成用文字（可含 [[break:N]]＝N ms 停頓，等同 SSML <break>；edge-tts 不接受自訂 SSML，所以一律分段合成＋淡入淡出＋靜音）；spec.segment_rates＝各段語速；post.contour＝把第 segment 段的 F0 改成指定走勢（Praat PSOLA，不改長度）。 修正第 2 輪（v03）：葉護理師改回角色表語速範圍（−20%）並以音高（+55Hz）和阿樂區分；小晴三句含人名「品安」的台詞把「品安」單獨一段合成，再以 PSOLA 加深「品」的半三聲低降（post.contour，段 0）；defaults.version 改 v03（避免重建時覆寫已採用的 v02）。",
+ "version": "2026-10-21 G3 修正第 2 輪 v03",
+ "defaults": {
+  "version": "v04",
+  "sample_rate": 48000,
+  "head_ms": 120,
+  "tail_ms": 250,
+  "target_lufs": -18.0,
+  "true_peak_max": -1.5,
+  "short_line_s": 3.0,
+  "lipsync_fps": 12
+ },
+ "services": {
+  "edge": {
+   "tool": "uvx --from edge-tts==7.3.1 edge-tts",
+   "license": "非官方工具，微軟條款未明確授權；v1.2 第 20.2 節只作暫用；v1.3 第 6 節在記錄風險下可用，之後以 Azure 同名聲線一鍵重建（--service azure）"
   },
-  "services": {
-    "edge": {
-      "tool": "uvx --from edge-tts==7.3.1 edge-tts",
-      "license": "非官方工具，微軟條款未明確授權；v1.2 第 20.2 節只作暫用；v1.3 第 6 節在記錄風險下可用，之後以 Azure 同名聲線一鍵重建（--service azure）"
-    },
-    "azure": {
-      "env": [
-        "AZURE_SPEECH_KEY",
-        "AZURE_SPEECH_REGION"
-      ],
-      "license": "Azure AI Speech 正式授權（需使用者帳號）；後端已寫好、尚未實測"
-    },
-    "elevenlabs": {
-      "env": [
-        "ELEVENLABS_API_KEY"
-      ],
-      "output_format": "mp3_44100_128",
-      "plan": "免費方案（API 不可用共享聲線與聲線設計；pcm／mp3 192k 需付費方案）",
-      "license": "依帳號方案條款（免費方案：限非商業用途並須標註 ElevenLabs）"
-    }
+  "azure": {
+   "env": [
+    "AZURE_SPEECH_KEY",
+    "AZURE_SPEECH_REGION"
+   ],
+   "license": "Azure AI Speech 正式授權（需使用者帳號）；後端已寫好、尚未實測"
   },
-  "roles": {
-    "旁白": {
-      "code": "narrator",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoChenNeural",
-        "rate": "-14%",
-        "pitch": "+0Hz"
-      },
-      "overrides": [
-        {
-          "match": "a2_c004_02|a2_c008_05",
-          "set": {
-            "rate": "-8%",
-            "post": {
-              "sentence_gap_ms": 1300
-            }
-          },
-          "note": "必要旁白兩句：放慢到約 3.5 字／秒、句間多停半拍（edge 原本句間約 1.0 秒 → 1.3 秒）"
-        }
-      ],
-      "alt": {
-        "elevenlabs": {
-          "service": "elevenlabs",
-          "voice_id": "EXAVITQu4vr4xnSDxMaL",
-          "voice_name": "Sarah",
-          "model": "eleven_v3",
-          "settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75
-          },
-          "seed": 20261021,
-          "language_code": "zh",
-          "output_format": "mp3_44100_128"
-        }
-      }
-    },
-    "折折": {
-      "code": "zhezhe",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoYuNeural",
-        "rate": "+22%",
-        "pitch": "+60Hz",
-        "post": {
-          "max_pause_ms": 550
-        }
-      },
-      "note": "全劇最高；與小宇同底聲（HsiaoYu），音高差 ≥8%（+60Hz 對 +20Hz）、語速差 ≥5%（+22% 對 +12%）"
-    },
-    "小晴": {
-      "code": "xiaoqing",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoChenNeural",
-        "rate": "+0%",
-        "pitch": "+40Hz",
-        "post": {
-          "max_pause_ms": 550
-        }
-      },
-      "note": "G3 B 版童聲調整（角色表起始值 +25Hz → +40Hz，約 +20%）"
-    },
-    "小宇": {
-      "code": "xiaoyu",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoYuNeural",
-        "rate": "+12%",
-        "pitch": "+20Hz",
-        "post": {
-          "max_pause_ms": 550
-        }
-      },
-      "note": "G3 B 版童聲調整（角色表起始值 −10Hz → +20Hz）；比小晴低、與小晴不同底聲"
-    },
-    "阿樂叔叔": {
-      "code": "ale",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-YunJheNeural",
-        "rate": "+0%",
-        "pitch": "+0Hz",
-        "post": {
-          "max_pause_ms": 900
-        }
-      },
-      "overrides": [
-        {
-          "match": "a2_c0(0[1-9]|1[0-2])_\\d{2}|a4_c001_\\d{2}|a4_c008_\\d{2}",
-          "set": {
-            "rate": "-6%"
-          },
-          "note": "受影響段（a2_c001–a2_c012、a4_c001、a4_c008）：慢、困惑但咬字清楚；目標 3.3–3.5 字／秒"
-        }
-      ],
-      "alt": {
-        "elevenlabs": {
-          "service": "elevenlabs",
-          "voice_id": "7Sk22fdUzAroSHJkVoXB",
-          "voice_name": "Juin（台灣中年男聲，需 ElevenLabs 付費方案）",
-          "model": "eleven_multilingual_v2",
-          "settings": {
-            "stability": 0.5,
-            "similarity_boost": 0.75,
-            "style": 0.0,
-            "use_speaker_boost": true,
-            "speed": 0.92
-          },
-          "seed": 20261021,
-          "output_format": "mp3_44100_128"
-        }
-      },
-      "note": "一般段 +0%（G4 未量測，G5 依 3.6–3.8 字／秒調整）；受影響段 −6%（G4 量測 −12% 時 3.03／3.23 字／秒，低於目標 3.3–3.5）"
-    },
-    "品安": {
-      "code": "pinan",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoYuNeural",
-        "rate": "-10%",
-        "pitch": "+40Hz",
-        "post": {
-          "max_pause_ms": 550
-        }
-      },
-      "note": "G3 未試音（G4 不需要）；角色表起始值 +15Hz 會和小宇（+20Hz）同底聲又太近，暫訂 +40Hz，G5 前量測確認"
-    },
-    "葉護理師": {
-      "code": "ye",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-YunJheNeural",
-        "rate": "+5%",
-        "pitch": "+12Hz",
-        "post": {
-          "max_pause_ms": 650
-        }
-      },
-      "note": "比阿樂高（+12Hz，F0 約 127 Hz 對阿樂約 100）；語速 +5%（與阿樂一般段 +0% 差 5%；G3 量 −3% 為 3.46、+3% 為 3.94 字／秒）"
-    },
-    "林老師": {
-      "code": "lin",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoChenNeural",
-        "rate": "-5%",
-        "pitch": "-20Hz",
-        "post": {
-          "max_pause_ms": 650
-        }
-      },
-      "loudness_offset_db": {
-        "a5_c001_03": -4.0
-      },
-      "note": "與旁白、小晴同底聲（HsiaoChen）：音高 −20Hz（F0 約 165 Hz，旁白約 200、小晴約 260），語速 −5%（與小晴 +0% 差 5%，目標 4.0 字／秒）"
-    },
-    "陳伯伯": {
-      "code": "chen",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-YunJheNeural",
-        "rate": "-10%",
-        "pitch": "-12Hz",
-        "post": {
-          "max_pause_ms": 650
-        }
-      },
-      "note": "G3 未試音；角色表起始值"
-    },
-    "邀請者": {
-      "code": "inviter",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-YunJheNeural",
-        "rate": "+10%",
-        "pitch": "+25Hz",
-        "post": {
-          "max_pause_ms": 650
-        }
-      },
-      "note": "G3 未試音；角色表起始值 +25Hz；語速改 +10%（與葉護理師 +5% 差 5%）；G5 前以 F0 落在中性區（約 145–175 Hz）為準，必要時改 HsiaoChen −30Hz"
-    },
-    "執勤人員": {
-      "code": "dispatcher",
-      "spec": {
-        "service": "edge",
-        "voice": "zh-TW-HsiaoChenNeural",
-        "rate": "+5%",
-        "pitch": "-8Hz",
-        "post": {
-          "max_pause_ms": 650,
-          "telephone": true
-        }
-      },
-      "note": "G3 未試音；角色表起始值＋電話音色"
-    }
+  "elevenlabs": {
+   "env": [
+    "ELEVENLABS_API_KEY"
+   ],
+   "output_format": "mp3_44100_128",
+   "plan": "2026-10-21 06:27 以前為免費方案（API 不可用聲線庫聲線與聲線設計；免費方案產出只限非商業用途，公開時須標註 elevenlabs.io）；06:30 使用者升級 Starter 付費方案（含商用授權）。另受 ElevenLabs 使用政策「Use by and for Minors」限制：給 18 歲以下對象的產品須經 ElevenLabs 書面核准（review/G3/el/license_evidence.md），核准前正式演出不使用 ElevenLabs 輸出",
+   "license": "免費方案：非商業＋標註 elevenlabs.io；Starter：商用授權（Beta 服務除外）；兒童對象另需書面核准（尚未取得）"
   }
+ },
+ "roles": {
+  "旁白": {
+   "code": "narrator",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-14%",
+    "pitch": "-10Hz"
+   },
+   "overrides": [
+    {
+     "match": "a2_c004_02|a2_c008_05",
+     "set": {
+      "rate": "-8%",
+      "post": {
+       "sentence_gap_ms": 1300
+      }
+     },
+     "note": "必要旁白兩句：放慢到約 3.5 字／秒、句間多停半拍（edge 原本句間約 1.0 秒 → 1.3 秒）"
+    }
+   ],
+   "alt": {
+    "elevenlabs": {
+     "service": "elevenlabs",
+     "voice_id": "EXAVITQu4vr4xnSDxMaL",
+     "voice_name": "Sarah",
+     "model": "eleven_v3",
+     "settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75
+     },
+     "seed": 20261021,
+     "language_code": "zh",
+     "output_format": "mp3_44100_128"
+    }
+   },
+   "note": "修正第 1 輪：pitch +0Hz → −10Hz（F0 中位 198 → 185 Hz；G4 各句 a2_c004_01 196、a2_c004_02 185），和小宇（228 Hz，G4 a2_c001_01 226）逐句也差 ≥12%（G3 修正第 3 項）；林老師同步降到 −26Hz，必要旁白（−8%）與林老師（−5%）語速差 <5%，F0 仍差 ≥10%"
+  },
+  "折折": {
+   "code": "zhezhe",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+90Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "note": "修正第 1 輪：+60Hz → +90Hz（F0 274 → 293.5 Hz；edge-tts HsiaoYu 在 +90Hz 以上 F0 不再升高，+110/+130/+150Hz 量到同樣 293.6 Hz）。小晴升到 +56Hz 後仍保持全劇最高。與小宇同底聲，語速 +22% 對 +12%"
+  },
+  "小晴": {
+   "code": "xiaoqing",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "note": "修正第 1 輪：+40Hz → +56Hz（F0 254.5 → 276.9 Hz），和小宇（228 Hz）差 3.36 個半音（G3 修正第 8 項：≥3 半音）",
+   "overrides": [
+    {
+     "match": "a1_c001_01",
+     "set": {
+      "synth_text": "品安！[[break:450]]你的燈籠好漂亮。",
+      "post": {
+       "contour": {
+        "segment": 0,
+        "points": [
+         [
+          0,
+          1.0
+         ],
+         [
+          0.15,
+          0.86
+         ],
+         [
+          0.4,
+          0.7
+         ],
+         [
+          0.48,
+          0.7
+         ],
+         [
+          0.62,
+          1.1
+         ],
+         [
+          1.0,
+          1.14
+         ]
+        ]
+       }
+      }
+     },
+     "note": "重驗 1 第 2 項（D-G3-R2-01）：兩個轉寫模型都把人名「品安」寫成常用詞「平安」。edge-tts 不接受自訂 SSML（無法用 phoneme），換寫法（注音、拼音、空格、間隔號）都無效；改成「品安」單獨一段合成（不和後文連讀），再以 PSOLA 把該段 F0 改成半三聲：起點 → 40–48% 處 0.70 倍（品，低降）→ 62% 起升到 1.10–1.14 倍（安，高平，約 320–330 Hz，比小晴 F0 中位高約 3 半音）。停頓長度取原整句合成的自然停頓（！約 0.55 秒、，約 0.2 秒）。品／平 F0 對照與轉寫見 review/G3/tone_check_pinan_r2.json。聽感未驗證"
+    },
+    {
+     "match": "a1_c004_05",
+     "set": {
+      "synth_text": "品安，[[break:120]]快來，我們去跟阿樂叔叔說。",
+      "post": {
+       "contour": {
+        "segment": 0,
+        "points": [
+         [
+          0,
+          1.0
+         ],
+         [
+          0.15,
+          0.86
+         ],
+         [
+          0.4,
+          0.7
+         ],
+         [
+          0.48,
+          0.7
+         ],
+         [
+          0.62,
+          1.1
+         ],
+         [
+          1.0,
+          1.14
+         ]
+        ]
+       }
+      }
+     },
+     "note": "重驗 1 第 2 項（D-G3-R2-01）：兩個轉寫模型都把人名「品安」寫成常用詞「平安」。edge-tts 不接受自訂 SSML（無法用 phoneme），換寫法（注音、拼音、空格、間隔號）都無效；改成「品安」單獨一段合成（不和後文連讀），再以 PSOLA 把該段 F0 改成半三聲：起點 → 40–48% 處 0.70 倍（品，低降）→ 62% 起升到 1.10–1.14 倍（安，高平，約 320–330 Hz，比小晴 F0 中位高約 3 半音）。停頓長度取原整句合成的自然停頓（！約 0.55 秒、，約 0.2 秒）。品／平 F0 對照與轉寫見 review/G3/tone_check_pinan_r2.json。聽感未驗證"
+    },
+    {
+     "match": "a6_c006_01",
+     "set": {
+      "synth_text": "品安，[[break:120]]我在乎你，我們一起找人幫忙。",
+      "post": {
+       "contour": {
+        "segment": 0,
+        "points": [
+         [
+          0,
+          1.0
+         ],
+         [
+          0.15,
+          0.86
+         ],
+         [
+          0.4,
+          0.7
+         ],
+         [
+          0.48,
+          0.7
+         ],
+         [
+          0.62,
+          1.1
+         ],
+         [
+          1.0,
+          1.14
+         ]
+        ]
+       }
+      }
+     },
+     "note": "重驗 1 第 2 項（D-G3-R2-01）：兩個轉寫模型都把人名「品安」寫成常用詞「平安」。edge-tts 不接受自訂 SSML（無法用 phoneme），換寫法（注音、拼音、空格、間隔號）都無效；改成「品安」單獨一段合成（不和後文連讀），再以 PSOLA 把該段 F0 改成半三聲：起點 → 40–48% 處 0.70 倍（品，低降）→ 62% 起升到 1.10–1.14 倍（安，高平，約 320–330 Hz，比小晴 F0 中位高約 3 半音）。停頓長度取原整句合成的自然停頓（！約 0.55 秒、，約 0.2 秒）。品／平 F0 對照與轉寫見 review/G3/tone_check_pinan_r2.json。聽感未驗證"
+    }
+   ]
+  },
+  "小宇": {
+   "code": "xiaoyu",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "note": "修正第 1 輪：維持 +20Hz（D-G3-R1-01：角色表起始值 −10Hz 量到 188 Hz，會和旁白（190）幾乎同高、無法和旁白差 12%；+20Hz 量到 228 Hz）。比小晴低 3.36 半音、比品安高 3.94 半音"
+  },
+  "阿樂叔叔": {
+   "code": "ale",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "pitch": "+0Hz",
+    "post": {
+     "max_pause_ms": 900
+    }
+   },
+   "overrides": [
+    {
+     "match": "a2_c0(0[1-9]|1[0-2])_\\d{2}|a4_c001_\\d{2}|a4_c008_\\d{2}",
+     "set": {
+      "rate": "-6%"
+     },
+     "note": "受影響段（a2_c001–a2_c012、a4_c001、a4_c008）：慢、困惑但咬字清楚；目標 3.3–3.5 字／秒"
+    },
+    {
+     "match": "a2_c002_01",
+     "set": {
+      "synth_text": "咦？[[break:350]]我想揮手……[[break:550]]手怎麼跑到旁邊去了？",
+      "segment_rates": [
+       "-8%",
+       "-18%",
+       "-18%"
+      ],
+      "post": {
+       "contour": {
+        "segment": 0,
+        "points": [
+         [
+          0,
+          1.0
+         ],
+         [
+          0.3,
+          0.97
+         ],
+         [
+          1.0,
+          1.38
+         ]
+        ]
+       }
+      }
+     },
+     "note": "G3 修正第 4、10 項：分三段合成；「咦？」之後停 350 ms（量測停頓 ≤600 ms）、「揮手……」之後停 550 ms（量測 ≥500 ms）；後兩段 −18% 讓淨語速 ≤4.5 字／秒；「咦？」以 PSOLA 改成二聲上揚（目標點：起點 → 30% 處 0.97 倍 → 終點 1.38 倍（量測終點／起點 ≥1.15））。edge-tts 的 YunJhe 讀「咦／疑／移／姨？」首字都是低平略降（終點／起點 0.92–0.97），換寫法無效（review/G3/tone_check_yi_r1.json）"
+    }
+   ],
+   "alt": {
+    "elevenlabs": {
+     "service": "elevenlabs",
+     "voice_id": "7Sk22fdUzAroSHJkVoXB",
+     "voice_name": "Juin（台灣中年男聲，需 ElevenLabs 付費方案）",
+     "model": "eleven_multilingual_v2",
+     "settings": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": 0.0,
+      "use_speaker_boost": true,
+      "speed": 0.92
+     },
+     "seed": 20261021,
+     "output_format": "mp3_44100_128"
+    }
+   },
+   "note": "一般段 +0%（G4 未量測，G5 依 3.6–3.8 字／秒調整）；受影響段 −6%（G4 量測 −12% 時 3.03／3.23 字／秒，低於目標 3.3–3.5）"
+  },
+  "品安": {
+   "code": "pinan",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "-10%",
+    "pitch": "-10Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "note": "修正第 1 輪：+40Hz → −10Hz（F0 245 → 181 Hz；D-G3-R1-02：四個孩子中最低、輕聲慢速，和小宇差 3.94 半音、和小晴 7.9、和折折 8.4 半音）"
+  },
+  "葉護理師": {
+   "code": "ye",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "note": "修正第 2 輪（重驗 1 第 3 項，D-G3-R2-02）：語速改回角色表範圍（+10% → −20%：校準句 4.29 字／秒 ≤4.6；8 句淨語速 ≤5.0（其中 3 句另設 −25%／−28%），見 review/G3/metrics.json round2.ye），改用音高和阿樂區分（+40Hz → +55Hz：校準句 F0 約 163 Hz，代表台詞合併約 158 Hz，比阿樂一般段 113 Hz 高約 5.8 半音）。和邀請者（YunJhe +0%／+45Hz）同一句校準句：語速差約 25%（≥15%）。第 1 輪紀錄：+10%／+40Hz（校準句 5.88 字／秒，超出角色表 3.8–4.0）",
+   "overrides": [
+    {
+     "match": "a2_c012_03",
+     "set": {
+      "rate": "-28%"
+     },
+     "note": "修正第 2 輪：−20% 時淨語速 5.15（驗收者算法 5.32）超過 5.0 → 本句 −28%（目標 ≤4.8）"
+    },
+    {
+     "match": "a2_c012_05|a5_c008_01",
+     "set": {
+      "rate": "-25%"
+     },
+     "note": "修正第 2 輪：−20% 時淨語速 4.87–4.98，貼近 5.0 上限 → 這兩句 −25%（目標 ≤4.8）"
+    }
+   ]
+  },
+  "林老師": {
+   "code": "lin",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-5%",
+    "pitch": "-26Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "loudness_offset_db": {
+    "a5_c001_03": -4.0
+   },
+   "note": "修正第 1 輪：−20Hz → −26Hz（F0 169 → 161 Hz；角色表「中低（女聲）」），讓旁白降到 −10Hz 後兩人 F0 仍差 ≥10%。語速 −5%（與小晴 +0% 差 5%）"
+  },
+  "陳伯伯": {
+   "code": "chen",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-12%",
+    "pitch": "-50Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "note": "修正第 1 輪（G3 修正第 2 項）：−10%/−12Hz 量到 105.7 Hz，和阿樂受影響段（103 Hz）同高 → 改 −12%/−50Hz（91.7 Hz，全劇最低；比阿樂受影響段低 11%、語速差 6%）"
+  },
+  "邀請者": {
+   "code": "inviter",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "+0%",
+    "pitch": "+45Hz",
+    "post": {
+     "max_pause_ms": 650
+    }
+   },
+   "note": "修正第 1 輪（G3 修正第 2 項，D-G3-R1-04）：YunJhe +25Hz 量到 148 Hz（中性區下緣），改 +45Hz → 約 167 Hz（中性區 145–175 中段）；語速 +10% → +0%（代表台詞 4.73 字／秒超過 4.5 上限，角色表目標 4.2）。和葉護理師（147 Hz）F0 差 ≥10%、語速差 ≥5%。HsiaoChen −30Hz 量到 171 Hz，但和林老師幾乎同高，不採用"
+  },
+  "執勤人員": {
+   "code": "dispatcher",
+   "spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+5%",
+    "pitch": "-8Hz",
+    "post": {
+     "max_pause_ms": 650,
+     "telephone": true
+    }
+   },
+   "note": "修正第 1 輪補量：F0 中位 203 Hz（電話音色後量），和旁白（190）、林老師（168.5）同底聲；語速 +5% 對旁白 −14%、林老師 −5%"
+  }
+ },
+ "official_engine": {
+  "service": "elevenlabs",
+  "since": "2026-10-21",
+  "decision": "DECISIONS.md D-G3-07（使用者：全部改用 ElevenLabs，不用 edge-tts）",
+  "build": "tools/vo_el_prod.py（合成＋自動檢查）→ tools/vo_el_promote.py（升為 audio/vo 的 v04）",
+  "license": "Starter 付費方案；兒童用途書面核准待 ElevenLabs 回覆（review/G3/el/license_evidence.md）",
+  "roles": {
+   "阿樂叔叔": {
+    "code": "ale",
+    "voice_id": "Z9RJEkFYQw307BCQULDR",
+    "voice_name": "Kuo Yu - Taiwan",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/ale.json"
+   },
+   "陳伯伯": {
+    "code": "chen",
+    "voice_id": "auoHciLZJwKTwYUoRTYz",
+    "voice_name": "Neil Chuang - Deep, Trustworthy and Rich",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/chen.json"
+   },
+   "執勤人員": {
+    "code": "dispatcher",
+    "voice_id": "aQwAQvuS5kErJvZlR7wN",
+    "voice_name": "Angel - Narration",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/dispatcher.json"
+   },
+   "邀請者": {
+    "code": "inviter",
+    "voice_id": "NIqnuIdrAT3LLSSxN05L",
+    "voice_name": "Chihiro Yoko - Clear, Soothing and Sweet",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/inviter.json"
+   },
+   "林老師": {
+    "code": "lin",
+    "voice_id": "5ypmms5LDLZQ1fRMo16H",
+    "voice_name": "Jui - Calm, Warm & Pleasing",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/lin.json"
+   },
+   "旁白": {
+    "code": "narrator",
+    "voice_id": "qDeYqHQrKRH839xMU4nb",
+    "voice_name": "Door Chow",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/narrator.json"
+   },
+   "品安": {
+    "code": "pinan",
+    "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+    "voice_name": "Yui - Delicate, Graceful and Soothing",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/pinan.json"
+   },
+   "小晴": {
+    "code": "xiaoqing",
+    "voice_id": "1AKkSX7KMPHIWuz76m0n",
+    "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/xiaoqing.json"
+   },
+   "小宇": {
+    "code": "xiaoyu",
+    "voice_id": "xrDmUzhnE51Df8z38r1M",
+    "voice_name": "Vivian - Taiwanese Social Media",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/xiaoyu.json"
+   },
+   "葉護理師": {
+    "code": "ye",
+    "voice_id": "qV41hPnIn6kbvO8hMtPG",
+    "voice_name": "Devon - Relaxed, Natural and Warm",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/ye.json"
+   },
+   "折折": {
+    "code": "zhezhe",
+    "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+    "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+    "model": "eleven_v3",
+    "config": "audio/vo_el/casting/zhezhe.json"
+   }
+  },
+  "edge_archive": "audio/_archive_edge/（舊 edge-tts 檔，只封存）；下方 services／roles 的 edge 設定只留作紀錄，不再用於演出"
+ }
 }

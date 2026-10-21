@@ -1,0 +1,194 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。（兒童組加）post.pitch_shift_st＝PSOLA 整段改調半音；post.stretch＝固定長度倍數；post.auto_stretch＝{target, tolerance, min, max, default}：母帶前淨語速超出角色表語速 ±tolerance 時，用 PSOLA 把長度乘 淨語速÷target（夾在 min–max）；eleven_v3 不理會 speed，只能這樣放慢。（兒童組加）head_guard＝句首保護 {mode: always／off, prefix}：送出文字前加 prefix（預設「嗯。」），合成後依轉寫時間戳＋停頓切掉（head_cut）。",
+ "role": "折折",
+ "code": "zhezhe",
+ "status": "active",
+ "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+ "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": null,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 450,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九",
+  "摺": "哲",
+  "口訣": "口決",
+  "哲哲": "折折",
+  "主燈": "主灯",
+  "盞燈": "盞灯",
+  "燈鎮": "灯镇"
+ },
+ "post": {
+  "pitch_shift_st": 2.0,
+  "auto_stretch": {
+   "tolerance": 0.2,
+   "min": 0.75,
+   "max": 1.3,
+   "default": 1.0
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "note": "eleven_v3 不理會 speed；改用 post.auto_stretch"
+ },
+ "lines": {
+  "a2_c007_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a2_c011_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a3_c007_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a4_c007_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a4_c011_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a5_c004_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a6_c005_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a7_c003_02": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "替身字（合成前就加）：「盞」送同音「展」（第 1 輪 a0_c005_02 等句 4 次「盞」都被兩個模型轉成探／坦／餐／燈）。字幕仍是原字。"
+  },
+  "a0_c005_02": {
+   "text_subs": {
+    "盞": "展",
+    "台口": "檯口"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪 4 次「盞」都被轉成探／坦／層／攤／盤；「盞」送同音「展」。",
+   "head_guard": {
+    "mode": "always"
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：句首「台」被轉成開／海，加句首保護並送同音「檯」"
+  },
+  "a0_c005_03": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪 4 次「盞」都被轉成探／坦／層／攤／盤；「盞」送同音「展」。"
+  },
+  "a1_c001_04": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪 4 次「盞」都被轉成探／坦／層／攤／盤；「盞」送同音「展」。"
+  },
+  "a1_c007_01": {
+   "text_subs": {
+    "盞": "展"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪 4 次「盞」都被轉成探／坦／層／攤／盤；「盞」送同音「展」。"
+  },
+  "a0_c002_01": {
+   "settings": {
+    "stability": 1.0
+   },
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪「喵」被 small 轉成你好／喲、「折折」被轉成褶褶／啾啾；stability 0.5 → 1.0、加句首保護。"
+  },
+  "a0_c002_02": {
+   "settings": {
+    "stability": 1.0
+   },
+   "note": "第 2 輪（調參數）：第 1 輪「紙摺成」被轉成糾纏／織成／子折成；stability 0.5 → 1.0。"
+  },
+  "a0_c004_03": {
+   "settings": {
+    "stability": 1.0
+   },
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪句首「交給我」被轉成都給我、「摺成」被轉成轍城／就身／折唇；stability 0.5 → 1.0、加句首保護。",
+   "text_subs": {
+    "放大鏡": "放大境"
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：「鏡」large 轉成「劍」，送同音「境」"
+  },
+  "a4_c008_02": {
+   "head_guard": {
+    "mode": "always"
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：句首「他們」兩個模型都轉成「雷」，加句首保護"
+  },
+  "a6_c003_01": {
+   "text_subs": {
+    "一題": "一提"
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：「題」large 轉成「代」，送同音「提」"
+  },
+  "a6_c009_01": {
+   "text_subs": {
+    "紙登結": "紙灯節",
+    "紙燈節": "紙灯節"
+   },
+   "_note": "主線（13:4x）：「紙」large 轉成植／直、「燈」偶爾轉成單／彈 → 「燈」送簡體「灯」（同角色「主燈」「盞燈」用灯有效），「節」送原字"
+  }
+ },
+ "targets": {
+  "rate_nominal": [
+   4.3,
+   4.6
+  ],
+  "rate_cps_net": [
+   3.8,
+   5.1
+  ],
+  "f0_nominal": 293.5,
+  "f0_hz": [
+   280.0,
+   360.0
+  ],
+  "source": "角色表第 3 節（4.3–4.6；全劇最高、明亮）；casting.json 折折 note（F0 293.5 Hz）"
+ },
+ "source": "review/G3/el/full/trial/kids/（zz_chloe_v3*、zz_lulu_v3：Chloe 的「紙燈節」兩次都通過、Lulu 兩次都不過；「摺」送「哲」、「口訣」送「口決」、「燈籠」送原字的比較見各資料夾）",
+ "note": "Chloe v3＋PSOLA 升 2 半音（原 F0 約 255–262 Hz，與小晴 Tiffy 約 260 Hz 同高 → 約 292 Hz，全劇最高；和小晴也是不同聲線）。替身字（只送 ElevenLabs，字幕原字）：「口訣」→「口決」（原字兩個模型都聽成口窺／口盔）；「摺」→「哲」（送「摺／折」多被聽成揪、糾、織、軸）；「折折」送原字（送 pronounce.json 的「哲哲」6 次多被聽成肘肘、蕉蕉、啾啾）；「主燈」「盞燈」「燈鎮」的「燈」送簡體「灯」（v3 念繁體「燈」多被聽成動、凳、豆、鬥，送「灯」後 a0_c003_02 兩次都轉寫成「主燈」）；「燈籠」送原字（送「登籠」多被聽成「登樓」）。auto_stretch 0.75–1.3 倍（Chloe 句子常偏慢）。2026-10-21 10:45 起第 1 輪改這組設定、每句最多 4 次（點數控制），先前 5 句的 6 次紀錄見 previous_rounds。聽感未驗證。"
+}

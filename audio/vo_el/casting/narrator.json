@@ -1,0 +1,262 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。 成人組補充（2026-10-21）：post.pitch_shift_st／post.stretch／post.auto_stretch＝PSOLA 改調／放慢（兒童組加入工具；eleven_v3 不理會 speed，語速只能後處理）；auto_stretch＝{target, tolerance, min, max}：母帶前淨語速超出 rate_nominal±tolerance 才把長度乘 淨語速÷target（夾在 min–max）。",
+ "role": "旁白",
+ "code": "narrator",
+ "status": "active",
+ "voice_id": "qDeYqHQrKRH839xMU4nb",
+ "voice_name": "Door Chow",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": 0.92,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 400,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九",
+  "電子煙": "電紫煙",
+  "使喚": "使換",
+  "家長": "家掌"
+ },
+ "post": {
+  "auto_stretch": {
+   "target": 4.2,
+   "tolerance": 0.5,
+   "min": 0.93,
+   "max": 1.15
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "step": 0.03,
+  "min": 0.85,
+  "max": 1.1,
+  "note": "eleven_v3 不理會 speed：同文字 speed 0.7 與 1.2 正文長度 1.64／1.63 秒（2026-10-21 試跑，audio/vo_el/_raw/x_speedtest/）；換成 v2 再開"
+ },
+ "targets": {
+  "rate_nominal": [
+   3.8,
+   4.0
+  ],
+  "rate_cps_net": [
+   3.3,
+   4.5
+  ],
+  "f0_nominal": 185.0,
+  "f0_hz": [
+   164.8,
+   207.7
+  ],
+  "source": "角色表第 3 節（3.8–4.0；必要旁白約 3.5）；casting.json 旁白 note（F0 185 Hz）"
+ },
+ "lines": {
+  "a2_c004_02": {
+   "synth_text": "這些線，是故事的比喻。毒品，可能讓人的頭腦和身體，受到影響，不聽使喚。人，不會真的變成喪屍。",
+   "targets": {
+    "rate_nominal": [
+     3.3,
+     3.7
+    ]
+   },
+   "post": {
+    "auto_stretch": {
+     "target": 3.6,
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3
+    }
+   },
+   "note": "必要旁白：逗號只加在合成用文字（字幕、轉寫比對仍用劇本原文，字一個都沒改），讓 eleven_v3 念得更從容；淨語速仍超出就 PSOLA 放慢到約 3.6（角色表約 3.5、通過範圍 3.0–4.0）。試聲線：逗號版 a2_c004_02 淨語速 3.91、原文 4.33–4.76（review/G3/el/full/voice_trials/narrator/）"
+  },
+  "a2_c008_05": {
+   "synth_text": "不過，看見一個人站不穩，不能，就說他吸毒，也可能，有其他身體狀況。我們，要先找大人幫忙。",
+   "targets": {
+    "rate_nominal": [
+     3.3,
+     3.7
+    ]
+   },
+   "post": {
+    "auto_stretch": {
+     "target": 3.6,
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3
+    }
+   },
+   "note": "必要旁白：逗號只加在合成用文字（字幕、轉寫比對仍用劇本原文，字一個都沒改），讓 eleven_v3 念得更從容；淨語速仍超出就 PSOLA 放慢到約 3.6（角色表約 3.5、通過範圍 3.0–4.0）。試聲線：逗號版 a2_c004_02 淨語速 3.91、原文 4.33–4.76（review/G3/el/full/voice_trials/narrator/）"
+  },
+  "a4_c006_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確",
+   "text_subs": {
+    "正解": "正姐"
+   }
+  },
+  "a4_c009_03": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "句首保護（送出加「嗯。」再切掉）；第 1 輪 6/6「繫」轉成騎／起／擠／切（Door 念 jì；edge 基準也念 jì、同樣被判不通過）。台灣「繫安全帶」也常念 xì，轉寫比對的參考讀音是 xì → 合成用同音「系」",
+   "text_subs": {
+    "繫好": "係好"
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：「繫」edge 與 EL 都被聽成吸／擠，送同音「係」"
+  },
+  "a4_c010_01": {
+   "text_subs": {
+    "正解": "正姐"
+   },
+   "note": "「正解」合成用「正姐」（同音 zhèng jiě；試聲線 trial_narrator3 加句首保護時 3/3 轉寫正確）"
+  },
+  "a5_c002_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "句首保護（送出加「嗯。」再切掉）；第 1 輪 small 5/6 把「醒」轉成「行」：整句合成時「醒。你」跨句號做了三聲變調（xǐng→xíng）→ 這句改成兩句分開合成（segment_mode synth，句間 400 ms），句尾保護照用",
+   "segment_mode": "synth",
+   "post": {
+    "auto_stretch": {
+     "target": 4.0,
+     "tolerance": 0.2,
+     "min": 0.93,
+     "max": 1.2
+    }
+   },
+   "_note": "主線第 2 輪（2026-10-21 12:40）：淨語速 4.9 超過 4.5，放慢"
+  },
+  "a5_c003_01": {
+   "text_subs": {
+    "正解": "正姐"
+   },
+   "note": "「正解」合成用「正姐」（同音 zhèng jiě；試聲線 trial_narrator3 加句首保護時 3/3 轉寫正確）"
+  },
+  "a6_c004_01": {
+   "text_subs": {
+    "正解": "正姐"
+   },
+   "note": "「正解」合成用「正姐」（同音 zhèng jiě；試聲線 trial_narrator3 加句首保護時 3/3 轉寫正確）"
+  },
+  "a6_c007_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "note": "句首保護（送出加「嗯。」再切掉）；第 1 輪「燈」多次轉成鄧／凳／蛋（Door 把「燈」念成四聲）→ 這句兩個「燈」合成用同音「登」（dēng）",
+   "text_subs": {
+    "燈": "登"
+   }
+  },
+  "a6_c008_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "這叫做操偶線。"
+   },
+   "note": "句首保護（送出加「嗯。」再切掉）；第 1 輪（已有句首保護）6/6 仍把「操」轉成草／朝／超（Door 念成 cǎo 或 cháo；edge 基準 small 也轉成「超」）→ 第 2 輪合成用「糙偶線」（台灣「糙」念 cāo）",
+   "text_subs": {},
+   "_note": "主線第 5 輪（13:2x）：句中的「操偶線」Door 都念對（a2_c004_01、a2_c005_02 通過），句首念錯；改用「這叫做操偶線。」當句首保護（先念一次、停頓後切掉），正文送原字「操」"
+  },
+  "a2_c006_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "正解": "正姐"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；「正解」合成用「正姐」（同音 zhèng jiě；試聲線一次通過）"
+  },
+  "a2_c010_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "正解": "正姐"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；「正解」合成用「正姐」（同音 zhèng jiě；試聲線 trial_narrator3 一次通過）"
+  },
+  "a0_c001_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "小燈鎮": "小登鎮",
+    "鎮上": "震上"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 6 次：turbo 4/6 把「小燈」轉成「小凳」→ 合成用「小登鎮」；small 6/6 把「鎮」轉成「證／正」（edge 基準 small 也一樣，判斷是轉寫器偏誤）"
+  },
+  "a2_c003_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "電子煙": "電子菸",
+    "煙彈": "菸彈"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 6/6 small 把「桑師」轉成「桑絲」（捲舌不明顯）；Door 念原字「喪屍」時（a2_c004_02、a2_c005_04）兩個模型都轉寫正確 → 這句合成用「喪屍煙蛋」（「彈」仍用「蛋」保 dàn）",
+   "_note": "使用者 13:3x 聽過指出本句「電子煙」「喪屍煙彈」念錯 → 第 6 輪：不用替身字（電紫煙、桑師煙蛋都拿掉），改送台灣常見寫法「電子菸」「喪屍菸彈」（同音 yān；「菸彈」在語料中多念 dàn），「喪屍」送原字",
+   "text_mode": "original"
+  },
+  "a2_c009_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "站不穩": "站不吻"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 turbo 5/6 把「穩」轉成「倫／輪」→ 合成用同音「吻」（wěn）"
+  },
+  "a2_c013_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "葉護理師": "葉互理師"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 6/6 把「護」轉成「虎／狐／壺」（Door 念成 hú）→ 合成用同音「互」（hù）"
+  },
+  "a4_c001_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "葉護理師": "葉互理師"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 6/6 把「葉護」轉成「夜壺／野狐」（Door 把「護」念成 hú）→ 合成用同音「互」（hù）"
+  },
+  "a4_c003_02": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "轉彎": "轉灣"
+   },
+   "note": "句首保護：eleven_v3 原始檔第一個 20 ms 就接近滿音量（句首被截），句首字常念糊（「正解」→正給／斷點、「看見」→趁見、選項編號漏掉）；試聲線 trial_narrator3 加「嗯。」後「正解」3/3 轉寫正確；第 1 輪 6/6 兩個模型都把「彎」轉成「完」（Door 念成 wán）→ 合成用同音「灣」（wān）"
+  }
+ },
+ "source": "任務指定起點 Door v3；review/G3/el/library/INDEX.md 3.1（Door v3 eleven_v3 排名第一）；試聲線 review/G3/el/full/voice_trials/narrator/",
+ "note": "Door v3 在試聲線中：「電子煙」兩次都轉成「電洗煙」→ 合成用「電紫煙」（2/2 兩個模型都轉寫正確）；「使喚」4/4 轉成「使款／使寬」→ 合成用「使換」（同音 shǐ huàn）；「家長」林老師兩個聲線都轉成「家場／交響」→ 合成用「家掌」。auto_stretch：淨語速超出 3.3–4.5 才放慢／加快到 4.2（夾在 0.93–1.15 倍）。"
+}

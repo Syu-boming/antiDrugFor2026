@@ -1,0 +1,17 @@
+{
+ "watch": {
+  "overalls_projv2_lum": 0.13,
+  "bg_projv2_lum_median": 0.568,
+  "contrast": 3.42
+ },
+ "palm": {
+  "overalls_projv2_lum": 0.127,
+  "bg_projv2_lum_median": 0.568,
+  "contrast": 3.48
+ },
+ "worried": {
+  "overalls_projv2_lum": 0.129,
+  "bg_projv2_lum_median": 0.568,
+  "contrast": 3.44
+ }
+}

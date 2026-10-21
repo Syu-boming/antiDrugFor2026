@@ -1,0 +1,63 @@
+{
+ "a0_c002_03": {
+  "seconds": 2.76,
+  "speech_start": 0.12,
+  "speech_end": 2.51,
+  "speech_segments": [
+   [
+    0.12,
+    1.0
+   ],
+   [
+    1.48,
+    2.51
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/out/vo_a0_c002_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/lipsync/a0_c002_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "慢慢摺，燈才會亮。"
+ },
+ "a0_c003_03": {
+  "seconds": 4.11,
+  "speech_start": 0.12,
+  "speech_end": 3.86,
+  "speech_segments": [
+   [
+    0.11,
+    0.99
+   ],
+   [
+    1.23,
+    3.87
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/out/vo_a0_c003_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/lipsync/a0_c003_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "奇怪，我昨天晚上明明放在這裡啊。"
+ },
+ "a6_c009_03": {
+  "seconds": 8.29,
+  "speech_start": 0.12,
+  "speech_end": 8.04,
+  "speech_segments": [
+   [
+    0.12,
+    3.39
+   ],
+   [
+    5.04,
+    6.04
+   ],
+   [
+    6.91,
+    8.04
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/out/vo_a6_c009_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/lipsync/a6_c009_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。"
+ }
+}

@@ -1,0 +1,25 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body POSE sheet of an existing character for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND (the standing girl) is the FINAL approved character master: Xiaoqing. Draw THE SAME GIRL - identical face, identical design and identical colors - only the pose and expression change:
+- 9-year-old girl, shoulder-length dark brown bob; on one side of her hair a small ORIGAMI STAR hair clip whose paper folds/creases are clearly visible; mustard-yellow short-sleeve top; deep lake-teal (dark blue-green) overalls with rolled cuffs; a small spiral-bound notebook peeking out of the overalls' bib pocket, its cover completely BLANK (no marks, no letters); white socks; mustard-yellow sneakers. Same exact colors as the second reference image (do NOT lighten or darken them; the overalls stay the same deep teal as the reference).
+- Proportions exactly like the master: 4.45 heads tall (head including hair = about 22.5% of the full height), slim natural 9-year-old picture-book child, NOT chibi, NOT big-headed.
+
+POSE (very important): a worried waiting stance. Her whole body is turned in a three-quarter view toward the VIEWER'S LEFT (she faces a grown-up to the left of the picture, keeping her distance). She stands still with her weight centered, feet close together, both soles flat on the floor. Both hands are held together close to her chest (fingers loosely clasped in front of the overalls' bib, elbows tucked in to her sides), shoulders very slightly raised. Her head is turned toward the left and tilted slightly up, eyes looking to the left at the grown-up. Clearly NOT a frontal standing pose: the torso, hips and feet are all visibly rotated toward the left.
+EXPRESSION: worried and concerned for someone: eyebrows tilted up toward the middle, eyes open looking left, mouth closed in a small slightly downturned worried line. Gentle and caring, NOT scared, NOT crying, NOT angry.
+
+The whole figure from the top of the hair to the soles and the fingertips is visible with empty transparent margin all around (nothing cropped). Her face must be fully visible (three-quarter view, both eyes visible, the far eye slightly narrower), never a strict side profile.
+
+ART STYLE (match the attached reference image's "3D pop-up picture book made of thick matte cardstock" style and character design, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Colors: EXACTLY the same flat colors as the SECOND reference image (the approved master) - do not shift, darken, lighten or re-saturate any color.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G4/art/raw/pose_xq_worried_v05.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G4/art/raw/pose_xq_worried_v05.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

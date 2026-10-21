@@ -1,0 +1,161 @@
+{
+ "code": "narrator",
+ "lines": [],
+ "attempts": 1,
+ "variants": {
+  "Door_v3_stab1": {
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "voice_name": "Door Chow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.92,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.8,
+     4.0
+    ],
+    "rate_cps_net": [
+     3.3,
+     4.5
+    ],
+    "f0_nominal": 185.0,
+    "f0_hz": [
+     164.8,
+     207.7
+    ]
+   },
+   "lines": {},
+   "trial_lines": [
+    "a2_c004_02"
+   ]
+  },
+  "Door_v3_comma": {
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "voice_name": "Door Chow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.92,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.8,
+     4.0
+    ],
+    "rate_cps_net": [
+     3.3,
+     4.5
+    ],
+    "f0_nominal": 185.0,
+    "f0_hz": [
+     164.8,
+     207.7
+    ]
+   },
+   "lines": {
+    "a2_c004_02": {
+     "synth_text": "這些線，是故事的比喻。毒品，可能讓人的頭腦和身體，受到影響，不聽使喚。人，不會真的變成喪屍。"
+    },
+    "a2_c008_05": {
+     "synth_text": "不過，看見一個人站不穩，不能，就說他吸毒，也可能，有其他身體狀況。我們，要先找大人幫忙。"
+    }
+   },
+   "trial_lines": [
+    "a2_c004_02",
+    "a2_c008_05"
+   ]
+  },
+  "Door_v3_zi": {
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "voice_name": "Door Chow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.92,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "電紫煙"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.8,
+     4.0
+    ],
+    "rate_cps_net": [
+     3.3,
+     4.5
+    ],
+    "f0_nominal": 185.0,
+    "f0_hz": [
+     164.8,
+     207.7
+    ]
+   },
+   "lines": {},
+   "trial_lines": [
+    "a2_c003_02"
+   ],
+   "trial_attempts": 2
+  }
+ }
+}

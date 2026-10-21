@@ -1,0 +1,70 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。（兒童組加）post.pitch_shift_st＝PSOLA 整段改調半音；post.stretch＝固定長度倍數；post.auto_stretch＝{target, tolerance, min, max, default}：母帶前淨語速超出角色表語速 ±tolerance 時，用 PSOLA 把長度乘 淨語速÷target（夾在 min–max）；eleven_v3 不理會 speed，只能這樣放慢。（兒童組加）head_guard＝句首保護 {mode: always／off, prefix}：送出文字前加 prefix（預設「嗯。」），合成後依轉寫時間戳＋停頓切掉（head_cut）。",
+ "role": "品安",
+ "code": "pinan",
+ "status": "active",
+ "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+ "voice_name": "Yui - Delicate, Graceful and Soothing",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": null,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 500,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九",
+  "摺": "折",
+  "登籠": "燈籠"
+ },
+ "post": {
+  "pitch_shift_st": -3.5,
+  "auto_stretch": {
+   "tolerance": 0.2,
+   "min": 0.9,
+   "max": 1.5,
+   "default": 1.0
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "note": "eleven_v3 不理會 speed；改用 post.auto_stretch"
+ },
+ "lines": {
+  "a1_c001_05": {
+   "text_subs": {
+    "燈": "灯"
+   },
+   "note": "第 2 輪（調參數）：第 1 輪 6 次「燈」都被聽成的／凳／蛋／鄧；改送簡體「灯」（試聲線 pa_prod_dengS 一次通過）。"
+  }
+ },
+ "targets": {
+  "rate_nominal": [
+   3.6,
+   3.8
+  ],
+  "rate_cps_net": [
+   3.1,
+   4.3
+  ],
+  "f0_nominal": 181.0,
+  "f0_hz": [
+   161.3,
+   203.2
+  ],
+  "source": "角色表第 3 節（3.6–3.8；輕聲、慢）；casting.json 品安 note（F0 181 Hz，四個孩子中最低）"
+ },
+ "source": "review/G3/el/full/trial/kids/pa_yui_v3_m3（3 句：2 句一次通過，1 句只差語速；之後加了放慢後重量修正）",
+ "note": "Yui v3＋PSOLA 降 3.5 半音（原 F0 約 225–235 Hz → 約 185 Hz，四個孩子中最低；小宇用 Vivian 約 212 Hz）。v3 淨語速 5.4–6.0，用 auto_stretch 放慢到 3.7。聽感（降調後是否自然、像不像孩子）未驗證。"
+}

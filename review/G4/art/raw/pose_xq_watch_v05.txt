@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15b9e-5680-7233-b5c2-6da75ca8bf5f/exec-f114c065-7e2f-4d9a-bb64-d1df64dd6e95.png`
+- Destination: [review/G4/art/raw/pose_xq_watch_v05.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/pose_xq_watch_v05.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, verified transparent pixels.

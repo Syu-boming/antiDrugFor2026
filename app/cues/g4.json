@@ -76,7 +76,8 @@
           "xiaoqing": {
             "visible": true,
             "popup": 0,
-            "emotion": "smile"
+            "emotion": "smile",
+            "pose": "watch"
           },
           "xiaoyu": {
             "visible": true,
@@ -162,8 +163,8 @@
         },
         {
           "name": "camera.move",
-          "start": 7.6,
-          "duration": 2.8,
+          "start": 7.0,
+          "duration": 4.6,
           "params": {
             "to": "g4_mid"
           }
@@ -189,9 +190,9 @@
         "FX6",
         "FX3"
       ],
-      "teacherNote": "一次按鍵完成：署名卡約 1 秒淡出、場燈漸暗、柔和追光慢慢掃過台口 → 摺層紙布幕約 2 秒打開（3.0 秒對上開幕曲落點）→ 立體書景片依序立起、人物隨工作台與景片立起 → 鏡頭推到工作台中景，停住等老師。開幕曲一次播完、自然收尾。",
+      "teacherNote": "一次按鍵完成：署名卡約 1 秒淡出、場燈漸暗、柔和追光慢慢掃過台口 → 摺層紙布幕約 2 秒打開（3.0 秒對上開幕曲落點）→ 立體書景片依序立起、人物隨工作台與景片立起 → 鏡頭慢慢推到工作台中景（4.6 秒，光敏：放慢），停住等老師。開幕曲一次播完、自然收尾。",
       "checkpoint": null,
-      "minDuration": 10.6,
+      "minDuration": 11.6,
       "sfx": [
         {
           "id": "sfx_curtain_open",
@@ -232,7 +233,7 @@
           },
           "xiaoqing": {
             "visible": true,
-            "pose": "stand",
+            "pose": "watch",
             "emotion": "smile"
           },
           "xiaoyu": {
@@ -245,24 +246,24 @@
       "animation": [
         {
           "name": "fx.desat",
-          "start": 0.5,
-          "duration": 5.5,
+          "start": 0.3,
+          "duration": 3.2,
           "params": {
             "to": 0.5
           }
         },
         {
           "name": "light.dim",
-          "start": 1.0,
-          "duration": 3.5,
+          "start": 0.5,
+          "duration": 2.5,
           "params": {
             "to": 0.94
           }
         },
         {
           "name": "fx.spot",
-          "start": 2.0,
-          "duration": 3.5,
+          "start": 0.8,
+          "duration": 2.8,
           "params": {
             "to": 1,
             "target": "ale"
@@ -270,8 +271,8 @@
         },
         {
           "name": "camera.move",
-          "start": 5.6,
-          "duration": 3.2,
+          "start": 2.0,
+          "duration": 2.6,
           "params": {
             "to": "g4_mid_up"
           }
@@ -279,56 +280,65 @@
         {
           "name": "strings.drop",
           "target": "ale",
-          "start": 6.5,
-          "duration": 3.2,
+          "start": 3.5,
+          "duration": 3.0,
           "params": {
             "anchors": [
               "wrist",
               "elbow",
               "knee"
             ],
-            "stagger": 1.0,
+            "stagger": 0.9,
             "each": 1.2
           }
         },
         {
           "name": "puppet.face",
           "target": "xiaoyu",
-          "start": 7.4,
+          "start": 4.6,
           "params": {
             "emotion": "surprised"
           }
         },
         {
-          "name": "puppet.pose",
-          "target": "xiaoyu",
-          "start": 7.5,
-          "duration": 0.24,
-          "params": {
-            "pose": "stepback"
-          }
-        },
-        {
           "name": "puppet.face",
           "target": "xiaoqing",
-          "start": 8.6,
+          "start": 5.0,
           "params": {
             "emotion": "worried"
           }
         },
         {
           "name": "camera.move",
-          "start": 9.4,
-          "duration": 2.6,
+          "start": 6.8,
+          "duration": 2.0,
           "params": {
             "to": "g4_mid"
           }
         },
         {
+          "name": "puppet.pose",
+          "target": "xiaoqing",
+          "start": 8.95,
+          "duration": 0.24,
+          "params": {
+            "pose": "worried"
+          }
+        },
+        {
+          "name": "puppet.pose",
+          "target": "xiaoyu",
+          "start": 9.3,
+          "duration": 0.24,
+          "params": {
+            "pose": "stepback"
+          }
+        },
+        {
           "name": "puppet.waveTry",
           "target": "ale",
-          "start": 9.9,
-          "duration": 3.6,
+          "start": 9.7,
+          "duration": 3.8,
           "params": {
             "emotion": "confused"
           }
@@ -336,30 +346,39 @@
         {
           "name": "puppet.kneeTug",
           "target": "ale",
-          "start": "a2_c002_01.end+0.25",
-          "duration": 3.6,
+          "start": "a2_c002_01.end+0.15",
+          "duration": 3.4,
           "params": {
             "at": [
-              -1.82,
+              -1.94,
               1.4
             ]
           }
         },
         {
-          "name": "puppet.pose",
-          "target": "xiaoqing",
-          "start": "a2_c002_02-0.4",
-          "duration": 0.24,
+          "name": "camera.move",
+          "start": "a2_c002_01.end+0.3",
+          "duration": 4.0,
           "params": {
-            "pose": "reach"
+            "to": "g4_push"
           }
         },
         {
-          "name": "camera.move",
-          "start": "a2_c002_01.end+0.4",
-          "duration": 4.2,
+          "name": "puppet.pose",
+          "target": "xiaoqing",
+          "start": "a2_c002_02-0.3",
+          "duration": 0.24,
           "params": {
-            "to": "g4_push"
+            "pose": "palm"
+          }
+        },
+        {
+          "name": "puppet.pose",
+          "target": "xiaoqing",
+          "start": "a2_c002_02+1.05",
+          "duration": 0.24,
+          "params": {
+            "pose": "worried"
           }
         }
       ],
@@ -369,13 +388,13 @@
           "id": "a2_c002_01",
           "speaker": "阿樂叔叔",
           "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
-          "start": 13.0
+          "start": 13.45
         },
         {
           "id": "a2_c002_02",
           "speaker": "小晴",
           "text": "叔叔，小心！",
-          "start": "a2_c002_01.end+1.85"
+          "start": "a2_c002_01.end+1.75"
         }
       ],
       "next": "a2_c004",
@@ -387,33 +406,33 @@
         "FX8",
         "FX4"
       ],
-      "teacherNote": "代表鏡頭：音樂收束、場景慢慢降彩；三條灰色紙繩一根根落下扣在腕背、肘外、膝前。叔叔想揮手（意圖）→ 線先繃緊 → 手被拉向旁邊；想站起 → 膝前線繃緊 → 膝蓋被提起、腳離地 → 身體晃一下、扶住桌邊。臉、膚色、衣服都不變。停格後等老師。",
+      "teacherNote": "代表鏡頭：音樂收束、場景約 3 秒降彩；三條淡灰紙繩一根根落下，紙環扣在腕背、肘外、膝前（第一根約 4.5 秒落下）。叔叔先露出想打招呼的笑臉、自己把手抬到胸口高度揮兩下（線還鬆）→ 線繃直 → 手被拉到旁邊 → 才露出困惑的臉；想站起：半站 → 膝前線繃緊 → 膝蓋被提起、腳離地 → 身體晃一下 → 扶住桌邊停住。小晴喊「叔叔，小心！」時伸出手掌示意（不指人），約 1.4 秒後收回成擔心站姿。臉、膚色、衣服都不變。停格後等老師（配樂 3 秒內淡到很小聲）。",
       "checkpoint": null,
       "tail": 2.0,
       "sfx": [
         {
           "id": "sfx_string_drop",
-          "at": 6.98,
+          "at": 3.98,
           "gain": 0.8
         },
         {
           "id": "sfx_string_drop",
-          "at": 7.98,
+          "at": 4.88,
           "gain": 0.8
         },
         {
           "id": "sfx_string_drop",
-          "at": 8.98,
+          "at": 5.78,
           "gain": 0.8
         },
         {
           "id": "sfx_string_taut",
-          "at": 11.0,
+          "at": 12.33,
           "gain": 0.8
         },
         {
           "id": "sfx_string_taut",
-          "at": "a2_c002_01.end+1.0",
+          "at": "a2_c002_01.end+1.25",
           "gain": 0.8
         }
       ],
@@ -423,7 +442,7 @@
           "at": 0,
           "loop": false,
           "fade": 1.0,
-          "offset": 4.0
+          "offset": 7.0
         }
       ],
       "musicLevel": 0.75
@@ -457,7 +476,7 @@
           },
           "xiaoqing": {
             "visible": true,
-            "pose": "reach",
+            "pose": "worried",
             "emotion": "worried"
           },
           "xiaoyu": {
@@ -471,37 +490,25 @@
         {
           "name": "camera.move",
           "start": 0.3,
-          "duration": 4.2,
+          "duration": 4.3,
           "params": {
-            "to": "anchor:ale.wrist",
-            "dist": 12.5
+            "to": "g4_c004_wrist"
           }
         },
         {
           "name": "camera.move",
-          "start": 4.7,
-          "duration": 1.6,
-          "params": {
-            "to": "anchor:ale.elbow",
-            "dist": 12.5
-          }
-        },
-        {
-          "name": "camera.move",
-          "start": 6.5,
+          "start": 6.4,
           "duration": 3.8,
           "params": {
-            "to": "anchor:ale.knee",
-            "dist": 12.5
+            "to": "g4_c004_knee"
           }
         },
         {
           "name": "camera.move",
-          "start": 10.5,
+          "start": 10.6,
           "duration": 3.6,
           "params": {
-            "to": "anchor:ale.up",
-            "dist": 13.5
+            "to": "g4_c004_up"
           }
         },
         {
@@ -510,6 +517,70 @@
           "duration": 3.6,
           "params": {
             "to": "g4_mid"
+          }
+        },
+        {
+          "name": "puppet.lean",
+          "target": "xiaoqing",
+          "start": 9.0,
+          "duration": 0.8,
+          "params": {
+            "to": 0.04
+          }
+        },
+        {
+          "name": "puppet.lean",
+          "target": "xiaoyu",
+          "start": 9.15,
+          "duration": 0.8,
+          "params": {
+            "to": -0.04
+          }
+        },
+        {
+          "name": "puppet.blink",
+          "target": "xiaoqing",
+          "start": 9.5
+        },
+        {
+          "name": "puppet.blink",
+          "target": "xiaoyu",
+          "start": 9.75
+        },
+        {
+          "name": "puppet.lean",
+          "target": "xiaoqing",
+          "start": 10.9,
+          "duration": 0.9,
+          "params": {
+            "to": 0
+          }
+        },
+        {
+          "name": "puppet.lean",
+          "target": "xiaoyu",
+          "start": 11.05,
+          "duration": 0.9,
+          "params": {
+            "to": 0
+          }
+        },
+        {
+          "name": "puppet.tilt",
+          "target": "ale",
+          "start": 12.0,
+          "duration": 0.8,
+          "params": {
+            "to": 0.16
+          }
+        },
+        {
+          "name": "puppet.tilt",
+          "target": "ale",
+          "start": 14.1,
+          "duration": 0.9,
+          "params": {
+            "to": 0.07
           }
         }
       ],
@@ -536,7 +607,7 @@
         "FX4",
         "FX8"
       ],
-      "teacherNote": "必要旁白一（一字不改）。鏡頭沿線慢慢移動：腕背 → 肘外 → 膝前紙環 → 往上出畫面，最後回到中景停格，等老師。",
+      "teacherNote": "必要旁白一（一字不改）。鏡頭在三人同框下慢慢移動：看腕背、肘外紙環 → 往下看膝前紙環 → 往上看線一路延伸出畫面，最後回到中景停格；兩個孩子一直在畫面裡（站在旁邊擔心地看，不靠近、不指人）；必要旁白第 2、3 頁之間有安靜的小動作：約 9 秒兩個孩子互看一眼（身體微微傾向對方、眨眼，約 11 秒回正），約 12 秒阿樂叔叔歪頭看手腕的線（約 14 秒回正）。停格後配樂 3 秒內淡到很小聲，等老師。",
       "checkpoint": {
         "label": "第二幕必要旁白一",
         "atMinute": 13
@@ -581,7 +652,7 @@
           },
           "xiaoqing": {
             "visible": true,
-            "pose": "reach",
+            "pose": "worried",
             "emotion": "worried"
           },
           "xiaoyu": {
@@ -595,7 +666,7 @@
         {
           "name": "fx.spot",
           "start": 0,
-          "duration": 1.6,
+          "duration": 1.4,
           "params": {
             "to": 0
           }
@@ -603,27 +674,28 @@
         {
           "name": "light.restore",
           "start": 0,
-          "duration": 1.6
+          "duration": 1.4
         },
         {
           "name": "fx.desat",
           "start": 0,
-          "duration": 2.0,
+          "duration": 1.4,
           "params": {
             "to": 0.2
           }
         },
         {
           "name": "camera.move",
-          "start": 0,
-          "duration": 3.0,
+          "start": 0.3,
+          "duration": 5.0,
           "params": {
             "to": "g4_stage"
-          }
+          },
+          "ease": "linear"
         },
         {
           "name": "curtain.close",
-          "start": 0.9,
+          "start": 3.3,
           "duration": 2.0
         }
       ],
@@ -631,7 +703,7 @@
       "music": [
         {
           "id": "music_closing",
-          "at": 0.9,
+          "at": 3.3,
           "loop": false,
           "fade": 0.8
         }
@@ -644,14 +716,14 @@
       "fx": [
         "FX5"
       ],
-      "teacherNote": "最後謝幕等待時按一次：燈光回到台口、摺層紙布幕約 2 秒合上，接著自動顯示同款署名卡，保持畫面。",
+      "teacherNote": "最後謝幕等待時按一次：追光收掉、燈光回到台口（約 1.4 秒）→ 鏡頭等速慢慢拉回台口全景（5 秒；光敏：移動放慢、不加速）→ 摺層紙布幕約 2 秒合上（3.3 秒起，閉幕曲同時進來），接著自動顯示同款署名卡，保持畫面。",
       "checkpoint": null,
-      "minDuration": 3.1,
+      "minDuration": 5.4,
       "autoAdvance": true,
       "sfx": [
         {
           "id": "sfx_curtain_close",
-          "at": 0.9
+          "at": 3.3
         }
       ]
     },

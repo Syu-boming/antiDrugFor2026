@@ -1,0 +1,36 @@
+{
+ "a1_c004_02": {
+  "seconds": 2.91,
+  "speech_start": 0.12,
+  "speech_end": 2.66,
+  "speech_segments": [
+   [
+    0.12,
+    2.66
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_lulu_v3/out/vo_a1_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_lulu_v3/lipsync/a1_c004_02_el01.json",
+  "role": "小晴",
+  "text": "電子煙在臺灣是禁止的。"
+ },
+ "a1_c008_02": {
+  "seconds": 4.17,
+  "speech_start": 0.12,
+  "speech_end": 3.92,
+  "speech_segments": [
+   [
+    0.12,
+    1.02
+   ],
+   [
+    1.62,
+    3.92
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_lulu_v3/out/vo_a1_c008_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_lulu_v3/lipsync/a1_c008_02_el01.json",
+  "role": "小晴",
+  "text": "不要碰。我們快去跟阿樂叔叔說。"
+ }
+}

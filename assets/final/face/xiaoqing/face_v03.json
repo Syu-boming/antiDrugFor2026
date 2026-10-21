@@ -1,0 +1,210 @@
+{
+ "character": "xiaoqing",
+ "format_note": "引擎原生 FaceConfig（app/src/stage/face.ts）。perPose 依立牌姿勢名稱（cast.ts／g4_manifest characters.xiaoqing.poses）；最上層 mouth／eyes 是空槽（stand 姿勢沒有正式換片，照舊用退路換片）。各姿勢的素材代理格式見 face-<姿勢>_v01.json、reach 見 face_v02.json。",
+ "version": "v03",
+ "headLayer": {
+  "image": "chr-xiaoqing_pose-reach-worried-head",
+  "offset": [
+   256,
+   11
+  ],
+  "pivot": [
+   189,
+   341
+  ],
+  "size": [
+   475,
+   424
+  ]
+ },
+ "poseImage": "chr-xiaoqing_pose-reach-worried",
+ "mouth": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 2,
+  "shapes": {
+   "closed": "none/xiaoqing-closed",
+   "half": "none/xiaoqing-half",
+   "open": "none/xiaoqing-open",
+   "round": "none/xiaoqing-round",
+   "worried": "none/xiaoqing-worried",
+   "smile": "none/xiaoqing-smile"
+  }
+ },
+ "eyes": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 1,
+  "shapes": {
+   "open": "none/xiaoqing-open",
+   "half": "none/xiaoqing-half",
+   "closed": "none/xiaoqing-closed"
+  }
+ },
+ "perPose": {
+  "reach": {
+   "mouth": {
+    "anchor": [
+     137.0,
+     276.0
+    ],
+    "size": [
+     78,
+     74
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/xiaoqing/chr-xiaoqing_mouth_closed",
+     "half": "face/xiaoqing/chr-xiaoqing_mouth_half",
+     "open": "face/xiaoqing/chr-xiaoqing_mouth_open",
+     "worried": "face/xiaoqing/chr-xiaoqing_mouth_worried",
+     "round": "face/xiaoqing/chr-xiaoqing_mouth_round"
+    }
+   },
+   "eyes": {
+    "anchor": [
+     168.0,
+     209.0
+    ],
+    "size": [
+     172,
+     124
+    ],
+    "z": 1,
+    "shapes": {
+     "open": "face/xiaoqing/chr-xiaoqing_eyes_open",
+     "half": "face/xiaoqing/chr-xiaoqing_eyes_half",
+     "closed": "face/xiaoqing/chr-xiaoqing_eyes_closed"
+    }
+   }
+  },
+  "watch": {
+   "mouth": {
+    "anchor": [
+     171.0,
+     300.0
+    ],
+    "size": [
+     70,
+     56
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/xiaoqing/chr-xiaoqing_watch-mouth_closed",
+     "half": "face/xiaoqing/chr-xiaoqing_watch-mouth_half",
+     "open": "face/xiaoqing/chr-xiaoqing_watch-mouth_open",
+     "round": "face/xiaoqing/chr-xiaoqing_watch-mouth_round",
+     "worried": "face/xiaoqing/chr-xiaoqing_watch-mouth_worried",
+     "smile": "face/xiaoqing/chr-xiaoqing_watch-mouth_smile"
+    }
+   },
+   "eyes": {
+    "anchor": [
+     197.0,
+     236.0
+    ],
+    "size": [
+     158,
+     100
+    ],
+    "z": 1,
+    "shapes": {
+     "open": "face/xiaoqing/chr-xiaoqing_watch-eyes_open",
+     "half": "face/xiaoqing/chr-xiaoqing_watch-eyes_half",
+     "closed": "face/xiaoqing/chr-xiaoqing_watch-eyes_closed"
+    }
+   }
+  },
+  "palm": {
+   "mouth": {
+    "anchor": [
+     413.0,
+     331.0
+    ],
+    "size": [
+     66,
+     54
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/xiaoqing/chr-xiaoqing_palm-mouth_closed",
+     "half": "face/xiaoqing/chr-xiaoqing_palm-mouth_half",
+     "open": "face/xiaoqing/chr-xiaoqing_palm-mouth_open",
+     "worried": "face/xiaoqing/chr-xiaoqing_palm-mouth_worried",
+     "round": "face/xiaoqing/chr-xiaoqing_palm-mouth_round"
+    }
+   },
+   "eyes": {
+    "anchor": [
+     438.0,
+     254.0
+    ],
+    "size": [
+     176,
+     112
+    ],
+    "z": 1,
+    "shapes": {
+     "open": "face/xiaoqing/chr-xiaoqing_palm-eyes_open",
+     "half": "face/xiaoqing/chr-xiaoqing_palm-eyes_half",
+     "closed": "face/xiaoqing/chr-xiaoqing_palm-eyes_closed"
+    }
+   }
+  },
+  "worried": {
+   "mouth": {
+    "anchor": [
+     150.0,
+     306.0
+    ],
+    "size": [
+     64,
+     52
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/xiaoqing/chr-xiaoqing_worried-mouth_closed",
+     "half": "face/xiaoqing/chr-xiaoqing_worried-mouth_half",
+     "open": "face/xiaoqing/chr-xiaoqing_worried-mouth_open",
+     "round": "face/xiaoqing/chr-xiaoqing_worried-mouth_round",
+     "worried": "face/xiaoqing/chr-xiaoqing_worried-mouth_worried"
+    }
+   },
+   "eyes": {
+    "anchor": [
+     178.0,
+     234.0
+    ],
+    "size": [
+     152,
+     100
+    ],
+    "z": 1,
+    "shapes": {
+     "open": "face/xiaoqing/chr-xiaoqing_worried-eyes_open",
+     "half": "face/xiaoqing/chr-xiaoqing_worried-eyes_half",
+     "closed": "face/xiaoqing/chr-xiaoqing_worried-eyes_closed"
+    }
+   }
+  }
+ },
+ "lipsync_map": {
+  "0": "mouth_closed",
+  "1": "mouth_half",
+  "2": "mouth_open",
+  "3": "mouth_round"
+ },
+ "swap_rule": "硬切換（不做透明度交叉淡化，角色表 0.6）；眨眼：eyes_closed 停 2–3 格（12 fps），每 3–6 秒一次；轉頭／情緒轉折時加眨一次。"
+}

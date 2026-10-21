@@ -1,0 +1,17 @@
+{
+ "a1_c004_02": {
+  "seconds": 3.11,
+  "speech_start": 0.12,
+  "speech_end": 2.86,
+  "speech_segments": [
+   [
+    0.12,
+    2.85
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3_dz/out/vo_a1_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3_dz/lipsync/a1_c004_02_el01.json",
+  "role": "小晴",
+  "text": "電子煙在臺灣是禁止的。"
+ }
+}

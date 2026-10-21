@@ -1,0 +1,868 @@
+{
+ "note": "Mac 開發機（Apple M4）上 headless Chrome（ANGLE Metal）即時播放 g4 的數據，不代表學校 Windows 筆電；學校筆電要用探針與第 3 天彩排實測（school 欄，未驗證）。",
+ "method": "只統計 cue 播放中（mode=playing）的影格；影格時間＝相鄰 requestAnimationFrame 時間戳的間隔；rAF 回呼耗時＝引擎每格 JS 工作（不含 GPU）。視窗 1920×1080、deviceScaleFactor 1；停住點等 1 秒按 →（下一步）；畫質 A、B 各 3 次，每次重開瀏覽器，用 AudioContext 時鐘（clock 欄）。slowFrames＝每格 > 50 ms 的 cue、cue 內秒數、是否在台詞時段內（前後各 0.1 秒）。",
+ "machine": {
+  "cpu": "Apple M4",
+  "cores": 10,
+  "memGB": 16,
+  "os": "darwin 25.5.0"
+ },
+ "acceptance": {
+  "rule": "台詞時段內 0 格超過 100 ms（G4 修正第 28 項）",
+  "over100msDuringLines": 1,
+  "over100ms": 1,
+  "allClocksAudio": true
+ },
+ "school": {
+  "status": "未驗證",
+  "todo": "請使用者在學校 Windows 筆電用探針跑 g4：p95 影格時間、> 100 ms 次數、30＋40 分鐘耐熱測試，結果填在這裡（G4 修正第 31、35 項）。",
+  "p95Ms": null,
+  "over100ms": null,
+  "thermal30plus40min": null
+ },
+ "runs": [
+  {
+   "quality": "A",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 63.5,
+   "frameIntervalMs": {
+    "n": 3727,
+    "median": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 16.8,
+    "mean": 16.666
+   },
+   "rafCallbackMs": {
+    "n": 3732,
+    "median": 0.6,
+    "p95": 0.8,
+    "p99": 1,
+    "max": 8.5,
+    "mean": 0.582
+   },
+   "over33ms": 0,
+   "over50ms": 0,
+   "over100ms": 0,
+   "over100msDuringLines": 0,
+   "slowFrames": [],
+   "playingFrames": 3732,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11687.2,
+     "frameIntervalMs": {
+      "n": 700,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 701,
+      "median": 0.5,
+      "p95": 0.8,
+      "p99": 1.3,
+      "max": 3.7,
+      "mean": 0.47
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23939.3,
+     "frameIntervalMs": {
+      "n": 1435,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1436,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 1,
+      "max": 8.5,
+      "mean": 0.611
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c004": {
+     "playMs": 19628.7,
+     "frameIntervalMs": {
+      "n": 1176,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1177,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 0.9,
+      "max": 6.5,
+      "mean": 0.623
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c002": {
+     "playMs": 5479.1,
+     "frameIntervalMs": {
+      "n": 328,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 329,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 1,
+      "max": 2.2,
+      "mean": 0.631
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1478.6,
+     "frameIntervalMs": {
+      "n": 88,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.667
+     },
+     "rafCallbackMs": {
+      "n": 89,
+      "median": 0.3,
+      "p95": 0.4,
+      "p99": 0.5,
+      "max": 0.7,
+      "mean": 0.271
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 1
+  },
+  {
+   "quality": "A",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 72.2,
+   "frameIntervalMs": {
+    "n": 3726,
+    "median": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 16.8,
+    "mean": 16.666
+   },
+   "rafCallbackMs": {
+    "n": 3731,
+    "median": 0.6,
+    "p95": 0.9,
+    "p99": 1,
+    "max": 7.3,
+    "mean": 0.608
+   },
+   "over33ms": 0,
+   "over50ms": 0,
+   "over100ms": 0,
+   "over100msDuringLines": 0,
+   "slowFrames": [],
+   "playingFrames": 3731,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11697.5,
+     "frameIntervalMs": {
+      "n": 701,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 702,
+      "median": 0.5,
+      "p95": 0.7,
+      "p99": 0.8,
+      "max": 4.4,
+      "mean": 0.462
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23906.9,
+     "frameIntervalMs": {
+      "n": 1433,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1434,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 0.9,
+      "max": 7.3,
+      "mean": 0.615
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c004": {
+     "playMs": 19625,
+     "frameIntervalMs": {
+      "n": 1176,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1177,
+      "median": 0.7,
+      "p95": 0.9,
+      "p99": 1,
+      "max": 5.9,
+      "mean": 0.688
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c002": {
+     "playMs": 5488.6,
+     "frameIntervalMs": {
+      "n": 329,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 330,
+      "median": 0.7,
+      "p95": 1,
+      "p99": 1.1,
+      "max": 2,
+      "mean": 0.696
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1466.2,
+     "frameIntervalMs": {
+      "n": 87,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.667
+     },
+     "rafCallbackMs": {
+      "n": 88,
+      "median": 0.3,
+      "p95": 0.4,
+      "p99": 0.5,
+      "max": 0.5,
+      "mean": 0.268
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 2
+  },
+  {
+   "quality": "A",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 64.5,
+   "frameIntervalMs": {
+    "n": 3722,
+    "median": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 133.3,
+    "mean": 16.706
+   },
+   "rafCallbackMs": {
+    "n": 3727,
+    "median": 0.6,
+    "p95": 0.9,
+    "p99": 1.8,
+    "max": 25.1,
+    "mean": 0.636
+   },
+   "over33ms": 2,
+   "over50ms": 2,
+   "over100ms": 1,
+   "over100msDuringLines": 1,
+   "slowFrames": [
+    {
+     "cue": "a2_c002",
+     "msSinceCueStart": 20886.1,
+     "cueTime": 20.793,
+     "frameMs": 133.3,
+     "duringLine": "a2_c002_02"
+    },
+    {
+     "cue": "a2_c004",
+     "msSinceCueStart": 6074.2,
+     "cueTime": 6.015,
+     "frameMs": 50.1,
+     "duringLine": "a2_c004_02"
+    }
+   ],
+   "playingFrames": 3727,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11707.3,
+     "frameIntervalMs": {
+      "n": 702,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 703,
+      "median": 0.5,
+      "p95": 0.7,
+      "p99": 0.8,
+      "max": 4.1,
+      "mean": 0.452
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23957.3,
+     "frameIntervalMs": {
+      "n": 1430,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 133.3,
+      "mean": 16.748
+     },
+     "rafCallbackMs": {
+      "n": 1431,
+      "median": 0.6,
+      "p95": 1.3,
+      "p99": 2.3,
+      "max": 25.1,
+      "mean": 0.724
+     },
+     "over33ms": 1,
+     "over50ms": 1
+    },
+    "a2_c004": {
+     "playMs": 19622.5,
+     "frameIntervalMs": {
+      "n": 1174,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 50.1,
+      "mean": 16.694
+     },
+     "rafCallbackMs": {
+      "n": 1175,
+      "median": 0.6,
+      "p95": 0.9,
+      "p99": 1.5,
+      "max": 6.5,
+      "mean": 0.663
+     },
+     "over33ms": 1,
+     "over50ms": 1
+    },
+    "a8_c002": {
+     "playMs": 5484.8,
+     "frameIntervalMs": {
+      "n": 328,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 329,
+      "median": 0.6,
+      "p95": 0.9,
+      "p99": 1,
+      "max": 2,
+      "mean": 0.642
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1474.7,
+     "frameIntervalMs": {
+      "n": 88,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 89,
+      "median": 0.3,
+      "p95": 0.5,
+      "p99": 0.6,
+      "max": 0.6,
+      "mean": 0.283
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 3
+  },
+  {
+   "quality": "B",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 79,
+   "frameIntervalMs": {
+    "n": 3729,
+    "median": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 16.8,
+    "mean": 16.666
+   },
+   "rafCallbackMs": {
+    "n": 3734,
+    "median": 0.6,
+    "p95": 0.8,
+    "p99": 1,
+    "max": 7.5,
+    "mean": 0.582
+   },
+   "over33ms": 0,
+   "over50ms": 0,
+   "over100ms": 0,
+   "over100msDuringLines": 0,
+   "slowFrames": [],
+   "playingFrames": 3734,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11708.6,
+     "frameIntervalMs": {
+      "n": 702,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 703,
+      "median": 0.5,
+      "p95": 0.7,
+      "p99": 0.9,
+      "max": 3.9,
+      "mean": 0.442
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23912.2,
+     "frameIntervalMs": {
+      "n": 1434,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1435,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 1,
+      "max": 7.5,
+      "mean": 0.608
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c004": {
+     "playMs": 19637.1,
+     "frameIntervalMs": {
+      "n": 1177,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1178,
+      "median": 0.6,
+      "p95": 0.9,
+      "p99": 1,
+      "max": 6.5,
+      "mean": 0.644
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c002": {
+     "playMs": 5500.1,
+     "frameIntervalMs": {
+      "n": 329,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 330,
+      "median": 0.6,
+      "p95": 0.9,
+      "p99": 1,
+      "max": 2.1,
+      "mean": 0.637
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1480.8,
+     "frameIntervalMs": {
+      "n": 87,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 88,
+      "median": 0.2,
+      "p95": 0.4,
+      "p99": 0.5,
+      "max": 0.5,
+      "mean": 0.245
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 1
+  },
+  {
+   "quality": "B",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 62.2,
+   "frameIntervalMs": {
+    "n": 3728,
+    "median": 16.7,
+    "p95": 16.8,
+    "p99": 16.8,
+    "max": 16.8,
+    "mean": 16.666
+   },
+   "rafCallbackMs": {
+    "n": 3733,
+    "median": 0.6,
+    "p95": 0.8,
+    "p99": 0.9,
+    "max": 8.6,
+    "mean": 0.563
+   },
+   "over33ms": 0,
+   "over50ms": 0,
+   "over100ms": 0,
+   "over100msDuringLines": 0,
+   "slowFrames": [],
+   "playingFrames": 3733,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11705.3,
+     "frameIntervalMs": {
+      "n": 701,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 702,
+      "median": 0.4,
+      "p95": 0.7,
+      "p99": 0.8,
+      "max": 4.2,
+      "mean": 0.425
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23913.8,
+     "frameIntervalMs": {
+      "n": 1434,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1435,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 0.9,
+      "max": 8.6,
+      "mean": 0.595
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c004": {
+     "playMs": 19635.2,
+     "frameIntervalMs": {
+      "n": 1177,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1178,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 0.9,
+      "max": 5.7,
+      "mean": 0.612
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c002": {
+     "playMs": 5496.6,
+     "frameIntervalMs": {
+      "n": 328,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 329,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 1,
+      "max": 2,
+      "mean": 0.627
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1487.1,
+     "frameIntervalMs": {
+      "n": 88,
+      "median": 16.7,
+      "p95": 16.8,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.667
+     },
+     "rafCallbackMs": {
+      "n": 89,
+      "median": 0.2,
+      "p95": 0.4,
+      "p99": 0.5,
+      "max": 0.5,
+      "mean": 0.254
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 2
+  },
+  {
+   "quality": "B",
+   "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+   "clock": "audio",
+   "audioState": "running",
+   "warmUpMs": 60.9,
+   "frameIntervalMs": {
+    "n": 3729,
+    "median": 16.7,
+    "p95": 16.7,
+    "p99": 16.8,
+    "max": 16.8,
+    "mean": 16.666
+   },
+   "rafCallbackMs": {
+    "n": 3734,
+    "median": 0.6,
+    "p95": 0.8,
+    "p99": 1,
+    "max": 7,
+    "mean": 0.581
+   },
+   "over33ms": 0,
+   "over50ms": 0,
+   "over100ms": 0,
+   "over100msDuringLines": 0,
+   "slowFrames": [],
+   "playingFrames": 3734,
+   "perCue": {
+    "a0_c001": {
+     "playMs": 11688.5,
+     "frameIntervalMs": {
+      "n": 700,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 701,
+      "median": 0.5,
+      "p95": 0.7,
+      "p99": 0.8,
+      "max": 3.8,
+      "mean": 0.452
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c002": {
+     "playMs": 23900.7,
+     "frameIntervalMs": {
+      "n": 1433,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1434,
+      "median": 0.6,
+      "p95": 0.9,
+      "p99": 1,
+      "max": 7,
+      "mean": 0.621
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a2_c004": {
+     "playMs": 19624.3,
+     "frameIntervalMs": {
+      "n": 1176,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 1177,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 0.9,
+      "max": 6.4,
+      "mean": 0.624
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c002": {
+     "playMs": 5490.9,
+     "frameIntervalMs": {
+      "n": 328,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.666
+     },
+     "rafCallbackMs": {
+      "n": 329,
+      "median": 0.6,
+      "p95": 0.8,
+      "p99": 1,
+      "max": 2.2,
+      "mean": 0.63
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    },
+    "a8_c003": {
+     "playMs": 1540.7,
+     "frameIntervalMs": {
+      "n": 92,
+      "median": 16.7,
+      "p95": 16.7,
+      "p99": 16.8,
+      "max": 16.8,
+      "mean": 16.665
+     },
+     "rafCallbackMs": {
+      "n": 93,
+      "median": 0.2,
+      "p95": 0.3,
+      "p99": 0.4,
+      "max": 0.5,
+      "mean": 0.224
+     },
+     "over33ms": 0,
+     "over50ms": 0
+    }
+   },
+   "pageErrors": [],
+   "run": 3
+  }
+ ]
+}

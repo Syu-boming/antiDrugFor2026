@@ -1,0 +1,67 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。（兒童組加）post.pitch_shift_st＝PSOLA 整段改調半音；post.stretch＝固定長度倍數；post.auto_stretch＝{target, tolerance, min, max, default}：母帶前淨語速超出角色表語速 ±tolerance 時，用 PSOLA 把長度乘 淨語速÷target（夾在 min–max）；eleven_v3 不理會 speed，只能這樣放慢。（兒童組加）head_guard＝句首保護 {mode: always／off, prefix}：送出文字前加 prefix（預設「嗯。」），合成後依轉寫時間戳＋停頓切掉（head_cut）。",
+ "role": "折折",
+ "code": "zhezhe",
+ "status": "active",
+ "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+ "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": null,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 450,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九",
+  "摺": "哲",
+  "口訣": "口決",
+  "紙登結": "纸灯节",
+  "燈籠": "灯笼",
+  "燈": "灯",
+  "哲哲": "折折"
+ },
+ "post": {
+  "pitch_shift_st": 2.0,
+  "auto_stretch": {
+   "tolerance": 0.2,
+   "min": 0.75,
+   "max": 1.3,
+   "default": 1.0
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "note": "eleven_v3 不理會 speed；改用 post.auto_stretch"
+ },
+ "lines": {},
+ "targets": {
+  "rate_nominal": [
+   4.3,
+   4.6
+  ],
+  "rate_cps_net": [
+   3.8,
+   5.1
+  ],
+  "f0_nominal": 293.5,
+  "f0_hz": [
+   280.0,
+   360.0
+  ],
+  "source": "角色表第 3 節（4.3–4.6；全劇最高、明亮）；casting.json 折折 note（F0 293.5 Hz）"
+ },
+ "source": "review/G3/el/full/trial/kids/（zz_chloe_v3*、zz_lulu_v3：Chloe 的「紙燈節」兩次都通過、Lulu 兩次都不過；「摺」送「哲」、「口訣」送「口決」、「燈籠」送原字的比較見各資料夾）",
+ "note": "Chloe v3＋PSOLA 升 2 半音（原 F0 約 255–262 Hz，與小晴 Tiffy 約 260 Hz 同高 → 約 292 Hz，全劇最高；和小晴也是不同聲線）。「口訣」原字兩個模型都聽成「口窺／口盔」，送「口決」（同音 jué）後兩次都轉寫一致。「登籠」被念成「登樓」，改回原字「燈籠」。聽感未驗證。"
+}

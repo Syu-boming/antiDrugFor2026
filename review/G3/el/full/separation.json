@@ -1,0 +1,1157 @@
+{
+ "_說明": "全部角色兩兩的 F0 中位數半音差。F0＝該角色所有檔案有聲格合併的中位數（parselmouth 自相關，75–700 Hz）；有 ElevenLabs 採用檔的角色用 EL，否則用 edge 基準。same_scene＝兩個角色在同一個 cue（同場戲）都有台詞。排序：同場戲在前、半音差小的在前。聽感未驗證。",
+ "generated": "2026-10-21 12:46:01",
+ "roles": {
+  "narrator": {
+   "role": "旁白",
+   "engine": "elevenlabs",
+   "f0_median_el": 200.2,
+   "f0_median_edge": 187.2,
+   "n_el": 57,
+   "n_edge": 57,
+   "f0_target": 185.0,
+   "f0_median": 200.2
+  },
+  "zhezhe": {
+   "role": "折折",
+   "engine": "elevenlabs",
+   "f0_median_el": 288.8,
+   "f0_median_edge": 288.3,
+   "n_el": 37,
+   "n_edge": 45,
+   "f0_target": 293.5,
+   "f0_median": 288.8
+  },
+  "xiaoqing": {
+   "role": "小晴",
+   "engine": "elevenlabs",
+   "f0_median_el": 265.0,
+   "f0_median_edge": 284.1,
+   "n_el": 22,
+   "n_edge": 22,
+   "f0_target": 276.9,
+   "f0_median": 265.0
+  },
+  "xiaoyu": {
+   "role": "小宇",
+   "engine": "elevenlabs",
+   "f0_median_el": 219.9,
+   "f0_median_edge": 223.2,
+   "n_el": 24,
+   "n_edge": 24,
+   "f0_target": 228.0,
+   "f0_median": 219.9
+  },
+  "ale": {
+   "role": "阿樂叔叔",
+   "engine": "elevenlabs",
+   "f0_median_el": 110.0,
+   "f0_median_edge": 109.9,
+   "n_el": 13,
+   "n_edge": 13,
+   "f0_target": 113.0,
+   "f0_median": 110.0
+  },
+  "pinan": {
+   "role": "品安",
+   "engine": "elevenlabs",
+   "f0_median_el": 185.2,
+   "f0_median_edge": 178.0,
+   "n_el": 8,
+   "n_edge": 8,
+   "f0_target": 181.0,
+   "f0_median": 185.2
+  },
+  "ye": {
+   "role": "葉護理師",
+   "engine": "elevenlabs",
+   "f0_median_el": 134.1,
+   "f0_median_edge": 160.7,
+   "n_el": 8,
+   "n_edge": 8,
+   "f0_target": 148.0,
+   "f0_median": 134.1
+  },
+  "lin": {
+   "role": "林老師",
+   "engine": "elevenlabs",
+   "f0_median_el": 169.5,
+   "f0_median_edge": 162.1,
+   "n_el": 12,
+   "n_edge": 12,
+   "f0_target": 161.0,
+   "f0_median": 169.5
+  },
+  "chen": {
+   "role": "陳伯伯",
+   "engine": "elevenlabs",
+   "f0_median_el": 94.5,
+   "f0_median_edge": 91.9,
+   "n_el": 3,
+   "n_edge": 3,
+   "f0_target": 91.7,
+   "f0_median": 94.5
+  },
+  "inviter": {
+   "role": "邀請者",
+   "engine": "elevenlabs",
+   "f0_median_el": 140.5,
+   "f0_median_edge": 167.9,
+   "n_el": 5,
+   "n_edge": 5,
+   "f0_target": 167.0,
+   "f0_median": 140.5
+  },
+  "dispatcher": {
+   "role": "執勤人員",
+   "engine": "elevenlabs",
+   "f0_median_el": 281.4,
+   "f0_median_edge": 203.5,
+   "n_el": 3,
+   "n_edge": 3,
+   "f0_target": 203.0,
+   "f0_median": 281.4
+  }
+ },
+ "pairs": [
+  {
+   "a": "折折",
+   "b": "小晴",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    265.0
+   ],
+   "semitones": 1.49,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a1_c001",
+    "a1_c003",
+    "a1_c008",
+    "a4_c002",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "品安",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    169.5
+   ],
+   "semitones": 1.53,
+   "same_scene": true,
+   "shared_cues": [
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "小宇",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    219.9
+   ],
+   "semitones": 1.62,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c008",
+    "a2_c013"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    185.2
+   ],
+   "semitones": 2.97,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c001",
+    "a1_c004",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "小宇",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    219.9
+   ],
+   "semitones": 3.23,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a1_c001",
+    "a1_c003",
+    "a1_c004",
+    "a1_c008",
+    "a2_c008",
+    "a2_c013",
+    "a3_c002",
+    "a4_c002",
+    "a4_c012",
+    "a5_c001",
+    "a5_c005",
+    "a5_c008",
+    "a6_c001",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    134.1
+   ],
+   "semitones": 3.43,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c012"
+   ]
+  },
+  {
+   "a": "葉護理師",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    134.1,
+    169.5
+   ],
+   "semitones": 4.06,
+   "same_scene": true,
+   "shared_cues": [
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    281.4
+   ],
+   "semitones": 4.27,
+   "same_scene": true,
+   "shared_cues": [
+    "a5_c006"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    169.5
+   ],
+   "semitones": 4.51,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c012",
+    "a5_c001",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "小宇",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    219.9
+   ],
+   "semitones": 4.72,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a1_c001",
+    "a1_c003",
+    "a1_c008",
+    "a2_c001",
+    "a3_c001",
+    "a4_c002",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "品安",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    140.5
+   ],
+   "semitones": 4.78,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c004"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "小晴",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    265.0
+   ],
+   "semitones": 4.85,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c008",
+    "a2_c013"
+   ]
+  },
+  {
+   "a": "品安",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    134.1
+   ],
+   "semitones": 5.59,
+   "same_scene": true,
+   "shared_cues": [
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    185.2
+   ],
+   "semitones": 6.2,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c001",
+    "a1_c004",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "折折",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    288.8
+   ],
+   "semitones": 6.34,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c005",
+    "a2_c005",
+    "a2_c009",
+    "a3_c005",
+    "a4_c005",
+    "a4_c009",
+    "a5_c002",
+    "a6_c003",
+    "a6_c007"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    134.1
+   ],
+   "semitones": 6.94,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c013"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    185.2
+   ],
+   "semitones": 7.69,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c001",
+    "a6_c002",
+    "a7_c003"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    169.5
+   ],
+   "semitones": 7.74,
+   "same_scene": true,
+   "shared_cues": [
+    "a3_c003",
+    "a3_c008",
+    "a4_c012",
+    "a5_c001",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    140.5
+   ],
+   "semitones": 7.76,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c002",
+    "a1_c004",
+    "a3_c001"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    134.1
+   ],
+   "semitones": 8.56,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c013",
+    "a5_c008",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    169.5
+   ],
+   "semitones": 9.23,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c013",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "林老師",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    169.5,
+    94.5
+   ],
+   "semitones": 10.11,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c012",
+    "a4_c013",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "阿樂叔叔",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    110.0
+   ],
+   "semitones": 10.37,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c008",
+    "a4_c001"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    140.5
+   ],
+   "semitones": 10.99,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c004"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    134.1
+   ],
+   "semitones": 11.79,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c012",
+    "a2_c013",
+    "a5_c008",
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "阿樂叔叔",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    110.0
+   ],
+   "semitones": 11.99,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a2_c001",
+    "a2_c008"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    140.5
+   ],
+   "semitones": 12.47,
+   "same_scene": true,
+   "shared_cues": [
+    "a3_c001"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    94.5
+   ],
+   "semitones": 14.62,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c012",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "阿樂叔叔",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    110.0
+   ],
+   "semitones": 15.22,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a2_c002",
+    "a2_c008",
+    "a2_c012"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "阿樂叔叔",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    110.0
+   ],
+   "semitones": 16.71,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c002",
+    "a0_c003",
+    "a0_c004",
+    "a2_c001",
+    "a4_c008",
+    "a6_c009"
+   ]
+  },
+  {
+   "a": "小晴",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    94.5
+   ],
+   "semitones": 17.85,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c012",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    94.5
+   ],
+   "semitones": 19.34,
+   "same_scene": true,
+   "shared_cues": [
+    "a4_c013",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "折折",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    281.4
+   ],
+   "semitones": 0.45,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "葉護理師",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    134.1,
+    140.5
+   ],
+   "semitones": 0.81,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "小晴",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    265.0,
+    281.4
+   ],
+   "semitones": 1.04,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "旁白",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    185.2
+   ],
+   "semitones": 1.35,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    94.5
+   ],
+   "semitones": 2.63,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "旁白",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    169.5
+   ],
+   "semitones": 2.88,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "林老師",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    169.5,
+    140.5
+   ],
+   "semitones": 3.25,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    140.5
+   ],
+   "semitones": 4.24,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "旁白",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    281.4
+   ],
+   "semitones": 5.89,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "葉護理師",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    134.1,
+    94.5
+   ],
+   "semitones": 6.06,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "旁白",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    140.5
+   ],
+   "semitones": 6.13,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "陳伯伯",
+   "b": "邀請者",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    94.5,
+    140.5
+   ],
+   "semitones": 6.87,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "品安",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    281.4
+   ],
+   "semitones": 7.24,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    169.5
+   ],
+   "semitones": 7.49,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "林老師",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    169.5,
+    281.4
+   ],
+   "semitones": 8.78,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    185.2
+   ],
+   "semitones": 9.02,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "品安",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    94.5
+   ],
+   "semitones": 11.65,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "邀請者",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    140.5,
+    281.4
+   ],
+   "semitones": 12.02,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "葉護理師",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    134.1,
+    281.4
+   ],
+   "semitones": 12.83,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "旁白",
+   "b": "陳伯伯",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    94.5
+   ],
+   "semitones": 13.0,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "折折",
+   "b": "葉護理師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    134.1
+   ],
+   "semitones": 13.28,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "阿樂叔叔",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    110.0,
+    281.4
+   ],
+   "semitones": 16.26,
+   "same_scene": false,
+   "shared_cues": []
+  },
+  {
+   "a": "陳伯伯",
+   "b": "執勤人員",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    94.5,
+    281.4
+   ],
+   "semitones": 18.89,
+   "same_scene": false,
+   "shared_cues": []
+  }
+ ],
+ "same_scene_under_3st": [
+  {
+   "a": "折折",
+   "b": "小晴",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    288.8,
+    265.0
+   ],
+   "semitones": 1.49,
+   "same_scene": true,
+   "shared_cues": [
+    "a0_c004",
+    "a1_c001",
+    "a1_c003",
+    "a1_c008",
+    "a4_c002",
+    "a5_c001"
+   ]
+  },
+  {
+   "a": "品安",
+   "b": "林老師",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    185.2,
+    169.5
+   ],
+   "semitones": 1.53,
+   "same_scene": true,
+   "shared_cues": [
+    "a6_c006"
+   ]
+  },
+  {
+   "a": "旁白",
+   "b": "小宇",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    200.2,
+    219.9
+   ],
+   "semitones": 1.62,
+   "same_scene": true,
+   "shared_cues": [
+    "a2_c008",
+    "a2_c013"
+   ]
+  },
+  {
+   "a": "小宇",
+   "b": "品安",
+   "engines": [
+    "elevenlabs",
+    "elevenlabs"
+   ],
+   "f0": [
+    219.9,
+    185.2
+   ],
+   "semitones": 2.97,
+   "same_scene": true,
+   "shared_cues": [
+    "a1_c001",
+    "a1_c004",
+    "a6_c006"
+   ]
+  }
+ ]
+}

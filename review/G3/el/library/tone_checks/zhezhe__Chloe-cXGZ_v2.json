@@ -1,0 +1,512 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "zhezhe",
+ "role_zh": "折折",
+ "cand": "zhezhe_Chloe-cXGZ",
+ "model": "eleven_multilingual_v2",
+ "line": "a0_c003_01",
+ "voice": "Chloe - Gentle, Delicate, Reassuring",
+ "整句（替身字，正式管線）": {
+  "file": "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__a0_c003_01.wav",
+  "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是智燈節今年的智燈是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.82,
+     1.02
+    ],
+    [
+     1.02,
+     1.24
+    ],
+    [
+     1.24,
+     1.46
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    157,
+    524
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.78,
+    "t1": 0.86,
+    "mean_hz": 280.7,
+    "start_hz": 286.9,
+    "end_hz": 271.7,
+    "min_hz": 269.3,
+    "min_pos": 0.62,
+    "end_over_start": 0.947,
+    "end_over_min": 1.009,
+    "contour_hz_20ms": [
+     287,
+     293,
+     276,
+     269,
+     272
+    ]
+   },
+   "燈": {
+    "t0": 0.96,
+    "t1": 1.07,
+    "mean_hz": 268.1,
+    "start_hz": 284.9,
+    "end_hz": 259.9,
+    "min_hz": 258.1,
+    "min_pos": 0.73,
+    "end_over_start": 0.912,
+    "end_over_min": 1.007,
+    "contour_hz_20ms": [
+     294,
+     274,
+     273,
+     262,
+     262,
+     262
+    ]
+   },
+   "節": {
+    "t0": 1.1,
+    "t1": 1.28,
+    "mean_hz": 288.7,
+    "start_hz": 292.9,
+    "end_hz": 288.8,
+    "min_hz": 281.2,
+    "min_pos": 0.17,
+    "end_over_start": 0.986,
+    "end_over_min": 1.027,
+    "contour_hz_20ms": [
+     293,
+     273,
+     281,
+     282,
+     278,
+     285,
+     293,
+     298,
+     295,
+     289
+    ]
+   },
+   "燈_end_over_start": 0.912,
+   "燈_over_紙_mean": 0.955,
+   "節_end_over_min": 1.027,
+   "節_min_pos": 0.17,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是智燈節今年的助燈是照著我的樣子做的",
+    "large-v3-turbo": "明天就是智燈節今年的智燈是照著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "整句（原字）": {
+  "file": "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__tone_a0_c003_01_orig.wav",
+  "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是智燈節今年的智燈是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.82,
+     1.02
+    ],
+    [
+     1.02,
+     1.24
+    ],
+    [
+     1.24,
+     1.46
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    158,
+    525
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.78,
+    "t1": 0.86,
+    "mean_hz": 280.6,
+    "start_hz": 287.0,
+    "end_hz": 272.4,
+    "min_hz": 269.0,
+    "min_pos": 0.62,
+    "end_over_start": 0.949,
+    "end_over_min": 1.013,
+    "contour_hz_20ms": [
+     287,
+     293,
+     275,
+     269,
+     272
+    ]
+   },
+   "燈": {
+    "t0": 0.96,
+    "t1": 1.07,
+    "mean_hz": 268.1,
+    "start_hz": 284.5,
+    "end_hz": 259.8,
+    "min_hz": 258.0,
+    "min_pos": 0.73,
+    "end_over_start": 0.913,
+    "end_over_min": 1.007,
+    "contour_hz_20ms": [
+     293,
+     273,
+     273,
+     262,
+     262,
+     261
+    ]
+   },
+   "節": {
+    "t0": 1.1,
+    "t1": 1.28,
+    "mean_hz": 288.7,
+    "start_hz": 293.4,
+    "end_hz": 288.8,
+    "min_hz": 281.2,
+    "min_pos": 0.17,
+    "end_over_start": 0.984,
+    "end_over_min": 1.027,
+    "contour_hz_20ms": [
+     293,
+     273,
+     281,
+     282,
+     278,
+     285,
+     293,
+     298,
+     295,
+     289
+    ]
+   },
+   "燈_end_over_start": 0.913,
+   "燈_over_紙_mean": 0.955,
+   "節_end_over_min": 1.027,
+   "節_min_pos": 0.17,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是智燈節今年的燭燈是照著我的樣子做的",
+    "large-v3-turbo": "明天就是智燈節今年的智燈是照著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "智等節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.54
+    ],
+    [
+     0.54,
+     0.7
+    ],
+    [
+     0.7,
+     0.92
+    ]
+   ],
+   "octave_fixed_frames": 5,
+   "pitch_range_hz": [
+    174,
+    579
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.47,
+    "t1": 0.56,
+    "mean_hz": 290.2,
+    "start_hz": 298.9,
+    "end_hz": 269.0,
+    "min_hz": 269.0,
+    "min_pos": 1.0,
+    "end_over_start": 0.9,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     301,
+     297,
+     298,
+     292,
+     261
+    ]
+   },
+   "燈": {
+    "t0": 0.59,
+    "t1": 0.63,
+    "mean_hz": 233.7,
+    "start_hz": 264.5,
+    "end_hz": 226.3,
+    "min_hz": 227.1,
+    "min_pos": 1.0,
+    "end_over_start": 0.855,
+    "end_over_min": 0.996,
+    "contour_hz_20ms": [
+     265,
+     232,
+     226
+    ]
+   },
+   "節": {
+    "t0": 0.89,
+    "t1": 0.97,
+    "mean_hz": 355.8,
+    "start_hz": 452.7,
+    "end_hz": 276.7,
+    "min_hz": 255.9,
+    "min_pos": 0.5,
+    "end_over_start": 0.611,
+    "end_over_min": 1.081,
+    "contour_hz_20ms": [
+     453,
+     490,
+     248,
+     264,
+     277
+    ]
+   },
+   "燈_end_over_start": 0.855,
+   "燈_over_紙_mean": 0.805,
+   "節_end_over_min": 1.081,
+   "節_min_pos": 0.5,
+   "燈_一聲": false,
+   "節_二聲": true,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.0
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "知等界",
+    "large-v3-turbo": "智等節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "知等節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.52
+    ],
+    [
+     0.52,
+     0.7
+    ],
+    [
+     0.7,
+     0.92
+    ]
+   ],
+   "octave_fixed_frames": 5,
+   "pitch_range_hz": [
+    174,
+    579
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.47,
+    "t1": 0.56,
+    "mean_hz": 290.7,
+    "start_hz": 298.3,
+    "end_hz": 271.9,
+    "min_hz": 271.9,
+    "min_pos": 1.0,
+    "end_over_start": 0.911,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     301,
+     298,
+     298,
+     292,
+     261
+    ]
+   },
+   "燈": {
+    "t0": 0.59,
+    "t1": 0.63,
+    "mean_hz": 233.8,
+    "start_hz": 264.8,
+    "end_hz": 226.5,
+    "min_hz": 227.2,
+    "min_pos": 1.0,
+    "end_over_start": 0.855,
+    "end_over_min": 0.997,
+    "contour_hz_20ms": [
+     265,
+     232,
+     226
+    ]
+   },
+   "節": {
+    "t0": 0.89,
+    "t1": 0.97,
+    "mean_hz": 355.2,
+    "start_hz": 452.6,
+    "end_hz": 274.8,
+    "min_hz": 254.9,
+    "min_pos": 0.5,
+    "end_over_start": 0.607,
+    "end_over_min": 1.078,
+    "contour_hz_20ms": [
+     453,
+     490,
+     247,
+     263,
+     275
+    ]
+   },
+   "燈_end_over_start": 0.855,
+   "燈_over_紙_mean": 0.804,
+   "節_end_over_min": 1.078,
+   "節_min_pos": 0.5,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.0
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "知等界",
+    "large-v3-turbo": "知等節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "知等節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.52
+    ],
+    [
+     0.52,
+     0.7
+    ],
+    [
+     0.7,
+     0.92
+    ]
+   ],
+   "octave_fixed_frames": 6,
+   "pitch_range_hz": [
+    174,
+    579
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.47,
+    "t1": 0.56,
+    "mean_hz": 290.2,
+    "start_hz": 298.8,
+    "end_hz": 268.8,
+    "min_hz": 268.8,
+    "min_pos": 1.0,
+    "end_over_start": 0.9,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     302,
+     298,
+     298,
+     292,
+     261
+    ]
+   },
+   "燈": {
+    "t0": 0.59,
+    "t1": 0.63,
+    "mean_hz": 233.8,
+    "start_hz": 264.5,
+    "end_hz": 226.6,
+    "min_hz": 227.3,
+    "min_pos": 1.0,
+    "end_over_start": 0.857,
+    "end_over_min": 0.997,
+    "contour_hz_20ms": [
+     264,
+     231,
+     227
+    ]
+   },
+   "節": {
+    "t0": 0.89,
+    "t1": 0.97,
+    "mean_hz": 328.1,
+    "start_hz": 452.2,
+    "end_hz": 276.1,
+    "min_hz": 247.6,
+    "min_pos": 0.38,
+    "end_over_start": 0.611,
+    "end_over_min": 1.115,
+    "contour_hz_20ms": [
+     452,
+     491,
+     248,
+     263,
+     276
+    ]
+   },
+   "燈_end_over_start": 0.857,
+   "燈_over_紙_mean": 0.806,
+   "節_end_over_min": 1.115,
+   "節_min_pos": 0.38,
+   "燈_一聲": false,
+   "節_二聲": true,
+   "pass": false
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "知等界",
+    "large-v3-turbo": "知等節"
+   }
+  }
+ }
+}

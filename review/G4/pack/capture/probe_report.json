@@ -1,69 +1,178 @@
 {
  "rule": {
-  "string_width_px_closeup": ">= 8",
-  "deltaL": ">= 25（投影模擬後 >= 15）",
+  "string_width_px": "6–10（中景，G4 修正第 22 項）",
+  "deltaL": ">= 25（投影模擬後 >= 15）；ΔL*＝每一側取繩身或該側深灰邊對背景的較大者、再取兩側較小者（判定方式待主線確認）",
+  "ring_center_inside_silhouette": "全部 true（G4 修正第 23 項）",
   "child_bg_proj_lum": ">= 0.50"
  },
  "strings": [
   {
    "cue": "a2_c002",
-   "t": 11.415,
+   "t": 11.41,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 7.46,
+   "deltaL_body": 3.4,
+   "deltaL_edge": 23.3,
+   "deltaL": 23.3,
+   "deltaL_proj_body": 4.1,
+   "deltaL_proj_edge": 15.7,
+   "deltaL_proj": 15.7
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 7.52,
+   "deltaL_body": 16.2,
+   "deltaL_edge": 23.7,
+   "deltaL": 26.8,
+   "deltaL_proj_body": 11.2,
+   "deltaL_proj_edge": 16.5,
+   "deltaL_proj": 18.7
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 7.03,
+   "deltaL_body": 13.7,
+   "deltaL_edge": 8.6,
+   "deltaL": 15.2,
+   "deltaL_proj_body": 9.7,
+   "deltaL_proj_edge": 6.1,
+   "deltaL_proj": 10.8
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
    "key": "mid",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 12.48,
-   "deltaL": 11.6,
-   "deltaL_proj": 7.8
+   "widthPx": 8.14,
+   "deltaL_body": 2.6,
+   "deltaL_edge": 25.9,
+   "deltaL": 27.7,
+   "deltaL_proj_body": 3.5,
+   "deltaL_proj_edge": 17.1,
+   "deltaL_proj": 19.3
   },
   {
    "cue": "a2_c002",
-   "t": 11.415,
+   "t": 12.465,
    "key": "mid",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 12.49,
-   "deltaL": 17.7,
-   "deltaL_proj": 11.4
+   "widthPx": 8.1,
+   "deltaL_body": 15.9,
+   "deltaL_edge": 26.1,
+   "deltaL": 26.1,
+   "deltaL_proj_body": 11.0,
+   "deltaL_proj_edge": 17.3,
+   "deltaL_proj": 17.3
   },
   {
    "cue": "a2_c002",
-   "t": 11.415,
+   "t": 12.465,
    "key": "mid",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 12.14,
-   "deltaL": 12.1,
-   "deltaL_proj": 8.0
+   "widthPx": 7.03,
+   "deltaL_body": 13.7,
+   "deltaL_edge": 8.4,
+   "deltaL": 15.0,
+   "deltaL_proj_body": 9.7,
+   "deltaL_proj_edge": 6.0,
+   "deltaL_proj": 10.7
   },
   {
    "cue": "a2_c002",
    "t": 22.83,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 8.98,
+   "deltaL_body": 13.6,
+   "deltaL_edge": 30.7,
+   "deltaL": 30.7,
+   "deltaL_proj_body": 9.5,
+   "deltaL_proj_edge": 21.3,
+   "deltaL_proj": 21.3
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 9.01,
+   "deltaL_body": 15.3,
+   "deltaL_edge": 31.8,
+   "deltaL": 32.6,
+   "deltaL_proj_body": 10.6,
+   "deltaL_proj_edge": 22.1,
+   "deltaL_proj": 22.6
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 8.75,
+   "deltaL_body": 13.4,
+   "deltaL_edge": 9.6,
+   "deltaL": 23.8,
+   "deltaL_proj_body": 9.0,
+   "deltaL_proj_edge": 6.5,
+   "deltaL_proj": 16.7
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
    "key": "after",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 13.8,
-   "deltaL": 40.4,
-   "deltaL_proj": 28.0
+   "widthPx": 9.12,
+   "deltaL_body": 13.8,
+   "deltaL_edge": 29.2,
+   "deltaL": 29.2,
+   "deltaL_proj_body": 9.6,
+   "deltaL_proj_edge": 20.3,
+   "deltaL_proj": 20.3
   },
   {
    "cue": "a2_c002",
-   "t": 22.83,
+   "t": 24.93,
    "key": "after",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 13.86,
-   "deltaL": 41.7,
-   "deltaL_proj": 28.9
+   "widthPx": 9.16,
+   "deltaL_body": 14.5,
+   "deltaL_edge": 33.5,
+   "deltaL": 35.9,
+   "deltaL_proj_body": 10.1,
+   "deltaL_proj_edge": 23.2,
+   "deltaL_proj": 24.9
   },
   {
    "cue": "a2_c002",
-   "t": 22.83,
+   "t": 24.93,
    "key": "after",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 13.44,
-   "deltaL": 11.0,
-   "deltaL_proj": 7.3
+   "widthPx": 8.89,
+   "deltaL_body": 13.0,
+   "deltaL_edge": 11.1,
+   "deltaL": 26.2,
+   "deltaL_proj_body": 9.3,
+   "deltaL_proj_edge": 7.1,
+   "deltaL_proj": 17.8
   },
   {
    "cue": "a2_c004",
@@ -71,9 +180,13 @@
    "key": "before",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 13.8,
-   "deltaL": 40.3,
-   "deltaL_proj": 27.9
+   "widthPx": 9.12,
+   "deltaL_body": 13.5,
+   "deltaL_edge": 29.9,
+   "deltaL": 31.8,
+   "deltaL_proj_body": 9.4,
+   "deltaL_proj_edge": 20.4,
+   "deltaL_proj": 22.0
   },
   {
    "cue": "a2_c004",
@@ -81,9 +194,13 @@
    "key": "before",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 13.86,
-   "deltaL": 41.6,
-   "deltaL_proj": 28.8
+   "widthPx": 9.16,
+   "deltaL_body": 14.2,
+   "deltaL_edge": 30.7,
+   "deltaL": 31.6,
+   "deltaL_proj_body": 9.9,
+   "deltaL_proj_edge": 21.3,
+   "deltaL_proj": 21.9
   },
   {
    "cue": "a2_c004",
@@ -91,69 +208,139 @@
    "key": "before",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 13.44,
-   "deltaL": 11.0,
-   "deltaL_proj": 7.3
+   "widthPx": 8.89,
+   "deltaL_body": 13.0,
+   "deltaL_edge": 13.8,
+   "deltaL": 25.8,
+   "deltaL_proj_body": 9.0,
+   "deltaL_proj_edge": 9.4,
+   "deltaL_proj": 17.6
   },
   {
    "cue": "a2_c004",
    "t": 9.75,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 9.26,
+   "deltaL_body": 14.0,
+   "deltaL_edge": 32.3,
+   "deltaL": 32.3,
+   "deltaL_proj_body": 9.7,
+   "deltaL_proj_edge": 22.4,
+   "deltaL_proj": 22.4
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 9.3,
+   "deltaL_body": 14.4,
+   "deltaL_edge": 33.1,
+   "deltaL": 35.3,
+   "deltaL_proj_body": 10.0,
+   "deltaL_proj_edge": 23.0,
+   "deltaL_proj": 24.5
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 9.02,
+   "deltaL_body": 13.5,
+   "deltaL_edge": 16.3,
+   "deltaL": 29.9,
+   "deltaL_proj_body": 9.3,
+   "deltaL_proj_edge": 10.8,
+   "deltaL_proj": 20.3
+  },
+  {
+   "cue": "a2_c004",
+   "t": 10.955,
    "key": "mid",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 16.41,
-   "deltaL": 40.2,
-   "deltaL_proj": 27.8
+   "widthPx": 9.25,
+   "deltaL_body": 13.2,
+   "deltaL_edge": 37.8,
+   "deltaL": 37.8,
+   "deltaL_proj_body": 9.2,
+   "deltaL_proj_edge": 26.2,
+   "deltaL_proj": 26.2
   },
   {
    "cue": "a2_c004",
-   "t": 9.75,
+   "t": 10.955,
    "key": "mid",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 16.48,
-   "deltaL": 39.3,
-   "deltaL_proj": 26.9
+   "widthPx": 9.29,
+   "deltaL_body": 14.9,
+   "deltaL_edge": 32.8,
+   "deltaL": 32.8,
+   "deltaL_proj_body": 10.3,
+   "deltaL_proj_edge": 22.8,
+   "deltaL_proj": 22.8
   },
   {
    "cue": "a2_c004",
-   "t": 9.75,
+   "t": 10.955,
    "key": "mid",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 15.95,
-   "deltaL": 9.4,
-   "deltaL_proj": 6.4
+   "widthPx": 9.01,
+   "deltaL_body": 12.5,
+   "deltaL_edge": 12.4,
+   "deltaL": 28.3,
+   "deltaL_proj_body": 8.7,
+   "deltaL_proj_edge": 8.1,
+   "deltaL_proj": 19.0
   },
   {
    "cue": "a2_c004",
-   "t": 19.5,
+   "t": 21.91,
    "key": "after",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 12.44,
-   "deltaL": 40.2,
-   "deltaL_proj": 27.8
+   "widthPx": 8.11,
+   "deltaL_body": 14.4,
+   "deltaL_edge": 26.3,
+   "deltaL": 26.3,
+   "deltaL_proj_body": 10.0,
+   "deltaL_proj_edge": 18.3,
+   "deltaL_proj": 18.3
   },
   {
    "cue": "a2_c004",
-   "t": 19.5,
+   "t": 21.91,
    "key": "after",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 12.49,
-   "deltaL": 41.6,
-   "deltaL_proj": 28.8
+   "widthPx": 8.14,
+   "deltaL_body": 15.4,
+   "deltaL_edge": 30.0,
+   "deltaL": 30.0,
+   "deltaL_proj_body": 10.7,
+   "deltaL_proj_edge": 20.9,
+   "deltaL_proj": 20.9
   },
   {
    "cue": "a2_c004",
-   "t": 19.5,
+   "t": 21.91,
    "key": "after",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 12.13,
-   "deltaL": 10.3,
-   "deltaL_proj": 6.8
+   "widthPx": 7.91,
+   "deltaL_body": 12.7,
+   "deltaL_edge": 12.7,
+   "deltaL": 22.5,
+   "deltaL_proj_body": 9.0,
+   "deltaL_proj_edge": 8.8,
+   "deltaL_proj": 15.6
   },
   {
    "cue": "a8_c002",
@@ -161,9 +348,13 @@
    "key": "before",
    "actor": "ale",
    "anchor": "wrist",
-   "widthPx": 12.44,
-   "deltaL": 40.5,
-   "deltaL_proj": 28.0
+   "widthPx": 8.11,
+   "deltaL_body": 14.6,
+   "deltaL_edge": 30.3,
+   "deltaL": 30.8,
+   "deltaL_proj_body": 10.1,
+   "deltaL_proj_edge": 21.1,
+   "deltaL_proj": 21.4
   },
   {
    "cue": "a8_c002",
@@ -171,9 +362,13 @@
    "key": "before",
    "actor": "ale",
    "anchor": "elbow",
-   "widthPx": 12.49,
-   "deltaL": 42.1,
-   "deltaL_proj": 29.1
+   "widthPx": 8.14,
+   "deltaL_body": 15.1,
+   "deltaL_edge": 24.8,
+   "deltaL": 28.5,
+   "deltaL_proj_body": 10.5,
+   "deltaL_proj_edge": 17.3,
+   "deltaL_proj": 19.8
   },
   {
    "cue": "a8_c002",
@@ -181,257 +376,1427 @@
    "key": "before",
    "actor": "ale",
    "anchor": "knee",
-   "widthPx": 12.13,
-   "deltaL": 10.3,
-   "deltaL_proj": 6.8
+   "widthPx": 7.91,
+   "deltaL_body": 12.7,
+   "deltaL_edge": 12.3,
+   "deltaL": 20.4,
+   "deltaL_proj_body": 9.1,
+   "deltaL_proj_edge": 8.5,
+   "deltaL_proj": 14.1
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "wrist",
+   "widthPx": 6.33,
+   "deltaL_body": 15.5,
+   "deltaL_edge": 22.8,
+   "deltaL": 22.8,
+   "deltaL_proj_body": 10.6,
+   "deltaL_proj_edge": 15.6,
+   "deltaL_proj": 15.6
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "elbow",
+   "widthPx": 6.36,
+   "deltaL_body": 15.8,
+   "deltaL_edge": 23.9,
+   "deltaL": 23.9,
+   "deltaL_proj_body": 10.8,
+   "deltaL_proj_edge": 16.4,
+   "deltaL_proj": 16.4
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "actor": "ale",
+   "anchor": "knee",
+   "widthPx": 6.19,
+   "deltaL_body": 8.9,
+   "deltaL_edge": 12.7,
+   "deltaL": 21.1,
+   "deltaL_proj_body": 6.1,
+   "deltaL_proj_edge": 8.1,
+   "deltaL_proj": 15.3
   }
  ],
+ "rings": [
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "anchor": "wrist",
+   "ring_px": [
+    384.8,
+    329.1
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 127.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.6,
+     244.4,
+     224.1
+    ],
+    "luma": 244.5,
+    "min_channel_mean": 224.1,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 54
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "anchor": "elbow",
+   "ring_px": [
+    377.6,
+    362.8
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 124.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.7,
+     244.5,
+     224.1
+    ],
+    "luma": 244.6,
+    "min_channel_mean": 224.1,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 51
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "anchor": "knee",
+   "ring_px": [
+    630.3,
+    627.7
+   ],
+   "ring_radius_px": 9.7,
+   "center_diff_vs_bg": 82.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.3,
+     244.2,
+     223.9
+    ],
+    "luma": 244.3,
+    "min_channel_mean": 223.9,
+    "hue_deg": 42.9,
+    "saturation": 0.113,
+    "n_px": 50
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
+   "key": "mid",
+   "anchor": "wrist",
+   "ring_px": [
+    390.9,
+    328.0
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 127.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.1,
+     244.7,
+     224.4
+    ],
+    "luma": 244.9,
+    "min_channel_mean": 224.4,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 53
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
+   "key": "mid",
+   "anchor": "elbow",
+   "ring_px": [
+    376.0,
+    358.3
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 120.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.2,
+     243.7,
+     223.6
+    ],
+    "luma": 244.0,
+    "min_channel_mean": 223.6,
+    "hue_deg": 42.2,
+    "saturation": 0.114,
+    "n_px": 54
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
+   "key": "mid",
+   "anchor": "knee",
+   "ring_px": [
+    630.3,
+    627.7
+   ],
+   "ring_radius_px": 9.7,
+   "center_diff_vs_bg": 82.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.3,
+     244.2,
+     223.9
+    ],
+    "luma": 244.3,
+    "min_channel_mean": 223.9,
+    "hue_deg": 42.9,
+    "saturation": 0.113,
+    "n_px": 50
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "anchor": "wrist",
+   "ring_px": [
+    222.9,
+    230.5
+   ],
+   "ring_radius_px": 10.8,
+   "center_diff_vs_bg": 117.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.4,
+     245.1,
+     224.8
+    ],
+    "luma": 245.3,
+    "min_channel_mean": 224.8,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 61
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "anchor": "elbow",
+   "ring_px": [
+    298.1,
+    243.1
+   ],
+   "ring_radius_px": 10.8,
+   "center_diff_vs_bg": 53.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.7,
+     245.6,
+     225.1
+    ],
+    "luma": 245.7,
+    "min_channel_mean": 225.1,
+    "hue_deg": 43.1,
+    "saturation": 0.113,
+    "n_px": 63
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "anchor": "knee",
+   "ring_px": [
+    543.3,
+    570.9
+   ],
+   "ring_radius_px": 10.7,
+   "center_diff_vs_bg": 170.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.1,
+     244.7,
+     224.5
+    ],
+    "luma": 244.9,
+    "min_channel_mean": 224.5,
+    "hue_deg": 42.4,
+    "saturation": 0.113,
+    "n_px": 65
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
+   "key": "after",
+   "anchor": "wrist",
+   "ring_px": [
+    205.5,
+    222.1
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 116.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.6,
+     245.4,
+     225.1
+    ],
+    "luma": 245.5,
+    "min_channel_mean": 225.1,
+    "hue_deg": 42.7,
+    "saturation": 0.113,
+    "n_px": 64
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
+   "key": "after",
+   "anchor": "elbow",
+   "ring_px": [
+    281.9,
+    234.8
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 54.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.5,
+     245.2,
+     224.9
+    ],
+    "luma": 245.3,
+    "min_channel_mean": 224.9,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 66
+   }
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
+   "key": "after",
+   "anchor": "knee",
+   "ring_px": [
+    530.7,
+    568.5
+   ],
+   "ring_radius_px": 10.9,
+   "center_diff_vs_bg": 167.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.5,
+     245.4,
+     225.1
+    ],
+    "luma": 245.5,
+    "min_channel_mean": 225.1,
+    "hue_deg": 42.9,
+    "saturation": 0.112,
+    "n_px": 69
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "anchor": "wrist",
+   "ring_px": [
+    204.9,
+    222.2
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 116.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.3,
+     244.9,
+     224.7
+    ],
+    "luma": 245.1,
+    "min_channel_mean": 224.7,
+    "hue_deg": 42.5,
+    "saturation": 0.113,
+    "n_px": 69
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "anchor": "elbow",
+   "ring_px": [
+    281.3,
+    235.0
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 52.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.3,
+     244.8,
+     224.5
+    ],
+    "luma": 245.0,
+    "min_channel_mean": 224.5,
+    "hue_deg": 42.4,
+    "saturation": 0.113,
+    "n_px": 67
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 0,
+   "key": "before",
+   "anchor": "knee",
+   "ring_px": [
+    530.7,
+    568.5
+   ],
+   "ring_radius_px": 10.9,
+   "center_diff_vs_bg": 167.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.5,
+     245.4,
+     225.1
+    ],
+    "luma": 245.5,
+    "min_channel_mean": 225.1,
+    "hue_deg": 42.9,
+    "saturation": 0.112,
+    "n_px": 69
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "anchor": "wrist",
+   "ring_px": [
+    184.4,
+    194.1
+   ],
+   "ring_radius_px": 11.2,
+   "center_diff_vs_bg": 114.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.6,
+     245.2,
+     224.9
+    ],
+    "luma": 245.4,
+    "min_channel_mean": 224.9,
+    "hue_deg": 42.5,
+    "saturation": 0.113,
+    "n_px": 70
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "anchor": "elbow",
+   "ring_px": [
+    261.9,
+    207.0
+   ],
+   "ring_radius_px": 11.2,
+   "center_diff_vs_bg": 51.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.5,
+     245.2,
+     224.9
+    ],
+    "luma": 245.3,
+    "min_channel_mean": 224.9,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 70
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "anchor": "knee",
+   "ring_px": [
+    514.5,
+    546.0
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 148.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.7,
+     245.5,
+     225.1
+    ],
+    "luma": 245.6,
+    "min_channel_mean": 225.1,
+    "hue_deg": 42.8,
+    "saturation": 0.113,
+    "n_px": 65
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 10.955,
+   "key": "mid",
+   "anchor": "wrist",
+   "ring_px": [
+    185.4,
+    194.6
+   ],
+   "ring_radius_px": 11.2,
+   "center_diff_vs_bg": 115.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.2,
+     245.0,
+     224.7
+    ],
+    "luma": 245.1,
+    "min_channel_mean": 224.7,
+    "hue_deg": 42.6,
+    "saturation": 0.113,
+    "n_px": 75
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 10.955,
+   "key": "mid",
+   "anchor": "elbow",
+   "ring_px": [
+    262.8,
+    207.5
+   ],
+   "ring_radius_px": 11.2,
+   "center_diff_vs_bg": 52.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     254.0,
+     245.8,
+     225.5
+    ],
+    "luma": 245.9,
+    "min_channel_mean": 225.5,
+    "hue_deg": 42.6,
+    "saturation": 0.112,
+    "n_px": 65
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 10.955,
+   "key": "mid",
+   "anchor": "knee",
+   "ring_px": [
+    514.6,
+    546.1
+   ],
+   "ring_radius_px": 11.0,
+   "center_diff_vs_bg": 163.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.1,
+     244.9,
+     224.5
+    ],
+    "luma": 245.0,
+    "min_channel_mean": 224.5,
+    "hue_deg": 42.8,
+    "saturation": 0.113,
+    "n_px": 71
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 21.91,
+   "key": "after",
+   "anchor": "wrist",
+   "ring_px": [
+    328.6,
+    278.3
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 117.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.3,
+     243.7,
+     223.5
+    ],
+    "luma": 244.0,
+    "min_channel_mean": 223.5,
+    "hue_deg": 42.2,
+    "saturation": 0.114,
+    "n_px": 56
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 21.91,
+   "key": "after",
+   "anchor": "elbow",
+   "ring_px": [
+    396.5,
+    289.7
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 55.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.3,
+     243.9,
+     223.7
+    ],
+    "luma": 244.1,
+    "min_channel_mean": 223.7,
+    "hue_deg": 42.4,
+    "saturation": 0.113,
+    "n_px": 52
+   }
+  },
+  {
+   "cue": "a2_c004",
+   "t": 21.91,
+   "key": "after",
+   "anchor": "knee",
+   "ring_px": [
+    615.7,
+    586.1
+   ],
+   "ring_radius_px": 9.7,
+   "center_diff_vs_bg": 173.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.1,
+     244.0,
+     223.7
+    ],
+    "luma": 244.1,
+    "min_channel_mean": 223.7,
+    "hue_deg": 42.9,
+    "saturation": 0.113,
+    "n_px": 55
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "anchor": "wrist",
+   "ring_px": [
+    327.1,
+    278.7
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 120.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     253.0,
+     244.6,
+     224.4
+    ],
+    "luma": 244.8,
+    "min_channel_mean": 224.4,
+    "hue_deg": 42.3,
+    "saturation": 0.113,
+    "n_px": 50
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "anchor": "elbow",
+   "ring_px": [
+    395.0,
+    290.0
+   ],
+   "ring_radius_px": 9.8,
+   "center_diff_vs_bg": 56.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.5,
+     244.1,
+     223.8
+    ],
+    "luma": 244.3,
+    "min_channel_mean": 223.8,
+    "hue_deg": 42.4,
+    "saturation": 0.114,
+    "n_px": 55
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "anchor": "knee",
+   "ring_px": [
+    615.7,
+    586.1
+   ],
+   "ring_radius_px": 9.7,
+   "center_diff_vs_bg": 173.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     252.1,
+     244.0,
+     223.7
+    ],
+    "luma": 244.1,
+    "min_channel_mean": 223.7,
+    "hue_deg": 42.9,
+    "saturation": 0.113,
+    "n_px": 55
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "anchor": "wrist",
+   "ring_px": [
+    488.2,
+    541.8
+   ],
+   "ring_radius_px": 7.6,
+   "center_diff_vs_bg": 120.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     245.3,
+     236.2,
+     216.5
+    ],
+    "luma": 236.7,
+    "min_channel_mean": 216.5,
+    "hue_deg": 41.1,
+    "saturation": 0.117,
+    "n_px": 33
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "anchor": "elbow",
+   "ring_px": [
+    536.5,
+    549.8
+   ],
+   "ring_radius_px": 7.6,
+   "center_diff_vs_bg": 58.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     241.8,
+     232.6,
+     213.2
+    ],
+    "luma": 233.2,
+    "min_channel_mean": 213.2,
+    "hue_deg": 40.7,
+    "saturation": 0.118,
+    "n_px": 36
+   }
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "anchor": "knee",
+   "ring_px": [
+    691.8,
+    759.5
+   ],
+   "ring_radius_px": 7.6,
+   "center_diff_vs_bg": 123.0,
+   "center_inside_silhouette": true,
+   "body": {
+    "mean_srgb": [
+     241.3,
+     232.1,
+     212.7
+    ],
+    "luma": 232.6,
+    "min_channel_mean": 212.7,
+    "hue_deg": 40.8,
+    "saturation": 0.119,
+    "n_px": 33
+   }
+  }
+ ],
+ "ring_crops": {
+  "sheet": "ring_crops.png",
+  "dir": "ring_crops/",
+  "rope_crop_4x": "rope_crop_4x.png"
+ },
+ "ring_body_rule": "環身＝紙環半徑 0.57–0.73（以紙環貼圖半寬為 1；v02 紙面在 0.475–0.815）、避開紙繩方向 ±25° 的像素平均；luma＝Rec.601；G4 修正第 2 輪第 8 項：環身平均 sRGB ≥ 220（luma 與最小通道平均都列）、色相接近紙色（約 30–50°、彩度 ≥ 0.05），不是中性灰",
  "child_background": [
   {
    "cue": "a0_c001",
-   "t": 5.3,
-   "key": "mid",
-   "actor": "xiaoqing",
-   "region": [
-    1105,
-    807,
-    1194,
-    874
-   ],
-   "proj_lum_median": 0.42,
-   "proj_lum_p10": 0.336
-  },
-  {
-   "cue": "a0_c001",
-   "t": 5.3,
-   "key": "mid",
+   "t": 5.2,
+   "key": "probe",
    "actor": "xiaoyu",
+   "upright": 0.35,
    "region": [
-    1270,
-    734,
-    1347,
-    840
+    1266,
+    771,
+    1346,
+    853
    ],
    "proj_lum_median": 0.56,
-   "proj_lum_p10": 0.423
+   "proj_lum_p10": 0.473
   },
   {
    "cue": "a0_c001",
-   "t": 10.6,
-   "key": "after",
+   "t": 5.4,
+   "key": "probe",
    "actor": "xiaoqing",
+   "upright": 0.39,
    "region": [
-    1280,
-    607,
-    1420,
-    831
+    1106,
+    756,
+    1194,
+    857
    ],
-   "proj_lum_median": 0.58,
-   "proj_lum_p10": 0.542
+   "proj_lum_median": 0.573,
+   "proj_lum_p10": 0.543
   },
   {
    "cue": "a0_c001",
-   "t": 10.6,
-   "key": "after",
+   "t": 5.4,
+   "key": "probe",
    "actor": "xiaoyu",
+   "upright": 0.5,
    "region": [
-    1544,
-    613,
-    1661,
-    816
-   ],
-   "proj_lum_median": 0.566,
-   "proj_lum_p10": 0.468
-  },
-  {
-   "cue": "a2_c002",
-   "t": 0,
-   "key": "before",
-   "actor": "xiaoqing",
-   "region": [
-    1280,
-    607,
-    1420,
-    831
-   ],
-   "proj_lum_median": 0.58,
-   "proj_lum_p10": 0.542
-  },
-  {
-   "cue": "a2_c002",
-   "t": 0,
-   "key": "before",
-   "actor": "xiaoyu",
-   "region": [
-    1544,
-    614,
-    1661,
-    816
-   ],
-   "proj_lum_median": 0.566,
-   "proj_lum_p10": 0.468
-  },
-  {
-   "cue": "a2_c002",
-   "t": 11.415,
-   "key": "mid",
-   "actor": "xiaoqing",
-   "region": [
-    1290,
-    626,
-    1431,
-    848
-   ],
-   "proj_lum_median": 0.57,
-   "proj_lum_p10": 0.479
-  },
-  {
-   "cue": "a2_c002",
-   "t": 11.415,
-   "key": "mid",
-   "actor": "xiaoyu",
-   "region": [
-    1553,
-    631,
-    1670,
+    1274,
+    714,
+    1349,
     833
    ],
-   "proj_lum_median": 0.556,
-   "proj_lum_p10": 0.463
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
   },
   {
-   "cue": "a2_c002",
-   "t": 22.83,
-   "key": "after",
+   "cue": "a0_c001",
+   "t": 5.6,
+   "key": "probe",
    "actor": "xiaoqing",
+   "upright": 0.49,
    "region": [
-    1466,
-    615,
-    1624,
-    860
+    1109,
+    713,
+    1195,
+    842
    ],
-   "proj_lum_median": 0.569,
-   "proj_lum_p10": 0.431
+   "proj_lum_median": 0.579,
+   "proj_lum_p10": 0.557
   },
   {
-   "cue": "a2_c002",
-   "t": 22.83,
-   "key": "after",
+   "cue": "a0_c001",
+   "t": 5.6,
+   "key": "probe",
    "actor": "xiaoyu",
+   "upright": 0.53,
    "region": [
-    1744,
-    616,
-    1874,
-    840
+    1279,
+    703,
+    1350,
+    829
    ],
    "proj_lum_median": 0.564,
-   "proj_lum_p10": 0.464
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 5.8,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "upright": 0.51,
+   "region": [
+    1111,
+    706,
+    1196,
+    839
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a0_c001",
+   "t": 5.8,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "upright": 0.53,
+   "region": [
+    1280,
+    703,
+    1352,
+    829
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.51,
+   "region": [
+    1112,
+    706,
+    1197,
+    839
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.53,
+   "region": [
+    1280,
+    703,
+    1352,
+    829
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.2,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.51,
+   "region": [
+    1112,
+    705,
+    1197,
+    839
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.2,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.53,
+   "region": [
+    1280,
+    703,
+    1352,
+    829
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.4,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.51,
+   "region": [
+    1112,
+    704,
+    1197,
+    839
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.4,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.53,
+   "region": [
+    1280,
+    703,
+    1352,
+    829
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.6,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.52,
+   "region": [
+    1112,
+    704,
+    1197,
+    839
+   ],
+   "proj_lum_median": 0.58,
+   "proj_lum_p10": 0.559
+  },
+  {
+   "cue": "a0_c001",
+   "t": 6.6,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.53,
+   "region": [
+    1280,
+    704,
+    1352,
+    829
+   ],
+   "proj_lum_median": 0.564,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a0_c001",
+   "t": 11.6,
+   "key": "after",
+   "actor": "xiaoqing",
+   "upright": 0.85,
+   "region": [
+    1281,
+    453,
+    1422,
+    675
+   ],
+   "proj_lum_median": 0.583,
+   "proj_lum_p10": 0.569
+  },
+  {
+   "cue": "a0_c001",
+   "t": 11.6,
+   "key": "after",
+   "actor": "xiaoyu",
+   "upright": 0.86,
+   "region": [
+    1544,
+    466,
+    1662,
+    668
+   ],
+   "proj_lum_median": 0.569,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a2_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoqing",
+   "upright": 0.86,
+   "region": [
+    1280,
+    449,
+    1420,
+    674
+   ],
+   "proj_lum_median": 0.583,
+   "proj_lum_p10": 0.569
+  },
+  {
+   "cue": "a2_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoyu",
+   "upright": 0.86,
+   "region": [
+    1544,
+    466,
+    1662,
+    668
+   ],
+   "proj_lum_median": 0.569,
+   "proj_lum_p10": 0.47
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.85,
+   "region": [
+    1281,
+    452,
+    1422,
+    674
+   ],
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
+  },
+  {
+   "cue": "a2_c002",
+   "t": 11.41,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.85,
+   "region": [
+    1544,
+    467,
+    1662,
+    668
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.467
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "upright": 0.85,
+   "region": [
+    1281,
+    454,
+    1423,
+    675
+   ],
+   "proj_lum_median": 0.573,
+   "proj_lum_p10": 0.56
+  },
+  {
+   "cue": "a2_c002",
+   "t": 12.465,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "upright": 0.86,
+   "region": [
+    1544,
+    462,
+    1661,
+    667
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.467
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 0.94,
+   "region": [
+    1279,
+    424,
+    1437,
+    669
+   ],
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
+  },
+  {
+   "cue": "a2_c002",
+   "t": 22.83,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 0.95,
+   "region": [
+    1566,
+    438,
+    1695,
+    663
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.468
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
+   "key": "after",
+   "actor": "xiaoqing",
+   "upright": 0.97,
+   "region": [
+    1278,
+    413,
+    1436,
+    666
+   ],
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
+  },
+  {
+   "cue": "a2_c002",
+   "t": 24.93,
+   "key": "after",
+   "actor": "xiaoyu",
+   "upright": 0.96,
+   "region": [
+    1572,
+    434,
+    1702,
+    661
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.468
   },
   {
    "cue": "a2_c004",
    "t": 0,
    "key": "before",
    "actor": "xiaoqing",
+   "upright": 0.97,
    "region": [
-    1465,
-    610,
-    1621,
-    859
+    1277,
+    413,
+    1436,
+    667
    ],
-   "proj_lum_median": 0.569,
-   "proj_lum_p10": 0.433
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
   },
   {
    "cue": "a2_c004",
    "t": 0,
    "key": "before",
    "actor": "xiaoyu",
+   "upright": 0.96,
    "region": [
-    1744,
-    617,
-    1874,
-    841
+    1573,
+    435,
+    1705,
+    662
    ],
-   "proj_lum_median": 0.564,
-   "proj_lum_p10": 0.463
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.468
   },
   {
    "cue": "a2_c004",
    "t": 9.75,
+   "key": "probe",
+   "actor": "xiaoqing",
+   "upright": 1.0,
+   "region": [
+    1278,
+    386,
+    1449,
+    647
+   ],
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.561
+  },
+  {
+   "cue": "a2_c004",
+   "t": 9.75,
+   "key": "probe",
+   "actor": "xiaoyu",
+   "upright": 1.0,
+   "region": [
+    1558,
+    407,
+    1699,
+    643
+   ],
+   "proj_lum_median": 0.561,
+   "proj_lum_p10": 0.469
+  },
+  {
+   "cue": "a2_c004",
+   "t": 10.955,
    "key": "mid",
    "actor": "xiaoqing",
+   "upright": 1.0,
    "region": [
-    1865,
-    418,
-    1920,
-    714
+    1278,
+    385,
+    1449,
+    647
    ],
-   "proj_lum_median": 0.573,
-   "proj_lum_p10": 0.559
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.561
   },
   {
    "cue": "a2_c004",
-   "t": 19.5,
+   "t": 10.955,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "upright": 0.98,
+   "region": [
+    1558,
+    413,
+    1698,
+    645
+   ],
+   "proj_lum_median": 0.561,
+   "proj_lum_p10": 0.469
+  },
+  {
+   "cue": "a2_c004",
+   "t": 21.91,
    "key": "after",
    "actor": "xiaoqing",
+   "upright": 0.86,
    "region": [
-    1280,
-    611,
+    1281,
+    450,
     1421,
-    832
+    674
    ],
-   "proj_lum_median": 0.57,
-   "proj_lum_p10": 0.515
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
   },
   {
    "cue": "a2_c004",
-   "t": 19.5,
+   "t": 21.91,
    "key": "after",
    "actor": "xiaoyu",
-   "region": [
-    1543,
-    612,
-    1659,
-    816
-   ],
-   "proj_lum_median": 0.556,
-   "proj_lum_p10": 0.466
-  },
-  {
-   "cue": "a8_c002",
-   "t": 0,
-   "key": "before",
-   "actor": "xiaoqing",
-   "region": [
-    1280,
-    607,
-    1420,
-    831
-   ],
-   "proj_lum_median": 0.571,
-   "proj_lum_p10": 0.535
-  },
-  {
-   "cue": "a8_c002",
-   "t": 0,
-   "key": "before",
-   "actor": "xiaoyu",
+   "upright": 0.85,
    "region": [
     1544,
-    614,
-    1661,
-    816
+    467,
+    1662,
+    668
    ],
-   "proj_lum_median": 0.556,
-   "proj_lum_p10": 0.466
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.467
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoqing",
+   "upright": 0.86,
+   "region": [
+    1280,
+    449,
+    1420,
+    674
+   ],
+   "proj_lum_median": 0.574,
+   "proj_lum_p10": 0.56
+  },
+  {
+   "cue": "a8_c002",
+   "t": 0,
+   "key": "before",
+   "actor": "xiaoyu",
+   "upright": 0.85,
+   "region": [
+    1544,
+    466,
+    1662,
+    668
+   ],
+   "proj_lum_median": 0.56,
+   "proj_lum_p10": 0.467
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "actor": "xiaoqing",
+   "upright": 0.61,
+   "region": [
+    1165,
+    665,
+    1265,
+    824
+   ],
+   "proj_lum_median": 0.582,
+   "proj_lum_p10": 0.565
+  },
+  {
+   "cue": "a8_c002",
+   "t": 2.7,
+   "key": "mid",
+   "actor": "xiaoyu",
+   "upright": 0.62,
+   "region": [
+    1359,
+    666,
+    1442,
+    814
+   ],
+   "proj_lum_median": 0.567,
+   "proj_lum_p10": 0.473
   }
  ],
  "summary": {
-  "min_string_width_px": 12.13,
-  "min_deltaL": 9.4,
-  "min_deltaL_proj": 6.4,
-  "min_child_bg_median": 0.42,
-  "min_child_bg_p10": 0.336
+  "min_string_width_px": 6.19,
+  "max_string_width_px": 9.3,
+  "min_deltaL": 15.0,
+  "min_deltaL_proj": 10.7,
+  "min_deltaL_body": 2.6,
+  "min_deltaL_proj_body": 3.5,
+  "min_deltaL_edge": 8.4,
+  "min_deltaL_proj_edge": 6.0,
+  "rings_measured": 30,
+  "rings_center_inside": 30,
+  "ring_body_luma_min": 232.6,
+  "ring_body_luma_median": 244.9,
+  "ring_body_min_channel_min": 212.7,
+  "ring_body_hue_median": 42.6,
+  "ring_body_hue_range": [
+   40.7,
+   43.1
+  ],
+  "ring_body_sat_median": 0.113,
+  "ring_body_sat_min": 0.112,
+  "min_child_bg_median": 0.56,
+  "min_child_bg_p10": 0.467,
+  "min_child_bg_median_upright": 0.56,
+  "child_bg_frames": 39
  },
- "limits": "ΔL* 以線兩側緊鄰像素計（可能是皮膚、袖口或背景）；實際投影無法由此驗證。"
+ "limits": "ΔL* 以線兩側緊鄰像素計（可能是皮膚、袖口或背景）；紙環剪影判定只看紙環中心；實際投影無法由此驗證。"
 }

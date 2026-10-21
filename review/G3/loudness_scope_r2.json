@@ -1,0 +1,103 @@
+{
+ "_說明": "重驗 1 第 4 項（主線裁決用）。讀 G4 驗收包離線混音 review/G4/pack/audio/g4_mix.wav（由 tools/g4_review_pack.py 依引擎規則混出）與 loudness.json、timeline.json；ffmpeg ebur128 整合響度（含閘門）。無台詞時段＝cue 內扣掉每句台詞前 0.3 秒到後 0.5 秒。",
+ "source_mtime": "2026-10-21 08:47:58",
+ "per_cue": {
+  "a0_c001": {
+   "kind": "curtain",
+   "from_s": 3,
+   "to_s": 14.6,
+   "cue_I_LUFS": -20.1,
+   "music_only_sec": 11.6,
+   "dialogue_window_sec": 0.0,
+   "music_only_I_LUFS": -20.1
+  },
+  "a2_c002": {
+   "kind": "scene",
+   "from_s": 16.6,
+   "to_s": 40.41,
+   "cue_I_LUFS": -20.3,
+   "music_only_sec": 15.6,
+   "dialogue_window_sec": 8.21,
+   "music_only_I_LUFS": -25.6
+  },
+  "a2_c004": {
+   "kind": "scene",
+   "from_s": 44.41,
+   "to_s": 63.95,
+   "cue_I_LUFS": -15.2,
+   "music_only_sec": 2.0,
+   "dialogue_window_sec": 17.54,
+   "music_only_I_LUFS": -24.2
+  },
+  "a8_c002": {
+   "kind": "curtain",
+   "from_s": 67.95,
+   "to_s": 73.35,
+   "cue_I_LUFS": -20.5,
+   "music_only_sec": 5.4,
+   "dialogue_window_sec": 0.0,
+   "music_only_I_LUFS": -20.5
+  },
+  "a8_c003": {
+   "kind": "title",
+   "from_s": 73.35,
+   "to_s": 74.75,
+   "cue_I_LUFS": -21.5,
+   "music_only_sec": 1.4,
+   "dialogue_window_sec": 0.0,
+   "music_only_I_LUFS": -21.5
+  }
+ },
+ "dialogue_lines_in_mix_I": {
+  "a2_c002_01": -15.0,
+  "a2_c002_02": -14.9,
+  "a2_c004_01": -14.7,
+  "a2_c004_02": -14.9
+ },
+ "dialogue_lines_spread_lu": 0.3,
+ "vo_files_I": {
+  "a2_c002_01": -18.0,
+  "a2_c002_02": -18.0,
+  "a2_c004_01": -17.8,
+  "a2_c004_02": -18.0
+ },
+ "vo_files_spread_lu": 0.2,
+ "featured_music_passages_I": {
+  "a0_c001": -20.1,
+  "a8_c002": -20.5,
+  "a8_c003": -21.5
+ },
+ "featured_music_spread_lu": 1.4,
+ "underscore_passages_I": {
+  "a2_c002": -25.6,
+  "a2_c004": -24.2
+ },
+ "underscore_spread_lu": 1.4,
+ "cue_level_option_estimate": {
+  "a2_c004_cue_I": -15.2,
+  "a2_c002_target_I": -17.2,
+  "a2_c002_music_only_now": -25.6,
+  "a2_c002_music_only_needed_est": -19.1,
+  "raise_needed_lu_est": 6.5,
+  "dialogue_in_mix_LUFS": -14.9,
+  "note": "能量平均估算（無台詞時段 15.6 秒、台詞時段含前後 0.3／0.5 秒）。襯底要升到約對白下 4 LU，等於把劇情段的襯底配樂改成和開幕曲一樣的主奏音量；而且開幕、閉幕、署名卡（−20～−21.5）仍和 a2_c004（−15.2）差 >2 LU，要讓「全部 cue」都在 ±1 LU 內，主奏配樂得和對白一樣響（約 −15），聲音代理不建議。"
+ },
+ "proposed_rule": {
+  "text": "±1 LU（最大－最小 ≤2 LU）適用於三層：(1) 每個素材檔正規化：配音逐句檔 −18 LUFS、配樂檔與音效依各自目標（music_metrics.json，偏離目標 ≤1 LU）；(2) 演出混音中每一句對白的整合響度（對白錨點，全部台詞最大－最小 ≤2 LU）；(3) 同一類無台詞配樂段彼此比較：主奏段（開幕、閉幕、署名卡）一組、劇情襯底段（scene cue 內無台詞時段）一組，各自 ≤2 LU。整段 cue 的整合響度只列參考，不設 ±1 LU（它取決於台詞佔比：以對白為主的 a2_c004 約 −15、以無台詞動作為主的 a2_c002 約 −20）。",
+  "pass_now": {
+   "vo_files": true,
+   "dialogue_lines": true,
+   "featured_music": true,
+   "underscore": true
+  },
+  "status": "聲音代理建議；裁決權在主線（REVIEW.md）。主線同意後，把 loudness_json_decision_draft 貼進 tools/g4_review_pack.py 的 segment_spread_lu.decision，並加 loudness_json_fields_suggested 四個欄位（數字取本檔）。",
+  "caveat": "劇情襯底組目前只有 a2_c002（15.6 秒）與 a2_c004（2.0 秒）兩段，a2_c004 樣本短；G5 各幕完成後要用全劇混音重算。",
+  "loudness_json_decision_draft": "已定案（主線，依 review/G3/loudness_scope_r2.json）：±1 LU 適用於素材檔正規化、各句對白在混音中的整合響度、同類無台詞配樂段（主奏段一組、劇情襯底段一組）；整段 cue 只列參考。",
+  "loudness_json_fields_suggested": [
+   "dialogue_lines_lu",
+   "featured_music_lu",
+   "underscore_lu",
+   "vo_files_lu"
+  ]
+ }
+}

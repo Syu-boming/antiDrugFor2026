@@ -1,0 +1,40 @@
+{
+ "a0_c004_01": {
+  "seconds": 3.4,
+  "speech_start": 0.12,
+  "speech_end": 3.15,
+  "speech_segments": [
+   [
+    0.11,
+    1.5
+   ],
+   [
+    1.94,
+    3.15
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/out/vo_a0_c004_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/lipsync/a0_c004_01_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔早！折折早！"
+ },
+ "a5_c005_03": {
+  "seconds": 5.34,
+  "speech_start": 0.12,
+  "speech_end": 5.09,
+  "speech_segments": [
+   [
+    0.11,
+    3.24
+   ],
+   [
+    3.38,
+    5.08
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/out/vo_a5_c005_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/lipsync/a5_c005_03_el01.json",
+  "role": "小宇",
+  "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。"
+ }
+}

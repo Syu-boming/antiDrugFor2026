@@ -1,0 +1,17 @@
+{
+ "a3_c004_02": {
+  "seconds": 5.64,
+  "speech_start": 0.12,
+  "speech_end": 5.39,
+  "speech_segments": [
+   [
+    0.12,
+    5.38
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_s1/out/vo_a3_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_s1/lipsync/a3_c004_02_el01.json",
+  "role": "折折",
+  "text": "再加上口訣和動作：不碰、不試；先離開，找大人。"
+ }
+}

@@ -67,29 +67,55 @@ def resolve_spec(casting: dict, role: str, line_id: str, service: str | None) ->
 SENT_RE = re.compile(r"(?<=[。！？])")
 
 
+def plan_segments(synth_text: str, gap_ms: int | None) -> list[tuple[str, int | None]]:
+    """合成用文字 → [(段落文字, 之後停頓毫秒)]：先依 [[break:N]] 分段，再依 post.sentence_gap_ms 依句號分句。"""
+    out: list[tuple[str, int | None]] = []
+    for text, brk in V.split_breaks(synth_text):
+        parts = [p for p in SENT_RE.split(text) if p.strip()] if gap_ms else [text]
+        for i, p in enumerate(parts):
+            out.append((p, gap_ms if i < len(parts) - 1 else brk))
+    return out
+
+
 def render_line(line: dict, casting: dict, pron: dict, service: str | None, force: bool, purpose: str) -> tuple[np.ndarray, dict]:
-    """合成一句（含多人同聲、分句加停頓、後處理），回傳母帶前的 48 kHz float 與紀錄。"""
+    """合成一句（含多人同聲、分段加停頓、後處理），回傳母帶前的 48 kHz float 與紀錄。
+
+    G3 修正第 1 輪：spec.synth_text（可含 [[break:N]]）優先於劇本原文；分段時每段去爆音、修到語音起訖（前 10 ms、後 80 ms），
+    再做 10 ms 淡入／20 ms 淡出（升餘弦）後才接 N ms 靜音，不直接把全零樣本接在語音上；post.contour＝{"segment": i, "points": [...]}
+    把第 i 段的 F0 改成指定走勢（例如「咦？」二聲上揚）。
+    """
     roles = [r.strip() for r in line["role"].split("、")]
     mixes, notes = [], {"specs": [], "el_chars": 0}
     for role in roles:
         spec = resolve_spec(casting, role, line["id"], service)
-        synth_text = V.apply_pronounce(line["text"], pron, spec["service"], line["id"])
-        gap_ms = spec.get("post", {}).get("sentence_gap_ms")
-        parts = [p for p in SENT_RE.split(synth_text) if p.strip()] if gap_ms else [synth_text]
-        chunks = []
-        for i, part in enumerate(parts):
-            s = {k: v for k, v in spec.items() if k != "post"}
+        synth_text = V.apply_pronounce(spec.get("synth_text") or line["text"], pron, spec["service"], line["id"])
+        post = spec.get("post", {})
+        segs = plan_segments(synth_text, post.get("sentence_gap_ms"))
+        contour = post.get("contour") or {}
+        chunks, seg_log = [], []
+        for i, (part, gap) in enumerate(segs):
+            s = {k: v for k, v in spec.items() if k not in ("post", "synth_text", "note")}
+            if s.get("segment_rates") and i < len(s["segment_rates"]):
+                s["rate"] = s["segment_rates"][i]
+            s.pop("segment_rates", None)
             raw, info = V.synth_raw(s, part, purpose=f"{purpose} {line['id']}", force=force)
             notes["el_chars"] += info.get("billed") or (info["chars"] if s["service"] == "elevenlabs" else 0)
             x = V.decode(raw)
-            if len(parts) > 1:
+            x, clicks = V.declick(x)
+            rec = {"text": part, "rate": s.get("rate"), "gap_after_ms": gap, "declicked": clicks}
+            if len(segs) > 1:
                 a, b = V.speech_bounds(x)
-                x = x[max(0, a - 480):min(len(x), b + int(0.08 * V.SR))]
-                if i < len(parts) - 1:
-                    x = np.concatenate([x, np.zeros(int(gap_ms / 1000 * V.SR), dtype=np.float32)])
+                x = V.fade_edges(x[max(0, a - 480):min(len(x), b + int(0.08 * V.SR))], fin_ms=10, fout_ms=20)
+            if contour and contour.get("segment") == i:
+                x, cinfo = V.apply_contour(x, contour["points"])
+                rec["contour"] = cinfo
+                rec["rise_after"] = V.first_syllable_rise(x)
+            if gap and i < len(segs) - 1:
+                x = np.concatenate([x, np.zeros(int(gap / 1000 * V.SR), dtype=np.float32)])
             chunks.append(x)
+            seg_log.append(rec)
         x = np.concatenate(chunks)
-        post = spec.get("post", {})
+        notes.setdefault("segments", {})[role] = seg_log
         if post.get("max_pause_ms"):
             x, cut = V.cap_pauses(x, post["max_pause_ms"])
             if cut:
@@ -101,7 +127,8 @@ def render_line(line: dict, casting: dict, pron: dict, service: str | None, forc
         mixes.append(x)
         notes["specs"].append({"role": role, "service": spec["service"],
                                **{k: spec.get(k) for k in ("voice", "voice_id", "voice_name", "model", "rate", "pitch",
-                                                           "settings", "seed", "language_code") if spec.get(k) is not None},
+                                                           "segment_rates", "settings", "seed", "language_code")
+                                  if spec.get(k) is not None},
                                "post": post, "synth_text": synth_text})
     if len(mixes) > 1:
         n = max(len(m) for m in mixes)
@@ -157,12 +184,14 @@ def build(ids: list[str], args) -> list[dict]:
                "lipsync": str((V.LIP_DIR / f"{lid}_{ver}.json").relative_to(V.ROOT)),
                "seconds": m["seconds"], "speech_start": minfo["speech_start"], "speech_end": minfo["speech_end"],
                "master": minfo, "metrics": m, "synthesis": notes["specs"], "el_chars_billed": notes["el_chars"],
-               "pause_caps_ms": notes.get("pause_caps", [])}
+               "pause_caps_ms": notes.get("pause_caps", []), "segments": notes.get("segments", {}),
+               "speech_segments": V.speech_segments(y)}
         results.append(rec)
         print(f"{lid} {ln['role']} {m['seconds']:.2f}s I={m['integrated_lufs']} TP={m['true_peak_dbtp']} "
               f"{m['rate_cps']}字/秒 F0={m['f0_median']} 削波={m['clipped_samples']}")
     if not args.no_transcribe and results:
-        tc = V.transcribe_compare([(V.ROOT / r["file"], r["text"], r["synthesis"][0]["synth_text"]) for r in results])
+        tc = V.transcribe_compare([(V.ROOT / r["file"], r["text"], V.strip_breaks(r["synthesis"][0]["synth_text"]))
+                                   for r in results])
         for r in results:
             r["transcript"] = tc[str(V.ROOT / r["file"])]
             ms = r["transcript"]["models"]
@@ -175,6 +204,7 @@ def build(ids: list[str], args) -> list[dict]:
     report = json.loads(rpath.read_text("utf-8")) if rpath.exists() else {}
     for r in results:
         timings[r["id"]] = {"seconds": r["seconds"], "speech_start": r["speech_start"], "speech_end": r["speech_end"],
+                            "speech_segments": r["speech_segments"],
                             "file": r["file"], "lipsync": r["lipsync"], "role": r["role"], "text": r["text"]}
         report[r["id"]] = r
     timings = dict(sorted(timings.items()))

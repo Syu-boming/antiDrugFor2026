@@ -1,0 +1,1110 @@
+{
+ "a1_c004_02": {
+  "id": "a1_c004_02",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "電子煙在臺灣是禁止的。",
+  "required": false,
+  "signature": "1cec8baab755743d",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "f0_nominal": 276.9,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:16:12",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "電子煙在臺灣是禁止的。",
+      "sent": "電子煙在臺灣是禁止的。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c004_02/xiaoqing_a0_s0_54a1766db091.mp3",
+      "request_id": "luoeKtivi4D2qfHQhuW5",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -72.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -54.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.2,
+       "t_fill_s": 3.16,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.25,
+        3.45
+       ],
+       "decay_end_s": 2.46,
+       "cut_s": 2.56,
+       "floor_rel_db": -69.6,
+       "removed_s": 2.08
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.111,
+       "rate_before": 4.444,
+       "target": 4.0
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.66,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -3.4,
+     "limited": null,
+     "raw_head_silence_ms": 30,
+     "raw_tail_silence_ms": 274
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a1.wav",
+     "seconds": 2.91,
+     "speech_seconds": 2.54,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.4,
+     "clipped_samples": 0,
+     "rate_cps": 3.94,
+     "rate_cps_net": 3.94,
+     "rate_cps_net_r": 4.0,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 243.7,
+     "f0_p10": 182.7,
+     "f0_p90": 333.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.0,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "電視煙在臺灣是禁止的",
+      "cer": 0.1,
+      "per": 0.1,
+      "diffs": [
+       {
+        "ref": "子",
+        "hyp": "視",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "電視煙在臺灣是禁止的",
+      "cer": 0.1,
+      "per": 0.1,
+      "diffs": [
+       {
+        "ref": "子",
+        "hyp": "視",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "子",
+          "hyp": "視",
+          "kind": "字不同",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "子",
+          "hyp": "視",
+          "kind": "字不同",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -72.6,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.0,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 10,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 3.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.56 秒處切掉 2.08 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.111（母帶前淨語速 4.444 → 目標 4.0）"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 10:16:38",
+    "seeds": {
+     "xiaoqing": 20261022
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "電子煙在臺灣是禁止的。",
+      "sent": "電子煙在臺灣是禁止的。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c004_02/xiaoqing_a1_s0_08a07b30a07a.mp3",
+      "request_id": "NAk0clqOceAULDjAmSI0",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -58.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -12.2,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.62,
+       "t_fill_s": 4.02,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.67,
+        4.34
+       ],
+       "decay_end_s": 2.79,
+       "cut_s": 2.89,
+       "floor_rel_db": -60.4,
+       "removed_s": 1.91
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.84,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -2.3,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 160
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a2.wav",
+     "seconds": 3.09,
+     "speech_seconds": 2.72,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.3,
+     "clipped_samples": 0,
+     "rate_cps": 3.68,
+     "rate_cps_net": 3.68,
+     "rate_cps_net_r": 3.72,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 270.0,
+     "f0_p10": 166.3,
+     "f0_p90": 295.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.72,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "編是先在臺灣是禁止的",
+      "cer": 0.3,
+      "per": 0.3,
+      "diffs": [
+       {
+        "ref": "電子煙",
+        "hyp": "編是先",
+        "kind": "字不同",
+        "span": [
+         0,
+         3
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "編事先在臺灣是禁止的",
+      "cer": 0.3,
+      "per": 0.3,
+      "diffs": [
+       {
+        "ref": "電子煙",
+        "hyp": "編事先",
+        "kind": "字不同",
+        "span": [
+         0,
+         3
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "電子煙",
+          "hyp": "編是先",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "電子煙",
+          "hyp": "編事先",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -58.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.72,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 10,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 3.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.89 秒處切掉 1.91 秒）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "BT0SH7Hb8NRPpT5xbCgg",
+    "voice_name": "Lulu - Cute Little Witch",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_lulu_v3/out/vo_a1_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_lulu_v3/lipsync/a1_c004_02_el01.json",
+  "seconds": 2.91,
+  "speech_start": 0.12,
+  "speech_end": 2.66,
+  "speech_segments": [
+   [
+    0.12,
+    2.66
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "子",
+        "hyp": "視",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "子",
+        "hyp": "視",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": false,
+    "words": {
+     "電子煙": {
+      "small": "不一致（需複查）",
+      "large-v3-turbo": "不一致（需複查）"
+     }
+    },
+    "inconsistent": [
+     "電子煙"
+    ],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -72.6,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.0,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 10,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -3.4,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a",
+   "b"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a1.wav",
+   "seconds": 2.91,
+   "speech_seconds": 2.54,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.4,
+   "clipped_samples": 0,
+   "rate_cps": 3.94,
+   "rate_cps_net": 3.94,
+   "rate_cps_net_r": 4.0,
+   "pauses_ms": [],
+   "pauses_ms_r": [],
+   "f0_median": 243.7,
+   "f0_p10": 182.7,
+   "f0_p90": 333.0,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.0,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "luoeKtivi4D2qfHQhuW5"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.56 秒處切掉 2.08 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×1.111（母帶前淨語速 4.444 → 目標 4.0）"
+  ]
+ },
+ "a1_c008_02": {
+  "id": "a1_c008_02",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "不要碰。我們快去跟阿樂叔叔說。",
+  "required": false,
+  "signature": "aa2ebaaca01061cd",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "f0_nominal": 276.9,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:17:17",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "不要碰。我們快去跟阿勒叔叔說。",
+      "sent": "不要碰。我們快去跟阿勒叔叔說。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c008_02/xiaoqing_a0_s0_86fcae1015c0.mp3",
+      "request_id": "qAsSecTwRPyrOjx1nCAJ",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -67.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -18.7,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.62,
+       "t_fill_s": 3.16,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.67,
+        3.47
+       ],
+       "decay_end_s": 2.9,
+       "cut_s": 3.0,
+       "floor_rel_db": -64.4,
+       "removed_s": 0.92
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.58,
+         1.0
+        ],
+        "cut_s": 0.93,
+        "depth_rel_db": -58.4,
+        "existing_pause_ms": 220,
+        "inserted_ms": 230,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.27,
+       "rate_before": 5.078,
+       "target": 4.0
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c008_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.92,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.6,
+     "limited": true,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 282
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c008_02/a1.wav",
+     "seconds": 4.17,
+     "speech_seconds": 3.8,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.42,
+     "rate_cps_net": 4.08,
+     "rate_cps_net_r": 4.05,
+     "pauses_ms": [
+      610
+     ],
+     "pauses_ms_r": [
+      460
+     ],
+     "f0_median": 255.9,
+     "f0_p10": 210.4,
+     "f0_p90": 284.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.05,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "阿樂叔叔",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "阿樂叔叔",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "阿樂叔叔": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -67.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.05,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 13,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       610
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.58,
+         1.0
+        ],
+        "cut_s": 0.93,
+        "depth_rel_db": -58.4,
+        "existing_pause_ms": 220,
+        "inserted_ms": 230,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.6,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 8,
+    "billed_new": 8,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.0 秒處切掉 0.92 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.27（母帶前淨語速 5.078 → 目標 4.0）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "BT0SH7Hb8NRPpT5xbCgg",
+    "voice_name": "Lulu - Cute Little Witch",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 8,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_lulu_v3/out/vo_a1_c008_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_lulu_v3/lipsync/a1_c008_02_el01.json",
+  "seconds": 4.17,
+  "speech_start": 0.12,
+  "speech_end": 3.92,
+  "speech_segments": [
+   [
+    0.12,
+    1.02
+   ],
+   [
+    1.62,
+    3.92
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "阿樂叔叔": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -67.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.05,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 13,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     610
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       0.58,
+       1.0
+      ],
+      "cut_s": 0.93,
+      "depth_rel_db": -58.4,
+      "existing_pause_ms": 220,
+      "inserted_ms": 230,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.6,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c008_02/a1.wav",
+   "seconds": 4.17,
+   "speech_seconds": 3.8,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.6,
+   "clipped_samples": 0,
+   "rate_cps": 3.42,
+   "rate_cps_net": 4.08,
+   "rate_cps_net_r": 4.05,
+   "pauses_ms": [
+    610
+   ],
+   "pauses_ms_r": [
+    460
+   ],
+   "f0_median": 255.9,
+   "f0_p10": 210.4,
+   "f0_p90": 284.2,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.05,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "qAsSecTwRPyrOjx1nCAJ"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 3.0 秒處切掉 0.92 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×1.27（母帶前淨語速 5.078 → 目標 4.0）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

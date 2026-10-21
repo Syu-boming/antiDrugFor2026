@@ -1,0 +1,112 @@
+{
+ "master_v04_overalls": {
+  "L*": 37.27008819580078,
+  "px": 185711,
+  "median": "#216160"
+ },
+ "watch": {
+  "raw": "review/G4/art/raw/pose_xq_watch_v05.png",
+  "raw_overalls_L*": 39.0,
+  "raw_overalls_median": "#276566",
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    189719,
+    39.0,
+    37.0,
+    "#276566",
+    "#216061"
+   ]
+  ],
+  "generated": "assets/generated/chr-xiaoqing_pose-watch_v05.png",
+  "overalls_L*_after": 37.0,
+  "overalls_median_after": "#216061",
+  "stray_px_removed": 0,
+  "final": "assets/final/chr-xiaoqing_pose-watch_v05.png",
+  "offset_from_source": [
+   254,
+   9
+  ],
+  "size": [
+   544,
+   1520
+  ],
+  "feet_bottom_px": [
+   436.5,
+   1502
+  ],
+  "height_px": 1487,
+  "has_alpha": true,
+  "semi_alpha_px": 10872
+ },
+ "palm": {
+  "raw": "review/G4/art/raw/pose_xq_palm_v05.png",
+  "raw_overalls_L*": 38.7,
+  "raw_overalls_median": "#1B6566",
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    192432,
+    38.7,
+    37.0,
+    "#1B6566",
+    "#156162"
+   ]
+  ],
+  "generated": "assets/generated/chr-xiaoqing_pose-palm_v05.png",
+  "overalls_L*_after": 37.1,
+  "overalls_median_after": "#156162",
+  "stray_px_removed": 0,
+  "final": "assets/final/chr-xiaoqing_pose-palm_v05.png",
+  "offset_from_source": [
+   68,
+   13
+  ],
+  "size": [
+   846,
+   1517
+  ],
+  "feet_bottom_px": [
+   702.5,
+   1500
+  ],
+  "height_px": 1484,
+  "has_alpha": true,
+  "semi_alpha_px": 11276
+ },
+ "worried": {
+  "raw": "review/G4/art/raw/pose_xq_worried_v05.png",
+  "raw_overalls_L*": 38.6,
+  "raw_overalls_median": "#246465",
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    166950,
+    38.6,
+    37.0,
+    "#246465",
+    "#1F6061"
+   ]
+  ],
+  "generated": "assets/generated/chr-xiaoqing_pose-worried_v05.png",
+  "overalls_L*_after": 37.0,
+  "overalls_median_after": "#1F6061",
+  "stray_px_removed": 0,
+  "final": "assets/final/chr-xiaoqing_pose-worried_v05.png",
+  "offset_from_source": [
+   269,
+   52
+  ],
+  "size": [
+   528,
+   1468
+  ],
+  "feet_bottom_px": [
+   271.0,
+   1450
+  ],
+  "height_px": 1435,
+  "has_alpha": true,
+  "semi_alpha_px": 9008
+ }
+}

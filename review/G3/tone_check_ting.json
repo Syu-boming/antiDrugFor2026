@@ -1,0 +1,127 @@
+{
+ "_說明": "修正清單第 6 項（方法同 tone_check_yi.json）：必要旁白一的第二句，small 模型把「不聽」轉成「不停」。用正式必要旁白參數，把「聽」（tīng 一聲）換成「停」（tíng 二聲）各合成一次，量目標音節的 F0 走勢：短框句「不聽使喚。」取第 2 個有聲段（不｜聽｜使｜喚，送氣 t、sh、h 把有聲段隔開）；整句取倒數第 3 個有聲段。一聲＝高平（終點／起點約 0.95–1.05），二聲＝上升（> 1.10）。聽感未驗證，第 3 天彩排確認。",
+ "voice_spec": {
+  "service": "edge",
+  "voice": "zh-TW-HsiaoChenNeural",
+  "rate": "-8%",
+  "pitch": "-10Hz"
+ },
+ "cases": {
+  "聽（一聲）": {
+   "short_frame": "不聽使喚。",
+   "short_target": {
+    "t0": 0.415,
+    "t1": 0.545,
+    "mean_hz": 269.9,
+    "start_hz": 261.6,
+    "end_hz": 267.1,
+    "end_over_start": 1.021,
+    "contour_hz_20ms": [
+     259,
+     268,
+     269,
+     270,
+     275,
+     277,
+     271
+    ]
+   },
+   "short_islands": 4,
+   "sentence": "毒品可能讓人的頭腦和身體受到影響，不聽使喚。",
+   "sentence_target": {
+    "t0": 3.977,
+    "t1": 4.107,
+    "mean_hz": 185.4,
+    "start_hz": 199.2,
+    "end_hz": 193.3,
+    "end_over_start": 0.97,
+    "contour_hz_20ms": [
+     202,
+     186,
+     176,
+     176,
+     181,
+     186,
+     192
+    ]
+   },
+   "sentence_islands": 14
+  },
+  "停（二聲）": {
+   "short_frame": "不停使喚。",
+   "short_target": {
+    "t0": 0.405,
+    "t1": 0.545,
+    "mean_hz": 204.2,
+    "start_hz": 219.5,
+    "end_hz": 207.9,
+    "end_over_start": 0.947,
+    "contour_hz_20ms": [
+     219,
+     214,
+     202,
+     194,
+     194,
+     200,
+     208,
+     206
+    ]
+   },
+   "short_islands": 4,
+   "sentence": "毒品可能讓人的頭腦和身體受到影響，不停使喚。",
+   "sentence_target": {
+    "t0": 3.967,
+    "t1": 4.097,
+    "mean_hz": 157.3,
+    "start_hz": 175.2,
+    "end_hz": 161.5,
+    "end_over_start": 0.922,
+    "contour_hz_20ms": [
+     181,
+     159,
+     149,
+     151,
+     152,
+     154,
+     160
+    ]
+   },
+   "sentence_islands": 14
+  }
+ },
+ "official_v02_target": {
+  "t0": 3.766,
+  "t1": 3.896,
+  "mean_hz": 185.6,
+  "start_hz": 201.2,
+  "end_hz": 191.8,
+  "end_over_start": 0.953,
+  "contour_hz_20ms": [
+   201,
+   192,
+   177,
+   176,
+   179,
+   185,
+   190
+  ]
+ },
+ "summary": {
+  "short_target": {
+   "聽_end_over_start": 1.021,
+   "停_end_over_start": 0.947,
+   "聽_mean_hz": 269.9,
+   "停_mean_hz": 204.2,
+   "聽_over_停_mean": 1.322
+  },
+  "sentence_target": {
+   "聽_end_over_start": 0.97,
+   "停_end_over_start": 0.922,
+   "聽_mean_hz": 185.4,
+   "停_mean_hz": 157.3,
+   "聽_over_停_mean": 1.179
+  },
+  "official_v02": 0.953
+ },
+ "結論": "合成器把「聽」讀成高平調（一聲）：短框句與整句裡，「聽」的走勢平（終點／起點約 0.97–1.00），而且平均 F0 比同位置的「停」高約 15–20%；「停」起點較低、先降再回升（台灣華語二聲常見的低升形）。兩者在音高上可清楚分開，所以 small 的「不停」判讀為轉寫誤差（large-v3-turbo 轉寫為「不聽」）。聽感未驗證，第 3 天彩排確認。"
+}

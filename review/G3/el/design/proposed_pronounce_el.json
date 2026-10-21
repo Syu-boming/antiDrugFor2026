@@ -1,0 +1,369 @@
+{
+ "_說明": "ElevenLabs 讀音提案（不改 audio/vo/pronounce.json）。同一聲線、同一模型、同一句，原字與替身字各合成一次：兩個轉寫模型對該詞都是「轉寫一致」或「同音轉寫」才算通過；「紙燈節」另須聲調檢查通過（可定位時）。規則：某模型下原字在所有測過的聲線與句子都通過 → 提案該模型 elevenlabs 表把該詞對應回原字（取消全域替身字）；否則若替身字全部通過 → 維持全域替身字；兩者都有未通過 → 列出，不提案。聽感未驗證。",
+ "evidence": {
+  "紙燈節": [
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_frame_zdj",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "frame_zdj",
+    "variant": "sub",
+    "sent_text": "紙登結。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_frame_zdj__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "frame_zdj",
+    "variant": "orig",
+    "sent_text": "紙燈節。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c003_01",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a0_c003_01",
+    "variant": "sub",
+    "sent_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": true,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c003_01__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a0_c003_01",
+    "variant": "orig",
+    "sent_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_frame_zdj",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "frame_zdj",
+    "variant": "sub",
+    "sent_text": "紙登結。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_frame_zdj__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "frame_zdj",
+    "variant": "orig",
+    "sent_text": "紙燈節。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a0_c003_01",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a0_c003_01",
+    "variant": "sub",
+    "sent_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+    "asr_status": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": false,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a0_c003_01__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a0_c003_01",
+    "variant": "orig",
+    "sent_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": false,
+    "pass": false
+   }
+  ],
+  "折折": [
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c002_01",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a0_c002_01",
+    "variant": "sub",
+    "sent_text": "喵！大家好，我是哲哲。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "tone_pass": null,
+    "pass": true
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c002_01__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a0_c002_01",
+    "variant": "orig",
+    "sent_text": "喵！大家好，我是折折。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": null,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a0_c002_01",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a0_c002_01",
+    "variant": "sub",
+    "sent_text": "喵！大家好，我是哲哲。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": null,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a0_c002_01__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a0_c002_01",
+    "variant": "orig",
+    "sent_text": "喵！大家好，我是折折。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "tone_pass": null,
+    "pass": true
+   }
+  ],
+  "阿樂": [
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__a1_c008_02",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a1_c008_02",
+    "variant": "sub",
+    "sent_text": "不要碰。我們快去跟阿勒叔叔說。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__a1_c008_02__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a1_c008_02",
+    "variant": "orig",
+    "sent_text": "不要碰。我們快去跟阿樂叔叔說。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__a1_c008_02",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a1_c008_02",
+    "variant": "sub",
+    "sent_text": "不要碰。我們快去跟阿勒叔叔說。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__a1_c008_02__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a1_c008_02",
+    "variant": "orig",
+    "sent_text": "不要碰。我們快去跟阿樂叔叔說。",
+    "asr_status": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   }
+  ],
+  "燈籠": [
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a1_c004_06",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a1_c004_06",
+    "variant": "sub",
+    "sent_text": "你們先走，我把登籠收好就來。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": null,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__mv2__probe_a1_c004_06__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_multilingual_v2",
+    "line": "a1_c004_06",
+    "variant": "orig",
+    "sent_text": "你們先走，我把燈籠收好就來。",
+    "asr_status": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "tone_pass": null,
+    "pass": false
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a1_c004_06",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a1_c004_06",
+    "variant": "sub",
+    "sent_text": "你們先走，我把登籠收好就來。",
+    "asr_status": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   },
+   {
+    "key": "xiaoqing_ttv3_p3__v3__probe_a1_c004_06__orig",
+    "voice": "xiaoqing_ttv3_p3",
+    "model": "eleven_v3",
+    "line": "a1_c004_06",
+    "variant": "orig",
+    "sent_text": "你們先走，我把燈籠收好就來。",
+    "asr_status": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "tone_pass": null,
+    "pass": true
+   }
+  ]
+ },
+ "proposal": {
+  "紙燈節": {
+   "eleven_multilingual_v2": {
+    "decision": "兩者都有未通過（不提案）",
+    "orig_pass": "0/2",
+    "sub_pass": "0/2"
+   },
+   "eleven_v3": {
+    "decision": "兩者都有未通過（不提案）",
+    "orig_pass": "0/2",
+    "sub_pass": "0/2"
+   }
+  },
+  "折折": {
+   "eleven_multilingual_v2": {
+    "decision": "替身字（維持全域）",
+    "elevenlabs_entry": {
+     "折折": "哲哲"
+    },
+    "orig_pass": "0/1",
+    "sub_pass": "1/1"
+   },
+   "eleven_v3": {
+    "decision": "原字",
+    "elevenlabs_entry": {
+     "折折": "折折"
+    },
+    "orig_pass": "1/1",
+    "sub_pass": "0/1"
+   }
+  },
+  "阿樂": {
+   "eleven_multilingual_v2": {
+    "decision": "原字",
+    "elevenlabs_entry": {
+     "阿樂": "阿樂"
+    },
+    "orig_pass": "1/1",
+    "sub_pass": "1/1"
+   },
+   "eleven_v3": {
+    "decision": "原字",
+    "elevenlabs_entry": {
+     "阿樂": "阿樂"
+    },
+    "orig_pass": "1/1",
+    "sub_pass": "1/1"
+   }
+  },
+  "燈籠": {
+   "eleven_multilingual_v2": {
+    "decision": "兩者都有未通過（不提案）",
+    "orig_pass": "0/1",
+    "sub_pass": "0/1"
+   },
+   "eleven_v3": {
+    "decision": "原字",
+    "elevenlabs_entry": {
+     "燈籠": "燈籠"
+    },
+    "orig_pass": "1/1",
+    "sub_pass": "1/1"
+   }
+  }
+ },
+ "proposed_elevenlabs_table": {
+  "eleven_multilingual_v2": {
+   "折折": "哲哲",
+   "阿樂": "阿樂"
+  },
+  "eleven_v3": {
+   "折折": "折折",
+   "阿樂": "阿樂",
+   "燈籠": "燈籠"
+  }
+ }
+}

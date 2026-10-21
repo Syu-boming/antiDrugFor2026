@@ -2,8 +2,10 @@
 // 驗證 v1.2 第 19.1 節的規則（連按、長按、上一步、暫停、重播、題目恢復未揭答、播放中不跳段），
 // 以及 F5／Esc 攔截、頁面隱藏才暫停、GPU 中斷重建，與「有正式音檔」時的音訊排程與切換停止。
 // 三、G4 代表鏡頭 cue 集（g4）的流程、WAIT_GUARD；四、虛擬時鐘下的確定性（重播一致）、布幕與署名卡時間、
-// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出；六、字幕斷行與對白避讓的純函式測試。
-// 前兩段用即時時鐘（不是虛擬時鐘）跑；全部約 4 分鐘。
+// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出；六、字幕斷行與對白避讓的純函式測試；
+// 七、G4 正式配音的操作測試（必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音）：
+// 對白聲音 ≤ 1、字幕與語音時間差 ≤ 50 ms（G4 修正第 29 項）。
+// 前兩段與第七段用即時時鐘（不是虛擬時鐘）跑；全部約 5 分鐘。
 //
 // 用法：node tools/engine-test.mjs [--headed]
 import { createRequire } from 'node:module';
@@ -18,6 +20,7 @@ const { chromium } = require('playwright-core');
 const DIST = join(ROOT, 'app/dist');
 if (!existsSync(join(DIST, 'index.html'))) { console.error('[engine-test] 請先在 app/ 執行 npm run build'); process.exit(1); }
 
+const dk = await import(pathToFileURL(join(ROOT, 'app/src/audio/ducking.ts')).href);
 const results = [];
 const check = (name, ok, detail = '') => {
   results.push({ name, ok: !!ok, detail });
@@ -306,9 +309,10 @@ console.log('\n二、有正式音檔時（測試用合成音檔，暫存資料�
       const lv3 = await page.evaluate(() => window.__engine.debug.audioLevels());
       check('配樂在播（段落配樂 music_test，基準音量約 0.8）', lv0.musicId === 'music_test' && Math.abs(lv0.musicBus - 0.8) < 0.1, `bus ${lv0.musicBus.toFixed(2)}`);
       check('對白壓低配樂：說話前配樂未避讓', lv0.duck > 0.9, `duck ${lv0.duck.toFixed(2)}`);
-      check('對白壓低配樂：說話時避讓到約 −10 dB（0.32）', lv1.duck < 0.4, `duck ${lv1.duck.toFixed(2)}`);
-      check('對白壓低配樂：相鄰兩句之間（間隔 < 0.9 秒）不回升', lv2.duck < 0.45, `duck ${lv2.duck.toFixed(2)}`);
+      check(`對白壓低配樂：說話時避讓到 DUCK_LEVEL（${dk.DUCK_LEVEL}，約 ${(20 * Math.log10(dk.DUCK_LEVEL)).toFixed(0)} dB）`, Math.abs(lv1.duck - dk.DUCK_LEVEL) < 0.06, `duck ${lv1.duck.toFixed(2)}`);
+      check('對白壓低配樂：相鄰兩句之間（間隔 < 0.9 秒）不回升', lv2.duck < dk.DUCK_LEVEL + 0.1, `duck ${lv2.duck.toFixed(2)}`);
       check('對白壓低配樂：說完後回升', lv3.duck > 0.85, `duck ${lv3.duck.toFixed(2)}`);
+      check(`教師停格：劇情段落播完後配樂降到基準音量的 ${dk.HOLD_MUSIC_RATIO}（時間常數 ${dk.HOLD_TC} 秒）`, lv3.musicBus < 0.8 * dk.HOLD_MUSIC_RATIO * 2.2, `bus ${lv3.musicBus.toFixed(3)}（停住 1.3 秒時）`);
       await page.evaluate(() => window.__engine.gotoCue('a2_c002', { mode: 'play' }));
       await waitFor(() => window.__engine.getState().cueTime > 7.3, null, 12000);
       await page.keyboard.press('r');
@@ -395,15 +399,19 @@ console.log('\n四、G4 虛擬時鐘：重播一致、布幕時間、角色進�
   // 操偶線：一根根落下、扣上紙環；近景線寬 ≥ 8 px
   await play('a2_c002');
   const vis = async (t) => { await seek(t); const p = await page.evaluate(() => window.__engine.debug.probe()); return Object.fromEntries(p.strings.map((x) => [x.anchor, x])); };
-  const s5 = await vis(5.0), s8 = await vis(7.7), s11 = await vis(11.0);
-  check('操偶線落下前看不到線', !s5.wrist.visible && !s5.elbow.visible && !s5.knee.visible);
-  check('操偶線一根根落下（7.7 秒：腕背已扣上、膝前還沒落下）', s8.wrist.visible && !s8.knee.visible);
-  check('三條線都扣上（腕背、肘外、膝前）', s11.wrist.visible && s11.elbow.visible && s11.knee.visible);
-  await play('a2_c004');
-  await seek(4.6);
-  const pc = await page.evaluate(() => window.__engine.debug.probe());
-  const minW = Math.min(...pc.strings.filter((x) => x.visible).map((x) => x.widthPx));
-  check('沿線近景：線寬 ≥ 8 px（1080p 換算）', minW * (1080 / 720) >= 8, `${(minW * 1.5).toFixed(1)} px@1080`);
+  const s5 = await vis(3.0), s8 = await vis(4.8), s11 = await vis(7.0);
+  check('操偶線落下前看不到線（3.0 秒）', !s5.wrist.visible && !s5.elbow.visible && !s5.knee.visible);
+  check('操偶線一根根落下（4.8 秒：腕背已扣上、膝前還沒落下；第一根在 5 秒前落下）', s8.wrist.visible && s8.wrist.ringPx && !s8.knee.visible);
+  check('三條線都扣上（腕背、肘外、膝前），紙環是正方形圓環（直徑約 2.4 倍線寬）', s11.wrist.visible && s11.elbow.visible && s11.knee.visible
+    && ['wrist', 'elbow', 'knee'].every((n) => s11[n].ringRadiusPx * 2 > s11[n].widthPx * 1.8 && s11[n].ringRadiusPx * 2 < s11[n].widthPx * 3.2),
+  ['wrist', 'elbow', 'knee'].map((n) => `${n} 線 ${s11[n].widthPx.toFixed(1)}／環 ${(s11[n].ringRadiusPx * 2).toFixed(1)} px`).join('、'));
+  const wides = [];
+  for (const [id, t] of [['a2_c002', 7.0], ['a2_c002', 22.0], ['a2_c004', 4.6], ['a2_c004', 9.0], ['a2_c004', 13.0]]) {
+    await play(id); await seek(t);
+    const pc = await page.evaluate(() => window.__engine.debug.probe());
+    wides.push(...pc.strings.filter((x) => x.visible && x.ringPx).map((x) => x.widthPx * (1080 / 720)));
+  }
+  check('線寬 6–10 px（1080p 換算；中景與 a2_c004 各鏡位）', Math.min(...wides) >= 6 && Math.max(...wides) <= 10, `${Math.min(...wides).toFixed(1)}–${Math.max(...wides).toFixed(1)} px@1080`);
 
   // 臉部換片：說話時嘴型變化、3–6 秒眨一次
   await play('a2_c002');
@@ -423,6 +431,58 @@ console.log('\n四、G4 虛擬時鐘：重播一致、布幕時間、角色進�
   check('對嘴：阿樂叔叔說話時嘴型換片（至少 3 種）', mouths.size >= 3, [...mouths].join('、'));
   const minBlinks = Math.floor(tl.duration / 6.5);
   check(`眨眼：每個角色在 ${tl.duration.toFixed(0)} 秒內至少眨 ${minBlinks} 次（3–6 秒一次＋情緒轉折）`, Object.values(eyes).every((n) => n >= minBlinks), JSON.stringify(eyes));
+
+  // G4 修正第 2 輪第 10 項：換姿勢翻面前 0.2 秒到結束後 0.3 秒不眨眼（每秒 30 格逐格檢查）
+  const rtl = await page.evaluate(() => window.__engine.debug.timeline('a2_c002'));
+  const flipBad = [];
+  let flipFrames = 0;
+  for (const a of rtl.anims.filter((x) => x.name === 'puppet.pose')) {
+    for (let t = a.start - 0.2; t <= a.end + 0.3 + 1e-6; t += 1 / 30) {
+      await seek(t);
+      const e = (await page.evaluate(() => window.__engine.debug.faces()))[a.target]?.eyes;
+      flipFrames++;
+      if (e !== 'open') flipBad.push(`${a.target} ${t.toFixed(3)}s ${e}`);
+    }
+  }
+  check('眨眼不和換姿勢翻面重疊：翻面前 0.2 秒到結束後 0.3 秒眼睛都是睜開', flipBad.length === 0 && flipFrames > 0, flipBad.length ? flipBad.slice(0, 4).join('、') : `${flipFrames} 格`);
+
+  // G4 修正第 2 輪第 6 項：線還鬆時畫面裡那段線是下垂弧（中點偏移 ≥ 15 px），繃直節拍後是直線（≤ 3 px）
+  const sagOf = (path) => {
+    const pts = [];
+    for (let i = 0; i < path.length; i++) {
+      const p = path[i];
+      if (p[1] < 0) continue;
+      if (i > 0 && path[i - 1][1] < 0 && !pts.length) { const a = path[i - 1]; const u = -a[1] / (p[1] - a[1]); pts.push([a[0] + (p[0] - a[0]) * u, 0]); }
+      pts.push(p);
+    }
+    if (pts.length < 3) return null;
+    const L = [0];
+    for (let i = 1; i < pts.length; i++) L.push(L[i - 1] + Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]));
+    const half = L[L.length - 1] / 2;
+    let m = pts[pts.length - 1];
+    for (let i = 1; i < L.length; i++) if (L[i] >= half) { const u = (half - L[i - 1]) / Math.max(1e-9, L[i] - L[i - 1]); m = [pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * u, pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * u]; break; }
+    const a = pts[0], b = pts[pts.length - 1], cl = Math.hypot(b[0] - a[0], b[1] - a[1]) || 1;
+    return Math.abs((b[0] - a[0]) * (a[1] - m[1]) - (a[0] - m[0]) * (b[1] - a[1])) / cl * (1080 / 720);
+  };
+  await play('a2_c002');
+  const sagAt = async (t) => { await seek(t); const p = await page.evaluate(() => window.__engine.debug.probe()); return Object.fromEntries(p.strings.filter((x) => x.visible && x.path).map((x) => [x.anchor, sagOf(x.path)])); };
+  const sl = await sagAt(11.0), stt = await sagAt(12.6);
+  check('操偶線還鬆（11.0 秒）是下垂弧：三條線中點偏移 ≥ 15 px（1080p 換算）', ['wrist', 'elbow', 'knee'].every((n) => sl[n] >= 15), Object.entries(sl).map(([k, v]) => `${k} ${v?.toFixed(1)}`).join('、'));
+  check('繃直節拍後（12.6 秒）腕背、肘外是直線：中點偏移 ≤ 3 px', ['wrist', 'elbow'].every((n) => stt[n] !== null && stt[n] <= 3), Object.entries(stt).map(([k, v]) => `${k} ${v?.toFixed(1)}`).join('、'));
+
+  // G4 修正第 2 輪第 7 項：站起時臀部離凳上移 ≥ 25 px；扶桌時近側手（不透明範圍）跨過桌面上緣 ≥ 10 px
+  const hipAbove = async (t) => { await seek(t); const p = await page.evaluate(() => window.__engine.debug.probe()); const a = p.actors.find((x) => x.id === 'ale'); const st = p.landmarks.stoolTop; return { above: (st[0][1] + st[1][1]) / 2 - a.joints.hip[1], p, a }; };
+  // 站起拍跟著 a2_c002_01 結束時間走（kneeTug＝台詞結束＋0.15 s），取樣點也以台詞結束時間為準（2026-10-21 主線：配音換 ElevenLabs 後句長改變）
+  const vt = JSON.parse(readFileSync(join(ROOT, 'audio/vo/timings.json'), 'utf8'));
+  const L1 = 13.45 + vt.a2_c002_01.seconds;
+  const h0 = await hipAbove(L1 - 0.04), h1 = await hipAbove(L1 + 0.66);
+  const rise = (h1.above - h0.above) * (1080 / 720);
+  const h2 = await hipAbove(L1 + 4.16);
+  const hand = h2.a.opaque?.hand_l, tt = h2.p.landmarks.tableTop;
+  const ty = (tt[0][1] + tt[1][1]) / 2;
+  const straddle = hand ? Math.min(ty - hand[1], hand[3] - ty) * (1080 / 720) : -1;
+  check(`站起拍：臀部相對凳面上移 ≥ 25 px（台詞結束＋0.66 秒對 −0.04 秒，${(L1 + 0.66).toFixed(2)} 對 ${(L1 - 0.04).toFixed(2)} 秒，1080p 換算）`, rise >= 25, `${rise.toFixed(1)} px`);
+  check(`扶桌：近側手不透明範圍跨過桌面上緣 ≥ 10 px（台詞結束＋4.16 秒＝${(L1 + 4.16).toFixed(2)} 秒）`, straddle >= 10, `${straddle.toFixed(1)} px`);
   const ws = await page.evaluate(() => [getComputedStyle(document.querySelector('.quiz-q')).whiteSpace, getComputedStyle(document.querySelector('.sig-card')).backgroundImage.slice(0, 22)]);
   check('題卡題目支援手動換行（white-space: pre-line）', ws[0] === 'pre-line', ws[0]);
   check('署名卡由程式排字（素材紙卡只當底）', (await page.textContent('.sig-text')) === '許博明老師製作', ws[1]);
@@ -474,17 +534,87 @@ console.log('\n六、字幕斷行、對白避讓排程（純函式）');
   const man = tlmod.layoutSubtitle('第一行\n第二行\n\n第三行');
   check('cue 文字支援手動換行（\\n 換行、\\n\\n 換頁）', JSON.stringify(man) === JSON.stringify([['第一行', '第二行'], ['第三行']]), JSON.stringify(man));
   check('手動換行不影響朗讀字數與配音比對', tlmod.spokenChars('第一行\n第二行') === 6 && tlmod.plainText('第一行\n第二行') === '第一行第二行');
-  const dk = await import(pathToFileURL(join(ROOT, 'app/src/audio/ducking.ts')).href);
   const plan = dk.duckingPlan([[2, 4], [4.5, 6], [9, 10]]);
   const at = (t) => dk.duckGainAt(plan, t);
-  check('避讓排程：說話前 0.15 秒開始壓低、說話中約 0.32', at(1.5) > 0.95 && Math.abs(at(3) - dk.DUCK_LEVEL) < 0.02, `${at(1.5).toFixed(2)} / ${at(3).toFixed(2)}`);
-  check('避讓排程：間隔 0.5 秒的兩句之間不回升；間隔 3 秒的會回升', at(4.3) < 0.4 && at(8.5) > 0.85, `${at(4.3).toFixed(2)} / ${at(8.5).toFixed(2)}`);
-  check('避讓排程：最後一句說完 0.3 秒後回升', at(10.2) < 0.4 && at(11.5) > 0.9, `${at(10.2).toFixed(2)} / ${at(11.5).toFixed(2)}`);
+  check(`避讓排程：說話前 0.15 秒開始壓低、說話中約 ${dk.DUCK_LEVEL}`, at(1.5) > 0.95 && Math.abs(at(3) - dk.DUCK_LEVEL) < 0.02, `${at(1.5).toFixed(2)} / ${at(3).toFixed(2)}`);
+  check('避讓排程：間隔 0.5 秒的兩句之間不回升；間隔 3 秒的會回升', at(4.3) < dk.DUCK_LEVEL + 0.08 && at(8.5) > 0.85, `${at(4.3).toFixed(2)} / ${at(8.5).toFixed(2)}`);
+  check('避讓排程：最後一句說完 0.3 秒後回升', at(10.2) < dk.DUCK_LEVEL + 0.08 && at(11.5) > 0.9, `${at(10.2).toFixed(2)} / ${at(11.5).toFixed(2)}`);
   const val = await import(pathToFileURL(join(ROOT, 'app/src/cues/validate.ts')).href);
   for (const f of readdirSync(join(ROOT, 'app/cues')).filter((x) => x.endsWith('.json') && !x.includes('schema'))) {
     const v = val.validateCueFile(JSON.parse(readFileSync(join(ROOT, 'app/cues', f), 'utf8')));
     check(`cue 檔 ${f} 驗證通過、沒有未知動畫名稱`, v.ok && v.warnings.length === 0, [...v.errors, ...v.warnings].slice(0, 3).join(' | '));
   }
+}
+
+// ======================================================================= 七、G4 正式配音的操作測試（即時、AudioContext 時鐘）
+console.log('\n七、G4 正式配音：必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音');
+{
+  const { page, st, waitFor, waitPhase, errors } = await open(join(DIST, 'index.html'), 'nofs=1&cues=g4');
+  await page.click('.ready-btn');
+  await waitPhase('title_idle');
+  let s = await st();
+  if (s.clock !== 'audio') {
+    check('G4 操作測試需要 AudioContext 時鐘', false, `時鐘 ${s.clock}、音訊 ${s.audioState}`);
+  } else {
+    const voN = (x) => x.voSounding; // 正在發聲的對白（排程時間已到、還沒結束）
+    const sync = () => page.evaluate(() => window.__engine.debug.voiceSync());
+    const maxDiff = (xs) => (xs.length ? Math.max(...xs.map((x) => Math.abs(x.diffMs))) : NaN);
+    const narr = async () => { await page.evaluate(() => window.__engine.gotoCue('a2_c004', { mode: 'play' })); await waitFor(() => window.__engine.getState().cueTime > 7.0, null, 15000); };
+    await narr();
+    s = await st();
+    let sy = await sync();
+    check('必要旁白播放中：發聲中的對白 1 個、字幕與語音時間差 ≤ 50 ms', voN(s) === 1 && sy.length === 1 && maxDiff(sy) <= 50, `對白 ${voN(s)}、差 ${maxDiff(sy)} ms（${sy.map((x) => x.id).join('、')}）`);
+    // 上一步：回到 a2_c002 的停格，聲音全部停
+    await page.keyboard.press('PageUp');
+    await sleep(150);
+    s = await st();
+    check('旁白播放中按上一步：回到上一個穩定節點、發聲中的對白 0 個', s.cueId === 'a2_c002' && s.mode === 'waiting' && voN(s) === 0, `${s.cueId} ${s.phase}、對白 ${voN(s)}`);
+    // R：從頭重播，舊台詞停掉
+    await narr();
+    await page.keyboard.press('r');
+    await sleep(150);
+    s = await st();
+    check('旁白播放中按 R：同一段從頭播、發聲中的對白 ≤ 1（舊旁白已停）', s.cueId === 'a2_c004' && s.cueTime < 1 && voN(s) <= 1, `t=${s.cueTime}、對白 ${voN(s)}`);
+    await waitFor(() => window.__engine.getState().cueTime > 6.6, null, 12000);
+    sy = await sync();
+    s = await st();
+    check('重播後旁白：字幕與語音時間差 ≤ 50 ms、發聲中的對白 ≤ 1', voN(s) <= 1 && sy.length === 1 && maxDiff(sy) <= 50, `差 ${maxDiff(sy)} ms`);
+    // 暫停後繼續
+    await page.keyboard.press('Period');
+    await sleep(600);
+    const p1 = await st();
+    await page.keyboard.press('Period');
+    await sleep(400);
+    sy = await sync();
+    s = await st();
+    check('旁白暫停 0.6 秒後繼續：時間停住、恢復後字幕與語音時間差 ≤ 50 ms、發聲中的對白 ≤ 1', p1.paused && p1.audioState === 'suspended' && !s.paused && voN(s) <= 1 && maxDiff(sy) <= 50, `暫停時 ${p1.audioState}；差 ${maxDiff(sy)} ms`);
+    // 系統把 AudioContext 停掉（例如投影機切換、Windows 音訊裝置變動），之後系統自己恢復、老師再按繼續
+    const t0 = (await st()).cueTime;
+    const stA = await page.evaluate(() => window.__engine.debug.systemSuspendAudio());
+    await sleep(500);
+    const a1 = await st();
+    check('系統停掉 AudioContext（suspended）：引擎自動暫停、時間停住', stA === 'suspended' && a1.paused && a1.pauseReason === 'audio' && Math.abs(a1.cueTime - t0) < 0.15, `暫停原因 ${a1.pauseReason}、${t0}→${a1.cueTime}`);
+    await page.evaluate(() => window.__engine.debug.systemResumeAudio());
+    await sleep(400);
+    const a2 = await st();
+    check('系統自己恢復音訊時：引擎仍停住等老師（再停一次，聲音不會自己播）', a2.paused && a2.audioState !== 'running' && Math.abs(a2.cueTime - a1.cueTime) < 0.1, `音訊 ${a2.audioState}、${a1.cueTime}→${a2.cueTime}`);
+    await page.keyboard.press('Period');
+    await sleep(500);
+    sy = await sync();
+    s = await st();
+    check('老師按繼續後：音訊恢復、字幕與語音時間差 ≤ 50 ms、發聲中的對白 ≤ 1', !s.paused && s.audioState === 'running' && voN(s) <= 1 && (sy.length === 0 || maxDiff(sy) <= 50), `差 ${maxDiff(sy)} ms、對白 ${voN(s)}`);
+    // 開頭靜音（HDMI 吞音）：400 ms 時畫面停在第一格、聲音一起延後
+    await page.evaluate(() => window.__engine.debug.setLeadIn(400));
+    await page.evaluate(() => window.__engine.gotoCue('a2_c004', { mode: 'play' }));
+    await sleep(200);
+    const l1 = await st();
+    await waitFor(() => window.__engine.getState().cueTime > 1.5, null, 8000);
+    sy = await sync();
+    check('開頭靜音 400 ms：按下後先停在第一格，之後照常播、字幕與語音時間差 ≤ 50 ms', l1.leadInMs === 400 && l1.cueTime === 0 && sy.length === 1 && maxDiff(sy) <= 50, `0.2 秒時 t=${l1.cueTime}；差 ${maxDiff(sy)} ms`);
+    await page.evaluate(() => window.__engine.debug.setLeadIn(0));
+  }
+  check('G4 操作測試沒有頁面錯誤', errors.length === 0, errors.slice(0, 3).join(' | '));
+  await page.close();
 }
 
 await browser.close();

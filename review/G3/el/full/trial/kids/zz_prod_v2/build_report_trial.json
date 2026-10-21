@@ -1,0 +1,2386 @@
+{
+ "a0_c002_01": {
+  "id": "a0_c002_01",
+  "role": "折折",
+  "codes": [
+   "zhezhe"
+  ],
+  "text": "喵！大家好，我是折折。",
+  "required": false,
+  "signature": "f9d0cd933bc079c4",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.3,
+    4.6
+   ],
+   "rate_cps_net": [
+    3.8,
+    5.1
+   ],
+   "f0_nominal": 293.5,
+   "f0_hz": [
+    280.0,
+    360.0
+   ],
+   "source": "角色表第 3 節（4.3–4.6；全劇最高、明亮）；casting.json 折折 note（F0 293.5 Hz）",
+   "rate_range": [
+    3.8,
+    5.1
+   ],
+   "f0_range": [
+    280.0,
+    360.0
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:51:07",
+    "seeds": {
+     "zhezhe": 20261021
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "喵！大家好，我是折折。",
+      "sent": "喵！大家好，我是折折。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c002_01/zhezhe_a0_s0_a4179064d8c5.mp3",
+      "request_id": "6hS6VQ635c3TXhuMXEVS",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -31.7,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -25.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.8,
+       "t_fill_s": 2.64,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        1.87,
+        2.66
+       ],
+       "decay_end_s": 1.9,
+       "cut_s": 2.0,
+       "floor_rel_db": -28.9,
+       "removed_s": 1.36
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.26,
+         0.42
+        ],
+        "cut_s": 0.41,
+        "depth_rel_db": -24.3,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 0.899,
+       "rate_before": 4.0,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c002_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.32,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -2.5,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 3
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c002_01/a1.wav",
+     "seconds": 2.57,
+     "speech_seconds": 2.21,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.5,
+     "clipped_samples": 0,
+     "rate_cps": 3.62,
+     "rate_cps_net": 4.42,
+     "rate_cps_net_r": 4.44,
+     "pauses_ms": [
+      400
+     ],
+     "pauses_ms_r": [
+      390
+     ],
+     "f0_median": 289.0,
+     "f0_p10": 244.5,
+     "f0_p90": 349.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.44,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "喵大家好我是褶褶",
+      "cer": 0.25,
+      "per": 0.25,
+      "diffs": [
+       {
+        "ref": "折折",
+        "hyp": "褶褶",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         6,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "喵大家好我是哲哲",
+      "cer": 0.25,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "折折",
+        "hyp": "哲哲",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         6,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "同音轉寫（讀音一致）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "折折",
+          "hyp": "褶褶",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           6,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "折折": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       }
+      },
+      "inconsistent": [
+       "折折"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -31.7,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.44,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 8,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       400
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.26,
+         0.42
+        ],
+        "cut_s": 0.41,
+        "depth_rel_db": -24.3,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.5,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 2.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.0 秒處切掉 1.36 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×0.899（母帶前淨語速 4.0 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 10:51:48",
+    "seeds": {
+     "zhezhe": 20261022
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "喵！大家好，我是折折。",
+      "sent": "喵！大家好，我是折折。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c002_01/zhezhe_a1_s0_6966e609b985.mp3",
+      "request_id": "eb5lFU0dQM65GXchuQgJ",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -35.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -11.3,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.7,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        1.72,
+        2.68
+       ],
+       "decay_end_s": 1.74,
+       "cut_s": 1.84,
+       "floor_rel_db": -30.8,
+       "removed_s": 1.44
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "字數比例（時間戳對不上）",
+        "t_est_s": [
+         0.23,
+         0.23
+        ],
+        "cut_s": 0.36,
+        "depth_rel_db": -24.4,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 1.0,
+       "rate_before": 4.348,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c002_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.41,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -3.6,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c002_01/a2.wav",
+     "seconds": 2.66,
+     "speech_seconds": 2.3,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.48,
+     "rate_cps_net": 4.35,
+     "rate_cps_net_r": 4.35,
+     "pauses_ms": [
+      460
+     ],
+     "pauses_ms_r": [
+      440
+     ],
+     "f0_median": 279.8,
+     "f0_p10": 244.3,
+     "f0_p90": 334.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.35,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "大家好我是喆喆",
+      "cer": 0.375,
+      "per": 0.125,
+      "diffs": [
+       {
+        "ref": "喵",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "喆喆",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         6,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "同音轉寫（讀音一致）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "今天哦大家好我是哲哲",
+      "cer": 0.625,
+      "per": 0.375,
+      "diffs": [
+       {
+        "ref": "喵",
+        "hyp": "今天哦",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "哲哲",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         6,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "同音轉寫（讀音一致）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "喵",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "喵",
+          "hyp": "今天哦",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "折折": {
+        "small": "同音轉寫（讀音一致）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -35.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.35,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 8,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       460
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "字數比例（時間戳對不上）",
+        "t_est_s": [
+         0.23,
+         0.23
+        ],
+        "cut_s": 0.36,
+        "depth_rel_db": -24.4,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 1.84 秒處切掉 1.44 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×1.0（母帶前淨語速 4.348 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+    "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "哲",
+     "口訣": "口決",
+     "紙登結": "纸灯节",
+     "燈籠": "灯笼",
+     "燈": "灯",
+     "哲哲": "折折"
+    },
+    "post": {
+     "pitch_shift_st": 2.0,
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.75,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 2,
+  "file": "review/G3/el/full/trial/kids/zz_prod_v2/out/vo_a0_c002_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_prod_v2/lipsync/a0_c002_01_el01.json",
+  "seconds": 2.66,
+  "speech_start": 0.12,
+  "speech_end": 2.41,
+  "speech_segments": [
+   [
+    0.11,
+    0.49
+   ],
+   [
+    0.94,
+    2.41
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "喵",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "喵",
+        "hyp": "今天哦",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "折折": {
+      "small": "同音轉寫（讀音一致）",
+      "large-v3-turbo": "同音轉寫（讀音一致）"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -35.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.35,
+    "range": [
+     3.8,
+     5.1
+    ],
+    "syllables": 8,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     460
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "字數比例（時間戳對不上）",
+      "t_est_s": [
+       0.23,
+       0.23
+      ],
+      "cut_s": 0.36,
+      "depth_rel_db": -24.4,
+      "existing_pause_ms": 0,
+      "inserted_ms": 450,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -3.6,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c002_01/a2.wav",
+   "seconds": 2.66,
+   "speech_seconds": 2.3,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.6,
+   "clipped_samples": 0,
+   "rate_cps": 3.48,
+   "rate_cps_net": 4.35,
+   "rate_cps_net_r": 4.35,
+   "pauses_ms": [
+    460
+   ],
+   "pauses_ms_r": [
+    440
+   ],
+   "f0_median": 279.8,
+   "f0_p10": 244.3,
+   "f0_p90": 334.0,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.35,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "eb5lFU0dQM65GXchuQgJ"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 1.84 秒處切掉 1.44 秒）",
+   "PSOLA 改調 2.0 半音、長度 ×1.0（母帶前淨語速 4.348 → 目標 4.45）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a0_c003_04": {
+  "id": "a0_c003_04",
+  "role": "折折",
+  "codes": [
+   "zhezhe"
+  ],
+  "text": "沒有骨架，就沒有主燈。紙燈節怎麼辦？",
+  "required": false,
+  "signature": "f3b5d3ce6000fcfe",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.3,
+    4.6
+   ],
+   "rate_cps_net": [
+    3.8,
+    5.1
+   ],
+   "f0_nominal": 293.5,
+   "f0_hz": [
+    280.0,
+    360.0
+   ],
+   "source": "角色表第 3 節（4.3–4.6；全劇最高、明亮）；casting.json 折折 note（F0 293.5 Hz）",
+   "rate_range": [
+    3.8,
+    5.1
+   ],
+   "f0_range": [
+    280.0,
+    360.0
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:49:46",
+    "seeds": {
+     "zhezhe": 20261021
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "沒有骨架，就沒有主灯。纸灯节怎麼辦？",
+      "sent": "沒有骨架，就沒有主灯。纸灯节怎麼辦？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c003_04/zhezhe_a0_s0_0d64f4b8bd10.mp3",
+      "request_id": "FaRje8ZFy9g5SgGT6794",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -37.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -16.3,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.6,
+       "t_fill_s": 4.7,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        3.72,
+        5.05
+       ],
+       "decay_end_s": 3.84,
+       "cut_s": 3.94,
+       "floor_rel_db": -33.7,
+       "removed_s": 1.74
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.06,
+         2.22
+        ],
+        "cut_s": 2.16,
+        "depth_rel_db": -37.7,
+        "existing_pause_ms": 620,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 0.862,
+       "rate_before": 3.836,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c003_04/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.51,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -4.3,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 6
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c003_04/a1.wav",
+     "seconds": 3.76,
+     "speech_seconds": 3.38,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -4.3,
+     "clipped_samples": 0,
+     "rate_cps": 4.44,
+     "rate_cps_net": 5.28,
+     "rate_cps_net_r": 4.46,
+     "pauses_ms": [
+      540
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 292.5,
+     "f0_p10": 228.5,
+     "f0_p90": 418.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 260,
+     "rate_net_syll": 4.46,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "沒有骨架就沒有主刀直刀結怎麼辦",
+      "cer": 0.267,
+      "per": 0.2,
+      "diffs": [
+       {
+        "ref": "燈紙燈節",
+        "hyp": "刀直刀結",
+        "kind": "字不同",
+        "span": [
+         8,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "紙燈節",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "沒有骨架就沒有主燈直燈結怎麼辦",
+      "cer": 0.133,
+      "per": 0.067,
+      "diffs": [
+       {
+        "ref": "紙",
+        "hyp": "直",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         9,
+         10
+        ]
+       },
+       {
+        "ref": "節",
+        "hyp": "結",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         11,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "紙燈節",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "燈紙燈節",
+          "hyp": "刀直刀結",
+          "kind": "字不同",
+          "span": [
+           8,
+           12
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "紙",
+          "hyp": "直",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           9,
+           10
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "紙燈節": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "紙燈節"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -37.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.46,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       540
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.06,
+         2.22
+        ],
+        "cut_s": 2.16,
+        "depth_rel_db": -37.7,
+        "existing_pause_ms": 620,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.3,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 3.0,
+    "billed": 9,
+    "billed_new": 9,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.94 秒處切掉 1.74 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×0.862（母帶前淨語速 3.836 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 10:50:29",
+    "seeds": {
+     "zhezhe": 20261022
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "沒有骨架，就沒有主灯。纸灯节怎麼辦？",
+      "sent": "沒有骨架，就沒有主灯。纸灯节怎麼辦？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c003_04/zhezhe_a1_s0_7f018562a914.mp3",
+      "request_id": "fgzKRZXQUetXNwG3erh6",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -30.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -9.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.74,
+       "t_fill_s": 4.8,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.07,
+        5.06
+       ],
+       "decay_end_s": 4.09,
+       "cut_s": 4.19,
+       "floor_rel_db": -30.7,
+       "removed_s": 1.49
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.1,
+         2.26
+        ],
+        "cut_s": 2.34,
+        "depth_rel_db": -31.5,
+        "existing_pause_ms": 90,
+        "inserted_ms": 360,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 0.812,
+       "rate_before": 3.614,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c003_04/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.8,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -4.9,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 5
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c003_04/a2.wav",
+     "seconds": 4.05,
+     "speech_seconds": 3.68,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -4.9,
+     "clipped_samples": 0,
+     "rate_cps": 4.08,
+     "rate_cps_net": 4.52,
+     "rate_cps_net_r": 4.5,
+     "pauses_ms": [
+      360
+     ],
+     "pauses_ms_r": [
+      320
+     ],
+     "f0_median": 298.2,
+     "f0_p10": 226.8,
+     "f0_p90": 410.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.5,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "沒有骨架就沒有主兜指凍節怎麼辦",
+      "cer": 0.2,
+      "per": 0.133,
+      "diffs": [
+       {
+        "ref": "燈紙燈",
+        "hyp": "兜指凍",
+        "kind": "字不同",
+        "span": [
+         8,
+         11
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "紙燈節",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "沒有骨架就沒有主兜紫冬節怎麼辦",
+      "cer": 0.2,
+      "per": 0.2,
+      "diffs": [
+       {
+        "ref": "燈紙燈",
+        "hyp": "兜紫冬",
+        "kind": "字不同",
+        "span": [
+         8,
+         11
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "紙燈節",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "燈紙燈",
+          "hyp": "兜指凍",
+          "kind": "字不同",
+          "span": [
+           8,
+           11
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "燈紙燈",
+          "hyp": "兜紫冬",
+          "kind": "字不同",
+          "span": [
+           8,
+           11
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "紙燈節": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "紙燈節"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -30.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.5,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       360
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.1,
+         2.26
+        ],
+        "cut_s": 2.34,
+        "depth_rel_db": -31.5,
+        "existing_pause_ms": 90,
+        "inserted_ms": 360,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 3.0,
+    "billed": 9,
+    "billed_new": 9,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.19 秒處切掉 1.49 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×0.812（母帶前淨語速 3.614 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+    "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "哲",
+     "口訣": "口決",
+     "紙登結": "纸灯节",
+     "燈籠": "灯笼",
+     "燈": "灯",
+     "哲哲": "折折"
+    },
+    "post": {
+     "pitch_shift_st": 2.0,
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.75,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 18,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/zz_prod_v2/out/vo_a0_c003_04_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_prod_v2/lipsync/a0_c003_04_el01.json",
+  "seconds": 3.76,
+  "speech_start": 0.12,
+  "speech_end": 3.51,
+  "speech_segments": [
+   [
+    0.12,
+    1.93
+   ],
+   [
+    2.46,
+    3.5
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "燈紙燈節",
+        "hyp": "刀直刀結",
+        "kind": "字不同",
+        "span": [
+         8,
+         12
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "紙",
+        "hyp": "直",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         9,
+         10
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": false,
+    "words": {
+     "紙燈節": {
+      "small": "不一致（需複查）",
+      "large-v3-turbo": "不一致（需複查）"
+     }
+    },
+    "inconsistent": [
+     "紙燈節"
+    ],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -37.4,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.46,
+    "range": [
+     3.8,
+     5.1
+    ],
+    "syllables": 15,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     540
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       2.06,
+       2.22
+      ],
+      "cut_s": 2.16,
+      "depth_rel_db": -37.7,
+      "existing_pause_ms": 620,
+      "inserted_ms": 0,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -4.3,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a",
+   "b"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c003_04/a1.wav",
+   "seconds": 3.76,
+   "speech_seconds": 3.38,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -4.3,
+   "clipped_samples": 0,
+   "rate_cps": 4.44,
+   "rate_cps_net": 5.28,
+   "rate_cps_net_r": 4.46,
+   "pauses_ms": [
+    540
+   ],
+   "pauses_ms_r": [],
+   "f0_median": 292.5,
+   "f0_p10": 228.5,
+   "f0_p90": 418.9,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 260,
+   "rate_net_syll": 4.46,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "FaRje8ZFy9g5SgGT6794"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 3.94 秒處切掉 1.74 秒）",
+   "PSOLA 改調 2.0 半音、長度 ×0.862（母帶前淨語速 3.836 → 目標 4.45）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a0_c004_03": {
+  "id": "a0_c004_03",
+  "role": "折折",
+  "codes": [
+   "zhezhe"
+  ],
+  "text": "交給我！我摺成放大鏡，馬上找到！",
+  "required": false,
+  "signature": "7522b01a10b4104c",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.3,
+    4.6
+   ],
+   "rate_cps_net": [
+    3.8,
+    5.1
+   ],
+   "f0_nominal": 293.5,
+   "f0_hz": [
+    280.0,
+    360.0
+   ],
+   "source": "角色表第 3 節（4.3–4.6；全劇最高、明亮）；casting.json 折折 note（F0 293.5 Hz）",
+   "rate_range": [
+    3.8,
+    5.1
+   ],
+   "f0_range": [
+    280.0,
+    360.0
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:52:24",
+    "seeds": {
+     "zhezhe": 20261021
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "交給我！我哲成放大鏡，馬上找到！",
+      "sent": "交給我！我哲成放大鏡，馬上找到！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c004_03/zhezhe_a0_s0_0d8885f0ec44.mp3",
+      "request_id": "1xRwbywQd6VjBilO3wWR",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": true,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -32.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -19.2,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.68,
+       "t_fill_s": 3.06,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.71,
+        3.5
+       ],
+       "decay_end_s": 2.77,
+       "cut_s": 2.87,
+       "floor_rel_db": -31.6,
+       "removed_s": 1.37
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.52,
+         0.64
+        ],
+        "cut_s": 0.67,
+        "depth_rel_db": -33.1,
+        "existing_pause_ms": 70,
+        "inserted_ms": 380,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 1.0,
+       "rate_before": 4.594,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c004_03/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.37,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -4.6,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c004_03/a1.wav",
+     "seconds": 3.62,
+     "speech_seconds": 3.25,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -4.6,
+     "clipped_samples": 0,
+     "rate_cps": 4.0,
+     "rate_cps_net": 4.64,
+     "rate_cps_net_r": 4.58,
+     "pauses_ms": [
+      450
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 316.1,
+     "f0_p10": 247.5,
+     "f0_p90": 424.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 260,
+     "rate_net_syll": 4.58,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "都給我我轍城放大鏡馬上找到",
+      "cer": 0.231,
+      "per": 0.077,
+      "diffs": [
+       {
+        "ref": "交",
+        "hyp": "都",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "ref": "摺成",
+        "hyp": "轍城",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         4,
+         6
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "都給我我折承放大鏡馬上找到",
+      "cer": 0.231,
+      "per": 0.077,
+      "diffs": [
+       {
+        "ref": "交",
+        "hyp": "都",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "ref": "摺成",
+        "hyp": "折承",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         4,
+         6
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "交",
+          "hyp": "都",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "交",
+          "hyp": "都",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -32.6,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.58,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 13,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       450
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.52,
+         0.64
+        ],
+        "cut_s": 0.67,
+        "depth_rel_db": -33.1,
+        "existing_pause_ms": 70,
+        "inserted_ms": 380,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 8,
+    "billed_new": 0,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.87 秒處切掉 1.37 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×1.0（母帶前淨語速 4.594 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 10:53:16",
+    "seeds": {
+     "zhezhe": 20261022
+    },
+    "settings": {
+     "zhezhe": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "zhezhe",
+      "i": 0,
+      "text": "交給我！我哲成放大鏡，馬上找到！",
+      "sent": "交給我！我哲成放大鏡，馬上找到！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c004_03/zhezhe_a1_s0_238aff7541a4.mp3",
+      "request_id": "MNpF6pxyzdFyHhZpIDaK",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": true,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -35.3,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -19.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.88,
+       "t_fill_s": 3.6,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.93,
+        3.79
+       ],
+       "decay_end_s": 2.94,
+       "cut_s": 3.04,
+       "floor_rel_db": -31.3,
+       "removed_s": 1.44
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.6,
+         0.82
+        ],
+        "cut_s": 0.76,
+        "depth_rel_db": -34.8,
+        "existing_pause_ms": 160,
+        "inserted_ms": 290,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 2.0,
+       "stretch": 1.0,
+       "rate_before": 4.362,
+       "target": 4.45
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c004_03/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.43,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -3.9,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 10
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c004_03/a2.wav",
+     "seconds": 3.68,
+     "speech_seconds": 3.31,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.93,
+     "rate_cps_net": 4.5,
+     "rate_cps_net_r": 4.38,
+     "pauses_ms": [
+      420
+     ],
+     "pauses_ms_r": [
+      310
+     ],
+     "f0_median": 314.7,
+     "f0_p10": 252.6,
+     "f0_p90": 391.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.38,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "交給我我就身放大鏡馬上找到",
+      "cer": 0.154,
+      "per": 0.154,
+      "diffs": [
+       {
+        "ref": "摺成",
+        "hyp": "就身",
+        "kind": "字不同",
+        "span": [
+         4,
+         6
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "交給我我折身放大鏡馬上找到",
+      "cer": 0.154,
+      "per": 0.077,
+      "diffs": [
+       {
+        "ref": "摺成",
+        "hyp": "折身",
+        "kind": "字不同",
+        "span": [
+         4,
+         6
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "摺成",
+          "hyp": "就身",
+          "kind": "字不同",
+          "span": [
+           4,
+           6
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "摺成",
+          "hyp": "折身",
+          "kind": "字不同",
+          "span": [
+           4,
+           6
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -35.3,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.38,
+      "range": [
+       3.8,
+       5.1
+      ],
+      "syllables": 13,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       420
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.6,
+         0.82
+        ],
+        "cut_s": 0.76,
+        "depth_rel_db": -34.8,
+        "existing_pause_ms": 160,
+        "inserted_ms": 290,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 8,
+    "billed_new": 0,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.04 秒處切掉 1.44 秒）",
+     "PSOLA 改調 2.0 半音、長度 ×1.0（母帶前淨語速 4.362 → 目標 4.45）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+    "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "哲",
+     "口訣": "口決",
+     "紙登結": "纸灯节",
+     "燈籠": "灯笼",
+     "燈": "灯",
+     "哲哲": "折折"
+    },
+    "post": {
+     "pitch_shift_st": 2.0,
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.75,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 16,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/zz_prod_v2/out/vo_a0_c004_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_prod_v2/lipsync/a0_c004_03_el01.json",
+  "seconds": 3.62,
+  "speech_start": 0.12,
+  "speech_end": 3.37,
+  "speech_segments": [
+   [
+    0.11,
+    0.74
+   ],
+   [
+    1.18,
+    3.36
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "交",
+        "hyp": "都",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "交",
+        "hyp": "都",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -32.6,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.58,
+    "range": [
+     3.8,
+     5.1
+    ],
+    "syllables": 13,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     450
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       0.52,
+       0.64
+      ],
+      "cut_s": 0.67,
+      "depth_rel_db": -33.1,
+      "existing_pause_ms": 70,
+      "inserted_ms": 380,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -4.6,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/zz_prod_v2/_attempts/a0_c004_03/a1.wav",
+   "seconds": 3.62,
+   "speech_seconds": 3.25,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -4.6,
+   "clipped_samples": 0,
+   "rate_cps": 4.0,
+   "rate_cps_net": 4.64,
+   "rate_cps_net_r": 4.58,
+   "pauses_ms": [
+    450
+   ],
+   "pauses_ms_r": [
+    400
+   ],
+   "f0_median": 316.1,
+   "f0_p10": 247.5,
+   "f0_p90": 424.2,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 260,
+   "rate_net_syll": 4.58,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "1xRwbywQd6VjBilO3wWR"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.87 秒處切掉 1.37 秒）",
+   "PSOLA 改調 2.0 半音、長度 ×1.0（母帶前淨語速 4.594 → 目標 4.45）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

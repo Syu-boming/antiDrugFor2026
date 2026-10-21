@@ -1,0 +1,1268 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "rows": [
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "edge",
+   "voice": "edge 基準（casting.json）",
+   "model": "edge",
+   "file": "tone_checks/narrator__edge_edge.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.186,
+    "燈_over_紙_mean": 1.015,
+    "節_end_over_min": 1.001,
+    "節_min_pos": 0.82,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "這裡是小燈證每年秋天震上都會半指燈節",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 1.188,
+    "燈_over_紙_mean": 1.3,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 0.94,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "只登結",
+     "large-v3-turbo": "紙燈結"
+    },
+    "燈_over_錯誤對照等_mean": 1.13
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 1.177,
+    "燈_over_紙_mean": 1.272,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 0.88,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "只登結",
+     "large-v3-turbo": "紙燈結"
+    },
+    "燈_over_錯誤對照等_mean": 1.113
+   }
+  },
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "narrator_Chihiro-NIqn",
+   "voice": "Chihiro Yoko - Clear, Soothing and Sweet",
+   "model": "v2",
+   "file": "tone_checks/narrator__Chihiro-NIqn_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.013,
+    "燈_over_紙_mean": 1.059,
+    "節_end_over_min": 1.003,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "這裡是小燈針每年秋天正常都會半指燈節",
+     "large-v3-turbo": "這裡是小燈針每年秋天鎮上都會半指燈結"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 1.013,
+    "燈_over_紙_mean": 1.059,
+    "節_end_over_min": 1.003,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "這裡是小燈針每年秋天正常都會半指燈節",
+     "large-v3-turbo": "這裡是小燈針每年秋天鎮上都會半指燈結"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.988,
+    "燈_over_紙_mean": 1.112,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段少於 3 段：用字時間戳範圍",
+    "islands": 2,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直等節",
+     "large-v3-turbo": "直凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.009
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.988,
+    "燈_over_紙_mean": 1.113,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段少於 3 段：用字時間戳範圍",
+    "islands": 2,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直等節",
+     "large-v3-turbo": "直凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.01
+   }
+  },
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "narrator_Chihiro-NIqn",
+   "voice": "Chihiro Yoko - Clear, Soothing and Sweet",
+   "model": "v3",
+   "file": "tone_checks/narrator__Chihiro-NIqn_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.018,
+    "燈_over_紙_mean": 1.145,
+    "節_end_over_min": 1.016,
+    "節_min_pos": 0.62,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小鄧鎮每年秋天鎮上都會辦直燈節",
+     "large-v3-turbo": "這裡是小凳鎮每年秋天鎮上都會辦直燈節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.92,
+    "燈_over_紙_mean": 0.879,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 0.88,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小鄧鎮每年秋天鎮上都會辦直鄧節",
+     "large-v3-turbo": "這裡是小鄧鎮每年秋天鎮上都會辦職鄧節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.687,
+    "燈_over_紙_mean": 1.084,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段少於 3 段：用字時間戳範圍",
+    "islands": 2,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "池燈節",
+     "large-v3-turbo": "遲凳節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": null,
+    "燈_over_紙_mean": null,
+    "節_end_over_min": null,
+    "節_min_pos": null,
+    "f0_pass": null,
+    "error": "轉寫無法逐字對齊到「紙登結」",
+    "method": null,
+    "islands": null,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "咖喱洞解",
+     "large-v3-turbo": "革命動革"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "narrator_Door-qDeY",
+   "voice": "Door Chow",
+   "model": "v2",
+   "file": "tone_checks/narrator__Door-qDeY_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.101,
+    "燈_over_紙_mean": 1.413,
+    "節_end_over_min": 1.008,
+    "節_min_pos": 0.59,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小燈針每年秋天正常都會辦直燈接",
+     "large-v3-turbo": "這裡是小鄧真每年秋天鎮上都會伴著登街"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 1.101,
+    "燈_over_紙_mean": 1.412,
+    "節_end_over_min": 1.008,
+    "節_min_pos": 0.67,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小燈針每年秋天正常都會辦直燈接",
+     "large-v3-turbo": "這裡是小鄧真每年秋天鎮上都會伴著燈街"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 1.596,
+    "燈_over_紙_mean": 1.095,
+    "節_end_over_min": 1.001,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "指凳姐",
+     "large-v3-turbo": "只凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 1.597,
+    "燈_over_紙_mean": 1.094,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "指凳節",
+     "large-v3-turbo": "只凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   }
+  },
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "narrator_Door-qDeY",
+   "voice": "Door Chow",
+   "model": "v3",
+   "file": "tone_checks/narrator__Door-qDeY_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.116,
+    "燈_over_紙_mean": 1.121,
+    "節_end_over_min": 1.103,
+    "節_min_pos": 0.0,
+    "f0_pass": true,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "這裡是小燈證每年秋天正常都會辦紙燈節",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 1.634,
+    "燈_over_紙_mean": 0.94,
+    "節_end_over_min": 1.007,
+    "節_min_pos": 0.76,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小燈證每年秋天正常都會辦直燈節",
+     "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦直燈節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.598,
+    "燈_over_紙_mean": 1.263,
+    "節_end_over_min": 1.001,
+    "節_min_pos": 0.84,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "是淡潔",
+     "large-v3-turbo": "是凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.182
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 1.078,
+    "燈_over_紙_mean": 1.621,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 0.86,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "只登簡",
+     "large-v3-turbo": "指燈簡"
+    },
+    "燈_over_錯誤對照等_mean": 1.283
+   }
+  },
+  {
+   "role": "narrator",
+   "role_zh": "旁白",
+   "cand": "narrator_Ling-Z8Ai",
+   "voice": "Ling - Steady, Calm and Grounded",
+   "model": "v2",
+   "file": "tone_checks/narrator__Ling-Z8Ai_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.793,
+    "燈_over_紙_mean": 1.306,
+    "節_end_over_min": 1.103,
+    "節_min_pos": 0.25,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小鄧鎮每年秋天鎮上都會半支等級",
+     "large-v3-turbo": "這裡是小凳鎮每年秋天鎮上都會半支凳節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.819,
+    "燈_over_紙_mean": 1.286,
+    "節_end_over_min": 1.231,
+    "節_min_pos": 0.17,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "這裡是小鄧鎮每年秋天鎮上都會半支等級",
+     "large-v3-turbo": "這裡是小凳鎮每年秋天鎮上都會半支凳節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.667,
+    "燈_over_紙_mean": 1.08,
+    "節_end_over_min": 1.016,
+    "節_min_pos": 0.63,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直當節",
+     "large-v3-turbo": "直凳節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.667,
+    "燈_over_紙_mean": 1.08,
+    "節_end_over_min": 1.016,
+    "節_min_pos": 0.63,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直當節",
+     "large-v3-turbo": "直凳節"
+    },
+    "燈_over_錯誤對照等_mean": 0.999
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "edge",
+   "voice": "edge 基準（casting.json）",
+   "model": "edge",
+   "file": "tone_checks/lin__edge_edge.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.12,
+    "燈_over_紙_mean": 1.212,
+    "節_end_over_min": 1.001,
+    "節_min_pos": 0.89,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "今天只登結學校提早放學",
+     "large-v3-turbo": "今天只登節學校提早放學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "lin_Door-qDeY",
+   "voice": "Door Chow",
+   "model": "v2",
+   "file": "tone_checks/lin__Door-qDeY_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.034,
+    "燈_over_紙_mean": 1.138,
+    "節_end_over_min": 1.017,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "今天只登街學校提早放學",
+     "large-v3-turbo": "今天只登階學校提早放學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "lin_Door-qDeY",
+   "voice": "Door Chow",
+   "model": "v3",
+   "file": "tone_checks/lin__Door-qDeY_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.181,
+    "燈_over_紙_mean": 1.041,
+    "節_end_over_min": 1.035,
+    "節_min_pos": 0.78,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "今天紙燈節學校提早放學",
+     "large-v3-turbo": "今天只登節學校提早放學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "lin_Jane-0Aj5",
+   "voice": "Jane - Low, Calm and Slow",
+   "model": "v2",
+   "file": "tone_checks/lin__Jane-0Aj5_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.98,
+    "燈_over_紙_mean": 0.733,
+    "節_end_over_min": 1.134,
+    "節_min_pos": 0.64,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "今天只登街學校提早放學",
+     "large-v3-turbo": "今天只等待學校提早放學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "lin_Jane-0Aj5",
+   "voice": "Jane - Low, Calm and Slow",
+   "model": "v3",
+   "file": "tone_checks/lin__Jane-0Aj5_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.989,
+    "燈_over_紙_mean": 0.838,
+    "節_end_over_min": 1.043,
+    "節_min_pos": 0.5,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "紀念紙登結學校提早放學",
+     "large-v3-turbo": "今年只登節學校提早放學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "lin",
+   "role_zh": "林老師",
+   "cand": "lin_Jui-5ypm",
+   "voice": "Jui - Calm, Warm & Pleasing ",
+   "model": "v2",
+   "file": "tone_checks/lin__Jui-5ypm_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.683,
+    "燈_over_紙_mean": 0.592,
+    "節_end_over_min": 1.094,
+    "節_min_pos": 0.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "今天只等街學校提早放學",
+     "large-v3-turbo": "今天只等街學校提早訪學"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "edge",
+   "voice": "edge 基準（casting.json）",
+   "model": "edge",
+   "file": "tone_checks/zhezhe__edge_edge.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.05,
+    "燈_over_紙_mean": 0.909,
+    "節_end_over_min": 1.005,
+    "節_min_pos": 0.77,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 1.05,
+    "燈_over_紙_mean": 1.291,
+    "節_end_over_min": 1.0,
+    "節_min_pos": 0.81,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "擠單節",
+     "large-v3-turbo": "子彈節"
+    },
+    "燈_over_錯誤對照等_mean": 1.295
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 1.055,
+    "燈_over_紙_mean": 1.277,
+    "節_end_over_min": 1.015,
+    "節_min_pos": 0.73,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "擠單節",
+     "large-v3-turbo": "子彈結"
+    },
+    "燈_over_錯誤對照等_mean": 1.287
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "zhezhe_Chloe-cXGZ",
+   "voice": "Chloe - Gentle, Delicate, Reassuring",
+   "model": "v2",
+   "file": "tone_checks/zhezhe__Chloe-cXGZ_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.912,
+    "燈_over_紙_mean": 0.955,
+    "節_end_over_min": 1.027,
+    "節_min_pos": 0.17,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是智燈節今年的助燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是智燈節今年的智燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.913,
+    "燈_over_紙_mean": 0.955,
+    "節_end_over_min": 1.027,
+    "節_min_pos": 0.17,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是智燈節今年的燭燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是智燈節今年的智燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.855,
+    "燈_over_紙_mean": 0.805,
+    "節_end_over_min": 1.081,
+    "節_min_pos": 0.5,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "知等界",
+     "large-v3-turbo": "智等節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.855,
+    "燈_over_紙_mean": 0.804,
+    "節_end_over_min": 1.078,
+    "節_min_pos": 0.5,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "知等界",
+     "large-v3-turbo": "知等節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "zhezhe_Lulu-BT0S",
+   "voice": "Lulu - Cute Little Witch ",
+   "model": "v2",
+   "file": "tone_checks/zhezhe__Lulu-BT0S_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 0.731,
+    "燈_over_紙_mean": 0.755,
+    "節_end_over_min": 1.147,
+    "節_min_pos": 0.1,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是指等節今年的主燈是找著我的樣子做的",
+     "large-v3-turbo": "明天就是知等節今年的主燈是找著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.731,
+    "燈_over_紙_mean": 0.759,
+    "節_end_over_min": 1.147,
+    "節_min_pos": 0.05,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是隻等節今年的主燈是找著我的樣子做的",
+     "large-v3-turbo": "明天就是枝等節今年的主燈是找著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.71,
+    "燈_over_紙_mean": 1.173,
+    "節_end_over_min": 1.06,
+    "節_min_pos": 0.48,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直燈節",
+     "large-v3-turbo": "直燈節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.711,
+    "燈_over_紙_mean": 1.171,
+    "節_end_over_min": 1.06,
+    "節_min_pos": 0.48,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直燈節",
+     "large-v3-turbo": "直燈節"
+    },
+    "燈_over_錯誤對照等_mean": 1.0
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "zhezhe_Lulu-BT0S",
+   "voice": "Lulu - Cute Little Witch ",
+   "model": "v3",
+   "file": "tone_checks/zhezhe__Lulu-BT0S_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.173,
+    "燈_over_紙_mean": 1.36,
+    "節_end_over_min": 1.12,
+    "節_min_pos": 0.5,
+    "f0_pass": true,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "明天就是指燈節今年的主動是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙燈節今年的主凳是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.971,
+    "燈_over_紙_mean": 1.421,
+    "節_end_over_min": 1.096,
+    "節_min_pos": 0.0,
+    "f0_pass": true,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是指凍節今年的主動是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙洞節今年的主洞是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": null,
+    "燈_over_紙_mean": null,
+    "節_end_over_min": null,
+    "節_min_pos": null,
+    "f0_pass": null,
+    "error": "轉寫無法逐字對齊到「紙燈節」",
+    "method": null,
+    "islands": null,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "Tamitonjutsu",
+     "large-v3-turbo": "タミトン雑"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.671,
+    "燈_over_紙_mean": 0.815,
+    "節_end_over_min": 1.002,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "Kamidoketsu",
+     "large-v3-turbo": "髪土結"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "zhezhe_Tiffy-1AKk",
+   "voice": "Tiffy - Taiwanese Bilingual Narrator",
+   "model": "v2",
+   "file": "tone_checks/zhezhe__Tiffy-1AKk_v2.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.027,
+    "燈_over_紙_mean": 0.836,
+    "節_end_over_min": 1.018,
+    "節_min_pos": 0.6,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙燈街今年的主燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 1.027,
+    "燈_over_紙_mean": 0.837,
+    "節_end_over_min": 1.017,
+    "節_min_pos": 0.6,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙燈街今年的主燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": 0.683,
+    "燈_over_紙_mean": 0.892,
+    "節_end_over_min": 1.012,
+    "節_min_pos": 0.39,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直檔街",
+     "large-v3-turbo": "直檔節"
+    },
+    "燈_over_錯誤對照等_mean": 0.999
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.684,
+    "燈_over_紙_mean": 0.893,
+    "節_end_over_min": 1.009,
+    "節_min_pos": 0.44,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "直檔街",
+     "large-v3-turbo": "直檔節"
+    },
+    "燈_over_錯誤對照等_mean": 0.996
+   }
+  },
+  {
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "cand": "zhezhe_Tiffy-1AKk",
+   "voice": "Tiffy - Taiwanese Bilingual Narrator",
+   "model": "v3",
+   "file": "tone_checks/zhezhe__Tiffy-1AKk_v3.json",
+   "整句（替身字，正式管線）": {
+    "燈_end_over_start": 1.136,
+    "燈_over_紙_mean": 1.226,
+    "節_end_over_min": 1.004,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": true,
+    "hyp": {
+     "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "整句（原字）": {
+    "燈_end_over_start": 0.986,
+    "燈_over_紙_mean": 1.206,
+    "節_end_over_min": 1.002,
+    "節_min_pos": 1.0,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+    "islands": 4,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "明天就是指燈節今年的主燈是照著我的樣子做的",
+     "large-v3-turbo": "明天就是紫凳節今年的竹凳是照著我的樣子做的"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙燈節（原字）": {
+    "燈_end_over_start": null,
+    "燈_over_紙_mean": null,
+    "節_end_over_min": null,
+    "節_min_pos": null,
+    "f0_pass": null,
+    "error": "轉寫無法逐字對齊到「紙燈節」",
+    "method": null,
+    "islands": null,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "學妹淡潔",
+     "large-v3-turbo": "解密誕節"
+    },
+    "燈_over_錯誤對照等_mean": null
+   },
+   "短框句 紙登結（替身字）": {
+    "燈_end_over_start": 0.929,
+    "燈_over_紙_mean": 1.077,
+    "節_end_over_min": 1.07,
+    "節_min_pos": 0.56,
+    "f0_pass": false,
+    "error": null,
+    "method": "有聲段正好 3 段",
+    "islands": 3,
+    "asr_both_ok": false,
+    "hyp": {
+     "small": "紙刀血",
+     "large-v3-turbo": "紙凍結"
+    },
+    "燈_over_錯誤對照等_mean": null
+   }
+  }
+ ],
+ "waveform_identity": {
+  "_說明": "合成器原始檔（解碼後）兩兩比較：corr＝相關係數、residual_db＝差值能量相對原訊號（dB）。determinism＝Door Chow「紙燈節。」同文字、同參數、同 seed 重複呼叫一次的對照（量合成器本身的變動）。",
+  "pairs": {
+   "narrator_Chihiro-NIqn｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9983,
+     "residual_db": -24.7,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.998,
+     "residual_db": -24.1,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9987,
+     "residual_db": -25.8,
+     "samples": [
+      238516,
+      238516
+     ]
+    }
+   },
+   "narrator_Chihiro-NIqn｜v3": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.0423,
+     "residual_db": 1.7,
+     "samples": [
+      49920,
+      49920
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": -0.0565,
+     "residual_db": 2.4,
+     "samples": [
+      30720,
+      30720
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": -0.0224,
+     "residual_db": 3.0,
+     "samples": [
+      207360,
+      207360
+     ]
+    }
+   },
+   "narrator_Door-qDeY｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9976,
+     "residual_db": -23.1,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9977,
+     "residual_db": -23.3,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9979,
+     "residual_db": -23.7,
+     "samples": [
+      218454,
+      218454
+     ]
+    }
+   },
+   "narrator_Door-qDeY｜v3": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.0014,
+     "residual_db": 1.7,
+     "samples": [
+      42240,
+      42240
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": -0.0066,
+     "residual_db": 2.9,
+     "samples": [
+      57600,
+      57600
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.0006,
+     "residual_db": 2.8,
+     "samples": [
+      230400,
+      230400
+     ]
+    }
+   },
+   "narrator_Ling-Z8Ai｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.994,
+     "residual_db": -19.2,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9959,
+     "residual_db": -20.9,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9958,
+     "residual_db": -20.8,
+     "samples": [
+      231829,
+      231829
+     ]
+    }
+   },
+   "zhezhe_Chloe-cXGZ｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9983,
+     "residual_db": -24.8,
+     "samples": [
+      64645,
+      64645
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9987,
+     "residual_db": -25.8,
+     "samples": [
+      64645,
+      64645
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9991,
+     "residual_db": -27.5,
+     "samples": [
+      236287,
+      236287
+     ]
+    }
+   },
+   "zhezhe_Lulu-BT0S｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9968,
+     "residual_db": -22.0,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.997,
+     "residual_db": -22.2,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9974,
+     "residual_db": -22.8,
+     "samples": [
+      287556,
+      287556
+     ]
+    }
+   },
+   "zhezhe_Lulu-BT0S｜v3": {
+    "紙燈節 vs 紙登結": {
+     "corr": -0.0482,
+     "residual_db": 2.7,
+     "samples": [
+      138240,
+      138240
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.0303,
+     "residual_db": 2.7,
+     "samples": [
+      65280,
+      65280
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.0084,
+     "residual_db": 3.0,
+     "samples": [
+      253440,
+      253440
+     ]
+    }
+   },
+   "zhezhe_Tiffy-1AKk｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9985,
+     "residual_db": -25.2,
+     "samples": [
+      55728,
+      55728
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9985,
+     "residual_db": -25.3,
+     "samples": [
+      55728,
+      55728
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9985,
+     "residual_db": -25.1,
+     "samples": [
+      216225,
+      216225
+     ]
+    }
+   },
+   "zhezhe_Tiffy-1AKk｜v3": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.0106,
+     "residual_db": 1.5,
+     "samples": [
+      57600,
+      57600
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.0545,
+     "residual_db": 2.4,
+     "samples": [
+      57600,
+      57600
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": -0.0154,
+     "residual_db": 3.1,
+     "samples": [
+      245760,
+      245760
+     ]
+    }
+   }
+  },
+  "determinism_same_text": {
+   "v2": {
+    "corr": 0.9976,
+    "resid_db": -23.1,
+    "len": [
+     57958,
+     57958
+    ],
+    "len_first": 57958,
+    "len_repeat": 57958
+   },
+   "v3": {
+    "corr": 0.3214,
+    "resid_db": 1.7,
+    "len": [
+     57600,
+     57600
+    ],
+    "len_first": 57600,
+    "len_repeat": 57600
+   }
+  }
+ }
+}

@@ -1,0 +1,637 @@
+{
+ "_說明": "G3 修正第 1 輪：混音參數離線模擬（修正清單第 9、11、12 項的「聲音那一半」）。 方法見 tools/vo_mixsim.py 檔頭。聽感未驗證。",
+ "ducking_ts_current": {
+  "DUCK_LEVEL": 0.32,
+  "DUCK_LEAD": 0.15,
+  "DUCK_TC_DOWN": 0.06,
+  "DUCK_RELEASE": 0.3,
+  "DUCK_TC_UP": 0.25,
+  "DUCK_BRIDGE": 0.9
+ },
+ "hold_scene_assumed_s": 6.0,
+ "retimed": {
+  "a2_c002": [
+   [
+    "a2_c002_01",
+    13.0,
+    17.89
+   ],
+   [
+    "a2_c002_02",
+    19.74,
+    21.46
+   ]
+  ],
+  "a2_c004": [
+   [
+    "a2_c004_01",
+    0.8,
+    5.49
+   ],
+   [
+    "a2_c004_02",
+    5.94,
+    17.54
+   ]
+  ]
+ },
+ "audio_sources": {
+  "vo_a2_c001_01": "audio/vo/vo_a2_c001_01_v02.wav",
+  "vo_a2_c001_02": "audio/vo/vo_a2_c001_02_v02.wav",
+  "vo_a2_c001_03": "audio/vo/vo_a2_c001_03_v02.wav",
+  "vo_a2_c002_01": "audio/vo/vo_a2_c002_01_v02.wav",
+  "vo_a2_c002_02": "audio/vo/vo_a2_c002_02_v02.wav",
+  "vo_a2_c004_01": "audio/vo/vo_a2_c004_01_v02.wav",
+  "vo_a2_c004_02": "audio/vo/vo_a2_c004_02_v02.wav",
+  "music_closing": "audio/music/music_closing_v01.wav",
+  "music_m4_light": "audio/music/music_m4_light_v02.wav",
+  "music_m4_strings": "audio/music/music_m4_strings_v01.wav",
+  "music_opening": "audio/music/music_opening_v01.wav",
+  "music_town": "audio/music/music_town_v01.wav",
+  "sfx_card_in": "audio/sfx/sfx_card_in_v01.wav",
+  "sfx_curtain_close": "audio/sfx/sfx_curtain_close_v01.wav",
+  "sfx_curtain_open": "audio/sfx/sfx_curtain_open_v01.wav",
+  "sfx_fold": "audio/sfx/sfx_fold_v01.wav",
+  "sfx_lamp_on": "audio/sfx/sfx_lamp_on_v01.wav",
+  "sfx_paper_rustle": "audio/sfx/sfx_paper_rustle_v01.wav",
+  "sfx_quiet_fold": "audio/sfx/sfx_quiet_fold_v01.wav",
+  "sfx_stamp": "audio/sfx/sfx_stamp_v01.wav",
+  "sfx_string_drop": "audio/sfx/sfx_string_drop_v01.wav",
+  "sfx_string_taut": "audio/sfx/sfx_string_taut_v01.wav"
+ },
+ "variants": {
+  "現行（0.32／0.9，無停格淡出）": {
+   "constants": {
+    "DUCK_LEVEL": 0.32,
+    "DUCK_BRIDGE": 0.9,
+    "FREEZE_LEVEL": null,
+    "FREEZE_TC": null
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -36.7,
+     "vo_minus_background_LU": 21.7,
+     "mix_I": -15.0
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -35.6,
+     "vo_minus_background_LU": 20.6,
+     "mix_I": -15.0
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -37.0,
+     "vo_minus_background_LU": 22.2,
+     "mix_I": -14.7
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -37.1,
+     "vo_minus_background_LU": 22.2,
+     "mix_I": -14.9
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    20.6,
+    22.2
+   ],
+   "lines_in_15_18": false,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -36.8,
+     "bg_momentary_min_LUFS": -38.1
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -38.6,
+     "bg_momentary_min_LUFS": -38.8
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -27.5,
+     "momentary_max_after_3s_LUFS": -23.4,
+     "pass_le_-35": false
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -25.9,
+     "momentary_max_after_3s_LUFS": -22.1,
+     "pass_le_-35": false
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.1,
+    "a2_c004": -15.2,
+    "a8_c002": -18.7,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 4.9,
+   "dialogue_line_mix_spread_lu": 0.3
+  },
+  "0.50／0.9＋停格 0.10": {
+   "constants": {
+    "DUCK_LEVEL": 0.5,
+    "DUCK_BRIDGE": 0.9,
+    "FREEZE_LEVEL": 0.1,
+    "FREEZE_TC": 0.6
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -32.8,
+     "vo_minus_background_LU": 17.8,
+     "mix_I": -15.1
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -31.7,
+     "vo_minus_background_LU": 16.7,
+     "mix_I": -14.9
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -33.1,
+     "vo_minus_background_LU": 18.3,
+     "mix_I": -14.7
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -33.2,
+     "vo_minus_background_LU": 18.3,
+     "mix_I": -14.9
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    16.7,
+    18.3
+   ],
+   "lines_in_15_18": false,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -32.9,
+     "bg_momentary_min_LUFS": -34.2
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -34.7,
+     "bg_momentary_min_LUFS": -34.9
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -46.8,
+     "momentary_max_after_3s_LUFS": -43.1,
+     "pass_le_-35": true
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -45.1,
+     "momentary_max_after_3s_LUFS": -42.1,
+     "pass_le_-35": true
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.1,
+    "a2_c004": -15.2,
+    "a8_c002": -18.8,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 4.9,
+   "dialogue_line_mix_spread_lu": 0.4
+  },
+  "0.56／0.9＋停格 0.10": {
+   "constants": {
+    "DUCK_LEVEL": 0.56,
+    "DUCK_BRIDGE": 0.9,
+    "FREEZE_LEVEL": 0.1,
+    "FREEZE_TC": 0.6
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -31.8,
+     "vo_minus_background_LU": 16.8,
+     "mix_I": -15.1
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -30.7,
+     "vo_minus_background_LU": 15.7,
+     "mix_I": -14.9
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.4,
+     "mix_I": -14.7
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.3,
+     "mix_I": -14.9
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    15.7,
+    17.4
+   ],
+   "lines_in_15_18": true,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -31.9,
+     "bg_momentary_min_LUFS": -33.2
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -33.7,
+     "bg_momentary_min_LUFS": -33.9
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -46.8,
+     "momentary_max_after_3s_LUFS": -43.1,
+     "pass_le_-35": true
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -45.1,
+     "momentary_max_after_3s_LUFS": -42.1,
+     "pass_le_-35": true
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.1,
+    "a2_c004": -15.2,
+    "a8_c002": -18.8,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 4.9,
+   "dialogue_line_mix_spread_lu": 0.4
+  },
+  "0.63／0.9＋停格 0.10": {
+   "constants": {
+    "DUCK_LEVEL": 0.63,
+    "DUCK_BRIDGE": 0.9,
+    "FREEZE_LEVEL": 0.1,
+    "FREEZE_TC": 0.6
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -30.8,
+     "vo_minus_background_LU": 15.8,
+     "mix_I": -15.0
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -29.7,
+     "vo_minus_background_LU": 14.7,
+     "mix_I": -14.9
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -31.1,
+     "vo_minus_background_LU": 16.3,
+     "mix_I": -14.6
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -31.2,
+     "vo_minus_background_LU": 16.3,
+     "mix_I": -14.8
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    14.7,
+    16.3
+   ],
+   "lines_in_15_18": false,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -30.9,
+     "bg_momentary_min_LUFS": -32.2
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -32.7,
+     "bg_momentary_min_LUFS": -32.9
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -46.8,
+     "momentary_max_after_3s_LUFS": -43.1,
+     "pass_le_-35": true
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -45.1,
+     "momentary_max_after_3s_LUFS": -42.1,
+     "pass_le_-35": true
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.2,
+    "a2_c004": -15.2,
+    "a8_c002": -18.8,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 5.0,
+   "dialogue_line_mix_spread_lu": 0.4
+  },
+  "0.56／2.0＋停格 0.10": {
+   "constants": {
+    "DUCK_LEVEL": 0.56,
+    "DUCK_BRIDGE": 2.0,
+    "FREEZE_LEVEL": 0.1,
+    "FREEZE_TC": 0.6
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -31.8,
+     "vo_minus_background_LU": 16.8,
+     "mix_I": -15.1
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -30.8,
+     "vo_minus_background_LU": 15.8,
+     "mix_I": -14.9
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.4,
+     "mix_I": -14.7
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.3,
+     "mix_I": -14.9
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    15.8,
+    17.4
+   ],
+   "lines_in_15_18": true,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -31.9,
+     "bg_momentary_min_LUFS": -33.2
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -33.7,
+     "bg_momentary_min_LUFS": -33.9
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -46.8,
+     "momentary_max_after_3s_LUFS": -43.1,
+     "pass_le_-35": true
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -45.1,
+     "momentary_max_after_3s_LUFS": -42.1,
+     "pass_le_-35": true
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.1,
+    "a2_c004": -15.2,
+    "a8_c002": -18.8,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 4.9,
+   "dialogue_line_mix_spread_lu": 0.4
+  },
+  "0.56／0.9＋停格 0（靜音）": {
+   "constants": {
+    "DUCK_LEVEL": 0.56,
+    "DUCK_BRIDGE": 0.9,
+    "FREEZE_LEVEL": 0.0,
+    "FREEZE_TC": 0.6
+   },
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "start": 28.6,
+     "end": 33.49,
+     "vo_in_mix_I": -15.0,
+     "background_I": -31.8,
+     "vo_minus_background_LU": 16.8,
+     "mix_I": -15.1
+    },
+    {
+     "id": "a2_c002_02",
+     "start": 35.34,
+     "end": 37.06,
+     "vo_in_mix_I": -15.0,
+     "background_I": -30.7,
+     "vo_minus_background_LU": 15.7,
+     "mix_I": -14.9
+    },
+    {
+     "id": "a2_c004_01",
+     "start": 45.86,
+     "end": 50.55,
+     "vo_in_mix_I": -14.8,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.4,
+     "mix_I": -14.7
+    },
+    {
+     "id": "a2_c004_02",
+     "start": 51.0,
+     "end": 62.6,
+     "vo_in_mix_I": -14.9,
+     "background_I": -32.2,
+     "vo_minus_background_LU": 17.3,
+     "mix_I": -14.9
+    }
+   ],
+   "vo_minus_background_LU_range": [
+    15.7,
+    17.4
+   ],
+   "lines_in_15_18": true,
+   "narration_pauses_background": [
+    {
+     "from": 53.08,
+     "to": 54.45,
+     "bg_momentary_mean_LUFS": -31.9,
+     "bg_momentary_min_LUFS": -33.2
+    },
+    {
+     "from": 59.05,
+     "to": 60.38,
+     "bg_momentary_mean_LUFS": -33.7,
+     "bg_momentary_min_LUFS": -33.9
+    }
+   ],
+   "freeze": [
+    {
+     "cue": "a2_c002",
+     "hold_from": 39.06,
+     "hold_to": 45.06,
+     "momentary_at_3s_LUFS": -68.3,
+     "momentary_max_after_3s_LUFS": -68.3,
+     "pass_le_-35": true
+    },
+    {
+     "cue": "a2_c004",
+     "hold_from": 64.6,
+     "hold_to": 70.6,
+     "momentary_at_3s_LUFS": -66.1,
+     "momentary_max_after_3s_LUFS": -66.1,
+     "pass_le_-35": true
+    }
+   ],
+   "per_cue_I": {
+    "a0_c001": -20.1,
+    "a2_c002": -20.1,
+    "a2_c004": -15.2,
+    "a8_c002": -18.7,
+    "a8_c003": -21.3
+   },
+   "segment_spread_lu_all_cues": 6.1,
+   "segment_spread_lu_dialogue_cues": 4.9,
+   "dialogue_line_mix_spread_lu": 0.4
+  }
+ },
+ "recommended": "0.56／0.9＋停格 0.10",
+ "recommendation": {
+  "app/src/audio/ducking.ts": {
+   "DUCK_LEVEL": 0.56,
+   "DUCK_BRIDGE": 0.9
+  },
+  "music": "audio/music/music_m4_light_v02.wav（−24 LUFS，v01 為 −27；tools/pack.mjs 自動取最新版）。v01 時 a2_c004 背景太低，同一個 DUCK_LEVEL 無法讓 a2_c002 與 a2_c004 都落在 15–18 LU。",
+  "final_waiting": {
+   "music_bus_target": "musicLevel × 0.10（約 −20 dB）",
+   "time_constant_s": 0.6,
+   "rule": "場景 cue 進入 final_waiting 時對配樂匯流排 setTargetAtTime(musicLevel×0.10, t, 0.6)；老師按下一步、下一個 cue 的 musicLevel 照常以 0.35 s 回升。片尾署名卡（a8_c003）不套用：閉幕曲照設計自然收尾。"
+  },
+  "why": "對白比背景高 15.7–17.4 LU（目標 15–18）；必要旁白句間停頓的背景約 [-31.9, -33.7] LUFS（目標約 −30，不掉到 −40）；停格第 3 秒總混音 [-46.8, -45.1] LUFS（目標 ≤ −35）。DUCK_BRIDGE 不必改：必要旁白一是單一音檔，句間停頓本來就在同一段避讓裡，背景高低由 DUCK_LEVEL 決定；改成 2.0 只會讓 a2_c002 兩句之間（1.85 s）不回升，沒有改善。",
+  "segment_spread_note": "各段（cue）整合響度差 6.1 LU：純配樂段（開幕、閉幕、署名卡）約 −19 到 −21 LUFS，以對白為主的 a2_c004 約 −15 LUFS；台詞時段（對白句）之間只差 0.4 LU（含台詞的 cue 整段量是 4.9 LU，因為 a2_c002 有 13 秒純配樂）。要讓所有段落都在 ±1 LU 內，純配樂段必須提高到和對白幾乎一樣響，對白時又要再壓 14 dB 以上（換句時配樂起伏很大），不建議。建議主線依修正清單第 12 項的但書，把「各段 ±1 LU」定義為對白段（以及每個素材檔各自正規化：配音 −18±0.2 LUFS、配樂 −20／−24／−27 LUFS 分級），並寫進 REVIEW.md。"
+ }
+}

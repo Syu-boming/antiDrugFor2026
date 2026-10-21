@@ -1,0 +1,4291 @@
+{
+ "a2_c012_01": {
+  "id": "a2_c012_01",
+  "role": "葉護理師",
+  "codes": [
+   "ye"
+  ],
+  "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+  "required": false,
+  "signature": "0855ccd199dcb968",
+  "status": "fail",
+  "max_attempts": 6,
+  "targets": {
+   "rate_nominal": [
+    3.8,
+    4.0
+   ],
+   "rate_cps_net": [
+    3.3,
+    4.5
+   ],
+   "f0_nominal": 148.0,
+   "f0_hz": [
+    131.9,
+    166.1
+   ],
+   "source": "角色表第 3 節（3.8–4.0；溫柔、清楚、不急）；casting.json 葉護理師 note（F0 148 Hz）",
+   "rate_range": [
+    3.3,
+    4.5
+   ],
+   "f0_range": [
+    131.9,
+    166.1
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 08:27:36",
+    "seeds": {
+     "ye": 20261021
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？",
+      "tail_fix": null,
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a0_s0_ae85cb8211a4.mp3",
+      "request_id": "1XVh9O1pN4SFZfCnWQgf",
+      "billed": 4,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -9.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a0_s1_f2b38ab29b93.mp3",
+      "request_id": "DHK7SO9vOdoKZJmDqtt1",
+      "billed": 4,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -10.1,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.14,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a1.wav",
+     "seconds": 4.39,
+     "speech_seconds": 4.02,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 4.23,
+     "rate_cps_net": 4.91,
+     "rate_cps_net_r": 4.84,
+     "pauses_ms": [
+      560
+     ],
+     "pauses_ms_r": [
+      490
+     ],
+     "f0_median": 134.6,
+     "f0_p10": 108.7,
+     "f0_p90": 155.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.84,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -9.5,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -10.1,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.84,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       560
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 2.34,
+    "billed": 8,
+    "mitigations": []
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 08:27:46",
+    "seeds": {
+     "ye": 20261022
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.89,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？",
+      "tail_fix": null,
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a1_s0_f6468b6d013a.mp3",
+      "request_id": "vih23hkJ8eMzMweqwBbd",
+      "billed": 4,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -29.4,
+       "last60ms_voiced": 0.25,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a1_s1_1c44236a8896.mp3",
+      "request_id": "E0t09rlG2ZSKlWXjCcTp",
+      "billed": 4,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -19.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.27,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -2.7,
+     "limited": null,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a2.wav",
+     "seconds": 4.52,
+     "speech_seconds": 4.15,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.7,
+     "clipped_samples": 0,
+     "rate_cps": 4.1,
+     "rate_cps_net": 4.72,
+     "rate_cps_net_r": 4.72,
+     "pauses_ms": [
+      550
+     ],
+     "pauses_ms_r": [
+      520
+     ],
+     "f0_median": 160.9,
+     "f0_p10": 119.2,
+     "f0_p90": 185.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.72,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -29.4,
+        "last60ms_voiced": 0.25,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -19.0,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.72,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       550
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 1.22,
+    "billed": 8,
+    "mitigations": [
+     "speed 0.89（基準 0.92）"
+    ]
+   },
+   {
+    "k": 3,
+    "time": "2026-10-21 08:27:56",
+    "seeds": {
+     "ye": 20261023
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.86,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？",
+      "tail_fix": null,
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a2_s0_00c29e0145ef.mp3",
+      "request_id": "UbjNfqu0I9FG7qmiEy0y",
+      "billed": 4,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -15.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a2_s1_7720300a6edc.mp3",
+      "request_id": "27ePHR4DGwRgL13FPSuK",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -14.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a3.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.3,
+     "method": "loudnorm_pass1_gain",
+     "I": -17.9,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a3.wav",
+     "seconds": 4.55,
+     "speech_seconds": 4.18,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 4.07,
+     "rate_cps_net": 4.64,
+     "rate_cps_net_r": 4.68,
+     "pauses_ms": [
+      160,
+      520
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 160.4,
+     "f0_p10": 120.9,
+     "f0_p90": 177.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.68,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "好的你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.118,
+      "per": 0.118,
+      "diffs": [
+       {
+        "ref": "阿樂",
+        "hyp": "好的",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "阿樂",
+          "hyp": "好的",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -15.5,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -14.8,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.68,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "c",
+     "d"
+    ],
+    "problems": 3,
+    "detail_score": 3.18,
+    "billed": 9,
+    "mitigations": [
+     "段2句尾補「……」",
+     "speed 0.86（基準 0.92）"
+    ]
+   },
+   {
+    "k": 4,
+    "time": "2026-10-21 08:28:05",
+    "seeds": {
+     "ye": 20261024
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.85,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a3_s0_bc2c1d1276db.mp3",
+      "request_id": "cMDCDph21GhTWx6Nh7pP",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -25.5,
+       "last60ms_voiced": 0.5,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a3_s1_920faf7f81f6.mp3",
+      "request_id": "xiS6tOqve4t1wdrd1nWk",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -19.3,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a4.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.05,
+     "method": "loudnorm_two_pass",
+     "I": -17.9,
+     "TP": -2.3,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a4.wav",
+     "seconds": 4.3,
+     "speech_seconds": 3.93,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -2.3,
+     "clipped_samples": 0,
+     "rate_cps": 4.33,
+     "rate_cps_net": 4.99,
+     "rate_cps_net_r": 4.99,
+     "pauses_ms": [
+      520
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 158.8,
+     "f0_p10": 128.8,
+     "f0_p90": 189.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.99,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -25.5,
+        "last60ms_voiced": 0.5,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -19.3,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.99,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 1.49,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.85（基準 0.92）"
+    ]
+   },
+   {
+    "k": 5,
+    "time": "2026-10-21 08:28:14",
+    "seeds": {
+     "ye": 20261025
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.85,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a4_s0_15b110a541ac.mp3",
+      "request_id": "5siVglcBk76FelJd69yo",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -26.7,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a4_s1_26ad686de98f.mp3",
+      "request_id": "uIetLOZ4FnNIZ41WqdAt",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -12.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a5.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.88,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.4,
+     "limited": true,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a5.wav",
+     "seconds": 4.13,
+     "speech_seconds": 3.76,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.4,
+     "clipped_samples": 0,
+     "rate_cps": 4.52,
+     "rate_cps_net": 5.31,
+     "rate_cps_net_r": 5.25,
+     "pauses_ms": [
+      560
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 148.9,
+     "f0_p10": 114.1,
+     "f0_p90": 178.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 5.25,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -26.7,
+        "last60ms_voiced": 0.0,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -12.0,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 5.25,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       560
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 1.75,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.85（基準 0.92）"
+    ]
+   },
+   {
+    "k": 6,
+    "time": "2026-10-21 08:28:24",
+    "seeds": {
+     "ye": 20261026
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.85,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "阿勒，你哪裡不舒服？",
+      "sent": "阿勒，你哪裡不舒服？……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a5_s0_78a144c4b8e9.mp3",
+      "request_id": "uEIPR2SEQioGRH6tvVZR",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -25.3,
+       "last60ms_voiced": 1.0,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "我陪你去看醫生，好嗎？",
+      "sent": "我陪你去看醫生，好嗎？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c012_01/ye_a5_s1_b63581b0f314.mp3",
+      "request_id": "g208VBZHv2F2zSZV7zjg",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -12.3,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a2_c012_01/a6.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.22,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.3,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a2_c012_01/a6.wav",
+     "seconds": 4.47,
+     "speech_seconds": 4.11,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.3,
+     "clipped_samples": 0,
+     "rate_cps": 4.14,
+     "rate_cps_net": 4.72,
+     "rate_cps_net_r": 4.74,
+     "pauses_ms": [
+      510
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 150.3,
+     "f0_p10": 114.1,
+     "f0_p90": 175.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.74,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "好了你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.118,
+      "per": 0.118,
+      "diffs": [
+       {
+        "ref": "阿樂",
+        "hyp": "好了",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "阿樂",
+          "hyp": "好了",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -25.3,
+        "last60ms_voiced": 1.0,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -12.3,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.74,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 17,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       510
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "c",
+     "d"
+    ],
+    "problems": 3,
+    "detail_score": 2.24,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.85（基準 0.92）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "qV41hPnIn6kbvO8hMtPG",
+    "voice_name": "Devon - Relaxed, Natural and Warm",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": 0.92,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {}
+   }
+  ],
+  "billed_total": 55,
+  "chosen": 2,
+  "file": "audio/vo_el/vo_a2_c012_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_01_el01.json",
+  "seconds": 4.52,
+  "speech_start": 0.12,
+  "speech_end": 4.27,
+  "speech_segments": [
+   [
+    0.12,
+    1.83
+   ],
+   [
+    2.37,
+    4.27
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": false,
+    "segments": [
+     {
+      "last60ms_rel_dB": -29.4,
+      "last60ms_voiced": 0.25,
+      "truncated": false
+     },
+     {
+      "last60ms_rel_dB": -19.0,
+      "last60ms_voiced": 1.0,
+      "truncated": true
+     }
+    ],
+    "truncated": 1,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": false,
+    "value": 4.72,
+    "range": [
+     3.3,
+     4.5
+    ],
+    "syllables": 17,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     550
+    ],
+    "threshold_ms": 150,
+    "method": "已知句界（分段合成插入的停頓）",
+    "applicable": true
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.7,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "c",
+   "d"
+  ],
+  "metrics": {
+   "file": "audio/vo_el/_attempts/a2_c012_01/a2.wav",
+   "seconds": 4.52,
+   "speech_seconds": 4.15,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.7,
+   "clipped_samples": 0,
+   "rate_cps": 4.1,
+   "rate_cps_net": 4.72,
+   "rate_cps_net_r": 4.72,
+   "pauses_ms": [
+    550
+   ],
+   "pauses_ms_r": [
+    520
+   ],
+   "f0_median": 160.9,
+   "f0_p10": 119.2,
+   "f0_p90": 185.3,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.72,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "vih23hkJ8eMzMweqwBbd",
+   "E0t09rlG2ZSKlWXjCcTp"
+  ],
+  "mitigations": [
+   "speed 0.89（基準 0.92）"
+  ]
+ },
+ "a5_c006_01": {
+  "id": "a5_c006_01",
+  "role": "執勤人員",
+  "codes": [
+   "dispatcher"
+  ],
+  "text": "119 您好，請問發生什麼事？在哪裡？",
+  "required": false,
+  "signature": "b63c6c0e41a19eca",
+  "status": "fail",
+  "max_attempts": 6,
+  "targets": {
+   "rate_nominal": [
+    4.0,
+    4.4
+   ],
+   "rate_cps_net": [
+    3.5,
+    4.9
+   ],
+   "f0_nominal": 203.0,
+   "f0_hz": [
+    180.9,
+    227.9
+   ],
+   "source": "角色表第 3 節（4.2；冷靜、清楚、引導式提問）；casting.json 執勤人員 note（F0 203 Hz，電話音色後量）",
+   "rate_range": [
+    3.5,
+    4.9
+   ],
+   "f0_range": [
+    180.9,
+    227.9
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 08:28:33",
+    "seeds": {
+     "dispatcher": 20261021
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.0,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？",
+      "tail_fix": null,
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a0_s0_f1454156df40.mp3",
+      "request_id": "f8i5ZkXLub7uwjlgsZmR",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -21.7,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a0_s1_5b0bd0aab6e1.mp3",
+      "request_id": "hqWhqY0WXnEOTlJw6Dt2",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -69.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "declicked": 1
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.42,
+     "method": "loudnorm_two_pass",
+     "I": -17.9,
+     "TP": -2.9,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 80
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a1.wav",
+     "seconds": 5.67,
+     "speech_seconds": 5.3,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -2.9,
+     "clipped_samples": 0,
+     "rate_cps": 2.83,
+     "rate_cps_net": 3.45,
+     "rate_cps_net_r": 2.61,
+     "pauses_ms": [
+      280,
+      250,
+      150,
+      420
+     ],
+     "pauses_ms_r": [
+      260,
+      420
+     ],
+     "f0_median": 274.5,
+     "f0_p10": 199.1,
+     "f0_p90": 421.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.26,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -21.7,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -69.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.26,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       420
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 1.24,
+    "billed": 8,
+    "mitigations": []
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 08:28:42",
+    "seeds": {
+     "dispatcher": 20261022
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.03,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？",
+      "tail_fix": null,
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a1_s0_1c4122612f46.mp3",
+      "request_id": "ouS6nmqLz0ZU2CTJY4aS",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -16.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a1_s1_4902a9255214.mp3",
+      "request_id": "fAmGttws2iXqSRh5norA",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -0.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 6.74,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -2.5,
+     "limited": null,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a2.wav",
+     "seconds": 6.99,
+     "speech_seconds": 6.63,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.5,
+     "clipped_samples": 0,
+     "rate_cps": 2.26,
+     "rate_cps_net": 3.27,
+     "rate_cps_net_r": 2.45,
+     "pauses_ms": [
+      280,
+      430,
+      1330
+     ],
+     "pauses_ms_r": [
+      420,
+      1300
+     ],
+     "f0_median": 268.6,
+     "f0_p10": 184.1,
+     "f0_p90": 439.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 3.06,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -16.4,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -0.5,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.06,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       430
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.5,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 2.44,
+    "billed": 8,
+    "mitigations": [
+     "speed 1.03（基準 1.0）"
+    ]
+   },
+   {
+    "k": 3,
+    "time": "2026-10-21 08:28:51",
+    "seeds": {
+     "dispatcher": 20261023
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.06,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？……",
+      "tail_fix": "……",
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a2_s0_8c1358574ea2.mp3",
+      "request_id": "GclMnufY9kLPgvydZXFh",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -16.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a2_s1_76a94db41899.mp3",
+      "request_id": "CWX8mhdiricrwzTyIaAS",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -13.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a3.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.9,
+     "method": "loudnorm_two_pass",
+     "I": -17.8,
+     "TP": -2.7,
+     "limited": null,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a3.wav",
+     "seconds": 5.15,
+     "speech_seconds": 4.78,
+     "integrated_lufs": -17.8,
+     "true_peak_dbtp": -2.7,
+     "clipped_samples": 0,
+     "rate_cps": 3.14,
+     "rate_cps_net": 3.69,
+     "rate_cps_net_r": 2.89,
+     "pauses_ms": [
+      280,
+      430
+     ],
+     "pauses_ms_r": [
+      200,
+      420
+     ],
+     "f0_median": 275.5,
+     "f0_p10": 187.7,
+     "f0_p90": 401.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.61,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -16.4,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -13.4,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.61,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       430
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.8,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 9,
+    "mitigations": [
+     "段1句尾補「……」",
+     "speed 1.06（基準 1.0）"
+    ]
+   },
+   {
+    "k": 4,
+    "time": "2026-10-21 08:29:00",
+    "seeds": {
+     "dispatcher": 20261024
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.06,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？……",
+      "tail_fix": "……",
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a3_s0_faa47f28a444.mp3",
+      "request_id": "lj0orbHGtv3bosVQ3uRX",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -23.1,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a3_s1_b5c238068671.mp3",
+      "request_id": "n2PgqgDEKKyqrS9BKT8P",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -18.9,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a4.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.84,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -2.7,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a4.wav",
+     "seconds": 5.09,
+     "speech_seconds": 4.73,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.7,
+     "clipped_samples": 0,
+     "rate_cps": 3.17,
+     "rate_cps_net": 3.46,
+     "rate_cps_net_r": 2.78,
+     "pauses_ms": [
+      190,
+      400
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 288.6,
+     "f0_p10": 195.3,
+     "f0_p90": 403.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.47,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -23.1,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -18.9,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.47,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       400
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 2.03,
+    "billed": 9,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 1.06（基準 1.0）"
+    ]
+   },
+   {
+    "k": 5,
+    "time": "2026-10-21 08:29:09",
+    "seeds": {
+     "dispatcher": 20261025
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.09,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？……",
+      "tail_fix": "……",
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a4_s0_3bdefa0797ec.mp3",
+      "request_id": "39OZmc90VklaHVQJczmh",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -24.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a4_s1_6422710326d1.mp3",
+      "request_id": "hRKEXnrsckWZeBVLC33W",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -2.1,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a5.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.19,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -3.2,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a5.wav",
+     "seconds": 5.44,
+     "speech_seconds": 5.08,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.2,
+     "clipped_samples": 0,
+     "rate_cps": 2.95,
+     "rate_cps_net": 3.4,
+     "rate_cps_net_r": 2.58,
+     "pauses_ms": [
+      180,
+      260,
+      410
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 296.0,
+     "f0_p10": 207.2,
+     "f0_p90": 350.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 3.22,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -24.0,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -2.1,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.22,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       410
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 2.28,
+    "billed": 9,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 1.09（基準 1.0）"
+    ]
+   },
+   {
+    "k": 6,
+    "time": "2026-10-21 08:29:19",
+    "seeds": {
+     "dispatcher": 20261026
+    },
+    "settings": {
+     "dispatcher": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 1.1,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "dispatcher",
+      "i": 0,
+      "text": "一一九 您好，請問發生什麼事？",
+      "sent": "一一九 您好，請問發生什麼事？……",
+      "tail_fix": "……",
+      "gap_after_ms": 400,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a5_s0_bcb327c86d01.mp3",
+      "request_id": "WSaPa4Gp8gvNr8UaUkh5",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -24.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "dispatcher",
+      "i": 1,
+      "text": "在哪裡？",
+      "sent": "在哪裡？……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c006_01/dispatcher_a5_s1_391dfbab8672.mp3",
+      "request_id": "QnIHft984KFCAMkoYd1A",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -35.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c006_01/a6.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.34,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -3.6,
+     "limited": null,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c006_01/a6.wav",
+     "seconds": 5.59,
+     "speech_seconds": 4.57,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.28,
+     "rate_cps_net": 3.61,
+     "rate_cps_net_r": 2.89,
+     "pauses_ms": [
+      420
+     ],
+     "pauses_ms_r": [
+      400
+     ],
+     "f0_median": 268.6,
+     "f0_p10": 188.0,
+     "f0_p90": 389.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 900,
+     "rate_net_syll": 3.61,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "119您好請問發生什麼事在哪裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -24.0,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -35.6,
+        "last60ms_voiced": 0.0,
+        "truncated": false
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.61,
+      "range": [
+       3.5,
+       4.9
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       420
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c"
+    ],
+    "problems": 1,
+    "detail_score": 1.0,
+    "billed": 9,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 1.1（基準 1.0）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "aQwAQvuS5kErJvZlR7wN",
+    "voice_name": "Angel - Narration",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": 1.0,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 400,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "telephone": true
+    }
+   }
+  ],
+  "billed_total": 52,
+  "chosen": 6,
+  "file": "audio/vo_el/vo_a5_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_01_el01.json",
+  "seconds": 5.59,
+  "speech_start": 0.12,
+  "speech_end": 5.34,
+  "speech_segments": [
+   [
+    0.12,
+    3.48
+   ],
+   [
+    3.89,
+    4.69
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "119": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": false,
+    "segments": [
+     {
+      "last60ms_rel_dB": -24.0,
+      "last60ms_voiced": 1.0,
+      "truncated": true
+     },
+     {
+      "last60ms_rel_dB": -35.6,
+      "last60ms_voiced": 0.0,
+      "truncated": false
+     }
+    ],
+    "truncated": 1,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.61,
+    "range": [
+     3.5,
+     4.9
+    ],
+    "syllables": 15,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     420
+    ],
+    "threshold_ms": 150,
+    "method": "已知句界（分段合成插入的停頓）",
+    "applicable": true
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -3.6,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "c"
+  ],
+  "metrics": {
+   "file": "audio/vo_el/_attempts/a5_c006_01/a6.wav",
+   "seconds": 5.59,
+   "speech_seconds": 4.57,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.6,
+   "clipped_samples": 0,
+   "rate_cps": 3.28,
+   "rate_cps_net": 3.61,
+   "rate_cps_net_r": 2.89,
+   "pauses_ms": [
+    420
+   ],
+   "pauses_ms_r": [
+    400
+   ],
+   "f0_median": 268.6,
+   "f0_p10": 188.0,
+   "f0_p90": 389.9,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 900,
+   "rate_net_syll": 3.61,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "WSaPa4Gp8gvNr8UaUkh5",
+   "QnIHft984KFCAMkoYd1A"
+  ],
+  "mitigations": [
+   "段1句尾補「……」",
+   "段2句尾補「……」",
+   "speed 1.1（基準 1.0）"
+  ]
+ },
+ "a5_c008_03": {
+  "id": "a5_c008_03",
+  "role": "葉護理師",
+  "codes": [
+   "ye"
+  ],
+  "text": "不是喔。你們找大人、打 119，是在幫他。",
+  "required": false,
+  "signature": "67c6e053da6007d3",
+  "status": "fail",
+  "max_attempts": 6,
+  "targets": {
+   "rate_nominal": [
+    3.8,
+    4.0
+   ],
+   "rate_cps_net": [
+    3.3,
+    4.5
+   ],
+   "f0_nominal": 148.0,
+   "f0_hz": [
+    131.9,
+    166.1
+   ],
+   "source": "角色表第 3 節（3.8–4.0；溫柔、清楚、不急）；casting.json 葉護理師 note（F0 148 Hz）",
+   "rate_range": [
+    3.3,
+    4.5
+   ],
+   "f0_range": [
+    131.9,
+    166.1
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 08:29:28",
+    "seeds": {
+     "ye": 20261021
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。",
+      "tail_fix": null,
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a0_s0_abc3e67dd7fa.mp3",
+      "request_id": "g0iO1gP8UUuGpTiV8Edo",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -7.6,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a0_s1_c60a93e82410.mp3",
+      "request_id": "mNKBayiQp6JpeShhWChO",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -21.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.06,
+     "method": "loudnorm_two_pass",
+     "I": -18.2,
+     "TP": -2.9,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a1.wav",
+     "seconds": 4.31,
+     "speech_seconds": 3.95,
+     "integrated_lufs": -18.2,
+     "true_peak_dbtp": -2.9,
+     "clipped_samples": 0,
+     "rate_cps": 4.05,
+     "rate_cps_net": 4.64,
+     "rate_cps_net_r": 3.78,
+     "pauses_ms": [
+      500
+     ],
+     "pauses_ms_r": [
+      490
+     ],
+     "f0_median": 127.2,
+     "f0_p10": 113.7,
+     "f0_p90": 150.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.65,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -7.6,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -21.5,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.65,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       500
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.2,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 2.15,
+    "billed": 9,
+    "mitigations": []
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 08:29:36",
+    "seeds": {
+     "ye": 20261022
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.89,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。",
+      "tail_fix": null,
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a1_s0_569b2102ad0c.mp3",
+      "request_id": "SCW5kIMdEdVzCsZXx8pb",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -23.6,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a1_s1_6322808025cb.mp3",
+      "request_id": "96SOCQLT8iYtjGGSr1VB",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -15.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.46,
+     "method": "loudnorm_two_pass",
+     "I": -18.1,
+     "TP": -2.2,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a2.wav",
+     "seconds": 4.71,
+     "speech_seconds": 4.35,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -2.2,
+     "clipped_samples": 0,
+     "rate_cps": 3.68,
+     "rate_cps_net": 4.2,
+     "rate_cps_net_r": 3.41,
+     "pauses_ms": [
+      540,
+      150
+     ],
+     "pauses_ms_r": [
+      530
+     ],
+     "f0_median": 124.1,
+     "f0_p10": 103.6,
+     "f0_p90": 141.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.2,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -23.6,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -15.5,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 2,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.2,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       540
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "c"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 9,
+    "mitigations": [
+     "speed 0.89（基準 0.92）"
+    ]
+   },
+   {
+    "k": 3,
+    "time": "2026-10-21 08:29:45",
+    "seeds": {
+     "ye": 20261023
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.89,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a2_s0_6da019bdbf37.mp3",
+      "request_id": "4e0pdkjlHiYkVSSynrm1",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -21.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a2_s1_efeb50d33154.mp3",
+      "request_id": "MIBeqXS6lFSS9glfy5DK",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261023,
+      "tail": {
+       "last60ms_rel_dB": -13.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a3.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.62,
+     "method": "loudnorm_two_pass",
+     "I": -18.2,
+     "TP": -5.4,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a3.wav",
+     "seconds": 4.87,
+     "speech_seconds": 4.5,
+     "integrated_lufs": -18.2,
+     "true_peak_dbtp": -5.4,
+     "clipped_samples": 0,
+     "rate_cps": 3.56,
+     "rate_cps_net": 4.43,
+     "rate_cps_net_r": 3.32,
+     "pauses_ms": [
+      300,
+      590,
+      200
+     ],
+     "pauses_ms_r": [
+      540
+     ],
+     "f0_median": 147.1,
+     "f0_p10": 107.6,
+     "f0_p90": 181.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.09,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔你們找大人打依舊是在幫他",
+      "cer": 0.188,
+      "per": 0.125,
+      "diffs": [
+       {
+        "ref": "一一九",
+        "hyp": "依舊",
+        "kind": "字不同",
+        "span": [
+         9,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "一一九",
+          "hyp": "依舊",
+          "kind": "字不同",
+          "span": [
+           9,
+           12
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "119": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "119"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -21.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -13.8,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.09,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       590
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.2,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "c"
+    ],
+    "problems": 3,
+    "detail_score": 3.0,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.89（基準 0.92）"
+    ]
+   },
+   {
+    "k": 4,
+    "time": "2026-10-21 08:29:54",
+    "seeds": {
+     "ye": 20261024
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.89,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a3_s0_b7661efefe92.mp3",
+      "request_id": "acQcxFSPIUCRloapBMdU",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -7.9,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a3_s1_35d2ca7909d7.mp3",
+      "request_id": "gzmgvuq584kAyrw2Qz5p",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261024,
+      "tail": {
+       "last60ms_rel_dB": -25.1,
+       "last60ms_voiced": 0.5,
+       "truncated": false
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a4.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.59,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -5.8,
+     "limited": null,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a4.wav",
+     "seconds": 5.84,
+     "speech_seconds": 5.47,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.8,
+     "clipped_samples": 0,
+     "rate_cps": 2.93,
+     "rate_cps_net": 3.86,
+     "rate_cps_net_r": 2.63,
+     "pauses_ms": [
+      810,
+      520,
+      230
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 146.9,
+     "f0_p10": 119.9,
+     "f0_p90": 185.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.24,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔嗯你們找大人打依舊是在幫他",
+      "cer": 0.25,
+      "per": 0.188,
+      "diffs": [
+       {
+        "ref": "",
+        "hyp": "嗯",
+        "kind": "多字",
+        "span": [
+         3,
+         3
+        ]
+       },
+       {
+        "ref": "一一九",
+        "hyp": "依舊",
+        "kind": "字不同",
+        "span": [
+         9,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔嗯你們找大人打119是在幫他",
+      "cer": 0.062,
+      "per": 0.062,
+      "diffs": [
+       {
+        "ref": "",
+        "hyp": "嗯",
+        "kind": "多字",
+        "span": [
+         3,
+         3
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "",
+          "hyp": "嗯",
+          "kind": "多字",
+          "span": [
+           3,
+           3
+          ]
+         },
+         {
+          "ref": "一一九",
+          "hyp": "依舊",
+          "kind": "字不同",
+          "span": [
+           9,
+           12
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "",
+          "hyp": "嗯",
+          "kind": "多字",
+          "span": [
+           3,
+           3
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "119": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "119"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -7.9,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       },
+       {
+        "last60ms_rel_dB": -25.1,
+        "last60ms_voiced": 0.5,
+        "truncated": false
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.24,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.8,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ],
+    "problems": 4,
+    "detail_score": 5.06,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.89（基準 0.92）"
+    ]
+   },
+   {
+    "k": 5,
+    "time": "2026-10-21 08:30:03",
+    "seeds": {
+     "ye": 20261025
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.92,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a4_s0_6a0b18bbca86.mp3",
+      "request_id": "BEAOrrY87OkWQFSgygGL",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -20.1,
+       "last60ms_voiced": 0.25,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a4_s1_1cfa015404fe.mp3",
+      "request_id": "Iq7gyGxsPVt6M0bZGD5c",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261025,
+      "tail": {
+       "last60ms_rel_dB": -16.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a5.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.79,
+     "method": "loudnorm_two_pass",
+     "I": -18.1,
+     "TP": -1.6,
+     "limited": null,
+     "raw_head_silence_ms": 30,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a5.wav",
+     "seconds": 6.04,
+     "speech_seconds": 5.67,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.6,
+     "clipped_samples": 0,
+     "rate_cps": 2.82,
+     "rate_cps_net": 3.11,
+     "rate_cps_net_r": 2.52,
+     "pauses_ms": [
+      530
+     ],
+     "pauses_ms_r": [
+      510
+     ],
+     "f0_median": 130.1,
+     "f0_p10": 108.7,
+     "f0_p90": 554.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.1,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔你們找大人打依舊是在幫他",
+      "cer": 0.188,
+      "per": 0.125,
+      "diffs": [
+       {
+        "ref": "一一九",
+        "hyp": "依舊",
+        "kind": "字不同",
+        "span": [
+         9,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "一一九",
+          "hyp": "依舊",
+          "kind": "字不同",
+          "span": [
+           9,
+           12
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "119": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "119"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -20.1,
+        "last60ms_voiced": 0.25,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -16.8,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.1,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       530
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ],
+    "problems": 4,
+    "detail_score": 3.2,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」"
+    ]
+   },
+   {
+    "k": 6,
+    "time": "2026-10-21 08:30:12",
+    "seeds": {
+     "ye": 20261026
+    },
+    "settings": {
+     "ye": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ye",
+      "i": 0,
+      "text": "不是喔。",
+      "sent": "不是喔。……",
+      "tail_fix": "……",
+      "gap_after_ms": 500,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a5_s0_b02278cedf37.mp3",
+      "request_id": "iKfDslY4p9HEDGethlh5",
+      "billed": 2,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -24.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "declicked": 0
+     },
+     {
+      "role": "ye",
+      "i": 1,
+      "text": "你們找大人、打 一一九，是在幫他。",
+      "sent": "你們找大人、打 一一九，是在幫他。……",
+      "tail_fix": "……",
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c008_03/ye_a5_s1_9107b4eec302.mp3",
+      "request_id": "6ztaQKWWVj8gxMykmXFI",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261026,
+      "tail": {
+       "last60ms_rel_dB": -14.3,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "audio/vo_el/_attempts/a5_c008_03/a6.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.64,
+     "method": "loudnorm_two_pass",
+     "I": -18.0,
+     "TP": -3.2,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "audio/vo_el/_attempts/a5_c008_03/a6.wav",
+     "seconds": 5.89,
+     "speech_seconds": 5.52,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.2,
+     "clipped_samples": 0,
+     "rate_cps": 2.9,
+     "rate_cps_net": 4.08,
+     "rate_cps_net_r": 2.61,
+     "pauses_ms": [
+      1070,
+      530,
+      220
+     ],
+     "pauses_ms_r": [
+      520
+     ],
+     "f0_median": 147.6,
+     "f0_p10": 127.0,
+     "f0_p90": 330.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.21,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "不是喔你們找大人打依舊是在幫他",
+      "cer": 0.188,
+      "per": 0.125,
+      "diffs": [
+       {
+        "ref": "一一九",
+        "hyp": "依舊",
+        "kind": "字不同",
+        "span": [
+         9,
+         12
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "不是喔你們找大人打119是在幫他",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "一一九",
+          "hyp": "依舊",
+          "kind": "字不同",
+          "span": [
+           9,
+           12
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "119": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "119"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": false,
+      "segments": [
+       {
+        "last60ms_rel_dB": -24.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false
+       },
+       {
+        "last60ms_rel_dB": -14.3,
+        "last60ms_voiced": 1.0,
+        "truncated": true
+       }
+      ],
+      "truncated": 1,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.21,
+      "range": [
+       3.3,
+       4.5
+      ],
+      "syllables": 16,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       530
+      ],
+      "threshold_ms": 150,
+      "method": "已知句界（分段合成插入的停頓）",
+      "applicable": true
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "c",
+     "d"
+    ],
+    "problems": 4,
+    "detail_score": 3.09,
+    "billed": 10,
+    "mitigations": [
+     "段1句尾補「……」",
+     "段2句尾補「……」",
+     "speed 0.95（基準 0.92）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "qV41hPnIn6kbvO8hMtPG",
+    "voice_name": "Devon - Relaxed, Natural and Warm",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": 0.92,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {}
+   }
+  ],
+  "billed_total": 58,
+  "chosen": 2,
+  "file": "audio/vo_el/vo_a5_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_03_el01.json",
+  "seconds": 4.71,
+  "speech_start": 0.12,
+  "speech_end": 4.46,
+  "speech_segments": [
+   [
+    0.11,
+    0.83
+   ],
+   [
+    1.36,
+    3.41
+   ],
+   [
+    3.55,
+    4.46
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "119": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": false,
+    "segments": [
+     {
+      "last60ms_rel_dB": -23.6,
+      "last60ms_voiced": 1.0,
+      "truncated": true
+     },
+     {
+      "last60ms_rel_dB": -15.5,
+      "last60ms_voiced": 1.0,
+      "truncated": true
+     }
+    ],
+    "truncated": 2,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.2,
+    "range": [
+     3.3,
+     4.5
+    ],
+    "syllables": 16,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     540
+    ],
+    "threshold_ms": 150,
+    "method": "已知句界（分段合成插入的停頓）",
+    "applicable": true
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.1,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.2,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "c"
+  ],
+  "metrics": {
+   "file": "audio/vo_el/_attempts/a5_c008_03/a2.wav",
+   "seconds": 4.71,
+   "speech_seconds": 4.35,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -2.2,
+   "clipped_samples": 0,
+   "rate_cps": 3.68,
+   "rate_cps_net": 4.2,
+   "rate_cps_net_r": 3.41,
+   "pauses_ms": [
+    540,
+    150
+   ],
+   "pauses_ms_r": [
+    530
+   ],
+   "f0_median": 124.1,
+   "f0_p10": 103.6,
+   "f0_p90": 141.4,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.2,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "SCW5kIMdEdVzCsZXx8pb",
+   "96SOCQLT8iYtjGGSr1VB"
+  ],
+  "mitigations": [
+   "speed 0.89（基準 0.92）"
+  ]
+ }
+}

@@ -1,0 +1,1182 @@
+{
+ "Jane_v3|a3_c008_01": {
+  "variant": "Jane_v3",
+  "line": "a3_c008_01",
+  "voice": "Jane - Low, Calm and Slow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "今天紙登結，學校提早放學。",
+      "sent": "今天紙登結，學校提早放學。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c008_01/lin_a0_s0_be3a8a0a7cf7.mp3",
+      "request_id": "jNidMGDOdb3vqqnAC4Cw",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -21.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -10.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.72,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        2.77,
+        3.74
+       ],
+       "decay_end_s": 2.78,
+       "cut_s": 2.88,
+       "floor_rel_db": -18.0,
+       "removed_s": 1.2
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c008_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c008_01_a1.wav",
+     "seconds": 3.25,
+     "speech_seconds": 2.89,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.81,
+     "rate_cps_net": 3.81,
+     "rate_cps_net_r": 3.82,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 196.1,
+     "f0_p10": 161.8,
+     "f0_p90": 591.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.82,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "今天紙燈節學校提早放學",
+     "large-v3-turbo": "今天只登節學校提早放學"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "紙燈節": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -21.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.82,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 11,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.9,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 7
+   }
+  ]
+ },
+ "Jane_v3|a3_c003_02": {
+  "variant": "Jane_v3",
+  "line": "a3_c003_02",
+  "voice": "Jane - Low, Calm and Slow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "sent": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c003_02/lin_a0_s0_6a29f0458152.mp3",
+      "request_id": "Tcsmt5Mb5gHXQdZv78o5",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -19.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -11.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.64,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        4.58,
+        5.06
+       ],
+       "decay_end_s": 4.6,
+       "cut_s": 4.7,
+       "floor_rel_db": -19.1,
+       "removed_s": 1.46
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.24,
+         1.4
+        ],
+        "cut_s": 1.36,
+        "depth_rel_db": -24.0,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c003_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c003_02_a1.wav",
+     "seconds": 5.52,
+     "speech_seconds": 5.16,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -5.6,
+     "clipped_samples": 0,
+     "rate_cps": 3.88,
+     "rate_cps_net": 4.24,
+     "rate_cps_net_r": 4.25,
+     "pauses_ms": [
+      440
+     ],
+     "pauses_ms_r": [
+      440
+     ],
+     "f0_median": 155.0,
+     "f0_p10": 81.9,
+     "f0_p90": 210.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.25,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "謝謝你們告訴我老師和請警衛北博很緊張處理",
+     "large-v3-turbo": "謝謝你們告訴我老師會請警衛北部和警察處理"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "會",
+          "hyp": "和",
+          "kind": "字不同",
+          "span": [
+           9,
+           10
+          ]
+         },
+         {
+          "ref": "伯伯和警察",
+          "hyp": "北博很緊張",
+          "kind": "字不同",
+          "span": [
+           13,
+           18
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "伯伯",
+          "hyp": "北部",
+          "kind": "字不同",
+          "span": [
+           13,
+           15
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -19.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.25,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 20,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       440
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.24,
+         1.4
+        ],
+        "cut_s": 1.36,
+        "depth_rel_db": -24.0,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 3.0,
+    "fail_detail": "(a) small：會→和（字不同）、伯伯和警察→北博很緊張（字不同）；large-v3-turbo：伯伯→北部（字不同）",
+    "billed": 10
+   }
+  ]
+ },
+ "Jane_v3|a3_c008_02": {
+  "variant": "Jane_v3",
+  "line": "a3_c008_02",
+  "voice": "Jane - Low, Calm and Slow",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "小晴、小宇，你們家長前幾天就拜託阿勒叔叔，開車來接你們去廣場。",
+      "sent": "小晴、小宇，你們家長前幾天就拜託阿勒叔叔，開車來接你們去廣場。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c008_02/lin_a0_s0_b373231ec2cc.mp3",
+      "request_id": "RP5PcuFygfWQVlTDOYtr",
+      "billed": 14,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -23.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -13.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 6.4,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        6.45,
+        6.78
+       ],
+       "decay_end_s": 6.48,
+       "cut_s": 6.58,
+       "floor_rel_db": -22.1,
+       "removed_s": 1.58
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c008_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jane_v3/a3_c008_02_a1.wav",
+     "seconds": 6.95,
+     "speech_seconds": 6.59,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -6.2,
+     "clipped_samples": 0,
+     "rate_cps": 4.1,
+     "rate_cps_net": 4.1,
+     "rate_cps_net_r": 4.1,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 183.7,
+     "f0_p10": 159.4,
+     "f0_p90": 239.6,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.1,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": "小青小宇你們交響前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "large-v3-turbo": "小青小羽你們交賞前幾天就拜託阿樂叔叔開車來接你們去廣場"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "家長",
+          "hyp": "交響",
+          "kind": "字不同",
+          "span": [
+           6,
+           8
+          ]
+         }
+        ],
+        "excused_names": [
+         {
+          "ref": "晴",
+          "hyp": "青",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           1,
+           2
+          ],
+          "excuse": {
+           "name": "小晴",
+           "edge_hyp": "青"
+          }
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "晴",
+          "hyp": "青",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           1,
+           2
+          ]
+         },
+         {
+          "ref": "家長",
+          "hyp": "交賞",
+          "kind": "字不同",
+          "span": [
+           6,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "阿樂叔叔": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -23.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.1,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 27,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -6.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 3.0,
+    "fail_detail": "(a) small：家長→交響（字不同）；large-v3-turbo：晴→青（聲調不同（疑讀錯，或轉寫偏好））、家長→交賞（字不同）",
+    "billed": 14
+   }
+  ]
+ },
+ "Jui_v3|a3_c008_01": {
+  "variant": "Jui_v3",
+  "line": "a3_c008_01",
+  "voice": "Jui - Calm, Warm & Pleasing",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "今天紙登結，學校提早放學。",
+      "sent": "今天紙登結，學校提早放學。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c008_01/lin_a0_s0_1d45c6928159.mp3",
+      "request_id": "ttTygucRPLkzCwJrAXlR",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -42.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -12.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.16,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.27,
+        4.72
+       ],
+       "decay_end_s": 3.31,
+       "cut_s": 3.41,
+       "floor_rel_db": -41.7,
+       "removed_s": 1.95
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c008_01_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c008_01_a1.wav",
+     "seconds": 3.76,
+     "speech_seconds": 3.4,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.2,
+     "clipped_samples": 0,
+     "rate_cps": 3.24,
+     "rate_cps_net": 3.24,
+     "rate_cps_net_r": 3.33,
+     "pauses_ms": [
+      170
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 176.3,
+     "f0_p10": 135.8,
+     "f0_p90": 231.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.33,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "今天只登街學校提早放學",
+     "large-v3-turbo": "今天只登節學校提早放學"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "紙燈節",
+          "hyp": "只登街",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           2,
+           5
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "紙燈節": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       }
+      },
+      "inconsistent": [
+       "紙燈節"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -42.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.33,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 11,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "d"
+    ],
+    "detail_score": 2.07,
+    "fail_detail": "(a) small：紙燈節→只登街（聲調不同（疑讀錯，或轉寫偏好））；(b) 紙燈節（不一致（需複查）／同音轉寫（讀音一致））；(d) 3.33 字／秒（範圍 3.4–4.6）",
+    "billed": 7
+   }
+  ]
+ },
+ "Jui_v3|a3_c003_02": {
+  "variant": "Jui_v3",
+  "line": "a3_c003_02",
+  "voice": "Jui - Calm, Warm & Pleasing",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "sent": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c003_02/lin_a0_s0_73a088a869ec.mp3",
+      "request_id": "OBNgJLH0THLHOykpcBMl",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -18.2,
+       "last60ms_voiced": 0.75,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.34,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        5.27,
+        6.47
+       ],
+       "decay_end_s": 5.44,
+       "cut_s": 5.54,
+       "floor_rel_db": -72.0,
+       "removed_s": 1.34
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.5,
+         2.28
+        ],
+        "cut_s": 1.58,
+        "depth_rel_db": -40.8,
+        "existing_pause_ms": 760,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c003_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c003_02_a1.wav",
+     "seconds": 5.7,
+     "speech_seconds": 5.33,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.0,
+     "clipped_samples": 0,
+     "rate_cps": 3.75,
+     "rate_cps_net": 4.38,
+     "rate_cps_net_r": 4.43,
+     "pauses_ms": [
+      760
+     ],
+     "pauses_ms_r": [
+      730
+     ],
+     "f0_median": 158.1,
+     "f0_p10": 106.9,
+     "f0_p90": 221.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.43,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+     "large-v3-turbo": "謝謝你們告訴我老師會請警衛伯伯和警察處理"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.43,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 20,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       760
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.5,
+         2.28
+        ],
+        "cut_s": 1.58,
+        "depth_rel_db": -40.8,
+        "existing_pause_ms": 760,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.0,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 10
+   }
+  ]
+ },
+ "Jui_v3|a3_c008_02": {
+  "variant": "Jui_v3",
+  "line": "a3_c008_02",
+  "voice": "Jui - Calm, Warm & Pleasing",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "lin": 20261021
+    },
+    "settings": {
+     "lin": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.95,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "lin",
+      "i": 0,
+      "text": "小晴、小宇，你們家長前幾天就拜託阿勒叔叔，開車來接你們去廣場。",
+      "sent": "小晴、小宇，你們家長前幾天就拜託阿勒叔叔，開車來接你們去廣場。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a3_c008_02/lin_a0_s0_db878aa9c0c0.mp3",
+      "request_id": "noT2hJ4YqL66HVtEjfQl",
+      "billed": 14,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -14.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -16.6,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.9,
+       "t_fill_s": 10.34,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        8.7,
+        8.78
+       ],
+       "decay_end_s": 8.71,
+       "cut_s": 8.76,
+       "floor_rel_db": -12.9,
+       "removed_s": 2.52
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c008_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/lin/Jui_v3/a3_c008_02_a1.wav",
+     "seconds": 9.13,
+     "speech_seconds": 8.77,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -4.2,
+     "clipped_samples": 0,
+     "rate_cps": 3.08,
+     "rate_cps_net": 3.6,
+     "rate_cps_net_r": 3.35,
+     "pauses_ms": [
+      160,
+      850,
+      410
+     ],
+     "pauses_ms_r": [
+      500,
+      210
+     ],
+     "f0_median": 168.1,
+     "f0_p10": 84.4,
+     "f0_p90": 210.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.35,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "小情小玉你們家場前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "large-v3-turbo": "小晴小羽你們家場前幾天就拜託阿樂叔叔開車來接你們去廣場"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "長",
+          "hyp": "場",
+          "kind": "字不同",
+          "span": [
+           7,
+           8
+          ]
+         }
+        ],
+        "excused_names": [
+         {
+          "ref": "宇",
+          "hyp": "玉",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           3,
+           4
+          ],
+          "excuse": {
+           "name": "小宇",
+           "edge_hyp": "玉"
+          }
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "長",
+          "hyp": "場",
+          "kind": "字不同",
+          "span": [
+           7,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "阿樂叔叔": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -14.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.35,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 27,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.2,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "detail_score": 2.05,
+    "fail_detail": "(a) small：長→場（字不同）；large-v3-turbo：長→場（字不同）；(d) 3.35 字／秒（範圍 3.4–4.6）",
+    "billed": 14
+   }
+  ]
+ }
+}

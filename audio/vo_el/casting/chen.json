@@ -1,0 +1,64 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。 成人組補充（2026-10-21）：post.pitch_shift_st／post.stretch／post.auto_stretch＝PSOLA 改調／放慢（兒童組加入工具；eleven_v3 不理會 speed，語速只能後處理）；auto_stretch＝{target, tolerance, min, max}：母帶前淨語速超出 rate_nominal±tolerance 才把長度乘 淨語速÷target（夾在 min–max）。",
+ "role": "陳伯伯",
+ "code": "chen",
+ "status": "active",
+ "voice_id": "auoHciLZJwKTwYUoRTYz",
+ "voice_name": "Neil Chuang - Deep, Trustworthy and Rich",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": 0.88,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 450,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九"
+ },
+ "post": {
+  "auto_stretch": {
+   "target": 3.9,
+   "tolerance": 0.5,
+   "min": 0.93,
+   "max": 1.15
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "step": 0.03,
+  "min": 0.85,
+  "max": 1.1,
+  "note": "eleven_v3 不理會 speed：同文字 speed 0.7 與 1.2 正文長度 1.64／1.63 秒（2026-10-21 試跑，audio/vo_el/_raw/x_speedtest/）；換成 v2 再開"
+ },
+ "targets": {
+  "rate_nominal": [
+   3.5,
+   3.7
+  ],
+  "rate_cps_net": [
+   3.0,
+   4.2
+  ],
+  "f0_nominal": 91.7,
+  "f0_hz": [
+   81.7,
+   102.9
+  ],
+  "source": "角色表第 3 節（3.5–3.7；渾厚、慢、讓人安心）；casting.json 陳伯伯 note（91.7 Hz，全劇最低）"
+ },
+ "lines": {},
+ "source": "任務指定起點 Neil v3；review/G3/el/library/INDEX.md 3.5；試聲線 review/G3/el/full/voice_trials/chen/（F0 93–96 Hz，兩句通過）",
+ "note": "auto_stretch 只在淨語速超出 3.0–4.2 時才處理。",
+ "trial_note_a4_c013_01": "2026-10-21 第 2 輪試過 a4_c013_01 句首保護＋「小晴→小情」5 次（seed 20261021–25）：句首「鑰匙」反而 5/5 轉成收拾／消失／修飾／秀時，全部未通過 → 撤回，回到第 1 輪設定（第 1 輪 6 次的原始檔已付費，重新判定不另計費）。原始檔留在 audio/vo_el/_raw/a4_c013_01/。"
+}

@@ -1,0 +1,4 @@
+audio/vo_el/vo_a2_c004_02_el01.wav  I: -17.9 LUFS  Peak: -2.4 dBFS 
+audio/vo_el/vo_a2_c008_03_el01.wav  I: -17.8 LUFS  Peak: -1.8 dBFS 
+audio/vo_el/vo_a5_c006_01_el01.wav  I: -18.0 LUFS  Peak: -2.4 dBFS 
+audio/vo_el/vo_a2_c012_02_el01.wav  I: -18.0 LUFS  Peak: -2.2 dBFS 

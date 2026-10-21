@@ -29,6 +29,8 @@ import compose  # noqa: E402
 import sfx as sfxmod  # noqa: E402
 
 VER = 'v01'
+# 個別改版（不覆寫已採用的 v01；tools/pack.mjs 自動取最新版本）
+VERSIONS = {'music_m4_light': 'v02'}   # G3 修正第 1 輪：−27 → −24 LUFS（review/G3/mix_r1.json）
 REVIEW = ROOT / 'review' / 'G3'
 TP_CEIL = -2.3        # 真峰值上限（規格 ≤ −2 dBTP，留 0.3 dB 餘裕）
 SFX_PEAK = -8.0       # 音效樣本峰值（規格 ≤ −6 dBFS）
@@ -42,7 +44,7 @@ def log(*a):
 # ---------------------------------------------------------------- 配樂
 def music_path(pid: str, draft: bool) -> Path:
     """草稿放 audio/music/drafts/（tools/pack.mjs 只讀 audio/music/ 第一層，草稿不會被打包進演出）。"""
-    return (MUSIC_OUT / 'drafts' if draft else MUSIC_OUT) / f'{pid}_{VER}.wav'
+    return (MUSIC_OUT / 'drafts' if draft else MUSIC_OUT) / f'{pid}_{VERSIONS.get(pid, VER)}.wav'
 
 
 def build_music(pid: str, fn) -> dict:

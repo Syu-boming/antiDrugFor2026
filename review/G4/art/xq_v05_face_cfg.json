@@ -1,0 +1,221 @@
+{
+ "watch": {
+  "tilt": 12.5,
+  "mouth_c": [
+   167,
+   301
+  ],
+  "mouth_box": [
+   136,
+   272,
+   206,
+   328
+  ],
+  "eyes": [
+   [
+    144,
+    223
+   ],
+   [
+    238,
+    243
+   ]
+  ],
+  "eyes_box": [
+   118,
+   186,
+   276,
+   286
+  ],
+  "eye_boxes": [
+   [
+    126,
+    192,
+    162,
+    254
+   ],
+   [
+    210,
+    210,
+    268,
+    278
+   ]
+  ],
+  "eye_ellipses": [
+   [
+    144,
+    223,
+    15,
+    29,
+    12
+   ],
+   [
+    238,
+    243,
+    26,
+    31,
+    12
+   ]
+  ],
+  "original_mouth": "mouth_smile",
+  "rest_mouth_label": "mouth_smile",
+  "mouth_colors": {
+   "inside": [
+    190,
+    80,
+    62
+   ],
+   "tongue": [
+    236,
+    140,
+    120
+   ]
+  },
+  "stage_scale": 0.32,
+  "mouth_scale": 1.0,
+  "lw": 3.5,
+  "lid_lw": 5.0
+ },
+ "palm": {
+  "tilt": 14.0,
+  "mouth_c": [
+   412,
+   330
+  ],
+  "mouth_box": [
+   380,
+   304,
+   446,
+   358
+  ],
+  "eyes": [
+   [
+    381,
+    241
+   ],
+   [
+    488,
+    267
+   ]
+  ],
+  "eyes_box": [
+   350,
+   198,
+   526,
+   310
+  ],
+  "eye_boxes": [
+   [
+    356,
+    202,
+    406,
+    280
+   ],
+   [
+    454,
+    226,
+    522,
+    306
+   ]
+  ],
+  "eye_ellipses": [
+   [
+    381,
+    240,
+    22,
+    35,
+    14
+   ],
+   [
+    488,
+    266,
+    31,
+    37,
+    14
+   ]
+  ],
+  "original_mouth": "mouth_round",
+  "rest_mouth_label": "mouth_round",
+  "stage_scale": 0.32,
+  "mouth_scale": 1.0,
+  "lw": 3.5,
+  "lid_lw": 5.0
+ },
+ "worried": {
+  "tilt": 17.0,
+  "mouth_c": [
+   145,
+   301
+  ],
+  "mouth_box": [
+   118,
+   280,
+   182,
+   332
+  ],
+  "eyes": [
+   [
+    126,
+    220
+   ],
+   [
+    218,
+    248
+   ]
+  ],
+  "eyes_box": [
+   102,
+   184,
+   254,
+   284
+  ],
+  "eye_boxes": [
+   [
+    106,
+    188,
+    146,
+    252
+   ],
+   [
+    190,
+    214,
+    248,
+    282
+   ]
+  ],
+  "eye_ellipses": [
+   [
+    126,
+    220,
+    18,
+    30,
+    17
+   ],
+   [
+    218,
+    248,
+    27,
+    31,
+    17
+   ]
+  ],
+  "original_mouth": "mouth_worried",
+  "rest_mouth_label": "mouth_worried",
+  "mouth_colors": {
+   "inside": [
+    190,
+    80,
+    62
+   ],
+   "tongue": [
+    236,
+    140,
+    120
+   ]
+  },
+  "stage_scale": 0.32,
+  "mouth_scale": 1.0,
+  "lw": 3.5,
+  "lid_lw": 5.0
+ }
+}

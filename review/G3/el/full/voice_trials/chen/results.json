@@ -1,0 +1,556 @@
+{
+ "Neil_v3|a4_c012_05": {
+  "variant": "Neil_v3",
+  "line": "a4_c012_05",
+  "voice": "Neil Chuang - Deep, Trustworthy and Rich",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "chen": 20261021
+    },
+    "settings": {
+     "chen": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.88,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "chen",
+      "i": 0,
+      "text": "車先不要開，我過去陪他。",
+      "sent": "車先不要開，我過去陪他。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a4_c012_05/chen_a0_s0_23ca91d37313.mp3",
+      "request_id": "e9uueDKUnxFI81OOMPg7",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -35.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -24.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.24,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        2.28,
+        3.19
+       ],
+       "decay_end_s": 2.34,
+       "cut_s": 2.44,
+       "floor_rel_db": -31.7,
+       "removed_s": 2.6
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/chen/Neil_v3/a4_c012_05_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/chen/Neil_v3/a4_c012_05_a1.wav",
+     "seconds": 2.8,
+     "speech_seconds": 2.44,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.6,
+     "clipped_samples": 0,
+     "rate_cps": 4.1,
+     "rate_cps_net": 4.1,
+     "rate_cps_net_r": 4.13,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 93.0,
+     "f0_p10": 82.7,
+     "f0_p90": 114.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.13,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "車先不要開我過去陪他",
+     "large-v3-turbo": "車先不要開我過去陪他"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -35.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.13,
+      "range": [
+       3.0,
+       4.2
+      ],
+      "syllables": 10,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.6,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 6
+   }
+  ]
+ },
+ "Neil_v3|a5_c001_02": {
+  "variant": "Neil_v3",
+  "line": "a5_c001_02",
+  "voice": "Neil Chuang - Deep, Trustworthy and Rich",
+  "model": "eleven_v3",
+  "attempts": [
+   {
+    "k": 1,
+    "seeds": {
+     "chen": 20261021
+    },
+    "settings": {
+     "chen": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.88,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "chen",
+      "i": 0,
+      "text": "阿勒，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+      "sent": "阿勒，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c001_02/chen_a0_s0_1d3dcce49939.mp3",
+      "request_id": "80nxYM9hYwAl51HnLHZY",
+      "billed": 13,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -39.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -11.8,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.68,
+       "t_fill_s": 7.02,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        5.81,
+        7.32
+       ],
+       "decay_end_s": 5.86,
+       "cut_s": 5.96,
+       "floor_rel_db": -34.2,
+       "removed_s": 1.72
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.94,
+         1.56
+        ],
+        "cut_s": 1.13,
+        "depth_rel_db": -44.7,
+        "existing_pause_ms": 880,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/chen/Neil_v3/a5_c001_02_a1.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/chen/Neil_v3/a5_c001_02_a1.wav",
+     "seconds": 6.31,
+     "speech_seconds": 5.95,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.87,
+     "rate_cps_net": 4.91,
+     "rate_cps_net_r": 4.19,
+     "pauses_ms": [
+      550,
+      320,
+      400
+     ],
+     "pauses_ms_r": [
+      370
+     ],
+     "f0_median": 95.7,
+     "f0_p10": 83.9,
+     "f0_p90": 113.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 4.19,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "好的你坐著林老師我去轉角帶小朋友過馬路很快回來",
+     "large-v3-turbo": "阿樂你坐著林老師我去轉角帶小朋友過馬路很快回來"
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "阿樂",
+          "hyp": "好的",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -39.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.19,
+      "range": [
+       3.0,
+       4.2
+      ],
+      "syllables": 23,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       550
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.94,
+         1.56
+        ],
+        "cut_s": 1.13,
+        "depth_rel_db": -44.7,
+        "existing_pause_ms": 880,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "detail_score": 1.0,
+    "fail_detail": "(a) small：阿樂→好的（字不同）",
+    "billed": 13
+   },
+   {
+    "k": 2,
+    "seeds": {
+     "chen": 20261022
+    },
+    "settings": {
+     "chen": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": 0.88,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "chen",
+      "i": 0,
+      "text": "阿勒，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+      "sent": "阿勒，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c001_02/chen_a1_s0_403269b88c21.mp3",
+      "request_id": "vZAw9fQKyvTATACkNYPX",
+      "billed": 13,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -34.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -9.1,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 6.72,
+       "t_fill_s": 7.62,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        6.83,
+        8.0
+       ],
+       "decay_end_s": 6.88,
+       "cut_s": 6.98,
+       "floor_rel_db": -29.4,
+       "removed_s": 1.34
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.1,
+         1.9
+        ],
+        "cut_s": 1.47,
+        "depth_rel_db": -44.0,
+        "existing_pause_ms": 680,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/voice_trials/chen/Neil_v3/a5_c001_02_a2.wav",
+    "metrics": {
+     "file": "review/G3/el/full/voice_trials/chen/Neil_v3/a5_c001_02_a2.wav",
+     "seconds": 7.32,
+     "speech_seconds": 6.95,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.31,
+     "rate_cps_net": 3.65,
+     "rate_cps_net_r": 3.31,
+     "pauses_ms": [
+      640,
+      150,
+      160
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 93.2,
+     "f0_p10": 81.0,
+     "f0_p90": 114.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.31,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": "阿勒你坐著林老師我去轉角帶小朋友過馬路很快回來",
+     "large-v3-turbo": "阿樂你坐著林老師我去轉腳帶小朋友過馬路很快回來"
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -34.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.31,
+      "range": [
+       3.0,
+       4.2
+      ],
+      "syllables": 23,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       640
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.1,
+         1.9
+        ],
+        "cut_s": 1.47,
+        "depth_rel_db": -44.0,
+        "existing_pause_ms": 680,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "detail_score": 0.0,
+    "fail_detail": "",
+    "billed": 13
+   }
+  ]
+ }
+}

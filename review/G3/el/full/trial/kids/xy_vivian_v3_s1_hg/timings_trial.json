@@ -1,0 +1,21 @@
+{
+ "a0_c004_01": {
+  "seconds": 3.3,
+  "speech_start": 0.12,
+  "speech_end": 3.05,
+  "speech_segments": [
+   [
+    0.12,
+    1.5
+   ],
+   [
+    1.94,
+    3.05
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_hg/out/vo_a0_c004_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_hg/lipsync/a0_c004_01_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔早！折折早！"
+ }
+}

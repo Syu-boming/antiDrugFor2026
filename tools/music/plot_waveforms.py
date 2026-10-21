@@ -2,6 +2,7 @@
 """畫 review/G3/music_waveforms.png：每檔一列（左：波形＋瞬間響度；右：頻譜圖）。
 用 /opt/anaconda3/bin/python3 執行（需要 matplotlib）。由 build_all.py 自動呼叫。"""
 import json
+import re
 from pathlib import Path
 
 import matplotlib
@@ -44,7 +45,7 @@ def main():
         ax.set_xlim(0, t[-1])
         for sgn in (1, -1):   # −6 dBFS 參考線
             ax.axhline(sgn * 10 ** (-6 / 20), color='#bbbbbb', lw=0.5, ls=':')
-        name = Path(rec['file']).stem.replace('_v01', '')
+        name = re.sub(r'_v\d+$', '', Path(rec['file']).stem)
         stat = f"I {rec['integrated_lufs']} LUFS  TP {rec['true_peak_dbtp']} dBTP  {rec['duration_s']} s"
         if rec['kind'] == 'music_loop':
             stat += f"  loop seam {rec['seam_sample_diff_lsb']} LSB"

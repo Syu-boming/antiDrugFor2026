@@ -1,6 +1,6 @@
 {
  "format": "antidrug-g4-art/1",
- "version": "v01",
+ "version": "v06",
  "date": "2026-10-21",
  "coords": "世界座標照 app/src/stage/layers.ts：x 向右、y 向上、z 朝觀眾；地面 y=0。world＝錨點的建議世界座標 [x, y, z]；units_per_px＝圖上 1 px 的世界長度。數值來自 review/G4/art/a2_layout_test.png 的 Python 試排（相機＝CAMERA_PRESETS.medium，1920×1080）。圖片像素座標 y 向下。",
  "pack_ids": "tools/pack.mjs：圖像 id＝相對 assets/final 的路徑去掉副檔名與 _vNN（例 bg-workshop-back、rig/chr-ale_torso、face/ale/chr-ale_mouth_open）；素材 JSON id 同理（rig/ale_rig、rig/ale_attach、face/xiaoqing/face、face/xiaoyu/face、face/ale/face、g4_manifest）。本檔 assets[].id 就是打包 id。",
@@ -494,7 +494,7 @@
  "assets": [
   {
    "id": "bg-workshop-back",
-   "file": "assets/final/bg-workshop-back_v02.jpg",
+   "file": "assets/final/bg-workshop-back_v03.jpg",
    "layer": "遠",
    "engine_layer": "backdrop",
    "z": -5.0,
@@ -519,7 +519,7 @@
     ]
    },
    "units_per_px": 0.007422,
-   "notes": "騎樓下燈籠工作室後牆（淺暖米色灰泥＋淺木柱、上方層架放未點亮的紙燈籠與竹篾）。蓋滿中景與大全景。右側門洞（世界 x≈6.9–7.9）是孩子 a2_c012 往右跑出去的方向。柱子已提亮 40%，角色軀幹高度一帶投影 v2 亮度中位 0.59。不透明 JPG，色彩空間 sRGB。",
+   "notes": "騎樓下燈籠工作室後牆（淺暖米色灰泥＋淺木柱、上方層架放未點亮的紙燈籠與竹篾）。蓋滿中景與大全景。右側門洞（世界 x≈6.9–7.9）是孩子 a2_c012 往右跑出去的方向。柱子已提亮 40%，角色軀幹高度一帶投影 v2 亮度中位 0.59。不透明 JPG，色彩空間 sRGB。 v03（G4 修正第 1 輪）：最下方踢腳板由偏橘 #DFB683 一帶提亮成淺木色 #F0DEC0（review/G4/art/wall_v03.json），開幕景片立起時兒童軀幹帶的背景亮度預估 0.42→0.55；尺寸、錨點不變。",
    "cues": [
     "a2_c001",
     "a2_c002",
@@ -778,7 +778,7 @@
     }
    },
    "face": "assets/final/face/xiaoqing/face.json",
-   "notes": "小晴：a2_c002 伸手提醒（指向叔叔手腕的線）。整張圖或『身體＋頭』兩層擇一（兩層 0° 疊回與原圖只差 ≤12 px 邊緣）。呼吸：身體層以腳底為錨點 scaleY 1.000–1.008、週期 3–4 秒；轉頭：頭層繞 pivot ±2.5° 以內；眨眼與對嘴見 face.json。",
+   "notes": "小晴：a2_c002 伸手提醒（指向叔叔手腕的線）。整張圖或『身體＋頭』兩層擇一（兩層 0° 疊回與原圖只差 ≤12 px 邊緣）。呼吸：身體層以腳底為錨點 scaleY 1.000–1.008、週期 3–4 秒；轉頭：頭層繞 pivot ±2.5° 以內；眨眼與對嘴見 face.json。 G4 修正第 1 輪：導演要求 a2_c004 全段不指人、「叔叔，小心！」改伸手掌 → 這張（伸食指）改由 palm／worried 取代，保留不刪。",
    "cues": [
     "a2_c002",
     "a2_c004"
@@ -914,7 +914,7 @@
   },
   {
    "id": "rig/ale_rig",
-   "file": "assets/final/rig/ale_rig.json",
+   "file": "assets/final/rig/ale_rig_v05.json",
    "layer": "角色",
    "engine_layer": "actors",
    "z": 0.0,
@@ -980,7 +980,7 @@
     },
     "forearm_l": {
      "id": "rig/chr-ale_forearm-l",
-     "file": "assets/final/rig/chr-ale_forearm-l_v04.png",
+     "file": "assets/final/rig/chr-ale_forearm-l_v05.png",
      "outline_id": "rig/chr-ale_forearm-l-outline"
     },
     "hand_l": {
@@ -990,7 +990,7 @@
     },
     "forearm_r": {
      "id": "rig/chr-ale_forearm-r",
-     "file": "assets/final/rig/chr-ale_forearm-r_v04.png",
+     "file": "assets/final/rig/chr-ale_forearm-r_v05.png",
      "outline_id": "rig/chr-ale_forearm-r-outline"
     },
     "hand_r": {
@@ -1002,9 +1002,15 @@
      "id": "rig/chr-ale_head-worried",
      "file": "assets/final/rig/chr-ale_head-worried_v04.png",
      "outline_id": "rig/chr-ale_head-worried-outline"
+    },
+    "head_greet": {
+     "id": "rig/chr-ale_head-greet",
+     "file": "assets/final/rig/chr-ale_head-greet_v05.png",
+     "outline_id": "rig/chr-ale_head-greet-outline",
+     "note": "替換頭 X2「想打招呼」（微笑＋眉毛上抬），與 head 同樞紐；臉部換片用 FALLBACK_FACES['ale:head']"
     }
    },
-   "attach": "assets/final/rig/ale_attach.json",
+   "attach": "assets/final/rig/ale_attach_v05.json",
    "face": "assets/final/face/ale/face.json",
    "readme": "assets/final/rig/README.md",
    "notes": "阿樂叔叔分件紙偶 v04（ale_v03 接縫修正＋乾淨困惑頭）。a2 用困惑頭 head_worried；白色紙芯邊用各部件的 -outline 圖在所有部件後面畫一次（整體外輪廓）。站姿身高 4.6 單位＝中景 640 px，與 G2 v04 合成相同比例。",
@@ -1013,6 +1019,262 @@
     "a2_c002",
     "a2_c004"
    ]
+  },
+  {
+   "id": "tex-string-rope",
+   "file": "assets/final/tex-string-rope_v01.png",
+   "layer": "角色",
+   "engine_layer": "strings（order 390）",
+   "z": null,
+   "size_px": [
+    64,
+    256
+   ],
+   "notes": "操偶線紙繩貼圖：u 跨線寬（u=0 畫面左＝受光邊）、v 沿線長四方連續，一週期＝4 線寬。淡灰紙繩身 sRGB≈178＋斜向扭紋＋紙纖維，兩側深灰邊各 12/64。RepeatWrapping＋mipmap。",
+   "cues": [
+    "a2_c002",
+    "a2_c004",
+    "a8_c002"
+   ]
+  },
+  {
+   "id": "tex-string-ring",
+   "file": "assets/final/tex-string-ring_v02.png",
+   "layer": "角色",
+   "engine_layer": "strings（order 391）",
+   "z": null,
+   "size_px": [
+    128,
+    128
+   ],
+   "notes": "紙環貼圖 v02（G4 修正第 2 輪）：米白紙環（紙面 sRGB≈(251,242,222)、色相約 41°、彩度約 12%，整片同色、沒有放射漸層或高光）＋細纖維紙紋＋左下紙帶接口細線；外緣、內緣暖深棕描邊；整個環往右下偏移 (5,6) px 的暖棕厚紙側邊當單側陰影（alphaTest 0.5，所以用不透明色）。外半徑 0.88、孔半徑 0.42（貼圖半寬為 1）。正方形平面、直徑 0.103 世界單位、正對鏡頭、不隨肢體旋轉（陰影方向因此固定在右下）。v01 灰環保留不刪。",
+   "cues": [
+    "a2_c002",
+    "a2_c004",
+    "a8_c002"
+   ]
+  },
+  {
+   "id": "ui/ui-speaker_narrator",
+   "file": "assets/final/ui/ui-speaker_narrator_v01.png",
+   "layer": "介面",
+   "engine_layer": "overlay（字幕說話者小頭像）",
+   "z": null,
+   "size_px": [
+    128,
+    128
+   ],
+   "notes": "字幕說話者小頭像：旁白（未點亮的和紙燈籠徽章）。128×128 透明圓形徽章（淡色圓盤＋白紙芯邊＋深色細線），顯示約 52–56 px；圖中無字，名牌文字由程式排字。說話者 id 同 app/src/ui/characters.ts。是否採用由主線決定（共用字幕樣式）。",
+   "cues": [
+    "全劇字幕"
+   ]
+  },
+  {
+   "id": "ui/ui-speaker_ale",
+   "file": "assets/final/ui/ui-speaker_ale_v01.png",
+   "layer": "介面",
+   "engine_layer": "overlay（字幕說話者小頭像）",
+   "z": null,
+   "size_px": [
+    128,
+    128
+   ],
+   "notes": "字幕說話者小頭像：阿樂叔叔。128×128 透明圓形徽章（淡色圓盤＋白紙芯邊＋深色細線），顯示約 52–56 px；圖中無字，名牌文字由程式排字。說話者 id 同 app/src/ui/characters.ts。是否採用由主線決定（共用字幕樣式）。",
+   "cues": [
+    "全劇字幕"
+   ]
+  },
+  {
+   "id": "ui/ui-speaker_xiaoqing",
+   "file": "assets/final/ui/ui-speaker_xiaoqing_v01.png",
+   "layer": "介面",
+   "engine_layer": "overlay（字幕說話者小頭像）",
+   "z": null,
+   "size_px": [
+    128,
+    128
+   ],
+   "notes": "字幕說話者小頭像：小晴。128×128 透明圓形徽章（淡色圓盤＋白紙芯邊＋深色細線），顯示約 52–56 px；圖中無字，名牌文字由程式排字。說話者 id 同 app/src/ui/characters.ts。是否採用由主線決定（共用字幕樣式）。",
+   "cues": [
+    "全劇字幕"
+   ]
+  },
+  {
+   "id": "ui/ui-speaker_xiaoyu",
+   "file": "assets/final/ui/ui-speaker_xiaoyu_v01.png",
+   "layer": "介面",
+   "engine_layer": "overlay（字幕說話者小頭像）",
+   "z": null,
+   "size_px": [
+    128,
+    128
+   ],
+   "notes": "字幕說話者小頭像：小宇。128×128 透明圓形徽章（淡色圓盤＋白紙芯邊＋深色細線），顯示約 52–56 px；圖中無字，名牌文字由程式排字。說話者 id 同 app/src/ui/characters.ts。是否採用由主線決定（共用字幕樣式）。",
+   "cues": [
+    "全劇字幕"
+   ]
+  },
+  {
+   "id": "chr-xiaoqing_pose-watch",
+   "file": "assets/final/chr-xiaoqing_pose-watch_v05.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.4,
+   "size_px": [
+    544,
+    1520
+   ],
+   "anchor": {
+    "px": [
+     436.5,
+     1502
+    ],
+    "meaning": "腳底中點（最低 6 列範圍中點）",
+    "world": [
+     0.95,
+     0.0,
+     0.4
+    ]
+   },
+   "face_pieces": "assets/final/face/xiaoqing/face-watch_v01.json（各姿勢各一份；合併版 face_v03.json 的 perPose.watch）",
+   "notes": "注視阿樂（a2_c002 開場；取代正面立正母版）：3/4 側身朝畫面左、放鬆、微笑",
+   "cues": [
+    "a2_c002（開場到第一根線落下後）"
+   ]
+  },
+  {
+   "id": "chr-xiaoqing_pose-palm",
+   "file": "assets/final/chr-xiaoqing_pose-palm_v05.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.4,
+   "size_px": [
+    846,
+    1517
+   ],
+   "anchor": {
+    "px": [
+     702.5,
+     1500
+    ],
+    "meaning": "腳底中點（最低 6 列範圍中點）",
+    "world": [
+     0.95,
+     0.0,
+     0.4
+    ]
+   },
+   "face_pieces": "assets/final/face/xiaoqing/face-palm_v01.json（各姿勢各一份；合併版 face_v03.json 的 perPose.palm）",
+   "notes": "「叔叔，小心！」伸出手掌示意：掌心向外、手指併攏、手在胸口高度，不指人；擔心、叫喚的圓嘴；≤1.5 秒後換回 worried",
+   "cues": [
+    "a2_c002（a2_c002_02 句）"
+   ]
+  },
+  {
+   "id": "chr-xiaoqing_pose-worried",
+   "file": "assets/final/chr-xiaoqing_pose-worried_v05.png",
+   "layer": "角色",
+   "engine_layer": "actors",
+   "z": 0.4,
+   "size_px": [
+    528,
+    1468
+   ],
+   "anchor": {
+    "px": [
+     271.0,
+     1450
+    ],
+    "meaning": "腳底中點（最低 6 列範圍中點）",
+    "world": [
+     0.95,
+     0.0,
+     0.4
+    ]
+   },
+   "face_pieces": "assets/final/face/xiaoqing/face-worried_v01.json（各姿勢各一份；合併版 face_v03.json 的 perPose.worried）",
+   "notes": "擔心站姿：雙手輕握在胸前、3/4 側身朝畫面左；a2_c004 全段用（不指人）",
+   "cues": [
+    "a2_c002（喊完之後）",
+    "a2_c004"
+   ]
   }
- ]
+ ],
+ "string_render": {
+  "rope_texture": "tex-string-rope",
+  "ring_texture": "tex-string-ring",
+  "string_width_world": 0.043,
+  "ring_diameter_world": 0.103,
+  "px_at_1080p": {
+   "g4_mid": {
+    "線寬": 8.0,
+    "紙環": 19.2
+   },
+   "錨點近景 dist 12.5": {
+    "線寬": 10.5,
+    "紙環": 25.2
+   }
+  },
+  "rope_end": "線的下端停在紙環上緣（扣點往線的方向退 0.4×直徑）；紙環畫在部件與線上面、正對鏡頭、不隨肢體旋轉",
+  "attach": "rig/ale_attach（v05）：三個扣點離肢體外形 ≥ 26.5 母版 px，整個紙環在剪影內（review/G4/art/ale_attach_v05_check.json）",
+  "preview": [
+   "review/G4/art/string_preview_v01.png",
+   "review/G4/art/ale_a2_poses_v05.png",
+   "review/G4/art/ring_crops_v02_preview.png"
+  ],
+  "contrast": "review/G4/art/string_tex_v01.json（線身對淺牆 ΔL*≈18；深灰邊對牆 ΔL*≈64；線身對工作褲 ΔL*≈32）",
+  "ring": "tex-string-ring v02：米白紙環＋紙紋＋右下單側厚紙陰影；環身亮度在 light 1.0 時 luma≈242、light 0.92 時仍 ≥220。strings.ts 的 ringMat.color.setScalar(light) 會把貼圖乘暗，light 低於 0.91 時環身會低於 220。",
+  "ring_stats": "review/G4/art/ring_tex_v02.json（貼圖紙面、v01 擷取環身、v02 示意環身的亮度與色相）；引擎重擷取後跑 make_ring_tex_v02.py --measure <擷取資料夾>"
+ },
+ "characters": {
+  "xiaoqing": {
+   "rig": "standee",
+   "height": 2.5,
+   "defaultPose": "stand",
+   "face": "face/xiaoqing/face",
+   "poses": {
+    "stand": {
+     "image": "chr-xiaoqing_master"
+    },
+    "reach": {
+     "image": "chr-xiaoqing_pose-reach-worried"
+    },
+    "watch": {
+     "image": "chr-xiaoqing_pose-watch"
+    },
+    "palm": {
+     "image": "chr-xiaoqing_pose-palm"
+    },
+    "worried": {
+     "image": "chr-xiaoqing_pose-worried"
+    }
+   }
+  }
+ },
+ "round1_art": {
+  "date": "2026-10-21",
+  "items": {
+   "22/34 操偶線紙繩": "tex-string-rope v01＋string_render（引擎換貼圖、STRING_WIDTH 0.066→0.043）",
+   "23 紙環": "tex-string-ring v01＋rig/ale_attach v05（扣點內移，紙環整個在剪影內）",
+   "27 前臂": "rig/chr-ale_forearm-{l,r} v05（補線稿、紙紋，移除袖口碎片）；id 不變，打包自動換用",
+   "17 X2 打招呼臉": "rig/chr-ale_head-greet v05（rig v05 的 head_greet 替換部件）",
+   "16 閉眼": "face/<角色>/chr-<角色>_eyes_closed v02（中性閉眼）＋face_v02.json",
+   "16/25 小晴姿勢": "chr-xiaoqing_pose-{watch,palm,worried} v05＋face/xiaoqing/face_v03.json（perPose）＋characters.xiaoqing",
+   "21 開幕背景亮度": "bg-workshop-back v03（踢腳板提亮）",
+   "33 說話者圖示": "ui/ui-speaker_{narrator,ale,xiaoqing,xiaoyu} v01（主線決定是否採用）"
+  }
+ },
+ "round2_art": {
+  "date": "2026-10-21",
+  "items": {
+   "1/5/9 兩眼同閉": "小晴 reach＝face/xiaoqing/chr-xiaoqing_eyes_half v02、eyes_closed v03；小晴 watch／palm／worried＝chr-xiaoqing_<姿勢>-eyes_half v02、eyes_closed v02；小宇＝chr-xiaoyu_eyes_half v02、eyes_closed v03。兩隻眼都換成同款線（閉眼＝近乎平直、略往下彎的中性閉眼線；半閉＝上半眼改眼皮），同一張換片蓋兩眼，所以一換片就是兩眼同時閉、同時開。圖像 id 不含版本號，打包自動換用，face JSON 的 shapes 不必改。檢查：review/G4/art/blink_check_r2.json、face_sheet_xq_v06.png、face_sheet_v06.png、blink_zoom_r2.png",
+   "face JSON": "face/xiaoqing/face＝face_v04.json（原生 FaceConfig，perPose 內容與 v03 相同，只更新版本與紀錄）；face/xiaoyu/face＝face_v03.json；face-<姿勢>_v02.json（只登記檔名）",
+   "8 紙環": "tex-string-ring v02（見 assets[] 與 string_render.ring）"
+  },
+  "engine_notes": [
+   "眨眼與翻面錯開（問題 10）、線的下垂弧（問題 6）、站起與扶桌（問題 7）、a2_c004 小動作（問題 12）是引擎的部分，素材沒有變更。",
+   "引擎重擷取 g4_playback.mp4 與 ring_crops.png 後，才能做問題 8、9 的正式驗證（本輪美術只附示意與素材層級的量測）。",
+   "strings.ts 的退路紙環 ringTexture()（素材缺圖時）仍是灰環；正式包有 v02 素材不會用到，若要一致可改成米白（#FBF2DE 紙面、#4A3426 描邊）。"
+  ]
+ }
 }

@@ -1,0 +1,2666 @@
+{
+ "_說明": "ElevenLabs 全劇版升為正式 v04 的紀錄（tools/vo_el_promote.py）",
+ "lines": {
+  "a6_c007_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a6_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c007_01_el01.json",
+   "file": "audio/vo/vo_a6_c007_01_v04.wav",
+   "sha1": "598b093054973a9b57b7720b43a3869a240e3b24",
+   "status": "fail",
+   "failed": [
+    "a",
+    "b"
+   ],
+   "request_ids": [
+    "w6aNwR5ZdxfeiX158z67"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c003_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c003_02_el01.json",
+   "file": "audio/vo/vo_a2_c003_02_v04.wav",
+   "sha1": "b017952b634960f63f5b162f2e94fbf973d9a095",
+   "status": "fail",
+   "failed": [
+    "a",
+    "b"
+   ],
+   "request_ids": [
+    "pbUV2nO4yNzU6u2YFeuq"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c001_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a0_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c001_01_el01.json",
+   "file": "audio/vo/vo_a0_c001_01_v04.wav",
+   "sha1": "5ae41c548e0a17b29840041872ef1ba3b3ea818d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "PZxGprGYRJyXvhsT3zYS"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c002_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c002_01_el01.json",
+   "file": "audio/vo/vo_a0_c002_01_v04.wav",
+   "sha1": "a2985212a3fe04572ff4330de50118bee768f090",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "T3AURdH2ceRuPfNg7seD"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c002_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c002_02_el01.json",
+   "file": "audio/vo/vo_a0_c002_02_v04.wav",
+   "sha1": "44d79f85603f3b3d8a7d5061d1dcffa93ef35bdd",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "AZNiGANSb2dk2vne9naR"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c002_03": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a0_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c002_03_el01.json",
+   "file": "audio/vo/vo_a0_c002_03_v04.wav",
+   "sha1": "6cb024819c907a60d893d306adfa06e5290cc114",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "8L9xVt0NF7zrnLYbPZzZ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c003_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c003_01_el01.json",
+   "file": "audio/vo/vo_a0_c003_01_v04.wav",
+   "sha1": "c309208edff7b4912eecea2f119cc5f0d0fb0385",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "u4rogqG7iY4W0oSiFKIw"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c003_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c003_02_el01.json",
+   "file": "audio/vo/vo_a0_c003_02_v04.wav",
+   "sha1": "6303a1458fb98f8abddc21ac7ab8fc5320dd986a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "XX8AmELu3kc0Tt09LvMq"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c003_03": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a0_c003_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c003_03_el01.json",
+   "file": "audio/vo/vo_a0_c003_03_v04.wav",
+   "sha1": "aa3c20cab904e4b5a61af251834e193e7cf0e2f1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "YTVBiFHm5AI14ByXWJyO"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c003_04": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c003_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c003_04_el01.json",
+   "file": "audio/vo/vo_a0_c003_04_v04.wav",
+   "sha1": "a36b4eba2aeab626cac1f78a3043df38d5fb84c8",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "IVan194KkAP0ddYK4UVK"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a0_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_01_el01.json",
+   "file": "audio/vo/vo_a0_c004_01_v04.wav",
+   "sha1": "f619d9adf67a561a9e6dd5db600377cc802e3eff",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "pIycmznAPNDjU0GHDljO"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a0_c004_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_02_el01.json",
+   "file": "audio/vo/vo_a0_c004_02_v04.wav",
+   "sha1": "c1773d4723df6967f523855dfa93df7682ee9960",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "xMXNdi0WJ77bDEY5QzzG"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c004_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_03_el01.json",
+   "file": "audio/vo/vo_a0_c004_03_v04.wav",
+   "sha1": "427442a30b7fd02000b79216ee64882e92127f96",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "FiP39vo4S0cMTMfuVTFT"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a0_c004_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_04_el01.json",
+   "file": "audio/vo/vo_a0_c004_04_v04.wav",
+   "sha1": "633d4dcb6e3f272979fcdf200fae0f5d52d2ea3f",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "Mp3Ql7oeUZgM94hBGwjf"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_05": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a0_c004_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_05_el01.json",
+   "file": "audio/vo/vo_a0_c004_05_v04.wav",
+   "sha1": "2e0e4ad92ffcd098acfccf07deb4603f8e1e17d4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "eZsmSicFVLHt4jSZW6kL"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c004_06": {
+   "role": "小晴、小宇",
+   "source": "audio/vo_el/vo_a0_c004_06_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c004_06_el01.json",
+   "file": "audio/vo/vo_a0_c004_06_v04.wav",
+   "sha1": "12415ee896ab34d6d29f0d0afbc2c30991ec56d1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "qFa28lEXocpT5BKwmnqC",
+    "5FhGqJskqXjCLbL6Gf1B"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c005_01_el01.json",
+   "file": "audio/vo/vo_a0_c005_01_v04.wav",
+   "sha1": "9d4270ebdb2ef0c3549b3363efb65dcf99cd37fd",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "DlV7BMdd5hPRQcBbbgQT"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c005_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c005_02_el01.json",
+   "file": "audio/vo/vo_a0_c005_02_v04.wav",
+   "sha1": "87bd31a4eba4ce2b9de060206d556346f9fd3f06",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "tPqlWgMFpVptAVSkTnEW"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a0_c005_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a0_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a0_c005_03_el01.json",
+   "file": "audio/vo/vo_a0_c005_03_v04.wav",
+   "sha1": "d11131414e6f9da1b5a966a003b1fcce8df2ae30",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "DdQBQzyGLo30QMGBs9rA"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c001_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c001_01_el01.json",
+   "file": "audio/vo/vo_a1_c001_01_v04.wav",
+   "sha1": "8cfa73cdad3b411a40c36f875a9d34bd522daaf5",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "t61gsmfqgpb6JQPhKno0"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c001_02": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a1_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c001_02_el01.json",
+   "file": "audio/vo/vo_a1_c001_02_v04.wav",
+   "sha1": "201b90db86bf04a0e807587baa73b69ffc0f9230",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "JT0pEJlwe0MQEoRPre7r"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c001_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a1_c001_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c001_03_el01.json",
+   "file": "audio/vo/vo_a1_c001_03_v04.wav",
+   "sha1": "dc6124100688695815d8c5d854302261f4ee7826",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "cWzHwssgPRXpoOTBup51"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c001_04": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a1_c001_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c001_04_el01.json",
+   "file": "audio/vo/vo_a1_c001_04_v04.wav",
+   "sha1": "31a094644e0749762e2d9128a7b59db90e5ea82a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "zOSwG8JkSaVwNoFwiy1T"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c001_05": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a1_c001_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c001_05_el01.json",
+   "file": "audio/vo/vo_a1_c001_05_v04.wav",
+   "sha1": "977e1ea731e9d6bb1a5d695e62947bf55225299e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "snTN15GB9GjtbRPOeOLJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c002_01": {
+   "role": "邀請者",
+   "source": "audio/vo_el/vo_a1_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c002_01_el01.json",
+   "file": "audio/vo/vo_a1_c002_01_v04.wav",
+   "sha1": "e86c845618001809be0ee46fd665c123d2dea798",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "PQQnFVJMAI7CkPyQ478V"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c002_02": {
+   "role": "邀請者",
+   "source": "audio/vo_el/vo_a1_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c002_02_el01.json",
+   "file": "audio/vo/vo_a1_c002_02_v04.wav",
+   "sha1": "b93f54295d424c0cad82bdf0534c5f293a35ba3f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "PRCUsxzOkYxc8pvANF15"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c002_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a1_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c002_03_el01.json",
+   "file": "audio/vo/vo_a1_c002_03_v04.wav",
+   "sha1": "5dfd368c7e8d73fb69a3f11287cf10ec649eb920",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "oc94dzfODJ5ZmsloU9J8"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c003_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a1_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c003_01_el01.json",
+   "file": "audio/vo/vo_a1_c003_01_v04.wav",
+   "sha1": "e9b58e5663a11d0d695310bddab2e40dc637aabe",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Z8KhsRFEi9SuxNLyDTQJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c003_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c003_02_el01.json",
+   "file": "audio/vo/vo_a1_c003_02_v04.wav",
+   "sha1": "302e16280f39e83ad278c3198c4ec76d537598e3",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "TC6E6GUtbe3iYnF11G7Q"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c003_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a1_c003_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c003_03_el01.json",
+   "file": "audio/vo/vo_a1_c003_03_v04.wav",
+   "sha1": "2649b85481e1a4c9e9d43dc3c47191100d7578b4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "0hB5ad4UpMuCsFRzgHzB"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_01": {
+   "role": "邀請者",
+   "source": "audio/vo_el/vo_a1_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_01_el01.json",
+   "file": "audio/vo/vo_a1_c004_01_v04.wav",
+   "sha1": "e3df6f3ce72a9a3d6b4b834b7f52bd730953ab78",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "o7P0qUnu9EhyzBIOU6Up"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c004_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_02_el01.json",
+   "file": "audio/vo/vo_a1_c004_02_v04.wav",
+   "sha1": "891e697985d3255aa5ab18406fb8fc961c51b001",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "hmcOlvUuyHW3g3L3uLoJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_03": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c004_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_03_el01.json",
+   "file": "audio/vo/vo_a1_c004_03_v04.wav",
+   "sha1": "424608631faa34174da9b245588a13dbe5aaa4f9",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "6yJKLYduC24ghb823vXj"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a1_c004_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_04_el01.json",
+   "file": "audio/vo/vo_a1_c004_04_v04.wav",
+   "sha1": "996bc04b6957319c840d5baf54c3db8324573c78",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "tlge6fSvjskHz3vq2iI1"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_05": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c004_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_05_el01.json",
+   "file": "audio/vo/vo_a1_c004_05_v04.wav",
+   "sha1": "6d3b13bfd2e719d2cc41bdc03818d84a0811ed3d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "JZNvT2Ef0slhLQDOTN94"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c004_06": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a1_c004_06_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c004_06_el01.json",
+   "file": "audio/vo/vo_a1_c004_06_v04.wav",
+   "sha1": "bd906ce6fa2750b3d2cb7fbadcd2514d94287a4c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "SFB5NbcWJLM1tcpruJiO"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a1_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c005_01_el01.json",
+   "file": "audio/vo/vo_a1_c005_01_v04.wav",
+   "sha1": "f9f33e6fde193a6126ea90508490d4a834ec66ec",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "PHGf9OvZ2rII9DZc9Gug"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c005_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a1_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c005_02_el01.json",
+   "file": "audio/vo/vo_a1_c005_02_v04.wav",
+   "sha1": "98bbe88abd4cd407906bbb48c7d068ef9586ad7c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "v2z0SQIFPCAuzp4WVUzH"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c005_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a1_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c005_03_el01.json",
+   "file": "audio/vo/vo_a1_c005_03_v04.wav",
+   "sha1": "2b8b832e415c810e95e1e701f5ab7b6fe28aad2d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "OcjGb8o9wipoSvW0P8Cc"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c005_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a1_c005_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c005_04_el01.json",
+   "file": "audio/vo/vo_a1_c005_04_v04.wav",
+   "sha1": "2a3e694c721a325b8b7d4b045048f789fd43ad99",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "wgoeYHT24JVdLX0MofET"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c005_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a1_c005_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c005_05_el01.json",
+   "file": "audio/vo/vo_a1_c005_05_v04.wav",
+   "sha1": "d95255c775a728070eee3c3d42526ca60e196b18",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "EmehKp1dm1YZZFrWei7H"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c006_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a1_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c006_01_el01.json",
+   "file": "audio/vo/vo_a1_c006_01_v04.wav",
+   "sha1": "a0f9dde06f40ae399d9080c7a6eb1725537f91dd",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "GeId3w0tPRae3ypLBGy1"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c007_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a1_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c007_01_el01.json",
+   "file": "audio/vo/vo_a1_c007_01_v04.wav",
+   "sha1": "16fb7d83b0825c4aa5fdc1f87b7320ad67c1809c",
+   "status": "fail",
+   "failed": [
+    "d"
+   ],
+   "request_ids": [
+    "78XZsZX444I1fl9qFQhb"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c008_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a1_c008_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c008_01_el01.json",
+   "file": "audio/vo/vo_a1_c008_01_v04.wav",
+   "sha1": "3c2f0ba95873d8c9ed1a7c7dc966dd01560e57b5",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "94GrzVnjahLAWarvWXWc"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c008_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a1_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c008_02_el01.json",
+   "file": "audio/vo/vo_a1_c008_02_v04.wav",
+   "sha1": "43c9ae117be0e665e5c910f7cad9c24413b09490",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "7KudAtheCAtC3MFgCNwh"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a1_c008_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a1_c008_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a1_c008_03_el01.json",
+   "file": "audio/vo/vo_a1_c008_03_v04.wav",
+   "sha1": "f31dd1e251cffcb6603e9823645b650fa631bf95",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "CprQKveKWGfHc48ENGTG"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c001_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a2_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c001_01_el01.json",
+   "file": "audio/vo/vo_a2_c001_01_v04.wav",
+   "sha1": "185af119d67cccbb68eea0b7c51a3838f21ef565",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "EpyWUhgq06LyiKqZRULV"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c001_02": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a2_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c001_02_el01.json",
+   "file": "audio/vo/vo_a2_c001_02_v04.wav",
+   "sha1": "6897862567d7ba609b5cb847d0d7e926634e8b90",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "kBLAo8ddNNHjvUzT9PWK"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c001_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a2_c001_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c001_03_el01.json",
+   "file": "audio/vo/vo_a2_c001_03_v04.wav",
+   "sha1": "2ed19927b959ba6b04b47e920f87d8092903da5a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Ma39XpGORAPrnKiwKkg7"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c002_01": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a2_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c002_01_el01.json",
+   "file": "audio/vo/vo_a2_c002_01_v04.wav",
+   "sha1": "713fab79e4b82999e67577af640b7b4ae038b935",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "ghOIeVeEQ7UQWTlHlfwJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c002_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a2_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c002_02_el01.json",
+   "file": "audio/vo/vo_a2_c002_02_v04.wav",
+   "sha1": "29b9af78a23331dfb7c1be1be0817aa3ced220a3",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "puN3V1PNDRyy82SnVqkH"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c003_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c003_01_el01.json",
+   "file": "audio/vo/vo_a2_c003_01_v04.wav",
+   "sha1": "31749439918e966a18b242141f56e9c58f7d3b0b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "t7vvg21HphkuiDA9RMPw"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c004_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c004_01_el01.json",
+   "file": "audio/vo/vo_a2_c004_01_v04.wav",
+   "sha1": "00ca9a90d0c1be49e2978b362ce1678b95a96113",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Svg4K7otdJoJ6defhe18"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c004_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c004_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c004_02_el01.json",
+   "file": "audio/vo/vo_a2_c004_02_v04.wav",
+   "sha1": "dacab0f41e41b294e81219307c23dbf2633291d8",
+   "status": "incomplete",
+   "failed": null,
+   "request_ids": null,
+   "time": "2026-10-21 13:40:12"
+  },
+  "a2_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a2_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c005_01_el01.json",
+   "file": "audio/vo/vo_a2_c005_01_v04.wav",
+   "sha1": "6611bfd4d41de51c78ca3b76fbc248226e7ae51c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "8XtsLtw1jDoexjVSonPX"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c005_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c005_02_el01.json",
+   "file": "audio/vo/vo_a2_c005_02_v04.wav",
+   "sha1": "b07b940e6a199073b416caa63a18c70db79ff325",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "WCA3qXlSwY5X0Zl19mTp"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c005_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c005_03_el01.json",
+   "file": "audio/vo/vo_a2_c005_03_v04.wav",
+   "sha1": "451f7341ae2102370f0c5456bf42e9b2bd4e7e2c",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "0BURmuAr8LDqV2kjF1Qd"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c005_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c005_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c005_04_el01.json",
+   "file": "audio/vo/vo_a2_c005_04_v04.wav",
+   "sha1": "7a1ded5ab324401d357112f04f3b1036fb1aa64b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "pyWagNQKifk0lATyIoqN"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c005_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c005_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c005_05_el01.json",
+   "file": "audio/vo/vo_a2_c005_05_v04.wav",
+   "sha1": "ebb2224b0c7d389e2aa3601570bd340a19b6ea4b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "hvXe4xwm5C2He0Lmug1N"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c006_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c006_01_el01.json",
+   "file": "audio/vo/vo_a2_c006_01_v04.wav",
+   "sha1": "e680684146d308d287d5bf4a66d3027926f85fd9",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "UwlqdtDQzkcs4kJKfa4K"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c007_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a2_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c007_01_el01.json",
+   "file": "audio/vo/vo_a2_c007_01_v04.wav",
+   "sha1": "c29806691e4416e4537f0e6dafc1a7831bbaf281",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "3hcXw1r8ZXkVAWUUystk"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c008_01": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a2_c008_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c008_01_el01.json",
+   "file": "audio/vo/vo_a2_c008_01_v04.wav",
+   "sha1": "6fceb11c412785f112a165c639c4ed07fce9ee57",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "FFRHjWitrwuhEzuxgDMW"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c008_02": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a2_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c008_02_el01.json",
+   "file": "audio/vo/vo_a2_c008_02_v04.wav",
+   "sha1": "5f0860ca7ba5a6ec02db7e887d1e443a2cf9c5cc",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "eNNtK2NskCtMxzcTo3RB"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c008_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a2_c008_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c008_03_el01.json",
+   "file": "audio/vo/vo_a2_c008_03_v04.wav",
+   "sha1": "e4a97756fbd607dd07ff1ad89cfb03fc036fc4ed",
+   "status": "fail",
+   "failed": [
+    "d"
+   ],
+   "request_ids": [
+    "Eox4wXLkFnVPa1ZKPoop"
+   ],
+   "time": "2026-10-21 13:40:12"
+  },
+  "a2_c008_04": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a2_c008_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c008_04_el01.json",
+   "file": "audio/vo/vo_a2_c008_04_v04.wav",
+   "sha1": "62b04fc9b445797973c765d44ae32b66553e4682",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "YXAC3rZzxLJfP8Tr6XgR"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c008_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c008_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c008_05_el01.json",
+   "file": "audio/vo/vo_a2_c008_05_v04.wav",
+   "sha1": "81dda45daebce047b2a22e57394254891c99a305",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "hy1tfzXPNNHsh38XUTo0"
+   ],
+   "time": "2026-10-21 13:40:12"
+  },
+  "a2_c009_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a2_c009_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c009_01_el01.json",
+   "file": "audio/vo/vo_a2_c009_01_v04.wav",
+   "sha1": "885779f8d38e03f367df2201f86927f2e003ab8d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "GJmFXeXMayKhT2kuZ5Hm"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c009_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c009_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c009_02_el01.json",
+   "file": "audio/vo/vo_a2_c009_02_v04.wav",
+   "sha1": "e1337b46f8b69813af47d864fbdc15a5b33c3137",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Dhu7mOrpP1n7R2s4v9TZ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c009_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c009_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c009_03_el01.json",
+   "file": "audio/vo/vo_a2_c009_03_v04.wav",
+   "sha1": "9592cb296d6f4cef3542befea367638875e07779",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "YvHMrfvCRO3TyDx4lFLO"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c009_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c009_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c009_04_el01.json",
+   "file": "audio/vo/vo_a2_c009_04_v04.wav",
+   "sha1": "d6882569600db991ae4cbb757d1a4d9647a33fbf",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "dXCW3TxJeDv0IxsPMKIC"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c009_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c009_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c009_05_el01.json",
+   "file": "audio/vo/vo_a2_c009_05_v04.wav",
+   "sha1": "b67b8daa048d923efcb146b47e5ffb8662280838",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "dxHoVORK5zPKZGfQqPgD"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c010_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c010_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c010_01_el01.json",
+   "file": "audio/vo/vo_a2_c010_01_v04.wav",
+   "sha1": "8a0baeda5c833f68bbd66d222f1ad55c7c60a456",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "mBcdyXTRhzCGPbpKlUMy"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c011_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a2_c011_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c011_01_el01.json",
+   "file": "audio/vo/vo_a2_c011_01_v04.wav",
+   "sha1": "29181fc2fba035e560c09f085210f76e6dc230cc",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "iNI8FWYQPnp5oQypfE6d"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c012_01": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a2_c012_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c012_01_el01.json",
+   "file": "audio/vo/vo_a2_c012_01_v04.wav",
+   "sha1": "6230d4ba3b8597b7c39fbba40aef0f4c9d88a2d2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "NzvB0sqUWwzXPEPIvQEu"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c012_02": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a2_c012_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c012_02_el01.json",
+   "file": "audio/vo/vo_a2_c012_02_v04.wav",
+   "sha1": "c57fda7fb215323bf624c115772ed43699ad3b85",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "e72AEYTVGN8y0uq9Zj7C"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c012_03": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a2_c012_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c012_03_el01.json",
+   "file": "audio/vo/vo_a2_c012_03_v04.wav",
+   "sha1": "c91dd8d4e89bed44eedc19f0f32386a4811620dc",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "BJSzhblEM8KtqVisgR3i"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c012_04": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a2_c012_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c012_04_el01.json",
+   "file": "audio/vo/vo_a2_c012_04_v04.wav",
+   "sha1": "a54acff05bef948b0487b4e032fb8e3bd9a11ef1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "992AwETf0z528O700iIG"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c012_05": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a2_c012_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c012_05_el01.json",
+   "file": "audio/vo/vo_a2_c012_05_v04.wav",
+   "sha1": "5e336dbc0268eea247ebe857864b2ca0db2de5e4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "3O5CQv45vfdUcUQu5njO"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c013_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c013_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c013_01_el01.json",
+   "file": "audio/vo/vo_a2_c013_01_v04.wav",
+   "sha1": "60195a4f16c3c96635d8051457e88471bceed8a7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "IQHH2hkWevXMGMmOZkl9"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c013_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a2_c013_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c013_02_el01.json",
+   "file": "audio/vo/vo_a2_c013_02_v04.wav",
+   "sha1": "9ebbf223b26cbad588e7dc9f22616a283e5c996b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "aSAulYIEwSTx4nEzxfE8"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c013_03": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a2_c013_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c013_03_el01.json",
+   "file": "audio/vo/vo_a2_c013_03_v04.wav",
+   "sha1": "92ed21392d1c045ba7cc55f7193671c9a9b7875f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "JDEiV2nnaAXngoVKu8Ty"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c013_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a2_c013_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c013_04_el01.json",
+   "file": "audio/vo/vo_a2_c013_04_v04.wav",
+   "sha1": "9e2130c386f5f2f67d86c0c2cf42f900d484c11b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "30kW55foDqLLzIxVLO2w"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a2_c013_05": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a2_c013_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a2_c013_05_el01.json",
+   "file": "audio/vo/vo_a2_c013_05_v04.wav",
+   "sha1": "29ffe38cfd30cbe79392d005400efb6bac384f75",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "LfZd0O11ltn9vtWVC3Pn"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c001_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a3_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c001_01_el01.json",
+   "file": "audio/vo/vo_a3_c001_01_v04.wav",
+   "sha1": "3c0229b4dd95030a3ac353fe9b2ed5bce045bfe6",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "VWviTwdJ9Lpx9nnhBS1X"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c001_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a3_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c001_02_el01.json",
+   "file": "audio/vo/vo_a3_c001_02_v04.wav",
+   "sha1": "aa3546dfd152f0c413bf22b612a74dafa4c36312",
+   "status": "fail",
+   "failed": [
+    "d"
+   ],
+   "request_ids": [
+    "k31qWxYKyiS1x4l5QNRf"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c001_03": {
+   "role": "邀請者",
+   "source": "audio/vo_el/vo_a3_c001_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c001_03_el01.json",
+   "file": "audio/vo/vo_a3_c001_03_v04.wav",
+   "sha1": "87528a2dd72b4023d63be470dae4aa6d09d6d891",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "7AtmAX5Urn8G6hPMDe1k"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c001_04": {
+   "role": "邀請者",
+   "source": "audio/vo_el/vo_a3_c001_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c001_04_el01.json",
+   "file": "audio/vo/vo_a3_c001_04_v04.wav",
+   "sha1": "56393c2a364fab99085652526b477168cefa626e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "VTtG3Vyn1TcZt6pDdsdR"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c002_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a3_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c002_01_el01.json",
+   "file": "audio/vo/vo_a3_c002_01_v04.wav",
+   "sha1": "8a7396557e58e0c8254160eed55e6f0aa78cdee1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "OCHglVYIeQKzHGGoyILY"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c002_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a3_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c002_02_el01.json",
+   "file": "audio/vo/vo_a3_c002_02_v04.wav",
+   "sha1": "9d11f96437d81ace5bf253e5d96e88df546e6b7b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "rmUwCxKSedY8Hbz2CBN4"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c002_03": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a3_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c002_03_el01.json",
+   "file": "audio/vo/vo_a3_c002_03_v04.wav",
+   "sha1": "5f62eedc63ea18698310cbf8e607b950f8ce1204",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "WPDPb1t8sNVsyexW6Byy"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c003_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a3_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c003_01_el01.json",
+   "file": "audio/vo/vo_a3_c003_01_v04.wav",
+   "sha1": "3acb22fe0d674dabb0d097b4c865f4f25cf90d52",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "p7ZNYRwMq8plw1auvU7T"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c003_02": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a3_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c003_02_el01.json",
+   "file": "audio/vo/vo_a3_c003_02_v04.wav",
+   "sha1": "313e8d5289f40b5b6743e2f78cfb9f544481e66b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "OBNgJLH0THLHOykpcBMl"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c003_03": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a3_c003_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c003_03_el01.json",
+   "file": "audio/vo/vo_a3_c003_03_v04.wav",
+   "sha1": "3f1e6e36be5e59305234caa7cd51340da7091f82",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Usl7fHhhX8WWWIrcK5P7"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c004_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a3_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c004_01_el01.json",
+   "file": "audio/vo/vo_a3_c004_01_v04.wav",
+   "sha1": "679b26b05f6d508bb3c34009dd39ba7cc1833220",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "UGKmJAh75gfGueit2gmJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c004_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a3_c004_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c004_02_el01.json",
+   "file": "audio/vo/vo_a3_c004_02_v04.wav",
+   "sha1": "aa4dada6d686accad20691b9b60f16ae962bc579",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "zBxwol9osZO0y7HNL6AP"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a3_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c005_01_el01.json",
+   "file": "audio/vo/vo_a3_c005_01_v04.wav",
+   "sha1": "34b7a3d0c72dd4b665cc4ed4c71496feeb975e0f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "os7ANqBQjKbBJV7l8K8j"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c005_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a3_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c005_02_el01.json",
+   "file": "audio/vo/vo_a3_c005_02_v04.wav",
+   "sha1": "8aba6e60ceee2100c10418d31caee1c5d261d394",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "uI7vl462PbUWLPPWlfzq"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c005_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a3_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c005_03_el01.json",
+   "file": "audio/vo/vo_a3_c005_03_v04.wav",
+   "sha1": "084e222ec6ba6cc6a4b8e4bb0a12f02602a5089a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "n0Gx72Vau4987drqR53P"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c005_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a3_c005_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c005_04_el01.json",
+   "file": "audio/vo/vo_a3_c005_04_v04.wav",
+   "sha1": "11a1d8b75cfb8be0223158d3b814861b83a1defe",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "o65Ln0ehEOpYDzPIQNKJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c005_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a3_c005_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c005_05_el01.json",
+   "file": "audio/vo/vo_a3_c005_05_v04.wav",
+   "sha1": "0142865708ca0c8f4097f15d24f7fabee9c1f383",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "A1piVoqUtMiFsufY37IJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c006_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a3_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c006_01_el01.json",
+   "file": "audio/vo/vo_a3_c006_01_v04.wav",
+   "sha1": "8ab1ef24bba53d4ba2ab271bcdad6f55e1798437",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "GnBR1OmUvzTnQBI2u7s1"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c007_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a3_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c007_01_el01.json",
+   "file": "audio/vo/vo_a3_c007_01_v04.wav",
+   "sha1": "699be3e0a470c180ae45ee50370c0c16c3b1928c",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "LsVDaYgLQ2fHxd0kiLmI"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c008_01": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a3_c008_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c008_01_el01.json",
+   "file": "audio/vo/vo_a3_c008_01_v04.wav",
+   "sha1": "ec2cd64a356a16168eec33e9aa1c9175486d2f87",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "gcPfKHaqKtu5XwP4trN5"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c008_02": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a3_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c008_02_el01.json",
+   "file": "audio/vo/vo_a3_c008_02_v04.wav",
+   "sha1": "8628c0c2a69037e092a02a817af39e5c4dd8288a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "cWhkGzuHlV7fz9sIfU5f"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c008_03": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a3_c008_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c008_03_el01.json",
+   "file": "audio/vo/vo_a3_c008_03_v04.wav",
+   "sha1": "da9c9586946be77c0ce8e4bd5978415282e81935",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "JXWxzvHEZB7YcRSM6z54"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a3_c008_04": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a3_c008_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a3_c008_04_el01.json",
+   "file": "audio/vo/vo_a3_c008_04_v04.wav",
+   "sha1": "0d5afcf2f205fdbd4e8cdb5a74141b5de254932d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "vhvC8fWCcGLkHc52X3ge"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c001_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c001_01_el01.json",
+   "file": "audio/vo/vo_a4_c001_01_v04.wav",
+   "sha1": "cc574bb864360e6115bb4082cd79642ec707b9a7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "fjFbPFbeajsfbKzVKF53"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c001_02": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a4_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c001_02_el01.json",
+   "file": "audio/vo/vo_a4_c001_02_v04.wav",
+   "sha1": "e9ce5021377927032d65c9d437509e9ea9c423f6",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "DbqorbN45g7b855D7ix4"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c002_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a4_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c002_01_el01.json",
+   "file": "audio/vo/vo_a4_c002_01_v04.wav",
+   "sha1": "6783a0607957f97f3b5763ba67e7bdb831f0aabe",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "70PU1fl0bi0uy3nLIBfL"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c002_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a4_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c002_02_el01.json",
+   "file": "audio/vo/vo_a4_c002_02_v04.wav",
+   "sha1": "ff717ce392f8ab41962a7e983b5625d63c29884b",
+   "status": "fail",
+   "failed": [
+    "d"
+   ],
+   "request_ids": [
+    "UNQ6ZoYxda4WYlmGL7pT"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c002_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c002_03_el01.json",
+   "file": "audio/vo/vo_a4_c002_03_v04.wav",
+   "sha1": "d58da62fd0961b8600c29d6fadfb4db96b7704b5",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "ri2ZEle3mbsITCc1xfh4"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c003_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c003_01_el01.json",
+   "file": "audio/vo/vo_a4_c003_01_v04.wav",
+   "sha1": "882766c685e352fb90af62c49a621ff0d2017c46",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "z8dKDOKG9JvmaP1K1Svl"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c003_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c003_02_el01.json",
+   "file": "audio/vo/vo_a4_c003_02_v04.wav",
+   "sha1": "ac0f533ad5a8249990fb86c3b0bc062e8ec10abe",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "P34h0jhaljC33u07hDZz"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c004_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c004_01_el01.json",
+   "file": "audio/vo/vo_a4_c004_01_v04.wav",
+   "sha1": "8a5c4190d2f25e23c697f8f2b71099eb2d3bff1e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "G54ar97YpJY5qtme9ERQ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c004_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c004_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c004_02_el01.json",
+   "file": "audio/vo/vo_a4_c004_02_v04.wav",
+   "sha1": "a3f01ab2b5844b97a91dd0773d624291d8334ef2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "WIKI9zHCrdPqzGxrCbcD"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c005_01_el01.json",
+   "file": "audio/vo/vo_a4_c005_01_v04.wav",
+   "sha1": "abbd93c94facf3cebd7c1ae9d0397d3b7ac52df6",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "zj3xkiabXRGiMoO5GwhY"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c005_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c005_02_el01.json",
+   "file": "audio/vo/vo_a4_c005_02_v04.wav",
+   "sha1": "eb09fc208fd317ee78bc0d7b6e4cd384de622738",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "gMk5BeYb4zswHO3VuISP"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c005_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c005_03_el01.json",
+   "file": "audio/vo/vo_a4_c005_03_v04.wav",
+   "sha1": "153524762885987d6c46bd851f337dd0f66228f3",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "pmNMRtoD1P975MIauUYZ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c005_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c005_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c005_04_el01.json",
+   "file": "audio/vo/vo_a4_c005_04_v04.wav",
+   "sha1": "82ea264653d0dfd1286ecb6b38e9f19f3b33b177",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "czkAhk75nd8JiFxpSuzq"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c005_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c005_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c005_05_el01.json",
+   "file": "audio/vo/vo_a4_c005_05_v04.wav",
+   "sha1": "e47515b968108fdf099114a6f98e22dd20d65ed0",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Psmqa4rTujIxSeYzmhmF"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c006_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c006_01_el01.json",
+   "file": "audio/vo/vo_a4_c006_01_v04.wav",
+   "sha1": "528b44a54b7ebaced9a7d6521a6ce5958f317563",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "JGp8ZmQAf4mEJJRojjy6"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c007_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c007_01_el01.json",
+   "file": "audio/vo/vo_a4_c007_01_v04.wav",
+   "sha1": "61e7656af6ce29d69d1c06c22020a9cd05caba30",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "zsGvCPtpIA87f0mc3Bjd"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c008_01": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a4_c008_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c008_01_el01.json",
+   "file": "audio/vo/vo_a4_c008_01_v04.wav",
+   "sha1": "68001acb3b5e77019b6e7640e3a6839cf6350a23",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "fHapQbbmNcylpmeqRFFd"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c008_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c008_02_el01.json",
+   "file": "audio/vo/vo_a4_c008_02_v04.wav",
+   "sha1": "e81d0f6521fe80116a8175b9d3daad9ca47b94ed",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "ndI0MZdwCETO43aY1dwC"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c009_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c009_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c009_01_el01.json",
+   "file": "audio/vo/vo_a4_c009_01_v04.wav",
+   "sha1": "bc684cdac7dba45c5156aee29772d65a4c6937a4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "NOtGsCWYvnXjgllUFOaX"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c009_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c009_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c009_02_el01.json",
+   "file": "audio/vo/vo_a4_c009_02_v04.wav",
+   "sha1": "703bcf63f03fcdd138621891873a77717e851198",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "pmCgHokRX8kdkGJWfbel"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c009_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c009_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c009_03_el01.json",
+   "file": "audio/vo/vo_a4_c009_03_v04.wav",
+   "sha1": "175926c7e1d7560379bd009c4d299c9166181391",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "viRUXtal2eUOkA4b8S5t"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c009_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c009_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c009_04_el01.json",
+   "file": "audio/vo/vo_a4_c009_04_v04.wav",
+   "sha1": "188bdf92fd09c0e9330fda38f796a7a9f935fc06",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "gafdwVAf1zd4pJ193t44"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c009_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c009_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c009_05_el01.json",
+   "file": "audio/vo/vo_a4_c009_05_v04.wav",
+   "sha1": "7bf22bca1757e3a0ca49525510e0a267e0f3bf8c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "4AHYkUqabE1zVNHmhd7d"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c010_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a4_c010_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c010_01_el01.json",
+   "file": "audio/vo/vo_a4_c010_01_v04.wav",
+   "sha1": "4fa705063a4ad4bead0b3995f7e4baf895fba0e7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "0v9T2z97QakICUZI7zrU"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c011_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c011_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c011_01_el01.json",
+   "file": "audio/vo/vo_a4_c011_01_v04.wav",
+   "sha1": "1dbc1615d14c535bcb9fe03b90a5c9515972d6a1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "lkJdxEfbxQU8e9OCcWBl"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c012_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a4_c012_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c012_01_el01.json",
+   "file": "audio/vo/vo_a4_c012_01_v04.wav",
+   "sha1": "d7031b23a23074793b33ebc0691d0db6f318ad59",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "nbSG4Qhot77HdTuu5L8i"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c012_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a4_c012_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c012_02_el01.json",
+   "file": "audio/vo/vo_a4_c012_02_v04.wav",
+   "sha1": "150a0a00706650dab690cd681888fcb59533c6fd",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "2TfnETqyoWOMpFoAmHu7"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c012_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a4_c012_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c012_03_el01.json",
+   "file": "audio/vo/vo_a4_c012_03_v04.wav",
+   "sha1": "d7a84e5eace34c8f25013b490914b1616057084e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "oevygR7uBaQmO98yGvx1"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c012_04": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a4_c012_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c012_04_el01.json",
+   "file": "audio/vo/vo_a4_c012_04_v04.wav",
+   "sha1": "24d44f6a2dd7b725a000f12f6ab433bcb7cd1c67",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "vmzXWjbypdWTtKRgjyhS"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c012_05": {
+   "role": "陳伯伯",
+   "source": "audio/vo_el/vo_a4_c012_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c012_05_el01.json",
+   "file": "audio/vo/vo_a4_c012_05_v04.wav",
+   "sha1": "5ceaa7b3a7eb6f0cc883895d4594610c0be0a3d1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "e9uueDKUnxFI81OOMPg7"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c013_01": {
+   "role": "陳伯伯",
+   "source": "audio/vo_el/vo_a4_c013_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c013_01_el01.json",
+   "file": "audio/vo/vo_a4_c013_01_v04.wav",
+   "sha1": "df5852aa134752e3c7f0fc3e564abefac1ddec62",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "H11AvPH1vCBEJf8MZuny"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c013_02": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a4_c013_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c013_02_el01.json",
+   "file": "audio/vo/vo_a4_c013_02_v04.wav",
+   "sha1": "be0759a82525ad2bd0cb5778b0bdab550537092f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "WaYmSgidJyZOQQfOXB9j"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a4_c013_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a4_c013_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a4_c013_03_el01.json",
+   "file": "audio/vo/vo_a4_c013_03_v04.wav",
+   "sha1": "c10b9db3fd303396f162110ee80471b59f8fc8f1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "g0GFeys5NSadYXQV9jK5"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a5_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_01_el01.json",
+   "file": "audio/vo/vo_a5_c001_01_v04.wav",
+   "sha1": "1cc27d3ed54b43be129fb5a26f4644a50420f1f7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "fG4EoKIREikE6hSSQqRP"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_02": {
+   "role": "陳伯伯",
+   "source": "audio/vo_el/vo_a5_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_02_el01.json",
+   "file": "audio/vo/vo_a5_c001_02_v04.wav",
+   "sha1": "d002c9eebe8c14a58d385e97c9d999f7c3adaada",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "vZAw9fQKyvTATACkNYPX"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_03": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a5_c001_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_03_el01.json",
+   "file": "audio/vo/vo_a5_c001_03_v04.wav",
+   "sha1": "5738fe825aa5f8efb15c6aa75fb200ac72ea33b7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "EUSEG1HqTKMV4dZtK5TK"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c001_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_04_el01.json",
+   "file": "audio/vo/vo_a5_c001_04_v04.wav",
+   "sha1": "7e550eaa5acee5ac38614ba9b7fa82394670f21e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "v2cxYUf3MCn9qnleEqpm"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_05": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a5_c001_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_05_el01.json",
+   "file": "audio/vo/vo_a5_c001_05_v04.wav",
+   "sha1": "b086c8abe2d1cdac823d576cfc78033053f9d440",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "QlLfBho31fi858tnjM5W"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c001_06": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a5_c001_06_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c001_06_el01.json",
+   "file": "audio/vo/vo_a5_c001_06_v04.wav",
+   "sha1": "658ea4227984b8bacb5211cce1dcee057b12dc36",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "fbFNoAmawJqkjGToh8nD"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c002_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a5_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c002_01_el01.json",
+   "file": "audio/vo/vo_a5_c002_01_v04.wav",
+   "sha1": "c4481be033f249ad4d2bf7019bd4e79d429777d2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "0SBzYsNPAIEaenNORyOE"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c002_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a5_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c002_02_el01.json",
+   "file": "audio/vo/vo_a5_c002_02_v04.wav",
+   "sha1": "3681a326977be112d079cf2bf50409dc4b017dad",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "BhaobBAme23Zt7bbRLxR",
+    "VjYwaIiJ2qTX4rOAPbP8"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c002_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a5_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c002_03_el01.json",
+   "file": "audio/vo/vo_a5_c002_03_v04.wav",
+   "sha1": "cab706f2e487bea44dccf5df0f37f5193cf88993",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "789wmYzxqYWo4oe7YlZC"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c002_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a5_c002_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c002_04_el01.json",
+   "file": "audio/vo/vo_a5_c002_04_v04.wav",
+   "sha1": "e991639904f8fe68c42d901d3a7728eef89eec7b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "7EqEpns8SXc6yLwwIdZP"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c002_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a5_c002_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c002_05_el01.json",
+   "file": "audio/vo/vo_a5_c002_05_v04.wav",
+   "sha1": "b0e3d012a439d47d526dd7e4c0698407860c0b4e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "q1AZMPIJwgXlDKBeX2mV"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c003_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a5_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c003_01_el01.json",
+   "file": "audio/vo/vo_a5_c003_01_v04.wav",
+   "sha1": "18cb29227bcb7944d64dcd73bcfe97002f2aff73",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "9L1VWlyl13pTVg0SuWng"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c004_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a5_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c004_01_el01.json",
+   "file": "audio/vo/vo_a5_c004_01_v04.wav",
+   "sha1": "5936eb579bb97c4682e77fc7770730b4702e7b22",
+   "status": "fail",
+   "failed": [
+    "d"
+   ],
+   "request_ids": [
+    "CYLt52IKYC4IwdrbKiBc"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c005_01": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c005_01_el01.json",
+   "file": "audio/vo/vo_a5_c005_01_v04.wav",
+   "sha1": "83875f91583e67d2464a64711f3951024e536ca7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "XGYa6sdz2pTagKyeNq11"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c005_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a5_c005_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c005_02_el01.json",
+   "file": "audio/vo/vo_a5_c005_02_v04.wav",
+   "sha1": "e4933cf7658cdb15d8d0ff051cd8d754851abe5c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "l6n9rMiM5urR7nphgXKn"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c005_03": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c005_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c005_03_el01.json",
+   "file": "audio/vo/vo_a5_c005_03_v04.wav",
+   "sha1": "3443489ff7f91c1bbb09dd5cdddcb01920c774c1",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "n1YslrJ9Q9ZVYosHeo4u"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c006_01": {
+   "role": "執勤人員",
+   "source": "audio/vo_el/vo_a5_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c006_01_el01.json",
+   "file": "audio/vo/vo_a5_c006_01_v04.wav",
+   "sha1": "d4589ede89b5607f2af34a94f33cb07683e221e2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "qQN9srfagLXGSwlp0vRz"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c006_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c006_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c006_02_el01.json",
+   "file": "audio/vo/vo_a5_c006_02_v04.wav",
+   "sha1": "b9b9115c65171be3e773977c3ee6a9777ea461cf",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "e1MgRk5kYyktRUi2sdge"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c006_03": {
+   "role": "執勤人員",
+   "source": "audio/vo_el/vo_a5_c006_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c006_03_el01.json",
+   "file": "audio/vo/vo_a5_c006_03_v04.wav",
+   "sha1": "c5986374f2502af1b6d9f6274c495d0807a04b9f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "P8KBWlb1Zwda0p1euYaW"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c006_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c006_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c006_04_el01.json",
+   "file": "audio/vo/vo_a5_c006_04_v04.wav",
+   "sha1": "c27d030d7f589da130ebb4c210643b053cb4a0cb",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "vh6VZDnCNhXKa43jXqgV"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c006_05": {
+   "role": "執勤人員",
+   "source": "audio/vo_el/vo_a5_c006_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c006_05_el01.json",
+   "file": "audio/vo/vo_a5_c006_05_v04.wav",
+   "sha1": "67d1809def1b511c4c7cedaa38d0723a63140baa",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "QDV9q8H6xBWztj14F8mp"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c007_01": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a5_c007_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c007_01_el01.json",
+   "file": "audio/vo/vo_a5_c007_01_v04.wav",
+   "sha1": "2d031a2b8f6d399f817ce789f8fc8e083bce342a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "2nuyFd8Pbh4u9DChUpQR"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c007_02": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a5_c007_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c007_02_el01.json",
+   "file": "audio/vo/vo_a5_c007_02_v04.wav",
+   "sha1": "74f8cee6b81ae1eecd68cd81a8e49dfca02c0187",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "lZf9TDKzqH6hNs5X0oGr"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c008_01": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a5_c008_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c008_01_el01.json",
+   "file": "audio/vo/vo_a5_c008_01_v04.wav",
+   "sha1": "09928edb9af4be0cd3750b1e3f63cdc7af7bd355",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "39GSItLfrgejKqEi6o6y"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c008_02": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a5_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c008_02_el01.json",
+   "file": "audio/vo/vo_a5_c008_02_v04.wav",
+   "sha1": "44b6cd3f8c0d27d1a68a0ec9215ca4bf7fc79a49",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "xTzx3n7vvdoHBrjY1AAv"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c008_03": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a5_c008_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c008_03_el01.json",
+   "file": "audio/vo/vo_a5_c008_03_v04.wav",
+   "sha1": "404f76bb337d7089f79bd24ffb29cdf8d613331e",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "7tm0MQDTFnh6NvVFyR4P"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c008_04": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a5_c008_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c008_04_el01.json",
+   "file": "audio/vo/vo_a5_c008_04_v04.wav",
+   "sha1": "260522acb489222a6b46abca8861b6410a46a7d8",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "MhVIxgBKQ8AfOGPzOydZ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a5_c008_05": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a5_c008_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a5_c008_05_el01.json",
+   "file": "audio/vo/vo_a5_c008_05_v04.wav",
+   "sha1": "a9c123a577be3206ac4c3ce3dc2727a187da8b8a",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "o97vhFHRFSDDhkFIkcXp"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c001_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a6_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c001_01_el01.json",
+   "file": "audio/vo/vo_a6_c001_01_v04.wav",
+   "sha1": "510fb86b188f1eaba7d712b5be7fa02c4c6d9fa3",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "H9ThdgnSky7fxSM4eeeJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c001_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a6_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c001_02_el01.json",
+   "file": "audio/vo/vo_a6_c001_02_v04.wav",
+   "sha1": "7c7473a182ef1cd022aa12423d69cbda916cdd54",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "3kBuHE6639zFKZAl7xDE"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c002_01": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a6_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c002_01_el01.json",
+   "file": "audio/vo/vo_a6_c002_01_v04.wav",
+   "sha1": "819f5d89ff5aac549a6c7e26c9e52bcea6210dea",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "J8KLxVSJ0XSMjVbJ0pPU"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c002_02": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a6_c002_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c002_02_el01.json",
+   "file": "audio/vo/vo_a6_c002_02_v04.wav",
+   "sha1": "406e4e12b4fd8d991f7bd8e977e77663f60e387f",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "BrIZveZmzpORdYJvZlfd"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c002_03": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a6_c002_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c002_03_el01.json",
+   "file": "audio/vo/vo_a6_c002_03_v04.wav",
+   "sha1": "293ad6e56dab65e40c0cdb9836e5843084f361da",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "VBoyLB8T7TbXAN6FvcTi"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c002_04": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a6_c002_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c002_04_el01.json",
+   "file": "audio/vo/vo_a6_c002_04_v04.wav",
+   "sha1": "46c70f94eb033a1a5aaa337a8b0ccd7aeaa5e0db",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "A9G0rZ4E2d059ftIlHiL"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c003_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a6_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c003_01_el01.json",
+   "file": "audio/vo/vo_a6_c003_01_v04.wav",
+   "sha1": "8eba8b858d248ef752ba7cf1e7b56af0735355a2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "ZgYDPz9mUWC6l3CHXe7O"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c003_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c003_02_el01.json",
+   "file": "audio/vo/vo_a6_c003_02_v04.wav",
+   "sha1": "50c47f342b0e0e974ef54b932aa36ca548cb38c5",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "DPxe1sT2HVBrNrRfPvAW"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c003_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c003_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c003_03_el01.json",
+   "file": "audio/vo/vo_a6_c003_03_v04.wav",
+   "sha1": "c466c473405dae496ebb6f88a973af4284cd68b4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "ZsnWsQ226jus3yuS33cX"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c003_04": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c003_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c003_04_el01.json",
+   "file": "audio/vo/vo_a6_c003_04_v04.wav",
+   "sha1": "b84957a9f7123b6be04d1ecf6bc4677ff31fbbde",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "nPheg9UPvcyJDzw781Qj"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c003_05": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c003_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c003_05_el01.json",
+   "file": "audio/vo/vo_a6_c003_05_v04.wav",
+   "sha1": "3abab49b45f97746ace8bc0493b7f20d0a9e5ef3",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "hveshN5Ujo4QYPed8pjF"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c004_01": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c004_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c004_01_el01.json",
+   "file": "audio/vo/vo_a6_c004_01_v04.wav",
+   "sha1": "b0827dc589640a8e0bca97e2c7c64c58ddcf48f4",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "NLWC0uqRday2MpqpdZK9"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c005_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a6_c005_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c005_01_el01.json",
+   "file": "audio/vo/vo_a6_c005_01_v04.wav",
+   "sha1": "2545ab0af943e0839848bd97e63ae032a6dba775",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "51RD7qhycBUufHBLgFVL"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_01": {
+   "role": "小晴",
+   "source": "audio/vo_el/vo_a6_c006_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_01_el01.json",
+   "file": "audio/vo/vo_a6_c006_01_v04.wav",
+   "sha1": "8f6fdf447507c143f28fcc41fae0eddc50d55403",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "hgUN5jo5ad3Lz1grY1Kq"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_02": {
+   "role": "小宇",
+   "source": "audio/vo_el/vo_a6_c006_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_02_el01.json",
+   "file": "audio/vo/vo_a6_c006_02_v04.wav",
+   "sha1": "d926c6d900a2e2f00e490f0d6e6751778128f2d2",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "G3lWwSpIG84nvzSSPV0w"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_03": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a6_c006_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_03_el01.json",
+   "file": "audio/vo/vo_a6_c006_03_v04.wav",
+   "sha1": "f00d54cde5a72da6f3aa618246d81981560dca99",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "BrQezzTm9wFrRUyoAY1w"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_04": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a6_c006_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_04_el01.json",
+   "file": "audio/vo/vo_a6_c006_04_v04.wav",
+   "sha1": "77b2737d1c95fa14613a82c222599f9f26d2d592",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "qJ0vCropR1GAHgAPMVUX"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_05": {
+   "role": "林老師",
+   "source": "audio/vo_el/vo_a6_c006_05_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_05_el01.json",
+   "file": "audio/vo/vo_a6_c006_05_v04.wav",
+   "sha1": "b119c03dabbd7d92e482b013965fae2e9953066b",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "iwf2BynbQkuSQCVQjZQW"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c006_06": {
+   "role": "葉護理師",
+   "source": "audio/vo_el/vo_a6_c006_06_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c006_06_el01.json",
+   "file": "audio/vo/vo_a6_c006_06_v04.wav",
+   "sha1": "8cb8c434a4c44484acdef8e809d73834bcfd8075",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "VoPWqsfCAfsjbuPI3jmt"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c007_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c007_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c007_02_el01.json",
+   "file": "audio/vo/vo_a6_c007_02_v04.wav",
+   "sha1": "637259269e2cffb33070a6ec2c1818c6ed01d77c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "WZNQWRJCNFQqDBC6c99C"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c007_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c007_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c007_03_el01.json",
+   "file": "audio/vo/vo_a6_c007_03_v04.wav",
+   "sha1": "fcc650581b406f75bfdae38ea9b07a4d636af229",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "wI5RMfMTzVIeeeIH2GdE"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c008_02": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c008_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c008_02_el01.json",
+   "file": "audio/vo/vo_a6_c008_02_v04.wav",
+   "sha1": "f0603a83626c6bdc0587e69c786492334f9f10a3",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "XVEZyfdrUYjiHUkeSApf"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c008_03": {
+   "role": "旁白",
+   "source": "audio/vo_el/vo_a6_c008_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c008_03_el01.json",
+   "file": "audio/vo/vo_a6_c008_03_v04.wav",
+   "sha1": "ccdc9bd9412001848981dad371bf0754211e7a07",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "46AMsogM2Afgbj1re5Bg"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c009_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a6_c009_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c009_01_el01.json",
+   "file": "audio/vo/vo_a6_c009_01_v04.wav",
+   "sha1": "a7f73642c6042fb7b4c3b27f99e4d0fe3ec58c46",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "tuie4mlDj9DiW2rQXy9v"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c009_02": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a6_c009_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c009_02_el01.json",
+   "file": "audio/vo/vo_a6_c009_02_v04.wav",
+   "sha1": "a26784c8ac0ca580eb34dc8df40f3a71723f3969",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "QSIUpUfESPMEwDu7X2jJ"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c009_03": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a6_c009_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c009_03_el01.json",
+   "file": "audio/vo/vo_a6_c009_03_v04.wav",
+   "sha1": "b82a8a0781fde108e6532e178924cf055cf93fa8",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "YoGvnQHv78G6t3WYVfuh"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a6_c009_04": {
+   "role": "阿樂叔叔",
+   "source": "audio/vo_el/vo_a6_c009_04_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a6_c009_04_el01.json",
+   "file": "audio/vo/vo_a6_c009_04_v04.wav",
+   "sha1": "2186330fd34f1be1c8731d84483e833c3008ea3c",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "cJSIUqBMzovOP7DfdVuj"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c001_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a7_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c001_01_el01.json",
+   "file": "audio/vo/vo_a7_c001_01_v04.wav",
+   "sha1": "2a31227bc407909c9f1a4cdcf062c496d0a5158f",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "4weR53ikbEsHLybqGwKY"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c001_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a7_c001_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c001_02_el01.json",
+   "file": "audio/vo/vo_a7_c001_02_v04.wav",
+   "sha1": "c54b51f9468327b94c769a9cabb87cc6146551ee",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "0CyUK0PssMUS1R2La9Hv"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c001_03": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a7_c001_03_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c001_03_el01.json",
+   "file": "audio/vo/vo_a7_c001_03_v04.wav",
+   "sha1": "91cf75379ef5c60cd45b07fb12e3dddd1e1fe7ff",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "0lF43xCNvkIvfLxvJKPi"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c002_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a7_c002_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c002_01_el01.json",
+   "file": "audio/vo/vo_a7_c002_01_v04.wav",
+   "sha1": "bff792518f05a9dd5a365776506c456c68c83f2d",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "FIVQFxsrjcT6yfiT0jBo"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c003_01": {
+   "role": "品安",
+   "source": "audio/vo_el/vo_a7_c003_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c003_01_el01.json",
+   "file": "audio/vo/vo_a7_c003_01_v04.wav",
+   "sha1": "dc0c11b6c9fccf6ce4a7f854ef0212690690abdc",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "Ho4buuGKPdluXK07hYxK"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a7_c003_02": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a7_c003_02_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a7_c003_02_el01.json",
+   "file": "audio/vo/vo_a7_c003_02_v04.wav",
+   "sha1": "5e488566d5bc51e658ceb37cba54ed4190b491f2",
+   "status": "fail",
+   "failed": [
+    "a"
+   ],
+   "request_ids": [
+    "GWSKF3w6sugcecLSqbvx"
+   ],
+   "time": "2026-10-21 13:29:08"
+  },
+  "a8_c001_01": {
+   "role": "折折",
+   "source": "audio/vo_el/vo_a8_c001_01_el01.wav",
+   "lipsync_source": "audio/lipsync_el/a8_c001_01_el01.json",
+   "file": "audio/vo/vo_a8_c001_01_v04.wav",
+   "sha1": "6424ecce1f8b7c26c7f8793ada4bad8799d1dcd7",
+   "status": "pass",
+   "failed": [],
+   "request_ids": [
+    "M5GxGkTYZo8cWfSNhM5T"
+   ],
+   "time": "2026-10-21 13:29:08"
+  }
+ }
+}

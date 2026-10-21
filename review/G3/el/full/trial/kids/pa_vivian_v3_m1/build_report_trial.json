@@ -1,0 +1,1139 @@
+{
+ "a1_c004_06": {
+  "id": "a1_c004_06",
+  "role": "品安",
+  "codes": [
+   "pinan"
+  ],
+  "text": "你們先走，我把燈籠收好就來。",
+  "required": false,
+  "signature": "8dadca938b6a2f4b",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.6,
+    3.8
+   ],
+   "f0_nominal": 181.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.1,
+    4.3
+   ],
+   "f0_range": [
+    161.3,
+    203.2
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:42:43",
+    "seeds": {
+     "pinan": 20261021
+    },
+    "settings": {
+     "pinan": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "pinan",
+      "i": 0,
+      "text": "你們先走，我把登籠收好就來。",
+      "sent": "你們先走，我把登籠收好就來。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c004_06/pinan_a0_s0_459e835f9eb1.mp3",
+      "request_id": "FfNjPDf0RZOghsbxZZrx",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -57.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -14.0,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.36,
+       "t_fill_s": 3.32,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.44,
+        3.55
+       ],
+       "decay_end_s": 2.57,
+       "cut_s": 2.67,
+       "floor_rel_db": -54.4,
+       "removed_s": 1.33
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": -1.0,
+       "stretch": 1.313,
+       "rate_before": 4.858,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a1_c004_06/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.38,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.3,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 246
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a1_c004_06/a1.wav",
+     "seconds": 3.63,
+     "speech_seconds": 3.28,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.3,
+     "clipped_samples": 0,
+     "rate_cps": 3.66,
+     "rate_cps_net": 3.66,
+     "rate_cps_net_r": 3.68,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 205.2,
+     "f0_p10": 177.0,
+     "f0_p90": 282.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 3.68,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "你們先走我把燈籠收好就來",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "燈籠",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "你們先走我把燈籠收好就來",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": [
+       {
+        "word": "燈籠",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "燈籠": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -57.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.68,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 12,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 7,
+    "billed_new": 7,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.67 秒處切掉 1.33 秒）",
+     "PSOLA 改調 -1.0 半音、長度 ×1.313（母帶前淨語速 4.858 → 目標 3.7）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "xrDmUzhnE51Df8z38r1M",
+    "voice_name": "Vivian - Taiwanese Social Media",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.4,
+      "default": 1.0
+     },
+     "pitch_shift_st": -1.0
+    }
+   }
+  ],
+  "billed_total": 7,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/out/vo_a1_c004_06_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/lipsync/a1_c004_06_el01.json",
+  "seconds": 3.63,
+  "speech_start": 0.12,
+  "speech_end": 3.38,
+  "speech_segments": [
+   [
+    0.11,
+    3.39
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "燈籠": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -57.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.68,
+    "range": [
+     3.1,
+     4.3
+    ],
+    "syllables": 12,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.3,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a1_c004_06/a1.wav",
+   "seconds": 3.63,
+   "speech_seconds": 3.28,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.3,
+   "clipped_samples": 0,
+   "rate_cps": 3.66,
+   "rate_cps_net": 3.66,
+   "rate_cps_net_r": 3.68,
+   "pauses_ms": [],
+   "pauses_ms_r": [],
+   "f0_median": 205.2,
+   "f0_p10": 177.0,
+   "f0_p90": 282.9,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 240,
+   "rate_net_syll": 3.68,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "FfNjPDf0RZOghsbxZZrx"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.67 秒處切掉 1.33 秒）",
+   "PSOLA 改調 -1.0 半音、長度 ×1.313（母帶前淨語速 4.858 → 目標 3.7）"
+  ]
+ },
+ "a6_c002_02": {
+  "id": "a6_c002_02",
+  "role": "品安",
+  "codes": [
+   "pinan"
+  ],
+  "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+  "required": false,
+  "signature": "0220c092dd94209e",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.6,
+    3.8
+   ],
+   "f0_nominal": 181.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.1,
+    4.3
+   ],
+   "f0_range": [
+    161.3,
+    203.2
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:43:28",
+    "seeds": {
+     "pinan": 20261021
+    },
+    "settings": {
+     "pinan": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "pinan",
+      "i": 0,
+      "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+      "sent": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a6_c002_02/pinan_a0_s0_1428fd9e2490.mp3",
+      "request_id": "cTLFbWICitpYuEnC6eAY",
+      "billed": 17,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -38.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -45.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 8.74,
+       "t_fill_s": 9.36,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        8.84,
+        9.61
+       ],
+       "decay_end_s": 8.88,
+       "cut_s": 8.98,
+       "floor_rel_db": -36.9,
+       "removed_s": 1.98
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         4.06,
+         4.74
+        ],
+        "cut_s": 4.58,
+        "depth_rel_db": -39.7,
+        "existing_pause_ms": 570,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": -1.0,
+       "stretch": 1.102,
+       "rate_before": 4.077,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a6_c002_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 10.0,
+     "method": "loudnorm_pass1_gain",
+     "I": -17.8,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 16
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a6_c002_02/a1.wav",
+     "seconds": 10.25,
+     "speech_seconds": 9.89,
+     "integrated_lufs": -17.8,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.44,
+     "rate_cps_net": 3.85,
+     "rate_cps_net_r": 3.57,
+     "pauses_ms": [
+      630,
+      430
+     ],
+     "pauses_ms_r": [
+      320
+     ],
+     "f0_median": 192.3,
+     "f0_p10": 171.1,
+     "f0_p90": 295.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.57,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -38.4,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.57,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 34,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       630
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         4.06,
+         4.74
+        ],
+        "cut_s": 4.58,
+        "depth_rel_db": -39.7,
+        "existing_pause_ms": 570,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.8,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 17,
+    "billed_new": 17,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 8.98 秒處切掉 1.98 秒）",
+     "PSOLA 改調 -1.0 半音、長度 ×1.102（母帶前淨語速 4.077 → 目標 3.7）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "xrDmUzhnE51Df8z38r1M",
+    "voice_name": "Vivian - Taiwanese Social Media",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.4,
+      "default": 1.0
+     },
+     "pitch_shift_st": -1.0
+    }
+   }
+  ],
+  "billed_total": 17,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/out/vo_a6_c002_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/lipsync/a6_c002_02_el01.json",
+  "seconds": 10.25,
+  "speech_start": 0.12,
+  "speech_end": 10.0,
+  "speech_segments": [
+   [
+    0.11,
+    4.68
+   ],
+   [
+    5.3,
+    6.56
+   ],
+   [
+    6.98,
+    10.0
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -38.4,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.57,
+    "range": [
+     3.1,
+     4.3
+    ],
+    "syllables": 34,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     630
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       4.06,
+       4.74
+      ],
+      "cut_s": 4.58,
+      "depth_rel_db": -39.7,
+      "existing_pause_ms": 570,
+      "inserted_ms": 0,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -17.8,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a6_c002_02/a1.wav",
+   "seconds": 10.25,
+   "speech_seconds": 9.89,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 3.44,
+   "rate_cps_net": 3.85,
+   "rate_cps_net_r": 3.57,
+   "pauses_ms": [
+    630,
+    430
+   ],
+   "pauses_ms_r": [
+    320
+   ],
+   "f0_median": 192.3,
+   "f0_p10": 171.1,
+   "f0_p90": 295.2,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.57,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "cTLFbWICitpYuEnC6eAY"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 8.98 秒處切掉 1.98 秒）",
+   "PSOLA 改調 -1.0 半音、長度 ×1.102（母帶前淨語速 4.077 → 目標 3.7）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a7_c003_01": {
+  "id": "a7_c003_01",
+  "role": "品安",
+  "codes": [
+   "pinan"
+  ],
+  "text": "有讓你擔心的秘密，也可以找大人說。",
+  "required": false,
+  "signature": "81e36340d54e6a49",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.6,
+    3.8
+   ],
+   "f0_nominal": 181.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.1,
+    4.3
+   ],
+   "f0_range": [
+    161.3,
+    203.2
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:43:57",
+    "seeds": {
+     "pinan": 20261021
+    },
+    "settings": {
+     "pinan": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "pinan",
+      "i": 0,
+      "text": "有讓你擔心的秘密，也可以找大人說。",
+      "sent": "有讓你擔心的秘密，也可以找大人說。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a7_c003_01/pinan_a0_s0_f3315755927c.mp3",
+      "request_id": "dwunw0Tba66w007TGffm",
+      "billed": 8,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -32.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -25.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.52,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.7,
+        5.11
+       ],
+       "decay_end_s": 3.75,
+       "cut_s": 3.85,
+       "floor_rel_db": -35.1,
+       "removed_s": 2.55
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": -1.0,
+       "stretch": 1.0,
+       "rate_before": 3.906,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a7_c003_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 3.97,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.3,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a7_c003_01/a1.wav",
+     "seconds": 4.22,
+     "speech_seconds": 3.86,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.3,
+     "clipped_samples": 0,
+     "rate_cps": 3.89,
+     "rate_cps_net": 4.23,
+     "rate_cps_net_r": 3.91,
+     "pauses_ms": [
+      310
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 187.6,
+     "f0_p10": 171.4,
+     "f0_p90": 223.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.91,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "有讓你擔心的秘密也可以找大人說",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "有讓你擔心的秘密也可以找大人說",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -32.0,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.91,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 15,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 8,
+    "billed_new": 8,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.85 秒處切掉 2.55 秒）",
+     "PSOLA 改調 -1.0 半音、長度 ×1.0（母帶前淨語速 3.906 → 目標 3.7）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "xrDmUzhnE51Df8z38r1M",
+    "voice_name": "Vivian - Taiwanese Social Media",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.4,
+      "default": 1.0
+     },
+     "pitch_shift_st": -1.0
+    }
+   }
+  ],
+  "billed_total": 8,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/out/vo_a7_c003_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/lipsync/a7_c003_01_el01.json",
+  "seconds": 4.22,
+  "speech_start": 0.12,
+  "speech_end": 3.97,
+  "speech_segments": [
+   [
+    0.11,
+    1.86
+   ],
+   [
+    2.16,
+    3.97
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -32.0,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.91,
+    "range": [
+     3.1,
+     4.3
+    ],
+    "syllables": 15,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.3,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a7_c003_01/a1.wav",
+   "seconds": 4.22,
+   "speech_seconds": 3.86,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.3,
+   "clipped_samples": 0,
+   "rate_cps": 3.89,
+   "rate_cps_net": 4.23,
+   "rate_cps_net_r": 3.91,
+   "pauses_ms": [
+    310
+   ],
+   "pauses_ms_r": [],
+   "f0_median": 187.6,
+   "f0_p10": 171.4,
+   "f0_p90": 223.8,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.91,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "dwunw0Tba66w007TGffm"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 3.85 秒處切掉 2.55 秒）",
+   "PSOLA 改調 -1.0 半音、長度 ×1.0（母帶前淨語速 3.906 → 目標 3.7）"
+  ]
+ }
+}

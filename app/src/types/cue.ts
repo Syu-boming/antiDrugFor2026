@@ -82,7 +82,7 @@ export interface CharacterStart {
   popup?: number;
   /** 坐姿程度（正面分件紙偶）：1＝坐、0.5＝半站、0＝站（預設 0；pose:"sit" 也會設成 1） */
   sit?: number;
-  /** 起始情緒：smile／neutral／confused／worried／surprised（臉部換片） */
+  /** 起始情緒：smile／greet（X2 想打招呼）／neutral／confused／worried／surprised（臉部換片） */
   emotion?: string;
   /** B 側手的起始位置：chest（手放胸前）／grab（扶著桌邊）／lap（放膝上，預設） */
   hand?: 'chest' | 'grab' | 'lap';

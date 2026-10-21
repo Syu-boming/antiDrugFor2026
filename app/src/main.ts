@@ -42,6 +42,16 @@ export interface EngineAPI {
     hideActors(on: boolean): void;
     /** 目前每個角色的臉部換片狀態 */
     faces(): Record<string, { eyes: string; mouth: string } | null>;
+    /** 配音聽到的位置與字幕時間軸的差（毫秒） */
+    voiceSync(): ReturnType<Engine['voiceSync']>;
+    /** 模擬系統把 AudioContext 停掉／恢復（不經過引擎） */
+    systemSuspendAudio(): Promise<string>;
+    systemResumeAudio(): Promise<string>;
+    /** 每段開頭的靜音（毫秒） */
+    setLeadIn(ms: number): void;
+    warmMs(): number;
+    /** 指定 cue 解析後的動畫與台詞時間（秒；測試用） */
+    timeline(id: string): { anims: { name: string; target: string | null; start: number; end: number; params: Record<string, unknown> }[]; lines: { id: string; start: number; end: number }[] } | null;
   };
 }
 
@@ -76,11 +86,13 @@ function boot(): void {
     setQuality: (q) => eng.setQuality(q),
     getLock30: () => eng.lock30,
     setLock30: (on) => eng.setLock30(on),
+    getLeadIn: () => eng.leadInMs,
+    setLeadIn: (ms) => eng.setLeadIn(ms),
     cues: () => eng.getCues().map((c) => ({ id: c.id, title: c.title })),
     gotoCue: (id) => { eng.gotoCue(id, { mode: 'before' }); },
     status: () => {
       const s = eng.getState();
-      return `${s.phaseLabel}｜${s.cueId ?? '—'}｜${s.cueTime.toFixed(1)}／${s.cueDuration.toFixed(1)} 秒｜時鐘 ${s.clock}｜音訊 ${s.audioState}｜${s.fps} fps｜${s.gpu}`;
+      return `${s.phaseLabel}｜${s.cueId ?? '—'}｜${s.cueTime.toFixed(1)}／${s.cueDuration.toFixed(1)} 秒｜時鐘 ${s.clock}｜音訊 ${s.audioState}｜開頭靜音 ${s.leadInMs} ms｜${s.fps} fps｜${s.gpu}`;
     },
   });
   if (cfg.menu) menu.toggle();
@@ -126,6 +138,19 @@ function boot(): void {
       probe: () => stage.probe(),
       hideActors: (on) => { stage.hideActorsForProbe = on; eng.renderNow(performance.now()); },
       faces: () => Object.fromEntries([...stage.actors].map(([id, a]) => { const f = a.kind === 'rig' ? (a.activeFace ?? a.face) : a.face; return [id, f ? f.current : null]; })),
+      voiceSync: () => eng.voiceSync(),
+      systemSuspendAudio: async () => { await mixer.ctx?.suspend(); return mixer.state; },
+      systemResumeAudio: async () => { await mixer.ctx?.resume(); return mixer.state; },
+      setLeadIn: (ms) => eng.setLeadIn(ms),
+      warmMs: () => eng.warmMs,
+      timeline: (id) => {
+        const tl = eng.timelines.find((x) => x.cue.id === id);
+        if (!tl) return null;
+        return {
+          anims: tl.anims.map((a) => ({ name: a.name, target: a.target ?? null, start: a.start, end: a.end, params: { ...a.params } })),
+          lines: tl.lines.map((l) => ({ id: l.line.id, start: l.start, end: l.end })),
+        };
+      },
     },
   };
 

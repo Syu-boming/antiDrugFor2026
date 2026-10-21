@@ -1,0 +1,36 @@
+{
+ "a0_c004_01": {
+  "seconds": 2.56,
+  "speech_start": 0.12,
+  "speech_end": 2.31,
+  "speech_segments": [
+   [
+    0.12,
+    1.25
+   ],
+   [
+    1.64,
+    2.32
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/out/vo_a0_c004_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/lipsync/a0_c004_01_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔早！折折早！"
+ },
+ "a3_c001_01": {
+  "seconds": 2.45,
+  "speech_start": 0.12,
+  "speech_end": 2.2,
+  "speech_segments": [
+   [
+    0.12,
+    2.2
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/out/vo_a3_c001_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/lipsync/a3_c001_01_el01.json",
+  "role": "小宇",
+  "text": "折折，你又迷路了？"
+ }
+}

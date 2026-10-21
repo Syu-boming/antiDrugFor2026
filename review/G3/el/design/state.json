@@ -1,0 +1,1564 @@
+{
+ "designs": [
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Calm, observant and sensible; speaks in short, confident sentences at a medium pace. Bright, clear, mid-high child voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "2ede8e081a8163ea85375598e413fb34"
+   }
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "description": "A young adult voice actor who voices children's characters, here a calm and sensible schoolgirl: bright, light and lively, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Short, confident sentences at a medium pace; clear mid-high voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "3c44727aab7d5a305d16a15be2a6fc1f"
+   }
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Bright, light, clear and high-pitched voice; calm and sensible, short confident sentences at a medium pace, warm and friendly, not squeaky, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "xiaoqing_ttv3_p1",
+     "n": 1,
+     "generated_voice_id": "vzgMzzawd6FkarcMeJGn",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv3_p1.mp3",
+     "duration_secs": 24.6100625,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoqing_ttv3_p2",
+     "n": 2,
+     "generated_voice_id": "F4qrqDuCORAxaxMCKjDu",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv3_p2.mp3",
+     "duration_secs": 24.192125,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoqing_ttv3_p3",
+     "n": 3,
+     "generated_voice_id": "zmAXM4lsxUuinVKGnPdo",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv3_p3.mp3",
+     "duration_secs": 27.64025,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。"
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "description": "A nine-year-old boy from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Curious, lively and quick, with a friendly, energetic tone; his voice has not broken yet, a clear child voice in the middle range, a little lower and rounder than a girl's. Not squeaky, not cartoonish, not baby talk. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "不用，我不試。我先離開。叔叔，你還好嗎？竹篾掉了。阿勒叔叔早！哲哲早！明天就是紙登結了……叔叔會好一點嗎？等一下，我想一想。不用，我們不要。陳伯伯、林老師，阿勒叔叔站不穩，可是他說要開車。主燈的骨架。它不見了！",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "113e2b59fa94eb51cae1c40269d48686"
+   }
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "description": "A young adult voice actor who voices children's characters, here a curious and lively schoolboy: bright, light and quick, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Friendly, energetic tone in a clear middle range, a little lower and rounder than a girl's. Not squeaky, not cartoonish, not baby talk. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "不用，我不試。我先離開。叔叔，你還好嗎？竹篾掉了。阿勒叔叔早！哲哲早！明天就是紙登結了……叔叔會好一點嗎？等一下，我想一想。不用，我們不要。陳伯伯、林老師，阿勒叔叔站不穩，可是他說要開車。主燈的骨架。它不見了！",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "3bf8215487bba9efbc478d8269a4b3d4"
+   }
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Light, clear and energetic voice in the middle range, a little lower and rounder than a typical young woman's, with a playful, boyish tone; curious, lively and quick, friendly. Not squeaky, not cartoonish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "不用，我不試。我先離開。叔叔，你還好嗎？竹篾掉了。阿勒叔叔早！哲哲早！明天就是紙登結了……叔叔會好一點嗎？等一下，我想一想。不用，我們不要。陳伯伯、林老師，阿勒叔叔站不穩，可是他說要開車。主燈的骨架。它不見了！",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "xiaoyu_ttv3_p1",
+     "n": 1,
+     "generated_voice_id": "oZpyYEWtwWM06B75E0uY",
+     "mp3": "review/G3/el/design/previews/xiaoyu_ttv3_p1.mp3",
+     "duration_secs": 23.957,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoyu_ttv3_p2",
+     "n": 2,
+     "generated_voice_id": "XnmpwDA7QMjMG4ooxdtL",
+     "mp3": "review/G3/el/design/previews/xiaoyu_ttv3_p2.mp3",
+     "duration_secs": 24.7668125,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoyu_ttv3_p3",
+     "n": 3,
+     "generated_voice_id": "McRjWYvyFJKt91yQHpdr",
+     "mp3": "review/G3/el/design/previews/xiaoyu_ttv3_p3.mp3",
+     "duration_secs": 30.435375,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "不用，我不試。我先離開。叔叔，你還好嗎？竹篾掉了。阿勒叔叔早！哲哲早！明天就是紙登結了……叔叔會好一點嗎？等一下，我想一想。不用，我們不要。陳伯伯、林老師，阿勒叔叔站不穩，可是他說要開車。主燈的骨架。它不見了！"
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Quiet, shy and gentle, a little afraid of being scolded; she speaks softly and slowly with small pauses, but every word stays clear. The lowest and softest voice among the four children: a warm, mellow child voice in the lower-middle range, not whispering, not squeaky, not baby talk, not sad or dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "你們先走，我把登籠收好就來。我跟你們說一個秘密……不要告訴老師，好不好？我怕被罵。老師……我書包裡，有一個別人給的盒子。有讓你擔心的秘密，也可以找大人說。那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "e8a948749305cb205acef3419337a4d4"
+   }
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "description": "A young adult voice actor who voices children's characters, here a quiet and shy schoolgirl: soft and gentle, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). The lowest and softest of the child voices: warm, mellow lower-middle range, speaking slowly and quietly with small pauses but every word clear. Not whispering, not squeaky, not baby talk, not dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "你們先走，我把登籠收好就來。我跟你們說一個秘密……不要告訴老師，好不好？我怕被罵。老師……我書包裡，有一個別人給的盒子。有讓你擔心的秘密，也可以找大人說。那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "d584b072cd41c8dc630587776deb16c0"
+   }
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Quiet, shy and gentle; she speaks softly and slowly with small pauses, but every word stays clear. Warm, mellow voice in the lower-middle range, soft and light, not whispering, not breathy, not sad or dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "你們先走，我把登籠收好就來。我跟你們說一個秘密……不要告訴老師，好不好？我怕被罵。老師……我書包裡，有一個別人給的盒子。有讓你擔心的秘密，也可以找大人說。那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "pinan_ttv3_p1",
+     "n": 1,
+     "generated_voice_id": "LW8eWPiomGIHoyVZqIjF",
+     "mp3": "review/G3/el/design/previews/pinan_ttv3_p1.mp3",
+     "duration_secs": 26.517,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "pinan_ttv3_p2",
+     "n": 2,
+     "generated_voice_id": "XF2qg5Et6ezUqt5xHfp2",
+     "mp3": "review/G3/el/design/previews/pinan_ttv3_p2.mp3",
+     "duration_secs": 28.6851875,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "pinan_ttv3_p3",
+     "n": 3,
+     "generated_voice_id": "kewYPXFj2pEXOZ9L822d",
+     "mp3": "review/G3/el/design/previews/pinan_ttv3_p3.mp3",
+     "duration_secs": 30.9316875,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "你們先走，我把登籠收好就來。我跟你們說一個秘密……不要告訴老師，好不好？我怕被罵。老師……我書包裡，有一個別人給的盒子。有讓你擔心的秘密，也可以找大人說。那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+  },
+  {
+   "role": "zhezhe",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "description": "A playful origami paper cat, the cheerful host character of a children's paper puppet theater in Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Bright, light, youthful and gender-neutral voice, the highest-pitched voice in the cast, lively with a slight upward lilt at the end of sentences, friendly and warm but never shrill, squeaky or babyish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！喵！大家好，我是哲哲。我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。第一題來囉！台口上這八盞燈，每完成一題，我們就一起點亮一盞。",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "zhezhe_ttv3_p1",
+     "n": 1,
+     "generated_voice_id": "QjuJFudRhuWZaNL6jQDN",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv3_p1.mp3",
+     "duration_secs": 33.07375,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "zhezhe_ttv3_p2",
+     "n": 2,
+     "generated_voice_id": "ZyC2YbGXrcelMEWDpIGc",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv3_p2.mp3",
+     "duration_secs": 29.312125,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "zhezhe_ttv3_p3",
+     "n": 3,
+     "generated_voice_id": "0c123nstYLFQJ1LROZWu",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv3_p3.mp3",
+     "duration_secs": 34.5888125,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！喵！大家好，我是哲哲。我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。第一題來囉！台口上這八盞燈，每完成一題，我們就一起點亮一盞。"
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "原描述",
+   "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Calm, observant and sensible; speaks in short, confident sentences at a medium pace. Bright, clear, mid-high child voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "fd60efd83af85aad8ec85f0adda10157"
+   }
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "改寫描述（年輕成人配音員）",
+   "description": "A young adult voice actor who voices children's characters, here a calm and sensible schoolgirl: bright, light and lively, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Short, confident sentences at a medium pace; clear mid-high voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "previews": [],
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "a1ad2fc07b88db0403765806a0c08b21"
+   }
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "改寫描述2（無兒童字眼）",
+   "description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Bright, light, clear and high-pitched voice; calm and sensible, short confident sentences at a medium pace, warm and friendly, not squeaky, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "xiaoqing_ttv2_p1",
+     "n": 1,
+     "generated_voice_id": "Lv6lXIK4z0nFR7AfSFza",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv2_p1.mp3",
+     "duration_secs": 27.588,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoqing_ttv2_p2",
+     "n": 2,
+     "generated_voice_id": "2UZDuJuITCLX03k3lgzB",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv2_p2.mp3",
+     "duration_secs": 29.7561875,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "xiaoqing_ttv2_p3",
+     "n": 3,
+     "generated_voice_id": "r8hJJTLQkcyqTc1Yv1Vl",
+     "mp3": "review/G3/el/design/previews/xiaoqing_ttv2_p3.mp3",
+     "duration_secs": 28.1888125,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。"
+  },
+  {
+   "role": "zhezhe",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "原描述",
+   "description": "A playful origami paper cat, the cheerful host character of a children's paper puppet theater in Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Bright, light, youthful and gender-neutral voice, the highest-pitched voice in the cast, lively with a slight upward lilt at the end of sentences, friendly and warm but never shrill, squeaky or babyish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！喵！大家好，我是哲哲。我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。第一題來囉！台口上這八盞燈，每完成一題，我們就一起點亮一盞。",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "previews": [
+    {
+     "cid": "zhezhe_ttv2_p1",
+     "n": 1,
+     "generated_voice_id": "Zy6EpL22X7ptdr8ZNNdU",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv2_p1.mp3",
+     "duration_secs": 24.00925,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "zhezhe_ttv2_p2",
+     "n": 2,
+     "generated_voice_id": "4Hck5OgRr3GllgxY8vIe",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv2_p2.mp3",
+     "duration_secs": 28.006,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    },
+    {
+     "cid": "zhezhe_ttv2_p3",
+     "n": 3,
+     "generated_voice_id": "ymIT6zyD6Mc8IKYHJmK8",
+     "mp3": "review/G3/el/design/previews/zhezhe_ttv2_p3.mp3",
+     "duration_secs": 28.3194375,
+     "language": "zh",
+     "media_type": "audio/mpeg"
+    }
+   ],
+   "returned_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！喵！大家好，我是哲哲。我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。第一題來囉！台口上這八盞燈，每完成一題，我們就一起點亮一盞。"
+  }
+ ],
+ "saved": [
+  {
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "generated_voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "http": 200,
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "endpoints_tried": [
+    "text-to-voice"
+   ],
+   "detail": null,
+   "tier": 3
+  }
+ ],
+ "problems": [],
+ "sample_jobs": [
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__a2_c002_02",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a2_c002_02",
+   "ref": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 120,
+    "raw_tail_silence_ms": 196,
+    "speech_start": 0.12,
+    "speech_end": 1.29,
+    "method": "measured_gain",
+    "gain_db": -3.8,
+    "pre_I": -14.2,
+    "I": -18.0,
+    "TP": -4.5,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__a2_c002_02.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__a1_c004_03",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a1_c004_03",
+   "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 150,
+    "raw_tail_silence_ms": 137,
+    "speech_start": 0.12,
+    "speech_end": 3.78,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -14.78,
+    "I": -17.8,
+    "TP": -4.1,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__a1_c004_03.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__a1_c008_02",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a1_c008_02",
+   "ref": "不要碰。我們快去跟阿樂叔叔說。",
+   "synth_text": "不要碰。我們快去跟阿勒叔叔說。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 140,
+    "raw_tail_silence_ms": 128,
+    "speech_start": 0.12,
+    "speech_end": 3.01,
+    "method": "measured_gain",
+    "gain_db": -2.2,
+    "pre_I": -15.8,
+    "I": -18.0,
+    "TP": -3.6,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__a1_c008_02.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__a1_c008_02__orig",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a1_c008_02",
+   "ref": "不要碰。我們快去跟阿樂叔叔說。",
+   "synth_text": "不要碰。我們快去跟阿樂叔叔說。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 140,
+    "raw_tail_silence_ms": 128,
+    "speech_start": 0.12,
+    "speech_end": 3.01,
+    "method": "measured_gain",
+    "gain_db": -2.1,
+    "pre_I": -15.9,
+    "I": -18.0,
+    "TP": -3.5,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__a1_c008_02__orig.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_frame_zdj",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙登結。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 120,
+    "raw_tail_silence_ms": 217,
+    "speech_start": 0.12,
+    "speech_end": 0.99,
+    "method": "measured_gain",
+    "gain_db": -1.8,
+    "pre_I": -16.2,
+    "I": -18.0,
+    "TP": -2.8,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_frame_zdj.wav",
+   "billed": 2
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_frame_zdj__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙燈節。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 110,
+    "raw_tail_silence_ms": 217,
+    "speech_start": 0.12,
+    "speech_end": 1.0,
+    "method": "measured_gain",
+    "gain_db": -2.1,
+    "pre_I": -15.9,
+    "I": -18.0,
+    "TP": -3.0,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_frame_zdj__orig.wav",
+   "billed": 2
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c003_01",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a0_c003_01",
+   "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 153,
+    "speech_start": 0.12,
+    "speech_end": 4.73,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -15.33,
+    "I": -18.0,
+    "TP": -4.2,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a0_c003_01.wav",
+   "billed": 10
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c003_01__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a0_c003_01",
+   "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 153,
+    "speech_start": 0.12,
+    "speech_end": 4.73,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -16.5,
+    "I": -17.9,
+    "TP": -2.8,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a0_c003_01__orig.wav",
+   "billed": 10
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c002_01",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a0_c002_01",
+   "ref": "喵！大家好，我是折折。",
+   "synth_text": "喵！大家好，我是哲哲。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 170,
+    "raw_tail_silence_ms": 203,
+    "speech_start": 0.12,
+    "speech_end": 1.93,
+    "method": "measured_gain",
+    "gain_db": -2.6,
+    "pre_I": -15.4,
+    "I": -18.0,
+    "TP": -4.3,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a0_c002_01.wav",
+   "billed": 4
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a0_c002_01__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a0_c002_01",
+   "ref": "喵！大家好，我是折折。",
+   "synth_text": "喵！大家好，我是折折。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 193,
+    "speech_start": 0.12,
+    "speech_end": 1.95,
+    "method": "measured_gain",
+    "gain_db": -2.7,
+    "pre_I": -15.3,
+    "I": -18.0,
+    "TP": -3.7,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a0_c002_01__orig.wav",
+   "billed": 4
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a1_c004_06",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a1_c004_06",
+   "ref": "你們先走，我把燈籠收好就來。",
+   "synth_text": "你們先走，我把登籠收好就來。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 205,
+    "speech_start": 0.12,
+    "speech_end": 2.82,
+    "method": "measured_gain",
+    "gain_db": -3.5,
+    "pre_I": -14.5,
+    "I": -18.0,
+    "TP": -4.5,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a1_c004_06.wav",
+   "billed": 6
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__mv2__probe_a1_c004_06__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "mv2",
+   "line": "a1_c004_06",
+   "ref": "你們先走，我把燈籠收好就來。",
+   "synth_text": "你們先走，我把燈籠收好就來。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 215,
+    "speech_start": 0.12,
+    "speech_end": 2.81,
+    "method": "measured_gain",
+    "gain_db": -3.3,
+    "pre_I": -14.7,
+    "I": -18.0,
+    "TP": -4.1,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__mv2__probe_a1_c004_06__orig.wav",
+   "billed": 6
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__a2_c002_02",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a2_c002_02",
+   "ref": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 0,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 1.4,
+    "method": "measured_gain",
+    "gain_db": -3.9,
+    "pre_I": -14.1,
+    "I": -18.0,
+    "TP": -5.2,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__a2_c002_02.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__a1_c004_03",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a1_c004_03",
+   "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 70,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 3.65,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -14.4,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -5.1,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__a1_c004_03.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__a1_c008_02",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a1_c008_02",
+   "ref": "不要碰。我們快去跟阿樂叔叔說。",
+   "synth_text": "不要碰。我們快去跟阿勒叔叔說。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 30,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 3.13,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -11.89,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -7.5,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__a1_c008_02.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__a1_c008_02__orig",
+   "probe": false,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a1_c008_02",
+   "ref": "不要碰。我們快去跟阿樂叔叔說。",
+   "synth_text": "不要碰。我們快去跟阿樂叔叔說。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 30,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 3.13,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -12.47,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -6.3,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__a1_c008_02__orig.wav",
+   "billed": null
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_frame_zdj",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙登結。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 30,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 1.45,
+    "method": "measured_gain",
+    "gain_db": -2.5,
+    "pre_I": -15.5,
+    "I": -18.0,
+    "TP": -2.9,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_frame_zdj.wav",
+   "billed": 2
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_frame_zdj__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙燈節。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 0,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 1.48,
+    "method": "measured_gain",
+    "gain_db": -3.3,
+    "pre_I": -14.7,
+    "I": -18.0,
+    "TP": -4.1,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_frame_zdj__orig.wav",
+   "billed": 2
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a0_c003_01",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a0_c003_01",
+   "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 30,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 5.29,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -13.0,
+    "I": -18.0,
+    "TP": -5.4,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a0_c003_01.wav",
+   "billed": 10
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a0_c003_01__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a0_c003_01",
+   "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 20,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 5.06,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -13.48,
+    "I": -18.1,
+    "TP": -5.1,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a0_c003_01__orig.wav",
+   "billed": 10
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a0_c002_01",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a0_c002_01",
+   "ref": "喵！大家好，我是折折。",
+   "synth_text": "喵！大家好，我是哲哲。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 50,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 2.71,
+    "method": "measured_gain",
+    "gain_db": -5.2,
+    "pre_I": -12.8,
+    "I": -18.0,
+    "TP": -6.0,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a0_c002_01.wav",
+   "billed": 4
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a0_c002_01__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a0_c002_01",
+   "ref": "喵！大家好，我是折折。",
+   "synth_text": "喵！大家好，我是折折。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 60,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 2.78,
+    "method": "measured_gain",
+    "gain_db": -4.8,
+    "pre_I": -13.2,
+    "I": -18.0,
+    "TP": -5.6,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a0_c002_01__orig.wav",
+   "billed": 4
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a1_c004_06",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a1_c004_06",
+   "ref": "你們先走，我把燈籠收好就來。",
+   "synth_text": "你們先走，我把登籠收好就來。",
+   "variant": "sub",
+   "master": {
+    "raw_head_silence_ms": 60,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 2.94,
+    "method": "measured_gain",
+    "gain_db": -4.8,
+    "pre_I": -13.2,
+    "I": -18.0,
+    "TP": -5.2,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a1_c004_06.wav",
+   "billed": 6
+  },
+  {
+   "key": "xiaoqing_ttv3_p3__v3__probe_a1_c004_06__orig",
+   "probe": true,
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "mshort": "v3",
+   "line": "a1_c004_06",
+   "ref": "你們先走，我把燈籠收好就來。",
+   "synth_text": "你們先走，我把燈籠收好就來。",
+   "variant": "orig",
+   "master": {
+    "raw_head_silence_ms": 20,
+    "raw_tail_silence_ms": 0,
+    "speech_start": 0.12,
+    "speech_end": 2.82,
+    "method": "measured_gain",
+    "gain_db": -5.0,
+    "pre_I": -13.0,
+    "I": -18.0,
+    "TP": -5.7,
+    "declick_raw": []
+   },
+   "file": "review/G3/el/design/samples/xiaoqing_ttv3_p3__v3__probe_a1_c004_06__orig.wav",
+   "billed": 6
+  },
+  {
+   "key": "edge_xiaoqing__a2_c002_02",
+   "cid": "edge_xiaoqing",
+   "role": "xiaoqing",
+   "mshort": "edge",
+   "line": "a2_c002_02",
+   "ref": "叔叔，小心！",
+   "synth_text": "叔叔，小心！",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoqing__a2_c002_02.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 190,
+    "raw_tail_silence_ms": 740,
+    "speech_start": 0.12,
+    "speech_end": 1.47,
+    "method": "measured_gain",
+    "gain_db": 2.4,
+    "pre_I": -20.4,
+    "I": -18.0,
+    "TP": -3.7,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_xiaoqing__a1_c004_03",
+   "cid": "edge_xiaoqing",
+   "role": "xiaoqing",
+   "mshort": "edge",
+   "line": "a1_c004_03",
+   "ref": "包裝漂亮、聞起來香，都不能證明安全。",
+   "synth_text": "包裝漂亮、聞起來香，都不能證明安全。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoqing__a1_c004_03.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 190,
+    "raw_tail_silence_ms": 802,
+    "speech_start": 0.12,
+    "speech_end": 3.76,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -19.02,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -3.4,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_xiaoqing__a1_c008_02",
+   "cid": "edge_xiaoqing",
+   "role": "xiaoqing",
+   "mshort": "edge",
+   "line": "a1_c008_02",
+   "ref": "不要碰。我們快去跟阿樂叔叔說。",
+   "synth_text": "不要碰。我們快去跟阿勒叔叔說。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoqing__a1_c008_02.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 190,
+    "raw_tail_silence_ms": 806,
+    "speech_start": 0.12,
+    "speech_end": 3.27,
+    "method": "loudnorm_two_pass",
+    "normalization_type": "linear",
+    "pass1_input_i": -18.56,
+    "trim_passes": 1,
+    "declick_after_gain": [
+     [
+      0.892,
+      -69.9
+     ]
+    ],
+    "I": -18.0,
+    "TP": -4.8,
+    "declick_raw": [
+     [
+      0.936,
+      -67.9
+     ]
+    ]
+   }
+  },
+  {
+   "key": "edge_xiaoyu__a3_c002_02",
+   "cid": "edge_xiaoyu",
+   "role": "xiaoyu",
+   "mshort": "edge",
+   "line": "a3_c002_02",
+   "ref": "不用，我不試。我先離開。",
+   "synth_text": "不用，我不試。我先離開。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoyu__a3_c002_02.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 734,
+    "speech_start": 0.12,
+    "speech_end": 2.89,
+    "method": "measured_gain",
+    "gain_db": 3.6,
+    "pre_I": -21.6,
+    "limited": true,
+    "declick_after_gain": [
+     [
+      1.584,
+      -68.1
+     ]
+    ],
+    "I": -18.1,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_xiaoyu__a2_c013_04",
+   "cid": "edge_xiaoyu",
+   "role": "xiaoyu",
+   "mshort": "edge",
+   "line": "a2_c013_04",
+   "ref": "明天就是紙燈節了……叔叔會好一點嗎？",
+   "synth_text": "明天就是紙登結了……叔叔會好一點嗎？",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoyu__a2_c013_04.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 160,
+    "raw_tail_silence_ms": 1110,
+    "speech_start": 0.12,
+    "speech_end": 3.53,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 4.96,
+    "pass1_input_i": -22.96,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -2.3,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_xiaoyu__a0_c004_01",
+   "cid": "edge_xiaoyu",
+   "role": "xiaoyu",
+   "mshort": "edge",
+   "line": "a0_c004_01",
+   "ref": "阿樂叔叔早！折折早！",
+   "synth_text": "阿勒叔叔早！哲哲早！",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoyu__a0_c004_01.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 150,
+    "raw_tail_silence_ms": 742,
+    "speech_start": 0.12,
+    "speech_end": 2.51,
+    "method": "measured_gain",
+    "gain_db": 2.2,
+    "pre_I": -20.2,
+    "limited": true,
+    "I": -18.1,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_xiaoyu__frame_zdj",
+   "cid": "edge_xiaoyu",
+   "role": "xiaoyu",
+   "mshort": "edge",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙登結。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_xiaoyu__frame_zdj.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 140,
+    "raw_tail_silence_ms": 872,
+    "speech_start": 0.12,
+    "speech_end": 0.98,
+    "method": "measured_gain",
+    "gain_db": 5.1,
+    "pre_I": -23.1,
+    "limited": true,
+    "I": -18.2,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_pinan__a1_c004_06",
+   "cid": "edge_pinan",
+   "role": "pinan",
+   "mshort": "edge",
+   "line": "a1_c004_06",
+   "ref": "你們先走，我把燈籠收好就來。",
+   "synth_text": "你們先走，我把登籠收好就來。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_pinan__a1_c004_06.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "-10%",
+    "pitch": "-10Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 190,
+    "raw_tail_silence_ms": 922,
+    "speech_start": 0.12,
+    "speech_end": 3.76,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.46,
+    "pass1_input_i": -21.46,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "I": -18.2,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_pinan__a6_c002_03",
+   "cid": "edge_pinan",
+   "role": "pinan",
+   "mshort": "edge",
+   "line": "a6_c002_03",
+   "ref": "不要告訴老師，好不好？我怕被罵。",
+   "synth_text": "不要告訴老師，好不好？我怕被罵。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_pinan__a6_c002_03.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "-10%",
+    "pitch": "-10Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 190,
+    "raw_tail_silence_ms": 922,
+    "speech_start": 0.12,
+    "speech_end": 4.51,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 2.84,
+    "pass1_input_i": -20.84,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -2.2,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_pinan__a6_c006_03",
+   "cid": "edge_pinan",
+   "role": "pinan",
+   "mshort": "edge",
+   "line": "a6_c006_03",
+   "ref": "老師……我書包裡，有一個別人給的盒子。",
+   "synth_text": "老師……我書包裡，有一個別人給的盒子。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_pinan__a6_c006_03.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "-10%",
+    "pitch": "-10Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 180,
+    "raw_tail_silence_ms": 936,
+    "speech_start": 0.12,
+    "speech_end": 4.38,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 5.36,
+    "pass1_input_i": -23.36,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "trim_passes": 1,
+    "I": -18.0,
+    "TP": -2.2,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_zhezhe__a2_c001_03",
+   "cid": "edge_zhezhe",
+   "role": "zhezhe",
+   "mshort": "edge",
+   "line": "a2_c001_03",
+   "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_zhezhe__a2_c001_03.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+90Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 150,
+    "raw_tail_silence_ms": 664,
+    "speech_start": 0.12,
+    "speech_end": 5.17,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 3.14,
+    "pass1_input_i": -21.14,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "I": -17.9,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_zhezhe__a0_c003_01",
+   "cid": "edge_zhezhe",
+   "role": "zhezhe",
+   "mshort": "edge",
+   "line": "a0_c003_01",
+   "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+   "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_zhezhe__a0_c003_01.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+90Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 150,
+    "raw_tail_silence_ms": 698,
+    "speech_start": 0.12,
+    "speech_end": 4.92,
+    "method": "loudnorm_pass1_gain",
+    "gain_db": 4.42,
+    "pass1_input_i": -22.42,
+    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+    "limited": true,
+    "I": -18.0,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_zhezhe__a0_c002_01",
+   "cid": "edge_zhezhe",
+   "role": "zhezhe",
+   "mshort": "edge",
+   "line": "a0_c002_01",
+   "ref": "喵！大家好，我是折折。",
+   "synth_text": "喵！大家好，我是哲哲。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_zhezhe__a0_c002_01.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+90Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 150,
+    "raw_tail_silence_ms": 662,
+    "speech_start": 0.12,
+    "speech_end": 2.69,
+    "method": "measured_gain",
+    "gain_db": 2.0,
+    "pre_I": -20.0,
+    "limited": true,
+    "declick_after_gain": [
+     [
+      0.761,
+      -68.8
+     ]
+    ],
+    "I": -18.1,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  },
+  {
+   "key": "edge_zhezhe__frame_zdj",
+   "cid": "edge_zhezhe",
+   "role": "zhezhe",
+   "mshort": "edge",
+   "line": "frame_zdj",
+   "ref": "紙燈節。",
+   "synth_text": "紙登結。",
+   "variant": "sub",
+   "file": "review/G3/el/design/samples/edge_zhezhe__frame_zdj.wav",
+   "edge_spec": {
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+90Hz",
+    "post": {
+     "max_pause_ms": 550
+    }
+   },
+   "master": {
+    "raw_head_silence_ms": 130,
+    "raw_tail_silence_ms": 952,
+    "speech_start": 0.12,
+    "speech_end": 0.91,
+    "method": "measured_gain",
+    "gain_db": 5.1,
+    "pre_I": -23.1,
+    "limited": true,
+    "I": -18.2,
+    "TP": -1.9,
+    "declick_raw": []
+   }
+  }
+ ]
+}

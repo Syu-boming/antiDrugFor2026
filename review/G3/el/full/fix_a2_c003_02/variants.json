@@ -1,0 +1,12 @@
+[
+ {"name":"A_v3_robust_orig","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_v3","language_code":"zh","settings":{"stability":1.0,"similarity_boost":0.75},"seeds":[11,12],
+  "text":"有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"},
+ {"name":"B_v3_robust_yan","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_v3","language_code":"zh","settings":{"stability":1.0,"similarity_boost":0.75},"seeds":[11,12],
+  "text":"有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"},
+ {"name":"C_v2_orig","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_multilingual_v2","settings":{"stability":0.5,"similarity_boost":0.75},"seeds":[11,12],
+  "text":"有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"},
+ {"name":"D_v2_yan","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_multilingual_v2","settings":{"stability":0.5,"similarity_boost":0.75},"seeds":[11,12],
+  "text":"有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"},
+ {"name":"E_v3_natural_orig","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_v3","language_code":"zh","settings":{"stability":0.5,"similarity_boost":0.75},"seeds":[21,22],
+  "text":"有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"}
+]

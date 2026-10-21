@@ -1,9 +1,17 @@
 // 字幕疊層（v1.2 第 16.2 節、第 15.3 節）：
-// 半透明深色紙條底板、白字、約 2–3 px 細描邊（CSS 以 em 比例計算）、角色名牌與小頭像（先用色塊）。
+// 半透明深色紙條底板、白字、約 2–3 px 細描邊（CSS 以 em 比例計算）、角色名牌與小頭像。
+// 小頭像：素材 assets/final/ui/ui-speaker_<說話者 id>（128×128 透明圓形徽章）；沒有素材的說話者不顯示方塊，只留名牌文字
+// （G4 修正第 33 項：原本的空白色塊拿掉）。
 // 字級＝舞台高度 × 68/1080，每行 ≤16 字、最多兩行（斷行在 timeline 階段就算好）。
 // 不用 CSS 轉場：顯示與否完全由時間決定，虛擬時鐘擷取時才會逐格一致。
 import type { CueTimeline, ResolvedLine, SubtitlePage } from '../cues/timeline';
 import { speakerInfo } from './characters';
+import { getPack } from '../data/packs';
+
+/** 說話者小頭像（資料包裡的 data URL；找不到回傳 undefined） */
+function speakerIcon(id: string): string | undefined {
+  return getPack<string>(`img:ui/ui-speaker_${id}`);
+}
 
 /** 兩句之間的空檔短於這個秒數時，字幕條不收起（避免來回閃現） */
 const BRIDGE = 0.8;
@@ -48,7 +56,9 @@ export class SubtitleView {
     this.lastKey = key;
     if (!cur) { this.strip.hidden = true; return; }
     const sp = speakerInfo(cur.line.line.speaker);
-    this.avatar.style.background = sp.color;
+    const icon = speakerIcon(sp.id);
+    this.avatar.hidden = !icon;
+    this.avatar.style.backgroundImage = icon ? `url("${icon}")` : '';
     this.name.textContent = sp.name;
     this.text.replaceChildren(...cur.page.rows.map((r) => {
       const d = document.createElement('div');

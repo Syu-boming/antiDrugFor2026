@@ -10,8 +10,9 @@ import { Curtain } from './curtain';
 import { buildProscenium, buildWorkshop } from './sets';
 import { applyPopup, buildWorkshopG4, type PopPiece } from './workshop';
 import { ANCHOR_CAMERA, CAMERA_PRESETS, LAYER, STAGE_OPENING, type CameraPreset } from './layers';
-import { PuppetDirector, type LipsyncData, type Performer } from './perform';
+import { MIN_STRING_PX, PuppetDirector, type LipsyncData, type Performer } from './perform';
 import { buildCast } from './cast';
+import { configureStringTextures } from './strings';
 import { setTextureDensity, makeCanvas } from './paper';
 import { desatUniform, enableDesat, FollowSpot } from './fx';
 import type { AnchorName } from './rig';
@@ -68,6 +69,8 @@ export class Stage {
   castReport: string[] = [];
   castTimings: Record<string, number> = {};
   tableEdge: [number, number] | null = null;
+  /** 量測用地標（世界座標；只有 workshop_g4 景有） */
+  landmarks: Record<string, { x0: number; x1: number; y: number; z: number }> = {};
   contextLost = false;
   onContextLost?: () => void;
   onContextRestored?: () => void;
@@ -127,14 +130,20 @@ export class Stage {
       ws.materials.forEach(enableDesat);
       marks = ws.marks;
       this.tableEdge = ws.tableEdge;
+      this.landmarks = ws.landmarks;
     } else {
+      this.landmarks = {};
       const ws = buildWorkshop();
       this.setGroup.add(ws.group);
       ws.group.traverse((m) => { const mat = (m as Mesh).material as Material | undefined; if (mat) enableDesat(mat); });
       marks = { ale: { x: -2.2, z: 0 }, xiaoqing: { x: 3.1, z: 0.3 } };
       this.tableEdge = ws.tableEdge;
     }
+    // 操偶線紙繩與紙環貼圖（素材優先，缺圖用程式畫的退路）：要在建立紙偶之前設定
+    const maxAniso = this.renderer?.capabilities.getMaxAnisotropy?.() ?? 4;
+    const st = configureStringTextures(assets?.image('tex-string-rope'), assets?.image('tex-string-ring'), Math.min(8, maxAniso || 4));
     const cast = buildCast(file.characters, assets, { alphaToCoverage: a2c, marks });
+    if (st.rope === 'fallback' || st.ring === 'fallback') cast.report.push(`操偶線貼圖：紙繩 ${st.rope === 'image' ? '素材' : '程式退路'}、紙環 ${st.ring === 'image' ? '素材' : '程式退路'}`);
     this.actors = cast.actors;
     this.castReport = cast.report;
     this.castTimings = cast.timings;
@@ -249,6 +258,9 @@ export class Stage {
     (this.lip.material as MeshStandardMaterial).emissiveIntensity = Math.max(0, (1 - L) * 2.2);
     desatUniform.value = world.desat;
     this.director.light = lerp(0.55, 1, L) + world.spot * 0.08;
+    // 線寬下限：相機到注視點的距離 → 1080p 每世界單位幾 px（純函式，重播一致）
+    const camDist = Math.hypot(c.pos[0] - c.target[0], c.pos[1] - c.target[1], c.pos[2] - c.target[2]);
+    this.director.minStringWidth = MIN_STRING_PX * (2 * camDist * Math.tan((c.fov * Math.PI) / 360)) / 1080;
     this.director.apply(tl, t, playKey);
     // 追光跟著角色（胸口高度）
     const target = world.spotTarget ? this.actors.get(world.spotTarget) : undefined;
@@ -357,10 +369,45 @@ export class Stage {
     return [(v.x + 1) / 2 * W, (1 - v.y) / 2 * H];
   }
 
+  private alphaBounds = new WeakMap<object, [number, number, number, number] | null>();
+
+  /** 部件貼圖不透明範圍（alpha ≥ 128）投影到螢幕的外框；量測用，結果依貼圖快取 */
+  private opaqueBox(m: Mesh): [number, number, number, number] | null {
+    const map = (m.material as MeshStandardMaterial).map;
+    const img = map?.image as HTMLCanvasElement | undefined;
+    if (!img || typeof img.getContext !== 'function') return null;
+    let ab = this.alphaBounds.get(img);
+    if (ab === undefined) {
+      ab = null;
+      try {
+        const g = img.getContext('2d');
+        if (g) {
+          const { width: W, height: H } = img;
+          const d = g.getImageData(0, 0, W, H).data;
+          let x0 = W, y0 = H, x1 = -1, y1 = -1;
+          for (let y = 0; y < H; y++) for (let x = 0; x < W; x++) if (d[(y * W + x) * 4 + 3] >= 128) { if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+          if (x1 >= 0) ab = [x0 / W, y0 / H, (x1 + 1) / W, (y1 + 1) / H];
+        }
+      } catch { ab = null; }
+      this.alphaBounds.set(img, ab);
+    }
+    if (!ab) return null;
+    m.geometry.computeBoundingBox();
+    const bb = m.geometry.boundingBox!;
+    const gx = (u: number): number => bb.min.x + (bb.max.x - bb.min.x) * u;
+    const gy = (v: number): number => bb.max.y - (bb.max.y - bb.min.y) * v; // 圖像 y 向下
+    const box: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
+    for (const [u, v] of [[ab[0], ab[1]], [ab[2], ab[1]], [ab[0], ab[3]], [ab[2], ab[3]]]) {
+      const [px, py] = this.project(new Vector3(gx(u), gy(v), 0).applyMatrix4(m.matrixWorld));
+      box[0] = Math.min(box[0], px); box[1] = Math.min(box[1], py); box[2] = Math.max(box[2], px); box[3] = Math.max(box[3], py);
+    }
+    return box.map((v) => Math.round(v * 10) / 10) as [number, number, number, number];
+  }
+
   /** 擷取量測：操偶線（錨點、螢幕線寬）與角色外框（像素，繪圖緩衝座標） */
-  probe(): { curtain: number; strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][] }[]; actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number] }[] } {
-    const strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][] }[] = [];
-    const actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number] }[] = [];
+  probe(): { curtain: number; strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[]; actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number]; parts?: Record<string, [number, number, number, number]>; opaque?: Record<string, [number, number, number, number]>; joints?: Record<string, [number, number]>; eyesBox?: [number, number, number, number] }[]; landmarks: Record<string, [[number, number], [number, number]]> } {
+    const strings: { actor: string; anchor: string; anchorPx: [number, number]; widthPx: number; visible: boolean; dir: [number, number]; path?: [number, number][]; ringPx?: [number, number]; ringRadiusPx?: number }[] = [];
+    const actors: { id: string; box: [number, number, number, number]; visible: boolean; headBox?: [number, number, number, number]; parts?: Record<string, [number, number, number, number]>; opaque?: Record<string, [number, number, number, number]>; joints?: Record<string, [number, number]>; eyesBox?: [number, number, number, number] }[] = [];
     // 驗收量測用：物件與所有上層都可見才算顯示中
     const shown = (o: Object3D | null): boolean => { for (let q = o; q; q = q.parent) if (!q.visible) return false; return true; };
     const meshBox = (m: Mesh, box: [number, number, number, number]): void => {
@@ -385,38 +432,73 @@ export class Stage {
         }
       });
       let headBox: [number, number, number, number] | undefined;
+      let parts: Record<string, [number, number, number, number]> | undefined;
+      let joints: Record<string, [number, number]> | undefined;
+      let opaque: Record<string, [number, number, number, number]> | undefined;
       if (a.kind === 'rig') {
+        // 關節（螢幕像素）：hip＝骨盆樞紐（臀部離凳的量測點）
+        const pel = a.rig.role('pelvis');
+        if (pel && a.rig.has(pel)) {
+          const hp = a.rig.part(pel).pivot.getWorldPosition(new Vector3());
+          joints = { hip: this.project(hp).map((v) => Math.round(v * 10) / 10) as [number, number] };
+        }
         const hb: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
         a.rig.parts.forEach((p, name) => { if (name.startsWith('head') && p.mesh && shown(p.mesh)) meshBox(p.mesh, hb); });
         if (Number.isFinite(hb[0])) headBox = hb;
+        // 各部件外框（含透明邊；驗收包量腳、膝與字幕底板是否重疊用）
+        parts = {};
+        a.rig.parts.forEach((p, name) => {
+          if (!p.mesh || !shown(p.mesh)) return;
+          const b: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
+          meshBox(p.mesh, b);
+          if (Number.isFinite(b[0])) parts![name] = b.map((v) => Math.round(v * 10) / 10) as [number, number, number, number];
+          // 不透明範圍（貼圖 alpha ≥ 128 的外框；不含透明邊與白色紙芯描邊）
+          const ob = this.opaqueBox(p.mesh);
+          if (ob) { opaque ??= {}; opaque[name] = ob; }
+        });
       }
-      actors.push({ id, box, visible: a.root.visible, headBox });
+      // 眼睛換片在畫面上的範圍（驗收包放大眨眼格用）
+      let eyesBox: [number, number, number, number] | undefined;
+      const fr = a.kind === 'rig' ? (a.activeFace ?? a.face) : a.face;
+      const em = fr?.eyesMesh();
+      if (em && shown(fr!.group)) {
+        const eb: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
+        meshBox(em, eb);
+        if (Number.isFinite(eb[0])) eyesBox = eb.map((v) => Math.round(v * 10) / 10) as [number, number, number, number];
+      }
+      actors.push({ id, box, visible: a.root.visible, headBox, parts, opaque, joints, eyesBox });
       if (a.kind !== 'rig') return;
       a.strings.forEach((s, n) => {
         const L = s.last;
         if (!L.visible) { strings.push({ actor: id, anchor: n, anchorPx: [0, 0], widthPx: 0, visible: false, dir: [0, 0] }); return; }
         const b = this.project(L.bottom);
-        const up = L.bottom.clone().lerp(L.top, 0.02);
-        const u = this.project(up);
+        // 整條線的螢幕路徑：strings.ts 實際畫的中心線（37 點，上端 → 線的下端；下段細分，看得到的彎曲都在裡面）
+        const path: [number, number][] = [];
+        for (let i = 0; i + 2 < L.path.length; i += 3) path.push(this.project(new Vector3(L.path[i], L.path[i + 1], L.path[i + 2])));
+        // 線在下端的方向（往上）：沿路徑往上第一個離下端 ≥ 10 px 的點
+        let u = path.length > 1 ? path[path.length - 2] : this.project(L.bottom.clone().lerp(L.top, 0.02));
+        for (let i = path.length - 2; i >= 0; i--) { u = path[i]; if (Math.hypot(u[0] - b[0], u[1] - b[1]) >= 10) break; }
         const side = L.bottom.clone().add(new Vector3(L.width, 0, 0));
         const sp = this.project(side);
         const dx = u[0] - b[0], dy = u[1] - b[1], dl = Math.hypot(dx, dy) || 1;
         // 線寬（垂直於線的方向）＝水平投影寬度 × |cos|
         const widthPx = Math.abs(sp[0] - b[0]) * Math.abs(dy / dl);
-        // 整條線的螢幕路徑（與 strings.ts 同一條二次貝茲曲線，13 點，上端→下端）
-        const ddx = L.bottom.x - L.top.x, ddy = L.bottom.y - L.top.y, len = Math.hypot(ddx, ddy) || 1;
-        const c = new Vector3((L.top.x + L.bottom.x) / 2 + (-ddy / len) * L.bow, (L.top.y + L.bottom.y) / 2 + (ddx / len) * L.bow, (L.top.z + L.bottom.z) / 2);
-        const path: [number, number][] = [];
-        for (let i = 0; i <= 12; i++) {
-          const t = i / 12, it = 1 - t;
-          path.push(this.project(new Vector3(
-            it * it * L.top.x + 2 * it * t * c.x + t * t * L.bottom.x,
-            it * it * L.top.y + 2 * it * t * c.y + t * t * L.bottom.y,
-            it * it * L.top.z + 2 * it * t * c.z + t * t * L.bottom.z)));
+        // 紙環中心與半徑（螢幕像素）：驗收包檢查扣點是否落在肢體剪影內
+        let ringPx: [number, number] | undefined, ringRadiusPx: number | undefined;
+        if (L.ring) {
+          ringPx = this.project(L.ring);
+          const e = this.project(L.ring.clone().add(new Vector3(L.ringD / 2, 0, 0)));
+          ringRadiusPx = Math.abs(e[0] - ringPx[0]);
         }
-        strings.push({ actor: id, anchor: n, anchorPx: b, widthPx, visible: true, dir: [dx / dl, dy / dl], path });
+        strings.push({ actor: id, anchor: n, anchorPx: b, widthPx, visible: true, dir: [dx / dl, dy / dl], path, ringPx, ringRadiusPx });
       });
     });
-    return { curtain: this.curtain.openAmount, strings, actors };
+    // 地標（桌面上緣、凳面上緣）：左右兩端投影到螢幕
+    const landmarks: Record<string, [[number, number], [number, number]]> = {};
+    for (const [k, v] of Object.entries(this.landmarks)) {
+      const r = (q: [number, number]): [number, number] => q.map((x) => Math.round(x * 10) / 10) as [number, number];
+      landmarks[k] = [r(this.project(new Vector3(v.x0, v.y, v.z))), r(this.project(new Vector3(v.x1, v.y, v.z)))];
+    }
+    return { curtain: this.curtain.openAmount, strings, actors, landmarks };
   }
 }

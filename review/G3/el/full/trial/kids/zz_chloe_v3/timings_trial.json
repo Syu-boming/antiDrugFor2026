@@ -1,0 +1,51 @@
+{
+ "a0_c002_02": {
+  "seconds": 5.09,
+  "speech_start": 0.12,
+  "speech_end": 4.84,
+  "speech_segments": [
+   [
+    0.11,
+    4.84
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3/out/vo_a0_c002_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3/lipsync/a0_c002_02_el01.json",
+  "role": "折折",
+  "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
+ },
+ "a0_c003_01": {
+  "seconds": 5.24,
+  "speech_start": 0.12,
+  "speech_end": 4.99,
+  "speech_segments": [
+   [
+    0.11,
+    1.7
+   ],
+   [
+    2.17,
+    4.98
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3/out/vo_a0_c003_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3/lipsync/a0_c003_01_el01.json",
+  "role": "折折",
+  "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！"
+ },
+ "a3_c004_02": {
+  "seconds": 5.77,
+  "speech_start": 0.12,
+  "speech_end": 5.52,
+  "speech_segments": [
+   [
+    0.12,
+    5.52
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3/out/vo_a3_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3/lipsync/a3_c004_02_el01.json",
+  "role": "折折",
+  "text": "再加上口訣和動作：不碰、不試；先離開，找大人。"
+ }
+}

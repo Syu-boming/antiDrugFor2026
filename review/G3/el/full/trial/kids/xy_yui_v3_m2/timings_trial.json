@@ -1,0 +1,63 @@
+{
+ "a0_c004_01": {
+  "seconds": 2.74,
+  "speech_start": 0.12,
+  "speech_end": 2.49,
+  "speech_segments": [
+   [
+    0.11,
+    1.19
+   ],
+   [
+    1.68,
+    2.49
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2/out/vo_a0_c004_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_yui_v3_m2/lipsync/a0_c004_01_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔早！折折早！"
+ },
+ "a5_c005_03": {
+  "seconds": 6.27,
+  "speech_start": 0.12,
+  "speech_end": 6.02,
+  "speech_segments": [
+   [
+    0.11,
+    1.35
+   ],
+   [
+    1.98,
+    3.61
+   ],
+   [
+    4.43,
+    6.04
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2/out/vo_a5_c005_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_yui_v3_m2/lipsync/a5_c005_03_el01.json",
+  "role": "小宇",
+  "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。"
+ },
+ "a5_c006_02": {
+  "seconds": 7.56,
+  "speech_start": 0.12,
+  "speech_end": 7.31,
+  "speech_segments": [
+   [
+    0.11,
+    2.51
+   ],
+   [
+    3.71,
+    7.33
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2/out/vo_a5_c006_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_yui_v3_m2/lipsync/a5_c006_02_el01.json",
+  "role": "小宇",
+  "text": "這裡是小燈國小正門口。有一個大人坐在門口的椅子上，叫不醒。"
+ }
+}

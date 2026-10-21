@@ -10,18 +10,19 @@
 //   紙偶    puppet.popup                            隨立體書景片立起（以腳底為鉸鏈）
 //           puppet.enter {from} / puppet.exit {to}  從畫面外走進來／走出去（dx，世界單位）
 //           puppet.sit {to}                         坐姿程度（1 坐、0 站；0.5 半站）
-//           puppet.waveTry                          想揮手：手抬起 → 線先繃緊 → 手被拉向旁邊
-//           puppet.kneeTug {at}                     想站起：起身 → 膝前線繃緊 → 膝蓋被提起（腳離地）→ 晃一下 → 扶桌（at＝桌邊世界座標）
+//           puppet.waveTry                          想揮手：臉換 X2 → 手自己抬到胸口高度揮 2 下（線還鬆）→ 線繃直 → 手被拉偏 → 困惑臉（節拍見 beats.ts）
+//           puppet.kneeTug {at}                     想站起：半站 → 膝前線繃緊 → 膝蓋被提起（腳離地）→ 晃一下 → 扶桌（at＝桌邊世界座標；節拍見 beats.ts）
 //           puppet.reach / puppet.wave / puppet.chest / puppet.grab {at}   B 側手：伸手、揮手、手放胸前、扶住某點
 //           puppet.lean {to} / puppet.move {dx} / puppet.tilt {to}         傾身、移動、歪頭
 //           puppet.pose {pose}                      立牌換姿勢（紙片翻面）
-//           puppet.face {emotion}                   情緒換片（smile／neutral／confused／worried／surprised），轉折時加眨一次
+//           puppet.face {emotion}                   情緒換片（smile／greet／neutral／confused／worried／surprised），轉折時加眨一次
 //           puppet.blink                            加眨一次
 import { Group, Vector2, Vector3, type Object3D } from 'three';
 import type { CharacterStart } from '../types/cue';
 import type { CueTimeline, ResolvedAnim } from '../cues/timeline';
-import { Rig, type AnchorName } from './rig';
-import { PaperString, StringSim } from './strings';
+import { Rig, solveTwoBone, type AnchorName } from './rig';
+import { PaperString, RING_DIAMETER, StringSim } from './strings';
+import { KNEE_TUG, WAVE_TRY } from './beats';
 import type { StandeeActor } from './standee';
 import type { EyeShape, FaceRig, MouthShape } from './face';
 import { LAYER } from './layers';
@@ -30,8 +31,21 @@ import { clamp, ease, hashString, lerp, seeded, smoothstep } from '../util/math'
 export const ANCHORS: AnchorName[] = ['wrist', 'elbow', 'knee'];
 /** 操偶線上端的高度（遠高於任何鏡位的畫面上緣，線一定延伸出畫面） */
 const STRING_TOP_Y = 15;
-/** 線寬：中景約 9 px、近景 ≥ 8 px（1080p） */
-export const STRING_WIDTH = 0.066;
+/** 線寬（世界單位）：g4 中景約 8 px、較近的鏡位約 9–10 px（1080p；規格 6–10 px，G4 修正第 22 項） */
+export const STRING_WIDTH = 0.043;
+/** 線在 1080p 畫面上最細的寬度（px）：鏡頭拉遠時（例如閉幕拉回台口）線寬改用這個下限，不會細到看不見（規格 6–10 px） */
+export const MIN_STRING_PX = 6.3;
+/**
+ * 線鬆時的側向弧度（世界單位，乘上 1−張力）：張力 0.2（剛落下、還鬆）時 bow＝0.16，
+ * g4 中景畫面裡那一段線的中點偏離直線約 20–30 px（strings.ts sagShape）；張力 1 時 bow＝0（直線）。
+ */
+export const SLACK_BOW = 0.2;
+/** 扶桌時手腕在桌面上緣上方多少（世界單位）：手掌往下蓋過桌面上緣約一半 */
+const GRAB_WRIST_DY = 0.02;
+/** 扶桌時上身往桌子那側的傾斜（弧度；正值＝往 B 側） */
+const GRAB_LEAN = 0.05;
+/** 揮手時手腕左右擺動的幅度（世界單位） */
+const WAVE_AMP = 0.06;
 
 export interface LipsyncData { fps: number; frames: number[] }
 
@@ -84,16 +98,24 @@ export interface Intent {
   visible: boolean; x: number; y: number; z: number; facing: 1 | -1;
   dx: number; lift: number; lean: number; popup: number; walk: number;
   sit: number; armRaise: number; reachB: number; waveB: number; chestB: number; grabB: number; grabAt: V2 | null; step: number;
+  /** A 側手揮手（0–1 包絡）與揮手起點（cue 秒） */
+  waveA: number; waveT0: number;
   headTilt: number;
   drop: Rec<number>; landAt: Rec<number>; tension: Rec<number>; fade: Rec<number>; detach: Rec<number>;
   pull: Rec<V2>; swing: Rec<number>; bodyPush: V2;
   pose: string; flip: number; emotion: string; events: number[];
+  /** 不眨眼的時段（換姿勢翻面前 0.2 秒到翻面結束後 0.3 秒；G4 修正第 2 輪第 10 項） */
+  quiet: [number, number][];
 }
 
-/** 正面紙偶（圖片分件）的拉力量：手腕被拉到 A 側（畫面左）、略往上；膝蓋往上提 */
+/**
+ * 正面紙偶（圖片分件）的拉力量（相對 A 側肩膀，世界單位）：
+ * raised＝想揮手時手腕自己抬到的位置（身體外側、胸口到肩膀高度；手肘在外下方、前臂往內上斜，兩條線分開不重疊）；pullWrist＝線把手腕拉向 A 側（畫面左）、略往上的位移。
+ * 兩者相加＝被拉到旁邊的最後位置 [-0.88, 0.26]（和 G4 第一版相同，a2_c004 的 pulled_half 起始姿勢不變）。
+ */
 const FRONT = {
-  raised: [-0.3, 0.72] as V2,
-  pullWrist: [-0.58, -0.46] as V2,
+  raised: [-0.3, 0.26] as V2,
+  pullWrist: [-0.58, 0] as V2,
   pullElbow: [-0.16, 0.06] as V2,
   pullKnee: [0.05, 0.3] as V2,
   chest: [-0.3, -0.24] as V2,
@@ -111,7 +133,7 @@ function applyPosePreset(it: Intent, pose: string | undefined, view: 'front' | '
     if (pose === 'pulled_sit') it.sit = 1;
     if (pose === 'pulled_half') {
       it.sit = 0.55; it.pull.knee = [P.pullKnee[0] * 0.75, P.pullKnee[1] * 0.75]; it.tension.knee = 1;
-      it.grabB = 1; it.emotion = 'confused'; it.headTilt = 0.07;
+      it.grabB = 1; it.emotion = 'confused'; it.headTilt = 0.07; it.lean = GRAB_LEAN;
     } else if (view === 'side') {
       it.pull.knee = [0.08, 0.1];
     }
@@ -140,10 +162,10 @@ export function evalIntent(place: ActorPlacement, view: 'front' | 'side', start:
     visible: start ? start.visible !== false : false,
     x: start?.x ?? place.x, y: start?.y ?? 0, z: start?.z ?? place.z, facing: start?.facing ?? place.facing,
     dx: 0, lift: 0, lean: 0, popup: start?.popup ?? 1, walk: 0,
-    sit: start?.sit ?? 0, armRaise: 0, reachB: 0, waveB: 0, chestB: 0, grabB: 0, grabAt: null, step: 0, headTilt: 0,
+    sit: start?.sit ?? 0, armRaise: 0, reachB: 0, waveB: 0, chestB: 0, grabB: 0, grabAt: null, step: 0, headTilt: 0, waveA: 0, waveT0: 0,
     drop: rec(() => 0), landAt: rec(() => -99), tension: rec(() => start?.stringTension ?? 0.3), fade: rec(() => 1), detach: rec(() => 0),
     pull: rec<V2>(() => [0, 0]), swing: rec(() => 0), bodyPush: [0, 0],
-    pose: defaultPose, flip: 0, emotion: start?.emotion ?? 'smile', events: [],
+    pose: defaultPose, flip: 0, emotion: start?.emotion ?? 'smile', events: [], quiet: [],
   };
   for (const a of start?.strings ?? []) if (a in it.drop) it.drop[a as AnchorName] = 1;
   applyPosePreset(it, start?.pose, view);
@@ -221,40 +243,57 @@ export function evalIntent(place: ActorPlacement, view: 'front' | 'side', start:
       }
       case 'puppet.sit': it.sit = lerp(it.sit, Number(a.params.to ?? 1), ease(a.ease ?? 'inOut', prog(a, t))); break;
       case 'puppet.waveTry': {
-        // 0–30% 手抬起（意圖）；30–42% 線繃緊（先繃緊）；42–67% 手被拉向一旁（再拉動）
-        const u = (t - a.start) / a.duration;
-        it.armRaise = Math.max(it.armRaise, ease('inOut', prog(a, t, 0, 0.3)));
-        it.tension.wrist = Math.max(it.tension.wrist, lerp(0.2, 1, smoothstep(0.3, 0.42, u)));
-        it.tension.elbow = Math.max(it.tension.elbow, lerp(0.2, 1, smoothstep(0.33, 0.45, u)));
-        const pull = ease('inOut', prog(a, t, 0.42, 0.67));
+        // 節拍（秒）見 beats.ts WAVE_TRY：X2 臉 → 手自己抬起（線鬆）→ 揮 2 下 → 線繃直 → 手被拉偏 → 困惑臉
+        const W = WAVE_TRY;
+        const s = t - a.start;
+        if (s < 0) break;
+        it.emotion = String(a.params.greet ?? 'greet');
+        it.armRaise = Math.max(it.armRaise, clamp((s - W.raiseStart) / (W.raiseEnd - W.raiseStart)));
+        if (s > W.waveStart && s < W.waveEnd) {
+          it.waveA = Math.min(1, (s - W.waveStart) / 0.12, (W.waveEnd - s) / 0.12);
+          it.waveT0 = a.start + W.waveStart;
+        }
+        it.tension.wrist = Math.max(it.tension.wrist, lerp(0.2, 1, smoothstep(W.tautStart, W.tautEnd, s)));
+        it.tension.elbow = Math.max(it.tension.elbow, lerp(0.2, 1, smoothstep(W.tautStart + 0.05, W.tautEnd + 0.05, s)));
+        const pull = ease('inOut', clamp((s - W.pullStart) / (W.pullEnd - W.pullStart)));
         it.pull.wrist = [lerp(it.pull.wrist[0], P.pullWrist[0], pull), lerp(it.pull.wrist[1], P.pullWrist[1], pull)];
         it.pull.elbow = [lerp(it.pull.elbow[0], P.pullElbow[0], pull), lerp(it.pull.elbow[1], P.pullElbow[1], pull)];
-        if (view === 'front') it.chestB = Math.max(it.chestB, ease('inOut', prog(a, t, 0.55, 0.85)));
-        if (u >= 0.5) { it.emotion = String(a.params.emotion ?? 'confused'); it.events.push(a.start + a.duration * 0.5); }
-        if (view === 'front') it.headTilt = Math.max(it.headTilt, 0.07 * ease('inOut', prog(a, t, 0.5, 0.8)));
+        if (view === 'front') it.chestB = Math.max(it.chestB, ease('inOut', clamp((s - W.confused - 0.1) / 0.8)));
+        if (s >= W.confused) { it.emotion = String(a.params.emotion ?? 'confused'); it.events.push(a.start + W.confused); }
+        if (view === 'front') it.headTilt = Math.max(it.headTilt, 0.07 * ease('inOut', clamp((s - W.confused) / 0.6)));
         break;
       }
       case 'puppet.kneeTug': {
-        // 想站起（意圖）→ 膝前線繃緊 → 膝蓋被往上提、腳離地 → 身體晃一下 → B 側手扶住桌邊
-        const u = (t - a.start) / a.duration;
+        // 節拍（秒）見 beats.ts KNEE_TUG：半站（≥ 0.5 秒）→ 膝前線繃緊 → 膝蓋被提起、腳離地 → 軀幹晃 1 次 → B 側手扶住桌邊並停住
+        const K = KNEE_TUG;
+        const s = t - a.start;
+        if (s < 0) break;
+        const ph = (s0: number, s1: number): number => ease('inOut', clamp((s - s0) / (s1 - s0)));
         if (view === 'front') {
-          it.sit = lerp(it.sit, Math.max(0, it.sit - 0.45), ease('inOut', prog(a, t, 0, 0.32)));
-          it.tension.knee = Math.max(it.tension.knee, lerp(0.2, 1, smoothstep(0.22, 0.34, u)));
-          const tug = ease('inOut', prog(a, t, 0.36, 0.5)) - 0.25 * ease('inOut', prog(a, t, 0.62, 0.9));
+          // 臀部明顯離開凳面、停在半站（≥ 0.5 秒）；膝蓋被提起、扶住桌邊後身體往下沉一點，停在 a2_c004 的 pulled_half 半站（sit 0.55）
+          const sit0 = it.sit;
+          it.sit = lerp(sit0, Math.max(0, sit0 - K.riseDepth), ph(K.riseStart, K.riseEnd));
+          it.sit = lerp(it.sit, Math.min(sit0, K.settleSit), ph(K.settleStart, K.settleEnd));
+          it.tension.knee = Math.max(it.tension.knee, lerp(0.2, 1, smoothstep(K.tautStart, K.tautEnd, s)));
+          // 提起後略放一點（停在 0.75），和 a2_c004 的 pulled_half 起始姿勢相同
+          const tug = ph(K.liftStart, K.liftEnd) - 0.25 * ph(K.grabStart, K.grabEnd + 0.4);
           it.pull.knee = [lerp(it.pull.knee[0], P.pullKnee[0], tug), lerp(it.pull.knee[1], P.pullKnee[1], tug)];
-          const push = ease('inOut', prog(a, t, 0.36, 0.46)) * (1 - ease('inOut', prog(a, t, 0.48, 0.66)));
-          it.bodyPush = [it.bodyPush[0] + 0.14 * push, it.bodyPush[1] + 0.05 * push];
-          const g = ease('inOut', prog(a, t, 0.44, 0.66));
+          // 軀幹被帶一下：推力只出現一次，回正交給阻尼大的彈簧（擺幅漸小、不重複抖動）
+          const push = ph(K.swayStart, K.swayPeak) * (1 - ph(K.swayPeak, K.swayEnd));
+          it.bodyPush = [it.bodyPush[0] + 0.13 * push, it.bodyPush[1] + 0.04 * push];
+          const g = ph(K.grabStart, K.grabEnd);
           if (g > 0) { it.grabB = Math.max(it.grabB, g); it.chestB *= 1 - g; }
+          // 扶桌時上身往桌子那側靠一點（近側肩膀放低，手掌才壓得到桌面上緣）；和 a2_c004 pulled_half 的起始姿勢相同
+          it.lean = lerp(it.lean, Math.max(it.lean, GRAB_LEAN), g);
           if (Array.isArray(a.params.at)) it.grabAt = [Number(a.params.at[0]), Number(a.params.at[1])];
         } else {
-          it.step = Math.max(it.step, ease('inOut', prog(a, t, 0, 0.3)) * (1 - ease('inOut', prog(a, t, 0.38, 0.55))));
-          it.tension.knee = Math.max(it.tension.knee, lerp(0.25, 1, smoothstep(0.24, 0.36, u)));
-          const tug = ease('inOut', prog(a, t, 0.38, 0.5)) - 0.6 * ease('inOut', prog(a, t, 0.6, 0.85));
+          it.step = Math.max(it.step, ph(K.riseStart, K.riseEnd) * (1 - ph(K.liftStart, K.liftEnd)));
+          it.tension.knee = Math.max(it.tension.knee, lerp(0.25, 1, smoothstep(K.tautStart, K.tautEnd, s)));
+          const tug = ph(K.liftStart, K.liftEnd) - 0.6 * ph(K.grabStart, K.grabEnd + 0.4);
           it.pull.knee = [lerp(it.pull.knee[0], P.pullKnee[0], tug), lerp(it.pull.knee[1], P.pullKnee[1], tug)];
-          const push = ease('inOut', prog(a, t, 0.38, 0.46)) * (1 - ease('inOut', prog(a, t, 0.46, 0.6)));
+          const push = ph(K.swayStart, K.swayPeak) * (1 - ph(K.swayPeak, K.swayEnd));
           it.bodyPush = [it.bodyPush[0] - 0.35 * push, it.bodyPush[1]];
-          it.grabB = Math.max(it.grabB, ease('inOut', prog(a, t, 0.5, 0.72)));
+          it.grabB = Math.max(it.grabB, ph(K.grabStart, K.grabEnd));
         }
         break;
       }
@@ -278,7 +317,10 @@ export function evalIntent(place: ActorPlacement, view: 'front' | 'side', start:
         if (t >= half) it.pose = String(a.params.pose ?? it.pose);
         const u = prog(a, t);
         if (u > 0 && u < 1) it.flip = u;
-        it.events.push(half);
+        // 眨眼不和翻面同時發生：翻面前 0.2 秒到翻面結束後 0.3 秒都不眨眼；翻面結束 0.32 秒後才加眨一次
+        //（blinkTimes 會在事件時間再加 0.06 秒）
+        it.quiet.push([a.start - 0.2, a.start + a.duration + FLIP_BLINK_GAP]);
+        it.events.push(a.start + a.duration + FLIP_BLINK_GAP + 0.02 - 0.06);
         break;
       }
       case 'puppet.face': if (t >= a.start) { it.emotion = String(a.params.emotion ?? it.emotion); } it.events.push(a.start); break;
@@ -295,17 +337,36 @@ const w3 = new Vector3();
 const top3 = new Vector3();
 const bot3 = new Vector3();
 
-/** 眨眼時間表：3–6 秒隨機（以角色與 cue 為種子，重播一致）＋轉頭／情緒轉折時加眨 */
-function blinkTimes(actorId: string, cueId: string, duration: number, events: number[]): number[] {
+/** 一次眨眼的長度（半閉 → 閉 → 半閉，秒；見 eyeAt） */
+const BLINK_LEN = 0.17;
+/** 換姿勢翻面結束後，至少隔多久才眨眼（秒；G4 修正第 2 輪第 10 項） */
+export const FLIP_BLINK_GAP = 0.3;
+
+/**
+ * 眨眼時間表：3–6 秒隨機（以角色與 cue 為種子，重播一致）＋轉頭／情緒轉折時加眨。
+ * quiet（換姿勢翻面的時段）內不眨眼：落在裡面的眨眼移到時段結束之後；兩次眨眼至少隔 0.4 秒。
+ */
+export function blinkTimes(actorId: string, cueId: string, duration: number, events: number[], quiet: [number, number][] = []): number[] {
   const r = seeded(hashString(`${actorId}|${cueId}|blink`));
-  const out: number[] = [];
+  const raw: number[] = [];
   let t = 0.6 + r() * 2.2;
-  while (t < duration + 2) { out.push(t); t += 3 + r() * 3; }
-  for (const e of events) out.push(e + 0.06);
-  return out.sort((a, b) => a - b);
+  while (t < duration + 2) { raw.push(t); t += 3 + r() * 3; }
+  for (const e of events) raw.push(e + 0.06);
+  const moved = raw.map((b) => {
+    let x = b;
+    for (let k = 0; k < 4; k++) {
+      const q = quiet.find(([q0, q1]) => x + BLINK_LEN > q0 && x < q1);
+      if (!q) break;
+      x = q[1] + 0.02;
+    }
+    return x;
+  }).sort((a, b) => a - b);
+  const out: number[] = [];
+  for (const b of moved) if (!out.length || b - out[out.length - 1] >= 0.4) out.push(b);
+  return out;
 }
 
-function eyeAt(times: number[], t: number): EyeShape {
+export function eyeAt(times: number[], t: number): EyeShape {
   for (const b of times) {
     if (t < b) break;
     const d = t - b;
@@ -324,6 +385,8 @@ export class PuppetDirector {
   private blinkCache = new Map<string, number[]>();
   /** 舞台燈總量（紙繩亮度跟著走） */
   light = 1;
+  /** 目前鏡位下線寬的世界單位下限（Stage.apply 依相機距離算：MIN_STRING_PX 在 1080p 的世界寬度） */
+  minStringWidth = 0;
 
   constructor(public actors: Map<string, Performer>, private lipsync: (id: string) => LipsyncData | undefined = () => undefined) {}
 
@@ -351,7 +414,8 @@ export class PuppetDirector {
           out.set(`${id}:${n}`, { px: it.pull[n][0], py: it.pull[n][1], k: 40 + 50 * it.tension[n] });
           out.set(`${id}:sw:${n}`, { px: it.swing[n], py: 0, k: 30, c: 2.6 });
         }
-        out.set(`${id}:body`, { px: it.bodyPush[0], py: it.bodyPush[1] });
+        // 軀幹：阻尼比約 0.6（被帶一下只晃 1 次，第二次擺幅 < 10%）
+        out.set(`${id}:body`, { px: it.bodyPush[0], py: it.bodyPush[1], k: 40, c: 7.6 });
       });
       return out;
     };
@@ -371,14 +435,14 @@ export class PuppetDirector {
   // ------------------------------------------------------------------ 臉
 
   private faceAt(actorId: string, it: Intent, tl: CueTimeline, t: number, painted: MouthShape): { eyes: EyeShape; mouth: MouthShape; speaking: boolean } {
-    const ck = `${tl.cue.id}|${actorId}|${it.events.join(',')}`;
+    const ck = `${tl.cue.id}|${actorId}|${it.events.join(',')}|${it.quiet.map((q) => q.join('-')).join(',')}`;
     let times = this.blinkCache.get(ck);
-    if (!times) { times = blinkTimes(actorId, tl.cue.id, tl.duration, it.events); this.blinkCache.set(ck, times); }
+    if (!times) { times = blinkTimes(actorId, tl.cue.id, tl.duration, it.events, it.quiet); this.blinkCache.set(ck, times); }
     const eyes = eyeAt(times, t);
     const sp = this.mouthOpen(actorId, tl, t);
     if (sp) return { eyes, mouth: sp, speaking: true };
     const emo = it.emotion;
-    const mouth: MouthShape = emo === 'smile' ? (painted === 'smile' ? 'smile' : painted) : emo === 'confused' || emo === 'worried' ? (painted === 'open' ? 'open' : 'worried')
+    const mouth: MouthShape = emo === 'smile' || emo === 'greet' ? (painted === 'smile' ? 'smile' : painted) : emo === 'confused' || emo === 'worried' ? (painted === 'open' ? 'open' : 'worried')
       : emo === 'surprised' ? (painted === 'round' || painted === 'open' ? painted : 'round') : 'closed';
     return { eyes, mouth, speaking: false };
   }
@@ -423,9 +487,11 @@ export class PuppetDirector {
       const dir = other ? Math.sign((other.x + other.dx) - (it.x + it.dx)) : 0;
       listen = Math.max(-1, Math.min(1, listen + dir * w));
     }
+    // 呼吸：以腳底為支點的伸縮，中景 1080p 約 ±4.5 px（8 格／秒條帶看得出起伏；G4 修正第 25 項）
     const breath = Math.sin((t / 3.6 + phase) * Math.PI * 2);
-    const flip = it.flip > 0 ? Math.max(0.06, Math.abs(Math.cos(Math.PI * it.flip))) : 1;
-    a.body.scale.set(flip * it.facing * (1 - 0.003 * breath), 1 + 0.007 * breath, 1);
+    // 換姿勢＝紙片翻面：寬度只壓到 55% 就在動作中段硬切換圖再展開，不會出現只剩一條細縫的格（G4 修正第 27 項）
+    const flip = it.flip > 0 ? 1 - 0.45 * Math.sin(Math.PI * it.flip) : 1;
+    a.body.scale.set(flip * it.facing * (1 - 0.003 * breath), 1 + 0.0095 * breath, 1);
     const head = a.head;
     if (head) {
       // 有頭層：聆聽時頭微微轉向說話者（±2.5° 內）、句首輕輕點一下頭；身體只做很小的擺動
@@ -479,28 +545,38 @@ export class PuppetDirector {
     rig.root.updateMatrixWorld(true);
 
     // A 側手臂（操偶線那隻）：意圖位置＋線的拉力位移（模擬）
+    // 抬手（意圖）用「角度內插」：上臂從垂下往身體外側轉、前臂往上折，直到揮手姿勢（手腕在身體外側胸口到肩膀高度）；
+    // 不從肩膀前面、臉前穿過，也不會在兩種手肘彎向之間跳格（G4 修正第 17 項；舊版用 IK 目標內插，抬到一半手肘會翻面一格）。
+    // 揮手擺動、線的拉力與模擬位移再用 IK 加上去，取「最接近參考姿勢」的彎向，所以整段連續。
     const LA = rig.spec.limbs.armA;
     if (LA) {
       const sA = rig.localPoint(LA.upper);
       const [l1, l2] = rig.limbLengths('armA');
-      const restOff = rig.localPoint(LA.end).sub(sA); // 靜止姿勢的手腕相對肩膀
-      const rest: V2 = [restOff.x, restOff.y];
+      const rest = rig.limbAngles('armA');
+      const R = FRONT.raised;
+      const flip = (LA.bend === 1 ? -1 : 1) as 1 | -1; // 揮手姿勢：手肘朝外下方（和預設彎向相反）
+      const W = solveTwoBone(sA.x, sA.y, l1, l2, sA.x + R[0], sA.y + R[1], flip);
+      // 上臂往身體外側轉（A 側在畫面左＝角度往 ±180° 走）；前臂走較短的一邊
+      let d1 = Math.atan2(Math.sin(W.a1 - rest.a1), Math.cos(W.a1 - rest.a1));
+      if (rest.a1 < -Math.PI / 2 && d1 > 0) d1 -= Math.PI * 2; // 從垂下往左外側（不往身體前面轉）
+      const d2 = Math.atan2(Math.sin(W.a2 - rest.a2), Math.cos(W.a2 - rest.a2));
+      const u = clamp(it.armRaise);
+      const refA1 = rest.a1 + d1 * ease('sine', clamp(u * 1.4 - 0.4)); // 上臂晚一點才往外抬（手肘先留在低處）
+      const refA2 = rest.a2 + d2 * ease('sine', clamp(u * 1.5)); // 前臂先往上折：手肘留在低處、手自己抬起來（不會整隻手臂水平伸直，避免像被線拉開）
+      rig.setLimbAngles('armA', refA1, refA2);
+      const wrA = rig.localPoint(LA.end);
       const wr = this.sim.get(`${id}:wrist`), el = this.sim.get(`${id}:elbow`);
       const aw = it.drop.wrist >= 0.999 ? 1 : 0, ae = it.drop.elbow >= 0.999 ? 1 : 0;
-      // 抬手（意圖）：手腕沿身體外側的弧線抬起（角度與距離內插），不從肩膀前面、臉前穿過；
-      // 抬起後手肘改朝外下方（solveLimbBlend），手肘與兩條線都離開頭頸（G4 整合：原本手肘會停在耳朵旁）。
-      const R = FRONT.raised;
-      const ra = Math.atan2(rest[1], rest[0]), rd = Math.hypot(rest[0], rest[1]);
-      let qa = Math.atan2(R[1], R[0]);
-      const qd = Math.hypot(R[0], R[1]);
-      if (R[0] < 0) { while (qa > ra) qa -= Math.PI * 2; } else { while (qa < ra) qa += Math.PI * 2; }
-      const ang = lerp(ra, qa, it.armRaise), dist = lerp(rd, qd, it.armRaise);
-      const tx = Math.cos(ang) * dist + wr.ox * aw + el.ox * 0.4 * ae;
-      const ty = Math.sin(ang) * dist + wr.oy * aw + el.oy * 0.4 * ae;
-      const d = Math.hypot(tx, ty), maxR = (l1 + l2) * 0.995;
-      const k = d > maxR ? maxR / d : 1;
-      v2.set(sA.x + tx * k, sA.y + ty * k);
-      rig.solveLimbBlend('armA', v2, smoothstep(0.3, 0.85, it.armRaise));
+      // 揮手：手腕在胸口高度左右擺 2 下（前臂朝上，以手肘為支點）
+      const wave = it.waveA > 0 ? it.waveA * WAVE_AMP * Math.sin((t - it.waveT0) * Math.PI * 2 * WAVE_TRY.waveHz) : 0;
+      const ox = wave + wr.ox * aw + el.ox * 0.4 * ae, oy = wr.oy * aw + el.oy * 0.4 * ae;
+      if (Math.abs(ox) + Math.abs(oy) > 1e-5) {
+        let tx = wrA.x - sA.x + ox, ty = wrA.y - sA.y + oy;
+        const d = Math.hypot(tx, ty), maxR = (l1 + l2) * 0.995;
+        if (d > maxR) { tx *= maxR / d; ty *= maxR / d; }
+        v2.set(sA.x + tx, sA.y + ty);
+        rig.solveLimbNear('armA', v2, refA1);
+      }
     }
 
     // B 側手臂：放膝上（靜止）、手放胸前（擔心）、扶桌邊
@@ -512,9 +588,10 @@ export class PuppetDirector {
       tx = lerp(tx, FRONT.chest[0], it.chestB); ty = lerp(ty, FRONT.chest[1], it.chestB);
       if (it.grabB > 0) {
         // 扶桌：目標是世界座標的桌邊（預設在骨盆旁邊）
-        let gx = 0.78, gy = 1.4;
+        let gx = 0.66, gy = 1.4;
         if (it.grabAt) { gx = (it.grabAt[0] - rig.root.position.x) * it.facing; gy = it.grabAt[1] - rig.root.position.y; }
-        tx = lerp(tx, gx - sB.x, it.grabB); ty = lerp(ty, gy - sB.y + 0.12, it.grabB);
+        // 手腕停在桌面上緣稍上方（GRAB_WRIST_DY），手掌（指尖朝下）蓋過桌面上緣（G4 修正第 2 輪第 7 項：手的外框與桌面上緣相交 ≥ 10 px）
+        tx = lerp(tx, gx - sB.x, it.grabB); ty = lerp(ty, gy - sB.y + GRAB_WRIST_DY, it.grabB);
       }
       tx = lerp(tx, 0.62, it.reachB); ty = lerp(ty, 0.1, it.reachB);
       const [l1, l2] = rig.limbLengths('armB');
@@ -562,11 +639,12 @@ export class PuppetDirector {
       rig.setRot(L.lower, Math.atan2(sy, sx) - restS - rig.chainRot(L.lower));
     }
 
-    // 頭部替換：笑＝一般頭；其他情緒＝困惑頭（若有）。硬切，轉折時加眨一次（events）
+    // 頭部替換：笑＝一般頭；greet＝X2 想打招呼（head_greet：微笑＋眉抬）；其他情緒＝困惑頭（若有）。硬切，轉折時加眨一次（events）
     let face = actor.face;
     if (actor.heads.size > 1) {
-      const worried = it.emotion !== 'smile' && actor.heads.has('head_worried');
-      const show = worried ? 'head_worried' : 'head';
+      const emo = it.emotion;
+      const show = emo === 'greet' && actor.heads.has('head_greet') ? 'head_greet'
+        : emo !== 'smile' && emo !== 'greet' && actor.heads.has('head_worried') ? 'head_worried' : 'head';
       for (const [pid, f] of actor.heads) {
         const part = rig.part(pid);
         const on = pid === show;
@@ -609,11 +687,11 @@ export class PuppetDirector {
       const by = lerp(STRING_TOP_Y, anchor.y, drop);
       bot3.set(lerp(anchor.x, top3.x, det * 0.25) + det * 0.6 * f, lerp(by, STRING_TOP_Y + 1, ease('in', det)), zFront);
       const sw = this.sim.get(`${id}:sw:${n}`).ox;
-      const bow = ((1 - it.tension[n]) * 0.26 * drop + sw + det * 0.5) * (n === 'knee' ? 1 : -1) * f;
+      const bow = ((1 - it.tension[n]) * SLACK_BOW * drop + sw + det * 0.5) * (n === 'knee' ? 1 : -1) * f;
       const landed = drop >= 0.999 && det < 0.15 ? clamp((t - it.landAt[n]) / 0.12) : 0;
-      const ringA = rig.anchorAngle(n);
-      const aw = rig.spec.anchors[n]?.width ?? 0.18;
-      s.update({ top: top3, bottom: bot3, bow, width: STRING_WIDTH, opacity: it.fade[n], ring: det > 0 ? Math.max(0, 1 - det * 6) : landed, ringAngle: ringA, ringWidth: aw, light: this.light });
+      // 紙環中心＝扣點（bot3）；線的下端由 PaperString 退到紙環上緣。鏡頭拉遠時線寬用下限（紙環等比例放大）
+      const width = Math.max(STRING_WIDTH, this.minStringWidth);
+      s.update({ top: top3, bottom: bot3, bow, width, opacity: it.fade[n], ring: det > 0 ? Math.max(0, 1 - det * 6) : landed, ringDiameter: RING_DIAMETER * (width / STRING_WIDTH), light: this.light });
     }
   }
 

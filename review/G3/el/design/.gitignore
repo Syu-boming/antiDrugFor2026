@@ -1,0 +1,3 @@
+# 可重建的快取（tools/vo_el_design.py 重跑會用到，不必進版本庫）
+_raw/
+asr_cache.json

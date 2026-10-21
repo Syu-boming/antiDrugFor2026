@@ -1,0 +1,364 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "narrator",
+ "role_zh": "旁白",
+ "cand": "narrator_Chihiro-NIqn",
+ "model": "eleven_v3",
+ "line": "a0_c001_01",
+ "voice": "Chihiro Yoko - Clear, Soothing and Sweet",
+ "整句（替身字，正式管線）": {
+  "file": "samples/narrator/narrator__Chihiro-NIqn_v3__a0_c001_01.wav",
+  "synth_text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。",
+  "f0": {
+   "whisper_turbo_words": "這裡是小凳鎮每年秋天鎮上都會辦直燈節",
+   "whisper_spans": [
+    [
+     3.84,
+     4.14
+    ],
+    [
+     4.14,
+     4.4
+    ],
+    [
+     4.4,
+     4.66
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    96,
+    321
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 3.76,
+    "t1": 3.93,
+    "mean_hz": 140.9,
+    "start_hz": 151.7,
+    "end_hz": 173.1,
+    "min_hz": 120.2,
+    "min_pos": 0.65,
+    "end_over_start": 1.141,
+    "end_over_min": 1.441,
+    "contour_hz_20ms": [
+     153,
+     149,
+     145,
+     138,
+     125,
+     137,
+     120,
+     124,
+     173
+    ]
+   },
+   "燈": {
+    "t0": 4.27,
+    "t1": 4.47,
+    "mean_hz": 161.4,
+    "start_hz": 161.6,
+    "end_hz": 164.5,
+    "min_hz": 157.2,
+    "min_pos": 0.35,
+    "end_over_start": 1.018,
+    "end_over_min": 1.047,
+    "contour_hz_20ms": [
+     178,
+     161,
+     161,
+     159,
+     151,
+     158,
+     160,
+     162,
+     163,
+     164,
+     165
+    ]
+   },
+   "節": {
+    "t0": 4.61,
+    "t1": 4.74,
+    "mean_hz": 124.3,
+    "start_hz": 170.1,
+    "end_hz": 114.8,
+    "min_hz": 113.0,
+    "min_pos": 0.62,
+    "end_over_start": 0.675,
+    "end_over_min": 1.016,
+    "contour_hz_20ms": [
+     170,
+     118,
+     124,
+     119,
+     113,
+     114,
+     116
+    ]
+   },
+   "燈_end_over_start": 1.018,
+   "燈_over_紙_mean": 1.145,
+   "節_end_over_min": 1.016,
+   "節_min_pos": 0.62,
+   "燈_一聲": true,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "這裡是小鄧鎮每年秋天鎮上都會辦直燈節",
+    "large-v3-turbo": "這裡是小凳鎮每年秋天鎮上都會辦直燈節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "整句（原字）": {
+  "file": "samples/narrator/narrator__Chihiro-NIqn_v3__tone_a0_c001_01_orig.wav",
+  "synth_text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "這裡是小鄧鎮每年秋天鎮上都會辦職鄧節",
+   "whisper_spans": [
+    [
+     3.56,
+     3.82
+    ],
+    [
+     3.82,
+     4.02
+    ],
+    [
+     4.02,
+     4.28
+    ]
+   ],
+   "octave_fixed_frames": 2,
+   "pitch_range_hz": [
+    102,
+    338
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 3.485,
+    "t1": 3.635,
+    "mean_hz": 147.4,
+    "start_hz": 162.6,
+    "end_hz": 136.0,
+    "min_hz": 135.7,
+    "min_pos": 0.87,
+    "end_over_start": 0.837,
+    "end_over_min": 1.002,
+    "contour_hz_20ms": [
+     163,
+     162,
+     157,
+     151,
+     144,
+     136,
+     136,
+     135
+    ]
+   },
+   "燈": {
+    "t0": 3.765,
+    "t1": 3.815,
+    "mean_hz": 129.6,
+    "start_hz": 132.8,
+    "end_hz": 122.2,
+    "min_hz": 126.0,
+    "min_pos": 1.0,
+    "end_over_start": 0.92,
+    "end_over_min": 0.97,
+    "contour_hz_20ms": [
+     133,
+     134,
+     130
+    ]
+   },
+   "節": {
+    "t0": 3.905,
+    "t1": 4.065,
+    "mean_hz": 151.4,
+    "start_hz": 167.0,
+    "end_hz": 139.2,
+    "min_hz": 139.2,
+    "min_pos": 0.88,
+    "end_over_start": 0.833,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     174,
+     165,
+     163,
+     154,
+     147,
+     143,
+     140,
+     139,
+     143
+    ]
+   },
+   "燈_end_over_start": 0.92,
+   "燈_over_紙_mean": 0.879,
+   "節_end_over_min": 1.0,
+   "節_min_pos": 0.88,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "這裡是小鄧鎮每年秋天鎮上都會辦直鄧節",
+    "large-v3-turbo": "這裡是小鄧鎮每年秋天鎮上都會辦職鄧節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/narrator/narrator__Chihiro-NIqn_v3__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "遲凳節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.4
+    ],
+    [
+     0.4,
+     0.64
+    ],
+    [
+     0.64,
+     0.96
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    101,
+    335
+   ],
+   "islands_in_window": 2,
+   "method": "有聲段少於 3 段：用字時間戳範圍",
+   "紙": {
+    "t0": 0.255,
+    "t1": 0.395,
+    "mean_hz": 167.2,
+    "start_hz": 169.2,
+    "end_hz": 172.5,
+    "min_hz": 158.8,
+    "min_pos": 0.14,
+    "end_over_start": 1.02,
+    "end_over_min": 1.086,
+    "contour_hz_20ms": [
+     187,
+     159,
+     159,
+     163,
+     165,
+     169,
+     173,
+     168
+    ]
+   },
+   "燈": {
+    "t0": 0.405,
+    "t1": 0.635,
+    "mean_hz": 181.3,
+    "start_hz": 218.0,
+    "end_hz": 149.8,
+    "min_hz": 147.1,
+    "min_pos": 1.0,
+    "end_over_start": 0.687,
+    "end_over_min": 1.018,
+    "contour_hz_20ms": [
+     179,
+     218,
+     204,
+     191,
+     180,
+     168,
+     159,
+     150
+    ]
+   },
+   "節": {
+    "t0": 0.645,
+    "t1": 0.705,
+    "mean_hz": 137.8,
+    "start_hz": 140.9,
+    "end_hz": 135.4,
+    "min_hz": 135.3,
+    "min_pos": 1.0,
+    "end_over_start": 0.961,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     141,
+     138,
+     137,
+     135
+    ]
+   },
+   "燈_end_over_start": 0.687,
+   "燈_over_紙_mean": 1.084,
+   "節_end_over_min": 1.0,
+   "節_min_pos": 1.0,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "池燈節",
+    "large-v3-turbo": "遲凳節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/narrator/narrator__Chihiro-NIqn_v3__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "革命動革",
+   "error": "轉寫無法逐字對齊到「紙登結」"
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "咖喱洞解",
+    "large-v3-turbo": "革命動革"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/narrator/narrator__Chihiro-NIqn_v3__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "甘意等待",
+   "error": "轉寫無法逐字對齊到「紙等街」"
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "咖喱等解",
+    "large-v3-turbo": "仲勿健康仲勿健康仲勿健康"
+   }
+  }
+ }
+}

@@ -1,0 +1,1556 @@
+{
+ "_說明": "EL 選角聲線設計：全部候選（每次設計回傳 3 個預覽，全部量測）。只列客觀條件與結果，不含評分或推薦。",
+ "criteria": {
+  "per0": "轉寫：兩個轉寫模型（small、large-v3-turbo）中至少一個 PER＝0（per_min＝0；同 G3「兩個模型都出現的差異才算疑似讀音問題」）。小晴的預覽含人名「品安」，兩個模型在 G3 就把它寫成常用詞「平安」（review/G3/tone_check_pinan.json），所以 PER 另算「排除人名」版：轉寫裡的「平安」視為「品安」後重算；原始 PER 也列出。",
+  "check_words": "讀音檢查詞：兩個轉寫模型對每個檢查詞（vo_lib.CHECK_WORDS，含紙燈節、燈籠、折折、阿樂）都是「轉寫一致」或「同音轉寫」，沒有「不一致」。「一」「不」變調轉寫看不出，一律未驗證。",
+  "zdj_tone": "紙燈節聲調（折折必測；含「紙燈節」的檔都量）：有聲段與起訖量法同 review/G3/tone_check_ting.json；定位：large-v3-turbo 逐字時間與原文逐字對齊找出「燈」的時間，和它重疊最多的有聲段＝燈，前一段＝紙，後一段＝節（後面緊接、間隔 <80 ms 的段一併合併）；對齊失敗才退回「最後三個有聲段」並註明（第一版只用最後三個有聲段，複查時發現 zhezhe_ttv3_p2 的「節」被嘎裂聲切成兩段而錯位，故改法）。燈＝高平：終點／起點 0.93–1.07，且平均 F0 ≥ 1.08 × 紙的平均 F0；節＝上揚：終點／起點 ≥ 1.10。三項都成立才通過。",
+  "f0_target": "F0 中位數落在角色目標：小晴 245–275 Hz（約 260）、小宇 230–250 Hz、品安 180–200 Hz、折折 ≥280 Hz。",
+  "formants_higher": "共振峰：有聲段 F1 與 F2 中位數（Praat Burg 法 LPC，5 個共振峰、上限 6500 Hz、25 ms 窗，只取 F0>0 且強度在最大值 25 dB 內的格）都高於同一段文字的 edge 升調基準。",
+  "accent": "台灣口音、自然度、像不像孩子的聽感：無法量測，一律「未驗證」。"
+ },
+ "tiers": {
+  "1": "全部條件成立（per0、check_words、zdj_tone〔折折〕、f0_target、formants_higher）",
+  "2": "除 f0_target 外全部成立（F0 不在目標內，依與目標的半音距離排序）",
+  "3": "check_words、zdj_tone〔折折〕、formants_higher 成立，但 PER≠0（依 PER、F0 距離排序）"
+ },
+ "select_rule": "每個角色依（級別、F0 與目標的半音距離、F1×F2 相對 edge 的幾何平均倍率由高到低）排序。第 1 輪：每個角色取排序第一、級別 1–3 的候選；第 2 輪：各角色排序第二、級別 1–2 的候選依（級別、F0 距離）排序補到合計 6 個為止；每角色最多 2 個。沒有級別的候選不存。",
+ "design_specs": {
+  "xiaoqing": {
+   "role_zh": "小晴",
+   "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Calm, observant and sensible; speaks in short, confident sentences at a medium pace. Bright, clear, mid-high child voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback_description": "A young adult voice actor who voices children's characters, here a calm and sensible schoolgirl: bright, light and lively, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Short, confident sentences at a medium pace; clear mid-high voice, warm and friendly, not squeaky, not baby talk, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback2_description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Bright, light, clear and high-pitched voice; calm and sensible, short confident sentences at a medium pace, warm and friendly, not squeaky, not whispering, not exaggerated. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "description_source": "audio/vo/design_specs.json",
+   "preview_lines": [
+    "a2_c002_02",
+    "a1_c004_03",
+    "a1_c001_01",
+    "a1_c008_02",
+    "a3_c003_01",
+    "a2_c008_04",
+    "a4_c012_01",
+    "a0_c004_02"
+   ],
+   "preview_text_sent": "叔叔，小心！包裝漂亮、聞起來香，都不能證明安全。品安！你的登籠好漂亮。不要碰。我們快去跟阿勒叔叔說。林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。我們不知道。可是，叔叔需要幫忙。叔叔，我們先不上車。骨架不見了？我記下來。",
+   "preview_text_chars": 111,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "sample_lines": [
+    "a2_c002_02",
+    "a1_c004_03",
+    "a1_c008_02"
+   ],
+   "orig_variant_lines": [
+    "a1_c008_02"
+   ],
+   "tone_frame": null,
+   "check_word_coverage": {
+    "燈籠": {
+     "in_preview": true,
+     "in_samples": false
+    },
+    "阿樂": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "「一」變調": {
+     "in_preview": true,
+     "in_samples": false,
+     "note": "轉寫看不出變調，未驗證"
+    },
+    "「不」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    }
+   }
+  },
+  "xiaoyu": {
+   "role_zh": "小宇",
+   "description": "A nine-year-old boy from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Curious, lively and quick, with a friendly, energetic tone; his voice has not broken yet, a clear child voice in the middle range, a little lower and rounder than a girl's. Not squeaky, not cartoonish, not baby talk. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback_description": "A young adult voice actor who voices children's characters, here a curious and lively schoolboy: bright, light and quick, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Friendly, energetic tone in a clear middle range, a little lower and rounder than a girl's. Not squeaky, not cartoonish, not baby talk. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback2_description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Light, clear and energetic voice in the middle range, a little lower and rounder than a typical young woman's, with a playful, boyish tone; curious, lively and quick, friendly. Not squeaky, not cartoonish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "description_source": "audio/vo/design_specs.json",
+   "preview_lines": [
+    "a3_c002_02",
+    "a2_c001_01",
+    "a0_c004_01",
+    "a2_c013_04",
+    "a1_c003_01",
+    "a1_c004_04",
+    "a4_c012_03",
+    "a1_c001_03"
+   ],
+   "preview_text_sent": "不用，我不試。我先離開。叔叔，你還好嗎？竹篾掉了。阿勒叔叔早！哲哲早！明天就是紙登結了……叔叔會好一點嗎？等一下，我想一想。不用，我們不要。陳伯伯、林老師，阿勒叔叔站不穩，可是他說要開車。主燈的骨架。它不見了！",
+   "preview_text_chars": 105,
+   "f0_target": "230–250 Hz",
+   "sample_lines": [
+    "a3_c002_02",
+    "a2_c013_04",
+    "a0_c004_01"
+   ],
+   "orig_variant_lines": [
+    "a2_c013_04",
+    "a0_c004_01"
+   ],
+   "tone_frame": "紙燈節。",
+   "check_word_coverage": {
+    "紙燈節": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "折折": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "阿樂": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "竹篾": {
+     "in_preview": true,
+     "in_samples": false
+    },
+    "119": {
+     "in_preview": false,
+     "in_samples": false
+    },
+    "「一」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    },
+    "「不」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    }
+   }
+  },
+  "pinan": {
+   "role_zh": "品安",
+   "description": "A nine-year-old girl from Taiwan speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Quiet, shy and gentle, a little afraid of being scolded; she speaks softly and slowly with small pauses, but every word stays clear. The lowest and softest voice among the four children: a warm, mellow child voice in the lower-middle range, not whispering, not squeaky, not baby talk, not sad or dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback_description": "A young adult voice actor who voices children's characters, here a quiet and shy schoolgirl: soft and gentle, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). The lowest and softest of the child voices: warm, mellow lower-middle range, speaking slowly and quietly with small pauses but every word clear. Not whispering, not squeaky, not baby talk, not dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback2_description": "A young adult woman in her early twenties from Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, soft retroflex, not a Beijing accent). Quiet, shy and gentle; she speaks softly and slowly with small pauses, but every word stays clear. Warm, mellow voice in the lower-middle range, soft and light, not whispering, not breathy, not sad or dramatic. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "description_source": "本腳本（script/角色表_v03.md：四個孩子中聲音最低、輕聲、慢）",
+   "preview_lines": [
+    "a1_c004_06",
+    "a6_c002_01",
+    "a6_c002_03",
+    "a6_c006_03",
+    "a7_c003_01",
+    "a6_c002_02"
+   ],
+   "preview_text_sent": "你們先走，我把登籠收好就來。我跟你們說一個秘密……不要告訴老師，好不好？我怕被罵。老師……我書包裡，有一個別人給的盒子。有讓你擔心的秘密，也可以找大人說。那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+   "preview_text_chars": 115,
+   "f0_target": "180–200 Hz",
+   "sample_lines": [
+    "a1_c004_06",
+    "a6_c002_03",
+    "a6_c006_03"
+   ],
+   "orig_variant_lines": [
+    "a1_c004_06"
+   ],
+   "tone_frame": null,
+   "check_word_coverage": {
+    "燈籠": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "「一」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    },
+    "「不」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    }
+   }
+  },
+  "zhezhe": {
+   "role_zh": "折折",
+   "description": "A playful origami paper cat, the cheerful host character of a children's paper puppet theater in Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Bright, light, youthful and gender-neutral voice, the highest-pitched voice in the cast, lively with a slight upward lilt at the end of sentences, friendly and warm but never shrill, squeaky or babyish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback_description": "A young adult voice actor who voices children's characters, here a playful origami paper cat who hosts a children's paper puppet theater: bright, light and lively, with a childlike vocal quality, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Gender-neutral, the highest-pitched voice in the cast, with a slight upward lilt at the end of sentences, friendly and warm but never shrill, squeaky or babyish. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "fallback2_description": "A playful origami paper cat, the cheerful cartoon host of a paper puppet theater in Taiwan, speaking natural Taiwan Mandarin (Taiwanese Guoyu accent, not a Beijing accent). Bright, light, high-pitched and gender-neutral voice, the highest in the cast, lively with a slight upward lilt at the end of sentences, friendly and warm but never shrill or squeaky. Clean close-microphone studio recording with no background noise, no music and no reverb.",
+   "description_source": "audio/vo/design_specs.json",
+   "preview_lines": [
+    "a0_c003_01",
+    "a0_c002_01",
+    "a0_c002_02",
+    "a2_c001_03",
+    "a1_c005_01",
+    "a0_c005_02"
+   ],
+   "preview_text_sent": "明天就是紙登結。今年的主燈，是照著我的樣子做的！喵！大家好，我是哲哲。我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。第一題來囉！台口上這八盞燈，每完成一題，我們就一起點亮一盞。",
+   "preview_text_chars": 114,
+   "f0_target": "≥280 Hz",
+   "sample_lines": [
+    "a2_c001_03",
+    "a0_c003_01",
+    "a0_c002_01"
+   ],
+   "orig_variant_lines": [
+    "a0_c003_01",
+    "a0_c002_01"
+   ],
+   "tone_frame": "紙燈節。",
+   "check_word_coverage": {
+    "紙燈節": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "燈籠": {
+     "in_preview": true,
+     "in_samples": false
+    },
+    "折折": {
+     "in_preview": true,
+     "in_samples": true
+    },
+    "阿樂": {
+     "in_preview": true,
+     "in_samples": false
+    },
+    "119": {
+     "in_preview": false,
+     "in_samples": false
+    },
+    "「一」變調": {
+     "in_preview": true,
+     "in_samples": false,
+     "note": "轉寫看不出變調，未驗證"
+    },
+    "「不」變調": {
+     "in_preview": true,
+     "in_samples": true,
+     "note": "轉寫看不出變調，未驗證"
+    }
+   }
+  }
+ },
+ "design_calls": [
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "2ede8e081a8163ea85375598e413fb34"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "3c44727aab7d5a305d16a15be2a6fc1f"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "113e2b59fa94eb51cae1c40269d48686"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "3bf8215487bba9efbc478d8269a4b3d4"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoyu",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "e8a948749305cb205acef3419337a4d4"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述（年輕成人配音員）",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "d584b072cd41c8dc630587776deb16c0"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "pinan",
+   "model": "eleven_ttv_v3",
+   "tag": "改寫描述2（無兒童字眼）",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  },
+  {
+   "role": "zhezhe",
+   "model": "eleven_ttv_v3",
+   "tag": "原描述",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "原描述",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "fd60efd83af85aad8ec85f0adda10157"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "改寫描述（年輕成人配音員）",
+   "http": 403,
+   "ok": false,
+   "billed": null,
+   "request_id": null,
+   "error": {
+    "type": "authorization_error",
+    "code": "forbidden",
+    "message": "Sorry, this prompt potentially doesn't follow our safety guidelines and therefore has been blocked.",
+    "status": "blocked_generation",
+    "request_id": "a1ad2fc07b88db0403765806a0c08b21"
+   },
+   "n_previews": 0
+  },
+  {
+   "role": "xiaoqing",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "改寫描述2（無兒童字眼）",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  },
+  {
+   "role": "zhezhe",
+   "model": "eleven_multilingual_ttv_v2",
+   "tag": "原描述",
+   "http": 200,
+   "ok": true,
+   "billed": null,
+   "request_id": null,
+   "error": null,
+   "n_previews": 3
+  }
+ ],
+ "candidates": {
+  "xiaoqing_ttv3_p1": {
+   "cid": "xiaoqing_ttv3_p1",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "vzgMzzawd6FkarcMeJGn",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv3_p1.wav",
+   "f0_median": 264.1,
+   "f0_p10": 182.7,
+   "f0_p90": 368.5,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 0.0,
+   "F1": 656.8,
+   "F2": 1516.5,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 1.08,
+   "F2_ratio_vs_edge": 0.96,
+   "formant_geo_ratio": 1.018,
+   "per_small": 0.109,
+   "per_turbo": 0.087,
+   "per_min": 0.087,
+   "per_min_excl_name": 0.076,
+   "cer_small": 0.12,
+   "cer_turbo": 0.098,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoqing_ttv3_p2": {
+   "cid": "xiaoqing_ttv3_p2",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "F4qrqDuCORAxaxMCKjDu",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv3_p2.wav",
+   "f0_median": 225.5,
+   "f0_p10": 159.3,
+   "f0_p90": 318.6,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 1.44,
+   "F1": 657.8,
+   "F2": 1586.6,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 1.081,
+   "F2_ratio_vs_edge": 1.004,
+   "formant_geo_ratio": 1.042,
+   "per_small": 0.065,
+   "per_turbo": 0.022,
+   "per_min": 0.022,
+   "per_min_excl_name": 0.011,
+   "cer_small": 0.109,
+   "cer_turbo": 0.043,
+   "check_status": {
+    "燈籠": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": false,
+    "formants_higher": true
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoqing_ttv3_p3": {
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv3_p3.wav",
+   "f0_median": 287.3,
+   "f0_p10": 205.1,
+   "f0_p90": 354.7,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 0.76,
+   "F1": 660.2,
+   "F2": 1651.5,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 1.085,
+   "F2_ratio_vs_edge": 1.045,
+   "formant_geo_ratio": 1.065,
+   "per_small": 0.043,
+   "per_turbo": 0.033,
+   "per_min": 0.033,
+   "per_min_excl_name": 0.022,
+   "cer_small": 0.065,
+   "cer_turbo": 0.043,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": true,
+    "zdj_tone": null,
+    "f0_target": false,
+    "formants_higher": true
+   },
+   "tier": 3,
+   "accent": "未驗證",
+   "selected": true
+  },
+  "xiaoyu_ttv3_p1": {
+   "cid": "xiaoyu_ttv3_p1",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "oZpyYEWtwWM06B75E0uY",
+   "file": "review/G3/el/design/previews/xiaoyu_ttv3_p1.wav",
+   "f0_median": 249.2,
+   "f0_p10": 193.2,
+   "f0_p90": 367.5,
+   "f0_target": "230–250 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 632.3,
+   "F2": 1551.6,
+   "F1_edge": 537.7,
+   "F2_edge": 1859.5,
+   "F1_ratio_vs_edge": 1.176,
+   "F2_ratio_vs_edge": 0.834,
+   "formant_geo_ratio": 0.99,
+   "per_small": 0.071,
+   "per_turbo": 0.071,
+   "per_min": 0.071,
+   "per_min_excl_name": 0.071,
+   "cer_small": 0.095,
+   "cer_turbo": 0.119,
+   "check_status": {
+    "紙燈節": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "阿樂": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "竹篾": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不試": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不用": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一下": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一想": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoyu_ttv3_p2": {
+   "cid": "xiaoyu_ttv3_p2",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "XnmpwDA7QMjMG4ooxdtL",
+   "file": "review/G3/el/design/previews/xiaoyu_ttv3_p2.wav",
+   "f0_median": 235.1,
+   "f0_p10": 172.5,
+   "f0_p90": 330.7,
+   "f0_target": "230–250 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 617.5,
+   "F2": 1449.4,
+   "F1_edge": 537.7,
+   "F2_edge": 1859.5,
+   "F1_ratio_vs_edge": 1.148,
+   "F2_ratio_vs_edge": 0.779,
+   "formant_geo_ratio": 0.946,
+   "per_small": 0.036,
+   "per_turbo": 0.036,
+   "per_min": 0.036,
+   "per_min_excl_name": 0.036,
+   "cer_small": 0.071,
+   "cer_turbo": 0.06,
+   "check_status": {
+    "紙燈節": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "竹篾": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不試": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不用": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一下": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一想": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoyu_ttv3_p3": {
+   "cid": "xiaoyu_ttv3_p3",
+   "role": "xiaoyu",
+   "role_zh": "小宇",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "McRjWYvyFJKt91yQHpdr",
+   "file": "review/G3/el/design/previews/xiaoyu_ttv3_p3.wav",
+   "f0_median": 243.9,
+   "f0_p10": 186.8,
+   "f0_p90": 311.4,
+   "f0_target": "230–250 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 523.5,
+   "F2": 1524.9,
+   "F1_edge": 537.7,
+   "F2_edge": 1859.5,
+   "F1_ratio_vs_edge": 0.974,
+   "F2_ratio_vs_edge": 0.82,
+   "formant_geo_ratio": 0.894,
+   "per_small": 0.012,
+   "per_turbo": 0.071,
+   "per_min": 0.012,
+   "per_min_excl_name": 0.012,
+   "cer_small": 0.048,
+   "cer_turbo": 0.083,
+   "check_status": {
+    "紙燈節": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "折折": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "阿樂": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "竹篾": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不試": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不用": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一下": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一想": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "pinan_ttv3_p1": {
+   "cid": "pinan_ttv3_p1",
+   "role": "pinan",
+   "role_zh": "品安",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "LW8eWPiomGIHoyVZqIjF",
+   "file": "review/G3/el/design/previews/pinan_ttv3_p1.wav",
+   "f0_median": 208.1,
+   "f0_p10": 170.3,
+   "f0_p90": 265.0,
+   "f0_target": "180–200 Hz",
+   "f0_dist_semitones": 0.69,
+   "F1": 472.9,
+   "F2": 1822.8,
+   "F1_edge": 464.9,
+   "F2_edge": 1845.9,
+   "F1_ratio_vs_edge": 1.017,
+   "F2_ratio_vs_edge": 0.987,
+   "formant_geo_ratio": 1.002,
+   "per_small": 0.02,
+   "per_turbo": 0.0,
+   "per_min": 0.0,
+   "per_min_excl_name": 0.0,
+   "cer_small": 0.02,
+   "cer_turbo": 0.0,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": true,
+    "check_words": true,
+    "zdj_tone": null,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "pinan_ttv3_p2": {
+   "cid": "pinan_ttv3_p2",
+   "role": "pinan",
+   "role_zh": "品安",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "XF2qg5Et6ezUqt5xHfp2",
+   "file": "review/G3/el/design/previews/pinan_ttv3_p2.wav",
+   "f0_median": 186.8,
+   "f0_p10": 149.2,
+   "f0_p90": 337.6,
+   "f0_target": "180–200 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 513.6,
+   "F2": 1599.0,
+   "F1_edge": 464.9,
+   "F2_edge": 1845.9,
+   "F1_ratio_vs_edge": 1.105,
+   "F2_ratio_vs_edge": 0.866,
+   "formant_geo_ratio": 0.978,
+   "per_small": 0.031,
+   "per_turbo": 0.031,
+   "per_min": 0.031,
+   "per_min_excl_name": 0.031,
+   "cer_small": 0.041,
+   "cer_turbo": 0.031,
+   "check_status": {
+    "燈籠": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "pinan_ttv3_p3": {
+   "cid": "pinan_ttv3_p3",
+   "role": "pinan",
+   "role_zh": "品安",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "kewYPXFj2pEXOZ9L822d",
+   "file": "review/G3/el/design/previews/pinan_ttv3_p3.wav",
+   "f0_median": 206.4,
+   "f0_p10": 168.8,
+   "f0_p90": 245.3,
+   "f0_target": "180–200 Hz",
+   "f0_dist_semitones": 0.55,
+   "F1": 334.3,
+   "F2": 1769.5,
+   "F1_edge": 464.9,
+   "F2_edge": 1845.9,
+   "F1_ratio_vs_edge": 0.719,
+   "F2_ratio_vs_edge": 0.959,
+   "formant_geo_ratio": 0.83,
+   "per_small": 0.031,
+   "per_turbo": 0.031,
+   "per_min": 0.031,
+   "per_min_excl_name": 0.031,
+   "cer_small": 0.031,
+   "cer_turbo": 0.031,
+   "check_status": {
+    "燈籠": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": null,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv3_p1": {
+   "cid": "zhezhe_ttv3_p1",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "原描述",
+   "generated_voice_id": "QjuJFudRhuWZaNL6jQDN",
+   "file": "review/G3/el/design/previews/zhezhe_ttv3_p1.wav",
+   "f0_median": 245.4,
+   "f0_p10": 150.3,
+   "f0_p90": 411.0,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 2.28,
+   "F1": 527.8,
+   "F2": 1803.9,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.773,
+   "F2_ratio_vs_edge": 0.847,
+   "formant_geo_ratio": 0.809,
+   "per_small": 0.041,
+   "per_turbo": 0.082,
+   "per_min": 0.041,
+   "per_min_excl_name": 0.041,
+   "cer_small": 0.112,
+   "cer_turbo": 0.112,
+   "check_status": {
+    "紙燈節": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": false,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv3_p2": {
+   "cid": "zhezhe_ttv3_p2",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "原描述",
+   "generated_voice_id": "ZyC2YbGXrcelMEWDpIGc",
+   "file": "review/G3/el/design/previews/zhezhe_ttv3_p2.wav",
+   "f0_median": 206.2,
+   "f0_p10": 132.4,
+   "f0_p90": 375.0,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 5.3,
+   "F1": 611.6,
+   "F2": 1861.7,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.895,
+   "F2_ratio_vs_edge": 0.874,
+   "formant_geo_ratio": 0.884,
+   "per_small": 0.082,
+   "per_turbo": 0.102,
+   "per_min": 0.082,
+   "per_min_excl_name": 0.082,
+   "cer_small": 0.143,
+   "cer_turbo": 0.153,
+   "check_status": {
+    "紙燈節": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": false,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv3_p3": {
+   "cid": "zhezhe_ttv3_p3",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_ttv_v3",
+   "desc_tag": "原描述",
+   "generated_voice_id": "0c123nstYLFQJ1LROZWu",
+   "file": "review/G3/el/design/previews/zhezhe_ttv3_p3.wav",
+   "f0_median": 227.8,
+   "f0_p10": 131.4,
+   "f0_p90": 376.1,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 3.57,
+   "F1": 512.1,
+   "F2": 1854.1,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.75,
+   "F2_ratio_vs_edge": 0.871,
+   "formant_geo_ratio": 0.808,
+   "per_small": 0.112,
+   "per_turbo": 0.082,
+   "per_min": 0.082,
+   "per_min_excl_name": 0.082,
+   "cer_small": 0.194,
+   "cer_turbo": 0.133,
+   "check_status": {
+    "紙燈節": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": true,
+    "zdj_tone": false,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoqing_ttv2_p1": {
+   "cid": "xiaoqing_ttv2_p1",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "Lv6lXIK4z0nFR7AfSFza",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv2_p1.wav",
+   "f0_median": 252.5,
+   "f0_p10": 219.5,
+   "f0_p90": 300.4,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 0.0,
+   "F1": 468.8,
+   "F2": 1421.0,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 0.771,
+   "F2_ratio_vs_edge": 0.899,
+   "formant_geo_ratio": 0.833,
+   "per_small": 0.076,
+   "per_turbo": 0.076,
+   "per_min": 0.076,
+   "per_min_excl_name": 0.065,
+   "cer_small": 0.098,
+   "cer_turbo": 0.087,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": true,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoqing_ttv2_p2": {
+   "cid": "xiaoqing_ttv2_p2",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "2UZDuJuITCLX03k3lgzB",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv2_p2.wav",
+   "f0_median": 278.1,
+   "f0_p10": 196.2,
+   "f0_p90": 363.7,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 0.19,
+   "F1": 545.1,
+   "F2": 1598.1,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 0.896,
+   "F2_ratio_vs_edge": 1.011,
+   "formant_geo_ratio": 0.952,
+   "per_small": 0.054,
+   "per_turbo": 0.076,
+   "per_min": 0.054,
+   "per_min_excl_name": 0.043,
+   "cer_small": 0.087,
+   "cer_turbo": 0.098,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": true,
+    "zdj_tone": null,
+    "f0_target": false,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "xiaoqing_ttv2_p3": {
+   "cid": "xiaoqing_ttv2_p3",
+   "role": "xiaoqing",
+   "role_zh": "小晴",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "改寫描述2（無兒童字眼）",
+   "generated_voice_id": "r8hJJTLQkcyqTc1Yv1Vl",
+   "file": "review/G3/el/design/previews/xiaoqing_ttv2_p3.wav",
+   "f0_median": 261.3,
+   "f0_p10": 194.9,
+   "f0_p90": 336.5,
+   "f0_target": "約 260 Hz（±1 半音＝245–275 Hz）",
+   "f0_dist_semitones": 0.0,
+   "F1": 508.1,
+   "F2": 1879.2,
+   "F1_edge": 608.3,
+   "F2_edge": 1580.3,
+   "F1_ratio_vs_edge": 0.835,
+   "F2_ratio_vs_edge": 1.189,
+   "formant_geo_ratio": 0.996,
+   "per_small": 0.065,
+   "per_turbo": 0.065,
+   "per_min": 0.065,
+   "per_min_excl_name": 0.054,
+   "cer_small": 0.109,
+   "cer_turbo": 0.098,
+   "check_status": {
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "不要": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不能": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "一次": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": true,
+    "zdj_tone": null,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv2_p1": {
+   "cid": "zhezhe_ttv2_p1",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "原描述",
+   "generated_voice_id": "Zy6EpL22X7ptdr8ZNNdU",
+   "file": "review/G3/el/design/previews/zhezhe_ttv2_p1.wav",
+   "f0_median": 314.5,
+   "f0_p10": 230.1,
+   "f0_p90": 411.6,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 532.0,
+   "F2": 1654.2,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.779,
+   "F2_ratio_vs_edge": 0.777,
+   "formant_geo_ratio": 0.778,
+   "per_small": 0.204,
+   "per_turbo": 0.194,
+   "per_min": 0.194,
+   "per_min_excl_name": 0.194,
+   "cer_small": 0.235,
+   "cer_turbo": 0.224,
+   "check_status": {
+    "紙燈節": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": false,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv2_p2": {
+   "cid": "zhezhe_ttv2_p2",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "原描述",
+   "generated_voice_id": "4Hck5OgRr3GllgxY8vIe",
+   "file": "review/G3/el/design/previews/zhezhe_ttv2_p2.wav",
+   "f0_median": 363.9,
+   "f0_p10": 280.0,
+   "f0_p90": 438.3,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 608.9,
+   "F2": 1783.1,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.891,
+   "F2_ratio_vs_edge": 0.837,
+   "formant_geo_ratio": 0.864,
+   "per_small": 0.143,
+   "per_turbo": 0.173,
+   "per_min": 0.143,
+   "per_min_excl_name": 0.143,
+   "cer_small": 0.163,
+   "cer_turbo": 0.173,
+   "check_status": {
+    "紙燈節": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": false,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  },
+  "zhezhe_ttv2_p3": {
+   "cid": "zhezhe_ttv2_p3",
+   "role": "zhezhe",
+   "role_zh": "折折",
+   "ttv_model": "eleven_multilingual_ttv_v2",
+   "desc_tag": "原描述",
+   "generated_voice_id": "ymIT6zyD6Mc8IKYHJmK8",
+   "file": "review/G3/el/design/previews/zhezhe_ttv2_p3.wav",
+   "f0_median": 334.2,
+   "f0_p10": 281.0,
+   "f0_p90": 388.9,
+   "f0_target": "≥280 Hz",
+   "f0_dist_semitones": 0.0,
+   "F1": 595.5,
+   "F2": 2041.2,
+   "F1_edge": 683.1,
+   "F2_edge": 2129.1,
+   "F1_ratio_vs_edge": 0.872,
+   "F2_ratio_vs_edge": 0.959,
+   "formant_geo_ratio": 0.914,
+   "per_small": 0.102,
+   "per_turbo": 0.122,
+   "per_min": 0.102,
+   "per_min_excl_name": 0.102,
+   "cer_small": 0.133,
+   "cer_turbo": 0.173,
+   "check_status": {
+    "紙燈節": {
+     "small": "不一致（需複查）",
+     "large-v3-turbo": "不一致（需複查）"
+    },
+    "燈籠": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "折折": {
+     "small": "轉寫一致",
+     "large-v3-turbo": "同音轉寫（讀音一致）"
+    },
+    "阿樂": {
+     "small": "同音轉寫（讀音一致）",
+     "large-v3-turbo": "轉寫一致"
+    },
+    "一起": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    },
+    "不是": {
+     "small": "未驗證（變調轉寫看不出）",
+     "large-v3-turbo": "未驗證（變調轉寫看不出）"
+    }
+   },
+   "criteria": {
+    "per0": false,
+    "check_words": false,
+    "zdj_tone": false,
+    "f0_target": true,
+    "formants_higher": false
+   },
+   "tier": null,
+   "accent": "未驗證",
+   "selected": false
+  }
+ },
+ "picks": [
+  "xiaoqing_ttv3_p3"
+ ],
+ "saved_voices": [
+  {
+   "cid": "xiaoqing_ttv3_p3",
+   "role": "xiaoqing",
+   "generated_voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "voice_name": "AD-xiaoqing_ttv3_p3",
+   "http": 200,
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "endpoints_tried": [
+    "text-to-voice"
+   ],
+   "detail": null,
+   "tier": 3
+  }
+ ],
+ "problems": []
+}

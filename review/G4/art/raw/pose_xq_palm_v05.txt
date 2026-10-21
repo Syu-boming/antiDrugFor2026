@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15b9e-5680-7cf2-9cb3-1ca2dea563c2/exec-276331e4-65dc-43fa-99ce-32a971006ea4.png`
+- Destination: [review/G4/art/raw/pose_xq_palm_v05.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G4/art/raw/pose_xq_palm_v05.png>)
+- Dimensions: **1024 × 1536 px**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

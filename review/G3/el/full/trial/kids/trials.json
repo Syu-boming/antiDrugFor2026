@@ -1,0 +1,3375 @@
+{
+ "_說明": "兒童與阿樂組試聲線（2026-10-21）：每個資料夾一組候選設定（casting/<code>.json）跑 2–3 句代表句、每句最多 2 次，用 tools/vo_el_prod.py 同一套合成與 (a)–(f) 檢查（包裝腳本 _scripts/trial_kids.py）；點數記在 audio/vo_el/ledger.json（purpose「EL 全劇 試聲線（孩子與阿樂組）」）。聽感一律未驗證。",
+ "trials": {
+  "ale_juin_v2": {
+   "role": "阿樂叔叔",
+   "code": "ale",
+   "voice_name": "Juin - Taiwanese Male Adult",
+   "voice_id": "7Sk22fdUzAroSHJkVoXB",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "speed": 0.88,
+    "use_speaker_boost": true
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.25,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a2_c002_01": "fail",
+    "a4_c008_01": "fail",
+    "a6_c009_03": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a2_c002_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.15,
+     "f0_median": 113.7,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.204,
+      "rate_before": 4.094,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "咦我想回收收怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想回收手怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a2_c002_01/a1.wav"
+    },
+    {
+     "line": "a2_c002_01",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.46,
+     "f0_median": 104.3,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.25,
+      "rate_before": 4.348,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "一我想回收收怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想回收收怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a2_c002_01/a2.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 2.99,
+     "f0_median": 130.9,
+     "psola": null,
+     "asr": {
+      "small": "小青小魚上車吧",
+      "large-v3-turbo": "小青小魚上車吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a4_c008_01/a1.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 2.64,
+     "f0_median": 135.8,
+     "psola": null,
+     "asr": {
+      "small": "小青小魚傷者吧",
+      "large-v3-turbo": "小青小魚商扯吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a4_c008_01/a2.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.86,
+     "f0_median": 114.1,
+     "psola": null,
+     "asr": {
+      "small": "我現在還是會定氣回去看醫生慢慢者等才會亮",
+      "large-v3-turbo": "我現在還是會定氣回去看醫生慢慢著等才會亮"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a6_c009_03/a1.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.82,
+     "f0_median": 109.3,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.148,
+      "rate_before": 4.246,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定氣會去看醫生慢慢著等才會涼",
+      "large-v3-turbo": "我現在還是會定氣會去看醫生慢慢著燈才會亮"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_juin_v2/_attempts/a6_c009_03/a2.wav"
+    }
+   ]
+  },
+  "ale_kuoyu_v2": {
+   "role": "阿樂叔叔",
+   "code": "ale",
+   "voice_name": "Kuo Yu - Taiwan",
+   "voice_id": "Z9RJEkFYQw307BCQULDR",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "speed": 0.88,
+    "use_speaker_boost": true
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.25,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a2_c002_01": "fail",
+    "a4_c008_01": "fail",
+    "a6_c009_03": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a2_c002_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.65,
+     "f0_median": 106.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.25,
+      "rate_before": 4.575,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "依我想揮手收怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想會瘦瘦怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a2_c002_01/a1.wav"
+    },
+    {
+     "line": "a2_c002_01",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.43,
+     "f0_median": 131.4,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.25,
+      "rate_before": 4.321,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "1我想繪射收怎麼跑到旁邊去了",
+      "large-v3-turbo": "1我想繪色手怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a2_c002_01/a2.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.06,
+     "f0_median": 133.2,
+     "psola": null,
+     "asr": {
+      "small": "小青小語上車吧",
+      "large-v3-turbo": "小青小羽上車吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a4_c008_01/a1.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 2.71,
+     "f0_median": 101.0,
+     "psola": null,
+     "asr": {
+      "small": "小青小玉上車吧",
+      "large-v3-turbo": "小青小玉上策吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a4_c008_01/a2.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.6,
+     "f0_median": 108.7,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.234,
+      "rate_before": 4.566,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會釘起回去看醫生慢慢著等才會亮",
+      "large-v3-turbo": "我現在還是會盯氣回去看醫生慢慢著等才會亮"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a6_c009_03/a1.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.7,
+     "f0_median": 99.1,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.248,
+      "rate_before": 4.619,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢著等才會涼",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢著等才會涼"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v2/_attempts/a6_c009_03/a2.wav"
+    }
+   ]
+  },
+  "ale_kuoyu_v3": {
+   "role": "阿樂叔叔",
+   "code": "ale",
+   "voice_name": "Kuo Yu - Taiwan",
+   "voice_id": "Z9RJEkFYQw307BCQULDR",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.45,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a2_c002_01": "pass",
+    "a4_c008_01": "fail",
+    "a6_c009_03": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a2_c002_01",
+     "attempt": 1,
+     "failed": [
+      "d"
+     ],
+     "rate_net": 4.29,
+     "f0_median": 118.5,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.45,
+      "rate_before": 6.14,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "咦我想揮手手怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想揮手手怎麼跑到旁邊去了"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a1.wav"
+    },
+    {
+     "line": "a2_c002_01",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 3.4,
+     "f0_median": 127.4,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.396,
+      "rate_before": 4.746,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "咦我想揮手手怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想揮手手怎麼跑到旁邊去了"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a2.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.37,
+     "f0_median": 111.2,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.418,
+      "rate_before": 4.217,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "小青小宇上車吧",
+      "large-v3-turbo": "小晴小雨上車吧"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a1.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.4,
+     "f0_median": 115.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.218,
+      "rate_before": 4.142,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "可琴小玉上策吧",
+      "large-v3-turbo": "可情小雨上車吧"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a2.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.7,
+     "f0_median": 94.6,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.318,
+      "rate_before": 4.878,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢折等才會亮",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢折凳才會亮"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a1.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.69,
+     "f0_median": 102.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.4,
+      "rate_before": 5.181,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢著燈才會亮",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢折燈才會亮"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a2.wav"
+    }
+   ]
+  },
+  "ale_kuoyu_v3_zhe": {
+   "role": "阿樂叔叔",
+   "code": "ale",
+   "voice_name": "Kuo Yu - Taiwan",
+   "voice_id": "Z9RJEkFYQw307BCQULDR",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "摺": "折"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.45,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_03": "pass",
+    "a0_c003_03": "pass",
+    "a6_c009_03": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_03",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.68,
+     "f0_median": 96.2,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.19,
+      "rate_before": 4.403,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "慢慢折燈才會亮",
+      "large-v3-turbo": "慢慢折燈才會亮"
+     },
+     "billed": 5,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/_attempts/a0_c002_03/a1.wav"
+    },
+    {
+     "line": "a0_c003_03",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 4.0,
+     "f0_median": 113.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.45,
+      "rate_before": 5.469,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "奇怪我昨天晚上明明放在這裡啊",
+      "large-v3-turbo": "奇怪我昨天晚上明明放在這裡啊"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/_attempts/a0_c003_03/a1.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.71,
+     "f0_median": 100.4,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.434,
+      "rate_before": 5.305,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢折燈才會亮"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3_zhe/_attempts/a6_c009_03/a1.wav"
+    }
+   ]
+  },
+  "ale_xuming_v2": {
+   "role": "阿樂叔叔",
+   "code": "ale",
+   "voice_name": "Xu Ming",
+   "voice_id": "A3T1GnLHdn0WL5w4TMtq",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "speed": 0.88,
+    "use_speaker_boost": true
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.25,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a2_c002_01": "fail",
+    "a4_c008_01": "fail",
+    "a6_c009_03": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a2_c002_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.37,
+     "f0_median": 110.2,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.098,
+      "rate_before": 3.733,
+      "target": 3.4
+     },
+     "asr": {
+      "small": "咦我想回收收怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想回收收怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a2_c002_01/a1.wav"
+    },
+    {
+     "line": "a2_c002_01",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.55,
+     "f0_median": 115.5,
+     "psola": null,
+     "asr": {
+      "small": "咦我想會收收怎麼跑到旁邊去了",
+      "large-v3-turbo": "咦我想會收收怎麼跑到旁邊去了"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a2_c002_01/a2.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 2.61,
+     "f0_median": 125.9,
+     "psola": null,
+     "asr": {
+      "small": "小青小羽上車吧",
+      "large-v3-turbo": "小青小羽上車吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a4_c008_01/a1.wav"
+    },
+    {
+     "line": "a4_c008_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 2.44,
+     "f0_median": 108.3,
+     "psola": null,
+     "asr": {
+      "small": "小青小玉上車吧",
+      "large-v3-turbo": "小青小玉上車吧"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a4_c008_01/a2.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.69,
+     "f0_median": 115.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.124,
+      "rate_before": 4.158,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢著等才會亮",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢著等才會亮"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a6_c009_03/a1.wav"
+    },
+    {
+     "line": "a6_c009_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 3.7,
+     "f0_median": 117.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.119,
+      "rate_before": 4.141,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "我現在還是會定期回去看醫生慢慢著等才會亮",
+      "large-v3-turbo": "我現在還是會定期回去看醫生慢慢著等才會亮"
+     },
+     "billed": 9,
+     "wav": "review/G3/el/full/trial/kids/ale_xuming_v2/_attempts/a6_c009_03/a2.wav"
+    }
+   ]
+  },
+  "pa_vivian_v3_m1": {
+   "role": "品安",
+   "code": "pinan",
+   "voice_name": "Vivian - Taiwanese Social Media",
+   "voice_id": "xrDmUzhnE51Df8z38r1M",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.4,
+     "default": 1.0
+    },
+    "pitch_shift_st": -1.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_06": "pass",
+    "a6_c002_02": "pass",
+    "a7_c003_01": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_06",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.68,
+     "f0_median": 205.2,
+     "psola": {
+      "pitch_shift_st": -1.0,
+      "stretch": 1.313,
+      "rate_before": 4.858,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "你們先走我把燈籠收好就來",
+      "large-v3-turbo": "你們先走我把燈籠收好就來"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a1_c004_06/a1.wav"
+    },
+    {
+     "line": "a6_c002_02",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.57,
+     "f0_median": 192.3,
+     "psola": {
+      "pitch_shift_st": -1.0,
+      "stretch": 1.102,
+      "rate_before": 4.077,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+      "large-v3-turbo": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡"
+     },
+     "billed": 17,
+     "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a6_c002_02/a1.wav"
+    },
+    {
+     "line": "a7_c003_01",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.91,
+     "f0_median": 187.6,
+     "psola": {
+      "pitch_shift_st": -1.0,
+      "stretch": 1.0,
+      "rate_before": 3.906,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "有讓你擔心的秘密也可以找大人說",
+      "large-v3-turbo": "有讓你擔心的秘密也可以找大人說"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/pa_vivian_v3_m1/_attempts/a7_c003_01/a1.wav"
+    }
+   ]
+  },
+  "pa_yui_v3_m3": {
+   "role": "品安",
+   "code": "pinan",
+   "voice_name": "Yui - Delicate, Graceful and Soothing",
+   "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.4,
+     "default": 1.0
+    },
+    "pitch_shift_st": -3.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_06": "pass",
+    "a6_c002_02": "pass",
+    "a7_c003_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_06",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.21,
+     "f0_median": 192.1,
+     "psola": {
+      "pitch_shift_st": -3.0,
+      "stretch": 1.4,
+      "rate_before": 5.882,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "你們先走我把羹龍收好就來",
+      "large-v3-turbo": "你們先走我把根籠收好就來"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/pa_yui_v3_m3/_attempts/a1_c004_06/a1.wav"
+    },
+    {
+     "line": "a1_c004_06",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 3.99,
+     "f0_median": 199.8,
+     "psola": {
+      "pitch_shift_st": -3.0,
+      "stretch": 1.4,
+      "rate_before": 5.43,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "你們先走我把燈籠收好就來",
+      "large-v3-turbo": "你們先走我把燈籠收好就來"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/pa_yui_v3_m3/_attempts/a1_c004_06/a2.wav"
+    },
+    {
+     "line": "a6_c002_02",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.98,
+     "f0_median": 173.0,
+     "psola": {
+      "pitch_shift_st": -3.0,
+      "stretch": 1.4,
+      "rate_before": 5.629,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+      "large-v3-turbo": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡"
+     },
+     "billed": 17,
+     "wav": "review/G3/el/full/trial/kids/pa_yui_v3_m3/_attempts/a6_c002_02/a1.wav"
+    },
+    {
+     "line": "a7_c003_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.26,
+     "f0_median": 192.1,
+     "psola": {
+      "pitch_shift_st": -3.0,
+      "stretch": 1.4,
+      "rate_before": 5.976,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "有讓你擔心的秘密也可以找大人",
+      "large-v3-turbo": "有讓你擔心的秘密也可以找大人數"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/pa_yui_v3_m3/_attempts/a7_c003_01/a1.wav"
+    },
+    {
+     "line": "a7_c003_01",
+     "attempt": 2,
+     "failed": [
+      "d"
+     ],
+     "rate_net": 4.64,
+     "f0_median": 185.0,
+     "psola": {
+      "pitch_shift_st": -3.0,
+      "stretch": 1.4,
+      "rate_before": 5.976,
+      "target": 3.7
+     },
+     "asr": {
+      "small": "有讓你擔心的秘密也可以找大人說",
+      "large-v3-turbo": "有讓你擔心的秘密也可以找大人說"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/pa_yui_v3_m3/_attempts/a7_c003_01/a2.wav"
+    }
+   ]
+  },
+  "xq_lulu_v3": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Lulu - Cute Little Witch",
+   "voice_id": "BT0SH7Hb8NRPpT5xbCgg",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail",
+    "a1_c008_02": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.0,
+     "f0_median": 243.7,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.111,
+      "rate_before": 4.444,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "電視煙在臺灣是禁止的",
+      "large-v3-turbo": "電視煙在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.72,
+     "f0_median": 270.0,
+     "psola": null,
+     "asr": {
+      "small": "編是先在臺灣是禁止的",
+      "large-v3-turbo": "編事先在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c004_02/a2.wav"
+    },
+    {
+     "line": "a1_c008_02",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 4.05,
+     "f0_median": 255.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.27,
+      "rate_before": 5.078,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "不要碰我們快去跟阿樂叔叔說",
+      "large-v3-turbo": "不要碰我們快去跟阿樂叔叔說"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/xq_lulu_v3/_attempts/a1_c008_02/a1.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v2": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0.0,
+    "speed": 0.95,
+    "use_speaker_boost": true
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.98,
+     "f0_median": 247.1,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.25,
+      "rate_before": 5.0,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "電子言在臺灣是禁止的",
+      "large-v3-turbo": "電子鹽在臺灣是靜止的"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v2/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.97,
+     "f0_median": 236.7,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.131,
+      "rate_before": 4.525,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "電子言在臺灣是禁止的",
+      "large-v3-turbo": "電子鹽在臺灣是禁止的"
+     },
+     "billed": 4,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v2/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c003_02": "pass",
+    "a1_c004_02": "fail",
+    "a5_c005_02": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a1_c003_02",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 3.81,
+     "f0_median": 267.6,
+     "psola": null,
+     "asr": {
+      "small": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+      "large-v3-turbo": "這盒子上面什麼都沒寫誰做的裡面裝什麼"
+     },
+     "billed": 10,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c003_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.05,
+     "f0_median": 260.7,
+     "psola": null,
+     "asr": {
+      "small": "劍血煙在臺灣是禁止的",
+      "large-v3-turbo": "電水淹在臺灣是靜止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.0,
+     "f0_median": 261.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.082,
+      "rate_before": 4.329,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "戒指炎在臺灣是禁止的",
+      "large-v3-turbo": "蟹指煙在臺灣是靜止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a2.wav"
+    },
+    {
+     "line": "a5_c005_02",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 4.26,
+     "f0_median": 252.8,
+     "psola": null,
+     "asr": {
+      "small": "我去辦公室找林老師你待在門裡面不要過去",
+      "large-v3-turbo": "我去辦公室找林老師你待在門裡面不要過去"
+     },
+     "billed": 10,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a5_c005_02/a1.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_comma": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.0,
+     "f0_median": 260.4,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.244,
+      "rate_before": 4.975,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "歸史研在臺灣是禁止的",
+      "large-v3-turbo": "餵食菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_comma/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.77,
+     "f0_median": 281.8,
+     "psola": null,
+     "asr": {
+      "small": "電視音樂在臺灣是禁止的",
+      "large-v3-turbo": "電史約在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_comma/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_dz": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "店紫煙"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.98,
+     "f0_median": 276.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.092,
+      "rate_before": 4.367,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "劍子煙在臺灣是禁止的",
+      "large-v3-turbo": "賤子菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_dz/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 3.7,
+     "f0_median": 255.6,
+     "psola": null,
+     "asr": {
+      "small": "電子煙在臺灣是禁止的",
+      "large-v3-turbo": "電子煙在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_dz/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_hg": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.0,
+     "f0_median": 271.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.078,
+      "rate_before": 4.31,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "天氣煙在臺灣是靜止的",
+      "large-v3-turbo": "天啟宴在臺灣是靜止的"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_hg/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.24,
+     "f0_median": 244.1,
+     "psola": null,
+     "asr": {
+      "small": "電喜煙在臺灣是禁止的",
+      "large-v3-turbo": "電洗員在臺灣是禁止的"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_hg/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_s1": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.98,
+     "f0_median": 265.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.136,
+      "rate_before": 4.545,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "電視演在臺灣是禁止的",
+      "large-v3-turbo": "電子鹽在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_s1/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.98,
+     "f0_median": 272.0,
+     "psola": null,
+     "asr": {
+      "small": "電喜煙在臺灣是禁止的",
+      "large-v3-turbo": "貼洗菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_s1/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_yan": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "電子菸"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.13,
+     "f0_median": 263.0,
+     "psola": null,
+     "asr": {
+      "small": "漸顯煙在臺灣是禁止的",
+      "large-v3-turbo": "健血淹在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_yan/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.27,
+     "f0_median": 247.8,
+     "psola": null,
+     "asr": {
+      "small": "這些顯示在臺灣是禁止的",
+      "large-v3-turbo": "這些顯驗在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_yan/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_tiffy_v3_zi": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+   "voice_id": "1AKkSX7KMPHIWuz76m0n",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "電子煙": "電紫煙"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.29,
+     "f0_median": 261.5,
+     "psola": null,
+     "asr": {
+      "small": "電視煙在臺灣是禁止的",
+      "large-v3-turbo": "電死菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_zi/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.05,
+     "f0_median": 250.0,
+     "psola": null,
+     "asr": {
+      "small": "電視煙在臺灣是禁止的",
+      "large-v3-turbo": "電子菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3_zi/_attempts/a1_c004_02/a2.wav"
+    }
+   ]
+  },
+  "xq_zmax_v3": {
+   "role": "小晴",
+   "code": "xiaoqing",
+   "voice_name": "聲線設計 xiaoqing_ttv3_p3（AD-xiaoqing_ttv3_p3）",
+   "voice_id": "zmAXM4lsxUuinVKGnPdo",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a1_c004_02": "fail",
+    "a1_c008_02": "incomplete"
+   },
+   "attempts": [
+    {
+     "line": "a1_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.92,
+     "f0_median": 310.4,
+     "psola": null,
+     "asr": {
+      "small": "電喜煙在臺灣是禁止的",
+      "large-v3-turbo": "練習菸在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_zmax_v3/_attempts/a1_c004_02/a1.wav"
+    },
+    {
+     "line": "a1_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.94,
+     "f0_median": 313.9,
+     "psola": null,
+     "asr": {
+      "small": "電信約在臺灣是禁止的",
+      "large-v3-turbo": "電行員在臺灣是禁止的"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xq_zmax_v3/_attempts/a1_c004_02/a2.wav"
+    },
+    {
+     "line": "a1_c008_02",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.06,
+     "f0_median": 354.4,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.3,
+      "rate_before": 5.263,
+      "target": 4.0
+     },
+     "asr": {
+      "small": "不要泡我們快去跟阿樂叔叔說哦",
+      "large-v3-turbo": "不要碰我們快去跟阿樂叔叔說"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/xq_zmax_v3/_attempts/a1_c008_02/a1.wav"
+    }
+   ]
+  },
+  "xy_vivian_v3": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Vivian - Taiwanese Social Media",
+   "voice_id": "xrDmUzhnE51Df8z38r1M",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c004_01": "fail",
+    "a5_c005_03": "fail",
+    "a5_c006_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.16,
+     "f0_median": 246.8,
+     "psola": null,
+     "asr": {
+      "small": "她的叔叔找者者找",
+      "large-v3-turbo": "阿勒叔叔找哲哲找"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.74,
+     "f0_median": 211.3,
+     "psola": null,
+     "asr": {
+      "small": "阿樂叔叔早週週早",
+      "large-v3-turbo": "阿勒叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a0_c004_01/a2.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.8,
+     "f0_median": 209.6,
+     "psola": null,
+     "asr": {
+      "small": "陳伯伯聽不到林老師還沒出來我來打一一",
+      "large-v3-turbo": "陳伯伯聽不到林老師還沒出來我來打一一招"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a5_c005_03/a1.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.52,
+     "f0_median": 212.6,
+     "psola": null,
+     "asr": {
+      "small": "陳伯伯聽不到林老師還沒出來我來打一",
+      "large-v3-turbo": "陳伯伯聽不到雷老師還沒出來我來打一一拳"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a5_c005_03/a2.wav"
+    },
+    {
+     "line": "a5_c006_02",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.39,
+     "f0_median": 204.4,
+     "psola": null,
+     "asr": {
+      "small": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫",
+      "large-v3-turbo": "這裡是小鄧國小鎮門口有一個大人坐在門口的椅子上叫"
+     },
+     "billed": 13,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a5_c006_02/a1.wav"
+    },
+    {
+     "line": "a5_c006_02",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.28,
+     "f0_median": 211.3,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.086,
+      "rate_before": 4.668,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "這裡是小鄧國小鎮門口有一個大人坐在門口的椅子上叫不行",
+      "large-v3-turbo": "這裡是小鄧國小鎮門口有一個大人坐在門口的椅子上叫不醒"
+     },
+     "billed": 13,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3/_attempts/a5_c006_02/a2.wav"
+    }
+   ]
+  },
+  "xy_vivian_v3_s1": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Vivian - Taiwanese Social Media",
+   "voice_id": "xrDmUzhnE51Df8z38r1M",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c004_01": "fail",
+    "a5_c005_03": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.14,
+     "f0_median": 251.4,
+     "psola": null,
+     "asr": {
+      "small": "花樂叔叔早折折早",
+      "large-v3-turbo": "阿勒叔叔早折折早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.12,
+     "f0_median": 211.1,
+     "psola": null,
+     "asr": {
+      "small": "阿勒叔叔早遮遮早",
+      "large-v3-turbo": "阿勒叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/_attempts/a0_c004_01/a2.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 1,
+     "failed": [
+      "d"
+     ],
+     "rate_net": 3.1,
+     "f0_median": 209.9,
+     "psola": null,
+     "asr": {
+      "small": "陳伯伯聽不到林老師還沒出來我來打119",
+      "large-v3-turbo": "陳伯伯聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/_attempts/a5_c005_03/a1.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 3.91,
+     "f0_median": 213.3,
+     "psola": null,
+     "asr": {
+      "small": "陳伯伯聽不到林老師還沒出來我來打119",
+      "large-v3-turbo": "陳伯伯聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1/_attempts/a5_c005_03/a2.wav"
+    }
+   ]
+  },
+  "xy_vivian_v3_s1_hg": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Vivian - Taiwanese Social Media",
+   "voice_id": "xrDmUzhnE51Df8z38r1M",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "lines": {
+    "a0_c004_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.0,
+     "f0_median": 220.6,
+     "psola": null,
+     "asr": {
+      "small": "阿樂叔叔早遮遮早",
+      "large-v3-turbo": "阿樂叔叔早嘶嘶早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_hg/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.03,
+     "f0_median": 200.4,
+     "psola": null,
+     "asr": {
+      "small": "阿勒叔叔早折折早",
+      "large-v3-turbo": "阿樂叔叔早遮遮早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_hg/_attempts/a0_c004_01/a2.wav"
+    }
+   ]
+  },
+  "xy_vivian_v3_s1_zz": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Vivian - Taiwanese Social Media",
+   "voice_id": "xrDmUzhnE51Df8z38r1M",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "哲哲": "折折"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 0.85,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c004_01": "fail",
+    "a3_c001_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.29,
+     "f0_median": 254.9,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 0.85,
+      "rate_before": 2.797,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "阿樂叔叔早早早早",
+      "large-v3-turbo": "阿樂叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.32,
+     "f0_median": 202.3,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 0.85,
+      "rate_before": 3.509,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "阿樂叔叔早遮遮早",
+      "large-v3-turbo": "阿勒叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/_attempts/a0_c004_01/a2.wav"
+    },
+    {
+     "line": "a3_c001_01",
+     "attempt": 1,
+     "failed": [
+      "d"
+     ],
+     "rate_net": 3.47,
+     "f0_median": 245.1,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 0.85,
+      "rate_before": 2.941,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "哲哲你又迷路了",
+      "large-v3-turbo": "哲哲你又迷路了"
+     },
+     "billed": 5,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/_attempts/a3_c001_01/a1.wav"
+    },
+    {
+     "line": "a3_c001_01",
+     "attempt": 2,
+     "failed": [
+      "d"
+     ],
+     "rate_net": 2.97,
+     "f0_median": 242.8,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 0.85,
+      "rate_before": 2.527,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "哲哲你又迷路了",
+      "large-v3-turbo": "哲哲你又迷路了"
+     },
+     "billed": 5,
+     "wav": "review/G3/el/full/trial/kids/xy_vivian_v3_s1_zz/_attempts/a3_c001_01/a2.wav"
+    }
+   ]
+  },
+  "xy_yui_v3_m2": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Yui - Delicate, Graceful and Soothing",
+   "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": -2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c004_01": "fail",
+    "a5_c005_03": "fail",
+    "a5_c006_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.28,
+     "f0_median": 244.5,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.127,
+      "rate_before": 4.848,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "阿的叔叔早久則早",
+      "large-v3-turbo": "阿樂叔叔早九九早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "c",
+      "d"
+     ],
+     "rate_net": 3.12,
+     "f0_median": 222.7,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.0,
+      "rate_before": 3.162,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "巴勒叔叔早哲哲早嗯",
+      "large-v3-turbo": "娃德叔叔找哲哲找嗯"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a0_c004_01/a2.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.27,
+     "f0_median": 211.6,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.136,
+      "rate_before": 4.884,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "喘不不聽不到林老師還沒出來我來打悠悠酒",
+      "large-v3-turbo": "噴噴噴聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a5_c005_03/a1.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.19,
+     "f0_median": 217.1,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.292,
+      "rate_before": 5.556,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "伯伯聽不到您老師還沒出來我來打119",
+      "large-v3-turbo": "文博博聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a5_c005_03/a2.wav"
+    },
+    {
+     "line": "a5_c006_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 5.22,
+     "f0_median": 203.1,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.3,
+      "rate_before": 6.753,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "這裡是小燈國小鎮門口有一個大人住在門口的椅子上",
+      "large-v3-turbo": "這裡是小燈國小鎮門口有一個大人住在門口的椅子上"
+     },
+     "billed": 13,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a5_c006_02/a1.wav"
+    },
+    {
+     "line": "a5_c006_02",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.33,
+     "f0_median": 213.8,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.3,
+      "rate_before": 5.677,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫不行",
+      "large-v3-turbo": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫不醒"
+     },
+     "billed": 13,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2/_attempts/a5_c006_02/a2.wav"
+    }
+   ]
+  },
+  "xy_yui_v3_m2_s1": {
+   "role": "小宇",
+   "code": "xiaoyu",
+   "voice_name": "Yui - Delicate, Graceful and Soothing",
+   "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": -2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c004_01": "fail",
+    "a5_c005_03": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c004_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.6,
+     "f0_median": 233.7,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.0,
+      "rate_before": 3.604,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "愛樂叔叔早遮遮早",
+      "large-v3-turbo": "阿樂叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a1.wav"
+    },
+    {
+     "line": "a0_c004_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.85,
+     "f0_median": 234.6,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.0,
+      "rate_before": 3.922,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "哈囉叔叔早早早早早",
+      "large-v3-turbo": "阿勒叔叔早哲哲早"
+     },
+     "billed": 6,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a2.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.27,
+     "f0_median": 253.5,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.145,
+      "rate_before": 4.922,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "等伯伯聽不到林老師還沒出來我來打119",
+      "large-v3-turbo": "等伯伯聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a1.wav"
+    },
+    {
+     "line": "a5_c005_03",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.24,
+     "f0_median": 210.9,
+     "psola": {
+      "pitch_shift_st": -2.0,
+      "stretch": 1.0,
+      "rate_before": 4.279,
+      "target": 4.3
+     },
+     "asr": {
+      "small": "伯伯聽不到林老師還沒出來我來打119",
+      "large-v3-turbo": "伯伯聽不到林老師還沒出來我來打119"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a0_c003_01": "pass",
+    "a3_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "c",
+      "d"
+     ],
+     "rate_net": 3.6,
+     "f0_median": 259.8,
+     "psola": null,
+     "asr": {
+      "small": "我是燈籠紙折騰的貓是阿樂叔叔把我折出來的哦嗯",
+      "large-v3-turbo": "我是燈籠紙折成的貓是阿樂叔叔把我折出來的喔嗯"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.45,
+     "f0_median": 259.5,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.118,
+      "rate_before": 4.976,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是登樓直九城的貓是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是燈籠紫擱成的帽是阿樂叔叔把我折出來的喔"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 1,
+     "failed": [
+      "c"
+     ],
+     "rate_net": 4.46,
+     "f0_median": 250.7,
+     "psola": {
+      "pitch_shift_st": 0.0,
+      "stretch": 1.118,
+      "rate_before": 4.976,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "明天就是指燈節今年的主燈是照著我的樣子做的",
+      "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a0_c003_01/a1.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 4.78,
+     "f0_median": 262.5,
+     "psola": null,
+     "asr": {
+      "small": "明天就是指燈節今年的主燈是照著我的樣子做的",
+      "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a0_c003_01/a2.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 2.99,
+     "f0_median": 269.4,
+     "psola": null,
+     "asr": {
+      "small": "再加上口窺和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口盔和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a3_c004_02/a1.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.35,
+     "f0_median": 254.2,
+     "psola": null,
+     "asr": {
+      "small": "再加上口口和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口口和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3/_attempts/a3_c004_02/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a0_c003_01": "pass",
+    "a3_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.74,
+     "f0_median": 306.7,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.73,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是燈籠紙揪成的貓是阿樂叔叔把我揪出來的哦",
+      "large-v3-turbo": "我是燈籠紙折成的貓是阿樂叔叔把我折出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.45,
+     "f0_median": 291.5,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.118,
+      "rate_before": 4.976,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是登樓直九城的貓是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是燈籠絕九層的帽是阿樂叔叔把我折出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.61,
+     "f0_median": 281.3,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.595,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "明天就是指燈節今年的主得是照著我的樣子做的",
+      "large-v3-turbo": "明天就是紙燈節今年的煮的是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a0_c003_01/a1.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 2,
+     "failed": [],
+     "rate_net": 4.4,
+     "f0_median": 292.6,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.403,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "明天就是指燈節今年的主燈是照著我的樣子做的",
+      "large-v3-turbo": "明天就是紙燈節今年的主燈是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a0_c003_01/a2.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 2.99,
+     "f0_median": 302.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 2.99,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口窺和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口盔和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a3_c004_02/a1.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.35,
+     "f0_median": 284.8,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.346,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口口和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口口和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2/_attempts/a3_c004_02/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2_jue": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "摺": "折",
+    "口訣": "口決"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a3_c004_02": "fail",
+    "a7_c002_01": "pass"
+   },
+   "attempts": [
+    {
+     "line": "a3_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 3.47,
+     "f0_median": 314.6,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.468,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口訣和動作不Paul不是先離開找大人",
+      "large-v3-turbo": "再加上口訣和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/_attempts/a3_c004_02/a1.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 3.31,
+     "f0_median": 309.5,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.315,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口訣很動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口訣痕逗作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/_attempts/a3_c004_02/a2.wav"
+    },
+    {
+     "line": "a7_c002_01",
+     "attempt": 1,
+     "failed": [],
+     "rate_net": 4.8,
+     "f0_median": 289.4,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.783,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "最後大家一起做一次口訣",
+      "large-v3-turbo": "最後大家一起做一次口訣"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_jue/_attempts/a7_c002_01/a1.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2_long": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "摺": "折",
+    "口訣": "口決",
+    "登籠": "燈籠"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 0.88,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a1_c001_04": "incomplete",
+    "a6_c007_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.75,
+     "f0_median": 295.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.751,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是當老子折承的孟是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是當老子折成的帽是阿樂叔叔把我折出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_long/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.46,
+     "f0_median": 277.4,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.137,
+      "rate_before": 5.06,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是燈籠紙揪成的貓是阿樂叔叔把我揪出來的哦",
+      "large-v3-turbo": "我是燈籠紙折成的貓是阿樂叔叔把我折出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_long/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a1_c001_04",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.46,
+     "f0_median": 297.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 0.925,
+      "rate_before": 4.027,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "網友來佈置看我折一攤燈籠",
+      "large-v3-turbo": "我也來佈置看我這一攤燈了"
+     },
+     "billed": 8,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_long/_attempts/a1_c001_04/a1.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 3.79,
+     "f0_median": 383.1,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 0.88,
+      "rate_before": 3.333,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我糾纏了真的是燈籠",
+      "large-v3-turbo": "我我絕腸了真的是燈籠"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_long/_attempts/a6_c007_01/a1.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 3.62,
+     "f0_median": 337.1,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 0.88,
+      "rate_before": 3.175,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我捉成了真的是燈籠",
+      "large-v3-turbo": "我我折成了真的是燈籠"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_long/_attempts/a6_c007_01/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2_s1": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a3_c004_02": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a3_c004_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.31,
+     "f0_median": 287.0,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.315,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口口和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口扣和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_s1/_attempts/a3_c004_02/a1.wav"
+    },
+    {
+     "line": "a3_c004_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 3.43,
+     "f0_median": 282.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.435,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "再加上口魁和動作不碰不是先離開找大人",
+      "large-v3-turbo": "再加上口筱和動作不碰不適先離開找大人"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_s1/_attempts/a3_c004_02/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2_zhe": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "摺": "折"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a6_c007_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.45,
+     "f0_median": 292.8,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 4.449,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是德隆紙軸承的帽是阿樂叔叔把我揪出來的哦",
+      "large-v3-turbo": "我是燈籠紙織成的帽是阿樂叔叔把我織出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.45,
+     "f0_median": 265.4,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.121,
+      "rate_before": 4.988,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是燈樓舉折承的貓是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是登樓舉折成的嗎是阿樂叔叔把我折出來的哦"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.94,
+     "f0_median": 353.6,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 3.937,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我折成了真的是登樓",
+      "large-v3-turbo": "我我折成了真的是燈樓"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe/_attempts/a6_c007_01/a1.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "d"
+     ],
+     "rate_net": 2.83,
+     "f0_median": 393.3,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.0,
+      "rate_before": 2.849,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我糾纏了真的是燈籠",
+      "large-v3-turbo": "我我結成了真的是燈籠"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe/_attempts/a6_c007_01/a2.wav"
+    }
+   ]
+  },
+  "zz_chloe_v3_p2_zhe2": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Chloe - Gentle, Delicate, Reassuring",
+   "voice_id": "cXGZGSG0udxZ0hTfyBnC",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九",
+    "摺": "哲",
+    "口訣": "口決",
+    "登籠": "燈籠"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 0.88,
+     "max": 1.3,
+     "default": 1.0
+    },
+    "pitch_shift_st": 2.0
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a6_c007_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.45,
+     "f0_median": 281.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.1,
+      "rate_before": 4.895,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是燈籠植摺成的貓是阿樂叔叔把我摺出來的哦",
+      "large-v3-turbo": "我是燈籠子折成的貓是阿樂叔叔把我折出來的喔"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 4.46,
+     "f0_median": 279.7,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 1.095,
+      "rate_before": 4.872,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我是燈籠紙折騰的貓是阿娜叔叔把我折出來的哦",
+      "large-v3-turbo": "我是燈籠紙折成的貓是阿樂叔叔把我折出來的喔"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "b"
+     ],
+     "rate_net": 3.88,
+     "f0_median": 380.3,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 0.88,
+      "rate_before": 3.425,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我折承了真的是燈籠",
+      "large-v3-turbo": "我我折成了真的是燈哦"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/_attempts/a6_c007_01/a1.wav"
+    },
+    {
+     "line": "a6_c007_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "d"
+     ],
+     "rate_net": 2.81,
+     "f0_median": 347.2,
+     "psola": {
+      "pitch_shift_st": 2.0,
+      "stretch": 0.88,
+      "rate_before": 2.469,
+      "target": 4.45
+     },
+     "asr": {
+      "small": "我我折承了真的是燈籠",
+      "large-v3-turbo": "我我折成了真的是燈樓"
+     },
+     "billed": 7,
+     "wav": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/_attempts/a6_c007_01/a2.wav"
+    }
+   ]
+  },
+  "zz_lulu_v3": {
+   "role": "折折",
+   "code": "zhezhe",
+   "voice_name": "Lulu - Cute Little Witch",
+   "voice_id": "BT0SH7Hb8NRPpT5xbCgg",
+   "model": "eleven_v3",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": null,
+    "use_speaker_boost": null
+   },
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {
+    "auto_stretch": {
+     "tolerance": 0.2,
+     "min": 1.0,
+     "max": 1.3,
+     "default": 1.0
+    }
+   },
+   "head_guard": null,
+   "lines": {
+    "a0_c002_02": "fail",
+    "a0_c003_01": "fail"
+   },
+   "attempts": [
+    {
+     "line": "a0_c002_02",
+     "attempt": 1,
+     "failed": [
+      "a",
+      "c",
+      "d"
+     ],
+     "rate_net": 3.62,
+     "f0_median": 254.7,
+     "psola": null,
+     "asr": {
+      "small": "我是燈籠植折騰的貓是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是燈籠汁折成的貓是阿樂叔叔把我遮出來的哦嗯"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_lulu_v3/_attempts/a0_c002_02/a1.wav"
+    },
+    {
+     "line": "a0_c002_02",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "c"
+     ],
+     "rate_net": 3.91,
+     "f0_median": 246.0,
+     "psola": null,
+     "asr": {
+      "small": "我是燈籠植折騰的孟是阿樂叔叔把我折出來的哦",
+      "large-v3-turbo": "我是燈籠直遮成的帽是阿樂叔叔把我遮出來的哦嗯"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_lulu_v3/_attempts/a0_c002_02/a2.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 1,
+     "failed": [
+      "a"
+     ],
+     "rate_net": 4.61,
+     "f0_median": 234.7,
+     "psola": null,
+     "asr": {
+      "small": "明天就是指燈節今年的主燈是照著我的樣子做的",
+      "large-v3-turbo": "明天就是紙燈節今年的主凳是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_lulu_v3/_attempts/a0_c003_01/a1.wav"
+    },
+    {
+     "line": "a0_c003_01",
+     "attempt": 2,
+     "failed": [
+      "a",
+      "b",
+      "c"
+     ],
+     "rate_net": 4.69,
+     "f0_median": 249.0,
+     "psola": null,
+     "asr": {
+      "small": "明天就是智登節今年的主動是照著我的樣子做的",
+      "large-v3-turbo": "明天就是織燈節今年的主凳是照著我的樣子做的"
+     },
+     "billed": 11,
+     "wav": "review/G3/el/full/trial/kids/zz_lulu_v3/_attempts/a0_c003_01/a2.wav"
+    }
+   ]
+  }
+ }
+}

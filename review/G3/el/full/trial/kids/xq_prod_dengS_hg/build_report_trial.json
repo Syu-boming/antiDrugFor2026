@@ -1,0 +1,533 @@
+{
+ "a1_c001_01": {
+  "id": "a1_c001_01",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "品安！你的燈籠好漂亮。",
+  "required": false,
+  "signature": "958ab9739ce2ecf7",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "rate_cps_net": [
+    3.4,
+    4.6
+   ],
+   "f0_nominal": 276.9,
+   "f0_hz": [
+    246.7,
+    310.8
+   ],
+   "source": "角色表第 3 節（3.9–4.1；句子短而肯定）；casting.json 小晴 note（F0 276.9 Hz）",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:47:39",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "品安！你的灯笼好漂亮。",
+      "sent": "嗯。品安！你的灯笼好漂亮。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c001_01/xiaoqing_a0_s0_cbeea63d24b1.mp3",
+      "request_id": "t61gsmfqgpb6JQPhKno0",
+      "billed": 7,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -34.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -77.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.7,
+       "t_fill_s": 4.82,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.05,
+        5.44
+       ],
+       "decay_end_s": 4.09,
+       "cut_s": 4.19,
+       "floor_rel_db": -34.0,
+       "removed_s": 2.45
+      },
+      "declicked": 0,
+      "head_guard": "嗯。",
+      "head": {
+       "t0_s": 0.9,
+       "asr_head": "嗯平安你",
+       "how": "第一段停頓",
+       "guard": "ok",
+       "pause_s": [
+        0.44,
+        1.43
+       ],
+       "cut_s": 1.4
+      },
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.42,
+         0.78
+        ],
+        "cut_s": 0.89,
+        "depth_rel_db": -33.1,
+        "existing_pause_ms": 120,
+        "inserted_ms": 330,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 0.88,
+       "rate_before": 3.261,
+       "target": 4.0
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/_attempts/a1_c001_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.86,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -7.1,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 6
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/_attempts/a1_c001_01/a1.wav",
+     "seconds": 3.11,
+     "speech_seconds": 2.75,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -7.1,
+     "clipped_samples": 0,
+     "rate_cps": 3.27,
+     "rate_cps_net": 4.19,
+     "rate_cps_net_r": 3.72,
+     "pauses_ms": [
+      600
+     ],
+     "pauses_ms_r": [
+      300
+     ],
+     "f0_median": 346.9,
+     "f0_p10": 263.6,
+     "f0_p90": 389.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.72,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "平安你的燈籠好漂亮",
+      "cer": 0.111,
+      "per": 0.111,
+      "diffs": [
+       {
+        "ref": "品",
+        "hyp": "平",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "燈籠",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "平安你的燈籠好漂亮",
+      "cer": 0.111,
+      "per": 0.111,
+      "diffs": [
+       {
+        "ref": "品",
+        "hyp": "平",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "燈籠",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": [
+         {
+          "ref": "品",
+          "hyp": "平",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ],
+          "excuse": {
+           "name": "品安",
+           "edge_hyp": "平"
+          }
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": [
+         {
+          "ref": "品",
+          "hyp": "平",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ],
+          "excuse": {
+           "name": "品安",
+           "edge_hyp": "平"
+          }
+         }
+        ]
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "燈籠": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -34.0,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.72,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 9,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       600
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.42,
+         0.78
+        ],
+        "cut_s": 0.89,
+        "depth_rel_db": -33.1,
+        "existing_pause_ms": 120,
+        "inserted_ms": 330,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -7.1,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 7,
+    "billed_new": 7,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.19 秒處切掉 2.45 秒）",
+     "句首保護（送出加「嗯。」，在 1.4 秒處切掉）",
+     "PSOLA 改調 0.0 半音、長度 ×0.88（母帶前淨語速 3.261 → 目標 4.0）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "1AKkSX7KMPHIWuz76m0n",
+    "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "折",
+     "登籠": "燈籠",
+     "燈籠": "灯笼"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.88,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 7,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/out/vo_a1_c001_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/lipsync/a1_c001_01_el01.json",
+  "seconds": 3.11,
+  "speech_start": 0.12,
+  "speech_end": 2.86,
+  "speech_segments": [
+   [
+    0.11,
+    0.75
+   ],
+   [
+    1.34,
+    2.86
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": [
+       {
+        "ref": "品",
+        "hyp": "平",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ],
+        "excuse": {
+         "name": "品安",
+         "edge_hyp": "平"
+        }
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": [
+       {
+        "ref": "品",
+        "hyp": "平",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ],
+        "excuse": {
+         "name": "品安",
+         "edge_hyp": "平"
+        }
+       }
+      ]
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "燈籠": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -34.0,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.72,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 9,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     600
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       0.42,
+       0.78
+      ],
+      "cut_s": 0.89,
+      "depth_rel_db": -33.1,
+      "existing_pause_ms": 120,
+      "inserted_ms": 330,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -7.1,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/_attempts/a1_c001_01/a1.wav",
+   "seconds": 3.11,
+   "speech_seconds": 2.75,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -7.1,
+   "clipped_samples": 0,
+   "rate_cps": 3.27,
+   "rate_cps_net": 4.19,
+   "rate_cps_net_r": 3.72,
+   "pauses_ms": [
+    600
+   ],
+   "pauses_ms_r": [
+    300
+   ],
+   "f0_median": 346.9,
+   "f0_p10": 263.6,
+   "f0_p90": 389.2,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.72,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "t61gsmfqgpb6JQPhKno0"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 4.19 秒處切掉 2.45 秒）",
+   "句首保護（送出加「嗯。」，在 1.4 秒處切掉）",
+   "PSOLA 改調 0.0 半音、長度 ×0.88（母帶前淨語速 3.261 → 目標 4.0）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

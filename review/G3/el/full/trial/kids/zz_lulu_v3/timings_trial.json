@@ -1,0 +1,56 @@
+{
+ "a0_c002_02": {
+  "seconds": 7.12,
+  "speech_start": 0.12,
+  "speech_end": 6.87,
+  "speech_segments": [
+   [
+    0.12,
+    1.27
+   ],
+   [
+    1.41,
+    2.31
+   ],
+   [
+    2.79,
+    3.87
+   ],
+   [
+    4.03,
+    5.29
+   ],
+   [
+    6.22,
+    6.87
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_lulu_v3/out/vo_a0_c002_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_lulu_v3/lipsync/a0_c002_02_el01.json",
+  "role": "折折",
+  "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
+ },
+ "a0_c003_01": {
+  "seconds": 5.78,
+  "speech_start": 0.12,
+  "speech_end": 5.53,
+  "speech_segments": [
+   [
+    0.12,
+    1.8
+   ],
+   [
+    2.44,
+    3.52
+   ],
+   [
+    3.76,
+    5.53
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_lulu_v3/out/vo_a0_c003_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_lulu_v3/lipsync/a0_c003_01_el01.json",
+  "role": "折折",
+  "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！"
+ }
+}

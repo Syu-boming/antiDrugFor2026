@@ -1,0 +1,90 @@
+{
+ "_說明": "字幕與語音的時間差表（G3 修正清單第 14 項）。",
+ "method": "ffmpeg silencedetect noise=-45dB d=0.1；差值＝字幕頁起點−語音起點",
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "timeline": "review/G4/pack/timeline.json",
+ "rows": [
+  {
+   "cue": "a2_c002",
+   "line": "a2_c002_01",
+   "page": 1,
+   "text": "咦？／我想揮手……手怎麼跑到旁邊去了？",
+   "subtitle_start_s": 13.0,
+   "line_start_s": 13.0,
+   "voice_onset_in_file_s": 0.13,
+   "voice_start_s": 13.13,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c002_01_v02.wav"
+  },
+  {
+   "cue": "a2_c002",
+   "line": "a2_c002_02",
+   "page": 1,
+   "text": "叔叔，小心！",
+   "subtitle_start_s": 19.74,
+   "line_start_s": 19.74,
+   "voice_onset_in_file_s": 0.131,
+   "voice_start_s": 19.871,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c002_02_v02.wav"
+  },
+  {
+   "cue": "a2_c004",
+   "line": "a2_c004_01",
+   "page": 1,
+   "text": "阿樂叔叔身上這一條一條的線，／叫做操偶線。",
+   "subtitle_start_s": 0.8,
+   "line_start_s": 0.8,
+   "voice_onset_in_file_s": 0.138,
+   "voice_start_s": 0.938,
+   "diff_s": -0.138,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c004_01_v02.wav"
+  },
+  {
+   "cue": "a2_c004",
+   "line": "a2_c004_02",
+   "page": 1,
+   "text": "這些線是故事的比喻。",
+   "subtitle_start_s": 5.94,
+   "line_start_s": 5.94,
+   "voice_onset_in_file_s": 0.135,
+   "voice_start_s": 6.075,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c004_02_v02.wav"
+  },
+  {
+   "cue": "a2_c004",
+   "line": "a2_c004_02",
+   "page": 2,
+   "text": "毒品可能讓人的頭腦／和身體受到影響，不聽使喚。",
+   "subtitle_start_s": 8.702,
+   "line_start_s": 5.94,
+   "voice_onset_in_file_s": 3.457,
+   "voice_start_s": 9.397,
+   "diff_s": -0.695,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c004_02_v02.wav"
+  },
+  {
+   "cue": "a2_c004",
+   "line": "a2_c004_02",
+   "page": 3,
+   "text": "人不會真的變成喪屍。",
+   "subtitle_start_s": 14.778,
+   "line_start_s": 5.94,
+   "voice_onset_in_file_s": 9.408,
+   "voice_start_s": 15.348,
+   "diff_s": -0.569,
+   "pass": true,
+   "audio": "audio/vo/vo_a2_c004_02_v02.wav"
+  }
+ ],
+ "all_pass": true
+}

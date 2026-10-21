@@ -1,0 +1,1571 @@
+{
+ "a1_c003_02": {
+  "id": "a1_c003_02",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？",
+  "required": false,
+  "signature": "2119433f7800df89",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "f0_nominal": 276.9,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:31:26",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？",
+      "sent": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c003_02/xiaoqing_a0_s0_5ac1a5c86d96.mp3",
+      "request_id": "TC6E6GUtbe3iYnF11G7Q",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -33.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -15.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.5,
+       "t_fill_s": 5.02,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.65,
+        5.33
+       ],
+       "decay_end_s": 4.67,
+       "cut_s": 4.77,
+       "floor_rel_db": -32.6,
+       "removed_s": 1.23
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.12
+        ],
+        "cut_s": 2.15,
+        "depth_rel_db": -36.5,
+        "existing_pause_ms": 140,
+        "inserted_ms": 310,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.96,
+         3.3
+        ],
+        "cut_s": 3.29,
+        "depth_rel_db": -35.9,
+        "existing_pause_ms": 30,
+        "inserted_ms": 420,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c003_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.62,
+     "method": "loudnorm_two_pass",
+     "I": -17.9,
+     "TP": -4.9,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c003_02/a1.wav",
+     "seconds": 5.87,
+     "speech_seconds": 5.5,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -4.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.27,
+     "rate_cps_net": 3.91,
+     "rate_cps_net_r": 3.81,
+     "pauses_ms": [
+      450,
+      450
+     ],
+     "pauses_ms_r": [
+      330,
+      430
+     ],
+     "f0_median": 267.6,
+     "f0_p10": 226.5,
+     "f0_p90": 318.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.81,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -33.0,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.81,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 18,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       450,
+       450
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.94,
+         2.12
+        ],
+        "cut_s": 2.15,
+        "depth_rel_db": -36.5,
+        "existing_pause_ms": 140,
+        "inserted_ms": 310,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.96,
+         3.3
+        ],
+        "cut_s": 3.29,
+        "depth_rel_db": -35.9,
+        "existing_pause_ms": 30,
+        "inserted_ms": 420,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -4.9,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 10,
+    "billed_new": 10,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.77 秒處切掉 1.23 秒）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "1AKkSX7KMPHIWuz76m0n",
+    "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 10,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a1_c003_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a1_c003_02_el01.json",
+  "seconds": 5.87,
+  "speech_start": 0.12,
+  "speech_end": 5.62,
+  "speech_segments": [
+   [
+    0.12,
+    2.19
+   ],
+   [
+    2.63,
+    3.71
+   ],
+   [
+    4.15,
+    5.62
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -33.0,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.81,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 18,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     450,
+     450
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       1.94,
+       2.12
+      ],
+      "cut_s": 2.15,
+      "depth_rel_db": -36.5,
+      "existing_pause_ms": 140,
+      "inserted_ms": 310,
+      "clean": true
+     },
+     {
+      "boundary": 2,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       2.96,
+       3.3
+      ],
+      "cut_s": 3.29,
+      "depth_rel_db": -35.9,
+      "existing_pause_ms": 30,
+      "inserted_ms": 420,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -17.9,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -4.9,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c003_02/a1.wav",
+   "seconds": 5.87,
+   "speech_seconds": 5.5,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -4.9,
+   "clipped_samples": 0,
+   "rate_cps": 3.27,
+   "rate_cps_net": 3.91,
+   "rate_cps_net_r": 3.81,
+   "pauses_ms": [
+    450,
+    450
+   ],
+   "pauses_ms_r": [
+    330,
+    430
+   ],
+   "f0_median": 267.6,
+   "f0_p10": 226.5,
+   "f0_p90": 318.5,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.81,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "TC6E6GUtbe3iYnF11G7Q"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 4.77 秒處切掉 1.23 秒）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a1_c004_02": {
+  "id": "a1_c004_02",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "電子煙在臺灣是禁止的。",
+  "required": false,
+  "signature": "e1256ecbe84bc68b",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "f0_nominal": 276.9,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:30:29",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "電子煙在臺灣是禁止的。",
+      "sent": "電子煙在臺灣是禁止的。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c004_02/xiaoqing_a0_s0_dadfc508b93c.mp3",
+      "request_id": "5vHfiZ5CZdQThP4p5amh",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -33.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -20.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.34,
+       "t_fill_s": 3.18,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.38,
+        3.47
+       ],
+       "decay_end_s": 2.42,
+       "cut_s": 2.52,
+       "floor_rel_db": -30.8,
+       "removed_s": 1.64
+      },
+      "declicked": 0
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.61,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -5.1,
+     "limited": null,
+     "raw_head_silence_ms": 30,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a1.wav",
+     "seconds": 2.86,
+     "speech_seconds": 2.49,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.1,
+     "clipped_samples": 0,
+     "rate_cps": 4.02,
+     "rate_cps_net": 4.02,
+     "rate_cps_net_r": 4.05,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 260.7,
+     "f0_p10": 222.6,
+     "f0_p90": 313.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.05,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "劍血煙在臺灣是禁止的",
+      "cer": 0.2,
+      "per": 0.2,
+      "diffs": [
+       {
+        "ref": "電子",
+        "hyp": "劍血",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "電水淹在臺灣是靜止的",
+      "cer": 0.3,
+      "per": 0.2,
+      "diffs": [
+       {
+        "ref": "子煙",
+        "hyp": "水淹",
+        "kind": "字不同",
+        "span": [
+         1,
+         3
+        ]
+       },
+       {
+        "ref": "禁",
+        "hyp": "靜",
+        "kind": "字不同",
+        "span": [
+         7,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "電子",
+          "hyp": "劍血",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "子煙",
+          "hyp": "水淹",
+          "kind": "字不同",
+          "span": [
+           1,
+           3
+          ]
+         },
+         {
+          "ref": "禁",
+          "hyp": "靜",
+          "kind": "字不同",
+          "span": [
+           7,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -33.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.05,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 10,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.1,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 4.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.52 秒處切掉 1.64 秒）"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:30:47",
+    "seeds": {
+     "xiaoqing": 20261022
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "電子煙在臺灣是禁止的。",
+      "sent": "電子煙在臺灣是禁止的。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c004_02/xiaoqing_a1_s0_6569e70fc5cc.mp3",
+      "request_id": "tuvt3QYmVLyFukTvMuKU",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -33.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -19.2,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.18,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        2.19,
+        2.83
+       ],
+       "decay_end_s": 2.23,
+       "cut_s": 2.33,
+       "floor_rel_db": -32.3,
+       "removed_s": 1.03
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.082,
+       "rate_before": 4.329,
+       "target": 4.0
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.64,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -5.7,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 1
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a2.wav",
+     "seconds": 2.89,
+     "speech_seconds": 2.52,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -5.7,
+     "clipped_samples": 0,
+     "rate_cps": 3.97,
+     "rate_cps_net": 3.97,
+     "rate_cps_net_r": 4.0,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 261.8,
+     "f0_p10": 230.8,
+     "f0_p90": 365.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 260,
+     "rate_net_syll": 4.0,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "戒指炎在臺灣是禁止的",
+      "cer": 0.3,
+      "per": 0.3,
+      "diffs": [
+       {
+        "ref": "電子煙",
+        "hyp": "戒指炎",
+        "kind": "字不同",
+        "span": [
+         0,
+         3
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "蟹指煙在臺灣是靜止的",
+      "cer": 0.3,
+      "per": 0.3,
+      "diffs": [
+       {
+        "ref": "電子",
+        "hyp": "蟹指",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "ref": "禁",
+        "hyp": "靜",
+        "kind": "字不同",
+        "span": [
+         7,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "電子煙",
+        "status": "不一致（需複查）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "電子煙",
+          "hyp": "戒指炎",
+          "kind": "字不同",
+          "span": [
+           0,
+           3
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "電子",
+          "hyp": "蟹指",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         },
+         {
+          "ref": "禁",
+          "hyp": "靜",
+          "kind": "字不同",
+          "span": [
+           7,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "電子煙": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "不一致（需複查）"
+       }
+      },
+      "inconsistent": [
+       "電子煙"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -33.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.0,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 10,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.7,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 4.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.33 秒處切掉 1.03 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.082（母帶前淨語速 4.329 → 目標 4.0）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "1AKkSX7KMPHIWuz76m0n",
+    "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a1_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a1_c004_02_el01.json",
+  "seconds": 2.86,
+  "speech_start": 0.12,
+  "speech_end": 2.61,
+  "speech_segments": [
+   [
+    0.12,
+    2.61
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 3,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "電子",
+        "hyp": "劍血",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "子煙",
+        "hyp": "水淹",
+        "kind": "字不同",
+        "span": [
+         1,
+         3
+        ]
+       },
+       {
+        "ref": "禁",
+        "hyp": "靜",
+        "kind": "字不同",
+        "span": [
+         7,
+         8
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": false,
+    "words": {
+     "電子煙": {
+      "small": "不一致（需複查）",
+      "large-v3-turbo": "不一致（需複查）"
+     }
+    },
+    "inconsistent": [
+     "電子煙"
+    ],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -33.5,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.05,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 10,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -5.1,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a",
+   "b"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a1_c004_02/a1.wav",
+   "seconds": 2.86,
+   "speech_seconds": 2.49,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -5.1,
+   "clipped_samples": 0,
+   "rate_cps": 4.02,
+   "rate_cps_net": 4.02,
+   "rate_cps_net_r": 4.05,
+   "pauses_ms": [],
+   "pauses_ms_r": [],
+   "f0_median": 260.7,
+   "f0_p10": 222.6,
+   "f0_p90": 313.9,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.05,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "5vHfiZ5CZdQThP4p5amh"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.52 秒處切掉 1.64 秒）"
+  ]
+ },
+ "a5_c005_02": {
+  "id": "a5_c005_02",
+  "role": "小晴",
+  "codes": [
+   "xiaoqing"
+  ],
+  "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
+  "required": false,
+  "signature": "5faf5cc6704057b9",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.9,
+    4.1
+   ],
+   "f0_nominal": 276.9,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.4,
+    4.6
+   ],
+   "f0_range": [
+    246.7,
+    310.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:32:08",
+    "seeds": {
+     "xiaoqing": 20261021
+    },
+    "settings": {
+     "xiaoqing": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoqing",
+      "i": 0,
+      "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
+      "sent": "我去辦公室找林老師！你待在門裡面，不要過去。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c005_02/xiaoqing_a0_s0_895956fb92be.mp3",
+      "request_id": "l6n9rMiM5urR7nphgXKn",
+      "billed": 10,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -16.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -14.4,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 4.52,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        4.38,
+        4.51
+       ],
+       "decay_end_s": 4.39,
+       "cut_s": 4.49,
+       "floor_rel_db": -15.6,
+       "removed_s": 2.39
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.8,
+         2.42
+        ],
+        "cut_s": 2.38,
+        "depth_rel_db": -40.1,
+        "existing_pause_ms": 200,
+        "inserted_ms": 250,
+        "clean": true
+       }
+      ]
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a5_c005_02/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.86,
+     "method": "loudnorm_two_pass",
+     "I": -18.1,
+     "TP": -5.3,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a5_c005_02/a1.wav",
+     "seconds": 5.11,
+     "speech_seconds": 4.75,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -5.3,
+     "clipped_samples": 0,
+     "rate_cps": 4.0,
+     "rate_cps_net": 4.42,
+     "rate_cps_net_r": 4.26,
+     "pauses_ms": [
+      450
+     ],
+     "pauses_ms_r": [
+      280
+     ],
+     "f0_median": 252.8,
+     "f0_p10": 220.7,
+     "f0_p90": 324.3,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.26,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -16.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.26,
+      "range": [
+       3.4,
+       4.6
+      ],
+      "syllables": 19,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       450
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.8,
+         2.42
+        ],
+        "cut_s": 2.38,
+        "depth_rel_db": -40.1,
+        "existing_pause_ms": 200,
+        "inserted_ms": 250,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -5.3,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 10,
+    "billed_new": 10,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.49 秒處切掉 2.39 秒）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "1AKkSX7KMPHIWuz76m0n",
+    "voice_name": "Tiffy - Taiwanese Bilingual Narrator",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 10,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a5_c005_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a5_c005_02_el01.json",
+  "seconds": 5.11,
+  "speech_start": 0.12,
+  "speech_end": 4.86,
+  "speech_segments": [
+   [
+    0.11,
+    2.32
+   ],
+   [
+    2.76,
+    4.86
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -16.9,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.26,
+    "range": [
+     3.4,
+     4.6
+    ],
+    "syllables": 19,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     450
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       1.8,
+       2.42
+      ],
+      "cut_s": 2.38,
+      "depth_rel_db": -40.1,
+      "existing_pause_ms": 200,
+      "inserted_ms": 250,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.1,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -5.3,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/_attempts/a5_c005_02/a1.wav",
+   "seconds": 5.11,
+   "speech_seconds": 4.75,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -5.3,
+   "clipped_samples": 0,
+   "rate_cps": 4.0,
+   "rate_cps_net": 4.42,
+   "rate_cps_net_r": 4.26,
+   "pauses_ms": [
+    450
+   ],
+   "pauses_ms_r": [
+    280
+   ],
+   "f0_median": 252.8,
+   "f0_p10": 220.7,
+   "f0_p90": 324.3,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.26,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "l6n9rMiM5urR7nphgXKn"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 4.49 秒處切掉 2.39 秒）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

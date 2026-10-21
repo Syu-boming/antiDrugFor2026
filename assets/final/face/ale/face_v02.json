@@ -1,0 +1,195 @@
+{
+ "character": "ale",
+ "zh": "阿樂叔叔",
+ "version": "v02",
+ "head_image": {
+  "file": "assets/final/rig/chr-ale_head-worried_v04.png",
+  "image_id": "rig/chr-ale_head-worried",
+  "size": [
+   283,
+   424
+  ],
+  "note": "頭部圖＝分件困惑頭 chr-ale_head-worried_v04（rig 部件，與 head 同樞紐）"
+ },
+ "pack_ids": "圖像 id＝相對 assets/final 的路徑去掉 _vNN（tools/pack.mjs）；本檔的 JSON id＝face/<角色>/face。",
+ "coords": "anchor_px＝換片左上角在頭部圖上的像素座標（y 向下）；同一組（嘴、眼）所有換片同錨點、同尺寸，直接疊在頭部圖上即可。",
+ "z_order": "頭部圖 < 眼睛換片 < 嘴巴換片（兩組不重疊）；換片永遠畫在頭部圖正上方、同一變換。",
+ "swap_rule": "硬切換（不做透明度交叉淡化，角色表 0.6）；眨眼：eyes_closed 停 2–3 格（12 fps），每 3–6 秒一次；轉頭／情緒轉折時加眨一次。",
+ "lipsync_map": {
+  "0": "mouth_closed",
+  "1": "mouth_half",
+  "2": "mouth_open",
+  "3": "mouth_round"
+ },
+ "rest_mouth": "mouth_worried",
+ "rest_eyes": "eyes_open",
+ "groups": {
+  "mouth": {
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ]
+  },
+  "eyes": {
+   "anchor_px": [
+    124,
+    150
+   ],
+   "size": [
+    98,
+    50
+   ]
+  }
+ },
+ "pieces": {
+  "mouth_closed": {
+   "file": "assets/final/face/ale/chr-ale_mouth_closed_v01.png",
+   "image_id": "face/ale/chr-ale_mouth_closed",
+   "group": "mouth",
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 153
+  },
+  "mouth_half": {
+   "file": "assets/final/face/ale/chr-ale_mouth_half_v01.png",
+   "image_id": "face/ale/chr-ale_mouth_half",
+   "group": "mouth",
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 288
+  },
+  "mouth_open": {
+   "file": "assets/final/face/ale/chr-ale_mouth_open_v01.png",
+   "image_id": "face/ale/chr-ale_mouth_open",
+   "group": "mouth",
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 422
+  },
+  "mouth_round": {
+   "file": "assets/final/face/ale/chr-ale_mouth_round_v01.png",
+   "image_id": "face/ale/chr-ale_mouth_round",
+   "group": "mouth",
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 318
+  },
+  "mouth_worried": {
+   "file": "assets/final/face/ale/chr-ale_mouth_worried_v01.png",
+   "image_id": "face/ale/chr-ale_mouth_worried",
+   "group": "mouth",
+   "anchor_px": [
+    128,
+    219
+   ],
+   "size": [
+    70,
+    33
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_open": {
+   "file": "assets/final/face/ale/chr-ale_eyes_open_v01.png",
+   "image_id": "face/ale/chr-ale_eyes_open",
+   "group": "eyes",
+   "anchor_px": [
+    124,
+    150
+   ],
+   "size": [
+    98,
+    50
+   ],
+   "source": "原圖（未改）",
+   "changed_px": 0
+  },
+  "eyes_half": {
+   "file": "assets/final/face/ale/chr-ale_eyes_half_v01.png",
+   "image_id": "face/ale/chr-ale_eyes_half",
+   "group": "eyes",
+   "anchor_px": [
+    124,
+    150
+   ],
+   "size": [
+    98,
+    50
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 375
+  },
+  "eyes_closed": {
+   "file": "assets/final/face/ale/chr-ale_eyes_closed_v02.png",
+   "image_id": "face/ale/chr-ale_eyes_closed",
+   "group": "eyes",
+   "anchor_px": [
+    124,
+    150
+   ],
+   "size": [
+    98,
+    50
+   ],
+   "source": "原圖局部填補＋程式畫剪紙風線條",
+   "changed_px": 611
+  }
+ },
+ "colors": {
+  "line": [
+   48,
+   15,
+   1
+  ],
+  "inside": [
+   118,
+   48,
+   44
+  ],
+  "tongue": [
+   214,
+   116,
+   100
+  ],
+  "lash": [
+   4,
+   2,
+   0
+  ]
+ },
+ "stage_scale_hint": 0.39,
+ "expression_hint": "X10 困惑＝eyes_half＋（眉在頭部圖上已是擔心眉）＋mouth_worried（說話時 lipsync）；X11 疲倦＝eyes_half＋mouth_closed；X12 閉眼靠著＝eyes_closed＋mouth_closed。",
+ "change_log": "v02（G4 修正第 1 輪）：eyes_closed 改中性閉眼（往下彎的眼皮線），取代 v01 的笑眼弧線；其餘換片沿用 v01。"
+}

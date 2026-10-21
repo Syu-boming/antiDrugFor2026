@@ -1,0 +1,63 @@
+{
+ "a1_c004_06": {
+  "seconds": 3.48,
+  "speech_start": 0.12,
+  "speech_end": 3.23,
+  "speech_segments": [
+   [
+    0.11,
+    3.23
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/pa_yui_v3_m3/out/vo_a1_c004_06_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_yui_v3_m3/lipsync/a1_c004_06_el01.json",
+  "role": "品安",
+  "text": "你們先走，我把燈籠收好就來。"
+ },
+ "a6_c002_02": {
+  "seconds": 11.54,
+  "speech_start": 0.12,
+  "speech_end": 11.29,
+  "speech_segments": [
+   [
+    0.12,
+    2.16
+   ],
+   [
+    2.91,
+    5.67
+   ],
+   [
+    6.89,
+    8.28
+   ],
+   [
+    8.97,
+    11.31
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/pa_yui_v3_m3/out/vo_a6_c002_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_yui_v3_m3/lipsync/a6_c002_02_el01.json",
+  "role": "品安",
+  "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+ },
+ "a7_c003_01": {
+  "seconds": 3.91,
+  "speech_start": 0.12,
+  "speech_end": 3.66,
+  "speech_segments": [
+   [
+    0.13,
+    2.11
+   ],
+   [
+    2.39,
+    3.66
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/pa_yui_v3_m3/out/vo_a7_c003_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_yui_v3_m3/lipsync/a7_c003_01_el01.json",
+  "role": "品安",
+  "text": "有讓你擔心的秘密，也可以找大人說。"
+ }
+}

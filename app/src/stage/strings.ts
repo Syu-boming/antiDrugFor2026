@@ -1,90 +1,133 @@
-// 操偶線（v1.2 第 15.2 節、G2 一般問題第 2 項）：
-// - 平面紙繩：中灰紙帶＋紙纖維、兩側深灰邊線、左側一道受光邊；不做扭絞鋼索紋。
-//   明度：紙帶 L*≈48，對阿樂的皮膚（L*≈76）與袖口（L*≈88）ΔL* ≥ 25；深灰邊 L*≈22。
+// 操偶線（v1.2 第 15.2 節；G4 修正第 1 輪第 22、23、34 項）：
+// - 紙繩：素材貼圖 tex-string-rope（64×256；v02 起為平面紙繩：淡灰繩身 sRGB≈184＋不規則短纖維點紋（無扭紋）、兩側深灰邊、左側淡色受光邊；G4 關卡決定，主線更新）；
+//   沒有素材時用程式畫的退路貼圖。線寬 0.043 世界單位＝g4 中景約 8 px（規格 6–10 px），兩側深灰邊各約 1.5 px。
 //   用不受光照影響的材質（亮度只跟舞台燈總量走），擷取量得到的 ΔL* 才穩定。
-// - 寬度：中景約 9 px、近景 ≥ 8 px（1080p）。
-// - 從畫面上方外面垂下，下端以紙環扣在錨點（紙環是包住肢體的一圈紙帶）；不畫操控者的手或人影。
+// - 紙環：素材貼圖 tex-string-ring v02（128×128 米白紙環 sRGB≈(251,242,222)＋紙紋、暖棕細描邊、右下單側厚紙陰影，中間透明；
+//   G4 修正第 2 輪第 8 項）。貼圖取樣 LOD 偏移 −1（環身不被描邊糊灰）；last.ring＝紙環實際畫的位置（含前移 RING_Z）。
+//   正方形、直徑 0.103 世界單位（約 2.4 倍線寬），正對鏡頭、不隨肢體旋轉、不拉長；不用矩形帶、鉚釘或扁板。
+//   紙環中心＝扣點（扣點在肢體剪影內，見 assets/final/rig/ale_attach_v05.json）；線的下端停在紙環上緣（往線的方向退 0.4×直徑），
+//   紙環畫在部件與線的上面。
+// - 從畫面上方外面垂下；不畫操控者的手或人影。
 // - 受力順序：線先繃緊（弧度消失），肢體才被拉動；擺盪用固定步長的彈簧阻尼模擬，每個 cue 開始時重設，
 //   所以重播與上一步會得到一模一樣的畫面。
+// - 鬆垂弧（G4 修正第 2 輪第 6 項）：線還鬆時，彎曲集中在「紙環往上 sagLength()」這一段（畫面裡看得到的下段），
+//   形狀 sagShape(u)＝6.75·u·(1−u)²：最大偏移在下段 1/3 處，往上以斜率 0 平順接回直線（沒有折角）；
+//   g4 中景線鬆（張力 0.2）時，畫面中段偏離直線約 20–30 px；張力 1 時 bow＝0，整條線是直線。
+//   網格在下段細分 30 段、上段（直線）6 段；中心線世界座標存在 last.path，擷取量測（Stage.probe）直接投影這條線。
 // - 復原 API：鬆（tension→0、弧度變大）、淡（opacity）、脫落（紙環打開、線往上飄出畫面）；沒有「剪斷」。
 import {
-  BufferAttribute, BufferGeometry, CanvasTexture, DoubleSide, Mesh, MeshBasicMaterial, PlaneGeometry, RepeatWrapping, Vector3,
+  BufferAttribute, BufferGeometry, CanvasTexture, DoubleSide, LinearFilter, LinearMipmapLinearFilter, Mesh, MeshBasicMaterial, PlaneGeometry,
+  RepeatWrapping, SRGBColorSpace, Texture, Vector3,
 } from 'three';
 import { finishTexture, makeCanvas } from './paper';
 import { seeded } from '../util/math';
 
-export const ROPE_COLORS = { body: '#77746f', edge: '#3a3835', lit: '#c9c5bc', fiberDark: 'rgba(40,38,34,0.16)', fiberLight: 'rgba(235,232,224,0.18)' };
+export const ROPE_COLORS = { body: '#b3b0aa', edge: '#403d3a', lit: '#d7d4cc', fiberDark: 'rgba(40,38,34,0.16)', fiberLight: 'rgba(245,242,234,0.2)' };
 
-/** 平面紙繩貼圖（u＝橫跨寬度，v＝沿長度重複） */
+/** 退路紙繩貼圖（素材 tex-string-rope 缺圖時）：淡灰紙繩身、斜向扭紋、兩側深灰邊、左側受光邊（u＝橫跨寬度，v＝沿長度重複） */
 export function ropeTexture(): CanvasTexture {
   const W = 64, H = 256;
   const [c, g] = makeCanvas(W, H);
   g.fillStyle = ROPE_COLORS.body;
   g.fillRect(0, 0, W, H);
-  // 紙纖維：沿長度方向的細短線與斑點（不成螺旋）
+  // 斜向扭紋（每個週期 3 道）＋紙纖維
+  g.strokeStyle = 'rgba(70,64,58,0.22)';
+  g.lineWidth = 5;
+  for (let k = -1; k < 4; k++) { const y = k * (H / 3); g.beginPath(); g.moveTo(10, y + 30); g.lineTo(W - 10, y); g.stroke(); }
   const r = seeded(913);
-  for (let i = 0; i < 260; i++) {
-    const x = 9 + r() * (W - 18), y = r() * H, len = 4 + r() * 14;
+  for (let i = 0; i < 220; i++) {
+    const x = 12 + r() * (W - 24), y = r() * H, len = 4 + r() * 12;
     g.strokeStyle = r() < 0.5 ? ROPE_COLORS.fiberDark : ROPE_COLORS.fiberLight;
     g.lineWidth = 0.7 + r() * 0.8;
     g.beginPath(); g.moveTo(x, y); g.lineTo(x + (r() - 0.5) * 3, y + len); g.stroke();
   }
-  // 兩側深灰邊線（各約 15%）＋左側受光邊
   g.fillStyle = ROPE_COLORS.edge;
-  g.fillRect(0, 0, 9, H);
-  g.fillRect(W - 10, 0, 10, H);
+  g.fillRect(0, 0, 12, H);
+  g.fillRect(W - 12, 0, 12, H);
   g.fillStyle = ROPE_COLORS.lit;
-  g.fillRect(9, 0, 4, H);
-  g.fillStyle = 'rgba(0,0,0,0.10)';
-  g.fillRect(W - 16, 0, 6, H); // 右側背光
+  g.fillRect(12, 0, 6, H);
   const t = finishTexture(new CanvasTexture(c));
   t.wrapS = RepeatWrapping;
   t.wrapT = RepeatWrapping;
   return t;
 }
 
-/** 紙環貼圖：米白紙帶、上下深色紙邊、中間一道摺痕、上緣中央綁線的小結 */
+/** 退路紙環貼圖（素材 tex-string-ring 缺圖時）：透明底上的圓環（外深灰細線、白紙芯邊、淡灰環身、內深灰細線） */
 export function ringTexture(): CanvasTexture {
-  const W = 128, H = 48;
-  const [c, g] = makeCanvas(W, H);
-  g.fillStyle = '#efe6d3';
-  g.fillRect(0, 0, W, H);
-  g.fillStyle = 'rgba(120,96,70,0.18)';
-  g.fillRect(0, H * 0.48, W, 3);
-  g.fillStyle = '#4d4034';
-  g.fillRect(0, 0, W, 5);
-  g.fillRect(0, H - 5, W, 5);
-  g.fillRect(0, 0, 4, H);
-  g.fillRect(W - 4, 0, 4, H);
-  // 兩端略暗（紙帶繞到肢體後面）
-  const grd = g.createLinearGradient(0, 0, W, 0);
-  grd.addColorStop(0, 'rgba(60,45,30,0.35)'); grd.addColorStop(0.18, 'rgba(60,45,30,0)');
-  grd.addColorStop(0.82, 'rgba(60,45,30,0)'); grd.addColorStop(1, 'rgba(60,45,30,0.35)');
-  g.fillStyle = grd;
-  g.fillRect(0, 0, W, H);
-  // 綁線的小結（灰色）
-  g.fillStyle = ROPE_COLORS.edge;
-  g.beginPath(); g.ellipse(W / 2, 9, 9, 7, 0, 0, Math.PI * 2); g.fill();
-  g.fillStyle = ROPE_COLORS.body;
-  g.beginPath(); g.ellipse(W / 2, 9, 5.5, 4, 0, 0, Math.PI * 2); g.fill();
+  // 與素材 tex-string-ring v02 一致：米白紙環（#FBF2DE）、暖棕細描邊（#4A3426）、右下單側厚紙陰影，沒有金屬漸層或高光
+  const S = 128;
+  const [c, g] = makeCanvas(S, S);
+  const ring = (cx: number, cy: number, r: number, w: number, col: string): void => { g.strokeStyle = col; g.lineWidth = w; g.beginPath(); g.arc(cx, cy, r, 0, Math.PI * 2); g.stroke(); };
+  ring(S / 2 + 3, S / 2 + 4, 42, 22, 'rgba(132,106,78,0.9)');
+  ring(S / 2, S / 2, 42, 24, '#4a3426');
+  ring(S / 2, S / 2, 42, 19, '#fbf2de');
   return finishTexture(new CanvasTexture(c));
 }
 
-let ropeTex: CanvasTexture | null = null;
-let ringTex: CanvasTexture | null = null;
+let ropeTex: Texture | null = null;
+let ringTex: Texture | null = null;
+
+/**
+ * 換用素材貼圖（Stage.setScene 在建立紙偶前呼叫）：rope＝tex-string-rope、ring＝tex-string-ring；缺圖時用程式畫的退路。
+ * anisotropy：細長的紙繩斜著貼時保留扭紋（渲染器支援的上限內）。
+ */
+export function configureStringTextures(rope: CanvasImageSource | undefined, ring: CanvasImageSource | undefined, anisotropy = 4): { rope: 'image' | 'fallback'; ring: 'image' | 'fallback' } {
+  const mk = (img: CanvasImageSource, repeat: boolean): Texture => {
+    const t = new Texture(img as HTMLImageElement);
+    t.colorSpace = SRGBColorSpace;
+    t.generateMipmaps = true;
+    t.minFilter = LinearMipmapLinearFilter;
+    t.magFilter = LinearFilter;
+    t.anisotropy = anisotropy;
+    if (repeat) { t.wrapS = RepeatWrapping; t.wrapT = RepeatWrapping; }
+    t.needsUpdate = true;
+    return t;
+  };
+  ropeTex = rope ? mk(rope, true) : null;
+  ringTex = ring ? mk(ring, false) : null;
+  return { rope: rope ? 'image' : 'fallback', ring: ring ? 'image' : 'fallback' };
+}
 
 export function ropeMaterial(): MeshBasicMaterial {
   ropeTex ??= ropeTexture();
   return new MeshBasicMaterial({ map: ropeTex, side: DoubleSide });
 }
 
+/**
+ * 紙環貼圖取樣往細一級 mip（LOD 偏移 −1）：紙環在畫面上只有約 15–27 px，預設三線性取樣會用到 16–32 px 的 mip，
+ * 深棕描邊與厚紙陰影被糊進米白環身，看起來變灰（G4 修正第 2 輪第 8 項）；偏移後環身保持紙色，描邊仍有反鋸齒。
+ */
+const RING_LOD_BIAS = -1.0;
+
 export function ringMaterial(): MeshBasicMaterial {
   ringTex ??= ringTexture();
-  return new MeshBasicMaterial({ map: ringTex, side: DoubleSide });
+  // 紙環素材是透明圓環：刀切邊（alphaTest），中間看得到肢體
+  const m = new MeshBasicMaterial({ map: ringTex, side: DoubleSide, alphaTest: 0.5, transparent: false });
+  m.onBeforeCompile = (shader) => {
+    shader.fragmentShader = shader.fragmentShader.replace('#include <map_fragment>',
+      `#ifdef USE_MAP\n\tvec4 sampledDiffuseColor = texture2D( map, vMapUv, ${RING_LOD_BIAS.toFixed(2)} );\n\tdiffuseColor *= sampledDiffuseColor;\n#endif`);
+  };
+  m.customProgramCacheKey = () => 'paper-ring-lodbias';
+  return m;
 }
 
-const SEGMENTS = 36;
-const tmpA = new Vector3();
+/** 紙環在線前面多少（世界單位）；last.ring 記的是紙環實際畫的位置（含這個前移），量測的紙環中心才和畫面一致 */
+const RING_Z = 0.02;
+
+/** 紙環直徑（世界單位）：約 2.4 倍線寬，中景約 19 px（assets/final/g4_manifest.json string_render） */
+export const RING_DIAMETER = 0.103;
+
+/** 網格分段：下段（鬆垂弧所在）30 段＋上段（直線）6 段 */
+const SEG_LOW = 30;
+const SEG_HIGH = 6;
+const SEGMENTS = SEG_LOW + SEG_HIGH;
+const tmpB = new Vector3();
+
+/** 鬆垂弧形狀（u＝從紙環往上的距離 ÷ 下段長度）：u＝0 與 1 時為 0，最大值 1 在 u＝1/3，u＝1 處斜率 0 */
+export function sagShape(u: number): number { return u <= 0 || u >= 1 ? 0 : 6.75 * u * (1 - u) * (1 - u); }
+function sagSlope(u: number): number { return u <= 0 || u >= 1 ? 0 : 6.75 * (1 - u) * (1 - 3 * u); }
+/** 鬆垂弧所在的下段長度（世界單位）：線長的 20%，限制在 1.0–3.0（g4 中景約等於畫面裡看得到的線段） */
+export function sagLength(len: number): number { return Math.max(1.0, Math.min(3.0, len * 0.2)); }
 
 export interface StringPose {
   top: Vector3;
@@ -97,9 +140,8 @@ export interface StringPose {
   opacity: number;
   /** 紙環：0＝沒扣上、1＝扣好；脫落時從 1 往 0 */
   ring: number;
-  /** 紙環方向（世界角度，弧度：肢體方向）與寬度（包住的肢體寬度） */
-  ringAngle: number;
-  ringWidth: number;
+  /** 紙環直徑（世界單位；省略＝RING_DIAMETER） */
+  ringDiameter?: number;
   /** 舞台燈總量（紙繩不受光照，亮度跟著舞台燈走） */
   light: number;
 }
@@ -112,8 +154,10 @@ export class PaperString {
   readonly ringMat: MeshBasicMaterial;
   private pos: Float32Array;
   private uv: Float32Array;
-  /** 最近一次的螢幕取樣資訊（測試與擷取量測用） */
-  last: { top: Vector3; bottom: Vector3; width: number; visible: boolean; bow: number } = { top: new Vector3(), bottom: new Vector3(), width: 0, visible: false, bow: 0 };
+  /** 中心線世界座標（x,y,z × 37 點，上端 → 下端） */
+  private center = new Float32Array((SEGMENTS + 1) * 3);
+  /** 最近一次的螢幕取樣資訊（測試與擷取量測用）；path＝中心線世界座標（上端 → 線的下端，37 點） */
+  last: { top: Vector3; bottom: Vector3; width: number; visible: boolean; bow: number; ring: Vector3 | null; ringD: number; path: Float32Array } = { top: new Vector3(), bottom: new Vector3(), width: 0, visible: false, bow: 0, ring: null, ringD: 0, path: new Float32Array(0) };
 
   constructor(renderOrder: number) {
     this.ropeMat = ropeMaterial();
@@ -144,20 +188,33 @@ export class PaperString {
   update(p: StringPose): void {
     if (p.opacity <= 0.002) { this.hide(); return; }
     this.mesh.visible = true;
-    const { top, bottom } = p;
-    const dx = bottom.x - top.x, dy = bottom.y - top.y;
-    const len = Math.hypot(dx, dy) || 1;
-    const nx = -dy / len, ny = dx / len;
-    const cx = (top.x + bottom.x) / 2 + nx * p.bow, cy = (top.y + bottom.y) / 2 + ny * p.bow;
-    const cz = (top.z + bottom.z) / 2;
-    const vRepeat = len / (p.width * 4);
+    const { top } = p;
+    // 中心線：從扣點（紙環中心 p.bottom）沿直線往上到 top，再加上側向的鬆垂弧 bow·sagShape(s／Ls)
+    //（s＝沿直線從扣點往上的距離）。紙環扣上時，線的下端停在紙環上緣：從 s0＝0.4×直徑開始畫。
+    const D = p.ringDiameter ?? RING_DIAMETER;
+    const ringOn = p.ring > 0.01;
+    const pop = p.ring < 1 ? 0.6 + 0.4 * p.ring : 1;
+    const ax = p.bottom.x, ay = p.bottom.y, az = p.bottom.z;
+    const ux0 = top.x - ax, uy0 = top.y - ay;
+    const len = Math.hypot(ux0, uy0) || 1;
+    const ux = ux0 / len, uy = uy0 / len;
+    // 法線（與舊版二次貝茲相同的方向慣例：bow > 0 往 (uy, −ux)）
+    const nx = uy, ny = -ux;
+    const Ls = Math.min(sagLength(len), len);
+    const s0 = ringOn ? Math.min(0.4 * D * pop, len * 0.5) : 0;
+    const bow = p.bow;
     for (let i = 0; i <= SEGMENTS; i++) {
-      const t = i / SEGMENTS, it = 1 - t;
-      const px = it * it * top.x + 2 * it * t * cx + t * t * bottom.x;
-      const py = it * it * top.y + 2 * it * t * cy + t * t * bottom.y;
-      const pz = it * it * top.z + 2 * it * t * cz + t * t * bottom.z;
-      const tx = 2 * it * (cx - top.x) + 2 * t * (bottom.x - cx);
-      const ty = 2 * it * (cy - top.y) + 2 * t * (bottom.y - cy);
+      // i＝0 在上端；下段（i ≥ SEG_HIGH）細分
+      const sd = i <= SEG_HIGH ? len - (len - Ls) * (i / SEG_HIGH) : Ls - (Ls - s0) * ((i - SEG_HIGH) / SEG_LOW);
+      const s = Math.max(s0, sd);
+      const u = s / Ls;
+      const off = bow * sagShape(u);
+      const px = ax + ux * s + nx * off;
+      const py = ay + uy * s + ny * off;
+      const pz = az + (top.z - az) * (s / len);
+      // 切線（往上）：up＋法線×bow·g'(u)／Ls
+      const sl = s < Ls ? (bow * sagSlope(u)) / Ls : 0;
+      const tx = ux + nx * sl, ty = uy + ny * sl;
       const tl = Math.hypot(tx, ty) || 1;
       // 紙帶寬度：u=0 在畫面左側（受光邊在左）
       let ox = (-ty / tl) * p.width / 2, oy = (tx / tl) * p.width / 2;
@@ -165,10 +222,14 @@ export class PaperString {
       const k = i * 6;
       this.pos[k] = px + ox; this.pos[k + 1] = py + oy; this.pos[k + 2] = pz;
       this.pos[k + 3] = px - ox; this.pos[k + 4] = py - oy; this.pos[k + 5] = pz;
-      const u = i * 4;
-      this.uv[u] = 0; this.uv[u + 1] = t * vRepeat;
-      this.uv[u + 2] = 1; this.uv[u + 3] = t * vRepeat;
+      const c3 = i * 3;
+      this.center[c3] = px; this.center[c3 + 1] = py; this.center[c3 + 2] = pz;
+      const v = (len - s) / (p.width * 4);
+      const uvk = i * 4;
+      this.uv[uvk] = 0; this.uv[uvk + 1] = v;
+      this.uv[uvk + 2] = 1; this.uv[uvk + 3] = v;
     }
+    const bottom = tmpB.set(this.center[SEGMENTS * 3], this.center[SEGMENTS * 3 + 1], this.center[SEGMENTS * 3 + 2]);
     const geo = this.mesh.geometry;
     geo.attributes.position.needsUpdate = true;
     geo.attributes.uv.needsUpdate = true;
@@ -181,16 +242,14 @@ export class PaperString {
     this.ringMat.opacity = p.opacity;
     this.ropeMat.depthWrite = !fade;
     this.ringMat.depthWrite = !fade;
-    this.last = { top: top.clone(), bottom: bottom.clone(), width: p.width, visible: true, bow: p.bow };
+    this.last = { top: top.clone(), bottom: bottom.clone(), width: p.width, visible: true, bow: p.bow, ring: ringOn ? new Vector3(p.bottom.x, p.bottom.y, p.bottom.z + RING_Z) : null, ringD: ringOn ? D * pop : 0, path: this.center };
 
-    // 紙環：包住肢體的紙帶（長邊垂直於肢體方向），扣上時由 0.6 倍彈到原尺寸
-    this.ring.visible = p.ring > 0.01;
-    if (this.ring.visible) {
-      tmpA.copy(bottom);
-      const pop = p.ring < 1 ? 0.6 + 0.4 * p.ring : 1;
-      this.ring.position.set(tmpA.x, tmpA.y, tmpA.z + 0.02);
-      this.ring.rotation.set(0, 0, p.ringAngle + Math.PI / 2);
-      this.ring.scale.set((p.ringWidth + 0.04) * pop, Math.max(0.06, p.width * 1.05) * pop, 1);
+    // 紙環：正方形圓環貼圖，正對鏡頭、不隨肢體旋轉；扣上時由 0.6 倍彈到原尺寸
+    this.ring.visible = ringOn;
+    if (ringOn) {
+      this.ring.position.set(p.bottom.x, p.bottom.y, p.bottom.z + RING_Z);
+      this.ring.rotation.set(0, 0, 0);
+      this.ring.scale.set(D * pop, D * pop, 1);
     }
   }
 }

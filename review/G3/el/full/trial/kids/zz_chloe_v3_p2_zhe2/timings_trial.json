@@ -1,0 +1,40 @@
+{
+ "a0_c002_02": {
+  "seconds": 5.1,
+  "speech_start": 0.12,
+  "speech_end": 4.85,
+  "speech_segments": [
+   [
+    0.11,
+    4.85
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/out/vo_a0_c002_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/lipsync/a0_c002_02_el01.json",
+  "role": "折折",
+  "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
+ },
+ "a6_c007_01": {
+  "seconds": 3.36,
+  "speech_start": 0.12,
+  "speech_end": 3.11,
+  "speech_segments": [
+   [
+    0.11,
+    0.55
+   ],
+   [
+    0.7,
+    1.69
+   ],
+   [
+    2.1,
+    3.11
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/out/vo_a6_c007_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_chloe_v3_p2_zhe2/lipsync/a6_c007_01_el01.json",
+  "role": "折折",
+  "text": "我……我摺成了！真的是燈籠！"
+ }
+}

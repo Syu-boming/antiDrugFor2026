@@ -1,15 +1,25 @@
 // 對白壓低配樂（ducking）的排程規則：純函式，tools/engine-test.mjs 會直接用 Node 執行它做單元測試。
 // 這個檔只能用 `import type`。
 
-/** 對白時配樂壓到這個比例（約 −10 dB） */
-export const DUCK_LEVEL = 0.32;
+/**
+ * 對白時配樂壓到這個比例（約 −5 dB）。G3 修正第 9 項：台詞比背景約高 15–18 LU、必要旁白句間停頓的背景維持在約 −30 LUFS
+ *（review/G3/mix_r1.json 的離線模擬；配樂 music_m4_light 同步改為 v02 −24 LUFS）。
+ */
+export const DUCK_LEVEL = 0.56;
 /** 說話前多久開始壓低（秒）、壓低的時間常數 */
 export const DUCK_LEAD = 0.15;
 export const DUCK_TC_DOWN = 0.06;
-/** 說完後多久回升（秒）、回升的時間常數；相鄰兩句間隔短於 BRIDGE 秒時中間不回升 */
+/**
+ * 說完後多久回升（秒）、回升的時間常數；相鄰兩句間隔短於 BRIDGE 秒時中間不回升。
+ * 同一個配音檔內的句間停頓（例如必要旁白一三句之間 1.3 秒）整段都算說話中，不回升也不再往下壓。
+ */
 export const DUCK_RELEASE = 0.3;
 export const DUCK_TC_UP = 0.25;
 export const DUCK_BRIDGE = 0.9;
+
+/** 教師停格（場景 cue 播完、等老師按鍵）時配樂降到基準音量的這個比例（約 −20 dB），時間常數 HOLD_TC 秒：3 秒內 ≤ −35 LUFS（G3 修正第 11 項） */
+export const HOLD_MUSIC_RATIO = 0.1;
+export const HOLD_TC = 0.6;
 
 export interface DuckStep { at: number; value: number; tc: number }
 

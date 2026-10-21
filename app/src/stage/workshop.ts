@@ -28,6 +28,8 @@ export interface WorkshopG4 {
   tableEdge: [number, number];
   /** 角色站位參考 */
   marks: Record<string, { x: number; z: number }>;
+  /** 量測用地標（世界座標）：工作台桌面上緣、圓凳座面上緣（驗收包量扶桌與臀部離凳用） */
+  landmarks: Record<string, { x0: number; x1: number; y: number; z: number }>;
 }
 
 type Draw = (g: CanvasRenderingContext2D, W: number, H: number) => void;
@@ -343,6 +345,11 @@ export function buildWorkshopG4(opts: { alphaToCoverage: boolean; image?: (id: s
   return {
     group, pieces, materials: mats, tableEdge: [TABLE.x0 + 0.1, TABLE.top],
     marks: { ale: { x: -2.6, z: 0 }, xiaoqing: { x: 1.85, z: 0.45 }, xiaoyu: { x: 3.35, z: -0.5 } },
+    landmarks: {
+      tableTop: { x0: TABLE.x0, x1: TABLE.x1, y: TABLE.top, z: TABLE.z },
+      // 圓凳：寬 0.9、高 0.98，座面橢圓橫跨 4%–96%
+      stoolTop: { x0: -2.6 - 0.414, x1: -2.6 + 0.414, y: 0.98, z: -0.32 },
+    },
   };
 }
 

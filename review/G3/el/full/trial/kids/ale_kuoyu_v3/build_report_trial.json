@@ -1,0 +1,2133 @@
+{
+ "a2_c002_01": {
+  "id": "a2_c002_01",
+  "role": "阿樂叔叔",
+  "codes": [
+   "ale"
+  ],
+  "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+  "required": false,
+  "signature": "2cfe28a28ca7d4b6",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.3,
+    3.5
+   ],
+   "f0_nominal": 103.0,
+   "source": "角色表第 3 節／casting.json note",
+   "note": "阿樂受影響段（角色表 3.3–3.5）",
+   "rate_range": [
+    2.8,
+    4.0
+   ],
+   "f0_range": [
+    91.8,
+    115.6
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:48:00",
+    "seeds": {
+     "ale": 20261021
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "sent": "咦？我想揮手……手怎麼跑到旁邊去了？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c002_01/ale_a0_s0_7ce7bb5560eb.mp3",
+      "request_id": "0P4vVB4CYnQ7qwSO58J4",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -58.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -51.0,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 2.88,
+       "t_fill_s": 3.76,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        2.89,
+        4.08
+       ],
+       "decay_end_s": 3.05,
+       "cut_s": 3.15,
+       "floor_rel_db": -59.0,
+       "removed_s": 1.65
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.2,
+         0.4
+        ],
+        "cut_s": 0.41,
+        "depth_rel_db": -56.6,
+        "existing_pause_ms": 190,
+        "inserted_ms": 160,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.38
+        ],
+        "cut_s": 1.34,
+        "depth_rel_db": -62.4,
+        "existing_pause_ms": 430,
+        "inserted_ms": 120,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.45,
+       "rate_before": 6.14,
+       "target": 3.4
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.73,
+     "method": "loudnorm_pass1_gain",
+     "I": -17.9,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 90,
+     "raw_tail_silence_ms": 274
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a1.wav",
+     "seconds": 4.98,
+     "speech_seconds": 4.61,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.04,
+     "rate_cps_net": 4.28,
+     "rate_cps_net_r": 4.29,
+     "pauses_ms": [
+      520,
+      820
+     ],
+     "pauses_ms_r": [
+      510,
+      800
+     ],
+     "f0_median": 118.5,
+     "f0_p10": 96.7,
+     "f0_p90": 483.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.29,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "咦我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "咦我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -58.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 4.29,
+      "range": [
+       2.8,
+       4.0
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       520,
+       820
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.2,
+         0.4
+        ],
+        "cut_s": 0.41,
+        "depth_rel_db": -56.6,
+        "existing_pause_ms": 190,
+        "inserted_ms": 160,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.38
+        ],
+        "cut_s": 1.34,
+        "depth_rel_db": -62.4,
+        "existing_pause_ms": 430,
+        "inserted_ms": 120,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -17.9,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "d"
+    ],
+    "problems": 1,
+    "detail_score": 0.29,
+    "billed": 9,
+    "billed_new": 9,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.15 秒處切掉 1.65 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.45（母帶前淨語速 6.14 → 目標 3.4）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:48:43",
+    "seeds": {
+     "ale": 20261022
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "sent": "咦？我想揮手……手怎麼跑到旁邊去了？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a2_c002_01/ale_a1_s0_572d49b6c725.mp3",
+      "request_id": "ghOIeVeEQ7UQWTlHlfwJ",
+      "billed": 9,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -63.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -20.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.92,
+       "t_fill_s": 5.16,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        4.02,
+        5.56
+       ],
+       "decay_end_s": 4.13,
+       "cut_s": 4.23,
+       "floor_rel_db": -58.7,
+       "removed_s": 2.17
+      },
+      "declicked": 2,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.16,
+         0.56
+        ],
+        "cut_s": 0.49,
+        "depth_rel_db": -66.1,
+        "existing_pause_ms": 490,
+        "inserted_ms": 0,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.58,
+         1.86
+        ],
+        "cut_s": 1.82,
+        "depth_rel_db": -61.6,
+        "existing_pause_ms": 610,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.396,
+       "rate_before": 4.746,
+       "target": 3.4
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.78,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 245
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a2.wav",
+     "seconds": 6.03,
+     "speech_seconds": 5.67,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 2.47,
+     "rate_cps_net": 3.4,
+     "rate_cps_net_r": 3.4,
+     "pauses_ms": [
+      690,
+      860
+     ],
+     "pauses_ms_r": [
+      690,
+      840
+     ],
+     "f0_median": 127.4,
+     "f0_p10": 98.4,
+     "f0_p90": 515.0,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.4,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "咦我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "咦我想揮手手怎麼跑到旁邊去了",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -63.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.4,
+      "range": [
+       2.8,
+       4.0
+      ],
+      "syllables": 14,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       690,
+       860
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.16,
+         0.56
+        ],
+        "cut_s": 0.49,
+        "depth_rel_db": -66.1,
+        "existing_pause_ms": 490,
+        "inserted_ms": 0,
+        "clean": true
+       },
+       {
+        "boundary": 2,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.58,
+         1.86
+        ],
+        "cut_s": 1.82,
+        "depth_rel_db": -61.6,
+        "existing_pause_ms": 610,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 9,
+    "billed_new": 9,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.23 秒處切掉 2.17 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.396（母帶前淨語速 4.746 → 目標 3.4）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "Z9RJEkFYQw307BCQULDR",
+    "voice_name": "Kuo Yu - Taiwan",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.45,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 18,
+  "chosen": 2,
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a2_c002_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a2_c002_01_el01.json",
+  "seconds": 6.03,
+  "speech_start": 0.12,
+  "speech_end": 5.78,
+  "speech_segments": [
+   [
+    0.11,
+    0.41
+   ],
+   [
+    1.09,
+    2.42
+   ],
+   [
+    3.27,
+    5.78
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -63.2,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.4,
+    "range": [
+     2.8,
+     4.0
+    ],
+    "syllables": 14,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     690,
+     860
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       0.16,
+       0.56
+      ],
+      "cut_s": 0.49,
+      "depth_rel_db": -66.1,
+      "existing_pause_ms": 490,
+      "inserted_ms": 0,
+      "clean": true
+     },
+     {
+      "boundary": 2,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       1.58,
+       1.86
+      ],
+      "cut_s": 1.82,
+      "depth_rel_db": -61.6,
+      "existing_pause_ms": 610,
+      "inserted_ms": 0,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a2_c002_01/a2.wav",
+   "seconds": 6.03,
+   "speech_seconds": 5.67,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 2.47,
+   "rate_cps_net": 3.4,
+   "rate_cps_net_r": 3.4,
+   "pauses_ms": [
+    690,
+    860
+   ],
+   "pauses_ms_r": [
+    690,
+    840
+   ],
+   "f0_median": 127.4,
+   "f0_p10": 98.4,
+   "f0_p90": 515.0,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.4,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "ghOIeVeEQ7UQWTlHlfwJ"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 4.23 秒處切掉 2.17 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×1.396（母帶前淨語速 4.746 → 目標 3.4）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a4_c008_01": {
+  "id": "a4_c008_01",
+  "role": "阿樂叔叔",
+  "codes": [
+   "ale"
+  ],
+  "text": "小晴、小宇……上車吧。",
+  "required": false,
+  "signature": "d20299a71f310017",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.3,
+    3.5
+   ],
+   "f0_nominal": 103.0,
+   "source": "角色表第 3 節／casting.json note",
+   "note": "阿樂受影響段（角色表 3.3–3.5）",
+   "rate_range": [
+    2.8,
+    4.0
+   ],
+   "f0_range": [
+    91.8,
+    115.6
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:50:15",
+    "seeds": {
+     "ale": 20261021
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "小晴、小宇……上車吧。",
+      "sent": "小晴、小宇……上車吧。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a4_c008_01/ale_a0_s0_67626f496d78.mp3",
+      "request_id": "4328qCyUSvNfhChdzd7h",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -74.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -55.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.64,
+       "t_fill_s": 2.72,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        1.64,
+        3.0
+       ],
+       "decay_end_s": 1.78,
+       "cut_s": 1.88,
+       "floor_rel_db": -70.0,
+       "removed_s": 2.04
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.418,
+       "rate_before": 4.217,
+       "target": 3.4
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.53,
+     "method": "measured_gain",
+     "I": -18.1,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 10,
+     "raw_tail_silence_ms": 246
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a1.wav",
+     "seconds": 2.78,
+     "speech_seconds": 2.41,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 2.9,
+     "rate_cps_net": 3.38,
+     "rate_cps_net_r": 3.37,
+     "pauses_ms": [
+      340
+     ],
+     "pauses_ms_r": [
+      270
+     ],
+     "f0_median": 111.2,
+     "f0_p10": 100.1,
+     "f0_p90": 122.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.37,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "小青小宇上車吧",
+      "cer": 0.143,
+      "per": 0.143,
+      "diffs": [
+       {
+        "ref": "晴",
+        "hyp": "青",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "小晴小雨上車吧",
+      "cer": 0.143,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "宇",
+        "hyp": "雨",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         3,
+         4
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "晴",
+          "hyp": "青",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -74.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.37,
+      "range": [
+       2.8,
+       4.0
+      ],
+      "syllables": 7,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 1.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 1.88 秒處切掉 2.04 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.418（母帶前淨語速 4.217 → 目標 3.4）"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:50:34",
+    "seeds": {
+     "ale": 20261022
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "小晴、小宇……上車吧。",
+      "sent": "小晴、小宇……上車吧。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a4_c008_01/ale_a1_s0_742bca9b088a.mp3",
+      "request_id": "hVDvXmzK9Yd6p7ZFpd0g",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -65.8,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -59.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.8,
+       "t_fill_s": 3.22,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        1.9,
+        3.57
+       ],
+       "decay_end_s": 2.04,
+       "cut_s": 2.14,
+       "floor_rel_db": -61.4,
+       "removed_s": 2.26
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.218,
+       "rate_before": 4.142,
+       "target": 3.4
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.5,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -3.4,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 227
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a2.wav",
+     "seconds": 2.75,
+     "speech_seconds": 2.39,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.4,
+     "clipped_samples": 0,
+     "rate_cps": 2.93,
+     "rate_cps_net": 3.37,
+     "rate_cps_net_r": 3.4,
+     "pauses_ms": [
+      310
+     ],
+     "pauses_ms_r": [
+      300
+     ],
+     "f0_median": 115.9,
+     "f0_p10": 105.9,
+     "f0_p90": 127.2,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.4,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "可琴小玉上策吧",
+      "cer": 0.857,
+      "per": 0.857,
+      "diffs": [
+       {
+        "ref": "",
+        "hyp": "可琴",
+        "kind": "多字",
+        "span": [
+         0,
+         0
+        ]
+       },
+       {
+        "ref": "晴小宇",
+        "hyp": "玉",
+        "kind": "字不同",
+        "span": [
+         1,
+         4
+        ]
+       },
+       {
+        "ref": "車",
+        "hyp": "策",
+        "kind": "字不同",
+        "span": [
+         5,
+         6
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "可情小雨上車吧",
+      "cer": 0.714,
+      "per": 0.571,
+      "diffs": [
+       {
+        "ref": "",
+        "hyp": "可情",
+        "kind": "多字",
+        "span": [
+         0,
+         0
+        ]
+       },
+       {
+        "ref": "晴小宇",
+        "hyp": "雨",
+        "kind": "字不同",
+        "span": [
+         1,
+         4
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 5,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "",
+          "hyp": "可琴",
+          "kind": "多字",
+          "span": [
+           0,
+           0
+          ]
+         },
+         {
+          "ref": "晴小宇",
+          "hyp": "玉",
+          "kind": "字不同",
+          "span": [
+           1,
+           4
+          ]
+         },
+         {
+          "ref": "車",
+          "hyp": "策",
+          "kind": "字不同",
+          "span": [
+           5,
+           6
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "",
+          "hyp": "可情",
+          "kind": "多字",
+          "span": [
+           0,
+           0
+          ]
+         },
+         {
+          "ref": "晴小宇",
+          "hyp": "雨",
+          "kind": "字不同",
+          "span": [
+           1,
+           4
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -65.8,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.4,
+      "range": [
+       2.8,
+       4.0
+      ],
+      "syllables": 7,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 5.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.14 秒處切掉 2.26 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.218（母帶前淨語速 4.142 → 目標 3.4）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "Z9RJEkFYQw307BCQULDR",
+    "voice_name": "Kuo Yu - Taiwan",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.45,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a4_c008_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a4_c008_01_el01.json",
+  "seconds": 2.78,
+  "speech_start": 0.12,
+  "speech_end": 2.53,
+  "speech_segments": [
+   [
+    0.12,
+    1.38
+   ],
+   [
+    1.71,
+    2.53
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 1,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "晴",
+        "hyp": "青",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -74.2,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.37,
+    "range": [
+     2.8,
+     4.0
+    ],
+    "syllables": 7,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.1,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a4_c008_01/a1.wav",
+   "seconds": 2.78,
+   "speech_seconds": 2.41,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 2.9,
+   "rate_cps_net": 3.38,
+   "rate_cps_net_r": 3.37,
+   "pauses_ms": [
+    340
+   ],
+   "pauses_ms_r": [
+    270
+   ],
+   "f0_median": 111.2,
+   "f0_p10": 100.1,
+   "f0_p90": 122.8,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.37,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "4328qCyUSvNfhChdzd7h"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 1.88 秒處切掉 2.04 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×1.418（母帶前淨語速 4.217 → 目標 3.4）"
+  ]
+ },
+ "a6_c009_03": {
+  "id": "a6_c009_03",
+  "role": "阿樂叔叔",
+  "codes": [
+   "ale"
+  ],
+  "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+  "required": false,
+  "signature": "19893c4a786ba622",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.6,
+    3.8
+   ],
+   "f0_nominal": 113.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.1,
+    4.3
+   ],
+   "f0_range": [
+    100.7,
+    126.8
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:49:22",
+    "seeds": {
+     "ale": 20261021
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+      "sent": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a6_c009_03/ale_a0_s0_72d99cdfb29b.mp3",
+      "request_id": "jKOvPuJbfxbu8nZCnUD2",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -63.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -34.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 7.22,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        7.23,
+        8.86
+       ],
+       "decay_end_s": 7.48,
+       "cut_s": 7.58,
+       "floor_rel_db": -61.4,
+       "removed_s": 1.62
+      },
+      "declicked": 1,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.14,
+         2.3
+        ],
+        "cut_s": 2.38,
+        "depth_rel_db": -55.6,
+        "existing_pause_ms": 1310,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.318,
+       "rate_before": 4.878,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 9.77,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -1.6,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 340
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a1.wav",
+     "seconds": 10.02,
+     "speech_seconds": 9.67,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.6,
+     "clipped_samples": 0,
+     "rate_cps": 2.07,
+     "rate_cps_net": 3.72,
+     "rate_cps_net_r": 3.7,
+     "pauses_ms": [
+      1730,
+      1000,
+      760,
+      800
+     ],
+     "pauses_ms_r": [
+      1720,
+      990,
+      750,
+      790
+     ],
+     "f0_median": 94.6,
+     "f0_p10": 78.3,
+     "f0_p90": 127.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 3.7,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "我現在還是會定期回去看醫生慢慢折等才會亮",
+      "cer": 0.1,
+      "per": 0.05,
+      "diffs": [
+       {
+        "ref": "摺燈",
+        "hyp": "折等",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         15,
+         17
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "我現在還是會定期回去看醫生慢慢折凳才會亮",
+      "cer": 0.1,
+      "per": 0.05,
+      "diffs": [
+       {
+        "ref": "摺燈",
+        "hyp": "折凳",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         15,
+         17
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "摺燈",
+          "hyp": "折等",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           15,
+           17
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "摺燈",
+          "hyp": "折凳",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           15,
+           17
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -63.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.7,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 20,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1730
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.14,
+         2.3
+        ],
+        "cut_s": 2.38,
+        "depth_rel_db": -55.6,
+        "existing_pause_ms": 1310,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 11,
+    "billed_new": 11,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 7.58 秒處切掉 1.62 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.318（母帶前淨語速 4.878 → 目標 3.7）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:49:54",
+    "seeds": {
+     "ale": 20261022
+    },
+    "settings": {
+     "ale": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "ale",
+      "i": 0,
+      "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+      "sent": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a6_c009_03/ale_a1_s0_4bfc7c05e284.mp3",
+      "request_id": "XpdJA3XXO2i1Ef9wmG8T",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -70.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -20.6,
+       "last60ms_voiced": 0.5,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.32,
+       "t_fill_s": 6.66,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        5.31,
+        6.94
+       ],
+       "decay_end_s": 5.54,
+       "cut_s": 5.64,
+       "floor_rel_db": -66.8,
+       "removed_s": 2.04
+      },
+      "declicked": 1,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.24,
+         2.46
+        ],
+        "cut_s": 2.45,
+        "depth_rel_db": -69.0,
+        "existing_pause_ms": 1080,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 1.4,
+       "rate_before": 5.181,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 7.75,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.1,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 266
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a2.wav",
+     "seconds": 8.0,
+     "speech_seconds": 7.65,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 2.61,
+     "rate_cps_net": 3.7,
+     "rate_cps_net_r": 3.69,
+     "pauses_ms": [
+      1500,
+      740
+     ],
+     "pauses_ms_r": [
+      1490,
+      720
+     ],
+     "f0_median": 102.8,
+     "f0_p10": 85.7,
+     "f0_p90": 137.4,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 3.69,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "我現在還是會定期回去看醫生慢慢著燈才會亮",
+      "cer": 0.05,
+      "per": 0.05,
+      "diffs": [
+       {
+        "ref": "摺",
+        "hyp": "著",
+        "kind": "字不同",
+        "span": [
+         15,
+         16
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+      "cer": 0.05,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "摺",
+        "hyp": "折",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         15,
+         16
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "摺",
+          "hyp": "著",
+          "kind": "字不同",
+          "span": [
+           15,
+           16
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -70.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.69,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 20,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       1500
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         2.24,
+         2.46
+        ],
+        "cut_s": 2.45,
+        "depth_rel_db": -69.0,
+        "existing_pause_ms": 1080,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 1.0,
+    "billed": 11,
+    "billed_new": 11,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 5.64 秒處切掉 2.04 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×1.4（母帶前淨語速 5.181 → 目標 3.7）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "Z9RJEkFYQw307BCQULDR",
+    "voice_name": "Kuo Yu - Taiwan",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.45,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 22,
+  "chosen": 2,
+  "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/out/vo_a6_c009_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/ale_kuoyu_v3/lipsync/a6_c009_03_el01.json",
+  "seconds": 8.0,
+  "speech_start": 0.12,
+  "speech_end": 7.75,
+  "speech_segments": [
+   [
+    0.11,
+    3.44
+   ],
+   [
+    4.93,
+    5.89
+   ],
+   [
+    6.62,
+    7.76
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 1,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "摺",
+        "hyp": "著",
+        "kind": "字不同",
+        "span": [
+         15,
+         16
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -70.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.69,
+    "range": [
+     3.1,
+     4.3
+    ],
+    "syllables": 20,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     1500
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       2.24,
+       2.46
+      ],
+      "cut_s": 2.45,
+      "depth_rel_db": -69.0,
+      "existing_pause_ms": 1080,
+      "inserted_ms": 0,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.1,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/ale_kuoyu_v3/_attempts/a6_c009_03/a2.wav",
+   "seconds": 8.0,
+   "speech_seconds": 7.65,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 2.61,
+   "rate_cps_net": 3.7,
+   "rate_cps_net_r": 3.69,
+   "pauses_ms": [
+    1500,
+    740
+   ],
+   "pauses_ms_r": [
+    1490,
+    720
+   ],
+   "f0_median": 102.8,
+   "f0_p10": 85.7,
+   "f0_p90": 137.4,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 240,
+   "rate_net_syll": 3.69,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "XpdJA3XXO2i1Ef9wmG8T"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 5.64 秒處切掉 2.04 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×1.4（母帶前淨語速 5.181 → 目標 3.7）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

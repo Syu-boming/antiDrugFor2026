@@ -36,7 +36,7 @@ node ../tools/capture.mjs --cues g4 --probe --out ../review/G4/capture   # 驗�
 
 - file:// 直接開：`app/dist/index.html?cues=g4`（`?cues=demo` 是技術骨架流程）。
 - 網址參數：`capture=1` 虛擬時鐘、`autostart=1`、`q=A|B`、`fps=30`、`av=毫秒`、`step=每秒格數`、`nofs=1`、`menu=1`。
-- `window.__engine.debug`：`audioLevels()`（配樂基準音量與避讓增益）、`probe()`（操偶線螢幕位置與線寬、整條線的螢幕路徑 `path`（13 點，上端→下端）、角色外框、分件紙偶的頭部框 `headBox`、布幕開合）、`hideActors(on)`（量背景用）、`faces()`（目前眼睛與嘴型）。`getState()` 另有 `missingAudio`、`castReport`、`actors`、`set`、`world`（布幕、署名卡、景片、降彩、追光、燈光）。
+- `window.__engine.debug`：`audioLevels()`（配樂基準音量與避讓增益）、`probe()`（操偶線螢幕位置與線寬、整條線的螢幕路徑 `path`（引擎實際畫的中心線 37 點，上端→線的下端，下段細分）、角色外框、分件紙偶的頭部框 `headBox`、部件外框 `parts` 與不透明範圍 `opaque`、關節 `joints.hip`、景片地標 `landmarks`（`tableTop`、`stoolTop` 兩端螢幕座標）、布幕開合）、`timeline(id)`（該 cue 解析後的動畫與台詞秒數，測試用）、`hideActors(on)`（量背景用）、`faces()`（目前眼睛與嘴型）。`getState()` 另有 `missingAudio`、`castReport`、`actors`、`set`、`world`（布幕、署名卡、景片、降彩、追光、燈光）。
 
 ### capture.mjs 新選項
 
@@ -65,7 +65,7 @@ node ../tools/capture.mjs --cues g4 --probe --out ../review/G4/capture   # 驗�
 | `initialState.characters.<id>` | `popup` | 0＝平躺（等 `puppet.popup` 立起），1＝站好 |
 | | `sit` | 正面分件紙偶坐姿：1 坐、0.5 半站、0 站 |
 | | `pose` | 分件紙偶姿勢預設：`sit`、`pulled_sit`、`pulled_half`（a2_c002 結尾：半站、腕被拉到旁邊、膝被提起、左手扶桌）；立牌填姿勢名（`stand`、`reach`、`stepback`） |
-| | `emotion` | `smile`／`neutral`／`confused`／`worried`／`surprised`（臉部換片；阿樂叔叔非笑時換困惑頭） |
+| | `emotion` | `smile`／`greet`／`neutral`／`confused`／`worried`／`surprised`（臉部換片；阿樂叔叔 greet＝head_greet、其他非笑情緒換困惑頭） |
 | | `hand` | B 側手起始：`chest`／`grab`／`lap` |
 | cue | `music` | 段落內配樂切換 `[{ id, at, loop, fade, gain, offset }]`，交叉淡入淡出；`id:"none"` 淡出 |
 | cue | `musicLevel` | 配樂基準音量（省略時依種類：劇情 0.8、題卡 0.06、署名卡 0） |
@@ -99,8 +99,8 @@ G4 鏡位（`src/stage/layers.ts`）：`g4_wide`、`g4_mid`（三人同框、下
 | `puppet.popup` | — | 以腳底為鉸鏈立起（略過頭再回正）；有這個動畫的角色在開始前是平躺的 |
 | `puppet.enter` {from} / `puppet.exit` {to} | dx（世界單位，預設 ∓6） | 走進／走出（帶走路起伏） |
 | `puppet.sit` {to} | to＝1 | 坐姿程度 |
-| `puppet.waveTry` {emotion} | | 想揮手：0–30% 手抬起（意圖）→ 30–45% 線繃緊 → 42–67% 手被拉向旁邊；50% 換情緒（預設 confused）＋加眨一次；B 側手放到胸前 |
-| `puppet.kneeTug` {at:[x,y]} | at＝桌邊世界座標 | 想站起（起身到半站）→ 22–34% 膝前線繃緊 → 36–50% 膝蓋被提起、腳離地 → 身體晃一下 → 44–66% B 側手扶住 `at` |
+| `puppet.waveTry` {emotion, greet} | | 想揮手（秒數見 `src/stage/beats.ts` WAVE_TRY）：0 s 臉換 X2（`greet`→head_greet）→ 0.25–0.85 s 手自己抬到胸口高度（線還鬆）→ 0.85–1.75 s 揮 2 下 → 1.8 s 線繃直（cue 另排 sfx_string_taut）→ 2.1–2.85 s 手被拉偏 → 2.5 s 換 emotion（預設 confused）＋加眨一次；B 側手放到胸前 |
+| `puppet.kneeTug` {at:[x,y]} | at＝桌邊世界座標 | 想站起（秒數見 beats.ts KNEE_TUG）：0–0.6 s 起身到半站 → 停在半站到 1.1 s → 1.1–1.35 s 膝前線繃緊 → 1.4–1.9 s 膝蓋被提起、腳離地 → 1.45–2.2 s 軀幹被帶一下（阻尼比約 0.6，只晃 1 次）→ 1.95–2.6 s B 側手扶住 `at` 並停住 |
 | `puppet.reach` / `puppet.wave` / `puppet.chest` {to} / `puppet.grab` {at,to} | | B 側手 |
 | `puppet.lean` {to} / `puppet.move` {dx} / `puppet.tilt` {to} | | 傾身、移動、歪頭（歪頭加眨一次） |
 | `puppet.pose` {pose} | 0.24 s | 立牌換姿勢＝紙片翻面（水平壓扁→換圖→展開），不交叉淡化 |
@@ -123,11 +123,12 @@ G4 鏡位（`src/stage/layers.ts`）：`g4_wide`、`g4_mid`（三人同框、下
 起始狀態用 `characters.<id>.strings: ["wrist","elbow","knee"]` 與 `stringTension`。各幕的復原段（第六幕「一天一天變鬆、變淡、一根一根脫落」）用 `strings.loosen` → `strings.fade` → `strings.detach` 依序排，時間拉長（例如各 4–8 秒），就是「不是答對就好、要時間」。
 
 外觀與規則（兒童安全界線第 2 條、v1.2 第 15.2 節、G2 一般問題第 2 項）：
-- 平面紙繩：中灰紙帶（L*≈48）＋紙纖維、兩側深灰邊線、左側受光邊；不做扭絞紋。線寬 0.066 世界單位＝中景約 9 px、沿線近景 12–16 px（≥ 8 px）。不受燈光明暗影響（只跟舞台燈總量走），量得到的 ΔL* 穩定。
-- 扣點只有手腕背側、手肘外側、膝蓋正面；紙環是包住肢體的紙帶（寬＝扣點處的肢體寬）。
+- 紙繩（G4 修正第 1 輪）：素材貼圖 `tex-string-rope`（淡灰紙繩身 sRGB≈178、斜向扭紋與纖維、兩側深灰邊、左側受光邊；`configureStringTextures` 在建立紙偶前換上，缺圖用程式退路）。線寬 `STRING_WIDTH`＝0.043 世界單位＝g4_mid 約 8 px、g4_push／a2_c004 鏡位約 9 px（規格 6–10 px）。不受燈光明暗影響（只跟舞台燈總量走）。
+- 扣點只有手腕背側、手肘外側、膝蓋正面（`rig/ale_attach` v05，扣點在肢體剪影內）；紙環＝`tex-string-ring` 正方形圓環（直徑 `RING_DIAMETER` 0.103），紙環中心＝扣點、正對鏡頭、不隨肢體旋轉；線的下端停在紙環上緣（往線的方向退 0.4×直徑）。`probe().strings[]` 另有 `ringPx`、`ringRadiusPx`。
 - 線往上延伸出畫面（上端 y=15），不畫操控者。腕、肘線往畫面左（危險方位）上方；膝前線往外側上方（斜率約 0.2），走身體外側、避開頭頸。
 - 深度：腕、肘線在所有部件前；膝前線在軀幹、大腿前，但在 B 側前臂與手後面（扶桌的手從線前經過，不會像多扣一處）。
 - 受力順序：意圖 → 線先繃緊 → 肢體被拉偏（`waveTry`、`kneeTug` 內建時序）。
+- 鬆垂弧（G4 修正第 2 輪）：側向弧度 bow＝(1−張力)×`SLACK_BOW`（0.2）；彎曲集中在紙環往上 `sagLength()`（線長 20%，1.0–3.0 世界單位）這一段，形狀 `sagShape(u)`＝6.75·u·(1−u)²（上端斜率 0，接回直線沒有折角）。g4 中景張力 0.2 時，畫面裡那段線的中點偏離直線約 18–25 px；張力 1 時是直線。`waveTry`／`kneeTug` 的繃直節拍在 0.12 秒內拉直。
 
 量測（`capture.mjs --probe`，2026-10-21 本機）：沿線近景線寬 12.4–16.5 px；腕、肘線 ΔL* 約 40（投影 v2 約 28）；膝前線緊鄰的是深色工作褲，ΔL* 約 8–12（靠深灰邊與受光邊分出）。
 
@@ -135,7 +136,7 @@ G4 鏡位（`src/stage/layers.ts`）：`g4_wide`、`g4_mid`（三人同框、下
 
 - 對嘴 JSON：`audio/lipsync/<台詞編號>_v01.json`，`{ "fps": 12, "frames": [...] }`，整數 **0 閉、1 半開、2 大開、3 圓唇**（`perform.ts` 的 `LIP_SHAPES`）。沒有對嘴資料的句子用字幕時間產生佔位開合。
 - 不說話時：依 `emotion` 顯示嘴型（smile→原圖或 smile；confused／worried→worried；surprised→round；其他→closed）。face.json 有 `rest_mouth` 時以它為原圖嘴型。
-- 眨眼：每個角色以「角色＋cue」為種子 3–6 秒一次（重播一致），情緒轉折、歪頭、換姿勢時加眨一次；half 0.05 s → closed 0.07 s → half 0.05 s。
+- 眨眼：每個角色以「角色＋cue」為種子 3–6 秒一次（重播一致），情緒轉折、歪頭時加眨一次；half 0.05 s → closed 0.07 s → half 0.05 s。換姿勢翻面前 0.2 秒到翻面結束後 0.3 秒（`FLIP_BLINK_GAP`）不眨眼，落在裡面的眨眼移到之後；翻面結束 0.32 秒後才加眨一次；兩次眨眼至少隔 0.4 秒（G4 修正第 2 輪第 10 項）。眼睛換片一張圖同時蓋兩眼，所以一定兩眼同時閉、同時開；程式退路的閉眼是近乎平直、略往下彎的中性線（不是笑眼）。
 - 沒說話的角色：呼吸（以腳底為支點的極輕伸縮）、重心擺動；別人說話時微微傾向說話者，有頭層的立牌改為頭轉向說話者（±2.5° 內）並在句首輕點頭。
 
 ### face.json（兩種格式都接受）
@@ -188,11 +189,11 @@ G4 鏡位（`src/stage/layers.ts`）：`g4_wide`、`g4_mid`（三人同框、下
 | `sfx_string_taut` | 腕線繃緊、膝前線繃緊 | |
 | `sfx_paper_rustle` | 景片立起 | |
 
-缺檔：準備畫面與 `getState().missingAudio` 列出，該處無聲，照常演出（engine-test 第五段）。對白避讓：說話前 0.15 s 壓到 0.32（約 −10 dB），相鄰兩句間隔 < 0.9 s 不回升，最後一句後 0.3 s 回升（`ducking.ts`，engine-test 第二、六段）。
+缺檔：準備畫面與 `getState().missingAudio` 列出，該處無聲，照常演出（engine-test 第五段）。對白避讓：說話前 0.15 s 壓到 `DUCK_LEVEL` 0.56（約 −5 dB；G3 修正第 9 項），相鄰兩句間隔 < 0.9 s 不回升，最後一句後 0.3 s 回升（`ducking.ts`，engine-test 第二、六段）。教師停格：劇情段落（kind＝scene、非自動接續）播完後，配樂基準音量以時間常數 0.6 s 降到 ×0.10（`HOLD_MUSIC_RATIO`、`HOLD_TC`；G3 修正第 11 項）。每段開頭靜音：`?lead=0|200|400` 或教師選單「開頭靜音」，按下一步後畫面停在第一格、聲音一起延後（HDMI 吞音用，G3 修正第 15 項，學校實機未驗證）。
 
 ## 11. 時間與長度（目前素材）
 
-署名卡待機 → 開幕 10.6 s → a2_c002 22.8 s → a2_c004 19.5 s → 閉幕 3.1 s＋署名卡 1.4 s。a2_c002＋a2_c004＝42.3 s（規格 30–45 s）。正式配音換版後長度會變，動作錨在台詞上會跟著移；換版後請重跑 `engine-test` 與 `capture`，確認仍在 30–45 s。
+署名卡待機 → 開幕 11.6 s → a2_c002 23.8 s → a2_c004 19.5 s → 閉幕 5.4 s＋署名卡 1.4 s。a2_c002＋a2_c004＝43.35 s（規格 30–45 s；G4 修正第 1 輪）。正式配音換版後長度會變，動作錨在台詞上會跟著移；換版後請重跑 `engine-test` 與 `capture`，確認仍在 30–45 s。
 
 ## 12. 整合代理要做的事
 
@@ -211,6 +212,36 @@ G4 鏡位（`src/stage/layers.ts`）：`g4_wide`、`g4_mid`（三人同框、下
 | `cues/g4.json` | `a8_c003`（片尾署名卡）加 `musicLevel: 0.8`。原本署名卡種類預設配樂音量 0，閉幕曲在署名卡出現（主題句進入）時會被壓到無聲；現在閉幕曲照 `review/G3/music.md` 的同步點播完、自然淡出。片頭 `a0_c000` 仍是 0（待機無配樂）。 |
 | `src/stage/strings.ts`、`src/stage/stage.ts` | 只加量測欄位：`PaperString.last.bow`、`probe()` 的 `strings[].path` 與 `actors[].headBox`（驗收包量線到頭部框的距離、線是否經過兒童立牌）。畫面不變。 |
 | `../tools/g4_review_pack.mjs`、`g4_review_pack.py`、`g4_transcripts.py` | G4 驗收包產生器（輸出 `review/G4/pack/`，見該處 INDEX.md）：capture.mjs 30 格／秒光敏＋量測、播放錄製（固定步長 30 格／秒＋依引擎規則離線混音）、a2_c002 每秒 8 格條帶、4:3 關鍵影格、投影模擬、效能（即時播放）、響度、逐字稿差異。 |
+
+## 12b. 整合代理變更（G4 修正第 1 輪，2026-10-21）
+
+| 檔案 | 變更 | 對應修正項 |
+|---|---|---|
+| `src/stage/strings.ts` | 紙繩、紙環改用素材貼圖（`configureStringTextures`）；紙環正方形圓環、中心＝扣點、線停在紙環上緣；`last.ring`／`ringD` | 22、23、34 |
+| `src/stage/beats.ts`（新） | 揮手與扯膝的節拍表（純資料，perform.ts 與驗收包共用） | 17、18 |
+| `src/stage/perform.ts` | `STRING_WIDTH` 0.043；`waveTry` 改為 X2 臉（emotion `greet`→`head_greet`）→ 手自己抬到胸口高度揮 2 下（線還鬆）→ 線繃直 → 手被拉偏 → 0.4 s 後困惑臉；`kneeTug` 改為半站停 0.5 s → 膝線繃緊 → 膝蓋提起 → 軀幹晃 1 次（阻尼比約 0.6）→ 近側手扶桌停住；立牌呼吸振幅約 ±4.5 px；換姿勢翻面只壓到 55% 寬就硬切（沒有細縫格） | 17、18、19、25、27 |
+| `src/stage/layers.ts` | `g4_mid`、`g4_mid_up`、`g4_push` 降低鏡頭（腳與膝在字幕底板之上）；`g4_push` 只推近約 11%，兩個孩子留在 90% 安全框；新增 `g4_c004_wrist`／`_knee`／`_up`（三人同框下的小幅移動，取代錨點近景） | 24、26、32 |
+| `cues/g4.json` | a2_c002：降彩 3.2 s、第一根線 4.48 s 落下、小晴開場用 watch 姿勢、喊「叔叔，小心！」時換 palm（1.35 s 後換回 worried）、小宇翻面移到 9.3 s（落線完成、鏡頭靜止後）；a2_c004：三人同框鏡位、小晴 worried 姿勢（全段不指人）；a8_c002：燈光先變、鏡頭等速 5 s 拉回、布幕 3.3 s 起合上（光敏 ≤ 2 次／秒） | 16、19、20、24、25、30 |
+| `src/stage/stage.ts` | `probe()` 加 `actors[].parts`（部件外框）、紙環中心與半徑 | 23、26 |
+| `src/ui/subtitle.ts`、`theater.css` | 說話者小頭像改用 `assets/final/ui/ui-speaker_<id>`；沒有素材的說話者不顯示方塊 | 33 |
+| `src/audio/ducking.ts`、`mixer.ts`、`src/engine/engine.ts` | DUCK_LEVEL 0.56；教師停格配樂降到 ×0.10；`voiceTimings()`、`sounding()`；`voiceSync()`（字幕與語音時間差）；系統自己恢復 AudioContext 時引擎保持暫停；開演前預熱（每個 cue 前／中／後各畫一次） | G3 9、11、15；G4 28、29 |
+| `src/config.ts`、`src/ui/overlays.ts`、`src/main.ts` | `leadInMs`（`?lead=`、教師選單「開頭靜音」0／200／400）；`debug.voiceSync`、`systemSuspendAudio`、`systemResumeAudio`、`setLeadIn`、`warmMs`；`getState().voSounding`、`leadInMs` | G3 15；G4 29 |
+| `../tools/capture.mjs`、`capture_probe.py` | `--probe-times`；ΔL* 分成繩身與深灰邊；紙環中心是否在剪影內；紙環與紙繩放大裁切；兒童背景加「立起程度」 | 21、22、23 |
+| `../tools/g4_review_pack.*` | 條帶節拍標示、呼吸、字幕重疊、換姿勢放大、前臂裁切、光敏細格與投影 v2、效能 A／B 各 3 次與 > 50 ms 清單、school 欄、停格響度、segment_spread_lu、字幕與語音時間差、兒童安全框 | 17–31；G3 11、12、14 |
+| `../tools/engine-test.mjs` | 第七段：必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音（發聲中的對白 ≤ 1、字幕與語音差 ≤ 50 ms） | 29 |
+
+## 12c. 整合代理變更（G4 修正第 2 輪，2026-10-21）
+
+| 檔案 | 變更 | 對應修正項 |
+|---|---|---|
+| `src/stage/strings.ts` | 鬆垂弧改成集中在下段的 `sagShape`（下段 30 段、上段 6 段）；中心線世界座標 `last.path`；退路紙環改成米白紙環（與素材 v02 一致）；紙環貼圖取樣 LOD 偏移 −1；`last.ring` 改記紙環實際畫的位置（含前移 0.02，量測的紙環中心與畫面差約 1 px 的偏差修掉） | 6、8 |
+| `src/stage/perform.ts`、`beats.ts` | `SLACK_BOW` 0.2；`WAVE_TRY.tautEnd` 2.75、`KNEE_TUG.tautEnd` 1.22（0.12 秒拉直）；`kneeTug` 坐姿程度 1→0.25（0.5 秒）、停 0.6 秒、扶桌後沉回 0.55；扶桌手腕目標降低、上身往桌側傾 0.05（`pulled_half` 起始姿勢同步）；翻面不眨眼（`quiet` 時段、`blinkTimes`／`eyeAt` 匯出） | 6、7、10 |
+| `src/stage/face.ts` | 程式退路閉眼改中性線（近乎平直） | 5 |
+| `src/stage/stage.ts`、`workshop.ts`、`src/main.ts` | `probe()` 的 `path` 改用實際中心線、`dir` 沿線；加 `opaque`、`joints.hip`、`landmarks`；`debug.timeline(id)` | 6、7、10 量測 |
+| `cues/g4.json` | a2_c002 扶桌點 x −1.94；a2_c004 必要旁白第 2、3 頁之間：約 9 秒兩個孩子互看（微傾、眨眼，11 秒回正）、約 12 秒阿樂叔叔歪頭看手腕的線（14 秒回正） | 7、12 |
+| `../tools/capture_probe.py` | ΔL* 取樣沿實際中心線走；紙環環身亮度、色相、彩度 | 6、8 |
+| `../tools/g4_review_pack.*` | 每格臉部狀態（`faces_playback.json`）、翻面窗眼睛檢查、37.9–38.1 秒 mp4 抽格、全片眨眼格放大、孩子頭部條帶、鬆垂弧量測、站起與扶桌量測、a2_c004 畫面變化 | 1、5–10、12 |
+| `../tools/engine-test.mjs` | 翻面不眨眼、鬆垂弧 ≥ 15 px／繃直 ≤ 3 px、臀部上移 ≥ 25 px、手跨桌緣 ≥ 10 px | 6、7、10 |
 
 ## 13. 已知限制
 

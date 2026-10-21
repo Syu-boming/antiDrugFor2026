@@ -1,0 +1,21 @@
+{
+ "a1_c001_03": {
+  "seconds": 3.22,
+  "speech_start": 0.12,
+  "speech_end": 2.97,
+  "speech_segments": [
+   [
+    0.11,
+    1.3
+   ],
+   [
+    1.91,
+    2.97
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xy_prod_dengS/out/vo_a1_c001_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_prod_dengS/lipsync/a1_c001_03_el01.json",
+  "role": "小宇",
+  "text": "主燈的骨架。它不見了！"
+ }
+}

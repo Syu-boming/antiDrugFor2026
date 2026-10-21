@@ -23,13 +23,14 @@
    "lines": [],
    "sfx": [],
    "music": [],
-   "anims": []
+   "anims": [],
+   "beats": []
   },
   {
    "id": "a0_c001",
    "kind": "curtain",
    "title": "開幕（G4 代表段落）",
-   "duration": 10.6,
+   "duration": 11.6,
    "autoAdvance": false,
    "audioId": null,
    "musicLoop": true,
@@ -154,19 +155,20 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 7.6,
-     "end": 10.4,
+     "start": 7,
+     "end": 11.6,
      "params": {
       "to": "g4_mid"
      }
     }
-   ]
+   ],
+   "beats": []
   },
   {
    "id": "a2_c002",
    "kind": "scene",
    "title": "線落下來（代表鏡頭）",
-   "duration": 22.83,
+   "duration": 24.93,
    "autoAdvance": false,
    "audioId": null,
    "musicLoop": true,
@@ -177,14 +179,14 @@
      "speaker": "阿樂叔叔",
      "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
      "audioId": "vo_a2_c002_01",
-     "start": 13,
-     "end": 17.26,
-     "duration": 4.26,
+     "start": 13.45,
+     "end": 19.48,
+     "duration": 6.03,
      "placeholder": false,
      "pages": [
       {
-       "start": 13,
-       "end": 17.26,
+       "start": 13.45,
+       "end": 19.48,
        "rows": [
         "咦？",
         "我想揮手……手怎麼跑到旁邊去了？"
@@ -197,14 +199,14 @@
      "speaker": "小晴",
      "text": "叔叔，小心！",
      "audioId": "vo_a2_c002_02",
-     "start": 19.11,
-     "end": 20.83,
-     "duration": 1.72,
+     "start": 21.23,
+     "end": 22.93,
+     "duration": 1.7,
      "placeholder": false,
      "pages": [
       {
-       "start": 19.11,
-       "end": 20.83,
+       "start": 21.23,
+       "end": 22.93,
        "rows": [
         "叔叔，小心！"
        ]
@@ -215,27 +217,27 @@
    "sfx": [
     {
      "id": "sfx_string_drop",
-     "at": 6.98,
+     "at": 3.98,
      "gain": 0.8
     },
     {
      "id": "sfx_string_drop",
-     "at": 7.98,
+     "at": 4.88,
      "gain": 0.8
     },
     {
      "id": "sfx_string_drop",
-     "at": 8.98,
+     "at": 5.78,
      "gain": 0.8
     },
     {
      "id": "sfx_string_taut",
-     "at": 11,
+     "at": 12.33,
      "gain": 0.8
     },
     {
      "id": "sfx_string_taut",
-     "at": 18.26,
+     "at": 20.73,
      "gain": 0.8
     }
    ],
@@ -246,15 +248,15 @@
      "loop": false,
      "fade": 1,
      "gain": 1,
-     "offset": 4
+     "offset": 7
     }
    ],
    "anims": [
     {
      "name": "fx.desat",
      "target": null,
-     "start": 0.5,
-     "end": 6,
+     "start": 0.3,
+     "end": 3.5,
      "params": {
       "to": 0.5
      }
@@ -262,8 +264,8 @@
     {
      "name": "light.dim",
      "target": null,
-     "start": 1,
-     "end": 4.5,
+     "start": 0.5,
+     "end": 3,
      "params": {
       "to": 0.94
      }
@@ -271,8 +273,8 @@
     {
      "name": "fx.spot",
      "target": null,
-     "start": 2,
-     "end": 5.5,
+     "start": 0.8,
+     "end": 3.6,
      "params": {
       "to": 1,
       "target": "ale"
@@ -281,8 +283,8 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 5.6,
-     "end": 8.8,
+     "start": 2,
+     "end": 4.6,
      "params": {
       "to": "g4_mid_up"
      }
@@ -290,41 +292,32 @@
     {
      "name": "strings.drop",
      "target": "ale",
-     "start": 6.5,
-     "end": 9.7,
+     "start": 3.5,
+     "end": 6.5,
      "params": {
       "anchors": [
        "wrist",
        "elbow",
        "knee"
       ],
-      "stagger": 1,
+      "stagger": 0.9,
       "each": 1.2
      }
     },
     {
      "name": "puppet.face",
      "target": "xiaoyu",
-     "start": 7.4,
-     "end": 7.4,
+     "start": 4.6,
+     "end": 4.6,
      "params": {
       "emotion": "surprised"
      }
     },
     {
-     "name": "puppet.pose",
-     "target": "xiaoyu",
-     "start": 7.5,
-     "end": 7.74,
-     "params": {
-      "pose": "stepback"
-     }
-    },
-    {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 8.6,
-     "end": 8.6,
+     "start": 5,
+     "end": 5,
      "params": {
       "emotion": "worried"
      }
@@ -332,16 +325,34 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 9.4,
-     "end": 12,
+     "start": 6.8,
+     "end": 8.8,
      "params": {
       "to": "g4_mid"
      }
     },
     {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 8.95,
+     "end": 9.19,
+     "params": {
+      "pose": "worried"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 9.3,
+     "end": 9.54,
+     "params": {
+      "pose": "stepback"
+     }
+    },
+    {
      "name": "puppet.waveTry",
      "target": "ale",
-     "start": 9.9,
+     "start": 9.7,
      "end": 13.5,
      "params": {
       "emotion": "confused"
@@ -350,11 +361,11 @@
     {
      "name": "puppet.kneeTug",
      "target": "ale",
-     "start": 17.51,
-     "end": 21.11,
+     "start": 19.63,
+     "end": 23.03,
      "params": {
       "at": [
-       -1.82,
+       -1.94,
        1.4
       ]
      }
@@ -362,8 +373,8 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 17.66,
-     "end": 21.86,
+     "start": 19.78,
+     "end": 23.78,
      "params": {
       "to": "g4_push"
      }
@@ -371,11 +382,94 @@
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 18.71,
-     "end": 18.95,
+     "start": 20.93,
+     "end": 21.17,
      "params": {
-      "pose": "reach"
+      "pose": "palm"
      }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 22.28,
+     "end": 22.52,
+     "params": {
+      "pose": "worried"
+     }
+    }
+   ],
+   "beats": [
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "臉換 X2（想打招呼）",
+     "t": 9.7
+    },
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "手自己抬起（線還鬆）",
+     "t": 9.95
+    },
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "揮手 2 下",
+     "t": 10.85
+    },
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "線繃直＋音效",
+     "t": 12.33
+    },
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "手被拉偏",
+     "t": 12.63
+    },
+    {
+     "anim": "puppet.waveTry",
+     "target": "ale",
+     "label": "換困惑臉",
+     "t": 13.03
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "臀部離凳、起身",
+     "t": 19.63
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "停在半站",
+     "t": 20.13
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "膝前線繃緊＋音效",
+     "t": 20.73
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "膝蓋被提起",
+     "t": 21.03
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "軀幹晃一下",
+     "t": 21.08
+    },
+    {
+     "anim": "puppet.kneeTug",
+     "target": "ale",
+     "label": "手扶住桌邊",
+     "t": 21.58
     }
    ]
   },
@@ -383,7 +477,7 @@
    "id": "a2_c004",
    "kind": "scene",
    "title": "操偶線（必要旁白一）",
-   "duration": 19.5,
+   "duration": 21.91,
    "autoAdvance": false,
    "audioId": null,
    "musicLoop": true,
@@ -395,13 +489,13 @@
      "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
      "audioId": "vo_a2_c004_01",
      "start": 0.8,
-     "end": 5.48,
-     "duration": 4.68,
+     "end": 6.01,
+     "duration": 5.21,
      "placeholder": false,
      "pages": [
       {
        "start": 0.8,
-       "end": 5.48,
+       "end": 6.01,
        "rows": [
         "阿樂叔叔身上這一條一條的線，",
         "叫做操偶線。"
@@ -414,29 +508,29 @@
      "speaker": "旁白",
      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
      "audioId": "vo_a2_c004_02",
-     "start": 5.93,
-     "end": 17.5,
-     "duration": 11.57,
+     "start": 6.46,
+     "end": 19.91,
+     "duration": 13.45,
      "placeholder": false,
      "pages": [
       {
-       "start": 5.93,
-       "end": 8.685,
+       "start": 6.46,
+       "end": 9.662,
        "rows": [
         "這些線是故事的比喻。"
        ]
       },
       {
-       "start": 8.685,
-       "end": 14.745,
+       "start": 9.662,
+       "end": 16.708,
        "rows": [
         "毒品可能讓人的頭腦",
         "和身體受到影響，不聽使喚。"
        ]
       },
       {
-       "start": 14.745,
-       "end": 17.5,
+       "start": 16.708,
+       "end": 19.91,
        "rows": [
         "人不會真的變成喪屍。"
        ]
@@ -460,58 +554,114 @@
      "name": "camera.move",
      "target": null,
      "start": 0.3,
-     "end": 4.5,
+     "end": 4.6,
      "params": {
-      "to": "anchor:ale.wrist",
-      "dist": 12.5
+      "to": "g4_c004_wrist"
      }
     },
     {
      "name": "camera.move",
      "target": null,
-     "start": 4.7,
-     "end": 6.3,
+     "start": 6.4,
+     "end": 10.2,
      "params": {
-      "to": "anchor:ale.elbow",
-      "dist": 12.5
+      "to": "g4_c004_knee"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoqing",
+     "start": 9,
+     "end": 9.8,
+     "params": {
+      "to": 0.04
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoyu",
+     "start": 9.15,
+     "end": 9.95,
+     "params": {
+      "to": -0.04
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "target": "xiaoqing",
+     "start": 9.5,
+     "end": 9.5,
+     "params": {}
+    },
+    {
+     "name": "puppet.blink",
+     "target": "xiaoyu",
+     "start": 9.75,
+     "end": 9.75,
+     "params": {}
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 10.6,
+     "end": 14.2,
+     "params": {
+      "to": "g4_c004_up"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoqing",
+     "start": 10.9,
+     "end": 11.8,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoyu",
+     "start": 11.05,
+     "end": 11.95,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 12,
+     "end": 12.8,
+     "params": {
+      "to": 0.16
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 14.1,
+     "end": 15,
+     "params": {
+      "to": 0.07
      }
     },
     {
      "name": "camera.move",
      "target": null,
-     "start": 6.5,
-     "end": 10.3,
-     "params": {
-      "to": "anchor:ale.knee",
-      "dist": 12.5
-     }
-    },
-    {
-     "name": "camera.move",
-     "target": null,
-     "start": 10.5,
-     "end": 14.1,
-     "params": {
-      "to": "anchor:ale.up",
-      "dist": 13.5
-     }
-    },
-    {
-     "name": "camera.move",
-     "target": null,
-     "start": 15.5,
-     "end": 19.1,
+     "start": 17.91,
+     "end": 21.51,
      "params": {
       "to": "g4_mid"
      }
     }
-   ]
+   ],
+   "beats": []
   },
   {
    "id": "a8_c002",
    "kind": "curtain",
    "title": "布幕合攏",
-   "duration": 3.1,
+   "duration": 5.4,
    "autoAdvance": true,
    "audioId": null,
    "musicLoop": true,
@@ -520,14 +670,14 @@
    "sfx": [
     {
      "id": "sfx_curtain_close",
-     "at": 0.9,
+     "at": 3.3,
      "gain": 1
     }
    ],
    "music": [
     {
      "id": "music_closing",
-     "at": 0.9,
+     "at": 3.3,
      "loop": false,
      "fade": 0.8,
      "gain": 1,
@@ -539,7 +689,7 @@
      "name": "fx.spot",
      "target": null,
      "start": 0,
-     "end": 1.6,
+     "end": 1.4,
      "params": {
       "to": 0
      }
@@ -548,14 +698,14 @@
      "name": "light.restore",
      "target": null,
      "start": 0,
-     "end": 1.6,
+     "end": 1.4,
      "params": {}
     },
     {
      "name": "fx.desat",
      "target": null,
      "start": 0,
-     "end": 2,
+     "end": 1.4,
      "params": {
       "to": 0.2
      }
@@ -563,8 +713,8 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 0,
-     "end": 3,
+     "start": 0.3,
+     "end": 5.3,
      "params": {
       "to": "g4_stage"
      }
@@ -572,11 +722,12 @@
     {
      "name": "curtain.close",
      "target": null,
-     "start": 0.9,
-     "end": 2.9,
+     "start": 3.3,
+     "end": 5.3,
      "params": {}
     }
-   ]
+   ],
+   "beats": []
   },
   {
    "id": "a8_c003",
@@ -598,9 +749,45 @@
      "end": 0.8,
      "params": {}
     }
-   ]
+   ],
+   "beats": []
   }
  ],
+ "beatTables": {
+  "waveTry": {
+   "greet": 0,
+   "raiseStart": 0.25,
+   "raiseEnd": 1.15,
+   "waveStart": 1.15,
+   "waveEnd": 2.58,
+   "waveHz": 1.4,
+   "tautStart": 2.63,
+   "tautEnd": 2.75,
+   "pullStart": 2.93,
+   "pullEnd": 3.68,
+   "confused": 3.33,
+   "duration": 3.8
+  },
+  "kneeTug": {
+   "riseStart": 0,
+   "riseEnd": 0.5,
+   "riseDepth": 0.75,
+   "tautStart": 1.1,
+   "tautEnd": 1.22,
+   "liftStart": 1.4,
+   "liftEnd": 1.9,
+   "swayStart": 1.45,
+   "swayPeak": 1.75,
+   "swayEnd": 2.2,
+   "grabStart": 1.95,
+   "grabEnd": 2.6,
+   "settleStart": 2.1,
+   "settleEnd": 2.9,
+   "settleSit": 0.55,
+   "duration": 3.4
+  },
+  "source": "app/src/stage/beats.ts"
+ },
  "schedule": [
   {
    "id": "a0_c000",
@@ -614,78 +801,1048 @@
    "id": "a0_c001",
    "kind": "curtain",
    "start": 3,
-   "duration": 10.6,
+   "duration": 11.6,
    "hold": 2,
    "autoAdvance": false
   },
   {
    "id": "a2_c002",
    "kind": "scene",
-   "start": 15.6,
-   "duration": 22.83,
-   "hold": 2,
+   "start": 16.6,
+   "duration": 24.93,
+   "hold": 4,
    "autoAdvance": false
   },
   {
    "id": "a2_c004",
    "kind": "scene",
-   "start": 40.43,
-   "duration": 19.5,
-   "hold": 2,
+   "start": 45.53,
+   "duration": 21.91,
+   "hold": 4,
    "autoAdvance": false
   },
   {
    "id": "a8_c002",
    "kind": "curtain",
-   "start": 61.93,
-   "duration": 3.1,
+   "start": 71.44,
+   "duration": 5.4,
    "hold": 0,
    "autoAdvance": true
   },
   {
    "id": "a8_c003",
    "kind": "title",
-   "start": 65.03,
+   "start": 76.84,
    "duration": 1.4,
    "hold": 6.5,
    "autoAdvance": false
   }
  ],
- "totalPlaybackSec": 72.93,
+ "totalPlaybackSec": 84.74,
  "audio": {
-  "vo_a2_c001_01": {
-   "source": "audio/vo/vo_a2_c001_01_v01.wav",
-   "duration": 3.52,
+  "vo_a0_c001_01": {
+   "source": "audio/vo/vo_a0_c001_01_v04.wav",
+   "duration": 5.16,
    "bus": "vo"
   },
-  "vo_a2_c001_02": {
-   "source": "audio/vo/vo_a2_c001_02_v01.wav",
-   "duration": 3.16,
+  "vo_a0_c002_01": {
+   "source": "audio/vo/vo_a0_c002_01_v04.wav",
+   "duration": 2.53,
    "bus": "vo"
   },
-  "vo_a2_c001_03": {
-   "source": "audio/vo/vo_a2_c001_03_v01.wav",
-   "duration": 5.43,
+  "vo_a0_c002_02": {
+   "source": "audio/vo/vo_a0_c002_02_v04.wav",
+   "duration": 5.1,
    "bus": "vo"
   },
-  "vo_a2_c002_01": {
-   "source": "audio/vo/vo_a2_c002_01_v01.wav",
-   "duration": 4.26,
+  "vo_a0_c002_03": {
+   "source": "audio/vo/vo_a0_c002_03_v04.wav",
+   "duration": 2.62,
    "bus": "vo"
   },
-  "vo_a2_c002_02": {
-   "source": "audio/vo/vo_a2_c002_02_v01.wav",
-   "duration": 1.72,
+  "vo_a0_c003_01": {
+   "source": "audio/vo/vo_a0_c003_01_v04.wav",
+   "duration": 5.63,
    "bus": "vo"
   },
-  "vo_a2_c004_01": {
-   "source": "audio/vo/vo_a2_c004_01_v01.wav",
+  "vo_a0_c003_02": {
+   "source": "audio/vo/vo_a0_c003_02_v04.wav",
+   "duration": 3.22,
+   "bus": "vo"
+  },
+  "vo_a0_c003_03": {
+   "source": "audio/vo/vo_a0_c003_03_v04.wav",
+   "duration": 4.24,
+   "bus": "vo"
+  },
+  "vo_a0_c003_04": {
+   "source": "audio/vo/vo_a0_c003_04_v04.wav",
+   "duration": 4.15,
+   "bus": "vo"
+  },
+  "vo_a0_c004_01": {
+   "source": "audio/vo/vo_a0_c004_01_v04.wav",
+   "duration": 2.71,
+   "bus": "vo"
+  },
+  "vo_a0_c004_02": {
+   "source": "audio/vo/vo_a0_c004_02_v04.wav",
+   "duration": 3.2,
+   "bus": "vo"
+  },
+  "vo_a0_c004_03": {
+   "source": "audio/vo/vo_a0_c004_03_v04.wav",
+   "duration": 3.87,
+   "bus": "vo"
+  },
+  "vo_a0_c004_04": {
+   "source": "audio/vo/vo_a0_c004_04_v04.wav",
+   "duration": 3.34,
+   "bus": "vo"
+  },
+  "vo_a0_c004_05": {
+   "source": "audio/vo/vo_a0_c004_05_v04.wav",
+   "duration": 5.69,
+   "bus": "vo"
+  },
+  "vo_a0_c004_06": {
+   "source": "audio/vo/vo_a0_c004_06_v04.wav",
+   "duration": 1.15,
+   "bus": "vo"
+  },
+  "vo_a0_c005_01": {
+   "source": "audio/vo/vo_a0_c005_01_v04.wav",
+   "duration": 5.84,
+   "bus": "vo"
+  },
+  "vo_a0_c005_02": {
+   "source": "audio/vo/vo_a0_c005_02_v04.wav",
+   "duration": 4.8,
+   "bus": "vo"
+  },
+  "vo_a0_c005_03": {
+   "source": "audio/vo/vo_a0_c005_03_v04.wav",
+   "duration": 3.3,
+   "bus": "vo"
+  },
+  "vo_a1_c001_01": {
+   "source": "audio/vo/vo_a1_c001_01_v04.wav",
+   "duration": 3.11,
+   "bus": "vo"
+  },
+  "vo_a1_c001_02": {
+   "source": "audio/vo/vo_a1_c001_02_v04.wav",
    "duration": 4.68,
    "bus": "vo"
   },
+  "vo_a1_c001_03": {
+   "source": "audio/vo/vo_a1_c001_03_v04.wav",
+   "duration": 3.57,
+   "bus": "vo"
+  },
+  "vo_a1_c001_04": {
+   "source": "audio/vo/vo_a1_c001_04_v04.wav",
+   "duration": 3.4,
+   "bus": "vo"
+  },
+  "vo_a1_c001_05": {
+   "source": "audio/vo/vo_a1_c001_05_v04.wav",
+   "duration": 2.04,
+   "bus": "vo"
+  },
+  "vo_a1_c002_01": {
+   "source": "audio/vo/vo_a1_c002_01_v04.wav",
+   "duration": 2.19,
+   "bus": "vo"
+  },
+  "vo_a1_c002_02": {
+   "source": "audio/vo/vo_a1_c002_02_v04.wav",
+   "duration": 4.25,
+   "bus": "vo"
+  },
+  "vo_a1_c002_03": {
+   "source": "audio/vo/vo_a1_c002_03_v04.wav",
+   "duration": 2.29,
+   "bus": "vo"
+  },
+  "vo_a1_c003_01": {
+   "source": "audio/vo/vo_a1_c003_01_v04.wav",
+   "duration": 2.03,
+   "bus": "vo"
+  },
+  "vo_a1_c003_02": {
+   "source": "audio/vo/vo_a1_c003_02_v04.wav",
+   "duration": 5.87,
+   "bus": "vo"
+  },
+  "vo_a1_c003_03": {
+   "source": "audio/vo/vo_a1_c003_03_v04.wav",
+   "duration": 5.42,
+   "bus": "vo"
+  },
+  "vo_a1_c004_01": {
+   "source": "audio/vo/vo_a1_c004_01_v04.wav",
+   "duration": 4.27,
+   "bus": "vo"
+  },
+  "vo_a1_c004_02": {
+   "source": "audio/vo/vo_a1_c004_02_v04.wav",
+   "duration": 2.89,
+   "bus": "vo"
+  },
+  "vo_a1_c004_03": {
+   "source": "audio/vo/vo_a1_c004_03_v04.wav",
+   "duration": 4.13,
+   "bus": "vo"
+  },
+  "vo_a1_c004_04": {
+   "source": "audio/vo/vo_a1_c004_04_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a1_c004_05": {
+   "source": "audio/vo/vo_a1_c004_05_v04.wav",
+   "duration": 3.66,
+   "bus": "vo"
+  },
+  "vo_a1_c004_06": {
+   "source": "audio/vo/vo_a1_c004_06_v04.wav",
+   "duration": 3.89,
+   "bus": "vo"
+  },
+  "vo_a1_c005_01": {
+   "source": "audio/vo/vo_a1_c005_01_v04.wav",
+   "duration": 1.92,
+   "bus": "vo"
+  },
+  "vo_a1_c005_02": {
+   "source": "audio/vo/vo_a1_c005_02_v04.wav",
+   "duration": 6.61,
+   "bus": "vo"
+  },
+  "vo_a1_c005_03": {
+   "source": "audio/vo/vo_a1_c005_03_v04.wav",
+   "duration": 3.29,
+   "bus": "vo"
+  },
+  "vo_a1_c005_04": {
+   "source": "audio/vo/vo_a1_c005_04_v04.wav",
+   "duration": 3.59,
+   "bus": "vo"
+  },
+  "vo_a1_c005_05": {
+   "source": "audio/vo/vo_a1_c005_05_v04.wav",
+   "duration": 3.73,
+   "bus": "vo"
+  },
+  "vo_a1_c006_01": {
+   "source": "audio/vo/vo_a1_c006_01_v04.wav",
+   "duration": 4.77,
+   "bus": "vo"
+  },
+  "vo_a1_c007_01": {
+   "source": "audio/vo/vo_a1_c007_01_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a1_c008_01": {
+   "source": "audio/vo/vo_a1_c008_01_v04.wav",
+   "duration": 3.84,
+   "bus": "vo"
+  },
+  "vo_a1_c008_02": {
+   "source": "audio/vo/vo_a1_c008_02_v04.wav",
+   "duration": 4.02,
+   "bus": "vo"
+  },
+  "vo_a1_c008_03": {
+   "source": "audio/vo/vo_a1_c008_03_v04.wav",
+   "duration": 2.17,
+   "bus": "vo"
+  },
+  "vo_a2_c001_01": {
+   "source": "audio/vo/vo_a2_c001_01_v04.wav",
+   "duration": 3.45,
+   "bus": "vo"
+  },
+  "vo_a2_c001_02": {
+   "source": "audio/vo/vo_a2_c001_02_v04.wav",
+   "duration": 3.03,
+   "bus": "vo"
+  },
+  "vo_a2_c001_03": {
+   "source": "audio/vo/vo_a2_c001_03_v04.wav",
+   "duration": 6.03,
+   "bus": "vo"
+  },
+  "vo_a2_c002_01": {
+   "source": "audio/vo/vo_a2_c002_01_v04.wav",
+   "duration": 6.03,
+   "bus": "vo"
+  },
+  "vo_a2_c002_02": {
+   "source": "audio/vo/vo_a2_c002_02_v04.wav",
+   "duration": 1.7,
+   "bus": "vo"
+  },
+  "vo_a2_c003_01": {
+   "source": "audio/vo/vo_a2_c003_01_v04.wav",
+   "duration": 3.98,
+   "bus": "vo"
+  },
+  "vo_a2_c003_02": {
+   "source": "audio/vo/vo_a2_c003_02_v04.wav",
+   "duration": 7.91,
+   "bus": "vo"
+  },
+  "vo_a2_c004_01": {
+   "source": "audio/vo/vo_a2_c004_01_v04.wav",
+   "duration": 5.21,
+   "bus": "vo"
+  },
   "vo_a2_c004_02": {
-   "source": "audio/vo/vo_a2_c004_02_v01.wav",
-   "duration": 11.57,
+   "source": "audio/vo/vo_a2_c004_02_v04.wav",
+   "duration": 13.45,
+   "bus": "vo"
+  },
+  "vo_a2_c005_01": {
+   "source": "audio/vo/vo_a2_c005_01_v04.wav",
+   "duration": 1.6,
+   "bus": "vo"
+  },
+  "vo_a2_c005_02": {
+   "source": "audio/vo/vo_a2_c005_02_v04.wav",
+   "duration": 3.96,
+   "bus": "vo"
+  },
+  "vo_a2_c005_03": {
+   "source": "audio/vo/vo_a2_c005_03_v04.wav",
+   "duration": 4.76,
+   "bus": "vo"
+  },
+  "vo_a2_c005_04": {
+   "source": "audio/vo/vo_a2_c005_04_v04.wav",
+   "duration": 4.33,
+   "bus": "vo"
+  },
+  "vo_a2_c005_05": {
+   "source": "audio/vo/vo_a2_c005_05_v04.wav",
+   "duration": 4.46,
+   "bus": "vo"
+  },
+  "vo_a2_c006_01": {
+   "source": "audio/vo/vo_a2_c006_01_v04.wav",
+   "duration": 4.96,
+   "bus": "vo"
+  },
+  "vo_a2_c007_01": {
+   "source": "audio/vo/vo_a2_c007_01_v04.wav",
+   "duration": 5.47,
+   "bus": "vo"
+  },
+  "vo_a2_c008_01": {
+   "source": "audio/vo/vo_a2_c008_01_v04.wav",
+   "duration": 5.51,
+   "bus": "vo"
+  },
+  "vo_a2_c008_02": {
+   "source": "audio/vo/vo_a2_c008_02_v04.wav",
+   "duration": 5.04,
+   "bus": "vo"
+  },
+  "vo_a2_c008_03": {
+   "source": "audio/vo/vo_a2_c008_03_v04.wav",
+   "duration": 3.47,
+   "bus": "vo"
+  },
+  "vo_a2_c008_04": {
+   "source": "audio/vo/vo_a2_c008_04_v04.wav",
+   "duration": 3.97,
+   "bus": "vo"
+  },
+  "vo_a2_c008_05": {
+   "source": "audio/vo/vo_a2_c008_05_v04.wav",
+   "duration": 12.31,
+   "bus": "vo"
+  },
+  "vo_a2_c009_01": {
+   "source": "audio/vo/vo_a2_c009_01_v04.wav",
+   "duration": 1.65,
+   "bus": "vo"
+  },
+  "vo_a2_c009_02": {
+   "source": "audio/vo/vo_a2_c009_02_v04.wav",
+   "duration": 3.97,
+   "bus": "vo"
+  },
+  "vo_a2_c009_03": {
+   "source": "audio/vo/vo_a2_c009_03_v04.wav",
+   "duration": 3.72,
+   "bus": "vo"
+  },
+  "vo_a2_c009_04": {
+   "source": "audio/vo/vo_a2_c009_04_v04.wav",
+   "duration": 4.03,
+   "bus": "vo"
+  },
+  "vo_a2_c009_05": {
+   "source": "audio/vo/vo_a2_c009_05_v04.wav",
+   "duration": 4.19,
+   "bus": "vo"
+  },
+  "vo_a2_c010_01": {
+   "source": "audio/vo/vo_a2_c010_01_v04.wav",
+   "duration": 4.29,
+   "bus": "vo"
+  },
+  "vo_a2_c011_01": {
+   "source": "audio/vo/vo_a2_c011_01_v04.wav",
+   "duration": 1.87,
+   "bus": "vo"
+  },
+  "vo_a2_c012_01": {
+   "source": "audio/vo/vo_a2_c012_01_v04.wav",
+   "duration": 5.06,
+   "bus": "vo"
+  },
+  "vo_a2_c012_02": {
+   "source": "audio/vo/vo_a2_c012_02_v04.wav",
+   "duration": 3.53,
+   "bus": "vo"
+  },
+  "vo_a2_c012_03": {
+   "source": "audio/vo/vo_a2_c012_03_v04.wav",
+   "duration": 3.81,
+   "bus": "vo"
+  },
+  "vo_a2_c012_04": {
+   "source": "audio/vo/vo_a2_c012_04_v04.wav",
+   "duration": 4.37,
+   "bus": "vo"
+  },
+  "vo_a2_c012_05": {
+   "source": "audio/vo/vo_a2_c012_05_v04.wav",
+   "duration": 3.83,
+   "bus": "vo"
+  },
+  "vo_a2_c013_01": {
+   "source": "audio/vo/vo_a2_c013_01_v04.wav",
+   "duration": 7.12,
+   "bus": "vo"
+  },
+  "vo_a2_c013_02": {
+   "source": "audio/vo/vo_a2_c013_02_v04.wav",
+   "duration": 4.63,
+   "bus": "vo"
+  },
+  "vo_a2_c013_03": {
+   "source": "audio/vo/vo_a2_c013_03_v04.wav",
+   "duration": 5.28,
+   "bus": "vo"
+  },
+  "vo_a2_c013_04": {
+   "source": "audio/vo/vo_a2_c013_04_v04.wav",
+   "duration": 4.37,
+   "bus": "vo"
+  },
+  "vo_a2_c013_05": {
+   "source": "audio/vo/vo_a2_c013_05_v04.wav",
+   "duration": 2.79,
+   "bus": "vo"
+  },
+  "vo_a3_c001_01": {
+   "source": "audio/vo/vo_a3_c001_01_v04.wav",
+   "duration": 2.24,
+   "bus": "vo"
+  },
+  "vo_a3_c001_02": {
+   "source": "audio/vo/vo_a3_c001_02_v04.wav",
+   "duration": 2.44,
+   "bus": "vo"
+  },
+  "vo_a3_c001_03": {
+   "source": "audio/vo/vo_a3_c001_03_v04.wav",
+   "duration": 6.22,
+   "bus": "vo"
+  },
+  "vo_a3_c001_04": {
+   "source": "audio/vo/vo_a3_c001_04_v04.wav",
+   "duration": 1.7,
+   "bus": "vo"
+  },
+  "vo_a3_c002_01": {
+   "source": "audio/vo/vo_a3_c002_01_v04.wav",
+   "duration": 2.01,
+   "bus": "vo"
+  },
+  "vo_a3_c002_02": {
+   "source": "audio/vo/vo_a3_c002_02_v04.wav",
+   "duration": 2.89,
+   "bus": "vo"
+  },
+  "vo_a3_c002_03": {
+   "source": "audio/vo/vo_a3_c002_03_v04.wav",
+   "duration": 1.13,
+   "bus": "vo"
+  },
+  "vo_a3_c003_01": {
+   "source": "audio/vo/vo_a3_c003_01_v04.wav",
+   "duration": 5.74,
+   "bus": "vo"
+  },
+  "vo_a3_c003_02": {
+   "source": "audio/vo/vo_a3_c003_02_v04.wav",
+   "duration": 5.7,
+   "bus": "vo"
+  },
+  "vo_a3_c003_03": {
+   "source": "audio/vo/vo_a3_c003_03_v04.wav",
+   "duration": 4.31,
+   "bus": "vo"
+  },
+  "vo_a3_c004_01": {
+   "source": "audio/vo/vo_a3_c004_01_v04.wav",
+   "duration": 5.45,
+   "bus": "vo"
+  },
+  "vo_a3_c004_02": {
+   "source": "audio/vo/vo_a3_c004_02_v04.wav",
+   "duration": 4.42,
+   "bus": "vo"
+  },
+  "vo_a3_c005_01": {
+   "source": "audio/vo/vo_a3_c005_01_v04.wav",
+   "duration": 1.45,
+   "bus": "vo"
+  },
+  "vo_a3_c005_02": {
+   "source": "audio/vo/vo_a3_c005_02_v04.wav",
+   "duration": 4.57,
+   "bus": "vo"
+  },
+  "vo_a3_c005_03": {
+   "source": "audio/vo/vo_a3_c005_03_v04.wav",
+   "duration": 5.04,
+   "bus": "vo"
+  },
+  "vo_a3_c005_04": {
+   "source": "audio/vo/vo_a3_c005_04_v04.wav",
+   "duration": 3.78,
+   "bus": "vo"
+  },
+  "vo_a3_c005_05": {
+   "source": "audio/vo/vo_a3_c005_05_v04.wav",
+   "duration": 4.27,
+   "bus": "vo"
+  },
+  "vo_a3_c006_01": {
+   "source": "audio/vo/vo_a3_c006_01_v04.wav",
+   "duration": 5.24,
+   "bus": "vo"
+  },
+  "vo_a3_c007_01": {
+   "source": "audio/vo/vo_a3_c007_01_v04.wav",
+   "duration": 2.18,
+   "bus": "vo"
+  },
+  "vo_a3_c008_01": {
+   "source": "audio/vo/vo_a3_c008_01_v04.wav",
+   "duration": 3.69,
+   "bus": "vo"
+  },
+  "vo_a3_c008_02": {
+   "source": "audio/vo/vo_a3_c008_02_v04.wav",
+   "duration": 8.56,
+   "bus": "vo"
+  },
+  "vo_a3_c008_03": {
+   "source": "audio/vo/vo_a3_c008_03_v04.wav",
+   "duration": 3.47,
+   "bus": "vo"
+  },
+  "vo_a3_c008_04": {
+   "source": "audio/vo/vo_a3_c008_04_v04.wav",
+   "duration": 10.37,
+   "bus": "vo"
+  },
+  "vo_a4_c001_01": {
+   "source": "audio/vo/vo_a4_c001_01_v04.wav",
+   "duration": 13.56,
+   "bus": "vo"
+  },
+  "vo_a4_c001_02": {
+   "source": "audio/vo/vo_a4_c001_02_v04.wav",
+   "duration": 5.51,
+   "bus": "vo"
+  },
+  "vo_a4_c002_01": {
+   "source": "audio/vo/vo_a4_c002_01_v04.wav",
+   "duration": 3.4,
+   "bus": "vo"
+  },
+  "vo_a4_c002_02": {
+   "source": "audio/vo/vo_a4_c002_02_v04.wav",
+   "duration": 2.43,
+   "bus": "vo"
+  },
+  "vo_a4_c002_03": {
+   "source": "audio/vo/vo_a4_c002_03_v04.wav",
+   "duration": 4.73,
+   "bus": "vo"
+  },
+  "vo_a4_c003_01": {
+   "source": "audio/vo/vo_a4_c003_01_v04.wav",
+   "duration": 6.28,
+   "bus": "vo"
+  },
+  "vo_a4_c003_02": {
+   "source": "audio/vo/vo_a4_c003_02_v04.wav",
+   "duration": 4.59,
+   "bus": "vo"
+  },
+  "vo_a4_c004_01": {
+   "source": "audio/vo/vo_a4_c004_01_v04.wav",
+   "duration": 2.83,
+   "bus": "vo"
+  },
+  "vo_a4_c004_02": {
+   "source": "audio/vo/vo_a4_c004_02_v04.wav",
+   "duration": 5.12,
+   "bus": "vo"
+  },
+  "vo_a4_c005_01": {
+   "source": "audio/vo/vo_a4_c005_01_v04.wav",
+   "duration": 1.24,
+   "bus": "vo"
+  },
+  "vo_a4_c005_02": {
+   "source": "audio/vo/vo_a4_c005_02_v04.wav",
+   "duration": 4.01,
+   "bus": "vo"
+  },
+  "vo_a4_c005_03": {
+   "source": "audio/vo/vo_a4_c005_03_v04.wav",
+   "duration": 3.01,
+   "bus": "vo"
+  },
+  "vo_a4_c005_04": {
+   "source": "audio/vo/vo_a4_c005_04_v04.wav",
+   "duration": 3.05,
+   "bus": "vo"
+  },
+  "vo_a4_c005_05": {
+   "source": "audio/vo/vo_a4_c005_05_v04.wav",
+   "duration": 3.16,
+   "bus": "vo"
+  },
+  "vo_a4_c006_01": {
+   "source": "audio/vo/vo_a4_c006_01_v04.wav",
+   "duration": 4.06,
+   "bus": "vo"
+  },
+  "vo_a4_c007_01": {
+   "source": "audio/vo/vo_a4_c007_01_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a4_c008_01": {
+   "source": "audio/vo/vo_a4_c008_01_v04.wav",
+   "duration": 3.02,
+   "bus": "vo"
+  },
+  "vo_a4_c008_02": {
+   "source": "audio/vo/vo_a4_c008_02_v04.wav",
+   "duration": 4.51,
+   "bus": "vo"
+  },
+  "vo_a4_c009_01": {
+   "source": "audio/vo/vo_a4_c009_01_v04.wav",
+   "duration": 1.36,
+   "bus": "vo"
+  },
+  "vo_a4_c009_02": {
+   "source": "audio/vo/vo_a4_c009_02_v04.wav",
+   "duration": 7.63,
+   "bus": "vo"
+  },
+  "vo_a4_c009_03": {
+   "source": "audio/vo/vo_a4_c009_03_v04.wav",
+   "duration": 4.67,
+   "bus": "vo"
+  },
+  "vo_a4_c009_04": {
+   "source": "audio/vo/vo_a4_c009_04_v04.wav",
+   "duration": 4.21,
+   "bus": "vo"
+  },
+  "vo_a4_c009_05": {
+   "source": "audio/vo/vo_a4_c009_05_v04.wav",
+   "duration": 3.64,
+   "bus": "vo"
+  },
+  "vo_a4_c010_01": {
+   "source": "audio/vo/vo_a4_c010_01_v04.wav",
+   "duration": 5.12,
+   "bus": "vo"
+  },
+  "vo_a4_c011_01": {
+   "source": "audio/vo/vo_a4_c011_01_v04.wav",
+   "duration": 1.42,
+   "bus": "vo"
+  },
+  "vo_a4_c012_01": {
+   "source": "audio/vo/vo_a4_c012_01_v04.wav",
+   "duration": 2.45,
+   "bus": "vo"
+  },
+  "vo_a4_c012_02": {
+   "source": "audio/vo/vo_a4_c012_02_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a4_c012_03": {
+   "source": "audio/vo/vo_a4_c012_03_v04.wav",
+   "duration": 5.33,
+   "bus": "vo"
+  },
+  "vo_a4_c012_04": {
+   "source": "audio/vo/vo_a4_c012_04_v04.wav",
+   "duration": 9.04,
+   "bus": "vo"
+  },
+  "vo_a4_c012_05": {
+   "source": "audio/vo/vo_a4_c012_05_v04.wav",
+   "duration": 3.04,
+   "bus": "vo"
+  },
+  "vo_a4_c013_01": {
+   "source": "audio/vo/vo_a4_c013_01_v04.wav",
+   "duration": 5.11,
+   "bus": "vo"
+  },
+  "vo_a4_c013_02": {
+   "source": "audio/vo/vo_a4_c013_02_v04.wav",
+   "duration": 4.22,
+   "bus": "vo"
+  },
+  "vo_a4_c013_03": {
+   "source": "audio/vo/vo_a4_c013_03_v04.wav",
+   "duration": 5.52,
+   "bus": "vo"
+  },
+  "vo_a5_c001_01": {
+   "source": "audio/vo/vo_a5_c001_01_v04.wav",
+   "duration": 3.63,
+   "bus": "vo"
+  },
+  "vo_a5_c001_02": {
+   "source": "audio/vo/vo_a5_c001_02_v04.wav",
+   "duration": 7.32,
+   "bus": "vo"
+  },
+  "vo_a5_c001_03": {
+   "source": "audio/vo/vo_a5_c001_03_v04.wav",
+   "duration": 2.09,
+   "bus": "vo"
+  },
+  "vo_a5_c001_04": {
+   "source": "audio/vo/vo_a5_c001_04_v04.wav",
+   "duration": 2.9,
+   "bus": "vo"
+  },
+  "vo_a5_c001_05": {
+   "source": "audio/vo/vo_a5_c001_05_v04.wav",
+   "duration": 1.96,
+   "bus": "vo"
+  },
+  "vo_a5_c001_06": {
+   "source": "audio/vo/vo_a5_c001_06_v04.wav",
+   "duration": 5.02,
+   "bus": "vo"
+  },
+  "vo_a5_c002_01": {
+   "source": "audio/vo/vo_a5_c002_01_v04.wav",
+   "duration": 1.23,
+   "bus": "vo"
+  },
+  "vo_a5_c002_02": {
+   "source": "audio/vo/vo_a5_c002_02_v04.wav",
+   "duration": 5.78,
+   "bus": "vo"
+  },
+  "vo_a5_c002_03": {
+   "source": "audio/vo/vo_a5_c002_03_v04.wav",
+   "duration": 3.39,
+   "bus": "vo"
+  },
+  "vo_a5_c002_04": {
+   "source": "audio/vo/vo_a5_c002_04_v04.wav",
+   "duration": 3.81,
+   "bus": "vo"
+  },
+  "vo_a5_c002_05": {
+   "source": "audio/vo/vo_a5_c002_05_v04.wav",
+   "duration": 4.61,
+   "bus": "vo"
+  },
+  "vo_a5_c003_01": {
+   "source": "audio/vo/vo_a5_c003_01_v04.wav",
+   "duration": 5.02,
+   "bus": "vo"
+  },
+  "vo_a5_c004_01": {
+   "source": "audio/vo/vo_a5_c004_01_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a5_c005_01": {
+   "source": "audio/vo/vo_a5_c005_01_v04.wav",
+   "duration": 1.36,
+   "bus": "vo"
+  },
+  "vo_a5_c005_02": {
+   "source": "audio/vo/vo_a5_c005_02_v04.wav",
+   "duration": 5.6,
+   "bus": "vo"
+  },
+  "vo_a5_c005_03": {
+   "source": "audio/vo/vo_a5_c005_03_v04.wav",
+   "duration": 5.29,
+   "bus": "vo"
+  },
+  "vo_a5_c006_01": {
+   "source": "audio/vo/vo_a5_c006_01_v04.wav",
+   "duration": 5.15,
+   "bus": "vo"
+  },
+  "vo_a5_c006_02": {
+   "source": "audio/vo/vo_a5_c006_02_v04.wav",
+   "duration": 6.92,
+   "bus": "vo"
+  },
+  "vo_a5_c006_03": {
+   "source": "audio/vo/vo_a5_c006_03_v04.wav",
+   "duration": 6.82,
+   "bus": "vo"
+  },
+  "vo_a5_c006_04": {
+   "source": "audio/vo/vo_a5_c006_04_v04.wav",
+   "duration": 4.06,
+   "bus": "vo"
+  },
+  "vo_a5_c006_05": {
+   "source": "audio/vo/vo_a5_c006_05_v04.wav",
+   "duration": 4.98,
+   "bus": "vo"
+  },
+  "vo_a5_c007_01": {
+   "source": "audio/vo/vo_a5_c007_01_v04.wav",
+   "duration": 4.84,
+   "bus": "vo"
+  },
+  "vo_a5_c007_02": {
+   "source": "audio/vo/vo_a5_c007_02_v04.wav",
+   "duration": 4.53,
+   "bus": "vo"
+  },
+  "vo_a5_c008_01": {
+   "source": "audio/vo/vo_a5_c008_01_v04.wav",
+   "duration": 5.71,
+   "bus": "vo"
+  },
+  "vo_a5_c008_02": {
+   "source": "audio/vo/vo_a5_c008_02_v04.wav",
+   "duration": 3.64,
+   "bus": "vo"
+  },
+  "vo_a5_c008_03": {
+   "source": "audio/vo/vo_a5_c008_03_v04.wav",
+   "duration": 5.4,
+   "bus": "vo"
+  },
+  "vo_a5_c008_04": {
+   "source": "audio/vo/vo_a5_c008_04_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a5_c008_05": {
+   "source": "audio/vo/vo_a5_c008_05_v04.wav",
+   "duration": 6.39,
+   "bus": "vo"
+  },
+  "vo_a6_c001_01": {
+   "source": "audio/vo/vo_a6_c001_01_v04.wav",
+   "duration": 3.82,
+   "bus": "vo"
+  },
+  "vo_a6_c001_02": {
+   "source": "audio/vo/vo_a6_c001_02_v04.wav",
+   "duration": 2.01,
+   "bus": "vo"
+  },
+  "vo_a6_c002_01": {
+   "source": "audio/vo/vo_a6_c002_01_v04.wav",
+   "duration": 2.85,
+   "bus": "vo"
+  },
+  "vo_a6_c002_02": {
+   "source": "audio/vo/vo_a6_c002_02_v04.wav",
+   "duration": 12.34,
+   "bus": "vo"
+  },
+  "vo_a6_c002_03": {
+   "source": "audio/vo/vo_a6_c002_03_v04.wav",
+   "duration": 4.59,
+   "bus": "vo"
+  },
+  "vo_a6_c002_04": {
+   "source": "audio/vo/vo_a6_c002_04_v04.wav",
+   "duration": 3.53,
+   "bus": "vo"
+  },
+  "vo_a6_c003_01": {
+   "source": "audio/vo/vo_a6_c003_01_v04.wav",
+   "duration": 1.35,
+   "bus": "vo"
+  },
+  "vo_a6_c003_02": {
+   "source": "audio/vo/vo_a6_c003_02_v04.wav",
+   "duration": 5.73,
+   "bus": "vo"
+  },
+  "vo_a6_c003_03": {
+   "source": "audio/vo/vo_a6_c003_03_v04.wav",
+   "duration": 3.48,
+   "bus": "vo"
+  },
+  "vo_a6_c003_04": {
+   "source": "audio/vo/vo_a6_c003_04_v04.wav",
+   "duration": 4.08,
+   "bus": "vo"
+  },
+  "vo_a6_c003_05": {
+   "source": "audio/vo/vo_a6_c003_05_v04.wav",
+   "duration": 3.91,
+   "bus": "vo"
+  },
+  "vo_a6_c004_01": {
+   "source": "audio/vo/vo_a6_c004_01_v04.wav",
+   "duration": 4.74,
+   "bus": "vo"
+  },
+  "vo_a6_c005_01": {
+   "source": "audio/vo/vo_a6_c005_01_v04.wav",
+   "duration": 2.41,
+   "bus": "vo"
+  },
+  "vo_a6_c006_01": {
+   "source": "audio/vo/vo_a6_c006_01_v04.wav",
+   "duration": 3.96,
+   "bus": "vo"
+  },
+  "vo_a6_c006_02": {
+   "source": "audio/vo/vo_a6_c006_02_v04.wav",
+   "duration": 2.96,
+   "bus": "vo"
+  },
+  "vo_a6_c006_03": {
+   "source": "audio/vo/vo_a6_c006_03_v04.wav",
+   "duration": 4.72,
+   "bus": "vo"
+  },
+  "vo_a6_c006_04": {
+   "source": "audio/vo/vo_a6_c006_04_v04.wav",
+   "duration": 5.55,
+   "bus": "vo"
+  },
+  "vo_a6_c006_05": {
+   "source": "audio/vo/vo_a6_c006_05_v04.wav",
+   "duration": 3.51,
+   "bus": "vo"
+  },
+  "vo_a6_c006_06": {
+   "source": "audio/vo/vo_a6_c006_06_v04.wav",
+   "duration": 2.76,
+   "bus": "vo"
+  },
+  "vo_a6_c007_01": {
+   "source": "audio/vo/vo_a6_c007_01_v04.wav",
+   "duration": 3.52,
+   "bus": "vo"
+  },
+  "vo_a6_c007_02": {
+   "source": "audio/vo/vo_a6_c007_02_v04.wav",
+   "duration": 2.96,
+   "bus": "vo"
+  },
+  "vo_a6_c007_03": {
+   "source": "audio/vo/vo_a6_c007_03_v04.wav",
+   "duration": 4.32,
+   "bus": "vo"
+  },
+  "vo_a6_c008_02": {
+   "source": "audio/vo/vo_a6_c008_02_v04.wav",
+   "duration": 5.98,
+   "bus": "vo"
+  },
+  "vo_a6_c008_03": {
+   "source": "audio/vo/vo_a6_c008_03_v04.wav",
+   "duration": 4.64,
+   "bus": "vo"
+  },
+  "vo_a6_c009_01": {
+   "source": "audio/vo/vo_a6_c009_01_v04.wav",
+   "duration": 2.29,
+   "bus": "vo"
+  },
+  "vo_a6_c009_02": {
+   "source": "audio/vo/vo_a6_c009_02_v04.wav",
+   "duration": 5.65,
+   "bus": "vo"
+  },
+  "vo_a6_c009_03": {
+   "source": "audio/vo/vo_a6_c009_03_v04.wav",
+   "duration": 8.08,
+   "bus": "vo"
+  },
+  "vo_a6_c009_04": {
+   "source": "audio/vo/vo_a6_c009_04_v04.wav",
+   "duration": 3.34,
+   "bus": "vo"
+  },
+  "vo_a7_c001_01": {
+   "source": "audio/vo/vo_a7_c001_01_v04.wav",
+   "duration": 4.94,
+   "bus": "vo"
+  },
+  "vo_a7_c001_02": {
+   "source": "audio/vo/vo_a7_c001_02_v04.wav",
+   "duration": 5.09,
+   "bus": "vo"
+  },
+  "vo_a7_c001_03": {
+   "source": "audio/vo/vo_a7_c001_03_v04.wav",
+   "duration": 6.74,
+   "bus": "vo"
+  },
+  "vo_a7_c002_01": {
+   "source": "audio/vo/vo_a7_c002_01_v04.wav",
+   "duration": 2.68,
+   "bus": "vo"
+  },
+  "vo_a7_c003_01": {
+   "source": "audio/vo/vo_a7_c003_01_v04.wav",
+   "duration": 4.82,
+   "bus": "vo"
+  },
+  "vo_a7_c003_02": {
+   "source": "audio/vo/vo_a7_c003_02_v04.wav",
+   "duration": 3.49,
+   "bus": "vo"
+  },
+  "vo_a8_c001_01": {
+   "source": "audio/vo/vo_a8_c001_01_v04.wav",
+   "duration": 3.05,
    "bus": "vo"
   },
   "music_closing": {
@@ -694,7 +1851,7 @@
    "bus": "music"
   },
   "music_m4_light": {
-   "source": "audio/music/music_m4_light_v01.wav",
+   "source": "audio/music/music_m4_light_v02.wav",
    "duration": 32,
    "bus": "music"
   },

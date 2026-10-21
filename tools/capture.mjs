@@ -14,6 +14,7 @@
 //   --dense-fps 30        高密度逐格的每秒格數（預設 30）
 //   --probe               量測：每個關鍵影格與每秒一格記錄操偶線螢幕位置與線寬（probe.json），
 //                         並在關鍵影格隱藏角色重畫一次，量兒童站位背景的亮度（投影 v2 模擬）與線的 ΔL*
+//   --probe-times "a0_c001:4.6,4.8;a2_c002:11.5"   另外在這些 cue 內秒數做量測（隱藏角色量背景、紙環位置；不進接觸表與光敏分析）
 //   --video               把高密度逐格組成 H.264 預覽影片（無聲，需要 ffmpeg）
 //   --keep-analysis       保留分析用的中間影格（預設分析完刪除，節省空間）
 // 輸出：keyframes/（PNG）、frames/（每秒 2 格 JPEG）、contact_keyframes.png、contact_timeline_NN.png、
@@ -43,12 +44,13 @@ const only = opt('--only', '') ? new Set(opt('--only', '').split(',')) : null;
 const dense = opt('--dense', '') ? new Set(opt('--dense', '').split(',')) : new Set();
 const denseFps = Number(opt('--dense-fps', '30'));
 const probe = has('--probe');
+const probeTimes = new Map((opt('--probe-times', '') || '').split(';').filter(Boolean).map((x) => { const [id, ts] = x.split(':'); return [id, ts.split(',').map(Number).filter((v) => Number.isFinite(v))]; }));
 const video = has('--video');
 
 const dist = join(ROOT, 'app/dist/index.html');
 if (!existsSync(dist)) { console.error('[capture] 找不到 app/dist/index.html，請先在 app/ 執行 npm run build'); process.exit(1); }
 
-for (const d of ['keyframes', 'frames', 'frames/analysis', 'frames_dense', 'probe_bg']) {
+for (const d of ['keyframes', 'frames', 'frames/analysis', 'frames_dense', 'probe_bg', 'probe_frames']) {
   rmSync(join(out, d), { recursive: true, force: true });
   mkdirSync(join(out, d), { recursive: true });
 }
@@ -93,6 +95,8 @@ for (const c of list) {
   for (let k = 0; k <= Math.floor(D * afps + 1e-6); k++) add(k / afps, null);
   for (let k = 0; k <= Math.floor(D * fps + 1e-6); k++) add(k / fps, 'save');
   add(0, 'before'); add(D / 2, 'mid'); add(D, 'after');
+  // 額外量測時間（只量測，不存進接觸表、不進光敏分析）
+  if (probe) for (const t of probeTimes.get(c.id) ?? []) { const k = r3(Math.min(D, t)); const e = times.get(k); if (e) e.probeBg = true; else times.set(k, { t: k, key: null, save: false, probeBg: true, probeOnly: true }); }
   // 高密度逐格：每格都存（另一個資料夾，不進接觸表）
   const denseTimes = new Set();
   if (dense.has(c.id)) {
@@ -111,19 +115,22 @@ for (const c of list) {
       if (e.denseOnly) continue;
     }
     // 量測：關鍵影格＋每秒一格記錄操偶線位置；關鍵影格另外隱藏角色量背景
-    if (probe && (e.key || Math.abs(e.t - Math.round(e.t)) < 1e-6)) {
+    if (probe && (e.key || e.probeBg || Math.abs(e.t - Math.round(e.t)) < 1e-6)) {
       const pr = await page.evaluate(() => window.__engine.debug.probe());
-      const rec = { cueId: c.id, t: e.t, key: e.key, ...pr };
-      if (e.key) {
-        const shot = `keyframes/${tag}_${e.key.replace(/\+/g, '-')}.png`;
+      const rec = { cueId: c.id, t: e.t, key: e.key ?? (e.probeBg ? 'probe' : null), ...pr };
+      if (e.key || e.probeBg) {
+        const label = e.key ? e.key.replace(/\+/g, '-') : 'probe';
+        let shot = `keyframes/${tag}_${label}.png`;
+        if (!e.key) { shot = `probe_frames/${tag}_${label}.png`; await page.screenshot({ path: join(out, shot), type: 'png' }); }
         rec.frame = shot;
         await page.evaluate(() => window.__engine.debug.hideActors(true));
-        rec.bgFrame = `probe_bg/${tag}_${e.key.replace(/\+/g, '-')}.png`;
+        rec.bgFrame = `probe_bg/${tag}_${label}.png`;
         await page.screenshot({ path: join(out, rec.bgFrame), type: 'png' });
         await page.evaluate(() => window.__engine.debug.hideActors(false));
         await page.evaluate((t) => window.__engine.capture.seek(t), seekT);
       }
       probes.push(rec);
+      if (e.probeOnly) continue;
     }
     let file;
     if (e.key) {
@@ -171,6 +178,6 @@ if (probe && py.status === 0) {
 }
 if (py.status !== 0) { console.error('[capture] 分析失敗'); process.exit(py.status ?? 1); }
 if (!has('--keep-analysis')) rmSync(join(out, 'frames/analysis'), { recursive: true, force: true });
-if (!probe) rmSync(join(out, 'probe_bg'), { recursive: true, force: true });
+if (!probe) { rmSync(join(out, 'probe_bg'), { recursive: true, force: true }); rmSync(join(out, 'probe_frames'), { recursive: true, force: true }); }
 if (!dense.size) rmSync(join(out, 'frames_dense'), { recursive: true, force: true });
 console.log(`[capture] 完成 → ${out}`);

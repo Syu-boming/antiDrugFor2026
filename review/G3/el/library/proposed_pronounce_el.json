@@ -1,0 +1,412 @@
+{
+ "_說明": "ElevenLabs 專用讀音提案（只寫在本資料夾，不改 audio/vo/pronounce.json）。格式同 pronounce.json 的 elevenlabs 服務表：鍵＝字幕原字、值＝送進 ElevenLabs 的文字。全域表已有 紙燈節→紙登結；若要讓 ElevenLabs 念原字，服務表寫 紙燈節→紙燈節。判定規則（客觀）：某寫法在某候選「整句」兩個轉寫模型都沒有非同音差異（ASR 通過），且整句與短框句的 F0 走勢都通過（燈高平、節上揚）＝該候選通過。聽感未驗證。",
+ "rule": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "elevenlabs": {},
+ "evidence": {
+  "紙燈節": {
+   "旁白｜Chihiro Yoko - Clear, Soothing and Sweet｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": true,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "旁白｜Chihiro Yoko - Clear, Soothing and Sweet｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "旁白｜Door Chow｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "旁白｜Door Chow｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": true,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "旁白｜Ling - Steady, Calm and Grounded｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "林老師｜Door Chow｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": null,
+     "整句 F0": null,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": false
+    }
+   },
+   "林老師｜Door Chow｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": null,
+     "整句 F0": null,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": false
+    }
+   },
+   "林老師｜Jane - Low, Calm and Slow｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": null,
+     "整句 F0": null,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": false
+    }
+   },
+   "林老師｜Jane - Low, Calm and Slow｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": null,
+     "整句 F0": null,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": false
+    }
+   },
+   "林老師｜Jui - Calm, Warm & Pleasing ｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": null,
+     "整句 F0": null,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": false
+    }
+   },
+   "折折｜Chloe - Gentle, Delicate, Reassuring｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "折折｜Lulu - Cute Little Witch ｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "折折｜Lulu - Cute Little Witch ｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": true,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": true,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "折折｜Tiffy - Taiwanese Bilingual Narrator｜v2": {
+    "替身字 紙登結": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false,
+     "tested": true
+    }
+   },
+   "折折｜Tiffy - Taiwanese Bilingual Narrator｜v3": {
+    "替身字 紙登結": {
+     "整句 ASR": true,
+     "整句 F0": false,
+     "短框句 F0": false,
+     "pass": false
+    },
+    "原字 紙燈節": {
+     "整句 ASR": false,
+     "整句 F0": false,
+     "短框句 F0": null,
+     "pass": false,
+     "tested": true
+    }
+   }
+  }
+ },
+ "counts": {
+  "紙燈節": {
+   "v2": {
+    "tested_candidates": 6,
+    "原字通過": 0,
+    "替身字通過": 0
+   },
+   "v3": {
+    "tested_candidates": 4,
+    "原字通過": 0,
+    "替身字通過": 0
+   }
+  }
+ },
+ "multilingual_v2_waveform_identity": {
+  "pairs": {
+   "narrator_Chihiro-NIqn｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9983,
+     "residual_db": -24.7,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.998,
+     "residual_db": -24.1,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9987,
+     "residual_db": -25.8,
+     "samples": [
+      238516,
+      238516
+     ]
+    }
+   },
+   "narrator_Door-qDeY｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9976,
+     "residual_db": -23.1,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9977,
+     "residual_db": -23.3,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9979,
+     "residual_db": -23.7,
+     "samples": [
+      218454,
+      218454
+     ]
+    }
+   },
+   "narrator_Ling-Z8Ai｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.994,
+     "residual_db": -19.2,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9959,
+     "residual_db": -20.9,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c001_01 原字 vs 替身字": {
+     "corr": 0.9958,
+     "residual_db": -20.8,
+     "samples": [
+      231829,
+      231829
+     ]
+    }
+   },
+   "zhezhe_Chloe-cXGZ｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9983,
+     "residual_db": -24.8,
+     "samples": [
+      64645,
+      64645
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9987,
+     "residual_db": -25.8,
+     "samples": [
+      64645,
+      64645
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9991,
+     "residual_db": -27.5,
+     "samples": [
+      236287,
+      236287
+     ]
+    }
+   },
+   "zhezhe_Lulu-BT0S｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9968,
+     "residual_db": -22.0,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.997,
+     "residual_db": -22.2,
+     "samples": [
+      57958,
+      57958
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9974,
+     "residual_db": -22.8,
+     "samples": [
+      287556,
+      287556
+     ]
+    }
+   },
+   "zhezhe_Tiffy-1AKk｜v2": {
+    "紙燈節 vs 紙登結": {
+     "corr": 0.9985,
+     "residual_db": -25.2,
+     "samples": [
+      55728,
+      55728
+     ]
+    },
+    "紙燈節 vs 紙等街": {
+     "corr": 0.9985,
+     "residual_db": -25.3,
+     "samples": [
+      55728,
+      55728
+     ]
+    },
+    "a0_c003_01 原字 vs 替身字": {
+     "corr": 0.9985,
+     "residual_db": -25.1,
+     "samples": [
+      216225,
+      216225
+     ]
+    }
+   }
+  },
+  "same_text_repeat_corr": 0.9976,
+  "min_pair_corr": 0.994
+ },
+ "proposal_text": "eleven_multilingual_v2：同聲線、同 seed 念「紙燈節。」「紙登結。」「紙等街。」與整句原字／替身字，解碼後波形兩兩相關 ≥ 0.994（同一句重複呼叫的相關 0.9976），長度逐樣本相同 → 換寫法（包括聲調不同的「等」「街」）對 v2 的讀音沒有可量測的作用；v2 的「紙燈節」讀得對不對，取決於聲線與 seed，不取決於替身字。v2：整句 ASR＋整句與短框句 F0 全部通過的候選，原字 0／6、替身字 0／6。v3：整句 ASR＋整句與短框句 F0 全部通過的候選，原字 0／4、替身字 0／4。依規則（原字通過數 > 替身字通過數才改）：維持全域替身字「紙登結」，elevenlabs 服務表不新增；v3 同文字重複呼叫結果不同（決定性對照 corr 0.3214），單次結果只代表一次抽樣。",
+ "other_words": "燈籠→登籠、折折→哲哲、阿樂→阿勒、喪屍煙彈→桑師煙蛋：本輪只用全域替身字合成（正式管線的做法），沒有另測原字；各候選的轉寫檢查結果見 metrics.json 與 transcripts.md。119：劇本原字直接送 ElevenLabs，結果見執勤人員 a5_c006_01。"
+}

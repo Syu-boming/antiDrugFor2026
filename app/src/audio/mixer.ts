@@ -7,7 +7,7 @@ import { duckingPlan } from './ducking';
 
 export type Bus = 'vo' | 'music' | 'sfx';
 
-interface Voice { src: AudioBufferSourceNode; gain: GainNode; bus: Bus; id: string }
+interface Voice { src: AudioBufferSourceNode; gain: GainNode; bus: Bus; id: string; when: number; offset: number }
 
 export class Mixer {
   readonly ctx: AudioContext | null = null;
@@ -49,6 +49,11 @@ export class Mixer {
   duration(id: string): number | undefined { return this.buffers.get(id)?.duration; }
   get activeVoices(): number { return this.voices.size; }
   activeIds(): string[] { return [...this.voices].map((v) => v.id); }
+  /** 已經開始發聲（排程時間已到、還沒結束）的聲音數；bus 省略＝全部 */
+  sounding(bus?: Bus): number {
+    const now = this.ctx?.currentTime ?? 0;
+    return [...this.voices].filter((v) => (!bus || v.bus === bus) && v.when <= now + 1e-3).length;
+  }
 
   /** 解碼資料包裡的音檔（data URL）；不需要使用者互動，準備畫面就能先做 */
   async decode(id: string, dataUrl: string): Promise<boolean> {
@@ -83,11 +88,11 @@ export class Mixer {
     const gain = ctx.createGain();
     gain.gain.value = opts.gain ?? 1;
     src.connect(gain).connect(out);
-    const v: Voice = { src, gain, bus, id };
-    src.onended = () => { this.voices.delete(v); if (this.music === v) this.music = null; };
     // 排程時間已經過去時，從對應的位置接著播（例如暫停邊界上的誤差）
     const late = Math.max(0, ctx.currentTime - when);
-    src.start(Math.max(when, ctx.currentTime), (opts.offset ?? 0) + late);
+    const v: Voice = { src, gain, bus, id, when: Math.max(when, ctx.currentTime), offset: (opts.offset ?? 0) + late };
+    src.onended = () => { this.voices.delete(v); if (this.music === v) this.music = null; };
+    src.start(v.when, v.offset);
     this.voices.add(v);
     if (bus === 'music') this.music = v;
     return true;
@@ -143,13 +148,18 @@ export class Mixer {
     gain.gain.setValueAtTime(0, t);
     gain.gain.linearRampToValueAtTime(opts.gain ?? 1, t + fade);
     src.connect(gain).connect(out);
-    const v: Voice = { src, gain, bus: 'music', id };
-    src.onended = () => { this.voices.delete(v); if (this.music === v) this.music = null; };
     const late = Math.max(0, ctx.currentTime - when);
-    src.start(t, ((opts.offset ?? 0) + late) % Math.max(0.01, buf.duration));
+    const v: Voice = { src, gain, bus: 'music', id, when: t, offset: ((opts.offset ?? 0) + late) % Math.max(0.01, buf.duration) };
+    src.onended = () => { this.voices.delete(v); if (this.music === v) this.music = null; };
+    src.start(t, v.offset);
     this.voices.add(v);
     this.music = v;
     return true;
+  }
+
+  /** 測試用：每個聲音的排程（AudioContext 開始時間與檔內起點），算「現在聽到檔內第幾秒」 */
+  voiceTimings(): { id: string; bus: Bus; when: number; offset: number }[] {
+    return [...this.voices].map((v) => ({ id: v.id, bus: v.bus, when: v.when, offset: v.offset }));
   }
 
   /** 測試用：目前的配樂基準音量與避讓增益 */
@@ -165,6 +175,14 @@ export class Mixer {
     const t = Math.max(ctx.currentTime, when ?? ctx.currentTime);
     g.gain.cancelScheduledValues(t);
     g.gain.setTargetAtTime(level, t, timeConstant);
+  }
+
+  /** 在 when 起把配樂基準音量慢慢降到 level（不取消之前的排程；教師停格用） */
+  scheduleMusicLevel(level: number, when: number, timeConstant: number): void {
+    const ctx = this.ctx;
+    const g = this.buses.music;
+    if (!ctx || !g) return;
+    g.gain.setTargetAtTime(level, Math.max(ctx.currentTime, when), timeConstant);
   }
 
   /** 依台詞區間排好配樂避讓（排程規則見 ducking.ts 的 duckingPlan，可單獨測試） */

@@ -81,6 +81,8 @@ export interface FallbackFace {
   paintedMouth: MouthShape;
   /** 眼睛有眼鏡框時，補片只蓋鏡片內 */
   glasses?: boolean;
+  /** 眼睛補片半徑倍數（相對眼框半徑；預設 眼鏡 1.08／無眼鏡 1.3）。補片邊緣 18% 是羽化，眼眶要落在實色區內才不會留下淡淡的眼框 */
+  patchK?: number;
 }
 
 /** 基準圖像素 → 掛載物件本地座標（世界單位） */
@@ -139,14 +141,15 @@ function drawFallback(kind: 'eyes' | 'mouth', shape: string, fb: FallbackFace, s
     if (shape === 'open') return null; // 原圖
     for (const [x0, y0, x1, y1] of fb.eyes) {
       const cx = (x0 + x1) / 2, cy = (y0 + y1) / 2, rx = (x1 - x0) / 2, ry = (y1 - y0) / 2;
-      const k = fb.glasses ? 1.08 : 1.3;
+      const k = fb.patchK ?? (fb.glasses ? 1.08 : 1.3);
       if (shape === 'closed') {
+        // 中性閉眼：近乎平直、略往下彎的眼皮線（與素材 eyes_closed v02／v03 同款，不是往上拱的笑眼）；兩眼畫在同一張換片，一定同時閉
         patch(cx, cy, rx * k, ry * k);
         g.strokeStyle = ink;
         g.lineWidth = Math.max(2, ry * 0.22 * scale);
         g.beginPath();
         g.moveTo(X(cx - rx * 1.05), Y(cy + ry * 0.05));
-        g.quadraticCurveTo(X(cx), Y(cy + ry * 0.55), X(cx + rx * 1.05), Y(cy + ry * 0.05));
+        g.quadraticCurveTo(X(cx), Y(cy + ry * 0.16), X(cx + rx * 1.05), Y(cy + ry * 0.05));
         g.stroke();
       } else {
         // 半閉：上半部蓋上眼皮，留下半個眼珠
@@ -295,6 +298,8 @@ export class FaceRig {
   }
 
   setVisible(on: boolean): void { this.group.visible = on; }
+  /** 眼睛換片的任一張網格（同一組換片同錨點、同尺寸；量測眼睛在畫面上的位置用） */
+  eyesMesh(): Mesh | null { const v = this.slots.eyes; if (!v) return null; for (const m of v.meshes.values()) return m; return null; }
   get current(): { eyes: string; mouth: string } { return { eyes: this.slots.eyes?.current ?? '', mouth: this.slots.mouth?.current ?? '' }; }
 }
 
@@ -303,7 +308,8 @@ export const FALLBACK_FACES: Record<string, FallbackFace> = {
   'ale:head': { eyes: [[507, 174, 522, 201], [568, 180, 582, 206]], mouth: [505, 231, 566, 249], paintedMouth: 'smile' },
   'xiaoqing:stand': { ref: [262, 48], eyes: [[393, 240, 427, 289], [494, 251, 538, 301]], mouth: [433, 328, 481, 339], paintedMouth: 'smile' },
   'xiaoqing:reach': { ref: [119, 97], eyes: [[457, 264, 479, 303], [545, 289, 593, 335]], mouth: [479, 350, 510, 377], paintedMouth: 'open' },
-  'xiaoyu:stand': { ref: [258, 44], eyes: [[419, 242, 437, 274], [513, 249, 531, 281]], mouth: [437, 313, 491, 327], paintedMouth: 'smile', glasses: true },
+  // 2026-10-21 主線：G4 重驗（第 2 輪後）發現站姿近側眼框比實際眼睛高 6 px、窄 3 px → 眨眼像單眼眨。改用 chr-xiaoyu_master_v04 實量的眼珠範圍（深色連通區外擴 1–2 px；ref＝alpha≥128 左上角 17,16），補片放大到 1.32 倍（眼眶落在實色區，閉眼不留淡框；仍在鏡片內）
+  'xiaoyu:stand': { ref: [17, 16], eyes: [[177, 212, 199, 249], [270, 225, 295, 263]], mouth: [196, 285, 250, 299], paintedMouth: 'smile', glasses: true, patchK: 1.32 },
   'xiaoyu:stepback': { ref: [256, 81], eyes: [[463, 254, 481, 286], [546, 289, 564, 321]], mouth: [472, 365, 498, 395], paintedMouth: 'round', glasses: true },
 };
 

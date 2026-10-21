@@ -1,0 +1,361 @@
+{
+ "a1_c001_05": {
+  "id": "a1_c001_05",
+  "role": "品安",
+  "codes": [
+   "pinan"
+  ],
+  "text": "……你是青蛙燈嗎？",
+  "required": false,
+  "signature": "c33ea8682fb684ee",
+  "status": "pass",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    3.6,
+    3.8
+   ],
+   "rate_cps_net": [
+    3.1,
+    4.3
+   ],
+   "f0_nominal": 181.0,
+   "f0_hz": [
+    161.3,
+    203.2
+   ],
+   "source": "角色表第 3 節（3.6–3.8；輕聲、慢）；casting.json 品安 note（F0 181 Hz，四個孩子中最低）",
+   "rate_range": [
+    3.1,
+    4.3
+   ],
+   "f0_range": [
+    161.3,
+    203.2
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:46:03",
+    "seeds": {
+     "pinan": 20261021
+    },
+    "settings": {
+     "pinan": {
+      "stability": 0.5,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "pinan",
+      "i": 0,
+      "text": "……你是青蛙灯嗎？",
+      "sent": "……你是青蛙灯嗎？……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c001_05/pinan_a0_s0_55926453f28d.mp3",
+      "request_id": "snTN15GB9GjtbRPOeOLJ",
+      "billed": 5,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -58.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -40.4,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.36,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        1.69,
+        2.55
+       ],
+       "decay_end_s": 1.98,
+       "cut_s": 2.08,
+       "floor_rel_db": -56.2,
+       "removed_s": 1.92
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "psola": {
+       "pitch_shift_st": -3.5,
+       "stretch": 1.0,
+       "rate_before": 3.727,
+       "target": 3.7
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/pa_prod_dengS/_attempts/a1_c001_05/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 1.79,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -3.2,
+     "limited": null,
+     "raw_head_silence_ms": 100,
+     "raw_tail_silence_ms": 310
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/pa_prod_dengS/_attempts/a1_c001_05/a1.wav",
+     "seconds": 2.04,
+     "speech_seconds": 1.67,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -3.2,
+     "clipped_samples": 0,
+     "rate_cps": 3.59,
+     "rate_cps_net": 3.59,
+     "rate_cps_net_r": 3.7,
+     "pauses_ms": [],
+     "pauses_ms_r": [],
+     "f0_median": 256.1,
+     "f0_p10": 207.3,
+     "f0_p90": 272.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.7,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "你是青蛙燈嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "你是青蛙燈嗎",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": true,
+      "n_bad": 0,
+      "models": {
+       "small": {
+        "bad": [],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -58.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.7,
+      "range": [
+       3.1,
+       4.3
+      ],
+      "syllables": 6,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -3.2,
+      "clipped": 0
+     }
+    },
+    "failed": [],
+    "problems": 0,
+    "detail_score": 0.0,
+    "billed": 5,
+    "billed_new": 5,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.08 秒處切掉 1.92 秒）",
+     "PSOLA 改調 -3.5 半音、長度 ×1.0（母帶前淨語速 3.727 → 目標 3.7）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+    "voice_name": "Yui - Delicate, Graceful and Soothing",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 0.5,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 500,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "折",
+     "登籠": "燈籠",
+     "燈": "灯"
+    },
+    "post": {
+     "pitch_shift_st": -3.5,
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.9,
+      "max": 1.5,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 5,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/pa_prod_dengS/out/vo_a1_c001_05_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_prod_dengS/lipsync/a1_c001_05_el01.json",
+  "seconds": 2.04,
+  "speech_start": 0.12,
+  "speech_end": 1.79,
+  "speech_segments": [
+   [
+    0.12,
+    1.79
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": true,
+    "n_bad": 0,
+    "models": {
+     "small": {
+      "bad": [],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -58.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.7,
+    "range": [
+     3.1,
+     4.3
+    ],
+    "syllables": 6,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -3.2,
+    "clipped": 0
+   }
+  },
+  "failed": [],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/pa_prod_dengS/_attempts/a1_c001_05/a1.wav",
+   "seconds": 2.04,
+   "speech_seconds": 1.67,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.2,
+   "clipped_samples": 0,
+   "rate_cps": 3.59,
+   "rate_cps_net": 3.59,
+   "rate_cps_net_r": 3.7,
+   "pauses_ms": [],
+   "pauses_ms_r": [],
+   "f0_median": 256.1,
+   "f0_p10": 207.3,
+   "f0_p90": 272.5,
+   "pause_spikes": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 3.7,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "snTN15GB9GjtbRPOeOLJ"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.08 秒處切掉 1.92 秒）",
+   "PSOLA 改調 -3.5 半音、長度 ×1.0（母帶前淨語速 3.727 → 目標 3.7）"
+  ]
+ }
+}

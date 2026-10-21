@@ -1,0 +1,1563 @@
+{
+ "a0_c004_01": {
+  "id": "a0_c004_01",
+  "role": "小宇",
+  "codes": [
+   "xiaoyu"
+  ],
+  "text": "阿樂叔叔早！折折早！",
+  "required": false,
+  "signature": "0665c6cce76b24ea",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.2,
+    4.4
+   ],
+   "f0_nominal": 228.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.7,
+    4.9
+   ],
+   "f0_range": [
+    203.1,
+    255.9
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:50:59",
+    "seeds": {
+     "xiaoyu": 20261021
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "阿勒叔叔早！哲哲早！",
+      "sent": "阿勒叔叔早！哲哲早！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c004_01/xiaoyu_a0_s0_9c32303a2673.mp3",
+      "request_id": "3nxUqOjMPTSzHDpEPTv2",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -66.3,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -10.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.98,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        2.22,
+        3.21
+       ],
+       "decay_end_s": 2.52,
+       "cut_s": 2.62,
+       "floor_rel_db": -62.2,
+       "removed_s": 1.14
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.22
+        ],
+        "cut_s": 1.23,
+        "depth_rel_db": -24.5,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": -2.0,
+       "stretch": 1.0,
+       "rate_before": 3.604,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.81,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -2.6,
+     "limited": null,
+     "raw_head_silence_ms": 20,
+     "raw_tail_silence_ms": 360
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a1.wav",
+     "seconds": 3.06,
+     "speech_seconds": 2.69,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.6,
+     "clipped_samples": 0,
+     "rate_cps": 2.97,
+     "rate_cps_net": 3.56,
+     "rate_cps_net_r": 3.6,
+     "pauses_ms": [
+      440
+     ],
+     "pauses_ms_r": [
+      440
+     ],
+     "f0_median": 233.7,
+     "f0_p10": 179.8,
+     "f0_p90": 304.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 120,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 3.6,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "愛樂叔叔早遮遮早",
+      "cer": 0.375,
+      "per": 0.375,
+      "diffs": [
+       {
+        "ref": "阿",
+        "hyp": "愛",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "遮遮",
+        "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+        "span": [
+         5,
+         7
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "阿樂叔叔",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿樂叔叔早哲哲早",
+      "cer": 0.25,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "折折",
+        "hyp": "哲哲",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         5,
+         7
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "同音轉寫（讀音一致）"
+       },
+       {
+        "word": "阿樂叔叔",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "阿",
+          "hyp": "愛",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         },
+         {
+          "ref": "折折",
+          "hyp": "遮遮",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）",
+          "span": [
+           5,
+           7
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "折折": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "阿樂叔叔": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [
+       "折折",
+       "阿樂叔叔"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -66.3,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.6,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 8,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       440
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.08,
+         1.22
+        ],
+        "cut_s": 1.23,
+        "depth_rel_db": -24.5,
+        "existing_pause_ms": 0,
+        "inserted_ms": 450,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.6,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b",
+     "d"
+    ],
+    "problems": 3,
+    "detail_score": 4.1,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.62 秒處切掉 1.14 秒）",
+     "PSOLA 改調 -2.0 半音、長度 ×1.0（母帶前淨語速 3.604 → 目標 4.3）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:51:22",
+    "seeds": {
+     "xiaoyu": 20261022
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "阿勒叔叔早！哲哲早！",
+      "sent": "阿勒叔叔早！哲哲早！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a0_c004_01/xiaoyu_a1_s0_31d040cf02af.mp3",
+      "request_id": "oWZZX0A2gSxCYXS4KIoO",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -57.1,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -12.3,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 1.86,
+       "t_fill_s": 2.22,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        1.98,
+        2.82
+       ],
+       "decay_end_s": 2.18,
+       "cut_s": 2.28,
+       "floor_rel_db": -56.1,
+       "removed_s": 1.24
+      },
+      "declicked": 0,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.94,
+         1.2
+        ],
+        "cut_s": 1.18,
+        "depth_rel_db": -39.1,
+        "existing_pause_ms": 50,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": -2.0,
+       "stretch": 1.0,
+       "rate_before": 3.922,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.63,
+     "method": "measured_gain",
+     "I": -18.2,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 170
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a2.wav",
+     "seconds": 2.88,
+     "speech_seconds": 2.54,
+     "integrated_lufs": -18.2,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.15,
+     "rate_cps_net": 3.81,
+     "rate_cps_net_r": 3.85,
+     "pauses_ms": [
+      440
+     ],
+     "pauses_ms_r": [
+      420
+     ],
+     "f0_median": 234.6,
+     "f0_p10": 165.9,
+     "f0_p90": 289.9,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 230,
+     "rate_net_syll": 3.85,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "哈囉叔叔早早早早早",
+      "cer": 0.875,
+      "per": 0.875,
+      "diffs": [
+       {
+        "ref": "阿樂",
+        "hyp": "哈囉",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         5,
+         7
+        ]
+       },
+       {
+        "ref": "",
+        "hyp": "早早早",
+        "kind": "多字",
+        "span": [
+         8,
+         8
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "不一致（需複查）"
+       },
+       {
+        "word": "阿樂叔叔",
+        "status": "不一致（需複查）"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "阿勒叔叔早哲哲早",
+      "cer": 0.375,
+      "per": 0.0,
+      "diffs": [
+       {
+        "ref": "樂",
+        "hyp": "勒",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "哲哲",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         5,
+         7
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "折折",
+        "status": "同音轉寫（讀音一致）"
+       },
+       {
+        "word": "阿樂叔叔",
+        "status": "同音轉寫（讀音一致）"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 3,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "阿樂",
+          "hyp": "哈囉",
+          "kind": "字不同",
+          "span": [
+           0,
+           2
+          ]
+         },
+         {
+          "ref": "折折",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           5,
+           7
+          ]
+         },
+         {
+          "ref": "",
+          "hyp": "早早早",
+          "kind": "多字",
+          "span": [
+           8,
+           8
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": false,
+      "words": {
+       "折折": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       },
+       "阿樂叔叔": {
+        "small": "不一致（需複查）",
+        "large-v3-turbo": "同音轉寫（讀音一致）"
+       }
+      },
+      "inconsistent": [
+       "折折",
+       "阿樂叔叔"
+      ],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -57.1,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 3.85,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 8,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       440
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         0.94,
+         1.2
+        ],
+        "cut_s": 1.18,
+        "depth_rel_db": -39.1,
+        "existing_pause_ms": 50,
+        "inserted_ms": 400,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.2,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "b"
+    ],
+    "problems": 2,
+    "detail_score": 5.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 2.28 秒處切掉 1.24 秒）",
+     "PSOLA 改調 -2.0 半音、長度 ×1.0（母帶前淨語速 3.922 → 目標 4.3）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+    "voice_name": "Yui - Delicate, Graceful and Soothing",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 1.0,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     },
+     "pitch_shift_st": -2.0
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 2,
+  "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/out/vo_a0_c004_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/lipsync/a0_c004_01_el01.json",
+  "seconds": 2.88,
+  "speech_start": 0.12,
+  "speech_end": 2.63,
+  "speech_segments": [
+   [
+    0.11,
+    1.29
+   ],
+   [
+    1.72,
+    2.65
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 3,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "阿樂",
+        "hyp": "哈囉",
+        "kind": "字不同",
+        "span": [
+         0,
+         2
+        ]
+       },
+       {
+        "ref": "折折",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         5,
+         7
+        ]
+       },
+       {
+        "ref": "",
+        "hyp": "早早早",
+        "kind": "多字",
+        "span": [
+         8,
+         8
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": false,
+    "words": {
+     "折折": {
+      "small": "不一致（需複查）",
+      "large-v3-turbo": "同音轉寫（讀音一致）"
+     },
+     "阿樂叔叔": {
+      "small": "不一致（需複查）",
+      "large-v3-turbo": "同音轉寫（讀音一致）"
+     }
+    },
+    "inconsistent": [
+     "折折",
+     "阿樂叔叔"
+    ],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -57.1,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 3.85,
+    "range": [
+     3.7,
+     4.9
+    ],
+    "syllables": 8,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     440
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       0.94,
+       1.2
+      ],
+      "cut_s": 1.18,
+      "depth_rel_db": -39.1,
+      "existing_pause_ms": 50,
+      "inserted_ms": 400,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.2,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a",
+   "b"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a0_c004_01/a2.wav",
+   "seconds": 2.88,
+   "speech_seconds": 2.54,
+   "integrated_lufs": -18.2,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 3.15,
+   "rate_cps_net": 3.81,
+   "rate_cps_net_r": 3.85,
+   "pauses_ms": [
+    440
+   ],
+   "pauses_ms_r": [
+    420
+   ],
+   "f0_median": 234.6,
+   "f0_p10": 165.9,
+   "f0_p90": 289.9,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 230,
+   "rate_net_syll": 3.85,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "oWZZX0A2gSxCYXS4KIoO"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 2.28 秒處切掉 1.24 秒）",
+   "PSOLA 改調 -2.0 半音、長度 ×1.0（母帶前淨語速 3.922 → 目標 4.3）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ },
+ "a5_c005_03": {
+  "id": "a5_c005_03",
+  "role": "小宇",
+  "codes": [
+   "xiaoyu"
+  ],
+  "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+  "required": false,
+  "signature": "d859ce5fbcbe3737",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.2,
+    4.4
+   ],
+   "f0_nominal": 228.0,
+   "source": "角色表第 3 節／casting.json note",
+   "rate_range": [
+    3.7,
+    4.9
+   ],
+   "f0_range": [
+    203.1,
+    255.9
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 09:51:59",
+    "seeds": {
+     "xiaoyu": 20261021
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "陳伯伯聽不到，林老師還沒出來……我來打 一一九。",
+      "sent": "陳伯伯聽不到，林老師還沒出來……我來打 一一九。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c005_03/xiaoyu_a0_s0_ac8a6edd8de2.mp3",
+      "request_id": "dU7oTYUfrDvm1AzI4Llj",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -55.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -16.7,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.86,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        4.04,
+        4.59
+       ],
+       "decay_end_s": 4.21,
+       "cut_s": 4.31,
+       "floor_rel_db": -55.6,
+       "removed_s": 0.73
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": -2.0,
+       "stretch": 1.145,
+       "rate_before": 4.922,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 4.84,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.0,
+     "TP": -2.4,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 215
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a1.wav",
+     "seconds": 5.09,
+     "speech_seconds": 4.74,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.4,
+     "clipped_samples": 0,
+     "rate_cps": 4.01,
+     "rate_cps_net": 4.3,
+     "rate_cps_net_r": 3.6,
+     "pauses_ms": [
+      160,
+      320
+     ],
+     "pauses_ms_r": [
+      270
+     ],
+     "f0_median": 253.5,
+     "f0_p10": 201.9,
+     "f0_p90": 316.8,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 4.27,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "等伯伯聽不到林老師還沒出來我來打119",
+      "cer": 0.053,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "陳",
+        "hyp": "等",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "等伯伯聽不到林老師還沒出來我來打119",
+      "cer": 0.053,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "陳",
+        "hyp": "等",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "陳",
+          "hyp": "等",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "陳",
+          "hyp": "等",
+          "kind": "字不同",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -55.9,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.27,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 19,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -2.4,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 11,
+    "billed_new": 11,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 4.31 秒處切掉 0.73 秒）",
+     "PSOLA 改調 -2.0 半音、長度 ×1.145（母帶前淨語速 4.922 → 目標 4.3）"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 09:52:43",
+    "seeds": {
+     "xiaoyu": 20261022
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "陳伯伯聽不到，林老師還沒出來……我來打 一一九。",
+      "sent": "陳伯伯聽不到，林老師還沒出來……我來打 一一九。……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a5_c005_03/xiaoyu_a1_s0_41c5d798fe28.mp3",
+      "request_id": "ziTNCxCscCudZD3bXxnK",
+      "billed": 11,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -58.5,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -18.5,
+       "last60ms_voiced": 1.0,
+       "truncated": true
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 5.18,
+       "t_fill_s": 5.96,
+       "asr_tail": "嗯",
+       "guard": "ok",
+       "pause_s": [
+        5.4,
+        6.36
+       ],
+       "decay_end_s": 5.72,
+       "cut_s": 5.82,
+       "floor_rel_db": -59.4,
+       "removed_s": 1.14
+      },
+      "declicked": 0,
+      "psola": {
+       "pitch_shift_st": -2.0,
+       "stretch": 1.0,
+       "rate_before": 4.279,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 5.67,
+     "method": "loudnorm_pass1_gain",
+     "I": -18.1,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 270
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a2.wav",
+     "seconds": 5.92,
+     "speech_seconds": 5.57,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.41,
+     "rate_cps_net": 4.25,
+     "rate_cps_net_r": 3.57,
+     "pauses_ms": [
+      410,
+      690
+     ],
+     "pauses_ms_r": [
+      380,
+      680
+     ],
+     "f0_median": 210.9,
+     "f0_p10": 163.8,
+     "f0_p90": 255.5,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 240,
+     "rate_net_syll": 4.24,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "伯伯聽不到林老師還沒出來我來打119",
+      "cer": 0.053,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "陳",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "伯伯聽不到林老師還沒出來我來打119",
+      "cer": 0.053,
+      "per": 0.053,
+      "diffs": [
+       {
+        "ref": "陳",
+        "hyp": "",
+        "kind": "漏字",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "words": [
+       {
+        "word": "119",
+        "status": "轉寫一致"
+       }
+      ]
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "陳",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "陳",
+          "hyp": "",
+          "kind": "漏字",
+          "span": [
+           0,
+           1
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {
+       "119": {
+        "small": "轉寫一致",
+        "large-v3-turbo": "轉寫一致"
+       }
+      },
+      "inconsistent": [],
+      "applicable": true
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -58.5,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.24,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 19,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [],
+      "threshold_ms": 150,
+      "applicable": false,
+      "note": "單句"
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.1,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 11,
+    "billed_new": 11,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 5.82 秒處切掉 1.14 秒）",
+     "PSOLA 改調 -2.0 半音、長度 ×1.0（母帶前淨語速 4.279 → 目標 4.3）"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "kGjJqO6wdwRN9iJsoeIC",
+    "voice_name": "Yui - Delicate, Graceful and Soothing",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 1.0,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 1.0,
+      "max": 1.3,
+      "default": 1.0
+     },
+     "pitch_shift_st": -2.0
+    }
+   }
+  ],
+  "billed_total": 22,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/out/vo_a5_c005_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/lipsync/a5_c005_03_el01.json",
+  "seconds": 5.09,
+  "speech_start": 0.12,
+  "speech_end": 4.84,
+  "speech_segments": [
+   [
+    0.11,
+    1.35
+   ],
+   [
+    1.5,
+    3.07
+   ],
+   [
+    3.38,
+    4.85
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "陳",
+        "hyp": "等",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "陳",
+        "hyp": "等",
+        "kind": "字不同",
+        "span": [
+         0,
+         1
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {
+     "119": {
+      "small": "轉寫一致",
+      "large-v3-turbo": "轉寫一致"
+     }
+    },
+    "inconsistent": [],
+    "applicable": true
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -55.9,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.27,
+    "range": [
+     3.7,
+     4.9
+    ],
+    "syllables": 19,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [],
+    "threshold_ms": 150,
+    "applicable": false,
+    "note": "單句"
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -2.4,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xy_yui_v3_m2_s1/_attempts/a5_c005_03/a1.wav",
+   "seconds": 5.09,
+   "speech_seconds": 4.74,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.4,
+   "clipped_samples": 0,
+   "rate_cps": 4.01,
+   "rate_cps_net": 4.3,
+   "rate_cps_net_r": 3.6,
+   "pauses_ms": [
+    160,
+    320
+   ],
+   "pauses_ms_r": [
+    270
+   ],
+   "f0_median": 253.5,
+   "f0_p10": 201.9,
+   "f0_p90": 316.8,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 240,
+   "rate_net_syll": 4.27,
+   "f0_in_range": true
+  },
+  "request_ids": [
+   "dU7oTYUfrDvm1AzI4Llj"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 4.31 秒處切掉 0.73 秒）",
+   "PSOLA 改調 -2.0 半音、長度 ×1.145（母帶前淨語速 4.922 → 目標 4.3）"
+  ]
+ }
+}

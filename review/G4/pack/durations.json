@@ -1,29 +1,29 @@
 {
  "cues": {
   "a0_c000": 0,
-  "a0_c001": 10.6,
-  "a2_c002": 22.83,
-  "a2_c004": 19.5,
-  "a8_c002": 3.1,
+  "a0_c001": 11.6,
+  "a2_c002": 24.93,
+  "a2_c004": 21.91,
+  "a8_c002": 5.4,
   "a8_c003": 1.4
  },
- "a2_c002_plus_a2_c004_sec": 42.33,
+ "a2_c002_plus_a2_c004_sec": 46.84,
  "target_sec": [
   30,
   45
  ],
- "all_cues_sum_sec": 57.43,
- "opening_a0_c001_sec": 10.6,
- "closing_a8_c002_plus_a8_c003_sec": 4.5,
- "playback_with_holds_sec": 72.93,
+ "all_cues_sum_sec": 65.24,
+ "opening_a0_c001_sec": 11.6,
+ "closing_a8_c002_plus_a8_c003_sec": 6.8,
+ "playback_with_holds_sec": 84.74,
  "holds_assumed_sec": {
   "a0_c000": 3,
   "a0_c001": 2,
-  "a2_c002": 2,
-  "a2_c004": 2,
+  "a2_c002": 4,
+  "a2_c004": 4,
   "a8_c002": 0,
   "a8_c003": 6.5
  },
- "video_duration_sec": 72.93,
- "vo_seconds_in_a2_c002_a2_c004": 22.23
+ "video_duration_sec": 84.733333,
+ "vo_seconds_in_a2_c002_a2_c004": 26.39
 }

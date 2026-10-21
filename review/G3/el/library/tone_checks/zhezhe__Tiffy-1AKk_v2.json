@@ -1,0 +1,552 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "zhezhe",
+ "role_zh": "折折",
+ "cand": "zhezhe_Tiffy-1AKk",
+ "model": "eleven_multilingual_v2",
+ "line": "a0_c003_01",
+ "voice": "Tiffy - Taiwanese Bilingual Narrator",
+ "整句（替身字，正式管線）": {
+  "file": "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__a0_c003_01.wav",
+  "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是紙燈街今年的主燈是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.78,
+     1.02
+    ],
+    [
+     1.02,
+     1.22
+    ],
+    [
+     1.22,
+     1.44
+    ]
+   ],
+   "octave_fixed_frames": 5,
+   "pitch_range_hz": [
+    139,
+    463
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 0.805,
+    "t1": 0.905,
+    "mean_hz": 254.8,
+    "start_hz": 289.9,
+    "end_hz": 245.3,
+    "min_hz": 232.3,
+    "min_pos": 0.6,
+    "end_over_start": 0.846,
+    "end_over_min": 1.056,
+    "contour_hz_20ms": [
+     294,
+     276,
+     256,
+     232,
+     235,
+     253
+    ]
+   },
+   "燈": {
+    "t0": 1.095,
+    "t1": 1.295,
+    "mean_hz": 213.1,
+    "start_hz": 212.0,
+    "end_hz": 217.7,
+    "min_hz": 209.4,
+    "min_pos": 0.45,
+    "end_over_start": 1.027,
+    "end_over_min": 1.039,
+    "contour_hz_20ms": [
+     218,
+     211,
+     211,
+     211,
+     211,
+     209,
+     213,
+     214,
+     216,
+     216,
+     210
+    ]
+   },
+   "節": {
+    "t0": 1.365,
+    "t1": 1.515,
+    "mean_hz": 211.4,
+    "start_hz": 230.6,
+    "end_hz": 206.7,
+    "min_hz": 203.0,
+    "min_pos": 0.6,
+    "end_over_start": 0.896,
+    "end_over_min": 1.018,
+    "contour_hz_20ms": [
+     256,
+     221,
+     208,
+     205,
+     204,
+     202,
+     205,
+     207
+    ]
+   },
+   "燈_end_over_start": 1.027,
+   "燈_over_紙_mean": 0.836,
+   "節_end_over_min": 1.018,
+   "節_min_pos": 0.6,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "轉寫一致",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+    "large-v3-turbo": "明天就是紙燈街今年的主燈是照著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "整句（原字）": {
+  "file": "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__tone_a0_c003_01_orig.wav",
+  "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是紙燈街今年的主燈是照著我的樣子做的",
+   "whisper_spans": [
+    [
+     0.78,
+     1.02
+    ],
+    [
+     1.02,
+     1.22
+    ],
+    [
+     1.22,
+     1.44
+    ]
+   ],
+   "octave_fixed_frames": 5,
+   "pitch_range_hz": [
+    139,
+    464
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 0.805,
+    "t1": 0.905,
+    "mean_hz": 254.6,
+    "start_hz": 290.1,
+    "end_hz": 245.2,
+    "min_hz": 232.2,
+    "min_pos": 0.6,
+    "end_over_start": 0.845,
+    "end_over_min": 1.056,
+    "contour_hz_20ms": [
+     294,
+     276,
+     255,
+     232,
+     235,
+     252
+    ]
+   },
+   "燈": {
+    "t0": 1.095,
+    "t1": 1.295,
+    "mean_hz": 213.1,
+    "start_hz": 212.1,
+    "end_hz": 217.7,
+    "min_hz": 209.6,
+    "min_pos": 0.45,
+    "end_over_start": 1.027,
+    "end_over_min": 1.039,
+    "contour_hz_20ms": [
+     218,
+     211,
+     211,
+     211,
+     210,
+     210,
+     213,
+     214,
+     216,
+     216,
+     210
+    ]
+   },
+   "節": {
+    "t0": 1.365,
+    "t1": 1.515,
+    "mean_hz": 211.4,
+    "start_hz": 230.3,
+    "end_hz": 206.8,
+    "min_hz": 203.2,
+    "min_pos": 0.6,
+    "end_over_start": 0.898,
+    "end_over_min": 1.017,
+    "contour_hz_20ms": [
+     256,
+     220,
+     208,
+     205,
+     204,
+     203,
+     205,
+     207
+    ]
+   },
+   "燈_end_over_start": 1.027,
+   "燈_over_紙_mean": 0.837,
+   "節_end_over_min": 1.017,
+   "節_min_pos": 0.6,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "轉寫一致",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+    "large-v3-turbo": "明天就是紙燈街今年的主燈是照著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "直檔節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.32
+    ],
+    [
+     0.32,
+     0.48
+    ],
+    [
+     0.48,
+     0.7
+    ]
+   ],
+   "octave_fixed_frames": 1,
+   "pitch_range_hz": [
+    144,
+    481
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.255,
+    "t1": 0.335,
+    "mean_hz": 282.9,
+    "start_hz": 296.8,
+    "end_hz": 282.8,
+    "min_hz": 274.2,
+    "min_pos": 0.62,
+    "end_over_start": 0.953,
+    "end_over_min": 1.031,
+    "contour_hz_20ms": [
+     297,
+     284,
+     286,
+     270,
+     283
+    ]
+   },
+   "燈": {
+    "t0": 0.365,
+    "t1": 0.535,
+    "mean_hz": 252.3,
+    "start_hz": 330.5,
+    "end_hz": 225.7,
+    "min_hz": 218.1,
+    "min_pos": 1.0,
+    "end_over_start": 0.683,
+    "end_over_min": 1.035,
+    "contour_hz_20ms": [
+     206,
+     331,
+     301,
+     258,
+     233,
+     226,
+     226,
+     228,
+     210
+    ]
+   },
+   "節": {
+    "t0": 0.595,
+    "t1": 0.775,
+    "mean_hz": 233.6,
+    "start_hz": 255.7,
+    "end_hz": 230.9,
+    "min_hz": 228.3,
+    "min_pos": 0.39,
+    "end_over_start": 0.903,
+    "end_over_min": 1.012,
+    "contour_hz_20ms": [
+     259,
+     242,
+     231,
+     228,
+     228,
+     229,
+     229,
+     229,
+     230,
+     232
+    ]
+   },
+   "燈_end_over_start": 0.683,
+   "燈_over_紙_mean": 0.892,
+   "節_end_over_min": 1.012,
+   "節_min_pos": 0.39,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 0.999
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "直檔街",
+    "large-v3-turbo": "直檔節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "直檔節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.32
+    ],
+    [
+     0.32,
+     0.48
+    ],
+    [
+     0.48,
+     0.68
+    ]
+   ],
+   "octave_fixed_frames": 1,
+   "pitch_range_hz": [
+    144,
+    481
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.255,
+    "t1": 0.335,
+    "mean_hz": 281.7,
+    "start_hz": 285.1,
+    "end_hz": 282.4,
+    "min_hz": 274.8,
+    "min_pos": 0.62,
+    "end_over_start": 0.991,
+    "end_over_min": 1.028,
+    "contour_hz_20ms": [
+     285,
+     284,
+     286,
+     270,
+     282
+    ]
+   },
+   "燈": {
+    "t0": 0.365,
+    "t1": 0.545,
+    "mean_hz": 251.5,
+    "start_hz": 331.1,
+    "end_hz": 226.6,
+    "min_hz": 225.6,
+    "min_pos": 0.83,
+    "end_over_start": 0.684,
+    "end_over_min": 1.004,
+    "contour_hz_20ms": [
+     206,
+     331,
+     301,
+     258,
+     233,
+     226,
+     226,
+     228,
+     220,
+     229
+    ]
+   },
+   "節": {
+    "t0": 0.595,
+    "t1": 0.755,
+    "mean_hz": 233.8,
+    "start_hz": 255.6,
+    "end_hz": 230.3,
+    "min_hz": 228.3,
+    "min_pos": 0.44,
+    "end_over_start": 0.901,
+    "end_over_min": 1.009,
+    "contour_hz_20ms": [
+     259,
+     242,
+     231,
+     228,
+     228,
+     229,
+     229,
+     229,
+     231
+    ]
+   },
+   "燈_end_over_start": 0.684,
+   "燈_over_紙_mean": 0.893,
+   "節_end_over_min": 1.009,
+   "節_min_pos": 0.44,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 0.996
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "直檔街",
+    "large-v3-turbo": "直檔節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "直檔節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.32
+    ],
+    [
+     0.32,
+     0.48
+    ],
+    [
+     0.48,
+     0.68
+    ]
+   ],
+   "octave_fixed_frames": 1,
+   "pitch_range_hz": [
+    144,
+    481
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.255,
+    "t1": 0.335,
+    "mean_hz": 281.6,
+    "start_hz": 284.6,
+    "end_hz": 283.0,
+    "min_hz": 274.7,
+    "min_pos": 0.62,
+    "end_over_start": 0.994,
+    "end_over_min": 1.03,
+    "contour_hz_20ms": [
+     285,
+     284,
+     286,
+     270,
+     283
+    ]
+   },
+   "燈": {
+    "t0": 0.365,
+    "t1": 0.535,
+    "mean_hz": 252.5,
+    "start_hz": 330.9,
+    "end_hz": 225.6,
+    "min_hz": 220.4,
+    "min_pos": 1.0,
+    "end_over_start": 0.682,
+    "end_over_min": 1.024,
+    "contour_hz_20ms": [
+     206,
+     331,
+     301,
+     258,
+     233,
+     226,
+     226,
+     228,
+     214
+    ]
+   },
+   "節": {
+    "t0": 0.595,
+    "t1": 0.755,
+    "mean_hz": 233.8,
+    "start_hz": 255.6,
+    "end_hz": 230.3,
+    "min_hz": 228.4,
+    "min_pos": 0.44,
+    "end_over_start": 0.901,
+    "end_over_min": 1.008,
+    "contour_hz_20ms": [
+     259,
+     242,
+     232,
+     228,
+     228,
+     230,
+     229,
+     229,
+     230
+    ]
+   },
+   "燈_end_over_start": 0.682,
+   "燈_over_紙_mean": 0.897,
+   "節_end_over_min": 1.008,
+   "節_min_pos": 0.44,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "直檔街",
+    "large-v3-turbo": "直檔節"
+   }
+  }
+ }
+}

@@ -12,14 +12,14 @@
     "sheet": "proj/16x9/a0_c001_000.00_before_sheet.png"
    },
    {
-    "src": "capture/keyframes/a0_c001_005.30_mid.png",
-    "proj": "proj/16x9/a0_c001_005.30_mid_proj.png",
-    "sheet": "proj/16x9/a0_c001_005.30_mid_sheet.png"
+    "src": "capture/keyframes/a0_c001_005.80_mid.png",
+    "proj": "proj/16x9/a0_c001_005.80_mid_proj.png",
+    "sheet": "proj/16x9/a0_c001_005.80_mid_sheet.png"
    },
    {
-    "src": "capture/keyframes/a0_c001_010.60_after.png",
-    "proj": "proj/16x9/a0_c001_010.60_after_proj.png",
-    "sheet": "proj/16x9/a0_c001_010.60_after_sheet.png"
+    "src": "capture/keyframes/a0_c001_011.60_after.png",
+    "proj": "proj/16x9/a0_c001_011.60_after_proj.png",
+    "sheet": "proj/16x9/a0_c001_011.60_after_sheet.png"
    },
    {
     "src": "capture/keyframes/a2_c002_000.00_before.png",
@@ -27,14 +27,14 @@
     "sheet": "proj/16x9/a2_c002_000.00_before_sheet.png"
    },
    {
-    "src": "capture/keyframes/a2_c002_011.41_mid.png",
-    "proj": "proj/16x9/a2_c002_011.41_mid_proj.png",
-    "sheet": "proj/16x9/a2_c002_011.41_mid_sheet.png"
+    "src": "capture/keyframes/a2_c002_012.46_mid.png",
+    "proj": "proj/16x9/a2_c002_012.46_mid_proj.png",
+    "sheet": "proj/16x9/a2_c002_012.46_mid_sheet.png"
    },
    {
-    "src": "capture/keyframes/a2_c002_022.83_after.png",
-    "proj": "proj/16x9/a2_c002_022.83_after_proj.png",
-    "sheet": "proj/16x9/a2_c002_022.83_after_sheet.png"
+    "src": "capture/keyframes/a2_c002_024.93_after.png",
+    "proj": "proj/16x9/a2_c002_024.93_after_proj.png",
+    "sheet": "proj/16x9/a2_c002_024.93_after_sheet.png"
    },
    {
     "src": "capture/keyframes/a2_c004_000.00_before.png",
@@ -42,14 +42,14 @@
     "sheet": "proj/16x9/a2_c004_000.00_before_sheet.png"
    },
    {
-    "src": "capture/keyframes/a2_c004_009.75_mid.png",
-    "proj": "proj/16x9/a2_c004_009.75_mid_proj.png",
-    "sheet": "proj/16x9/a2_c004_009.75_mid_sheet.png"
+    "src": "capture/keyframes/a2_c004_010.96_mid.png",
+    "proj": "proj/16x9/a2_c004_010.96_mid_proj.png",
+    "sheet": "proj/16x9/a2_c004_010.96_mid_sheet.png"
    },
    {
-    "src": "capture/keyframes/a2_c004_019.50_after.png",
-    "proj": "proj/16x9/a2_c004_019.50_after_proj.png",
-    "sheet": "proj/16x9/a2_c004_019.50_after_sheet.png"
+    "src": "capture/keyframes/a2_c004_021.91_after.png",
+    "proj": "proj/16x9/a2_c004_021.91_after_proj.png",
+    "sheet": "proj/16x9/a2_c004_021.91_after_sheet.png"
    },
    {
     "src": "capture/keyframes/a8_c002_000.00_before.png",
@@ -57,14 +57,14 @@
     "sheet": "proj/16x9/a8_c002_000.00_before_sheet.png"
    },
    {
-    "src": "capture/keyframes/a8_c002_001.55_mid.png",
-    "proj": "proj/16x9/a8_c002_001.55_mid_proj.png",
-    "sheet": "proj/16x9/a8_c002_001.55_mid_sheet.png"
+    "src": "capture/keyframes/a8_c002_002.70_mid.png",
+    "proj": "proj/16x9/a8_c002_002.70_mid_proj.png",
+    "sheet": "proj/16x9/a8_c002_002.70_mid_sheet.png"
    },
    {
-    "src": "capture/keyframes/a8_c002_003.10_after.png",
-    "proj": "proj/16x9/a8_c002_003.10_after_proj.png",
-    "sheet": "proj/16x9/a8_c002_003.10_after_sheet.png"
+    "src": "capture/keyframes/a8_c002_005.40_after.png",
+    "proj": "proj/16x9/a8_c002_005.40_after_proj.png",
+    "sheet": "proj/16x9/a8_c002_005.40_after_sheet.png"
    },
    {
     "src": "capture/keyframes/a8_c003_000.00_before.png",
@@ -100,48 +100,48 @@
     "proj": "proj/1024x768/a0_c001_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a0_c001_005.30_mid.png",
-    "proj": "proj/1024x768/a0_c001_005.30_mid_proj.png"
+    "src": "keyframes_4x3/1024x768/a0_c001_005.80_mid.png",
+    "proj": "proj/1024x768/a0_c001_005.80_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a0_c001_010.60_after.png",
-    "proj": "proj/1024x768/a0_c001_010.60_after_proj.png"
+    "src": "keyframes_4x3/1024x768/a0_c001_011.60_after.png",
+    "proj": "proj/1024x768/a0_c001_011.60_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1024x768/a2_c002_000.00_before.png",
     "proj": "proj/1024x768/a2_c002_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a2_c002_011.41_mid.png",
-    "proj": "proj/1024x768/a2_c002_011.41_mid_proj.png"
+    "src": "keyframes_4x3/1024x768/a2_c002_012.46_mid.png",
+    "proj": "proj/1024x768/a2_c002_012.46_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a2_c002_022.83_after.png",
-    "proj": "proj/1024x768/a2_c002_022.83_after_proj.png"
+    "src": "keyframes_4x3/1024x768/a2_c002_024.93_after.png",
+    "proj": "proj/1024x768/a2_c002_024.93_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1024x768/a2_c004_000.00_before.png",
     "proj": "proj/1024x768/a2_c004_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a2_c004_009.75_mid.png",
-    "proj": "proj/1024x768/a2_c004_009.75_mid_proj.png"
+    "src": "keyframes_4x3/1024x768/a2_c004_010.96_mid.png",
+    "proj": "proj/1024x768/a2_c004_010.96_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a2_c004_019.50_after.png",
-    "proj": "proj/1024x768/a2_c004_019.50_after_proj.png"
+    "src": "keyframes_4x3/1024x768/a2_c004_021.91_after.png",
+    "proj": "proj/1024x768/a2_c004_021.91_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1024x768/a8_c002_000.00_before.png",
     "proj": "proj/1024x768/a8_c002_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a8_c002_001.55_mid.png",
-    "proj": "proj/1024x768/a8_c002_001.55_mid_proj.png"
+    "src": "keyframes_4x3/1024x768/a8_c002_002.70_mid.png",
+    "proj": "proj/1024x768/a8_c002_002.70_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1024x768/a8_c002_003.10_after.png",
-    "proj": "proj/1024x768/a8_c002_003.10_after_proj.png"
+    "src": "keyframes_4x3/1024x768/a8_c002_005.40_after.png",
+    "proj": "proj/1024x768/a8_c002_005.40_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1024x768/a8_c003_000.00_before.png",
@@ -174,48 +174,48 @@
     "proj": "proj/1440x1080/a0_c001_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a0_c001_005.30_mid.png",
-    "proj": "proj/1440x1080/a0_c001_005.30_mid_proj.png"
+    "src": "keyframes_4x3/1440x1080/a0_c001_005.80_mid.png",
+    "proj": "proj/1440x1080/a0_c001_005.80_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a0_c001_010.60_after.png",
-    "proj": "proj/1440x1080/a0_c001_010.60_after_proj.png"
+    "src": "keyframes_4x3/1440x1080/a0_c001_011.60_after.png",
+    "proj": "proj/1440x1080/a0_c001_011.60_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1440x1080/a2_c002_000.00_before.png",
     "proj": "proj/1440x1080/a2_c002_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a2_c002_011.41_mid.png",
-    "proj": "proj/1440x1080/a2_c002_011.41_mid_proj.png"
+    "src": "keyframes_4x3/1440x1080/a2_c002_012.46_mid.png",
+    "proj": "proj/1440x1080/a2_c002_012.46_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a2_c002_022.83_after.png",
-    "proj": "proj/1440x1080/a2_c002_022.83_after_proj.png"
+    "src": "keyframes_4x3/1440x1080/a2_c002_024.93_after.png",
+    "proj": "proj/1440x1080/a2_c002_024.93_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1440x1080/a2_c004_000.00_before.png",
     "proj": "proj/1440x1080/a2_c004_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a2_c004_009.75_mid.png",
-    "proj": "proj/1440x1080/a2_c004_009.75_mid_proj.png"
+    "src": "keyframes_4x3/1440x1080/a2_c004_010.96_mid.png",
+    "proj": "proj/1440x1080/a2_c004_010.96_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a2_c004_019.50_after.png",
-    "proj": "proj/1440x1080/a2_c004_019.50_after_proj.png"
+    "src": "keyframes_4x3/1440x1080/a2_c004_021.91_after.png",
+    "proj": "proj/1440x1080/a2_c004_021.91_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1440x1080/a8_c002_000.00_before.png",
     "proj": "proj/1440x1080/a8_c002_000.00_before_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a8_c002_001.55_mid.png",
-    "proj": "proj/1440x1080/a8_c002_001.55_mid_proj.png"
+    "src": "keyframes_4x3/1440x1080/a8_c002_002.70_mid.png",
+    "proj": "proj/1440x1080/a8_c002_002.70_mid_proj.png"
    },
    {
-    "src": "keyframes_4x3/1440x1080/a8_c002_003.10_after.png",
-    "proj": "proj/1440x1080/a8_c002_003.10_after_proj.png"
+    "src": "keyframes_4x3/1440x1080/a8_c002_005.40_after.png",
+    "proj": "proj/1440x1080/a8_c002_005.40_after_proj.png"
    },
    {
     "src": "keyframes_4x3/1440x1080/a8_c003_000.00_before.png",
@@ -234,53 +234,1196 @@
  "strip_pages": [
   "strip_a2_c002/strip_a2_c002_8fps_p01.png",
   "strip_a2_c002/strip_a2_c002_8fps_p02.png",
-  "strip_a2_c002/strip_a2_c002_8fps_p03.png"
+  "strip_a2_c002/strip_a2_c002_8fps_p03.png",
+  "strip_a2_c002/strip_a2_c002_8fps_p04.png"
  ],
+ "beats": {
+  "puppet.waveTry": {
+   "beats": [
+    {
+     "label": "臉換 X2（想打招呼）",
+     "t": 9.7,
+     "strip_frame_t": 9.75
+    },
+    {
+     "label": "手自己抬起（線還鬆）",
+     "t": 9.95,
+     "strip_frame_t": 10.0
+    },
+    {
+     "label": "揮手 2 下",
+     "t": 10.85,
+     "strip_frame_t": 10.875
+    },
+    {
+     "label": "線繃直＋音效",
+     "t": 12.33,
+     "strip_frame_t": 12.375
+    },
+    {
+     "label": "手被拉偏",
+     "t": 12.63,
+     "strip_frame_t": 12.75
+    },
+    {
+     "label": "換困惑臉",
+     "t": 13.03,
+     "strip_frame_t": 13.125
+    }
+   ],
+   "increasing": true,
+   "strip_frames_increasing": true
+  },
+  "puppet.kneeTug": {
+   "beats": [
+    {
+     "label": "臀部離凳、起身",
+     "t": 19.63,
+     "strip_frame_t": 19.75
+    },
+    {
+     "label": "停在半站",
+     "t": 20.13,
+     "strip_frame_t": 20.25
+    },
+    {
+     "label": "膝前線繃緊＋音效",
+     "t": 20.73,
+     "strip_frame_t": 20.75
+    },
+    {
+     "label": "膝蓋被提起",
+     "t": 21.03,
+     "strip_frame_t": 21.125
+    },
+    {
+     "label": "軀幹晃一下",
+     "t": 21.08,
+     "strip_frame_t": 21.125
+    },
+    {
+     "label": "手扶住桌邊",
+     "t": 21.58,
+     "strip_frame_t": 21.625
+    }
+   ],
+   "increasing": true,
+   "strip_frames_increasing": true
+  },
+  "checks": {
+   "wave_duration_s": 1.43,
+   "wave_ge_0_6s": true,
+   "wave_cycles": 2.0,
+   "confused_after_pull_s": 0.4,
+   "confused_after_pull_ge_0_15s": true,
+   "taut_after_wave": true,
+   "half_stand_hold_s": 0.6,
+   "half_stand_ge_0_5s": true,
+   "lift_after_taut": true,
+   "grab_after_sway_peak": true
+  }
+ },
+ "strip_measures": {
+  "breathing_xiaoqing": {
+   "window_s": [
+    13.75,
+    19.18
+   ],
+   "frames": 44,
+   "box_height_px_min": 497.0,
+   "box_height_px_max": 506.1,
+   "peak_to_peak_px": 9.1,
+   "amplitude_px": 4.6,
+   "note": "外框高度＝立牌腳底到頭頂（含透明邊）；呼吸是以腳底為支點的伸縮，頭頂的上下起伏＝高度變化"
+  },
+  "subtitle_vs_knee": {
+   "rule": "第一句台詞起到停格，有字幕的每一格：字幕底板（DOM 外框）不和膝前線路徑（引擎實際畫的中心線 37 點）、膝前紙環、被提起那條腿（thigh_l、shin_l 部件外框，含透明邊）重疊",
+   "frames_with_subtitle": 62,
+   "frames_overlapping": 0,
+   "rows": [
+    {
+     "t": 13.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 13.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 13.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 13.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 14.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 15.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 16.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 17.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.5,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.625,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.75,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 18.875,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 19,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 19.125,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 19.25,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 19.375,
+     "sub": [
+      298,
+      810,
+      1622,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.25,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.375,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.5,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.625,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.75,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 21.875,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.125,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.25,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.375,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.5,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.625,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.75,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    },
+    {
+     "t": 22.875,
+     "sub": [
+      649,
+      887,
+      1271,
+      1021
+     ],
+     "knee_path_pts_in_sub": 0,
+     "knee_ring_overlap": false,
+     "leg_box_overlap_px": {
+      "shin_l": 0,
+      "thigh_l": 0
+     },
+     "overlap": false
+    }
+   ]
+  }
+ },
+ "flips": [
+  {
+   "target": "xiaoqing",
+   "pose": "worried",
+   "start": 8.95,
+   "end": 9.19,
+   "sheet": "strip_a2_c002/flip/flip_xiaoqing_008.95.png",
+   "min_width_ratio": 0.555,
+   "frames": 26,
+   "eyes_open_from_start-0.2_to_end+0.3": true
+  },
+  {
+   "target": "xiaoyu",
+   "pose": "stepback",
+   "start": 9.3,
+   "end": 9.54,
+   "sheet": "strip_a2_c002/flip/flip_xiaoyu_009.30.png",
+   "min_width_ratio": 0.557,
+   "frames": 26,
+   "eyes_open_from_start-0.2_to_end+0.3": true
+  },
+  {
+   "target": "xiaoqing",
+   "pose": "palm",
+   "start": 20.93,
+   "end": 21.17,
+   "sheet": "strip_a2_c002/flip/flip_xiaoqing_020.93.png",
+   "min_width_ratio": 0.564,
+   "frames": 26,
+   "eyes_open_from_start-0.2_to_end+0.3": true
+  },
+  {
+   "target": "xiaoqing",
+   "pose": "worried",
+   "start": 22.28,
+   "end": 22.52,
+   "sheet": "strip_a2_c002/flip/flip_xiaoqing_022.28.png",
+   "min_width_ratio": 0.571,
+   "frames": 26,
+   "eyes_open_from_start-0.2_to_end+0.3": true
+  }
+ ],
+ "forearm_crops": "capture/forearm_crops.png",
  "compare_g2": [
   "compare_g2v04_g4_16x9.png",
   "compare_g2v04_g4_1440x1080.png",
   "compare_g2v04_g4_1024x768.png"
  ],
  "audio": {
-  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設，照引擎混音規則（三條匯流排、配樂基準音量 setTargetAtTime 0.35 s、對白避讓 duckingPlan、交叉淡入淡出、換 cue 停台詞與音效 30 ms 淡出）以 48 kHz 離線混音；總音量 1.0。",
+  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設，照引擎混音規則（三條匯流排、配樂基準音量 setTargetAtTime 0.35 s、對白避讓 duckingPlan、教師停格時配樂降到基準 ×HOLD_MUSIC_RATIO、交叉淡入淡出、換 cue 停台詞與音效 30 ms 淡出）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
   "file": "audio/g4_mix.wav",
-  "duration_sec": 72.93,
-  "sample_peak_dBFS": -1.49,
+  "duration_sec": 84.74,
+  "sample_peak_dBFS": -1.44,
   "clipped_samples": 0,
   "full_playback": {
-   "I_LUFS": -18.5,
-   "LRA_LU": 12.3,
-   "TP_dBTP": -1.5
+   "I_LUFS": -18.4,
+   "LRA_LU": 13.3,
+   "TP_dBTP": -1.4
   },
   "a2_c002_to_a2_c004": {
-   "I_LUFS": -17.4,
-   "LRA_LU": 11.9,
-   "TP_dBTP": -1.5,
-   "from_sec": 15.6,
-   "to_sec": 59.93
+   "I_LUFS": -17.3,
+   "LRA_LU": 11.8,
+   "TP_dBTP": -1.4,
+   "from_sec": 16.6,
+   "to_sec": 67.44
   },
   "music_stem_full": {
-   "I_LUFS": -24.4,
-   "LRA_LU": 20.2,
+   "I_LUFS": -25.7,
+   "LRA_LU": 12.5,
    "TP_dBTP": -7.7
   },
   "line_vo_file_I_spread_LU": 0.2,
-  "line_mix_I_spread_LU": 0.3,
-  "momentary_max_LUFS": -11.4,
-  "momentary_max_at_sec": 30.8,
+  "line_mix_I_spread_LU": 0.2,
+  "momentary_max_LUFS": -10.2,
+  "momentary_max_at_sec": 46.8,
   "momentary_max_rise_within_1s_LU": 34.8,
-  "momentary_max_rise_per_100ms_LU": 22.8,
+  "momentary_max_rise_per_100ms_LU": 18.6,
   "momentary_full_mix": {
-   "max_LUFS": -11.4,
-   "max_at_sec": 30.8,
+   "max_LUFS": -10.2,
+   "max_at_sec": 46.8,
    "max_rise_within_1s_LU": 34.8,
    "max_rise_within_1s_at_sec": 4.1,
-   "max_rise_per_100ms_LU": 22.8,
-   "max_rise_per_100ms_at_sec": 46.6
+   "max_rise_per_100ms_LU": 18.6,
+   "max_rise_per_100ms_at_sec": 3.2
   },
   "momentary_music_sfx_only": {
    "max_LUFS": -15.7,
-   "max_at_sec": 63.9,
+   "max_at_sec": 75.9,
    "max_rise_within_1s_LU": 34.8,
    "max_rise_within_1s_at_sec": 4.1,
    "max_rise_per_100ms_LU": 18.6,
@@ -288,26 +1431,131 @@
   },
   "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算；music_sfx_only＝不含配音的配樂＋音效分軌（含基準音量與避讓）。",
   "ducking_constants": {
-   "DUCK_LEVEL": 0.32,
+   "DUCK_LEVEL": 0.56,
    "DUCK_LEAD": 0.15,
    "DUCK_TC_DOWN": 0.06,
    "DUCK_RELEASE": 0.3,
    "DUCK_TC_UP": 0.25,
-   "DUCK_BRIDGE": 0.9
+   "DUCK_BRIDGE": 0.9,
+   "HOLD_MUSIC_RATIO": 0.1,
+   "HOLD_TC": 0.6
+  },
+  "freeze_holds": [
+   {
+    "cue": "a2_c002",
+    "hold_from_sec": 41.53,
+    "hold_sec": 4,
+    "momentary_at_hold_start_LUFS": -28.6,
+    "momentary_at_3s_LUFS": -45.3,
+    "momentary_max_after_3s_LUFS": -45.0,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a2_c004",
+    "hold_from_sec": 67.44,
+    "hold_sec": 4,
+    "momentary_at_hold_start_LUFS": -27.8,
+    "momentary_at_3s_LUFS": -45.0,
+    "momentary_max_after_3s_LUFS": -41.8,
+    "pass_le_-35": true
+   }
+  ],
+  "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
+  "segment_spread_lu": {
+   "vo_files_lu": 0.2,
+   "featured_music_lu": 1.4,
+   "featured_music_I_LUFS": {
+    "a0_c001": -20.1,
+    "a8_c002": -21.0,
+    "a8_c003": -21.5
+   },
+   "underscore_lu": 1.5,
+   "underscore_I_LUFS": {
+    "a2_c002": -25.4,
+    "a2_c004": -26.9
+   },
+   "layers_note": "分層依 review/G3/loudness_scope_r2.json proposed_rule：素材檔（配音逐句檔）、各句對白在混音中、主奏段（沒有台詞的 cue 整段）、劇情襯底段（有台詞的 cue 扣掉每句台詞前 0.3 秒到後 0.5 秒）；各自最大−最小 ≤ 2 LU。",
+   "all_cues_lu": 6.2,
+   "dialogue_cues_lu": 4.6,
+   "dialogue_lines_lu": 0.2,
+   "per_cue_I_LUFS": {
+    "a0_c001": -20.1,
+    "a2_c002": -19.9,
+    "a2_c004": -15.3,
+    "a8_c002": -21.0,
+    "a8_c003": -21.5
+   },
+   "rule": "各段落整合響度最大−最小 ≤ 2 LU（±1 LU）",
+   "pass_all_cues": false,
+   "pass_dialogue_lines": true,
+   "decision": "已定案（主線 2026-10-21 12:30，依 review/G3/loudness_scope_r2.json）：v1.2 §20.4「各段整合響度差距 ±1 LU」（最大－最小 ≤2 LU）適用於三層：(1) 素材檔正規化（配音逐句檔 −18 LUFS；配樂與音效偏離各自目標 ≤1 LU）；(2) 演出混音中各句對白的整合響度（對白錨點）；(3) 同類無台詞配樂段彼此比較（主奏段一組、劇情襯底段一組）。整段 cue 的整合響度取決於台詞佔比，只列參考、不設 ±1 LU。理由：§20.4 的目的是讓對白清楚一致、不忽大忽小；整段 cue 混了不同比例的台詞與襯底，硬拉到 ±1 LU 會迫使無台詞動作段的配樂抬高約 6.5 LU，反而壓縮對白與襯底的層次。G6 全劇混音完成後用全劇數字重算一次（目前劇情襯底組只有 2 段樣本）。",
+   "decision_source": "review/G3/loudness_decision.json",
+   "pass_layers": {
+    "vo_files_lu": true,
+    "dialogue_lines_lu": true,
+    "featured_music_lu": true,
+    "underscore_lu": true
+   }
   }
  },
  "flash_playback": {
   "ok": true,
   "max_changes_per_sec": {
-   "luma": 3,
-   "red": 3
+   "luma": 2,
+   "red": 2
   },
-  "near_limit_total": 111,
-  "frames_analyzed": 2188
+  "near_limit_total": 49,
+  "frames_analyzed": 2542
+ },
+ "flash_variants": {
+  "fine_32x18": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 2
+   },
+   "near_limit_3_total": 86
+  },
+  "proj_16x9": {
+   "max_changes_per_sec": {
+    "luma": 2,
+    "red": 0
+   },
+   "near_limit_3_total": 0
+  },
+  "proj_32x18": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "near_limit_3_total": 32
+  }
+ },
+ "subtitle_sync": {
+  "method": "ffmpeg silencedetect noise=−45 dB、d=0.1 s 找配音檔的語音起點（第 1 頁＝第一個起點；之後各頁＝頁起點前後最接近的停頓後起點）；差值＝字幕頁起點 − 語音起點",
+  "range_s": [
+   -0.8,
+   0.1
+  ],
+  "all_pass": true
+ },
+ "kids_in_frame": {
+  "rule": "頭（外框上 30%）與上半身（外框上 55%）完整落在 90% 安全框 [96, 54, 1824, 1026] 內；外框含立牌透明邊與卡紙側邊（比可見的人略大）",
+  "cues": {
+   "a2_c002": {
+    "probes": 214,
+    "frames_outside": 0,
+    "examples": []
+   },
+   "a2_c004": {
+    "probes": 219,
+    "frames_outside": 0,
+    "examples": []
+   }
+  }
  },
  "video": {
   "file": "g4_playback.mp4",
-  "frames": 2188,
+  "frames": 2542,
   "ffprobe": {
    "programs": [],
    "stream_groups": [],
@@ -317,7 +1565,7 @@
      "width": 1920,
      "height": 1080,
      "r_frame_rate": "30/1",
-     "nb_frames": "2187",
+     "nb_frames": "2542",
      "side_data_list": [
       {}
      ]
@@ -325,43 +1573,43 @@
     {
      "codec_name": "aac",
      "r_frame_rate": "0/0",
-     "nb_frames": "3420"
+     "nb_frames": "3972"
     }
    ],
    "format": {
-    "duration": "72.930000",
-    "size": "46058632"
+    "duration": "84.733333",
+    "size": "49133551"
    }
   }
  },
  "durations": {
   "cues": {
    "a0_c000": 0,
-   "a0_c001": 10.6,
-   "a2_c002": 22.83,
-   "a2_c004": 19.5,
-   "a8_c002": 3.1,
+   "a0_c001": 11.6,
+   "a2_c002": 24.93,
+   "a2_c004": 21.91,
+   "a8_c002": 5.4,
    "a8_c003": 1.4
   },
-  "a2_c002_plus_a2_c004_sec": 42.33,
+  "a2_c002_plus_a2_c004_sec": 46.84,
   "target_sec": [
    30,
    45
   ],
-  "all_cues_sum_sec": 57.43,
-  "opening_a0_c001_sec": 10.6,
-  "closing_a8_c002_plus_a8_c003_sec": 4.5,
-  "playback_with_holds_sec": 72.93,
+  "all_cues_sum_sec": 65.24,
+  "opening_a0_c001_sec": 11.6,
+  "closing_a8_c002_plus_a8_c003_sec": 6.8,
+  "playback_with_holds_sec": 84.74,
   "holds_assumed_sec": {
    "a0_c000": 3,
    "a0_c001": 2,
-   "a2_c002": 2,
-   "a2_c004": 2,
+   "a2_c002": 4,
+   "a2_c004": 4,
    "a8_c002": 0,
    "a8_c003": 6.5
   },
-  "video_duration_sec": 72.93,
-  "vo_seconds_in_a2_c002_a2_c004": 22.23
+  "video_duration_sec": 84.733333,
+  "vo_seconds_in_a2_c002_a2_c004": 26.39
  },
  "safety": {
   "string_anchors_in_cues": [
@@ -369,51 +1617,52 @@
    "knee",
    "wrist"
   ],
+  "attach_file": "assets/final/rig/ale_attach_v05.json",
   "attach_points_primary": {
    "wrist_back": {
     "part": "forearm_r",
     "local_px": [
-     69.0,
-     210.0
+     82.0,
+     184.0
     ]
    },
    "elbow_out": {
     "part": "upper_arm_r",
     "local_px": [
-     39.0,
-     279.0
+     54.0,
+     265.0
     ]
    },
    "knee_front": {
     "part": "thigh_l",
     "local_px": [
-     87.5,
+     88.0,
      330.0
     ]
    }
   },
-  "probe_frames_with_strings": 435,
-  "string_path_min_dist_to_ale_head_box_px": 26.9,
+  "probe_frames_with_strings": 545,
+  "string_path_min_dist_to_ale_head_box_px": 21.6,
   "per_anchor": {
    "wrist": {
-    "min_dist_to_head_box_px": 30.9,
-    "frames": 435,
-    "at": "a2_c002 t=7.3"
+    "min_dist_to_head_box_px": 24.2,
+    "frames": 545,
+    "at": "a2_c002 t=4.3"
    },
    "elbow": {
-    "min_dist_to_head_box_px": 44.0,
-    "frames": 424,
-    "at": "a2_c002 t=8.3"
+    "min_dist_to_head_box_px": 34.3,
+    "frames": 535,
+    "at": "a2_c002 t=5.2"
    },
    "knee": {
-    "min_dist_to_head_box_px": 26.9,
-    "frames": 413,
-    "at": "a8_c002 t=2.9"
+    "min_dist_to_head_box_px": 21.6,
+    "frames": 525,
+    "at": "a8_c002 t=5.4"
    }
   },
   "string_path_intersects_child_box": [],
   "string_path_intersects_child_box_count": 0,
-  "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎同一條二次貝茲曲線投影成 13 點；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
+  "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎實際畫的中心線（strings.ts，37 點，下段細分）投影到螢幕；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
   "required_narration_1": {
    "claude_md": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
    "script_v03": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
@@ -483,22 +1732,384 @@
   "capture_external_requests": 0,
   "capture_console_errors": 0
  },
+ "blink_check": {
+  "flips": [
+   {
+    "cue": "a2_c002",
+    "target": "xiaoqing",
+    "pose": "worried",
+    "start": 8.95,
+    "end": 9.19,
+    "frames_checked": 22,
+    "frames_after_end_0_3s": 9,
+    "all_open": true,
+    "first_blink_after_end_s": 0.343
+   },
+   {
+    "cue": "a2_c002",
+    "target": "xiaoyu",
+    "pose": "stepback",
+    "start": 9.3,
+    "end": 9.54,
+    "frames_checked": 23,
+    "frames_after_end_0_3s": 9,
+    "all_open": true,
+    "first_blink_after_end_s": 0.327
+   },
+   {
+    "cue": "a2_c002",
+    "target": "xiaoqing",
+    "pose": "palm",
+    "start": 20.93,
+    "end": 21.17,
+    "frames_checked": 23,
+    "frames_after_end_0_3s": 9,
+    "all_open": true,
+    "first_blink_after_end_s": 0.33
+   },
+   {
+    "cue": "a2_c002",
+    "target": "xiaoqing",
+    "pose": "worried",
+    "start": 22.28,
+    "end": 22.52,
+    "frames_checked": 22,
+    "frames_after_end_0_3s": 9,
+    "all_open": true,
+    "first_blink_after_end_s": 0.347
+   }
+  ],
+  "blink_runs": 35,
+  "blink_frames_sheet": "blink/kids_blink_frames.png",
+  "blink_frames": 178,
+  "window_37_9_38_1": {
+   "sheet": "blink/mp4_37.9-38.1.png",
+   "non_open_frames": 1
+  }
+ },
+ "kids_zoom": {
+  "sheet": "strip_a2_c002/kids_18.75-22.6.png",
+  "frames": 31,
+  "eyes": [
+   {
+    "t": 18.75,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 18.875,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.125,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.25,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.375,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.5,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.625,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.75,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 19.875,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.125,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.25,
+    "xiaoqing": "open",
+    "xiaoyu": "closed"
+   },
+   {
+    "t": 20.375,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.5,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.625,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.75,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 20.875,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.125,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.25,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.375,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.5,
+    "xiaoqing": "half",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.625,
+    "xiaoqing": "half",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.75,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.875,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 22,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 22.125,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 22.25,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 22.375,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 22.5,
+    "xiaoqing": "open",
+    "xiaoyu": "open"
+   }
+  ],
+  "non_open_frames": [
+   {
+    "t": 20.25,
+    "xiaoqing": "open",
+    "xiaoyu": "closed"
+   },
+   {
+    "t": 21.5,
+    "xiaoqing": "half",
+    "xiaoyu": "open"
+   },
+   {
+    "t": 21.625,
+    "xiaoqing": "half",
+    "xiaoyu": "open"
+   }
+  ]
+ },
+ "string_sag": {
+  "rule": "畫面裡那一段線（畫面上緣到紙環上緣，引擎實際畫的中心線 path）的弧長中點，到兩端連線的距離（px）",
+  "wave_taut_beat_s": 12.33,
+  "wave_taut_end_s": 12.45,
+  "knee_taut_beat_s": 20.73,
+  "knee_taut_end_s": 20.85,
+  "loose_9_75_12_25": {
+   "min_px": 18.3,
+   "max_px": 25.2,
+   "samples": 63,
+   "pass_ge_15": true
+  },
+  "taut_after_12_5_wrist_elbow": {
+   "min_px": 0.0,
+   "max_px": 0.0,
+   "samples": 202,
+   "pass_le_3": true
+  },
+  "knee_loose_before_taut": {
+   "min_px": 18.3,
+   "max_px": 19.4,
+   "samples": 88,
+   "pass_ge_15": true
+  },
+  "knee_after_taut": {
+   "min_px": 0.0,
+   "max_px": 0.0,
+   "samples": 34,
+   "pass_le_3": true
+  },
+  "frames_sheet": "strip_a2_c002/string_sag_frames.png",
+  "plot": "strip_a2_c002/string_sag_plot.png"
+ },
+ "stand": {
+  "rule": "臀部上移＝（凳面上緣 y − 骨盆樞紐 y）減去起身前（kneeTug 起點）的同一量（同一格內相對凳面，抵銷鏡頭推近）；扶桌相交＝近側手 hand_l 貼圖不透明範圍（alpha ≥ 128，不含白色紙芯描邊）跨過桌面上緣的量：上下各離桌面上緣的較小者（hand_straddle_px），左右與桌面範圍重疊（hand_x_overlap_px）",
+  "kneeTug_start_s": 19.63,
+  "grab_end_s": 22.23,
+  "seated_hip_above_stool_px": 2.8999999999999773,
+  "max_rise_px": 60.3,
+  "longest_rise_ge_25px_s": 5.181,
+  "pass_rise": true,
+  "hand_after_grab_end": {
+   "frames": 23,
+   "min_straddle_px": 16.8,
+   "min_x_overlap_px": 38.9
+  },
+  "pass_hand": true,
+  "sheet": "strip_a2_c002/stand_18.5-21.5.png"
+ },
+ "c004_variation": {
+  "rule": "相鄰兩格（每秒 2 格）灰階平均絕對差 > 1.0 算一次變化（排除下方 22% 字幕帶）；每個 6 秒窗（每 0.5 秒滑動）至少 1 次",
+  "min_changed_pairs_per_6s": 5,
+  "windows": 32,
+  "windows_without_change": [],
+  "animations": [
+   {
+    "name": "camera.move",
+    "target": null,
+    "start": 0.3,
+    "end": 4.6
+   },
+   {
+    "name": "camera.move",
+    "target": null,
+    "start": 6.4,
+    "end": 10.2
+   },
+   {
+    "name": "puppet.lean",
+    "target": "xiaoqing",
+    "start": 9,
+    "end": 9.8
+   },
+   {
+    "name": "puppet.lean",
+    "target": "xiaoyu",
+    "start": 9.15,
+    "end": 9.95
+   },
+   {
+    "name": "puppet.blink",
+    "target": "xiaoqing",
+    "start": 9.5,
+    "end": 9.5
+   },
+   {
+    "name": "puppet.blink",
+    "target": "xiaoyu",
+    "start": 9.75,
+    "end": 9.75
+   },
+   {
+    "name": "camera.move",
+    "target": null,
+    "start": 10.6,
+    "end": 14.2
+   },
+   {
+    "name": "puppet.lean",
+    "target": "xiaoqing",
+    "start": 10.9,
+    "end": 11.8
+   },
+   {
+    "name": "puppet.lean",
+    "target": "xiaoyu",
+    "start": 11.05,
+    "end": 11.95
+   },
+   {
+    "name": "puppet.tilt",
+    "target": "ale",
+    "start": 12,
+    "end": 12.8
+   },
+   {
+    "name": "puppet.tilt",
+    "target": "ale",
+    "start": 14.1,
+    "end": 15
+   },
+   {
+    "name": "camera.move",
+    "target": null,
+    "start": 17.91,
+    "end": 21.51
+   }
+  ]
+ },
  "frames_meta": {
   "strip": {
    "cue": "a2_c002",
-   "from": 6.5,
-   "to": 22.83,
+   "from": 3.5,
+   "to": 24.93,
    "fps": 8,
-   "count": 132,
+   "count": 173,
    "fromAnim": "strings.drop.start"
   },
   "errors": [],
   "engineDurations": {
    "a0_c000": 0,
-   "a0_c001": 10.6,
-   "a2_c002": 22.83,
-   "a2_c004": 19.5,
-   "a8_c002": 3.1,
+   "a0_c001": 11.6,
+   "a2_c002": 24.93,
+   "a2_c004": 21.91,
+   "a8_c002": 5.4,
    "a8_c003": 1.4
   }
  }

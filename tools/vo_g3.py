@@ -197,6 +197,63 @@ def write_transcripts(metrics: dict) -> None:
                 rows.append(f"| `{n}` | {mname} | {m['hyp_trad']} | {m['cer']:.3f} | {m['per']:.3f} | {diffs} | {checks} |")
             rows.append(f"| `{n}` | **判讀** | {t['verdict']} | {t['cer_min']:.3f} | {t['per_min']:.3f} | | |")
         rows.append("")
+    rep_p = V.VO_DIR / "build_report.json"
+    if rep_p.exists():
+        rep = json.loads(rep_p.read_text("utf-8"))
+        rows += ["# 正式台詞（audio/vo/build_report.json，目前版本：G4 代表鏡頭 v02＋修正第 2 輪重建句 v03）", "",
+                 "| 句子 | 角色 | 檔案 | 模型 | 轉寫（繁體） | CER | PER | 差異 | 判讀 |", "|---|---|---|---|---|---:|---:|---|---|"]
+        for lid, r in rep.items():
+            t = r.get("transcript")
+            if not t:
+                continue
+            for mname, m in t["models"].items():
+                diffs = "；".join(f"「{d['ref']}」→「{d['hyp']}」{d['kind']}" for d in m["diffs"]) or "無"
+                rows.append(f"| {lid} | {r['role']} | `{r['file']}` | {mname} | {m['hyp_trad']} | {m['cer']:.3f} | {m['per']:.3f} | {diffs} | |")
+            rows.append(f"| {lid} | | | **判讀** | | {t['cer_min']:.3f} | {t['per_min']:.3f} | | {t['verdict']} |")
+        rows.append("")
+    ck = metrics.get("round1", {}).get("checklist")
+    if ck:
+        rows += ["# 修正第 1 輪：讀音檢查表句子（正式選角參數 casting.json v02）", "",
+                 "- 產生：`tools/vo_g3_r1.py`。每句用正式管線合成（`review/G3/r1/check_*.wav`），兩個模型各轉寫一次。",
+                 "- **嚴格通過**＝兩個模型都沒有任何非同音差異，而且檢查詞都「轉寫一致」或「同音轉寫」。",
+                 "- 「垃圾」劇本沒有台詞含這個詞，用測試句；兩種讀音（lè sè／lā jī）轉寫都寫「垃圾」，讀音另見 `tone_check_lese.json`。"
+                 "「一起、不碰、不試」的變調轉寫看不出，標未驗證（聽感留到第 3 天彩排）。", "",
+                 "| 句子 | 角色 | 檢查詞 | 合成用文字 | 模型 | 轉寫（繁體） | CER | PER | 差異 | 檢查詞狀態 |",
+                 "|---|---|---|---|---|---|---:|---:|---|---|"]
+        for r in ck["rows"]:
+            t = r.get("transcript")
+            if not t:
+                rows.append(f"| {r['line']} | {r['role']} | {r['check_word']} | {r['synth_text']} | — | （未轉寫） | | | | |")
+                continue
+            for mname, m in t["models"].items():
+                diffs = "；".join(f"「{d['ref']}」→「{d['hyp']}」{d['kind']}" for d in m["diffs"]) or "無"
+                checks = "；".join(f"{c['word']}：{c['status']}" for c in m["checks"]) or "—"
+                rows.append(f"| {r['line']}{'' if r['in_script'] else '（測試句）'} | {r['role']} | {r['check_word']} | "
+                            f"{r['synth_text']} | {mname} | {m['hyp_trad']} | {m['cer']:.3f} | {m['per']:.3f} | {diffs} | {checks} |")
+            rows.append(f"| {r['line']} | | | | **判讀** | {t['verdict']}；嚴格通過：{'是' if r.get('pass_strict') else '否'} | "
+                        f"{t['cer_min']:.3f} | {t['per_min']:.3f} | | |")
+        rows.append("")
+    pa = metrics.get("round2", {}).get("pinan")
+    tc_p = G3 / "tone_check_pinan_r2.json"
+    if pa and tc_p.exists():
+        tc = json.loads(tc_p.read_text("utf-8"))
+        rows += ["# 修正第 2 輪：人名「品安」（重驗 1 第 2 項）", "",
+                 "- 產生：`tools/vo_g3_r2.py`。正式檔＝`audio/vo/vo_<句>_v03.wav`（「品安」分段＋PSOLA 半三聲）；對照＝同管線把文字換成「平安」"
+                 "（`review/G3/r2/pinan_ctrl_ping_*.wav`）；修正前＝整句合成（`pinan_before_*.wav`）；只分段＝`pinan_segonly_*.wav`。",
+                 "- 「正式提示」與上面所有轉寫相同（「以下是繁體中文的台灣華語。」）；「人名提示」另加故事人物名單，只用來檢查音檔裡的品／平分不分得出來"
+                 "（同一提示也轉寫平安對照檔）。F0 走勢見 `tone_check_pinan_r2.png`／`.json`。聽感未驗證。", "",
+                 f"- 結論：{tc.get('conclusion')}", "",
+                 "| 句子 | 檔案 | 模型 | 正式提示 | 人名提示 |", "|---|---|---|---|---|"]
+        lab = {"official": "正式檔 v03", "segment_only": "只分段", "before_whole_sentence": "修正前（整句）", "control_ping": "對照：平安"}
+        for lid, c in tc["cases"].items():
+            for kind in ("official", "segment_only", "before_whole_sentence", "control_ping"):
+                for mname, t in c["transcripts"][kind].items():
+                    rows.append(f"| {lid} | {lab[kind]} | {mname} | {t['standard_prompt']} | {t['name_hint_prompt']} |")
+            s = tc["summary"][lid]
+            rows.append(f"| {lid} | **F0** | | 品最低 {s['official_min_hz']} Hz／平最低 {s['ping_control_min_hz']} Hz（{s['pin_minus_ping_st']} 半音）；"
+                        f"品從起點 {s['official_fall_from_onset_st']} 半音；三聲判準 {'符合' if s['third_tone_clear'] else '未符合'} | "
+                        f"人名提示分得出品／平：" + "、".join(f"{m} {'是' if v else '否'}" for m, v in s["name_hint_discriminates_pin_vs_ping"].items()) + " |")
+        rows.append("")
     (G3 / "transcripts.md").write_text("\n".join(rows), "utf-8")
 
 

@@ -1,0 +1,101 @@
+{
+ "code": "lin",
+ "lines": [
+  "a3_c008_01",
+  "a3_c003_02",
+  "a3_c008_02"
+ ],
+ "attempts": 1,
+ "variants": {
+  "Jane_v3": {
+   "voice_id": "0Aj540a9UWvQPWdx9Zq4",
+   "voice_name": "Jane - Low, Calm and Slow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.95,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 450,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.9,
+     4.1
+    ],
+    "rate_cps_net": [
+     3.4,
+     4.6
+    ],
+    "f0_nominal": 161.0,
+    "f0_hz": [
+     143.4,
+     180.7
+    ]
+   },
+   "lines": {}
+  },
+  "Jui_v3": {
+   "voice_id": "5ypmms5LDLZQ1fRMo16H",
+   "voice_name": "Jui - Calm, Warm & Pleasing",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 0.95,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 450,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     3.9,
+     4.1
+    ],
+    "rate_cps_net": [
+     3.4,
+     4.6
+    ],
+    "f0_nominal": 161.0,
+    "f0_hz": [
+     143.4,
+     180.7
+    ]
+   },
+   "lines": {}
+  }
+ }
+}

@@ -1,10 +1,532 @@
 {
+ "a1_c001_01": {
+  "id": "a1_c001_01",
+  "role": "小晴",
+  "text": "品安！你的燈籠好漂亮。",
+  "file": "audio/vo/vo_a1_c001_01_v03.wav",
+  "lipsync": "audio/lipsync/a1_c001_01_v03.json",
+  "seconds": 2.81,
+  "speech_start": 0.12,
+  "speech_end": 2.56,
+  "master": {
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "speech_start": 0.12,
+   "speech_end": 2.56,
+   "method": "measured_gain",
+   "gain_db": 1.3,
+   "pre_I": -19.3,
+   "I": -18.0,
+   "TP": -3.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a1_c001_01_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 2.81,
+   "speech_seconds": 2.44,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.9,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 3.69,
+   "rate_cps_net": 4.81,
+   "pauses_ms": [
+    570
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.86,
+   "pauses_ms_r": [
+    570
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -72.2,
+   "pauses_checked": 1,
+   "f0_median": 275.3,
+   "f0_p10": 224.6,
+   "f0_p90": 380.9,
+   "voiced_ratio": 0.56
+  },
+  "synthesis": [
+   {
+    "role": "小晴",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550,
+     "contour": {
+      "segment": 0,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     }
+    },
+    "synth_text": "品安！[[break:450]]你的登籠好漂亮。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "小晴": [
+    {
+     "text": "品安！",
+     "rate": "+0%",
+     "gap_after_ms": 450,
+     "declicked": [
+      [
+       0.949,
+       -59.3
+      ],
+      [
+       0.974,
+       -62.3
+      ],
+      [
+       1.649,
+       -68.1
+      ],
+      [
+       1.674,
+       -64.9
+      ],
+      [
+       1.699,
+       -64.9
+      ],
+      [
+       1.724,
+       -68.4
+      ]
+     ],
+     "contour": {
+      "applied": true,
+      "f_start_hz": 292.0,
+      "t0": 0.08,
+      "t1": 0.45,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     },
+     "rise_after": {
+      "t0": 0.08,
+      "t1": 0.45,
+      "start_hz": 269.1,
+      "end_hz": 330.2,
+      "end_over_start": 1.227,
+      "contour_hz_20ms": [
+       285,
+       276,
+       262,
+       249,
+       238,
+       229,
+       219,
+       208,
+       205,
+       207,
+       257,
+       306,
+       321,
+       324,
+       326,
+       327,
+       329,
+       330,
+       332
+      ]
+     }
+    },
+    {
+     "text": "你的登籠好漂亮。",
+     "rate": "+0%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.57
+   ],
+   [
+    1.13,
+    2.56
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "品安！你的燈籠好漂亮。",
+     "hyp": "平安,你的燈籠好漂亮。",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "品安！你的燈籠好漂亮。",
+     "hyp": "平安!你的燈籠好漂亮!",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "per_min": 0.111,
+   "cer_min": 0.111,
+   "both_models_diff": [
+    "品"
+   ],
+   "verdict": "需複查：兩個模型都在「品」出現非同音差異"
+  }
+ },
+ "a1_c004_05": {
+  "id": "a1_c004_05",
+  "role": "小晴",
+  "text": "品安，快來，我們去跟阿樂叔叔說。",
+  "file": "audio/vo/vo_a1_c004_05_v03.wav",
+  "lipsync": "audio/lipsync/a1_c004_05_v03.json",
+  "seconds": 3.46,
+  "speech_start": 0.12,
+  "speech_end": 3.21,
+  "master": {
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "speech_start": 0.12,
+   "speech_end": 3.21,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -18.63,
+   "I": -18.0,
+   "TP": -4.5
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a1_c004_05_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.46,
+   "speech_seconds": 3.09,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -4.5,
+   "lra": 0.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 13,
+   "rate_cps": 4.21,
+   "rate_cps_net": 4.21,
+   "pauses_ms": [
+    240,
+    180
+   ],
+   "pause_count_ge250": 0,
+   "rate_cps_net_r": 4.58,
+   "pauses_ms_r": [
+    240
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -74.7,
+   "pauses_checked": 1,
+   "f0_median": 318.2,
+   "f0_p10": 245.0,
+   "f0_p90": 380.8,
+   "voiced_ratio": 0.6
+  },
+  "synthesis": [
+   {
+    "role": "小晴",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550,
+     "contour": {
+      "segment": 0,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     }
+    },
+    "synth_text": "品安，[[break:120]]快來，我們去跟阿勒叔叔說。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "小晴": [
+    {
+     "text": "品安，",
+     "rate": "+0%",
+     "gap_after_ms": 120,
+     "declicked": [
+      [
+       0.924,
+       -59.6
+      ],
+      [
+       0.974,
+       -62.5
+      ],
+      [
+       1.649,
+       -67.6
+      ],
+      [
+       1.674,
+       -65.2
+      ],
+      [
+       1.699,
+       -63.9
+      ],
+      [
+       1.724,
+       -68.4
+      ]
+     ],
+     "contour": {
+      "applied": true,
+      "f_start_hz": 289.9,
+      "t0": 0.08,
+      "t1": 0.46,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     },
+     "rise_after": {
+      "t0": 0.08,
+      "t1": 0.46,
+      "start_hz": 268.1,
+      "end_hz": 327.8,
+      "end_over_start": 1.223,
+      "contour_hz_20ms": [
+       281,
+       274,
+       261,
+       248,
+       238,
+       229,
+       219,
+       209,
+       203,
+       204,
+       246,
+       290,
+       318,
+       321,
+       322,
+       324,
+       326,
+       327,
+       328,
+       331
+      ]
+     }
+    },
+    {
+     "text": "快來，我們去跟阿勒叔叔說。",
+     "rate": "+0%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.59
+   ],
+   [
+    0.82,
+    1.39
+   ],
+   [
+    1.56,
+    3.21
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "品安，快來，我們去跟阿樂叔叔說。",
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "品安，快來，我們去跟阿樂叔叔說。",
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "per_min": 0.077,
+   "cer_min": 0.077,
+   "both_models_diff": [
+    "品"
+   ],
+   "verdict": "需複查：兩個模型都在「品」出現非同音差異"
+  }
+ },
  "a2_c001_01": {
   "id": "a2_c001_01",
   "role": "小宇",
   "text": "叔叔，你還好嗎？竹篾掉了。",
-  "file": "audio/vo/vo_a2_c001_01_v01.wav",
-  "lipsync": "audio/lipsync/a2_c001_01_v01.json",
+  "file": "audio/vo/vo_a2_c001_01_v02.wav",
+  "lipsync": "audio/lipsync/a2_c001_01_v02.json",
   "seconds": 3.52,
   "speech_start": 0.12,
   "speech_end": 3.27,
@@ -22,7 +544,7 @@
    "TP": -1.9
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c001_01_v01.wav",
+   "file": "audio/vo/vo_a2_c001_01_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
@@ -42,6 +564,13 @@
     570
    ],
    "pause_count_ge250": 1,
+   "rate_cps_net_r": 3.91,
+   "pauses_ms_r": [
+    560
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -80.8,
+   "pauses_checked": 1,
    "f0_median": 225.8,
    "f0_p10": 179.1,
    "f0_p90": 302.5,
@@ -65,6 +594,30 @@
    [
     1010,
     560
+   ]
+  ],
+  "segments": {
+   "小宇": [
+    {
+     "text": "叔叔，你還好嗎？竹篾掉了。",
+     "rate": "+12%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.71
+   ],
+   [
+    0.86,
+    1.76
+   ],
+   [
+    2.32,
+    3.27
    ]
   ],
   "transcript": {
@@ -120,8 +673,8 @@
   "id": "a2_c001_02",
   "role": "阿樂叔叔",
   "text": "沒事、沒事，手滑了一下。",
-  "file": "audio/vo/vo_a2_c001_02_v01.wav",
-  "lipsync": "audio/lipsync/a2_c001_02_v01.json",
+  "file": "audio/vo/vo_a2_c001_02_v02.wav",
+  "lipsync": "audio/lipsync/a2_c001_02_v02.json",
   "seconds": 3.16,
   "speech_start": 0.12,
   "speech_end": 2.91,
@@ -138,7 +691,7 @@
    "TP": -1.9
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c001_02_v01.wav",
+   "file": "audio/vo/vo_a2_c001_02_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
@@ -158,6 +711,14 @@
     280
    ],
    "pause_count_ge250": 2,
+   "rate_cps_net_r": 3.95,
+   "pauses_ms_r": [
+    230,
+    210
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": null,
+   "pauses_checked": 0,
    "f0_median": 94.3,
    "f0_p10": 84.4,
    "f0_p90": 131.1,
@@ -178,6 +739,39 @@
   ],
   "el_chars_billed": 0,
   "pause_caps_ms": [],
+  "segments": {
+   "阿樂叔叔": [
+    {
+     "text": "沒事、沒事，手滑了一下。",
+     "rate": "-6%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.153,
+       -46.7
+      ],
+      [
+       3.184,
+       -49.0
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.74
+   ],
+   [
+    1.04,
+    1.63
+   ],
+   [
+    1.9,
+    2.91
+   ]
+  ],
   "transcript": {
    "models": {
     "small": {
@@ -219,48 +813,55 @@
   "id": "a2_c001_03",
   "role": "折折",
   "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
-  "file": "audio/vo/vo_a2_c001_03_v01.wav",
-  "lipsync": "audio/lipsync/a2_c001_03_v01.json",
-  "seconds": 5.43,
+  "file": "audio/vo/vo_a2_c001_03_v02.wav",
+  "lipsync": "audio/lipsync/a2_c001_03_v02.json",
+  "seconds": 5.42,
   "speech_start": 0.12,
-  "speech_end": 5.18,
+  "speech_end": 5.17,
   "master": {
    "raw_head_silence_ms": 150,
    "raw_tail_silence_ms": 664,
    "speech_start": 0.12,
-   "speech_end": 5.18,
+   "speech_end": 5.17,
    "method": "loudnorm_pass1_gain",
-   "gain_db": 3.31,
-   "pass1_input_i": -21.31,
+   "gain_db": 3.14,
+   "pass1_input_i": -21.14,
    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
    "limited": true,
    "I": -17.9,
    "TP": -1.9
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c001_03_v01.wav",
+   "file": "audio/vo/vo_a2_c001_03_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
-   "seconds": 5.43,
-   "speech_seconds": 5.07,
+   "seconds": 5.42,
+   "speech_seconds": 5.05,
    "integrated_lufs": -17.9,
    "true_peak_dbtp": -1.9,
-   "lra": 1.5,
+   "lra": 1.4,
    "clipped_samples": 0,
    "head_silence_ms": 120,
-   "tail_silence_ms": 240,
+   "tail_silence_ms": 250,
    "han_chars": 22,
-   "rate_cps": 4.34,
-   "rate_cps_net": 4.88,
+   "rate_cps": 4.36,
+   "rate_cps_net": 4.9,
    "pauses_ms": [
     560
    ],
    "pause_count_ge250": 1,
-   "f0_median": 278.8,
-   "f0_p10": 216.7,
-   "f0_p90": 366.3,
-   "voiced_ratio": 0.52
+   "rate_cps_net_r": 4.92,
+   "pauses_ms_r": [
+    560
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -64.7,
+   "pauses_checked": 1,
+   "f0_median": 296.0,
+   "f0_p10": 231.9,
+   "f0_p90": 390.2,
+   "voiced_ratio": 0.53
   },
   "synthesis": [
    {
@@ -268,7 +869,7 @@
     "service": "edge",
     "voice": "zh-TW-HsiaoYuNeural",
     "rate": "+22%",
-    "pitch": "+60Hz",
+    "pitch": "+90Hz",
     "post": {
      "max_pause_ms": 550
     },
@@ -278,15 +879,35 @@
   "el_chars_billed": 0,
   "pause_caps_ms": [
    [
-    710,
+    720,
     560
+   ]
+  ],
+  "segments": {
+   "折折": [
+    {
+     "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+     "rate": "+22%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    3.65
+   ],
+   [
+    4.2,
+    5.17
    ]
   ],
   "transcript": {
    "models": {
     "small": {
      "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
-     "hyp": "大家仔細看,叔叔的手上,是不是多了什麼。看到的舉手。",
+     "hyp": "大家仔細看,叔叔的手上,是不是多了什麼?看到的舉手。",
      "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
      "cer": 0.0,
      "per": 0.0,
@@ -323,50 +944,57 @@
   "id": "a2_c002_01",
   "role": "阿樂叔叔",
   "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
-  "file": "audio/vo/vo_a2_c002_01_v01.wav",
-  "lipsync": "audio/lipsync/a2_c002_01_v01.json",
-  "seconds": 4.26,
+  "file": "audio/vo/vo_a2_c002_01_v02.wav",
+  "lipsync": "audio/lipsync/a2_c002_01_v02.json",
+  "seconds": 4.89,
   "speech_start": 0.12,
-  "speech_end": 4.01,
+  "speech_end": 4.64,
   "master": {
-   "raw_head_silence_ms": 250,
-   "raw_tail_silence_ms": 826,
+   "raw_head_silence_ms": 20,
+   "raw_tail_silence_ms": 90,
    "speech_start": 0.12,
-   "speech_end": 4.01,
+   "speech_end": 4.64,
    "method": "loudnorm_pass1_gain",
-   "gain_db": 5.05,
-   "pass1_input_i": -23.05,
+   "gain_db": 4.81,
+   "pass1_input_i": -22.81,
    "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
    "limited": true,
-   "trim_passes": 1,
    "I": -18.0,
-   "TP": -1.6
+   "TP": -1.9
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c002_01_v01.wav",
+   "file": "audio/vo/vo_a2_c002_01_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
-   "seconds": 4.26,
-   "speech_seconds": 3.89,
+   "seconds": 4.89,
+   "speech_seconds": 4.53,
    "integrated_lufs": -18.0,
-   "true_peak_dbtp": -1.6,
-   "lra": 1.2,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.8,
    "clipped_samples": 0,
    "head_silence_ms": 120,
-   "tail_silence_ms": 250,
+   "tail_silence_ms": 240,
    "han_chars": 14,
-   "rate_cps": 3.6,
-   "rate_cps_net": 4.78,
+   "rate_cps": 3.09,
+   "rate_cps_net": 4.42,
    "pauses_ms": [
-    960,
-    230
+    560,
+    800
    ],
-   "pause_count_ge250": 1,
-   "f0_median": 109.0,
-   "f0_p10": 86.9,
-   "f0_p90": 158.3,
-   "voiced_ratio": 0.37
+   "pause_count_ge250": 2,
+   "rate_cps_net_r": 4.35,
+   "pauses_ms_r": [
+    500,
+    770
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -76.3,
+   "pauses_checked": 2,
+   "f0_median": 109.9,
+   "f0_p10": 84.6,
+   "f0_p90": 146.3,
+   "voiced_ratio": 0.41
   },
   "synthesis": [
    {
@@ -375,66 +1003,227 @@
     "voice": "zh-TW-YunJheNeural",
     "rate": "-6%",
     "pitch": "+0Hz",
+    "segment_rates": [
+     "-8%",
+     "-18%",
+     "-18%"
+    ],
     "post": {
-     "max_pause_ms": 900
+     "max_pause_ms": 900,
+     "contour": {
+      "segment": 0,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.3,
+        0.97
+       ],
+       [
+        1.0,
+        1.38
+       ]
+      ]
+     }
     },
-    "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？"
+    "synth_text": "咦？[[break:350]]我想揮手……[[break:550]]手怎麼跑到旁邊去了？"
    }
   ],
   "el_chars_billed": 0,
-  "pause_caps_ms": [
+  "pause_caps_ms": [],
+  "segments": {
+   "阿樂叔叔": [
+    {
+     "text": "咦？",
+     "rate": "-8%",
+     "gap_after_ms": 350,
+     "declicked": [
+      [
+       0.156,
+       -46.9
+      ],
+      [
+       0.875,
+       -51.4
+      ],
+      [
+       0.924,
+       -61.3
+      ],
+      [
+       0.949,
+       -58.1
+      ],
+      [
+       0.974,
+       -61.9
+      ],
+      [
+       1.649,
+       -68.7
+      ],
+      [
+       1.674,
+       -65.1
+      ],
+      [
+       1.699,
+       -64.5
+      ],
+      [
+       1.724,
+       -68.3
+      ]
+     ],
+     "contour": {
+      "applied": true,
+      "f_start_hz": 96.3,
+      "t0": 0.05,
+      "t1": 0.37,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.3,
+        0.97
+       ],
+       [
+        1.0,
+        1.38
+       ]
+      ]
+     },
+     "rise_after": {
+      "t0": 0.05,
+      "t1": 0.36,
+      "start_hz": 95.6,
+      "end_hz": 127.2,
+      "end_over_start": 1.33,
+      "contour_hz_20ms": [
+       96,
+       96,
+       95,
+       95,
+       94,
+       95,
+       97,
+       102,
+       104,
+       108,
+       111,
+       115,
+       118,
+       122,
+       126,
+       131
+      ]
+     }
+    },
+    {
+     "text": "我想揮手……",
+     "rate": "-18%",
+     "gap_after_ms": 550,
+     "declicked": [
+      [
+       0.168,
+       -46.7
+      ],
+      [
+       1.583,
+       -55.1
+      ],
+      [
+       1.649,
+       -68.0
+      ],
+      [
+       1.674,
+       -64.6
+      ],
+      [
+       1.699,
+       -65.0
+      ],
+      [
+       1.724,
+       -68.9
+      ]
+     ]
+    },
+    {
+     "text": "手怎麼跑到旁邊去了？",
+     "rate": "-18%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.168,
+       -46.7
+      ],
+      [
+       2.254,
+       -50.1
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
    [
-    1080,
-    910
+    0.12,
+    0.53
+   ],
+   [
+    1.08,
+    2.0
+   ],
+   [
+    2.79,
+    4.65
    ]
   ],
   "transcript": {
    "models": {
     "small": {
      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
-     "hyp": "1. 我想揮手,手怎麼跑到旁邊去了?",
-     "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+     "hyp": "姨,我想揮手。手怎麼跑到旁邊去了?",
+     "hyp_trad": "姨我想揮手手怎麼跑到旁邊去了",
      "cer": 0.071,
-     "per": 0.071,
+     "per": 0.0,
      "diffs": [
       {
        "ref": "咦",
-       "hyp": "一",
-       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+       "hyp": "姨",
+       "kind": "同音字（讀音一致）"
       }
      ],
      "checks": []
     },
     "large-v3-turbo": {
      "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
-     "hyp": "1.我想揮手,手怎麼跑到旁邊去了?",
-     "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
-     "cer": 0.071,
-     "per": 0.071,
-     "diffs": [
-      {
-       "ref": "咦",
-       "hyp": "一",
-       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
-      }
-     ],
+     "hyp": "咦?我想揮手。手怎麼跑到旁邊去了?",
+     "hyp_trad": "咦我想揮手手怎麼跑到旁邊去了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
      "checks": []
     }
    },
-   "per_min": 0.071,
-   "cer_min": 0.071,
-   "both_models_diff": [
-    "咦"
-   ],
-   "verdict": "需複查：兩個模型都在「咦」出現非同音差異"
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
   }
  },
  "a2_c002_02": {
   "id": "a2_c002_02",
   "role": "小晴",
   "text": "叔叔，小心！",
-  "file": "audio/vo/vo_a2_c002_02_v01.wav",
-  "lipsync": "audio/lipsync/a2_c002_02_v01.json",
+  "file": "audio/vo/vo_a2_c002_02_v02.wav",
+  "lipsync": "audio/lipsync/a2_c002_02_v02.json",
   "seconds": 1.72,
   "speech_start": 0.12,
   "speech_end": 1.47,
@@ -444,20 +1233,20 @@
    "speech_start": 0.12,
    "speech_end": 1.47,
    "method": "measured_gain",
-   "gain_db": 2.5,
-   "pre_I": -20.5,
+   "gain_db": 2.3,
+   "pre_I": -20.3,
    "I": -18.0,
-   "TP": -3.6
+   "TP": -3.7
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c002_02_v01.wav",
+   "file": "audio/vo/vo_a2_c002_02_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
    "seconds": 1.72,
    "speech_seconds": 1.35,
    "integrated_lufs": -18.0,
-   "true_peak_dbtp": -3.6,
+   "true_peak_dbtp": -3.7,
    "lra": 0.0,
    "clipped_samples": 0,
    "head_silence_ms": 120,
@@ -469,10 +1258,17 @@
     240
    ],
    "pause_count_ge250": 0,
-   "f0_median": 363.3,
-   "f0_p10": 211.3,
-   "f0_p90": 384.3,
-   "voiced_ratio": 0.36
+   "rate_cps_net_r": 3.64,
+   "pauses_ms_r": [
+    230
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -66.2,
+   "pauses_checked": 1,
+   "f0_median": 393.6,
+   "f0_p10": 230.2,
+   "f0_p90": 417.7,
+   "voiced_ratio": 0.37
   },
   "synthesis": [
    {
@@ -480,7 +1276,7 @@
     "service": "edge",
     "voice": "zh-TW-HsiaoChenNeural",
     "rate": "+0%",
-    "pitch": "+40Hz",
+    "pitch": "+56Hz",
     "post": {
      "max_pause_ms": 550
     },
@@ -489,6 +1285,43 @@
   ],
   "el_chars_billed": 0,
   "pause_caps_ms": [],
+  "segments": {
+   "小晴": [
+    {
+     "text": "叔叔，小心！",
+     "rate": "+0%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       1.649,
+       -69.0
+      ],
+      [
+       1.674,
+       -65.2
+      ],
+      [
+       1.699,
+       -64.3
+      ],
+      [
+       1.724,
+       -68.0
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.72
+   ],
+   [
+    0.95,
+    1.47
+   ]
+  ],
   "transcript": {
    "models": {
     "small": {
@@ -520,45 +1353,52 @@
   "id": "a2_c004_01",
   "role": "旁白",
   "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
-  "file": "audio/vo/vo_a2_c004_01_v01.wav",
-  "lipsync": "audio/lipsync/a2_c004_01_v01.json",
-  "seconds": 4.68,
+  "file": "audio/vo/vo_a2_c004_01_v02.wav",
+  "lipsync": "audio/lipsync/a2_c004_01_v02.json",
+  "seconds": 4.69,
   "speech_start": 0.12,
-  "speech_end": 4.43,
+  "speech_end": 4.44,
   "master": {
    "raw_head_silence_ms": 220,
-   "raw_tail_silence_ms": 942,
+   "raw_tail_silence_ms": 932,
    "speech_start": 0.12,
-   "speech_end": 4.43,
+   "speech_end": 4.44,
    "method": "loudnorm_two_pass",
    "normalization_type": "linear",
-   "pass1_input_i": -18.89,
+   "pass1_input_i": -18.85,
    "I": -17.8,
-   "TP": -3.0
+   "TP": -2.9
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c004_01_v01.wav",
+   "file": "audio/vo/vo_a2_c004_01_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
-   "seconds": 4.68,
-   "speech_seconds": 4.31,
+   "seconds": 4.69,
+   "speech_seconds": 4.32,
    "integrated_lufs": -17.8,
-   "true_peak_dbtp": -3.0,
+   "true_peak_dbtp": -2.9,
    "lra": 0.6,
    "clipped_samples": 0,
    "head_silence_ms": 120,
    "tail_silence_ms": 250,
    "han_chars": 18,
-   "rate_cps": 4.18,
-   "rate_cps_net": 4.49,
+   "rate_cps": 4.17,
+   "rate_cps_net": 4.48,
    "pauses_ms": [
     300
    ],
    "pause_count_ge250": 1,
-   "f0_median": 210.3,
-   "f0_p10": 165.9,
-   "f0_p90": 281.5,
+   "rate_cps_net_r": 4.5,
+   "pauses_ms_r": [
+    290
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -68.7,
+   "pauses_checked": 1,
+   "f0_median": 197.4,
+   "f0_p10": 155.1,
+   "f0_p90": 259.5,
    "voiced_ratio": 0.58
   },
   "synthesis": [
@@ -567,13 +1407,38 @@
     "service": "edge",
     "voice": "zh-TW-HsiaoChenNeural",
     "rate": "-14%",
-    "pitch": "+0Hz",
+    "pitch": "-10Hz",
     "post": {},
     "synth_text": "阿勒叔叔身上這一條一條的線，叫做操偶線。"
    }
   ],
   "el_chars_billed": 0,
   "pause_caps_ms": [],
+  "segments": {
+   "旁白": [
+    {
+     "text": "阿勒叔叔身上這一條一條的線，叫做操偶線。",
+     "rate": "-14%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.157,
+       -61.3
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    2.89
+   ],
+   [
+    3.18,
+    4.44
+   ]
+  ],
   "transcript": {
    "models": {
     "small": {
@@ -643,47 +1508,56 @@
   "id": "a2_c004_02",
   "role": "旁白",
   "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
-  "file": "audio/vo/vo_a2_c004_02_v01.wav",
-  "lipsync": "audio/lipsync/a2_c004_02_v01.json",
-  "seconds": 11.57,
+  "file": "audio/vo/vo_a2_c004_02_v02.wav",
+  "lipsync": "audio/lipsync/a2_c004_02_v02.json",
+  "seconds": 11.6,
   "speech_start": 0.12,
-  "speech_end": 11.32,
+  "speech_end": 11.35,
   "master": {
    "raw_head_silence_ms": 10,
    "raw_tail_silence_ms": 80,
    "speech_start": 0.12,
-   "speech_end": 11.32,
+   "speech_end": 11.35,
    "method": "loudnorm_two_pass",
    "normalization_type": "linear",
-   "pass1_input_i": -19.1,
-   "I": -17.9,
+   "pass1_input_i": -19.14,
+   "I": -18.0,
    "TP": -3.4
   },
   "metrics": {
-   "file": "audio/vo/vo_a2_c004_02_v01.wav",
+   "file": "audio/vo/vo_a2_c004_02_v02.wav",
    "sample_rate": 48000,
    "bits": 16,
    "channels": 1,
-   "seconds": 11.57,
-   "speech_seconds": 11.2,
+   "seconds": 11.6,
+   "speech_seconds": 11.23,
    "integrated_lufs": -18.0,
    "true_peak_dbtp": -3.4,
-   "lra": 2.9,
+   "lra": 3.0,
    "clipped_samples": 0,
    "head_silence_ms": 120,
    "tail_silence_ms": 250,
    "han_chars": 38,
-   "rate_cps": 3.39,
-   "rate_cps_net": 4.7,
+   "rate_cps": 3.38,
+   "rate_cps_net": 4.69,
    "pauses_ms": [
-    1410,
+    1420,
     280,
-    1420
+    1430
    ],
    "pause_count_ge250": 3,
-   "f0_median": 197.3,
-   "f0_p10": 161.8,
-   "f0_p90": 278.9,
+   "rate_cps_net_r": 4.69,
+   "pauses_ms_r": [
+    1410,
+    280,
+    1410
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -64.3,
+   "pauses_checked": 3,
+   "f0_median": 185.5,
+   "f0_p10": 151.7,
+   "f0_p90": 261.4,
    "voiced_ratio": 0.5
   },
   "synthesis": [
@@ -692,7 +1566,7 @@
     "service": "edge",
     "voice": "zh-TW-HsiaoChenNeural",
     "rate": "-8%",
-    "pitch": "+0Hz",
+    "pitch": "-10Hz",
     "post": {
      "sentence_gap_ms": 1300
     },
@@ -701,6 +1575,46 @@
   ],
   "el_chars_billed": 0,
   "pause_caps_ms": [],
+  "segments": {
+   "旁白": [
+    {
+     "text": "這些線是故事的比喻。",
+     "rate": "-8%",
+     "gap_after_ms": 1300,
+     "declicked": []
+    },
+    {
+     "text": "毒品可能讓人的頭腦和身體受到影響，不聽使喚。",
+     "rate": "-8%",
+     "gap_after_ms": 1300,
+     "declicked": []
+    },
+    {
+     "text": "人不會真的變成喪屍。",
+     "rate": "-8%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    2.03
+   ],
+   [
+    3.44,
+    6.76
+   ],
+   [
+    7.03,
+    7.98
+   ],
+   [
+    9.4,
+    11.35
+   ]
+  ],
   "transcript": {
    "models": {
     "small": {
@@ -785,6 +1699,1527 @@
    "cer_min": 0.053,
    "both_models_diff": [],
    "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+  }
+ },
+ "a2_c012_01": {
+  "id": "a2_c012_01",
+  "role": "葉護理師",
+  "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+  "file": "audio/vo/vo_a2_c012_01_v03.wav",
+  "lipsync": "audio/lipsync/a2_c012_01_v03.json",
+  "seconds": 5.73,
+  "speech_start": 0.12,
+  "speech_end": 5.48,
+  "master": {
+   "raw_head_silence_ms": 280,
+   "raw_tail_silence_ms": 998,
+   "speech_start": 0.12,
+   "speech_end": 5.48,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 5.12,
+   "pass1_input_i": -23.12,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "declick_after_gain": [
+    [
+     2.866,
+     -57.9
+    ],
+    [
+     3.199,
+     -64.6
+    ]
+   ],
+   "I": -18.0,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c012_01_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.73,
+   "speech_seconds": 5.36,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.6,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 17,
+   "rate_cps": 3.17,
+   "rate_cps_net": 4.45,
+   "pauses_ms": [
+    460,
+    780,
+    300
+   ],
+   "pause_count_ge250": 3,
+   "rate_cps_net_r": 4.27,
+   "pauses_ms_r": [
+    380,
+    660,
+    280
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -68.7,
+   "pauses_checked": 1,
+   "f0_median": 160.8,
+   "f0_p10": 116.5,
+   "f0_p90": 209.8,
+   "voiced_ratio": 0.48
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "阿勒，你哪裡不舒服？我陪你去看醫生，好嗎？"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1270,
+    660
+   ]
+  ],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "阿勒，你哪裡不舒服？我陪你去看醫生，好嗎？",
+     "rate": "-20%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.17,
+       -47.1
+      ],
+      [
+       3.013,
+       -50.8
+      ],
+      [
+       3.956,
+       -46.5
+      ],
+      [
+       6.361,
+       -51.2
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.82
+   ],
+   [
+    1.27,
+    2.55
+   ],
+   [
+    3.32,
+    4.58
+   ],
+   [
+    4.87,
+    5.48
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+     "hyp": "阿樂,你哪裡不舒服? 我陪你去看醫生,好嗎?",
+     "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不舒服",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+     "hyp": "阿樂,你哪裡不舒服?我陪你去看醫生,好嗎?",
+     "hyp_trad": "阿樂你哪裡不舒服我陪你去看醫生好嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不舒服",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c012_03": {
+  "id": "a2_c012_03",
+  "role": "葉護理師",
+  "text": "你家人的電話沒人接，我晚一點再打。",
+  "file": "audio/vo/vo_a2_c012_03_v03.wav",
+  "lipsync": "audio/lipsync/a2_c012_03_v03.json",
+  "seconds": 3.98,
+  "speech_start": 0.12,
+  "speech_end": 3.73,
+  "master": {
+   "raw_head_silence_ms": 510,
+   "raw_tail_silence_ms": 1304,
+   "speech_start": 0.12,
+   "speech_end": 3.73,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 4.82,
+   "pass1_input_i": -22.82,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "I": -17.8,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c012_03_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.98,
+   "speech_seconds": 3.61,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.3,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 4.16,
+   "rate_cps_net": 4.66,
+   "pauses_ms": [
+    390
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.81,
+   "pauses_ms_r": [
+    380
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": null,
+   "pauses_checked": 0,
+   "f0_median": 161.5,
+   "f0_p10": 123.5,
+   "f0_p90": 211.7,
+   "voiced_ratio": 0.63
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-28%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "你家人的電話沒人接，我晚一點再打。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "你家人的電話沒人接，我晚一點再打。",
+     "rate": "-28%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.183,
+       -46.1
+      ],
+      [
+       0.387,
+       -55.1
+      ],
+      [
+       2.663,
+       -56.4
+      ],
+      [
+       4.437,
+       -46.5
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    2.0
+   ],
+   [
+    2.38,
+    3.73
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "你家人的電話沒人接，我晚一點再打。",
+     "hyp": "你家人的電話沒人接,我晚一點再打。",
+     "hyp_trad": "你家人的電話沒人接我晚一點再打",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "你家人的電話沒人接，我晚一點再打。",
+     "hyp": "你家人的電話沒人接,我晚一點再打。",
+     "hyp_trad": "你家人的電話沒人接我晚一點再打",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c012_05": {
+  "id": "a2_c012_05",
+  "role": "葉護理師",
+  "text": "謝謝你們告訴我，我會請警察去看看。",
+  "file": "audio/vo/vo_a2_c012_05_v03.wav",
+  "lipsync": "audio/lipsync/a2_c012_05_v03.json",
+  "seconds": 4.13,
+  "speech_start": 0.12,
+  "speech_end": 3.88,
+  "master": {
+   "raw_head_silence_ms": 300,
+   "raw_tail_silence_ms": 1172,
+   "speech_start": 0.12,
+   "speech_end": 3.88,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 4.87,
+   "pass1_input_i": -22.87,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "trim_passes": 1,
+   "I": -18.0,
+   "TP": -2.3
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c012_05_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.13,
+   "speech_seconds": 3.76,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -2.3,
+   "lra": 1.6,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 15,
+   "rate_cps": 3.99,
+   "rate_cps_net": 4.57,
+   "pauses_ms": [
+    480
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.67,
+   "pauses_ms_r": [
+    460
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": null,
+   "pauses_checked": 0,
+   "f0_median": 150.4,
+   "f0_p10": 113.9,
+   "f0_p90": 239.3,
+   "voiced_ratio": 0.52
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-25%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "謝謝你們告訴我，我會請警察去看看。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "謝謝你們告訴我，我會請警察去看看。",
+     "rate": "-25%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.179,
+       -46.6
+      ],
+      [
+       4.262,
+       -48.9
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    1.6
+   ],
+   [
+    2.07,
+    3.88
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "謝謝你們告訴我，我會請警察去看看。",
+     "hyp": "謝謝你們告訴我,我會請警察去看看。",
+     "hyp_trad": "謝謝你們告訴我我會請警察去看看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "謝謝你們告訴我，我會請警察去看看。",
+     "hyp": "謝謝你們告訴我,我會請警察去看看。",
+     "hyp_trad": "謝謝你們告訴我我會請警察去看看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c013_03": {
+  "id": "a2_c013_03",
+  "role": "葉護理師",
+  "text": "這幾天先不要開車。我會一直打給你的家人。",
+  "file": "audio/vo/vo_a2_c013_03_v03.wav",
+  "lipsync": "audio/lipsync/a2_c013_03_v03.json",
+  "seconds": 4.86,
+  "speech_start": 0.12,
+  "speech_end": 4.61,
+  "master": {
+   "raw_head_silence_ms": 300,
+   "raw_tail_silence_ms": 1134,
+   "speech_start": 0.12,
+   "speech_end": 4.61,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -22.27,
+   "declick_after_gain": [
+    [
+     2.232,
+     -52.9
+    ]
+   ],
+   "I": -18.1,
+   "TP": -2.3
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c013_03_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.86,
+   "speech_seconds": 4.49,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -2.3,
+   "lra": 1.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 18,
+   "rate_cps": 4.01,
+   "rate_cps_net": 4.72,
+   "pauses_ms": [
+    680
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.84,
+   "pauses_ms_r": [
+    660
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -63.5,
+   "pauses_checked": 1,
+   "f0_median": 160.0,
+   "f0_p10": 111.6,
+   "f0_p90": 230.7,
+   "voiced_ratio": 0.56
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "這幾天先不要開車。我會一直打給你的家人。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1480,
+    660
+   ]
+  ],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "這幾天先不要開車。我會一直打給你的家人。",
+     "rate": "-20%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.17,
+       -46.8
+      ],
+      [
+       3.221,
+       -46.5
+      ],
+      [
+       3.361,
+       -67.1
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    1.83
+   ],
+   [
+    2.5,
+    4.61
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "這幾天先不要開車。我會一直打給你的家人。",
+     "hyp": "這幾天先不要開車,我會一直打給你的家人。",
+     "hyp_trad": "這幾天先不要開車我會一直打給你的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一直",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "這幾天先不要開車。我會一直打給你的家人。",
+     "hyp": "這幾天先不要開車,我會一直打給你的家人。",
+     "hyp_trad": "這幾天先不要開車我會一直打給你的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一直",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a5_c008_01": {
+  "id": "a5_c008_01",
+  "role": "葉護理師",
+  "text": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+  "file": "audio/vo/vo_a5_c008_01_v03.wav",
+  "lipsync": "audio/lipsync/a5_c008_01_v03.json",
+  "seconds": 5.51,
+  "speech_start": 0.12,
+  "speech_end": 5.26,
+  "master": {
+   "raw_head_silence_ms": 290,
+   "raw_tail_silence_ms": 1098,
+   "speech_start": 0.12,
+   "speech_end": 5.26,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -22.76,
+   "I": -17.8,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a5_c008_01_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.51,
+   "speech_seconds": 5.14,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.3,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 22,
+   "rate_cps": 4.28,
+   "rate_cps_net": 4.64,
+   "pauses_ms": [
+    400
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.58,
+   "pauses_ms_r": [
+    280
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": null,
+   "pauses_checked": 0,
+   "f0_median": 181.9,
+   "f0_p10": 116.5,
+   "f0_p90": 239.8,
+   "voiced_ratio": 0.61
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-25%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "阿勒叔叔現在有醫生和護理師照顧，他的家人也來了。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "阿勒叔叔現在有醫生和護理師照顧，他的家人也來了。",
+     "rate": "-25%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.179,
+       -46.8
+      ],
+      [
+       5.669,
+       -68.2
+      ],
+      [
+       5.694,
+       -65.5
+      ],
+      [
+       5.719,
+       -65.3
+      ],
+      [
+       5.744,
+       -68.4
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    3.38
+   ],
+   [
+    3.77,
+    5.26
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+     "hyp": "阿樂叔叔現在有一生和護理師照顧,他的家人也來了。",
+     "hyp_trad": "阿樂叔叔現在有一生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "醫",
+       "hyp": "一",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+     "hyp": "阿勒叔叔現在有醫生和護理師照顧,他的家人也來了。",
+     "hyp_trad": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.045,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a5_c008_03": {
+  "id": "a5_c008_03",
+  "role": "葉護理師",
+  "text": "不是喔。你們找大人、打 119，是在幫他。",
+  "file": "audio/vo/vo_a5_c008_03_v03.wav",
+  "lipsync": "audio/lipsync/a5_c008_03_v03.json",
+  "seconds": 5.31,
+  "speech_start": 0.12,
+  "speech_end": 5.06,
+  "master": {
+   "raw_head_silence_ms": 290,
+   "raw_tail_silence_ms": 1088,
+   "speech_start": 0.12,
+   "speech_end": 5.06,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 4.75,
+   "pass1_input_i": -22.75,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "declick_after_gain": [
+    [
+     1.025,
+     -58.2
+    ],
+    [
+     1.157,
+     -52.4
+    ]
+   ],
+   "I": -17.9,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a5_c008_03_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.31,
+   "speech_seconds": 4.94,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.1,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 16,
+   "rate_cps": 3.24,
+   "rate_cps_net": 4.64,
+   "pauses_ms": [
+    730,
+    310,
+    450
+   ],
+   "pause_count_ge250": 3,
+   "rate_cps_net_r": 3.55,
+   "pauses_ms_r": [
+    630,
+    220,
+    370
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -66.8,
+   "pauses_checked": 1,
+   "f0_median": 150.8,
+   "f0_p10": 117.4,
+   "f0_p90": 211.7,
+   "voiced_ratio": 0.48
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "不是喔。你們找大人、打 一一九，是在幫他。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1470,
+    660
+   ]
+  ],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "不是喔。你們找大人、打 一一九，是在幫他。",
+     "rate": "-20%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.17,
+       -46.7
+      ],
+      [
+       1.182,
+       -56.1
+      ],
+      [
+       1.649,
+       -68.4
+      ],
+      [
+       1.674,
+       -64.9
+      ],
+      [
+       1.699,
+       -65.2
+      ],
+      [
+       1.724,
+       -68.7
+      ],
+      [
+       2.126,
+       -46.2
+      ],
+      [
+       6.22,
+       -53.0
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.75
+   ],
+   [
+    1.47,
+    2.52
+   ],
+   [
+    2.82,
+    3.69
+   ],
+   [
+    4.13,
+    5.06
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "不是喔。你們找大人、打 119，是在幫他。",
+     "hyp": "不是,你們找大人,打依舊,是在幫他。",
+     "hyp_trad": "不是你們找大人打依舊是在幫他",
+     "cer": 0.25,
+     "per": 0.188,
+     "diffs": [
+      {
+       "ref": "喔",
+       "hyp": "",
+       "kind": "漏字"
+      },
+      {
+       "ref": "一一九",
+       "hyp": "依舊",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "不一致（需複查）"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "不是喔。你們找大人、打 119，是在幫他。",
+     "hyp": "不是哦,你們找大人,打119,是在幫他。",
+     "hyp_trad": "不是哦你們找大人打119是在幫他",
+     "cer": 0.062,
+     "per": 0.062,
+     "diffs": [
+      {
+       "ref": "喔",
+       "hyp": "哦",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.062,
+   "cer_min": 0.062,
+   "both_models_diff": [
+    "喔"
+   ],
+   "verdict": "需複查：兩個模型都在「喔」出現非同音差異"
+  }
+ },
+ "a5_c008_05": {
+  "id": "a5_c008_05",
+  "role": "葉護理師",
+  "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+  "file": "audio/vo/vo_a5_c008_05_v03.wav",
+  "lipsync": "audio/lipsync/a5_c008_05_v03.json",
+  "seconds": 6.13,
+  "speech_start": 0.12,
+  "speech_end": 5.88,
+  "master": {
+   "raw_head_silence_ms": 290,
+   "raw_tail_silence_ms": 1052,
+   "speech_start": 0.12,
+   "speech_end": 5.88,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -21.82,
+   "I": -17.9,
+   "TP": -2.3
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a5_c008_05_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 6.13,
+   "speech_seconds": 5.76,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -2.3,
+   "lra": 0.8,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 19,
+   "rate_cps": 3.3,
+   "rate_cps_net": 4.34,
+   "pauses_ms": [
+    390,
+    680,
+    310
+   ],
+   "pause_count_ge250": 3,
+   "rate_cps_net_r": 4.28,
+   "pauses_ms_r": [
+    280,
+    660,
+    300
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -68.7,
+   "pauses_checked": 1,
+   "f0_median": 172.6,
+   "f0_p10": 116.1,
+   "f0_p90": 235.8,
+   "voiced_ratio": 0.49
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "他需要治療，也需要時間。大家會陪著他，慢慢來。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1310,
+    660
+   ]
+  ],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+     "rate": "-20%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       4.098,
+       -46.8
+      ],
+      [
+       6.847,
+       -51.6
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    1.33
+   ],
+   [
+    1.71,
+    2.72
+   ],
+   [
+    3.39,
+    4.71
+   ],
+   [
+    5.01,
+    5.88
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+     "hyp": "它需要治療,也需要時間。大家會陪著它,慢慢來。",
+     "hyp_trad": "它需要治療也需要時間大家會陪著它慢慢來",
+     "cer": 0.105,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "他",
+       "hyp": "它",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "他",
+       "hyp": "它",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+     "hyp": "他需要治療,也需要時間,大家會陪著他慢慢來。",
+     "hyp_trad": "他需要治療也需要時間大家會陪著他慢慢來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a6_c006_01": {
+  "id": "a6_c006_01",
+  "role": "小晴",
+  "text": "品安，我在乎你，我們一起找人幫忙。",
+  "file": "audio/vo/vo_a6_c006_01_v03.wav",
+  "lipsync": "audio/lipsync/a6_c006_01_v03.json",
+  "seconds": 3.54,
+  "speech_start": 0.12,
+  "speech_end": 3.29,
+  "master": {
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "speech_start": 0.12,
+   "speech_end": 3.29,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -18.92,
+   "I": -18.1,
+   "TP": -3.0
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a6_c006_01_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.54,
+   "speech_seconds": 3.17,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -3.0,
+   "lra": 0.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 14,
+   "rate_cps": 4.42,
+   "rate_cps_net": 4.42,
+   "pauses_ms": [
+    240,
+    220
+   ],
+   "pause_count_ge250": 0,
+   "rate_cps_net_r": 5.2,
+   "pauses_ms_r": [
+    240,
+    220
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": -74.7,
+   "pauses_checked": 1,
+   "f0_median": 263.4,
+   "f0_p10": 222.7,
+   "f0_p90": 360.7,
+   "voiced_ratio": 0.66
+  },
+  "synthesis": [
+   {
+    "role": "小晴",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+56Hz",
+    "post": {
+     "max_pause_ms": 550,
+     "contour": {
+      "segment": 0,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     }
+    },
+    "synth_text": "品安，[[break:120]]我在乎你，我們一起找人幫忙。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "小晴": [
+    {
+     "text": "品安，",
+     "rate": "+0%",
+     "gap_after_ms": 120,
+     "declicked": [
+      [
+       0.924,
+       -59.6
+      ],
+      [
+       0.974,
+       -62.5
+      ],
+      [
+       1.649,
+       -67.6
+      ],
+      [
+       1.674,
+       -65.2
+      ],
+      [
+       1.699,
+       -63.9
+      ],
+      [
+       1.724,
+       -68.4
+      ]
+     ],
+     "contour": {
+      "applied": true,
+      "f_start_hz": 289.9,
+      "t0": 0.08,
+      "t1": 0.46,
+      "points": [
+       [
+        0,
+        1.0
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.4,
+        0.7
+       ],
+       [
+        0.48,
+        0.7
+       ],
+       [
+        0.62,
+        1.1
+       ],
+       [
+        1.0,
+        1.14
+       ]
+      ]
+     },
+     "rise_after": {
+      "t0": 0.08,
+      "t1": 0.46,
+      "start_hz": 268.1,
+      "end_hz": 327.8,
+      "end_over_start": 1.223,
+      "contour_hz_20ms": [
+       281,
+       274,
+       261,
+       248,
+       238,
+       229,
+       219,
+       209,
+       203,
+       204,
+       246,
+       290,
+       318,
+       321,
+       322,
+       324,
+       326,
+       327,
+       328,
+       331
+      ]
+     }
+    },
+    {
+     "text": "我在乎你，我們一起找人幫忙。",
+     "rate": "+0%",
+     "gap_after_ms": null,
+     "declicked": []
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    0.59
+   ],
+   [
+    0.82,
+    1.65
+   ],
+   [
+    1.86,
+    3.29
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "品安，我在乎你，我們一起找人幫忙。",
+     "hyp": "平安,我在Honey,我們一起找人幫忙。",
+     "hyp_trad": "平安我在Honey我們一起找人幫忙",
+     "cer": 0.429,
+     "per": 0.429,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎你",
+       "hyp": "Honey",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "品安，我在乎你，我們一起找人幫忙。",
+     "hyp": "平安,我在呼你,我們一起找人幫忙。",
+     "hyp_trad": "平安我在呼你我們一起找人幫忙",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎",
+       "hyp": "呼",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.071,
+   "cer_min": 0.143,
+   "both_models_diff": [
+    "品"
+   ],
+   "verdict": "需複查：兩個模型都在「品」出現非同音差異"
+  }
+ },
+ "a6_c006_06": {
+  "id": "a6_c006_06",
+  "role": "葉護理師",
+  "text": "說出來，就是在保護自己。",
+  "file": "audio/vo/vo_a6_c006_06_v03.wav",
+  "lipsync": "audio/lipsync/a6_c006_06_v03.json",
+  "seconds": 3.19,
+  "speech_start": 0.12,
+  "speech_end": 2.94,
+  "master": {
+   "raw_head_silence_ms": 290,
+   "raw_tail_silence_ms": 1114,
+   "speech_start": 0.12,
+   "speech_end": 2.94,
+   "method": "measured_gain",
+   "gain_db": 4.4,
+   "pre_I": -22.4,
+   "limited": true,
+   "I": -18.1,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a6_c006_06_v03.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.19,
+   "speech_seconds": 2.82,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 20.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 10,
+   "rate_cps": 3.55,
+   "rate_cps_net": 4.02,
+   "pauses_ms": [
+    330
+   ],
+   "pause_count_ge250": 1,
+   "rate_cps_net_r": 4.05,
+   "pauses_ms_r": [
+    240
+   ],
+   "pause_spikes": 0,
+   "pause_core_peak_dbfs": null,
+   "pauses_checked": 0,
+   "f0_median": 156.3,
+   "f0_p10": 112.1,
+   "f0_p90": 234.8,
+   "voiced_ratio": 0.48
+  },
+  "synthesis": [
+   {
+    "role": "葉護理師",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz",
+    "post": {
+     "max_pause_ms": 650
+    },
+    "synth_text": "說出來，就是在保護自己。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "segments": {
+   "葉護理師": [
+    {
+     "text": "說出來，就是在保護自己。",
+     "rate": "-20%",
+     "gap_after_ms": null,
+     "declicked": [
+      [
+       0.17,
+       -46.5
+      ],
+      [
+       3.326,
+       -50.2
+      ]
+     ]
+    }
+   ]
+  },
+  "speech_segments": [
+   [
+    0.12,
+    1.04
+   ],
+   [
+    1.36,
+    2.94
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "說出來，就是在保護自己。",
+     "hyp": "說出來就是在保護自己。",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "說出來，就是在保護自己。",
+     "hyp": "說出來,就是在保護自己。",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
   }
  }
 }

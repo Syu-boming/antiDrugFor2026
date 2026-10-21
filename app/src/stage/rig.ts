@@ -264,6 +264,40 @@ export class Rig {
     this.setRot(L.lower, a2 + phi1 - phi2);
   }
 
+  /** 四肢目前的兩段角度：a1＝肩→肘向量的角度（紙偶根座標）、a2＝前臂相對上臂的角度（同 solveTwoBone 的定義） */
+  limbAngles(limb: string): { a1: number; a2: number } {
+    const L = this.spec.limbs[limb];
+    if (!L) return { a1: 0, a2: 0 };
+    const s = this.localPoint(L.upper), e = this.localPoint(L.lower), w = this.localPoint(L.end);
+    const a1 = Math.atan2(e.y - s.y, e.x - s.x);
+    const aw = Math.atan2(w.y - e.y, w.x - e.x);
+    return { a1, a2: Math.atan2(Math.sin(aw - a1), Math.cos(aw - a1)) };
+  }
+
+  /** 依兩段角度擺四肢（a1、a2 同 limbAngles） */
+  setLimbAngles(limb: string, a1: number, a2: number): void {
+    const L = this.spec.limbs[limb];
+    if (!L) return;
+    const upper = this.part(L.upper), lower = this.part(L.lower), end = this.part(L.end);
+    const phi1 = Math.atan2(lower.spec.at[1] * upper.lengthScale, lower.spec.at[0]);
+    const phi2 = Math.atan2(end.spec.at[1] * lower.lengthScale, end.spec.at[0]);
+    this.setRot(L.upper, a1 - phi1 - this.chainRot(L.upper));
+    this.setRot(L.lower, a2 + phi1 - phi2);
+  }
+
+  /** 兩種彎向中，上臂角度最接近 refA1 的那一個（參考姿勢連續，解就連續；不會在兩種彎向間跳） */
+  solveLimbNear(limb: string, target: Vector2, refA1: number): void {
+    const L = this.spec.limbs[limb];
+    if (!L) return;
+    const [l1, l2] = this.limbLengths(limb);
+    const s = this.localPoint(L.upper);
+    const A = solveTwoBone(s.x, s.y, l1, l2, target.x, target.y, 1);
+    const B = solveTwoBone(s.x, s.y, l1, l2, target.x, target.y, -1);
+    const dist = (a: number): number => Math.abs(Math.atan2(Math.sin(a - refA1), Math.cos(a - refA1)));
+    const pick = dist(A.a1) <= dist(B.a1) ? A : B;
+    this.setLimbAngles(limb, pick.a1, pick.a2);
+  }
+
   /** 四肢兩段長度（世界單位，含縮短比例） */
   limbLengths(limb: string): [number, number] {
     const L = this.spec.limbs[limb];

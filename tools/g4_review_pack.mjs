@@ -15,10 +15,11 @@
 //   capture/          tools/capture.mjs：每個 cue 前／中／後關鍵影格、每秒 2 格接觸表、30 格／秒光敏分析、操偶線量測
 //   keyframes_4x3/    同一套關鍵影格在 1440×1080、1024×768 視窗重新渲染
 //   proj/             關鍵影格的投影模擬 v2（tools/projsim.py 的函式）與接觸表
-//   strip_a2_c002/    a2_c002 從「strings.drop」開始到停格，每秒 8 格的逐格條帶
+//   strip_a2_c002/    a2_c002 從「strings.drop」開始到停格，每秒 8 格的逐格條帶（標出揮手與扯膝的節拍時間點）；
+//                     換姿勢（紙片翻面）前後每秒 30 格的放大條帶
 //   audio/            依 cue 時間混成的最終混音與分軌響度、逐句響度
 //   g4_playback.mp4   固定步長 30 格／秒逐格輸出＋混音（1920×1080）
-//   perf.json         開發機即時播放的影格時間
+//   perf.json         開發機即時播放的影格時間（畫質 A、B 各 3 次，AudioContext 時鐘；列出每格 > 50 ms 的時間點）
 //   timeline.json     解析後的 cue 時間軸、播放排程（含教師按鍵間隔假設）
 //   transcripts.*     配音逐句 faster-whisper 逐字稿與劇本差異
 //   INDEX.md          檔案與量測數字
@@ -47,8 +48,10 @@ const STRIP_FPS = 8;      // a2_c002 逐格條帶
 const W = 1920, H = 1080;
 const SIZES_4X3 = [[1440, 1080], [1024, 768]];
 /** 播放錄製的教師按鍵間隔假設（秒）：該 cue 播完後停住多久才按下一步。a8_c002 自動接 a8_c003。 */
-const HOLDS = { a0_c000: 3.0, a0_c001: 2.0, a2_c002: 2.0, a2_c004: 2.0, a8_c002: 0, a8_c003: 6.5 };
+// a2_c002、a2_c004 停 4 秒：量教師停格時配樂 3 秒內是否降到 ≤ −35 LUFS（G3 修正第 11 項）
+const HOLDS = { a0_c000: 3.0, a0_c001: 2.0, a2_c002: 4.0, a2_c004: 4.0, a8_c002: 0, a8_c003: 6.5 };
 const PERF_HOLD = 1.0;    // 效能量測時每個停住點等 1 秒再按下一步
+const PERF_RUNS = 3;      // 每種畫質跑幾次
 
 const dist = join(ROOT, 'app/dist/index.html');
 if (!existsSync(dist)) { console.error('[g4pack] 找不到 app/dist/index.html，請先在 app/ 執行 npm run build'); process.exit(1); }
@@ -63,9 +66,20 @@ const run = (cmd, argv, o = {}) => {
 };
 
 // ------------------------------------------------------------------ 1. 擷取（關鍵影格、接觸表、光敏、量測）
+// 額外量測時間：開幕兒童立起過程（每 0.2 秒，量站位背景亮度，G4 修正第 21 項）、
+// 驗收意見指定的紙環檢查時間（a2_c002 11.41／22.83 秒、a2_c004 9.75 秒，G4 修正第 23 項）
+const probeTimes = (() => {
+  const cf = JSON.parse(readFileSync(join(ROOT, `app/cues/${CUES}.json`), 'utf8'));
+  const c1 = cf.cues.find((c) => c.id === 'a0_c001');
+  const pops = (c1?.animation ?? []).filter((a) => a.name === 'puppet.popup' && a.target !== 'ale');
+  const t0 = Math.min(...pops.map((a) => a.start)), t1 = Math.max(...pops.map((a) => a.start + (a.duration ?? 1.1)));
+  const open = [];
+  for (let t = Math.floor(t0 * 5) / 5; t <= t1 + 0.6; t += 0.2) open.push(r3(t));
+  return `a0_c001:${open.join(',')};a2_c002:11.41,22.83;a2_c004:9.75`;
+})();
 if (!has('--skip-capture')) {
   log('tools/capture.mjs（30 格／秒光敏分析＋操偶線量測）');
-  run('node', ['tools/capture.mjs', '--cues', CUES, '--probe', '--analysis-fps', String(FPS), '--fps', '2', '--out', join(OUT, 'capture')]);
+  run('node', ['tools/capture.mjs', '--cues', CUES, '--probe', '--probe-times', probeTimes, '--analysis-fps', String(FPS), '--fps', '2', '--out', join(OUT, 'capture')]);
 }
 
 // ------------------------------------------------------------------ 2. 時間軸（與引擎同一個 buildTimelines）
@@ -77,6 +91,8 @@ const cueFile = JSON.parse(readFileSync(join(ROOT, `app/cues/${CUES}.json`), 'ut
 const engineSrc = readFileSync(join(ROOT, 'app/src/engine/engine.ts'), 'utf8');
 const MUSIC_LEVEL = Function(`return (${/const MUSIC_LEVEL[^=]*=\s*(\{[^}]*\})/.exec(engineSrc)[1]})`)();
 const timelines = buildTimelines(cueFile, (id) => manifest.audio[id]?.duration);
+const beatBundle = await esbuild.build({ entryPoints: [join(ROOT, 'app/src/stage/beats.ts')], bundle: true, format: 'esm', platform: 'node', write: false, logLevel: 'silent' });
+const { beatMarks, WAVE_TRY, KNEE_TUG } = await import(`data:text/javascript;base64,${Buffer.from(beatBundle.outputFiles[0].text).toString('base64')}`);
 const byId = new Map(timelines.map((t) => [t.cue.id, t]));
 // 播放順序：從第一個 cue 沿 next 走到底
 const order = [];
@@ -101,7 +117,9 @@ const tlOut = {
     sfx: t.sfx.map((s) => ({ ...s, at: r3(s.at) })),
     music: t.music.map((m) => ({ ...m, at: r3(m.at) })),
     anims: t.anims.map((a) => ({ name: a.name, target: a.target ?? null, start: r3(a.start), end: r3(a.end), params: a.params })),
+    beats: t.anims.flatMap((a) => beatMarks(a.name, a.start).map((m) => ({ anim: a.name, target: a.target ?? null, label: m.label, t: r3(m.t) }))),
   })),
+  beatTables: { waveTry: WAVE_TRY, kneeTug: KNEE_TUG, source: 'app/src/stage/beats.ts' },
   schedule,
   totalPlaybackSec: r3(gt),
   audio: audioSrc,
@@ -129,6 +147,7 @@ if (!has('--skip-frames')) {
     framesMeta.engineDurations = Object.fromEntries(engineCues.map((c) => [c.id, r3(c.duration)]));
     rmSync(join(WORK, 'video'), { recursive: true, force: true });
     const dense = [];   // 操偶線量測：播放錄製每 3 格（10 次／秒）取一次 probe()
+    const facesPlay = [];   // 每一格的臉部換片狀態＋兒童外框（G4 修正第 2 輪第 9、10 項：眨眼與翻面、兩眼同閉）
     for (const s of schedule) {
       const dir = join(WORK, 'video', s.id);
       mkdirSync(dir, { recursive: true });
@@ -137,10 +156,12 @@ if (!has('--skip-frames')) {
       for (let k = 0; k < n; k++) {
         await page.evaluate((t) => window.__engine.capture.seek(t), k / FPS);
         await page.screenshot({ path: join(dir, `${String(k).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 92 });
-        if (k % 3 === 0) {
-          const pr = await page.evaluate(() => window.__engine.debug.probe());
-          if (pr.strings.some((x) => x.visible)) dense.push({ cueId: s.id, t: r3(k / FPS), ...pr });
-        }
+        const pr = await page.evaluate(() => window.__engine.debug.probe());
+        const fc = await page.evaluate(() => window.__engine.debug.faces());
+        facesPlay.push({ cueId: s.id, k, t: r3(k / FPS), playT: r3(s.start + k / FPS), faces: fc,
+          boxes: Object.fromEntries(pr.actors.filter((a) => a.visible && a.id !== 'ale').map((a) => [a.id, a.box.map((v) => Math.round(v))])),
+          eyes: Object.fromEntries(pr.actors.filter((a) => a.visible && a.eyesBox).map((a) => [a.id, a.eyesBox])) });
+        if (k % 3 === 0 && pr.strings.some((x) => x.visible)) dense.push({ cueId: s.id, t: r3(k / FPS), ...pr });
       }
       await page.evaluate((t) => window.__engine.capture.seek(t), s.duration + 0.001);
       await page.screenshot({ path: join(dir, 'after.jpg'), type: 'jpeg', quality: 92 });
@@ -148,6 +169,7 @@ if (!has('--skip-frames')) {
       log(`播放逐格 ${s.id}：${n} 格＋停住格`);
     }
     writeFileSync(join(OUT, 'probe_dense.json'), JSON.stringify({ note: '播放錄製逐格時每 3 格（每秒 10 次）取一次 window.__engine.debug.probe()，只留有操偶線顯示的格；座標為 1920×1080 繪圖緩衝像素。', probes: dense }));
+    writeFileSync(join(OUT, 'faces_playback.json'), JSON.stringify({ note: '播放錄製每一格（30 格／秒）的臉部換片狀態 window.__engine.debug.faces()（eyes：open／half／closed；一張眼睛換片同時蓋兩眼）、兩個孩子的立牌外框 boxes 與眼睛換片範圍 eyes（1920×1080 像素）；playT＝g4_playback.mp4 的秒數。', fps: FPS, frames: facesPlay }));
     log(`操偶線量測 ${dense.length} 格（每秒 10 次）`);
     // a2_c002：從線開始落下（strings.drop 起點）到停格，每秒 8 格
     const tl = tlOut.cues.find((c) => c.id === 'a2_c002');
@@ -160,11 +182,36 @@ if (!has('--skip-frames')) {
     const stripTimes = [];
     for (let k = 0; ; k++) { const t = s0 + k / STRIP_FPS; if (t > tl.duration + 1e-6) break; stripTimes.push(r3(t)); }
     stripTimes.push(r3(tl.duration + 0.001));
+    const subRect = () => page.evaluate(() => { const e = document.querySelector('.sub-strip'); if (!e || e.hidden) return null; const r = e.getBoundingClientRect(); return [r.left, r.top, r.right, r.bottom]; });
+    const stripProbe = [];
     for (const t of stripTimes) {
       await page.evaluate((x) => window.__engine.capture.seek(x), t);
       await page.screenshot({ path: join(sdir, `a2_c002_${t.toFixed(3).padStart(7, '0')}.jpg`), type: 'jpeg', quality: 90 });
+      const pr = await page.evaluate(() => window.__engine.debug.probe());
+      stripProbe.push({ t, sub: await subRect(), faces: await page.evaluate(() => window.__engine.debug.faces()), actors: pr.actors, strings: pr.strings, landmarks: pr.landmarks });
     }
+    writeFileSync(join(OUT, 'strip_a2_c002', 'strip_probe.json'), JSON.stringify({ note: '條帶每一格的 probe()（角色外框、部件外框與不透明範圍 opaque、關節 joints.hip、操偶線中心線 path 與紙環螢幕位置、景片地標 landmarks：桌面上緣 tableTop、凳面上緣 stoolTop）、字幕底板外框（DOM，1920×1080 像素）、臉部換片狀態', frames: stripProbe }));
     framesMeta.strip = { cue: 'a2_c002', from: s0, to: tl.duration, fps: STRIP_FPS, count: stripTimes.length, fromAnim: 'strings.drop.start' };
+    // 換姿勢（紙片翻面）前後每秒 30 格（G4 修正第 19、27 項：檢查有沒有只剩細縫的格）；
+    // 第 2 輪第 10 項：翻面前 0.2 秒到翻面結束後 0.4 秒，逐格記錄臉部換片狀態（翻面結束後 0.3 秒內必須是 open）
+    const fdir = join(OUT, 'strip_a2_c002', 'flip');
+    mkdirSync(fdir, { recursive: true });
+    const flips = [];
+    for (const a of tl.anims.filter((x) => x.name === 'puppet.pose')) {
+      const list = [];
+      for (let k = -6; k <= Math.round((a.end - a.start) * FPS) + 12; k++) {
+        const t = r3(a.start + k / FPS);
+        await page.evaluate((x) => window.__engine.capture.seek(x), t);
+        const f = `${a.target}_${t.toFixed(3).padStart(7, '0')}.jpg`;
+        await page.screenshot({ path: join(fdir, f), type: 'jpeg', quality: 92 });
+        const pr = await page.evaluate(() => window.__engine.debug.probe());
+        const fc = await page.evaluate(() => window.__engine.debug.faces());
+        list.push({ t, file: f, box: pr.actors.find((x) => x.id === a.target)?.box, eyes: fc[a.target]?.eyes ?? null });
+      }
+      flips.push({ target: a.target, pose: a.params.pose, start: a.start, end: a.end, frames: list });
+    }
+    writeFileSync(join(fdir, 'flips.json'), JSON.stringify(flips, null, 1));
+    log(`換姿勢放大條帶 ${flips.length} 段（每秒 ${FPS} 格）`);
     log(`a2_c002 條帶 ${stripTimes.length} 格（${s0}–${tl.duration} 秒，${STRIP_FPS} 格／秒）`);
     framesMeta.errors.push(...errors);
     await page.close();
@@ -200,12 +247,21 @@ if (!has('--skip-frames')) {
 async function perfRun(quality) {
   const browser = await chromium.launch({ channel: 'chrome', headless: true, args: ['--autoplay-policy=no-user-gesture-required', '--force-device-scale-factor=1', '--hide-scrollbars'] });
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
-  // 每個 rAF 回呼記錄時間戳與回呼耗時（同一格多個回呼合併）
+  // 每個 rAF 回呼記錄時間戳與回呼耗時（同一格多個回呼合併）；同時記錄當下的 cue 與 cue 內秒數
   await page.addInitScript(() => {
     const rec = { ts: [], cpu: [] };
     window.__perfRec = rec;
     const raf = window.requestAnimationFrame.bind(window);
-    window.requestAnimationFrame = (cb) => raf((ts) => { const s = performance.now(); try { cb(ts); } finally { rec.ts.push(ts); rec.cpu.push(performance.now() - s); } });
+    rec.cue = []; rec.ct = [];
+    window.requestAnimationFrame = (cb) => raf((ts) => {
+      const s = performance.now();
+      try { cb(ts); } finally {
+        rec.ts.push(ts); rec.cpu.push(performance.now() - s);
+        let c = null, t = null;
+        try { const st = window.__engine?.getState(); if (st && st.mode === 'playing') { c = st.cueId; t = st.cueTime; } } catch { /* 還沒載入 */ }
+        rec.cue.push(c); rec.ct.push(t);
+      }
+    });
   });
   const errors = [];
   page.on('pageerror', (e) => errors.push(e.message));
@@ -227,12 +283,13 @@ async function perfRun(quality) {
     if (!s.autoAdvance) await page.waitForTimeout(PERF_HOLD * 1000);
   }
   const rec = await page.evaluate(() => window.__perfRec);
+  const warm = await page.evaluate(() => window.__engine.debug.warmMs());
   await browser.close();
   // 合併同一時間戳
   const frames = [];
   for (let i = 0; i < rec.ts.length; i++) {
     const last = frames[frames.length - 1];
-    if (last && Math.abs(last.ts - rec.ts[i]) < 0.01) last.cpu += rec.cpu[i]; else frames.push({ ts: rec.ts[i], cpu: rec.cpu[i] });
+    if (last && Math.abs(last.ts - rec.ts[i]) < 0.01) { last.cpu += rec.cpu[i]; last.cue = last.cue ?? rec.cue[i]; last.ct = last.ct ?? rec.ct[i]; } else frames.push({ ts: rec.ts[i], cpu: rec.cpu[i], cue: rec.cue[i], ct: rec.ct[i] });
   }
   const windows = [];
   for (const s of schedule.slice(1)) {
@@ -247,27 +304,43 @@ async function perfRun(quality) {
   };
   const per = {};
   const allInt = [], allCpu = [];
+  const slow = [];   // 每格 > 50 ms：時間戳、cue、cue 內秒數、是否在台詞時段內
+  const lineSpans = Object.fromEntries(tlOut.cues.map((c) => [c.id, c.lines.map((l) => [l.start, l.end, l.id])]));
   for (const w of windows) {
     const fr = frames.filter((f) => f.ts >= w.from && f.ts <= w.to);
     const ints = [];
-    for (let i = 1; i < fr.length; i++) ints.push(fr[i].ts - fr[i - 1].ts);
+    for (let i = 1; i < fr.length; i++) {
+      const dt = fr[i].ts - fr[i - 1].ts;
+      ints.push(dt);
+      if (dt > 50) {
+        const ct = fr[i].ct ?? fr[i - 1].ct;
+        const inLine = (lineSpans[w.id] ?? []).find(([a, b]) => ct !== null && ct >= a - 0.1 && ct <= b + 0.1);
+        slow.push({ cue: w.id, msSinceCueStart: r3(fr[i].ts - w.from), cueTime: ct === null ? null : r3(ct), frameMs: r3(dt), duringLine: inLine ? inLine[2] : null });
+      }
+    }
     allInt.push(...ints); allCpu.push(...fr.map((f) => f.cpu));
     per[w.id] = { playMs: r3(w.to - w.from), frameIntervalMs: stats(ints), rafCallbackMs: stats(fr.map((f) => f.cpu)), over33ms: ints.filter((x) => x > 33.4).length, over50ms: ints.filter((x) => x > 50).length };
   }
   return {
-    quality, gpu: st.gpu, clock: st.clock, audioState: st.audioState,
+    quality, gpu: st.gpu, clock: st.clock, audioState: st.audioState, warmUpMs: r3(warm),
     frameIntervalMs: stats(allInt), rafCallbackMs: stats(allCpu),
-    over33ms: allInt.filter((x) => x > 33.4).length, over50ms: allInt.filter((x) => x > 50).length,
+    over33ms: allInt.filter((x) => x > 33.4).length, over50ms: allInt.filter((x) => x > 50).length, over100ms: allInt.filter((x) => x > 100).length,
+    over100msDuringLines: slow.filter((x) => x.frameMs > 100 && x.duringLine).length,
+    slowFrames: slow,
     playingFrames: allInt.length + windows.length, perCue: per, pageErrors: errors,
   };
 }
 if (!has('--skip-perf')) {
   log('效能量測（即時播放，畫質 A 與 B）');
+  const runs = [];
+  for (const q of ['A', 'B']) for (let i = 1; i <= PERF_RUNS; i++) { const r = await perfRun(q); r.run = i; runs.push(r); log(`效能 ${q} 第 ${i} 次：時鐘 ${r.clock}、p95 ${r.frameIntervalMs?.p95} ms、最長 ${r.frameIntervalMs?.max} ms、>50 ms ${r.over50ms} 格、>100 ms ${r.over100ms} 格`); }
   const perf = {
-    note: 'Mac 開發機（Apple M4）上 headless Chrome（ANGLE Metal）即時播放 g4 的數據，不代表學校 Windows 筆電；學校筆電要用探針與第 3 天彩排實測。',
-    method: `只統計 cue 播放中（mode=playing）的影格；影格時間＝相鄰 requestAnimationFrame 時間戳的間隔；rAF 回呼耗時＝引擎每格 JS 工作（不含 GPU）。視窗 ${W}×${H}、deviceScaleFactor 1；停住點等 ${PERF_HOLD} 秒按 →（下一步）。`,
+    note: 'Mac 開發機（Apple M4）上 headless Chrome（ANGLE Metal）即時播放 g4 的數據，不代表學校 Windows 筆電；學校筆電要用探針與第 3 天彩排實測（school 欄，未驗證）。',
+    method: `只統計 cue 播放中（mode=playing）的影格；影格時間＝相鄰 requestAnimationFrame 時間戳的間隔；rAF 回呼耗時＝引擎每格 JS 工作（不含 GPU）。視窗 ${W}×${H}、deviceScaleFactor 1；停住點等 ${PERF_HOLD} 秒按 →（下一步）；畫質 A、B 各 ${PERF_RUNS} 次，每次重開瀏覽器，用 AudioContext 時鐘（clock 欄）。slowFrames＝每格 > 50 ms 的 cue、cue 內秒數、是否在台詞時段內（前後各 0.1 秒）。`,
     machine: { cpu: cpus()[0]?.model, cores: cpus().length, memGB: Math.round(totalmem() / 2 ** 30), os: `darwin ${release()}` },
-    runs: [await perfRun('A'), await perfRun('B')],
+    acceptance: { rule: '台詞時段內 0 格超過 100 ms（G4 修正第 28 項）', over100msDuringLines: runs.reduce((n, r) => n + r.over100msDuringLines, 0), over100ms: runs.reduce((n, r) => n + r.over100ms, 0), allClocksAudio: runs.every((r) => r.clock === 'audio') },
+    school: { status: '未驗證', todo: '請使用者在學校 Windows 筆電用探針跑 g4：p95 影格時間、> 100 ms 次數、30＋40 分鐘耐熱測試，結果填在這裡（G4 修正第 31、35 項）。', p95Ms: null, over100ms: null, thermal30plus40min: null },
+    runs,
   };
   writeFileSync(join(OUT, 'perf.json'), JSON.stringify(perf, null, 1));
   const a = perf.runs[0];

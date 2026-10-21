@@ -1,0 +1,17 @@
+{
+ "a0_c003_02": {
+  "seconds": 4.34,
+  "speech_start": 0.12,
+  "speech_end": 4.09,
+  "speech_segments": [
+   [
+    0.11,
+    4.09
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/zz_prod_dengS/out/vo_a0_c003_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/zz_prod_dengS/lipsync/a0_c003_02_el01.json",
+  "role": "折折",
+  "text": "可是……主燈的竹子骨架，不見了！"
+ }
+}

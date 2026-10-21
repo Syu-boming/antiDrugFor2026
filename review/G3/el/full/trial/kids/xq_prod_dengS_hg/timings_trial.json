@@ -1,0 +1,21 @@
+{
+ "a1_c001_01": {
+  "seconds": 3.11,
+  "speech_start": 0.12,
+  "speech_end": 2.86,
+  "speech_segments": [
+   [
+    0.11,
+    0.75
+   ],
+   [
+    1.34,
+    2.86
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/out/vo_a1_c001_01_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_prod_dengS_hg/lipsync/a1_c001_01_el01.json",
+  "role": "小晴",
+  "text": "品安！你的燈籠好漂亮。"
+ }
+}

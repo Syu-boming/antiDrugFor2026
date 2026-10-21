@@ -1,0 +1,59 @@
+{
+ "a1_c003_02": {
+  "seconds": 5.87,
+  "speech_start": 0.12,
+  "speech_end": 5.62,
+  "speech_segments": [
+   [
+    0.12,
+    2.19
+   ],
+   [
+    2.63,
+    3.71
+   ],
+   [
+    4.15,
+    5.62
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a1_c003_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a1_c003_02_el01.json",
+  "role": "小晴",
+  "text": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？"
+ },
+ "a1_c004_02": {
+  "seconds": 2.86,
+  "speech_start": 0.12,
+  "speech_end": 2.61,
+  "speech_segments": [
+   [
+    0.12,
+    2.61
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a1_c004_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a1_c004_02_el01.json",
+  "role": "小晴",
+  "text": "電子煙在臺灣是禁止的。"
+ },
+ "a5_c005_02": {
+  "seconds": 5.11,
+  "speech_start": 0.12,
+  "speech_end": 4.86,
+  "speech_segments": [
+   [
+    0.11,
+    2.32
+   ],
+   [
+    2.76,
+    4.86
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/xq_tiffy_v3/out/vo_a5_c005_02_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xq_tiffy_v3/lipsync/a5_c005_02_el01.json",
+  "role": "小晴",
+  "text": "我去辦公室找林老師！你待在門裡面，不要過去。"
+ }
+}

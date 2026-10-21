@@ -1,0 +1,79 @@
+{
+ "_說明": "ElevenLabs 全劇版角色設定（tools/vo_el_prod.py 讀這份；一個角色一個檔，代碼沿用 audio/vo/casting.json 的 code）。欄位：role＝劇本角色名；status＝active（會合成）／draft（要加 --include-draft）；voice_id、voice_name、model、language_code；settings＝voice_settings（值為 null 的欄位不送出，與 G3 試選角相同）；seed_base＝第 k 次嘗試用 seed_base＋k−1；sentence_gap_ms＝多句台詞依句號／問號／驚嘆號分段合成後插入的句間停頓（必要旁白固定 1300）；text_mode＝pronounce（套 audio/vo/pronounce.json 全域＋elevenlabs 表，與正式管線相同）或 original（念原字）；text_subs＝只給 ElevenLabs 的額外替身字；post＝後處理（telephone：300–3400 Hz 電話音色；pitch_shift_st：PSOLA 整段改調半音；max_pause_ms：每段內停頓上限；contour：{segment, points} 同 vo_lib.apply_contour）；adaptive_speed＝上一次嘗試淨語速超出範圍時 speed 調 ±step（夾在 min–max）；targets＝rate_nominal（角色表語速）、rate_cps_net（逐句通過範圍＝角色表 ±0.5）、f0_nominal、f0_hz（±2 半音，只列入報告）；lines.<台詞編號>＝逐句覆寫（settings、post、sentence_gap_ms、synth_text〔可含 [[break:N]]〕、text_subs、targets、loudness_offset_db）。segment_mode＝synth（依句號／問號／驚嘆號與 [[break:N]] 分段各自合成，任務規格預設）或 post（整句一次合成，再依轉寫時間戳在句界插入停頓；eleven_v3 分段合成時語速明顯變快，見 review/G3/el/full/trial/）；tail_guard＝句尾保護 {mode: always／on_fail／off, suffix, min_pause_ms}：送出文字句尾加 suffix（預設「……嗯。」），合成後在正文與填充字之間的長停頓處切掉，(c) 改在切點前 60 ms 判定，(a) 轉寫確認沒有殘留。 成人組補充（2026-10-21）：post.pitch_shift_st／post.stretch／post.auto_stretch＝PSOLA 改調／放慢（兒童組加入工具；eleven_v3 不理會 speed，語速只能後處理）；auto_stretch＝{target, tolerance, min, max}：母帶前淨語速超出 rate_nominal±tolerance 才把長度乘 淨語速÷target（夾在 min–max）。",
+ "role": "林老師",
+ "code": "lin",
+ "status": "active",
+ "voice_id": "5ypmms5LDLZQ1fRMo16H",
+ "voice_name": "Jui - Calm, Warm & Pleasing",
+ "model": "eleven_v3",
+ "language_code": "zh",
+ "settings": {
+  "stability": 0.5,
+  "similarity_boost": 0.75,
+  "style": null,
+  "speed": 0.95,
+  "use_speaker_boost": null
+ },
+ "seed_base": 20261021,
+ "sentence_gap_ms": 450,
+ "segment_mode": "post",
+ "tail_guard": {
+  "mode": "always",
+  "suffix": "……嗯。",
+  "min_pause_ms": 300
+ },
+ "text_mode": "pronounce",
+ "text_subs": {
+  "119": "一一九",
+  "家長": "家掌"
+ },
+ "post": {
+  "auto_stretch": {
+   "target": 4.0,
+   "tolerance": 0.45,
+   "min": 0.92,
+   "max": 1.15
+  }
+ },
+ "adaptive_speed": {
+  "enabled": false,
+  "step": 0.03,
+  "min": 0.85,
+  "max": 1.1,
+  "note": "eleven_v3 不理會 speed：同文字 speed 0.7 與 1.2 正文長度 1.64／1.63 秒（2026-10-21 試跑，audio/vo_el/_raw/x_speedtest/）；換成 v2 再開"
+ },
+ "targets": {
+  "rate_nominal": [
+   3.9,
+   4.1
+  ],
+  "rate_cps_net": [
+   3.4,
+   4.6
+  ],
+  "f0_nominal": 161.0,
+  "f0_hz": [
+   143.4,
+   180.7
+  ],
+  "source": "角色表第 3 節（4.0；肯定、溫暖、接手 119 時俐落）；casting.json 林老師 note（F0 161 Hz，中低女聲）"
+ },
+ "lines": {
+  "a5_c001_03": {
+   "loudness_offset_db": -4.0,
+   "note": "畫外音：同 casting.json 林老師 loudness_offset_db（只把音量放低，不加效果）"
+  },
+  "a5_c007_01": {
+   "head_guard": {
+    "mode": "always",
+    "prefix": "嗯。"
+   },
+   "text_subs": {
+    "小燈國小": "小登國小"
+   },
+   "note": "句首保護（送出加「嗯。」再切掉）：eleven_v3 原始檔一開頭就接近滿音量，句首字常念糊；第 1 輪 6/6 兩個模型都把「小燈」轉成「小鄧／小凳」（Jui 把「燈」念成四聲）→ 合成用同音「登」（dēng）。「接手→接受」edge 基準也有（turbo）"
+  }
+ },
+ "source": "任務指定 Jane／Jui 二選一（Door 給旁白）；試聲線 review/G3/el/full/voice_trials/lin/：Jui v3 三句 F0 176／158／168 Hz（目標 161），Jane v3 196／155／184 Hz",
+ "note": "選 Jui：F0 中位較接近林老師目標 161 Hz（角色表「中低（女聲）」），也和旁白 Door（約 200 Hz）差約 3 半音；Jane v3 約 180–196 Hz，和旁白只差約 1–2 半音。Jui 有兩句淨語速 3.33–3.35（略慢）→ auto_stretch 允許加快到 0.92 倍。「家長」兩個聲線都轉成「家場／交響」→ 合成用「家掌」。"
+}

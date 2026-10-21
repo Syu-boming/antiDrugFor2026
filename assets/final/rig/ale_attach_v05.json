@@ -1,0 +1,176 @@
+{
+ "version": "v05",
+ "rig": "assets/final/rig/ale_rig_v05.json",
+ "coords": "local_px＝部件圖（assets/final/rig/chr-ale_<部件>_v05.png（前臂）／_v04.png（其他））左上角起算的像素，y 向下；from_pivot_px＝相對該部件樞紐；master_px＝母版座標。",
+ "safety": "只扣手腕背側、手肘外側、膝蓋正面（兒童安全界線第 2 條）；線往上延伸出畫面；不繞脖子、不接頭胸腰；不畫操控者。",
+ "ring": {
+  "texture_image_id": "tex-string-ring",
+  "rope_texture_image_id": "tex-string-rope",
+  "shape": "紙環＝圓環（外深灰細線＋白紙芯邊＋淡灰紙環身＋內深灰細線，中間透明），正對鏡頭、不隨肢體旋轉；不用矩形帶、鉚釘或扁板",
+  "diameter_world": 0.103,
+  "diameter_master_px": 46.9,
+  "string_width_world": 0.043,
+  "px_at_1080p": {
+   "g4_mid（16.4 單位，186.8 px/單位）": {
+    "線寬": 8.0,
+    "紙環直徑": 19.2
+   },
+   "錨點近景（12.5 單位，245 px/單位）": {
+    "線寬": 10.5,
+    "紙環直徑": 25.2
+   }
+  },
+  "rope_end": "線的下端停在紙環上緣（扣點往線的方向退 0.4×直徑），看起來是繩子綁在紙環上；紙環畫在部件與線的上面",
+  "inside_rule": "每個扣點離部件外形邊緣 ≥ 26.5 母版 px（紙環半徑 23.5＋3），所以整個紙環都在肢體剪影內"
+ },
+ "a2_primary": [
+  "wrist_back",
+  "elbow_out",
+  "knee_front"
+ ],
+ "string_direction_hint": {
+  "wrist_back": "往上偏畫面左（危險方位）",
+  "elbow_out": "往上偏畫面左",
+  "knee_front": "近乎垂直往上，走身體外側（畫面右），不經過頭頸"
+ },
+ "points": {
+  "wrist_back": {
+   "part": "forearm_r",
+   "image_id": "rig/chr-ale_forearm-r",
+   "local_px": [
+    82.0,
+    184.0
+   ],
+   "master_px": [
+    304.0,
+    786.0
+   ],
+   "from_pivot_px": [
+    -1.0,
+    131.0
+   ],
+   "zh": "右手腕背側（前臂靠手腕，外側；整個紙環在前臂剪影內、在手的上方）",
+   "primary": true,
+   "edge_distance_px": 26.5,
+   "v04_local_px": [
+    69.0,
+    210.0
+   ]
+  },
+  "elbow_out": {
+   "part": "upper_arm_r",
+   "image_id": "rig/chr-ale_upper-arm-r",
+   "local_px": [
+    54.0,
+    265.0
+   ],
+   "master_px": [
+    276.0,
+    614.0
+   ],
+   "from_pivot_px": [
+    -59.0,
+    189.0
+   ],
+   "zh": "右手肘外側（上臂靠手肘的袖子上，外側；不扣手肘內側）",
+   "primary": true,
+   "edge_distance_px": 26.9,
+   "v04_local_px": [
+    39.0,
+    279.0
+   ]
+  },
+  "knee_front": {
+   "part": "thigh_l",
+   "image_id": "rig/chr-ale_thigh-l",
+   "local_px": [
+    88.0,
+    330.0
+   ],
+   "master_px": [
+    589.0,
+    1236.0
+   ],
+   "from_pivot_px": [
+    -6.0,
+    236.0
+   ],
+   "zh": "左膝蓋正面（膝頭中央，整個紙環在膝蓋輪廓內；坐姿時從桌子右端露出）",
+   "primary": true,
+   "edge_distance_px": 60.2,
+   "v04_local_px": [
+    87.5,
+    330.0
+   ]
+  },
+  "wrist_back_l": {
+   "part": "forearm_l",
+   "image_id": "rig/chr-ale_forearm-l",
+   "local_px": [
+    85.0,
+    174.0
+   ],
+   "master_px": [
+    708.0,
+    773.0
+   ],
+   "from_pivot_px": [
+    14.0,
+    121.0
+   ],
+   "zh": "左手腕背側（外側＝畫面右緣）",
+   "primary": false,
+   "edge_distance_px": 26.7,
+   "v04_local_px": [
+    117.0,
+    223.0
+   ]
+  },
+  "elbow_out_l": {
+   "part": "upper_arm_l",
+   "image_id": "rig/chr-ale_upper-arm-l",
+   "local_px": [
+    86.0,
+    252.0
+   ],
+   "master_px": [
+    684.0,
+    614.0
+   ],
+   "from_pivot_px": [
+    20.0,
+    189.0
+   ],
+   "zh": "左手肘外側",
+   "primary": false,
+   "edge_distance_px": 27.0,
+   "v04_local_px": [
+    118.0,
+    266.0
+   ]
+  },
+  "knee_front_r": {
+   "part": "thigh_r",
+   "image_id": "rig/chr-ale_thigh-r",
+   "local_px": [
+    86.0,
+    330.0
+   ],
+   "master_px": [
+    410.0,
+    1236.0
+   ],
+   "from_pivot_px": [
+    -15.0,
+    236.0
+   ],
+   "zh": "右膝蓋正面（a2 坐姿被桌子擋住）",
+   "primary": false,
+   "edge_distance_px": 58.3,
+   "v04_local_px": [
+    83.5,
+    330.0
+   ]
+  }
+ }
+}

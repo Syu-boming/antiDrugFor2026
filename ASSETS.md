@@ -75,11 +75,17 @@
 | audio/sfx/sfx_card_in_v01.wav | 音效（1.35 s） | 題卡 | 題卡摺開送上 | 各題出題 cue | 自製（程式合成） | 原創 | 峰值 −8.0 dBFS；聽感未驗證 | v01 |
 | audio/sfx/sfx_quiet_fold_v01.wav | 音效（2.80 s） | 折折 | S3 收摺音效（收聲訊號，加做） | 題卡模式開頭、教師插話點 | 自製（程式合成） | 原創 | 峰值 −11.4 dBFS；聽感未驗證 | v01 |
 
-## 配音（G3 選角提案＋G4 代表鏡頭正式台詞，2026-10-21 配音代理）
+## 配音（正式：ElevenLabs v04，2026-10-21 13:4x 起；使用者決定 DECISIONS.md D-G3-07）
+- **正式檔**：audio/vo/vo_<台詞編號>_v04.wav（201 句）＋audio/lipsync/<台詞編號>_v04.json；來源 audio/vo_el/vo_<id>_el01.wav（tools/vo_el_prod.py 合成＋自動檢查）→ tools/vo_el_promote.py 複製升版。逐句來源、sha1、自動檢查狀態、request_id 見 `audio/vo/promoted_el.json`；聲線、模型、seed、逐次計費見 `audio/vo_el/build_report_el.json`、`audio/vo_el/FILES.md`、`audio/vo_el/ledger.json`；人工指定採用的句子記在 build_report_el.json 的 manual_pick。
+- **服務與聲線**：ElevenLabs eleven_v3，全部是聲線庫聲線（旁白 Door Chow、折折 Chloe、小晴 Tiffy、小宇 Vivian、阿樂叔叔 Kuo Yu、品安 Yui、葉護理師 Devon、林老師 Jui、陳伯伯 Neil Chuang、邀請者 Chihiro Yoko、執勤人員 Angel；voice_id 見 audio/vo/casting.json 的 official_engine）。
+- **授權**：Starter 付費方案（2026-10-21 06:30 起），官方說明付費方案含商用授權（Beta 服務除外；eleven_v3 不是 Beta），聲線庫聲線附免費商用授權。ElevenLabs 使用政策「Use by and for Minors」要求兒童對象的產品取得書面核准：**使用者 2026-10-21 已申請、待回覆**；核准信件取得後記在本節。證據：review/G3/el/license_evidence.md。
+- **edge-tts**：不再用於演出。舊 v01–v03 檔移到 audio/_archive_edge/（只封存、不打包）；下方「配音（G3 選角提案＋G4 代表鏡頭正式台詞）」與兩輪修正紀錄是歷史紀錄。
+
+## 配音（歷史：edge-tts 版，已封存；G3 選角提案＋G4 代表鏡頭正式台詞，2026-10-21 配音代理）
 
 - 產生：`tools/vo_build.py --set g4`（讀 `audio/vo/casting.json`、`audio/vo/pronounce.json`、`script/劇本_v03.md`）；字幕一律用劇本原文，替身字只送進合成器（本批只有 a2_c004_01 的「阿樂」→「阿勒」）。母帶：頭 120 ms／尾 250 ms 靜音、−18 LUFS（ffmpeg loudnorm 兩段式；短句與 loudnorm 轉動態模式時改用量測值線性增益）、真峰值 ≤ −1.5 dBTP（4 倍超取樣限制器）、48 kHz／單聲道／16-bit PCM。選角理由與量測：`review/G3/casting.md`。
 - **授權（edge-tts）**：edge-tts 7.3.1 是社群開發的非官方工具，呼叫 Edge 線上朗讀服務，微軟條款沒有明確授權這種用途。v1.2 第 20.2 節只作暫用、不放進正式交付包；v1.3 第 6 節允許在記錄風險下使用。正式交付前建議以 Azure AI Speech 同名聲線一鍵重建（`tools/vo_build.py --all --service azure`，需使用者金鑰；後端已寫好未實測），或由主線決定。
-- ElevenLabs：本批正式檔**沒有**使用（金鑰為免費方案，API 不可用台灣共享聲線與聲線設計；免費方案條款限非商業並須標註 ElevenLabs）。G3 試音用了 283 字元（`audio/vo/elevenlabs_usage.jsonl`），試音樣本 `review/G3/samples/A_*`、`B_*jessica*` 不是正式素材。
+- ElevenLabs（G3 修正第 2 輪更正；**13:4x 起已改為正式配音**，本條保留當時紀錄）：當時正式配音沒有使用任何 ElevenLabs 輸出（G4 計費 0）。**方案與授權**：2026-10-21 06:27 以前是免費方案——API 不能用聲線庫（含台灣）聲線與聲線設計；**免費方案的產出只限非商業用途，公開時必須標註 elevenlabs.io，沒有商用授權**。06:30 使用者升級 Starter 付費方案（含商用授權，Beta 服務除外）。另受 ElevenLabs 使用政策「Use by and for Minors」：給 18 歲以下對象的產品須經 ElevenLabs 書面核准（review/G3/el/license_evidence.md），未取得前 ElevenLabs 輸出一律不進演出。**用量**：以 `audio/vo_el/ledger.json`（EL 全劇版，回應標頭 character-cost 逐筆累加、失敗呼叫不計）與 `audio/vo/elevenlabs_usage.jsonl`（全部呼叫）為準，本檔不再抄寫合計數字（參考：2026-10-21 13:10 ledger total_billed 6916、833 次呼叫）。G3 試音 283 字元在免費方案下產生（樣本 `review/G3/samples/A_*`、`B_*jessica*` 不是正式素材，受免費方案限制）。試作檔登記見本節「ElevenLabs 試作」。
 - 聽感一律未驗證（Claude 聽不到聲音），第 3 天彩排確認。
 
 | 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
@@ -93,6 +99,61 @@
 | audio/vo/vo_a2_c004_02_v01.wav | 配音（11.57 s） | 旁白 | 必要旁白一（合成文字與劇本逐字相同） | a2_c004 | edge-tts zh-TW-HsiaoChenNeural，rate −8%、pitch +0Hz，三句分開合成、句間停頓 1.3 秒 | edge-tts 暫用 | turbo 轉寫與劇本一致（同音「現世」），small 有轉寫誤差；−18.0 LUFS／−3.4 dBTP／0 削波；3.39 字/秒；聽感未驗證 | v01 |
 | audio/lipsync/a2_c001_01_v01.json … a2_c004_02_v01.json（7 檔） | 對嘴資料（{"fps":12,"frames":[0–3]}） | 同上 7 句 | 0 閉、1 半開、2 大開、3 圓唇（依 app/src/stage/perform.ts mouthOpen()） | a2_c001、a2_c002、a2_c004 | 由正式 WAV 自動產生（tools/vo_lib.py lipsync()：帶通 RMS 包絡＋遲滯門檻＋90 ms 最短停留＋每秒 12 格） | 原創（程式產生） | 格數＝ceil(秒數×12)；首尾靜音為 0；review/G3/vo_waveforms_g4.png 疊圖檢視 | v01 |
 | audio/vo/timings.json | 長度表 | — | 每句 seconds、speech_start、speech_end、file、lipsync | a2_c001、a2_c002、a2_c004 | tools/vo_build.py 自動產生 | 原創（程式產生） | 與 WAV 實際長度一致 | v01 |
+
+### G3 修正第 1 輪（2026-10-21，聲音代理；v01 保留不覆寫，tools/pack.mjs 自動取最新版）
+
+| 檔案 | 類型 | 角色 | 內容 | 用途 | 製作 | 授權 | 檢查 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| audio/vo/vo_a2_c001_01_v02.wav | 配音（3.52 s） | 小宇 | 「叔叔，你還好嗎？竹篾掉了。」 | a2_c001 | edge-tts zh-TW-HsiaoYuNeural，rate +12%、pitch +20Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：叔叔你還好嗎逐滅掉了；large-v3-turbo：叔叔你還好嗎竹滅掉了）；-18.1 LUFS／-1.9 dBTP／0 削波；F0 中位 225.8 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c001_02_v02.wav | 配音（3.16 s） | 阿樂叔叔 | 「沒事、沒事，手滑了一下。」 | a2_c001 | edge-tts zh-TW-YunJheNeural，rate -6%、pitch +0Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：沒事沒事手滑了一下；large-v3-turbo：沒事沒事手滑了一下）；-18.2 LUFS／-1.9 dBTP／0 削波；F0 中位 94.3 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c001_03_v02.wav | 配音（5.42 s） | 折折 | 「大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。」 | a2_c001 | edge-tts zh-TW-HsiaoYuNeural，rate +22%、pitch +90Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：大家仔細看叔叔的手上是不是多了什麼看到的舉手；large-v3-turbo：大家仔細看叔叔的手上是不是多了什麼看到的舉手）；-17.9 LUFS／-1.9 dBTP／0 削波；F0 中位 296.0 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c002_01_v02.wav | 配音（4.89 s） | 阿樂叔叔 | 「咦？我想揮手……手怎麼跑到旁邊去了？」 | a2_c002 | edge-tts zh-TW-YunJheNeural，rate -6%（分段 -8%／-18%／-18%）、pitch +0Hz；分三段、停頓 350／550 ms（[[break]]）、「咦？」PSOLA 二聲上揚（終點／起點 1.24）；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：姨我想揮手手怎麼跑到旁邊去了；large-v3-turbo：咦我想揮手手怎麼跑到旁邊去了）；-18.0 LUFS／-1.9 dBTP／0 削波；F0 中位 109.9 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c002_02_v02.wav | 配音（1.72 s） | 小晴 | 「叔叔，小心！」 | a2_c002 | edge-tts zh-TW-HsiaoChenNeural，rate +0%、pitch +56Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：叔叔小心；large-v3-turbo：叔叔小心）；-18.0 LUFS／-3.7 dBTP／0 削波；F0 中位 393.6 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c004_01_v02.wav | 配音（4.69 s） | 旁白 | 「阿樂叔叔身上這一條一條的線，叫做操偶線。」 | a2_c004 | edge-tts zh-TW-HsiaoChenNeural，rate -14%、pitch -10Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：阿勒叔叔身上這一條一條的線叫做操偶線；large-v3-turbo：阿勒叔叔身上這一條一條的線叫做操偶線）；-17.8 LUFS／-2.9 dBTP／0 削波；F0 中位 197.4 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/vo/vo_a2_c004_02_v02.wav | 配音（11.60 s） | 旁白 | 「這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。」 | a2_c004 | edge-tts zh-TW-HsiaoChenNeural，rate -8%、pitch -10Hz；三句分開合成、句間 1.3 秒；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 只有單一模型出現差異（多半是轉寫誤差）（small：這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍；large-v3-turbo：這些現世故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍）；-18.0 LUFS／-3.4 dBTP／0 削波；F0 中位 185.5 Hz；停頓突波 0；聽感未驗證 | v02 |
+| audio/music/music_m4_light_v02.wav | 配樂（無縫循環 32.0 s） | 燈籠店 | M4 很輕版（同譜，響度 −27 → −24 LUFS） | a2_c004 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/build_all.py | 原創 | -24.0 LUFS、-9.9 dBTP；理由見 review/G3/mix_r1.json；聽感未驗證 | v02 |
+
+### G3 修正第 2 輪（2026-10-21 約 09:00–10:00，聲音代理；新版號 v03，不覆寫 v01／v02）
+
+- 參數：`audio/vo/casting.json` v03（葉護理師 −20%／+55Hz，a2_c012_03 −28%、a2_c012_05／a5_c008_01 −25%；小晴三句「品安」分段＋PSOLA 半三聲）；`audio/vo/pronounce.json` 加「119」→「一一九」。`defaults.version` 改 v03，之後重建不會覆寫已採用的 v02。
+- 這 11 句不在 G4 代表鏡頭內（G4 的 7 句 v02 不變、未重建）；`tools/pack.mjs` 會依 cue 另成資料包，G5 直接引用。證據：`review/G3/metrics.json` 的 round2、`review/G3/tone_check_pinan_r2.json／.png`、`review/G3/vo_waveforms_r2.png`。
+- `review/G3/r2/*.wav` 是驗收用的試音與對照檔（含「平安」對照、修正前整句合成），**不是正式素材**。
+
+| 檔案 | 類型 | 角色 | 內容 | 用途 | 製作 | 授權 | 檢查 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| audio/vo/vo_a1_c001_01_v03.wav | 配音（2.81 s） | 小晴 | 「品安！你的燈籠好漂亮。」 | a1_c001（G5） | edge-tts zh-TW-HsiaoChenNeural，rate +0%、pitch +56Hz；「品安」單獨一段合成＋PSOLA 半三聲（品最低約 203 Hz，比「平安」對照低約 5.1–5.6 半音）；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型（正式提示）都把人名轉成「平安」（語言模型偏好；通過條件改用 F0 對照，見 tone_check_pinan_r2.json）（small：平安你的燈籠好漂亮；large-v3-turbo：平安你的燈籠好漂亮）；-18.0 LUFS／-3.9 dBTP／0 削波；淨語速 4.81（驗收者算法 4.86）字/秒；F0 中位 275.3 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a1_c004_05_v03.wav | 配音（3.46 s） | 小晴 | 「品安，快來，我們去跟阿樂叔叔說。」 | a1_c004（G5） | edge-tts zh-TW-HsiaoChenNeural，rate +0%、pitch +56Hz；「品安」單獨一段合成＋PSOLA 半三聲（品最低約 203 Hz，比「平安」對照低約 5.1–5.6 半音）；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型（正式提示）都把人名轉成「平安」（語言模型偏好；通過條件改用 F0 對照，見 tone_check_pinan_r2.json）（small：平安快來我們去跟阿樂叔叔說；large-v3-turbo：平安快來我們去跟阿樂叔叔說）；-18.0 LUFS／-4.5 dBTP／0 削波；淨語速 4.21（驗收者算法 4.58）字/秒；F0 中位 318.2 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a2_c012_01_v03.wav | 配音（5.73 s） | 葉護理師 | 「阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？」 | a2_c012（G5） | edge-tts zh-TW-YunJheNeural，rate -20%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：阿樂你哪裡不舒服我陪你去看醫生好嗎；large-v3-turbo：阿樂你哪裡不舒服我陪你去看醫生好嗎）；-18.0 LUFS／-1.9 dBTP／0 削波；淨語速 4.45（驗收者算法 4.27）字/秒；F0 中位 160.8 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a2_c012_03_v03.wav | 配音（3.98 s） | 葉護理師 | 「你家人的電話沒人接，我晚一點再打。」 | a2_c012（G5） | edge-tts zh-TW-YunJheNeural，rate -28%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：你家人的電話沒人接我晚一點再打；large-v3-turbo：你家人的電話沒人接我晚一點再打）；-17.8 LUFS／-1.9 dBTP／0 削波；淨語速 4.66（驗收者算法 4.81）字/秒；F0 中位 161.5 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a2_c012_05_v03.wav | 配音（4.13 s） | 葉護理師 | 「謝謝你們告訴我，我會請警察去看看。」 | a2_c012（G5） | edge-tts zh-TW-YunJheNeural，rate -25%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：謝謝你們告訴我我會請警察去看看；large-v3-turbo：謝謝你們告訴我我會請警察去看看）；-18.0 LUFS／-2.3 dBTP／0 削波；淨語速 4.57（驗收者算法 4.67）字/秒；F0 中位 150.4 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a2_c013_03_v03.wav | 配音（4.86 s） | 葉護理師 | 「這幾天先不要開車。我會一直打給你的家人。」 | a2_c013（G5） | edge-tts zh-TW-YunJheNeural，rate -20%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：這幾天先不要開車我會一直打給你的家人；large-v3-turbo：這幾天先不要開車我會一直打給你的家人）；-18.1 LUFS／-2.3 dBTP／0 削波；淨語速 4.72（驗收者算法 4.84）字/秒；F0 中位 160.0 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a5_c008_01_v03.wav | 配音（5.51 s） | 葉護理師 | 「阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。」 | a5_c008（G5） | edge-tts zh-TW-YunJheNeural，rate -25%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：阿樂叔叔現在有一生和護理師照顧他的家人也來了；large-v3-turbo：阿勒叔叔現在有醫生和護理師照顧他的家人也來了）；-17.8 LUFS／-1.9 dBTP／0 削波；淨語速 4.64（驗收者算法 4.58）字/秒；F0 中位 181.9 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a5_c008_03_v03.wav | 配音（5.31 s） | 葉護理師 | 「不是喔。你們找大人、打 119，是在幫他。」 | a5_c008（G5） | edge-tts zh-TW-YunJheNeural，rate -20%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都把句末「喔」寫成「哦」（同一個語氣詞的不同寫法，第 1 輪 r1 版也一樣）；small 把「一一九」轉成「依舊」，turbo 轉成「119」（small：不是你們找大人打依舊是在幫他；large-v3-turbo：不是哦你們找大人打119是在幫他）；-17.9 LUFS／-1.9 dBTP／0 削波；淨語速 4.64（驗收者算法 3.55）字/秒；F0 中位 150.8 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a5_c008_05_v03.wav | 配音（6.13 s） | 葉護理師 | 「他需要治療，也需要時間。大家會陪著他，慢慢來。」 | a5_c008（G5） | edge-tts zh-TW-YunJheNeural，rate -20%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：它需要治療也需要時間大家會陪著它慢慢來；large-v3-turbo：他需要治療也需要時間大家會陪著他慢慢來）；-17.9 LUFS／-2.3 dBTP／0 削波；淨語速 4.34（驗收者算法 4.28）字/秒；F0 中位 172.6 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a6_c006_01_v03.wav | 配音（3.54 s） | 小晴 | 「品安，我在乎你，我們一起找人幫忙。」 | a6_c006（G5） | edge-tts zh-TW-HsiaoChenNeural，rate +0%、pitch +56Hz；「品安」單獨一段合成＋PSOLA 半三聲（品最低約 203 Hz，比「平安」對照低約 5.1–5.6 半音）；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型（正式提示）都把人名轉成「平安」（語言模型偏好；通過條件改用 F0 對照，見 tone_check_pinan_r2.json）（small：平安我在Honey我們一起找人幫忙；large-v3-turbo：平安我在呼你我們一起找人幫忙）；-18.1 LUFS／-3.0 dBTP／0 削波；淨語速 4.42（驗收者算法 5.2）字/秒；F0 中位 263.4 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/vo/vo_a6_c006_06_v03.wav | 配音（3.19 s） | 葉護理師 | 「說出來，就是在保護自己。」 | a6_c006（G5） | edge-tts zh-TW-YunJheNeural，rate -20%、pitch +55Hz；10 ms 淡入／20 ms 淡出剪接、去孤立爆音 | edge-tts 暫用（見本節授權說明） | 兩個模型都轉寫一致或只有同音字（small：說出來就是在保護自己；large-v3-turbo：說出來就是在保護自己）；-18.1 LUFS／-1.9 dBTP／0 削波；淨語速 4.02（驗收者算法 4.05）字/秒；F0 中位 156.3 Hz；停頓突波 0；聽感未驗證 | v03 |
+| audio/lipsync/a1_c001_01_v03.json … a6_c006_06_v03.json（11 檔） | 對嘴資料 | 同上 11 句 | 0 閉、1 半開、2 大開、3 圓唇 | 同上 | 由正式 WAV 自動產生（tools/vo_lib.py lipsync()） | 原創（程式產生） | 格數＝ceil(秒數×12)；review/G3/vo_waveforms_r2.png 疊圖 | v03 |
+| audio/vo/timings.json、build_report.json | 長度表、逐句量測 | — | 新增上列 11 句；speech_segments 修正句尾假段落（tools/vo_lib.py speech_segments：句尾衰減不再切出 10 ms 的段落） | 引擎、驗收 | tools/vo_build.py 自動產生 | 原創（程式產生） | 與 WAV 實際長度一致 | — |
+
+### ElevenLabs 全劇版：audio/vo_el/、audio/lipsync_el/（登記時間 2026-10-21 10:00；**13:4x 起升為正式 v04**，見本檔「配音（正式：ElevenLabs v04）」）
+
+- **狀態**：全部是 ElevenLabs 全劇版試作（tools/vo_el_prod.py，主線工作流 wf_42597e72-70b，使用者 08:1x 指示「先做再說」）。〔13:4x 更新〕使用者決定全劇採用（D-G3-07），由 tools/vo_el_promote.py 複製成 audio/vo 的 v04 後打包；本資料夾仍是來源與工作檔，不直接打包。兒童用途書面核准待 ElevenLabs 回覆（license_evidence.md 第 5–8 節）。
+- **授權**：這些檔在 Starter 付費方案下產生（06:30 升級；商用授權，Beta 服務除外）。免費方案（06:27 以前）的產出只限非商業用途、公開時須標註 elevenlabs.io，本節沒有免費方案的檔案；免費方案時期的 G3 試音另見本節上方 ElevenLabs 一條。
+- **逐檔紀錄**以 `audio/vo_el/build_report_el.json`（每句 voice_id、模型、seed、request_id、計費、自動檢查結果）與 `audio/vo_el/ledger.json`（點數帳）為準；全部檔案清單見 `audio/vo_el/FILES.md`（自動產生，193 檔）；點數以 ledger.json 為準。`audio/vo_el/_attempts/`（每句最多 6 次嘗試的母帶）、`audio/vo_el/_raw/`（原始 mp3）、`audio/vo_el/casting/*.json`（角色設定）、`timings_el.json` 與 `*.lock` 都是工作檔，同樣不使用。
+
+| 檔案 | 角色 | 台詞 | 聲線／模型 | request_id | 計費（字元） | 自動檢查 | 狀態 |
+|---|---|---|---|---|---|---|---|
+| audio/vo_el/vo_a0_c001_01_el01.wav；audio/lipsync_el/a0_c001_01_el01.json | 旁白 | 「這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。」 | Door Chow（qDeYqHQrKRH839xMU4nb）／eleven_v3 | hvfSMtjncxPgBbfqhS1t | 60 | fail | 已升正式 v04 |
+| audio/vo_el/vo_a1_c005_02_el01.wav；audio/lipsync_el/a1_c005_02_el01.json | 旁白 | 「有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？」 | Door Chow（qDeYqHQrKRH839xMU4nb）／eleven_v3 | v2z0SQIFPCAuzp4WVUzH | 13 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a1_c005_03_el01.wav；audio/lipsync_el/a1_c005_03_el01.json | 旁白 | 「一，可以，包裝漂亮就很安全。」 | Door Chow（qDeYqHQrKRH839xMU4nb）／eleven_v3 | OcjGb8o9wipoSvW0P8Cc | 14 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a2_c012_01_el01.wav；audio/lipsync_el/a2_c012_01_el01.json | 葉護理師 | 「阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？」 | Devon - Relaxed, Natural and Warm（qV41hPnIn6kbvO8hMtPG）／eleven_v3 | KxWQ3ErzEpVT9VcZRTOd | 20 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a3_c003_02_el01.wav；audio/lipsync_el/a3_c003_02_el01.json | 林老師 | 「謝謝你們告訴我。老師會請警衛伯伯和警察處理。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | OBNgJLH0THLHOykpcBMl | 10 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a3_c003_03_el01.wav；audio/lipsync_el/a3_c003_03_el01.json | 林老師 | 「你們沒有拿，還馬上來找我，做得很好。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | Usl7fHhhX8WWWIrcK5P7 | 9 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a3_c008_01_el01.wav；audio/lipsync_el/a3_c008_01_el01.json | 林老師 | 「今天紙燈節，學校提早放學。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | gcPfKHaqKtu5XwP4trN5 | 42 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a3_c008_02_el01.wav；audio/lipsync_el/a3_c008_02_el01.json | 林老師 | 「小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | cWhkGzuHlV7fz9sIfU5f | 14 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a3_c008_04_el01.wav；audio/lipsync_el/a3_c008_04_el01.json | 林老師 | 「謝謝你告訴老師。老師先打電話給你們家人；如果叔叔先到，你們先待在校門裡面。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | vhvC8fWCcGLkHc52X3ge | 16 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a4_c012_04_el01.wav；audio/lipsync_el/a4_c012_04_el01.json | 林老師 | 「你們先待在校門裡面。老師繼續打給你們家人，也打給阿樂叔叔的家人。」 | Jui - Calm, Warm & Pleasing（5ypmms5LDLZQ1fRMo16H）／eleven_v3 | vmzXWjbypdWTtKRgjyhS | 14 | pass | 已升正式 v04 |
+| audio/vo_el/vo_a5_c006_01_el01.wav；audio/lipsync_el/a5_c006_01_el01.json | 執勤人員 | 「119 您好，請問發生什麼事？在哪裡？」 | Angel - Narration（aQwAQvuS5kErJvZlR7wN）／eleven_v3 | qQN9srfagLXGSwlp0vRz | 27 | pass | 已升正式 v04 |
 
 ## G4 代表鏡頭美術（2026-10-21 第 2 天約 03:30–05:00，美術代理）
 
@@ -134,3 +195,38 @@
 | app/cues/g4.json | cue 集（代表鏡頭） | 燈籠店（G4） | 署名卡待機→開幕→線落下來→操偶線（必要旁白一）→布幕合攏→片尾署名卡 | a0_c000、a0_c001、a2_c002、a2_c004、a8_c002、a8_c003 | 引擎代理建立；整合代理修正 a8_c003 配樂音量（閉幕曲不再於署名卡出現時被壓到無聲） | 原創 | 台詞與劇本 v03 逐字相同（驗收包 safety_data.json、transcripts.md）；a2_c002＋a2_c004 長度見 review/G4/pack/durations.json | v01 |
 | review/G4/pack/audio/g4_mix.wav | 驗收用最終混音（48 kHz 立體聲 16-bit） | G4 全段 | 配音 7 句中的 4 句、配樂 4 首、音效 5 種依 cue 時間混音 | G4 全段 | tools/g4_review_pack.py 依引擎混音規則離線混音（來源：audio/vo、audio/music、audio/sfx 各檔） | 衍生自各來源檔（edge-tts 配音風險見配音列；配樂音效自製原創） | 響度數據 review/G4/pack/audio/loudness.json；聽感未驗證 | v01 |
 | review/G4/pack/g4_playback.mp4 | 驗收用播放錄製（1920×1080、30 fps、H.264＋AAC） | G4 全段 | 固定步長逐格＋g4_mix.wav | G4 全段 | tools/g4_review_pack.mjs（虛擬時鐘逐格截圖）＋ffmpeg | 衍生自上列素材與劇場程式畫面 | 由腳本產生、不挑畫面；不進演出包 | v01 |
+
+## G4 修正第 1 輪美術（2026-10-21 第 2 天約 05:40–，美術代理）
+
+對應 G4 驗收問題 16、17、21、22、23、25、27、33、34。v04／v01 檔案全部保留不覆寫；`tools/pack.mjs` 每個 id 取最新版本，新檔一放進 assets/final 打包就自動換用（id 不變）。腳本都在 review/G4/art/scripts/；投影模擬在 review/G4/art/sim/（tools/projsim.py v2）。引擎介面變更見 assets/final/rig/README.md 第 9 節、g4_manifest.json 的 `string_render`、`round1_art`、`characters.xiaoqing`。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/tex-string-rope_v01.png | 操偶線紙繩貼圖（64×256，不透明，上下四方連續） | 阿樂叔叔 | 淡灰紙繩身（平均 sRGB≈178）＋斜向扭紋＋紙纖維、兩側深灰邊、左側淡色受光邊 | a2_c002、a2_c004、a8_c002 | 程式產生（make_string_tex.py）；畫法依 review/G4/art/ale_a2_poses_fixed.png 與 v1.2 第 15.2 節「灰色扭紋紙繩」 | 原創（程式產生） | 8 px 寬時深灰邊各約 1.5 px、扭紋間距約 10.7 px，1:1 看得到扭紋（review/G4/art/string_preview_v01.png）；線身對淺牆 ΔL* 18、深灰邊對牆 64、線身對工作褲 32（string_tex_v01.json） | v01 |
+| assets/final/tex-string-rope_v02.png | 操偶線紙繩貼圖 v02（64×256，不透明，上下四方連續；pack 自動取最新版） | 阿樂叔叔 | 平面淡灰紙繩：繩身平均 sRGB≈184（L* 74.7）＋不規則短纖維點紋（無扭紋）、兩側深灰邊、左側淡色受光邊 | 全劇操偶線 | 程式產生（review/G4/art/scripts/make_string_tex_v02.py）；G4 關卡決定：去掉規則斜向扭絞紋（REVIEW.md G4 關卡決定） | 原創（程式產生） | 沿線亮度自相關（週期 8–14 px）0.133（v01 為 0.974）；對照圖 review/G4/art/string_tex_v01_v02_4x.png；舞台 ΔL* 於 G5 驗收包重量 | v02 |
+| assets/final/tex-string-ring_v01.png | 紙環貼圖（128×128，透明） | 阿樂叔叔 | 圓環：外深灰細線＋白紙芯邊＋淡灰紙環身＋內深灰細線，中間透明 | 同上 | 程式產生（make_string_tex.py） | 原創（程式產生） | 不是矩形帶、鉚釘或扁板；建議直徑 0.103 世界單位（中景約 19 px） | v01 |
+| assets/final/rig/ale_attach_v05.json | 操偶線扣點 v05 | 阿樂叔叔 | 腕背、肘外、膝前扣點內移，整個紙環在肢體剪影內（離外形 ≥ 26.5 母版 px） | a2_c002、a2_c004 | ale_attach_v05.py | 原創（程式產生） | 六個 a2 姿勢紙環都在剪影內（review/G4/art/ale_attach_v05_check.json、ale_a2_poses_v05.png） | v05 |
+| assets/final/rig/chr-ale_forearm-{l,r}_v05.png、-outline_v05.png | 分件：前臂（透明） | 阿樂叔叔 | 移除切件帶進來的襯衫碎片（左 403 px、右 1217 px）、補 3 px 深棕線稿、膚色區補紙紋 | a2_c001–a2_c004 | assets/final/rig 同名 v04 → fix_forearms_v05.py | 使用者 ChatGPT 方案生成（母版）＋程式修整 | 尺寸、樞紐不變；前後對照 review/G4/art/forearm_fix_v05.png | v05 |
+| assets/final/rig/chr-ale_head-greet_v05.png、-outline_v05.png | 替換頭（透明） | 阿樂叔叔 | X2 想打招呼：一般頭的微笑＋眉毛上抬 9 px（外端再抬 2 px） | a2_c002（揮手意圖） | assets/final/rig/chr-ale_head_v04.png → make_ale_greet_head.py（不重新生成） | 使用者 ChatGPT 方案生成（母版）＋程式修整 | 只動眉毛 1698 px；臉型、膚色、髮型不變（review/G4/art/ale_head_greet_v05.png） | v05 |
+| assets/final/rig/ale_rig_v05.json | 分件資料 v05 | 阿樂叔叔 | 同 v04，前臂換 v05、加替換部件 head_greet | a2_c001–a2_c004 | ale_attach_v05.py、make_ale_greet_head.py | 原創（程式產生） | JSON id 仍是 rig/ale_rig | v05 |
+| assets/final/face/{xiaoqing,xiaoyu,ale}/chr-<角色>_eyes_closed_v02.png＋face_v02.json | 臉部換片：閉眼 | 小晴、小宇、阿樂叔叔 | 中性閉眼（往下彎的眼皮線），取代 v01 向上拱的笑眼 | a2_c002、a2_c004（眨眼） | build_faces_v05.py（build_faces.py 加 closed_curve 參數） | 使用者 ChatGPT 方案生成（原圖）＋程式繪製 | 其餘換片沿用 v01；review/G4/art/face_sheet_v05.png | v02 |
+| assets/final/bg-workshop-back_v03.jpg | 景片：後牆（不透明 2964×1415） | 燈籠工作室 | 只把最下方踢腳板（45 px）由偏橘 #DFB683 一帶提亮成淺木色 #F0DEC0，上緣留切口線 | a0_c001、a2_c001–a2_c012 | assets/final/bg-workshop-back_v02.jpg → make_back_v03.py | 使用者 ChatGPT 方案生成＋程式修整 | 開幕 5.30 s 小晴量測區投影 v2 亮度預估 0.42→0.55（wall_v03.json；正式數據待重擷取）；review/G4/art/wall_v03_compare.png | v03 |
+| assets/final/ui/ui-speaker_{narrator,ale,xiaoqing,xiaoyu}_v01.png | 字幕說話者小頭像（128×128 透明圓形徽章） | 旁白、阿樂叔叔、小晴、小宇 | 旁白＝未點亮的和紙燈籠（程式畫）；角色＝從正式母版裁頭肩 | 全劇字幕（v1.2 第 15.3 節） | make_speaker_icons.py | 原創（程式產生）／使用者 ChatGPT 方案生成（母版裁切） | 圖中無字；字幕框深底上與投影 v2 都清楚（review/G4/art/speaker_icons_v01.png）；是否採用由主線決定 | v01 |
+| assets/generated/chr-xiaoqing_pose-watch_v05.png → assets/final/chr-xiaoqing_pose-watch_v05.png | 表演姿勢圖（透明；生成 1024×1536 → 裁成 544×1520） | 小晴 | watch：3/4 側身朝畫面左、手輕扶吊帶、抬頭注視阿樂、微笑（取代 a2_c002 開場的正面立正母版） | a2_c002 開場 | Codex image_gen（pose_xq_watch_v05，第 1 次生成、未修改；附 review/G2a/S4.png＋assets/generated/chr-xiaoqing_master_v04.png）；吊帶褲 L* 39.0 → recolor_garment 同色相調到 37.0（同 D-G2-06）；process_xq_v05.py 裁邊、alpha 254→255 | 使用者 ChatGPT 方案生成 | 無文字（筆記本封面空白）、星星髮夾摺痕清楚；放進 a2_c002 實際畫面吊帶褲對背景 3.42:1（投影 v2，review/G4/art/xq_v05_stage_check.png） | v05 |
+| assets/generated/chr-xiaoqing_pose-palm_v05.png → assets/final/chr-xiaoqing_pose-palm_v05.png | 表演姿勢圖（透明；846×1517） | 小晴 | palm：「叔叔，小心！」伸出手掌示意（掌心向外、手指併攏、手在胸口高度，沒有指人）、另一手在胸前、擔心叫喚的圓嘴 | a2_c002（a2_c002_02 句，≤1.5 秒後換回 worried） | 同上（pose_xq_palm_v05）；吊帶褲 L* 38.7 → 37.1 | 使用者 ChatGPT 方案生成 | 無文字；不靠近、不碰阿樂；3.48:1 | v05 |
+| assets/generated/chr-xiaoqing_pose-worried_v05.png → assets/final/chr-xiaoqing_pose-worried_v05.png | 表演姿勢圖（透明；528×1468） | 小晴 | worried：雙手輕握在胸前、3/4 側身朝畫面左、擔心看著阿樂（不指人） | a2_c002 喊完之後、a2_c004 全段 | 同上（pose_xq_worried_v05）；吊帶褲 L* 38.6 → 37.0 | 使用者 ChatGPT 方案生成 | 無文字；3.44:1 | v05 |
+| assets/final/face/xiaoqing/chr-xiaoqing_{watch,palm,worried}-{mouth_closed,mouth_half,mouth_open,mouth_round,mouth_worried,eyes_open,eyes_half,eyes_closed}_v01.png（watch 另有 mouth_smile）＋face-{watch,palm,worried}_v01.json＋face_v03.json | 臉部換片（透明蓋片） | 小晴 | 三張新姿勢各 8–9 片（閉眼一律中性閉眼）；face_v03.json＝引擎原生 FaceConfig（perPose：reach、watch、palm、worried；stand 照舊用退路換片） | a2_c002、a2_c004 | build_faces_xq_v05.py（眼、嘴位置手量：review/G4/art/xq_v05_face_cfg.json） | 使用者 ChatGPT 方案生成（原圖）＋程式繪製 | 只改眼、嘴框內（review/G4/art/face_sheet_xq_v05.png）；現有引擎 build 煙霧測試：小晴 watch／palm／worried＝正式換片、阿樂 head_greet＝退路換片，無錯誤 | v01／v03 |
+| assets/final/g4_manifest.json | 素材清單（就地更新到 v05） | G4 代表鏡頭 | 後牆改 v03、rig 改 v05、新增紙繩／紙環貼圖、說話者小頭像、小晴三張新姿勢；新增 string_render、round1_art、characters.xiaoqing（cast.ts 會用它覆寫小晴的立牌姿勢表，預設姿勢仍是 stand） | 片頭、a2_c002、a2_c004、片尾 | build_manifest_v05.py | 原創（程式產生） | — | v05 |
+
+## G4 修正第 2 輪美術（2026-10-21 第 2 天，美術代理）
+
+對應 G4 第 2 輪問題 1、5、9（兩眼同閉）與 8（米白紙環）。舊檔全部保留不覆寫；圖像 id 不含版本號，`tools/pack.mjs` 自動取最新版（已用 `node tools/pack.mjs --out <暫存>` 確認選到下列新檔）。沒有新生成圖（不需要 image_gen），全部是以原圖局部填補＋程式繪製。腳本在 review/G4/art/scripts/；投影模擬在 review/G4/art/sim/。引擎介面見 assets/final/rig/README.md 第 10 節、g4_manifest.json 的 `round2_art`。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/face/xiaoqing/chr-xiaoqing_eyes_half_v02.png、chr-xiaoqing_eyes_closed_v03.png | 臉部換片：半閉、閉眼（reach 姿勢頭層） | 小晴 | 兩眼同步：閉眼＝近乎平直、略往下彎的中性閉眼線（不是笑眼）；半閉＝上半眼改眼皮 | a2_c002、a2_c004（眨眼） | build_faces_r2.py（chr-xiaoqing_pose-reach-worried_v04 原圖局部填補＋程式繪製；取代 v01／v02 的單眼閉合） | 使用者 ChatGPT 方案生成（原圖）＋程式繪製 | 每隻眼原本眼白／眼珠殘留 ≤0.3%、閉眼線 139／180 px（blink_check_r2.json）；review/G4/art/face_sheet_v06.png | v02／v03 |
+| assets/final/face/xiaoqing/chr-xiaoqing_{watch,palm,worried}-eyes_half_v02.png、-eyes_closed_v02.png | 臉部換片：半閉、閉眼（三張新姿勢） | 小晴 | 同上；修正第 1 輪畫面左側那隻眼沒閉（舞台上像眨單眼） | a2_c002、a2_c004 | build_faces_r2.py（chr-xiaoqing_pose-{watch,palm,worried}_v05 原圖） | 使用者 ChatGPT 方案生成（原圖）＋程式繪製 | 兩眼殘留皆 0%、閉眼線 103–186 px；投影 v2 下閉眼線對皮膚約 5.6:1；review/G4/art/face_sheet_xq_v06.png、sim/face_sheet_xq_v06_stress_sheet.png | v02 |
+| assets/final/face/xiaoyu/chr-xiaoyu_eyes_half_v02.png、chr-xiaoyu_eyes_closed_v03.png | 臉部換片：半閉、閉眼 | 小宇 | 兩眼同步（左眼不再只剩淡化殘影）；眼鏡框保留不蓋 | a2_c002、a2_c004 | build_faces_r2.py（chr-xiaoyu_pose-stepback-surprised_v04 原圖） | 使用者 ChatGPT 方案生成（原圖）＋程式繪製 | 兩眼殘留 0%、閉眼線 115／147 px；投影 v2 約 6.5:1；face_sheet_v06.png | v02／v03 |
+| assets/final/face/xiaoqing/face_v04.json、face-{watch,palm,worried}_v02.json；assets/final/face/xiaoyu/face_v03.json | 臉部換片設定 | 小晴、小宇 | face_v04＝引擎原生 FaceConfig（perPose 與 v03 相同，只更新紀錄）；其餘為素材代理格式，換成新檔名 | a2_c002、a2_c004 | build_faces_r2.py | 原創（程式產生） | 錨點、尺寸、圖像 id 不變 | v04／v02／v03 |
+| assets/final/tex-string-ring_v02.png | 紙環貼圖（128×128，透明） | 阿樂叔叔 | 米白紙環：紙面 sRGB≈(251,242,222)、紙紋、左下紙帶接口、暖深棕描邊、右下單側厚紙陰影；沒有金屬漸層或高光 | a2_c002、a2_c004、a8_c002 | make_ring_tex_v02.py（程式產生；取代灰色像墊圈的 v01） | 原創（程式產生） | 貼圖紙面 luma 242、色相 41.6°、彩度 0.115；換到 G4 擷取影格的示意（light 1.0）環身 luma 中位數 238、最低 227（v01 擷取 194、彩度 0.074）；review/G4/art/ring_crops_v02_preview.png、ring_tex_v02.json。正式量測待引擎重擷取 | v02 |
+| assets/final/g4_manifest.json | 素材清單（就地更新到 v06） | G4 代表鏡頭 | tex-string-ring 改指 v02；新增 round2_art、string_render.ring | a2_c002、a2_c004、a8_c002 | build_manifest_r2.py | 原創（程式產生） | — | v06 |

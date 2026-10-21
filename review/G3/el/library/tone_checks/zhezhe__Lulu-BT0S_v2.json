@@ -1,0 +1,577 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "zhezhe",
+ "role_zh": "折折",
+ "cand": "zhezhe_Lulu-BT0S",
+ "model": "eleven_multilingual_v2",
+ "line": "a0_c003_01",
+ "voice": "Lulu - Cute Little Witch ",
+ "整句（替身字，正式管線）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v2__a0_c003_01.wav",
+  "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是知等節今年的主燈是找著我的樣子做的",
+   "whisper_spans": [
+    [
+     1.12,
+     1.4
+    ],
+    [
+     1.4,
+     1.66
+    ],
+    [
+     1.66,
+     2.04
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    141,
+    469
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 1.355,
+    "t1": 1.465,
+    "mean_hz": 253.9,
+    "start_hz": 258.7,
+    "end_hz": 242.5,
+    "min_hz": 241.3,
+    "min_pos": 0.82,
+    "end_over_start": 0.937,
+    "end_over_min": 1.005,
+    "contour_hz_20ms": [
+     264,
+     254,
+     260,
+     261,
+     250,
+     241
+    ]
+   },
+   "燈": {
+    "t0": 1.535,
+    "t1": 1.795,
+    "mean_hz": 191.8,
+    "start_hz": 226.7,
+    "end_hz": 165.8,
+    "min_hz": 165.1,
+    "min_pos": 1.0,
+    "end_over_start": 0.731,
+    "end_over_min": 1.004,
+    "contour_hz_20ms": [
+     258,
+     227,
+     219,
+     209,
+     198,
+     188,
+     179,
+     179,
+     181,
+     179,
+     179,
+     174,
+     171,
+     165
+    ]
+   },
+   "節": {
+    "t0": 1.905,
+    "t1": 2.115,
+    "mean_hz": 203.5,
+    "start_hz": 194.1,
+    "end_hz": 222.6,
+    "min_hz": 194.1,
+    "min_pos": 0.1,
+    "end_over_start": 1.147,
+    "end_over_min": 1.147,
+    "contour_hz_20ms": [
+     198,
+     194,
+     195,
+     195,
+     195,
+     197,
+     199,
+     204,
+     212,
+     218,
+     224
+    ]
+   },
+   "燈_end_over_start": 0.731,
+   "燈_over_紙_mean": 0.755,
+   "節_end_over_min": 1.147,
+   "節_min_pos": 0.1,
+   "燈_一聲": false,
+   "節_二聲": true,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是指等節今年的主燈是找著我的樣子做的",
+    "large-v3-turbo": "明天就是知等節今年的主燈是找著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "整句（原字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v2__tone_a0_c003_01_orig.wav",
+  "synth_text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+  "f0": {
+   "whisper_turbo_words": "明天就是枝等節今年的主燈是找著我的樣子做的",
+   "whisper_spans": [
+    [
+     1.12,
+     1.46
+    ],
+    [
+     1.46,
+     1.62
+    ],
+    [
+     1.62,
+     2.04
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    141,
+    469
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 1.355,
+    "t1": 1.465,
+    "mean_hz": 252.3,
+    "start_hz": 249.3,
+    "end_hz": 242.4,
+    "min_hz": 241.9,
+    "min_pos": 0.82,
+    "end_over_start": 0.972,
+    "end_over_min": 1.002,
+    "contour_hz_20ms": [
+     245,
+     254,
+     260,
+     260,
+     250,
+     242
+    ]
+   },
+   "燈": {
+    "t0": 1.535,
+    "t1": 1.795,
+    "mean_hz": 191.6,
+    "start_hz": 226.7,
+    "end_hz": 165.8,
+    "min_hz": 163.9,
+    "min_pos": 1.0,
+    "end_over_start": 0.731,
+    "end_over_min": 1.011,
+    "contour_hz_20ms": [
+     258,
+     227,
+     219,
+     209,
+     198,
+     188,
+     179,
+     179,
+     181,
+     179,
+     179,
+     174,
+     171,
+     165
+    ]
+   },
+   "節": {
+    "t0": 1.905,
+    "t1": 2.115,
+    "mean_hz": 203.8,
+    "start_hz": 194.1,
+    "end_hz": 222.6,
+    "min_hz": 194.0,
+    "min_pos": 0.05,
+    "end_over_start": 1.147,
+    "end_over_min": 1.147,
+    "contour_hz_20ms": [
+     205,
+     194,
+     195,
+     195,
+     195,
+     197,
+     199,
+     204,
+     212,
+     218,
+     224
+    ]
+   },
+   "燈_end_over_start": 0.731,
+   "燈_over_紙_mean": 0.759,
+   "節_end_over_min": 1.147,
+   "節_min_pos": 0.05,
+   "燈_一聲": false,
+   "節_二聲": true,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "明天就是隻等節今年的主燈是找著我的樣子做的",
+    "large-v3-turbo": "明天就是枝等節今年的主燈是找著我的樣子做的"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v2__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "直燈節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.28
+    ],
+    [
+     0.28,
+     0.52
+    ],
+    [
+     0.52,
+     0.78
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    157,
+    522
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.29,
+    "mean_hz": 289.1,
+    "start_hz": 272.2,
+    "end_hz": 268.7,
+    "min_hz": 269.8,
+    "min_pos": 1.0,
+    "end_over_start": 0.987,
+    "end_over_min": 0.996,
+    "contour_hz_20ms": [
+     272,
+     298,
+     308,
+     291,
+     269
+    ]
+   },
+   "燈": {
+    "t0": 0.37,
+    "t1": 0.59,
+    "mean_hz": 339.0,
+    "start_hz": 369.1,
+    "end_hz": 261.9,
+    "min_hz": 259.9,
+    "min_pos": 1.0,
+    "end_over_start": 0.71,
+    "end_over_min": 1.008,
+    "contour_hz_20ms": [
+     368,
+     370,
+     366,
+     364,
+     364,
+     359,
+     351,
+     344,
+     335,
+     314,
+     264,
+     260
+    ]
+   },
+   "節": {
+    "t0": 0.65,
+    "t1": 0.86,
+    "mean_hz": 225.2,
+    "start_hz": 240.6,
+    "end_hz": 227.6,
+    "min_hz": 214.6,
+    "min_pos": 0.48,
+    "end_over_start": 0.946,
+    "end_over_min": 1.06,
+    "contour_hz_20ms": [
+     247,
+     240,
+     234,
+     225,
+     218,
+     214,
+     216,
+     217,
+     219,
+     223,
+     228
+    ]
+   },
+   "燈_end_over_start": 0.71,
+   "燈_over_紙_mean": 1.173,
+   "節_end_over_min": 1.06,
+   "節_min_pos": 0.48,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.0
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "直燈節",
+    "large-v3-turbo": "直燈節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v2__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "直燈節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.28
+    ],
+    [
+     0.28,
+     0.52
+    ],
+    [
+     0.52,
+     0.78
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    156,
+    520
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.29,
+    "mean_hz": 289.7,
+    "start_hz": 272.4,
+    "end_hz": 273.5,
+    "min_hz": 272.1,
+    "min_pos": 1.0,
+    "end_over_start": 1.004,
+    "end_over_min": 1.005,
+    "contour_hz_20ms": [
+     272,
+     298,
+     308,
+     292,
+     273
+    ]
+   },
+   "燈": {
+    "t0": 0.37,
+    "t1": 0.59,
+    "mean_hz": 339.1,
+    "start_hz": 369.0,
+    "end_hz": 262.2,
+    "min_hz": 260.3,
+    "min_pos": 1.0,
+    "end_over_start": 0.711,
+    "end_over_min": 1.007,
+    "contour_hz_20ms": [
+     368,
+     370,
+     366,
+     365,
+     364,
+     359,
+     351,
+     344,
+     335,
+     314,
+     264,
+     260
+    ]
+   },
+   "節": {
+    "t0": 0.65,
+    "t1": 0.86,
+    "mean_hz": 224.7,
+    "start_hz": 238.2,
+    "end_hz": 227.6,
+    "min_hz": 214.7,
+    "min_pos": 0.48,
+    "end_over_start": 0.955,
+    "end_over_min": 1.06,
+    "contour_hz_20ms": [
+     235,
+     240,
+     234,
+     225,
+     219,
+     214,
+     216,
+     217,
+     219,
+     223,
+     228
+    ]
+   },
+   "燈_end_over_start": 0.711,
+   "燈_over_紙_mean": 1.171,
+   "節_end_over_min": 1.06,
+   "節_min_pos": 0.48,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.0
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "不一致（需複查）",
+    "large-v3-turbo": "不一致（需複查）"
+   },
+   "hyp_by_model": {
+    "small": "直燈節",
+    "large-v3-turbo": "直燈節"
+   },
+   "both_models_ok": false
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/zhezhe/zhezhe__Lulu-BT0S_v2__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "直燈節",
+   "whisper_spans": [
+    [
+     0.0,
+     0.28
+    ],
+    [
+     0.28,
+     0.52
+    ],
+    [
+     0.52,
+     0.78
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    156,
+    520
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.21,
+    "t1": 0.29,
+    "mean_hz": 289.8,
+    "start_hz": 273.1,
+    "end_hz": 273.6,
+    "min_hz": 272.0,
+    "min_pos": 1.0,
+    "end_over_start": 1.002,
+    "end_over_min": 1.006,
+    "contour_hz_20ms": [
+     273,
+     298,
+     308,
+     292,
+     274
+    ]
+   },
+   "燈": {
+    "t0": 0.37,
+    "t1": 0.59,
+    "mean_hz": 339.1,
+    "start_hz": 369.1,
+    "end_hz": 262.1,
+    "min_hz": 260.1,
+    "min_pos": 1.0,
+    "end_over_start": 0.71,
+    "end_over_min": 1.008,
+    "contour_hz_20ms": [
+     368,
+     370,
+     366,
+     364,
+     364,
+     359,
+     351,
+     344,
+     335,
+     314,
+     264,
+     260
+    ]
+   },
+   "節": {
+    "t0": 0.65,
+    "t1": 0.86,
+    "mean_hz": 224.7,
+    "start_hz": 238.4,
+    "end_hz": 227.5,
+    "min_hz": 214.6,
+    "min_pos": 0.48,
+    "end_over_start": 0.954,
+    "end_over_min": 1.06,
+    "contour_hz_20ms": [
+     237,
+     240,
+     234,
+     225,
+     218,
+     214,
+     216,
+     217,
+     219,
+     223,
+     228
+    ]
+   },
+   "燈_end_over_start": 0.71,
+   "燈_over_紙_mean": 1.17,
+   "節_end_over_min": 1.06,
+   "節_min_pos": 0.48,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "直燈節",
+    "large-v3-turbo": "直燈節"
+   }
+  }
+ }
+}

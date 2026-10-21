@@ -23,3 +23,19 @@ review/G4/pack/keyframes_4x3/
 review/**/*.mp4
 review/G4/pack/audio/*.wav
 audio/vo/_raw/
+# ElevenLabs 全劇版工作檔（2026-10-21）：每次嘗試的母帶可由 _raw 原始檔＋tools/vo_el_prod.py 重建；
+# audio/vo_el/vo_*_el01.wav 已複製成正式 audio/vo/*_v04.wav（版本庫只留正式檔與 _raw 原始付費檔）
+audio/vo_el/_attempts/
+audio/vo_el/vo_*_el01.wav
+audio/vo_el/*.lock
+# 驗收用的試聽與比較音檔（驗收包留在磁碟）
+review/G3/el/**/*.wav
+review/G3/el/**/*.mp3
+# 驗收代理的逐格截圖與條帶（數量多、單張 1–2 MB；由 tools/g4_review_pack.mjs 或驗收代理重產；留在磁碟供 REVIEW.md 引用）
+review/G4/qa/**/*.png
+review/G4/qa/**/*.jpg
+review/G4/pack/strip_*/
+review/G4/pack/capture/
+review/G4/pack/blink/
+review/G3/r1/**/*.wav
+review/G3/r2/**/*.wav

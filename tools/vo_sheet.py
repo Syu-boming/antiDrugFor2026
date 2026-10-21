@@ -1,7 +1,8 @@
 """配音波形接觸表：每檔一列（波形＋語音起訖線＋F0 曲線；G4 正式台詞另疊對嘴格）。
 
 用法：tools/.venv/bin/python tools/vo_sheet.py   （需要 matplotlib：以 /opt/anaconda3/bin/python3 執行亦可）
-輸出：review/G3/vo_waveforms_g3.png（G3 試音樣本）、review/G3/vo_waveforms_g4.png（G4 正式台詞＋對嘴）。
+輸出：review/G3/vo_waveforms_g3.png（G3 試音樣本）、review/G3/vo_waveforms_g4.png（G4 正式台詞＋對嘴）、
+      vo_waveforms_g3_r1.png／vo_waveforms_g3_r2.png（第 1／2 輪校準句）、vo_waveforms_r2.png（第 2 輪重建的正式台詞 v03＋對嘴）。
 用途：讓驗收者看得到句頭 120 ms／句尾 250 ms 靜音、句尾是否被截斷、停頓位置、音高範圍與對嘴開合。
 """
 from __future__ import annotations
@@ -85,14 +86,60 @@ def main():
     sheet(items, ROOT / "review/G3/vo_waveforms_g3.png",
           "G3 試音樣本：藍＝波形、橘點＝F0（右軸 60–500 Hz）、綠底＝頭 120 ms／尾 250 ms 靜音區")
     rep = json.loads((ROOT / "audio/vo/build_report.json").read_text("utf-8"))
+    G4_CUES = ("a2_c001", "a2_c002", "a2_c004")
     items = []
     for lid, r in rep.items():
+        if not lid.startswith(G4_CUES):
+            continue
         lip = json.loads((ROOT / r["lipsync"]).read_text("utf-8"))
         m = r["metrics"]
         items.append({"file": r["file"], "seconds": r["seconds"], "speech": [r["speech_start"], r["speech_end"]], "lip": lip,
                       "label": f"{lid} {r['role']}：{r['text']}｜{m['rate_cps']} 字/秒｜F0 {m['f0_median']} Hz｜{m['integrated_lufs']} LUFS"})
     sheet(items, ROOT / "review/G3/vo_waveforms_g4.png",
           "G4 正式台詞：藍＝波形、紅線＝語音起訖、橘點＝F0、青色階梯＝對嘴格（0 閉、1 半開、2 大開、3 圓唇；每秒 12 格）")
+    # G3 修正第 2 輪：重建的正式台詞（v03：葉護理師 8 句、小晴含「品安」3 句）＋對嘴
+    items = []
+    for lid, r in rep.items():
+        if lid.startswith(G4_CUES) or not r["file"].endswith("_v03.wav"):
+            continue
+        lip = json.loads((ROOT / r["lipsync"]).read_text("utf-8"))
+        m = r["metrics"]
+        items.append({"file": r["file"], "seconds": r["seconds"], "speech": [r["speech_start"], r["speech_end"]], "lip": lip,
+                      "label": f"{lid} {r['role']}：{r['text']}｜{r['synthesis'][0].get('rate')}／{r['synthesis'][0].get('pitch')}｜"
+                               f"淨 {m['rate_cps_net']}（驗收者算法 {m['rate_cps_net_r']}）字/秒｜F0 {m['f0_median']} Hz｜{m['integrated_lufs']} LUFS"})
+    if items:
+        sheet(items, ROOT / "review/G3/vo_waveforms_r2.png",
+              "G3 修正第 2 輪正式台詞 v03：藍＝波形、紅線＝語音起訖、橘點＝F0、青色階梯＝對嘴格（0 閉、1 半開、2 大開、3 圓唇；每秒 12 格）")
+    # 修正第 2 輪：各角色同一句校準句（casting.json v03）
+    r2 = json.loads((ROOT / "review/G3/metrics.json").read_text("utf-8")).get("round2", {})
+    items = []
+    for code, r in r2.get("roles", {}).items():
+        f = ROOT / r["calibration_file"]
+        if f.exists():
+            sr, x = read(f)
+            items.append({"file": r["calibration_file"], "seconds": len(x) / sr,
+                          "label": f"{r['role_zh']}｜{r['spec']}｜校準句 {r['calibration_cps']} 字/秒｜校準句 F0 中位 "
+                                   f"{r.get('calibration_f0_median')} Hz｜代表台詞合併 {r['f0_median_pooled']} Hz"})
+    if items:
+        sheet(items, ROOT / "review/G3/vo_waveforms_g3_r2.png",
+              "G3 修正第 2 輪：各角色同一句校準句（今天放學以後，我們一起去廣場看燈籠。）；橘點＝F0（右軸 60–500 Hz）")
+    # G3 修正第 1 輪：每個角色的校準句（同一句）＋ a2_c002_01 修正前後
+    r1 = json.loads((ROOT / "review/G3/metrics.json").read_text("utf-8")).get("round1", {})
+    items = []
+    for code, r in r1.get("roles", {}).items():
+        f = ROOT / r["calibration_file"]
+        if f.exists():
+            sr, x = read(f)
+            items.append({"file": r["calibration_file"], "seconds": len(x) / sr,
+                          "label": f"{r['role_zh']}｜{r['spec']}｜校準句 {r['calibration_cps']} 字/秒｜代表台詞合併 F0 中位 {r['f0_median_pooled']} Hz"})
+    for v in ("v01", "v02"):
+        f = ROOT / f"audio/vo/vo_a2_c002_01_{v}.wav"
+        if f.exists():
+            sr, x = read(f)
+            items.append({"file": str(f.relative_to(ROOT)), "seconds": len(x) / sr, "label": f"a2_c002_01 {v}（修正前後對照）"})
+    if items:
+        sheet(items, ROOT / "review/G3/vo_waveforms_g3_r1.png",
+              "G3 修正第 1 輪：各角色同一句校準句（今天放學以後，我們一起去廣場看燈籠。）與 a2_c002_01 v01／v02；橘點＝F0（右軸 60–500 Hz）")
     print("ok")
 
 

@@ -1,0 +1,190 @@
+{
+ "code": "inviter",
+ "lines": [
+  "a1_c002_02",
+  "a3_c001_03"
+ ],
+ "attempts": 1,
+ "variants": {
+  "AndrewLo_v3": {
+   "voice_id": "jEEldhZPwU4gikRKvJJz",
+   "voice_name": "Andrew Lo",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 1.0,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     4.0,
+     4.4
+    ],
+    "rate_cps_net": [
+     3.5,
+     4.9
+    ],
+    "f0_nominal": 167.0,
+    "f0_hz": [
+     145.0,
+     175.0
+    ]
+   },
+   "lines": {}
+  },
+  "Yu_v3": {
+   "voice_id": "fQj4gJSexpu8RDE2Ii5m",
+   "voice_name": "Yu - Youthful, Energetic and Engaging",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 1.0,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     4.0,
+     4.4
+    ],
+    "rate_cps_net": [
+     3.5,
+     4.9
+    ],
+    "f0_nominal": 167.0,
+    "f0_hz": [
+     145.0,
+     175.0
+    ]
+   },
+   "lines": {}
+  },
+  "Chihiro_v3": {
+   "voice_id": "NIqnuIdrAT3LLSSxN05L",
+   "voice_name": "Chihiro Yoko - Clear, Soothing and Sweet",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 1.0,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     4.0,
+     4.4
+    ],
+    "rate_cps_net": [
+     3.5,
+     4.9
+    ],
+    "f0_nominal": 167.0,
+    "f0_hz": [
+     145.0,
+     175.0
+    ]
+   },
+   "lines": {}
+  },
+  "Jane_v3": {
+   "voice_id": "0Aj540a9UWvQPWdx9Zq4",
+   "voice_name": "Jane - Low, Calm and Slow",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": null,
+    "speed": 1.0,
+    "use_speaker_boost": null
+   },
+   "seed_base": 20261021,
+   "sentence_gap_ms": 400,
+   "segment_mode": "post",
+   "tail_guard": {
+    "mode": "always",
+    "suffix": "……嗯。",
+    "min_pause_ms": 300
+   },
+   "text_mode": "pronounce",
+   "text_subs": {
+    "119": "一一九"
+   },
+   "post": {},
+   "adaptive_speed": {
+    "enabled": false
+   },
+   "targets": {
+    "rate_nominal": [
+     4.0,
+     4.4
+    ],
+    "rate_cps_net": [
+     3.5,
+     4.9
+    ],
+    "f0_nominal": 167.0,
+    "f0_hz": [
+     145.0,
+     175.0
+    ]
+   },
+   "lines": {}
+  }
+ }
+}

@@ -3314,5 +3314,4406 @@
   "subscription_readable": false,
   "budget_rule": "G3 ≤ 剩餘字數 15%；金鑰沒有 user_read 權限查不到剩餘字數，取免費方案 10,000 × 15% = 1,500 為上限",
   "g3_chars_billed": 283
+ },
+ "round1": {
+  "_說明": "G3 修正第 1 輪（2026-10-21，tools/vo_g3_r1.py）。全部用 audio/vo/casting.json v02 參數走正式管線；F0 中位＝該角色代表台詞（3–4 句）全部有聲格合併取中位數（parselmouth，75–700 Hz）；語速比較用同一句校準句「今天放學以後，我們一起去廣場看燈籠。」。半音＝12·log2(F0 比)。聽感一律未驗證。ElevenLabs 本輪計費 0 字元。",
+  "checklist": {
+   "rows": [
+    {
+     "line": "a0_c001_01",
+     "role": "旁白",
+     "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+     "synth_text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。",
+     "check_word": "紙燈節",
+     "spec": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "-14%",
+      "pitch": "-10Hz"
+     },
+     "file": "review/G3/r1/check_a0_c001_01.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+        "hyp": "這裡是小燈證。每年秋天,正上都會辦紙燈節。",
+        "hyp_trad": "這裡是小燈證每年秋天正上都會辦紙燈節",
+        "cer": 0.111,
+        "per": 0.111,
+        "diffs": [
+         {
+          "ref": "鎮",
+          "hyp": "證",
+          "kind": "字不同"
+         },
+         {
+          "ref": "鎮",
+          "hyp": "正",
+          "kind": "字不同"
+         }
+        ],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+        "hyp": "這裡是小燈鎮。每年秋天,鎮上都會辦紙燈節。",
+        "hyp_trad": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+     },
+     "pass_strict": false,
+     "check_words_ok": true
+    },
+    {
+     "line": "a0_c003_01",
+     "role": "折折",
+     "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+     "synth_text": "明天就是紙登結。今年的主燈，是照著我的樣子做的！",
+     "check_word": "紙燈節",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+22%",
+      "pitch": "+90Hz"
+     },
+     "file": "review/G3/r1/check_a0_c003_01.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+        "hyp": "明天就是紙燈節。今年的主燈是照著我的樣子做的。",
+        "hyp_trad": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+        "hyp": "明天就是紙燈節,今年的主燈是照著我的樣子做的。",
+        "hyp_trad": "明天就是紙燈節今年的主燈是照著我的樣子做的",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a0_c003_04",
+     "role": "折折",
+     "text": "沒有骨架，就沒有主燈。紙燈節怎麼辦？",
+     "synth_text": "沒有骨架，就沒有主燈。紙登結怎麼辦？",
+     "check_word": "紙燈節",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+22%",
+      "pitch": "+90Hz"
+     },
+     "file": "review/G3/r1/check_a0_c003_04.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "沒有骨架，就沒有主燈。紙燈節怎麼辦？",
+        "hyp": "沒有骨架,就沒有主燈。只燈節怎麽辦?",
+        "hyp_trad": "沒有骨架就沒有主燈只燈節怎麼辦",
+        "cer": 0.067,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "紙",
+          "hyp": "只",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "同音轉寫（讀音一致）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "沒有骨架，就沒有主燈。紙燈節怎麼辦？",
+        "hyp": "沒有股價就沒有主燈!指燈節怎麼辦?",
+        "hyp_trad": "沒有股價就沒有主燈指燈節怎麼辦",
+        "cer": 0.2,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "骨架",
+          "hyp": "股價",
+          "kind": "同音字（讀音一致）"
+         },
+         {
+          "ref": "紙",
+          "hyp": "指",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "紙燈節",
+          "status": "同音轉寫（讀音一致）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.067,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a0_c002_01",
+     "role": "折折",
+     "text": "喵！大家好，我是折折。",
+     "synth_text": "喵！大家好，我是哲哲。",
+     "check_word": "折折",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+22%",
+      "pitch": "+90Hz"
+     },
+     "file": "review/G3/r1/check_a0_c002_01.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "喵！大家好，我是折折。",
+        "hyp": "喵!大家好,我是哲哲。",
+        "hyp_trad": "喵大家好我是哲哲",
+        "cer": 0.25,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "折折",
+          "hyp": "哲哲",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "折折",
+          "status": "同音轉寫（讀音一致）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "喵！大家好，我是折折。",
+        "hyp": "喵!大家好,我是哲哲。",
+        "hyp_trad": "喵大家好我是哲哲",
+        "cer": 0.25,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "折折",
+          "hyp": "哲哲",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "折折",
+          "status": "同音轉寫（讀音一致）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.25,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a2_c003_02",
+     "role": "旁白",
+     "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+     "synth_text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「桑師煙蛋」。",
+     "check_word": "喪屍煙彈",
+     "spec": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "-14%",
+      "pitch": "-10Hz"
+     },
+     "file": "review/G3/r1/check_a2_c003_02.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+        "hyp": "有一種煙彈,外表像電子煙,裡面卻可能加了毒品,有人叫它喪屍煙彈。",
+        "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙彈",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "喪屍煙彈",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "喪屍",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+        "hyp": "有一種煙蛋,外表像電子煙,裡面卻可能加了毒品,有人叫它喪屍煙蛋。",
+        "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋",
+        "cer": 0.071,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "彈",
+          "hyp": "蛋",
+          "kind": "同音字（讀音一致）"
+         },
+         {
+          "ref": "彈",
+          "hyp": "蛋",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "喪屍煙彈",
+          "status": "同音轉寫（讀音一致）"
+         },
+         {
+          "word": "喪屍",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a1_c004_06",
+     "role": "品安",
+     "text": "你們先走，我把燈籠收好就來。",
+     "synth_text": "你們先走，我把登籠收好就來。",
+     "check_word": "燈籠",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "-10%",
+      "pitch": "-10Hz"
+     },
+     "file": "review/G3/r1/check_a1_c004_06.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "你們先走，我把燈籠收好就來。",
+        "hyp": "你們先走,我把燈籠收好就來。",
+        "hyp_trad": "你們先走我把燈籠收好就來",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "燈籠",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "你們先走，我把燈籠收好就來。",
+        "hyp": "你們先走,我把燈籠收好就來。",
+        "hyp_trad": "你們先走我把燈籠收好就來",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "燈籠",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a0_c002_02",
+     "role": "折折",
+     "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。",
+     "synth_text": "我是登籠紙摺成的貓，是阿勒叔叔把我摺出來的喔。",
+     "check_word": "燈籠",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+22%",
+      "pitch": "+90Hz"
+     },
+     "file": "review/G3/r1/check_a0_c002_02.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。",
+        "hyp": "我是登龍幾折成的貓,是阿樂叔叔把我折出來的哦。",
+        "hyp_trad": "我是登龍幾折成的貓是阿樂叔叔把我折出來的哦",
+        "cer": 0.286,
+        "per": 0.095,
+        "diffs": [
+         {
+          "ref": "燈籠紙摺",
+          "hyp": "登龍幾折",
+          "kind": "字不同"
+         },
+         {
+          "ref": "摺",
+          "hyp": "折",
+          "kind": "同音字（讀音一致）"
+         },
+         {
+          "ref": "喔",
+          "hyp": "哦",
+          "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "燈籠",
+          "status": "同音轉寫（讀音一致）"
+         },
+         {
+          "word": "阿樂",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。",
+        "hyp": "我是燈籠指折成的貓,是阿樂叔叔把我折出來的喔!",
+        "hyp_trad": "我是燈籠指折成的貓是阿樂叔叔把我折出來的喔",
+        "cer": 0.143,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "紙摺",
+          "hyp": "指折",
+          "kind": "同音字（讀音一致）"
+         },
+         {
+          "ref": "摺",
+          "hyp": "折",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "燈籠",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "阿樂",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.143,
+      "both_models_diff": [],
+      "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+     },
+     "pass_strict": false,
+     "check_words_ok": true
+    },
+    {
+     "line": "t_lese_01",
+     "role": "旁白",
+     "text": "折折把地上的垃圾撿起來，丟進垃圾桶。",
+     "synth_text": "哲哲把地上的垃圾撿起來，丟進垃圾桶。",
+     "check_word": "垃圾",
+     "spec": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "-14%",
+      "pitch": "-10Hz"
+     },
+     "file": "review/G3/r1/check_t_lese_01.wav",
+     "in_script": false,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "折折把地上的垃圾撿起來，丟進垃圾桶。",
+        "hyp": "折折把地上的垃圾撿起來,丟進垃圾桶。",
+        "hyp_trad": "折折把地上的垃圾撿起來丟進垃圾桶",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "折折",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "垃圾",
+          "status": "轉寫一致"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "折折把地上的垃圾撿起來，丟進垃圾桶。",
+        "hyp": "折折把地上的垃圾撿起來,丟進垃圾桶。",
+        "hyp_trad": "折折把地上的垃圾撿起來丟進垃圾桶",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "折折",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "垃圾",
+          "status": "轉寫一致"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a3_c004_02",
+     "role": "折折",
+     "text": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+     "synth_text": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+     "check_word": "不碰、不試",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+22%",
+      "pitch": "+90Hz"
+     },
+     "file": "review/G3/r1/check_a3_c004_02.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+        "hyp": "再加上口訣和動作 不碰不是先離開找大人。",
+        "hyp_trad": "再加上口訣和動作不碰不是先離開找大人",
+        "cer": 0.056,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "試",
+          "hyp": "是",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "和",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "不碰",
+          "status": "未驗證（變調轉寫看不出）"
+         },
+         {
+          "word": "不試",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+        "hyp": "再加上口訣和動作,不碰不適,先離開找大人。",
+        "hyp_trad": "再加上口訣和動作不碰不適先離開找大人",
+        "cer": 0.056,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "試",
+          "hyp": "適",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "和",
+          "status": "轉寫一致"
+         },
+         {
+          "word": "不碰",
+          "status": "未驗證（變調轉寫看不出）"
+         },
+         {
+          "word": "不試",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.056,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a3_c002_02",
+     "role": "小宇",
+     "text": "不用，我不試。我先離開。",
+     "synth_text": "不用，我不試。我先離開。",
+     "check_word": "不試",
+     "spec": {
+      "voice": "zh-TW-HsiaoYuNeural",
+      "rate": "+12%",
+      "pitch": "+20Hz"
+     },
+     "file": "review/G3/r1/check_a3_c002_02.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "不用，我不試。我先離開。",
+        "hyp": "不用,我不是。我先離開。",
+        "hyp_trad": "不用我不是我先離開",
+        "cer": 0.111,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "試",
+          "hyp": "是",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "不試",
+          "status": "未驗證（變調轉寫看不出）"
+         },
+         {
+          "word": "不用",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "不用，我不試。我先離開。",
+        "hyp": "不用,我不是。我先離開。",
+        "hyp_trad": "不用我不是我先離開",
+        "cer": 0.111,
+        "per": 0.0,
+        "diffs": [
+         {
+          "ref": "試",
+          "hyp": "是",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "不試",
+          "status": "未驗證（變調轉寫看不出）"
+         },
+         {
+          "word": "不用",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.111,
+      "both_models_diff": [],
+      "verdict": "兩個模型都轉寫一致或只有同音字"
+     },
+     "pass_strict": true,
+     "check_words_ok": true
+    },
+    {
+     "line": "a6_c003_04",
+     "role": "旁白",
+     "text": "二，陪他一起找可信任的大人。",
+     "synth_text": "二，陪他一起找可信任的大人。",
+     "check_word": "一起",
+     "spec": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "-14%",
+      "pitch": "-10Hz"
+     },
+     "file": "review/G3/r1/check_a6_c003_04.wav",
+     "in_script": true,
+     "required": true,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "二，陪他一起找可信任的大人。",
+        "hyp": "2.陪他一起找可信願的大人。",
+        "hyp_trad": "2陪他一起找可信願的大人",
+        "cer": 0.083,
+        "per": 0.083,
+        "diffs": [
+         {
+          "ref": "任",
+          "hyp": "願",
+          "kind": "字不同"
+         }
+        ],
+        "checks": [
+         {
+          "word": "一起",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "二，陪他一起找可信任的大人。",
+        "hyp": "2、陪他一起找可信任的大人。",
+        "hyp_trad": "2陪他一起找可信任的大人",
+        "cer": 0.0,
+        "per": 0.0,
+        "diffs": [],
+        "checks": [
+         {
+          "word": "一起",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.0,
+      "cer_min": 0.0,
+      "both_models_diff": [],
+      "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+     },
+     "pass_strict": false,
+     "check_words_ok": true
+    },
+    {
+     "line": "a6_c006_01",
+     "role": "小晴",
+     "text": "品安，我在乎你，我們一起找人幫忙。",
+     "synth_text": "品安，我在乎你，我們一起找人幫忙。",
+     "check_word": "一起（附帶：人名品安）",
+     "spec": {
+      "voice": "zh-TW-HsiaoChenNeural",
+      "rate": "+0%",
+      "pitch": "+56Hz"
+     },
+     "file": "review/G3/r1/check_a6_c006_01.wav",
+     "in_script": true,
+     "required": false,
+     "transcript": {
+      "models": {
+       "small": {
+        "ref": "品安，我在乎你，我們一起找人幫忙。",
+        "hyp": "平安,我在呼你,我們一起找人幫忙。",
+        "hyp_trad": "平安我在呼你我們一起找人幫忙",
+        "cer": 0.143,
+        "per": 0.071,
+        "diffs": [
+         {
+          "ref": "品",
+          "hyp": "平",
+          "kind": "字不同"
+         },
+         {
+          "ref": "乎",
+          "hyp": "呼",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "一起",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       },
+       "large-v3-turbo": {
+        "ref": "品安，我在乎你，我們一起找人幫忙。",
+        "hyp": "平安,我在呼你,我們一起找人幫忙。",
+        "hyp_trad": "平安我在呼你我們一起找人幫忙",
+        "cer": 0.143,
+        "per": 0.071,
+        "diffs": [
+         {
+          "ref": "品",
+          "hyp": "平",
+          "kind": "字不同"
+         },
+         {
+          "ref": "乎",
+          "hyp": "呼",
+          "kind": "同音字（讀音一致）"
+         }
+        ],
+        "checks": [
+         {
+          "word": "一起",
+          "status": "未驗證（變調轉寫看不出）"
+         }
+        ]
+       }
+      },
+      "per_min": 0.071,
+      "cer_min": 0.143,
+      "both_models_diff": [
+       "品"
+      ],
+      "verdict": "需複查：兩個模型都在「品」出現非同音差異"
+     },
+     "pass_strict": false,
+     "check_words_ok": true
+    }
+   ],
+   "required_check_words_ok_both_models": true,
+   "required_all_pass_strict": false,
+   "required_failing_strict": [
+    "a0_c001_01",
+    "a0_c002_02",
+    "a6_c003_04"
+   ]
+  },
+  "roles": {
+   "narrator": {
+    "role_zh": "旁白",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-14%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 185.6,
+    "f0_p10": 151.6,
+    "f0_p90": 253.7,
+    "rate_cps_mean": 3.62,
+    "calibration_cps": 4.01,
+    "calibration_file": "review/G3/r1/narrator_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c004_01",
+      "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+      "file": "review/G3/r1/narrator_a2_c004_01.wav",
+      "f0_median": 197.4,
+      "rate_cps": 4.17,
+      "rate_cps_net": 4.48,
+      "rate_cps_net_r": 4.5,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -2.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c004_02",
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "file": "review/G3/r1/narrator_a2_c004_02.wav",
+      "f0_median": 185.5,
+      "rate_cps": 3.38,
+      "rate_cps_net": 4.69,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c001_01",
+      "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+      "file": "review/G3/r1/narrator_a0_c001_01.wav",
+      "f0_median": 198.2,
+      "rate_cps": 3.16,
+      "rate_cps_net": 4.1,
+      "rate_cps_net_r": 4.13,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -2.5,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c003_02",
+      "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+      "file": "review/G3/r1/narrator_a2_c003_02.wav",
+      "f0_median": 178.1,
+      "rate_cps": 3.75,
+      "rate_cps_net": 4.33,
+      "rate_cps_net_r": 4.33,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -3.0,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "narrator_required": {
+    "role_zh": "旁白（必要旁白）",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-8%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 185.5,
+    "f0_p10": 151.7,
+    "f0_p90": 261.4,
+    "rate_cps_mean": 3.38,
+    "calibration_cps": 4.29,
+    "calibration_file": "review/G3/r1/narrator_required_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c004_02",
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "file": "review/G3/r1/narrator_required_a2_c004_02.wav",
+      "f0_median": 185.5,
+      "rate_cps": 3.38,
+      "rate_cps_net": 4.69,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "zhezhe": {
+    "role_zh": "折折",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+22%",
+     "pitch": "+90Hz"
+    },
+    "f0_median_pooled": 294.0,
+    "f0_p10": 227.5,
+    "f0_p90": 382.8,
+    "rate_cps_mean": 3.92,
+    "calibration_cps": 4.51,
+    "calibration_file": "review/G3/r1/zhezhe_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_03",
+      "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "file": "review/G3/r1/zhezhe_a2_c001_03.wav",
+      "f0_median": 296.0,
+      "rate_cps": 4.36,
+      "rate_cps_net": 4.9,
+      "rate_cps_net_r": 4.92,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c003_01",
+      "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+      "file": "review/G3/r1/zhezhe_a0_c003_01.wav",
+      "f0_median": 294.0,
+      "rate_cps": 4.38,
+      "rate_cps_net": 4.98,
+      "rate_cps_net_r": 4.98,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c002_01",
+      "text": "喵！大家好，我是折折。",
+      "file": "review/G3/r1/zhezhe_a0_c002_01.wav",
+      "f0_median": 304.5,
+      "rate_cps": 3.11,
+      "rate_cps_net": 4.0,
+      "rate_cps_net_r": 4.02,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c004_02",
+      "text": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+      "file": "review/G3/r1/zhezhe_a3_c004_02.wav",
+      "f0_median": 288.1,
+      "rate_cps": 3.85,
+      "rate_cps_net": 3.85,
+      "rate_cps_net_r": 3.88,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "xiaoqing": {
+    "role_zh": "小晴",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+0%",
+     "pitch": "+56Hz"
+    },
+    "f0_median_pooled": 277.1,
+    "f0_p10": 227.6,
+    "f0_p90": 392.7,
+    "rate_cps_mean": 3.77,
+    "calibration_cps": 4.66,
+    "calibration_file": "review/G3/r1/xiaoqing_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c002_02",
+      "text": "叔叔，小心！",
+      "file": "review/G3/r1/xiaoqing_a2_c002_02.wav",
+      "f0_median": 393.6,
+      "rate_cps": 2.96,
+      "rate_cps_net": 2.96,
+      "rate_cps_net_r": 3.64,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.7,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_03",
+      "text": "包裝漂亮、聞起來香，都不能證明安全。",
+      "file": "review/G3/r1/xiaoqing_a1_c004_03.wav",
+      "f0_median": 281.7,
+      "rate_cps": 4.12,
+      "rate_cps_net": 4.44,
+      "rate_cps_net_r": 4.44,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c001_01",
+      "text": "品安！你的燈籠好漂亮。",
+      "file": "review/G3/r1/xiaoqing_a1_c001_01.wav",
+      "f0_median": 280.9,
+      "rate_cps": 3.69,
+      "rate_cps_net": 4.81,
+      "rate_cps_net_r": 4.84,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.7,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c006_01",
+      "text": "品安，我在乎你，我們一起找人幫忙。",
+      "file": "review/G3/r1/xiaoqing_a6_c006_01.wav",
+      "f0_median": 256.8,
+      "rate_cps": 4.32,
+      "rate_cps_net": 4.68,
+      "rate_cps_net_r": 5.09,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.7,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "xiaoyu": {
+    "role_zh": "小宇",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+12%",
+     "pitch": "+20Hz"
+    },
+    "f0_median_pooled": 228.0,
+    "f0_p10": 177.0,
+    "f0_p90": 295.1,
+    "rate_cps_mean": 3.54,
+    "calibration_cps": 4.15,
+    "calibration_file": "review/G3/r1/xiaoyu_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_01",
+      "text": "叔叔，你還好嗎？竹篾掉了。",
+      "file": "review/G3/r1/xiaoyu_a2_c001_01.wav",
+      "f0_median": 225.8,
+      "rate_cps": 3.17,
+      "rate_cps_net": 3.88,
+      "rate_cps_net_r": 3.91,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c002_02",
+      "text": "不用，我不試。我先離開。",
+      "file": "review/G3/r1/xiaoyu_a3_c002_02.wav",
+      "f0_median": 226.9,
+      "rate_cps": 3.25,
+      "rate_cps_net": 4.07,
+      "rate_cps_net_r": 4.09,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c013_04",
+      "text": "明天就是紙燈節了……叔叔會好一點嗎？",
+      "file": "review/G3/r1/xiaoyu_a2_c013_04.wav",
+      "f0_median": 224.0,
+      "rate_cps": 4.4,
+      "rate_cps_net": 4.4,
+      "rate_cps_net_r": 4.42,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c004_01",
+      "text": "阿樂叔叔早！折折早！",
+      "file": "review/G3/r1/xiaoyu_a0_c004_01.wav",
+      "f0_median": 250.1,
+      "rate_cps": 3.35,
+      "rate_cps_net": 4.4,
+      "rate_cps_net_r": 4.47,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "pinan": {
+    "role_zh": "品安",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "-10%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 181.8,
+    "f0_p10": 142.8,
+    "f0_p90": 229.5,
+    "rate_cps_mean": 3.28,
+    "calibration_cps": 3.33,
+    "calibration_file": "review/G3/r1/pinan_calibration.wav",
+    "lines": [
+     {
+      "line": "a1_c001_02",
+      "text": "我自己編的。你們在找什麼？",
+      "file": "review/G3/r1/pinan_a1_c001_02.wav",
+      "f0_median": 179.1,
+      "rate_cps": 3.28,
+      "rate_cps_net": 3.94,
+      "rate_cps_net_r": 3.97,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_06",
+      "text": "你們先走，我把燈籠收好就來。",
+      "file": "review/G3/r1/pinan_a1_c004_06.wav",
+      "f0_median": 173.8,
+      "rate_cps": 3.3,
+      "rate_cps_net": 3.54,
+      "rate_cps_net_r": 3.56,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c002_03",
+      "text": "不要告訴老師，好不好？我怕被罵。",
+      "file": "review/G3/r1/pinan_a6_c002_03.wav",
+      "f0_median": 189.8,
+      "rate_cps": 2.96,
+      "rate_cps_net": 3.41,
+      "rate_cps_net_r": 3.59,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.2,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a7_c003_01",
+      "text": "有讓你擔心的秘密，也可以找大人說。",
+      "file": "review/G3/r1/pinan_a7_c003_01.wav",
+      "f0_median": 179.3,
+      "rate_cps": 3.58,
+      "rate_cps_net": 3.82,
+      "rate_cps_net_r": 3.83,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.4,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "ale": {
+    "role_zh": "阿樂叔叔（一般段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+0Hz"
+    },
+    "f0_median_pooled": 113.4,
+    "f0_p10": 87.1,
+    "f0_p90": 178.4,
+    "rate_cps_mean": 4.18,
+    "calibration_cps": 5.37,
+    "calibration_file": "review/G3/r1/ale_calibration.wav",
+    "lines": [
+     {
+      "line": "a0_c002_03",
+      "text": "慢慢摺，燈才會亮。",
+      "file": "review/G3/r1/ale_a0_c002_03.wav",
+      "f0_median": 117.6,
+      "rate_cps": 3.98,
+      "rate_cps_net": 3.98,
+      "rate_cps_net_r": 4.07,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.8,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c003_03",
+      "text": "奇怪，我昨天晚上明明放在這裡啊。",
+      "file": "review/G3/r1/ale_a0_c003_03.wav",
+      "f0_median": 109.7,
+      "rate_cps": 4.9,
+      "rate_cps_net": 5.62,
+      "rate_cps_net_r": 5.71,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c004_05",
+      "text": "你們先去上學。放學再來幫叔叔找，好不好？",
+      "file": "review/G3/r1/ale_a0_c004_05.wav",
+      "f0_median": 104.8,
+      "rate_cps": 3.76,
+      "rate_cps_net": 5.23,
+      "rate_cps_net_r": 5.17,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c009_03",
+      "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+      "file": "review/G3/r1/ale_a6_c009_03.wav",
+      "f0_median": 119.2,
+      "rate_cps": 4.08,
+      "rate_cps_net": 5.06,
+      "rate_cps_net_r": 5.06,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.7,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "ale_affected": {
+    "role_zh": "阿樂叔叔（受影響段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-6%",
+     "pitch": "+0Hz"
+    },
+    "f0_median_pooled": 104.0,
+    "f0_p10": 84.8,
+    "f0_p90": 152.9,
+    "rate_cps_mean": 3.85,
+    "calibration_cps": 5.02,
+    "calibration_file": "review/G3/r1/ale_affected_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_02",
+      "text": "沒事、沒事，手滑了一下。",
+      "file": "review/G3/r1/ale_affected_a2_c001_02.wav",
+      "f0_median": 94.3,
+      "rate_cps": 3.23,
+      "rate_cps_net": 4.09,
+      "rate_cps_net_r": 3.95,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c002_01",
+      "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "file": "review/G3/r1/ale_affected_a2_c002_01.wav",
+      "f0_median": 109.9,
+      "rate_cps": 3.09,
+      "rate_cps_net": 4.42,
+      "rate_cps_net_r": 4.35,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c008_01",
+      "text": "奇怪……我的手，怎麼不聽話了？",
+      "file": "review/G3/r1/ale_affected_a2_c008_01.wav",
+      "f0_median": 110.9,
+      "rate_cps": 4.45,
+      "rate_cps_net": 5.19,
+      "rate_cps_net_r": 5.21,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c012_02",
+      "text": "不用……我休息一下就好。",
+      "file": "review/G3/r1/ale_affected_a2_c012_02.wav",
+      "f0_median": 110.7,
+      "rate_cps": 4.62,
+      "rate_cps_net": 4.62,
+      "rate_cps_net_r": 4.81,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "ye": {
+    "role_zh": "葉護理師",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+10%",
+     "pitch": "+40Hz"
+    },
+    "f0_median_pooled": 147.0,
+    "f0_p10": 108.1,
+    "f0_p90": 207.2,
+    "rate_cps_mean": 4.43,
+    "calibration_cps": 5.88,
+    "calibration_file": "review/G3/r1/ye_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c012_01",
+      "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "file": "review/G3/r1/ye_a2_c012_01.wav",
+      "f0_median": 147.5,
+      "rate_cps": 4.16,
+      "rate_cps_net": 5.63,
+      "rate_cps_net_r": 5.86,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c008_05",
+      "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+      "file": "review/G3/r1/ye_a5_c008_05.wav",
+      "f0_median": 161.3,
+      "rate_cps": 4.34,
+      "rate_cps_net": 5.52,
+      "rate_cps_net_r": 5.51,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.1,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c013_03",
+      "text": "這幾天先不要開車。我會一直打給你的家人。",
+      "file": "review/G3/r1/ye_a2_c013_03.wav",
+      "f0_median": 152.4,
+      "rate_cps": 5.2,
+      "rate_cps_net": 6.45,
+      "rate_cps_net_r": 6.59,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.8,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c008_03",
+      "text": "不是喔。你們找大人、打 119，是在幫他。",
+      "file": "review/G3/r1/ye_a5_c008_03.wav",
+      "f0_median": 139.3,
+      "rate_cps": 4.01,
+      "rate_cps_net": 5.41,
+      "rate_cps_net_r": 4.25,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "lin": {
+    "role_zh": "林老師",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-5%",
+     "pitch": "-26Hz"
+    },
+    "f0_median_pooled": 161.3,
+    "f0_p10": 135.7,
+    "f0_p90": 209.8,
+    "rate_cps_mean": 4.0,
+    "calibration_cps": 4.43,
+    "calibration_file": "review/G3/r1/lin_calibration.wav",
+    "lines": [
+     {
+      "line": "a3_c003_02",
+      "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "file": "review/G3/r1/lin_a3_c003_02.wav",
+      "f0_median": 157.7,
+      "rate_cps": 4.05,
+      "rate_cps_net": 4.68,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c008_02",
+      "text": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。",
+      "file": "review/G3/r1/lin_a3_c008_02.wav",
+      "f0_median": 157.3,
+      "rate_cps": 3.93,
+      "rate_cps_net": 4.3,
+      "rate_cps_net_r": 4.47,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -3.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c007_02",
+      "text": "你們沒有跑過去，還馬上找人幫忙，做得很好。",
+      "file": "review/G3/r1/lin_a5_c007_02.wav",
+      "f0_median": 160.7,
+      "rate_cps": 4.2,
+      "rate_cps_net": 4.81,
+      "rate_cps_net_r": 4.81,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -3.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c006_04",
+      "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。",
+      "file": "review/G3/r1/lin_a6_c006_04.wav",
+      "f0_median": 170.3,
+      "rate_cps": 3.83,
+      "rate_cps_net": 4.42,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -4.2,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "chen": {
+    "role_zh": "陳伯伯",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-12%",
+     "pitch": "-50Hz"
+    },
+    "f0_median_pooled": 91.9,
+    "f0_p10": 77.5,
+    "f0_p90": 118.1,
+    "rate_cps_mean": 3.66,
+    "calibration_cps": 4.72,
+    "calibration_file": "review/G3/r1/chen_calibration.wav",
+    "lines": [
+     {
+      "line": "a4_c012_05",
+      "text": "車先不要開，我過去陪他。",
+      "file": "review/G3/r1/chen_a4_c012_05.wav",
+      "f0_median": 87.9,
+      "rate_cps": 4.39,
+      "rate_cps_net": 5.1,
+      "rate_cps_net_r": 5.24,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a4_c013_01",
+      "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。",
+      "file": "review/G3/r1/chen_a4_c013_01.wav",
+      "f0_median": 92.7,
+      "rate_cps": 3.11,
+      "rate_cps_net": 4.04,
+      "rate_cps_net_r": 3.92,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c001_02",
+      "text": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+      "file": "review/G3/r1/chen_a5_c001_02.wav",
+      "f0_median": 94.3,
+      "rate_cps": 3.47,
+      "rate_cps_net": 4.72,
+      "rate_cps_net_r": 4.55,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "inviter": {
+    "role_zh": "邀請者",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+45Hz"
+    },
+    "f0_median_pooled": 164.4,
+    "f0_p10": 109.1,
+    "f0_p90": 223.3,
+    "rate_cps_mean": 4.32,
+    "calibration_cps": 5.35,
+    "calibration_file": "review/G3/r1/inviter_calibration.wav",
+    "lines": [
+     {
+      "line": "a1_c002_01",
+      "text": "嘿，要不要看看這個？",
+      "file": "review/G3/r1/inviter_a1_c002_01.wav",
+      "f0_median": 178.1,
+      "rate_cps": 4.68,
+      "rate_cps_net": 5.71,
+      "rate_cps_net_r": 5.97,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.0,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c002_02",
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "file": "review/G3/r1/inviter_a1_c002_02.wav",
+      "f0_median": 163.5,
+      "rate_cps": 4.44,
+      "rate_cps_net": 5.62,
+      "rate_cps_net_r": 5.41,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_01",
+      "text": "這是電子煙啦，大家都在玩。試試看嘛。",
+      "file": "review/G3/r1/inviter_a1_c004_01.wav",
+      "f0_median": 173.0,
+      "rate_cps": 3.97,
+      "rate_cps_net": 5.64,
+      "rate_cps_net_r": 5.36,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c001_03",
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "file": "review/G3/r1/inviter_a3_c001_03.wav",
+      "f0_median": 157.5,
+      "rate_cps": 4.18,
+      "rate_cps_net": 5.8,
+      "rate_cps_net_r": 5.56,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   },
+   "dispatcher": {
+    "role_zh": "執勤人員",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+5%",
+     "pitch": "-8Hz",
+     "telephone": true
+    },
+    "f0_median_pooled": 203.5,
+    "f0_p10": 162.6,
+    "f0_p90": 350.9,
+    "rate_cps_mean": 3.89,
+    "calibration_cps": 4.97,
+    "calibration_file": "review/G3/r1/dispatcher_calibration.wav",
+    "lines": [
+     {
+      "line": "a5_c006_01",
+      "text": "119 您好，請問發生什麼事？在哪裡？",
+      "file": "review/G3/r1/dispatcher_a5_c006_01.wav",
+      "f0_median": 189.1,
+      "rate_cps": 3.68,
+      "rate_cps_net": 4.81,
+      "rate_cps_net_r": 3.76,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c006_03",
+      "text": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？",
+      "file": "review/G3/r1/dispatcher_a5_c006_03.wav",
+      "f0_median": 202.2,
+      "rate_cps": 3.88,
+      "rate_cps_net": 5.12,
+      "rate_cps_net_r": 5.35,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.2,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c006_05",
+      "text": "做得很好。待在安全的地方，聽我的指示。",
+      "file": "review/G3/r1/dispatcher_a5_c006_05.wav",
+      "f0_median": 216.6,
+      "rate_cps": 4.12,
+      "rate_cps_net": 4.98,
+      "rate_cps_net_r": 5.37,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ]
+   }
+  },
+  "same_voice_pairs": {
+   "rows": [
+    {
+     "a": "旁白",
+     "b": "小晴",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "-14%",
+      "+0%"
+     ],
+     "calibration_cps": [
+      4.01,
+      4.66
+     ],
+     "rate_diff_pct": 16.2,
+     "f0": [
+      185.6,
+      277.1
+     ],
+     "f0_diff_pct": 49.3,
+     "semitones": 6.94,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "旁白",
+     "b": "林老師",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "-14%",
+      "-5%"
+     ],
+     "calibration_cps": [
+      4.01,
+      4.43
+     ],
+     "rate_diff_pct": 10.5,
+     "f0": [
+      185.6,
+      161.3
+     ],
+     "f0_diff_pct": 15.1,
+     "semitones": 2.43,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "旁白",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "-14%",
+      "+5%"
+     ],
+     "calibration_cps": [
+      4.01,
+      4.97
+     ],
+     "rate_diff_pct": 23.9,
+     "f0": [
+      185.6,
+      203.5
+     ],
+     "f0_diff_pct": 9.6,
+     "semitones": 1.59,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "折折",
+     "b": "小宇",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate_param": [
+      "+22%",
+      "+12%"
+     ],
+     "calibration_cps": [
+      4.51,
+      4.15
+     ],
+     "rate_diff_pct": 8.7,
+     "f0": [
+      294.0,
+      228.0
+     ],
+     "f0_diff_pct": 28.9,
+     "semitones": 4.4,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "折折",
+     "b": "品安",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate_param": [
+      "+22%",
+      "-10%"
+     ],
+     "calibration_cps": [
+      4.51,
+      3.33
+     ],
+     "rate_diff_pct": 35.4,
+     "f0": [
+      294.0,
+      181.8
+     ],
+     "f0_diff_pct": 61.7,
+     "semitones": 8.32,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "林老師",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "+0%",
+      "-5%"
+     ],
+     "calibration_cps": [
+      4.66,
+      4.43
+     ],
+     "rate_diff_pct": 5.2,
+     "f0": [
+      277.1,
+      161.3
+     ],
+     "f0_diff_pct": 71.8,
+     "semitones": 9.37,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "+0%",
+      "+5%"
+     ],
+     "calibration_cps": [
+      4.66,
+      4.97
+     ],
+     "rate_diff_pct": 6.7,
+     "f0": [
+      277.1,
+      203.5
+     ],
+     "f0_diff_pct": 36.2,
+     "semitones": 5.34,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "+0%",
+      "-8%"
+     ],
+     "calibration_cps": [
+      4.66,
+      4.29
+     ],
+     "rate_diff_pct": 8.6,
+     "f0": [
+      277.1,
+      185.5
+     ],
+     "f0_diff_pct": 49.4,
+     "semitones": 6.95,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "小宇",
+     "b": "品安",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate_param": [
+      "+12%",
+      "-10%"
+     ],
+     "calibration_cps": [
+      4.15,
+      3.33
+     ],
+     "rate_diff_pct": 24.6,
+     "f0": [
+      228.0,
+      181.8
+     ],
+     "f0_diff_pct": 25.4,
+     "semitones": 3.92,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "葉護理師",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "+0%",
+      "+10%"
+     ],
+     "calibration_cps": [
+      5.37,
+      5.88
+     ],
+     "rate_diff_pct": 9.5,
+     "f0": [
+      113.4,
+      147.0
+     ],
+     "f0_diff_pct": 29.6,
+     "semitones": 4.49,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "+0%",
+      "-12%"
+     ],
+     "calibration_cps": [
+      5.37,
+      4.72
+     ],
+     "rate_diff_pct": 13.8,
+     "f0": [
+      113.4,
+      91.9
+     ],
+     "f0_diff_pct": 23.4,
+     "semitones": 3.64,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "+0%",
+      "+0%"
+     ],
+     "calibration_cps": [
+      5.37,
+      5.35
+     ],
+     "rate_diff_pct": 0.4,
+     "f0": [
+      113.4,
+      164.4
+     ],
+     "f0_diff_pct": 45.0,
+     "semitones": 6.43,
+     "rule": "語速差 <5% → F0 差須 ≥10%",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "葉護理師",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "-6%",
+      "+10%"
+     ],
+     "calibration_cps": [
+      5.02,
+      5.88
+     ],
+     "rate_diff_pct": 17.1,
+     "f0": [
+      104.0,
+      147.0
+     ],
+     "f0_diff_pct": 41.3,
+     "semitones": 5.99,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "-6%",
+      "-12%"
+     ],
+     "calibration_cps": [
+      5.02,
+      4.72
+     ],
+     "rate_diff_pct": 6.4,
+     "f0": [
+      104.0,
+      91.9
+     ],
+     "f0_diff_pct": 13.2,
+     "semitones": 2.14,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "-6%",
+      "+0%"
+     ],
+     "calibration_cps": [
+      5.02,
+      5.35
+     ],
+     "rate_diff_pct": 6.6,
+     "f0": [
+      104.0,
+      164.4
+     ],
+     "f0_diff_pct": 58.1,
+     "semitones": 7.93,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "葉護理師",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "+10%",
+      "-12%"
+     ],
+     "calibration_cps": [
+      5.88,
+      4.72
+     ],
+     "rate_diff_pct": 24.6,
+     "f0": [
+      147.0,
+      91.9
+     ],
+     "f0_diff_pct": 60.0,
+     "semitones": 8.13,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "葉護理師",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "+10%",
+      "+0%"
+     ],
+     "calibration_cps": [
+      5.88,
+      5.35
+     ],
+     "rate_diff_pct": 9.9,
+     "f0": [
+      147.0,
+      164.4
+     ],
+     "f0_diff_pct": 11.8,
+     "semitones": 1.94,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "林老師",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "-5%",
+      "+5%"
+     ],
+     "calibration_cps": [
+      4.43,
+      4.97
+     ],
+     "rate_diff_pct": 12.2,
+     "f0": [
+      161.3,
+      203.5
+     ],
+     "f0_diff_pct": 26.2,
+     "semitones": 4.02,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "林老師",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "-5%",
+      "-8%"
+     ],
+     "calibration_cps": [
+      4.43,
+      4.29
+     ],
+     "rate_diff_pct": 3.3,
+     "f0": [
+      161.3,
+      185.5
+     ],
+     "f0_diff_pct": 15.0,
+     "semitones": 2.42,
+     "rule": "語速差 <5% → F0 差須 ≥10%",
+     "pass": true
+    },
+    {
+     "a": "陳伯伯",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "rate_param": [
+      "-12%",
+      "+0%"
+     ],
+     "calibration_cps": [
+      4.72,
+      5.35
+     ],
+     "rate_diff_pct": 13.3,
+     "f0": [
+      91.9,
+      164.4
+     ],
+     "f0_diff_pct": 78.9,
+     "semitones": 10.07,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    },
+    {
+     "a": "執勤人員",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate_param": [
+      "+5%",
+      "-8%"
+     ],
+     "calibration_cps": [
+      4.97,
+      4.29
+     ],
+     "rate_diff_pct": 15.9,
+     "f0": [
+      203.5,
+      185.5
+     ],
+     "f0_diff_pct": 9.7,
+     "semitones": 1.6,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true
+    }
+   ],
+   "all_pass": true,
+   "inviter_f0": 164.4,
+   "inviter_in_neutral_145_175": true
+  },
+  "kids": {
+   "f0": {
+    "小宇": 228.0,
+    "小晴": 277.1,
+    "折折": 294.0,
+    "品安": 181.8
+   },
+   "pairwise_semitones": {
+    "小宇↔折折": 4.4,
+    "小晴↔小宇": 3.38,
+    "小晴↔折折": 1.02,
+    "品安↔小宇": 3.92,
+    "品安↔小晴": 7.3,
+    "品安↔折折": 8.32
+   },
+   "xiaoyu_vs_others_semitones": {
+    "小晴": 3.38,
+    "折折": 4.4,
+    "品安": 3.92
+   },
+   "xiaoyu_vs_each_ge3": true,
+   "all_pairs_ge3": false,
+   "note": "小宇和其他三個孩子都差 ≥3 半音。小晴↔折折約 1 半音：edge-tts HsiaoYu 的音高在 +90Hz 以上不再升高（折折上限約 294 Hz），小晴又要比小宇高 3 半音（≥271 Hz），兩者無法再拉開；改靠不同底聲（HsiaoChen 對 HsiaoYu）與語速（+0% 對 +22%）區分，聽感留到第 3 天彩排。"
+  },
+  "narrator_vs_xiaoyu": {
+   "narrator": 185.6,
+   "xiaoyu": 228.0,
+   "diff_pct": 22.8,
+   "narrator_required": 185.5,
+   "pass_ge12pct": true
+  },
+  "ye_vs_ale": {
+   "ye": 147.0,
+   "ale": 113.4,
+   "ale_affected": 104.0,
+   "semitones_vs_ale": 4.49,
+   "semitones_vs_ale_affected": 5.99,
+   "calibration_cps": {
+    "ye": 5.88,
+    "ale": 5.37,
+    "ale_affected": 5.02
+   },
+   "pass_ge4_semitones": true,
+   "rate_diff_cps_min": 0.51
+  },
+  "tone": {
+   "yi": {
+    "v02_end_over_start": 1.239,
+    "v01_end_over_start": 0.933,
+    "pass": true
+   },
+   "ting": {
+    "short_target": {
+     "聽_end_over_start": 1.021,
+     "停_end_over_start": 0.947,
+     "聽_mean_hz": 269.9,
+     "停_mean_hz": 204.2,
+     "聽_over_停_mean": 1.322
+    },
+    "sentence_target": {
+     "聽_end_over_start": 0.97,
+     "停_end_over_start": 0.922,
+     "聽_mean_hz": 185.4,
+     "停_mean_hz": 157.3,
+     "聽_over_停_mean": 1.179
+    },
+    "official_v02": 0.953
+   },
+   "lese": {
+    "垃圾。": [
+     0.821,
+     0.74
+    ],
+    "樂色。": [
+     0.77,
+     0.758
+    ],
+    "拉機。": [
+     1.077,
+     1.045
+    ]
+   },
+   "pinan": {
+    "品安，我在乎你。": 0.879,
+    "平安，我在乎你。": 0.997
+   }
+  },
+  "pause_spikes": {
+   "v01_spikes_total": 5,
+   "current_spikes_total": 0,
+   "current_max_core_peak_dbfs": -59.9,
+   "pass": true
+  },
+  "a2_c002_01": {
+   "pause_after_yi_ms": 560,
+   "pause_after_huishou_ms": 800,
+   "pause_after_yi_ms_r": 500,
+   "pause_after_huishou_ms_r": 770,
+   "rate_cps_net": 4.42,
+   "rate_cps_net_r": 4.35,
+   "pass": true
+  },
+  "_取代": "roles、same_voice_pairs、kids 已由 round2 重算取代（葉護理師參數改變）；本節保留作修正前紀錄。"
+ },
+ "round2": {
+  "_說明": "G3 修正第 2 輪（2026-10-21，tools/vo_g3_r2.py）。audio/vo/casting.json v03：葉護理師 −20%／+55Hz（3 句另設 −25%／−28%）、小晴三句「品安」分段＋PSOLA 半三聲、pronounce.json 加「119」→「一一九」；其餘角色參數與第 1 輪相同。F0 中位＝代表台詞合併（f0_median_pooled）與同一句校準句「今天放學以後，我們一起去廣場看燈籠。」（calibration_f0_median）兩種；語速比較用校準句。本節取代 round1 的 roles／same_voice_pairs（round1 保留作修正前紀錄）。聽感一律未驗證。ElevenLabs 本輪計費 0 字元。",
+  "roles": {
+   "narrator": {
+    "role_zh": "旁白",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-14%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 185.6,
+    "f0_p10": 151.6,
+    "f0_p90": 253.7,
+    "rate_cps_mean": 3.62,
+    "calibration_cps": 4.01,
+    "calibration_file": "review/G3/r2/narrator_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c004_01",
+      "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+      "file": "review/G3/r2/narrator_a2_c004_01.wav",
+      "f0_median": 197.4,
+      "rate_cps": 4.17,
+      "rate_cps_net": 4.48,
+      "rate_cps_net_r": 4.5,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -2.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c004_02",
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "file": "review/G3/r2/narrator_a2_c004_02.wav",
+      "f0_median": 185.5,
+      "rate_cps": 3.38,
+      "rate_cps_net": 4.69,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c001_01",
+      "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+      "file": "review/G3/r2/narrator_a0_c001_01.wav",
+      "f0_median": 198.2,
+      "rate_cps": 3.16,
+      "rate_cps_net": 4.1,
+      "rate_cps_net_r": 4.13,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -2.5,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c003_02",
+      "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+      "file": "review/G3/r2/narrator_a2_c003_02.wav",
+      "f0_median": 178.1,
+      "rate_cps": 3.75,
+      "rate_cps_net": 4.33,
+      "rate_cps_net_r": 4.33,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -3.0,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 183.4,
+    "calibration_f0_p10": 155.9,
+    "calibration_f0_p90": 303.4
+   },
+   "narrator_required": {
+    "role_zh": "旁白（必要旁白）",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-8%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 185.5,
+    "f0_p10": 151.7,
+    "f0_p90": 261.4,
+    "rate_cps_mean": 3.38,
+    "calibration_cps": 4.29,
+    "calibration_file": "review/G3/r2/narrator_required_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c004_02",
+      "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+      "file": "review/G3/r2/narrator_required_a2_c004_02.wav",
+      "f0_median": 185.5,
+      "rate_cps": 3.38,
+      "rate_cps_net": 4.69,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 183.8,
+    "calibration_f0_p10": 155.9,
+    "calibration_f0_p90": 302.9
+   },
+   "zhezhe": {
+    "role_zh": "折折",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+22%",
+     "pitch": "+90Hz"
+    },
+    "f0_median_pooled": 294.0,
+    "f0_p10": 227.5,
+    "f0_p90": 382.8,
+    "rate_cps_mean": 3.92,
+    "calibration_cps": 4.51,
+    "calibration_file": "review/G3/r2/zhezhe_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_03",
+      "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+      "file": "review/G3/r2/zhezhe_a2_c001_03.wav",
+      "f0_median": 296.0,
+      "rate_cps": 4.36,
+      "rate_cps_net": 4.9,
+      "rate_cps_net_r": 4.92,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c003_01",
+      "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+      "file": "review/G3/r2/zhezhe_a0_c003_01.wav",
+      "f0_median": 294.0,
+      "rate_cps": 4.38,
+      "rate_cps_net": 4.98,
+      "rate_cps_net_r": 4.98,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c002_01",
+      "text": "喵！大家好，我是折折。",
+      "file": "review/G3/r2/zhezhe_a0_c002_01.wav",
+      "f0_median": 304.5,
+      "rate_cps": 3.11,
+      "rate_cps_net": 4.0,
+      "rate_cps_net_r": 4.02,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c004_02",
+      "text": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+      "file": "review/G3/r2/zhezhe_a3_c004_02.wav",
+      "f0_median": 288.1,
+      "rate_cps": 3.85,
+      "rate_cps_net": 3.85,
+      "rate_cps_net_r": 3.88,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 282.4,
+    "calibration_f0_p10": 232.0,
+    "calibration_f0_p90": 402.4
+   },
+   "xiaoqing": {
+    "role_zh": "小晴",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+0%",
+     "pitch": "+56Hz"
+    },
+    "f0_median_pooled": 277.2,
+    "f0_p10": 226.6,
+    "f0_p90": 392.7,
+    "rate_cps_mean": 3.8,
+    "calibration_cps": 4.66,
+    "calibration_file": "review/G3/r2/xiaoqing_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c002_02",
+      "text": "叔叔，小心！",
+      "file": "review/G3/r2/xiaoqing_a2_c002_02.wav",
+      "f0_median": 393.6,
+      "rate_cps": 2.96,
+      "rate_cps_net": 2.96,
+      "rate_cps_net_r": 3.64,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.7,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_03",
+      "text": "包裝漂亮、聞起來香，都不能證明安全。",
+      "file": "review/G3/r2/xiaoqing_a1_c004_03.wav",
+      "f0_median": 281.7,
+      "rate_cps": 4.12,
+      "rate_cps_net": 4.44,
+      "rate_cps_net_r": 4.44,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.4,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c001_01",
+      "text": "品安！你的燈籠好漂亮。",
+      "file": "review/G3/r2/xiaoqing_a1_c001_01.wav",
+      "f0_median": 275.3,
+      "rate_cps": 3.69,
+      "rate_cps_net": 4.81,
+      "rate_cps_net_r": 4.86,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c006_01",
+      "text": "品安，我在乎你，我們一起找人幫忙。",
+      "file": "review/G3/r2/xiaoqing_a6_c006_01.wav",
+      "f0_median": 263.4,
+      "rate_cps": 4.42,
+      "rate_cps_net": 4.42,
+      "rate_cps_net_r": 5.2,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -3.0,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 269.3,
+    "calibration_f0_p10": 230.1,
+    "calibration_f0_p90": 444.7
+   },
+   "xiaoyu": {
+    "role_zh": "小宇",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+12%",
+     "pitch": "+20Hz"
+    },
+    "f0_median_pooled": 228.0,
+    "f0_p10": 177.0,
+    "f0_p90": 295.1,
+    "rate_cps_mean": 3.54,
+    "calibration_cps": 4.15,
+    "calibration_file": "review/G3/r2/xiaoyu_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_01",
+      "text": "叔叔，你還好嗎？竹篾掉了。",
+      "file": "review/G3/r2/xiaoyu_a2_c001_01.wav",
+      "f0_median": 225.8,
+      "rate_cps": 3.17,
+      "rate_cps_net": 3.88,
+      "rate_cps_net_r": 3.91,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c002_02",
+      "text": "不用，我不試。我先離開。",
+      "file": "review/G3/r2/xiaoyu_a3_c002_02.wav",
+      "f0_median": 226.9,
+      "rate_cps": 3.25,
+      "rate_cps_net": 4.07,
+      "rate_cps_net_r": 4.09,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c013_04",
+      "text": "明天就是紙燈節了……叔叔會好一點嗎？",
+      "file": "review/G3/r2/xiaoyu_a2_c013_04.wav",
+      "f0_median": 224.0,
+      "rate_cps": 4.4,
+      "rate_cps_net": 4.4,
+      "rate_cps_net_r": 4.42,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c004_01",
+      "text": "阿樂叔叔早！折折早！",
+      "file": "review/G3/r2/xiaoyu_a0_c004_01.wav",
+      "f0_median": 250.1,
+      "rate_cps": 3.35,
+      "rate_cps_net": 4.4,
+      "rate_cps_net_r": 4.47,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 214.8,
+    "calibration_f0_p10": 176.8,
+    "calibration_f0_p90": 304.0
+   },
+   "pinan": {
+    "role_zh": "品安",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "-10%",
+     "pitch": "-10Hz"
+    },
+    "f0_median_pooled": 181.8,
+    "f0_p10": 142.8,
+    "f0_p90": 229.5,
+    "rate_cps_mean": 3.28,
+    "calibration_cps": 3.33,
+    "calibration_file": "review/G3/r2/pinan_calibration.wav",
+    "lines": [
+     {
+      "line": "a1_c001_02",
+      "text": "我自己編的。你們在找什麼？",
+      "file": "review/G3/r2/pinan_a1_c001_02.wav",
+      "f0_median": 179.1,
+      "rate_cps": 3.28,
+      "rate_cps_net": 3.94,
+      "rate_cps_net_r": 3.97,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_06",
+      "text": "你們先走，我把燈籠收好就來。",
+      "file": "review/G3/r2/pinan_a1_c004_06.wav",
+      "f0_median": 173.8,
+      "rate_cps": 3.3,
+      "rate_cps_net": 3.54,
+      "rate_cps_net_r": 3.56,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c002_03",
+      "text": "不要告訴老師，好不好？我怕被罵。",
+      "file": "review/G3/r2/pinan_a6_c002_03.wav",
+      "f0_median": 189.8,
+      "rate_cps": 2.96,
+      "rate_cps_net": 3.41,
+      "rate_cps_net_r": 3.59,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.2,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a7_c003_01",
+      "text": "有讓你擔心的秘密，也可以找大人說。",
+      "file": "review/G3/r2/pinan_a7_c003_01.wav",
+      "f0_median": 179.3,
+      "rate_cps": 3.58,
+      "rate_cps_net": 3.82,
+      "rate_cps_net_r": 3.83,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.4,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 175.0,
+    "calibration_f0_p10": 143.0,
+    "calibration_f0_p90": 250.0
+   },
+   "ale": {
+    "role_zh": "阿樂叔叔（一般段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+0Hz"
+    },
+    "f0_median_pooled": 113.4,
+    "f0_p10": 87.1,
+    "f0_p90": 178.4,
+    "rate_cps_mean": 4.18,
+    "calibration_cps": 5.37,
+    "calibration_file": "review/G3/r2/ale_calibration.wav",
+    "lines": [
+     {
+      "line": "a0_c002_03",
+      "text": "慢慢摺，燈才會亮。",
+      "file": "review/G3/r2/ale_a0_c002_03.wav",
+      "f0_median": 117.6,
+      "rate_cps": 3.98,
+      "rate_cps_net": 3.98,
+      "rate_cps_net_r": 4.07,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.8,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c003_03",
+      "text": "奇怪，我昨天晚上明明放在這裡啊。",
+      "file": "review/G3/r2/ale_a0_c003_03.wav",
+      "f0_median": 109.7,
+      "rate_cps": 4.9,
+      "rate_cps_net": 5.62,
+      "rate_cps_net_r": 5.71,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a0_c004_05",
+      "text": "你們先去上學。放學再來幫叔叔找，好不好？",
+      "file": "review/G3/r2/ale_a0_c004_05.wav",
+      "f0_median": 104.8,
+      "rate_cps": 3.76,
+      "rate_cps_net": 5.23,
+      "rate_cps_net_r": 5.17,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c009_03",
+      "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+      "file": "review/G3/r2/ale_a6_c009_03.wav",
+      "f0_median": 119.2,
+      "rate_cps": 4.08,
+      "rate_cps_net": 5.06,
+      "rate_cps_net_r": 5.06,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.7,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 120.9,
+    "calibration_f0_p10": 85.1,
+    "calibration_f0_p90": 183.6
+   },
+   "ale_affected": {
+    "role_zh": "阿樂叔叔（受影響段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-6%",
+     "pitch": "+0Hz"
+    },
+    "f0_median_pooled": 104.0,
+    "f0_p10": 84.8,
+    "f0_p90": 152.9,
+    "rate_cps_mean": 3.85,
+    "calibration_cps": 5.02,
+    "calibration_file": "review/G3/r2/ale_affected_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c001_02",
+      "text": "沒事、沒事，手滑了一下。",
+      "file": "review/G3/r2/ale_affected_a2_c001_02.wav",
+      "f0_median": 94.3,
+      "rate_cps": 3.23,
+      "rate_cps_net": 4.09,
+      "rate_cps_net_r": 3.95,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c002_01",
+      "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+      "file": "review/G3/r2/ale_affected_a2_c002_01.wav",
+      "f0_median": 109.9,
+      "rate_cps": 3.09,
+      "rate_cps_net": 4.42,
+      "rate_cps_net_r": 4.35,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c008_01",
+      "text": "奇怪……我的手，怎麼不聽話了？",
+      "file": "review/G3/r2/ale_affected_a2_c008_01.wav",
+      "f0_median": 110.9,
+      "rate_cps": 4.45,
+      "rate_cps_net": 5.19,
+      "rate_cps_net_r": 5.21,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c012_02",
+      "text": "不用……我休息一下就好。",
+      "file": "review/G3/r2/ale_affected_a2_c012_02.wav",
+      "f0_median": 110.7,
+      "rate_cps": 4.62,
+      "rate_cps_net": 4.62,
+      "rate_cps_net_r": 4.81,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 120.9,
+    "calibration_f0_p10": 85.4,
+    "calibration_f0_p90": 183.9
+   },
+   "ye": {
+    "role_zh": "葉護理師",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-20%",
+     "pitch": "+55Hz"
+    },
+    "f0_median_pooled": 158.4,
+    "f0_p10": 116.2,
+    "f0_p90": 222.9,
+    "rate_cps_mean": 3.43,
+    "calibration_cps": 4.29,
+    "calibration_file": "review/G3/r2/ye_calibration.wav",
+    "lines": [
+     {
+      "line": "a2_c012_01",
+      "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+      "file": "review/G3/r2/ye_a2_c012_01.wav",
+      "f0_median": 160.8,
+      "rate_cps": 3.17,
+      "rate_cps_net": 4.45,
+      "rate_cps_net_r": 4.27,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c008_05",
+      "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+      "file": "review/G3/r2/ye_a5_c008_05.wav",
+      "f0_median": 172.6,
+      "rate_cps": 3.3,
+      "rate_cps_net": 4.34,
+      "rate_cps_net_r": 4.28,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -2.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a2_c013_03",
+      "text": "這幾天先不要開車。我會一直打給你的家人。",
+      "file": "review/G3/r2/ye_a2_c013_03.wav",
+      "f0_median": 160.0,
+      "rate_cps": 4.01,
+      "rate_cps_net": 4.72,
+      "rate_cps_net_r": 4.84,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -2.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c008_03",
+      "text": "不是喔。你們找大人、打 119，是在幫他。",
+      "file": "review/G3/r2/ye_a5_c008_03.wav",
+      "f0_median": 150.8,
+      "rate_cps": 3.24,
+      "rate_cps_net": 4.64,
+      "rate_cps_net_r": 3.55,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 163.3,
+    "calibration_f0_p10": 114.8,
+    "calibration_f0_p90": 248.7
+   },
+   "lin": {
+    "role_zh": "林老師",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-5%",
+     "pitch": "-26Hz"
+    },
+    "f0_median_pooled": 161.3,
+    "f0_p10": 135.7,
+    "f0_p90": 209.8,
+    "rate_cps_mean": 4.0,
+    "calibration_cps": 4.43,
+    "calibration_file": "review/G3/r2/lin_calibration.wav",
+    "lines": [
+     {
+      "line": "a3_c003_02",
+      "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+      "file": "review/G3/r2/lin_a3_c003_02.wav",
+      "f0_median": 157.7,
+      "rate_cps": 4.05,
+      "rate_cps_net": 4.68,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -3.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c008_02",
+      "text": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。",
+      "file": "review/G3/r2/lin_a3_c008_02.wav",
+      "f0_median": 157.3,
+      "rate_cps": 3.93,
+      "rate_cps_net": 4.3,
+      "rate_cps_net_r": 4.47,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -3.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c007_02",
+      "text": "你們沒有跑過去，還馬上找人幫忙，做得很好。",
+      "file": "review/G3/r2/lin_a5_c007_02.wav",
+      "f0_median": 160.7,
+      "rate_cps": 4.2,
+      "rate_cps_net": 4.81,
+      "rate_cps_net_r": 4.81,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -3.3,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a6_c006_04",
+      "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。",
+      "file": "review/G3/r2/lin_a6_c006_04.wav",
+      "f0_median": 170.3,
+      "rate_cps": 3.83,
+      "rate_cps_net": 4.42,
+      "rate_cps_net_r": 4.69,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -4.2,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 162.5,
+    "calibration_f0_p10": 138.4,
+    "calibration_f0_p90": 268.6
+   },
+   "chen": {
+    "role_zh": "陳伯伯",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-12%",
+     "pitch": "-50Hz"
+    },
+    "f0_median_pooled": 91.9,
+    "f0_p10": 77.5,
+    "f0_p90": 118.1,
+    "rate_cps_mean": 3.66,
+    "calibration_cps": 4.72,
+    "calibration_file": "review/G3/r2/chen_calibration.wav",
+    "lines": [
+     {
+      "line": "a4_c012_05",
+      "text": "車先不要開，我過去陪他。",
+      "file": "review/G3/r2/chen_a4_c012_05.wav",
+      "f0_median": 87.9,
+      "rate_cps": 4.39,
+      "rate_cps_net": 5.1,
+      "rate_cps_net_r": 5.24,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.1,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a4_c013_01",
+      "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。",
+      "file": "review/G3/r2/chen_a4_c013_01.wav",
+      "f0_median": 92.7,
+      "rate_cps": 3.11,
+      "rate_cps_net": 4.04,
+      "rate_cps_net_r": 3.92,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c001_02",
+      "text": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+      "file": "review/G3/r2/chen_a5_c001_02.wav",
+      "f0_median": 94.3,
+      "rate_cps": 3.47,
+      "rate_cps_net": 4.72,
+      "rate_cps_net_r": 4.55,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 96.0,
+    "calibration_f0_p10": 78.6,
+    "calibration_f0_p90": 125.1
+   },
+   "inviter": {
+    "role_zh": "邀請者",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+45Hz"
+    },
+    "f0_median_pooled": 164.4,
+    "f0_p10": 109.1,
+    "f0_p90": 223.3,
+    "rate_cps_mean": 4.32,
+    "calibration_cps": 5.35,
+    "calibration_file": "review/G3/r2/inviter_calibration.wav",
+    "lines": [
+     {
+      "line": "a1_c002_01",
+      "text": "嘿，要不要看看這個？",
+      "file": "review/G3/r2/inviter_a1_c002_01.wav",
+      "f0_median": 178.1,
+      "rate_cps": 4.68,
+      "rate_cps_net": 5.71,
+      "rate_cps_net_r": 5.97,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.0,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c002_02",
+      "text": "亮晶晶的，聞起來香香的，很安全喔。",
+      "file": "review/G3/r2/inviter_a1_c002_02.wav",
+      "f0_median": 163.5,
+      "rate_cps": 4.44,
+      "rate_cps_net": 5.62,
+      "rate_cps_net_r": 5.41,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a1_c004_01",
+      "text": "這是電子煙啦，大家都在玩。試試看嘛。",
+      "file": "review/G3/r2/inviter_a1_c004_01.wav",
+      "f0_median": 173.0,
+      "rate_cps": 3.97,
+      "rate_cps_net": 5.64,
+      "rate_cps_net_r": 5.36,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a3_c001_03",
+      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+      "file": "review/G3/r2/inviter_a3_c001_03.wav",
+      "f0_median": 157.5,
+      "rate_cps": 4.18,
+      "rate_cps_net": 5.8,
+      "rate_cps_net_r": 5.56,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.2,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 155.0,
+    "calibration_f0_p10": 108.9,
+    "calibration_f0_p90": 235.1
+   },
+   "dispatcher": {
+    "role_zh": "執勤人員",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+5%",
+     "pitch": "-8Hz",
+     "telephone": true
+    },
+    "f0_median_pooled": 206.8,
+    "f0_p10": 165.0,
+    "f0_p90": 347.1,
+    "rate_cps_mean": 4.02,
+    "calibration_cps": 4.97,
+    "calibration_file": "review/G3/r2/dispatcher_calibration.wav",
+    "lines": [
+     {
+      "line": "a5_c006_01",
+      "text": "119 您好，請問發生什麼事？在哪裡？",
+      "file": "review/G3/r2/dispatcher_a5_c006_01.wav",
+      "f0_median": 194.3,
+      "rate_cps": 4.05,
+      "rate_cps_net": 5.47,
+      "rate_cps_net_r": 4.35,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.9,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c006_03",
+      "text": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？",
+      "file": "review/G3/r2/dispatcher_a5_c006_03.wav",
+      "f0_median": 202.2,
+      "rate_cps": 3.88,
+      "rate_cps_net": 5.12,
+      "rate_cps_net_r": 5.35,
+      "pause_spikes": 0,
+      "integrated_lufs": -18.0,
+      "true_peak_dbtp": -2.2,
+      "clipped_samples": 0
+     },
+     {
+      "line": "a5_c006_05",
+      "text": "做得很好。待在安全的地方，聽我的指示。",
+      "file": "review/G3/r2/dispatcher_a5_c006_05.wav",
+      "f0_median": 216.6,
+      "rate_cps": 4.12,
+      "rate_cps_net": 4.98,
+      "rate_cps_net_r": 5.37,
+      "pause_spikes": 0,
+      "integrated_lufs": -17.8,
+      "true_peak_dbtp": -1.9,
+      "clipped_samples": 0
+     }
+    ],
+    "calibration_f0_median": 187.5,
+    "calibration_f0_p10": 159.0,
+    "calibration_f0_p90": 319.0
+   }
+  },
+  "calibration_f0_table": [
+   {
+    "role": "旁白",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-14%",
+     "pitch": "-10Hz"
+    },
+    "calibration_f0_median": 183.4,
+    "calibration_f0_p10": 155.9,
+    "calibration_f0_p90": 303.4,
+    "calibration_cps": 4.01,
+    "f0_median_pooled": 185.6,
+    "calibration_file": "review/G3/r2/narrator_calibration.wav"
+   },
+   {
+    "role": "旁白（必要旁白）",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-8%",
+     "pitch": "-10Hz"
+    },
+    "calibration_f0_median": 183.8,
+    "calibration_f0_p10": 155.9,
+    "calibration_f0_p90": 302.9,
+    "calibration_cps": 4.29,
+    "f0_median_pooled": 185.5,
+    "calibration_file": "review/G3/r2/narrator_required_calibration.wav"
+   },
+   {
+    "role": "折折",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+22%",
+     "pitch": "+90Hz"
+    },
+    "calibration_f0_median": 282.4,
+    "calibration_f0_p10": 232.0,
+    "calibration_f0_p90": 402.4,
+    "calibration_cps": 4.51,
+    "f0_median_pooled": 294.0,
+    "calibration_file": "review/G3/r2/zhezhe_calibration.wav"
+   },
+   {
+    "role": "小晴",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+0%",
+     "pitch": "+56Hz"
+    },
+    "calibration_f0_median": 269.3,
+    "calibration_f0_p10": 230.1,
+    "calibration_f0_p90": 444.7,
+    "calibration_cps": 4.66,
+    "f0_median_pooled": 277.2,
+    "calibration_file": "review/G3/r2/xiaoqing_calibration.wav"
+   },
+   {
+    "role": "小宇",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "+12%",
+     "pitch": "+20Hz"
+    },
+    "calibration_f0_median": 214.8,
+    "calibration_f0_p10": 176.8,
+    "calibration_f0_p90": 304.0,
+    "calibration_cps": 4.15,
+    "f0_median_pooled": 228.0,
+    "calibration_file": "review/G3/r2/xiaoyu_calibration.wav"
+   },
+   {
+    "role": "品安",
+    "spec": {
+     "voice": "zh-TW-HsiaoYuNeural",
+     "rate": "-10%",
+     "pitch": "-10Hz"
+    },
+    "calibration_f0_median": 175.0,
+    "calibration_f0_p10": 143.0,
+    "calibration_f0_p90": 250.0,
+    "calibration_cps": 3.33,
+    "f0_median_pooled": 181.8,
+    "calibration_file": "review/G3/r2/pinan_calibration.wav"
+   },
+   {
+    "role": "阿樂叔叔（一般段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+0Hz"
+    },
+    "calibration_f0_median": 120.9,
+    "calibration_f0_p10": 85.1,
+    "calibration_f0_p90": 183.6,
+    "calibration_cps": 5.37,
+    "f0_median_pooled": 113.4,
+    "calibration_file": "review/G3/r2/ale_calibration.wav"
+   },
+   {
+    "role": "阿樂叔叔（受影響段）",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-6%",
+     "pitch": "+0Hz"
+    },
+    "calibration_f0_median": 120.9,
+    "calibration_f0_p10": 85.4,
+    "calibration_f0_p90": 183.9,
+    "calibration_cps": 5.02,
+    "f0_median_pooled": 104.0,
+    "calibration_file": "review/G3/r2/ale_affected_calibration.wav"
+   },
+   {
+    "role": "葉護理師",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-20%",
+     "pitch": "+55Hz"
+    },
+    "calibration_f0_median": 163.3,
+    "calibration_f0_p10": 114.8,
+    "calibration_f0_p90": 248.7,
+    "calibration_cps": 4.29,
+    "f0_median_pooled": 158.4,
+    "calibration_file": "review/G3/r2/ye_calibration.wav"
+   },
+   {
+    "role": "林老師",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "-5%",
+     "pitch": "-26Hz"
+    },
+    "calibration_f0_median": 162.5,
+    "calibration_f0_p10": 138.4,
+    "calibration_f0_p90": 268.6,
+    "calibration_cps": 4.43,
+    "f0_median_pooled": 161.3,
+    "calibration_file": "review/G3/r2/lin_calibration.wav"
+   },
+   {
+    "role": "陳伯伯",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "-12%",
+     "pitch": "-50Hz"
+    },
+    "calibration_f0_median": 96.0,
+    "calibration_f0_p10": 78.6,
+    "calibration_f0_p90": 125.1,
+    "calibration_cps": 4.72,
+    "f0_median_pooled": 91.9,
+    "calibration_file": "review/G3/r2/chen_calibration.wav"
+   },
+   {
+    "role": "邀請者",
+    "spec": {
+     "voice": "zh-TW-YunJheNeural",
+     "rate": "+0%",
+     "pitch": "+45Hz"
+    },
+    "calibration_f0_median": 155.0,
+    "calibration_f0_p10": 108.9,
+    "calibration_f0_p90": 235.1,
+    "calibration_cps": 5.35,
+    "f0_median_pooled": 164.4,
+    "calibration_file": "review/G3/r2/inviter_calibration.wav"
+   },
+   {
+    "role": "執勤人員",
+    "spec": {
+     "voice": "zh-TW-HsiaoChenNeural",
+     "rate": "+5%",
+     "pitch": "-8Hz",
+     "telephone": true
+    },
+    "calibration_f0_median": 187.5,
+    "calibration_f0_p10": 159.0,
+    "calibration_f0_p90": 319.0,
+    "calibration_cps": 4.97,
+    "f0_median_pooled": 206.8,
+    "calibration_file": "review/G3/r2/dispatcher_calibration.wav"
+   }
+  ],
+  "same_voice_pairs": {
+   "rows": [
+    {
+     "a": "旁白",
+     "b": "小晴",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-14%",
+       "pitch": "-10Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+0%",
+       "pitch": "+56Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.01,
+      4.66
+     ],
+     "rate_diff_pct": 16.2,
+     "f0_pooled": [
+      185.6,
+      277.2
+     ],
+     "f0_pooled_diff_pct": 49.4,
+     "semitones_pooled": 6.94,
+     "f0_calibration": [
+      183.4,
+      269.3
+     ],
+     "f0_calibration_diff_pct": 46.8,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "旁白",
+     "b": "林老師",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-14%",
+       "pitch": "-10Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-5%",
+       "pitch": "-26Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.01,
+      4.43
+     ],
+     "rate_diff_pct": 10.5,
+     "f0_pooled": [
+      185.6,
+      161.3
+     ],
+     "f0_pooled_diff_pct": 15.1,
+     "semitones_pooled": 2.43,
+     "f0_calibration": [
+      183.4,
+      162.5
+     ],
+     "f0_calibration_diff_pct": 12.9,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "旁白",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-14%",
+       "pitch": "-10Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+5%",
+       "pitch": "-8Hz",
+       "telephone": true
+      }
+     ],
+     "calibration_cps": [
+      4.01,
+      4.97
+     ],
+     "rate_diff_pct": 23.9,
+     "f0_pooled": [
+      185.6,
+      206.8
+     ],
+     "f0_pooled_diff_pct": 11.4,
+     "semitones_pooled": 1.87,
+     "f0_calibration": [
+      183.4,
+      187.5
+     ],
+     "f0_calibration_diff_pct": 2.2,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "折折",
+     "b": "小宇",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "+22%",
+       "pitch": "+90Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "+12%",
+       "pitch": "+20Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.51,
+      4.15
+     ],
+     "rate_diff_pct": 8.7,
+     "f0_pooled": [
+      294.0,
+      228.0
+     ],
+     "f0_pooled_diff_pct": 28.9,
+     "semitones_pooled": 4.4,
+     "f0_calibration": [
+      282.4,
+      214.8
+     ],
+     "f0_calibration_diff_pct": 31.5,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "折折",
+     "b": "品安",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "+22%",
+       "pitch": "+90Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "-10%",
+       "pitch": "-10Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.51,
+      3.33
+     ],
+     "rate_diff_pct": 35.4,
+     "f0_pooled": [
+      294.0,
+      181.8
+     ],
+     "f0_pooled_diff_pct": 61.7,
+     "semitones_pooled": 8.32,
+     "f0_calibration": [
+      282.4,
+      175.0
+     ],
+     "f0_calibration_diff_pct": 61.4,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "林老師",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+0%",
+       "pitch": "+56Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-5%",
+       "pitch": "-26Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.66,
+      4.43
+     ],
+     "rate_diff_pct": 5.2,
+     "f0_pooled": [
+      277.2,
+      161.3
+     ],
+     "f0_pooled_diff_pct": 71.9,
+     "semitones_pooled": 9.37,
+     "f0_calibration": [
+      269.3,
+      162.5
+     ],
+     "f0_calibration_diff_pct": 65.7,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+0%",
+       "pitch": "+56Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+5%",
+       "pitch": "-8Hz",
+       "telephone": true
+      }
+     ],
+     "calibration_cps": [
+      4.66,
+      4.97
+     ],
+     "rate_diff_pct": 6.7,
+     "f0_pooled": [
+      277.2,
+      206.8
+     ],
+     "f0_pooled_diff_pct": 34.0,
+     "semitones_pooled": 5.07,
+     "f0_calibration": [
+      269.3,
+      187.5
+     ],
+     "f0_calibration_diff_pct": 43.6,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "小晴",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+0%",
+       "pitch": "+56Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-8%",
+       "pitch": "-10Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.66,
+      4.29
+     ],
+     "rate_diff_pct": 8.6,
+     "f0_pooled": [
+      277.2,
+      185.5
+     ],
+     "f0_pooled_diff_pct": 49.4,
+     "semitones_pooled": 6.95,
+     "f0_calibration": [
+      269.3,
+      183.8
+     ],
+     "f0_calibration_diff_pct": 46.5,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "小宇",
+     "b": "品安",
+     "voice": "zh-TW-HsiaoYuNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "+12%",
+       "pitch": "+20Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoYuNeural",
+       "rate": "-10%",
+       "pitch": "-10Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.15,
+      3.33
+     ],
+     "rate_diff_pct": 24.6,
+     "f0_pooled": [
+      228.0,
+      181.8
+     ],
+     "f0_pooled_diff_pct": 25.4,
+     "semitones_pooled": 3.92,
+     "f0_calibration": [
+      214.8,
+      175.0
+     ],
+     "f0_calibration_diff_pct": 22.7,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "葉護理師",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-20%",
+       "pitch": "+55Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.37,
+      4.29
+     ],
+     "rate_diff_pct": 25.2,
+     "f0_pooled": [
+      113.4,
+      158.4
+     ],
+     "f0_pooled_diff_pct": 39.7,
+     "semitones_pooled": 5.79,
+     "f0_calibration": [
+      120.9,
+      163.3
+     ],
+     "f0_calibration_diff_pct": 35.1,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-12%",
+       "pitch": "-50Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.37,
+      4.72
+     ],
+     "rate_diff_pct": 13.8,
+     "f0_pooled": [
+      113.4,
+      91.9
+     ],
+     "f0_pooled_diff_pct": 23.4,
+     "semitones_pooled": 3.64,
+     "f0_calibration": [
+      120.9,
+      96.0
+     ],
+     "f0_calibration_diff_pct": 25.9,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（一般段）",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+45Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.37,
+      5.35
+     ],
+     "rate_diff_pct": 0.4,
+     "f0_pooled": [
+      113.4,
+      164.4
+     ],
+     "f0_pooled_diff_pct": 45.0,
+     "semitones_pooled": 6.43,
+     "f0_calibration": [
+      120.9,
+      155.0
+     ],
+     "f0_calibration_diff_pct": 28.2,
+     "rule": "語速差 <5% → F0 差須 ≥10%",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "葉護理師",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-6%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-20%",
+       "pitch": "+55Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.02,
+      4.29
+     ],
+     "rate_diff_pct": 17.0,
+     "f0_pooled": [
+      104.0,
+      158.4
+     ],
+     "f0_pooled_diff_pct": 52.3,
+     "semitones_pooled": 7.28,
+     "f0_calibration": [
+      120.9,
+      163.3
+     ],
+     "f0_calibration_diff_pct": 35.1,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-6%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-12%",
+       "pitch": "-50Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.02,
+      4.72
+     ],
+     "rate_diff_pct": 6.4,
+     "f0_pooled": [
+      104.0,
+      91.9
+     ],
+     "f0_pooled_diff_pct": 13.2,
+     "semitones_pooled": 2.14,
+     "f0_calibration": [
+      120.9,
+      96.0
+     ],
+     "f0_calibration_diff_pct": 25.9,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "阿樂叔叔（受影響段）",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-6%",
+       "pitch": "+0Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+45Hz"
+      }
+     ],
+     "calibration_cps": [
+      5.02,
+      5.35
+     ],
+     "rate_diff_pct": 6.6,
+     "f0_pooled": [
+      104.0,
+      164.4
+     ],
+     "f0_pooled_diff_pct": 58.1,
+     "semitones_pooled": 7.93,
+     "f0_calibration": [
+      120.9,
+      155.0
+     ],
+     "f0_calibration_diff_pct": 28.2,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "葉護理師",
+     "b": "陳伯伯",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-20%",
+       "pitch": "+55Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-12%",
+       "pitch": "-50Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.29,
+      4.72
+     ],
+     "rate_diff_pct": 10.0,
+     "f0_pooled": [
+      158.4,
+      91.9
+     ],
+     "f0_pooled_diff_pct": 72.4,
+     "semitones_pooled": 9.43,
+     "f0_calibration": [
+      163.3,
+      96.0
+     ],
+     "f0_calibration_diff_pct": 70.1,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "葉護理師",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-20%",
+       "pitch": "+55Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+45Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.29,
+      5.35
+     ],
+     "rate_diff_pct": 24.7,
+     "f0_pooled": [
+      158.4,
+      164.4
+     ],
+     "f0_pooled_diff_pct": 3.8,
+     "semitones_pooled": 0.64,
+     "f0_calibration": [
+      163.3,
+      155.0
+     ],
+     "f0_calibration_diff_pct": 5.4,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "林老師",
+     "b": "執勤人員",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-5%",
+       "pitch": "-26Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+5%",
+       "pitch": "-8Hz",
+       "telephone": true
+      }
+     ],
+     "calibration_cps": [
+      4.43,
+      4.97
+     ],
+     "rate_diff_pct": 12.2,
+     "f0_pooled": [
+      161.3,
+      206.8
+     ],
+     "f0_pooled_diff_pct": 28.2,
+     "semitones_pooled": 4.3,
+     "f0_calibration": [
+      162.5,
+      187.5
+     ],
+     "f0_calibration_diff_pct": 15.4,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "林老師",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-5%",
+       "pitch": "-26Hz"
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-8%",
+       "pitch": "-10Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.43,
+      4.29
+     ],
+     "rate_diff_pct": 3.3,
+     "f0_pooled": [
+      161.3,
+      185.5
+     ],
+     "f0_pooled_diff_pct": 15.0,
+     "semitones_pooled": 2.42,
+     "f0_calibration": [
+      162.5,
+      183.8
+     ],
+     "f0_calibration_diff_pct": 13.1,
+     "rule": "語速差 <5% → F0 差須 ≥10%",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "陳伯伯",
+     "b": "邀請者",
+     "voice": "zh-TW-YunJheNeural",
+     "param": [
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "-12%",
+       "pitch": "-50Hz"
+      },
+      {
+       "voice": "zh-TW-YunJheNeural",
+       "rate": "+0%",
+       "pitch": "+45Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.72,
+      5.35
+     ],
+     "rate_diff_pct": 13.3,
+     "f0_pooled": [
+      91.9,
+      164.4
+     ],
+     "f0_pooled_diff_pct": 78.9,
+     "semitones_pooled": 10.07,
+     "f0_calibration": [
+      96.0,
+      155.0
+     ],
+     "f0_calibration_diff_pct": 61.5,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    },
+    {
+     "a": "執勤人員",
+     "b": "旁白（必要旁白）",
+     "voice": "zh-TW-HsiaoChenNeural",
+     "param": [
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "+5%",
+       "pitch": "-8Hz",
+       "telephone": true
+      },
+      {
+       "voice": "zh-TW-HsiaoChenNeural",
+       "rate": "-8%",
+       "pitch": "-10Hz"
+      }
+     ],
+     "calibration_cps": [
+      4.97,
+      4.29
+     ],
+     "rate_diff_pct": 15.9,
+     "f0_pooled": [
+      206.8,
+      185.5
+     ],
+     "f0_pooled_diff_pct": 11.5,
+     "semitones_pooled": 1.88,
+     "f0_calibration": [
+      187.5,
+      183.8
+     ],
+     "f0_calibration_diff_pct": 2.0,
+     "rule": "語速差 ≥5%（F0 不設門檻）",
+     "pass": true,
+     "strict_pass": true
+    }
+   ],
+   "all_pass": true,
+   "all_strict_pass": true,
+   "strict_failing": []
+  },
+  "kids": {
+   "f0": {
+    "小宇": 228.0,
+    "小晴": 277.2,
+    "折折": 294.0,
+    "品安": 181.8
+   },
+   "pairwise_semitones": {
+    "小宇↔折折": 4.4,
+    "小晴↔小宇": 3.38,
+    "小晴↔折折": 1.02,
+    "品安↔小宇": 3.92,
+    "品安↔小晴": 7.3,
+    "品安↔折折": 8.32
+   },
+   "xiaoyu_vs_others_semitones": {
+    "小晴": 3.38,
+    "折折": 4.4,
+    "品安": 3.92
+   },
+   "xiaoyu_vs_each_ge3": true,
+   "all_pairs_ge3": false,
+   "note": "小宇和其他三個孩子都差 ≥3 半音。小晴↔折折約 1 半音：edge-tts HsiaoYu 的音高在 +90Hz 以上不再升高（折折上限約 294 Hz），小晴又要比小宇高 3 半音（≥271 Hz），兩者無法再拉開；改靠不同底聲（HsiaoChen 對 HsiaoYu）與語速（+0% 對 +22%）區分，聽感留到第 3 天彩排。"
+  },
+  "ye": {
+   "spec": {
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-20%",
+    "pitch": "+55Hz"
+   },
+   "calibration_cps": 4.29,
+   "calibration_le_4_6": true,
+   "lines": [
+    {
+     "line": "a2_c012_01",
+     "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+     "file": "audio/vo/vo_a2_c012_01_v03.wav",
+     "rate": "-20%",
+     "pitch": "+55Hz",
+     "seconds": 5.73,
+     "rate_cps": 3.17,
+     "rate_cps_net": 4.45,
+     "rate_cps_net_r": 4.27,
+     "f0_median": 160.8,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.9,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a2_c012_03",
+     "text": "你家人的電話沒人接，我晚一點再打。",
+     "file": "audio/vo/vo_a2_c012_03_v03.wav",
+     "rate": "-28%",
+     "pitch": "+55Hz",
+     "seconds": 3.98,
+     "rate_cps": 4.16,
+     "rate_cps_net": 4.66,
+     "rate_cps_net_r": 4.81,
+     "f0_median": 161.5,
+     "integrated_lufs": -17.8,
+     "true_peak_dbtp": -1.9,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a2_c012_05",
+     "text": "謝謝你們告訴我，我會請警察去看看。",
+     "file": "audio/vo/vo_a2_c012_05_v03.wav",
+     "rate": "-25%",
+     "pitch": "+55Hz",
+     "seconds": 4.13,
+     "rate_cps": 3.99,
+     "rate_cps_net": 4.57,
+     "rate_cps_net_r": 4.67,
+     "f0_median": 150.4,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -2.3,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a2_c013_03",
+     "text": "這幾天先不要開車。我會一直打給你的家人。",
+     "file": "audio/vo/vo_a2_c013_03_v03.wav",
+     "rate": "-20%",
+     "pitch": "+55Hz",
+     "seconds": 4.86,
+     "rate_cps": 4.01,
+     "rate_cps_net": 4.72,
+     "rate_cps_net_r": 4.84,
+     "f0_median": 160.0,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -2.3,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a5_c008_01",
+     "text": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+     "file": "audio/vo/vo_a5_c008_01_v03.wav",
+     "rate": "-25%",
+     "pitch": "+55Hz",
+     "seconds": 5.51,
+     "rate_cps": 4.28,
+     "rate_cps_net": 4.64,
+     "rate_cps_net_r": 4.58,
+     "f0_median": 181.9,
+     "integrated_lufs": -17.8,
+     "true_peak_dbtp": -1.9,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a5_c008_03",
+     "text": "不是喔。你們找大人、打 119，是在幫他。",
+     "file": "audio/vo/vo_a5_c008_03_v03.wav",
+     "rate": "-20%",
+     "pitch": "+55Hz",
+     "seconds": 5.31,
+     "rate_cps": 3.24,
+     "rate_cps_net": 4.64,
+     "rate_cps_net_r": 3.55,
+     "f0_median": 150.8,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -1.9,
+     "pause_spikes": 0,
+     "verdict": "需複查：兩個模型都在「喔」出現非同音差異"
+    },
+    {
+     "line": "a5_c008_05",
+     "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+     "file": "audio/vo/vo_a5_c008_05_v03.wav",
+     "rate": "-20%",
+     "pitch": "+55Hz",
+     "seconds": 6.13,
+     "rate_cps": 3.3,
+     "rate_cps_net": 4.34,
+     "rate_cps_net_r": 4.28,
+     "f0_median": 172.6,
+     "integrated_lufs": -17.9,
+     "true_peak_dbtp": -2.3,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    },
+    {
+     "line": "a6_c006_06",
+     "text": "說出來，就是在保護自己。",
+     "file": "audio/vo/vo_a6_c006_06_v03.wav",
+     "rate": "-20%",
+     "pitch": "+55Hz",
+     "seconds": 3.19,
+     "rate_cps": 3.55,
+     "rate_cps_net": 4.02,
+     "rate_cps_net_r": 4.05,
+     "f0_median": 156.3,
+     "integrated_lufs": -18.1,
+     "true_peak_dbtp": -1.9,
+     "pause_spikes": 0,
+     "verdict": "兩個模型都轉寫一致或只有同音字"
+    }
+   ],
+   "max_rate_cps_net": 4.72,
+   "max_rate_cps_net_r": 4.84,
+   "all_lines_net_le_5_0": true,
+   "gross_rate_mean": 3.71,
+   "role_sheet_rate": "角色表 3.8–4.0 字／秒（溫柔、清楚、不急）",
+   "vs_inviter": {
+    "ye_calibration_f0": 163.3,
+    "inviter_calibration_f0": 155.0,
+    "f0_calibration_diff_pct": 5.4,
+    "ye_calibration_cps": 4.29,
+    "inviter_calibration_cps": 5.35,
+    "rate_diff_pct": 24.7,
+    "f0_pooled": [
+     158.4,
+     164.4
+    ],
+    "f0_pooled_diff_pct": 3.8,
+    "rule": "同一句校準句 F0 差 ≥10%，或語速差 ≥15%（重驗 1 第 3 項）",
+    "pass": true
+   },
+   "vs_ale": {
+    "ye_f0_pooled": 158.4,
+    "ale_f0_pooled": 113.4,
+    "ale_affected_f0_pooled": 104.0,
+    "semitones_vs_ale": 5.79,
+    "semitones_vs_ale_affected": 7.28,
+    "calibration_f0": [
+     163.3,
+     120.9,
+     120.9
+    ],
+    "calibration_cps": [
+     4.29,
+     5.37,
+     5.02
+    ],
+    "rate_diff_pct_vs_ale": 25.2,
+    "rate_diff_pct_vs_ale_affected": 17.0
+   },
+   "vs_lin_cross_voice": {
+    "ye_f0_pooled": 158.4,
+    "lin_f0_pooled": 161.3,
+    "f0_pooled_diff_pct": 1.8,
+    "calibration_f0": [
+     163.3,
+     162.5
+    ],
+    "calibration_cps": [
+     4.29,
+     4.43
+    ],
+    "rate_diff_pct": 3.3,
+    "note": "不同底聲（YunJhe 男聲對 HsiaoChen 女聲；角色表第 3 節：常同場的林老師↔葉護理師用不同基礎聲音），同底聲門檻不適用。音高與語速現在幾乎相同（a6_c006 同場），區分只靠男女聲音色；聽感未驗證，列第 3 天彩排確認。"
+   },
+   "inviter_unchanged_note": "邀請者維持 YunJhe +0%／+45Hz（修正第 1 輪 D-G3-R1-04）。驗收建議的 HsiaoChen −30Hz 實測校準句 F0 157 Hz、4.66 字／秒，和新葉護理師（約 163 Hz、4.29 字／秒）F0 差約 4%、語速差約 9%，兩項都不到門檻，而且會和林老師（HsiaoChen −26Hz）同底聲又同高，不採用。"
+  },
+  "pinan": {
+   "speaker_calibration_f0": 269.3,
+   "name_hint_prompt": "以下是繁體中文的台灣華語。故事人物：小晴、小宇、品安、阿樂叔叔、折折。",
+   "summary": {
+    "a1_c001_01": {
+     "official_min_hz": 204.0,
+     "ping_control_min_hz": 281.3,
+     "before_min_hz": 248.0,
+     "pin_minus_ping_st": -5.56,
+     "official_min_vs_speaker_median_st": -4.81,
+     "official_fall_from_onset_st": -5.51,
+     "official_low_within_1st_ms": 50,
+     "official_rise_to_an_st": 8.19,
+     "ping_control_rise_to_an_st": 4.45,
+     "third_tone_criteria": {
+      "fall_from_onset_le_-4st": true,
+      "min_le_-3st_vs_speaker_calibration_median": true,
+      "min_ge_2st_below_ping_control": true
+     },
+     "third_tone_clear": true,
+     "standard_prompt_transcribed_pinan": {
+      "small": false,
+      "large-v3-turbo": false
+     },
+     "name_hint_discriminates_pin_vs_ping": {
+      "small": false,
+      "large-v3-turbo": true
+     }
+    },
+    "a1_c004_05": {
+     "official_min_hz": 202.7,
+     "ping_control_min_hz": 272.2,
+     "before_min_hz": 154.8,
+     "pin_minus_ping_st": -5.1,
+     "official_min_vs_speaker_median_st": -4.92,
+     "official_fall_from_onset_st": -5.3,
+     "official_low_within_1st_ms": 60,
+     "official_rise_to_an_st": 8.16,
+     "ping_control_rise_to_an_st": 4.53,
+     "third_tone_criteria": {
+      "fall_from_onset_le_-4st": true,
+      "min_le_-3st_vs_speaker_calibration_median": true,
+      "min_ge_2st_below_ping_control": true
+     },
+     "third_tone_clear": true,
+     "standard_prompt_transcribed_pinan": {
+      "small": false,
+      "large-v3-turbo": false
+     },
+     "name_hint_discriminates_pin_vs_ping": {
+      "small": false,
+      "large-v3-turbo": true
+     }
+    },
+    "a6_c006_01": {
+     "official_min_hz": 202.7,
+     "ping_control_min_hz": 272.2,
+     "before_min_hz": 244.8,
+     "pin_minus_ping_st": -5.1,
+     "official_min_vs_speaker_median_st": -4.92,
+     "official_fall_from_onset_st": -5.3,
+     "official_low_within_1st_ms": 60,
+     "official_rise_to_an_st": 8.16,
+     "ping_control_rise_to_an_st": 4.53,
+     "third_tone_criteria": {
+      "fall_from_onset_le_-4st": true,
+      "min_le_-3st_vs_speaker_calibration_median": true,
+      "min_ge_2st_below_ping_control": true
+     },
+     "third_tone_clear": true,
+     "standard_prompt_transcribed_pinan": {
+      "small": false,
+      "large-v3-turbo": false
+     },
+     "name_hint_discriminates_pin_vs_ping": {
+      "small": false,
+      "large-v3-turbo": true
+     }
+    }
+   },
+   "pass_condition_a_both_models_transcribe_pinan": false,
+   "pass_condition_b_third_tone_clear_all_lines": true,
+   "conclusion": "做不到通過條件 (a)：正式提示下兩個模型仍把三句的人名轉成常用詞「平安」（語言模型偏好；換寫法與加深走勢都無效）。改用通過條件 (b)：附品／平 F0 走勢對照，三句的「品」都符合三聲判準；加人名提示時，large-v3-turbo 把 3／3 句正式檔轉成「品安」、同時把平安對照檔轉成「平安」（修正前整句合成 2／3 句轉成「品安」）；small 加提示後連平安對照檔也寫成「品安」，分不出來。聽感未驗證，寫入 DECISIONS.md D-G3-R2-01。",
+   "name_hint_turbo_official_pinan_and_control_ping": 3,
+   "name_hint_turbo_before_pinan": 2
+  },
+  "loudness_scope": {
+   "dialogue_lines_spread_lu": 0.3,
+   "vo_files_spread_lu": 0.2,
+   "featured_music_passages_I": {
+    "a0_c001": -20.1,
+    "a8_c002": -20.5,
+    "a8_c003": -21.5
+   },
+   "featured_music_spread_lu": 1.4,
+   "underscore_passages_I": {
+    "a2_c002": -25.6,
+    "a2_c004": -24.2
+   },
+   "underscore_spread_lu": 1.4,
+   "cue_level_option_estimate": {
+    "a2_c004_cue_I": -15.2,
+    "a2_c002_target_I": -17.2,
+    "a2_c002_music_only_now": -25.6,
+    "a2_c002_music_only_needed_est": -19.1,
+    "raise_needed_lu_est": 6.5,
+    "dialogue_in_mix_LUFS": -14.9,
+    "note": "能量平均估算（無台詞時段 15.6 秒、台詞時段含前後 0.3／0.5 秒）。襯底要升到約對白下 4 LU，等於把劇情段的襯底配樂改成和開幕曲一樣的主奏音量；而且開幕、閉幕、署名卡（−20～−21.5）仍和 a2_c004（−15.2）差 >2 LU，要讓「全部 cue」都在 ±1 LU 內，主奏配樂得和對白一樣響（約 −15），聲音代理不建議。"
+   },
+   "proposed_rule": {
+    "text": "±1 LU（最大－最小 ≤2 LU）適用於三層：(1) 每個素材檔正規化：配音逐句檔 −18 LUFS、配樂檔與音效依各自目標（music_metrics.json，偏離目標 ≤1 LU）；(2) 演出混音中每一句對白的整合響度（對白錨點，全部台詞最大－最小 ≤2 LU）；(3) 同一類無台詞配樂段彼此比較：主奏段（開幕、閉幕、署名卡）一組、劇情襯底段（scene cue 內無台詞時段）一組，各自 ≤2 LU。整段 cue 的整合響度只列參考，不設 ±1 LU（它取決於台詞佔比：以對白為主的 a2_c004 約 −15、以無台詞動作為主的 a2_c002 約 −20）。",
+    "pass_now": {
+     "vo_files": true,
+     "dialogue_lines": true,
+     "featured_music": true,
+     "underscore": true
+    },
+    "status": "聲音代理建議；裁決權在主線（REVIEW.md）。主線同意後，把 loudness_json_decision_draft 貼進 tools/g4_review_pack.py 的 segment_spread_lu.decision，並加 loudness_json_fields_suggested 四個欄位（數字取本檔）。",
+    "caveat": "劇情襯底組目前只有 a2_c002（15.6 秒）與 a2_c004（2.0 秒）兩段，a2_c004 樣本短；G5 各幕完成後要用全劇混音重算。",
+    "loudness_json_decision_draft": "已定案（主線，依 review/G3/loudness_scope_r2.json）：±1 LU 適用於素材檔正規化、各句對白在混音中的整合響度、同類無台詞配樂段（主奏段一組、劇情襯底段一組）；整段 cue 只列參考。",
+    "loudness_json_fields_suggested": [
+     "dialogue_lines_lu",
+     "featured_music_lu",
+     "underscore_lu",
+     "vo_files_lu"
+    ]
+   }
+  },
+  "elevenlabs_usage": {
+   "source": "audio/vo/elevenlabs_usage.jsonl（回應標頭 character-cost 逐筆累加；失敗呼叫不計費）",
+   "snapshot": "2026-10-21 10:00:14",
+   "note": "EL 全劇版試作由另一個工作流（tools/vo_el_prod.py）執行中，總數會繼續增加；以 audio/vo_el/ledger.json 與本檔為準。",
+   "total_billed_chars": 3208,
+   "by_category": {
+    "G3 試音（免費方案，03:xx）": 283,
+    "Starter 升級後探測（06:27）": 1,
+    "EL 選角（Starter，06–07 時；review/G3/el/library、design）": 1426,
+    "EL 全劇版試作（Starter，08:27 起；tools/vo_el_prod.py，audio/vo_el/ledger.json）": 1498
+   },
+   "vo_el_ledger_total": 1498,
+   "this_round_billed": 0,
+   "license": "03:xx 的 G3 試音在免費方案下產生：只限非商業用途、公開時須標註 elevenlabs.io（review/G3/samples/A_*、B_*jessica*，不是正式素材）。06:30 起為 Starter 付費方案（商用授權，Beta 服務除外）。另受 ElevenLabs 使用政策「Use by and for Minors」：給 18 歲以下對象的產品須經書面核准（review/G3/el/license_evidence.md）；未取得核准前，ElevenLabs 輸出一律不進演出。"
+  }
  }
 }

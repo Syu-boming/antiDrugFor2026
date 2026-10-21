@@ -1,0 +1,17 @@
+{
+ "a1_c001_05": {
+  "seconds": 2.04,
+  "speech_start": 0.12,
+  "speech_end": 1.79,
+  "speech_segments": [
+   [
+    0.12,
+    1.79
+   ]
+  ],
+  "file": "review/G3/el/full/trial/kids/pa_prod_dengS/out/vo_a1_c001_05_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/pa_prod_dengS/lipsync/a1_c001_05_el01.json",
+  "role": "品安",
+  "text": "……你是青蛙燈嗎？"
+ }
+}

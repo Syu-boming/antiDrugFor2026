@@ -1,0 +1,790 @@
+{
+ "a2_c001_01": {
+  "id": "a2_c001_01",
+  "role": "小宇",
+  "text": "叔叔，你還好嗎？竹篾掉了。",
+  "file": "audio/vo/vo_a2_c001_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_01_v01.json",
+  "seconds": 3.52,
+  "speech_start": 0.12,
+  "speech_end": 3.27,
+  "master": {
+   "raw_head_silence_ms": 150,
+   "raw_tail_silence_ms": 738,
+   "speech_start": 0.12,
+   "speech_end": 3.27,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 4.69,
+   "pass1_input_i": -22.69,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "I": -18.1,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c001_01_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.52,
+   "speech_seconds": 3.15,
+   "integrated_lufs": -18.1,
+   "true_peak_dbtp": -1.9,
+   "lra": 0.4,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 10,
+   "rate_cps": 3.17,
+   "rate_cps_net": 3.88,
+   "pauses_ms": [
+    160,
+    570
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 225.8,
+   "f0_p10": 179.1,
+   "f0_p90": 302.5,
+   "voiced_ratio": 0.54
+  },
+  "synthesis": [
+   {
+    "role": "小宇",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+12%",
+    "pitch": "+20Hz",
+    "post": {
+     "max_pause_ms": 550
+    },
+    "synth_text": "叔叔，你還好嗎？竹篾掉了。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1010,
+    560
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "叔叔，你還好嗎？竹篾掉了。",
+     "hyp": "叔叔,你還好嗎? 逐滅掉了。",
+     "hyp_trad": "叔叔你還好嗎逐滅掉了",
+     "cer": 0.2,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "竹篾",
+       "hyp": "逐滅",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "竹篾",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "叔叔，你還好嗎？竹篾掉了。",
+     "hyp": "叔叔,你還好嗎?竹滅掉了。",
+     "hyp_trad": "叔叔你還好嗎竹滅掉了",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "篾",
+       "hyp": "滅",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "竹篾",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.1,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c001_02": {
+  "id": "a2_c001_02",
+  "role": "阿樂叔叔",
+  "text": "沒事、沒事，手滑了一下。",
+  "file": "audio/vo/vo_a2_c001_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_02_v01.json",
+  "seconds": 3.16,
+  "speech_start": 0.12,
+  "speech_end": 2.91,
+  "master": {
+   "raw_head_silence_ms": 250,
+   "raw_tail_silence_ms": 896,
+   "speech_start": 0.12,
+   "speech_end": 2.91,
+   "method": "measured_gain",
+   "gain_db": 4.5,
+   "pre_I": -22.5,
+   "limited": true,
+   "I": -18.2,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c001_02_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 3.16,
+   "speech_seconds": 2.79,
+   "integrated_lufs": -18.2,
+   "true_peak_dbtp": -1.9,
+   "lra": 20.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 9,
+   "rate_cps": 3.23,
+   "rate_cps_net": 4.09,
+   "pauses_ms": [
+    310,
+    280
+   ],
+   "pause_count_ge250": 2,
+   "f0_median": 94.3,
+   "f0_p10": 84.4,
+   "f0_p90": 131.1,
+   "voiced_ratio": 0.43
+  },
+  "synthesis": [
+   {
+    "role": "阿樂叔叔",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "post": {
+     "max_pause_ms": 900
+    },
+    "synth_text": "沒事、沒事，手滑了一下。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "沒事、沒事，手滑了一下。",
+     "hyp": "沒事 沒事 手滑了一下。",
+     "hyp_trad": "沒事沒事手滑了一下",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "沒事、沒事，手滑了一下。",
+     "hyp": "沒事,沒事,手滑了一下。",
+     "hyp_trad": "沒事沒事手滑了一下",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c001_03": {
+  "id": "a2_c001_03",
+  "role": "折折",
+  "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+  "file": "audio/vo/vo_a2_c001_03_v01.wav",
+  "lipsync": "audio/lipsync/a2_c001_03_v01.json",
+  "seconds": 5.43,
+  "speech_start": 0.12,
+  "speech_end": 5.18,
+  "master": {
+   "raw_head_silence_ms": 150,
+   "raw_tail_silence_ms": 664,
+   "speech_start": 0.12,
+   "speech_end": 5.18,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 3.31,
+   "pass1_input_i": -21.31,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "I": -17.9,
+   "TP": -1.9
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c001_03_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 5.43,
+   "speech_seconds": 5.07,
+   "integrated_lufs": -17.9,
+   "true_peak_dbtp": -1.9,
+   "lra": 1.5,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 240,
+   "han_chars": 22,
+   "rate_cps": 4.34,
+   "rate_cps_net": 4.88,
+   "pauses_ms": [
+    560
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 278.8,
+   "f0_p10": 216.7,
+   "f0_p90": 366.3,
+   "voiced_ratio": 0.52
+  },
+  "synthesis": [
+   {
+    "role": "折折",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoYuNeural",
+    "rate": "+22%",
+    "pitch": "+60Hz",
+    "post": {
+     "max_pause_ms": 550
+    },
+    "synth_text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    710,
+    560
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+     "hyp": "大家仔細看,叔叔的手上,是不是多了什麼。看到的舉手。",
+     "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+     "hyp": "大家仔細看,叔叔的手上是不是多了什麼?看到的舉手。",
+     "hyp_trad": "大家仔細看叔叔的手上是不是多了什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c002_01": {
+  "id": "a2_c002_01",
+  "role": "阿樂叔叔",
+  "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+  "file": "audio/vo/vo_a2_c002_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c002_01_v01.json",
+  "seconds": 4.26,
+  "speech_start": 0.12,
+  "speech_end": 4.01,
+  "master": {
+   "raw_head_silence_ms": 250,
+   "raw_tail_silence_ms": 826,
+   "speech_start": 0.12,
+   "speech_end": 4.01,
+   "method": "loudnorm_pass1_gain",
+   "gain_db": 5.05,
+   "pass1_input_i": -23.05,
+   "note": "loudnorm 第二段轉動態模式，改用第一段量測值做線性增益＋真峰值限制",
+   "limited": true,
+   "trim_passes": 1,
+   "I": -18.0,
+   "TP": -1.6
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c002_01_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.26,
+   "speech_seconds": 3.89,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.6,
+   "lra": 1.2,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 14,
+   "rate_cps": 3.6,
+   "rate_cps_net": 4.78,
+   "pauses_ms": [
+    960,
+    230
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 109.0,
+   "f0_p10": 86.9,
+   "f0_p90": 158.3,
+   "voiced_ratio": 0.37
+  },
+  "synthesis": [
+   {
+    "role": "阿樂叔叔",
+    "service": "edge",
+    "voice": "zh-TW-YunJheNeural",
+    "rate": "-6%",
+    "pitch": "+0Hz",
+    "post": {
+     "max_pause_ms": 900
+    },
+    "synth_text": "咦？我想揮手……手怎麼跑到旁邊去了？"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [
+   [
+    1080,
+    910
+   ]
+  ],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+     "hyp": "1. 我想揮手,手怎麼跑到旁邊去了?",
+     "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+     "cer": 0.071,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "咦",
+       "hyp": "一",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "咦？我想揮手……手怎麼跑到旁邊去了？",
+     "hyp": "1.我想揮手,手怎麼跑到旁邊去了?",
+     "hyp_trad": "1我想揮手手怎麼跑到旁邊去了",
+     "cer": 0.071,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "咦",
+       "hyp": "一",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "per_min": 0.071,
+   "cer_min": 0.071,
+   "both_models_diff": [
+    "咦"
+   ],
+   "verdict": "需複查：兩個模型都在「咦」出現非同音差異"
+  }
+ },
+ "a2_c002_02": {
+  "id": "a2_c002_02",
+  "role": "小晴",
+  "text": "叔叔，小心！",
+  "file": "audio/vo/vo_a2_c002_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c002_02_v01.json",
+  "seconds": 1.72,
+  "speech_start": 0.12,
+  "speech_end": 1.47,
+  "master": {
+   "raw_head_silence_ms": 190,
+   "raw_tail_silence_ms": 740,
+   "speech_start": 0.12,
+   "speech_end": 1.47,
+   "method": "measured_gain",
+   "gain_db": 2.5,
+   "pre_I": -20.5,
+   "I": -18.0,
+   "TP": -3.6
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c002_02_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 1.72,
+   "speech_seconds": 1.35,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.6,
+   "lra": 0.0,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 4,
+   "rate_cps": 2.96,
+   "rate_cps_net": 2.96,
+   "pauses_ms": [
+    240
+   ],
+   "pause_count_ge250": 0,
+   "f0_median": 363.3,
+   "f0_p10": 211.3,
+   "f0_p90": 384.3,
+   "voiced_ratio": 0.36
+  },
+  "synthesis": [
+   {
+    "role": "小晴",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "+0%",
+    "pitch": "+40Hz",
+    "post": {
+     "max_pause_ms": 550
+    },
+    "synth_text": "叔叔，小心！"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "叔叔，小心！",
+     "hyp": "叔叔,小心。",
+     "hyp_trad": "叔叔小心",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "ref": "叔叔，小心！",
+     "hyp": "叔叔,小心。",
+     "hyp_trad": "叔叔小心",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.0,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c004_01": {
+  "id": "a2_c004_01",
+  "role": "旁白",
+  "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+  "file": "audio/vo/vo_a2_c004_01_v01.wav",
+  "lipsync": "audio/lipsync/a2_c004_01_v01.json",
+  "seconds": 4.68,
+  "speech_start": 0.12,
+  "speech_end": 4.43,
+  "master": {
+   "raw_head_silence_ms": 220,
+   "raw_tail_silence_ms": 942,
+   "speech_start": 0.12,
+   "speech_end": 4.43,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -18.89,
+   "I": -17.8,
+   "TP": -3.0
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c004_01_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 4.68,
+   "speech_seconds": 4.31,
+   "integrated_lufs": -17.8,
+   "true_peak_dbtp": -3.0,
+   "lra": 0.6,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 18,
+   "rate_cps": 4.18,
+   "rate_cps_net": 4.49,
+   "pauses_ms": [
+    300
+   ],
+   "pause_count_ge250": 1,
+   "f0_median": 210.3,
+   "f0_p10": 165.9,
+   "f0_p90": 281.5,
+   "voiced_ratio": 0.58
+  },
+  "synthesis": [
+   {
+    "role": "旁白",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-14%",
+    "pitch": "+0Hz",
+    "post": {},
+    "synth_text": "阿勒叔叔身上這一條一條的線，叫做操偶線。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+     "hyp": "阿勒叔叔身上這一條一條的線,叫做操偶線。",
+     "hyp_trad": "阿勒叔叔身上這一條一條的線叫做操偶線",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "操偶線",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "一條",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+     "hyp": "阿勒叔叔身上這一條一條的線,叫做操偶線。",
+     "hyp_trad": "阿勒叔叔身上這一條一條的線叫做操偶線",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "操偶線",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "一條",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.056,
+   "both_models_diff": [],
+   "verdict": "兩個模型都轉寫一致或只有同音字"
+  }
+ },
+ "a2_c004_02": {
+  "id": "a2_c004_02",
+  "role": "旁白",
+  "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+  "file": "audio/vo/vo_a2_c004_02_v01.wav",
+  "lipsync": "audio/lipsync/a2_c004_02_v01.json",
+  "seconds": 11.57,
+  "speech_start": 0.12,
+  "speech_end": 11.32,
+  "master": {
+   "raw_head_silence_ms": 10,
+   "raw_tail_silence_ms": 80,
+   "speech_start": 0.12,
+   "speech_end": 11.32,
+   "method": "loudnorm_two_pass",
+   "normalization_type": "linear",
+   "pass1_input_i": -19.1,
+   "I": -17.9,
+   "TP": -3.4
+  },
+  "metrics": {
+   "file": "audio/vo/vo_a2_c004_02_v01.wav",
+   "sample_rate": 48000,
+   "bits": 16,
+   "channels": 1,
+   "seconds": 11.57,
+   "speech_seconds": 11.2,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -3.4,
+   "lra": 2.9,
+   "clipped_samples": 0,
+   "head_silence_ms": 120,
+   "tail_silence_ms": 250,
+   "han_chars": 38,
+   "rate_cps": 3.39,
+   "rate_cps_net": 4.7,
+   "pauses_ms": [
+    1410,
+    280,
+    1420
+   ],
+   "pause_count_ge250": 3,
+   "f0_median": 197.3,
+   "f0_p10": 161.8,
+   "f0_p90": 278.9,
+   "voiced_ratio": 0.5
+  },
+  "synthesis": [
+   {
+    "role": "旁白",
+    "service": "edge",
+    "voice": "zh-TW-HsiaoChenNeural",
+    "rate": "-8%",
+    "pitch": "+0Hz",
+    "post": {
+     "sentence_gap_ms": 1300
+    },
+    "synth_text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
+   }
+  ],
+  "el_chars_billed": 0,
+  "pause_caps_ms": [],
+  "transcript": {
+   "models": {
+    "small": {
+     "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+     "hyp": "這些現實故事的比喻,毒品可能讓人的頭腦和身體受到影響,不停使喚。人不會真的變成喪屍。",
+     "hyp_trad": "這些現實故事的比喻毒品可能讓人的頭腦和身體受到影響不停使喚人不會真的變成喪屍",
+     "cer": 0.079,
+     "per": 0.053,
+     "diffs": [
+      {
+       "ref": "線是",
+       "hyp": "現實",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      },
+      {
+       "ref": "聽",
+       "hyp": "停",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "喪屍",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "使喚",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不聽",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "ref": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+     "hyp": "這些現世故事的比喻。毒品可能讓人的頭腦和身體受到影響,不聽使喚。人不會真的變成喪屍。",
+     "hyp_trad": "這些現世故事的比喻毒品可能讓人的頭腦和身體受到影響不聽使喚人不會真的變成喪屍",
+     "cer": 0.053,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "線是",
+       "hyp": "現世",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "喪屍",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "使喚",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不聽",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "per_min": 0.0,
+   "cer_min": 0.053,
+   "both_models_diff": [],
+   "verdict": "只有單一模型出現差異（多半是轉寫誤差）"
+  }
+ }
+}

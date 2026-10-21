@@ -4,51 +4,52 @@
   "knee",
   "wrist"
  ],
+ "attach_file": "assets/final/rig/ale_attach_v05.json",
  "attach_points_primary": {
   "wrist_back": {
    "part": "forearm_r",
    "local_px": [
-    69.0,
-    210.0
+    82.0,
+    184.0
    ]
   },
   "elbow_out": {
    "part": "upper_arm_r",
    "local_px": [
-    39.0,
-    279.0
+    54.0,
+    265.0
    ]
   },
   "knee_front": {
    "part": "thigh_l",
    "local_px": [
-    87.5,
+    88.0,
     330.0
    ]
   }
  },
- "probe_frames_with_strings": 435,
- "string_path_min_dist_to_ale_head_box_px": 26.9,
+ "probe_frames_with_strings": 545,
+ "string_path_min_dist_to_ale_head_box_px": 21.6,
  "per_anchor": {
   "wrist": {
-   "min_dist_to_head_box_px": 30.9,
-   "frames": 435,
-   "at": "a2_c002 t=7.3"
+   "min_dist_to_head_box_px": 24.2,
+   "frames": 545,
+   "at": "a2_c002 t=4.3"
   },
   "elbow": {
-   "min_dist_to_head_box_px": 44.0,
-   "frames": 424,
-   "at": "a2_c002 t=8.3"
+   "min_dist_to_head_box_px": 34.3,
+   "frames": 535,
+   "at": "a2_c002 t=5.2"
   },
   "knee": {
-   "min_dist_to_head_box_px": 26.9,
-   "frames": 413,
-   "at": "a8_c002 t=2.9"
+   "min_dist_to_head_box_px": 21.6,
+   "frames": 525,
+   "at": "a8_c002 t=5.4"
   }
  },
  "string_path_intersects_child_box": [],
  "string_path_intersects_child_box_count": 0,
- "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎同一條二次貝茲曲線投影成 13 點；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
+ "probe_method": "capture/probe.json（關鍵影格與每秒一格）＋probe_dense.json（播放錄製每秒 10 次）；線路徑＝引擎實際畫的中心線（strings.ts，37 點，下段細分）投影到螢幕；頭部框＝阿樂叔叔顯示中的 head／head_worried 部件圖外框（含透明邊，比可見的頭大）；兒童框＝整個立牌外框（含透明邊）。",
  "required_narration_1": {
   "claude_md": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
   "script_v03": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",

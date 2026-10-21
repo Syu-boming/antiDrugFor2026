@@ -1,0 +1,26 @@
+[
+ {
+  "part": "forearm_l",
+  "file_v05": "chr-ale_forearm-l_v05.png",
+  "outline_v05": "chr-ale_forearm-l-outline_v05.png",
+  "stray_px_removed": 403,
+  "line_px_added": 170,
+  "skin_px_textured": 11176,
+  "size": [
+   148,
+   304
+  ]
+ },
+ {
+  "part": "forearm_r",
+  "file_v05": "chr-ale_forearm-r_v05.png",
+  "outline_v05": "chr-ale_forearm-r-outline_v05.png",
+  "stray_px_removed": 1217,
+  "line_px_added": 281,
+  "skin_px_textured": 13107,
+  "size": [
+   180,
+   295
+  ]
+ }
+]

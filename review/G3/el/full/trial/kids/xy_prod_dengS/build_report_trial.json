@@ -1,0 +1,753 @@
+{
+ "a1_c001_03": {
+  "id": "a1_c001_03",
+  "role": "小宇",
+  "codes": [
+   "xiaoyu"
+  ],
+  "text": "主燈的骨架。它不見了！",
+  "required": false,
+  "signature": "64c1f6fcd368adb8",
+  "status": "fail",
+  "max_attempts": 2,
+  "targets": {
+   "rate_nominal": [
+    4.2,
+    4.4
+   ],
+   "rate_cps_net": [
+    3.7,
+    4.9
+   ],
+   "f0_nominal": 228.0,
+   "f0_hz": [
+    203.1,
+    255.9
+   ],
+   "source": "角色表第 3 節（4.2–4.4；有活力；報案時放慢、清楚）；casting.json 小宇 note（F0 228 Hz，比小晴低）",
+   "rate_range": [
+    3.7,
+    4.9
+   ],
+   "f0_range": [
+    203.1,
+    255.9
+   ]
+  },
+  "attempts": [
+   {
+    "k": 1,
+    "time": "2026-10-21 10:42:31",
+    "seeds": {
+     "xiaoyu": 20261021
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "主灯的骨架。它不見了！",
+      "sent": "主灯的骨架。它不見了！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c001_03/xiaoyu_a0_s0_062d316f030d.mp3",
+      "request_id": "tubeLTYxfbwo3sLwMxY9",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261021,
+      "tail": {
+       "last60ms_rel_dB": -39.2,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -30.9,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.3,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.42,
+        5.01
+       ],
+       "decay_end_s": 3.55,
+       "cut_s": 3.65,
+       "floor_rel_db": -37.0,
+       "removed_s": 2.67
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.32,
+         1.62
+        ],
+        "cut_s": 1.61,
+        "depth_rel_db": -39.0,
+        "existing_pause_ms": 760,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 0.8,
+       "rate_before": 3.041,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_prod_dengS/_attempts/a1_c001_03/a1.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.97,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -1.9,
+     "limited": null,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 70
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_prod_dengS/_attempts/a1_c001_03/a1.wav",
+     "seconds": 3.22,
+     "speech_seconds": 2.86,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.15,
+     "rate_cps_net": 4.02,
+     "rate_cps_net_r": 4.09,
+     "pauses_ms": [
+      620
+     ],
+     "pauses_ms_r": [
+      590
+     ],
+     "f0_median": 284.3,
+     "f0_p10": 190.6,
+     "f0_p90": 418.1,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 250,
+     "rate_net_syll": 4.09,
+     "f0_in_range": false
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "主丹的骨架他不見了",
+      "cer": 0.222,
+      "per": 0.111,
+      "diffs": [
+       {
+        "ref": "燈",
+        "hyp": "丹",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "ref": "它",
+        "hyp": "他",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         5,
+         6
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "主丹的骨架它不見了",
+      "cer": 0.111,
+      "per": 0.111,
+      "diffs": [
+       {
+        "ref": "燈",
+        "hyp": "丹",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 2,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "燈",
+          "hyp": "丹",
+          "kind": "字不同",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [
+         {
+          "ref": "燈",
+          "hyp": "丹",
+          "kind": "字不同",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -39.2,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": true,
+      "value": 4.09,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 9,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       620
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.32,
+         1.62
+        ],
+        "cut_s": 1.61,
+        "depth_rel_db": -39.0,
+        "existing_pause_ms": 760,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a"
+    ],
+    "problems": 1,
+    "detail_score": 2.0,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.65 秒處切掉 2.67 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×0.8（母帶前淨語速 3.041 → 目標 4.3）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   },
+   {
+    "k": 2,
+    "time": "2026-10-21 10:43:30",
+    "seeds": {
+     "xiaoyu": 20261022
+    },
+    "settings": {
+     "xiaoyu": {
+      "stability": 1.0,
+      "similarity_boost": 0.75,
+      "style": null,
+      "speed": null,
+      "use_speaker_boost": null
+     }
+    },
+    "segments": [
+     {
+      "role": "xiaoyu",
+      "i": 0,
+      "text": "主灯的骨架。它不見了！",
+      "sent": "主灯的骨架。它不見了！……嗯。",
+      "segment_mode": "post",
+      "tail_guard": "……嗯。",
+      "tail_fix": null,
+      "gap_after_ms": null,
+      "raw": "audio/vo_el/_raw/a1_c001_03/xiaoyu_a1_s0_0672a270570b.mp3",
+      "request_id": "PIQAKQcrnNqy1Ask8hRO",
+      "billed": 6,
+      "billed_source": "character-cost",
+      "cached": false,
+      "seed": 20261022,
+      "tail": {
+       "last60ms_rel_dB": -32.3,
+       "last60ms_voiced": 0.0,
+       "truncated": false,
+       "where": "切點前 60 ms（句尾保護）"
+      },
+      "tail_raw_end": {
+       "last60ms_rel_dB": -12.6,
+       "last60ms_voiced": 0.0,
+       "truncated": false
+      },
+      "guard": {
+       "how": "轉寫時間戳",
+       "t_end_s": 3.2,
+       "t_fill_s": null,
+       "asr_tail": "",
+       "guard": "ok",
+       "pause_s": [
+        3.28,
+        4.75
+       ],
+       "decay_end_s": 3.45,
+       "cut_s": 3.55,
+       "floor_rel_db": -31.4,
+       "removed_s": 3.33
+      },
+      "declicked": 0,
+      "head_guard": null,
+      "head": null,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.12,
+         1.38
+        ],
+        "cut_s": 1.4,
+        "depth_rel_db": -32.6,
+        "existing_pause_ms": 800,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "psola": {
+       "pitch_shift_st": 0.0,
+       "stretch": 0.8,
+       "rate_before": 2.557,
+       "target": 4.3
+      }
+     }
+    ],
+    "wav": "review/G3/el/full/trial/kids/xy_prod_dengS/_attempts/a1_c001_03/a2.wav",
+    "master": {
+     "speech_start": 0.12,
+     "speech_end": 2.96,
+     "method": "measured_gain",
+     "I": -18.0,
+     "TP": -1.9,
+     "limited": true,
+     "raw_head_silence_ms": 0,
+     "raw_tail_silence_ms": 0
+    },
+    "metrics": {
+     "file": "review/G3/el/full/trial/kids/xy_prod_dengS/_attempts/a1_c001_03/a2.wav",
+     "seconds": 3.21,
+     "speech_seconds": 2.84,
+     "integrated_lufs": -18.0,
+     "true_peak_dbtp": -1.9,
+     "clipped_samples": 0,
+     "rate_cps": 3.17,
+     "rate_cps_net": 4.07,
+     "rate_cps_net_r": 3.18,
+     "pauses_ms": [
+      630
+     ],
+     "pauses_ms_r": [],
+     "f0_median": 225.5,
+     "f0_p10": 176.1,
+     "f0_p90": 253.7,
+     "pause_spikes": 0,
+     "head_silence_ms": 110,
+     "tail_silence_ms": 260,
+     "rate_net_syll": 3.18,
+     "f0_in_range": true
+    },
+    "asr": {
+     "small": {
+      "hyp_trad": "主丹的骨架他不見了",
+      "cer": 0.222,
+      "per": 0.111,
+      "diffs": [
+       {
+        "ref": "燈",
+        "hyp": "丹",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       },
+       {
+        "ref": "它",
+        "hyp": "他",
+        "kind": "同音字（讀音一致）",
+        "span": [
+         5,
+         6
+        ]
+       }
+      ],
+      "words": []
+     },
+     "large-v3-turbo": {
+      "hyp_trad": "主燈的骨架它不見了",
+      "cer": 0.0,
+      "per": 0.0,
+      "diffs": [],
+      "words": []
+     }
+    },
+    "checks": {
+     "a": {
+      "pass": false,
+      "n_bad": 1,
+      "models": {
+       "small": {
+        "bad": [
+         {
+          "ref": "燈",
+          "hyp": "丹",
+          "kind": "字不同",
+          "span": [
+           1,
+           2
+          ]
+         }
+        ],
+        "excused_names": []
+       },
+       "large-v3-turbo": {
+        "bad": [],
+        "excused_names": []
+       }
+      },
+      "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+     },
+     "b": {
+      "pass": true,
+      "words": {},
+      "inconsistent": [],
+      "applicable": false
+     },
+     "c": {
+      "pass": true,
+      "segments": [
+       {
+        "last60ms_rel_dB": -32.3,
+        "last60ms_voiced": 0.0,
+        "truncated": false,
+        "where": "切點前 60 ms（句尾保護）"
+       }
+      ],
+      "truncated": 0,
+      "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+     },
+     "d": {
+      "pass": false,
+      "value": 3.18,
+      "range": [
+       3.7,
+       4.9
+      ],
+      "syllables": 9,
+      "applicable": true
+     },
+     "e": {
+      "pass": true,
+      "pauses_ms": [
+       630
+      ],
+      "threshold_ms": 150,
+      "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+      "applicable": true,
+      "boundaries": [
+       {
+        "boundary": 1,
+        "how": "轉寫時間戳",
+        "t_est_s": [
+         1.12,
+         1.38
+        ],
+        "cut_s": 1.4,
+        "depth_rel_db": -32.6,
+        "existing_pause_ms": 800,
+        "inserted_ms": 0,
+        "clean": true
+       }
+      ],
+      "unclean": []
+     },
+     "f": {
+      "pass": true,
+      "lufs": -18.0,
+      "target_lufs": -18.0,
+      "true_peak_dbtp": -1.9,
+      "clipped": 0
+     }
+    },
+    "failed": [
+     "a",
+     "d"
+    ],
+    "problems": 2,
+    "detail_score": 1.52,
+    "billed": 6,
+    "billed_new": 6,
+    "mitigations": [
+     "段1句尾保護（送出加「……嗯。」，在 3.55 秒處切掉 3.33 秒）",
+     "PSOLA 改調 0.0 半音、長度 ×0.8（母帶前淨語速 2.557 → 目標 4.3）",
+     "整句合成＋依轉寫時間戳插入句間停頓"
+    ]
+   }
+  ],
+  "cast": [
+   {
+    "voice_id": "xrDmUzhnE51Df8z38r1M",
+    "voice_name": "Vivian - Taiwanese Social Media",
+    "model": "eleven_v3",
+    "language_code": "zh",
+    "settings": {
+     "stability": 1.0,
+     "similarity_boost": 0.75,
+     "style": null,
+     "speed": null,
+     "use_speaker_boost": null
+    },
+    "seed_base": 20261021,
+    "sentence_gap_ms": 450,
+    "text_mode": "pronounce",
+    "text_subs": {
+     "119": "一一九",
+     "摺": "折",
+     "登籠": "燈籠",
+     "哲哲": "折折",
+     "燈": "灯"
+    },
+    "post": {
+     "auto_stretch": {
+      "tolerance": 0.2,
+      "min": 0.8,
+      "max": 1.3,
+      "default": 1.0
+     }
+    }
+   }
+  ],
+  "billed_total": 12,
+  "chosen": 1,
+  "file": "review/G3/el/full/trial/kids/xy_prod_dengS/out/vo_a1_c001_03_el01.wav",
+  "lipsync": "review/G3/el/full/trial/kids/xy_prod_dengS/lipsync/a1_c001_03_el01.json",
+  "seconds": 3.22,
+  "speech_start": 0.12,
+  "speech_end": 2.97,
+  "speech_segments": [
+   [
+    0.11,
+    1.3
+   ],
+   [
+    1.91,
+    2.97
+   ]
+  ],
+  "checks": {
+   "a": {
+    "pass": false,
+    "n_bad": 2,
+    "models": {
+     "small": {
+      "bad": [
+       {
+        "ref": "燈",
+        "hyp": "丹",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     },
+     "large-v3-turbo": {
+      "bad": [
+       {
+        "ref": "燈",
+        "hyp": "丹",
+        "kind": "字不同",
+        "span": [
+         1,
+         2
+        ]
+       }
+      ],
+      "excused_names": []
+     }
+    },
+    "rule": "兩個模型都只能有同音字；人名在 edge 基準同句同模型有同音轉寫差異者豁免"
+   },
+   "b": {
+    "pass": true,
+    "words": {},
+    "inconsistent": [],
+    "applicable": false
+   },
+   "c": {
+    "pass": true,
+    "segments": [
+     {
+      "last60ms_rel_dB": -39.2,
+      "last60ms_voiced": 0.0,
+      "truncated": false,
+      "where": "切點前 60 ms（句尾保護）"
+     }
+    ],
+    "truncated": 0,
+    "rule": "最後 60 ms > −25 dB 且有聲 > 30% ＝截斷"
+   },
+   "d": {
+    "pass": true,
+    "value": 4.09,
+    "range": [
+     3.7,
+     4.9
+    ],
+    "syllables": 9,
+    "applicable": true
+   },
+   "e": {
+    "pass": true,
+    "pauses_ms": [
+     620
+    ],
+    "threshold_ms": 150,
+    "method": "整句合成後依轉寫時間戳插入（insert_boundaries）",
+    "applicable": true,
+    "boundaries": [
+     {
+      "boundary": 1,
+      "how": "轉寫時間戳",
+      "t_est_s": [
+       1.32,
+       1.62
+      ],
+      "cut_s": 1.61,
+      "depth_rel_db": -39.0,
+      "existing_pause_ms": 760,
+      "inserted_ms": 0,
+      "clean": true
+     }
+    ],
+    "unclean": []
+   },
+   "f": {
+    "pass": true,
+    "lufs": -18.0,
+    "target_lufs": -18.0,
+    "true_peak_dbtp": -1.9,
+    "clipped": 0
+   }
+  },
+  "failed": [
+   "a"
+  ],
+  "metrics": {
+   "file": "review/G3/el/full/trial/kids/xy_prod_dengS/_attempts/a1_c001_03/a1.wav",
+   "seconds": 3.22,
+   "speech_seconds": 2.86,
+   "integrated_lufs": -18.0,
+   "true_peak_dbtp": -1.9,
+   "clipped_samples": 0,
+   "rate_cps": 3.15,
+   "rate_cps_net": 4.02,
+   "rate_cps_net_r": 4.09,
+   "pauses_ms": [
+    620
+   ],
+   "pauses_ms_r": [
+    590
+   ],
+   "f0_median": 284.3,
+   "f0_p10": 190.6,
+   "f0_p90": 418.1,
+   "pause_spikes": 0,
+   "head_silence_ms": 110,
+   "tail_silence_ms": 250,
+   "rate_net_syll": 4.09,
+   "f0_in_range": false
+  },
+  "request_ids": [
+   "tubeLTYxfbwo3sLwMxY9"
+  ],
+  "mitigations": [
+   "段1句尾保護（送出加「……嗯。」，在 3.65 秒處切掉 2.67 秒）",
+   "PSOLA 改調 0.0 半音、長度 ×0.8（母帶前淨語速 3.041 → 目標 4.3）",
+   "整句合成＋依轉寫時間戳插入句間停頓"
+  ]
+ }
+}

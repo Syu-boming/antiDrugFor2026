@@ -1,0 +1,677 @@
+{
+ "samples/narrator/narrator__Ling-Z8Ai_v2__a0_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -61.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Ling-Z8Ai_v2__a2_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -41.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Ling-Z8Ai_v2__a2_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -62.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v2__a0_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -37.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v2__a2_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -42.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v2__a2_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -41.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v2__a0_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -71.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v2__a2_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -71.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v2__a2_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -71.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Juin-7Sk2_v2__a0_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -73.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Juin-7Sk2_v2__a2_c002_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -73.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Juin-7Sk2_v2__a2_c012_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -69.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v2__a0_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -69.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v2__a2_c002_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -66.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v2__a2_c012_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -47.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Xu-A3T1_v2__a0_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Xu-A3T1_v2__a2_c002_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -43.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Xu-A3T1_v2__a2_c012_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -56.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Devon-qV41_v2__a2_c012_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -1.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Devon-qV41_v2__a5_c008_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -32.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Andrew-jEEl_v2__a2_c012_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -64.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Andrew-jEEl_v2__a5_c008_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -70.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Yu-fQj4_v2__a2_c012_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -48.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Yu-fQj4_v2__a5_c008_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jui-5ypm_v2__a3_c008_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -48.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jui-5ypm_v2__a3_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -61.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jui-5ypm_v2__a3_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -49.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jane-0Aj5_v2__a3_c008_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -37.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jane-0Aj5_v2__a3_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -21.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jane-0Aj5_v2__a3_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -34.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v2__a3_c008_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -68.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v2__a3_c003_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -70.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v2__a3_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -70.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__Neil-auoH_v2__a4_c012_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -24.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__Neil-auoH_v2__a5_c001_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -32.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__YCHuang-LCVQ_v2__a4_c012_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -51.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__YCHuang-LCVQ_v2__a5_c001_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -44.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__Jerry-YBS7_v2__a4_c012_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -58.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__Jerry-YBS7_v2__a5_c001_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -61.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Door-qDeY_v2__a1_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -67.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Door-qDeY_v2__a3_c001_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -70.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Jui-5ypm_v2__a1_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -57.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Jui-5ypm_v2__a3_c001_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Chen-4NQt_v2__a1_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Chen-4NQt_v2__a3_c001_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -43.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Angel-aQwA_v2__a5_c006_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -41.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Angel-aQwA_v2__a5_c006_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -44.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Anna-r6qg_v2__a5_c006_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -64.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Anna-r6qg_v2__a5_c006_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -64.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Ling-Z8Ai_v2__a5_c006_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -58.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Ling-Z8Ai_v2__a5_c006_05.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -60.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v2__a0_c003_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -60.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v2__a0_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -56.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v2__a3_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -55.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__a0_c003_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -38.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__a0_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -35.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Chloe-cXGZ_v2__a3_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -35.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__a0_c003_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -51.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__a0_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -25.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v2__a3_c004_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -38.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Lulu-BT0S_v2__a1_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Lulu-BT0S_v2__a1_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -49.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Chloe-cXGZ_v2__a1_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -35.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Chloe-cXGZ_v2__a1_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -39.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Tiffy-1AKk_v2__a1_c001_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -44.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Tiffy-1AKk_v2__a1_c008_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -34.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v2__a3_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -52.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v2__a2_c013_04.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -51.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v2__a0_c004_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -42.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v2__a3_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -48.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v2__a2_c013_04.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -50.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v2__a0_c004_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -53.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Tiffy-1AKk_v2__a3_c002_02.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -26.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Tiffy-1AKk_v2__a2_c013_04.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -24.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoyu/xiaoyu__Tiffy-1AKk_v2__a0_c004_01.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -51.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Vivian-xrDm_v2__a1_c004_06.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -45.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Vivian-xrDm_v2__a6_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -46.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Yui-kGjJ_v2__a1_c004_06.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -53.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Yui-kGjJ_v2__a6_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -58.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Tiffy-1AKk_v2__a1_c004_06.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -42.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Tiffy-1AKk_v2__a6_c002_03.wav": {
+  "model": "eleven_multilingual_v2",
+  "last60ms_rel_dB": -45.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v3__a0_c001_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -10.6,
+  "last60ms_voiced": 1.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v3__a2_c004_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -23.7,
+  "last60ms_voiced": 1.0
+ },
+ "samples/narrator/narrator__Chihiro-NIqn_v3__a2_c003_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -14.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v3__a0_c001_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -27.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v3__a2_c004_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -9.7,
+  "last60ms_voiced": 1.0
+ },
+ "samples/narrator/narrator__Door-qDeY_v3__a2_c003_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -23.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v3__a0_c002_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -26.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v3__a2_c002_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -22.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Kuo-Z9RJ_v3__a2_c012_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -37.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Xu-A3T1_v3__a0_c002_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.8,
+  "last60ms_voiced": 0.25
+ },
+ "samples/ale/ale__Xu-A3T1_v3__a2_c002_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ale/ale__Xu-A3T1_v3__a2_c012_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -27.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/ye/ye__Devon-qV41_v3__a2_c012_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -13.2,
+  "last60ms_voiced": 1.0
+ },
+ "samples/ye/ye__Devon-qV41_v3__a5_c008_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -27.2,
+  "last60ms_voiced": 0.75
+ },
+ "samples/ye/ye__Yu-fQj4_v3__a2_c012_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -28.4,
+  "last60ms_voiced": 0.3333333333333333
+ },
+ "samples/ye/ye__Yu-fQj4_v3__a5_c008_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -18.3,
+  "last60ms_voiced": 0.25
+ },
+ "samples/lin/lin__Jane-0Aj5_v3__a3_c008_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.1,
+  "last60ms_voiced": 0.25
+ },
+ "samples/lin/lin__Jane-0Aj5_v3__a3_c003_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -14.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Jane-0Aj5_v3__a3_c008_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -11.2,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v3__a3_c008_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -35.5,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v3__a3_c003_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -35.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/lin/lin__Door-qDeY_v3__a3_c008_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -28.0,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__Neil-auoH_v3__a4_c012_05.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -8.6,
+  "last60ms_voiced": 1.0
+ },
+ "samples/chen/chen__Neil-auoH_v3__a5_c001_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -21.9,
+  "last60ms_voiced": 0.25
+ },
+ "samples/chen/chen__YCHuang-LCVQ_v3__a4_c012_05.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -72.6,
+  "last60ms_voiced": 0.0
+ },
+ "samples/chen/chen__YCHuang-LCVQ_v3__a5_c001_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -3.6,
+  "last60ms_voiced": 1.0
+ },
+ "samples/inviter/inviter__Door-qDeY_v3__a1_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -17.0,
+  "last60ms_voiced": 1.0
+ },
+ "samples/inviter/inviter__Door-qDeY_v3__a3_c001_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -7.8,
+  "last60ms_voiced": 0.0
+ },
+ "samples/inviter/inviter__Chen-4NQt_v3__a1_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -8.2,
+  "last60ms_voiced": 1.0
+ },
+ "samples/inviter/inviter__Chen-4NQt_v3__a3_c001_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/dispatcher/dispatcher__Angel-aQwA_v3__a5_c006_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -21.7,
+  "last60ms_voiced": 1.0
+ },
+ "samples/dispatcher/dispatcher__Angel-aQwA_v3__a5_c006_05.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -25.4,
+  "last60ms_voiced": 1.0
+ },
+ "samples/dispatcher/dispatcher__Ling-Z8Ai_v3__a5_c006_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -10.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/dispatcher/dispatcher__Ling-Z8Ai_v3__a5_c006_05.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -24.4,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v3__a0_c003_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -28.3,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v3__a0_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -2.9,
+  "last60ms_voiced": 1.0
+ },
+ "samples/zhezhe/zhezhe__Lulu-BT0S_v3__a3_c004_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -18.2,
+  "last60ms_voiced": 1.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v3__a0_c003_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -22.1,
+  "last60ms_voiced": 0.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v3__a0_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -13.8,
+  "last60ms_voiced": 1.0
+ },
+ "samples/zhezhe/zhezhe__Tiffy-1AKk_v3__a3_c004_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.7,
+  "last60ms_voiced": 0.0
+ },
+ "samples/xiaoqing/xiaoqing__Chloe-cXGZ_v3__a1_c001_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -22.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoqing/xiaoqing__Chloe-cXGZ_v3__a1_c008_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -13.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoqing/xiaoqing__Tiffy-1AKk_v3__a1_c001_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -12.1,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoqing/xiaoqing__Tiffy-1AKk_v3__a1_c008_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -12.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v3__a3_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -11.9,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v3__a2_c013_04.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -4.7,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Vivian-xrDm_v3__a0_c004_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -13.6,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v3__a3_c002_02.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -19.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v3__a2_c013_04.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -22.7,
+  "last60ms_voiced": 1.0
+ },
+ "samples/xiaoyu/xiaoyu__Yui-kGjJ_v3__a0_c004_01.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -17.3,
+  "last60ms_voiced": 0.5
+ },
+ "samples/pinan/pinan__Vivian-xrDm_v3__a1_c004_06.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -11.9,
+  "last60ms_voiced": 1.0
+ },
+ "samples/pinan/pinan__Vivian-xrDm_v3__a6_c002_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -11.3,
+  "last60ms_voiced": 1.0
+ },
+ "samples/pinan/pinan__Yui-kGjJ_v3__a1_c004_06.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -22.9,
+  "last60ms_voiced": 0.0
+ },
+ "samples/pinan/pinan__Yui-kGjJ_v3__a6_c002_03.wav": {
+  "model": "eleven_v3",
+  "last60ms_rel_dB": -16.6,
+  "last60ms_voiced": 1.0
+ }
+}

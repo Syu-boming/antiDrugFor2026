@@ -1,0 +1,6 @@
+[
+ {"name":"F_v2_yan1","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_multilingual_v2","settings":{"stability":0.75,"similarity_boost":0.75},"seeds":[31,32],
+  "text":"有一種淹蛋，外表像電子淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"},
+ {"name":"G_v3_yan1","voice_id":"qDeYqHQrKRH839xMU4nb","model":"eleven_v3","language_code":"zh","settings":{"stability":0.5,"similarity_boost":0.75},"seeds":[31,32],
+  "text":"有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"}
+]

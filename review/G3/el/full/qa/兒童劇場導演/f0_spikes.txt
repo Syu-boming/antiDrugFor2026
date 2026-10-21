@@ -1,0 +1,12 @@
+a2_c002_01 EL med 127 voiced 290 frames>2x 54 runs(t0,t1,maxHz,dB) [(np.float64(1.69), np.float64(1.72), 698, 58.5), (np.float64(2.17), np.float64(2.32), 527, 82.9), (np.float64(3.29), np.float64(3.37), 566, 59.7), (np.float64(4.1), np.float64(4.14), 436, 72.1), (np.float64(4.56), np.float64(4.58), 403, 63.6), (np.float64(5.5), np.float64(5.64), 570, 78.2)] maxdB 85.5
+a2_c002_01 edge med 109 voiced 197 frames>2x 0 runs(t0,t1,maxHz,dB) [] maxdB 84.0
+a2_c008_01 EL med 111 voiced 127 frames>2x 32 runs(t0,t1,maxHz,dB) [(np.float64(0.44), np.float64(0.53), 583, 84.8), (np.float64(0.76), np.float64(0.77), 670, 59.6), (np.float64(2.78), np.float64(2.92), 478, 84.0), (np.float64(3.01), np.float64(3.02), 362, 60.9), (np.float64(4.45), np.float64(4.46), 697, 73.5), (np.float64(5.22), np.float64(5.22), 470, 64.1)] maxdB 85.3
+a2_c008_01 edge med 110 voiced 131 frames>2x 0 runs(t0,t1,maxHz,dB) [] maxdB 84.1
+a2_c012_02 EL med 123 voiced 196 frames>2x 0 runs(t0,t1,maxHz,dB) [] maxdB 85.4
+a2_c012_02 edge med 110 voiced 96 frames>2x 0 runs(t0,t1,maxHz,dB) [] maxdB 84.1
+a4_c001_02 EL med 110 voiced 257 frames>2x 9 runs(t0,t1,maxHz,dB) [(np.float64(4.33), np.float64(4.37), 603, 64.9), (np.float64(4.58), np.float64(4.61), 498, 81.1)] maxdB 86.0
+a4_c001_02 edge med 102 voiced 183 frames>2x 3 runs(t0,t1,maxHz,dB) [(np.float64(2.62), np.float64(2.64), 219, 78.0)] maxdB 83.6
+a5_c006_01 EL med 294 voiced 315 frames>2x 3 runs(t0,t1,maxHz,dB) [(np.float64(2.97), np.float64(2.99), 634, 78.7)] maxdB 88.2
+a5_c006_01 edge med 189 voiced 220 frames>2x 10 runs(t0,t1,maxHz,dB) [(np.float64(0.67), np.float64(0.72), 403, 72.8), (np.float64(0.79), np.float64(0.82), 438, 72.4)] maxdB 84.6
+a5_c006_03 EL med 260 voiced 454 frames>2x 40 runs(t0,t1,maxHz,dB) [(np.float64(1.11), np.float64(1.21), 590, 85.3), (np.float64(1.8), np.float64(1.82), 535, 56.4), (np.float64(2.21), np.float64(2.22), 578, 60.9), (np.float64(3.66), np.float64(3.68), 528, 77.6), (np.float64(3.72), np.float64(3.72), 521, 60.4), (np.float64(3.96), np.float64(4.02), 645, 63.5), (np.float64(5.44), np.float64(5.53), 596, 83.8), (np.float64(5.6), np.float64(5.62), 532, 59.8)] maxdB 86.2
+a5_c006_03 edge med 202 voiced 299 frames>2x 12 runs(t0,t1,maxHz,dB) [(np.float64(1.5), np.float64(1.53), 443, 69.1), (np.float64(2.06), np.float64(2.13), 600, 67.8)] maxdB 85.5

@@ -1,0 +1,1070 @@
+{
+ "A_v3_robust_orig_s11": {
+  "variant": {
+   "name": "A_v3_robust_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 11,
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種鹽蛋外表像電洗鹽裡面卻可能加了毒品有人叫它上濕鹽碳",
+    "cer": 0.286,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "鹽蛋",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子煙",
+      "hyp": "洗鹽",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍煙彈",
+      "hyp": "上濕鹽碳",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種鹽蛋外表像電洗菸裡面卻可能加了毒品有人叫它喪失鹽炭",
+    "cer": 0.25,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "鹽蛋",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子煙",
+      "hyp": "洗菸",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失鹽炭",
+      "kind": "字不同"
+     }
+    ]
+   }
+  }
+ },
+ "A_v3_robust_orig_s12": {
+  "variant": {
+   "name": "A_v3_robust_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 12,
+  "billed": 14,
+  "request_id": "LB1rZipSLwWq8KTwOS5M",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像燈洗煙裡面卻可能加了毒品有人叫它上濕煙炭",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "電子",
+      "hyp": "燈洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像燉喜煙裡面卻可能加了毒品有人叫它喪失煙炭",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "電子",
+      "hyp": "燉喜",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   }
+  }
+ },
+ "B_v3_robust_yan_s11": {
+  "variant": {
+   "name": "B_v3_robust_yan",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"
+  },
+  "seed": 11,
+  "billed": 14,
+  "request_id": "s33qDxsb2wctRGcQeAhN",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙丹外表像電洗煙裡面卻可能加了毒品有人叫它上濕煙丹",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙丹外表像電洗煙裡面卻可能加了毒品有人叫它喪失煙丹",
+    "cer": 0.143,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "B_v3_robust_yan_s12": {
+  "variant": {
+   "name": "B_v3_robust_yan",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 1.0,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"
+  },
+  "seed": 12,
+  "billed": 14,
+  "request_id": "rr7lliY4StRvrj01rt5i",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙丹外表像電洗煙裡面卻可能加了毒品有人叫它上濕煙湯",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "湯",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙丹外表像電洗煙裡面卻可能加了毒品有人叫它喪失煙攤",
+    "cer": 0.143,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "攤",
+      "kind": "字不同"
+     }
+    ]
+   }
+  }
+ },
+ "C_v2_orig_s11": {
+  "variant": {
+   "name": "C_v2_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 11,
+  "billed": 14,
+  "request_id": "96K79XjautWzNXLHhqvq",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種眼單外表像電子炎裡面卻可能加了毒品有人教他喪屍眼單",
+    "cer": 0.25,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "炎",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "叫它",
+      "hyp": "教他",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種眼淡外表像電子鹽裡面卻可能加了毒品有人叫它喪失眼淡",
+    "cer": 0.214,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "C_v2_orig_s12": {
+  "variant": {
+   "name": "C_v2_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 12,
+  "billed": 14,
+  "request_id": "vd158wIl3kuuixaPCrEo",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種眼單外表像電子炎裡面卻可能加了毒品有人叫它喪屍眼淡",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "炎",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種眼淡外表像電子鹽裡面卻可能加了毒品有人叫它喪失眼淡",
+    "cer": 0.214,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "D_v2_yan_s11": {
+  "variant": {
+   "name": "D_v2_yan",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"
+  },
+  "seed": 11,
+  "billed": 14,
+  "request_id": "jgdeCIjXOPjgMukskSLf",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種眼單外表像電子炎裡面卻可能加了毒品有人教他喪屍眼單",
+    "cer": 0.25,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "炎",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "叫它",
+      "hyp": "教他",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種眼淡外表像電子鹽裡面卻可能加了毒品有人教它喪失眼淡",
+    "cer": 0.25,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "叫",
+      "hyp": "教",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "D_v2_yan_s12": {
+  "variant": {
+   "name": "D_v2_yan",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    11,
+    12
+   ],
+   "text": "有一種菸彈，外表像電子菸，裡面卻可能加了毒品，有人叫它「喪屍菸彈」。"
+  },
+  "seed": 12,
+  "billed": 14,
+  "request_id": "Ggv3bQVybiKS7cJgyX0U",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種眼單外表像電子鹽裡面卻可能加了毒品有人叫它喪屍眼淡",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種眼淡外表像電子鹽裡面卻可能加了毒品有人叫它喪失眼淡",
+    "cer": 0.214,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失眼淡",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "E_v3_natural_orig_s21": {
+  "variant": {
+   "name": "E_v3_natural_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    21,
+    22
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 21,
+  "billed": 14,
+  "request_id": "XZ2HAL6Ytvq1ualgonSY",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電洗煙裡面卻可能加了毒品有人叫它上濕煙炭",
+    "cer": 0.143,
+    "diffs": [
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電洗煙裡面卻可能加了毒品有人叫它喪失煙炭",
+    "cer": 0.143,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "子",
+      "hyp": "洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   }
+  }
+ },
+ "E_v3_natural_orig_s22": {
+  "variant": {
+   "name": "E_v3_natural_orig",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    21,
+    22
+   ],
+   "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+  },
+  "seed": 22,
+  "billed": 14,
+  "request_id": "sXiJEtB2aUlyG9DLpfJN",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像燈洗煙裡面卻可能加了毒品有人叫它上濕煙炭",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "電子",
+      "hyp": "燈洗",
+      "kind": "字不同"
+     },
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像鄧喜煙裡面卻可能加了毒品有人叫它喪失煙炭",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "電子",
+      "hyp": "鄧喜",
+      "kind": "字不同"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "炭",
+      "kind": "字不同"
+     }
+    ]
+   }
+  }
+ },
+ "F_v2_yan1_s31": {
+  "variant": {
+   "name": "F_v2_yan1",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.75,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    31,
+    32
+   ],
+   "text": "有一種淹蛋，外表像電子淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"
+  },
+  "seed": 31,
+  "billed": 14,
+  "request_id": "vVK5h8j4eZwQqlDGwJSn",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種言單外表像電子言裡面卻可能加了毒品有人叫它喪屍言單",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "言單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "言",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "言單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種鹽丹外表像電子鹽裡面卻可能加了毒品有人叫它喪失鹽丹",
+    "cer": 0.214,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "鹽丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失鹽丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "F_v2_yan1_s32": {
+  "variant": {
+   "name": "F_v2_yan1",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_multilingual_v2",
+   "settings": {
+    "stability": 0.75,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    31,
+    32
+   ],
+   "text": "有一種淹蛋，外表像電子淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"
+  },
+  "seed": 32,
+  "billed": 14,
+  "request_id": "MHJz7ojmdmbLIDu2dymJ",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種網單外表像電子鹽裡面卻可能加了毒品有人叫它喪屍鹽單",
+    "cer": 0.179,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "網單",
+      "kind": "字不同"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "煙彈",
+      "hyp": "鹽單",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種碗丹外表像電子鹽裡面卻可能加了毒品有人叫它喪失鹽丹",
+    "cer": 0.214,
+    "diffs": [
+     {
+      "ref": "煙彈",
+      "hyp": "碗丹",
+      "kind": "字不同"
+     },
+     {
+      "ref": "煙",
+      "hyp": "鹽",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     },
+     {
+      "ref": "屍煙彈",
+      "hyp": "失鹽丹",
+      "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+     }
+    ]
+   }
+  }
+ },
+ "G_v3_yan1_s31": {
+  "variant": {
+   "name": "G_v3_yan1",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    31,
+    32
+   ],
+   "text": "有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"
+  },
+  "seed": 31,
+  "billed": 14,
+  "request_id": "Fan4WuarhbRgQRV1PzLw",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它上濕煙彈",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪失煙蛋",
+    "cer": 0.107,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "屍",
+      "hyp": "失",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     }
+    ]
+   }
+  }
+ },
+ "G_v3_yan1_s32": {
+  "variant": {
+   "name": "G_v3_yan1",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    31,
+    32
+   ],
+   "text": "有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「喪屍淹蛋」。"
+  },
+  "seed": 32,
+  "billed": 14,
+  "request_id": "aAF9ofd1AcRxZbZa8WNz",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它上濕煙彈",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "喪屍",
+      "hyp": "上濕",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它上屍煙蛋",
+    "cer": 0.107,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "喪",
+      "hyp": "上",
+      "kind": "字不同"
+     },
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     }
+    ]
+   }
+  }
+ },
+ "H_v3_mix_s41": {
+  "variant": {
+   "name": "H_v3_mix",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    41,
+    42,
+    43
+   ],
+   "text": "有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「桑屍淹蛋」。"
+  },
+  "seed": 41,
+  "billed": 14,
+  "request_id": "Pruvvp5CDAmCpS1blzmb",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它桑絲煙彈",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "喪屍",
+      "hyp": "桑絲",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     }
+    ]
+   }
+  }
+ },
+ "H_v3_mix_s42": {
+  "variant": {
+   "name": "H_v3_mix",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    41,
+    42,
+    43
+   ],
+   "text": "有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「桑屍淹蛋」。"
+  },
+  "seed": 42,
+  "billed": 14,
+  "request_id": "iO74hfTwChXGTjY4i1dS",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它桑絲煙彈",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "喪屍",
+      "hyp": "桑絲",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     }
+    ]
+   }
+  }
+ },
+ "H_v3_mix_s43": {
+  "variant": {
+   "name": "H_v3_mix",
+   "voice_id": "qDeYqHQrKRH839xMU4nb",
+   "model": "eleven_v3",
+   "language_code": "zh",
+   "settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75
+   },
+   "seeds": [
+    41,
+    42,
+    43
+   ],
+   "text": "有一種淹蛋，外表像電紫淹，裡面卻可能加了毒品，有人叫它「桑屍淹蛋」。"
+  },
+  "seed": 43,
+  "billed": 14,
+  "request_id": "7mRuSYUoIul2KDSgz8y8",
+  "asr": {
+   "small": {
+    "hyp_trad": "有一種煙彈外表像電子煙裡面卻可能加了毒品有人叫它桑絲煙彈",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "喪屍",
+      "hyp": "桑絲",
+      "kind": "字不同"
+     }
+    ]
+   },
+   "large-v3-turbo": {
+    "hyp_trad": "有一種煙蛋外表像電子煙裡面卻可能加了毒品有人叫它喪屍煙蛋",
+    "cer": 0.071,
+    "diffs": [
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     },
+     {
+      "ref": "彈",
+      "hyp": "蛋",
+      "kind": "同音字（讀音一致）"
+     }
+    ]
+   }
+  }
+ }
+}

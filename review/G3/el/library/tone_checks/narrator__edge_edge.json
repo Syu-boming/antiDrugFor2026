@@ -1,0 +1,454 @@
+{
+ "_說明": "定位：large-v3-turbo 轉寫加字級時間戳（faster-whisper word_timestamps），把轉寫逐字對齊到合成用文字，取「紙燈節」三個字的時間；再在這個時間窗（前後各放寬 80 ms）裡找 ≥50 ms 的有聲段（parselmouth 自相關，10 ms；音高範圍依該檔 F0 中位自動設定：下限 0.6 倍、上限 2 倍；高於中位 1.7 倍的格減半、低於 0.55 倍的格加倍，修正八度錯誤）：紙（zh）、燈（d）、節（j）的聲母都是清音，正好三段時直接用；多於三段時，每個字取與時間戳重疊最多的一段；少於三段（或某段有聲格不足 50 ms）時改用時間戳範圍內的有聲格。每個字：起點＝前 20% 有聲格中位數、終點＝後 20% 中位數、最低點＝三點移動中位數的最小值。判定：燈＝一聲（終點／起點 ≥ 0.90，沒有三聲、四聲那種明顯下降；且平均 F0 ≥ 紙的 1.05 倍，紙是三聲、接一聲時讀低的半三聲）；節＝二聲（終點／最低點 ≥ 1.08，且最低點落在前 70%；台灣華語二聲常是先略降再上揚）。另以同一聲線念「紙等街。」（燈三聲、節一聲＝使用者聽到的「只等街」）作對照。G3 tone_check_ting.json 的 0.95–1.05 高平門檻是單音節框句用的；本句「燈」夾在低的「紙」與「節」之間，edge 基準的「燈」也會上揚到 1.19，所以只要求「不下降且比紙高」。",
+ "role": "narrator",
+ "role_zh": "旁白",
+ "cand": "edge",
+ "model": "edge-tts 7.3.1",
+ "line": "a0_c001_01",
+ "voice": "edge 基準（casting.json）",
+ "整句（替身字，正式管線）": {
+  "file": "samples/narrator/narrator__edge__a0_c001_01.wav",
+  "synth_text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙登結。",
+  "f0": {
+   "whisper_turbo_words": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節",
+   "whisper_spans": [
+    [
+     4.88,
+     5.1
+    ],
+    [
+     5.1,
+     5.32
+    ],
+    [
+     5.32,
+     5.56
+    ]
+   ],
+   "octave_fixed_frames": 1,
+   "pitch_range_hz": [
+    119,
+    398
+   ],
+   "islands_in_window": 4,
+   "method": "有聲段多於 3 段：取與字時間戳重疊最多者",
+   "紙": {
+    "t0": 4.805,
+    "t1": 4.955,
+    "mean_hz": 192.9,
+    "start_hz": 218.5,
+    "end_hz": 168.2,
+    "min_hz": 168.2,
+    "min_pos": 0.87,
+    "end_over_start": 0.77,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     225,
+     214,
+     210,
+     199,
+     186,
+     183,
+     172,
+     165
+    ]
+   },
+   "燈": {
+    "t0": 5.195,
+    "t1": 5.365,
+    "mean_hz": 195.7,
+    "start_hz": 177.1,
+    "end_hz": 210.1,
+    "min_hz": 176.9,
+    "min_pos": 0.0,
+    "end_over_start": 1.186,
+    "end_over_min": 1.187,
+    "contour_hz_20ms": [
+     177,
+     178,
+     184,
+     189,
+     196,
+     202,
+     204,
+     214,
+     210
+    ]
+   },
+   "節": {
+    "t0": 5.465,
+    "t1": 5.635,
+    "mean_hz": 160.8,
+    "start_hz": 175.2,
+    "end_hz": 154.6,
+    "min_hz": 154.4,
+    "min_pos": 0.82,
+    "end_over_start": 0.882,
+    "end_over_min": 1.001,
+    "contour_hz_20ms": [
+     184,
+     171,
+     161,
+     160,
+     160,
+     158,
+     154,
+     154,
+     155
+    ]
+   },
+   "燈_end_over_start": 1.186,
+   "燈_over_紙_mean": 1.015,
+   "節_end_over_min": 1.001,
+   "節_min_pos": 0.82,
+   "燈_一聲": false,
+   "節_二聲": false,
+   "pass": false
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "同音轉寫（讀音一致）",
+    "large-v3-turbo": "轉寫一致"
+   },
+   "hyp_by_model": {
+    "small": "這裡是小燈證每年秋天震上都會半指燈節",
+    "large-v3-turbo": "這裡是小燈鎮每年秋天鎮上都會辦紙燈節"
+   },
+   "both_models_ok": true
+  }
+ },
+ "短框句 紙燈節（原字）": {
+  "file": "samples/narrator/narrator__edge__tone_frame_orig.wav",
+  "synth_text": "紙燈節。",
+  "f0": {
+   "whisper_turbo_words": "紙燈結",
+   "whisper_spans": [
+    [
+     0.0,
+     0.32
+    ],
+    [
+     0.32,
+     0.54
+    ],
+    [
+     0.54,
+     0.78
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    109,
+    365
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.225,
+    "t1": 0.335,
+    "mean_hz": 172.7,
+    "start_hz": 180.6,
+    "end_hz": 165.0,
+    "min_hz": 164.0,
+    "min_pos": 0.82,
+    "end_over_start": 0.914,
+    "end_over_min": 1.006,
+    "contour_hz_20ms": [
+     180,
+     180,
+     179,
+     175,
+     166,
+     164
+    ]
+   },
+   "燈": {
+    "t0": 0.405,
+    "t1": 0.585,
+    "mean_hz": 224.5,
+    "start_hz": 203.8,
+    "end_hz": 242.0,
+    "min_hz": 203.8,
+    "min_pos": 0.06,
+    "end_over_start": 1.188,
+    "end_over_min": 1.188,
+    "contour_hz_20ms": [
+     208,
+     204,
+     210,
+     213,
+     217,
+     228,
+     238,
+     243,
+     242,
+     244
+    ]
+   },
+   "節": {
+    "t0": 0.675,
+    "t1": 0.855,
+    "mean_hz": 188.2,
+    "start_hz": 242.2,
+    "end_hz": 173.3,
+    "min_hz": 173.3,
+    "min_pos": 0.94,
+    "end_over_start": 0.716,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     242,
+     208,
+     193,
+     183,
+     181,
+     178,
+     177,
+     176,
+     173,
+     173
+    ]
+   },
+   "燈_end_over_start": 1.188,
+   "燈_over_紙_mean": 1.3,
+   "節_end_over_min": 1.0,
+   "節_min_pos": 0.94,
+   "燈_一聲": true,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.13
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "同音轉寫（讀音一致）",
+    "large-v3-turbo": "同音轉寫（讀音一致）"
+   },
+   "hyp_by_model": {
+    "small": "只登結",
+    "large-v3-turbo": "紙燈結"
+   },
+   "both_models_ok": true
+  }
+ },
+ "短框句 紙登結（替身字）": {
+  "file": "samples/narrator/narrator__edge__tone_frame_sub.wav",
+  "synth_text": "紙登結。",
+  "f0": {
+   "whisper_turbo_words": "紙燈結",
+   "whisper_spans": [
+    [
+     0.0,
+     0.32
+    ],
+    [
+     0.32,
+     0.54
+    ],
+    [
+     0.54,
+     0.78
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    110,
+    366
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.225,
+    "t1": 0.355,
+    "mean_hz": 173.9,
+    "start_hz": 185.0,
+    "end_hz": 166.2,
+    "min_hz": 161.1,
+    "min_pos": 0.77,
+    "end_over_start": 0.898,
+    "end_over_min": 1.031,
+    "contour_hz_20ms": [
+     186,
+     183,
+     180,
+     177,
+     171,
+     161,
+     165
+    ]
+   },
+   "燈": {
+    "t0": 0.405,
+    "t1": 0.585,
+    "mean_hz": 221.2,
+    "start_hz": 201.1,
+    "end_hz": 236.6,
+    "min_hz": 200.1,
+    "min_pos": 0.0,
+    "end_over_start": 1.177,
+    "end_over_min": 1.183,
+    "contour_hz_20ms": [
+     201,
+     201,
+     206,
+     213,
+     218,
+     226,
+     234,
+     239,
+     240,
+     235
+    ]
+   },
+   "節": {
+    "t0": 0.685,
+    "t1": 0.855,
+    "mean_hz": 182.7,
+    "start_hz": 207.2,
+    "end_hz": 170.9,
+    "min_hz": 170.9,
+    "min_pos": 0.88,
+    "end_over_start": 0.825,
+    "end_over_min": 1.0,
+    "contour_hz_20ms": [
+     225,
+     198,
+     189,
+     180,
+     177,
+     176,
+     174,
+     171,
+     171
+    ]
+   },
+   "燈_end_over_start": 1.177,
+   "燈_over_紙_mean": 1.272,
+   "節_end_over_min": 1.0,
+   "節_min_pos": 0.88,
+   "燈_一聲": true,
+   "節_二聲": false,
+   "pass": false,
+   "燈_over_錯誤對照等_mean": 1.113
+  },
+  "asr": {
+   "status_by_model": {
+    "small": "同音轉寫（讀音一致）",
+    "large-v3-turbo": "同音轉寫（讀音一致）"
+   },
+   "hyp_by_model": {
+    "small": "只登結",
+    "large-v3-turbo": "紙燈結"
+   },
+   "both_models_ok": true
+  }
+ },
+ "短框句 紙等街（錯誤讀音對照）": {
+  "file": "samples/narrator/narrator__edge__tone_frame_wrong.wav",
+  "synth_text": "紙等街。",
+  "f0": {
+   "whisper_turbo_words": "直等階",
+   "whisper_spans": [
+    [
+     0.0,
+     0.3
+    ],
+    [
+     0.3,
+     0.5
+    ],
+    [
+     0.5,
+     0.86
+    ]
+   ],
+   "octave_fixed_frames": 0,
+   "pitch_range_hz": [
+    128,
+    428
+   ],
+   "islands_in_window": 3,
+   "method": "有聲段正好 3 段",
+   "紙": {
+    "t0": 0.215,
+    "t1": 0.345,
+    "mean_hz": 202.6,
+    "start_hz": 204.7,
+    "end_hz": 205.3,
+    "min_hz": 185.2,
+    "min_pos": 0.15,
+    "end_over_start": 1.003,
+    "end_over_min": 1.108,
+    "contour_hz_20ms": [
+     222,
+     185,
+     190,
+     198,
+     212,
+     219,
+     206
+    ]
+   },
+   "燈": {
+    "t0": 0.405,
+    "t1": 0.595,
+    "mean_hz": 198.7,
+    "start_hz": 244.8,
+    "end_hz": 163.7,
+    "min_hz": 156.2,
+    "min_pos": 1.0,
+    "end_over_start": 0.669,
+    "end_over_min": 1.048,
+    "contour_hz_20ms": [
+     266,
+     236,
+     227,
+     217,
+     204,
+     186,
+     179,
+     172,
+     169,
+     162
+    ]
+   },
+   "節": {
+    "t0": 0.695,
+    "t1": 0.935,
+    "mean_hz": 222.9,
+    "start_hz": 216.2,
+    "end_hz": 238.1,
+    "min_hz": 212.2,
+    "min_pos": 0.33,
+    "end_over_start": 1.101,
+    "end_over_min": 1.122,
+    "contour_hz_20ms": [
+     220,
+     214,
+     217,
+     216,
+     211,
+     214,
+     219,
+     220,
+     226,
+     231,
+     234,
+     238,
+     242
+    ]
+   },
+   "燈_end_over_start": 0.669,
+   "燈_over_紙_mean": 0.981,
+   "節_end_over_min": 1.122,
+   "節_min_pos": 0.33,
+   "燈_一聲": false,
+   "節_二聲": true,
+   "pass": false
+  },
+  "asr": {
+   "hyp_by_model": {
+    "small": "直等階",
+    "large-v3-turbo": "直等階"
+   }
+  }
+ }
+}

@@ -1,0 +1,162 @@
+{
+ "ring_diameter_master_px": 46.9,
+ "screen_scale_mid": 0.4102,
+ "poses": {
+  "sit": {
+   "wrist_back": {
+    "canvas_px": [
+     482.5,
+     911.4
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 2.7
+   },
+   "elbow_out": {
+    "canvas_px": [
+     589.7,
+     801.4
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 4.6
+   },
+   "knee_front": {
+    "canvas_px": [
+     1145.6,
+     1401.1
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 39.5
+   }
+  },
+  "wave": {
+   "wrist_back": {
+    "canvas_px": [
+     594.5,
+     315.9
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 2.6
+   },
+   "elbow_out": {
+    "canvas_px": [
+     679.6,
+     461.8
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 4.1
+   },
+   "knee_front": {
+    "canvas_px": [
+     1145.6,
+     1401.1
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 39.5
+   }
+  },
+  "pulled": {
+   "wrist_back": {
+    "canvas_px": [
+     348.8,
+     590.0
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 3.0
+   },
+   "elbow_out": {
+    "canvas_px": [
+     514.0,
+     602.5
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 5.0
+   },
+   "knee_front": {
+    "canvas_px": [
+     1151.5,
+     1392.4
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 39.0
+   }
+  },
+  "halfstand": {
+   "wrist_back": {
+    "canvas_px": [
+     426.7,
+     506.1
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 2.8
+   },
+   "elbow_out": {
+    "canvas_px": [
+     589.7,
+     535.8
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 5.6
+   },
+   "knee_front": {
+    "canvas_px": [
+     1117.8,
+     1404.9
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 39.3
+   }
+  },
+  "kneetug": {
+   "wrist_back": {
+    "canvas_px": [
+     319.1,
+     559.2
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 2.6
+   },
+   "elbow_out": {
+    "canvas_px": [
+     485.6,
+     570.2
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 5.0
+   },
+   "knee_front": {
+    "canvas_px": [
+     1206.6,
+     1257.3
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 41.6
+   }
+  },
+  "hold": {
+   "wrist_back": {
+    "canvas_px": [
+     402.3,
+     561.2
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 2.9
+   },
+   "elbow_out": {
+    "canvas_px": [
+     565.4,
+     590.8
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 5.6
+   },
+   "knee_front": {
+    "canvas_px": [
+     1163.9,
+     1409.3
+    ],
+    "ring_inside_silhouette": true,
+    "margin_px": 40.4
+   }
+  }
+ }
+}

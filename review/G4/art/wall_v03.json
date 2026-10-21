@@ -1,0 +1,36 @@
+{
+ "file": "assets/final/bg-workshop-back_v03.jpg",
+ "source": "assets/final/bg-workshop-back_v02.jpg",
+ "baseboard_rows_px": [
+  1370,
+  1415
+ ],
+ "baseboard_world_height": 0.334,
+ "baseboard_mean_srgb_before": [
+  224.1999969482422,
+  184.5,
+  136.3000030517578
+ ],
+ "baseboard_mean_srgb_after": [
+  238.0,
+  220.0,
+  190.1
+ ],
+ "a0_c001_5.30_xiaoqing_box": [
+  1105,
+  807,
+  1194,
+  874
+ ],
+ "projv2_median_p10_before": [
+  0.42,
+  0.336
+ ],
+ "projv2_median_p10_after_estimate": [
+  0.554,
+  0.336
+ ],
+ "baseboard_px_in_box": 2628,
+ "box_px": 5963,
+ "note": "預估值（色比換算），正式數據以引擎重擷取的 probe_report.json 為準；量測區下緣仍含約 20% 地板（投影 v2 約 0.34–0.38），p10 由地板決定。"
+}

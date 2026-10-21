@@ -202,6 +202,7 @@
         "emotion": {
           "enum": [
             "smile",
+            "greet",
             "neutral",
             "confused",
             "worried",

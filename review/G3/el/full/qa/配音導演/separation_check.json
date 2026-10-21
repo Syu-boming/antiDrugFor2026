@@ -1,0 +1,1034 @@
+[
+ {
+  "pair": "小宇↔小晴",
+  "shared_cues": [
+   "a0_c004",
+   "a1_c001",
+   "a1_c003",
+   "a1_c004",
+   "a1_c008",
+   "a2_c008",
+   "a2_c013",
+   "a3_c002",
+   "a4_c002",
+   "a4_c012",
+   "a5_c001",
+   "a5_c005",
+   "a5_c008",
+   "a6_c001",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 4.35,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 3.46,
+   "loo_acc": 0.913
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 3.25,
+   "loo_acc": 0.957
+  }
+ },
+ {
+  "pair": "折折↔旁白",
+  "shared_cues": [
+   "a1_c005",
+   "a2_c005",
+   "a2_c009",
+   "a3_c005",
+   "a4_c005",
+   "a4_c009",
+   "a5_c002",
+   "a6_c003",
+   "a6_c007"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 7.34,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 6.79,
+   "loo_acc": 0.968
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 6.54,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔折折",
+  "shared_cues": [
+   "a0_c004",
+   "a1_c001",
+   "a1_c003",
+   "a1_c008",
+   "a2_c001",
+   "a3_c001",
+   "a4_c002",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 4.82,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 5.28,
+   "loo_acc": 0.918
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 4.82,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "折折↔阿樂叔叔",
+  "shared_cues": [
+   "a0_c002",
+   "a0_c003",
+   "a0_c004",
+   "a2_c001",
+   "a4_c008",
+   "a6_c009"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 16.8,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 16.86,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 16.6,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小晴↔折折",
+  "shared_cues": [
+   "a0_c004",
+   "a1_c001",
+   "a1_c003",
+   "a1_c008",
+   "a4_c002",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 0.46,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 1.82,
+   "loo_acc": 0.949
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "edge"
+   ],
+   "f0_st": 1.57,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小晴↔林老師",
+  "shared_cues": [
+   "a3_c003",
+   "a3_c008",
+   "a4_c012",
+   "a5_c001",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 9.63,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 8.0,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 8.0,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小晴↔阿樂叔叔",
+  "shared_cues": [
+   "a0_c004",
+   "a2_c002",
+   "a2_c008",
+   "a2_c012"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 16.34,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 15.04,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 15.04,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小晴↔葉護理師",
+  "shared_cues": [
+   "a2_c012",
+   "a2_c013",
+   "a5_c008",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 9.8,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 12.1,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 12.1,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔阿樂叔叔",
+  "shared_cues": [
+   "a0_c004",
+   "a2_c001",
+   "a2_c008"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 11.99,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 11.58,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 11.79,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "品安↔小宇",
+  "shared_cues": [
+   "a1_c001",
+   "a1_c004",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 3.66,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 2.82,
+   "loo_acc": 0.969
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "edge"
+   ],
+   "f0_st": 3.03,
+   "loo_acc": 0.969
+  }
+ },
+ {
+  "pair": "品安↔小晴",
+  "shared_cues": [
+   "a1_c001",
+   "a1_c004",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 8.02,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 6.28,
+   "loo_acc": 0.967
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 6.28,
+   "loo_acc": 0.967
+  }
+ },
+ {
+  "pair": "品安↔折折",
+  "shared_cues": [
+   "a1_c001",
+   "a6_c002",
+   "a7_c003"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 8.48,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 8.1,
+   "loo_acc": 0.956
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "edge"
+   ],
+   "f0_st": 7.84,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔邀請者",
+  "shared_cues": [
+   "a1_c002",
+   "a1_c004",
+   "a3_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 4.14,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 6.98,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 7.19,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔葉護理師",
+  "shared_cues": [
+   "a2_c013",
+   "a5_c008",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 5.45,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 8.64,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 8.85,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔林老師",
+  "shared_cues": [
+   "a4_c012",
+   "a5_c001",
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 5.28,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.54,
+   "loo_acc": 0.972
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 4.75,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "林老師↔陳伯伯",
+  "shared_cues": [
+   "a4_c012",
+   "a4_c013",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 9.65,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.09,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.09,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔旁白",
+  "shared_cues": [
+   "a2_c008",
+   "a2_c013"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 2.53,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 1.51,
+   "loo_acc": 0.938
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 1.72,
+   "loo_acc": 0.988
+  }
+ },
+ {
+  "pair": "小晴↔旁白",
+  "shared_cues": [
+   "a2_c008",
+   "a2_c013"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 6.88,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.97,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.97,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "旁白↔阿樂叔叔",
+  "shared_cues": [
+   "a2_c008",
+   "a4_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 9.46,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.07,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.07,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小宇↔陳伯伯",
+  "shared_cues": [
+   "a4_c012",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 14.93,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 14.63,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 14.83,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "小晴↔陳伯伯",
+  "shared_cues": [
+   "a4_c012",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 19.29,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 18.08,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 18.08,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "折折↔林老師",
+  "shared_cues": [
+   "a4_c013",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 10.1,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 9.82,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 9.56,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "折折↔陳伯伯",
+  "shared_cues": [
+   "a4_c013",
+   "a5_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 19.75,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 19.9,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 19.65,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "品安↔邀請者",
+  "shared_cues": [
+   "a1_c004"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 0.48,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.17,
+   "loo_acc": 0.923
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.17,
+   "loo_acc": 0.923
+  }
+ },
+ {
+  "pair": "小晴↔邀請者",
+  "shared_cues": [
+   "a1_c004"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 8.49,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.44,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 10.44,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "葉護理師↔阿樂叔叔",
+  "shared_cues": [
+   "a2_c012"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 6.54,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 2.94,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 2.94,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "旁白↔葉護理師",
+  "shared_cues": [
+   "a2_c013"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 2.92,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 7.13,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 7.13,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "折折↔邀請者",
+  "shared_cues": [
+   "a3_c001"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 8.96,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 12.26,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "edge",
+    "el"
+   ],
+   "f0_st": 12.01,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "執勤人員↔小宇",
+  "shared_cues": [
+   "a5_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 1.43,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 5.05,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "edge"
+   ],
+   "f0_st": 4.85,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "品安↔林老師",
+  "shared_cues": [
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 1.62,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 1.72,
+   "loo_acc": 0.85
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 1.72,
+   "loo_acc": 0.85
+  }
+ },
+ {
+  "pair": "品安↔葉護理師",
+  "shared_cues": [
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 1.78,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 5.82,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 5.82,
+   "loo_acc": 1.0
+  }
+ },
+ {
+  "pair": "林老師↔葉護理師",
+  "shared_cues": [
+   "a6_c006"
+  ],
+  "全edge": {
+   "engines": [
+    "edge",
+    "edge"
+   ],
+   "f0_st": 0.17,
+   "loo_acc": 1.0
+  },
+  "全EL": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.1,
+   "loo_acc": 1.0
+  },
+  "建議組合": {
+   "engines": [
+    "el",
+    "el"
+   ],
+   "f0_st": 4.1,
+   "loo_acc": 1.0
+  }
+ }
+]

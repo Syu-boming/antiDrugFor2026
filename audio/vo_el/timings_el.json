@@ -1,0 +1,3825 @@
+{
+ "a0_c001_01": {
+  "seconds": 5.16,
+  "speech_start": 0.12,
+  "speech_end": 4.91,
+  "speech_segments": [
+   [
+    0.11,
+    1.24
+   ],
+   [
+    1.78,
+    4.91
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c001_01_el01.json",
+  "role": "旁白",
+  "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。"
+ },
+ "a0_c002_01": {
+  "seconds": 2.53,
+  "speech_start": 0.12,
+  "speech_end": 2.28,
+  "speech_segments": [
+   [
+    0.11,
+    0.57
+   ],
+   [
+    0.93,
+    2.28
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c002_01_el01.json",
+  "role": "折折",
+  "text": "喵！大家好，我是折折。"
+ },
+ "a0_c002_02": {
+  "seconds": 5.1,
+  "speech_start": 0.12,
+  "speech_end": 4.85,
+  "speech_segments": [
+   [
+    0.11,
+    4.85
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c002_02_el01.json",
+  "role": "折折",
+  "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
+ },
+ "a0_c002_03": {
+  "seconds": 2.62,
+  "speech_start": 0.12,
+  "speech_end": 2.37,
+  "speech_segments": [
+   [
+    0.12,
+    1.09
+   ],
+   [
+    1.47,
+    2.41
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c002_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "慢慢摺，燈才會亮。"
+ },
+ "a0_c003_01": {
+  "seconds": 5.63,
+  "speech_start": 0.12,
+  "speech_end": 5.38,
+  "speech_segments": [
+   [
+    0.11,
+    1.72
+   ],
+   [
+    2.17,
+    5.38
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c003_01_el01.json",
+  "role": "折折",
+  "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！"
+ },
+ "a0_c003_02": {
+  "seconds": 3.22,
+  "speech_start": 0.12,
+  "speech_end": 2.97,
+  "speech_segments": [
+   [
+    0.11,
+    2.97
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c003_02_el01.json",
+  "role": "折折",
+  "text": "可是……主燈的竹子骨架，不見了！"
+ },
+ "a0_c003_03": {
+  "seconds": 4.24,
+  "speech_start": 0.12,
+  "speech_end": 3.99,
+  "speech_segments": [
+   [
+    0.11,
+    1.02
+   ],
+   [
+    1.27,
+    4.0
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c003_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c003_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "奇怪，我昨天晚上明明放在這裡啊。"
+ },
+ "a0_c003_04": {
+  "seconds": 4.15,
+  "speech_start": 0.12,
+  "speech_end": 3.9,
+  "speech_segments": [
+   [
+    0.12,
+    2.18
+   ],
+   [
+    2.59,
+    3.9
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c003_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c003_04_el01.json",
+  "role": "折折",
+  "text": "沒有骨架，就沒有主燈。紙燈節怎麼辦？"
+ },
+ "a0_c004_01": {
+  "seconds": 2.71,
+  "speech_start": 0.12,
+  "speech_end": 2.46,
+  "speech_segments": [
+   [
+    0.11,
+    1.15
+   ],
+   [
+    1.54,
+    2.47
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_01_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔早！折折早！"
+ },
+ "a0_c004_02": {
+  "seconds": 3.2,
+  "speech_start": 0.12,
+  "speech_end": 2.95,
+  "speech_segments": [
+   [
+    0.12,
+    1.44
+   ],
+   [
+    1.82,
+    2.94
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_02_el01.json",
+  "role": "小晴",
+  "text": "骨架不見了？我記下來。"
+ },
+ "a0_c004_03": {
+  "seconds": 3.87,
+  "speech_start": 0.12,
+  "speech_end": 3.62,
+  "speech_segments": [
+   [
+    0.11,
+    0.85
+   ],
+   [
+    1.28,
+    3.62
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_03_el01.json",
+  "role": "折折",
+  "text": "交給我！我摺成放大鏡，馬上找到！"
+ },
+ "a0_c004_04": {
+  "seconds": 3.34,
+  "speech_start": 0.12,
+  "speech_end": 3.09,
+  "speech_segments": [
+   [
+    0.12,
+    0.6
+   ],
+   [
+    0.85,
+    3.11
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_04_el01.json",
+  "role": "小宇",
+  "text": "呃……謝謝，我剛好缺一頂帽子。"
+ },
+ "a0_c004_05": {
+  "seconds": 5.69,
+  "speech_start": 0.12,
+  "speech_end": 5.44,
+  "speech_segments": [
+   [
+    0.12,
+    1.7
+   ],
+   [
+    2.57,
+    5.44
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_05_el01.json",
+  "role": "阿樂叔叔",
+  "text": "你們先去上學。放學再來幫叔叔找，好不好？"
+ },
+ "a0_c004_06": {
+  "seconds": 1.15,
+  "speech_start": 0.12,
+  "speech_end": 0.9,
+  "speech_segments": [
+   [
+    0.11,
+    0.89
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c004_06_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c004_06_el01.json",
+  "role": "小晴、小宇",
+  "text": "好！"
+ },
+ "a0_c005_01": {
+  "seconds": 5.84,
+  "speech_start": 0.12,
+  "speech_end": 5.59,
+  "speech_segments": [
+   [
+    0.11,
+    1.73
+   ],
+   [
+    2.25,
+    5.59
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c005_01_el01.json",
+  "role": "折折",
+  "text": "大家也幫我找，好不好？看到線索，舉手就好，不用喊出來。"
+ },
+ "a0_c005_02": {
+  "seconds": 4.8,
+  "speech_start": 0.12,
+  "speech_end": 4.55,
+  "speech_segments": [
+   [
+    0.12,
+    4.55
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c005_02_el01.json",
+  "role": "折折",
+  "text": "台口上這八盞燈，每完成一題，我們就一起點亮一盞。"
+ },
+ "a0_c005_03": {
+  "seconds": 3.3,
+  "speech_start": 0.12,
+  "speech_end": 3.05,
+  "speech_segments": [
+   [
+    0.11,
+    3.05
+   ]
+  ],
+  "file": "audio/vo_el/vo_a0_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a0_c005_03_el01.json",
+  "role": "折折",
+  "text": "八盞全亮，小燈鎮就會亮起來！"
+ },
+ "a1_c001_01": {
+  "seconds": 3.11,
+  "speech_start": 0.12,
+  "speech_end": 2.86,
+  "speech_segments": [
+   [
+    0.11,
+    0.76
+   ],
+   [
+    1.21,
+    2.86
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c001_01_el01.json",
+  "role": "小晴",
+  "text": "品安！你的燈籠好漂亮。"
+ },
+ "a1_c001_02": {
+  "seconds": 4.68,
+  "speech_start": 0.12,
+  "speech_end": 4.43,
+  "speech_segments": [
+   [
+    0.12,
+    1.37
+   ],
+   [
+    2.85,
+    4.44
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c001_02_el01.json",
+  "role": "品安",
+  "text": "我自己編的。你們在找什麼？"
+ },
+ "a1_c001_03": {
+  "seconds": 3.57,
+  "speech_start": 0.12,
+  "speech_end": 3.32,
+  "speech_segments": [
+   [
+    0.12,
+    1.26
+   ],
+   [
+    2.3,
+    3.32
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c001_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c001_03_el01.json",
+  "role": "小宇",
+  "text": "主燈的骨架。它不見了！"
+ },
+ "a1_c001_04": {
+  "seconds": 3.4,
+  "speech_start": 0.12,
+  "speech_end": 3.15,
+  "speech_segments": [
+   [
+    0.11,
+    0.86
+   ],
+   [
+    1.24,
+    3.15
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c001_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c001_04_el01.json",
+  "role": "折折",
+  "text": "我也來布置！看我摺一盞燈籠——"
+ },
+ "a1_c001_05": {
+  "seconds": 2.04,
+  "speech_start": 0.12,
+  "speech_end": 1.79,
+  "speech_segments": [
+   [
+    0.12,
+    1.79
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c001_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c001_05_el01.json",
+  "role": "品安",
+  "text": "……你是青蛙燈嗎？"
+ },
+ "a1_c002_01": {
+  "seconds": 2.19,
+  "speech_start": 0.12,
+  "speech_end": 1.94,
+  "speech_segments": [
+   [
+    0.11,
+    1.95
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c002_01_el01.json",
+  "role": "邀請者",
+  "text": "嘿，要不要看看這個？"
+ },
+ "a1_c002_02": {
+  "seconds": 4.25,
+  "speech_start": 0.12,
+  "speech_end": 4.0,
+  "speech_segments": [
+   [
+    0.11,
+    4.0
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c002_02_el01.json",
+  "role": "邀請者",
+  "text": "亮晶晶的，聞起來香香的，很安全喔。"
+ },
+ "a1_c002_03": {
+  "seconds": 2.29,
+  "speech_start": 0.12,
+  "speech_end": 2.04,
+  "speech_segments": [
+   [
+    0.12,
+    2.04
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c002_03_el01.json",
+  "role": "小宇",
+  "text": "哇……好亮。"
+ },
+ "a1_c003_01": {
+  "seconds": 2.03,
+  "speech_start": 0.12,
+  "speech_end": 1.78,
+  "speech_segments": [
+   [
+    0.11,
+    1.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c003_01_el01.json",
+  "role": "小宇",
+  "text": "等一下，我想一想。"
+ },
+ "a1_c003_02": {
+  "seconds": 5.87,
+  "speech_start": 0.12,
+  "speech_end": 5.62,
+  "speech_segments": [
+   [
+    0.12,
+    2.19
+   ],
+   [
+    2.63,
+    3.71
+   ],
+   [
+    4.15,
+    5.62
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c003_02_el01.json",
+  "role": "小晴",
+  "text": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？"
+ },
+ "a1_c003_03": {
+  "seconds": 5.42,
+  "speech_start": 0.12,
+  "speech_end": 5.17,
+  "speech_segments": [
+   [
+    0.12,
+    3.43
+   ],
+   [
+    3.88,
+    5.16
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c003_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c003_03_el01.json",
+  "role": "折折",
+  "text": "大家找找看，這個盒子哪裡怪怪的？看到的舉手。"
+ },
+ "a1_c004_01": {
+  "seconds": 4.27,
+  "speech_start": 0.12,
+  "speech_end": 4.02,
+  "speech_segments": [
+   [
+    0.11,
+    2.74
+   ],
+   [
+    3.12,
+    4.02
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_01_el01.json",
+  "role": "邀請者",
+  "text": "這是電子煙啦，大家都在玩。試試看嘛。"
+ },
+ "a1_c004_02": {
+  "seconds": 2.89,
+  "speech_start": 0.12,
+  "speech_end": 2.64,
+  "speech_segments": [
+   [
+    0.12,
+    2.64
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_02_el01.json",
+  "role": "小晴",
+  "text": "電子煙在臺灣是禁止的。"
+ },
+ "a1_c004_03": {
+  "seconds": 4.13,
+  "speech_start": 0.12,
+  "speech_end": 3.88,
+  "speech_segments": [
+   [
+    0.12,
+    3.88
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_03_el01.json",
+  "role": "小晴",
+  "text": "包裝漂亮、聞起來香，都不能證明安全。"
+ },
+ "a1_c004_04": {
+  "seconds": 1.86,
+  "speech_start": 0.12,
+  "speech_end": 1.61,
+  "speech_segments": [
+   [
+    0.11,
+    1.62
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_04_el01.json",
+  "role": "小宇",
+  "text": "不用，我們不要。"
+ },
+ "a1_c004_05": {
+  "seconds": 3.66,
+  "speech_start": 0.12,
+  "speech_end": 3.41,
+  "speech_segments": [
+   [
+    0.12,
+    3.41
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_05_el01.json",
+  "role": "小晴",
+  "text": "品安，快來，我們去跟阿樂叔叔說。"
+ },
+ "a1_c004_06": {
+  "seconds": 3.89,
+  "speech_start": 0.12,
+  "speech_end": 3.64,
+  "speech_segments": [
+   [
+    0.12,
+    1.31
+   ],
+   [
+    1.57,
+    3.65
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c004_06_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c004_06_el01.json",
+  "role": "品安",
+  "text": "你們先走，我把燈籠收好就來。"
+ },
+ "a1_c005_01": {
+  "seconds": 1.92,
+  "speech_start": 0.12,
+  "speech_end": 1.67,
+  "speech_segments": [
+   [
+    0.11,
+    1.67
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c005_01_el01.json",
+  "role": "折折",
+  "text": "第一題來囉！"
+ },
+ "a1_c005_02": {
+  "seconds": 6.61,
+  "speech_start": 0.12,
+  "speech_end": 6.36,
+  "speech_segments": [
+   [
+    0.12,
+    3.18
+   ],
+   [
+    3.62,
+    4.85
+   ],
+   [
+    5.26,
+    6.36
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c005_02_el01.json",
+  "role": "旁白",
+  "text": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？"
+ },
+ "a1_c005_03": {
+  "seconds": 3.29,
+  "speech_start": 0.12,
+  "speech_end": 3.04,
+  "speech_segments": [
+   [
+    0.12,
+    0.37
+   ],
+   [
+    0.79,
+    3.04
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c005_03_el01.json",
+  "role": "旁白",
+  "text": "一，可以，包裝漂亮就很安全。"
+ },
+ "a1_c005_04": {
+  "seconds": 3.59,
+  "speech_start": 0.12,
+  "speech_end": 3.34,
+  "speech_segments": [
+   [
+    0.11,
+    0.36
+   ],
+   [
+    0.64,
+    3.34
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c005_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c005_04_el01.json",
+  "role": "旁白",
+  "text": "二，不行，外觀不能證明安全。"
+ },
+ "a1_c005_05": {
+  "seconds": 3.73,
+  "speech_start": 0.12,
+  "speech_end": 3.48,
+  "speech_segments": [
+   [
+    0.11,
+    0.48
+   ],
+   [
+    0.71,
+    1.14
+   ],
+   [
+    1.59,
+    3.48
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c005_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c005_05_el01.json",
+  "role": "旁白",
+  "text": "三，可以，聞起來香就沒問題。"
+ },
+ "a1_c006_01": {
+  "seconds": 4.77,
+  "speech_start": 0.12,
+  "speech_end": 4.52,
+  "speech_segments": [
+   [
+    0.12,
+    1.15
+   ],
+   [
+    1.76,
+    2.43
+   ],
+   [
+    2.57,
+    4.52
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c006_01_el01.json",
+  "role": "旁白",
+  "text": "正解是二：不行，外觀不能證明安全。"
+ },
+ "a1_c007_01": {
+  "seconds": 2.02,
+  "speech_start": 0.12,
+  "speech_end": 1.77,
+  "speech_segments": [
+   [
+    0.11,
+    0.94
+   ],
+   [
+    1.1,
+    1.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c007_01_el01.json",
+  "role": "折折",
+  "text": "第一盞燈，亮了！"
+ },
+ "a1_c008_01": {
+  "seconds": 3.84,
+  "speech_start": 0.12,
+  "speech_end": 3.59,
+  "speech_segments": [
+   [
+    0.12,
+    0.52
+   ],
+   [
+    0.9,
+    3.59
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c008_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c008_01_el01.json",
+  "role": "折折",
+  "text": "咦？包裝裡面，怎麼有一團細細的線？"
+ },
+ "a1_c008_02": {
+  "seconds": 4.02,
+  "speech_start": 0.12,
+  "speech_end": 3.77,
+  "speech_segments": [
+   [
+    0.12,
+    0.97
+   ],
+   [
+    1.49,
+    3.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c008_02_el01.json",
+  "role": "小晴",
+  "text": "不要碰。我們快去跟阿樂叔叔說。"
+ },
+ "a1_c008_03": {
+  "seconds": 2.17,
+  "speech_start": 0.12,
+  "speech_end": 1.92,
+  "speech_segments": [
+   [
+    0.11,
+    1.92
+   ]
+  ],
+  "file": "audio/vo_el/vo_a1_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a1_c008_03_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔？"
+ },
+ "a2_c001_01": {
+  "seconds": 3.45,
+  "speech_start": 0.12,
+  "speech_end": 3.2,
+  "speech_segments": [
+   [
+    0.11,
+    1.7
+   ],
+   [
+    2.11,
+    3.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c001_01_el01.json",
+  "role": "小宇",
+  "text": "叔叔，你還好嗎？竹篾掉了。"
+ },
+ "a2_c001_02": {
+  "seconds": 3.03,
+  "speech_start": 0.12,
+  "speech_end": 2.78,
+  "speech_segments": [
+   [
+    0.12,
+    2.78
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c001_02_el01.json",
+  "role": "阿樂叔叔",
+  "text": "沒事、沒事，手滑了一下。"
+ },
+ "a2_c001_03": {
+  "seconds": 6.03,
+  "speech_start": 0.12,
+  "speech_end": 5.78,
+  "speech_segments": [
+   [
+    0.11,
+    3.95
+   ],
+   [
+    4.37,
+    5.78
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c001_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c001_03_el01.json",
+  "role": "折折",
+  "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。"
+ },
+ "a2_c002_01": {
+  "seconds": 6.03,
+  "speech_start": 0.12,
+  "speech_end": 5.78,
+  "speech_segments": [
+   [
+    0.11,
+    0.41
+   ],
+   [
+    1.09,
+    2.42
+   ],
+   [
+    3.27,
+    5.78
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c002_01_el01.json",
+  "role": "阿樂叔叔",
+  "text": "咦？我想揮手……手怎麼跑到旁邊去了？"
+ },
+ "a2_c002_02": {
+  "seconds": 1.7,
+  "speech_start": 0.12,
+  "speech_end": 1.45,
+  "speech_segments": [
+   [
+    0.11,
+    1.44
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c002_02_el01.json",
+  "role": "小晴",
+  "text": "叔叔，小心！"
+ },
+ "a2_c003_01": {
+  "seconds": 3.98,
+  "speech_start": 0.12,
+  "speech_end": 3.73,
+  "speech_segments": [
+   [
+    0.12,
+    3.73
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c003_01_el01.json",
+  "role": "旁白",
+  "text": "還記得廣場上，那個閃亮的小盒子嗎？"
+ },
+ "a2_c003_02": {
+  "seconds": 7.91,
+  "speech_start": 0.11,
+  "speech_end": 7.66,
+  "speech_segments": [
+   [
+    0.11,
+    1.23
+   ],
+   [
+    1.48,
+    3.07
+   ],
+   [
+    3.32,
+    5.07
+   ],
+   [
+    5.43,
+    7.66
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c003_02_el01.json",
+  "role": "旁白",
+  "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+ },
+ "a2_c004_01": {
+  "seconds": 5.21,
+  "speech_start": 0.12,
+  "speech_end": 4.96,
+  "speech_segments": [
+   [
+    0.12,
+    2.86
+   ],
+   [
+    3.0,
+    3.14
+   ],
+   [
+    3.29,
+    4.96
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c004_01_el01.json",
+  "role": "旁白",
+  "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。"
+ },
+ "a2_c005_01": {
+  "seconds": 1.6,
+  "speech_start": 0.12,
+  "speech_end": 1.35,
+  "speech_segments": [
+   [
+    0.11,
+    1.35
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c005_01_el01.json",
+  "role": "折折",
+  "text": "第二題！"
+ },
+ "a2_c005_02": {
+  "seconds": 3.96,
+  "speech_start": 0.12,
+  "speech_end": 3.71,
+  "speech_segments": [
+   [
+    0.11,
+    2.4
+   ],
+   [
+    2.6,
+    3.7
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c005_02_el01.json",
+  "role": "旁白",
+  "text": "阿樂叔叔身上的操偶線，在比喻什麼？"
+ },
+ "a2_c005_03": {
+  "seconds": 4.76,
+  "speech_start": 0.12,
+  "speech_end": 4.51,
+  "speech_segments": [
+   [
+    0.12,
+    0.52
+   ],
+   [
+    0.89,
+    4.51
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c005_03_el01.json",
+  "role": "旁白",
+  "text": "一，叔叔在練習下一場紙偶戲的動作。"
+ },
+ "a2_c005_04": {
+  "seconds": 4.33,
+  "speech_start": 0.12,
+  "speech_end": 4.08,
+  "speech_segments": [
+   [
+    0.11,
+    0.42
+   ],
+   [
+    0.93,
+    2.67
+   ],
+   [
+    2.88,
+    4.08
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c005_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c005_04_el01.json",
+  "role": "旁白",
+  "text": "二，人真的會變成喪屍，被線拉著走。"
+ },
+ "a2_c005_05": {
+  "seconds": 4.46,
+  "speech_start": 0.12,
+  "speech_end": 4.21,
+  "speech_segments": [
+   [
+    0.11,
+    0.43
+   ],
+   [
+    1.04,
+    4.21
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c005_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c005_05_el01.json",
+  "role": "旁白",
+  "text": "三，毒品可能讓頭腦和身體不聽使喚。"
+ },
+ "a2_c006_01": {
+  "seconds": 4.96,
+  "speech_start": 0.12,
+  "speech_end": 4.71,
+  "speech_segments": [
+   [
+    0.12,
+    1.27
+   ],
+   [
+    1.7,
+    4.71
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c006_01_el01.json",
+  "role": "旁白",
+  "text": "正解是三：毒品可能讓頭腦和身體不聽使喚。"
+ },
+ "a2_c007_01": {
+  "seconds": 5.47,
+  "speech_start": 0.12,
+  "speech_end": 5.22,
+  "speech_segments": [
+   [
+    0.11,
+    1.35
+   ],
+   [
+    1.86,
+    5.22
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c007_01_el01.json",
+  "role": "折折",
+  "text": "第二盞！不管答對幾個人，我們都一起完成了這一題。"
+ },
+ "a2_c008_01": {
+  "seconds": 5.51,
+  "speech_start": 0.12,
+  "speech_end": 5.26,
+  "speech_segments": [
+   [
+    0.11,
+    0.79
+   ],
+   [
+    2.09,
+    3.11
+   ],
+   [
+    3.68,
+    5.32
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c008_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c008_01_el01.json",
+  "role": "阿樂叔叔",
+  "text": "奇怪……我的手，怎麼不聽話了？"
+ },
+ "a2_c008_02": {
+  "seconds": 5.04,
+  "speech_start": 0.12,
+  "speech_end": 4.79,
+  "speech_segments": [
+   [
+    0.11,
+    2.5
+   ],
+   [
+    3.41,
+    4.79
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c008_02_el01.json",
+  "role": "阿樂叔叔",
+  "text": "骨架放到哪裡去了……我想不起來。"
+ },
+ "a2_c008_03": {
+  "seconds": 3.47,
+  "speech_start": 0.11,
+  "speech_end": 3.22,
+  "speech_segments": [
+   [
+    0.11,
+    3.22
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c008_03_el01.json",
+  "role": "小宇",
+  "text": "叔叔是不是……吸毒了？"
+ },
+ "a2_c008_04": {
+  "seconds": 3.97,
+  "speech_start": 0.12,
+  "speech_end": 3.72,
+  "speech_segments": [
+   [
+    0.11,
+    1.21
+   ],
+   [
+    1.61,
+    3.72
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c008_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c008_04_el01.json",
+  "role": "小晴",
+  "text": "我們不知道。可是，叔叔需要幫忙。"
+ },
+ "a2_c008_05": {
+  "seconds": 12.31,
+  "speech_start": 0.12,
+  "speech_end": 12.06,
+  "speech_segments": [
+   [
+    0.12,
+    0.71
+   ],
+   [
+    1.11,
+    3.39
+   ],
+   [
+    3.6,
+    4.9
+   ],
+   [
+    5.32,
+    7.71
+   ],
+   [
+    9.63,
+    12.06
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c008_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c008_05_el01.json",
+  "role": "旁白",
+  "text": "不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。"
+ },
+ "a2_c009_01": {
+  "seconds": 1.65,
+  "speech_start": 0.12,
+  "speech_end": 1.4,
+  "speech_segments": [
+   [
+    0.11,
+    1.4
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c009_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c009_01_el01.json",
+  "role": "折折",
+  "text": "第三題來了。"
+ },
+ "a2_c009_02": {
+  "seconds": 3.97,
+  "speech_start": 0.12,
+  "speech_end": 3.72,
+  "speech_segments": [
+   [
+    0.11,
+    3.72
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c009_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c009_02_el01.json",
+  "role": "旁白",
+  "text": "看見有人站不穩，就能確定他吸毒嗎？"
+ },
+ "a2_c009_03": {
+  "seconds": 3.72,
+  "speech_start": 0.12,
+  "speech_end": 3.47,
+  "speech_segments": [
+   [
+    0.23,
+    0.45
+   ],
+   [
+    0.91,
+    1.39
+   ],
+   [
+    1.7,
+    3.47
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c009_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c009_03_el01.json",
+  "role": "旁白",
+  "text": "一，不能，要先找大人來幫忙。"
+ },
+ "a2_c009_04": {
+  "seconds": 4.03,
+  "speech_start": 0.12,
+  "speech_end": 3.78,
+  "speech_segments": [
+   [
+    0.11,
+    0.38
+   ],
+   [
+    0.93,
+    1.43
+   ],
+   [
+    1.8,
+    3.78
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c009_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c009_04_el01.json",
+  "role": "旁白",
+  "text": "二，可以，看起來像就一定是。"
+ },
+ "a2_c009_05": {
+  "seconds": 4.19,
+  "speech_start": 0.12,
+  "speech_end": 3.94,
+  "speech_segments": [
+   [
+    0.11,
+    0.47
+   ],
+   [
+    1.18,
+    1.8
+   ],
+   [
+    1.94,
+    3.94
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c009_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c009_05_el01.json",
+  "role": "旁白",
+  "text": "三，不能，所以直接走開不用管。"
+ },
+ "a2_c010_01": {
+  "seconds": 4.29,
+  "speech_start": 0.12,
+  "speech_end": 4.04,
+  "speech_segments": [
+   [
+    0.12,
+    1.11
+   ],
+   [
+    1.54,
+    2.0
+   ],
+   [
+    2.27,
+    4.04
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c010_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c010_01_el01.json",
+  "role": "旁白",
+  "text": "正解是一：不能，要先找大人來幫忙。"
+ },
+ "a2_c011_01": {
+  "seconds": 1.87,
+  "speech_start": 0.12,
+  "speech_end": 1.62,
+  "speech_segments": [
+   [
+    0.11,
+    1.62
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c011_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c011_01_el01.json",
+  "role": "折折",
+  "text": "第三盞燈，亮了。"
+ },
+ "a2_c012_01": {
+  "seconds": 5.06,
+  "speech_start": 0.12,
+  "speech_end": 4.81,
+  "speech_segments": [
+   [
+    0.11,
+    2.42
+   ],
+   [
+    2.96,
+    4.8
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c012_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_01_el01.json",
+  "role": "葉護理師",
+  "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？"
+ },
+ "a2_c012_02": {
+  "seconds": 3.53,
+  "speech_start": 0.12,
+  "speech_end": 3.28,
+  "speech_segments": [
+   [
+    0.12,
+    0.67
+   ],
+   [
+    1.21,
+    3.28
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c012_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_02_el01.json",
+  "role": "阿樂叔叔",
+  "text": "不用……我休息一下就好。"
+ },
+ "a2_c012_03": {
+  "seconds": 3.81,
+  "speech_start": 0.12,
+  "speech_end": 3.56,
+  "speech_segments": [
+   [
+    0.11,
+    3.55
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c012_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_03_el01.json",
+  "role": "葉護理師",
+  "text": "你家人的電話沒人接，我晚一點再打。"
+ },
+ "a2_c012_04": {
+  "seconds": 4.37,
+  "speech_start": 0.12,
+  "speech_end": 4.12,
+  "speech_segments": [
+   [
+    0.11,
+    4.11
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c012_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_04_el01.json",
+  "role": "小晴",
+  "text": "還有，廣場上有人拿閃亮的盒子給小孩。"
+ },
+ "a2_c012_05": {
+  "seconds": 3.83,
+  "speech_start": 0.12,
+  "speech_end": 3.58,
+  "speech_segments": [
+   [
+    0.12,
+    3.57
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c012_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c012_05_el01.json",
+  "role": "葉護理師",
+  "text": "謝謝你們告訴我，我會請警察去看看。"
+ },
+ "a2_c013_01": {
+  "seconds": 7.12,
+  "speech_start": 0.12,
+  "speech_end": 6.87,
+  "speech_segments": [
+   [
+    0.12,
+    2.24
+   ],
+   [
+    2.75,
+    6.87
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c013_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c013_01_el01.json",
+  "role": "旁白",
+  "text": "阿樂叔叔告訴葉護理師：前幾天，也有人給他一樣的閃亮小盒子。"
+ },
+ "a2_c013_02": {
+  "seconds": 4.63,
+  "speech_start": 0.12,
+  "speech_end": 4.38,
+  "speech_segments": [
+   [
+    0.12,
+    1.02
+   ],
+   [
+    1.31,
+    2.85
+   ],
+   [
+    3.47,
+    4.38
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c013_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c013_02_el01.json",
+  "role": "旁白",
+  "text": "那個人說：「試一次沒關係。」他就試了。"
+ },
+ "a2_c013_03": {
+  "seconds": 5.28,
+  "speech_start": 0.12,
+  "speech_end": 5.03,
+  "speech_segments": [
+   [
+    0.12,
+    1.85
+   ],
+   [
+    2.37,
+    5.03
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c013_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c013_03_el01.json",
+  "role": "葉護理師",
+  "text": "這幾天先不要開車。我會一直打給你的家人。"
+ },
+ "a2_c013_04": {
+  "seconds": 4.37,
+  "speech_start": 0.12,
+  "speech_end": 4.12,
+  "speech_segments": [
+   [
+    0.12,
+    1.91
+   ],
+   [
+    2.19,
+    4.11
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c013_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c013_04_el01.json",
+  "role": "小宇",
+  "text": "明天就是紙燈節了……叔叔會好一點嗎？"
+ },
+ "a2_c013_05": {
+  "seconds": 2.79,
+  "speech_start": 0.12,
+  "speech_end": 2.54,
+  "speech_segments": [
+   [
+    0.11,
+    1.18
+   ],
+   [
+    1.4,
+    2.53
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c013_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c013_05_el01.json",
+  "role": "小晴",
+  "text": "主燈骨架，到底在哪裡？"
+ },
+ "a3_c001_01": {
+  "seconds": 2.24,
+  "speech_start": 0.12,
+  "speech_end": 1.99,
+  "speech_segments": [
+   [
+    0.11,
+    1.99
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c001_01_el01.json",
+  "role": "小宇",
+  "text": "折折，你又迷路了？"
+ },
+ "a3_c001_02": {
+  "seconds": 2.44,
+  "speech_start": 0.12,
+  "speech_end": 2.19,
+  "speech_segments": [
+   [
+    0.11,
+    2.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c001_02_el01.json",
+  "role": "折折",
+  "text": "我是在……測試風向。"
+ },
+ "a3_c001_03": {
+  "seconds": 6.22,
+  "speech_start": 0.12,
+  "speech_end": 5.97,
+  "speech_segments": [
+   [
+    0.11,
+    2.25
+   ],
+   [
+    2.61,
+    5.97
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c001_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c001_03_el01.json",
+  "role": "邀請者",
+  "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。"
+ },
+ "a3_c001_04": {
+  "seconds": 1.7,
+  "speech_start": 0.12,
+  "speech_end": 1.45,
+  "speech_segments": [
+   [
+    0.12,
+    1.45
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c001_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c001_04_el01.json",
+  "role": "邀請者",
+  "text": "大家都試過了。"
+ },
+ "a3_c002_01": {
+  "seconds": 2.01,
+  "speech_start": 0.12,
+  "speech_end": 1.76,
+  "speech_segments": [
+   [
+    0.11,
+    1.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c002_01_el01.json",
+  "role": "小宇",
+  "text": "等一下，我想一想。"
+ },
+ "a3_c002_02": {
+  "seconds": 2.89,
+  "speech_start": 0.12,
+  "speech_end": 2.64,
+  "speech_segments": [
+   [
+    0.12,
+    0.56
+   ],
+   [
+    0.72,
+    1.39
+   ],
+   [
+    1.78,
+    2.66
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c002_02_el01.json",
+  "role": "小宇",
+  "text": "不用，我不試。我先離開。"
+ },
+ "a3_c002_03": {
+  "seconds": 1.13,
+  "speech_start": 0.12,
+  "speech_end": 0.88,
+  "speech_segments": [
+   [
+    0.12,
+    0.87
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c002_03_el01.json",
+  "role": "小晴",
+  "text": "我們走。"
+ },
+ "a3_c003_01": {
+  "seconds": 5.74,
+  "speech_start": 0.12,
+  "speech_end": 5.49,
+  "speech_segments": [
+   [
+    0.12,
+    5.24
+   ],
+   [
+    5.4,
+    5.49
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c003_01_el01.json",
+  "role": "小晴",
+  "text": "林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。"
+ },
+ "a3_c003_02": {
+  "seconds": 5.7,
+  "speech_start": 0.12,
+  "speech_end": 5.45,
+  "speech_segments": [
+   [
+    0.12,
+    1.59
+   ],
+   [
+    2.34,
+    5.45
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c003_02_el01.json",
+  "role": "林老師",
+  "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。"
+ },
+ "a3_c003_03": {
+  "seconds": 4.31,
+  "speech_start": 0.12,
+  "speech_end": 4.06,
+  "speech_segments": [
+   [
+    0.13,
+    2.69
+   ],
+   [
+    3.14,
+    4.06
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c003_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c003_03_el01.json",
+  "role": "林老師",
+  "text": "你們沒有拿，還馬上來找我，做得很好。"
+ },
+ "a3_c004_01": {
+  "seconds": 5.45,
+  "speech_start": 0.12,
+  "speech_end": 5.2,
+  "speech_segments": [
+   [
+    0.12,
+    1.13
+   ],
+   [
+    1.5,
+    4.0
+   ],
+   [
+    4.37,
+    5.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c004_01_el01.json",
+  "role": "折折",
+  "text": "換大家了！先跟小宇說一次：不用，我不試。我先離開。"
+ },
+ "a3_c004_02": {
+  "seconds": 4.42,
+  "speech_start": 0.12,
+  "speech_end": 4.17,
+  "speech_segments": [
+   [
+    0.11,
+    1.59
+   ],
+   [
+    1.73,
+    4.17
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c004_02_el01.json",
+  "role": "折折",
+  "text": "再加上口訣和動作：不碰、不試；先離開，找大人。"
+ },
+ "a3_c005_01": {
+  "seconds": 1.45,
+  "speech_start": 0.12,
+  "speech_end": 1.2,
+  "speech_segments": [
+   [
+    0.11,
+    1.19
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c005_01_el01.json",
+  "role": "折折",
+  "text": "第四題！"
+ },
+ "a3_c005_02": {
+  "seconds": 4.57,
+  "speech_start": 0.12,
+  "speech_end": 4.32,
+  "speech_segments": [
+   [
+    0.12,
+    0.85
+   ],
+   [
+    0.99,
+    2.41
+   ],
+   [
+    2.59,
+    4.32
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c005_02_el01.json",
+  "role": "旁白",
+  "text": "有人說「試一次沒關係」，哪個做法比較安全？"
+ },
+ "a3_c005_03": {
+  "seconds": 5.04,
+  "speech_start": 0.12,
+  "speech_end": 4.79,
+  "speech_segments": [
+   [
+    0.11,
+    0.45
+   ],
+   [
+    1.04,
+    1.48
+   ],
+   [
+    2.01,
+    2.46
+   ],
+   [
+    2.62,
+    3.17
+   ],
+   [
+    3.63,
+    4.79
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c005_03_el01.json",
+  "role": "旁白",
+  "text": "一，說「不用，我不試」，離開找大人。"
+ },
+ "a3_c005_04": {
+  "seconds": 3.78,
+  "speech_start": 0.12,
+  "speech_end": 3.53,
+  "speech_segments": [
+   [
+    0.11,
+    0.36
+   ],
+   [
+    0.91,
+    3.53
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c005_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c005_04_el01.json",
+  "role": "旁白",
+  "text": "二，只試一次而已，應該沒關係。"
+ },
+ "a3_c005_05": {
+  "seconds": 4.27,
+  "speech_start": 0.12,
+  "speech_end": 4.02,
+  "speech_segments": [
+   [
+    0.11,
+    0.43
+   ],
+   [
+    0.98,
+    2.09
+   ],
+   [
+    2.47,
+    4.02
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c005_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c005_05_el01.json",
+  "role": "旁白",
+  "text": "三，先幫他保管，等一下再還給他。"
+ },
+ "a3_c006_01": {
+  "seconds": 5.24,
+  "speech_start": 0.12,
+  "speech_end": 4.99,
+  "speech_segments": [
+   [
+    0.12,
+    1.1
+   ],
+   [
+    1.43,
+    2.05
+   ],
+   [
+    2.32,
+    3.37
+   ],
+   [
+    3.74,
+    4.99
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c006_01_el01.json",
+  "role": "旁白",
+  "text": "正解是一：說「不用，我不試」，離開找大人。"
+ },
+ "a3_c007_01": {
+  "seconds": 2.18,
+  "speech_start": 0.12,
+  "speech_end": 1.93,
+  "speech_segments": [
+   [
+    0.11,
+    1.93
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c007_01_el01.json",
+  "role": "折折",
+  "text": "第四盞，已經一半了！"
+ },
+ "a3_c008_01": {
+  "seconds": 3.69,
+  "speech_start": 0.12,
+  "speech_end": 3.44,
+  "speech_segments": [
+   [
+    0.18,
+    3.44
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c008_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c008_01_el01.json",
+  "role": "林老師",
+  "text": "今天紙燈節，學校提早放學。"
+ },
+ "a3_c008_02": {
+  "seconds": 8.56,
+  "speech_start": 0.12,
+  "speech_end": 8.31,
+  "speech_segments": [
+   [
+    0.11,
+    1.6
+   ],
+   [
+    2.44,
+    8.31
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c008_02_el01.json",
+  "role": "林老師",
+  "text": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。"
+ },
+ "a3_c008_03": {
+  "seconds": 3.47,
+  "speech_start": 0.12,
+  "speech_end": 3.22,
+  "speech_segments": [
+   [
+    0.12,
+    3.21
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c008_03_el01.json",
+  "role": "小晴",
+  "text": "林老師，叔叔昨天站都站不穩……"
+ },
+ "a3_c008_04": {
+  "seconds": 10.37,
+  "speech_start": 0.12,
+  "speech_end": 10.12,
+  "speech_segments": [
+   [
+    0.11,
+    1.81
+   ],
+   [
+    2.56,
+    5.17
+   ],
+   [
+    5.86,
+    7.41
+   ],
+   [
+    7.86,
+    10.12
+   ]
+  ],
+  "file": "audio/vo_el/vo_a3_c008_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a3_c008_04_el01.json",
+  "role": "林老師",
+  "text": "謝謝你告訴老師。老師先打電話給你們家人；如果叔叔先到，你們先待在校門裡面。"
+ },
+ "a4_c001_01": {
+  "seconds": 13.56,
+  "speech_start": 0.12,
+  "speech_end": 13.31,
+  "speech_segments": [
+   [
+    0.11,
+    0.82
+   ],
+   [
+    1.21,
+    1.3
+   ],
+   [
+    1.44,
+    4.77
+   ],
+   [
+    5.41,
+    7.31
+   ],
+   [
+    7.67,
+    13.31
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c001_01_el01.json",
+  "role": "旁白",
+  "text": "放學了。家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響，忘了答應過葉護理師不開車，林老師的電話也還沒打通。"
+ },
+ "a4_c001_02": {
+  "seconds": 5.51,
+  "speech_start": 0.12,
+  "speech_end": 5.26,
+  "speech_segments": [
+   [
+    0.11,
+    0.86
+   ],
+   [
+    1.08,
+    1.7
+   ],
+   [
+    2.5,
+    3.03
+   ],
+   [
+    3.23,
+    5.26
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c001_02_el01.json",
+  "role": "阿樂叔叔",
+  "text": "小晴、小宇……走吧，叔叔載你們去廣場。"
+ },
+ "a4_c002_01": {
+  "seconds": 3.4,
+  "speech_start": 0.12,
+  "speech_end": 3.15,
+  "speech_segments": [
+   [
+    0.11,
+    1.51
+   ],
+   [
+    1.82,
+    3.15
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c002_01_el01.json",
+  "role": "小晴",
+  "text": "叔叔講話慢慢的，站也站不穩。"
+ },
+ "a4_c002_02": {
+  "seconds": 2.43,
+  "speech_start": 0.12,
+  "speech_end": 2.18,
+  "speech_segments": [
+   [
+    0.11,
+    2.18
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c002_02_el01.json",
+  "role": "小宇",
+  "text": "可是，他說要開車……"
+ },
+ "a4_c002_03": {
+  "seconds": 4.73,
+  "speech_start": 0.12,
+  "speech_end": 4.48,
+  "speech_segments": [
+   [
+    0.11,
+    0.86
+   ],
+   [
+    1.24,
+    4.48
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c002_03_el01.json",
+  "role": "折折",
+  "text": "等一下！我們先把故事暫停，用紙上的路想一想。"
+ },
+ "a4_c003_01": {
+  "seconds": 6.28,
+  "speech_start": 0.12,
+  "speech_end": 6.03,
+  "speech_segments": [
+   [
+    0.11,
+    6.04
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c003_01_el01.json",
+  "role": "旁白",
+  "text": "受到毒品影響的人開車，可能昏昏沉沉、判斷變差，反應也變慢。"
+ },
+ "a4_c003_02": {
+  "seconds": 4.59,
+  "speech_start": 0.12,
+  "speech_end": 4.34,
+  "speech_segments": [
+   [
+    0.12,
+    1.92
+   ],
+   [
+    2.41,
+    4.34
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c003_02_el01.json",
+  "role": "旁白",
+  "text": "該轉彎的時候轉不好，該停的時候停不下來。"
+ },
+ "a4_c004_01": {
+  "seconds": 2.83,
+  "speech_start": 0.12,
+  "speech_end": 2.58,
+  "speech_segments": [
+   [
+    0.12,
+    2.58
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c004_01_el01.json",
+  "role": "旁白",
+  "text": "危險不會只留在車子裡。"
+ },
+ "a4_c004_02": {
+  "seconds": 5.12,
+  "speech_start": 0.12,
+  "speech_end": 4.87,
+  "speech_segments": [
+   [
+    0.11,
+    1.97
+   ],
+   [
+    2.3,
+    3.44
+   ],
+   [
+    3.62,
+    4.87
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c004_02_el01.json",
+  "role": "旁白",
+  "text": "開車的人、坐車的人、走在路上的人，都可能受傷。"
+ },
+ "a4_c005_01": {
+  "seconds": 1.24,
+  "speech_start": 0.12,
+  "speech_end": 0.99,
+  "speech_segments": [
+   [
+    0.12,
+    0.99
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c005_01_el01.json",
+  "role": "折折",
+  "text": "第五題！"
+ },
+ "a4_c005_02": {
+  "seconds": 4.01,
+  "speech_start": 0.12,
+  "speech_end": 3.76,
+  "speech_segments": [
+   [
+    0.11,
+    2.0
+   ],
+   [
+    2.19,
+    3.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c005_02_el01.json",
+  "role": "旁白",
+  "text": "受到毒品影響還開車，可能危害到誰？"
+ },
+ "a4_c005_03": {
+  "seconds": 3.01,
+  "speech_start": 0.12,
+  "speech_end": 2.76,
+  "speech_segments": [
+   [
+    0.11,
+    0.5
+   ],
+   [
+    0.97,
+    2.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c005_03_el01.json",
+  "role": "旁白",
+  "text": "一，只會危害開車的人。"
+ },
+ "a4_c005_04": {
+  "seconds": 3.05,
+  "speech_start": 0.12,
+  "speech_end": 2.8,
+  "speech_segments": [
+   [
+    0.11,
+    0.41
+   ],
+   [
+    0.79,
+    2.8
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c005_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c005_04_el01.json",
+  "role": "旁白",
+  "text": "二，只會危害坐車的人。"
+ },
+ "a4_c005_05": {
+  "seconds": 3.16,
+  "speech_start": 0.12,
+  "speech_end": 2.91,
+  "speech_segments": [
+   [
+    0.11,
+    0.54
+   ],
+   [
+    0.91,
+    2.91
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c005_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c005_05_el01.json",
+  "role": "旁白",
+  "text": "三，駕駛、乘客和路人。"
+ },
+ "a4_c006_01": {
+  "seconds": 4.06,
+  "speech_start": 0.12,
+  "speech_end": 3.81,
+  "speech_segments": [
+   [
+    0.12,
+    1.19
+   ],
+   [
+    1.81,
+    3.81
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c006_01_el01.json",
+  "role": "旁白",
+  "text": "正解是三：駕駛、乘客和路人。"
+ },
+ "a4_c007_01": {
+  "seconds": 1.86,
+  "speech_start": 0.12,
+  "speech_end": 1.61,
+  "speech_segments": [
+   [
+    0.11,
+    1.61
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c007_01_el01.json",
+  "role": "折折",
+  "text": "第五盞燈，亮了。"
+ },
+ "a4_c008_01": {
+  "seconds": 3.02,
+  "speech_start": 0.12,
+  "speech_end": 2.77,
+  "speech_segments": [
+   [
+    0.12,
+    0.71
+   ],
+   [
+    0.93,
+    1.47
+   ],
+   [
+    1.83,
+    2.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c008_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c008_01_el01.json",
+  "role": "阿樂叔叔",
+  "text": "小晴、小宇……上車吧。"
+ },
+ "a4_c008_02": {
+  "seconds": 4.51,
+  "speech_start": 0.12,
+  "speech_end": 4.26,
+  "speech_segments": [
+   [
+    0.11,
+    1.36
+   ],
+   [
+    1.79,
+    4.26
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c008_02_el01.json",
+  "role": "折折",
+  "text": "他們還沒上車。換你想一想：現在該怎麼做？"
+ },
+ "a4_c009_01": {
+  "seconds": 1.36,
+  "speech_start": 0.12,
+  "speech_end": 1.11,
+  "speech_segments": [
+   [
+    0.12,
+    1.1
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c009_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c009_01_el01.json",
+  "role": "折折",
+  "text": "第六題！"
+ },
+ "a4_c009_02": {
+  "seconds": 7.63,
+  "speech_start": 0.12,
+  "speech_end": 7.38,
+  "speech_segments": [
+   [
+    0.11,
+    1.43
+   ],
+   [
+    1.58,
+    2.99
+   ],
+   [
+    3.34,
+    4.67
+   ],
+   [
+    5.06,
+    6.26
+   ],
+   [
+    6.7,
+    7.38
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c009_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c009_02_el01.json",
+  "role": "旁白",
+  "text": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？"
+ },
+ "a4_c009_03": {
+  "seconds": 4.67,
+  "speech_start": 0.12,
+  "speech_end": 4.42,
+  "speech_segments": [
+   [
+    0.11,
+    0.41
+   ],
+   [
+    1.02,
+    2.03
+   ],
+   [
+    2.25,
+    4.42
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c009_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c009_03_el01.json",
+  "role": "旁白",
+  "text": "一，坐後座、繫好安全帶就沒關係。"
+ },
+ "a4_c009_04": {
+  "seconds": 4.21,
+  "speech_start": 0.12,
+  "speech_end": 3.96,
+  "speech_segments": [
+   [
+    0.11,
+    0.37
+   ],
+   [
+    0.96,
+    2.06
+   ],
+   [
+    2.21,
+    3.96
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c009_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c009_04_el01.json",
+  "role": "旁白",
+  "text": "二，先不上車，到安全處找大人。"
+ },
+ "a4_c009_05": {
+  "seconds": 3.64,
+  "speech_start": 0.12,
+  "speech_end": 3.39,
+  "speech_segments": [
+   [
+    0.11,
+    0.5
+   ],
+   [
+    1.14,
+    3.39
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c009_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c009_05_el01.json",
+  "role": "旁白",
+  "text": "三，請他開慢一點，小心就好。"
+ },
+ "a4_c010_01": {
+  "seconds": 5.12,
+  "speech_start": 0.12,
+  "speech_end": 4.87,
+  "speech_segments": [
+   [
+    0.11,
+    1.17
+   ],
+   [
+    1.62,
+    2.82
+   ],
+   [
+    3.0,
+    4.87
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c010_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c010_01_el01.json",
+  "role": "旁白",
+  "text": "正解是二：先不上車，到安全處找大人。"
+ },
+ "a4_c011_01": {
+  "seconds": 1.42,
+  "speech_start": 0.12,
+  "speech_end": 1.17,
+  "speech_segments": [
+   [
+    0.11,
+    1.16
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c011_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c011_01_el01.json",
+  "role": "折折",
+  "text": "第六盞！"
+ },
+ "a4_c012_01": {
+  "seconds": 2.45,
+  "speech_start": 0.12,
+  "speech_end": 2.2,
+  "speech_segments": [
+   [
+    0.11,
+    2.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c012_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c012_01_el01.json",
+  "role": "小晴",
+  "text": "叔叔，我們先不上車。"
+ },
+ "a4_c012_02": {
+  "seconds": 1.86,
+  "speech_start": 0.12,
+  "speech_end": 1.61,
+  "speech_segments": [
+   [
+    0.11,
+    1.6
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c012_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c012_02_el01.json",
+  "role": "小宇",
+  "text": "我們回學校等。"
+ },
+ "a4_c012_03": {
+  "seconds": 5.33,
+  "speech_start": 0.12,
+  "speech_end": 5.08,
+  "speech_segments": [
+   [
+    0.11,
+    1.69
+   ],
+   [
+    1.83,
+    3.21
+   ],
+   [
+    3.51,
+    5.08
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c012_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c012_03_el01.json",
+  "role": "小宇",
+  "text": "陳伯伯、林老師，阿樂叔叔站不穩，可是他說要開車。"
+ },
+ "a4_c012_04": {
+  "seconds": 9.04,
+  "speech_start": 0.12,
+  "speech_end": 8.79,
+  "speech_segments": [
+   [
+    0.12,
+    2.35
+   ],
+   [
+    3.12,
+    5.66
+   ],
+   [
+    6.22,
+    8.79
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c012_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c012_04_el01.json",
+  "role": "林老師",
+  "text": "你們先待在校門裡面。老師繼續打給你們家人，也打給阿樂叔叔的家人。"
+ },
+ "a4_c012_05": {
+  "seconds": 3.04,
+  "speech_start": 0.12,
+  "speech_end": 2.79,
+  "speech_segments": [
+   [
+    0.11,
+    2.79
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c012_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c012_05_el01.json",
+  "role": "陳伯伯",
+  "text": "車先不要開，我過去陪他。"
+ },
+ "a4_c013_01": {
+  "seconds": 5.11,
+  "speech_start": 0.12,
+  "speech_end": 4.86,
+  "speech_segments": [
+   [
+    0.11,
+    1.43
+   ],
+   [
+    1.6,
+    3.19
+   ],
+   [
+    3.37,
+    3.48
+   ],
+   [
+    3.73,
+    4.86
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c013_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c013_01_el01.json",
+  "role": "陳伯伯",
+  "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。"
+ },
+ "a4_c013_02": {
+  "seconds": 4.22,
+  "speech_start": 0.12,
+  "speech_end": 3.97,
+  "speech_segments": [
+   [
+    0.12,
+    1.01
+   ],
+   [
+    1.21,
+    3.97
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c013_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c013_02_el01.json",
+  "role": "林老師",
+  "text": "陳伯伯，我打完電話就出來換你。"
+ },
+ "a4_c013_03": {
+  "seconds": 5.52,
+  "speech_start": 0.12,
+  "speech_end": 5.27,
+  "speech_segments": [
+   [
+    0.11,
+    0.44
+   ],
+   [
+    0.84,
+    3.44
+   ],
+   [
+    3.88,
+    5.27
+   ]
+  ],
+  "file": "audio/vo_el/vo_a4_c013_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a4_c013_03_el01.json",
+  "role": "折折",
+  "text": "咦？大家看，叔叔的車子後面，那是什麼？看到的舉手。"
+ },
+ "a5_c001_01": {
+  "seconds": 3.63,
+  "speech_start": 0.12,
+  "speech_end": 3.38,
+  "speech_segments": [
+   [
+    0.11,
+    1.13
+   ],
+   [
+    1.55,
+    3.38
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_01_el01.json",
+  "role": "小晴",
+  "text": "主燈骨架！原來在叔叔車上！"
+ },
+ "a5_c001_02": {
+  "seconds": 7.32,
+  "speech_start": 0.12,
+  "speech_end": 7.07,
+  "speech_segments": [
+   [
+    0.12,
+    1.32
+   ],
+   [
+    1.95,
+    3.22
+   ],
+   [
+    3.36,
+    5.87
+   ],
+   [
+    6.02,
+    7.07
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_02_el01.json",
+  "role": "陳伯伯",
+  "text": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！"
+ },
+ "a5_c001_03": {
+  "seconds": 2.09,
+  "speech_start": 0.12,
+  "speech_end": 1.84,
+  "speech_segments": [
+   [
+    0.12,
+    1.84
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_03_el01.json",
+  "role": "林老師",
+  "text": "好，我馬上出來！"
+ },
+ "a5_c001_04": {
+  "seconds": 2.9,
+  "speech_start": 0.12,
+  "speech_end": 2.65,
+  "speech_segments": [
+   [
+    0.11,
+    0.93
+   ],
+   [
+    1.48,
+    2.65
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_04_el01.json",
+  "role": "小宇",
+  "text": "阿樂叔叔？阿樂叔叔！"
+ },
+ "a5_c001_05": {
+  "seconds": 1.96,
+  "speech_start": 0.12,
+  "speech_end": 1.71,
+  "speech_segments": [
+   [
+    0.12,
+    1.71
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_05_el01.json",
+  "role": "小晴",
+  "text": "他……叫不醒。"
+ },
+ "a5_c001_06": {
+  "seconds": 5.02,
+  "speech_start": 0.12,
+  "speech_end": 4.77,
+  "speech_segments": [
+   [
+    0.11,
+    1.29
+   ],
+   [
+    1.46,
+    2.73
+   ],
+   [
+    3.12,
+    4.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c001_06_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c001_06_el01.json",
+  "role": "折折",
+  "text": "陳伯伯在轉角，林老師在辦公室。他們該怎麼做？"
+ },
+ "a5_c002_01": {
+  "seconds": 1.23,
+  "speech_start": 0.12,
+  "speech_end": 0.98,
+  "speech_segments": [
+   [
+    0.11,
+    0.98
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c002_01_el01.json",
+  "role": "折折",
+  "text": "第七題！"
+ },
+ "a5_c002_02": {
+  "seconds": 5.78,
+  "speech_start": 0.12,
+  "speech_end": 5.53,
+  "speech_segments": [
+   [
+    0.12,
+    1.43
+   ],
+   [
+    2.04,
+    3.87
+   ],
+   [
+    4.02,
+    5.53
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c002_02_el01.json",
+  "role": "旁白",
+  "text": "有人叫不醒。你站在安全的地方，接下來怎麼做？"
+ },
+ "a5_c002_03": {
+  "seconds": 3.39,
+  "speech_start": 0.12,
+  "speech_end": 3.14,
+  "speech_segments": [
+   [
+    0.12,
+    0.39
+   ],
+   [
+    0.62,
+    3.14
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c002_03_el01.json",
+  "role": "旁白",
+  "text": "一，先拍下影片，再傳給同學看。"
+ },
+ "a5_c002_04": {
+  "seconds": 3.81,
+  "speech_start": 0.12,
+  "speech_end": 3.56,
+  "speech_segments": [
+   [
+    0.11,
+    0.38
+   ],
+   [
+    0.83,
+    2.11
+   ],
+   [
+    2.26,
+    3.56
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c002_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c002_04_el01.json",
+  "role": "旁白",
+  "text": "二，自己先跑過去，用力把他搖醒。"
+ },
+ "a5_c002_05": {
+  "seconds": 4.61,
+  "speech_start": 0.12,
+  "speech_end": 4.36,
+  "speech_segments": [
+   [
+    0.11,
+    0.35
+   ],
+   [
+    0.61,
+    1.76
+   ],
+   [
+    2.05,
+    4.36
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c002_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c002_05_el01.json",
+  "role": "旁白",
+  "text": "三，先找大人，沒大人就撥 119。"
+ },
+ "a5_c003_01": {
+  "seconds": 5.02,
+  "speech_start": 0.12,
+  "speech_end": 4.77,
+  "speech_segments": [
+   [
+    0.11,
+    1.13
+   ],
+   [
+    1.45,
+    2.48
+   ],
+   [
+    2.82,
+    4.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c003_01_el01.json",
+  "role": "旁白",
+  "text": "正解是三：先找大人，沒大人就撥 119。"
+ },
+ "a5_c004_01": {
+  "seconds": 2.02,
+  "speech_start": 0.12,
+  "speech_end": 1.77,
+  "speech_segments": [
+   [
+    0.11,
+    1.77
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c004_01_el01.json",
+  "role": "折折",
+  "text": "第七盞燈，亮了。"
+ },
+ "a5_c005_01": {
+  "seconds": 1.36,
+  "speech_start": 0.12,
+  "speech_end": 1.11,
+  "speech_segments": [
+   [
+    0.11,
+    1.11
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c005_01_el01.json",
+  "role": "小宇",
+  "text": "陳伯伯——！"
+ },
+ "a5_c005_02": {
+  "seconds": 5.6,
+  "speech_start": 0.12,
+  "speech_end": 5.35,
+  "speech_segments": [
+   [
+    0.11,
+    2.32
+   ],
+   [
+    2.76,
+    5.34
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c005_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c005_02_el01.json",
+  "role": "小晴",
+  "text": "我去辦公室找林老師！你待在門裡面，不要過去。"
+ },
+ "a5_c005_03": {
+  "seconds": 5.29,
+  "speech_start": 0.12,
+  "speech_end": 5.04,
+  "speech_segments": [
+   [
+    0.11,
+    5.03
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c005_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c005_03_el01.json",
+  "role": "小宇",
+  "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。"
+ },
+ "a5_c006_01": {
+  "seconds": 5.15,
+  "speech_start": 0.12,
+  "speech_end": 4.9,
+  "speech_segments": [
+   [
+    0.12,
+    0.8
+   ],
+   [
+    0.97,
+    1.58
+   ],
+   [
+    1.85,
+    3.71
+   ],
+   [
+    4.14,
+    4.91
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_01_el01.json",
+  "role": "執勤人員",
+  "text": "119 您好，請問發生什麼事？在哪裡？"
+ },
+ "a5_c006_02": {
+  "seconds": 6.92,
+  "speech_start": 0.12,
+  "speech_end": 6.67,
+  "speech_segments": [
+   [
+    0.12,
+    2.48
+   ],
+   [
+    3.21,
+    5.81
+   ],
+   [
+    5.99,
+    6.68
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c006_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_02_el01.json",
+  "role": "小宇",
+  "text": "這裡是小燈國小正門口。有一個大人坐在門口的椅子上，叫不醒。"
+ },
+ "a5_c006_03": {
+  "seconds": 6.82,
+  "speech_start": 0.12,
+  "speech_end": 6.57,
+  "speech_segments": [
+   [
+    0.12,
+    0.56
+   ],
+   [
+    0.75,
+    2.6
+   ],
+   [
+    3.12,
+    4.49
+   ],
+   [
+    4.95,
+    6.57
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c006_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_03_el01.json",
+  "role": "執勤人員",
+  "text": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？"
+ },
+ "a5_c006_04": {
+  "seconds": 4.06,
+  "speech_start": 0.12,
+  "speech_end": 3.81,
+  "speech_segments": [
+   [
+    0.12,
+    1.57
+   ],
+   [
+    1.87,
+    3.81
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c006_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_04_el01.json",
+  "role": "小宇",
+  "text": "我在校門裡面。我同學去找老師了。"
+ },
+ "a5_c006_05": {
+  "seconds": 4.98,
+  "speech_start": 0.12,
+  "speech_end": 4.73,
+  "speech_segments": [
+   [
+    0.12,
+    1.09
+   ],
+   [
+    1.49,
+    3.03
+   ],
+   [
+    3.36,
+    4.73
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c006_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c006_05_el01.json",
+  "role": "執勤人員",
+  "text": "做得很好。待在安全的地方，聽我的指示。"
+ },
+ "a5_c007_01": {
+  "seconds": 4.84,
+  "speech_start": 0.12,
+  "speech_end": 4.59,
+  "speech_segments": [
+   [
+    0.12,
+    0.73
+   ],
+   [
+    1.14,
+    4.59
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c007_01_el01.json",
+  "role": "林老師",
+  "text": "您好，我是小燈國小的老師，我來接手。"
+ },
+ "a5_c007_02": {
+  "seconds": 4.53,
+  "speech_start": 0.12,
+  "speech_end": 4.28,
+  "speech_segments": [
+   [
+    0.12,
+    3.16
+   ],
+   [
+    3.32,
+    4.27
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c007_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c007_02_el01.json",
+  "role": "林老師",
+  "text": "你們沒有跑過去，還馬上找人幫忙，做得很好。"
+ },
+ "a5_c008_01": {
+  "seconds": 5.71,
+  "speech_start": 0.12,
+  "speech_end": 5.46,
+  "speech_segments": [
+   [
+    0.11,
+    3.39
+   ],
+   [
+    3.96,
+    5.46
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c008_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_01_el01.json",
+  "role": "葉護理師",
+  "text": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。"
+ },
+ "a5_c008_02": {
+  "seconds": 3.64,
+  "speech_start": 0.12,
+  "speech_end": 3.39,
+  "speech_segments": [
+   [
+    0.11,
+    3.39
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_02_el01.json",
+  "role": "小晴",
+  "text": "是我們害叔叔被送來醫院的嗎？"
+ },
+ "a5_c008_03": {
+  "seconds": 5.4,
+  "speech_start": 0.12,
+  "speech_end": 5.15,
+  "speech_segments": [
+   [
+    0.12,
+    0.8
+   ],
+   [
+    1.29,
+    1.49
+   ],
+   [
+    1.63,
+    3.77
+   ],
+   [
+    4.05,
+    5.15
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_03_el01.json",
+  "role": "葉護理師",
+  "text": "不是喔。你們找大人、打 119，是在幫他。"
+ },
+ "a5_c008_04": {
+  "seconds": 2.02,
+  "speech_start": 0.12,
+  "speech_end": 1.77,
+  "speech_segments": [
+   [
+    0.11,
+    1.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c008_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_04_el01.json",
+  "role": "小宇",
+  "text": "叔叔會好起來嗎？"
+ },
+ "a5_c008_05": {
+  "seconds": 6.39,
+  "speech_start": 0.12,
+  "speech_end": 6.14,
+  "speech_segments": [
+   [
+    0.12,
+    2.71
+   ],
+   [
+    3.18,
+    6.14
+   ]
+  ],
+  "file": "audio/vo_el/vo_a5_c008_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a5_c008_05_el01.json",
+  "role": "葉護理師",
+  "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。"
+ },
+ "a6_c001_01": {
+  "seconds": 3.82,
+  "speech_start": 0.12,
+  "speech_end": 3.57,
+  "speech_segments": [
+   [
+    0.11,
+    3.56
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c001_01_el01.json",
+  "role": "小晴",
+  "text": "叔叔不在，我們幫他把主燈完成！"
+ },
+ "a6_c001_02": {
+  "seconds": 2.01,
+  "speech_start": 0.12,
+  "speech_end": 1.76,
+  "speech_segments": [
+   [
+    0.11,
+    1.76
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c001_02_el01.json",
+  "role": "小宇",
+  "text": "慢慢摺，燈才會亮。"
+ },
+ "a6_c002_01": {
+  "seconds": 2.85,
+  "speech_start": 0.12,
+  "speech_end": 2.6,
+  "speech_segments": [
+   [
+    0.12,
+    2.6
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c002_01_el01.json",
+  "role": "品安",
+  "text": "我跟你們說一個秘密……"
+ },
+ "a6_c002_02": {
+  "seconds": 12.34,
+  "speech_start": 0.12,
+  "speech_end": 12.09,
+  "speech_segments": [
+   [
+    0.12,
+    2.31
+   ],
+   [
+    3.12,
+    6.07
+   ],
+   [
+    7.38,
+    8.87
+   ],
+   [
+    9.61,
+    12.11
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c002_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c002_02_el01.json",
+  "role": "品安",
+  "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+ },
+ "a6_c002_03": {
+  "seconds": 4.59,
+  "speech_start": 0.12,
+  "speech_end": 4.34,
+  "speech_segments": [
+   [
+    0.12,
+    2.2
+   ],
+   [
+    2.96,
+    4.34
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c002_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c002_03_el01.json",
+  "role": "品安",
+  "text": "不要告訴老師，好不好？我怕被罵。"
+ },
+ "a6_c002_04": {
+  "seconds": 3.53,
+  "speech_start": 0.12,
+  "speech_end": 3.28,
+  "speech_segments": [
+   [
+    0.11,
+    3.28
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c002_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c002_04_el01.json",
+  "role": "折折",
+  "text": "如果你是小晴和小宇，你會怎麼做？"
+ },
+ "a6_c003_01": {
+  "seconds": 1.35,
+  "speech_start": 0.12,
+  "speech_end": 1.1,
+  "speech_segments": [
+   [
+    0.12,
+    1.09
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c003_01_el01.json",
+  "role": "折折",
+  "text": "最後一題！"
+ },
+ "a6_c003_02": {
+  "seconds": 5.73,
+  "speech_start": 0.12,
+  "speech_end": 5.48,
+  "speech_segments": [
+   [
+    0.12,
+    2.94
+   ],
+   [
+    3.35,
+    4.52
+   ],
+   [
+    4.95,
+    5.48
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c003_02_el01.json",
+  "role": "旁白",
+  "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？"
+ },
+ "a6_c003_03": {
+  "seconds": 3.48,
+  "speech_start": 0.12,
+  "speech_end": 3.23,
+  "speech_segments": [
+   [
+    0.12,
+    0.42
+   ],
+   [
+    0.9,
+    3.23
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c003_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c003_03_el01.json",
+  "role": "旁白",
+  "text": "一，答應他，永遠不告訴任何人。"
+ },
+ "a6_c003_04": {
+  "seconds": 4.08,
+  "speech_start": 0.12,
+  "speech_end": 3.83,
+  "speech_segments": [
+   [
+    0.12,
+    0.4
+   ],
+   [
+    1.22,
+    3.83
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c003_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c003_04_el01.json",
+  "role": "旁白",
+  "text": "二，陪他一起找可信任的大人。"
+ },
+ "a6_c003_05": {
+  "seconds": 3.91,
+  "speech_start": 0.12,
+  "speech_end": 3.66,
+  "speech_segments": [
+   [
+    0.11,
+    0.58
+   ],
+   [
+    0.99,
+    3.66
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c003_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c003_05_el01.json",
+  "role": "旁白",
+  "text": "三，傳給全班同學，大家一起討論。"
+ },
+ "a6_c004_01": {
+  "seconds": 4.74,
+  "speech_start": 0.12,
+  "speech_end": 4.49,
+  "speech_segments": [
+   [
+    0.11,
+    1.2
+   ],
+   [
+    1.89,
+    4.49
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c004_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c004_01_el01.json",
+  "role": "旁白",
+  "text": "正解是二：陪他一起找可信任的大人。"
+ },
+ "a6_c005_01": {
+  "seconds": 2.41,
+  "speech_start": 0.12,
+  "speech_end": 2.16,
+  "speech_segments": [
+   [
+    0.13,
+    0.78
+   ],
+   [
+    1.12,
+    2.16
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c005_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c005_01_el01.json",
+  "role": "折折",
+  "text": "第八盞！全部亮了！"
+ },
+ "a6_c006_01": {
+  "seconds": 3.96,
+  "speech_start": 0.12,
+  "speech_end": 3.71,
+  "speech_segments": [
+   [
+    0.12,
+    3.71
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_01_el01.json",
+  "role": "小晴",
+  "text": "品安，我在乎你，我們一起找人幫忙。"
+ },
+ "a6_c006_02": {
+  "seconds": 2.96,
+  "speech_start": 0.12,
+  "speech_end": 2.71,
+  "speech_segments": [
+   [
+    0.12,
+    2.7
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_02_el01.json",
+  "role": "小宇",
+  "text": "我們陪你去，跟老師說清楚。"
+ },
+ "a6_c006_03": {
+  "seconds": 4.72,
+  "speech_start": 0.12,
+  "speech_end": 4.47,
+  "speech_segments": [
+   [
+    0.11,
+    1.02
+   ],
+   [
+    1.28,
+    4.47
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_03_el01.json",
+  "role": "品安",
+  "text": "老師……我書包裡，有一個別人給的盒子。"
+ },
+ "a6_c006_04": {
+  "seconds": 5.55,
+  "speech_start": 0.12,
+  "speech_end": 5.3,
+  "speech_segments": [
+   [
+    0.11,
+    2.0
+   ],
+   [
+    2.6,
+    3.63
+   ],
+   [
+    4.0,
+    5.3
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_04_el01.json",
+  "role": "林老師",
+  "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。"
+ },
+ "a6_c006_05": {
+  "seconds": 3.51,
+  "speech_start": 0.12,
+  "speech_end": 3.26,
+  "speech_segments": [
+   [
+    0.11,
+    1.32
+   ],
+   [
+    1.52,
+    3.26
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_05_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_05_el01.json",
+  "role": "林老師",
+  "text": "廣場那個人，警察已經在處理了。"
+ },
+ "a6_c006_06": {
+  "seconds": 2.76,
+  "speech_start": 0.12,
+  "speech_end": 2.51,
+  "speech_segments": [
+   [
+    0.11,
+    2.5
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c006_06_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c006_06_el01.json",
+  "role": "葉護理師",
+  "text": "說出來，就是在保護自己。"
+ },
+ "a6_c007_01": {
+  "seconds": 3.52,
+  "speech_start": 0.13,
+  "speech_end": 3.26,
+  "speech_segments": [
+   [
+    0.13,
+    1.95
+   ],
+   [
+    2.33,
+    3.26
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c007_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c007_01_el01.json",
+  "role": "折折",
+  "text": "我……我摺成了！真的是燈籠！"
+ },
+ "a6_c007_02": {
+  "seconds": 2.96,
+  "speech_start": 0.12,
+  "speech_end": 2.71,
+  "speech_segments": [
+   [
+    0.11,
+    2.71
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c007_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c007_02_el01.json",
+  "role": "旁白",
+  "text": "這一晚，小燈鎮的燈都亮了。"
+ },
+ "a6_c007_03": {
+  "seconds": 4.32,
+  "speech_start": 0.12,
+  "speech_end": 4.07,
+  "speech_segments": [
+   [
+    0.12,
+    0.8
+   ],
+   [
+    0.96,
+    2.54
+   ],
+   [
+    2.69,
+    4.07
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c007_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c007_03_el01.json",
+  "role": "旁白",
+  "text": "可是，阿樂叔叔要好起來，不是點亮燈就好。"
+ },
+ "a6_c008_02": {
+  "seconds": 5.98,
+  "speech_start": 0.12,
+  "speech_end": 5.73,
+  "speech_segments": [
+   [
+    0.12,
+    2.59
+   ],
+   [
+    2.87,
+    3.4
+   ],
+   [
+    4.01,
+    5.73
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c008_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c008_02_el01.json",
+  "role": "旁白",
+  "text": "操偶線一天一天變鬆、變淡，一根一根脫落。"
+ },
+ "a6_c008_03": {
+  "seconds": 4.64,
+  "speech_start": 0.12,
+  "speech_end": 4.39,
+  "speech_segments": [
+   [
+    0.12,
+    0.9
+   ],
+   [
+    1.11,
+    2.11
+   ],
+   [
+    2.33,
+    2.95
+   ],
+   [
+    3.22,
+    4.39
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c008_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c008_03_el01.json",
+  "role": "旁白",
+  "text": "好起來，需要求助、治療，還有時間。"
+ },
+ "a6_c009_01": {
+  "seconds": 2.29,
+  "speech_start": 0.12,
+  "speech_end": 2.04,
+  "speech_segments": [
+   [
+    0.11,
+    2.04
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c009_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c009_01_el01.json",
+  "role": "折折",
+  "text": "叔叔，又到紙燈節了！"
+ },
+ "a6_c009_02": {
+  "seconds": 5.65,
+  "speech_start": 0.12,
+  "speech_end": 5.4,
+  "speech_segments": [
+   [
+    0.12,
+    3.87
+   ],
+   [
+    4.12,
+    5.4
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c009_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c009_02_el01.json",
+  "role": "阿樂叔叔",
+  "text": "那天我把骨架搬上車，要送去廣場，後來自己忘了。"
+ },
+ "a6_c009_03": {
+  "seconds": 8.08,
+  "speech_start": 0.12,
+  "speech_end": 7.83,
+  "speech_segments": [
+   [
+    0.12,
+    3.3
+   ],
+   [
+    4.91,
+    5.88
+   ],
+   [
+    6.72,
+    7.83
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c009_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c009_03_el01.json",
+  "role": "阿樂叔叔",
+  "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。"
+ },
+ "a6_c009_04": {
+  "seconds": 3.34,
+  "speech_start": 0.12,
+  "speech_end": 3.09,
+  "speech_segments": [
+   [
+    0.11,
+    3.09
+   ]
+  ],
+  "file": "audio/vo_el/vo_a6_c009_04_el01.wav",
+  "lipsync": "audio/lipsync_el/a6_c009_04_el01.json",
+  "role": "阿樂叔叔",
+  "text": "謝謝你們，那天去找大人幫忙。"
+ },
+ "a7_c001_01": {
+  "seconds": 4.94,
+  "speech_start": 0.12,
+  "speech_end": 4.69,
+  "speech_segments": [
+   [
+    0.11,
+    4.69
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c001_01_el01.json",
+  "role": "折折",
+  "text": "第一張，拒絕與離開：說「不用，我不試」，然後離開。"
+ },
+ "a7_c001_02": {
+  "seconds": 5.09,
+  "speech_start": 0.12,
+  "speech_end": 4.84,
+  "speech_segments": [
+   [
+    0.12,
+    4.84
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c001_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c001_02_el01.json",
+  "role": "折折",
+  "text": "第二張，安全接送：覺得不對勁，先不上車，回去找大人。"
+ },
+ "a7_c001_03": {
+  "seconds": 6.74,
+  "speech_start": 0.12,
+  "speech_end": 6.49,
+  "speech_segments": [
+   [
+    0.11,
+    6.49
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c001_03_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c001_03_el01.json",
+  "role": "折折",
+  "text": "第三張，找大人求助：有人叫不醒，先找大人；找不到大人，就打 119。"
+ },
+ "a7_c002_01": {
+  "seconds": 2.68,
+  "speech_start": 0.12,
+  "speech_end": 2.43,
+  "speech_segments": [
+   [
+    0.12,
+    2.43
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c002_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c002_01_el01.json",
+  "role": "折折",
+  "text": "最後，大家一起做一次口訣！"
+ },
+ "a7_c003_01": {
+  "seconds": 4.82,
+  "speech_start": 0.12,
+  "speech_end": 4.57,
+  "speech_segments": [
+   [
+    0.12,
+    2.21
+   ],
+   [
+    2.6,
+    4.57
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c003_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c003_01_el01.json",
+  "role": "品安",
+  "text": "有讓你擔心的秘密，也可以找大人說。"
+ },
+ "a7_c003_02": {
+  "seconds": 3.49,
+  "speech_start": 0.12,
+  "speech_end": 3.24,
+  "speech_segments": [
+   [
+    0.11,
+    3.24
+   ]
+  ],
+  "file": "audio/vo_el/vo_a7_c003_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a7_c003_02_el01.json",
+  "role": "折折",
+  "text": "謝謝大家，幫小燈鎮點亮了八盞燈！"
+ },
+ "a8_c001_01": {
+  "seconds": 3.05,
+  "speech_start": 0.12,
+  "speech_end": 2.8,
+  "speech_segments": [
+   [
+    0.11,
+    2.8
+   ]
+  ],
+  "file": "audio/vo_el/vo_a8_c001_01_el01.wav",
+  "lipsync": "audio/lipsync_el/a8_c001_01_el01.json",
+  "role": "折折",
+  "text": "我們是小燈鎮的大家，下次見！"
+ },
+ "a2_c004_02": {
+  "seconds": 13.45,
+  "speech_start": 0.12,
+  "speech_end": 13.2,
+  "speech_segments": [
+   [
+    0.12,
+    2.23
+   ],
+   [
+    3.87,
+    8.91
+   ],
+   [
+    10.55,
+    13.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c004_02_el01.json",
+  "role": "旁白",
+  "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
+ }
+}
