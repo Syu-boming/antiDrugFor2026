@@ -1,0 +1,112 @@
+{
+ "school-building": {
+  "file": "assets/final/sets/gate/set-gate_school-building_v01.png",
+  "size": [
+   1800,
+   810
+  ]
+ },
+ "pillar": {
+  "file": "assets/final/sets/gate/set-gate_pillar_v01.png",
+  "size": [
+   122,
+   450
+  ]
+ },
+ "folding-gate": {
+  "file": "assets/final/sets/gate/set-gate_folding-gate_v01.png",
+  "size": [
+   150,
+   300
+  ]
+ },
+ "school-wall": {
+  "file": "assets/final/sets/gate/set-gate_school-wall_v01.png",
+  "size": [
+   1050,
+   217
+  ]
+ },
+ "guard-house": {
+  "file": "assets/final/sets/gate/set-gate_guard-house_v01.png",
+  "size": [
+   405,
+   450
+  ],
+  "window_hole_px": {
+   "x0": 53,
+   "y0": 121,
+   "x1": 225,
+   "y1": 279
+  }
+ },
+ "floor": {
+  "file": "assets/final/sets/gate/set-gate_floor_v01.png",
+  "size": [
+   2400,
+   1000
+  ],
+  "road_right_x": -2.6,
+  "gate_x": 0.1,
+  "pickup_line_x": 1.6,
+  "zebra_x": [
+   -7.4,
+   -3.4
+  ]
+ },
+ "bench": {
+  "file": "assets/final/props/prop-bench_v01.png",
+  "size": [
+   992,
+   512
+  ],
+  "seat_top_px_in_final": 220,
+  "px_per_unit": 300,
+  "seat_world_y": 0.92,
+  "white_border_px": 10
+ },
+ "truck": {
+  "file": "assets/final/props/prop-truck_v01.png",
+  "size": [
+   1532,
+   857
+  ],
+  "px_per_unit": 250,
+  "wheel_centers_px_in_final": [
+   [
+    376,
+    745
+   ],
+   [
+    1196,
+    745
+   ]
+  ],
+  "wheel_radius_px": 95,
+  "ground_px_in_final": 841,
+  "cat_ear_tip_px_in_final": [
+   994,
+   254
+  ],
+  "rear_window_px_in_final": [
+   1048,
+   308,
+   1128,
+   418
+  ],
+  "driver_door_px_in_final": [
+   1148,
+   302,
+   1456,
+   676
+  ],
+  "faces": "車頭朝畫面右（從左邊開進來）"
+ },
+ "truck-wheel": {
+  "file": "assets/final/props/prop-truck-wheel_v01.png",
+  "size": [
+   212,
+   212
+  ]
+ }
+}

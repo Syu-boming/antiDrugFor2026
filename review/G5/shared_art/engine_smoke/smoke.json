@@ -1,0 +1,206 @@
+{
+ "url": "file:///Users/boming/Documents/AI%20tool/%E5%8F%8D%E6%AF%92%E5%B0%8F%E5%8A%87%E5%A0%B4/app/dist/index.html?capture=1&cues=show&q=A&step=10&nofs=1",
+ "cues": {
+  "a1_c001": {
+   "set": "kraft_stage",
+   "actors": [
+    "ale",
+    "xiaoqing",
+    "xiaoyu",
+    "pinan"
+   ],
+   "castReport": [
+    "ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片",
+    "xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "xiaoyu：臉部 stand=退路換片、stepback=正式換片、cross=退路換片、dial=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "折折（zhezhe）：程式角色 zhezhe 還沒接上，用佔位小紙片",
+    "pinan：臉部 stand=正式換片、sit_lantern=正式換片、walk_straps=正式換片",
+    "ye：臉部 stand=正式換片、crouch=正式換片",
+    "lin：臉部 stand=正式換片、crouch=正式換片、sit=正式換片",
+    "chen：臉部 stand=正式換片"
+   ],
+   "faces": {
+    "ale": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "xiaoqing": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "xiaoyu": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "pinan": {
+     "eyes": "open",
+     "mouth": "smile"
+    }
+   }
+  },
+  "a2_c012": {
+   "set": "workshop_g4",
+   "actors": [
+    "ale",
+    "xiaoqing",
+    "xiaoyu",
+    "ye"
+   ],
+   "castReport": [
+    "ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片",
+    "xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "xiaoyu：臉部 stand=退路換片、stepback=正式換片、cross=退路換片、dial=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "折折（zhezhe）：程式角色 zhezhe 還沒接上，用佔位小紙片",
+    "pinan：臉部 stand=正式換片、sit_lantern=正式換片、walk_straps=正式換片",
+    "ye：臉部 stand=正式換片、crouch=正式換片",
+    "lin：臉部 stand=正式換片、crouch=正式換片、sit=正式換片",
+    "chen：臉部 stand=正式換片"
+   ],
+   "faces": {
+    "ale": {
+     "eyes": "open",
+     "mouth": "worried"
+    },
+    "xiaoqing": {
+     "eyes": "half",
+     "mouth": "smile"
+    },
+    "xiaoyu": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "ye": {
+     "eyes": "half",
+     "mouth": "smile"
+    }
+   }
+  },
+  "a3_c003": {
+   "set": "kraft_stage",
+   "actors": [
+    "xiaoqing",
+    "xiaoyu",
+    "pinan",
+    "lin"
+   ],
+   "castReport": [
+    "ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片",
+    "xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "xiaoyu：臉部 stand=退路換片、stepback=正式換片、cross=退路換片、dial=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "折折（zhezhe）：程式角色 zhezhe 還沒接上，用佔位小紙片",
+    "pinan：臉部 stand=正式換片、sit_lantern=正式換片、walk_straps=正式換片",
+    "ye：臉部 stand=正式換片、crouch=正式換片",
+    "lin：臉部 stand=正式換片、crouch=正式換片、sit=正式換片",
+    "chen：臉部 stand=正式換片"
+   ],
+   "faces": {
+    "xiaoqing": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "xiaoyu": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "pinan": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "lin": {
+     "eyes": "open",
+     "mouth": "smile"
+    }
+   }
+  },
+  "a4_c001": {
+   "set": "kraft_stage",
+   "actors": [
+    "ale",
+    "xiaoqing",
+    "xiaoyu",
+    "lin",
+    "chen"
+   ],
+   "castReport": [
+    "ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片",
+    "xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "xiaoyu：臉部 stand=退路換片、stepback=正式換片、cross=退路換片、dial=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "折折（zhezhe）：程式角色 zhezhe 還沒接上，用佔位小紙片",
+    "pinan：臉部 stand=正式換片、sit_lantern=正式換片、walk_straps=正式換片",
+    "ye：臉部 stand=正式換片、crouch=正式換片",
+    "lin：臉部 stand=正式換片、crouch=正式換片、sit=正式換片",
+    "chen：臉部 stand=正式換片"
+   ],
+   "faces": {
+    "ale": {
+     "eyes": "open",
+     "mouth": "worried"
+    },
+    "xiaoqing": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "xiaoyu": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "lin": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "chen": {
+     "eyes": "open",
+     "mouth": "smile"
+    }
+   }
+  },
+  "a5_c001": {
+   "set": "kraft_stage",
+   "actors": [
+    "ale",
+    "xiaoqing",
+    "xiaoyu",
+    "lin",
+    "chen",
+    "ye"
+   ],
+   "castReport": [
+    "ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片",
+    "xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "xiaoyu：臉部 stand=退路換片、stepback=正式換片、cross=退路換片、dial=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片",
+    "折折（zhezhe）：程式角色 zhezhe 還沒接上，用佔位小紙片",
+    "pinan：臉部 stand=正式換片、sit_lantern=正式換片、walk_straps=正式換片",
+    "ye：臉部 stand=正式換片、crouch=正式換片",
+    "lin：臉部 stand=正式換片、crouch=正式換片、sit=正式換片",
+    "chen：臉部 stand=正式換片"
+   ],
+   "faces": {
+    "ale": {
+     "eyes": "open",
+     "mouth": "worried"
+    },
+    "xiaoqing": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "xiaoyu": {
+     "eyes": "closed",
+     "mouth": "smile"
+    },
+    "lin": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "chen": {
+     "eyes": "open",
+     "mouth": "smile"
+    },
+    "ye": {
+     "eyes": "half",
+     "mouth": "smile"
+    }
+   }
+  }
+ },
+ "errors": []
+}

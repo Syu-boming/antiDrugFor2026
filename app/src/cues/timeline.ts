@@ -1,7 +1,9 @@
 // 把 cue 資料展開成時間軸：每句台詞的開始／結束、字幕分頁、動畫起訖、cue 總長。
 // 有正式音檔就用音檔長度；沒有就進「暫代模式」，依字數估計長度。
+// G5 全劇：每個 cue 的景（set）與換景亮度漸變（enterFade）、段落名冊（說話者 → 角色）、壓縮級別（略過的 cue 與台詞、短版）。
 import type { Cue, CueAnimation, CueFile, CueLine, QuizData, TimeRef } from '../types/cue';
 import { layoutSubtitle, spokenChars, charLen, plainText } from '../ui/textlayout';
+import { rosterFor } from './show';
 
 export interface SubtitlePage { start: number; end: number; rows: string[] }
 
@@ -44,9 +46,27 @@ export interface CueTimeline {
   quiz: QuizData | null;
   /** 上一穩定節點的索引（-1＝沒有） */
   prevStableIndex: number;
-  /** 下一節點的索引（-1＝最後） */
+  /** 下一節點的索引（-1＝最後）；壓縮略過的 cue 會被跳過 */
   nextIndex: number;
+  /** 這個 cue 開始時的景（cue.set ＞ 檔案層級 set ＞ workshop） */
+  set: string;
+  /** 這個 cue 結束時的景（最後一個 set.swap 動畫；沒有就同 set） */
+  endSet: string;
+  /** 開始時從暗漸亮的秒數（換景或 setFade；0＝不漸變） */
+  enterFade: number;
+  /** 目前壓縮級別下這個 cue 被略過（只能從章節選單直接跳進來） */
+  skipped: boolean;
+  /** 目前壓縮級別下沒播的台詞編號 */
+  droppedLines: string[];
 }
+
+export interface TimelineOptions {
+  /** 壓縮級別 0／1／2（時長估算_v03.md 第 5 節）：1＝略過 compression 1 的 cue 與 skippableWhenBehind 的台詞、套 level1；2＝再套 level2 短版 */
+  compression?: 0 | 1 | 2;
+}
+
+/** 換景亮度漸變：預設與下限（秒；v1.2 第 17.3 節「切場亮度漸變」） */
+export const SET_FADE = { default: 0.8, min: 0.6 };
 
 /** 時間參數預設值（暫代模式的估計依劇本「字數 ÷ 4 字／秒＋每句 0.5 秒」） */
 export const TIMING = { voStart: 0.5, gap: 0.45, tail: 0.9, charsPerSec: 4, minLine: 1.2, lampTail: 1.8 };
@@ -61,6 +81,7 @@ const ANIM_DEFAULT_DURATION: Record<string, number> = {
   'puppet.popup': 1.1, 'puppet.enter': 2.0, 'puppet.exit': 2.0, 'puppet.sit': 1.0, 'puppet.waveTry': 3.4, 'puppet.kneeTug': 3.2,
   'puppet.reach': 0.8, 'puppet.wave': 2.0, 'puppet.chest': 0.8, 'puppet.grab': 0.8, 'puppet.lean': 0.8, 'puppet.move': 1.5,
   'puppet.tilt': 0.8, 'puppet.pose': 0.24, 'puppet.face': 0, 'puppet.blink': 0,
+  'set.swap': 0, 'fade.out': 0.8, 'fade.in': 0.8,
 };
 
 export function estimateLineDuration(text: string): number {
@@ -102,28 +123,52 @@ function resolveRef(ref: TimeRef | undefined, lines: Map<string, ResolvedLine>, 
  * 建立整份 cue 檔的時間軸。
  * @param durationOf 依音檔 id 查實際長度（秒）；找不到回傳 undefined → 暫代模式
  */
-export function buildTimelines(file: CueFile, durationOf: (audioId: string) => number | undefined): CueTimeline[] {
+export function buildTimelines(file: CueFile, durationOf: (audioId: string) => number | undefined, opts: TimelineOptions = {}): CueTimeline[] {
   const cues = file.cues;
+  const level = opts.compression ?? 0;
   const index = new Map(cues.map((c, i) => [c.id, i]));
-  const roster = new Map(Object.entries(file.characters ?? {}).map(([id, c]) => [c.name, id]));
+  const rosterCache = new Map<string, Map<string, string>>();
+  const speakerMap = (cue: Cue): Map<string, string> => {
+    const key = cue.segment ?? '';
+    let m = rosterCache.get(key);
+    if (!m) { m = new Map(Object.entries(rosterFor(file, cue)).map(([id, c]) => [c.name, id])); rosterCache.set(key, m); }
+    return m;
+  };
   let lastQuiz: QuizData | null = null;
+  // 壓縮：1 級略過 compression 1 的 cue（2 級的 cue 改短版，不略過）
+  const skippedCue = (c: Cue): boolean => level >= 1 && c.compression === 1;
 
-  return cues.map((cue, i) => {
-    // 1. 台詞依序排上時間軸
+  const out0 = cues.map((cue0, i) => {
+    // 0. 壓縮的替代版本（1 級：略過可略台詞＋level1；2 級：再套 level2）
+    let cue = cue0;
+    const keep = new Set<string>(cue.lines.map((l) => l.id));
+    if (level >= 1) {
+      for (const l of cue.lines) if (l.skippableWhenBehind) keep.delete(l.id);
+      if (cue.level1) { cue = applyVariant(cue, cue.level1); if (cue.level1?.lines) for (const id of [...keep]) if (!cue0.level1!.lines!.includes(id)) keep.delete(id); }
+    }
+    if (level >= 2 && cue0.compression === 2 && cue0.level2) {
+      cue = applyVariant(cue, cue0.level2);
+      if (cue0.level2.lines) for (const id of [...keep]) if (!cue0.level2.lines.includes(id)) keep.delete(id);
+    }
+    const roster = speakerMap(cue0);
+    // 1. 台詞依序排上時間軸（壓縮略過的台詞收成 0 秒：不播、不上字幕，錨在它上面的動作照樣解析）
     const lines = new Map<string, ResolvedLine>();
     const resolved: ResolvedLine[] = [];
+    const dropped: string[] = [];
     let cursor = cue.voStart ?? TIMING.voStart;
     for (const line of cue.lines) {
       const audioId = audioIdOf(line);
       const real = durationOf(audioId);
-      const duration = real ?? estimateLineDuration(line.text);
+      const on = keep.has(line.id);
+      const duration = on ? real ?? estimateLineDuration(line.text) : 0;
       const s = line.start !== undefined ? (resolveRef(line.start, lines, null, line.id) ?? cursor) : cursor;
       const r: ResolvedLine = {
         line, audioId, actorId: roster.get(line.speaker) ?? null,
-        start: s, end: s + duration, duration, placeholder: real === undefined, pages: [],
+        start: s, end: s + duration, duration, placeholder: on && real === undefined, pages: [],
       };
-      r.pages = paginate(line.text, r.start, r.end);
       lines.set(line.id, r);
+      if (!on) { dropped.push(line.id); continue; }
+      r.pages = paginate(line.text, r.start, r.end);
       resolved.push(r);
       cursor = r.end + TIMING.gap;
     }
@@ -182,11 +227,46 @@ export function buildTimelines(file: CueFile, durationOf: (audioId: string) => n
     if (typeof cue.next === 'string') nextIndex = index.get(cue.next) ?? -1;
     else if (cue.next === undefined && i + 1 < cues.length) nextIndex = i + 1;
 
+    // 6. 景：cue.set ＞ 檔案層級 ＞ workshop；結束時的景＝最後一個 set.swap
+    const set = cue0.set ?? file.set ?? 'workshop';
+    const swaps = out.filter((a) => a.name === 'set.swap' && typeof a.params.set === 'string');
+    const endSet = swaps.length ? String(swaps[swaps.length - 1].params.set) : set;
+
     return {
       cue, index: i, duration, lines: resolved, anims: out, sfx, music,
       placeholder: resolved.some((l) => l.placeholder), quiz, prevStableIndex, nextIndex,
+      set, endSet, enterFade: 0, skipped: skippedCue(cue0), droppedLines: dropped,
     };
   });
+
+  // 7. 壓縮略過的 cue：下一節點與上一穩定節點都跳過它們（直接從章節選單跳進去仍可播）
+  const live = (j: number, dir: 'next' | 'prev'): number => {
+    const seen = new Set<number>();
+    while (j >= 0 && out0[j].skipped && !seen.has(j)) { seen.add(j); j = dir === 'next' ? out0[j].nextIndex : out0[j].prevStableIndex; }
+    return j;
+  };
+  if (level >= 1) for (const t of out0) { t.nextIndex = live(t.nextIndex, 'next'); t.prevStableIndex = live(t.prevStableIndex, 'prev'); }
+
+  // 8. 換景亮度漸變：跟流程上前一個 cue（next 指向自己的那個）結束時的景不同、而且開始時布幕是開的 → 從暗漸亮
+  for (const t of out0) {
+    const c = t.cue;
+    const pred = out0.find((p) => p.nextIndex === t.index && !p.skipped) ?? out0[t.index - 1];
+    const curtainOpen = (c.initialState.stage?.curtain ?? (c.kind === 'title' ? 'closed' : 'open')) === 'open';
+    const changed = !!pred && pred.endSet !== t.set;
+    if (curtainOpen && (changed || c.setFade !== undefined)) t.enterFade = Math.max(SET_FADE.min, c.setFade ?? SET_FADE.default);
+  }
+  return out0;
+}
+
+/** 套用壓縮替代版本（只換有寫的欄位） */
+function applyVariant(cue: Cue, v: NonNullable<Cue['level1']>): Cue {
+  return {
+    ...cue,
+    animation: v.animation ?? cue.animation,
+    minDuration: v.minDuration ?? cue.minDuration,
+    voStart: v.voStart ?? cue.voStart,
+    tail: v.tail ?? cue.tail,
+  };
 }
 
 /** 某時間點正在顯示的字幕頁 */

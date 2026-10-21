@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d3d-3182-7682-8668-c34c89e4ba1d/exec-862a1a02-b247-45ca-b67d-57aa632f8a63.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_walk_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_walk_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

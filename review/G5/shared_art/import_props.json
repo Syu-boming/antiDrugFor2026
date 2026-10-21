@@ -1,0 +1,140 @@
+{
+ "prop_inviter_v01": {
+  "raw": "review/G5/shared_art/raw/prop_inviter_v01.png",
+  "generated": "assets/generated/chr-inviter_kit_v01.png",
+  "stray_px_removed": 0,
+  "hand": {
+   "final": "assets/final/chr-inviter_hand-box_v01.png",
+   "offset_from_source": [
+    7,
+    326
+   ],
+   "size": [
+    866,
+    377
+   ],
+   "alpha_ref": [
+    0,
+    16
+   ],
+   "checks": {
+    "fog_px": 0,
+    "semi_alpha_px": 5492,
+    "semi_alpha_ratio_of_edge": 2.574,
+    "raw_fog_px": 0,
+    "raw_margins": {
+     "left": 7,
+     "top": 342,
+     "right": 679,
+     "bottom": 338
+    },
+    "raw_touches_edge": [],
+    "crop_ok": true,
+    "white_profile_1_24": [
+     0.754,
+     0.882,
+     0.889,
+     0.882,
+     0.897,
+     0.881,
+     0.881,
+     0.885,
+     0.751,
+     0.181,
+     0.022,
+     0.012,
+     0.009,
+     0.007,
+     0.005,
+     0.005,
+     0.003,
+     0.0,
+     0.002,
+     0.003,
+     0.005,
+     0.004,
+     0.005,
+     0.007
+    ],
+    "white_border_start_px": 0,
+    "outer_dark_line": false,
+    "white_border_px": 9,
+    "dark_line_inside_border": 0.92,
+    "white_border_coverage": 0.885,
+    "white_border_ok": true,
+    "lr_L_median_diff": 31.8,
+    "mean_b": 23.8
+   },
+   "box_bbox_px": [
+    268,
+    29,
+    834,
+    343
+   ],
+   "note": "左緣是袖口切口（畫布外延伸），引擎請把左緣放在畫面外或柱子後；左側沒有白邊是刻意的"
+  },
+  "box": {
+   "final": "assets/final/props/prop-sticker-box_v01.png",
+   "offset_from_source": [
+    889,
+    235
+   ],
+   "size": [
+    616,
+    533
+   ],
+   "alpha_ref": [
+    16,
+    16
+   ],
+   "checks": {
+    "fog_px": 0,
+    "semi_alpha_px": 4700,
+    "semi_alpha_ratio_of_edge": 2.539,
+    "raw_fog_px": 0,
+    "raw_margins": {
+     "left": 905,
+     "top": 251,
+     "right": 47,
+     "bottom": 272
+    },
+    "raw_touches_edge": [],
+    "crop_ok": true,
+    "white_profile_1_24": [
+     0.905,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     1.0,
+     0.999,
+     0.695,
+     0.093,
+     0.006,
+     0.005,
+     0.006,
+     0.004,
+     0.004,
+     0.005,
+     0.005,
+     0.006,
+     0.01,
+     0.012,
+     0.013,
+     0.013,
+     0.014,
+     0.014
+    ],
+    "white_border_start_px": 0,
+    "outer_dark_line": false,
+    "white_border_px": 9,
+    "dark_line_inside_border": 0.952,
+    "white_border_coverage": 1.0,
+    "white_border_ok": true,
+    "lr_L_median_diff": 2.1,
+    "mean_b": 36.1
+   }
+  }
+ }
+}

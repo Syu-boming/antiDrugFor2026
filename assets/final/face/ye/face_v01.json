@@ -1,0 +1,122 @@
+{
+ "character": "ye",
+ "version": "v01",
+ "format_note": "引擎原生 FaceConfig（app/src/stage/face.ts）。perPose 依立牌姿勢名稱（assets/final/rig/show_characters.json 的 poses）；最上層 mouth／eyes 是空槽（沒列在 perPose 的姿勢改用 fallbackFaces 退路換片）。anchor＝換片中心、size＝換片在姿勢圖上的像素尺寸，座標都是 assets/final 姿勢圖的像素。睜眼與原圖本來的嘴型沒有換片＝顯示原圖。",
+ "paintedMouth": "smile",
+ "paintedMouth_per_pose": {
+  "stand": "smile",
+  "crouch": "smile"
+ },
+ "paintedMouth_note": "FaceConfig 只有一個 paintedMouth（整個角色共用）。各姿勢原圖的嘴型在 paintedMouth_per_pose；每個姿勢都做了除了它自己原圖嘴型以外的全部嘴型換片，所以引擎要哪個嘴型都對得上（要原圖嘴型時顯示原圖）。",
+ "mouth": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 2,
+  "shapes": {
+   "closed": "none/ye-closed",
+   "half": "none/ye-half",
+   "open": "none/ye-open",
+   "round": "none/ye-round",
+   "worried": "none/ye-worried",
+   "smile": "none/ye-smile"
+  }
+ },
+ "eyes": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 1,
+  "shapes": {
+   "open": "none/ye-open",
+   "half": "none/ye-half",
+   "closed": "none/ye-closed"
+  }
+ },
+ "perPose": {
+  "stand": {
+   "eyes": {
+    "anchor": [
+     206.5,
+     199.5
+    ],
+    "size": [
+     95,
+     79
+    ],
+    "z": 1,
+    "shapes": {
+     "closed": "face/ye/chr-ye_stand-eyes_closed",
+     "half": "face/ye/chr-ye_stand-eyes_half"
+    }
+   },
+   "mouth": {
+    "anchor": [
+     209.0,
+     256.0
+    ],
+    "size": [
+     140,
+     28
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/ye/chr-ye_stand-mouth_closed",
+     "half": "face/ye/chr-ye_stand-mouth_half",
+     "open": "face/ye/chr-ye_stand-mouth_open",
+     "round": "face/ye/chr-ye_stand-mouth_round",
+     "worried": "face/ye/chr-ye_stand-mouth_worried"
+    }
+   },
+   "_image": "chr-ye_master"
+  },
+  "crouch": {
+   "eyes": {
+    "anchor": [
+     465.0,
+     256.0
+    ],
+    "size": [
+     124,
+     102
+    ],
+    "z": 1,
+    "shapes": {
+     "closed": "face/ye/chr-ye_crouch-eyes_closed",
+     "half": "face/ye/chr-ye_crouch-eyes_half"
+    }
+   },
+   "mouth": {
+    "anchor": [
+     467.5,
+     329.5
+    ],
+    "size": [
+     189,
+     37
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/ye/chr-ye_crouch-mouth_closed",
+     "half": "face/ye/chr-ye_crouch-mouth_half",
+     "open": "face/ye/chr-ye_crouch-mouth_open",
+     "round": "face/ye/chr-ye_crouch-mouth_round",
+     "worried": "face/ye/chr-ye_crouch-mouth_worried"
+    }
+   },
+   "_image": "chr-ye_pose-crouch"
+  }
+ },
+ "swap_rule": "硬切換（不做透明度交叉淡化）；兩眼在同一張換片，一定同時閉、同時開。",
+ "made_by": "review/G5/shared_art/scripts/build_faces_new.py"
+}

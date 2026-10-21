@@ -1,0 +1,370 @@
+{
+ "format": "antidrug-set/1",
+ "title": "校門口（放學接送區）",
+ "wall": {
+  "image": "sets/square/set-square_sky",
+  "width": 26,
+  "y": -0.5,
+  "z": -5.0,
+  "emissive": 0.32
+ },
+ "floor": {
+  "image": "set-gate_floor",
+  "repeat": [
+   1,
+   1
+  ],
+  "width": 24,
+  "depth": 10,
+  "z": 5.0,
+  "color": "#ddd3c0"
+ },
+ "layers": [
+  {
+   "id": "sq-mountains",
+   "image": "sets/square/set-square_mountains",
+   "x": 0,
+   "y": -2.324,
+   "z": -4.4,
+   "width": 24,
+   "layer": "far",
+   "popup": [
+    0.05,
+    0.27
+   ],
+   "_note": "沿用廣場遠山（底邊在地面下，只露出山脊）"
+  },
+  {
+   "id": "sq-backrow",
+   "image": "sets/square/set-square_backrow",
+   "x": -7.2,
+   "y": -0.059,
+   "z": -3.4,
+   "width": 11.5,
+   "layer": "far",
+   "popup": [
+    0.11,
+    0.33
+   ],
+   "_note": "對街騎樓（沿用廣場後排建築）"
+  },
+  {
+   "id": "school-building",
+   "image": "set-gate_school-building",
+   "x": 5.6,
+   "y": -0.013,
+   "z": -3.2,
+   "width": 11.5,
+   "layer": "far",
+   "popup": [
+    0.17,
+    0.39
+   ],
+   "_note": "三層樓走廊式校舍（無校徽、無字）"
+  },
+  {
+   "id": "prop-truck",
+   "image": "props/prop-truck",
+   "x": -7.6,
+   "y": -0.023,
+   "z": -2.4,
+   "width": 6.0,
+   "layer": "mid",
+   "popup": [
+    0.23,
+    0.45
+   ],
+   "_note": "淡米色無標誌小貨車（a4_c001、a4_c008、a4_c013 共用同一張）。貓耳竹篾尖在後窗旁；a4_c013 鏡頭帶到後車窗時用 cat_ear_tip_px_in_final 找位置。",
+   "_wheels": {
+    "id": "props/prop-truck-wheel",
+    "centers_world_from_bottom_center": [
+     [
+      -1.527,
+      0.439
+     ],
+     [
+      1.684,
+      0.439
+     ]
+    ],
+    "diameter_world": 0.83
+   }
+  },
+  {
+   "id": "sq-tree-a",
+   "image": "sets/square/set-square_tree-a",
+   "x": -4.9,
+   "y": -0.049,
+   "z": -1.6,
+   "width": 3.6,
+   "layer": "mid",
+   "popup": [
+    0.3,
+    0.52
+   ],
+   "_note": "校門外行道樹"
+  },
+  {
+   "id": "school-wall",
+   "image": "set-gate_school-wall",
+   "x": 5.2,
+   "y": 0.0,
+   "z": -1.25,
+   "width": 7.0,
+   "layer": "mid",
+   "popup": [
+    0.36,
+    0.58
+   ],
+   "_note": "校內側圍牆＋矮樹籬（在警衛室後面）"
+  },
+  {
+   "id": "folding-gate",
+   "image": "set-gate_folding-gate",
+   "x": 2.1,
+   "y": 0.0,
+   "z": -1.0,
+   "width": 0.9,
+   "layer": "mid",
+   "popup": [
+    0.42,
+    0.64
+   ],
+   "_note": "伸縮門收在右門柱內側（淺灰，避免孩子身後變暗）"
+  },
+  {
+   "id": "guard-house",
+   "image": "set-gate_guard-house",
+   "x": 4.7,
+   "y": 0.0,
+   "z": -0.95,
+   "width": 2.7,
+   "layer": "mid",
+   "popup": [
+    0.48,
+    0.7
+   ],
+   "_note": "警衛室（窗戶玻璃挖空）",
+   "_window_hole_world": {
+    "x0": 3.703,
+    "x1": 4.85,
+    "y0": 1.14,
+    "y1": 2.193
+   }
+  },
+  {
+   "id": "pillar",
+   "image": "set-gate_pillar",
+   "x": -1.25,
+   "y": 0.0,
+   "z": -0.9,
+   "width": 0.82,
+   "layer": "mid",
+   "popup": [
+    0.54,
+    0.76
+   ],
+   "_note": "左門柱"
+  },
+  {
+   "id": "pillar-2",
+   "image": "set-gate_pillar",
+   "x": 1.25,
+   "y": 0.0,
+   "z": -0.9,
+   "width": 0.82,
+   "layer": "mid",
+   "popup": [
+    0.6,
+    0.82
+   ],
+   "_note": "右門柱（同一張圖）"
+  },
+  {
+   "id": "prop-bench",
+   "image": "props/prop-bench",
+   "x": -3.2,
+   "y": -0.02,
+   "z": 0.1,
+   "width": 3.307,
+   "layer": "mid",
+   "popup": [
+    0.67,
+    0.89
+   ],
+   "_note": "座面世界高 0.92（圖上座面 y＝seat_top_px_in_final；白邊 10 px 在外）。品安 P-PA1、林老師 P-LIN2 的 feet 已算好坐在 0.92。",
+   "_seat_world_y": 0.92
+  },
+  {
+   "id": "sq-tree-b",
+   "image": "sets/square/set-square_tree-b",
+   "x": -8.6,
+   "y": -0.047,
+   "z": 2.2,
+   "width": 3.4,
+   "layer": "fore",
+   "popup": [
+    0.73,
+    0.95
+   ],
+   "_note": "左前景行道樹（框景，大全景才看得到）"
+  },
+  {
+   "id": "sq-planter-mid",
+   "image": "sets/square/set-square_planter-mid",
+   "x": 7.6,
+   "y": -0.037,
+   "z": 2.4,
+   "width": 1.5,
+   "layer": "fore",
+   "popup": [
+    0.79,
+    1.0
+   ],
+   "_note": "右前景花台（框景）"
+  }
+ ],
+ "grade": {
+  "preset": "day_warm"
+ },
+ "marks": {
+  "xiaoqing": {
+   "x": 2.7,
+   "z": 0.35
+  },
+  "xiaoyu": {
+   "x": 3.6,
+   "z": 0.1
+  },
+  "lin": {
+   "x": 4.6,
+   "z": 0.3
+  },
+  "chen": {
+   "x": -1.9,
+   "z": 0.25
+  },
+  "ale": {
+   "x": -3.2,
+   "z": 0.30000000000000004
+  },
+  "pinan": {
+   "x": 1.0,
+   "z": -0.2
+  }
+ },
+ "landmarks": {
+  "benchSeat": {
+   "x0": -4.65,
+   "x1": -1.75,
+   "y": 0.92,
+   "z": 0.1
+  },
+  "pickupLine": {
+   "x0": 1.6,
+   "x1": 1.6,
+   "y": 0,
+   "z": 0
+  },
+  "guardWindow": {
+   "x0": 3.703,
+   "x1": 4.85,
+   "y": 1.667,
+   "z": -0.95
+  },
+  "truckCatEar": {
+   "x0": -6.707,
+   "x1": -6.707,
+   "y": 2.338,
+   "z": -2.4
+  }
+ },
+ "cameras": {
+  "gate_wide": {
+   "pos": [
+    0,
+    3.6,
+    27
+   ],
+   "target": [
+    0,
+    3.2,
+    0
+   ],
+   "fov": 20
+  },
+  "gate_mid": {
+   "pos": [
+    -0.2,
+    1.7,
+    17.5
+   ],
+   "target": [
+    -0.2,
+    1.5,
+    0
+   ],
+   "fov": 20
+  },
+  "gate_inside": {
+   "pos": [
+    3.3,
+    1.5,
+    13.5
+   ],
+   "target": [
+    3.3,
+    1.35,
+    0
+   ],
+   "fov": 20
+  },
+  "gate_bench": {
+   "pos": [
+    -3.3,
+    1.45,
+    13.5
+   ],
+   "target": [
+    -3.3,
+    1.25,
+    0
+   ],
+   "fov": 20
+  },
+  "gate_truck_window": {
+   "pos": [
+    -6.457,
+    2.438,
+    8.1
+   ],
+   "target": [
+    -6.707,
+    2.188,
+    -2.4
+   ],
+   "fov": 20
+  }
+ },
+ "_made_by": "review/G5/shared_art/scripts/build_layouts.py（G5 共用美術代理）；擺位來源 review/G5/shared_art/sets/gate_layout_source.json",
+ "_coords": "世界座標同 app/src/stage/layers.ts：x 向右、y 向上（地面 0）、z 朝觀眾；x,y＝圖片底邊中點；width／height 世界單位。",
+ "_staging": {
+  "outside_left": "校門外（街道、對街騎樓、停在對面的小貨車、校門外長椅）＝畫面左＝危險方位（和 G4 一致）",
+  "inside_right": "校門內（警衛室、校舍、接送區）＝畫面右＝安全方位",
+  "kids_mark": "孩子站在接送線（世界 x +1.6）右側：建議 x +2.5～+3.7，z 0～0.4；不往左越過接送線（兒童安全界線第 6 條）",
+  "bench_mark": "長椅在校門外：x −3.2、z 0.1（坐的人 z 0.3）（阿樂叔叔 a4_c013 坐下、a5_c001 P-AL1 靠著椅背）",
+  "truck_mark": "小貨車停在對面：x −7.6、z −2.4（車頭朝右；從畫面左外開進來，只開到這裡就停，不靠近孩子）",
+  "guard_window": {
+   "world": {
+    "x0": 3.703,
+    "x1": 4.85,
+    "y0": 1.14,
+    "y1": 2.193
+   },
+   "note": "警衛室大窗的玻璃是挖空的（透明）；a4_c001 林老師的背影可以放在 z −1.2（警衛室後面一點）從窗裡看到。林老師背面圖還沒有（handoff）"
+  }
+ },
+ "_lighting": "兒童站位身後是警衛室淺灰綠牆（約 sRGB 207,216,198）與米色校牆，投影 v2 下要 ≥0.50（D-G2-06）；本預覽量測見 review/G5/shared_art/sets/gate_preview_*.json。",
+ "_floor_note": "地面平面（y=0，圖上方＝遠處）：左邊柏油路＋斑馬線、路緣、人行道、校門（x 0.1）、校內水泥地與黃色接送線（x +1.6）",
+ "_preview": "review/G5/shared_art/sets/gate_preview_*.png（Python 近似預覽，不是引擎擷取）"
+}

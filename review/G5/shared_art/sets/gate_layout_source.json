@@ -1,0 +1,235 @@
+{
+ "format": "antidrug-g5-set-layout-draft/1",
+ "status": "草稿：引擎代理定 layout.json 正式格式後改寫（app/SHOW_INTERFACE.md）。景片是程式繪製的退路版（image_gen 額度 19:50 才恢復）；之後若重抽，同 id 換圖即可。",
+ "set": "gate",
+ "used_in": "第三幕 a3_c003（校門口迎接、品安走過）；第四幕 a4_c001、a4_c002、a4_c008、a4_c012、a4_c013；第五幕 a5_c001、a5_c005–a5_c007",
+ "coords": "世界座標同 app/src/stage/layers.ts：x 向右、y 向上（地面 0）、z 朝觀眾；x,y＝圖片底邊中點；width／height 世界單位。",
+ "staging": {
+  "outside_left": "校門外（街道、對街騎樓、停在對面的小貨車、校門外長椅）＝畫面左＝危險方位（和 G4 一致）",
+  "inside_right": "校門內（警衛室、校舍、接送區）＝畫面右＝安全方位",
+  "kids_mark": "孩子站在接送線（世界 x +1.6）右側：建議 x +2.5～+3.7，z 0～0.4；不往左越過接送線（兒童安全界線第 6 條）",
+  "bench_mark": "長椅在校門外：x −3.2、z 0.1（坐的人 z 0.3）（阿樂叔叔 a4_c013 坐下、a5_c001 P-AL1 靠著椅背）",
+  "truck_mark": "小貨車停在對面：x −7.6、z −2.4（車頭朝右；從畫面左外開進來，只開到這裡就停，不靠近孩子）",
+  "guard_window": {
+   "world": {
+    "x0": 3.703,
+    "x1": 4.85,
+    "y0": 1.14,
+    "y1": 2.193
+   },
+   "note": "警衛室大窗的玻璃是挖空的（透明）；a4_c001 林老師的背影可以放在 z −1.2（警衛室後面一點）從窗裡看到。林老師背面圖還沒有（handoff）"
+  }
+ },
+ "lighting": "兒童站位身後是警衛室淺灰綠牆（約 sRGB 207,216,198）與米色校牆，投影 v2 下要 ≥0.50（D-G2-06）；本預覽量測見 review/G5/shared_art/sets/gate_preview_*.json。",
+ "floor": {
+  "id": "sets/gate/set-gate_floor",
+  "file": "assets/final/sets/gate/set-gate_floor_v01.png",
+  "world_width": 24,
+  "world_depth": 10,
+  "center": [
+   0,
+   0,
+   0.0
+  ],
+  "note": "地面平面（y=0，圖上方＝遠處）：左邊柏油路＋斑馬線、路緣、人行道、校門（x 0.1）、校內水泥地與黃色接送線（x +1.6）",
+  "road_right_x": -2.6,
+  "gate_x": 0.1,
+  "pickup_line_x": 1.6,
+  "zebra_x": [
+   -7.4,
+   -3.4
+  ]
+ },
+ "pieces": [
+  {
+   "id": "sets/square/set-square_sky",
+   "file": "assets/final/sets/square/set-square_sky_v01.png",
+   "layer": "backdrop",
+   "x": 0,
+   "y": -0.5,
+   "z": -5.0,
+   "width": 26,
+   "height": 17.333,
+   "anchor": "bottom-center",
+   "note": "沿用廣場天空（同一天、同一個小鎮）"
+  },
+  {
+   "id": "sets/square/set-square_mountains",
+   "file": "assets/final/sets/square/set-square_mountains_v01.png",
+   "layer": "far",
+   "x": 0,
+   "y": -2.2,
+   "z": -4.4,
+   "width": 24,
+   "height": 8.041,
+   "anchor": "bottom-center",
+   "note": "沿用廣場遠山（底邊在地面下，只露出山脊）"
+  },
+  {
+   "id": "sets/square/set-square_backrow",
+   "file": "assets/final/sets/square/set-square_backrow_v01.png",
+   "layer": "far",
+   "x": -7.2,
+   "y": 0,
+   "z": -3.4,
+   "width": 11.5,
+   "height": 4.742,
+   "anchor": "bottom-center",
+   "note": "對街騎樓（沿用廣場後排建築）"
+  },
+  {
+   "id": "sets/gate/set-gate_school-building",
+   "file": "assets/final/sets/gate/set-gate_school-building_v01.png",
+   "layer": "far",
+   "x": 5.6,
+   "y": 0,
+   "z": -3.2,
+   "width": 11.5,
+   "height": 5.175,
+   "anchor": "bottom-center",
+   "note": "三層樓走廊式校舍（無校徽、無字）"
+  },
+  {
+   "id": "sets/gate/set-gate_school-wall",
+   "file": "assets/final/sets/gate/set-gate_school-wall_v01.png",
+   "layer": "mid",
+   "x": 5.2,
+   "y": 0,
+   "z": -1.25,
+   "width": 7.0,
+   "height": 1.447,
+   "anchor": "bottom-center",
+   "note": "校內側圍牆＋矮樹籬（在警衛室後面）"
+  },
+  {
+   "id": "sets/gate/set-gate_pillar",
+   "file": "assets/final/sets/gate/set-gate_pillar_v01.png",
+   "layer": "mid",
+   "x": -1.25,
+   "y": 0,
+   "z": -0.9,
+   "width": 0.82,
+   "height": 3.025,
+   "anchor": "bottom-center",
+   "note": "左門柱"
+  },
+  {
+   "id": "sets/gate/set-gate_pillar",
+   "file": "assets/final/sets/gate/set-gate_pillar_v01.png",
+   "layer": "mid",
+   "x": 1.25,
+   "y": 0,
+   "z": -0.9,
+   "width": 0.82,
+   "height": 3.025,
+   "anchor": "bottom-center",
+   "note": "右門柱（同一張圖）"
+  },
+  {
+   "id": "sets/gate/set-gate_folding-gate",
+   "file": "assets/final/sets/gate/set-gate_folding-gate_v01.png",
+   "layer": "mid",
+   "x": 2.1,
+   "y": 0,
+   "z": -1.0,
+   "width": 0.9,
+   "height": 1.8,
+   "anchor": "bottom-center",
+   "note": "伸縮門收在右門柱內側（淺灰，避免孩子身後變暗）"
+  },
+  {
+   "id": "sets/gate/set-gate_guard-house",
+   "file": "assets/final/sets/gate/set-gate_guard-house_v01.png",
+   "layer": "mid",
+   "x": 4.7,
+   "y": 0,
+   "z": -0.95,
+   "width": 2.7,
+   "height": 3.0,
+   "anchor": "bottom-center",
+   "note": "警衛室（窗戶玻璃挖空）",
+   "window_hole_world": {
+    "x0": 3.703,
+    "x1": 4.85,
+    "y0": 1.14,
+    "y1": 2.193
+   }
+  },
+  {
+   "id": "sets/square/set-square_tree-a",
+   "file": "assets/final/sets/square/set-square_tree-a_v01.png",
+   "layer": "mid",
+   "x": -4.9,
+   "y": 0,
+   "z": -1.6,
+   "width": 3.6,
+   "height": 5.305,
+   "anchor": "bottom-center",
+   "note": "校門外行道樹"
+  },
+  {
+   "id": "sets/square/set-square_planter-mid",
+   "file": "assets/final/sets/square/set-square_planter-mid_v01.png",
+   "layer": "fore",
+   "x": 7.6,
+   "y": 0,
+   "z": 2.4,
+   "width": 1.5,
+   "height": 1.427,
+   "anchor": "bottom-center",
+   "note": "右前景花台（框景）"
+  },
+  {
+   "id": "sets/square/set-square_tree-b",
+   "file": "assets/final/sets/square/set-square_tree-b_v01.png",
+   "layer": "fore",
+   "x": -8.6,
+   "y": 0,
+   "z": 2.2,
+   "width": 3.4,
+   "height": 4.945,
+   "anchor": "bottom-center",
+   "note": "左前景行道樹（框景，大全景才看得到）"
+  }
+ ],
+ "props": [
+  {
+   "id": "props/prop-bench",
+   "file": "assets/final/props/prop-bench_v01.png",
+   "x": -3.2,
+   "y": 0,
+   "z": 0.1,
+   "width": 3.307,
+   "height": 1.707,
+   "anchor": "bottom-center",
+   "seat_world_y": 0.92,
+   "note": "座面世界高 0.92（圖上座面 y＝seat_top_px_in_final；白邊 10 px 在外）。品安 P-PA1、林老師 P-LIN2 的 feet 已算好坐在 0.92。"
+  },
+  {
+   "id": "props/prop-truck",
+   "file": "assets/final/props/prop-truck_v01.png",
+   "x": -7.6,
+   "y": 0,
+   "z": -2.4,
+   "width": 6.0,
+   "height": 3.356,
+   "anchor": "bottom-center",
+   "wheels": {
+    "id": "props/prop-truck-wheel",
+    "centers_world_from_bottom_center": [
+     [
+      -1.527,
+      0.439
+     ],
+     [
+      1.684,
+      0.439
+     ]
+    ],
+    "diameter_world": 0.83
+   },
+   "note": "淡米色無標誌小貨車（a4_c001、a4_c008、a4_c013 共用同一張）。貓耳竹篾尖在後窗旁；a4_c013 鏡頭帶到後車窗時用 cat_ear_tip_px_in_final 找位置。"
+  }
+ ],
+ "made_by": "review/G5/shared_art/scripts/build_gate.py"
+}

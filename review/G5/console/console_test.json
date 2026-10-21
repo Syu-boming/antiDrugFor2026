@@ -1,0 +1,458 @@
+{
+  "at": "2026-10-21T07:29:18.244Z",
+  "passed": 85,
+  "total": 85,
+  "electron": "/var/folders/wn/cty3sbxn6yl6ld02w2llmll80000gn/T/antidrug-electron-41.3.0/Electron.app/Contents/MacOS/Electron",
+  "screenshots": [
+    "browser_01_preparing.png",
+    "browser_02_title_idle.png",
+    "browser_03_playing.png",
+    "browser_04_story_waiting.png",
+    "browser_07_paused.png",
+    "browser_05_quiz_shown.png",
+    "stage_quiz_shown_clean.png",
+    "browser_06_reveal_waiting.png",
+    "browser_10_checkpoint.png",
+    "browser_08_focus_warn.png",
+    "stage_playing_clean.png",
+    "browser_09_disconnected.png",
+    "browser_layout_1280x720.png",
+    "browser_layout_1536x864.png",
+    "show_01_q8_upcoming.png",
+    "show_02_compression1.png",
+    "show_03_checkpoint_q3.png",
+    "single_01_notice.png",
+    "single_02_stage_already_open.png",
+    "keytest_page.png",
+    "console_keytest_overlay.png",
+    "electron_console.png",
+    "electron_stage.png"
+  ],
+  "results": [
+    {
+      "name": "產出 console.html、keytest.html、stage.html、console-link.js",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "stage.html＝index.html 多載入 console-link.js（舞台畫面相同）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台檔案沒有外部資源",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "不用攝影機、麥克風、地理位置",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "預設映射：PageDown 下一步、PageUp 上一步、句點暫停、F5／Esc 攔截",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "code 缺漏時用 key 對回（PageDown、句點、Esc）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "修飾鍵：Ctrl＋PageDown 交還瀏覽器，Ctrl＋F5 仍攔截",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "本機加設：B＝暫停；F5／Esc 不能改（仍攔截）；可取消 → 鍵",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "輪區 Q1–Q8＝A B C D A B C D",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "時間文字",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "下一步預告：題目出現 → 揭曉答案；劇情等待 → 出題 Q2；正解等待 → 點燈第 2 盞",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "下一步預告：準備畫面（瀏覽器要在舞台按；Electron 可遠端）、暫停中、播放中",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "劇情等待時預告下一題正解與指定區",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "壓縮建議（時長估算 v03 第 5 節）：Q3 落後 1:29 不觸發、1:30 → 1 級；Q6 2:00 → 1 級；Q8 2:30 → 2 級",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "壓縮建議以 cue 檔的 checkpoint.escalate 為準（有寫就用它的門檻與級別）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：只有一個畫面 → 單一舞台視窗",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：同步顯示（兩個畫面範圍相同）→ 單一舞台視窗",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：延伸顯示 → 舞台在外接螢幕、控制台在筆電螢幕",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：投影機被設成主螢幕時，控制台仍放筆電內建螢幕",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：不知道哪個是內建螢幕時，控制台放主螢幕、舞台放另一個",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "版面：--single 強制單一視窗",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台自動連上舞台並取得 cue 資料",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "準備畫面：控制台按下一步不會在舞台沒有使用者操作時啟動（瀏覽器規定）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "片頭待機：控制台顯示「下一步：開幕」與講稿重點",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "授課時鐘開演前顯示「未開始」",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "按鍵路由：控制台 PageDown → 舞台開幕（唯一狀態來源執行）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "授課時鐘在開幕時從 00:30 起跳",
+      "ok": true,
+      "detail": "00:30"
+    },
+    {
+      "name": "劇情等待：下一步預告下一段標題、講稿重點換成本段",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "停住後連按兩下：只推進一段（a2_c002）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "播放中從控制台連按 5 下：全部忽略、不跳段",
+      "ok": true,
+      "detail": "忽略 5 次"
+    },
+    {
+      "name": "長按（key repeat）：控制台全部忽略、舞台不跳段",
+      "ok": true,
+      "detail": "repeat 8 次"
+    },
+    {
+      "name": "黑屏鍵（句點）從控制台暫停：畫面時間停住、控制台顯示暫停中",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "再按一次繼續",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "上一步：回到上一個穩定節點（a0_c001 停住）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台的 F5／Esc 一律攔截、不重新整理、不送到舞台",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "舞台視窗收到的按鍵也顯示在控制台（標明是哪個視窗）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "跳到選單：停在 a2_c005 之前；控制台預告下一題 Q2（正解 3、B 區）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "題目出現：下一步＝揭曉答案；本題正解 3、指定區 B；講稿重點是本題提示",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "投影端（舞台）沒有正解標示（題目出現時未揭答）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "正解等待：控制台標示已揭曉、下一步＝收起題卡進入閉幕",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "查核點：段落播完時記下實際時間與落差（超前／落後）",
+      "ok": true,
+      "detail": "第二幕必要旁白一　目標 13:00　實際 00:38，超前 12:22"
+    },
+    {
+      "name": "授課時鐘 ＋30 秒（狀態存在舞台端）",
+      "ok": true,
+      "detail": "01:30 → 02:01"
+    },
+    {
+      "name": "兩個視窗都沒有焦點：大字提示「請點一下控制台」",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "焦點在舞台視窗：控制台標示焦點位置、不擋畫面",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "點回控制台：標示「焦點：控制台」",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "舞台失去焦點、控制台被隱藏：演出不暫停（只在控制台提示）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "舞台頁面被隱藏才暫停；恢復顯示後仍停住，控制台說明原因",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "暫停中從控制台按下一步：只繼續、不跳段",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "投影端只有舞台：舞台頁沒有任何控制台元素",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "舞台視窗關掉：控制台 3 秒內顯示連線中斷",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "斷線時按下一步：控制台說明沒有送出",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "舞台重新開啟：自動重連，授課時鐘接回原本的起點",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "過程中沒有頁面錯誤",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台在 1280×720 一個畫面放得下（按鈕列不被擠出畫面、沒有橫向捲動）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台在 1536×864 一個畫面放得下（按鈕列不被擠出畫面、沒有橫向捲動）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "全劇：控制台取得全部 cue，跳到選單依章節分組",
+      "ok": true,
+      "detail": "71 個 cue、9 章"
+    },
+    {
+      "name": "全劇八題：控制台的正解 2、3、1、1、3、2、3、2，指定區 A B C D A B C D",
+      "ok": true,
+      "detail": "Q1:2A Q2:3B Q3:1C Q4:1D Q5:3A Q6:2B Q7:3C Q8:2D"
+    },
+    {
+      "name": "壓縮級別：控制台按「1 級」→ 引擎套用 1 級（控制台顯示引擎的值）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "壓縮級別：回到 0 級",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "查核點用引擎的到達紀錄，換算成授課時鐘（開幕 00:30 起跳）顯示落差",
+      "ok": true,
+      "detail": "engine｜Q3 點燈收聲後　目標 13:00　實際 00:38，超前 12:22"
+    },
+    {
+      "name": "全劇：過程中沒有頁面錯誤",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "只有一個畫面（screen.isExtended=false）：先提示，再自動改走單一舞台視窗",
+      "ok": true,
+      "detail": "stage.html?cues=demo"
+    },
+    {
+      "name": "單一舞台視窗：簡報筆直接操作舞台",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "同一個畫面上舞台已經開著：控制台只提醒「會被投影出去」，不再開第二個舞台",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "devicePixelRatio 1 → 1.5 → 1.25：舞台繪圖解析度跟著重設",
+      "ok": true,
+      "detail": "1280→1920→1600 px"
+    },
+    {
+      "name": "按鍵測試頁：六項核對全部打勾（下一步、上一步、黑屏鍵、F5、Esc、長按）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "按鍵測試頁：F5 被攔截、沒有重新整理；顯示 key／code",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "F5／Esc 不能改映射（不顯示改設按鈕）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "沒有作用的鍵（b）可以加設成「下一步」並存在本機設定",
+      "ok": true,
+      "detail": "{\"KeyB\":\"next\"}"
+    },
+    {
+      "name": "加設的映射在舞台視窗生效（按 b＝下一步，開幕）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "恢復預設映射：清除本機加設",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "控制台的按鍵測試面板：測試中按 PageDown 不會送到劇場",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "關閉面板後恢復轉送",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：開兩個視窗（舞台 stage.html、控制台 console.html）",
+      "ok": true,
+      "detail": "stage.html?cues=demo&nofs=1、console.html?cues=demo&host=electron"
+    },
+    {
+      "name": "Electron：兩個視窗用 IPC 同步",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：控制台按下一步＝遠端「準備播放」，音訊時鐘正常（允許自動播放）",
+      "ok": true,
+      "detail": "audio／running"
+    },
+    {
+      "name": "Electron：按鍵路由（控制台 PageDown → 舞台開幕）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：主程序回報版面（測試用並排雙視窗）",
+      "ok": true,
+      "detail": "{\"mode\":\"dual-test\",\"reason\":\"test\",\"stageDisplay\":2,\"consoleDisplay\":2,\"displays\":1}"
+    },
+    {
+      "name": "Electron：完全離線（外部請求一律擋掉）",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：拒絕麥克風／攝影機權限",
+      "ok": true,
+      "detail": "denied:NotFoundError"
+    },
+    {
+      "name": "Electron：不開新視窗",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：焦點在控制台時舞台照常播放（不因失焦降速或暫停）",
+      "ok": true,
+      "detail": "t=2.431"
+    },
+    {
+      "name": "Electron：過程中沒有頁面錯誤",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "Electron：單一視窗模式只開舞台（同步顯示時的版面）",
+      "ok": true,
+      "detail": "stage.html?cues=demo&nofs=1"
+    },
+    {
+      "name": "Electron 單一視窗：簡報筆在舞台上直接「準備播放」（不必點滑鼠）",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body SITTING pose of an existing character for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a TRANSPARENT background (real alpha channel).
+
+THREE reference images are attached. The FIRST is only the art-style reference. The SECOND is the FINAL approved standing master of THIS character. The THIRD is another approved character of the same show (for scale and style). Draw THE SAME CHARACTER as the second reference - identical face, hair, clothes and colors - only the pose and expression change:
+- Ms. Lin, the children's homeroom teacher: a woman in her 30s, reliable and warm. Black medium-length hair gathered into a neat LOW BUN at the back of her head, a few soft strands at the temples.
+- Deep wine-red (burgundy, #7B2638-like; NOT pink, NOT bright red) open-front knitted cardigan; plain off-white (cream) top underneath; dark charcoal-gray straight long pants; dark brown flat shoes.
+- A plain dark-gray lanyard around her neck holding a small ID card whose face is completely BLANK plain cream (no text, no photo, no logo, no symbols).
+- Natural adult proportions exactly like the man in the third reference: about 6.3 heads tall (head = about 16% of the full height), slim, natural, NOT chibi, NOT big-headed.
+
+POSE (very important): P-LIN2: sitting upright on a bench that is NOT drawn (an invisible seat - draw NO bench, NO chair, NO seat of any kind; the bench is a separate stage piece added later). Three-quarter view toward the VIEWER'S LEFT. Thighs horizontal, knees bent at a right angle, lower legs vertical, both soles flat on the floor, knees together; both hands resting gently on her knees. Draw her at the same scale as the standing reference (same head size).
+EXPRESSION: calm and gentle, a small soft closed-mouth smile.
+
+The whole figure from the top of the hair to the soles and the fingertips is visible with empty transparent margin all around (nothing cropped). Face style exactly like the approved characters: simple dark eyes with one small white highlight, small simple nose, small mouth, soft rosy cheeks, thin dark lines. Her/his face must be fully visible (three-quarter view, both eyes visible, the far eye slightly narrower), never a strict side profile.
+
+ART STYLE (match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" style and the approved character references, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props unless listed above, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/shared_art/raw/chr_lin_sit_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/shared_art/raw/chr_lin_sit_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

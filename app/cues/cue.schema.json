@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "antidrug-cues/1",
   "title": "反毒剪紙劇場 cue 檔",
-  "description": "與 app/src/types/cue.ts 描述同一個結構（G4 後凍結）；執行期與打包期都會用 app/src/cues/validate.ts 驗證。",
+  "description": "與 app/src/types/cue.ts 描述同一個結構（G4 後凍結；G5 全劇欄位 2026-10-21 由主線授權加入）；執行期與打包期都會用 app/src/cues/validate.ts 驗證。全劇放在 app/cues/show/：index.json（definitions.showIndex）＋各段落檔（本結構）。",
   "type": "object",
   "required": [
     "format",
@@ -21,7 +21,7 @@
       "type": "string"
     },
     "characters": {
-      "description": "角色名冊：角色 id → { name 顯示名稱, rig 紙偶種類（adult／child／ale_v03／standee:<角色>）, x, z, facing 預設站位 }",
+      "description": "角色名冊：角色 id → { name 顯示名稱, rig 紙偶種類（adult／child／ale_v03／standee:<角色>／zhezhe／assets/final/rig/show_characters.json 的 rigs）, x, z, facing 預設站位, fallback 佔位紙偶 }",
       "type": "object",
       "additionalProperties": {
         "type": "object",
@@ -46,6 +46,13 @@
               1,
               -1
             ]
+          },
+          "fallback": {
+            "enum": [
+              "adult",
+              "child"
+            ],
+            "description": "rig 找不到時的程式佔位紙偶"
           }
         }
       }
@@ -59,7 +66,43 @@
     },
     "set": {
       "type": "string",
-      "description": "舞台景：workshop（技術骨架佔位景）／workshop_g4（G4 燈籠店立體書景）"
+      "description": "舞台景（檔案層級；cue 可再覆寫）：workshop（技術骨架佔位景）／workshop_g4（G4 燈籠店立體書景）／kraft_stage（全劇牛皮紙佔位景）／app/src/sets/registry.ts 登記的景／assets/final/sets/<景名>/layout.json 的資料驅動景"
+    },
+    "segments": {
+      "type": "array",
+      "description": "全劇合併後才有（tools/pack.mjs 產生）：各段落的 id、標題、檔名、景、名冊與 cue 清單；作者不用寫",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "file",
+          "cueIds"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "file": {
+            "type": "string"
+          },
+          "set": {
+            "type": "string"
+          },
+          "characters": {
+            "type": "object"
+          },
+          "cueIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -121,7 +164,8 @@
       ],
       "properties": {
         "name": {
-          "type": "string"
+          "type": "string",
+          "description": "動畫名稱：舞台層見 src/engine/world.ts（G5 新增 set.swap {set}、fade.out {to}、fade.in），角色見 src/stage/perform.ts；程式角色可用 <程式名>.<動作>（例如 zhezhe.fold）"
         },
         "target": {
           "type": "string"
@@ -431,6 +475,26 @@
                 },
                 "atMinute": {
                   "type": "number"
+                },
+                "escalate": {
+                  "type": "object",
+                  "required": [
+                    "behindSec",
+                    "level"
+                  ],
+                  "properties": {
+                    "behindSec": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "level": {
+                      "enum": [
+                        1,
+                        2
+                      ]
+                    }
+                  },
+                  "description": "落後 ≥ behindSec 秒時建議啟用 level 級壓縮"
                 }
               }
             }
@@ -497,6 +561,57 @@
         },
         "musicLoop": {
           "type": "boolean"
+        },
+        "set": {
+          "type": "string",
+          "description": "這個 cue 的景（覆寫檔案層級）"
+        },
+        "setFade": {
+          "type": "number",
+          "minimum": 0.6,
+          "description": "換景（或刻意從暗開始）時的亮度漸變秒數，最少 0.6；景不同時自動套用 0.8"
+        },
+        "level1": {
+          "$ref": "#/definitions/cueVariant",
+          "description": "壓縮級別 1 的替代版本"
+        },
+        "level2": {
+          "$ref": "#/definitions/cueVariant",
+          "description": "壓縮級別 2 的替代版本（短版）"
+        },
+        "storyboard": {
+          "type": "object",
+          "description": "動態分鏡底稿（劇本舞台指示＋節拍表），引擎不讀",
+          "properties": {
+            "beat": {
+              "type": "string"
+            },
+            "cast": {
+              "type": "string"
+            },
+            "camera": {
+              "type": "string"
+            },
+            "sound": {
+              "type": "string"
+            },
+            "directions": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "estimateSec": {
+              "type": "number"
+            },
+            "actionSec": {
+              "type": "number"
+            }
+          }
+        },
+        "segment": {
+          "type": "string",
+          "description": "所屬段落（合併時填入，作者不用寫）"
         }
       }
     },
@@ -523,6 +638,70 @@
         "gain": {
           "type": "number",
           "minimum": 0
+        },
+        "offset": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "cueVariant": {
+      "type": "object",
+      "properties": {
+        "lines": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^a\\d_c\\d{3}_\\d{2}$"
+          },
+          "description": "只留這些台詞"
+        },
+        "animation": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/animation"
+          }
+        },
+        "minDuration": {
+          "type": "number",
+          "minimum": 0
+        },
+        "voStart": {
+          "type": "number",
+          "minimum": 0
+        },
+        "tail": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "showIndex": {
+      "type": "object",
+      "description": "app/cues/show/index.json：全劇段落清單（依演出順序）",
+      "required": [
+        "format",
+        "id",
+        "title",
+        "segments"
+      ],
+      "properties": {
+        "format": {
+          "const": "antidrug-show/1"
+        },
+        "id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "segments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_-]+\\.json$"
+          }
         }
       }
     }

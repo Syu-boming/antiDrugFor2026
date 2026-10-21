@@ -1,0 +1,26 @@
+started pose_xq_forehead_v06 pid 48028
+started pose_xy_forehead_v06 pid 48030
+started pose_xq_walk_v06 pid 48032
+started pose_xy_walk_v06 pid 48034
+started chr_ye_crouch_v01 pid 48036
+== pose_xq_forehead_v06
+(no output)
+-rw-r--r--@ 1 boming  staff  1971858 10月 21 14:56 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_forehead_v06.png
+== pose_xy_forehead_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d3d-3182-7190-b52a-b5c20e2ccf1f/exec-e91b3894-5bf6-4c2e-b275-71e295ac478a.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_forehead_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_forehead_v06.png>)
+- Dimensions: **1024 × 1536 px**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.-rw-r--r--@ 1 boming  staff  1910056 10月 21 14:56 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_forehead_v06.png
+== pose_xq_walk_v06
+(no output)
+-rw-r--r--@ 1 boming  staff  2059245 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_walk_v06.png
+== pose_xy_walk_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d3d-3182-7682-8668-c34c89e4ba1d/exec-862a1a02-b247-45ca-b67d-57aa632f8a63.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_walk_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_walk_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.-rw-r--r--@ 1 boming  staff  2055927 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_walk_v06.png
+== chr_ye_crouch_v01
+(no output)
+-rw-r--r--@ 1 boming  staff  2015029 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_ye_crouch_v01.png

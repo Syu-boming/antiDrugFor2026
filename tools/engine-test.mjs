@@ -5,7 +5,10 @@
 // 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出；六、字幕斷行與對白避讓的純函式測試；
 // 七、G4 正式配音的操作測試（必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音）：
 // 對白聲音 ≤ 1、字幕與語音時間差 ≤ 50 ms（G4 修正第 29 項）。
-// 前兩段與第七段用即時時鐘（不是虛擬時鐘）跑；全部約 5 分鐘。
+// 八、G5 全劇（?cues=show，app/cues/show/）：201 句配音都在且都是 v04、八題順序與答案、題目→揭答→等待→續演、八盞燈、
+// 兩句必要旁白一字不差、每個 cue 都有景、G4 已完成的 cue 原樣搬進全劇、整齣從片頭按到片尾（每句字幕都出現）、
+// 換景亮度漸變與舊景釋放、跨檔上一步與章節跳轉、壓縮級別與查核點、上一步換景時即時漸暗漸亮。
+// 前兩段與第七段用即時時鐘（不是虛擬時鐘）跑；全部約 6 分鐘。
 //
 // 用法：node tools/engine-test.mjs [--headed]
 import { createRequire } from 'node:module';
@@ -615,6 +618,175 @@ console.log('\n七、G4 正式配音：必要旁白播放中按上一步、R、�
   }
   check('G4 操作測試沒有頁面錯誤', errors.length === 0, errors.slice(0, 3).join(' | '));
   await page.close();
+}
+
+// ======================================================================= 八、G5 全劇
+console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要旁白、景、流程、換景、章節、壓縮');
+{
+  const { loadShow } = await import(pathToFileURL(join(ROOT, 'tools/pack.mjs')).href);
+  const show = await loadShow();
+  check('全劇 cue 集：index.json＋各段落檔驗證通過（合併後也通過）', show && show.ok, show ? [...show.errors, ...show.warnings].slice(0, 3).join(' | ') || `${show.merged.cues.length} 個 cue、${show.merged.segments.length} 段、提醒 ${show.warnings.length}` : '沒有 app/cues/show/index.json');
+  const merged = show?.merged ?? { cues: [], segments: [] };
+  const allLines = merged.cues.flatMap((c) => c.lines);
+  const scriptTxt = readFileSync(join(ROOT, 'script/劇本_v03.md'), 'utf8');
+  const scriptLines = new Map(scriptTxt.split('\n').map((l) => /^\[(a\d_c\d{3}_\d{2})\] ([^：]+)：(.+?)\s*$/.exec(l)).filter(Boolean).map((m) => [m[1], { speaker: m[2], text: m[3] }]));
+  const plain = (t) => t.replace(/\s*\n\s*/g, '');
+  const textBad = allLines.filter((l) => !scriptLines.has(l.id) || plain(l.text) !== scriptLines.get(l.id).text || l.speaker !== scriptLines.get(l.id).speaker).map((l) => l.id);
+  check(`全劇台詞 ${allLines.length} 句＝劇本 v03 ${scriptLines.size} 句，說話者與字幕一字不差`, allLines.length === 201 && scriptLines.size === 201 && new Set(allLines.map((l) => l.id)).size === 201 && textBad.length === 0, textBad.slice(0, 5).join('、'));
+  const manifest = JSON.parse(readFileSync(join(DIST, 'data/manifest.js'), 'utf8').replace(/^[\s\S]*?window\.__pack\("manifest",/, '').replace(/\);\s*$/, ''));
+  const voBad = allLines.filter((l) => !/_v04\.wav$/.test(manifest.audio[l.audioId ?? `vo_${l.id}`]?.source ?? '')).map((l) => l.id);
+  check('201 句配音都打包進資料包、而且都是 v04（ElevenLabs 正式版）', voBad.length === 0 && manifest.cueSets.show, voBad.slice(0, 5).join('、') || `cues_show.js＋${Object.values(manifest.audio).filter((a) => a.bus === 'vo').length} 個配音檔`);
+  const quizCues = merged.cues.filter((c) => c.kind === 'quiz');
+  check('八題依序 Q1–Q8、答案 2、3、1、1、3、2、3、2', quizCues.map((c) => c.quiz.number).join() === '1,2,3,4,5,6,7,8' && quizCues.map((c) => c.quiz.answer).join() === '2,3,1,1,3,2,3,2', quizCues.map((c) => `${c.quiz.qid}:${c.quiz.answer}`).join(' '));
+  // 題卡文字與八題_v03.md 一字不差
+  const q8 = readFileSync(join(ROOT, 'script/八題_v03.md'), 'utf8');
+  const qBad = quizCues.filter((c) => {
+    const blk = q8.split('\n### ').find((b) => b.startsWith(`${c.quiz.qid}｜`)) ?? '';
+    const stem = /- 題幹：(.+)/.exec(blk)?.[1].trim();
+    const opts = [1, 2, 3].map((k) => new RegExp(`^- ${k}　(.+?)\\s*(\\*\\*〔正解〕\\*\\*)?\\s*$`, 'm').exec(blk)?.[1].trim());
+    return stem !== c.quiz.question || opts.join('|') !== c.quiz.options.join('|');
+  }).map((c) => c.quiz.qid);
+  check('題卡題目與選項和八題_v03.md 一字不差', qBad.length === 0, qBad.join('、'));
+  const byId = new Map(merged.cues.map((c) => [c.id, c]));
+  const flowBad = quizCues.filter((c) => {
+    const r = byId.get(c.next), l = r && byId.get(r.next), n = l && byId.get(l.next);
+    return !(r?.kind === 'reveal' && l?.kind === 'lamp' && l.lamp === c.quiz.number && n && (n.kind === 'scene' || n.kind === 'curtain') && r.prevStable === c.id && l.prevStable === r.id);
+  }).map((c) => c.quiz.qid);
+  check('每一題：出題 → 揭答 → 點燈（lamp.light 第 N 盞）→ 續演；上一步回到出題／揭答', flowBad.length === 0, flowBad.join('、'));
+  const req = [...readFileSync(join(ROOT, 'CLAUDE.md'), 'utf8').matchAll(/「((?:這些線是故事的比喻|不過，看見一個人站不穩)[^」]*)」/g)].map((m) => m[1]);
+  const narr = ['a2_c004_02', 'a2_c008_05'].map((id) => allLines.find((l) => l.id === id));
+  check('兩句必要旁白一字不差（CLAUDE.md＝全劇 cue 檔，說話者旁白）', req.length === 2 && narr.every((l, i) => l && plain(l.text) === req[i] && l.speaker === '旁白'), narr.map((l) => l?.id).join('、'));
+  const regSrc = readFileSync(join(ROOT, 'app/src/sets/registry.ts'), 'utf8');
+  const regNames = new Set([...regSrc.slice(regSrc.indexOf('SET_REGISTRY')).matchAll(/^\s+([a-z0-9_]+):\s*[A-Z0-9_]+,/gm)].map((m) => m[1]));
+  const noSet = merged.cues.filter((c) => !c.set || (!regNames.has(c.set) && !existsSync(join(ROOT, `assets/final/sets/${c.set}`)))).map((c) => `${c.id}:${c.set}`);
+  check('每個 cue 都有景（登記表或 assets/final/sets/<景名>/layout.json）', noSet.length === 0 && merged.cues.length > 0, noSet.slice(0, 5).join('、') || [...new Set(merged.cues.map((c) => c.set))].join('、'));
+  // G4 已完成的 cue 原樣搬進全劇（表演、鏡頭、配樂、音效、時間不動；流程與授課時鐘欄位除外）
+  const g4 = JSON.parse(readFileSync(join(ROOT, 'app/cues/g4.json'), 'utf8'));
+  const allow = { a0_c001: ['lines', 'title', 'teacherNote'], a2_c004: ['checkpoint'], a8_c002: ['initialState', 'teacherNote'], a8_c003: ['checkpoint'] };
+  const g4Bad = [];
+  for (const c of g4.cues) {
+    const sc = byId.get(c.id);
+    if (!sc) { g4Bad.push(`${c.id} 不在全劇`); continue; }
+    for (const k of Object.keys(c)) if (!['next', 'prevStable', ...(allow[c.id] ?? [])].includes(k) && JSON.stringify(c[k]) !== JSON.stringify(sc[k])) g4Bad.push(`${c.id}.${k}`);
+  }
+  check('G4 已完成的 6 個 cue 原樣搬進全劇（只改 next、prevStable 與授課時鐘欄位）', g4Bad.length === 0, g4Bad.join('、'));
+
+  const { page, st, errors } = await open(join(DIST, 'index.html'), 'capture=1&cues=show&step=30');
+  await page.waitForFunction(() => window.__engine.getState().mode === 'waiting', null, { timeout: 120000 });
+  const cues = await page.evaluate(() => window.__engine.getCues());
+  check('全劇載入：71 個 cue、沒有暫代音訊（201 句音檔都解碼）、每個 cue 都有景', cues.length === merged.cues.length && cues.every((c) => !c.placeholder && c.set), `${cues.length} 個 cue；暫代 ${cues.filter((c) => c.placeholder).map((c) => c.id).join('、') || '無'}`);
+  // 整齣從片頭按到片尾：每段播到結束；每句台詞在句中出現字幕（題卡在畫面上時以題卡為準）
+  const seek = (t) => page.evaluate((x) => window.__engine.capture.seek(x), t);
+  const visited = [];
+  const subBad = [];
+  let s = await st();
+  for (let i = 0; i < 200 && s.phase !== 'ended'; i++) {
+    await page.evaluate(() => window.__engine.next());
+    s = await st();
+    if (s.mode !== 'playing') break;
+    visited.push(s.cueId);
+    const tl = await page.evaluate((id) => window.__engine.debug.timeline(id), s.cueId);
+    for (const l of tl.lines) {
+      await seek((l.start + l.end) / 2);
+      const x = await st();
+      const line = allLines.find((y) => y.id === l.id);
+      if (!x.quizVisible && !(x.subtitle && plain(line.text).replace(/\s+/g, '').includes(x.subtitle.replace(/\s+/g, '')))) subBad.push(l.id);
+    }
+    await seek(s.cueDuration + 0.001);
+    s = await st();
+  }
+  check('整齣從片頭按到片尾：每段播完停住、最後停在片尾署名卡', s.phase === 'ended' && s.cueId === 'a8_c003' && visited.length === merged.cues.length - 1, `經過 ${visited.length} 段，最後 ${s.cueId} ${s.phase}`);
+  check('每句台詞播到句中時字幕都在（題卡出現時以題卡為準）', subBad.length === 0 && visited.length > 0, subBad.slice(0, 5).join('、') || `${allLines.length} 句`);
+  check('八盞燈：演完時八盞都亮', JSON.stringify(s.lampsLit) === '[1,2,3,4,5,6,7,8]', JSON.stringify(s.lampsLit));
+  // 八題：題目出現 → 下一步揭答 → 揭答停住（正解印章在第 N 項）→ 下一步點燈 → 停住等老師 → 下一步續演
+  const qflow = [];
+  for (const q of cues.filter((c) => c.kind === 'quiz')) {
+    await page.evaluate((id) => window.__engine.gotoCue(id, { mode: 'after' }), q.id);
+    const a = await st();
+    await page.evaluate(() => window.__engine.next());
+    const b = await st();
+    await seek(b.cueDuration + 0.001);
+    const c = await st();
+    const stamp = await page.locator(`.quiz-opt.opt-${q.quiz.answer}.correct`).count();
+    await page.evaluate(() => window.__engine.next());
+    const d = await st();
+    await seek(d.cueDuration + 0.001);
+    const e = await st();
+    await page.evaluate(() => window.__engine.next());
+    const f = await st();
+    const ok = a.phase === 'quiz_shown' && !a.revealed && b.phase === 'reveal_playing' && c.phase === 'reveal_waiting' && c.revealed && stamp === 1
+      && d.kind === 'lamp' && e.phase === 'story_waiting' && e.lampsLit.includes(q.quiz.number) && !c.lampsLit.includes(q.quiz.number) && f.phase === 'playing' && f.kind !== 'quiz';
+    if (!ok) qflow.push(`${q.quiz.qid}（${a.phase}/${b.phase}/${c.phase}/${stamp}/${e.phase}/${f.phase}）`);
+  }
+  check('八題實際操作：題目不自動揭答 → 揭答停住、正解印章 → 點燈停住 → 續演', qflow.length === 0, qflow.join('、') || '8 題');
+  // 換景：a1_c008（牛皮紙佔位景）→ a2_c001（燈籠店）
+  await page.evaluate(() => window.__engine.gotoCue('a2_c001', { mode: 'before' }));
+  const w0 = await st();
+  const sets0 = await page.evaluate(() => window.__engineShow.sets());
+  await page.evaluate(() => window.__engine.next());
+  const p0 = await st();
+  await seek(-p0.prerollSec / 2); const p1 = await st();
+  await seek(0); const p2 = await st();
+  await seek(p0.enterFade / 2); const p3 = await st();
+  await seek(p0.enterFade + 0.02); const p4 = await st();
+  const sets1 = await page.evaluate(() => window.__engineShow.sets());
+  check('換景亮度漸變：先把舊景漸暗（預捲 ≥ 0.6 秒），在全暗時換景，再漸亮（≥ 0.6 秒）', w0.cueId === 'a1_c008' && w0.set === 'kraft_stage' && p0.prerollSec >= 0.6 && p0.enterFade >= 0.6
+    && p1.set === 'kraft_stage' && p1.dim > 0.2 && p1.dim < 0.8 && p2.set === 'workshop_g4' && p2.dim >= 0.99 && p3.dim > 0.2 && p3.dim < 0.8 && p4.dim <= 0.01,
+  `預捲 ${p0.prerollSec} 秒（中點 ${p1.set} dim ${p1.dim}）→ 0 秒 ${p2.set} dim ${p2.dim} → ${p0.enterFade / 2} 秒 dim ${p3.dim} → ${p0.enterFade} 秒 dim ${p4.dim}`);
+  check('換景時舊景釋放（場景裡只留一個景、釋放次數增加）', sets1.liveSetGroups === 1 && sets1.disposed > sets0.disposed && sets1.active === 'workshop_g4', JSON.stringify(sets1));
+  // 跨檔上一步：a2_c001 播放中按上一步 → 回到 a1_c008（第一幕最後一個穩定節點）
+  await page.evaluate(() => window.__engine.prev());
+  const pv = await st();
+  check('跨檔上一步：第二幕第一段按上一步回到第一幕最後的停格', pv.cueId === 'a1_c008' && pv.phase === 'story_waiting' && pv.segment === 'a1', `${pv.cueId} ${pv.phase} ${pv.segment}`);
+  // 章節跳轉：每一章跳到開頭前（停在前一段的停格），按下一步就播該章第一段
+  const chapters = await page.evaluate(() => window.__engineShow.chapters());
+  const chBad = [];
+  for (const ch of chapters) {
+    await page.evaluate((id) => window.__engine.gotoCue(id, { mode: 'before' }), ch.firstCue);
+    await page.evaluate(() => window.__engine.next());
+    const x = await st();
+    // 第一章的第一個 cue 是片頭待機（署名卡）：跳過去停在署名卡，按下一步播開幕
+    const want = ch.firstCue === cues[0].id ? cues[0].next : ch.firstCue;
+    if (!(x.cueId === want && x.segment === ch.id && x.mode === 'playing')) chBad.push(`${ch.id}→${x.cueId}`);
+  }
+  check(`章節跳轉：${chapters.length} 章都能跳到開頭並播放（段落、章節名正確）`, chapters.length === 9 && chBad.length === 0, chBad.join('、') || chapters.map((c) => c.id).join('、'));
+  // 壓縮級別與查核點
+  const d0 = Object.fromEntries((await page.evaluate(() => window.__engine.getCues())).map((c) => [c.id, c]));
+  await page.evaluate(() => window.__engine.gotoCue('a0_c002', { mode: 'after' }));
+  const l1 = await page.evaluate(() => window.__engineShow.setCompression(1));
+  const d1 = Object.fromEntries((await page.evaluate(() => window.__engine.getCues())).map((c) => [c.id, c]));
+  const l2 = await page.evaluate(() => window.__engineShow.setCompression(2));
+  const d2 = Object.fromEntries((await page.evaluate(() => window.__engine.getCues())).map((c) => [c.id, c]));
+  await page.evaluate(() => window.__engineShow.setCompression(0));
+  const d3 = Object.fromEntries((await page.evaluate(() => window.__engine.getCues())).map((c) => [c.id, c]));
+  check('壓縮 1 級：略過「落後可略」的句子（a0_c004 _03、_04），段落變短；2 級：a6_c008 只播 _03、a7_c001 只播 _03；回到 0 級恢復',
+    l1 === 1 && l2 === 2 && d1.a0_c004.droppedLines.join() === 'a0_c004_03,a0_c004_04' && d1.a0_c004.duration < d0.a0_c004.duration - 3
+    && d2.a6_c008.droppedLines.join() === 'a6_c008_02' && d2.a7_c001.droppedLines.join() === 'a7_c001_01,a7_c001_02' && d1.a6_c008.droppedLines.length === 0
+    && d3.a0_c004.duration === d0.a0_c004.duration && d3.a6_c008.droppedLines.length === 0,
+  `a0_c004 ${d0.a0_c004.duration.toFixed(1)}→${d1.a0_c004.duration.toFixed(1)} 秒；a6_c008 ${d0.a6_c008.duration.toFixed(1)}→${d2.a6_c008.duration.toFixed(1)}；a7_c001 ${d0.a7_c001.duration.toFixed(1)}→${d2.a7_c001.duration.toFixed(1)}`);
+  const cps = await page.evaluate(() => window.__engineShow.checkpoints());
+  const cpOf = (id) => cps.list.find((c) => c.cueId === id);
+  check('查核點：Q3（a2_c011）落後 ≥ 90 秒 → 1 級、Q6（a4_c011）≥ 120 秒 → 1 級、Q8（a6_c005）≥ 150 秒 → 2 級', cpOf('a2_c011')?.escalate?.level === 1 && cpOf('a2_c011')?.escalate?.behindSec === 90
+    && cpOf('a4_c011')?.escalate?.behindSec === 120 && cpOf('a6_c005')?.escalate?.level === 2 && cpOf('a6_c005')?.escalate?.behindSec === 150,
+  cps.list.map((c) => `${c.cueId} ${c.plannedMin} 分`).join('、'));
+  check('全劇虛擬時鐘測試沒有頁面錯誤', errors.length === 0, errors.slice(0, 3).join(' | '));
+  await page.close();
+
+  // 即時播放：上一步、章節跳轉到別的景時先漸暗再漸亮（不突然由亮轉暗）
+  const live = await open(join(DIST, 'index.html'), 'nofs=1&cues=show');
+  await live.page.click('.ready-btn');
+  await live.waitPhase('title_idle', 60000);
+  await live.page.evaluate(() => window.__engine.gotoCue('a1_c008', { mode: 'after' }));
+  await sleep(1600);
+  await live.page.evaluate(() => window.__engine.gotoCue('a2_c001', { mode: 'after' }));
+  await sleep(250);
+  const n1 = await live.st();
+  await sleep(1500);
+  const n2 = await live.st();
+  check('即時播放的章節跳轉換景：先漸暗（0.25 秒時還是舊景、已變暗），1.75 秒後新景完全亮', n1.set === 'kraft_stage' && n1.dim > 0.05 && n1.dim < 0.95 && n2.set === 'workshop_g4' && n2.dim === 0,
+    `0.25 秒 ${n1.set} dim ${n1.dim}；1.75 秒 ${n2.set} dim ${n2.dim}`);
+  check('全劇即時測試沒有頁面錯誤', live.errors.length === 0, live.errors.slice(0, 3).join(' | '));
+  await live.page.close();
 }
 
 await browser.close();

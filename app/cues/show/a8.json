@@ -1,0 +1,316 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a8",
+ "title": "閉幕",
+ "set": "workshop_g4",
+ "characters": {
+  "ale": {
+   "name": "阿樂叔叔",
+   "rig": "ale_v03",
+   "x": -2.6,
+   "z": 0,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "pinan": {
+   "name": "品安",
+   "rig": "standee:pinan",
+   "x": 4.6,
+   "z": 0.3,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "lin": {
+   "name": "林老師",
+   "rig": "standee:lin",
+   "x": -3.6,
+   "z": 0.9,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "ye": {
+   "name": "葉護理師",
+   "rig": "standee:ye",
+   "x": 5.6,
+   "z": 0.2,
+   "facing": -1,
+   "fallback": "adult"
+  },
+  "chen": {
+   "name": "陳伯伯",
+   "rig": "standee:chen",
+   "x": -4.4,
+   "z": 0.4,
+   "facing": 1,
+   "fallback": "adult"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a8_c001",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "謝幕",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "smile",
+      "pose": "sit"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a8_c001_01",
+     "speaker": "折折",
+     "text": "我們是小燈鎮的大家，下次見！"
+    }
+   ],
+   "next": "a8_c002",
+   "prevStable": "a7_c003",
+   "skippable": false,
+   "compression": 2,
+   "fx": [
+    "FX12",
+    "FX14"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "shortVersion": "全體一起鞠躬一次，約 8 秒",
+   "voStart": 3.8,
+   "tail": 11.2,
+   "storyboard": {
+    "beat": "燈光回舞台；依序走到台前鞠躬：陳伯伯和林老師、葉護理師、阿樂（捧著小折折燈）、品安、小宇、小晴，最後折折；燈籠微光輕飄（亮度固定、不閃，見上）。短版：全體一起鞠躬一次約 8 秒",
+    "cast": "鞠躬一律用分件旋轉（軀幹繞髖前傾約 25°、頭再前傾約 10°），表情 X2；阿樂 P-AL3、L6",
+    "camera": "舞台全景固定",
+    "sound": "M1 謝幕版",
+    "directions": [
+     "（燈光回到舞台，謝幕音樂。角色依序走到台前鞠躬：陳伯伯和林老師、葉護理師、阿樂叔叔（捧著小折折燈）、品安、小宇、小晴，最後是折折。燈籠微光像落葉一樣輕輕飄。）",
+     "（**光敏註記（安全界線第 9 條）**：微光粒子亮度固定，不忽明忽暗、不閃爍，只有位置慢慢飄移；粒子進出畫面用淡入淡出（≥ 0.5 秒）；任何區域每秒明暗變化 ≤ 3 次，交 G5／G6 逐格光敏分析。）"
+    ],
+    "estimateSec": 19.0,
+    "actionSec": 15.0
+   }
+  },
+  {
+   "id": "a8_c002",
+   "sceneId": "stage",
+   "kind": "curtain",
+   "title": "布幕合攏",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1,
+     "desat": 0,
+     "spot": 0
+    },
+    "characters": {
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "smile",
+      "pose": "sit"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "fx.spot",
+     "start": 0,
+     "duration": 1.4,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "light.restore",
+     "start": 0,
+     "duration": 1.4
+    },
+    {
+     "name": "fx.desat",
+     "start": 0,
+     "duration": 1.4,
+     "params": {
+      "to": 0.2
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 0.3,
+     "duration": 5.0,
+     "params": {
+      "to": "g4_stage"
+     },
+     "ease": "linear"
+    },
+    {
+     "name": "curtain.close",
+     "start": 3.3,
+     "duration": 2.0
+    }
+   ],
+   "audioId": null,
+   "music": [
+    {
+     "id": "music_closing",
+     "at": 3.3,
+     "loop": false,
+     "fade": 0.8
+    }
+   ],
+   "lines": [],
+   "next": "a8_c003",
+   "prevStable": "a8_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX5"
+   ],
+   "teacherNote": "最後謝幕等待時按一次：追光收掉、燈光回到台口（約 1.4 秒）→ 鏡頭等速慢慢拉回台口全景（5 秒；光敏：移動放慢、不加速）→ 摺層紙布幕約 2 秒合上（3.3 秒起，閉幕曲同時進來），接著自動顯示同款署名卡，保持畫面。（全劇版：起始畫面是謝幕後全體角色、沒有操偶線；閉幕動作與 G4 相同。）",
+   "checkpoint": null,
+   "minDuration": 5.4,
+   "autoAdvance": true,
+   "sfx": [
+    {
+     "id": "sfx_curtain_close",
+     "at": 3.3
+    }
+   ],
+   "storyboard": {
+    "beat": "紙景一層一層收攏；燈光收回台口；布幕約 2 秒合上；中央出現同款署名卡，停住",
+    "cast": "無角色",
+    "camera": "台口",
+    "sound": "S1、M1 最後和弦",
+    "directions": [
+     "（紙景像立體書一樣一層一層收攏，燈光收回台口；摺層紙布幕約 2 秒合上。中央出現同款「許博明老師製作」署名卡，停住。不自動重播、不跳網站、不出現開發介面。）"
+    ],
+    "estimateSec": 12.0,
+    "actionSec": 12.0
+   }
+  },
+  {
+   "id": "a8_c003",
+   "sceneId": "stage",
+   "kind": "title",
+   "title": "片尾署名卡",
+   "initialState": {
+    "stage": {
+     "curtain": "closed",
+     "titleCard": false,
+     "camera": "wide"
+    }
+   },
+   "animation": [
+    {
+     "name": "title.fadeIn",
+     "start": 0,
+     "duration": 0.8
+    }
+   ],
+   "audioId": null,
+   "lines": [],
+   "next": null,
+   "prevStable": "a8_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "結束：停在署名卡，不自動重播、不跳網站。閉幕曲接著播完（署名卡出現時主題句進入，約 10 秒自然淡出），所以這一格保留配樂音量。",
+   "checkpoint": {
+    "label": "停在署名卡（之後教師結語）",
+    "atMinute": 34.55
+   },
+   "minDuration": 1.4,
+   "musicLevel": 0.8
+  }
+ ]
+}

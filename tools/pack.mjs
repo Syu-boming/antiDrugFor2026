@@ -1,5 +1,6 @@
 // 資料包產生器：把 app/cues、audio/（vo、music、sfx、lipsync）與 assets/final 轉成 app/dist/data/*.js。
 // 每個資料包是傳統 script，內容呼叫 window.__pack(id, 資料)；data/manifest.js 是總表。
+// G5 全劇：app/cues/show/index.json＋各段落檔 → 驗證每個段落檔與合併後的整齣（app/src/cues/show.ts）→ cues_show.js（?cues=show）。
 // 這樣 file://、http、Electron 三種環境都能用 <script src> 載入素材（file:// 擋 fetch 與 ES module）。
 //
 // 用法（在專案根目錄或 app/ 皆可）：
@@ -7,11 +8,34 @@
 //   node tools/pack.mjs --audio-dir <資料夾> --assets-dir <資料夾> --out <資料夾> [--sources <json>]   （測試用，覆寫來源）
 // 只讀取素材，不會改動 assets/ 與 audio/。
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { basename, dirname, extname, join, relative, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+/** 用 esbuild 把 app/src 的 TypeScript 模組打包成可在 Node 執行的 ESM（show.ts 會 import validate.ts） */
+export async function importTs(rel) {
+  const require = createRequire(join(ROOT, 'app/package.json'));
+  const esbuild = require('esbuild');
+  const r = await esbuild.build({ entryPoints: [join(ROOT, rel)], bundle: true, format: 'esm', platform: 'node', write: false, logLevel: 'silent' });
+  return import(`data:text/javascript;base64,${Buffer.from(r.outputFiles[0].text).toString('base64')}`);
+}
+
+/** 讀 app/cues/show（index.json＋段落檔），驗證並合併；沒有 show 資料夾回傳 null */
+export async function loadShow(cuesDir = join(ROOT, 'app/cues')) {
+  const dir = join(cuesDir, 'show');
+  if (!existsSync(join(dir, 'index.json'))) return null;
+  const { validateShow } = await importTs('app/src/cues/show.ts');
+  const index = JSON.parse(readFileSync(join(dir, 'index.json'), 'utf8'));
+  const files = {};
+  for (const f of index.segments ?? []) {
+    const p = join(dir, f);
+    if (existsSync(p)) files[f] = JSON.parse(readFileSync(p, 'utf8'));
+  }
+  return { index, files, ...validateShow(index, files) };
+}
 const MIME = {
   '.wav': 'audio/wav', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.m4a': 'audio/mp4',
   '.png': 'image/png', '.webp': 'image/webp', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg',
@@ -80,11 +104,18 @@ function latest(files, dir, pattern) {
 }
 
 export async function runPack(opts = {}) {
+  const tmp = `${opts.outDir ?? join(ROOT, 'app/dist/data')}.tmp-${process.pid}`;
+  try { return await runPackInner(opts); } catch (err) { rmSync(tmp, { recursive: true, force: true }); throw err; }
+}
+
+async function runPackInner(opts) {
   const cuesDir = opts.cuesDir ?? join(ROOT, 'app/cues');
   const audioDir = opts.audioDir ?? join(ROOT, 'audio');
   const assetsDir = opts.assetsDir ?? join(ROOT, 'assets/final');
-  const outDir = opts.outDir ?? join(ROOT, 'app/dist/data');
+  const finalDir = opts.outDir ?? join(ROOT, 'app/dist/data');
   const rel = (p) => relative(ROOT, p).split('\\').join('/');
+  // 先寫到暫存資料夾、最後才換上（多個代理同時 build 時，別人的測試不會讀到寫一半或被刪掉的資料包）
+  const outDir = `${finalDir}.tmp-${process.pid}`;
   rmSync(outDir, { recursive: true, force: true });
   mkdirSync(outDir, { recursive: true });
   const manifest = { format: 'antidrug-packs/1', builtAt: new Date().toISOString(), cueSets: {}, audio: {}, images: {}, lipsync: {}, json: {} };
@@ -102,6 +133,14 @@ export async function runPack(opts = {}) {
     const file = `cues_${name}.js`;
     total += writePack(join(outDir, file), [[`cues:${name}`, data]]);
     manifest.cueSets[name] = file;
+  }
+  // 1b. 全劇（app/cues/show/）：每個段落檔與合併後的整齣都要驗證通過
+  const show = await loadShow(cuesDir);
+  if (show) {
+    if (!show.ok) throw new Error(`全劇 cue 集驗證失敗：\n  ${show.errors.join('\n  ')}`);
+    for (const w of show.warnings) warnings.push(`show：${w}`);
+    total += writePack(join(outDir, 'cues_show.js'), [['cues:show', show.merged]]);
+    manifest.cueSets.show = 'cues_show.js';
   }
 
   // 2. 配音：逐句一檔 audio/vo/vo_<台詞編號>_vNN.(wav|mp3)，取最新版本；依 cue 分包
@@ -195,9 +234,11 @@ export async function runPack(opts = {}) {
   }
 
   total += writePack(join(outDir, 'manifest.js'), [['manifest', manifest]]);
+  rmSync(finalDir, { recursive: true, force: true });
+  renameSync(outDir, finalDir);
   const nAudio = Object.keys(manifest.audio).length;
   const nFallback = Object.values(manifest.images).filter((i) => i.fallback).length;
-  console.log(`[pack] cue 檔 ${Object.keys(manifest.cueSets).length}、音檔 ${nAudio}（配音 ${vo.length}）、對嘴 ${lips.length}、圖像 ${Object.keys(manifest.images).length}（退路 ${nFallback}）、素材 JSON ${Object.keys(manifest.json).length}；資料包共 ${(total / 1024 / 1024).toFixed(2)} MB → ${rel(outDir)}`);
+  console.log(`[pack] cue 檔 ${Object.keys(manifest.cueSets).length}、音檔 ${nAudio}（配音 ${vo.length}）、對嘴 ${lips.length}、圖像 ${Object.keys(manifest.images).length}（退路 ${nFallback}）、素材 JSON ${Object.keys(manifest.json).length}；資料包共 ${(total / 1024 / 1024).toFixed(2)} MB → ${rel(finalDir)}`);
   for (const w of warnings) console.warn(`[pack] 提醒：${w}`);
   return manifest;
 }

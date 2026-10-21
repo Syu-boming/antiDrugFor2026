@@ -1,0 +1,140 @@
+{
+ "format": "antidrug-g5-set-layout-draft/1",
+ "status": "草稿：引擎代理定 layout.json 正式格式後改寫（app/SHOW_INTERFACE.md）。",
+ "set": "square",
+ "coords": "世界座標同 app/src/stage/layers.ts：x 向右、y 向上（地面 0）、z 朝觀眾；x,y＝圖片底邊中點；width／height 世界單位（height 依圖片比例算好）。layer 只是建議的層名（backdrop z=-5、far -3.2、mid -0.9、actors 0、fore 2.4）。",
+ "scale_ref": "阿樂叔叔站姿 3.55、小晴 2.5；舞台開口 15.6×8.8；g4_mid 鏡位在 z=0 看到約 10.3×5.8。",
+ "lighting": "兒童站位身後是騎樓下層的淺米色門面；平光預覽投影 v2 中位亮度約 0.47–0.48（review/G5/shared_art/sets/preview_report.json），差一點到 D-G2-06 的 0.50：引擎請比照 G4 bg-workshop-back 給騎樓景片自發光（約 0.3）或柔光區。",
+ "floor": {
+  "color": "#d9c3a0",
+  "note": "廣場地面：暖黃米色紙（G2 合成用的地面色），引擎用平塗紙紋或沿用 bg-workshop-floor 的做法另做；本關沒有新地面圖。"
+ },
+ "pieces": [
+  {
+   "id": "sets/square/set-square_sky",
+   "file": "assets/final/sets/square/set-square_sky_v01.png",
+   "layer": "backdrop",
+   "x": 0,
+   "y": -0.5,
+   "z": -5.0,
+   "width": 26,
+   "height": 17.333,
+   "anchor": "bottom-center",
+   "note": "整張不透明背板"
+  },
+  {
+   "id": "sets/square/set-square_mountains",
+   "file": "assets/final/sets/square/set-square_mountains_v01.png",
+   "layer": "far",
+   "x": 0,
+   "y": -1.6,
+   "z": -4.2,
+   "width": 24,
+   "height": 8.041,
+   "anchor": "bottom-center",
+   "note": "遠山：底邊在地面下，只在建築上緣後露出山脊"
+  },
+  {
+   "id": "sets/square/set-square_backrow",
+   "file": "assets/final/sets/square/set-square_backrow_v01.png",
+   "layer": "far",
+   "x": 3.2,
+   "y": 0,
+   "z": -3.2,
+   "width": 15.5,
+   "height": 6.392,
+   "anchor": "bottom-center",
+   "note": "後排騎樓（五個拱門）"
+  },
+  {
+   "id": "sets/square/set-square_arcade",
+   "file": "assets/final/sets/square/set-square_arcade_v01.png",
+   "layer": "mid",
+   "x": -1.0,
+   "y": 0,
+   "z": -1.6,
+   "width": 12.5,
+   "height": 7.743,
+   "anchor": "bottom-center",
+   "note": "前排紅磚騎樓：下層淺米色門面在角色身後"
+  },
+  {
+   "id": "sets/square/set-square_tree-a",
+   "file": "assets/final/sets/square/set-square_tree-a_v01.png",
+   "layer": "mid",
+   "x": -6.6,
+   "y": 0,
+   "z": -0.8,
+   "width": 4.2,
+   "height": 6.189,
+   "anchor": "bottom-center",
+   "note": "左側行道樹（危險方位那側，邀請者從柱子後伸手時也可遮擋）"
+  },
+  {
+   "id": "sets/square/set-square_tree-b",
+   "file": "assets/final/sets/square/set-square_tree-b_v01.png",
+   "layer": "mid",
+   "x": 6.4,
+   "y": 0,
+   "z": -0.8,
+   "width": 4.2,
+   "height": 6.109,
+   "anchor": "bottom-center",
+   "note": "右側行道樹"
+  },
+  {
+   "id": "sets/square/set-square_planter-long",
+   "file": "assets/final/sets/square/set-square_planter-long_v01.png",
+   "layer": "mid",
+   "x": 4.6,
+   "y": 0,
+   "z": -0.5,
+   "width": 3.6,
+   "height": 1.301,
+   "anchor": "bottom-center",
+   "note": "長花台（求助站／長椅旁）"
+  },
+  {
+   "id": "sets/square/set-square_planter-tall",
+   "file": "assets/final/sets/square/set-square_planter-tall_v01.png",
+   "layer": "fore",
+   "x": -7.4,
+   "y": 0,
+   "z": 2.4,
+   "width": 1.7,
+   "height": 1.935,
+   "anchor": "bottom-center",
+   "note": "左前景花台（畫面邊緣框景，不擋表演區）"
+  },
+  {
+   "id": "sets/square/set-square_planter-mid",
+   "file": "assets/final/sets/square/set-square_planter-mid_v01.png",
+   "layer": "fore",
+   "x": 7.5,
+   "y": 0,
+   "z": 2.4,
+   "width": 1.6,
+   "height": 1.522,
+   "anchor": "bottom-center",
+   "note": "右前景花台"
+  }
+ ],
+ "props_suggested": {
+  "bench": "props/prop-bench（座面世界高 0.92；a1_c001 品安 P-PA1 坐在上面綁燈籠）"
+ },
+ "made_by": "review/G5/shared_art/scripts/build_square.py",
+ "props": [
+  {
+   "id": "props/prop-bench",
+   "file": "assets/final/props/prop-bench_v01.png",
+   "layer": "mid",
+   "x": -2.4,
+   "y": 0,
+   "z": 0.0,
+   "width": 3.307,
+   "height": 1.707,
+   "seat_world_y": 0.92,
+   "note": "品安 P-PA1 坐的長椅（座面 0.92；品安站位 z 要大於 0.0）"
+  }
+ ]
+}

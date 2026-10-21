@@ -1,0 +1,23 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: the far BACKDROP layer of a small-town Taiwanese elementary school gate scene for a children's paper-cut puppet theater (2.5D pop-up stage). LANDSCAPE orientation, request the wide 3:2 size (1536x1024), fully opaque (no transparency).
+
+The FIRST attached reference is the art-style reference (thick matte cardstock pop-up picture book). The SECOND attached reference is an approved stage composite of the same show: match its scenery style exactly (flat cut cardstock pieces, soft daylight colors, light paper fiber texture, crisp knife-cut edges, thin dark warm-gray lines, warm cream paper-core edges).
+
+CONTENT (one wide backdrop sheet that fills the whole canvas, no transparency):
+- Upper part: soft pale blue sky with a few flat cut-paper clouds (like the second reference), pale near the horizon.
+- Low distant green mountains as two flat layered cardstock ridges along the horizon (muted, desaturated).
+- RIGHT 55%: a friendly, light-colored 3-story Taiwanese elementary school building seen from the front, far away: cream / pale yellow walls with long open corridors (balconies with simple railings) on each floor, rows of windows, a few potted plants on the corridor railings, a flat roof; NO emblem, NO clock with numbers, NO signboard, NO flags with symbols.
+- LEFT 45%: a row of low town houses across the street: 2-3 story shophouses with an arcade (騎樓) at street level, red-brick and cream walls, simple windows, a few street trees in front; no signboards, no shop signs, no text.
+- The bottom 15% of the image is a plain flat light gray-beige sidewalk/ground band (no details) - the stage floor is added separately.
+- Overall light, airy daytime colors; keep the area behind the characters (the lower middle and right) LIGHT so that dark-clothed characters stand out.
+
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no drop shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors. (Stage lighting is added later by software.)
+- Absolutely NO text of any kind anywhere: no letters, no Chinese characters, no numbers, no signs with writing, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos (no delivery/logistics company look). No people unless stated.
+- Calm, friendly, child-safe daytime scenery.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/shared_art/raw/set_gate_back_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/shared_art/raw/set_gate_back_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

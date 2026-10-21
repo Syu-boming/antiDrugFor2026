@@ -1,0 +1,155 @@
+{
+ "sky": {
+  "file": "assets/final/sets/square/set-square_sky_v01.png",
+  "source": "assets/generated/bg-square-sky_v03.png",
+  "size": [
+   1536,
+   1024
+  ],
+  "opaque": true
+ },
+ "mountains": {
+  "file": "assets/final/sets/square/set-square_mountains_v01.png",
+  "source": "assets/generated/bg-square-mountains_v03.png",
+  "offset_in_source": [
+   -8,
+   512
+  ],
+  "size": [
+   1552,
+   520
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4562,
+   "lr_L_median_diff": 0.2
+  }
+ },
+ "backrow": {
+  "file": "assets/final/sets/square/set-square_backrow_v01.png",
+  "source": "assets/generated/bg-square-backrow_v03.png",
+  "offset_in_source": [
+   -8,
+   375
+  ],
+  "size": [
+   1552,
+   640
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 14894,
+   "lr_L_median_diff": 0.1
+  }
+ },
+ "arcade": {
+  "file": "assets/final/sets/square/set-square_arcade_v01.png",
+  "source": "assets/generated/bg-square-arcade_v03.png",
+  "offset_in_source": [
+   7,
+   40
+  ],
+  "size": [
+   1524,
+   944
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 17651,
+   "lr_L_median_diff": 0.5
+  }
+ },
+ "tree-a": {
+  "file": "assets/final/sets/square/set-square_tree-a_v01.png",
+  "source": "assets/generated/bg-square-trees_v03.png",
+  "offset_in_source": [
+   80,
+   22
+  ],
+  "size": [
+   663,
+   977
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 13024,
+   "lr_L_median_diff": 3.9
+  }
+ },
+ "tree-b": {
+  "file": "assets/final/sets/square/set-square_tree-b_v01.png",
+  "source": "assets/generated/bg-square-trees_v03.png",
+  "offset_in_source": [
+   821,
+   42
+  ],
+  "size": [
+   658,
+   957
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 12214,
+   "lr_L_median_diff": 0.5
+  }
+ },
+ "planter-tall": {
+  "file": "assets/final/sets/square/set-square_planter-tall_v01.png",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "offset_in_source": [
+   47,
+   372
+  ],
+  "size": [
+   355,
+   404
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 5016,
+   "lr_L_median_diff": 0.0
+  }
+ },
+ "planter-mid": {
+  "file": "assets/final/sets/square/set-square_planter-mid_v01.png",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "offset_in_source": [
+   483,
+   426
+  ],
+  "size": [
+   368,
+   350
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 5017,
+   "lr_L_median_diff": 0.1
+  }
+ },
+ "planter-long": {
+  "file": "assets/final/sets/square/set-square_planter-long_v01.png",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "offset_in_source": [
+   895,
+   561
+  ],
+  "size": [
+   595,
+   215
+  ],
+  "parts_merged": 1,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 5795,
+   "lr_L_median_diff": 0.2
+  }
+ }
+}

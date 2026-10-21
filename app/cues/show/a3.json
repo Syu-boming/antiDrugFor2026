@@ -1,0 +1,694 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a3",
+ "title": "第三幕：我可以說不要",
+ "set": "kraft_stage",
+ "characters": {
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "pinan": {
+   "name": "品安",
+   "rig": "standee:pinan",
+   "x": 4.5,
+   "z": -0.1,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "lin": {
+   "name": "林老師",
+   "rig": "standee:lin",
+   "x": 5.3,
+   "z": -0.6,
+   "facing": -1,
+   "fallback": "adult"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a3_c001",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "又是那隻手",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a3_c001_01",
+     "speaker": "小宇",
+     "text": "折折，你又迷路了？",
+     "skippableWhenBehind": true
+    },
+    {
+     "id": "a3_c001_02",
+     "speaker": "折折",
+     "text": "我是在……測試風向。",
+     "skippableWhenBehind": true
+    },
+    {
+     "id": "a3_c001_03",
+     "speaker": "邀請者",
+     "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。"
+    },
+    {
+     "id": "a3_c001_04",
+     "speaker": "邀請者",
+     "text": "大家都試過了。"
+    }
+   ],
+   "next": "a3_c002",
+   "prevStable": "a2_c013",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX13"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.0,
+   "tail": 6.0,
+   "storyboard": {
+    "beat": "折折摺成紙飛機帶路，繞一圈落進小宇的連帽；左側柱子後又伸出那隻手，把盒子遞到小宇面前；小宇停下",
+    "cast": "小宇 X2 → X5；折折；邀請者的手 H10",
+    "camera": "騎樓跟拍 → 中景",
+    "sound": "S14、M2 → M3",
+    "directions": [
+     "（紙燈節當天早上，騎樓下的上學路。折折摺成紙飛機想飛在前面帶路，繞了一大圈，咻——落進小宇連帽外套的帽子裡。）",
+     "（左側紅磚柱子後面，又伸出那隻手，把閃亮的小盒子遞到小宇面前。）",
+     "（小宇停下腳步，看著盒子。）"
+    ],
+    "estimateSec": 20.0,
+    "actionSec": 8.0
+   }
+  },
+  {
+   "id": "a3_c002",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "我想一想",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c002_01",
+     "speaker": "小宇",
+     "text": "等一下，我想一想。"
+    },
+    {
+     "id": "a3_c002_02",
+     "speaker": "小宇",
+     "text": "不用，我不試。我先離開。"
+    },
+    {
+     "id": "a3_c002_03",
+     "speaker": "小晴",
+     "text": "我們走。"
+    }
+   ],
+   "next": "a3_c003",
+   "prevStable": "a3_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.5,
+   "tail": 7.5,
+   "storyboard": {
+    "beat": "小宇腦中浮出小畫面（重用 a2_c002 被拉偏的手）；推推眼鏡；抬頭、掌心向外，平穩拒絕；小晴說「我們走」；兩人轉身往右",
+    "cast": "小宇：H8、X8 → H3、X7；小晴 X7",
+    "camera": "小宇近景＋小圓窗 → 雙人中景 → 跟拍往右",
+    "sound": "M6",
+    "directions": [
+     "（小宇的腦中浮出一個小畫面：阿樂叔叔被操偶線拉偏的手。他推推眼鏡。）",
+     "（小宇抬起頭，掌心向外，語氣平穩，不吵架。）",
+     "（兩人轉身往右，朝校門口走，沒有回頭爭辯。）"
+    ],
+    "estimateSec": 16.0,
+    "actionSec": 10.0
+   }
+  },
+  {
+   "id": "a3_c003",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "告訴林老師",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c003_01",
+     "speaker": "小晴",
+     "text": "林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。"
+    },
+    {
+     "id": "a3_c003_02",
+     "speaker": "林老師",
+     "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。"
+    },
+    {
+     "id": "a3_c003_03",
+     "speaker": "林老師",
+     "text": "你們沒有拿，還馬上來找我，做得很好。"
+    }
+   ],
+   "next": "a3_c004",
+   "prevStable": "a3_c002",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.0,
+   "tail": 6.0,
+   "storyboard": {
+    "beat": "校門口，林老師迎接學生；小晴報告；林老師道謝、說會請警衛和警察處理、口語稱讚「你們沒有拿，還馬上來找我，做得很好」（不逐條列步驟）；約 3 秒無台詞：品安從校門另一側走進來，雙手緊抓書包背帶、低頭避開目光、快步走過；折折耳朵動一下",
+    "cast": "林老師：H3（迎接）→ H1、X2 → X7；小晴 X7；小宇 X1；品安：H5 抓背帶、X5、行走分件；折折耳朵動一下",
+    "camera": "校門口中景（校內在右）→ 品安中景帶過",
+    "sound": "S10（輕）；品安段無音效強調",
+    "directions": [
+     "（校門口，林老師正在迎接學生。兩人走到她面前。）",
+     "（約 3 秒，無台詞：品安從校門另一側走進來，雙手緊抓書包背帶，低著頭避開大家的目光，快步走過。折折的耳朵動了一下。不加音效強調，也不交代原因。）"
+    ],
+    "estimateSec": 24.0,
+    "actionSec": 8.0
+   }
+  },
+  {
+   "id": "a3_c004",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "換大家練習（口訣）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c004_01",
+     "speaker": "折折",
+     "text": "換大家了！先跟小宇說一次：不用，我不試。我先離開。"
+    },
+    {
+     "id": "a3_c004_02",
+     "speaker": "折折",
+     "text": "再加上口訣和動作：不碰、不試；先離開，找大人。"
+    }
+   ],
+   "next": "a3_c005",
+   "prevStable": "a3_c003",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX6",
+    "FX4"
+   ],
+   "teacherNote": "練習（約 90 秒，全場只練這一次）：\n①「跟小宇一起說：不用，我不試。我先離開。」（全班說一次。）\n②「口訣加動作，坐著做、不離座：不碰——雙手在胸前交叉；不試——手掌左右搖；先離開——手指向門口；找大人——手掌放在額前，左右看。」（老師示範一次，全班做一次。）\n③ 做安靜手勢，等全場安靜，再按下一步；題卡出現時的折折收摺音效就是收聲訊號。",
+   "checkpoint": null,
+   "voStart": 1.5,
+   "tail": 4.5,
+   "storyboard": {
+    "beat": "折折跳到台口前緣攤開練習卡（拒絕句＋口訣，每句旁動作小圖，程式排版）；小晴、小宇站在卡兩側依序做四個動作：不碰、不試、先離開、找大人，最後停在「找大人」",
+    "cast": "小晴：P-QG1 → H3 左右搖 → H2 指右 → H4；小宇：P-XY1 → H3 → H2 → H4；兩人 X2",
+    "camera": "台口全景（不轉暗）",
+    "sound": "M6 輕快版",
+    "directions": [
+     "（折折跳到台口前緣，攤開一張大紙卡：上面是拒絕句和口訣，每句旁邊有動作小圖，文字由程式排版。小晴和小宇站在紙卡兩側；折折念口訣時，兩人依序做出四個動作，最後停在「找大人」的姿勢。）",
+     "（畫面停在練習卡，等老師帶。）"
+    ],
+    "estimateSec": 17.0,
+    "actionSec": 6.0
+   }
+  },
+  {
+   "id": "a3_c005",
+   "sceneId": "kraft_stage",
+   "kind": "quiz",
+   "title": "〔題卡 Q4〕出題",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0,
+     "duration": 2.4,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.2,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": 0.7,
+     "duration": 0.6
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c005_01",
+     "speaker": "折折",
+     "text": "第四題！"
+    },
+    {
+     "id": "a3_c005_02",
+     "speaker": "旁白",
+     "text": "有人說「試一次沒關係」，哪個做法比較安全？"
+    },
+    {
+     "id": "a3_c005_03",
+     "speaker": "旁白",
+     "text": "一，說「不用，我不試」，離開找大人。"
+    },
+    {
+     "id": "a3_c005_04",
+     "speaker": "旁白",
+     "text": "二，只試一次而已，應該沒關係。"
+    },
+    {
+     "id": "a3_c005_05",
+     "speaker": "旁白",
+     "text": "三，先幫他保管，等一下再還給他。"
+    }
+   ],
+   "next": "a3_c006",
+   "prevStable": "a3_c004",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "3、2、1，一起比！（本題看 D 區。）",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 0.7,
+     "gain": 0.8
+    }
+   ],
+   "quiz": {
+    "qid": "Q4",
+    "number": 4,
+    "question": "有人說「試一次沒關係」，哪個做法比較安全？",
+    "options": [
+     "說「不用，我不試」，離開找大人。",
+     "只試一次而已，應該沒關係。",
+     "先幫他保管，等一下再還給他。"
+    ],
+    "answer": 1
+   },
+   "voStart": 1.4,
+   "tail": 1.0,
+   "storyboard": {
+    "beat": "Q4 題卡模式 → 揭答第 1 項 → 第四盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（折折收摺音效＝收聲訊號；題卡模式。）",
+     "（題卡靜止。）"
+    ],
+    "estimateSec": 21.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a3_c006",
+   "sceneId": "kraft_stage",
+   "kind": "reveal",
+   "title": "〔題卡 Q4〕揭答",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "quiz.reveal",
+     "start": 0.3,
+     "duration": 0.45
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c006_01",
+     "speaker": "旁白",
+     "text": "正解是一：說「不用，我不試」，離開找大人。"
+    }
+   ],
+   "next": "a3_c007",
+   "prevStable": "a3_c005",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "回饋見 `八題_v03.md` Q4；點 D 區一位說理由。最後：「捧燈手——」說完就按下一步，不等全班都做好。",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.0,
+   "tail": 1.2,
+   "storyboard": {
+    "beat": "Q4 題卡模式 → 揭答第 1 項 → 第四盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（「正解」紙印章蓋在第 1 項；其他選項變淡。）"
+    ],
+    "estimateSec": 7.0,
+    "actionSec": 3.0
+   }
+  },
+  {
+   "id": "a3_c007",
+   "sceneId": "kraft_stage",
+   "kind": "lamp",
+   "title": "〔題卡 Q4〕點燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "lamp.light",
+     "start": 0.3,
+     "duration": 1.5,
+     "params": {
+      "index": 4
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a3_c007_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "light.restore",
+     "start": "a3_c007_01.end+0.3",
+     "duration": 1.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a3_c007_01.end+0.3",
+     "duration": 2.5,
+     "params": {
+      "to": "show_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c007_01",
+     "speaker": "折折",
+     "text": "第四盞，已經一半了！"
+    }
+   ],
+   "next": "a3_c008",
+   "prevStable": "a3_c006",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
+   "checkpoint": null,
+   "lamp": 4,
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.9,
+   "tail": 0.6,
+   "storyboard": {
+    "beat": "Q4 題卡模式 → 揭答第 1 項 → 第四盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（第四盞紙燈慢慢亮起；回到故事。）"
+    ],
+    "estimateSec": 7.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a3_c008",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "放學以後（懸念）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a3_c008_01",
+     "speaker": "林老師",
+     "text": "今天紙燈節，學校提早放學。"
+    },
+    {
+     "id": "a3_c008_02",
+     "speaker": "林老師",
+     "text": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。"
+    },
+    {
+     "id": "a3_c008_03",
+     "speaker": "小晴",
+     "text": "林老師，叔叔昨天站都站不穩……"
+    },
+    {
+     "id": "a3_c008_04",
+     "speaker": "林老師",
+     "text": "謝謝你告訴老師。老師先打電話給你們家人；如果叔叔先到，你們先待在校門裡面。"
+    }
+   ],
+   "next": "a4_c001",
+   "prevStable": "a3_c007",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX8"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.0,
+   "tail": 6.0,
+   "storyboard": {
+    "beat": "教室午後，窗外燈籠串輕擺；下課鐘柔和響；林老師說提早放學、家長前幾天就拜託阿樂叔叔開車來接；兩人互看；小晴筆停住；折折耳朵壓平；小晴舉手走到林老師面前說叔叔昨天站不穩；林老師道謝、說先打給家人、叔叔先到就待在校門裡；林老師拿手機走到走廊撥號",
+    "cast": "林老師 X1 → X5 → X7；小晴 H5、X5 → X7；小宇 X5；其他學生為遠景剪影",
+    "camera": "教室中景 → 兩人近景 → 折折 → 林老師與小晴中景",
+    "sound": "S9、M4 微弱",
+    "directions": [
+     "（教室，下午。窗外廣場的燈籠串輕輕擺動。下課鐘聲柔和地響起。）",
+     "（兩人互看一眼。小晴的筆停在筆記本上。折折的耳朵慢慢壓平。小晴舉手，走到林老師面前。）",
+     "（林老師拿起手機走到走廊撥號。小晴和小宇看著窗外的燈籠串。）",
+     "（說明：小晴當場告訴老師，示範及早找大人；懸念不變——家長是前幾天拜託的、還不知道昨天的事，老師的電話打不打得通、叔叔會不會先到，留到第四幕。）"
+    ],
+    "estimateSec": 31.0,
+    "actionSec": 8.0
+   }
+  }
+ ]
+}

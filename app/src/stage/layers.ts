@@ -62,6 +62,14 @@ export const CAMERA_PRESETS: Record<string, CameraPreset> = {
   g4_c004_up: { pos: [-0.18, 1.42, 14.8], target: [-0.18, 1.23, 0], fov: 20 },
   /** 閉幕前回到台口全景 */
   g4_stage: { pos: [0, 4.4, 30], target: [0, 4.2, 0], fov: 20 },
+
+  // ---- G5 全劇共用鏡位（各幕的景可在 layout.json／程式景另外定義自己的鏡位）
+  /** 全劇中景：x −6.3～6.9 都在畫面裡（五、六個角色同框），地面在 1080p 約 y≈740，腳在字幕底板之上（同 g4_mid 的做法） */
+  show_mid: { pos: [0.3, 1.6, 21], target: [0.3, 1.38, 0], fov: 20 },
+  /** 全劇大全景（景片立起、換景後交代地點）：地面約 y≈760 */
+  show_wide: { pos: [0.2, 2.2, 28], target: [0.2, 1.95, 0], fov: 20 },
+  /** 全劇近景（兩人）：看得清表情，畫面中心 x 由 camera.move 的 {pos,target} 另給更好；這個是置中版 */
+  show_close: { pos: [0.6, 1.55, 13], target: [0.6, 1.45, 0], fov: 20 },
 };
 
 /** 錨點鏡位的預設距離（"anchor:ale.wrist" 這類鏡位，dist 可在 camera.move 的 params 覆寫） */

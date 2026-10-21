@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7843-ac98-c8bdfbfc85aa/exec-3e273a38-5867-412f-90d8-9bec21ab5fce.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_cross_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_cross_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.

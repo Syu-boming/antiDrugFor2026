@@ -1,0 +1,19 @@
+started chr_pinan_sit_v01 pid 48049
+started chr_pinan_walk_v01 pid 48050
+started chr_lin_crouch_v01 pid 48052
+started chr_lin_sit_v01 pid 48053
+== chr_pinan_sit_v01
+(no output)
+-rw-r--r--@ 1 boming  staff  1986531 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_pinan_sit_v01.png
+== chr_pinan_walk_v01
+(no output)
+-rw-r--r--@ 1 boming  staff  1974795 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_pinan_walk_v01.png
+== chr_lin_crouch_v01
+- Source: `/Users/boming/.codex/generated_images/01a15d3d-31ab-7c30-b204-d4e72842fc41/exec-c4c72de7-ec80-4f07-8a80-ef395103ef79.png`
+- Destination: [review/G5/shared_art/raw/chr_lin_crouch_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_crouch_v01.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha channel: **Yes**
+- Copy verified byte-identical; no modifications.-rw-r--r--@ 1 boming  staff  2062637 10月 21 14:57 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_crouch_v01.png
+== chr_lin_sit_v01
+(no output)
+-rw-r--r--@ 1 boming  staff  1827872 10月 21 14:56 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_sit_v01.png

@@ -1,0 +1,1006 @@
+{
+ "assets/final/chr-xiaoqing_pose-cross_v06.png": {
+  "key": "xiaoqing:cross",
+  "raw": "review/G5/shared_art/raw/pose_xq_cross_v06.png",
+  "generated": "assets/generated/chr-xiaoqing_pose-cross_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.729,
+  "raw_margins": {
+   "left": 263,
+   "top": 36,
+   "right": 218,
+   "bottom": 29
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.3,
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 192112,
+    "L*": 38.0,
+    "median": "#236364",
+    "lab": [
+     38.0,
+     -19.2,
+     -6.5
+    ],
+    "dE_vs_v04": 1.2
+   },
+   "芥末黃上衣": {
+    "px": 15061,
+    "L*": 74.4,
+    "median": "#F3A924",
+    "lab": [
+     74.4,
+     17.0,
+     71.6
+    ],
+    "dE_vs_v04": 1.1
+   }
+  },
+  "recolor": "未調整（L* 與 v04 差 ≤ 1）",
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.452
+ },
+ "assets/final/chr-xiaoqing_pose-palmno_v06.png": {
+  "key": "xiaoqing:palmno",
+  "raw": "review/G5/shared_art/raw/pose_xq_palmno_v06.png",
+  "generated": "assets/generated/chr-xiaoqing_pose-palmno_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 10,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.67,
+  "raw_margins": {
+   "left": 133,
+   "top": 39,
+   "right": 195,
+   "bottom": 33
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.8,
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 190886,
+    "L*": 37.1,
+    "median": "#146164",
+    "lab": [
+     37.1,
+     -20.5,
+     -8.1
+    ],
+    "dE_vs_v04": 2.6
+   },
+   "芥末黃上衣": {
+    "px": 34949,
+    "L*": 79.0,
+    "median": "#FCB72F",
+    "lab": [
+     79.0,
+     13.6,
+     72.6
+    ],
+    "dE_vs_v04": 6.3
+   }
+  },
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    189979,
+    40.4,
+    37.0,
+    "#20696C",
+    "#146164"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.448
+ },
+ "assets/final/chr-xiaoyu_pose-cross_v06.png": {
+  "key": "xiaoyu:cross",
+  "raw": "review/G5/shared_art/raw/pose_xy_cross_v06.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-cross_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 12,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.64,
+  "raw_margins": {
+   "left": 247,
+   "top": 61,
+   "right": 257,
+   "bottom": 45
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 15.2,
+  "garments": {
+   "橘紅外套": {
+    "px": 99302,
+    "L*": 38.9,
+    "median": "#B12400",
+    "lab": [
+     38.9,
+     54.3,
+     52.0
+    ],
+    "dE_vs_v04": 4.8
+   },
+   "卡其短褲": {
+    "px": 60203,
+    "L*": 63.0,
+    "median": "#B99164",
+    "lab": [
+     63.0,
+     9.3,
+     29.7
+    ],
+    "dE_vs_v04": 7.2
+   }
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    101202,
+    44.0,
+    39.0,
+    "#C13409",
+    "#B12400"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.597
+ },
+ "assets/final/chr-xiaoyu_pose-watch-dial_v06.png": {
+  "key": "xiaoyu:dial",
+  "raw": "review/G5/shared_art/raw/pose_xy_watch_v06.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-watch-dial_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 12,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.617,
+  "raw_margins": {
+   "left": 214,
+   "top": 54,
+   "right": 213,
+   "bottom": 22
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 0.8,
+  "garments": {
+   "橘紅外套": {
+    "px": 118272,
+    "L*": 39.0,
+    "median": "#AF2901",
+    "lab": [
+     39.0,
+     51.9,
+     51.2
+    ],
+    "dE_vs_v04": 2.2
+   },
+   "卡其短褲": {
+    "px": 55270,
+    "L*": 62.4,
+    "median": "#BB8F5F",
+    "lab": [
+     62.4,
+     11.0,
+     31.4
+    ],
+    "dE_vs_v04": 5.6
+   }
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    121053,
+    44.7,
+    39.0,
+    "#C13A11",
+    "#AF2901"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.454
+ },
+ "assets/final/chr-pinan_master_v01.png": {
+  "key": "pinan:stand",
+  "raw": "review/G5/shared_art/raw/chr_pinan_stand_v01.png",
+  "generated": "assets/generated/chr-pinan_master_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 7,
+  "white_border_ok": true,
+  "outer_dark_line": false,
+  "dark_line_inside_border": 0.9,
+  "raw_margins": {
+   "left": 244,
+   "top": 26,
+   "right": 241,
+   "bottom": 29
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 0.7,
+  "garments": {
+   "茄紫上衣": {
+    "px": 56936,
+    "L*": 31.5,
+    "median": "#653F4F",
+    "lab": [
+     31.5,
+     19.0,
+     -2.5
+    ]
+   },
+   "橄欖綠書包": null
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.428
+ },
+ "assets/final/chr-lin_master_v01.png": {
+  "key": "lin:stand",
+  "raw": "review/G5/shared_art/raw/chr_lin_stand_v01.png",
+  "generated": "assets/generated/chr-lin_master_v01.png",
+  "draws": 1,
+  "fog_px": 3,
+  "white_border_px": 7,
+  "white_border_ok": true,
+  "outer_dark_line": false,
+  "dark_line_inside_border": 0.876,
+  "raw_margins": {
+   "left": 311,
+   "top": 13,
+   "right": 292,
+   "bottom": 12
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 0.7,
+  "garments": {
+   "酒紅毛衣": {
+    "px": 100902,
+    "L*": 29.6,
+    "median": "#782D2F",
+    "lab": [
+     29.6,
+     33.1,
+     15.6
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.391
+ },
+ "assets/final/chr-chen_master_v01.png": {
+  "key": "chen:stand",
+  "raw": "review/G5/shared_art/raw/chr_chen_stand_v01.png",
+  "generated": "assets/generated/chr-chen_master_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 10,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.759,
+  "raw_margins": {
+   "left": 214,
+   "top": 24,
+   "right": 193,
+   "bottom": 22
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 4.1,
+  "garments": {
+   "黃綠背心": {
+    "px": 90171,
+    "L*": 84.2,
+    "median": "#D6D94B",
+    "lab": [
+     84.2,
+     -17.9,
+     66.3
+    ]
+   },
+   "淺灰制服": {
+    "px": 124229,
+    "L*": 81.6,
+    "median": "#D5C9B5",
+    "lab": [
+     81.6,
+     2.9,
+     8.1
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.712
+ },
+ "assets/final/chr-ye_master_v01.png": {
+  "key": "ye:stand",
+  "raw": "review/G5/shared_art/raw/chr_ye_stand_v01.png",
+  "generated": "assets/generated/chr-ye_master_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 10,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.702,
+  "raw_margins": {
+   "left": 240,
+   "top": 13,
+   "right": 253,
+   "bottom": 21
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 2.3,
+  "garments": {
+   "鼠尾草綠護理服": {
+    "px": 147975,
+    "L*": 63.0,
+    "median": "#929C85",
+    "lab": [
+     63.0,
+     -8.1,
+     10.7
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.609
+ },
+ "assets/final/chr-xiaoyu_pose-palmno_v06.png": {
+  "key": "xiaoyu:palmno",
+  "raw": "review/G5/shared_art/raw/pose_xy_palmno_v06.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-palmno_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 11,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.661,
+  "raw_margins": {
+   "left": 127,
+   "top": 61,
+   "right": 178,
+   "bottom": 28
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.3,
+  "garments": {
+   "橘紅外套": {
+    "px": 136449,
+    "L*": 38.9,
+    "median": "#B12500",
+    "lab": [
+     38.9,
+     54.1,
+     51.9
+    ],
+    "dE_vs_v04": 4.5
+   },
+   "卡其短褲": {
+    "px": 57312,
+    "L*": 64.9,
+    "median": "#C29566",
+    "lab": [
+     64.9,
+     10.7,
+     31.1
+    ],
+    "dE_vs_v04": 8.1
+   }
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    137297,
+    46.4,
+    39.0,
+    "#C93B13",
+    "#B12500"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.437
+ },
+ "assets/final/chr-xiaoqing_pose-forehead_v06.png": {
+  "key": "xiaoqing:forehead",
+  "raw": "review/G5/shared_art/raw/pose_xq_forehead_v06.png",
+  "generated": "assets/generated/chr-xiaoqing_pose-forehead_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.651,
+  "raw_margins": {
+   "left": 245,
+   "top": 53,
+   "right": 146,
+   "bottom": 31
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.2,
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 204809,
+    "L*": 37.2,
+    "median": "#1B6161",
+    "lab": [
+     37.2,
+     -20.1,
+     -6.7
+    ],
+    "dE_vs_v04": 1.2
+   },
+   "芥末黃上衣": {
+    "px": 38811,
+    "L*": 74.5,
+    "median": "#F1AA28",
+    "lab": [
+     74.5,
+     16.1,
+     70.4
+    ],
+    "dE_vs_v04": 1.0
+   }
+  },
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    204199,
+    38.8,
+    37.0,
+    "#216565",
+    "#1B6161"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.451
+ },
+ "assets/final/chr-xiaoyu_pose-forehead_v06.png": {
+  "key": "xiaoyu:forehead",
+  "raw": "review/G5/shared_art/raw/pose_xy_forehead_v06.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-forehead_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 11,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.728,
+  "raw_margins": {
+   "left": 228,
+   "top": 11,
+   "right": 150,
+   "bottom": 22
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 0.5,
+  "garments": {
+   "橘紅外套": {
+    "px": 161124,
+    "L*": 39.0,
+    "median": "#AE2900",
+    "lab": [
+     39.0,
+     51.8,
+     51.6
+    ],
+    "dE_vs_v04": 2.4
+   },
+   "卡其短褲": {
+    "px": 62600,
+    "L*": 60.5,
+    "median": "#B7895A",
+    "lab": [
+     60.5,
+     11.7,
+     32.0
+    ],
+    "dE_vs_v04": 3.5
+   }
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    162205,
+    41.4,
+    39.0,
+    "#B63005",
+    "#AE2900"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.429
+ },
+ "assets/final/chr-xiaoqing_pose-walk_v06.png": {
+  "key": "xiaoqing:walk",
+  "raw": "review/G5/shared_art/raw/pose_xq_walk_v06.png",
+  "generated": "assets/generated/chr-xiaoqing_pose-walk_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 10,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.651,
+  "raw_margins": {
+   "left": 118,
+   "top": 48,
+   "right": 60,
+   "bottom": 74
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.8,
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 172760,
+    "L*": 37.2,
+    "median": "#186163",
+    "lab": [
+     37.2,
+     -20.1,
+     -7.4
+    ],
+    "dE_vs_v04": 1.8
+   },
+   "芥末黃上衣": {
+    "px": 35195,
+    "L*": 78.9,
+    "median": "#FBB736",
+    "lab": [
+     78.9,
+     13.8,
+     70.3
+    ],
+    "dE_vs_v04": 5.8
+   }
+  },
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    172835,
+    39.6,
+    37.0,
+    "#216769",
+    "#186163"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.496
+ },
+ "assets/final/chr-xiaoyu_pose-walk_v06.png": {
+  "key": "xiaoyu:walk",
+  "raw": "review/G5/shared_art/raw/pose_xy_walk_v06.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-walk_v06.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 11,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.717,
+  "raw_margins": {
+   "left": 123,
+   "top": 27,
+   "right": 85,
+   "bottom": 46
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.2,
+  "garments": {
+   "橘紅外套": {
+    "px": 154790,
+    "L*": 39.0,
+    "median": "#B02600",
+    "lab": [
+     39.0,
+     53.2,
+     51.8
+    ],
+    "dE_vs_v04": 3.7
+   },
+   "卡其短褲": {
+    "px": 47052,
+    "L*": 64.1,
+    "median": "#C29261",
+    "lab": [
+     64.1,
+     12.4,
+     32.8
+    ],
+    "dE_vs_v04": 7.0
+   }
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    158406,
+    43.7,
+    39.0,
+    "#BF350C",
+    "#B02600"
+   ]
+  ],
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "退路換片模擬（fallbackFaces）",
+  "proj_v2_figure_median_lum": 0.421
+ },
+ "assets/final/chr-ye_pose-crouch_v01.png": {
+  "key": "ye:crouch",
+  "raw": "review/G5/shared_art/raw/chr_ye_crouch_v01.png",
+  "generated": "assets/generated/chr-ye_pose-crouch_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 13,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.66,
+  "raw_margins": {
+   "left": 45,
+   "top": 171,
+   "right": 42,
+   "bottom": 88
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 3.7,
+  "garments": {
+   "鼠尾草綠護理服": {
+    "px": 136145,
+    "L*": 64.1,
+    "median": "#949F88",
+    "lab": [
+     64.1,
+     -8.2,
+     10.5
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.618
+ },
+ "assets/final/chr-pinan_pose-sit-lantern_v01.png": {
+  "key": "pinan:sit_lantern",
+  "raw": "review/G5/shared_art/raw/chr_pinan_sit_v01.png",
+  "generated": "assets/generated/chr-pinan_pose-sit-lantern_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "outer_dark_line": false,
+  "dark_line_inside_border": 0.835,
+  "raw_margins": {
+   "left": 242,
+   "top": 70,
+   "right": 219,
+   "bottom": 46
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 3.9,
+  "garments": {
+   "茄紫上衣": {
+    "px": 50585,
+    "L*": 30.9,
+    "median": "#623E4E",
+    "lab": [
+     30.9,
+     18.4,
+     -3.2
+    ]
+   },
+   "橄欖綠書包": null
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.437
+ },
+ "assets/final/chr-pinan_pose-walk-straps_v01.png": {
+  "key": "pinan:walk_straps",
+  "raw": "review/G5/shared_art/raw/chr_pinan_walk_v01.png",
+  "generated": "assets/generated/chr-pinan_pose-walk-straps_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "outer_dark_line": false,
+  "dark_line_inside_border": 0.915,
+  "raw_margins": {
+   "left": 158,
+   "top": 37,
+   "right": 135,
+   "bottom": 47
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.2,
+  "garments": {
+   "茄紫上衣": {
+    "px": 34062,
+    "L*": 33.4,
+    "median": "#6C4252",
+    "lab": [
+     33.4,
+     20.1,
+     -1.8
+    ]
+   },
+   "橄欖綠書包": null
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.441
+ },
+ "assets/final/chr-lin_pose-crouch_v01.png": {
+  "key": "lin:crouch",
+  "raw": "review/G5/shared_art/raw/chr_lin_crouch_v01.png",
+  "generated": "assets/generated/chr-lin_pose-crouch_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 11,
+  "white_border_ok": true,
+  "outer_dark_line": false,
+  "dark_line_inside_border": 0.937,
+  "raw_margins": {
+   "left": 166,
+   "top": 120,
+   "right": 73,
+   "bottom": 138
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 0.9,
+  "garments": {
+   "酒紅毛衣": {
+    "px": 132453,
+    "L*": 30.0,
+    "median": "#7C2B31",
+    "lab": [
+     30.0,
+     35.2,
+     15.3
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.397
+ },
+ "assets/final/chr-lin_pose-sit_v01.png": {
+  "key": "lin:sit",
+  "raw": "review/G5/shared_art/raw/chr_lin_sit_v01.png",
+  "generated": "assets/generated/chr-lin_pose-sit_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 10,
+  "white_border_ok": true,
+  "outer_dark_line": true,
+  "dark_line_inside_border": 0.926,
+  "raw_margins": {
+   "left": 198,
+   "top": 26,
+   "right": 211,
+   "bottom": 24
+  },
+  "crop_ok_feet_not_cut": true,
+  "lr_L_median_diff_flat_light": 1.5,
+  "garments": {
+   "酒紅毛衣": {
+    "px": 120223,
+    "L*": 31.8,
+    "median": "#832E32",
+    "lab": [
+     31.8,
+     36.6,
+     17.0
+    ]
+   }
+  },
+  "recolor": null,
+  "blink_both_closed_ok": true,
+  "blink_half_ok": true,
+  "blink_method": "正式換片（face/<角色>/face_v01.json）",
+  "proj_v2_figure_median_lum": 0.404
+ },
+ "assets/final/chr-inviter_hand-box_v01.png": {
+  "raw": "review/G5/shared_art/raw/prop_inviter_v01.png",
+  "generated": "assets/generated/chr-inviter_kit_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "raw_margins": {
+   "left": 7,
+   "top": 342,
+   "right": 679,
+   "bottom": 338
+  },
+  "crop_ok": true,
+  "note": "左緣是袖口切口（畫布外延伸），引擎請把左緣放在畫面外或柱子後；左側沒有白邊是刻意的"
+ },
+ "assets/final/props/prop-sticker-box_v01.png": {
+  "raw": "review/G5/shared_art/raw/prop_inviter_v01.png",
+  "generated": "assets/generated/chr-inviter_kit_v01.png",
+  "draws": 1,
+  "fog_px": 0,
+  "white_border_px": 9,
+  "white_border_ok": true,
+  "raw_margins": {
+   "left": 905,
+   "top": 251,
+   "right": 47,
+   "bottom": 272
+  },
+  "crop_ok": true,
+  "note": ""
+ },
+ "assets/final/sets/gate/set-gate_school-building_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/sets/gate/set-gate_pillar_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/sets/gate/set-gate_folding-gate_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0
+ },
+ "assets/final/sets/gate/set-gate_school-wall_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/sets/gate/set-gate_guard-house_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 1,
+  "lr_L_median_diff": 8.8
+ },
+ "assets/final/sets/gate/set-gate_floor_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0,
+  "lr_L_median_diff": 20.9
+ },
+ "assets/final/props/prop-bench_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 10,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/props/prop-truck_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 10,
+  "lr_L_median_diff": 4.6
+ },
+ "assets/final/props/prop-truck-wheel_v01.png": {
+  "draws": 0,
+  "method": "程式繪製（paperdraw.py；image_gen 額度用完的退路）",
+  "fog_px": 0,
+  "white_border_px": 0,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/sets/square/set-square_sky_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-sky_v03.png"
+ },
+ "assets/final/sets/square/set-square_mountains_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-mountains_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 4562,
+  "lr_L_median_diff": 0.2
+ },
+ "assets/final/sets/square/set-square_backrow_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-backrow_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 14894,
+  "lr_L_median_diff": 0.1
+ },
+ "assets/final/sets/square/set-square_arcade_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-arcade_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 17651,
+  "lr_L_median_diff": 0.5
+ },
+ "assets/final/sets/square/set-square_tree-a_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-trees_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 13024,
+  "lr_L_median_diff": 3.9
+ },
+ "assets/final/sets/square/set-square_tree-b_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-trees_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 12214,
+  "lr_L_median_diff": 0.5
+ },
+ "assets/final/sets/square/set-square_planter-tall_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 5016,
+  "lr_L_median_diff": 0.0
+ },
+ "assets/final/sets/square/set-square_planter-mid_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 5017,
+  "lr_L_median_diff": 0.1
+ },
+ "assets/final/sets/square/set-square_planter-long_v01.png": {
+  "draws": 0,
+  "method": "由 G2 拼版切件（不重抽）",
+  "source": "assets/generated/bg-square-planters_v03.png",
+  "fog_px": 0,
+  "semi_alpha_px": 5795,
+  "lr_L_median_diff": 0.2
+ }
+}

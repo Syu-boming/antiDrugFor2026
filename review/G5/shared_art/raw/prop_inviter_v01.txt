@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7521-970a-06853064fe34/exec-1cef04bb-aea4-4c36-88c0-0801447b9242.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/prop_inviter_v01.png`
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Unmodified copy verified.

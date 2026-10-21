@@ -1,0 +1,8 @@
+{
+  "name": "antidrug-paper-theater",
+  "productName": "反毒剪紙劇場",
+  "version": "0.1.0",
+  "description": "反毒剪紙劇場（許博明老師製作）Electron 可攜版外殼：舞台視窗＋教師控制台",
+  "main": "main.js",
+  "private": true
+}

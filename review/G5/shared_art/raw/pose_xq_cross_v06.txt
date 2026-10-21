@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7ab2-8f7b-8c9079ff9efc/exec-3f8448f1-69fc-43f1-b4bf-28d85cfb8b36.png`
+- Destination: [review/G5/shared_art/raw/pose_xq_cross_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_cross_v06.png>) — copied unmodified.
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes**, actual transparency verified.

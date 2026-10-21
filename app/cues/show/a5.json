@@ -1,0 +1,796 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a5",
+ "title": "第五幕：找得到的幫手",
+ "set": "kraft_stage",
+ "characters": {
+  "ale": {
+   "name": "阿樂叔叔",
+   "rig": "ale_v03",
+   "x": -2.6,
+   "z": 0,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "lin": {
+   "name": "林老師",
+   "rig": "standee:lin",
+   "x": 5.3,
+   "z": -0.6,
+   "facing": -1,
+   "fallback": "adult"
+  },
+  "chen": {
+   "name": "陳伯伯",
+   "rig": "standee:chen",
+   "x": -0.9,
+   "z": -0.4,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "ye": {
+   "name": "葉護理師",
+   "rig": "standee:ye",
+   "x": 6.2,
+   "z": -0.3,
+   "facing": -1,
+   "fallback": "adult"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a5_c001",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "叫不醒",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.15
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_m4_light",
+   "lines": [
+    {
+     "id": "a5_c001_01",
+     "speaker": "小晴",
+     "text": "主燈骨架！原來在叔叔車上！"
+    },
+    {
+     "id": "a5_c001_02",
+     "speaker": "陳伯伯",
+     "text": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！"
+    },
+    {
+     "id": "a5_c001_03",
+     "speaker": "林老師",
+     "text": "好，我馬上出來！"
+    },
+    {
+     "id": "a5_c001_04",
+     "speaker": "小宇",
+     "text": "阿樂叔叔？阿樂叔叔！"
+    },
+    {
+     "id": "a5_c001_05",
+     "speaker": "小晴",
+     "text": "他……叫不醒。"
+    },
+    {
+     "id": "a5_c001_06",
+     "speaker": "折折",
+     "text": "陳伯伯在轉角，林老師在辦公室。他們該怎麼做？"
+    }
+   ],
+   "next": "a5_c002",
+   "prevStable": "a4_c013",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX8"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.5,
+   "tail": 10.5,
+   "storyboard": {
+    "beat": "小晴發現骨架；遠處轉角一個低年級學生獨自揮手要過馬路；陳伯伯看看轉角又看看校門，先叫阿樂坐著，再轉向右邊辦公室的方向、手圍在嘴邊大聲交代：「林老師，我去轉角帶小朋友過馬路，很快回來！」；林老師不入鏡，從辦公室畫外回答「好，我馬上出來！」（新增 1 句，約 2 秒）；陳伯伯點頭、拍拍阿樂的肩膀，才快步走過轉角、看不見；阿樂的頭慢慢垂下靠著椅背不動；孩子在門內叫他；沒有回應；音樂停只剩風聲；停格；折折從筆記本探頭，小聲把問題交給觀眾",
+    "cast": "小晴 X4 → X6；小宇 X6；陳伯伯 X5（兩難）→ X7（大聲交代、點頭）→ 快步走開；林老師（畫外音，不入鏡）；低年級學生（遠景小尺寸、不說話）；阿樂：分件坐姿 X11 → P-AL1、X12、L3；折折耳朵壓平",
+    "camera": "門內越肩 → 遠景轉角 → 長椅中景（不特寫臉）→ 折折（林老師只有畫外音，不加鏡頭）",
+    "sound": "林老師畫外音（只降低音量、不加回音）→ S8；M 停",
+    "directions": [
+     "（接送區已經沒有家長和學生。阿樂叔叔坐在長椅上，還能點頭回話；陳伯伯站在他身邊。）",
+     "（遠處轉角，一個低年級小朋友背著書包，一個人站在路邊，朝陳伯伯揮手，想過馬路。陳伯伯看看轉角，又看看校門。他先對阿樂叔叔說一句，再轉向右邊辦公室的方向，手圍在嘴邊大聲交代。）",
+     "（林老師不入鏡，聲音從右邊辦公室的方向傳來（畫外音，只把音量放低一點，不加回音）。陳伯伯聽到回答，點點頭，拍拍阿樂叔叔的肩膀，才快步走向轉角，轉過去就看不見了。長椅上，阿樂叔叔的頭慢慢垂下來，像睡著一樣靠著椅背，不動了。臉和膚色都沒有改變；操偶線鬆鬆垂落在身旁，不把身體吊起或撐住。）",
+     "（沒有回應。孩子們站在校門裡，沒有走過去。音樂停住，只剩很輕的風聲。）",
+     "（停格。折折從小晴的筆記本探出頭，耳朵壓平，對全場小聲說。）",
+     "（陳伯伯離開前已經交代林老師出來接手，而且交接在畫面上看得到、聽得到：a4_c013_02 林老師約好打完電話就出來換他；a5_c001_02–_03 陳伯伯朝辦公室大聲交代，林老師回答「好，我馬上出來！」，陳伯伯點頭後才走。他是為了另一個孩子的安全才離開；劇本不示範大人把明顯不對勁的人丟下不管。阿樂叔叔是在交接的空檔才叫不醒。v03 新增 _03，原 _03–_05 改號為 _04–_06。）"
+    ],
+    "estimateSec": 35.0,
+    "actionSec": 14.0
+   }
+  },
+  {
+   "id": "a5_c002",
+   "sceneId": "kraft_stage",
+   "kind": "quiz",
+   "title": "〔題卡 Q7〕出題",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.15
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0,
+     "duration": 2.4,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.2,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": 0.7,
+     "duration": 0.6
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c002_01",
+     "speaker": "折折",
+     "text": "第七題！"
+    },
+    {
+     "id": "a5_c002_02",
+     "speaker": "旁白",
+     "text": "有人叫不醒。你站在安全的地方，接下來怎麼做？"
+    },
+    {
+     "id": "a5_c002_03",
+     "speaker": "旁白",
+     "text": "一，先拍下影片，再傳給同學看。"
+    },
+    {
+     "id": "a5_c002_04",
+     "speaker": "旁白",
+     "text": "二，自己先跑過去，用力把他搖醒。"
+    },
+    {
+     "id": "a5_c002_05",
+     "speaker": "旁白",
+     "text": "三，先找大人，沒大人就撥 119。"
+    }
+   ],
+   "next": "a5_c003",
+   "prevStable": "a5_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "3、2、1，一起比！（本題看 C 區。）",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 0.7,
+     "gain": 0.8
+    }
+   ],
+   "quiz": {
+    "qid": "Q7",
+    "number": 7,
+    "question": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+    "options": [
+     "先拍下影片，再傳給同學看。",
+     "自己先跑過去，用力把他搖醒。",
+     "先找大人，沒大人就撥 119。"
+    ],
+    "answer": 3
+   },
+   "voStart": 1.4,
+   "tail": 1.0,
+   "storyboard": {
+    "beat": "Q7 題卡模式 → 揭答第 3 項 → 第七盞燈 → 回到停格",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（折折收摺音效＝收聲訊號；題卡模式。）",
+     "（題卡靜止。）"
+    ],
+    "estimateSec": 22.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a5_c003",
+   "sceneId": "kraft_stage",
+   "kind": "reveal",
+   "title": "〔題卡 Q7〕揭答",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.15
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "quiz.reveal",
+     "start": 0.3,
+     "duration": 0.45
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c003_01",
+     "speaker": "旁白",
+     "text": "正解是三：先找大人，沒大人就撥 119。"
+    }
+   ],
+   "next": "a5_c004",
+   "prevStable": "a5_c002",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "回饋見 `八題_v03.md` Q7；點 C 區一位說理由。最後：「捧燈手——」說完就按下一步，不等全班都做好。",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.0,
+   "tail": 1.2,
+   "storyboard": {
+    "beat": "Q7 題卡模式 → 揭答第 3 項 → 第七盞燈 → 回到停格",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（「正解」紙印章蓋在第 3 項；其他選項變淡。）"
+    ],
+    "estimateSec": 8.0,
+    "actionSec": 3.0
+   }
+  },
+  {
+   "id": "a5_c004",
+   "sceneId": "kraft_stage",
+   "kind": "lamp",
+   "title": "〔題卡 Q7〕點燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.15
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "lamp.light",
+     "start": 0.3,
+     "duration": 1.5,
+     "params": {
+      "index": 7
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a5_c004_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "light.restore",
+     "start": "a5_c004_01.end+0.3",
+     "duration": 1.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a5_c004_01.end+0.3",
+     "duration": 2.5,
+     "params": {
+      "to": "show_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c004_01",
+     "speaker": "折折",
+     "text": "第七盞燈，亮了。"
+    }
+   ],
+   "next": "a5_c005",
+   "prevStable": "a5_c003",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
+   "checkpoint": null,
+   "lamp": 7,
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.9,
+   "tail": 0.6,
+   "storyboard": {
+    "beat": "Q7 題卡模式 → 揭答第 3 項 → 第七盞燈 → 回到停格",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（第七盞紙燈慢慢亮起；回到校門口的停格。）"
+    ],
+    "estimateSec": 6.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a5_c005",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "分頭求助",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c005_01",
+     "speaker": "小宇",
+     "text": "陳伯伯——！"
+    },
+    {
+     "id": "a5_c005_02",
+     "speaker": "小晴",
+     "text": "我去辦公室找林老師！你待在門裡面，不要過去。"
+    },
+    {
+     "id": "a5_c005_03",
+     "speaker": "小宇",
+     "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。"
+    }
+   ],
+   "next": "a5_c006",
+   "prevStable": "a5_c004",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.0,
+   "tail": 9.0,
+   "storyboard": {
+    "beat": "環顧鏡頭約 4 秒（小宇視線）：接送區空空的；轉角後只露出陳伯伯導護旗一角，他背對這邊；小宇大叫「陳伯伯——」，沒有回應；小晴叫小宇待在門裡、自己往右跑進校園找林老師；小宇說「陳伯伯聽不到，林老師還沒出來……我來打 119」，舉起兒童手錶",
+    "cast": "小宇：X6 → X7、P-XY2 起；小晴 X7、跑步循環往右",
+    "camera": "主觀環顧（慢搖）→ 雙人 → 小宇中景",
+    "sound": "S8 → M6",
+    "directions": [
+     "（約 4 秒的環顧鏡頭，從小宇的視線看出去：接送區空空的，家長和學生都走了；遠處轉角後面只露出陳伯伯導護旗的一小角，他背對這邊，正帶低年級小朋友過馬路，看不到這裡。）",
+     "（沒有回應，旗子沒有轉過來。）",
+     "（小晴往右跑進校園。小宇舉起手腕上的兒童手錶。）",
+     "（順序在劇中完整演出：先叫附近的大人（陳伯伯，沒有回應）→ 一人去找大人（林老師）→ 找不到能馬上來的大人，留下的人在安全處撥 119。孩子始終待在校門裡，不過馬路、不靠近長椅。）"
+    ],
+    "estimateSec": 22.0,
+    "actionSec": 12.0
+   }
+  },
+  {
+   "id": "a5_c006",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "撥 119",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c006_01",
+     "speaker": "執勤人員",
+     "text": "119 您好，請問發生什麼事？在哪裡？"
+    },
+    {
+     "id": "a5_c006_02",
+     "speaker": "小宇",
+     "text": "這裡是小燈國小正門口。有一個大人坐在門口的椅子上，叫不醒。"
+    },
+    {
+     "id": "a5_c006_03",
+     "speaker": "執勤人員",
+     "text": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？"
+    },
+    {
+     "id": "a5_c006_04",
+     "speaker": "小宇",
+     "text": "我在校門裡面。我同學去找老師了。"
+    },
+    {
+     "id": "a5_c006_05",
+     "speaker": "執勤人員",
+     "text": "做得很好。待在安全的地方，聽我的指示。"
+    }
+   ],
+   "next": "a5_c007",
+   "prevStable": "a5_c005",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.3,
+   "tail": 3.7,
+   "storyboard": {
+    "beat": "輕輕的撥號音；右上方出現紙剪電話聲波圖示；119 問發生什麼事、在哪裡；小宇先說地點、再說狀況與人數、說自己在門裡；執勤人員肯定並請他待在安全處、聽指示（依消防署兒童版報案宣導核對）",
+    "cast": "小宇：P-XY2、X7 → X1；執勤人員（圖示）",
+    "camera": "小宇近景＋圖示",
+    "sound": "S11、S12（執勤人員電話音色）",
+    "directions": [
+     "（手錶撥號音很輕。畫面右上方出現紙剪的電話聲波圖示，代表 119 執勤人員。）",
+     "（**核對依據**：內政部消防署兒童版〈緊急報案宣導〉（https://www.nfa.gov.tw/kid/index.php?code=list&flag=detail&ids=659&article_id=1288，2026-10-20 查閱；演出前一週複查）。該頁的原則是：先到安全處，再撥 119；聽從 119 執勤人員的指示；告知事故地點、災害類型、規模與受傷人數。本段對應：小宇在校門裡（安全處）才撥；先說地點，再說發生什麼事與人數（一個大人、叫不醒）；執勤人員最後一句是「聽我的指示」。該頁沒有列出執勤人員的固定受理用語，所以執勤人員的問句寫成一般說法，只問狀況、地點與報案人是否安全，不加該頁沒有的承諾或操作；v01 的「電話先不要掛」因查無依據改掉。教師背景見 `八題_v03.md` Q7。）"
+    ],
+    "estimateSec": 30.0,
+    "actionSec": 5.0
+   }
+  },
+  {
+   "id": "a5_c007",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "大人接手",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "chen": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.15
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a5_c007_01",
+     "speaker": "林老師",
+     "text": "您好，我是小燈國小的老師，我來接手。"
+    },
+    {
+     "id": "a5_c007_02",
+     "speaker": "林老師",
+     "text": "你們沒有跑過去，還馬上找人幫忙，做得很好。"
+    }
+   ],
+   "next": "a5_c008",
+   "prevStable": "a5_c006",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX3"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.0,
+   "tail": 9.0,
+   "storyboard": {
+    "beat": "林老師和小晴從右側跑來；陳伯伯從轉角快步回來守在阿樂身邊叫他；林老師蹲到小宇身邊，小宇把手錶舉到她面前，她對著手錶接手通話，不把手錶拿下來（劇本 v02 已統一）；救護車從遠處慢慢開近；兩位救護人員扶阿樂躺上擔架送上車；林老師口語稱讚「你們沒有跑過去，還馬上找人幫忙，做得很好」",
+    "cast": "林老師：P-LIN1 → 站起 X2；陳伯伯：P-CH2（可選）；救護人員＋阿樂：P-AL2、L3；小晴、小宇 X5 → X1",
+    "camera": "全景（門內外分界）→ 救護車遠景（不特寫擔架上的臉）→ 林老師與孩子中景",
+    "sound": "S13（無警笛）、M6 漸收",
+    "directions": [
+     "（林老師和小晴從右側跑來；陳伯伯也從轉角快步回來，守在阿樂叔叔身邊，一直叫他的名字。林老師蹲到小宇身邊，小宇把手錶舉到她面前，她對著手錶接手通話，不把手錶拿下來。）",
+     "（一輛救護車從遠處慢慢開近：車身是自訂的愛心手掌圖示，沒有紅十字；車頂燈穩定亮著，不閃；只有引擎聲，沒有尖銳的警笛。兩位救護人員扶阿樂叔叔躺上擔架，送上車；操偶線鬆垂貼著身體，不拉起身體。）"
+    ],
+    "estimateSec": 21.0,
+    "actionSec": 12.0
+   }
+  },
+  {
+   "id": "a5_c008",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "醫院的走廊",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a5_c008_01",
+     "speaker": "葉護理師",
+     "text": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。"
+    },
+    {
+     "id": "a5_c008_02",
+     "speaker": "小晴",
+     "text": "是我們害叔叔被送來醫院的嗎？"
+    },
+    {
+     "id": "a5_c008_03",
+     "speaker": "葉護理師",
+     "text": "不是喔。你們找大人、打 119，是在幫他。"
+    },
+    {
+     "id": "a5_c008_04",
+     "speaker": "小宇",
+     "text": "叔叔會好起來嗎？"
+    },
+    {
+     "id": "a5_c008_05",
+     "speaker": "葉護理師",
+     "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。"
+    }
+   ],
+   "next": "a6_c001",
+   "prevStable": "a5_c007",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX11",
+    "FX8"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.5,
+   "tail": 4.5,
+   "storyboard": {
+    "beat": "亮度漸換到傍晚醫院走廊；小晴、小宇、林老師坐長椅；葉護理師從診間出來蹲下平視；說阿樂有醫護照顧、家人來了；小晴自責；葉說不是，找大人、打 119 是在幫他；小宇問會好嗎；葉說需要治療和時間",
+    "cast": "小晴：P-QG2、X9 → X5；小宇：P-XY3、X5；林老師：P-LIN2、X1；葉護理師：P-YE1、X2",
+    "camera": "走廊全景 → 蹲下平視中景",
+    "sound": "M7",
+    "directions": [
+     "（亮度慢慢轉換到傍晚的醫院走廊。小晴、小宇和林老師坐在長椅上。葉護理師從診間走出來，蹲下和孩子們平視。）"
+    ],
+    "estimateSec": 28.0,
+    "actionSec": 6.0
+   }
+  }
+ ]
+}

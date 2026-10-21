@@ -36,3 +36,7 @@ console.log(`[build] dist/app.js ${(bytes / 1024).toFixed(0)} KB、dist/index.ht
 // 產生資料包
 const { runPack } = await import(pathToFileURL(join(here, '../tools/pack.mjs')).href);
 await runPack({});
+
+// 教師控制台、按鍵測試頁、舞台端連結（dist/console.html、keytest.html、stage.html、console-link.js）
+const { buildConsole } = await import('./console.build.mjs');
+await buildConsole({ dev });

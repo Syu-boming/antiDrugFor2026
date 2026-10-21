@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7b90-a178-240ce591db24/exec-b1cfd03f-b25f-4c00-b704-7927358329dd.png`
+- Destination: [review/G5/shared_art/raw/chr_chen_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_chen_stand_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**

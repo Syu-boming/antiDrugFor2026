@@ -12,7 +12,9 @@
     "pack": "node ../tools/pack.mjs",
     "test:engine": "node ../tools/engine-test.mjs",
     "capture": "node ../tools/capture.mjs --cues demo --out ../review/_capture_test",
-    "capture:g4": "node ../tools/capture.mjs --cues g4 --probe --out ../review/_capture_g4"
+    "capture:g4": "node ../tools/capture.mjs --cues g4 --probe --out ../review/_capture_g4",
+    "build:console": "node console.build.mjs",
+    "test:console": "node ../tools/console-test.mjs"
   },
   "dependencies": {
     "three": "0.186.1"

@@ -17,6 +17,13 @@
 //   特效編號       → Cue.fx（例如 "FX5"）
 //   教師提示       → Cue.teacherNote
 //   查核點         → Cue.checkpoint
+//
+// G5 全劇（2026-10-21，主線授權的共用元件修改）：
+//   cue.set／setFade      每個 cue 可指定景（覆寫檔案層級的 set）；換景時亮度漸變（≥0.6 秒）
+//   cue.level1／level2    壓縮級別 1／2 時的替代版本（留哪些台詞、換掉動畫、最短長度）
+//   cue.storyboard        動態分鏡底稿（劇本舞台指示＋節拍表：節拍、角色、鏡頭、聲音），給各幕代理參考，引擎不讀
+//   checkpoint.escalate   查核點落後多少秒時建議啟用幾級壓縮
+//   CueFile.segments      全劇（app/cues/show/）合併後的段落資訊（tools/pack.mjs 產生，作者不用寫）
 
 /** cue 種類：title 署名卡待機／curtain 開幕閉幕／scene 劇情段／quiz 出題／reveal 揭答與回饋／wait 停住等老師／lamp 點燈 */
 export type CueKind = 'title' | 'curtain' | 'scene' | 'quiz' | 'reveal' | 'wait' | 'lamp';
@@ -128,6 +135,36 @@ export interface Checkpoint {
   label: string;
   /** 預定授課分鐘（從開演起算） */
   atMinute: number;
+  /** 落後 ≥ behindSec 秒時建議啟用 level 級壓縮（時長估算_v03.md 第 5 節） */
+  escalate?: { behindSec: number; level: 1 | 2 };
+}
+
+/** 壓縮時的替代版本（壓縮級別 1 或 2 啟用時套用；2 級會先套 1 級再套 2 級） */
+export interface CueVariant {
+  /** 只留這些台詞（台詞編號）；其他台詞不播、不上字幕（時間軸上收成 0 秒，錨在它們上的動作照樣解析） */
+  lines?: string[];
+  /** 整組換掉的動畫 */
+  animation?: CueAnimation[];
+  minDuration?: number;
+  voStart?: number;
+  tail?: number;
+}
+
+/** 動態分鏡底稿（tools/build_show_skeleton.py 由劇本與節拍表產生；引擎不讀，只給製作參考） */
+export interface Storyboard {
+  /** 節拍表「節拍」欄 */
+  beat?: string;
+  /** 節拍表「角色（姿勢／手型／表情）」欄 */
+  cast?: string;
+  /** 節拍表「鏡頭」欄 */
+  camera?: string;
+  /** 節拍表「聲音」欄 */
+  sound?: string;
+  /** 劇本的舞台指示（括號內文字，依出現順序） */
+  directions?: string[];
+  /** 劇本 cue 資訊的估計秒數與動作秒數 */
+  estimateSec?: number;
+  actionSec?: number;
 }
 
 export interface SfxEvent {
@@ -192,6 +229,23 @@ export interface Cue {
   musicLoop?: boolean;
   /** 落後 6 分鐘時的短版說明（壓縮級別 2 用） */
   shortVersion?: string;
+
+  // ---- G5 全劇 ----
+  /** 這個 cue 的舞台景（景名見 app/src/sets/registry.ts 或 assets/final/sets/<景名>/layout.json）；省略時用檔案層級的 set */
+  set?: string;
+  /**
+   * 換景時的亮度漸變秒數（從暗漸亮；最少 0.6）。跟前一個 cue 的景不同時自動套用（預設 0.8）；
+   * 景相同但想從暗漸亮也可以寫。進入時從暗開始的 cue，引擎會先把前一格畫面漸暗 0.6 秒再開始。
+   */
+  setFade?: number;
+  /** 壓縮級別 1 啟用時的替代版本（例如去掉搬運鏡頭） */
+  level1?: CueVariant;
+  /** 壓縮級別 2 啟用時的替代版本（短版，例如只播 _03） */
+  level2?: CueVariant;
+  /** 動態分鏡底稿（引擎不讀） */
+  storyboard?: Storyboard;
+  /** 所屬段落 id（全劇合併時由 tools/pack.mjs 填入，作者不用寫） */
+  segment?: string;
 }
 
 /** 角色名冊（cue 檔內）：角色 id → 顯示名稱 */
@@ -201,15 +255,45 @@ export interface CharacterRoster {
    * standee:<角色>＝整張圖立牌（例如 standee:xiaoqing）。assets/final/g4_manifest.json 的 characters 可覆寫。
    * x、z、facing：預設站位（cue 的 initialState.characters 可再覆寫）。
    */
-  [id: string]: { name: string; rig?: string; x?: number; z?: number; facing?: 1 | -1 };
+  [id: string]: {
+    name: string; rig?: string; x?: number; z?: number; facing?: 1 | -1;
+    /** rig 找不到時的程式佔位紙偶（adult／child；省略時 ale 用 adult、其他用 child） */
+    fallback?: 'adult' | 'child';
+  };
+}
+
+/** 全劇合併後的段落資訊（tools/pack.mjs 由 app/cues/show/index.json 產生） */
+export interface SegmentInfo {
+  /** 段落 id（＝段落檔的 id，例如 a2） */
+  id: string;
+  title: string;
+  /** 段落檔名（例如 a2.json） */
+  file: string;
+  /** 段落檔層級的景 */
+  set?: string;
+  /** 段落檔的角色名冊 */
+  characters?: CharacterRoster;
+  /** 這個段落的 cue（依序） */
+  cueIds: string[];
+}
+
+/** app/cues/show/index.json：全劇的段落清單 */
+export interface ShowIndex {
+  format: 'antidrug-show/1';
+  id: string;
+  title: string;
+  /** 依演出順序的段落檔名（同資料夾） */
+  segments: string[];
 }
 
 export interface CueFile {
   format: 'antidrug-cues/1';
   id: string;
   title: string;
-  /** 舞台景（workshop＝技術骨架佔位景；workshop_g4＝G4 燈籠店立體書景） */
+  /** 舞台景（workshop＝技術骨架佔位景；workshop_g4＝G4 燈籠店立體書景；kraft_stage＝全劇牛皮紙佔位景；其他見 app/SHOW_INTERFACE.md） */
   set?: string;
   characters?: CharacterRoster;
   cues: Cue[];
+  /** 全劇合併後才有：各段落的名冊與景（作者不用寫） */
+  segments?: SegmentInfo[];
 }

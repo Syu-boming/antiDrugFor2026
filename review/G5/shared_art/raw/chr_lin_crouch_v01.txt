@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d3d-31ab-7c30-b204-d4e72842fc41/exec-c4c72de7-ec80-4f07-8a80-ef395103ef79.png`
+- Destination: [review/G5/shared_art/raw/chr_lin_crouch_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_crouch_v01.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha channel: **Yes**
+- Copy verified byte-identical; no modifications.

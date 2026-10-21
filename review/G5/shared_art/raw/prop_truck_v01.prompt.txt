@@ -1,0 +1,18 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a single SIDE-VIEW cut-out of a small pickup truck (prop) for a children's paper-cut puppet theater (2.5D pop-up stage). LANDSCAPE orientation, request the wide 3:2 size (1536x1024), with a TRANSPARENT background (real alpha channel).
+
+The FIRST attached reference is the art-style reference (thick matte cardstock pop-up picture book). The SECOND attached reference is an approved stage composite of the same show: match its scenery style exactly (flat cut cardstock pieces, soft daylight colors, light paper fiber texture, crisp knife-cut edges, thin dark warm-gray lines, warm cream paper-core edges).
+
+CONTENT: ONE small Taiwanese-style mini pickup truck (a small cab-over light truck with a cargo bed), exact side view, the FRONT of the truck facing the VIEWER'S RIGHT. Body color: soft pale cream / lantern-paper beige (NOT white, NOT any delivery-company color), with warm gray bumpers and dark gray tires with cream hubcaps. The cab has a side window and a small REAR window (the window at the back of the cab). The cargo bed is covered with a muted olive-khaki canvas tarp tied down with a few cords. Near the rear window of the cab, ONE small pointed tip of a woven bamboo-strip frame pokes out from under the tarp - it looks like the tip of a cat's ear made of bamboo strips (just a small triangular bamboo-lattice corner, not obvious). Generic friendly rounded design, NOT any real brand or model: NO logo, NO emblem, NO text, NO numbers, NO license plate characters (no plate), NO stripes or company livery. Headlights and tail lights unlit, flat. Driver's door closed. Nobody inside, no driver.
+The whole truck is visible with transparent margin all around. One flat cardstock piece with a crisp knife-cut outline, exactly ONE white paper-core border around the outer silhouette, a thin dark warm-gray line inside it, and a fine kraft-brown cardstock thickness edge.
+
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no drop shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors. (Stage lighting is added later by software.)
+- Absolutely NO text of any kind anywhere: no letters, no Chinese characters, no numbers, no signs with writing, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos (no delivery/logistics company look). No people unless stated.
+- Calm, friendly, child-safe daytime scenery.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/shared_art/raw/prop_truck_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/shared_art/raw/prop_truck_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7130-a4ed-85f441539810/exec-419bda46-d9e8-40a1-9811-c6733af80e22.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_stand_v01.png`
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, with transparent pixels.
+- Copied unmodified; byte-for-byte match verified.

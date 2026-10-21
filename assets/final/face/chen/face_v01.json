@@ -1,0 +1,85 @@
+{
+ "character": "chen",
+ "version": "v01",
+ "format_note": "引擎原生 FaceConfig（app/src/stage/face.ts）。perPose 依立牌姿勢名稱（assets/final/rig/show_characters.json 的 poses）；最上層 mouth／eyes 是空槽（沒列在 perPose 的姿勢改用 fallbackFaces 退路換片）。anchor＝換片中心、size＝換片在姿勢圖上的像素尺寸，座標都是 assets/final 姿勢圖的像素。睜眼與原圖本來的嘴型沒有換片＝顯示原圖。",
+ "paintedMouth": "smile",
+ "paintedMouth_per_pose": {
+  "stand": "smile"
+ },
+ "paintedMouth_note": "FaceConfig 只有一個 paintedMouth（整個角色共用）。各姿勢原圖的嘴型在 paintedMouth_per_pose；每個姿勢都做了除了它自己原圖嘴型以外的全部嘴型換片，所以引擎要哪個嘴型都對得上（要原圖嘴型時顯示原圖）。",
+ "mouth": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 2,
+  "shapes": {
+   "closed": "none/chen-closed",
+   "half": "none/chen-half",
+   "open": "none/chen-open",
+   "round": "none/chen-round",
+   "worried": "none/chen-worried",
+   "smile": "none/chen-smile"
+  }
+ },
+ "eyes": {
+  "anchor": [
+   0,
+   0
+  ],
+  "size": [
+   1,
+   1
+  ],
+  "z": 1,
+  "shapes": {
+   "open": "none/chen-open",
+   "half": "none/chen-half",
+   "closed": "none/chen-closed"
+  }
+ },
+ "perPose": {
+  "stand": {
+   "eyes": {
+    "anchor": [
+     247.5,
+     192.0
+    ],
+    "size": [
+     131,
+     78
+    ],
+    "z": 1,
+    "shapes": {
+     "closed": "face/chen/chr-chen_stand-eyes_closed",
+     "half": "face/chen/chr-chen_stand-eyes_half"
+    }
+   },
+   "mouth": {
+    "anchor": [
+     242.0,
+     253.0
+    ],
+    "size": [
+     186,
+     46
+    ],
+    "z": 2,
+    "shapes": {
+     "closed": "face/chen/chr-chen_stand-mouth_closed",
+     "half": "face/chen/chr-chen_stand-mouth_half",
+     "open": "face/chen/chr-chen_stand-mouth_open",
+     "round": "face/chen/chr-chen_stand-mouth_round",
+     "worried": "face/chen/chr-chen_stand-mouth_worried"
+    }
+   },
+   "_image": "chr-chen_master"
+  }
+ },
+ "swap_rule": "硬切換（不做透明度交叉淡化）；兩眼在同一張換片，一定同時閉、同時開。",
+ "made_by": "review/G5/shared_art/scripts/build_faces_new.py"
+}

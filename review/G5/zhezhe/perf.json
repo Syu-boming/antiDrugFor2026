@@ -1,0 +1,38 @@
+{
+ "scene_without": {
+  "calls": 24,
+  "triangles": 556
+ },
+ "scene_with": {
+  "calls": 51,
+  "triangles": 1402
+ },
+ "frame_without_cat": {
+  "mean_ms": 2.14,
+  "p95_ms": 3,
+  "max_ms": 3.7
+ },
+ "frame_with_cat": {
+  "mean_ms": 3.06,
+  "p95_ms": 4.6,
+  "max_ms": 5.5
+ },
+ "cat_update": {
+  "mean_ms": 0.0126,
+  "worst_batch_mean_ms": 0.027,
+  "note": "每批 100 次 update（含尾巴、燈籠頂點重算）的平均"
+ },
+ "cat_triangles": 2234,
+ "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+ "visible_triangles_by_form": {
+  "idle": 842,
+  "card": 146,
+  "plane": 122,
+  "megaphone": 290,
+  "magnifier": 522,
+  "lantern": 1034,
+  "hat": 266,
+  "sheet": 194
+ },
+ "note": "本機（Apple M4、Chrome headless、1920×1080、MSAA）量測；學校 Windows 內顯筆電需實機確認"
+}

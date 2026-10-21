@@ -1,0 +1,4 @@
+- Source: [/Users/boming/.codex/generated_images/01a15d39-5863-7a10-a071-12deb1ccb9d8/exec-d71e78b6-0a0c-4cc3-b3c4-acbad945aa10.png](/Users/boming/.codex/generated_images/01a15d39-5863-7a10-a071-12deb1ccb9d8/exec-d71e78b6-0a0c-4cc3-b3c4-acbad945aa10.png)
+- Destination: [review/G5/shared_art/raw/chr_pinan_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_pinan_stand_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**

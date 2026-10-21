@@ -11,6 +11,14 @@
 //
 // 上一鍵：回到上一個穩定節點（cue 播完後的停住畫面），停止舊音軌並重建該節點畫面；回到題目時恢復成未揭答。
 // 「穩定節點」＝某個 cue 播完停住的畫面；等待狀態一律顯示該 cue 的最後一格（純函式重建）。
+//
+// G5 全劇（?cues=show）：
+// - 換景亮度漸變：要播的 cue 從暗開始（時間軸 enterFade > 0，例如換景）時，先把目前畫面漸暗 PREROLL_SEC 秒（預捲，
+//   在 cue 時間 0 之前；擷取時 seek 負的秒數看得到），cue 再從暗漸亮。上一步、章節跳轉換到別的景時（只在即時播放），
+//   也是先漸暗 0.6 秒再漸亮 0.6 秒，不會突然由亮轉暗（v1.2 第 17.3 節第 5 條）。
+// - 壓縮級別 0／1／2（setCompression）：重建時間軸；播放中設定的話等這段播完才套用。
+// - 查核點：記錄開演時間與每個查核點的實際分鐘，算落後秒數與建議的壓縮級別（checkpointReport）。
+// - window.__engineShow：章節、壓縮、查核點、景的狀態（教師控制台與測試用；主線之後可併進 window.__engine）。
 import type { Cue, CueFile } from '../types/cue';
 import { validateCueFile, type ValidationResult } from '../cues/validate';
 import { buildTimelines, type CueTimeline } from '../cues/timeline';
@@ -25,6 +33,39 @@ import type { InputController } from './input';
 import type { LipsyncData } from '../stage/perform';
 import { HOLD_MUSIC_RATIO, HOLD_TC } from '../audio/ducking';
 import { saveSettings, type Config } from '../config';
+import { ease } from '../util/math';
+
+/** 換景漸暗預捲（秒）：要播的 cue 從暗開始時，先把目前畫面漸暗這麼久（≥0.6，v1.2 第 17.3 節） */
+export const PREROLL_SEC = 0.6;
+/** 上一步、章節跳轉換景時的漸暗／漸亮（秒；只在即時播放） */
+export const NAV_FADE_SEC = 0.6;
+
+export type CompressionLevel = 0 | 1 | 2;
+
+export interface ChapterInfo { id: string; title: string; firstCue: string; lastCue: string; cueCount: number; durationSec: number; sets: string[] }
+
+export interface CheckpointStatus {
+  cueId: string; label: string; plannedMin: number;
+  /** 實際到達的授課分鐘（從片頭第一次按下一步起算；離開該 cue 時記錄，沒離開則用播完時） */
+  actualMin: number | null;
+  /** 落後秒數（正＝落後、負＝超前） */
+  behindSec: number | null;
+  escalate: { behindSec: number; level: 1 | 2 } | null;
+  /** 落後達到 escalate 門檻 */
+  triggered: boolean;
+}
+
+/** window.__engineShow：全劇介面（教師控制台與 tools/engine-test.mjs 用） */
+export interface ShowAPI {
+  chapters(): ChapterInfo[];
+  compression(): CompressionLevel;
+  setCompression(level: number): CompressionLevel | 'pending';
+  checkpoints(): { elapsedSec: number | null; suggested: CompressionLevel; list: CheckpointStatus[] };
+  resetShowClock(): void;
+  sets(): { active: string; built: number; disposed: number; lastBuildMs: number; liveSetGroups: number };
+}
+
+interface Transition { kind: 'preroll' | 'nav'; fromIndex: number; fromT: number; fromKey: string; start: number; out: number; inn: number; wall: boolean }
 
 export type Mode = 'loading' | 'preparing' | 'waiting' | 'playing' | 'context_lost' | 'error';
 export type Phase = 'loading' | 'preparing' | 'title_idle' | 'playing' | 'quiz_playing' | 'reveal_playing' | 'story_waiting'
@@ -48,10 +89,13 @@ export interface EngineState {
   cueTime: number; cueDuration: number; revealed: boolean; quizVisible: boolean; lampsLit: number[];
   placeholderAudio: boolean; activeVoices: number; voiceIds: string[]; voSounding: number; subtitle: string;
   missingAudio: string[]; castReport: string[]; set: string; actors: string[];
-  world: { curtain: number; titleCard: number; set: number; desat: number; spot: number; light: number } | null;
+  world: { curtain: number; titleCard: number; set: number; desat: number; spot: number; light: number; dim: number } | null;
   clock: string; audioState: string; avOffsetMs: number; leadInMs: number; quality: Quality; lock30: boolean; playId: number;
   ignoredInputs: number; ignoredRepeats: number; blockedKeys: number; lastBlockedKey: string | null;
   fps: number; contextLost: boolean; errors: string[]; warnings: string[]; gpu: string;
+  /** G5 全劇：段落、章節名、壓縮級別、建議級別、開演後秒數、這段的換景漸亮秒數、目前的預捲秒數、舞台調暗 */
+  segment: string | null; chapter: string; compression: CompressionLevel; suggestedCompression: CompressionLevel;
+  showElapsedSec: number | null; enterFade: number; prerollSec: number; dim: number;
 }
 
 export class Engine {
@@ -85,6 +129,12 @@ export class Engine {
   leadInMs: number;
   lock30: boolean;
   private lastWorld: WorldState | null = null;
+  /** 換景漸暗（預捲或上一步、章節跳轉） */
+  private trans: Transition | null = null;
+  compression: CompressionLevel = 0;
+  private pendingCompression: CompressionLevel | null = null;
+  private showStartMs: number | null = null;
+  private cpLog = new Map<string, { reachedMs?: number; leftMs?: number }>();
 
   constructor(private cfg: Config, private stage: Stage, private ui: UI, private mixer: Mixer, private input: InputController) {
     this.avOffsetMs = cfg.avOffsetMs;
@@ -106,6 +156,15 @@ export class Engine {
         else if (this.paused && st === 'running') void mixer.ctx!.suspend().catch(() => undefined);
       });
     }
+    const api: ShowAPI = {
+      chapters: () => this.chapters(),
+      compression: () => this.compression,
+      setCompression: (l) => this.setCompression(l),
+      checkpoints: () => this.checkpointReport(),
+      resetShowClock: () => { this.showStartMs = null; this.cpLog.clear(); },
+      sets: () => ({ active: this.stage.setName, built: this.stage.setStats.built, disposed: this.stage.setStats.disposed, lastBuildMs: Math.round(this.stage.setStats.lastBuildMs), liveSetGroups: this.stage.liveSetGroups }),
+    };
+    (window as unknown as { __engineShow?: ShowAPI }).__engineShow = api;
   }
 
   get capturing(): boolean { return this.cfg.capture; }
@@ -157,7 +216,7 @@ export class Engine {
       for (const id of lipIds) { const d = getPack<LipsyncData>(`lip:${id}`); if (d) this.lipsync.set(id, d); }
       this.missingAudio = [...nonVo].filter((id) => !man.audio[id] || (this.mixer.available && !this.mixer.has(id))).sort();
 
-      this.timelines = buildTimelines(file, (id) => this.mixer.duration(id));
+      this.timelines = buildTimelines(file, (id) => this.mixer.duration(id), { compression: this.compression });
       this.idIndex = new Map(this.timelines.map((t) => [t.cue.id, t.index]));
       this.lampsCache.clear();
       const voTotal = file.cues.reduce((n, c) => n + c.lines.length, 0);
@@ -170,6 +229,7 @@ export class Engine {
         { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊`, ok: voReal === voTotal ? true : null },
         { label: '音訊', value: this.mixer.available ? `可用（已解碼 ${decoded} 個音檔）` : '無法建立音訊（只顯示字幕）', ok: this.mixer.available },
         { label: '配樂音效', value: this.missingAudio.length ? `缺 ${this.missingAudio.length} 個檔（照常演出、該處無聲）：${this.missingAudio.join('、')}` : '全部就緒', ok: this.missingAudio.length ? null : true },
+        ...(file.segments?.length ? [{ label: '全劇', value: `${file.segments.length} 段：${file.segments.map((sg) => sg.title).join('、')}；景 ${[...new Set(this.timelines.map((t) => t.set))].join('、')}`, ok: true }] : []),
         { label: '紙偶', value: `${[...this.stage.actors.keys()].join('、') || '無'}${this.stage.castReport.length ? `；${this.stage.castReport.join('；')}` : ''}`, ok: this.stage.castReport.length ? null : true },
         { label: '顯示卡', value: this.stage.gpuInfo, ok: !/SwiftShader|llvmpipe|Software/i.test(this.stage.gpuInfo) },
         ...(this.validation.warnings.length ? [{ label: '提醒', value: this.validation.warnings.join('；'), ok: null }] : []),
@@ -297,7 +357,7 @@ export class Engine {
     for (const tl of this.timelines) {
       for (const t of [0, tl.duration * 0.5, tl.duration]) {
         const world = evaluateWorld(tl, t, this.lampsBefore(tl.index), this.stage.cameraResolver(tl));
-        this.stage.apply(world, tl, t, `warm#${tl.index}`);
+        this.stage.apply(world, tl, t, `warm#${tl.index}`, { keepSet: true });
         this.stage.render();
       }
     }
@@ -311,19 +371,29 @@ export class Engine {
   private playCue(i: number): void {
     const tl = this.timelines[i];
     if (!tl) return;
+    // 查核點與開演時間：從片頭待機第一次按下一步＝開演；離開查核點 cue 時記錄
+    const cur = this.timelines[this.index];
+    if (this.showStartMs === null && cur?.cue.kind === 'title' && this.mode === 'waiting' && i !== this.index) this.showStartMs = performance.now();
+    if (cur?.cue.checkpoint && this.mode === 'waiting' && i !== this.index) { const e = this.cpLog.get(cur.cue.id) ?? {}; e.leftMs ??= performance.now(); this.cpLog.set(cur.cue.id, e); }
+    // 換景漸暗預捲：要播的 cue 從暗開始，而目前畫面布幕開著、還沒暗 → 先把目前這一格漸暗 PREROLL_SEC 秒
+    const fw = this.lastWorld;
+    const pre = tl.enterFade > 0 && fw && fw.curtain > 0.01 && fw.dim < 0.99 && this.timelines.length ? PREROLL_SEC : 0;
+    const from = { fromIndex: this.index, fromT: this.displayTime(), fromKey: String(this.playId) };
     this.mixer.stop('vo');
     this.mixer.stop('sfx');
     this.index = i;
     this.playId++;
     this.mode = 'playing';
-    this.stage.director.reset();
-    if (this.clock instanceof VirtualClock) this.cueStart = this.clock.now();
+    // 預捲時舊的一格繼續用舊的模擬狀態（不重設，換到新 cue 時 PuppetDirector 會自己重設）
+    if (!pre) this.stage.director.reset();
+    if (this.clock instanceof VirtualClock) this.cueStart = this.clock.now() + pre;
     else {
       // 瀏覽器在背景時可能把 AudioContext 停掉；按鍵當下恢復
       if (this.clock.kind === 'audio' && this.mixer.ctx && this.mixer.ctx.state !== 'running') void this.mixer.ctx.resume();
       // 每段開頭的靜音（HDMI 吞音時由教師選單加長）：畫面停在第一格、聲音一起延後
-      this.cueStart = this.clock.now() + this.clock.lead() + this.leadInMs / 1000;
+      this.cueStart = this.clock.now() + pre + this.clock.lead() + this.leadInMs / 1000;
     }
+    this.trans = pre ? { kind: 'preroll', ...from, start: this.cueStart - pre - (this.clock instanceof VirtualClock ? 0 : this.clock.lead() + this.leadInMs / 1000), out: pre, inn: 0, wall: false } : null;
     this.scheduleAudio(tl);
     this.renderNow(performance.now());
   }
@@ -339,6 +409,11 @@ export class Engine {
     const music = tl.cue.audioId;
     if (music === 'none') this.mixer.crossfadeMusic('none', at(0), { fade: 1.0 });
     else if (music && this.mixer.musicId !== music) this.mixer.crossfadeMusic(music, at(0), { loop: tl.cue.musicLoop ?? true, fade: 1.0 });
+    else if (!music && !this.mixer.musicId && !tl.music.some((m) => m.at < 0.05)) {
+      // 上一步、章節跳轉後沒有配樂在播：補上照流程這時候應該在播的循環配樂（往前找最近一次的配樂設定）
+      const bg = this.effectiveMusic(tl.index);
+      if (bg) this.mixer.crossfadeMusic(bg.id, at(0), { loop: true, fade: 1.0, gain: bg.gain });
+    }
     for (const m of tl.music) this.mixer.crossfadeMusic(m.id, at(m.at), { loop: m.loop, fade: m.fade, gain: m.gain, offset: m.offset });
     const level = tl.cue.musicLevel ?? MUSIC_LEVEL[tl.cue.kind] ?? 0.6;
     this.mixer.setMusicLevel(level, at(0));
@@ -347,18 +422,41 @@ export class Engine {
     this.mixer.scheduleDucking(intervals);
   }
 
+  /** 照流程在第 i 個 cue 開始時應該在播的循環配樂（往前找最近的 music 事件或 audioId；一次播完的曲子、"none" 都算沒有） */
+  private effectiveMusic(i: number): { id: string; gain: number } | null {
+    for (let j = i - 1; j >= 0; j--) {
+      const t = this.timelines[j];
+      const last = t.music[t.music.length - 1];
+      if (last) return last.id !== 'none' && last.loop ? { id: last.id, gain: last.gain } : null;
+      const a = t.cue.audioId;
+      if (a === 'none') return null;
+      if (a) return (t.cue.musicLoop ?? true) ? { id: a, gain: 1 } : null;
+    }
+    return null;
+  }
+
   private enterWaiting(i: number, opts: { keepAudio?: boolean } = {}): void {
     if (!opts.keepAudio) { this.mixer.stop('all', 0.05); this.mixer.resetDucking(); }
+    // 上一步、章節跳轉到別的景（布幕開著）：即時播放時先漸暗再漸亮（不突然由亮轉暗）
+    const fw = this.lastWorld;
+    const from = { fromIndex: this.index, fromT: this.displayTime(), fromKey: String(this.playId) };
+    const target = this.timelines[i];
+    this.trans = null;
+    if (!opts.keepAudio && !this.capturing && fw && target && fw.curtain > 0.01 && fw.dim < 0.99 && target.endSet !== this.stage.setName) {
+      this.trans = { kind: 'nav', ...from, start: performance.now() / 1000, out: NAV_FADE_SEC, inn: NAV_FADE_SEC, wall: true };
+    }
     this.index = i;
     this.mode = 'waiting';
     this.playId++;
     this.waitEnteredAt = performance.now();
+    if (this.pendingCompression !== null) this.applyCompression(this.pendingCompression);
     if (!opts.keepAudio && this.clock.kind === 'audio') { const c = this.timelines[i].cue; this.mixer.setMusicLevel(c.musicLevel ?? MUSIC_LEVEL[c.kind] ?? 0.6); }
     this.renderNow(performance.now());
   }
 
   private finishCue(): void {
     const tl = this.timelines[this.index];
+    if (tl.cue.checkpoint) { const e = this.cpLog.get(tl.cue.id) ?? {}; e.reachedMs ??= performance.now(); this.cpLog.set(tl.cue.id, e); }
     this.enterWaiting(this.index, { keepAudio: true });
     if (tl.cue.autoAdvance && tl.nextIndex >= 0 && !this.capturing) this.playCue(tl.nextIndex);
   }
@@ -417,6 +515,7 @@ export class Engine {
   private shouldRender(ms: number): boolean {
     if (this.mode === 'context_lost' || this.stage.contextLost || !this.timelines.length) return false;
     if (this.capturing) return true;
+    if (this.trans && this.transActive()) return true; // 換景漸暗中：每格都畫
     let interval = 100; // 等待、暫停：畫面靜止，降低更新率
     if (this.mode === 'playing' && !this.paused) interval = this.lock30 ? 1000 / 30 - 4 : 0;
     else if (this.mode === 'preparing' || (this.mode === 'waiting' && this.index === 0)) interval = 250; // 署名卡待機降載
@@ -440,11 +539,43 @@ export class Engine {
     return out;
   }
 
+  /** 換景漸暗是否還在進行（預捲：時鐘還沒走到 cue 開始；上一步：漸暗＋漸亮還沒完） */
+  private transActive(): boolean {
+    const tr = this.trans;
+    if (!tr) return false;
+    const el = (tr.wall ? performance.now() / 1000 : this.clock.now()) - tr.start;
+    return el < tr.out + tr.inn;
+  }
+
+  /** 漸暗中的舊畫面（上一個 cue 的那一格，dim 疊上漸暗進度） */
+  private renderFrom(tr: Transition, dim: number): void {
+    const tl = this.timelines[tr.fromIndex];
+    if (!tl) return;
+    const world = evaluateWorld(tl, tr.fromT, this.lampsBefore(tr.fromIndex), this.stage.cameraResolver(tl));
+    world.dim = Math.max(world.dim, dim);
+    this.lastWorld = world;
+    this.stage.apply(world, tl, tr.fromT, tr.fromKey);
+    this.ui.update({ tl, t: tr.fromT, world, showSubs: false, placeholder: false, paused: this.paused });
+    if (!this.stage.contextLost) this.stage.render();
+  }
+
   renderNow(ms: number): void {
     const tl = this.timelines[this.index];
     if (!tl) return;
+    let extraDim = 0;
+    const tr = this.trans;
+    if (tr) {
+      const el = (tr.wall ? performance.now() / 1000 : this.clock.now()) - tr.start;
+      // 1e-6：虛擬時鐘在 cue 第 0 秒時 el 可能因浮點誤差差一點點，不能還停在預捲
+      if (el < tr.out - 1e-6 && (tr.kind === 'nav' || this.mode === 'playing')) { this.renderFrom(tr, ease('sine', el / tr.out)); this.lastRenderMs = ms; return; }
+      if (tr.kind === 'nav') {
+        if (el < tr.out + tr.inn) extraDim = 1 - ease('sine', (el - tr.out) / tr.inn);
+        else this.trans = null;
+      }
+    }
     const t = this.displayTime();
     const world = evaluateWorld(tl, t, this.lampsBefore(this.index), this.stage.cameraResolver(tl));
+    if (extraDim > 0) world.dim = Math.max(world.dim, extraDim);
     this.lastWorld = world;
     this.stage.apply(world, tl, t, String(this.playId));
     this.ui.update({
@@ -535,21 +666,89 @@ export class Engine {
       placeholderAudio: !!tl?.placeholder, activeVoices: this.mixer.activeVoices, voiceIds: this.mixer.activeIds(), voSounding: this.mixer.sounding('vo'),
       subtitle: this.ui.subs.currentText, missingAudio: [...this.missingAudio], castReport: [...this.stage.castReport], set: this.stage.setName,
       actors: [...this.stage.actors.keys()],
-      world: w ? { curtain: w.curtain, titleCard: w.titleCard, set: w.set, desat: w.desat, spot: w.spot, light: w.light } : null,
+      world: w ? { curtain: w.curtain, titleCard: w.titleCard, set: w.set, desat: w.desat, spot: w.spot, light: w.light, dim: Math.round(w.dim * 1000) / 1000 } : null,
       clock: this.clock.kind, audioState: this.mixer.state, avOffsetMs: this.avOffsetMs, leadInMs: this.leadInMs,
       quality: this.stage.quality, lock30: this.lock30, playId: this.playId,
       ignoredInputs: this.ignoredInputs, ignoredRepeats: this.input.ignoredRepeats, blockedKeys: this.input.blocked,
       lastBlockedKey: this.input.lastBlockedKey, fps: Math.round(this.fpsEma * 10) / 10, contextLost: this.stage.contextLost,
       errors: [...this.errors], warnings: this.validation?.warnings ?? [], gpu: this.stage.gpuInfo,
+      segment: tl?.cue.segment ?? null, chapter: this.file?.segments?.find((sg) => sg.id === tl?.cue.segment)?.title ?? '',
+      compression: this.compression, suggestedCompression: this.checkpointReport().suggested,
+      showElapsedSec: this.showStartMs === null ? null : Math.round((performance.now() - this.showStartMs) / 100) / 10,
+      enterFade: tl?.enterFade ?? 0, prerollSec: this.trans?.kind === 'preroll' && this.mode === 'playing' ? this.trans.out : 0,
+      dim: w ? Math.round(w.dim * 1000) / 1000 : 0,
     };
   }
 
-  getCues(): { id: string; kind: string; title: string; duration: number; placeholder: boolean; next: string | null; prevStable: string | null }[] {
+  getCues(): {
+    id: string; kind: string; title: string; duration: number; placeholder: boolean; next: string | null; prevStable: string | null;
+    segment: string | null; chapter: string; set: string; enterFade: number; compression: number; skipped: boolean; droppedLines: string[];
+    checkpoint: Cue['checkpoint']; teacherNote: string; quiz: { qid: string; number: number; answer: number } | null; lamp: number | null; lines: number;
+  }[] {
+    const segTitle = new Map((this.file?.segments ?? []).map((sg) => [sg.id, sg.title]));
     return this.timelines.map((t) => ({
       id: t.cue.id, kind: t.cue.kind, title: t.cue.title ?? '', duration: t.duration, placeholder: t.placeholder,
       next: t.nextIndex >= 0 ? this.timelines[t.nextIndex].cue.id : null,
       prevStable: t.prevStableIndex >= 0 ? this.timelines[t.prevStableIndex].cue.id : null,
+      segment: t.cue.segment ?? null, chapter: segTitle.get(t.cue.segment ?? '') ?? '', set: t.set, enterFade: t.enterFade,
+      compression: t.cue.compression, skipped: t.skipped, droppedLines: [...t.droppedLines],
+      checkpoint: t.cue.checkpoint, teacherNote: t.cue.teacherNote,
+      quiz: t.cue.kind === 'quiz' || t.cue.kind === 'reveal' ? (t.quiz ? { qid: t.quiz.qid, number: t.quiz.number, answer: t.quiz.answer } : null) : null,
+      lamp: t.cue.lamp ?? null, lines: t.lines.length,
     }));
+  }
+
+  /** 章節（全劇＝各段落；一般 cue 檔＝一章） */
+  chapters(): ChapterInfo[] {
+    const segs = this.file?.segments;
+    const groups = segs?.length
+      ? segs.map((sg) => ({ id: sg.id, title: sg.title, ids: sg.cueIds }))
+      : [{ id: this.file?.id ?? '', title: this.file?.title ?? '', ids: this.timelines.map((t) => t.cue.id) }];
+    return groups.map((g) => {
+      const tls = g.ids.map((id) => this.timelines[this.idIndex.get(id) ?? -1]).filter(Boolean);
+      return {
+        id: g.id, title: g.title, firstCue: g.ids[0], lastCue: g.ids[g.ids.length - 1], cueCount: g.ids.length,
+        durationSec: Math.round(tls.filter((t) => !t.skipped).reduce((n, t) => n + t.duration, 0) * 10) / 10,
+        sets: [...new Set(tls.map((t) => t.set))],
+      };
+    });
+  }
+
+  /** 壓縮級別：播放中設定的話等這段播完才套用（回傳 'pending'） */
+  setCompression(level: number): CompressionLevel | 'pending' {
+    const L = (Math.max(0, Math.min(2, Math.round(Number(level) || 0)))) as CompressionLevel;
+    if (this.mode === 'playing') { this.pendingCompression = L; return 'pending'; }
+    this.applyCompression(L);
+    return L;
+  }
+
+  private applyCompression(L: CompressionLevel): void {
+    this.pendingCompression = null;
+    const changed = L !== this.compression;
+    this.compression = L;
+    if (!changed || !this.file) return;
+    this.timelines = buildTimelines(this.file, (id) => this.mixer.duration(id), { compression: L });
+    this.idIndex = new Map(this.timelines.map((t) => [t.cue.id, t.index]));
+    this.lampsCache.clear();
+    this.stage.resetCaches();
+    if (this.mode === 'waiting') this.renderNow(performance.now());
+  }
+
+  /** 查核點：預定分鐘、實際分鐘、落後秒數、建議壓縮級別（時長估算_v03.md 第 5 節的門檻寫在 cue 的 checkpoint.escalate） */
+  checkpointReport(): { elapsedSec: number | null; suggested: CompressionLevel; list: CheckpointStatus[] } {
+    const start = this.showStartMs;
+    let suggested: CompressionLevel = 0;
+    const list: CheckpointStatus[] = this.timelines.filter((t) => t.cue.checkpoint).map((t) => {
+      const cp = t.cue.checkpoint!;
+      const log = this.cpLog.get(t.cue.id);
+      const at = log?.leftMs ?? log?.reachedMs;
+      const actualMin = start !== null && at !== undefined ? (at - start) / 60000 : null;
+      const behindSec = actualMin === null ? null : Math.round((actualMin - cp.atMinute) * 60);
+      const triggered = !!cp.escalate && behindSec !== null && behindSec >= cp.escalate.behindSec;
+      if (triggered && cp.escalate!.level > suggested) suggested = cp.escalate!.level;
+      return { cueId: t.cue.id, label: cp.label, plannedMin: cp.atMinute, actualMin: actualMin === null ? null : Math.round(actualMin * 100) / 100, behindSec, escalate: cp.escalate ?? null, triggered };
+    });
+    return { elapsedSec: start === null ? null : Math.round((performance.now() - start) / 100) / 10, suggested, list };
   }
 
   // ---------------------------------------------------------------- 擷取（?capture=1）
@@ -558,7 +757,9 @@ export class Engine {
   captureSeek(t: number): { t: number; mode: Mode; phase: Phase } {
     if (!(this.clock instanceof VirtualClock)) throw new Error('只有 ?capture=1 才能逐格擷取');
     const tl = this.timelines[this.index];
-    this.clock.set(this.cueStart + Math.max(0, t));
+    // 負的秒數＝換景漸暗預捲（只有這次播放有預捲時）
+    const pre = this.trans?.kind === 'preroll' ? this.trans.out : 0;
+    this.clock.set(this.cueStart + Math.max(-pre, t));
     if (t < tl.duration) {
       if (this.mode === 'waiting') this.mode = 'playing'; // 回到播放中（同一次播放，不重設）
       this.tick();

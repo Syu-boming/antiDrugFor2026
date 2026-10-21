@@ -1,0 +1,156 @@
+{
+ "gate_medium": {
+  "xiaoqing": {
+   "box_px": [
+    1231,
+    573,
+    1360,
+    934
+   ],
+   "bg_proj_v2_median": 0.556,
+   "bg_proj_v2_p10": 0.27,
+   "height_px": 361,
+   "ok_ge_0.50": true
+  },
+  "xiaoyu": {
+   "box_px": [
+    1338,
+    583,
+    1483,
+    928
+   ],
+   "bg_proj_v2_median": 0.53,
+   "bg_proj_v2_p10": 0.277,
+   "height_px": 345,
+   "ok_ge_0.50": true
+  }
+ },
+ "gate_wide": {
+  "xiaoqing": {
+   "box_px": [
+    1181,
+    717,
+    1273,
+    973
+   ],
+   "bg_proj_v2_median": 0.55,
+   "bg_proj_v2_p10": 0.262,
+   "height_px": 256,
+   "ok_ge_0.50": true
+  },
+  "xiaoyu": {
+   "box_px": [
+    1258,
+    724,
+    1361,
+    969
+   ],
+   "bg_proj_v2_median": 0.525,
+   "bg_proj_v2_p10": 0.257,
+   "height_px": 245,
+   "ok_ge_0.50": true
+  }
+ },
+ "gate_mid_low": {
+  "xiaoqing": {
+   "box_px": [
+    1249,
+    339,
+    1412,
+    797
+   ],
+   "bg_proj_v2_median": 0.56,
+   "bg_proj_v2_p10": 0.262,
+   "height_px": 458,
+   "ok_ge_0.50": true
+  },
+  "xiaoyu": {
+   "box_px": [
+    1384,
+    356,
+    1567,
+    792
+   ],
+   "bg_proj_v2_median": 0.531,
+   "bg_proj_v2_p10": 0.273,
+   "height_px": 436,
+   "ok_ge_0.50": true
+  }
+ },
+ "square_medium": {
+  "pinan": {
+   "box_px": [
+    540,
+    599,
+    661,
+    890
+   ],
+   "bg_proj_v2_median": 0.471,
+   "bg_proj_v2_p10": 0.281,
+   "height_px": 291,
+   "ok_ge_0.50": false
+  },
+  "xiaoqing": {
+   "box_px": [
+    906,
+    573,
+    1035,
+    934
+   ],
+   "bg_proj_v2_median": 0.477,
+   "bg_proj_v2_p10": 0.361,
+   "height_px": 361,
+   "ok_ge_0.50": false
+  },
+  "xiaoyu": {
+   "box_px": [
+    1060,
+    583,
+    1186,
+    928
+   ],
+   "bg_proj_v2_median": 0.473,
+   "bg_proj_v2_p10": 0.31,
+   "height_px": 345,
+   "ok_ge_0.50": false
+  }
+ },
+ "square_wide": {
+  "pinan": {
+   "box_px": [
+    692,
+    735,
+    777,
+    942
+   ],
+   "bg_proj_v2_median": 0.471,
+   "bg_proj_v2_p10": 0.281,
+   "height_px": 207,
+   "ok_ge_0.50": false
+  },
+  "xiaoqing": {
+   "box_px": [
+    952,
+    717,
+    1043,
+    973
+   ],
+   "bg_proj_v2_median": 0.48,
+   "bg_proj_v2_p10": 0.398,
+   "height_px": 256,
+   "ok_ge_0.50": false
+  },
+  "xiaoyu": {
+   "box_px": [
+    1061,
+    724,
+    1150,
+    969
+   ],
+   "bg_proj_v2_median": 0.481,
+   "bg_proj_v2_p10": 0.315,
+   "height_px": 245,
+   "ok_ge_0.50": false
+  }
+ }
+}

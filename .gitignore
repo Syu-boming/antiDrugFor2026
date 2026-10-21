@@ -39,3 +39,15 @@ review/G4/pack/capture/
 review/G4/pack/blink/
 review/G3/r1/**/*.wav
 review/G3/r2/**/*.wav
+
+# Electron 可攜版輸出（app/electron/pack.mjs 產生）
+app/electron/out/
+
+# G5：可重建或已有副本的檔（生成原圖已複製進 assets/generated；預覽資料包與影片可由 tools 重跑）
+review/G5/shared_art/raw/*.png
+review/G5/zhezhe/preview/data.js
+review/G5/**/*.mp4
+review/G5/*/pack/capture/
+review/G5/*/pack/frames*/
+review/G5/*/pack/strip_*/
+review/G5/*/pack/blink/

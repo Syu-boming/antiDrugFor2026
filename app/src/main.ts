@@ -1,4 +1,5 @@
 // 劇場程式進入點：建立舞台、音訊、疊層與引擎，掛上按鍵，並提供 window.__engine 給測試與擷取腳本。
+import './stage/zhezhe_program'; // 登記程式角色 zhezhe（import 時的副作用，要在 new Stage 之前）
 import { readConfig } from './config';
 import { Mixer } from './audio/mixer';
 import { Stage } from './stage/stage';
@@ -137,7 +138,10 @@ function boot(): void {
       audioLevels: () => ({ ...mixer.levels(), musicId: mixer.musicId, time: mixer.ctx?.currentTime ?? 0 }),
       probe: () => stage.probe(),
       hideActors: (on) => { stage.hideActorsForProbe = on; eng.renderNow(performance.now()); },
-      faces: () => Object.fromEntries([...stage.actors].map(([id, a]) => { const f = a.kind === 'rig' ? (a.activeFace ?? a.face) : a.face; return [id, f ? f.current : null]; })),
+      faces: () => Object.fromEntries([
+        ...[...stage.actors].map(([id, a]) => { const f = a.kind === 'rig' ? (a.activeFace ?? a.face) : a.face; return [id, f ? f.current : null] as const; }),
+        ...[...stage.programs].map(([id, p]) => [id, p.faceState?.() ?? null] as const),
+      ]),
       voiceSync: () => eng.voiceSync(),
       systemSuspendAudio: async () => { await mixer.ctx?.suspend(); return mixer.state; },
       systemResumeAudio: async () => { await mixer.ctx?.resume(); return mixer.state; },

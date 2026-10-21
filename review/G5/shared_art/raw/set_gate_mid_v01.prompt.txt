@@ -1,0 +1,22 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a KIT SHEET of separate standing set pieces (middle layer) for a school gate scene for a children's paper-cut puppet theater (2.5D pop-up stage). LANDSCAPE orientation, request the wide 3:2 size (1536x1024), with a TRANSPARENT background (real alpha channel).
+
+The FIRST attached reference is the art-style reference (thick matte cardstock pop-up picture book). The SECOND attached reference is an approved stage composite of the same show: match its scenery style exactly (flat cut cardstock pieces, soft daylight colors, light paper fiber texture, crisp knife-cut edges, thin dark warm-gray lines, warm cream paper-core edges).
+
+CONTENT: separate flat cardstock cut-out set pieces arranged on ONE sheet with clear empty transparent space between every piece (they will be cut apart and placed individually). Front (elevation) view, like stage flats. Pieces:
+1. (left) A short section of the school's low perimeter wall: cream plaster with a light terracotta-tile coping on top and a low green hedge strip in front at its base; plain, no text, about 3 times wider than tall.
+2. (center) The SCHOOL GATE: two sturdy square gate pillars in cream/light-gray washed-stone texture with simple caps, and between them an open gateway; a folded expandable (accordion) metal sliding gate in soft gray pushed open against the RIGHT pillar. The pillars carry NO plaque, NO emblem, NO lettering (plain surfaces only). The opening between the pillars is EMPTY TRANSPARENT (see-through).
+3. (right) A small GUARD HOUSE booth: light gray-green walls, a flat roof with a small overhang, one door, and one big front window whose glass area is EMPTY TRANSPARENT (a see-through hole with a cream window frame and a simple sill) so a person can be shown inside behind it later. No sign, no text, no emblem on it.
+4. (bottom row, small) two potted plants in simple terracotta pots and one low shrub.
+Each piece has a thin warm kraft-brown cardstock thickness edge and a fine dark outline; the outer silhouettes are crisp knife-cut.
+
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no drop shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors. (Stage lighting is added later by software.)
+- Absolutely NO text of any kind anywhere: no letters, no Chinese characters, no numbers, no signs with writing, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos (no delivery/logistics company look). No people unless stated.
+- Calm, friendly, child-safe daytime scenery.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/shared_art/raw/set_gate_mid_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/shared_art/raw/set_gate_mid_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

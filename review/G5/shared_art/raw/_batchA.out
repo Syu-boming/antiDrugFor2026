@@ -1,0 +1,33 @@
+started chr_pinan_stand_v01 pid 43692
+started chr_lin_stand_v01 pid 43696
+started chr_chen_stand_v01 pid 43700
+started chr_ye_stand_v01 pid 43704
+started pose_xy_watch_v06 pid 43706
+== chr_pinan_stand_v01
+- Source: [/Users/boming/.codex/generated_images/01a15d39-5863-7a10-a071-12deb1ccb9d8/exec-d71e78b6-0a0c-4cc3-b3c4-acbad945aa10.png](/Users/boming/.codex/generated_images/01a15d39-5863-7a10-a071-12deb1ccb9d8/exec-d71e78b6-0a0c-4cc3-b3c4-acbad945aa10.png)
+- Destination: [review/G5/shared_art/raw/chr_pinan_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_pinan_stand_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**-rw-r--r--@ 1 boming  staff  1942972 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_pinan_stand_v01.png
+== chr_lin_stand_v01
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7130-a4ed-85f441539810/exec-419bda46-d9e8-40a1-9811-c6733af80e22.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_stand_v01.png`
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, with transparent pixels.
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  1712519 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_lin_stand_v01.png
+== chr_chen_stand_v01
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7b90-a178-240ce591db24/exec-b1cfd03f-b25f-4c00-b704-7927358329dd.png`
+- Destination: [review/G5/shared_art/raw/chr_chen_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_chen_stand_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**-rw-r--r--@ 1 boming  staff  1989556 10月 21 14:53 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_chen_stand_v01.png
+== chr_ye_stand_v01
+- Source: `/Users/boming/.codex/generated_images/01a15d39-585b-7280-84fc-d2288a5f4cbf/exec-52496a6d-f1ee-4768-a92b-ec974fc60729.png`
+- Destination: [review/G5/shared_art/raw/chr_ye_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_ye_stand_v01.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; bytes verified identical.-rw-r--r--@ 1 boming  staff  1885937 10月 21 14:53 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/chr_ye_stand_v01.png
+== pose_xy_watch_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5864-7da2-b045-be6320dd36a9/exec-88250a2c-85df-481f-99dc-94f45071f459.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_watch_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_watch_v06.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  1853021 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_watch_v06.png

@@ -1,0 +1,19 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image for a children's paper-cut puppet theater. LANDSCAPE orientation, request the wide 3:2 size (1536x1024), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached: the FIRST is the art-style reference (thick matte cardstock pop-up picture book); the SECOND is the approved adult character of the same show (match his hand drawing style, skin rendering, line weight and white paper-core border).
+
+The image contains exactly TWO separate cut-out pieces with plenty of empty transparent space between them:
+
+PIECE A (left 60% of the canvas): an adult's forearm and hand reaching in from the LEFT EDGE of the canvas - the sleeve is cut off by the left edge of the picture on purpose, as if the arm comes out from behind a pillar off-screen. Plain charcoal-gray long sleeve with a simple cuff. The hand is relaxed and casual, palm facing UP, with a small box resting on the open palm, like casually handing something over to someone. Neutral medium skin tone. No jewelry, no watch, no rings, no tattoos, no nail polish, no scars, no hair on the hand. An ordinary friendly hand: NOT claw-like, NOT dark, NOT menacing. No face, no body, no shadow.
+
+THE SMALL BOX: a plain small rectangular box about the size of a palm (a simple cuboid; NOT shaped like any real product - not like an e-cigarette, vape pen, lighter, phone, cigarette pack or candy) completely covered with layer upon layer of gaudy, tacky stickers: shiny-looking stickers in clashing hot pink, lime green, lemon yellow and turquoise with abstract shapes only (stars, dots, zigzags, swirls), stickers overlapping each other, several sticker corners peeling up; from under one peeled corner a short little gray paper thread pokes out. The shine is only a few fixed tiny white sparkle marks. NO text, NO letters, NO numbers, NO logos, NO brand, NO cartoon characters, NO faces, NO smoke, NO vapor, NO scent lines.
+
+PIECE B (right 40% of the canvas): the SAME sticker-covered box alone, drawn about twice as large, at a slight three-quarter angle showing its front and top faces, with the same peeled sticker corners and the little gray thread.
+
+ART STYLE: each piece is a flat cut-out of thick matte cardstock with subtle paper-fiber texture and a crisp knife-cut outline; exactly ONE fixed-width white paper-core border (about 10-12 px) around each piece's outer silhouette (except where piece A is cut by the canvas edge), with a thin dark warm-gray line inside it. Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no glow, no cast or drop shadows. TRANSPARENT background, nothing else in the image. Absolutely NO text of any kind, no watermark, no signature.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/shared_art/raw/prop_inviter_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/shared_art/raw/prop_inviter_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

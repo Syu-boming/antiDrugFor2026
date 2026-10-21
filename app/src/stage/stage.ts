@@ -1,25 +1,31 @@
 // three.js 舞台管理：渲染器（WebGLRenderer）、相機、燈光、景、布幕、紙偶與特效，
 // 以及 GPU 中斷（webglcontextlost／restored）、預先編譯（compileAsync）與畫質等級 A／B。
-// 景與演員在 cue 檔載入後才建立（setScene）：景依 cue 檔的 set 欄位，演員依 cue 檔的 characters 名冊。
+// 景與演員在 cue 檔載入後才建立（setScene）：
+// - 景（G5）：每個 cue 的景＝時間軸的 set（cue.set ＞ 檔案層級 set），景名查 src/sets/registry.ts（找不到再找 layout.json、最後用佔位景）。
+//   換景時先釋放舊景（幾何、材質、貼圖），再建新景；換景發生在畫面全暗的時候（時間軸的 enterFade／引擎的漸暗預捲），dimmer 蓋住台口內。
+// - 演員（G5）：全劇所有段落名冊的聯集一次建好（演員池），每個 cue 只顯示它所屬段落名冊上的角色（位置、站位、層序依段落）；
+//   程式角色（例如折折）不經過 PuppetDirector，舞台每格直接呼叫它的 apply。
 import {
   CanvasTexture, Color, DirectionalLight, DoubleSide, Group, HemisphereLight, Mesh, MeshBasicMaterial, NoToneMapping, PCFShadowMap,
   PerspectiveCamera, PlaneGeometry, Scene, SRGBColorSpace, Vector3, WebGLRenderer, type Material, type MeshStandardMaterial,
   type Object3D, type Texture,
 } from 'three';
 import { Curtain } from './curtain';
-import { buildProscenium, buildWorkshop } from './sets';
-import { applyPopup, buildWorkshopG4, type PopPiece } from './workshop';
+import { applyPopup, type PopPiece } from './workshop';
 import { ANCHOR_CAMERA, CAMERA_PRESETS, LAYER, STAGE_OPENING, type CameraPreset } from './layers';
 import { MIN_STRING_PX, PuppetDirector, type LipsyncData, type Performer } from './perform';
-import { buildCast } from './cast';
+import { buildCastPool, castKey, retargetOrder, type AnyPerformer, type CastEntry, type ProgramPerformer } from './cast';
 import { configureStringTextures } from './strings';
 import { setTextureDensity, makeCanvas } from './paper';
 import { desatUniform, enableDesat, FollowSpot } from './fx';
 import type { AnchorName } from './rig';
-import type { WorldState, CameraResolver } from '../engine/world';
+import { setAt, type WorldState, type CameraResolver } from '../engine/world';
 import type { CueTimeline } from '../cues/timeline';
-import type { CueFile } from '../types/cue';
+import type { CharacterRoster, CueFile } from '../types/cue';
 import type { AssetStore } from '../data/assets';
+import { rosterFor } from '../cues/show';
+import { buildProscenium, buildSet, setCameras } from '../sets/registry';
+import type { BuiltSet, SetContext, SetLight } from '../sets/types';
 import { lerp } from '../util/math';
 
 export type Quality = 'A' | 'B';
@@ -33,6 +39,26 @@ export interface StageOptions {
 }
 
 const BASE = { hemi: 1.35, key: 2.2, fill: 0.5 };
+/** 燈光預設（景可以覆寫，見 src/sets/types.ts SetLight） */
+const LIGHT_DEFAULT = { key: [-7, 13, 16] as [number, number, number], keyColor: '#ffe9c8', hemiSky: '#fff3dc', hemiGround: '#6b5846' };
+/** 換景調暗：貼在相機前面的全畫面深色片（不測深度、最後畫），不透明度＝world.dim；字幕與題卡是 HTML，不受影響 */
+const DIMMER = { z: -0.6, order: 10000, color: '#0b0806' };
+
+/** 釋放一個物件樹裡的幾何、材質與貼圖（換景時舊景用） */
+function disposeTree(root: Object3D): void {
+  const texKeys = ['map', 'emissiveMap', 'alphaMap', 'normalMap', 'roughnessMap', 'metalnessMap', 'bumpMap', 'aoMap', 'lightMap'];
+  root.traverse((o) => {
+    const m = o as Mesh;
+    if (!m.isMesh) return;
+    m.geometry?.dispose();
+    const mats = Array.isArray(m.material) ? m.material : [m.material];
+    for (const mat of mats) {
+      if (!mat) continue;
+      for (const k of texKeys) { const t = (mat as unknown as Record<string, Texture | null>)[k]; if (t && typeof t.dispose === 'function') t.dispose(); }
+      mat.dispose();
+    }
+  });
+}
 
 function contactShadowTexture(): CanvasTexture {
   const [c, g] = makeCanvas(128, 64);
@@ -52,7 +78,10 @@ export class Stage {
   /** 長焦透視相機：垂直視角約 20° */
   readonly camera = new PerspectiveCamera(20, 16 / 9, 0.5, 200);
   readonly curtain: Curtain;
+  /** 目前段落在台上的紙偶（角色 id → 紙偶；PuppetDirector 只管這些） */
   actors = new Map<string, Performer>();
+  /** 目前段落的程式角色（例如折折） */
+  programs = new Map<string, ProgramPerformer>();
   readonly director: PuppetDirector;
   private hemi = new HemisphereLight('#fff3dc', '#6b5846', BASE.hemi);
   private key = new DirectionalLight('#ffe9c8', BASE.key);
@@ -62,11 +91,28 @@ export class Stage {
   private setGroup = new Group();
   private castGroup = new Group();
   private pieces: PopPiece[] = [];
+  /** 接觸陰影（演員池鍵 → 陰影） */
   private shadows = new Map<string, Mesh>();
+  /** 全劇演員池（castKey(id, rig) → 紙偶）與池內 renderOrder 基準 */
+  private pool = new Map<string, AnyPerformer>();
+  private poolBase = new Map<string, number>();
+  /** 目前在台上的演員池鍵（角色 id → 鍵） */
+  private activeKeys = new Map<string, string>();
+  private castSync = '';
+  private file: CueFile | null = null;
+  private assets: AssetStore | null = null;
+  private activeSet: { name: string; built: BuiltSet } | null = null;
+  private setMarks: Record<string, { x: number; z: number }> | undefined;
+  private lightMul = { key: 1, hemi: 1, fill: 1 };
+  private dimmer: Mesh;
+  private setReports = new Set<string>();
+  private castPoolReport: string[] = [];
+  /** 景的建立與釋放次數（測試「舊景釋放資源」用） */
+  readonly setStats = { built: 0, disposed: 0, buildMs: 0, lastBuildMs: 0 };
   private loseExt: WEBGL_lose_context | null = null;
   private size = { w: 1280, h: 720 };
   setName = '';
-  castReport: string[] = [];
+  get castReport(): string[] { return [...this.castPoolReport, ...this.setReports]; }
   castTimings: Record<string, number> = {};
   tableEdge: [number, number] | null = null;
   /** 量測用地標（世界座標；只有 workshop_g4 景有） */
@@ -109,53 +155,161 @@ export class Stage {
     });
     this.scene.add(this.curtain.group);
     for (const o of [pros.group, this.curtain.group]) o.traverse((m) => { const mat = (m as Mesh).material as Material | undefined; if (mat) enableDesat(mat); });
+    // 換景亮度漸變：相機前面一張全畫面深色片（整個畫面一起漸暗、漸亮）；dim 0 時不畫（畫面與 G4 相同）
+    this.dimmer = new Mesh(new PlaneGeometry(4, 4), new MeshBasicMaterial({ color: DIMMER.color, transparent: true, opacity: 0, depthWrite: false, depthTest: false }));
+    this.dimmer.position.set(0, 0, DIMMER.z);
+    this.dimmer.renderOrder = DIMMER.order;
+    this.dimmer.visible = false;
+    this.dimmer.frustumCulled = false;
+    this.dimmer.name = 'dimmer';
+    this.camera.add(this.dimmer);
+    this.scene.add(this.camera);
     this.director = new PuppetDirector(this.actors, opts.lipsync);
     this.createRenderer();
   }
 
-  /** 依 cue 檔建立景與演員（載入後呼叫一次） */
+  /** 依 cue 檔建立景與演員（載入後呼叫一次）：先建第一個 cue 的景，再建全劇演員池 */
   setScene(file: CueFile, assets: AssetStore | null): void {
-    this.setGroup.clear();
+    this.disposeActiveSet();
     this.castGroup.clear();
     this.shadows.clear();
     this.anchorCams.clear();
-    this.pieces = [];
-    const a2c = this.quality === 'A';
-    let marks: Record<string, { x: number; z: number }> | undefined;
-    this.setName = file.set ?? 'workshop';
-    if (this.setName === 'workshop_g4') {
-      const ws = buildWorkshopG4({ alphaToCoverage: a2c, image: (iid) => assets?.image(iid) });
-      this.setGroup.add(ws.group);
-      this.pieces = ws.pieces;
-      ws.materials.forEach(enableDesat);
-      marks = ws.marks;
-      this.tableEdge = ws.tableEdge;
-      this.landmarks = ws.landmarks;
-    } else {
-      this.landmarks = {};
-      const ws = buildWorkshop();
-      this.setGroup.add(ws.group);
-      ws.group.traverse((m) => { const mat = (m as Mesh).material as Material | undefined; if (mat) enableDesat(mat); });
-      marks = { ale: { x: -2.2, z: 0 }, xiaoqing: { x: 3.1, z: 0.3 } };
-      this.tableEdge = ws.tableEdge;
-    }
+    this.pool.clear();
+    this.poolBase.clear();
+    this.activeKeys.clear();
+    this.castSync = '';
+    this.setReports.clear();
+    this.file = file;
+    this.assets = assets;
+    const first = file.cues[0];
+    this.ensureSet(first?.set ?? file.set ?? 'workshop');
     // 操偶線紙繩與紙環貼圖（素材優先，缺圖用程式畫的退路）：要在建立紙偶之前設定
     const maxAniso = this.renderer?.capabilities.getMaxAnisotropy?.() ?? 4;
     const st = configureStringTextures(assets?.image('tex-string-rope'), assets?.image('tex-string-ring'), Math.min(8, maxAniso || 4));
-    const cast = buildCast(file.characters, assets, { alphaToCoverage: a2c, marks });
+    // 演員池：檔案名冊＋各段落名冊的聯集（依第一次出現的順序；單一 cue 檔＝名冊順序，與 G4 相同）
+    const entries: CastEntry[] = [];
+    const seen = new Set<string>();
+    const addRoster = (r: CharacterRoster | undefined): void => {
+      for (const [id, entry] of Object.entries(r ?? {})) { const key = castKey(id, entry.rig); if (!seen.has(key)) { seen.add(key); entries.push({ key, id, entry }); } }
+    };
+    if (file.segments?.length) for (const sg of file.segments) addRoster(sg.characters); else addRoster(file.characters);
+    const cast = buildCastPool(entries, assets, { alphaToCoverage: this.quality === 'A', marks: this.setMarks });
     if (st.rope === 'fallback' || st.ring === 'fallback') cast.report.push(`操偶線貼圖：紙繩 ${st.rope === 'image' ? '素材' : '程式退路'}、紙環 ${st.ring === 'image' ? '素材' : '程式退路'}`);
-    this.actors = cast.actors;
-    this.castReport = cast.report;
+    this.castPoolReport = cast.report;
     this.castTimings = cast.timings;
-    this.actors.forEach((a, id) => {
+    this.pool = cast.pool;
+    let k = 0;
+    for (const e of entries) {
+      const a = this.pool.get(e.key);
+      if (!a || this.poolBase.has(e.key)) continue;
+      this.poolBase.set(e.key, LAYER.actors.order + k * LAYER.actorStride);
+      k++;
       a.addTo(this.castGroup);
+      a.root.visible = false;
       const sh = new Mesh(new PlaneGeometry(1, 1), new MeshBasicMaterial({ map: this.shadowTex, transparent: true, depthWrite: false, side: DoubleSide }));
       sh.rotation.x = -Math.PI / 2;
       sh.renderOrder = LAYER.backdrop.order + 5;
+      sh.visible = false;
       this.castGroup.add(sh);
-      this.shadows.set(id, sh);
+      this.shadows.set(e.key, sh);
+    }
+    if (first) this.syncCast(first, first.set ?? file.set ?? 'workshop');
+  }
+
+  /** 時間軸重建（例如換壓縮級別）後清掉依 cue 快取的錨點鏡位 */
+  resetCaches(): void { this.anchorCams.clear(); }
+
+  /** 場景裡還掛著的景（換景後應該一直是 1：舊景已釋放） */
+  get liveSetGroups(): number { return this.setGroup.children.length; }
+
+  private setContext(): SetContext {
+    const assets = this.assets;
+    return {
+      name: '', alphaToCoverage: this.quality === 'A', quality: this.quality,
+      image: (id) => assets?.image(id), json: <T>(id: string) => assets?.getJson<T>(id),
+    };
+  }
+
+  /** 換景：同名不動；不同就釋放舊景、建新景（舞台全暗時呼叫，避免看到換景） */
+  private ensureSet(name: string): void {
+    if (this.activeSet?.name === name) return;
+    this.disposeActiveSet();
+    const t0 = performance.now();
+    const { built, report } = buildSet(name, { ...this.setContext(), name });
+    this.setGroup.add(built.group);
+    if (built.materials) built.materials.forEach(enableDesat);
+    else built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableDesat); });
+    this.pieces = built.pieces ?? [];
+    this.tableEdge = built.tableEdge ?? null;
+    this.landmarks = built.landmarks ?? {};
+    this.setMarks = built.marks;
+    this.applySetLight(built.light);
+    this.activeSet = { name, built };
+    this.setName = name;
+    for (const r of report) this.setReports.add(r);
+    this.setStats.built++;
+    this.setStats.lastBuildMs = performance.now() - t0;
+    this.setStats.buildMs += this.setStats.lastBuildMs;
+  }
+
+  private disposeActiveSet(): void {
+    const a = this.activeSet;
+    if (!a) { this.setGroup.clear(); return; }
+    this.setGroup.remove(a.built.group);
+    disposeTree(a.built.group);
+    try { a.built.dispose?.(); } catch { /* 景自己的釋放失敗不影響演出 */ }
+    this.activeSet = null;
+    this.pieces = [];
+    this.setStats.disposed++;
+  }
+
+  private applySetLight(l: SetLight | undefined): void {
+    const k = l?.key ?? LIGHT_DEFAULT.key;
+    this.key.position.set(k[0], k[1], k[2]);
+    this.key.color.set(l?.keyColor ?? LIGHT_DEFAULT.keyColor);
+    this.hemi.color.set(l?.hemiSky ?? LIGHT_DEFAULT.hemiSky);
+    this.hemi.groundColor.set(l?.hemiGround ?? LIGHT_DEFAULT.hemiGround);
+    this.lightMul = { key: l?.keyIntensity ?? 1, hemi: l?.hemiIntensity ?? 1, fill: l?.fillIntensity ?? 1 };
+  }
+
+  /**
+   * 換段落（或換景）時：段落名冊上的角色上台（位置＝名冊 x、z ＞ 景的站位 marks ＞ 0；層序依段落名冊順序），其他角色下台。
+   * 單一 cue 檔（G4、demo）只同步一次。
+   */
+  private syncCast(cue: { segment?: string } & Parameters<typeof rosterFor>[1], setName: string): void {
+    const key = `${cue.segment ?? ''}|${setName}`;
+    if (key === this.castSync || !this.file) return;
+    this.castSync = key;
+    const roster = rosterFor(this.file, cue);
+    const actors = new Map<string, Performer>();
+    const programs = new Map<string, ProgramPerformer>();
+    this.activeKeys.clear();
+    let j = 0;
+    for (const [id, entry] of Object.entries(roster)) {
+      const pk = castKey(id, entry.rig);
+      const p = this.pool.get(pk);
+      if (!p) continue;
+      const mark = this.setMarks?.[id];
+      p.place.x = entry.x ?? mark?.x ?? 0;
+      p.place.z = entry.z ?? mark?.z ?? 0;
+      p.place.facing = (entry.facing ?? 1) as 1 | -1;
+      retargetOrder(p, this.poolBase.get(pk) ?? LAYER.actors.order, LAYER.actors.order + j * LAYER.actorStride);
+      j++;
+      this.activeKeys.set(id, pk);
+      if (p.kind === 'program') programs.set(id, p); else actors.set(id, p);
+    }
+    // 下台：池裡其他紙偶與它們的線、陰影都藏起來
+    this.pool.forEach((p, pk) => {
+      if ([...this.activeKeys.values()].includes(pk)) return;
+      p.root.visible = false;
+      if (p.kind === 'rig') p.strings.forEach((s) => s.hide());
+      const sh = this.shadows.get(pk);
+      if (sh) sh.visible = false;
     });
-    this.director.setActors(this.actors);
+    const same = actors.size === this.actors.size && [...actors].every(([id, a]) => this.actors.get(id) === a);
+    this.actors = actors;
+    this.programs = programs;
+    if (!same) this.director.setActors(this.actors);
   }
 
   private createRenderer(): void {
@@ -203,6 +357,11 @@ export class Stage {
   /** 錨點鏡位："anchor:<角色>.<錨點>"，以該 cue 開始時（t=0）的姿勢計算，整段固定（純函式） */
   cameraResolver(tl: CueTimeline): CameraResolver {
     return (name, params) => {
+      // 景的鏡位（layout.json 的 cameras 或程式景的 cameras）
+      for (const sn of [tl.set, ...tl.anims.filter((a) => a.name === 'set.swap').map((a) => String(a.params.set))]) {
+        const cams = (this.activeSet?.name === sn ? this.activeSet.built.cameras : undefined) ?? setCameras(sn, this.setContext());
+        if (cams?.[name]) return cams[name];
+      }
       const m = /^anchor:([a-z0-9_]+)\.(wrist|elbow|knee|up)$/i.exec(name);
       if (!m) return null;
       let cams = this.anchorCams.get(tl.cue.id);
@@ -219,6 +378,7 @@ export class Stage {
 
   private computeAnchorCams(tl: CueTimeline): Map<string, CameraPreset> {
     const out = new Map<string, CameraPreset>();
+    this.syncCast(tl.cue, this.activeSet?.name ?? tl.set);
     this.director.reset();
     this.director.apply(tl, 0, '__anchor_probe__');
     const v = new Vector3();
@@ -242,19 +402,27 @@ export class Stage {
     return out;
   }
 
-  /** 把舞台層狀態與紙偶表演套到場景上 */
-  apply(world: WorldState, tl: CueTimeline, t: number, playKey: string): void {
+  /**
+   * 把舞台層狀態與紙偶表演套到場景上。
+   * @param opts.keepSet 預熱用：不換景（只擺紙偶），避免開演前把每個景都建一次
+   */
+  apply(world: WorldState, tl: CueTimeline, t: number, playKey: string, opts: { keepSet?: boolean } = {}): void {
+    if (!opts.keepSet) this.ensureSet(setAt(tl, t));
+    this.syncCast(tl.cue, this.activeSet?.name ?? tl.set);
     this.curtain.setOpen(world.curtain);
     applyPopup(this.pieces, world.set);
+    const dim = Math.min(1, Math.max(0, world.dim ?? 0));
+    this.dimmer.visible = dim > 0.001;
+    (this.dimmer.material as MeshBasicMaterial).opacity = dim;
     const c = world.camera;
     this.camera.position.set(...c.pos);
     this.camera.fov = c.fov;
     this.camera.lookAt(...c.target);
     this.camera.updateProjectionMatrix();
     const L = world.light;
-    this.hemi.intensity = BASE.hemi * lerp(0.45, 1, L);
-    this.key.intensity = BASE.key * L;
-    this.fill.intensity = BASE.fill * lerp(0.6, 1, L);
+    this.hemi.intensity = BASE.hemi * lerp(0.45, 1, L) * this.lightMul.hemi;
+    this.key.intensity = BASE.key * L * this.lightMul.key;
+    this.fill.intensity = BASE.fill * lerp(0.6, 1, L) * this.lightMul.fill;
     (this.lip.material as MeshStandardMaterial).emissiveIntensity = Math.max(0, (1 - L) * 2.2);
     desatUniform.value = world.desat;
     this.director.light = lerp(0.55, 1, L) + world.spot * 0.08;
@@ -262,20 +430,27 @@ export class Stage {
     const camDist = Math.hypot(c.pos[0] - c.target[0], c.pos[1] - c.target[1], c.pos[2] - c.target[2]);
     this.director.minStringWidth = MIN_STRING_PX * (2 * camDist * Math.tan((c.fov * Math.PI) / 360)) / 1080;
     this.director.apply(tl, t, playKey);
+    // 程式角色（折折等）：不經過 PuppetDirector
+    const chars = tl.cue.initialState.characters ?? {};
+    this.programs.forEach((p, id) => p.apply(tl, t, chars[id], { light: this.director.light, playKey: `${tl.cue.id}#${playKey}`, lipsync: this.opts.lipsync ?? (() => undefined) }));
+    // 景自己的每格更新（視差、程式景片）
+    this.activeSet?.built.update?.({ world, tl, t, camera: this.camera });
     // 追光跟著角色（胸口高度）
-    const target = world.spotTarget ? this.actors.get(world.spotTarget) : undefined;
+    const target = world.spotTarget ? (this.actors.get(world.spotTarget) ?? this.programs.get(world.spotTarget)) : undefined;
     if (target && world.spot > 0.001) {
       const r = target.root;
       this.spot.set(world.spot, [r.position.x, r.position.y + 1.9, r.position.z], 1.1);
     } else if (world.spotAt && world.spot > 0.001) this.spot.set(world.spot, world.spotAt, 1.1);
     else this.spot.set(0, null);
     // 接觸陰影
-    this.actors.forEach((a, id) => {
-      const sh = this.shadows.get(id)!;
+    const onStage: [string, AnyPerformer][] = [...this.actors, ...this.programs];
+    onStage.forEach(([id, a]) => {
+      const sh = this.shadows.get(this.activeKeys.get(id) ?? '');
+      if (!sh) return;
       const r = a.root;
       sh.visible = r.visible;
       if (!sh.visible) return;
-      const wide = a.kind === 'rig' ? 1.35 : 1.0;
+      const wide = a.kind === 'rig' ? 1.35 : a.kind === 'program' ? 0.6 : 1.0;
       const up = Math.max(0, Math.cos(r.rotation.x));
       sh.position.set(r.position.x, 0.012, r.position.z + 0.05);
       sh.scale.set(wide * up + 0.001, 0.5 * up + 0.001, 1);
@@ -283,9 +458,10 @@ export class Stage {
     });
     // 擷取量測用：隱藏所有角色，量背景亮度
     if (this.hideActorsForProbe) {
-      this.actors.forEach((a, id) => {
+      onStage.forEach(([id, a]) => {
         a.root.visible = false;
-        this.shadows.get(id)!.visible = false;
+        const sh = this.shadows.get(this.activeKeys.get(id) ?? '');
+        if (sh) sh.visible = false;
         if (a.kind === 'rig') a.strings.forEach((st) => st.hide());
       });
     }
@@ -492,6 +668,13 @@ export class Stage {
         }
         strings.push({ actor: id, anchor: n, anchorPx: b, widthPx, visible: true, dir: [dx / dl, dy / dl], path, ringPx, ringRadiusPx });
       });
+    });
+    // 程式角色（折折等）：只量外框
+    this.programs.forEach((a, id) => {
+      const box: [number, number, number, number] = [Infinity, Infinity, -Infinity, -Infinity];
+      a.root.updateMatrixWorld(true);
+      a.root.traverse((o) => { const m = o as Mesh; if (m.isMesh && m.visible && m.geometry) meshBox(m, box); });
+      actors.push({ id, box, visible: a.root.visible });
     });
     // 地標（桌面上緣、凳面上緣）：左右兩端投影到螢幕
     const landmarks: Record<string, [[number, number], [number, number]]> = {};

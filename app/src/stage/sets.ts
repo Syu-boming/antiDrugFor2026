@@ -1,5 +1,6 @@
 // 示範場景（燈籠工作室佔位）與台口：全部用程式產生的紙片，之後換成 assets/final 的正式景片。
 // 畫面上的字一律由程式排版，景片圖裡不放任何文字。
+// G5：景改由 src/sets/registry.ts 登記（workshop＝本檔 buildWorkshop、workshop_g4、kraft_stage、各幕的景），台口仍由舞台直接建立。
 import {
   CanvasTexture, Color, DoubleSide, Group, Mesh, MeshStandardMaterial, PlaneGeometry, RepeatWrapping, Shape, ShapeGeometry,
 } from 'three';

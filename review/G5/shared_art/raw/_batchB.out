@@ -1,0 +1,34 @@
+started pose_xq_cross_v06 pid 43691
+started pose_xy_cross_v06 pid 43695
+started pose_xq_palmno_v06 pid 43699
+started pose_xy_palmno_v06 pid 43703
+started prop_inviter_v01 pid 43705
+== pose_xq_cross_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7ab2-8f7b-8c9079ff9efc/exec-3f8448f1-69fc-43f1-b4bf-28d85cfb8b36.png`
+- Destination: [review/G5/shared_art/raw/pose_xq_cross_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_cross_v06.png>) — copied unmodified.
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes**, actual transparency verified.-rw-r--r--@ 1 boming  staff  1908953 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_cross_v06.png
+== pose_xy_cross_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7843-ac98-c8bdfbfc85aa/exec-3e273a38-5867-412f-90d8-9bec21ab5fce.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_cross_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_cross_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  1802544 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_cross_v06.png
+== pose_xq_palmno_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7630-b281-c59c55aeab64/exec-791929ea-0c08-40cc-a328-e395b1f56510.png`
+- Destination: [review/G5/shared_art/raw/pose_xq_palmno_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_palmno_v06.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha: **Yes, verified transparency**
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  1972765 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xq_palmno_v06.png
+== pose_xy_palmno_v06
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7b12-96ad-c7d16639223f/exec-f5d6fd05-19b1-4682-bbf2-402caaa07300.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_palmno_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_palmno_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-identical; no modifications.-rw-r--r--@ 1 boming  staff  1907885 10月 21 14:53 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_palmno_v06.png
+== prop_inviter_v01
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7521-970a-06853064fe34/exec-1cef04bb-aea4-4c36-88c0-0801447b9242.png`
+- Destination: `/Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/prop_inviter_v01.png`
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Unmodified copy verified.-rw-r--r--@ 1 boming  staff  1779651 10月 21 14:52 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/prop_inviter_v01.png

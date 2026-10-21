@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5863-7b12-96ad-c7d16639223f/exec-f5d6fd05-19b1-4682-bbf2-402caaa07300.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_palmno_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_palmno_v06.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copy verified byte-identical; no modifications.

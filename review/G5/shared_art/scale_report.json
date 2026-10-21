@@ -1,0 +1,257 @@
+{
+ "masters": {
+  "xiaoqing": {
+   "file": "assets/final/chr-xiaoqing_master_v04.png",
+   "feet": [
+    282.0,
+    1471.0
+   ],
+   "top": 16.0,
+   "H": 1455.0,
+   "head": 285.5,
+   "units_per_px": 0.001718213058419244
+  },
+  "xiaoyu": {
+   "file": "assets/final/chr-xiaoyu_master_v04.png",
+   "feet": [
+    282.5,
+    1426.0
+   ],
+   "top": 16.0,
+   "H": 1410.0,
+   "head": 276.0,
+   "units_per_px": 0.0017163120567375886
+  },
+  "pinan": {
+   "file": "assets/final/chr-pinan_master_v01.png",
+   "feet": [
+    327.0,
+    1494.0
+   ],
+   "top": 17.0,
+   "H": 1477.0,
+   "head": 319.0,
+   "units_per_px": 0.0016587677725118486
+  },
+  "lin": {
+   "file": "assets/final/chr-lin_master_v01.png",
+   "feet": [
+    243.0,
+    1524.0
+   ],
+   "top": 17.0,
+   "H": 1507.0,
+   "head": 242.5,
+   "units_per_px": 0.002269409422694094
+  },
+  "chen": {
+   "file": "assets/final/chr-chen_master_v01.png",
+   "feet": [
+    307.0,
+    1502.0
+   ],
+   "top": 17.0,
+   "H": 1485.0,
+   "head": 237.0,
+   "units_per_px": 0.0023232323232323234
+  },
+  "ye": {
+   "file": "assets/final/chr-ye_master_v01.png",
+   "feet": [
+    295.0,
+    1515.0
+   ],
+   "top": 17.0,
+   "H": 1498.0,
+   "head": 239.0,
+   "units_per_px": 0.002389853137516689
+  }
+ },
+ "xiaoqing:cross": {
+  "image": "assets/final/chr-xiaoqing_pose-cross_v06.png",
+  "head_metric_px": 297.5,
+  "head_ratio_vs_master": 1.042,
+  "H_auto_px": 1467.0,
+  "H_equiv_px": 1516.2,
+  "auto_vs_equiv": -0.032,
+  "explicit": false,
+  "units_per_px": 0.001704
+ },
+ "xiaoqing:palmno": {
+  "image": "assets/final/chr-xiaoqing_pose-palmno_v06.png",
+  "head_metric_px": 295.5,
+  "head_ratio_vs_master": 1.035,
+  "H_auto_px": 1460.0,
+  "H_equiv_px": 1506.0,
+  "auto_vs_equiv": -0.031,
+  "explicit": false,
+  "units_per_px": 0.001712
+ },
+ "xiaoqing:forehead": {
+  "image": "assets/final/chr-xiaoqing_pose-forehead_v06.png",
+  "head_metric_px": 283.0,
+  "head_ratio_vs_master": 0.991,
+  "H_auto_px": 1448.0,
+  "H_equiv_px": 1442.3,
+  "auto_vs_equiv": 0.004,
+  "explicit": false,
+  "units_per_px": 0.001727
+ },
+ "xiaoqing:walk": {
+  "image": "assets/final/chr-xiaoqing_pose-walk_v06.png",
+  "head_metric_px": 298.0,
+  "head_ratio_vs_master": 1.044,
+  "H_auto_px": 1410.0,
+  "H_equiv_px": 1468.8,
+  "auto_vs_equiv": -0.072,
+  "rule": "walk：等效身高＝自動偵測 ÷ 0.96（跨步）",
+  "explicit": true,
+  "units_per_px": 0.001702
+ },
+ "xiaoyu:cross": {
+  "image": "assets/final/chr-xiaoyu_pose-cross_v06.png",
+  "head_metric_px": 305.0,
+  "head_ratio_vs_master": 1.105,
+  "H_auto_px": 1425.0,
+  "H_equiv_px": 1558.2,
+  "auto_vs_equiv": -0.085,
+  "explicit": false,
+  "units_per_px": 0.001698
+ },
+ "xiaoyu:dial": {
+  "image": "assets/final/chr-xiaoyu_pose-watch-dial_v06.png",
+  "head_metric_px": 353.0,
+  "head_ratio_vs_master": 1.279,
+  "H_auto_px": 1456.0,
+  "H_equiv_px": 1803.4,
+  "auto_vs_equiv": -0.193,
+  "explicit": false,
+  "units_per_px": 0.001662
+ },
+ "xiaoyu:palmno": {
+  "image": "assets/final/chr-xiaoyu_pose-palmno_v06.png",
+  "head_metric_px": 322.5,
+  "head_ratio_vs_master": 1.168,
+  "H_auto_px": 1443.0,
+  "H_equiv_px": 1647.6,
+  "auto_vs_equiv": -0.124,
+  "explicit": false,
+  "units_per_px": 0.001677
+ },
+ "xiaoyu:forehead": {
+  "image": "assets/final/chr-xiaoyu_pose-forehead_v06.png",
+  "head_metric_px": 310.0,
+  "head_ratio_vs_master": 1.123,
+  "H_auto_px": 1498.0,
+  "H_equiv_px": 1583.7,
+  "auto_vs_equiv": -0.054,
+  "explicit": false,
+  "units_per_px": 0.001615
+ },
+ "xiaoyu:walk": {
+  "image": "assets/final/chr-xiaoyu_pose-walk_v06.png",
+  "head_metric_px": 326.0,
+  "head_ratio_vs_master": 1.181,
+  "H_auto_px": 1459.0,
+  "H_equiv_px": 1519.8,
+  "auto_vs_equiv": -0.124,
+  "rule": "walk：等效身高＝自動偵測 ÷ 0.96（跨步）",
+  "explicit": true,
+  "units_per_px": 0.001592
+ },
+ "pinan:stand": {
+  "image": "assets/final/chr-pinan_master_v01.png",
+  "head_metric_px": 319.0,
+  "head_ratio_vs_master": 1.0,
+  "H_auto_px": 1477.0,
+  "H_equiv_px": 1477.0,
+  "auto_vs_equiv": 0.0,
+  "explicit": false,
+  "units_per_px": 0.001659
+ },
+ "pinan:sit_lantern": {
+  "image": "assets/final/chr-pinan_pose-sit-lantern_v01.png",
+  "head_metric_px": 369.5,
+  "head_ratio_vs_master": 1.158,
+  "H_auto_px": 1416.0,
+  "H_equiv_px": 1710.8,
+  "auto_vs_equiv": -0.172,
+  "seat_px": 990,
+  "feet_below_soles_world": 0.286,
+  "explicit": true,
+  "units_per_px": 0.001432
+ },
+ "pinan:walk_straps": {
+  "image": "assets/final/chr-pinan_pose-walk-straps_v01.png",
+  "head_metric_px": 366.0,
+  "head_ratio_vs_master": 1.147,
+  "H_auto_px": 1448.0,
+  "H_equiv_px": 1508.3,
+  "auto_vs_equiv": -0.146,
+  "rule": "walk：等效身高＝自動偵測 ÷ 0.96（跨步）",
+  "explicit": true,
+  "units_per_px": 0.001624
+ },
+ "lin:stand": {
+  "image": "assets/final/chr-lin_master_v01.png",
+  "head_metric_px": 242.5,
+  "head_ratio_vs_master": 1.0,
+  "H_auto_px": 1507.0,
+  "H_equiv_px": 1507.0,
+  "auto_vs_equiv": 0.0,
+  "explicit": false,
+  "units_per_px": 0.002269
+ },
+ "lin:crouch": {
+  "image": "assets/final/chr-lin_pose-crouch_v01.png",
+  "head_metric_px": 345.5,
+  "head_ratio_vs_master": 1.425,
+  "H_auto_px": 1274.0,
+  "H_equiv_px": 2147.1,
+  "auto_vs_equiv": -0.407,
+  "explicit": true,
+  "units_per_px": 0.001593
+ },
+ "lin:sit": {
+  "image": "assets/final/chr-lin_pose-sit_v01.png",
+  "head_metric_px": 299.0,
+  "head_ratio_vs_master": 1.233,
+  "H_auto_px": 1482.0,
+  "H_equiv_px": 1858.1,
+  "auto_vs_equiv": -0.202,
+  "seat_px": 1013,
+  "feet_below_soles_world": 0.025,
+  "explicit": true,
+  "units_per_px": 0.001841
+ },
+ "chen:stand": {
+  "image": "assets/final/chr-chen_master_v01.png",
+  "head_metric_px": 237.0,
+  "head_ratio_vs_master": 1.0,
+  "H_auto_px": 1485.0,
+  "H_equiv_px": 1485.0,
+  "auto_vs_equiv": 0.0,
+  "explicit": false,
+  "units_per_px": 0.002323
+ },
+ "ye:stand": {
+  "image": "assets/final/chr-ye_master_v01.png",
+  "head_metric_px": 239.0,
+  "head_ratio_vs_master": 1.0,
+  "H_auto_px": 1498.0,
+  "H_equiv_px": 1498.0,
+  "auto_vs_equiv": 0.0,
+  "explicit": false,
+  "units_per_px": 0.00239
+ },
+ "ye:crouch": {
+  "image": "assets/final/chr-ye_pose-crouch_v01.png",
+  "head_metric_px": 312.5,
+  "head_ratio_vs_master": 1.308,
+  "H_auto_px": 1273.0,
+  "H_equiv_px": 1958.7,
+  "auto_vs_equiv": -0.35,
+  "explicit": true,
+  "units_per_px": 0.001828
+ }
+}

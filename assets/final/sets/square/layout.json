@@ -1,0 +1,221 @@
+{
+ "format": "antidrug-set/1",
+ "title": "小鎮廣場（紙燈節）",
+ "wall": {
+  "image": "set-square_sky",
+  "width": 26,
+  "y": -0.5,
+  "z": -5.0,
+  "emissive": 0.32
+ },
+ "floor": {
+  "color": "#d9c3a0",
+  "z": 7.0,
+  "depth": 12
+ },
+ "layers": [
+  {
+   "id": "mountains",
+   "image": "set-square_mountains",
+   "x": 0,
+   "y": -1.724,
+   "z": -4.2,
+   "width": 24,
+   "layer": "far",
+   "popup": [
+    0.05,
+    0.27
+   ],
+   "_note": "遠山：底邊在地面下，只在建築上緣後露出山脊"
+  },
+  {
+   "id": "backrow",
+   "image": "set-square_backrow",
+   "x": 3.2,
+   "y": -0.08,
+   "z": -3.2,
+   "width": 15.5,
+   "layer": "far",
+   "popup": [
+    0.14,
+    0.36
+   ],
+   "_note": "後排騎樓（五個拱門）"
+  },
+  {
+   "id": "arcade",
+   "image": "set-square_arcade",
+   "x": -1.0,
+   "y": -0.066,
+   "z": -1.6,
+   "width": 12.5,
+   "layer": "mid",
+   "popup": [
+    0.23,
+    0.45
+   ],
+   "_note": "前排紅磚騎樓：下層淺米色門面在角色身後"
+  },
+  {
+   "id": "tree-a",
+   "image": "set-square_tree-a",
+   "x": -6.6,
+   "y": -0.057,
+   "z": -0.8,
+   "width": 4.2,
+   "layer": "mid",
+   "popup": [
+    0.32,
+    0.54
+   ],
+   "_note": "左側行道樹（危險方位那側，邀請者從柱子後伸手時也可遮擋）"
+  },
+  {
+   "id": "tree-b",
+   "image": "set-square_tree-b",
+   "x": 6.4,
+   "y": -0.057,
+   "z": -0.8,
+   "width": 4.2,
+   "layer": "mid",
+   "popup": [
+    0.41,
+    0.63
+   ],
+   "_note": "右側行道樹"
+  },
+  {
+   "id": "planter-long",
+   "image": "set-square_planter-long",
+   "x": 4.6,
+   "y": -0.054,
+   "z": -0.5,
+   "width": 3.6,
+   "layer": "mid",
+   "popup": [
+    0.49,
+    0.71
+   ],
+   "_note": "長花台（求助站／長椅旁）"
+  },
+  {
+   "id": "prop-bench",
+   "image": "props/prop-bench",
+   "x": -2.4,
+   "y": -0.02,
+   "z": 0.0,
+   "width": 3.307,
+   "layer": "mid",
+   "popup": [
+    0.58,
+    0.8
+   ],
+   "_note": "品安 P-PA1 坐的長椅（座面 0.92；品安站位 z 要大於 0.0）",
+   "_seat_world_y": 0.92
+  },
+  {
+   "id": "planter-tall",
+   "image": "set-square_planter-tall",
+   "x": -7.4,
+   "y": -0.043,
+   "z": 2.4,
+   "width": 1.7,
+   "layer": "fore",
+   "popup": [
+    0.67,
+    0.89
+   ],
+   "_note": "左前景花台（畫面邊緣框景，不擋表演區）"
+  },
+  {
+   "id": "planter-mid",
+   "image": "set-square_planter-mid",
+   "x": 7.5,
+   "y": -0.039,
+   "z": 2.4,
+   "width": 1.6,
+   "layer": "fore",
+   "popup": [
+    0.76,
+    0.98
+   ],
+   "_note": "右前景花台"
+  }
+ ],
+ "grade": {
+  "preset": "day_warm"
+ },
+ "marks": {
+  "pinan": {
+   "x": -2.4,
+   "z": 0.2
+  },
+  "xiaoqing": {
+   "x": 0.4,
+   "z": 0.35
+  },
+  "xiaoyu": {
+   "x": 1.5,
+   "z": 0.1
+  },
+  "ye": {
+   "x": 4.6,
+   "z": 0.2
+  }
+ },
+ "landmarks": {
+  "benchSeat": {
+   "x0": -3.85,
+   "x1": -0.95,
+   "y": 0.92,
+   "z": 0.0
+  }
+ },
+ "cameras": {
+  "square_wide": {
+   "pos": [
+    0,
+    3.6,
+    27
+   ],
+   "target": [
+    0,
+    3.2,
+    0
+   ],
+   "fov": 20
+  },
+  "square_mid": {
+   "pos": [
+    0.3,
+    1.7,
+    17.5
+   ],
+   "target": [
+    0.3,
+    1.5,
+    0
+   ],
+   "fov": 20
+  },
+  "square_bench": {
+   "pos": [
+    -2.2,
+    1.4,
+    13
+   ],
+   "target": [
+    -2.2,
+    1.2,
+    0
+   ],
+   "fov": 20
+  }
+ },
+ "_made_by": "review/G5/shared_art/scripts/build_layouts.py（G5 共用美術代理）；擺位來源 review/G5/shared_art/sets/square_layout_source.json",
+ "_coords": "世界座標同 app/src/stage/layers.ts：x 向右、y 向上（地面 0）、z 朝觀眾；x,y＝圖片底邊中點；width／height 世界單位（height 依圖片比例算好）。layer 只是建議的層名（backdrop z=-5、far -3.2、mid -0.9、actors 0、fore 2.4）。",
+ "_staging": "兒童站位身後是騎樓下層的淺米色門面；平光預覽投影 v2 中位亮度約 0.47–0.48（review/G5/shared_art/sets/preview_report.json），差一點到 D-G2-06 的 0.50：引擎請比照 G4 bg-workshop-back 給騎樓景片自發光（約 0.3）或柔光區。",
+ "_lighting": "兒童站位身後是騎樓下層的淺米色門面；平光預覽投影 v2 中位亮度約 0.47–0.48（review/G5/shared_art/sets/preview_report.json），差一點到 D-G2-06 的 0.50：引擎請比照 G4 bg-workshop-back 給騎樓景片自發光（約 0.3）或柔光區。",
+ "_floor_note": "廣場地面：暖黃米色紙（G2 合成用的地面色），引擎用平塗紙紋或沿用 bg-workshop-floor 的做法另做；本關沒有新地面圖。",
+ "_preview": "review/G5/shared_art/sets/square_preview_*.png（Python 近似預覽，不是引擎擷取）"
+}

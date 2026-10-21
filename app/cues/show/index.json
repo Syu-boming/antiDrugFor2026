@@ -1,0 +1,16 @@
+{
+ "format": "antidrug-show/1",
+ "id": "show",
+ "title": "紙燈節（全劇）",
+ "segments": [
+  "a0.json",
+  "a1.json",
+  "a2.json",
+  "a3.json",
+  "a4.json",
+  "a5.json",
+  "a6.json",
+  "a7.json",
+  "a8.json"
+ ]
+}

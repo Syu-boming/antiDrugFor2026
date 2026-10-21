@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15d39-5864-7da2-b045-be6320dd36a9/exec-88250a2c-85df-481f-99dc-94f45071f459.png`
+- Destination: [review/G5/shared_art/raw/pose_xy_watch_v06.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/shared_art/raw/pose_xy_watch_v06.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.
