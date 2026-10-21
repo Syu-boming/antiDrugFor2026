@@ -7,6 +7,7 @@
 //   lantern    燈籠：手風琴摺的貓耳小燈籠，由扁平圓盤往上拉開；glow 0–1 柔和亮起（只做慢漸變，不閃）
 //   hat        紙帽子：前後兩片從併攏張開（a0_c004 摺錯的笑點）
 //   sheet      一張方形燈籠紙（a0_c002 登場前）：收摺時「摺、摺、摺」三下（對摺、再對摺、斜摺）成小三角紙包
+//   frog       紙青蛙（a1_c001 摺燈籠摺錯）：後腿、前腳、眼睛翻片依序攤開（G5 開場＋第一幕代理新增）
 // 單位：折折身高＝1（由 zhezhe.ts 的外層縮放成世界單位）。
 import {
   AdditiveBlending, BufferAttribute, BufferGeometry, CanvasTexture, Color, DoubleSide, Group, Matrix4, Mesh,
@@ -15,8 +16,8 @@ import {
 import { clamp, smoothstep } from '../util/math';
 import { PAPER_T, PaperBuilder, ZZ_COLORS, outlineGeometry, paperMaterial, triNormal, v3 } from './zhezhe_paper';
 
-export type FoldForm = 'idle' | 'card' | 'plane' | 'megaphone' | 'magnifier' | 'lantern' | 'hat' | 'sheet';
-export const FOLD_FORMS: FoldForm[] = ['idle', 'card', 'plane', 'megaphone', 'magnifier', 'lantern', 'hat', 'sheet'];
+export type FoldForm = 'idle' | 'card' | 'plane' | 'megaphone' | 'magnifier' | 'lantern' | 'hat' | 'sheet' | 'frog';
+export const FOLD_FORMS: FoldForm[] = ['idle', 'card', 'plane', 'megaphone', 'magnifier', 'lantern', 'hat', 'sheet', 'frog'];
 
 /** 建立部件時共用的設定 */
 export interface PartCtx {
@@ -573,4 +574,74 @@ function haloTexture(): CanvasTexture {
   haloTex = new CanvasTexture(c);
   haloTex.colorSpace = SRGBColorSpace;
   return haloTex;
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// 紙青蛙（a1_c001 摺燈籠摺錯的笑點；G5 開場＋第一幕代理新增，主線授權只新增造型）。
+// 正面看的摺紙青蛙：六角身體（淺橙正面朝觀眾）＋頭頂兩片圓眼翻片（墨點眼珠）＋身體兩側摺出的後腿＋底下兩隻小前腳＋一道寬嘴。
+// 收摺：後腿、前腳往前摺回身體正面，眼睛翻片往前翻下蓋住臉，整個疊成一片扁紙包；攤開時依序打開（先後腿、再前腳、最後眼睛立起）。
+// 單位同其他造型（折折身高＝1），腳底在 y＝0；全寬約 0.9、高約 0.52。
+// ---------------------------------------------------------------------------------------------------------------------
+export class FrogForm implements FormObject {
+  readonly group = new Group();
+  private flaps: { g: Group; axis: Vector3; folded: number; rest: number; win: [number, number] }[] = [];
+  private eyesUp: Group[] = [];
+  constructor(ctx: PartCtx, inkMat: Material) {
+    const F: string = ZZ_COLORS.front, B: string = ZZ_COLORS.back, t = PAPER_T;
+    const root = new Group();
+    this.group.add(root);
+    // 身體：正面淺橙（逆時針＝法線朝 +z）
+    const body = [v3(-0.27, 0.05, 0), v3(0.27, 0.05, 0), v3(0.25, 0.27, 0), v3(0.12, 0.37, 0), v3(-0.12, 0.37, 0), v3(-0.25, 0.27, 0)];
+    root.add(partMesh(new PaperBuilder().slab(body, F, B), ctx));
+    // 寬嘴（墨色細彎條，貼在身體正面）
+    const mouth: Vector3[] = [];
+    const N = 7;
+    for (let i = 0; i <= N; i++) { const u = i / N, x = -0.11 + 0.22 * u, y = 0.2 - 0.035 * Math.sin(Math.PI * u); mouth.push(v3(x, y, 0)); }
+    for (let i = N; i >= 0; i--) { const u = i / N, x = -0.11 + 0.22 * u, y = 0.2 - 0.035 * Math.sin(Math.PI * u) - 0.016 * Math.sin(Math.PI * u) - 0.004; mouth.push(v3(x, y, 0)); }
+    const mouthB = new PaperBuilder().slab(mouth.reverse(), ZZ_COLORS.ink, ZZ_COLORS.ink, t * 0.4);
+    const mouthM = partMesh(mouthB, ctx, { outline: false, mat: inkMat });
+    mouthM.position.z = t * 0.75;
+    root.add(mouthM);
+    // 翻片：pts 是攤開時的座標，a→b 是摺線；folded＝收摺時繞摺線轉的角度（轉到身體正面），rest＝完成形的微角度（立體感）
+    const flap = (pts: Vector3[], a: Vector3, b: Vector3, folded: number, rest: number, win: [number, number], z: number, front = F, back = B): Group => {
+      const g = new Group();
+      g.position.set(a.x, a.y, z);
+      g.add(partMesh(new PaperBuilder().slab(pts.map((p) => p.clone().sub(v3(a.x, a.y, 0))), front, back), ctx));
+      root.add(g);
+      this.flaps.push({ g, axis: b.clone().sub(a).normalize(), folded, rest, win });
+      return g;
+    };
+    // 後腿（左右）：鉸鏈在身體側邊，往前摺回身體正面；完成形略朝觀眾翹起
+    const lA = v3(-0.27, 0.05, 0), lB = v3(-0.25, 0.27, 0);
+    flap([v3(-0.27, 0.05, 0), v3(-0.25, 0.27, 0), v3(-0.36, 0.2, 0), v3(-0.45, 0.07, 0), v3(-0.4, 0.0, 0), v3(-0.3, 0.0, 0)], lA, lB, Math.PI - 0.06, 0.35, [0, 0.55], 1.5 * t);
+    const rA = v3(0.25, 0.27, 0), rB = v3(0.27, 0.05, 0);
+    flap([v3(0.27, 0.05, 0), v3(0.3, 0.0, 0), v3(0.4, 0.0, 0), v3(0.45, 0.07, 0), v3(0.36, 0.2, 0), v3(0.25, 0.27, 0)], rA, rB, Math.PI - 0.06, 0.35, [0.05, 0.6], 2.5 * t);
+    // 前腳（左右）：鉸鏈在身體底邊，往上摺回正面
+    const fl = v3(-0.2, 0.05, 0), fl2 = v3(-0.08, 0.05, 0);
+    flap([v3(-0.2, 0.05, 0), v3(-0.08, 0.05, 0), v3(-0.17, -0.0, 0), v3(-0.25, 0.0, 0)].reverse(), fl, fl2, -(Math.PI - 0.06), -0.25, [0.3, 0.8], 3.5 * t);
+    const fr = v3(0.08, 0.05, 0), fr2 = v3(0.2, 0.05, 0);
+    flap([v3(0.08, 0.05, 0), v3(0.2, 0.05, 0), v3(0.25, 0.0, 0), v3(0.17, 0.0, 0)].reverse(), fr, fr2, -(Math.PI - 0.06), -0.25, [0.32, 0.82], 4.5 * t);
+    // 眼睛翻片（左右）：鉸鏈在身體上緣，往前翻下蓋住臉；完成形微微前傾。墨點眼珠＋白色眼白（背面色）
+    const eye = (cx: number, z: number, win: [number, number]): void => {
+      const hy = 0.335, a = v3(cx - 0.075, hy, 0), b = v3(cx + 0.075, hy, 0);
+      const pts: Vector3[] = [];
+      for (let i = 0; i <= 8; i++) { const ang = Math.PI * (i / 8); pts.push(v3(cx + 0.075 * Math.cos(ang), hy + 0.145 * Math.sin(ang) * (0.82 + 0.18 * Math.sin(ang)), 0)); }
+      // 逆時針（角度 0→π：從右下沿上緣走到左下）；正面＝白色眼白
+      const g = flap(pts, b, a, -(Math.PI - 0.08), -0.25, win, 5.5 * t + z, B, F);
+      const pupil = new Mesh(discGeometry(0.03, 14), inkMat);
+      pupil.position.set(cx - b.x + (cx < 0 ? 0.008 : -0.008), 0.075, t * 0.75);
+      g.add(pupil);
+      ctx.tris.n += 14;
+      this.eyesUp.push(g);
+    };
+    eye(-0.085, 0, [0.55, 1]);
+    eye(0.085, t, [0.6, 1]);
+  }
+  setOpen(open: number): void {
+    for (const f of this.flaps) {
+      const k = sub(open, f.win[0], f.win[1]);
+      const ang = f.folded * (1 - k) + f.rest * k;
+      f.g.quaternion.setFromAxisAngle(f.axis, ang);
+    }
+  }
 }

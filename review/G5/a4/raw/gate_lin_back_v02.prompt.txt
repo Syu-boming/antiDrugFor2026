@@ -1,0 +1,11 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: the teacher "Ms. Lin" (林老師) from the attached character master seen FROM BEHIND, head and shoulders down to mid-chest only (she will be seen through a small window), SQUARE 1024x1024, TRANSPARENT background.
+She is talking on a mobile phone held to her right ear with her right hand (the phone a plain dark grey rounded rectangle, nothing on it); we see the back of her head with the same low bun, the back of her same deep-red cardigan; NO face visible at all. Calm pose. Same art style as the master.
+One flat cardstock piece, crisp knife-cut outline, ONE white paper-core border, thin dark warm-gray inner line.
+Destination: review/G5/a4/raw/gate_lin_back_v02.png (→ assets/final/sets/gate/set-gate_a4-lin-back_v02.png, width 0.8 world).
+Attach as references: S4 style sheet, assets/final/chr-lin_master_v01.png.
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors (stage lighting is added later by software).
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos. Calm, friendly, child-safe.
+
+After the image is generated: copy YOUR OWN generated PNG unmodified (no crop/resize/re-encode) to the destination path below inside the current workspace, print its pixel width x height and whether it has alpha, and the absolute source path. Do not create, edit or delete any other files. Do not regenerate unless the first generation failed.

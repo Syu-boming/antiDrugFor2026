@@ -1,0 +1,347 @@
+{
+ "act": "a0",
+ "proj": {
+  "16x9": 16
+ },
+ "compare_g4": {
+  "sheets": [
+   "compare_g4/compare_g4_01.png"
+  ],
+  "g4_refs": [
+   "review/G4/pack/capture/keyframes/a2_c002_012.59_mid.png",
+   "review/G4/pack/capture/keyframes/a2_c004_010.96_mid.png",
+   "review/G4/pack/capture/keyframes/a0_c001_011.60_after.png",
+   "review/G4/pack/capture/keyframes/a2_c002_025.18_after.png"
+  ],
+  "size": [
+   640,
+   360
+  ]
+ },
+ "audio": {
+  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
+  "file": "audio/a0_mix.wav",
+  "duration_sec": 130.3,
+  "sample_peak_dBFS": -1.15,
+  "clipped_samples": 0,
+  "full_playback": {
+   "I_LUFS": -16.6,
+   "LRA_LU": 13.3,
+   "TP_dBTP": -1.1
+  },
+  "line_vo_file_I_spread_LU": 0.4,
+  "line_mix_I_spread_LU": 0.7,
+  "momentary_max_LUFS": -9.4,
+  "momentary_max_rise_within_1s_LU": 41.5,
+  "momentary_max_rise_per_100ms_LU": 20.3,
+  "freeze_holds": [
+   {
+    "cue": "a0_c002",
+    "hold_from_sec": 38.91,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -43.1,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a0_c003",
+    "hold_from_sec": 67.55,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -43.8,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a0_c004",
+    "hold_from_sec": 100.56,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -41.7,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a0_c005",
+    "hold_from_sec": 126.8,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -43.1,
+    "pass_le_-35": true
+   }
+  ],
+  "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
+  "ducking_constants": {
+   "DUCK_LEVEL": 0.56,
+   "DUCK_LEAD": 0.15,
+   "DUCK_TC_DOWN": 0.06,
+   "DUCK_RELEASE": 0.3,
+   "DUCK_TC_UP": 0.25,
+   "DUCK_BRIDGE": 0.9,
+   "HOLD_MUSIC_RATIO": 0.1,
+   "HOLD_TC": 0.6
+  }
+ },
+ "flash_playback": {
+  "ok": true,
+  "max_changes_per_sec": {
+   "luma": 3,
+   "red": 2
+  },
+  "near_limit_total": 161,
+  "frames_analyzed": 3909
+ },
+ "flash_variants": {
+  "fine_32x18": {
+   "max_changes_per_sec": {
+    "luma": 6,
+    "red": 3
+   },
+   "near_limit_3_total": 171
+  },
+  "proj_16x9": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "near_limit_3_total": 6
+  },
+  "proj_32x18": {
+   "max_changes_per_sec": {
+    "luma": 4,
+    "red": 0
+   },
+   "near_limit_3_total": 97
+  }
+ },
+ "subtitle_sync": {
+  "method": "ffmpeg silencedetect noise=−45 dB、d=0.1 s 找配音檔的語音起點（第 1 頁＝第一個起點；之後各頁＝頁起點前後最接近的停頓後起點）；差值＝字幕頁起點 − 語音起點",
+  "range_s": [
+   -0.8,
+   0.1
+  ],
+  "all_pass": true
+ },
+ "video": {
+  "file": "a0_playback.mp4",
+  "frames": 3909,
+  "ffprobe": {
+   "programs": [],
+   "stream_groups": [],
+   "streams": [
+    {
+     "codec_name": "h264",
+     "width": 1920,
+     "height": 1080,
+     "r_frame_rate": "30/1",
+     "nb_frames": "3909",
+     "side_data_list": [
+      {}
+     ]
+    },
+    {
+     "codec_name": "aac",
+     "r_frame_rate": "0/0",
+     "nb_frames": "6109"
+    }
+   ],
+   "format": {
+    "duration": "130.300000",
+    "size": "44472942"
+   }
+  }
+ },
+ "durations": {
+  "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+  "cues": [
+   {
+    "cue": "a0_c000",
+    "kind": "title",
+    "duration_sec": 0,
+    "preroll_sec": 0,
+    "estimate_sec": null,
+    "diff_sec": null,
+    "vo_sec": 0,
+    "lines": 0
+   },
+   {
+    "cue": "a0_c001",
+    "kind": "curtain",
+    "duration_sec": 13.66,
+    "preroll_sec": 0,
+    "estimate_sec": 26.0,
+    "diff_sec": -12.3,
+    "vo_sec": 5.16,
+    "lines": 1
+   },
+   {
+    "cue": "a0_c002",
+    "kind": "scene",
+    "duration_sec": 20.65,
+    "preroll_sec": 0.6,
+    "estimate_sec": 18.5,
+    "diff_sec": 2.1,
+    "vo_sec": 10.25,
+    "lines": 3
+   },
+   {
+    "cue": "a0_c003",
+    "kind": "scene",
+    "duration_sec": 24.54,
+    "preroll_sec": 0.6,
+    "estimate_sec": 23.5,
+    "diff_sec": 1.0,
+    "vo_sec": 17.24,
+    "lines": 4
+   },
+   {
+    "cue": "a0_c004",
+    "kind": "scene",
+    "duration_sec": 29.51,
+    "preroll_sec": 0,
+    "estimate_sec": 24.8,
+    "diff_sec": 4.7,
+    "vo_sec": 19.96,
+    "lines": 6
+   },
+   {
+    "cue": "a0_c005",
+    "kind": "scene",
+    "duration_sec": 22.74,
+    "preroll_sec": 0,
+    "estimate_sec": 20.2,
+    "diff_sec": 2.5,
+    "vo_sec": 13.94,
+    "lines": 3
+   }
+  ],
+  "act_total_sec": 111.1,
+  "act_preroll_total_sec": 1.2,
+  "estimate_sum_sec": 113.0,
+  "act_budget_recorded_sec": 113.0,
+  "diff_vs_budget_sec": -0.7,
+  "playback_with_holds_sec": 130.3,
+  "holds_assumed_sec": {
+   "a0_c000": 2,
+   "a0_c001": 2,
+   "a0_c002": 3.5,
+   "a0_c003": 3.5,
+   "a0_c004": 3.5,
+   "a0_c005": 3.5
+  }
+ },
+ "safety": {
+  "string_anchors_in_cues": [],
+  "string_anchors_allowed": [
+   "elbow",
+   "knee",
+   "wrist"
+  ],
+  "string_anchors_only_allowed": true,
+  "actors_with_strings": [],
+  "probe_frames_with_strings": 0,
+  "string_path_min_dist_to_head_box_px": null,
+  "per_anchor": {},
+  "string_path_intersects_child_box": [],
+  "string_path_intersects_child_box_count": 0,
+  "probe_sources": [
+   "capture/probe.json",
+   "probe_dense.json"
+  ],
+  "probe_method": "線路徑＝引擎實際畫的中心線投影到螢幕；頭部框＝分件紙偶 head* 部件圖外框（含透明邊）；兒童框＝立牌外框（含透明邊）。",
+  "required_narration": {},
+  "lines_total": 17,
+  "lines_differ_from_script_v03": [],
+  "subtitle_max_chars_per_row": 16,
+  "subtitle_max_rows_per_page": 2,
+  "app_js_getUserMedia_count": 0,
+  "app_js_mediaDevices_count": 0,
+  "capture_external_requests": 0,
+  "capture_console_errors": 0
+ },
+ "frames_meta": {
+  "preroll": {
+   "a0_c000": 0,
+   "a0_c001": 0,
+   "a0_c002": 0.6,
+   "a0_c003": 0.6,
+   "a0_c004": 0,
+   "a0_c005": 0
+  },
+  "engineDurations": {
+   "a0_c000": 0,
+   "a0_c001": 13.66,
+   "a0_c002": 20.65,
+   "a0_c003": 24.54,
+   "a0_c004": 29.51,
+   "a0_c005": 22.74,
+   "a1_c001": 30.8,
+   "a1_c002": 14.53,
+   "a1_c003": 18.52,
+   "a1_c004": 30.2,
+   "a1_c005": 23.34,
+   "a1_c006": 6.97,
+   "a1_c007": 7.62,
+   "a1_c008": 26.38,
+   "a2_c001": 23.76,
+   "a2_c002": 25.18,
+   "a2_c003": 15.3,
+   "a2_c004": 21.91,
+   "a2_c005": 23.31,
+   "a2_c006": 7.16,
+   "a2_c007": 10.17,
+   "a2_c008": 38.35,
+   "a2_c009": 21.76,
+   "a2_c010": 6.49,
+   "a2_c011": 6.57,
+   "a2_c012": 34.7,
+   "a2_c013": 34.39,
+   "a3_c001": 21.95,
+   "a3_c002": 16.93,
+   "a3_c003": 24.65,
+   "a3_c004": 16.32,
+   "a3_c005": 23.31,
+   "a3_c006": 7.44,
+   "a3_c007": 6.88,
+   "a3_c008": 35.44,
+   "a4_c001": 23.92,
+   "a4_c002": 25.46,
+   "a4_c003": 15.52,
+   "a4_c004": 15.3,
+   "a4_c005": 18.67,
+   "a4_c006": 6.26,
+   "a4_c007": 6.56,
+   "a4_c008": 20.03,
+   "a4_c009": 25.71,
+   "a4_c010": 7.32,
+   "a4_c011": 8.62,
+   "a4_c012": 28.67,
+   "a4_c013": 28.35,
+   "a5_c001": 39.17,
+   "a5_c002": 23.02,
+   "a5_c003": 7.22,
+   "a5_c004": 6.72,
+   "a5_c005": 25.15,
+   "a5_c006": 34.73,
+   "a5_c007": 21.82,
+   "a5_c008": 30.96,
+   "a6_c001": 18.28,
+   "a6_c002": 30.66,
+   "a6_c003": 22.75,
+   "a6_c004": 6.94,
+   "a6_c005": 7.11,
+   "a6_c006": 33.71,
+   "a6_c007": 23.7,
+   "a6_c008": 25.07,
+   "a6_c009": 30.71,
+   "a7_c001": 26.67,
+   "a7_c002": 8.68,
+   "a7_c003": 14.76,
+   "a8_c001": 18.05,
+   "a8_c002": 5.4,
+   "a8_c003": 1.4
+  },
+  "errors": [],
+  "sets": {
+   "active": "workshop_a0",
+   "built": 2,
+   "disposed": 1,
+   "lastBuildMs": 2,
+   "liveSetGroups": 1
+  }
+ }
+}

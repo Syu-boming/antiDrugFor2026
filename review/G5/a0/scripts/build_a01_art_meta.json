@@ -1,0 +1,72 @@
+{
+ "assets/final/sets/workshop_a0/design_v01.png": {
+  "px_per_unit": 300,
+  "size_units": [
+   1.5,
+   1.85
+  ],
+  "size": [
+   450,
+   555
+  ]
+ },
+ "assets/final/sets/square_a1/sil*_v01.png": {
+  "body_px_per_unit": 453.24,
+  "body_size_px": [
+   481,
+   857
+  ],
+  "arm_pivot_px": [
+   240,
+   250
+  ],
+  "arm_px_per_unit": 453.24,
+  "bamboo_px_per_unit": 453.24,
+  "shoulder_in_body_px": [
+   83,
+   333
+  ]
+ },
+ "assets/final/sets/square_a1/wrapper_v01.png": {
+  "px_per_unit": 1000,
+  "hole_center_px": [
+   448.00000000000006,
+   275.0
+  ],
+  "size": [
+   800,
+   550
+  ]
+ },
+ "assets/final/chr-xiaoqing_pose-walkl_v01.png": {
+  "source": "chr-xiaoqing_pose-walk_v06.png（左右鏡像，往畫面左走）",
+  "size": [
+   880,
+   1448
+  ]
+ },
+ "assets/final/sets/square_a1/shopwindow_v01.png": {
+  "px_per_unit": 150,
+  "window_units_from_topleft": [
+   0.147,
+   0.56,
+   2.353,
+   2.24
+  ],
+  "size_units": [
+   2.5,
+   2.546666666666667
+  ],
+  "size": [
+   375,
+   382
+  ]
+ },
+ "assets/final/sets/square_a1/townsfolk_v01.png": {
+  "px_per_unit": 150,
+  "size": [
+   780,
+   390
+  ]
+ }
+}

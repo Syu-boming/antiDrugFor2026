@@ -1,0 +1,79 @@
+{
+ "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+ "cues": [
+  {
+   "cue": "a0_c000",
+   "kind": "title",
+   "duration_sec": 0,
+   "preroll_sec": 0,
+   "estimate_sec": null,
+   "diff_sec": null,
+   "vo_sec": 0,
+   "lines": 0
+  },
+  {
+   "cue": "a0_c001",
+   "kind": "curtain",
+   "duration_sec": 13.66,
+   "preroll_sec": 0,
+   "estimate_sec": 26.0,
+   "diff_sec": -12.3,
+   "vo_sec": 5.16,
+   "lines": 1
+  },
+  {
+   "cue": "a0_c002",
+   "kind": "scene",
+   "duration_sec": 20.65,
+   "preroll_sec": 0.6,
+   "estimate_sec": 18.5,
+   "diff_sec": 2.1,
+   "vo_sec": 10.25,
+   "lines": 3
+  },
+  {
+   "cue": "a0_c003",
+   "kind": "scene",
+   "duration_sec": 24.54,
+   "preroll_sec": 0.6,
+   "estimate_sec": 23.5,
+   "diff_sec": 1.0,
+   "vo_sec": 17.24,
+   "lines": 4
+  },
+  {
+   "cue": "a0_c004",
+   "kind": "scene",
+   "duration_sec": 29.51,
+   "preroll_sec": 0,
+   "estimate_sec": 24.8,
+   "diff_sec": 4.7,
+   "vo_sec": 19.96,
+   "lines": 6
+  },
+  {
+   "cue": "a0_c005",
+   "kind": "scene",
+   "duration_sec": 22.74,
+   "preroll_sec": 0,
+   "estimate_sec": 20.2,
+   "diff_sec": 2.5,
+   "vo_sec": 13.94,
+   "lines": 3
+  }
+ ],
+ "act_total_sec": 111.1,
+ "act_preroll_total_sec": 1.2,
+ "estimate_sum_sec": 113.0,
+ "act_budget_recorded_sec": 113.0,
+ "diff_vs_budget_sec": -0.7,
+ "playback_with_holds_sec": 130.3,
+ "holds_assumed_sec": {
+  "a0_c000": 2,
+  "a0_c001": 2,
+  "a0_c002": 3.5,
+  "a0_c003": 3.5,
+  "a0_c004": 3.5,
+  "a0_c005": 3.5
+ }
+}

@@ -1,0 +1,72 @@
+{
+ "format": "antidrug-set/1",
+ "title": "回想小窗（第二幕 a2_c003：小晴想起廣場上的盒子）",
+ "wall": {
+  "image": "bg-workshop-back",
+  "width": 21,
+  "y": -0.02,
+  "z": -3.6,
+  "emissive": 0.34
+ },
+ "floor": {
+  "image": "bg-workshop-floor",
+  "repeat": [
+   10,
+   4
+  ]
+ },
+ "layers": [
+  {
+   "id": "memBox",
+   "image": "mem-box",
+   "x": -0.05,
+   "y": 0.98,
+   "z": -0.4,
+   "width": 2.5,
+   "layer": "mid",
+   "order": 30,
+   "thick": 4,
+   "shadow": false,
+   "emissive": 0.25
+  },
+  {
+   "id": "memWrapper",
+   "image": "mem-wrapper",
+   "x": -0.05,
+   "y": 0.98,
+   "z": -0.4,
+   "width": 2.5,
+   "layer": "mid",
+   "order": 31,
+   "thick": 4,
+   "shadow": false,
+   "emissive": 0.25
+  }
+ ],
+ "grade": {
+  "preset": "muted"
+ },
+ "marks": {
+  "xiaoqing": {
+   "x": 2.15,
+   "z": 0.7
+  }
+ },
+ "cameras": {
+  "a2_memory_cu": {
+   "pos": [
+    1.05,
+    2.02,
+    8.6
+   ],
+   "target": [
+    1.05,
+    1.92,
+    0
+   ],
+   "fov": 20
+  }
+ },
+ "_made_by": "review/G5/a2/scripts/build_a2_art.py（a2 代理）；回想小窗的開合、翻面由 app/src/sets/a2_memory.ts 依台詞時間驅動",
+ "_note": "背牆沿用 G4 燈籠店 bg-workshop-back（同一間店），grade muted＋cue 的 desat 0.5 延續 a2_c002 的降彩；小窗內兩張圖已預先褪色（回憶）。"
+}

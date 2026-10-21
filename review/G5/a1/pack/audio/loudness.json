@@ -1,0 +1,529 @@
+{
+ "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
+ "file": "audio/a1_mix.wav",
+ "duration_sec": 186.26,
+ "sample_peak_dBFS": -1.21,
+ "clipped_samples": 0,
+ "full_playback": {
+  "I_LUFS": -16.4,
+  "LRA_LU": 16.1,
+  "TP_dBTP": -1.2
+ },
+ "per_cue": {
+  "a1_c001": {
+   "I_LUFS": -17.5,
+   "LRA_LU": 10.0,
+   "TP_dBTP": -1.4
+  },
+  "a1_c002": {
+   "I_LUFS": -16.4,
+   "LRA_LU": 5.1,
+   "TP_dBTP": -1.2
+  },
+  "a1_c003": {
+   "I_LUFS": -15.9,
+   "LRA_LU": 5.5,
+   "TP_dBTP": -1.4
+  },
+  "a1_c004": {
+   "I_LUFS": -16.0,
+   "LRA_LU": 9.3,
+   "TP_dBTP": -1.3
+  },
+  "a1_c005": {
+   "I_LUFS": -15.1,
+   "LRA_LU": 2.6,
+   "TP_dBTP": -2.7
+  },
+  "a1_c006": {
+   "I_LUFS": -15.3,
+   "LRA_LU": 2.6,
+   "TP_dBTP": -4.0
+  },
+  "a1_c007": {
+   "I_LUFS": -18.5,
+   "LRA_LU": 14.5,
+   "TP_dBTP": -2.5
+  },
+  "a1_c008": {
+   "I_LUFS": -17.0,
+   "LRA_LU": 19.1,
+   "TP_dBTP": -1.6
+  }
+ },
+ "lines": [
+  {
+   "id": "a1_c001_01",
+   "cue": "a1_c001",
+   "speaker": "小晴",
+   "start": 7.2,
+   "end": 10.31,
+   "vo_file": "audio/vo/vo_a1_c001_01_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -7.1,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -14.9,
+   "background_I_LUFS": -30.2,
+   "vo_minus_background_LU": 15.3
+  },
+  {
+   "id": "a1_c001_02",
+   "cue": "a1_c001",
+   "speaker": "品安",
+   "start": 10.76,
+   "end": 15.44,
+   "vo_file": "audio/vo/vo_a1_c001_02_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -1.6,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -29.4,
+   "vo_minus_background_LU": 14.4
+  },
+  {
+   "id": "a1_c001_03",
+   "cue": "a1_c001",
+   "speaker": "小宇",
+   "start": 15.89,
+   "end": 19.46,
+   "vo_file": "audio/vo/vo_a1_c001_03_v04.wav",
+   "vo_file_I_LUFS": -18.1,
+   "vo_file_TP_dBTP": -2.2,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.1,
+   "background_I_LUFS": -29.9,
+   "vo_minus_background_LU": 14.8
+  },
+  {
+   "id": "a1_c001_04",
+   "cue": "a1_c001",
+   "speaker": "折折",
+   "start": 19.91,
+   "end": 23.31,
+   "vo_file": "audio/vo/vo_a1_c001_04_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -5.6,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -31.6,
+   "vo_minus_background_LU": 16.6
+  },
+  {
+   "id": "a1_c001_05",
+   "cue": "a1_c001",
+   "speaker": "品安",
+   "start": 25.96,
+   "end": 28.0,
+   "vo_file": "audio/vo/vo_a1_c001_05_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -3.2,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -30.2,
+   "vo_minus_background_LU": 15.2
+  },
+  {
+   "id": "a1_c002_01",
+   "cue": "a1_c002",
+   "speaker": "邀請者",
+   "start": 37.6,
+   "end": 39.79,
+   "vo_file": "audio/vo/vo_a1_c002_01_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -2.1,
+   "mix_I_LUFS": -15.2,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -32.3,
+   "vo_minus_background_LU": 17.3
+  },
+  {
+   "id": "a1_c002_02",
+   "cue": "a1_c002",
+   "speaker": "邀請者",
+   "start": 40.24,
+   "end": 44.49,
+   "vo_file": "audio/vo/vo_a1_c002_02_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -1.6,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -30.3,
+   "vo_minus_background_LU": 15.3
+  },
+  {
+   "id": "a1_c002_03",
+   "cue": "a1_c002",
+   "speaker": "小宇",
+   "start": 44.94,
+   "end": 47.23,
+   "vo_file": "audio/vo/vo_a1_c002_03_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -4.6,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -32.2,
+   "vo_minus_background_LU": 17.2
+  },
+  {
+   "id": "a1_c003_01",
+   "cue": "a1_c003",
+   "speaker": "小宇",
+   "start": 53.83,
+   "end": 55.86,
+   "vo_file": "audio/vo/vo_a1_c003_01_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -1.6,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -29.3,
+   "vo_minus_background_LU": 14.3
+  },
+  {
+   "id": "a1_c003_02",
+   "cue": "a1_c003",
+   "speaker": "小晴",
+   "start": 56.31,
+   "end": 62.18,
+   "vo_file": "audio/vo/vo_a1_c003_02_v04.wav",
+   "vo_file_I_LUFS": -17.9,
+   "vo_file_TP_dBTP": -4.9,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -14.8,
+   "background_I_LUFS": -31.0,
+   "vo_minus_background_LU": 16.2
+  },
+  {
+   "id": "a1_c003_03",
+   "cue": "a1_c003",
+   "speaker": "折折",
+   "start": 62.63,
+   "end": 68.05,
+   "vo_file": "audio/vo/vo_a1_c003_03_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -3.4,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -31.8,
+   "vo_minus_background_LU": 16.8
+  },
+  {
+   "id": "a1_c004_01",
+   "cue": "a1_c004",
+   "speaker": "邀請者",
+   "start": 75.95,
+   "end": 80.22,
+   "vo_file": "audio/vo/vo_a1_c004_01_v04.wav",
+   "vo_file_I_LUFS": -18.1,
+   "vo_file_TP_dBTP": -1.9,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.1,
+   "background_I_LUFS": -31.4,
+   "vo_minus_background_LU": 16.3
+  },
+  {
+   "id": "a1_c004_02",
+   "cue": "a1_c004",
+   "speaker": "小晴",
+   "start": 80.67,
+   "end": 83.56,
+   "vo_file": "audio/vo/vo_a1_c004_02_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -6.1,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -14.9,
+   "background_I_LUFS": -32.0,
+   "vo_minus_background_LU": 17.1
+  },
+  {
+   "id": "a1_c004_03",
+   "cue": "a1_c004",
+   "speaker": "小晴",
+   "start": 84.01,
+   "end": 88.14,
+   "vo_file": "audio/vo/vo_a1_c004_03_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -5.3,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -30.1,
+   "vo_minus_background_LU": 15.1
+  },
+  {
+   "id": "a1_c004_04",
+   "cue": "a1_c004",
+   "speaker": "小宇",
+   "start": 88.59,
+   "end": 90.45,
+   "vo_file": "audio/vo/vo_a1_c004_04_v04.wav",
+   "vo_file_I_LUFS": -18.2,
+   "vo_file_TP_dBTP": -1.9,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.1,
+   "background_I_LUFS": -32.5,
+   "vo_minus_background_LU": 17.4
+  },
+  {
+   "id": "a1_c004_05",
+   "cue": "a1_c004",
+   "speaker": "小晴",
+   "start": 93.75,
+   "end": 97.41,
+   "vo_file": "audio/vo/vo_a1_c004_05_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -6.7,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -28.3,
+   "vo_minus_background_LU": 13.3
+  },
+  {
+   "id": "a1_c004_06",
+   "cue": "a1_c004",
+   "speaker": "品安",
+   "start": 97.86,
+   "end": 101.75,
+   "vo_file": "audio/vo/vo_a1_c004_06_v04.wav",
+   "vo_file_I_LUFS": -17.8,
+   "vo_file_TP_dBTP": -1.9,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -14.8,
+   "background_I_LUFS": -30.9,
+   "vo_minus_background_LU": 16.1
+  },
+  {
+   "id": "a1_c005_01",
+   "cue": "a1_c005",
+   "speaker": "折折",
+   "start": 110.05,
+   "end": 111.97,
+   "vo_file": "audio/vo/vo_a1_c005_01_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -5.4,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -28.0,
+   "vo_minus_background_LU": 13.0
+  },
+  {
+   "id": "a1_c005_02",
+   "cue": "a1_c005",
+   "speaker": "旁白",
+   "start": 112.42,
+   "end": 119.03,
+   "vo_file": "audio/vo/vo_a1_c005_02_v04.wav",
+   "vo_file_I_LUFS": -17.9,
+   "vo_file_TP_dBTP": -2.9,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -14.9,
+   "background_I_LUFS": -52.7,
+   "vo_minus_background_LU": 37.8
+  },
+  {
+   "id": "a1_c005_03",
+   "cue": "a1_c005",
+   "speaker": "旁白",
+   "start": 119.48,
+   "end": 122.77,
+   "vo_file": "audio/vo/vo_a1_c005_03_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -2.9,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -53.3,
+   "vo_minus_background_LU": 38.3
+  },
+  {
+   "id": "a1_c005_04",
+   "cue": "a1_c005",
+   "speaker": "旁白",
+   "start": 123.22,
+   "end": 126.81,
+   "vo_file": "audio/vo/vo_a1_c005_04_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -3.5,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -51.2,
+   "vo_minus_background_LU": 36.2
+  },
+  {
+   "id": "a1_c005_05",
+   "cue": "a1_c005",
+   "speaker": "旁白",
+   "start": 127.26,
+   "end": 130.99,
+   "vo_file": "audio/vo/vo_a1_c005_05_v04.wav",
+   "vo_file_I_LUFS": -17.9,
+   "vo_file_TP_dBTP": -2.7,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -14.9,
+   "background_I_LUFS": -52.6,
+   "vo_minus_background_LU": 37.7
+  },
+  {
+   "id": "a1_c006_01",
+   "cue": "a1_c006",
+   "speaker": "旁白",
+   "start": 135.99,
+   "end": 140.76,
+   "vo_file": "audio/vo/vo_a1_c006_01_v04.wav",
+   "vo_file_I_LUFS": -17.8,
+   "vo_file_TP_dBTP": -4.0,
+   "mix_I_LUFS": -14.8,
+   "vo_in_mix_I_LUFS": -14.8,
+   "background_I_LUFS": -57.3,
+   "vo_minus_background_LU": 42.5
+  },
+  {
+   "id": "a1_c007_01",
+   "cue": "a1_c007",
+   "speaker": "折折",
+   "start": 146.36,
+   "end": 148.38,
+   "vo_file": "audio/vo/vo_a1_c007_01_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -2.6,
+   "mix_I_LUFS": -14.9,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -33.6,
+   "vo_minus_background_LU": 18.6
+  },
+  {
+   "id": "a1_c008_01",
+   "cue": "a1_c008",
+   "speaker": "折折",
+   "start": 161.48,
+   "end": 165.32,
+   "vo_file": "audio/vo/vo_a1_c008_01_v04.wav",
+   "vo_file_I_LUFS": -18.1,
+   "vo_file_TP_dBTP": -4.2,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.1,
+   "background_I_LUFS": -41.1,
+   "vo_minus_background_LU": 26.0
+  },
+  {
+   "id": "a1_c008_02",
+   "cue": "a1_c008",
+   "speaker": "小晴",
+   "start": 165.77,
+   "end": 169.79,
+   "vo_file": "audio/vo/vo_a1_c008_02_v04.wav",
+   "vo_file_I_LUFS": -17.8,
+   "vo_file_TP_dBTP": -5.3,
+   "mix_I_LUFS": -14.7,
+   "vo_in_mix_I_LUFS": -14.8,
+   "background_I_LUFS": -38.2,
+   "vo_minus_background_LU": 23.4
+  },
+  {
+   "id": "a1_c008_03",
+   "cue": "a1_c008",
+   "speaker": "小宇",
+   "start": 176.99,
+   "end": 179.16,
+   "vo_file": "audio/vo/vo_a1_c008_03_v04.wav",
+   "vo_file_I_LUFS": -18.0,
+   "vo_file_TP_dBTP": -1.8,
+   "mix_I_LUFS": -15.0,
+   "vo_in_mix_I_LUFS": -15.0,
+   "background_I_LUFS": -37.4,
+   "vo_minus_background_LU": 22.4
+  }
+ ],
+ "line_vo_file_I_spread_LU": 0.4,
+ "line_mix_I_spread_LU": 0.5,
+ "momentary_max_LUFS": -8.9,
+ "momentary_max_rise_within_1s_LU": 42.1,
+ "momentary_max_rise_per_100ms_LU": 33.1,
+ "freeze_holds": [
+  {
+   "cue": "a1_c001",
+   "hold_from_sec": 31.4,
+   "hold_sec": 3.5,
+   "momentary_max_after_3s_LUFS": -40.0,
+   "pass_le_-35": true
+  },
+  {
+   "cue": "a1_c002",
+   "hold_from_sec": 49.43,
+   "hold_sec": 3.5,
+   "momentary_max_after_3s_LUFS": -45.8,
+   "pass_le_-35": true
+  },
+  {
+   "cue": "a1_c003",
+   "hold_from_sec": 71.45,
+   "hold_sec": 3.5,
+   "momentary_max_after_3s_LUFS": -42.5,
+   "pass_le_-35": true
+  },
+  {
+   "cue": "a1_c004",
+   "hold_from_sec": 105.15,
+   "hold_sec": 3.5,
+   "momentary_max_after_3s_LUFS": -45.4,
+   "pass_le_-35": true
+  },
+  {
+   "cue": "a1_c008",
+   "hold_from_sec": 182.76,
+   "hold_sec": 3.5,
+   "momentary_max_after_3s_LUFS": -51.8,
+   "pass_le_-35": true
+  }
+ ],
+ "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
+ "ducking_constants": {
+  "DUCK_LEVEL": 0.56,
+  "DUCK_LEAD": 0.15,
+  "DUCK_TC_DOWN": 0.06,
+  "DUCK_RELEASE": 0.3,
+  "DUCK_TC_UP": 0.25,
+  "DUCK_BRIDGE": 0.9,
+  "HOLD_MUSIC_RATIO": 0.1,
+  "HOLD_TC": 0.6
+ },
+ "events": [
+  {
+   "t": 0.6,
+   "music": "music_town",
+   "loop": true,
+   "fade": 1.0,
+   "gain": 1.0,
+   "offset": 0.0
+  },
+  {
+   "t": 35.2,
+   "music": "music_shiny",
+   "loop": true,
+   "fade": 2.2,
+   "gain": 1,
+   "offset": 0
+  },
+  {
+   "t": 80.47,
+   "music": "music_courage",
+   "loop": true,
+   "fade": 1.6,
+   "gain": 1,
+   "offset": 0
+  },
+  {
+   "t": 155.18,
+   "music": "music_town",
+   "loop": true,
+   "fade": 1,
+   "gain": 0.7,
+   "offset": 0
+  },
+  {
+   "t": 158.48,
+   "music": "music_m4_light",
+   "loop": true,
+   "fade": 3,
+   "gain": 0.42,
+   "offset": 0
+  }
+ ]
+}

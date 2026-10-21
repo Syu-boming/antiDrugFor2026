@@ -1,0 +1,251 @@
+{
+ "string_anchors_in_cues": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "string_anchors_allowed": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "string_anchors_only_allowed": true,
+ "actors_with_strings": [
+  "ale"
+ ],
+ "probe_frames_with_strings": 1160,
+ "string_path_min_dist_to_head_box_px": 15.3,
+ "per_anchor": {
+  "ale.wrist": {
+   "min_dist_to_head_box_px": 22.1,
+   "frames": 1160,
+   "at": "a4_c010 t=1"
+  },
+  "ale.elbow": {
+   "min_dist_to_head_box_px": 22.0,
+   "frames": 1160,
+   "at": "a4_c010 t=1"
+  },
+  "ale.knee": {
+   "min_dist_to_head_box_px": 15.3,
+   "frames": 1160,
+   "at": "a4_c001 t=10.9"
+  }
+ },
+ "string_path_intersects_child_box": [],
+ "string_path_intersects_child_box_count": 0,
+ "probe_sources": [
+  "capture/probe.json",
+  "probe_dense.json"
+ ],
+ "probe_method": "線路徑＝引擎實際畫的中心線投影到螢幕；頭部框＝分件紙偶 head* 部件圖外框（含透明邊）；兒童框＝立牌外框（含透明邊）。",
+ "required_narration": {},
+ "lines_total": 33,
+ "lines_differ_from_script_v03": [],
+ "subtitle_max_chars_per_row": 16,
+ "subtitle_max_rows_per_page": 2,
+ "subtitles": [
+  {
+   "id": "a4_c001_01",
+   "pages": 2,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c001_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c002_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a4_c002_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c002_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a4_c003_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c003_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c004_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a4_c004_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a4_c005_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 4
+  },
+  {
+   "id": "a4_c005_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c005_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a4_c005_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a4_c005_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a4_c006_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a4_c007_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 8
+  },
+  {
+   "id": "a4_c008_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a4_c008_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a4_c009_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 4
+  },
+  {
+   "id": "a4_c009_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c009_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c009_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a4_c009_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a4_c010_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c011_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 4
+  },
+  {
+   "id": "a4_c012_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a4_c012_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 7
+  },
+  {
+   "id": "a4_c012_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c012_04",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a4_c012_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a4_c013_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a4_c013_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a4_c013_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14
+  }
+ ],
+ "app_js_getUserMedia_count": 0,
+ "app_js_mediaDevices_count": 0,
+ "capture_external_requests": 0,
+ "capture_console_errors": 0
+}

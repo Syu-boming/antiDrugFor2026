@@ -1,0 +1,31 @@
+# 第四幕（a4）新素材：資產表列（給主線併入 ASSETS.md）
+
+2026-10-21，G5 第四幕代理。Codex image_gen 額度用完（約 19:50 恢復），全部用 Pillow＋G2 同款紙紋程式繪製（review/G5/a4/scripts/build_a4_art.py，借用 review/G5/shared_art/scripts/paperdraw.py 的畫法；可重跑）。圖裡沒有任何文字、數字、品牌、標誌、紅十字；車子是通用小車、路人與剪影是通用人形。show_characters.json 只新增 chen.poses.receive、lin.poses.standr 與對應的 fallbackFaces（chen:receive、lin:standr，眼嘴範圍由母版平移／鏡射）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/a4_roadmap/set-a4map_map_v01.png | 景片（俯視地圖，不透明）；3240×1620 | a4_roadmap（紙上的路） | 牛皮紙地圖：主路＋支路、人行道與行道樹、斑馬線、停止線、公園水池、校園花圃與球場線、右下屋頂、3×2 摺痕、紙星指北（無字母） | a4_c002（後半，gate 景也用同一張淡入）–a4_c008（前半） | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-a_v01.png | 立體書小屋（透明，白邊）；420×343 | a4_roadmap | 平房：赤陶屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-b_v01.png | 立體書小屋（透明，白邊）；420×409 | a4_roadmap | 二樓透天：灰綠屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-c_v01.png | 立體書小屋（透明，白邊）；464×321 | a4_roadmap | 小店：素色遮雨棚（不放招牌字） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-d_v01.png | 立體書小屋（透明，白邊）；376×354 | a4_roadmap | 兩層小屋：石板灰屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_school_v01.png | 立體書景片（透明，白邊）；1035×453 | a4_roadmap | 地圖上的學校（無校徽、無字） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_gatepost_v01.png | 立體書景片（透明，白邊）；88×209 | a4_roadmap | 地圖上的校門柱 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_tree_v01.png | 立體書景片（透明，白邊）；231×297 | a4_roadmap | 圓樹 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_walker_v01.png | 立體書小人（透明，白邊）；192×368 | a4_roadmap | 斑馬線上背書包的路人（背影、往學校走；通用人形） | a4_c002–a4_c004、a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_car_v01.png | 道具（俯視，透明，白邊）；344×203 | a4_roadmap | 紙剪小車：通用小車、灰綠色、無標誌（不是阿樂叔叔的小貨車） | a4_c002–a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_screen_v01.png | 剪影幕（不透明）；2200×1040 | a4_roadmap | 背光紙幕：暖米色、中央亮四周暗、背光下紙纖維較明顯、牛皮紙摺邊框 | a4_c004–a4_c008（FX10） | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-ground_v01.png | 剪影（透明）；2132×124 | a4_roadmap | 地面剪影：路面＋路緣，右段斑馬線用亮縫表示 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-car_v01.png | 剪影（透明）；680×324 | a4_roadmap | 車子側面剪影（車頭朝右）：前窗駕駛（雙手握方向盤）、後窗乘客；窗挖空透出背光 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-walker_v01.png | 剪影（透明）；190×390 | a4_roadmap | 背書包的路人側面剪影（往右走） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-key_v01.png | 道具（透明，白邊）；424×244 | gate（校門口） | 車鑰匙：圓環鑰匙頭、鑰匙齒、灰色鑰匙圈、青綠小紙牌（無字）；跟著阿樂叔叔／陳伯伯的手 | a4_c001、a4_c002、a4_c008–a4_c011、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-flag_v01.png | 道具（透明，白邊）；336×544 | gate | 導護旗：黃綠色小旗（無字、無圖案）＋竹柄；陳伯伯另一手拿著 | a4_c001、a4_c012、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-phone_v01.png | 道具（透明，白邊）；152×262 | gate | 林老師的手機：深灰圓角、螢幕淡灰沒有內容 | a4_c012、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-lin-back_v01.png | 景片（透明，白邊）；307×352 | gate | 警衛室窗內林老師的小背影：低髮髻、酒紅開襟衫、拿手機貼耳（看不到臉） | a4_c001 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-lantern_v01.png | 景片（透明）；138×300 | gate | 騎樓下的小紙燈籠（暖米橘、低彩度、不發光）＋吊繩 | gate 景常駐；a4_c008 風吹擺動 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-walkers-a_v01.png | 遠景剪影（透明）；221×403 | gate | 家長牽孩子離開（灰藍平塗剪影、沒有五官、大人提袋） | a4_c001 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-walkers-b_v01.png | 遠景剪影（透明）；221×403 | gate | 家長牽孩子離開（灰綠平塗剪影、沒有五官） | a4_c001、a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-chen_pose-receive_v01.png | 表演姿勢圖（透明）；819×1522 | chen | receive：伸手接鑰匙——畫面左側（他的右手）整段手臂以袖口下為軸往外轉 38°（轉軸藏在袖子後面）；頭臉、身體與 chr-chen_master_v01 相同；往左加寬 170 px | a4_c013 | 由 assets/final/chr-chen_master_v01.png 改畫前臂（build_a4_art.py chen_receive） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-lin_pose-standr_v01.png | 表演姿勢圖（透明）；456×1546 | lin | standr：林老師站姿左右鏡射（臉朝畫面右）——說完話轉身走進辦公室前紙片翻面用 | a4_c013 | assets/final/chr-lin_master_v01.png 左右鏡射（build_a4_art.py lin_standr） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+
+另：assets/final/sets/gate/layout.json 改兩處擺位（第四幕代理）：sq-tree-a 由 x −4.9 移到 −10.4（原位置擋住對面小貨車駕駛座與阿樂叔叔）；prop-bench 由 x −3.2 移到 −2.3（整張長椅在人行道上、不擋住車旁的阿樂叔叔），benchSeat 地標、marks.ale、gate_bench 鏡位同步更新。小貨車、警衛室、接送線、貓耳地標都沒動。

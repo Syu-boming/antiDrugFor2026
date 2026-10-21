@@ -47,6 +47,10 @@
      "image": "chr-xiaoqing_pose-walk",
      "face": "xiaoqing:walk",
      "headTop": -41.8
+    },
+    "walk_l": {
+     "image": "chr-xiaoqing_pose-walkl",
+     "headTop": -41.8
     }
    },
    "face": "face/xiaoqing/face",
@@ -83,6 +87,15 @@
      "image": "chr-xiaoyu_pose-walk",
      "face": "xiaoyu:walk",
      "headTop": -44.8
+    },
+    "walk_r": {
+     "image": "chr-xiaoyu_pose-walk-r",
+     "face": "xiaoyu:walk_r",
+     "headTop": -44.8
+    },
+    "standwatch": {
+     "image": "chr-xiaoyu_pose-standwatch",
+     "face": "xiaoyu:stand"
     }
    },
    "face": "face/xiaoyu/face",
@@ -109,6 +122,14 @@
      "image": "chr-pinan_pose-walk-straps",
      "face": "pinan:walk_straps",
      "headTop": -43.3
+    },
+    "sit_lantern_back": {
+     "image": "chr-pinan_pose-sit-lantern-back",
+     "feet": [
+      393.0,
+      1632.4
+     ],
+     "headTop": -78.4
     }
    },
    "face": "face/pinan/face",
@@ -135,6 +156,9 @@
       1512.8
      ],
      "headTop": -345.3
+    },
+    "standr": {
+     "image": "chr-lin_pose-standr"
     }
    },
    "face": "face/lin/face",
@@ -147,6 +171,9 @@
    "poses": {
     "stand": {
      "image": "chr-chen_master"
+    },
+    "receive": {
+     "image": "chr-chen_pose-receive"
     }
    },
    "face": "face/chen/face",
@@ -672,6 +699,91 @@
     336
    ],
    "paintedMouth": "smile"
+  },
+  "xiaoyu:walk_r": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     353,
+     277,
+     381,
+     324
+    ],
+    [
+     260,
+     266,
+     282,
+     311
+    ]
+   ],
+   "mouth": [
+    288,
+    357,
+    346,
+    369
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32,
+   "_note": "a2 代理新增：xiaoyu:walk 的鏡像（chr-xiaoyu_pose-walk-r 是 walk 圖左右翻轉；名冊 facing:-1 時翻面後就是原圖往畫面右走）"
+  },
+  "chen:receive": {
+   "ref": [
+    5,
+    16
+   ],
+   "eyes": [
+    [
+     365,
+     170,
+     392,
+     206
+    ],
+    [
+     432,
+     175,
+     467,
+     213
+    ]
+   ],
+   "mouth": [
+    379,
+    245,
+    445,
+    261
+   ],
+   "paintedMouth": "smile"
+  },
+  "lin:standr": {
+   "ref": [
+    18,
+    17
+   ],
+   "eyes": [
+    [
+     243,
+     176,
+     292,
+     211
+    ],
+    [
+     326,
+     186,
+     354,
+     218
+    ]
+   ],
+   "mouth": [
+    270,
+    251,
+    321,
+    270
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.3
   }
  }
 }

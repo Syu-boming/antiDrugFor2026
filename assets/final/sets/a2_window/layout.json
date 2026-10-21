@@ -1,0 +1,160 @@
+{
+ "format": "antidrug-set/1",
+ "title": "燈籠店外的傍晚（第二幕 a2_c013：窗內與店門口）",
+ "wall": {
+  "image": "sky",
+  "width": 26,
+  "y": -0.5,
+  "z": -5.0,
+  "emissive": 0.36
+ },
+ "floor": {
+  "color": "#bfb2a0",
+  "z": 16.0,
+  "depth": 24
+ },
+ "layers": [
+  {
+   "id": "backrow",
+   "image": "sets/square/set-square_backrow",
+   "x": 0.6,
+   "y": -0.08,
+   "z": -3.6,
+   "width": 19,
+   "layer": "far"
+  },
+  {
+   "id": "interior",
+   "image": "interior",
+   "x": -2.3,
+   "y": 0.0,
+   "z": -2.8,
+   "width": 7.5,
+   "layer": "far",
+   "order": 5,
+   "thick": 0,
+   "shadow": false,
+   "emissive": 0.55
+  },
+  {
+   "id": "bench",
+   "image": "bg-workshop-table",
+   "x": -0.7,
+   "y": 0.0,
+   "z": -2.25,
+   "height": 1.93,
+   "layer": "mid",
+   "order": 2,
+   "emissive": 0.35
+  },
+  {
+   "id": "stool",
+   "image": "stool",
+   "x": -2.95,
+   "y": 0.0,
+   "z": -1.82,
+   "width": 0.9,
+   "layer": "mid",
+   "order": 4,
+   "emissive": 0.3
+  },
+  {
+   "id": "facade",
+   "image": "facade",
+   "x": 0.6,
+   "y": 0.0,
+   "z": -0.6,
+   "width": 12,
+   "layer": "mid",
+   "order": 40,
+   "thick": 6
+  },
+  {
+   "id": "glass",
+   "image": "glass",
+   "x": -2.4,
+   "y": 1.05,
+   "z": -0.66,
+   "width": 4.0,
+   "height": 2.95,
+   "layer": "fore",
+   "order": 0,
+   "thick": 0,
+   "shadow": false,
+   "opacity": 0.12
+  }
+ ],
+ "grade": {
+  "preset": "dusk_purple"
+ },
+ "light": {
+  "keyColor": "#f4e4ea",
+  "keyIntensity": 0.92,
+  "hemiSky": "#efe2f0"
+ },
+ "marks": {
+  "ale": {
+   "x": -2.95,
+   "z": -1.5
+  },
+  "ye": {
+   "x": -1.1,
+   "z": -1.15
+  },
+  "xiaoqing": {
+   "x": 0.4,
+   "z": 0.55
+  },
+  "xiaoyu": {
+   "x": 1.4,
+   "z": 0.95
+  },
+  "zhezhe": {
+   "x": -0.62,
+   "z": -0.45
+  }
+ },
+ "cameras": {
+  "a2_win_wide": {
+   "pos": [
+    -0.6,
+    2.05,
+    20
+   ],
+   "target": [
+    -0.6,
+    1.9,
+    0
+   ],
+   "fov": 20
+  },
+  "a2_win_kids": {
+   "pos": [
+    -0.45,
+    1.98,
+    13.0
+   ],
+   "target": [
+    -0.45,
+    1.88,
+    0
+   ],
+   "fov": 20
+  },
+  "a2_win_note": {
+   "pos": [
+    30,
+    1.5,
+    5.9
+   ],
+   "target": [
+    30,
+    1.5,
+    0
+   ],
+   "fov": 20
+  }
+ },
+ "_made_by": "review/G5/a2/scripts/build_a2_art.py（a2 代理）；剪影回憶小窗、筆記本特寫、天色漸變由 app/src/sets/a2_window.ts 繪製",
+ "_note": "窗在店面圖裡挖空（x −4.4～−0.4、y 1.05～4.0），窗內是阿樂叔叔與葉護理師（z −1.5、−1.15），操偶線往上被店面擋住；店面上緣 6.2，鏡頭上緣要低於 6（線不露到天空）。筆記本特寫放在 x=30 的獨立小台（鏡頭切過去）。"
+}

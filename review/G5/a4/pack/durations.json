@@ -1,0 +1,156 @@
+{
+ "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+ "cues": [
+  {
+   "cue": "a4_c001",
+   "kind": "scene",
+   "duration_sec": 23.92,
+   "preroll_sec": 0.6,
+   "estimate_sec": 27.5,
+   "diff_sec": -3.6,
+   "vo_sec": 19.07,
+   "lines": 2
+  },
+  {
+   "cue": "a4_c002",
+   "kind": "scene",
+   "duration_sec": 25.46,
+   "preroll_sec": 0,
+   "estimate_sec": 20.0,
+   "diff_sec": 5.5,
+   "vo_sec": 10.56,
+   "lines": 3
+  },
+  {
+   "cue": "a4_c003",
+   "kind": "scene",
+   "duration_sec": 15.52,
+   "preroll_sec": 0,
+   "estimate_sec": 23.8,
+   "diff_sec": -8.3,
+   "vo_sec": 10.87,
+   "lines": 2
+  },
+  {
+   "cue": "a4_c004",
+   "kind": "scene",
+   "duration_sec": 15.3,
+   "preroll_sec": 0,
+   "estimate_sec": 18.2,
+   "diff_sec": -2.9,
+   "vo_sec": 7.95,
+   "lines": 2
+  },
+  {
+   "cue": "a4_c005",
+   "kind": "quiz",
+   "duration_sec": 18.67,
+   "preroll_sec": 0,
+   "estimate_sec": 17.5,
+   "diff_sec": 1.2,
+   "vo_sec": 14.47,
+   "lines": 5
+  },
+  {
+   "cue": "a4_c006",
+   "kind": "reveal",
+   "duration_sec": 6.26,
+   "preroll_sec": 0,
+   "estimate_sec": 6.2,
+   "diff_sec": 0.1,
+   "vo_sec": 4.06,
+   "lines": 1
+  },
+  {
+   "cue": "a4_c007",
+   "kind": "lamp",
+   "duration_sec": 6.56,
+   "preroll_sec": 0,
+   "estimate_sec": 6.0,
+   "diff_sec": 0.6,
+   "vo_sec": 1.86,
+   "lines": 1
+  },
+  {
+   "cue": "a4_c008",
+   "kind": "scene",
+   "duration_sec": 20.03,
+   "preroll_sec": 0,
+   "estimate_sec": 16.0,
+   "diff_sec": 4.0,
+   "vo_sec": 7.53,
+   "lines": 2
+  },
+  {
+   "cue": "a4_c009",
+   "kind": "quiz",
+   "duration_sec": 25.71,
+   "preroll_sec": 0,
+   "estimate_sec": 22.8,
+   "diff_sec": 2.9,
+   "vo_sec": 21.51,
+   "lines": 5
+  },
+  {
+   "cue": "a4_c010",
+   "kind": "reveal",
+   "duration_sec": 7.32,
+   "preroll_sec": 0,
+   "estimate_sec": 7.2,
+   "diff_sec": 0.1,
+   "vo_sec": 5.12,
+   "lines": 1
+  },
+  {
+   "cue": "a4_c011",
+   "kind": "lamp",
+   "duration_sec": 8.62,
+   "preroll_sec": 0,
+   "estimate_sec": 5.2,
+   "diff_sec": 3.4,
+   "vo_sec": 1.42,
+   "lines": 1
+  },
+  {
+   "cue": "a4_c012",
+   "kind": "scene",
+   "duration_sec": 28.67,
+   "preroll_sec": 0,
+   "estimate_sec": 28.8,
+   "diff_sec": -0.1,
+   "vo_sec": 21.72,
+   "lines": 5
+  },
+  {
+   "cue": "a4_c013",
+   "kind": "scene",
+   "duration_sec": 28.35,
+   "preroll_sec": 0,
+   "estimate_sec": 24.8,
+   "diff_sec": 3.6,
+   "vo_sec": 14.85,
+   "lines": 3
+  }
+ ],
+ "act_total_sec": 230.4,
+ "act_preroll_total_sec": 0.6,
+ "estimate_sum_sec": 224.0,
+ "act_budget_recorded_sec": 224.0,
+ "diff_vs_budget_sec": 7.0,
+ "playback_with_holds_sec": 271.49,
+ "holds_assumed_sec": {
+  "a4_c001": 3.5,
+  "a4_c002": 3.5,
+  "a4_c003": 3.5,
+  "a4_c004": 3.5,
+  "a4_c005": 3,
+  "a4_c006": 2.5,
+  "a4_c007": 2.5,
+  "a4_c008": 3.5,
+  "a4_c009": 3,
+  "a4_c010": 2.5,
+  "a4_c011": 2.5,
+  "a4_c012": 3.5,
+  "a4_c013": 3.5
+ }
+}

@@ -1,0 +1,1632 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a1_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a1_c001_01",
+   "speaker": "小晴",
+   "script": "品安！你的燈籠好漂亮。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "平安,你的燈籠好漂亮。",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,你的燈籠好漂亮。",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "平安,你的燈籠好漂亮。",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,你的燈籠好漂亮。",
+     "hyp_trad": "平安你的燈籠好漂亮",
+     "cer": 0.111,
+     "per": 0.111,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c001_02",
+   "speaker": "品安",
+   "script": "我自己編的。你們在找什麼？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c001_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我自己編的,你們在找什麼?",
+     "hyp_trad": "我自己編的你們在找什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我自己編的。你們在找什麼?",
+     "hyp_trad": "我自己編的你們在找什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我自己編的。你們在找什麼?",
+     "hyp_trad": "我自己編的你們在找什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我自己編的。你們在找什麼?",
+     "hyp_trad": "我自己編的你們在找什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c001_03",
+   "speaker": "小宇",
+   "script": "主燈的骨架。它不見了！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c001_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "主燈的骨架 他不見了。",
+     "hyp_trad": "主燈的骨架他不見了",
+     "cer": 0.111,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "它",
+       "hyp": "他",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "主燈的骨架,它不見了。",
+     "hyp_trad": "主燈的骨架它不見了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "主燈的骨架 它不見了。",
+     "hyp_trad": "主燈的骨架它不見了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "主燈的骨架,它不見了。",
+     "hyp_trad": "主燈的骨架它不見了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c001_04",
+   "speaker": "折折",
+   "script": "我也來布置！看我摺一盞燈籠——",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c001_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我也來佈置,看我折一盞燈籠。",
+     "hyp_trad": "我也來佈置看我折一盞燈籠",
+     "cer": 0.167,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "布",
+       "hyp": "佈",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "我也來佈置,看我折一盞燈籠。",
+     "hyp_trad": "我也來佈置看我折一盞燈籠",
+     "cer": 0.167,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "布",
+       "hyp": "佈",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我有來布置 看我折一盞燈籠",
+     "hyp_trad": "我有來佈置看我折一盞燈籠",
+     "cer": 0.25,
+     "per": 0.083,
+     "diffs": [
+      {
+       "ref": "也",
+       "hyp": "有",
+       "kind": "字不同"
+      },
+      {
+       "ref": "布",
+       "hyp": "佈",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "我也來佈置,看我折一盞燈籠。",
+     "hyp_trad": "我也來佈置看我折一盞燈籠",
+     "cer": 0.167,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "布",
+       "hyp": "佈",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c001_05",
+   "speaker": "品安",
+   "script": "……你是青蛙燈嗎？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c001_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你是青蛙燈嗎?",
+     "hyp_trad": "你是青蛙燈嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你是青蛙燈嗎?",
+     "hyp_trad": "你是青蛙燈嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你是青蛙丹嗎?",
+     "hyp_trad": "你是青蛙丹嗎",
+     "cer": 0.167,
+     "per": 0.167,
+     "diffs": [
+      {
+       "ref": "燈",
+       "hyp": "丹",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你是青蛙丹嗎?",
+     "hyp_trad": "你是青蛙丹嗎",
+     "cer": 0.167,
+     "per": 0.167,
+     "diffs": [
+      {
+       "ref": "燈",
+       "hyp": "丹",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c002_01",
+   "speaker": "邀請者",
+   "script": "嘿，要不要看看這個？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c002_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "嘿,要不要看看這個?",
+     "hyp_trad": "嘿要不要看看這個",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "嘿,要不要看看這個?",
+     "hyp_trad": "嘿要不要看看這個",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "嘿! 要不要看看這個?",
+     "hyp_trad": "嘿要不要看看這個",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "嘿,要不要看看這個。",
+     "hyp_trad": "嘿要不要看看這個",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c002_02",
+   "speaker": "邀請者",
+   "script": "亮晶晶的，聞起來香香的，很安全喔。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c002_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "亮晶晶的,聞起來香香的,很安全喔!",
+     "hyp_trad": "亮晶晶的聞起來香香的很安全喔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "亮晶晶的,聞起來香香的,很安全喔!",
+     "hyp_trad": "亮晶晶的聞起來香香的很安全喔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "亮晶晶的,聞起來香香的,很安全喔!",
+     "hyp_trad": "亮晶晶的聞起來香香的很安全喔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "亮晶晶的,聞起來香香的,很安全喔!",
+     "hyp_trad": "亮晶晶的聞起來香香的很安全喔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c002_03",
+   "speaker": "小宇",
+   "script": "哇……好亮。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c002_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "哇 好亮",
+     "hyp_trad": "哇好亮",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "哇,好亮。",
+     "hyp_trad": "哇好亮",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "哇 好亮",
+     "hyp_trad": "哇好亮",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "哇,好亮。",
+     "hyp_trad": "哇好亮",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c003_01",
+   "speaker": "小宇",
+   "script": "等一下，我想一想。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c003_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c003_02",
+   "speaker": "小晴",
+   "script": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c003_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "這盒子上面什麼都沒寫,誰做的?裡面裝什麼?",
+     "hyp_trad": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這盒子上面什麼都沒寫,誰做的,裡面裝什麼。",
+     "hyp_trad": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "這盒子上面什麼都沒寫,誰錯的,裡面裝什麼。",
+     "hyp_trad": "這盒子上面什麼都沒寫誰錯的裡面裝什麼",
+     "cer": 0.056,
+     "per": 0.056,
+     "diffs": [
+      {
+       "ref": "做",
+       "hyp": "錯",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這盒子上面什麼都沒寫,誰做的,裡面裝什麼。",
+     "hyp_trad": "這盒子上面什麼都沒寫誰做的裡面裝什麼",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c003_03",
+   "speaker": "折折",
+   "script": "大家找找看，這個盒子哪裡怪怪的？看到的舉手。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c003_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "大家找找看,這個盒子哪裡怪怪的,看到的舉手。",
+     "hyp_trad": "大家找找看這個盒子哪裡怪怪的看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "大家找找看,這個盒子哪裡怪怪的,看到的舉手。",
+     "hyp_trad": "大家找找看這個盒子哪裡怪怪的看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "大家找找看這個盒子哪裡怪怪的看到的舉手",
+     "hyp_trad": "大家找找看這個盒子哪裡怪怪的看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "大家找找看這個盒子哪裡怪怪的,看到的舉手。",
+     "hyp_trad": "大家找找看這個盒子哪裡怪怪的看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c004_01",
+   "speaker": "邀請者",
+   "script": "這是電子煙啦，大家都在玩。試試看嘛。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "這是電子煙啦,大家都在玩,試試看嘛。",
+     "hyp_trad": "這是電子煙啦大家都在玩試試看嘛",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這是電子煙啦,大家都在玩,試試看嘛。",
+     "hyp_trad": "這是電子煙啦大家都在玩試試看嘛",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "這是電子煙啦,大家都在玩,試試看吧。",
+     "hyp_trad": "這是電子煙啦大家都在玩試試看吧",
+     "cer": 0.067,
+     "per": 0.067,
+     "diffs": [
+      {
+       "ref": "嘛",
+       "hyp": "吧",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這是電子煙啦,大家都在玩,試試看嘛。",
+     "hyp_trad": "這是電子煙啦大家都在玩試試看嘛",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c004_02",
+   "speaker": "小晴",
+   "script": "電子煙在臺灣是禁止的。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "電子煙在台灣是禁止的。",
+     "hyp_trad": "電子煙在臺灣是禁止的",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "電子煙在台灣是禁止的。",
+     "hyp_trad": "電子煙在臺灣是禁止的",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "電子煙在台灣是禁止的。",
+     "hyp_trad": "電子煙在臺灣是禁止的",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "電子煙在台灣是禁止的。",
+     "hyp_trad": "電子煙在臺灣是禁止的",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c004_03",
+   "speaker": "小晴",
+   "script": "包裝漂亮、聞起來香，都不能證明安全。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+     "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "包裝漂亮,聞起來香都不能證明安全。",
+     "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "包裝漂亮,聞起來香,都不能證明安全。",
+     "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "包裝漂亮,聞起來香都不能證明安全。",
+     "hyp_trad": "包裝漂亮聞起來香都不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c004_04",
+   "speaker": "小宇",
+   "script": "不用，我們不要。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "不用,我們不要。",
+     "hyp_trad": "不用我們不要",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不用,我們不要。",
+     "hyp_trad": "不用我們不要",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "不用,我們不要。",
+     "hyp_trad": "不用我們不要",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不用,我們不要。",
+     "hyp_trad": "不用我們不要",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c004_05",
+   "speaker": "小晴",
+   "script": "品安，快來，我們去跟阿樂叔叔說。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,快來,我們去跟阿樂叔叔說。",
+     "hyp_trad": "平安快來我們去跟阿樂叔叔說",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c004_06",
+   "speaker": "品安",
+   "script": "你們先走，我把燈籠收好就來。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c004_06_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你們先走 我把燈籠收好就來",
+     "hyp_trad": "你們先走我把燈籠收好就來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你們先走,我把燈籠收好就來。",
+     "hyp_trad": "你們先走我把燈籠收好就來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你們先走 我把燈籠收好就來",
+     "hyp_trad": "你們先走我把燈籠收好就來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你們先走,我把燈籠收好就來。",
+     "hyp_trad": "你們先走我把燈籠收好就來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c005_01",
+   "speaker": "折折",
+   "script": "第一題來囉！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c005_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第一題來囉",
+     "hyp_trad": "第一題來囉",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第一題來囉。",
+     "hyp_trad": "第一題來囉",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第一題來囉",
+     "hyp_trad": "第一題來囉",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第一題來嘍。",
+     "hyp_trad": "第一題來嘍",
+     "cer": 0.2,
+     "per": 0.2,
+     "diffs": [
+      {
+       "ref": "囉",
+       "hyp": "嘍",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c005_02",
+   "speaker": "旁白",
+   "script": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c005_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "有人拿出包裝漂亮的電子煙說這個很安全,可以相信嗎?",
+     "hyp_trad": "有人拿出包裝漂亮的電子煙說這個很安全可以相信嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "有人拿出包裝漂亮的電子煙說,這個很安全,可以相信嗎?",
+     "hyp_trad": "有人拿出包裝漂亮的電子煙說這個很安全可以相信嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "有人拿出包裝漂亮的電子煙說這個很安全,可以相信嗎?",
+     "hyp_trad": "有人拿出包裝漂亮的電子煙說這個很安全可以相信嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "有人拿出包裝漂亮的電子煙說,這個很安全,可以相信嗎?",
+     "hyp_trad": "有人拿出包裝漂亮的電子煙說這個很安全可以相信嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c005_03",
+   "speaker": "旁白",
+   "script": "一，可以，包裝漂亮就很安全。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c005_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1.可以,包裝漂亮就很安全。",
+     "hyp_trad": "1可以包裝漂亮就很安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 可以,包裝漂亮就很安全。",
+     "hyp_trad": "1可以包裝漂亮就很安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1.可以,包裝漂亮就很安全。",
+     "hyp_trad": "1可以包裝漂亮就很安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 可以,包裝漂亮就很安全。",
+     "hyp_trad": "1可以包裝漂亮就很安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c005_04",
+   "speaker": "旁白",
+   "script": "二，不行，外觀不能證明安全。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c005_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2.不行,外觀不能證明安全。",
+     "hyp_trad": "2不行外觀不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 不行,外觀不能證明安全。",
+     "hyp_trad": "2不行外觀不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2.不行,外觀不能證明安全。",
+     "hyp_trad": "2不行外觀不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 不行,外觀不能證明安全。",
+     "hyp_trad": "2不行外觀不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c005_05",
+   "speaker": "旁白",
+   "script": "三，可以，聞起來香就沒問題。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c005_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3. 可以. 聞起來香就沒問題。",
+     "hyp_trad": "3可以聞起來香就沒問題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "3.可以。聞起來香就沒問題。",
+     "hyp_trad": "3可以聞起來香就沒問題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "3. 可以 聞起來香就沒問題。",
+     "hyp_trad": "3可以聞起來香就沒問題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "3.可以。聞起來香就沒問題。",
+     "hyp_trad": "3可以聞起來香就沒問題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c006_01",
+   "speaker": "旁白",
+   "script": "正解是二：不行，外觀不能證明安全。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c006_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "正解是二,不行,外觀不能證明安全。",
+     "hyp_trad": "正解是二不行外觀不能證明安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋2,不行,外觀不能證明安全。",
+     "hyp_trad": "正解釋2不行外觀不能證明安全",
+     "cer": 0.071,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "政解是二,不行,外觀不能證明安全。",
+     "hyp_trad": "政解是二不行外觀不能證明安全",
+     "cer": 0.071,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "政",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋2,不行,外觀不能證明安全。",
+     "hyp_trad": "正解釋2不行外觀不能證明安全",
+     "cer": 0.071,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不能",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c007_01",
+   "speaker": "折折",
+   "script": "第一盞燈，亮了！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c007_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第一盞燈亮了。",
+     "hyp_trad": "第一盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第一盞燈,亮了。",
+     "hyp_trad": "第一盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第一盞燈亮了。",
+     "hyp_trad": "第一盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第一盞燈,亮了。",
+     "hyp_trad": "第一盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c008_01",
+   "speaker": "折折",
+   "script": "咦？包裝裡面，怎麼有一團細細的線？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c008_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "咦?包裝裡面怎麼有一團細細的線?",
+     "hyp_trad": "咦包裝裡面怎麼有一團細細的線",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "咦?包裝裡面怎麼有一團細細的線?",
+     "hyp_trad": "咦包裝裡面怎麼有一團細細的線",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "咦?包裝裡面怎麼有一團細細的線?",
+     "hyp_trad": "咦包裝裡面怎麼有一團細細的線",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "咦?包裝裡面怎麼有一團細細的線?",
+     "hyp_trad": "咦包裝裡面怎麼有一團細細的線",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a1_c008_02",
+   "speaker": "小晴",
+   "script": "不要碰。我們快去跟阿樂叔叔說。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c008_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "不要碰,我們快去跟阿樂叔叔說。",
+     "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不要碰,我們快去跟阿樂叔叔說。",
+     "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "不要碰,我們快去跟阿樂叔叔說。",
+     "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不要碰,我們快去跟阿樂叔叔說。",
+     "hyp_trad": "不要碰我們快去跟阿樂叔叔說",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a1_c008_03",
+   "speaker": "小宇",
+   "script": "阿樂叔叔？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a1_c008_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "阿樂叔叔",
+     "hyp_trad": "阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂叔叔。",
+     "hyp_trad": "阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "阿樂叔叔",
+     "hyp_trad": "阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂叔叔。",
+     "hyp_trad": "阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

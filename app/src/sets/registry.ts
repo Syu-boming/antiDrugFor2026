@@ -8,7 +8,13 @@
 import { buildProscenium, buildWorkshop } from '../stage/sets';
 import { buildWorkshopG4 } from '../stage/workshop';
 import { KRAFT_STAGE } from './kraftStage';
+import { A2_MEMORY } from './a2_memory';   // 第二幕（a2 代理）
+import { A2_WINDOW } from './a2_window';   // 第二幕（a2 代理）
 import { imageSetEntry, readLayout } from './imageSet';
+import { GATE } from './gate';
+import { A4_ROADMAP } from './a4_roadmap';
+import { WORKSHOP_A0 } from './workshop_a0';
+import { SQUARE_A1 } from './square_a1';
 import type { BuiltSet, SetContext, SetEntry } from './types';
 import type { CameraPreset } from '../stage/layers';
 
@@ -37,6 +43,12 @@ export const SET_REGISTRY: Record<string, SetEntry> = {
   workshop_g4: WORKSHOP_G4,
   kraft_stage: KRAFT_STAGE,
   // ---- 各幕代理在這裡加自己的景（一幕一段，註明是哪一幕）
+  gate: GATE, // 第四幕代理：校門口（第三、四、五幕共用；layout.json 底景＋第四幕的程式道具，沒寫 setTrack 的 cue 和 layout 原樣相同）
+  a4_roadmap: A4_ROADMAP, // 第四幕代理：紙上的路（牛皮紙地圖、小車、背光剪影幕）
+  a2_memory: A2_MEMORY, // 第二幕 a2_c003 回想小窗
+  a2_window: A2_WINDOW, // 第二幕 a2_c013 店外傍晚（窗內、剪影小窗、筆記本）
+  workshop_a0: WORKSHOP_A0, // 開場（a0_c002–a0_c005）：G4 燈籠店＋設計圖、空底座、風鈴、八盞燈、回憶小窗、筆記本
+  square_a1: SQUARE_A1, // 第一幕（a1）：廣場（square 的 layout.json）＋紅磚柱、邀請者的手、盒子特寫、包裝紙、燈籠店窗前
 };
 
 /** 全劇預設的佔位景 */

@@ -1,0 +1,1528 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a2",
+ "title": "第二幕：看不見的操偶線",
+ "set": "workshop_g4",
+ "characters": {
+  "ale": {
+   "name": "阿樂叔叔",
+   "rig": "ale_v03",
+   "x": -2.6,
+   "z": 0,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "ye": {
+   "name": "葉護理師",
+   "rig": "standee:ye",
+   "x": 0.95,
+   "z": 0.95,
+   "facing": -1,
+   "fallback": "adult"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a2_c001",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "叔叔的手（找找看 2）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "smile",
+      "pose": "sit"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a2_c001_01",
+     "speaker": "小宇",
+     "text": "叔叔，你還好嗎？竹篾掉了。"
+    },
+    {
+     "id": "a2_c001_02",
+     "speaker": "阿樂叔叔",
+     "text": "沒事、沒事，手滑了一下。"
+    },
+    {
+     "id": "a2_c001_03",
+     "speaker": "折折",
+     "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。"
+    }
+   ],
+   "next": "a2_c002",
+   "prevStable": "a1_c008",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX7"
+   ],
+   "teacherNote": "找找看 2（約 30 秒，不計獎）：點一位。答案：手腕上多了一條細細的線。回應：「看得很仔細。這條線是什麼意思？我們繼續看。」",
+   "checkpoint": null,
+   "voStart": 2.8,
+   "tail": 8.2,
+   "storyboard": {
+    "beat": "阿樂撿起竹篾坐回工作台，笑一笑；右手腕背側一條細、淡的灰色紙線（L1）；鏡頭慢推到手腕近景（約 3 秒，無箭頭或提示音）；折折提問；停在推近畫面",
+    "cast": "阿樂：分件坐姿、H5 竹篾、X2、L1；小宇 X5；小晴 X5",
+    "camera": "中景 → 慢推到手腕近景（L1 規格見上：線寬 ≥ 8 px、ΔL* ≥ 25，最後一排看得到）",
+    "sound": "暖色環境聲",
+    "directions": [
+     "（燈籠店裡，暖黃的燈。阿樂叔叔彎腰撿起竹篾，坐回工作台前，對孩子們笑一笑。中景。他的右手腕背側，多了一條細細的淡灰色紙線（L1）：比 a2_c002 落下的操偶線細、淡，但投影下最後一排要看得到。）",
+     "（鏡頭從中景慢慢推近到阿樂叔叔的右手腕，約 3 秒，停在「手腕＋竹篾」的近景。不加箭頭、光圈、亮點或提示音效，讓孩子自己找。）",
+     "（畫面停在推近後的近景。）",
+     "（**L1 線投影可讀性規格（交 G2／G4 投影可讀性驗收）**：推近停格的畫面中，線寬 ≥ 8 px（1080p；以最後一排距離約為銀幕高 8 倍估算，約 3 弧分，場勘後依 v1.2 第 16.2 節公式修正）；線與相鄰的手腕皮膚、袖口的明度差 CIELAB ΔL* ≥ 25，套投影模擬（壓縮對比、抬高黑位、降低彩度）後仍 ≥ 15；線外加深灰細邊（v1.2 第 15.2 節）。未達標就加粗、加深或推得更近，不靠台詞或教師提示補救。）"
+    ],
+    "estimateSec": 23.0,
+    "actionSec": 11.0
+   }
+  },
+  {
+   "id": "a2_c002",
+   "sceneId": "workshop",
+   "kind": "scene",
+   "title": "線落下來（代表鏡頭）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1,
+     "desat": 0,
+     "spot": 0,
+     "spotTarget": "ale"
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "pose": "sit",
+      "emotion": "smile",
+      "strings": []
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "watch",
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stand",
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "fx.desat",
+     "start": 0.3,
+     "duration": 3.2,
+     "params": {
+      "to": 0.5
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0.5,
+     "duration": 2.5,
+     "params": {
+      "to": 0.94
+     }
+    },
+    {
+     "name": "fx.spot",
+     "start": 0.8,
+     "duration": 2.8,
+     "params": {
+      "to": 1,
+      "target": "ale"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 2.0,
+     "duration": 2.6,
+     "params": {
+      "to": "g4_mid_up"
+     }
+    },
+    {
+     "name": "strings.drop",
+     "target": "ale",
+     "start": 3.5,
+     "duration": 3.0,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stagger": 0.9,
+      "each": 1.2
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 4.6,
+     "params": {
+      "emotion": "surprised"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 5.0,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 6.8,
+     "duration": 2.0,
+     "params": {
+      "to": "g4_mid"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 8.95,
+     "duration": 0.24,
+     "params": {
+      "pose": "worried"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 9.3,
+     "duration": 0.24,
+     "params": {
+      "pose": "stepback"
+     }
+    },
+    {
+     "name": "puppet.waveTry",
+     "target": "ale",
+     "start": 9.7,
+     "duration": 3.8,
+     "params": {
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "puppet.kneeTug",
+     "target": "ale",
+     "start": "a2_c002_01.end+0.15",
+     "duration": 3.4,
+     "params": {
+      "at": [
+       -1.94,
+       1.4
+      ]
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a2_c002_01.end+0.3",
+     "duration": 4.0,
+     "params": {
+      "to": "g4_push"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": "a2_c002_02-0.3",
+     "duration": 0.24,
+     "params": {
+      "pose": "palm"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": "a2_c002_02+1.05",
+     "duration": 0.24,
+     "params": {
+      "pose": "worried"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "speaker": "阿樂叔叔",
+     "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+     "start": 13.45
+    },
+    {
+     "id": "a2_c002_02",
+     "speaker": "小晴",
+     "text": "叔叔，小心！",
+     "start": "a2_c002_01.end+2.0"
+    }
+   ],
+   "next": "a2_c003",
+   "prevStable": "a2_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX9",
+    "FX8",
+    "FX4"
+   ],
+   "teacherNote": "代表鏡頭：音樂收束、場景約 3 秒降彩；三條淡灰紙繩一根根落下，紙環扣在腕背、肘外、膝前（第一根約 4.5 秒落下）。叔叔先露出想打招呼的笑臉、自己把手抬到胸口高度揮兩下（線還鬆）→ 線繃直 → 手被拉到旁邊 → 才露出困惑的臉；想站起：半站 → 膝前線繃緊 → 膝蓋被提起、腳離地 → 身體晃一下 → 扶住桌邊停住。小晴喊「叔叔，小心！」時伸出手掌示意（不指人），約 1.4 秒後收回成擔心站姿。臉、膚色、衣服都不變。停格後等老師（配樂 3 秒內淡到很小聲）。",
+   "checkpoint": null,
+   "tail": 2.0,
+   "sfx": [
+    {
+     "id": "sfx_string_drop",
+     "at": 3.98,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_drop",
+     "at": 4.88,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_drop",
+     "at": 5.78,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 12.33,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": "a2_c002_01.end+1.25",
+     "gain": 0.8
+    }
+   ],
+   "music": [
+    {
+     "id": "music_m4_strings",
+     "at": 0,
+     "loop": false,
+     "fade": 1.0,
+     "offset": 7.0
+    }
+   ],
+   "musicLevel": 0.75,
+   "storyboard": {
+    "beat": "**代表鏡頭**：音樂收束、慢慢降彩；灰色紙繩一根根落下，紙環扣在腕背、肘外、膝前；阿樂想揮手 → 線繃緊 → 手被拉向旁邊；想站起 → 膝蓋被扯 → 身體晃一下 → 扶桌邊；停格",
+    "cast": "阿樂：分件坐姿→半站、H3 → H7、X2（意圖）→ 受力 → X10（困惑）、L2；小晴 X4",
+    "camera": "固定中景，線落下時微上搖",
+    "sound": "M4；紙繩落下的輕沙沙聲",
+    "directions": [
+     "（音樂收束，場景慢慢降彩。一根、兩根、三根……灰色紙繩從畫面上方落下，用紙環扣在阿樂叔叔的手腕背側、手肘外側、膝蓋正面。線往上延伸出畫面，看不到拉線的人。阿樂叔叔的臉、膚色、衣服都沒有改變。）",
+     "（阿樂叔叔笑著想對孩子揮手：手先抬起——線繃緊——手被拉向旁邊。他想站起來，膝蓋被線一扯，身體晃了一下，趕快扶住桌邊。表情是困惑、需要幫忙，不可怕。）",
+     "（停格。）"
+    ],
+    "estimateSec": 28.0,
+    "actionSec": 22.0
+   }
+  },
+  {
+   "id": "a2_c003",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "那個小盒子",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c003_01",
+     "speaker": "旁白",
+     "text": "還記得廣場上，那個閃亮的小盒子嗎？"
+    },
+    {
+     "id": "a2_c003_02",
+     "speaker": "旁白",
+     "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。"
+    }
+   ],
+   "next": "a2_c004",
+   "prevStable": "a2_c002",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX8"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.5,
+   "tail": 4.5,
+   "storyboard": {
+    "beat": "小晴想起廣場上的事：褪色回想小窗重用 a1_c003 盒子特寫、a1_c008 撕破的包裝紙與那團線；旁白說明「喪屍煙彈」可能是什麼；**不出現阿樂、不確認他用過**",
+    "cast": "小晴 X8（回想）；無手、無剪影",
+    "camera": "小晴近景＋回想小窗",
+    "sound": "M3 遠遠變調；旁白",
+    "directions": [
+     "（小晴看著叔叔，想起廣場上的事。褪色的回想小窗，重用影格：a1_c003 盒子的貼紙特寫、a1_c008 撕破的包裝紙和紙邊那團線。小窗裡沒有阿樂叔叔，也不出現打開或使用。）",
+     "（本段只說明盒子可能是什麼，不向觀眾確認阿樂叔叔用過；孩子和觀眾在 Q3 之前都停在「我們不知道，先找大人」。實情到 a2_c013 才由阿樂叔叔自己告訴葉護理師。）"
+    ],
+    "estimateSec": 18.0,
+    "actionSec": 6.0
+   }
+  },
+  {
+   "id": "a2_c004",
+   "sceneId": "workshop",
+   "kind": "scene",
+   "title": "操偶線（必要旁白一）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_push",
+     "light": 0.94,
+     "desat": 0.5,
+     "spot": 1,
+     "spotTarget": "ale"
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "emotion": "confused",
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "worried",
+      "emotion": "worried"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stepback",
+      "emotion": "surprised"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0.3,
+     "duration": 4.3,
+     "params": {
+      "to": "g4_c004_wrist"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 6.4,
+     "duration": 3.8,
+     "params": {
+      "to": "g4_c004_knee"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 10.6,
+     "duration": 3.6,
+     "params": {
+      "to": "g4_c004_up"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a2_c004_02.end-2.0",
+     "duration": 3.6,
+     "params": {
+      "to": "g4_mid"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoqing",
+     "start": 9.0,
+     "duration": 0.8,
+     "params": {
+      "to": 0.04
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoyu",
+     "start": 9.15,
+     "duration": 0.8,
+     "params": {
+      "to": -0.04
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "target": "xiaoqing",
+     "start": 9.5
+    },
+    {
+     "name": "puppet.blink",
+     "target": "xiaoyu",
+     "start": 9.75
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoqing",
+     "start": 10.9,
+     "duration": 0.9,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoyu",
+     "start": 11.05,
+     "duration": 0.9,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 12.0,
+     "duration": 0.8,
+     "params": {
+      "to": 0.16
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 14.1,
+     "duration": 0.9,
+     "params": {
+      "to": 0.07
+     }
+    }
+   ],
+   "audioId": null,
+   "musicLevel": 0.8,
+   "lines": [
+    {
+     "id": "a2_c004_01",
+     "speaker": "旁白",
+     "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。"
+    },
+    {
+     "id": "a2_c004_02",
+     "speaker": "旁白",
+     "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
+    }
+   ],
+   "next": "a2_c005",
+   "prevStable": "a2_c003",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX9",
+    "FX4",
+    "FX8"
+   ],
+   "teacherNote": "必要旁白一（一字不改）。鏡頭在三人同框下慢慢移動：看腕背、肘外紙環 → 往下看膝前紙環 → 往上看線一路延伸出畫面，最後回到中景停格；兩個孩子一直在畫面裡（站在旁邊擔心地看，不靠近、不指人）；必要旁白第 2、3 頁之間有安靜的小動作：約 9 秒兩個孩子互看一眼（身體微微傾向對方、眨眼，約 11 秒回正），約 12 秒阿樂叔叔歪頭看手腕的線（約 14 秒回正）。停格後配樂 3 秒內淡到很小聲，等老師。",
+   "checkpoint": null,
+   "voStart": 0.8,
+   "tail": 2.0,
+   "music": [
+    {
+     "id": "music_m4_light",
+     "at": 0,
+     "loop": true,
+     "fade": 2.5
+    }
+   ],
+   "storyboard": {
+    "beat": "回到停格；鏡頭沿線移動：腕背 → 肘外 → 膝前紙環 → 往上出畫面；必要旁白一；停格等老師",
+    "cast": "阿樂 X10、L2（靜止張力）",
+    "camera": "沿線慢搖",
+    "sound": "M4 很輕；旁白放慢",
+    "directions": [
+     "（回到工作室的停格。鏡頭沿著線慢慢移動：手腕背側、手肘外側、膝蓋正面的紙環，再往上到畫面外。）",
+     "（停格，等老師。）"
+    ],
+    "estimateSec": 22.0,
+    "actionSec": 7.0
+   }
+  },
+  {
+   "id": "a2_c005",
+   "sceneId": "workshop_g4",
+   "kind": "quiz",
+   "title": "〔題卡 Q2〕出題",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "emotion": "confused",
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "worried",
+      "emotion": "worried"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stepback",
+      "emotion": "surprised"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0,
+     "duration": 2.4,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.2,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": 0.7,
+     "duration": 0.6
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c005_01",
+     "speaker": "折折",
+     "text": "第二題！"
+    },
+    {
+     "id": "a2_c005_02",
+     "speaker": "旁白",
+     "text": "阿樂叔叔身上的操偶線，在比喻什麼？"
+    },
+    {
+     "id": "a2_c005_03",
+     "speaker": "旁白",
+     "text": "一，叔叔在練習下一場紙偶戲的動作。"
+    },
+    {
+     "id": "a2_c005_04",
+     "speaker": "旁白",
+     "text": "二，人真的會變成喪屍，被線拉著走。"
+    },
+    {
+     "id": "a2_c005_05",
+     "speaker": "旁白",
+     "text": "三，毒品可能讓頭腦和身體不聽使喚。"
+    }
+   ],
+   "next": "a2_c006",
+   "prevStable": "a2_c004",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "3、2、1，一起比！（本題看 B 區。）",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 0.7,
+     "gain": 0.8
+    }
+   ],
+   "quiz": {
+    "qid": "Q2",
+    "number": 2,
+    "question": "阿樂叔叔身上的操偶線，在比喻什麼？",
+    "options": [
+     "叔叔在練習下一場紙偶戲的動作。",
+     "人真的會變成喪屍，被線拉著走。",
+     "毒品可能讓頭腦和身體不聽使喚。"
+    ],
+    "answer": 3
+   },
+   "voStart": 1.4,
+   "tail": 1.0,
+   "storyboard": {
+    "beat": "Q2 題卡模式 → 揭答第 3 項 → 第二盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（折折收摺音效＝收聲訊號；題卡模式。）",
+     "（題卡靜止。）"
+    ],
+    "estimateSec": 22.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a2_c006",
+   "sceneId": "workshop_g4",
+   "kind": "reveal",
+   "title": "〔題卡 Q2〕揭答",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "emotion": "confused",
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "worried",
+      "emotion": "worried"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stepback",
+      "emotion": "surprised"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "quiz.reveal",
+     "start": 0.3,
+     "duration": 0.45
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c006_01",
+     "speaker": "旁白",
+     "text": "正解是三：毒品可能讓頭腦和身體不聽使喚。"
+    }
+   ],
+   "next": "a2_c007",
+   "prevStable": "a2_c005",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "回饋見 `八題_v03.md` Q2；點 B 區一位說理由。最後：「捧燈手——」說完就按下一步，不等全班都做好。",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.0,
+   "tail": 1.2,
+   "storyboard": {
+    "beat": "Q2 題卡模式 → 揭答第 3 項 → 第二盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（「正解」紙印章蓋在第 3 項，加勾號與外框；其他選項變淡。）"
+    ],
+    "estimateSec": 8.0,
+    "actionSec": 3.0
+   }
+  },
+  {
+   "id": "a2_c007",
+   "sceneId": "workshop_g4",
+   "kind": "lamp",
+   "title": "〔題卡 Q2〕點燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "emotion": "confused",
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "worried",
+      "emotion": "worried"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stepback",
+      "emotion": "surprised"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "lamp.light",
+     "start": 0.3,
+     "duration": 1.5,
+     "params": {
+      "index": 2
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a2_c007_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "light.restore",
+     "start": "a2_c007_01.end+0.3",
+     "duration": 1.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a2_c007_01.end+0.3",
+     "duration": 2.5,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c007_01",
+     "speaker": "折折",
+     "text": "第二盞！不管答對幾個人，我們都一起完成了這一題。"
+    }
+   ],
+   "next": "a2_c008",
+   "prevStable": "a2_c006",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
+   "checkpoint": null,
+   "lamp": 2,
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.9,
+   "tail": 0.6,
+   "storyboard": {
+    "beat": "Q2 題卡模式 → 揭答第 3 項 → 第二盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（第二盞紙燈慢慢亮起，燈籠鈴音；回到故事。）"
+    ],
+    "estimateSec": 10.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a2_c008",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "想不起來（必要旁白二）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c008_01",
+     "speaker": "阿樂叔叔",
+     "text": "奇怪……我的手，怎麼不聽話了？"
+    },
+    {
+     "id": "a2_c008_02",
+     "speaker": "阿樂叔叔",
+     "text": "骨架放到哪裡去了……我想不起來。"
+    },
+    {
+     "id": "a2_c008_03",
+     "speaker": "小宇",
+     "text": "叔叔是不是……吸毒了？"
+    },
+    {
+     "id": "a2_c008_04",
+     "speaker": "小晴",
+     "text": "我們不知道。可是，叔叔需要幫忙。"
+    },
+    {
+     "id": "a2_c008_05",
+     "speaker": "旁白",
+     "text": "不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。"
+    }
+   ],
+   "next": "a2_c009",
+   "prevStable": "a2_c007",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX9"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.5,
+   "tail": 4.5,
+   "storyboard": {
+    "beat": "阿樂拿燈籠紙想摺，手被拉得一頓一頓，紙皺成一團；低頭看手；小宇小聲問；小晴說不知道、叔叔需要幫忙；必要旁白二；停格（給 G4／G5，只記錄：Q2、Q3 間隔偏短，手部近景可多給 2–3 秒無台詞表演，估計秒數未計入）",
+    "cast": "阿樂：H6、X10、L2；小宇 X5（靠近小晴）；小晴 X5 → X7",
+    "camera": "手部近景 → 雙人近景",
+    "sound": "M4；無搞笑音效",
+    "directions": [
+     "（阿樂叔叔拿起一張燈籠紙想摺，手被線拉得一頓一頓，紙皺成一團。他低頭看著自己的手。沒有搞笑音效。）",
+     "（給 G4／G5 的備註〔G1 第 2 輪意見 10，只記錄、不擋關〕：Q2 到 Q3 之間只隔本段，題目偏密；做動畫時，這段手部近景可以多給 2–3 秒無台詞表演，拉開兩題的距離。本版估計秒數未計入，若採用由緩衝吸收。）",
+     "（小宇靠近小晴，小聲問。）",
+     "（停格。）"
+    ],
+    "estimateSec": 29.0,
+    "actionSec": 6.0
+   }
+  },
+  {
+   "id": "a2_c009",
+   "sceneId": "workshop_g4",
+   "kind": "quiz",
+   "title": "〔題卡 Q3〕出題",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "g4_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0,
+     "duration": 2.4,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.2,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": 0.7,
+     "duration": 0.6
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c009_01",
+     "speaker": "折折",
+     "text": "第三題來了。"
+    },
+    {
+     "id": "a2_c009_02",
+     "speaker": "旁白",
+     "text": "看見有人站不穩，就能確定他吸毒嗎？"
+    },
+    {
+     "id": "a2_c009_03",
+     "speaker": "旁白",
+     "text": "一，不能，要先找大人來幫忙。"
+    },
+    {
+     "id": "a2_c009_04",
+     "speaker": "旁白",
+     "text": "二，可以，看起來像就一定是。"
+    },
+    {
+     "id": "a2_c009_05",
+     "speaker": "旁白",
+     "text": "三，不能，所以直接走開不用管。"
+    }
+   ],
+   "next": "a2_c010",
+   "prevStable": "a2_c008",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "3、2、1，一起比！（本題看 C 區。）",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 0.7,
+     "gain": 0.8
+    }
+   ],
+   "quiz": {
+    "qid": "Q3",
+    "number": 3,
+    "question": "看見有人站不穩，就能確定他吸毒嗎？",
+    "options": [
+     "不能，要先找大人來幫忙。",
+     "可以，看起來像就一定是。",
+     "不能，所以直接走開不用管。"
+    ],
+    "answer": 1
+   },
+   "voStart": 1.4,
+   "tail": 1.0,
+   "storyboard": {
+    "beat": "Q3 題卡模式 → 揭答第 1 項 → 第三盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（折折收摺音效＝收聲訊號；題卡模式。）",
+     "（題卡靜止。）"
+    ],
+    "estimateSec": 20.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a2_c010",
+   "sceneId": "workshop_g4",
+   "kind": "reveal",
+   "title": "〔題卡 Q3〕揭答",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "quiz.reveal",
+     "start": 0.3,
+     "duration": 0.45
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c010_01",
+     "speaker": "旁白",
+     "text": "正解是一：不能，要先找大人來幫忙。"
+    }
+   ],
+   "next": "a2_c011",
+   "prevStable": "a2_c009",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "回饋見 `八題_v03.md` Q3；點 C 區一位說理由。最後：「捧燈手——」說完就按下一步，不等全班都做好。",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.0,
+   "tail": 1.2,
+   "storyboard": {
+    "beat": "Q3 題卡模式 → 揭答第 1 項 → 第三盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（「正解」紙印章蓋在第 1 項；其他選項變淡。）"
+    ],
+    "estimateSec": 7.0,
+    "actionSec": 3.0
+   }
+  },
+  {
+   "id": "a2_c011",
+   "sceneId": "workshop_g4",
+   "kind": "lamp",
+   "title": "〔題卡 Q3〕點燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "lamp.light",
+     "start": 0.3,
+     "duration": 1.5,
+     "params": {
+      "index": 3
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a2_c011_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "light.restore",
+     "start": "a2_c011_01.end+0.3",
+     "duration": 1.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a2_c011_01.end+0.3",
+     "duration": 2.5,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a2_c011_01",
+     "speaker": "折折",
+     "text": "第三盞燈，亮了。"
+    }
+   ],
+   "next": "a2_c012",
+   "prevStable": "a2_c010",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
+   "checkpoint": {
+    "label": "Q3 點燈收聲後",
+    "atMinute": 13.0,
+    "escalate": {
+     "behindSec": 90,
+     "level": 1
+    }
+   },
+   "lamp": 3,
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.9,
+   "tail": 0.6,
+   "storyboard": {
+    "beat": "Q3 題卡模式 → 揭答第 1 項 → 第三盞燈",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（第三盞紙燈慢慢亮起；回到故事。）"
+    ],
+    "estimateSec": 6.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a2_c012",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "去找葉護理師",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "pose": "pulled_half",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "hand": "grab"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a2_c012_01",
+     "speaker": "葉護理師",
+     "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？"
+    },
+    {
+     "id": "a2_c012_02",
+     "speaker": "阿樂叔叔",
+     "text": "不用……我休息一下就好。"
+    },
+    {
+     "id": "a2_c012_03",
+     "speaker": "葉護理師",
+     "text": "你家人的電話沒人接，我晚一點再打。"
+    },
+    {
+     "id": "a2_c012_04",
+     "speaker": "小晴",
+     "text": "還有，廣場上有人拿閃亮的盒子給小孩。"
+    },
+    {
+     "id": "a2_c012_05",
+     "speaker": "葉護理師",
+     "text": "謝謝你們告訴我，我會請警察去看看。"
+    }
+   ],
+   "next": "a2_c013",
+   "prevStable": "a2_c011",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX8"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.5,
+   "tail": 7.5,
+   "storyboard": {
+    "beat": "孩子往右跑出店門，跑到求助站；葉護理師快步進店，蹲下和阿樂平視；阿樂說休息就好；葉撥電話給阿樂的家人，沒人接，說晚一點再打（交代第二天接送照常的原因之一）；小晴說廣場上的盒子；葉答應請警察去看",
+    "cast": "小晴、小宇：跑步循環往右；葉護理師：P-YE1、X5 → X2；阿樂 X11、L2；小晴 X7",
+    "camera": "跟拍往右 → 店內蹲下平視中景",
+    "sound": "M6 → 安靜對話",
+    "directions": [
+     "（小晴和小宇往右跑出店門，跑向廣場另一頭正在搭的求助站——帳篷上是自訂的愛心手掌圖示，沒有紅十字。不久，葉護理師跟著孩子們快步進來，蹲下和阿樂叔叔平視。）",
+     "（葉護理師拿出手機撥號，等了一會兒，沒有人接。）"
+    ],
+    "estimateSec": 31.0,
+    "actionSec": 10.0
+   }
+  },
+  {
+   "id": "a2_c013",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "說出實情（懸念）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_m4_light",
+   "lines": [
+    {
+     "id": "a2_c013_01",
+     "speaker": "旁白",
+     "text": "阿樂叔叔告訴葉護理師：前幾天，也有人給他一樣的閃亮小盒子。"
+    },
+    {
+     "id": "a2_c013_02",
+     "speaker": "旁白",
+     "text": "那個人說：「試一次沒關係。」他就試了。"
+    },
+    {
+     "id": "a2_c013_03",
+     "speaker": "葉護理師",
+     "text": "這幾天先不要開車。我會一直打給你的家人。"
+    },
+    {
+     "id": "a2_c013_04",
+     "speaker": "小宇",
+     "text": "明天就是紙燈節了……叔叔會好一點嗎？"
+    },
+    {
+     "id": "a2_c013_05",
+     "speaker": "小晴",
+     "text": "主燈骨架，到底在哪裡？"
+    }
+   ],
+   "next": "a3_c001",
+   "prevStable": "a2_c012",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX10",
+    "FX8",
+    "FX11"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "set": "kraft_stage",
+   "voStart": 2.5,
+   "tail": 7.5,
+   "storyboard": {
+    "beat": "傍晚淡紫；孩子在店門口等；窗內葉護理師蹲在阿樂身邊，阿樂低頭慢慢說話；剪影回憶小窗：一隻手把同樣的盒子遞給阿樂，伸手接過的瞬間切走；旁白：阿樂告訴葉護理師，有人說「試一次沒關係」，他就試了；小窗收起，回到同一個窗景（不加鏡頭）：葉護理師請阿樂這幾天先不要開車、說會一直打給他的家人，阿樂點頭；小晴在問號旁又畫一個問號；折折回頭看空工作台，耳朵垂下",
+    "cast": "阿樂（窗內）X11 → 點頭、L2；葉護理師 P-YE1（窗內）、X5；邀請者的手 H10（剪影）；小晴 H5、X5；小宇 X5；折折耳朵垂",
+    "camera": "店外全景（含窗內）→ 剪影小窗 → 筆記本特寫 → 折折",
+    "sound": "M3 遠遠變調 → M1 小調短句",
+    "directions": [
+     "（傍晚，孩子們在燈籠店門口等，天色轉成淡紫。透過窗戶看得到：葉護理師還蹲在阿樂叔叔身邊，阿樂叔叔低著頭，慢慢說話。）",
+     "（回憶小窗，背光剪影、褪色：一隻手把一樣的閃亮小盒子遞給阿樂叔叔。他伸手接過的那一刻，畫面就切走，不出現打開或使用。）",
+     "（小窗收起，回到同一個窗景構圖（不增加鏡頭）：窗內，葉護理師看著阿樂叔叔，慢慢說；阿樂叔叔點點頭。）",
+     "（小晴在筆記本的問號旁邊，又畫了一個問號。折折回頭看空空的工作台，耳朵垂下來。）",
+     "（實情放在 Q3 與葉護理師介入之後揭露，而且是阿樂叔叔自己對大人說出來，不是孩子看外表判斷；與必要旁白二、Q3 一致。葉護理師知情後的處置由 _03 交代：請他這幾天先不要開車，並繼續聯絡他的家人（接 a2_c012_03「我晚一點再打」）。第二天叔叔還是開車來接孩子，a4_c001 旁白說明他「忘了答應過葉護理師不開車」，呼應 a2_c008「我想不起來」。）"
+    ],
+    "estimateSec": 33.0,
+    "actionSec": 10.0
+   }
+  }
+ ]
+}

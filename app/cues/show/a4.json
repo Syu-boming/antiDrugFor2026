@@ -2,69 +2,70 @@
  "format": "antidrug-cues/1",
  "id": "a4",
  "title": "第四幕：危險會跑到路上",
- "set": "kraft_stage",
+ "set": "gate",
  "characters": {
   "ale": {
    "name": "阿樂叔叔",
    "rig": "ale_v03",
-   "x": -2.6,
-   "z": 0,
+   "x": -6.3,
+   "z": -1.95,
    "facing": 1,
    "fallback": "adult"
   },
   "xiaoqing": {
    "name": "小晴",
    "rig": "standee:xiaoqing",
-   "x": 1.85,
-   "z": 0.45,
+   "x": 2.35,
+   "z": 2.0,
    "facing": 1,
    "fallback": "child"
   },
   "xiaoyu": {
    "name": "小宇",
    "rig": "standee:xiaoyu",
-   "x": 3.35,
-   "z": -0.5,
-   "facing": -1,
+   "x": 3.1,
+   "z": 1.75,
+   "facing": 1,
    "fallback": "child"
   },
   "zhezhe": {
    "name": "折折",
    "rig": "zhezhe",
-   "x": 0.55,
-   "z": 1.2,
+   "x": 2.95,
+   "z": 1.0,
    "facing": 1,
    "fallback": "child"
   },
   "lin": {
    "name": "林老師",
    "rig": "standee:lin",
-   "x": 5.3,
-   "z": -0.6,
-   "facing": -1,
+   "x": 5.45,
+   "z": -0.25,
+   "facing": 1,
    "fallback": "adult"
   },
   "chen": {
    "name": "陳伯伯",
    "rig": "standee:chen",
-   "x": -0.9,
-   "z": -0.4,
+   "x": -1.4,
+   "z": 0.55,
    "facing": 1,
    "fallback": "adult"
   }
  },
- "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "_note": "第四幕（G5 第四幕代理排戲；review/G5/a4/scripts/make_a4_cues.py 產生）。景：gate（校門口，app/src/sets/gate.ts）、a4_roadmap（紙上的路，app/src/sets/a4_roadmap.ts）。cue 的 setTrack＝景的程式動作（引擎不讀，景的 update 讀；格式見兩個景的檔頭）。storyboard 是劇本與節拍表的摘錄，引擎不讀。",
  "cues": [
   {
    "id": "a4_c001",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "scene",
    "title": "校門口",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_gate_wide",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -75,16 +76,147 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.18,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1
      },
      "chen": {
       "visible": true,
-      "emotion": "smile"
+      "x": -1.4,
+      "z": 0.15,
+      "emotion": "neutral"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "x": 2.35,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "neutral"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "x": 3.1,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "neutral"
      }
     }
    },
-   "animation": [],
-   "audioId": "music_m4_light",
+   "animation": [
+    {
+     "name": "puppet.popup",
+     "start": "a4_c001_01.start+5.29",
+     "duration": 0.005,
+     "target": "ale"
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a4_c001_01.start+5.29",
+     "duration": 0.005,
+     "target": "ale",
+     "params": {
+      "at": [
+       -5.6,
+       1.42
+      ]
+     }
+    },
+    {
+     "name": "puppet.kneeTug",
+     "start": "a4_c001_01.start+7.0",
+     "duration": 3.2,
+     "target": "ale",
+     "params": {
+      "at": [
+       -5.6,
+       1.42
+      ]
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "start": "a4_c001_01.start+10.6",
+     "duration": 1.4,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "knee"
+      ],
+      "to": 0.22
+     }
+    },
+    {
+     "name": "puppet.waveTry",
+     "start": "a4_c001_02.start+0.9",
+     "duration": 3.4,
+     "target": "ale",
+     "params": {
+      "greet": "greet",
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "start": "a4_c001_02.end+0.25",
+     "duration": 1.4,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.3
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "start": "a4_c001_02.end+0.3",
+     "target": "ale"
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c001_01.start+5.3",
+     "duration": 0,
+     "params": {
+      "to": "a4_across"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c001_01.start+5.4",
+     "duration": 4.4,
+     "params": {
+      "to": "a4_across_push"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c001_01.start+10.0",
+     "duration": 0,
+     "params": {
+      "to": "a4_window"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c001_01.end+0.15",
+     "duration": 0,
+     "params": {
+      "to": "a4_across"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c001_02.start+0.2",
+     "duration": 4.5,
+     "params": {
+      "to": "a4_across_push"
+     }
+    }
+   ],
+   "audioId": "music_town",
    "lines": [
     {
      "id": "a4_c001_01",
@@ -107,8 +239,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 3.0,
-   "tail": 9.0,
+   "voStart": 1.4,
+   "tail": 3.0,
    "storyboard": {
     "beat": "校門口大全景：最後幾位家長牽孩子離開；林老師在校門內側（右）的警衛室裡講電話、背對街道，隔著窗戶只看到背影；小貨車從左側開來停在對面，後車窗邊露出一小角貓耳（不推近、不打光；與劇本、a4_c013 一致）；旁白：家長前幾天就拜託阿樂來接孩子，叔叔的頭腦受到影響，忘了答應過葉護理師不開車，林老師的電話也還沒打通；阿樂下車，線清楚可見，扶車門晃一下，車鑰匙被線拉起又落下；叫孩子上車",
     "cast": "阿樂：站姿、H7 → H6 鑰匙、X11、L2；陳伯伯：H5 導護旗、X1（遠）；林老師（警衛室窗內小背影，看不到臉；分件背面）",
@@ -120,35 +252,258 @@
     ],
     "estimateSec": 28.0,
     "actionSec": 12.0
-   }
+   },
+   "set": "gate",
+   "music": [
+    {
+     "id": "music_m4_light",
+     "at": "a4_c001_01.start+4.6",
+     "loop": true,
+     "fade": 3.0,
+     "gain": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_gate_ambience",
+     "at": 0,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_ambulance_engine",
+     "at": "a4_c001_01.start+0.9",
+     "gain": 0.28
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": "a4_c001_02.start+2.7",
+     "gain": 0.7
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "lin",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "flag",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "walkers",
+     "start": 0,
+     "duration": 7.0,
+     "kind": "a",
+     "x0": -1.0,
+     "x1": 14.0,
+     "z": -2.85
+    },
+    {
+     "do": "walkers",
+     "start": 1.0,
+     "duration": 8.0,
+     "kind": "b",
+     "x0": -3.6,
+     "x1": 13.0,
+     "z": -2.95
+    },
+    {
+     "do": "truck",
+     "start": "a4_c001_01.start+1.0",
+     "duration": 4.6,
+     "from": -9.5
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.25
+    }
+   ]
   },
   {
    "id": "a4_c002",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "scene",
    "title": "不對勁",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_kids",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.35,
+      "z": 2.0,
+      "pose": "worried",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.1,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.5,
+      "z": 1.6,
+      "emotion": "curious"
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "puppet.tilt",
+     "start": "a4_c002_01.start+0.2",
+     "duration": 0.6,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0.03
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_01.start-0.2",
+     "duration": 2.2,
+     "params": {
+      "to": "a4_kids_qg"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_02.start-0.3",
+     "duration": 1.9,
+     "params": {
+      "to": "a4_kids_xy"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_02.end+0.05",
+     "duration": 1.7,
+     "params": {
+      "to": "a4_kids_z2"
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": "a4_c002_02.end+0.15",
+     "duration": 0.75,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       2.75,
+       0,
+       2.6
+      ],
+      "height": 0.55
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c002_02.end+0.9",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c002_03.start+0.9",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a4_c002_03.end+0.15",
+     "duration": 2.4,
+     "target": "zhezhe",
+     "params": {
+      "form": "plane"
+     }
+    },
+    {
+     "name": "zhezhe.flyTo",
+     "start": "a4_c002_03.end+2.45",
+     "duration": 2.6,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -0.5,
+       9.8,
+       -1.2
+      ],
+      "height": 1.0
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c002_03.end+3.6",
+     "duration": 0,
+     "params": {
+      "to": "a4_up"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c002_03.end+5.1",
+     "duration": 0,
+     "params": {
+      "to": "a4_fold_high"
+     }
+    },
+    {
+     "name": "set.fold",
+     "start": "a4_c002_03.end+5.2",
+     "duration": 2.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_03.end+7.5",
+     "duration": 2.0,
+     "params": {
+      "to": "a4_map_top"
+     }
+    },
+    {
+     "name": "set.swap",
+     "start": "a4_c002_03.end+9.7",
+     "duration": 0,
+     "params": {
+      "set": "a4_roadmap"
+     }
+    },
+    {
+     "name": "set.popup",
+     "start": "a4_c002_03.end+9.8",
+     "duration": 2.3
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_03.end+9.95",
+     "duration": 2.6,
+     "params": {
+      "to": "a4_map"
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -164,7 +519,8 @@
     {
      "id": "a4_c002_03",
      "speaker": "折折",
-     "text": "等一下！我們先把故事暫停，用紙上的路想一想。"
+     "text": "等一下！我們先把故事暫停，用紙上的路想一想。",
+     "start": "a4_c002_02.end+1.1"
     }
    ],
    "next": "a4_c003",
@@ -177,8 +533,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 2.3,
-   "tail": 6.7,
+   "voStart": 0.8,
+   "tail": 0.9,
    "storyboard": {
     "beat": "兩個孩子站在校門內接送線後，沒有往前；說出不對勁；折折從筆記本探頭，摺成紙飛機飛起；整條街往下摺平成牛皮紙地圖",
     "cast": "小晴 X5；小宇 X5；折折",
@@ -191,22 +547,108 @@
     ],
     "estimateSec": 20.0,
     "actionSec": 9.0
-   }
+   },
+   "set": "gate",
+   "music": [
+    {
+     "id": "music_road",
+     "at": "a4_c002_03.end+3.2",
+     "loop": true,
+     "fade": 2.5,
+     "gain": 0.9
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_fold",
+     "at": "a4_c002_03.end+0.75",
+     "gain": 0.9
+    },
+    {
+     "id": "sfx_plane_whoosh",
+     "at": "a4_c002_03.end+2.55",
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": "a4_c002_03.end+5.2",
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": "a4_c002_03.end+6.3",
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": "a4_c002_03.end+9.85",
+     "gain": 0.8
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "map",
+     "start": "a4_c002_03.end+8.0",
+     "duration": 1.6,
+     "to": 1
+    },
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 0
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       0
+      ]
+     ]
+    }
+   ]
   },
   {
    "id": "a4_c003",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "scene",
    "title": "紙上的路",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_map",
+     "light": 1,
+     "set": 1
     },
     "characters": {}
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": "a4_c003_02.start+0.9",
+     "duration": 3.6,
+     "params": {
+      "to": "a4_map_cross"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": "a4_c003_02.start+5.3",
+     "duration": 1.2,
+     "params": {
+      "to": 0.82
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -229,8 +671,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 3.0,
-   "tail": 9.0,
+   "voStart": 1.6,
+   "tail": 2.6,
    "storyboard": {
     "beat": "俯視地圖：虛線通到停止線；紙車沿線前進 → 慢慢偏離 → 鉛筆線歪向斑馬線 → 碰到前凍結",
     "cast": "無角色（紙車）",
@@ -242,22 +684,115 @@
     ],
     "estimateSec": 24.0,
     "actionSec": 12.0
-   }
+   },
+   "set": "a4_roadmap",
+   "music": [
+    {
+     "id": "none",
+     "at": "a4_c003_02.start+5.2",
+     "loop": true,
+     "fade": 0.7,
+     "gain": 1.0
+    }
+   ],
+   "sfx": [],
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0.3,
+     "duration": 1.7,
+     "to": 1,
+     "ease": "linear"
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       0
+      ],
+      [
+       "a4_c003_01.start+0.9",
+       0
+      ],
+      [
+       "a4_c003_01.start+2.8",
+       1.0
+      ],
+      [
+       "a4_c003_01.start+4.6",
+       2.0
+      ],
+      [
+       "a4_c003_02.start-0.3",
+       3.3
+      ],
+      [
+       "a4_c003_02.start+0.35",
+       4.0
+      ],
+      [
+       "a4_c003_02.start+1.5",
+       5.5
+      ],
+      [
+       "a4_c003_02.start+2.6",
+       7.0
+      ],
+      [
+       "a4_c003_02.start+3.6",
+       8.4
+      ],
+      [
+       "a4_c003_02.start+4.35",
+       9.5
+      ],
+      [
+       "a4_c003_02.start+4.85",
+       10.3
+      ],
+      [
+       "a4_c003_02.start+5.25",
+       11
+      ]
+     ]
+    }
+   ]
   },
   {
    "id": "a4_c004",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "scene",
    "title": "同一條路上的人",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_map_cross",
+     "light": 0.82,
+     "set": 1
     },
     "characters": {}
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "camera.cut",
+     "start": 0.3,
+     "duration": 0,
+     "params": {
+      "to": "a4_sil"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 3.0,
+     "duration": 1.8,
+     "params": {
+      "to": 0.36
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -281,8 +816,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 2.5,
-   "tail": 7.5,
+   "voStart": 4.5,
+   "tail": 2.4,
    "storyboard": {
     "beat": "凍結轉背光剪影：駕駛、後座乘客、斑馬線上背書包的路人；聚光燈依序照過（每次漸變 ≥1 秒）；停在剪影",
     "cast": "三個剪影（通用人形，不是主角）",
@@ -294,18 +829,123 @@
     ],
     "estimateSec": 18.0,
     "actionSec": 10.0
-   }
+   },
+   "set": "a4_roadmap",
+   "music": [
+    {
+     "id": "music_road",
+     "at": 0.8,
+     "loop": true,
+     "fade": 2.5,
+     "gain": 0.7
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_paper_rustle",
+     "at": 0.95,
+     "gain": 0.7
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "do": "screen",
+     "start": 0.9,
+     "duration": 3.5,
+     "to": 1
+    },
+    {
+     "do": "glow",
+     "start": 3.1,
+     "duration": 1.6,
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.start+0.0",
+     "duration": 1.0,
+     "target": "driver",
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.start+2.15",
+     "duration": 1.0,
+     "target": "driver",
+     "to": 0.3
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.start+2.15",
+     "duration": 1.0,
+     "target": "passenger",
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.start+3.45",
+     "duration": 1.0,
+     "target": "passenger",
+     "to": 0.3
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.start+3.45",
+     "duration": 1.0,
+     "target": "walker",
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.end+0.3",
+     "duration": 1.2,
+     "target": "driver",
+     "to": 0.8
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.end+0.3",
+     "duration": 1.2,
+     "target": "passenger",
+     "to": 0.8
+    },
+    {
+     "do": "spot",
+     "start": "a4_c004_02.end+0.3",
+     "duration": 1.2,
+     "target": "walker",
+     "to": 0.8
+    }
+   ]
   },
   {
    "id": "a4_c005",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "quiz",
    "title": "〔題卡 Q5〕出題",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_sil",
+     "light": 0.36,
+     "set": 1
     },
     "characters": {}
    },
@@ -405,11 +1045,50 @@
     ],
     "estimateSec": 18.0,
     "actionSec": 4.0
-   }
+   },
+   "set": "a4_roadmap",
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "do": "screen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "glow",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": 0,
+     "duration": 0,
+     "target": "all",
+     "to": 0.8
+    }
+   ]
   },
   {
    "id": "a4_c006",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "reveal",
    "title": "〔題卡 Q5〕揭答",
    "initialState": {
@@ -417,7 +1096,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "set": 1
     },
     "characters": {}
    },
@@ -464,11 +1144,50 @@
     ],
     "estimateSec": 6.0,
     "actionSec": 3.0
-   }
+   },
+   "set": "a4_roadmap",
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "do": "screen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "glow",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": 0,
+     "duration": 0,
+     "target": "all",
+     "to": 0.8
+    }
+   ]
   },
   {
    "id": "a4_c007",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "lamp",
    "title": "〔題卡 Q5〕點燈",
    "initialState": {
@@ -476,7 +1195,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "set": 1
     },
     "characters": {}
    },
@@ -504,7 +1224,7 @@
      "start": "a4_c007_01.end+0.3",
      "duration": 2.5,
      "params": {
-      "to": "show_mid"
+      "to": "a4_sil"
      }
     }
    ],
@@ -545,18 +1265,58 @@
     ],
     "estimateSec": 6.0,
     "actionSec": 4.0
-   }
+   },
+   "set": "a4_roadmap",
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "do": "screen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "glow",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": 0,
+     "duration": 0,
+     "target": "all",
+     "to": 0.8
+    }
+   ]
   },
   {
    "id": "a4_c008",
-   "sceneId": "kraft_stage",
+   "sceneId": "a4_roadmap",
    "kind": "scene",
    "title": "回到校門口",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_sil",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -567,34 +1327,230 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.18,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1,
+      "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.35,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.1,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 14.0,
+      "z": 1.05,
+      "emotion": "worried"
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "set.fold",
+     "start": 1.5,
+     "duration": 1.0
+    },
+    {
+     "name": "fade.out",
+     "start": 2.6,
+     "duration": 0.7
+    },
+    {
+     "name": "set.swap",
+     "start": 3.32,
+     "duration": 0,
+     "params": {
+      "set": "gate"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 3.32,
+     "duration": 0,
+     "params": {
+      "to": "a4_deep"
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "start": 3.3299999999999996,
+     "duration": 0.005,
+     "target": "ale"
+    },
+    {
+     "name": "puppet.grab",
+     "start": 3.3299999999999996,
+     "duration": 0.005,
+     "target": "ale",
+     "params": {
+      "at": [
+       -5.6,
+       1.42
+      ]
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "start": 3.3299999999999996,
+     "duration": 0.005,
+     "target": "xiaoqing"
+    },
+    {
+     "name": "puppet.popup",
+     "start": 3.3299999999999996,
+     "duration": 0.005,
+     "target": "xiaoyu"
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": 3.3299999999999996,
+     "duration": 0.01,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       3.05,
+       0,
+       2.6
+      ]
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 3.4,
+     "duration": 0.8
+    },
+    {
+     "name": "set.popup",
+     "start": 4.32,
+     "duration": 3.6
+    },
+    {
+     "name": "puppet.waveTry",
+     "start": "a4_c008_01.start+1.15",
+     "duration": 3.4,
+     "target": "ale",
+     "params": {
+      "greet": "greet",
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "start": "a4_c008_01.start+4.75",
+     "duration": 1.3,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.3
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c008_01.end+0.1",
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "stepback"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": "a4_c008_01.end+0.25",
+     "duration": 0.7,
+     "target": "xiaoqing",
+     "params": {
+      "dx": 0.25
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": "a4_c008_01.end+0.4",
+     "duration": 0.7,
+     "target": "xiaoyu",
+     "params": {
+      "dx": 0.25
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a4_c008_01.end+1.0",
+     "duration": 0.6,
+     "target": "xiaoqing",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a4_c008_01.end+1.0",
+     "duration": 0.6,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c008_01.end+1.1",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c008_01.end+1.7",
+     "duration": 3.3,
+     "params": {
+      "to": "a4_kids_z"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c008_02.start-0.3",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a4_c008_02.start+1.4",
+     "duration": 0.6,
+     "target": "zhezhe",
+     "params": {
+      "yaw": 0
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
      "id": "a4_c008_01",
      "speaker": "阿樂叔叔",
-     "text": "小晴、小宇……上車吧。"
+     "text": "小晴、小宇……上車吧。",
+     "start": 7.0
     },
     {
      "id": "a4_c008_02",
      "speaker": "折折",
-     "text": "他們還沒上車。換你想一想：現在該怎麼做？"
+     "text": "他們還沒上車。換你想一想：現在該怎麼做？",
+     "start": "a4_c008_01.end+3.3"
     }
    ],
    "next": "a4_c009",
@@ -607,8 +1563,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 2.3,
-   "tail": 6.7,
+   "voStart": 7.0,
+   "tail": 2.2,
    "storyboard": {
     "beat": "剪影翻回地圖，地圖立起變回校門口街景；**會動的節拍（約 10 秒，不停格）**：風吹騎樓小燈籠、接送區人更少；阿樂扶著車門舉鑰匙招手，再叫一次「上車吧」；鑰匙被線拉得晃兩下；兩個孩子在接送線後各退半步、互看，不往車子走；林老師在警衛室裡，不入鏡；折折把問題交給觀眾",
     "cast": "阿樂 H7 → H6 鑰匙、X11、L2；小晴、小宇 X5（退半步、轉頭互看）",
@@ -621,18 +1577,145 @@
     ],
     "estimateSec": 16.0,
     "actionSec": 9.0
-   }
+   },
+   "set": "a4_roadmap",
+   "music": [
+    {
+     "id": "none",
+     "at": 2.2,
+     "loop": true,
+     "fade": 1.0,
+     "gain": 1.0
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_paper_rustle",
+     "at": 1.0,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 1.6,
+     "gain": 0.6
+    },
+    {
+     "id": "sfx_gate_ambience",
+     "at": 3.42,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 4.37,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_wind",
+     "at": 3.92,
+     "gain": 0.2
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": "a4_c008_01.start+2.95",
+     "gain": 0.7
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "plan",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "car",
+     "start": 0,
+     "duration": 0,
+     "keys": [
+      [
+       0,
+       11
+      ]
+     ]
+    },
+    {
+     "do": "screen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "glow",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "spot",
+     "start": 0,
+     "duration": 0,
+     "target": "all",
+     "to": 0.8
+    },
+    {
+     "do": "spot",
+     "start": 0.05,
+     "duration": 0.8,
+     "target": "all",
+     "to": 0
+    },
+    {
+     "do": "glow",
+     "start": 0.2,
+     "duration": 1.0,
+     "to": 0
+    },
+    {
+     "do": "screen",
+     "start": 1.0,
+     "duration": 1.4,
+     "to": 0
+    },
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "farUp",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "wind",
+     "start": 3.82,
+     "duration": 2.0,
+     "to": 1
+    },
+    {
+     "do": "walkers",
+     "start": 3.52,
+     "duration": 7.5,
+     "kind": "b",
+     "x0": -1.5,
+     "x1": 13.0,
+     "z": -2.95
+    }
+   ]
   },
   {
    "id": "a4_c009",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "quiz",
    "title": "〔題卡 Q6〕出題",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_kids_z",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -643,19 +1726,32 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.3,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1,
+      "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.6,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.35,
+      "z": 1.75,
+      "pose": "stepback",
+      "emotion": "worried"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.05,
+      "z": 2.6,
+      "emotion": "curious"
      }
     }
    },
@@ -755,11 +1851,26 @@
     ],
     "estimateSec": 23.0,
     "actionSec": 4.0
-   }
+   },
+   "set": "gate",
+   "setTrack": [
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.6
+    }
+   ]
   },
   {
    "id": "a4_c010",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "reveal",
    "title": "〔題卡 Q6〕揭答",
    "initialState": {
@@ -767,7 +1878,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -778,19 +1890,32 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.3,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1,
+      "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.6,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.35,
+      "z": 1.75,
+      "pose": "stepback",
+      "emotion": "worried"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.05,
+      "z": 2.6,
+      "emotion": "curious"
      }
     }
    },
@@ -837,11 +1962,26 @@
     ],
     "estimateSec": 7.0,
     "actionSec": 3.0
-   }
+   },
+   "set": "gate",
+   "setTrack": [
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.6
+    }
+   ]
   },
   {
    "id": "a4_c011",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "lamp",
    "title": "〔題卡 Q6〕點燈",
    "initialState": {
@@ -849,7 +1989,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -860,19 +2001,32 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.3,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1,
+      "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.6,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.35,
+      "z": 1.75,
+      "pose": "stepback",
+      "emotion": "worried"
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.05,
+      "z": 2.6,
+      "emotion": "curious"
      }
     }
    },
@@ -893,14 +2047,14 @@
     {
      "name": "light.restore",
      "start": "a4_c011_01.end+0.3",
-     "duration": 1.2
+     "duration": 1.6
     },
     {
      "name": "camera.move",
-     "start": "a4_c011_01.end+0.3",
-     "duration": 2.5,
+     "start": "a4_c011_01.end+0.9",
+     "duration": 4.4,
      "params": {
-      "to": "show_mid"
+      "to": "a4_kids"
      }
     }
    ],
@@ -948,40 +2102,225 @@
     ],
     "estimateSec": 5.0,
     "actionSec": 4.0
-   }
+   },
+   "set": "gate",
+   "setTrack": [
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.6
+    }
+   ]
   },
   {
    "id": "a4_c012",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "scene",
    "title": "先不上車",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_kids",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.75,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 4.35,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "worried"
      },
      "lin": {
       "visible": true,
-      "emotion": "smile"
+      "x": 5.45,
+      "z": -0.25,
+      "emotion": "neutral",
+      "facing": 1
      },
      "chen": {
       "visible": true,
-      "emotion": "smile"
+      "x": 2.0,
+      "z": 0.35,
+      "emotion": "neutral",
+      "facing": -1
      }
     }
    },
-   "animation": [],
-   "audioId": null,
+   "animation": [
+    {
+     "name": "puppet.pose",
+     "start": 0.35,
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "palmno"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.45,
+     "duration": 0.6,
+     "target": "xiaoqing",
+     "params": {
+      "dx": 0.15
+     }
+    },
+    {
+     "name": "puppet.enter",
+     "start": "a4_c012_02.end+0.15",
+     "duration": 1.6,
+     "target": "xiaoqing",
+     "params": {
+      "from": -1.15
+     }
+    },
+    {
+     "name": "puppet.enter",
+     "start": "a4_c012_02.end+0.3",
+     "duration": 1.6,
+     "target": "xiaoyu",
+     "params": {
+      "from": -1.0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_02.end+0.15",
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_02.end+0.3",
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_02.end+1.8",
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_02.end+1.95",
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c012_02.end+2.25",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.enter",
+     "start": "a4_c012_02.end+0.5",
+     "duration": 1.3,
+     "target": "lin",
+     "params": {
+      "from": 3.2
+     }
+    },
+    {
+     "name": "puppet.enter",
+     "start": "a4_c012_02.start-0.2",
+     "duration": 2.8,
+     "target": "chen",
+     "params": {
+      "from": -4.2
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c012_02.start+0.1",
+     "duration": 2.8,
+     "params": {
+      "to": "a4_guard"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c012_04.start",
+     "target": "lin",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_04.start+0.05",
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "crouch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c012_04.end+0.15",
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c012_04.start-0.2",
+     "duration": 2.0,
+     "params": {
+      "to": "a4_guard_lin"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c012_05.start-0.4",
+     "duration": 1.9,
+     "params": {
+      "to": "a4_guard"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c012_05.start",
+     "target": "chen",
+     "params": {
+      "emotion": "smile"
+     }
+    }
+   ],
+   "audioId": "music_courage",
    "lines": [
     {
      "id": "a4_c012_01",
@@ -996,7 +2335,8 @@
     {
      "id": "a4_c012_03",
      "speaker": "小宇",
-     "text": "陳伯伯、林老師，阿樂叔叔站不穩，可是他說要開車。"
+     "text": "陳伯伯、林老師，阿樂叔叔站不穩，可是他說要開車。",
+     "start": "a4_c012_02.end+2.2"
     },
     {
      "id": "a4_c012_04",
@@ -1016,8 +2356,8 @@
    "fx": [],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 2.0,
-   "tail": 6.0,
+   "voStart": 1.0,
+   "tail": 2.4,
    "storyboard": {
     "beat": "小晴往後退一步，清楚說先不上車；小宇說回學校等；兩人轉身往右回到校門裡，走到警衛室門口找林老師；林老師拿著手機從警衛室快步出來；陳伯伯也從路口走過來；小宇報告；林老師安排孩子待在門裡、繼續打給兩邊家人；陳伯伯說車先不要開、他過去陪",
     "cast": "小晴 X7；小宇 X7 → X5；林老師 H2（指校門裡）、X7；陳伯伯 X7",
@@ -1029,18 +2369,65 @@
     ],
     "estimateSec": 29.0,
     "actionSec": 8.0
-   }
+   },
+   "set": "gate",
+   "music": [],
+   "sfx": [
+    {
+     "id": "sfx_gate_ambience",
+     "at": 0,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": "a4_c012_02.end+0.15",
+     "gain": 0.5
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "flag",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.5
+    },
+    {
+     "do": "phone",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "phone",
+     "start": "a4_c012_04.start+0.17",
+     "duration": 0,
+     "to": 0
+    },
+    {
+     "do": "phone",
+     "start": "a4_c012_04.end+0.27",
+     "duration": 0,
+     "to": 1
+    }
+   ]
   },
   {
    "id": "a4_c013",
-   "sceneId": "kraft_stage",
+   "sceneId": "gate",
    "kind": "scene",
    "title": "那是什麼？（找找看 3）",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a4_bench",
+     "light": 1,
+     "set": 1
     },
     "characters": {
      "ale": {
@@ -1051,47 +2438,207 @@
        "elbow",
        "knee"
       ],
-      "stringTension": 0.15
+      "stringTension": 0.12,
+      "sit": 0,
+      "x": -2.65,
+      "z": 0.3,
+      "facing": 1
      },
      "chen": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "lin": {
-      "visible": true,
-      "emotion": "smile"
+      "x": -0.95,
+      "z": 0.62,
+      "emotion": "neutral",
+      "facing": 1
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.75,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "neutral"
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "x": 4.35,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "neutral"
+     },
+     "lin": {
+      "visible": true,
+      "x": 5.45,
+      "z": -0.25,
+      "emotion": "neutral",
+      "facing": 1
      },
      "zhezhe": {
       "visible": true,
-      "emotion": "smile"
+      "x": 3.2,
+      "z": 2.55,
+      "emotion": "neutral"
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "puppet.sit",
+     "start": 0.4,
+     "duration": 1.4,
+     "target": "ale",
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 1.9,
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "receive"
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": 2.2,
+     "duration": 0.9,
+     "target": "ale",
+     "params": {
+      "at": [
+       -1.921,
+       1.568
+      ]
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": 3.35,
+     "duration": 0.9,
+     "target": "ale",
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c013_01.start+1.75",
+     "duration": 0.24,
+     "target": "chen",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": 1.2,
+     "duration": 1.9,
+     "params": {
+      "to": "a4_keyclose"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c013_01.start+1.9",
+     "duration": 1.9,
+     "params": {
+      "to": "a4_bench"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c013_01.end+0.05",
+     "duration": 2.2,
+     "params": {
+      "to": "a4_gate_wide2"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c013_02.end+0.2",
+     "duration": 0.24,
+     "target": "lin",
+     "params": {
+      "pose": "standr"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": "a4_c013_02.end+0.5",
+     "duration": 2.2,
+     "target": "lin",
+     "params": {
+      "to": 4.0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c013_02.end+0.6",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a4_c013_02.end+0.8",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c013_02.end+1.0",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c013_02.end+1.0",
+     "duration": 4.2,
+     "params": {
+      "to": "a4_truck_mid"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c013_02.end+5.2",
+     "duration": 5.6,
+     "params": {
+      "to": "a4_truck_window"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c013_03.start",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
      "id": "a4_c013_01",
      "speaker": "陳伯伯",
-     "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。"
+     "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。",
+     "start": 3.6
     },
     {
      "id": "a4_c013_02",
      "speaker": "林老師",
-     "text": "陳伯伯，我打完電話就出來換你。"
+     "text": "陳伯伯，我打完電話就出來換你。",
+     "start": "a4_c013_01.end+0.9"
     },
     {
      "id": "a4_c013_03",
      "speaker": "折折",
-     "text": "咦？大家看，叔叔的車子後面，那是什麼？看到的舉手。"
+     "text": "咦？大家看，叔叔的車子後面，那是什麼？看到的舉手。",
+     "start": "a4_c013_02.end+6.4"
     }
    ],
    "next": "a5_c001",
@@ -1103,8 +2650,8 @@
    ],
    "teacherNote": "找找看 3（約 30 秒，不計獎）：點一位。答案：主燈的竹骨架（貓耳朵）。若有孩子說「剛才車子一停就看到了」，加一句：「你從一開始就看得很仔細！」回應：「找到了！不過先別急，我們看下去。」",
    "checkpoint": null,
-   "voStart": 2.8,
-   "tail": 8.2,
+   "voStart": 3.6,
+   "tail": 2.6,
    "storyboard": {
     "beat": "接送區只剩他們；陳伯伯過馬路扶阿樂到校門外長椅坐下，收下車鑰匙放進導護背心口袋（交鑰匙的手部動作清楚入鏡），叮嚀孩子待在門裡；林老師說打完電話就出來換他，往右走進辦公室（比警衛室更裡面，去查兩家人的其他聯絡電話）；孩子鬆一口氣；鏡頭慢慢帶到小貨車後車窗：a4_c001 那一角現在看得出是貓耳形狀；折折提問；畫面停住",
     "cast": "陳伯伯＋阿樂：P-CH1 → 分件（陳伯伯 H6 收鑰匙、X7；阿樂 X11、線可見但鬆、不吊起）；林老師 X7；小晴、小宇 X2",
@@ -1117,7 +2664,74 @@
     ],
     "estimateSec": 25.0,
     "actionSec": 11.0
-   }
+   },
+   "set": "gate",
+   "music": [
+    {
+     "id": "music_town",
+     "at": "a4_c013_02.end+1.5",
+     "loop": true,
+     "fade": 2.5,
+     "gain": 0.8
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_gate_ambience",
+     "at": 0,
+     "gain": 0.5
+    }
+   ],
+   "setTrack": [
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.B"
+    },
+    {
+     "do": "key",
+     "start": 3.1,
+     "duration": 0.3,
+     "hold": "chen.receive"
+    },
+    {
+     "do": "key",
+     "start": "a4_c013_01.start+1.75",
+     "duration": 0.24,
+     "hold": "chen.stand"
+    },
+    {
+     "do": "flag",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.4
+    },
+    {
+     "do": "phone",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "phone",
+     "start": "a4_c013_02.end+0.32",
+     "duration": 0,
+     "to": 0
+    },
+    {
+     "do": "focus",
+     "start": "a4_c013_02.end+7.4",
+     "duration": 2.4,
+     "to": 1
+    }
+   ]
   }
  ]
 }

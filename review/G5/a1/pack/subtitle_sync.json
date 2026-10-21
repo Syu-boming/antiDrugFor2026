@@ -1,0 +1,307 @@
+{
+ "method": "ffmpeg silencedetect noise=−45 dB、d=0.1 s 找配音檔的語音起點（第 1 頁＝第一個起點；之後各頁＝頁起點前後最接近的停頓後起點）；差值＝字幕頁起點 − 語音起點",
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a1_c001",
+   "line": "a1_c001_01",
+   "page": 1,
+   "text": "品安！你的燈籠好漂亮。",
+   "subtitle_start_s": 6.6,
+   "voice_start_s": 6.726,
+   "diff_s": -0.126,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c001_01_v04.wav"
+  },
+  {
+   "cue": "a1_c001",
+   "line": "a1_c001_02",
+   "page": 1,
+   "text": "我自己編的。你們在找什麼？",
+   "subtitle_start_s": 10.16,
+   "voice_start_s": 10.294,
+   "diff_s": -0.134,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c001_02_v04.wav"
+  },
+  {
+   "cue": "a1_c001",
+   "line": "a1_c001_03",
+   "page": 1,
+   "text": "主燈的骨架。它不見了！",
+   "subtitle_start_s": 15.29,
+   "voice_start_s": 15.428,
+   "diff_s": -0.138,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c001_03_v04.wav"
+  },
+  {
+   "cue": "a1_c001",
+   "line": "a1_c001_04",
+   "page": 1,
+   "text": "我也來布置！看我摺一盞燈籠——",
+   "subtitle_start_s": 19.31,
+   "voice_start_s": 19.433,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c001_04_v04.wav"
+  },
+  {
+   "cue": "a1_c001",
+   "line": "a1_c001_05",
+   "page": 1,
+   "text": "……你是青蛙燈嗎？",
+   "subtitle_start_s": 25.36,
+   "voice_start_s": 25.499,
+   "diff_s": -0.139,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c001_05_v04.wav"
+  },
+  {
+   "cue": "a1_c002",
+   "line": "a1_c002_01",
+   "page": 1,
+   "text": "嘿，要不要看看這個？",
+   "subtitle_start_s": 2.7,
+   "voice_start_s": 2.829,
+   "diff_s": -0.129,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c002_01_v04.wav"
+  },
+  {
+   "cue": "a1_c002",
+   "line": "a1_c002_02",
+   "page": 1,
+   "text": "亮晶晶的，／聞起來香香的，很安全喔。",
+   "subtitle_start_s": 5.34,
+   "voice_start_s": 5.47,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c002_02_v04.wav"
+  },
+  {
+   "cue": "a1_c002",
+   "line": "a1_c002_03",
+   "page": 1,
+   "text": "哇……好亮。",
+   "subtitle_start_s": 10.04,
+   "voice_start_s": 10.172,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c002_03_v04.wav"
+  },
+  {
+   "cue": "a1_c003",
+   "line": "a1_c003_01",
+   "page": 1,
+   "text": "等一下，我想一想。",
+   "subtitle_start_s": 0.9,
+   "voice_start_s": 1.024,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c003_01_v04.wav"
+  },
+  {
+   "cue": "a1_c003",
+   "line": "a1_c003_02",
+   "page": 1,
+   "text": "這盒子上面什麼都沒寫。／誰做的？裡面裝什麼？",
+   "subtitle_start_s": 3.38,
+   "voice_start_s": 3.511,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c003_02_v04.wav"
+  },
+  {
+   "cue": "a1_c003",
+   "line": "a1_c003_03",
+   "page": 1,
+   "text": "大家找找看，這個盒子哪裡怪怪的？／看到的舉手。",
+   "subtitle_start_s": 9.7,
+   "voice_start_s": 9.832,
+   "diff_s": -0.133,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c003_03_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_01",
+   "page": 1,
+   "text": "這是電子煙啦，大家都在玩。／試試看嘛。",
+   "subtitle_start_s": 1,
+   "voice_start_s": 1.125,
+   "diff_s": -0.125,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_01_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_02",
+   "page": 1,
+   "text": "電子煙在臺灣是禁止的。",
+   "subtitle_start_s": 5.72,
+   "voice_start_s": 5.855,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_02_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_03",
+   "page": 1,
+   "text": "包裝漂亮、聞起來香，／都不能證明安全。",
+   "subtitle_start_s": 9.06,
+   "voice_start_s": 9.19,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_03_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_04",
+   "page": 1,
+   "text": "不用，我們不要。",
+   "subtitle_start_s": 13.64,
+   "voice_start_s": 13.764,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_04_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_05",
+   "page": 1,
+   "text": "品安，快來，我們去跟阿樂叔叔說。",
+   "subtitle_start_s": 18.8,
+   "voice_start_s": 18.947,
+   "diff_s": -0.147,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_05_v04.wav"
+  },
+  {
+   "cue": "a1_c004",
+   "line": "a1_c004_06",
+   "page": 1,
+   "text": "你們先走，我把燈籠收好就來。",
+   "subtitle_start_s": 22.91,
+   "voice_start_s": 23.045,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c004_06_v04.wav"
+  },
+  {
+   "cue": "a1_c005",
+   "line": "a1_c005_01",
+   "page": 1,
+   "text": "第一題來囉！",
+   "subtitle_start_s": 1.4,
+   "voice_start_s": 1.524,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c005_01_v04.wav"
+  },
+  {
+   "cue": "a1_c005",
+   "line": "a1_c005_02",
+   "page": 1,
+   "text": "有人拿出包裝漂亮的電子煙，／說「這個很安全」。可以相信嗎？",
+   "subtitle_start_s": 3.77,
+   "voice_start_s": 3.906,
+   "diff_s": -0.136,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c005_02_v04.wav"
+  },
+  {
+   "cue": "a1_c005",
+   "line": "a1_c005_03",
+   "page": 1,
+   "text": "一，可以，包裝漂亮就很安全。",
+   "subtitle_start_s": 10.83,
+   "voice_start_s": 10.962,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c005_03_v04.wav"
+  },
+  {
+   "cue": "a1_c005",
+   "line": "a1_c005_04",
+   "page": 1,
+   "text": "二，不行，外觀不能證明安全。",
+   "subtitle_start_s": 14.57,
+   "voice_start_s": 14.696,
+   "diff_s": -0.126,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c005_04_v04.wav"
+  },
+  {
+   "cue": "a1_c005",
+   "line": "a1_c005_05",
+   "page": 1,
+   "text": "三，可以，聞起來香就沒問題。",
+   "subtitle_start_s": 18.61,
+   "voice_start_s": 18.731,
+   "diff_s": -0.121,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c005_05_v04.wav"
+  },
+  {
+   "cue": "a1_c006",
+   "line": "a1_c006_01",
+   "page": 1,
+   "text": "正解是二：不行，／外觀不能證明安全。",
+   "subtitle_start_s": 1,
+   "voice_start_s": 1.134,
+   "diff_s": -0.134,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c006_01_v04.wav"
+  },
+  {
+   "cue": "a1_c007",
+   "line": "a1_c007_01",
+   "page": 1,
+   "text": "第一盞燈，亮了！",
+   "subtitle_start_s": 1.9,
+   "voice_start_s": 2.024,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c007_01_v04.wav"
+  },
+  {
+   "cue": "a1_c008",
+   "line": "a1_c008_01",
+   "page": 1,
+   "text": "咦？／包裝裡面，怎麼有一團細細的線？",
+   "subtitle_start_s": 6.3,
+   "voice_start_s": 6.435,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c008_01_v04.wav"
+  },
+  {
+   "cue": "a1_c008",
+   "line": "a1_c008_02",
+   "page": 1,
+   "text": "不要碰。我們快去跟阿樂叔叔說。",
+   "subtitle_start_s": 10.59,
+   "voice_start_s": 10.722,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c008_02_v04.wav"
+  },
+  {
+   "cue": "a1_c008",
+   "line": "a1_c008_03",
+   "page": 1,
+   "text": "阿樂叔叔？",
+   "subtitle_start_s": 21.81,
+   "voice_start_s": 21.934,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a1_c008_03_v04.wav"
+  }
+ ],
+ "all_pass": true
+}

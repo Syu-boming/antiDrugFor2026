@@ -1,0 +1,9 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a sheet of SIX separate small pop-up-book cut-outs for a paper street map, front elevations, evenly spaced with transparent gaps, LANDSCAPE 1536x1024, TRANSPARENT background: (1) a small one-storey house with a terracotta roof, (2) a two-storey Taiwanese townhouse with a sage roof, (3) a small corner shop with a plain striped awning and NO sign, (4) a small slate-roof house, (5) a round leafy street tree, (6) a small three-storey school building front with many windows, NO emblem.
+Each piece one flat cardstock cut-out with a crisp knife-cut outline, ONE white paper-core border, thin dark warm-gray inner line, soft flat daylight colors, light paper fiber texture.
+Destination: review/G5/a4/raw/a4map_popups_v02.png (a4 agent cuts them into assets/final/sets/a4_roadmap/set-a4map_<name>_v02.png).
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors (stage lighting is added later by software).
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos. Calm, friendly, child-safe.
+
+After the image is generated: copy YOUR OWN generated PNG unmodified (no crop/resize/re-encode) to the destination path below inside the current workspace, print its pixel width x height and whether it has alpha, and the absolute source path. Do not create, edit or delete any other files. Do not regenerate unless the first generation failed.

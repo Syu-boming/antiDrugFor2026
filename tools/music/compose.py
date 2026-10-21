@@ -587,6 +587,406 @@ def draft_m1_bows(name='music_m1_bows'):
     }
 
 
+# ================================================================ G5 正式版（v02；v01 是主線佔位，不覆寫）
+# 底樂一律 −24 LUFS（G3 慣例；review/G3/loudness_decision.json 第 (3) 層：同類襯底段彼此 ±1 LU），
+# 謝幕跟開幕／閉幕同組 −20 LUFS。循環曲用「連算三遍取中間」做逐樣本無縫接縫（build_all.loop_bake）。
+
+def _bar_chord(s: Song, key: str, chord: str, t0: float, dur: float, vel: float, which: int = 2, octave: int = 0):
+    for p in CH[chord][which]:
+        s.note(key, n(p) + 12 * octave, t0, dur, vel)
+
+
+def zhezhe(name='music_zhezhe', reps: int = 1):
+    """M2 折折動機：120 BPM、8 小節 = 16.0 秒一圈。第 1–2 小節（0–4 s）是俏皮短句（撥弦跳音＋卡林巴高八度＋木魚），
+    第 3–8 小節（4–16 s）是輕的循環底（撥弦點綴、木琴低音、偶爾卡林巴回應）。"""
+    beat = 0.5
+    bar = 4 * beat
+    loop = 8 * bar
+    s = Song(name, loop * reps, tail=3.0)
+    rng = random.Random(152)
+    s.inst('pizz', 'pizz', volume=96, pan=60, reverb=40)
+    s.inst('kalimba', 'kalimba', volume=80, pan=84, reverb=55)
+    s.inst('marimba', 'marimba', volume=86, pan=40, reverb=45)
+    s.inst('wood', 'woodblock', volume=66, pan=72, reverb=35)
+    s.inst('glock', 'glock', volume=62, pan=86, reverb=65)
+    s.inst('pad', 'warmpad', volume=56, pan=64, reverb=60)
+    motif = [('D4', .5), ('F#4', .5), ('A4', .5), (None, .5), ('B4', .25), ('A4', .25), ('F#4', .5), ('E4', .5), (None, .5)]
+    motif2 = [('E4', .5), ('A4', .5), ('B4', .5), (None, .5), ('D5', .25), ('B4', .25), ('A4', .5), ('D4', .5), (None, .5)]
+    answer = [(None, 2), ('B4', .25), ('A4', .25), ('F#4', .5), ('E4', 1)]
+    prog = ['D', 'Asus4', 'D', 'G', 'D', 'Bm7', 'Em7', 'Asus4']
+    for r in range(reps):
+        base = r * loop
+        for b, c in enumerate(prog):
+            t0 = base + b * bar
+            root = CH[c][0]
+            s.chord('pad', CH[c][2], t0, bar + 0.04, vel=30 if b < 2 else 34)
+            if b < 2:   # 短句
+                play_phrase(s, 'pizz', motif if b == 0 else motif2, t0, beat, 66, rng)
+                play_phrase(s, 'kalimba', motif if b == 0 else motif2, t0, beat, 40, rng, octave=1)
+                for i in (0, 3):
+                    s.note('wood', 'E5' if i == 0 else 'A5', _hum(rng, t0 + i * beat, 3), 0.1, 42 if i == 0 else 34)
+                s.note('marimba', n(root) + 12, t0, beat * 1.5, 56)
+            else:       # 循環底：反拍撥弦點綴＋木琴低音
+                s.note('marimba', n(root) + 12, _hum(rng, t0, 3), beat * 1.2, 46)
+                s.note('marimba', n(root) + 19, _hum(rng, t0 + 2 * beat, 3), beat * 1.0, 38)
+                tones = CH[c][1]
+                for i, idx in enumerate((2, 3, 2, 1)):
+                    s.note('pizz', tones[idx], _hum(rng, t0 + (i + 0.5) * beat, 4), beat * 0.4, _vel(rng, 46))
+                if b in (3, 6):
+                    s.note('wood', 'A5', _hum(rng, t0 + 3.5 * beat, 3), 0.1, 26)
+                if b in (4, 6):
+                    play_phrase(s, 'kalimba', answer, t0, beat, 36, rng, octave=1)
+        # 句尾小亮點：第 8 小節第 3–4 拍鐵琴兩聲，接回短句
+        s.note('glock', 'A5', base + 7 * bar + 2 * beat, 0.5, 30)
+        s.note('glock', 'D6', base + 7 * bar + 3 * beat, 0.6, 32)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.5, reverb_level=0.45),
+        'tempo': '120 BPM（1 拍 = 0.5 s）', 'key': 'D 大調五聲音階',
+        'mood': '俏皮、輕巧（折折登場、摺紙笑點）',
+        'instruments': '撥奏弦樂跳音、卡林巴（高八度）、木魚（GM Woodblock）、木琴低音、鐵琴、很輕的溫暖墊音（填住跳音之間的空隙）',
+        'sync': '一圈 16.0 秒（8 小節 × 2.0 s，1 拍 0.5 s）；0.0–4.0 s 短句（兩小節：0.0 起第一句、2.0 起第二句）；'
+                '4.0–16.0 s 輕的循環底（9.0、13.0 s 卡林巴小回應；15.0、15.5 s 鐵琴兩聲接回短句）；循環接縫在 16.0 s，短句每圈重複一次。',
+    }
+
+
+def shiny(name='music_shiny', reps: int = 1):
+    """M3 閃亮動機：音樂盒圓舞曲（3/4），全音階增三和弦 → 亮晶晶但不安穩；全部在中高音域（最低 C4），
+    算完再高通 200 Hz，保證沒有低頻轟鳴。8 小節 × 1.875 s = 15.0 秒一圈。"""
+    beat = 0.625
+    bar = 3 * beat
+    loop = 8 * bar
+    s = Song(name, loop * reps, tail=3.0)
+    rng = random.Random(153)
+    s.inst('mbox', 'musicbox', volume=88, pan=70, reverb=70)
+    s.inst('vibes', 'vibes', volume=66, pan=50, reverb=70)
+    s.inst('cel', 'celesta', volume=58, pan=60, reverb=72)
+    s.inst('pad', 'warmpad', volume=76, pan=64, reverb=60)
+    s.inst('vsus', 'vibes', volume=60, pan=74, reverb=75)
+    aug = {'E+': ['E4', 'G#4', 'C5'], 'D+': ['D4', 'F#4', 'A#4'], 'C+': ['C4', 'E4', 'G#4']}
+    harm = ['E+', 'E+', 'D+', 'D+', 'E+', 'E+', 'C+', 'C+']
+    mel = [[('E5', 1), ('F#5', 1), ('G#5', 1)],
+           [('A#5', 2), ('G#5', 1)],
+           [('F#5', 1.5), ('E5', .5), ('D5', 1)],
+           [('E5', 3)],
+           [('G#5', 1), ('A#5', 1), ('C6', 1)],
+           [('B5', 2), ('A#5', 1)],
+           [('G#5', 1), ('F#5', 1), ('E5', 1)],
+           [('F#5', 2), (None, 1)]]
+    for r in range(reps):
+        base = r * loop
+        for b in range(8):
+            t0 = base + b * bar
+            ch = aug[harm[b]]
+            s.note('vibes', ch[0], _hum(rng, t0, 3), bar * 1.4, 30)            # 圓舞曲第 1 拍
+            for k in (1, 2):                                                    # 第 2、3 拍鋼片琴和弦
+                for p in ch[1:]:
+                    s.note('cel', n(p) + 12, _hum(rng, t0 + k * beat, 3), beat * 0.7, 24)
+            play_phrase(s, 'mbox', mel[b], t0, beat, 46 if b < 4 else 45, rng)
+            # 旋律的長音（≥ 2 拍）用顫音琴低八度輕輕托住，音樂盒衰減快，不會掉成一個坑
+            xb = 0.0
+            for p, bb in mel[b]:
+                if p is not None and bb >= 2:
+                    s.note('vsus', n(p) - 12, t0 + xb * beat + 0.3, bb * beat, 30)
+                xb += bb
+            if b % 2 == 0:
+                s.chord('pad', [ch[1], ch[2]], t0, 2 * bar + 0.05, vel=48)
+            if b in (3, 7):   # 句尾留白處補兩顆很輕的音樂盒高音，避免音量掉坑
+                s.note('mbox', n(ch[2]) + 12, t0 + 1.5 * beat, beat, 30)
+                s.note('mbox', n(ch[1]) + 12, t0 + 2.2 * beat, beat, 28)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0, 'highpass': 200.0,
+        'render': dict(reverb_room=0.65, reverb_level=0.6),
+        'tempo': '96 BPM 圓舞曲（3/4，1 拍 = 0.625 s，1 小節 = 1.875 s）', 'key': 'E 全音階色彩（增三和弦 E+、D+、C+）',
+        'mood': '亮晶晶、有點不穩、讓人想靠近但不安心；不恐怖、沒有低頻轟鳴（最低音 C4，算完高通 200 Hz）',
+        'instruments': '音樂盒主旋律、顫音琴（第 1 拍）、鋼片琴（第 2、3 拍）、極輕墊音（中高音域）',
+        'sync': '一圈 15.0 秒（8 小節 × 1.875 s）；和聲 0.0 E+／3.75 D+／7.5 E+／11.25 C+；旋律每 7.5 s 一句（第二句 7.5 s 起，9.4 s 有一個 B5 甜音）；'
+                '循環接縫在 15.0 s。a1_c003「漸弱、停」用 music 事件 id:"none" 淡出；「遠遠變調（回憶）」可用 gain 0.5–0.6。',
+    }
+
+
+def road(name='music_road', reps: int = 1):
+    """M5 紙上的路：木塊 3+3+2 不規則重音（不是時鐘滴答、不像警報）、撥弦低音同一律動、木琴固定音型、弦樂長音。
+    96 BPM、8 小節 = 20.0 秒一圈，B 小調；第 8 小節停在 F#（屬和弦）接回 Bm。"""
+    beat = 0.625
+    bar = 4 * beat
+    loop = 8 * bar
+    s = Song(name, loop * reps, tail=3.0)
+    rng = random.Random(155)
+    s.inst('wood', 'woodblock', volume=62, pan=60, reverb=35)
+    s.inst('marimba', 'marimba', volume=80, pan=44, reverb=45)
+    s.inst('pizz', 'pizz', volume=88, pan=64, reverb=40)
+    s.inst('str', 'strings', volume=92, pan=64, reverb=58)
+    s.inst('cel', 'celesta', volume=54, pan=78, reverb=70)
+    prog = ['Bm', 'Bm', 'G', 'A', 'Bm', 'Bm', 'Em', 'F#']
+    roots = {'Bm': 'B1', 'G': 'G1', 'A': 'A1', 'Em': 'E2', 'F#': 'F#1'}
+    triad = {'Bm': ['B3', 'D4', 'F#4'], 'G': ['B3', 'D4', 'G4'], 'A': ['A3', 'C#4', 'E4'],
+             'Em': ['B3', 'E4', 'G4'], 'F#': ['A#3', 'C#4', 'F#4']}
+    pads = {'Bm': ['B2', 'F#3', 'D4'], 'G': ['G2', 'D3', 'B3'], 'A': ['A2', 'E3', 'C#4'],
+            'Em': ['E3', 'G3', 'B3'], 'F#': ['F#2', 'C#3', 'A#3']}
+    acc = [1, 0, 0, 1, 0, 0, 1, 0]   # 3+3+2
+    for r in range(reps):
+        base = r * loop
+        for b, c in enumerate(prog):
+            t0 = base + b * bar
+            for i in range(8):
+                if acc[i]:
+                    s.note('wood', 'E5' if i == 0 else 'D5', _hum(rng, t0 + i * beat / 2, 3), 0.08, 30 if i == 0 else 27)
+                elif i == 7 and b % 2 == 1:
+                    s.note('wood', 'G5', _hum(rng, t0 + i * beat / 2, 3), 0.06, 22)
+            rt = roots[c]
+            for xb, dp, v in ((0, 0, 48), (1.5, 7, 40), (3, 12, 40)):
+                s.note('pizz', n(rt) + dp, _hum(rng, t0 + xb * beat, 3), beat * 0.5, v)
+            tri = triad[c]
+            for i, xb in enumerate((0, 1.5, 3)):
+                s.note('marimba', tri[i], _hum(rng, t0 + xb * beat + beat / 2, 3), beat * 0.9, 36)
+            if b == 0 or prog[b - 1] != c:      # 同一和弦連續兩小節就連著拉，不重新起音
+                k = 2 if b + 1 < len(prog) and prog[b + 1] == c else 1
+                s.chord('str', pads[c], t0, k * bar + 0.04, vel=50)
+        # 「鉛筆線慢慢偏離」：第 5–6 小節鋼片琴下行四音，很輕
+        for k, p in enumerate(('F#5', 'E5', 'D5', 'C#5')):
+            s.note('cel', p, base + 4 * bar + k * 2 * beat, 2 * beat, 28)
+        s.expr('str', base, base + loop, 70, 70, steps=2)
+        s.expr('str', base + 6 * bar, base + 7.5 * bar, 70, 84, steps=12)
+        s.expr('str', base + 7.5 * bar, base + 8 * bar, 84, 70, steps=6)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.45, reverb_level=0.4),
+        'tempo': '96 BPM（1 拍 = 0.625 s；木塊 3+3+2 重音）', 'key': 'B 小調（Bm–Bm–G–A–Bm–Bm–Em–F#）',
+        'mood': '專注、有點緊張但不像警報；不用時鐘滴答（重音 3+3+2、不是每拍一樣）',
+        'instruments': '木塊（GM Woodblock）、撥奏弦樂低音、木琴固定音型、弦樂長音、鋼片琴下行四音',
+        'sync': '一圈 20.0 秒（8 小節 × 2.5 s）；每小節木塊重音在 0、0.94、1.88 s（3+3+2）；10.0–15.0 s 鋼片琴下行四音（10.0／11.25／12.5／13.75 s，可對紙車慢慢偏離）；'
+                '15.0–18.75 s 弦樂微微漸強、第 8 小節（17.5 s）F# 屬和弦接回 Bm；循環接縫在 20.0 s。凍結時由引擎停（music id:"none"）。',
+    }
+
+
+def road_hold(name='music_road_hold', reps: int = 1):
+    """（加做，可選）M5「長音」：a4_c004 背光剪影用。music_road 的和聲停在 Bm 長音、沒有木塊，弦樂慢慢呼吸，
+    鋼片琴偶爾一聲。16.0 秒一圈，−24 LUFS；跟 music_road 同調，從 music_road 交叉淡入不會跳。"""
+    loop = 16.0
+    s = Song(name, loop * reps, tail=5.0)
+    rng = random.Random(160)
+    s.inst('str', 'strings', volume=92, pan=64, reverb=62)
+    s.inst('bass', 'contrabass', volume=72, pan=64, reverb=55)
+    s.inst('pad', 'warmpad', volume=56, pan=64, reverb=62)
+    s.inst('cel', 'celesta', volume=52, pan=78, reverb=80)
+    for r in range(reps):
+        base = r * loop
+        for t0, chord, b in ((0.0, ['B2', 'F#3', 'D4'], 'B1'), (8.0, ['G2', 'D3', 'B3'], 'G1')):
+            s.chord('str', chord, base + t0, 8.04, vel=46)
+            s.note('bass', b, base + t0, 8.04, 36)
+            s.chord('pad', chord[1:], base + t0, 8.04, vel=30)
+            s.expr('str', base + t0, base + t0 + 4, 64, 80, steps=12)
+            s.expr('str', base + t0 + 4, base + t0 + 8, 80, 64, steps=12)
+        for t, p_ in ((3.0, 'F#5'), (11.0, 'D5')):
+            s.note('cel', p_, base + t, 2.0, 26)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.6, reverb_level=0.5),
+        'tempo': '自由速度（8 秒換一次和弦）', 'key': 'B 小調（Bm → G）',
+        'mood': '凍結畫面上的靜止張力；不恐怖、沒有低音不協和團塊',
+        'instruments': '弦樂長音（呼吸起伏）、低音提琴、溫暖墊音、鋼片琴兩聲',
+        'sync': '一圈 16.0 秒；0.0 s Bm、8.0 s G；鋼片琴 3.0、11.0 s；循環接縫在 16.0 s。加做、可選：節拍表 a4_c004「M5 長音」。',
+    }
+
+
+def courage(name='music_courage', reps: int = 1):
+    """M6 勇氣動機：M1 的上行變奏（D–E–F#–A 往上），穩定的四拍。96 BPM、12 小節 = 30.0 秒一圈（與 music_town 同速同長）。
+    第 1–8 小節長笛唱勇氣主題，第 9–12 小節只剩伴奏與木琴回聲（留白給對白）。"""
+    beat = 60 / 96
+    bar = 4 * beat
+    loop = 12 * bar
+    s = Song(name, loop * reps, tail=3.5)
+    rng = random.Random(156)
+    s.inst('koto', 'koto', volume=88, pan=46, reverb=55)
+    s.inst('flute', 'flute', volume=86, pan=78, reverb=68)
+    s.inst('pizz', 'pizz', volume=90, pan=64, reverb=42)
+    s.inst('strings', 'strings', volume=64, pan=64, reverb=60)
+    s.inst('glock', 'glock', volume=68, pan=86, reverb=70)
+    s.inst('marimba', 'marimba', volume=78, pan=38, reverb=50)
+    mel = [[('D4', 1), ('E4', 1), ('F#4', 1), ('A4', 1)],
+           [('B4', 1.5), ('A4', .5), ('D5', 2)],
+           [('E5', 1), ('D5', .5), ('B4', .5), ('A4', 1), ('B4', 1)],
+           [('D5', 3), (None, 1)],
+           [('F#4', 1), ('A4', 1), ('B4', 1), ('D5', 1)],
+           [('E5', 1.5), ('D5', .5), ('F#5', 2)],
+           [('E5', 1), ('F#5', 1), ('E5', .5), ('D5', .5), ('B4', 1)],
+           [('D5', 3), (None, 1)]]
+    prog = ['D', 'Gmaj7', 'Em7', 'Asus4', 'D', 'Bm7', 'Gmaj7', 'D', 'G', 'D/F#', 'Em7', 'Asus4']
+    for r in range(reps):
+        base = r * loop
+        for b, c in enumerate(prog):
+            t0 = base + b * bar
+            koto_bar(s, 'koto', c, t0, beat, 50, rng)
+            s.note('pizz', CH[c][0], _hum(rng, t0, 3), beat * 0.7, 62)
+            s.note('pizz', n(CH[c][0]) + 7, _hum(rng, t0 + 2 * beat, 3), beat * 0.6, 50)
+            s.chord('strings', CH[c][2], t0, bar * 0.98, vel=38 if b < 8 else 34)
+            if b < 8:
+                play_phrase(s, 'flute', mel[b], t0, beat, 58 if b < 4 else 62, rng)
+        for bb in (8, 10):   # 木琴回聲：上行四音
+            play_phrase(s, 'marimba', [('D5', .5), ('E5', .5), ('F#5', .5), ('A5', 1.5), (None, 1)], base + bb * bar, beat, 35, rng)
+        for bb, p, v in ((3, 'A5', 34), (7, 'D6', 36)):
+            s.note('glock', p, base + bb * bar, 1.5, v)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.6, reverb_level=0.5),
+        'tempo': '96 BPM（4/4，1 拍 = 0.625 s）', 'key': 'D 大調五聲音階',
+        'mood': '穩定、有勇氣、往前走（拒絕、離開、找大人、撥 119）',
+        'instruments': '箏分解和弦、長笛勇氣主題（M1 上行變奏）、撥奏弦樂低音、弦樂合奏墊、木琴回聲、鐵琴',
+        'sync': '一圈 30.0 秒（12 小節 × 2.5 s）；0.0 s 上行句頭 D–E–F#–A（「起」的落點，適合 M6 從 cue 開頭進）；10.0 s 第二句；'
+                '20.0–30.0 s 只剩伴奏，木琴回聲在 20.0、25.0 s；循環接縫在 30.0 s。輕快／溫柔／輕版用 gain（0.6–0.8），不另做檔。',
+    }
+
+
+def recovery(name='music_recovery', reps: int = 1):
+    """M7 復原動機：M1 慢版鋼琴＋弦。80 BPM、8 小節 = 24.0 秒一圈＝a6_c008 四季窗景一輪（每季 2 小節 6.0 s）。
+    秋：鋼琴＋很輕的弦；冬：大提琴進來；春：弦樂變暖、高一個八度；夏：最滿，第 8 小節漸弱回到秋的音量（接縫平順）。"""
+    beat = 0.75
+    bar = 4 * beat
+    loop = 8 * bar
+    s = Song(name, loop * reps, tail=4.0)
+    rng = random.Random(157)
+    s.inst('piano', 'piano', volume=82, pan=58, reverb=70)
+    s.inst('strings', 'slowstrings', volume=70, pan=64, reverb=65)
+    s.inst('hstr', 'slowstrings', volume=56, pan=70, reverb=70)
+    s.inst('cello', 'cello', volume=64, pan=50, reverb=62)
+    prog = ['D', 'Bm7', 'Gmaj7', 'Asus4', 'D', 'Bm7', ('Em7', 'Asus4'), 'D']
+    svel = [30, 30, 32, 32, 36, 36, 38, 32]
+    for r in range(reps):
+        base = r * loop
+        for b, ch in enumerate(prog):
+            t0 = base + b * bar
+            halves = ch if isinstance(ch, tuple) else (ch, ch)
+            # 鋼琴左手：每拍一個分解和弦音（慢版、像踏瓣延長）
+            for i in range(4):
+                c = halves[0] if i < 2 else halves[1]
+                idx = (0, 2, 3, 2)[i]
+                s.note('piano', CH[c][1][idx], _hum(rng, t0 + i * beat, 6), beat * 1.8, _vel(rng, 30, 2))
+            play_phrase(s, 'piano', M1_MELODY[b], t0, beat, 48, rng)
+            for h, c in enumerate(halves):
+                d = bar if len(set(halves)) == 1 else 2 * beat
+                if h == 1 and len(set(halves)) == 1:
+                    break
+                s.chord('strings', CH[c][2], t0 + h * 2 * beat, d * 0.99, vel=svel[b])
+                if b >= 2:
+                    s.note('cello', n(CH[c][0]) + 12, t0 + h * 2 * beat, d * 0.97, 38 if b < 7 else 34)
+                if 4 <= b <= 6:
+                    s.chord('hstr', [n(p) + 12 for p in CH[c][2][1:]], t0 + h * 2 * beat, d * 0.99, vel=26)
+        s.expr('strings', base + 7 * bar, base + 8 * bar, 110, 84, steps=12)
+        s.expr('strings', base + 8 * bar - 0.05, base + 8 * bar, 84, 110, steps=2)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.7, reverb_level=0.6),
+        'tempo': '80 BPM（1 拍 = 0.75 s，1 小節 = 3.0 s）', 'key': 'D 大調（M1 和聲 D–Bm7–Gmaj7–Asus4–D–Bm7–Em7/Asus4–D）',
+        'mood': '安靜、慢慢好起來；醫院走廊與四季',
+        'instruments': '鋼琴（M1 主題慢版＋左手分解和弦）、慢速弦樂、大提琴（第 3 小節起）、高音弦樂（春夏）',
+        'sync': '一圈 24.0 秒（8 小節 × 3.0 s）＝四季一輪：秋 0.0–6.0／冬 6.0–12.0（大提琴進）／春 12.0–18.0（高音弦樂）／夏 18.0–24.0（最滿，21–24 s 漸弱）；'
+                '6.0、12.0、18.0 s 是換季點（各是 M1 一句的開頭）；9.0 s 和 21.0 s 是半終止與終止前的長音；循環接縫在 24.0 s。'
+                'a5_c008（約 31 s）、a6_c009 也可用（循環）；a6_c008 二級短版（約 12 s）播前半＝秋冬。',
+    }
+
+
+def bows(name='music_bows'):
+    """M1 謝幕版：全編制唱主題。120 BPM，1 小節 2.0 s；0–1.0 s 豎琴上行引入，1.0 s 主題進（第一組鞠躬），
+    之後每 2.0 s 一個小節頭（共 7 組鞠躬：1／3／5／7／9／11／13 s），15.0 s 最後和弦（全體），18.0 s 靜音。"""
+    beat = 0.5
+    bar = 4 * beat
+    s = Song(name, 18.0, tail=3.0)
+    rng = random.Random(158)
+    s.inst('koto', 'koto', volume=88, pan=44, reverb=55)
+    s.inst('harp', 'harp', volume=86, pan=56, reverb=65)
+    s.inst('flute', 'flute', volume=90, pan=78, reverb=68)
+    s.inst('pizz', 'pizz', volume=90, pan=64, reverb=42)
+    s.inst('strings', 'strings', volume=68, pan=64, reverb=60)
+    s.inst('glock', 'glock', volume=70, pan=86, reverb=70)
+    s.inst('marimba', 'marimba', volume=78, pan=36, reverb=50)
+    s.inst('pad', 'warmpad', volume=62, pan=64, reverb=60)
+    # 0–1.0 s：燈光回舞台，豎琴五聲上行＋墊音漸強
+    harp_gliss(s, 'harp', PENTA_UP[5:], 0.05, 0.85, 36, 60, ring=1.6)
+    s.chord('pad', ['D3', 'A3', 'E4'], 0.0, 1.05, vel=44)
+    s.expr('pad', 0.0, 1.0, 40, 96)
+    prog = ['D', 'Bm7', 'Gmaj7', 'Asus4', 'D', 'Bm7', ('Em7', 'Asus4')]
+    for b, ch in enumerate(prog):
+        t0 = 1.0 + b * bar
+        halves = ch if isinstance(ch, tuple) else (ch, ch)
+        for h, c in enumerate(halves):
+            th = t0 + h * 2 * beat
+            s.note('pizz', CH[c][0], _hum(rng, th, 3), beat * 0.6, 66)
+            for i in range(4):
+                s.note('koto', CH[c][1][ARP[(i + 4 * h) % 8]], _hum(rng, th + i * beat / 2), beat * 0.9, _vel(rng, 54))
+        s.chord('strings', CH[halves[0]][2], t0, bar * 0.98, vel=42 if b < 4 else 46)
+        play_phrase(s, 'flute', M1_MELODY[b], t0, beat, 64 if b < 4 else 68, rng)
+        if b >= 4:
+            play_phrase(s, 'marimba', M1_MELODY[b], t0, beat, 40, rng, octave=1)
+        s.note('glock', ['D6', 'B5', 'D6', 'A5', 'D6', 'F#6', 'E6'][b], t0, 1.2, 30)   # 每組鞠躬的小亮點
+    t = 15.0
+    s.note('flute', 'D5', t, 2.6, 62)
+    s.expr('flute', 15.6, 17.6, 127, 40)
+    s.chord('harp', ['D3', 'A3', 'D4', 'E4', 'F#4', 'A4', 'D5'], t, 3.0, vel=58, roll=0.06)
+    s.note('glock', 'D6', t, 2.4, 42)
+    s.note('pizz', 'D2', t, 1.0, 68)
+    s.chord('strings', ['D3', 'A3', 'F#4'], t, 2.9, vel=42)
+    s.expr('strings', 16.0, 17.8, 110, 30)
+    return {
+        'song': s, 'kind': 'oneshot', 'length': 18.0, 'target': -20.0, 'fade_out': (16.6, 1.4),
+        'render': dict(reverb_room=0.62, reverb_level=0.55),
+        'tempo': '120 BPM（1 拍 = 0.5 s，1 小節 = 2.0 s）', 'key': 'D 大調五聲音階',
+        'mood': '溫暖、全員謝幕',
+        'instruments': '豎琴引入、箏、長笛主題（第 5 小節起木琴高八度加入）、撥奏弦樂、弦樂合奏、鐵琴（每組鞠躬一聲）、墊音',
+        'sync': '長度 18.0 s（＝a8_c001 目前長度：voStart 3.8＋台詞 3.0＋tail 11.2）；0.0–1.0 s 豎琴上行（燈光回舞台）；'
+                '小節頭 1.0／3.0／5.0／7.0／9.0／11.0／13.0 s＝7 組依序鞠躬（陳伯伯和林老師、葉護理師、阿樂、品安、小宇、小晴、折折），每個小節頭有一聲鐵琴；'
+                '7.0 s 半終止（第一句結束）；15.0 s 最後 D 和弦（可對全體一起鞠躬）；16.6–18.0 s 淡出，18.0 s 靜音。'
+                '二級短版（約 8 s）：只播到 8 s，換 cue 時由下一段的閉幕曲交叉淡入。',
+    }
+
+
+def town_night(name='music_town_night', reps: int = 1):
+    """M1 夜晚版（a6 燈節夜晚廣場）：80 BPM、10 小節 = 30.0 秒一圈。豎琴分解和弦取代箏、顫音琴與鋼片琴當燈籠微光，
+    長笛主題輕一點；第 9–10 小節留白。整體比白天的 music_town 慢、柔、殘響多。"""
+    beat = 0.75
+    bar = 4 * beat
+    loop = 10 * bar
+    s = Song(name, loop * reps, tail=4.5)
+    rng = random.Random(159)
+    s.inst('harp', 'harp', volume=88, pan=48, reverb=70)
+    s.inst('flute', 'flute', volume=80, pan=78, reverb=75)
+    s.inst('vibes', 'vibes', volume=60, pan=58, reverb=72)
+    s.inst('cel', 'celesta', volume=56, pan=84, reverb=80)
+    s.inst('pizz', 'pizz', volume=80, pan=64, reverb=50)
+    s.inst('pad', 'warmpad', volume=58, pan=64, reverb=65)
+    s.inst('str', 'slowstrings', volume=58, pan=64, reverb=65)
+    prog = ['D', 'Bm7', 'Gmaj7', 'Asus4', 'D', 'Bm7', ('Em7', 'Asus4'), 'D', 'Gmaj7', 'Asus4']
+    twinkle = {0: [(1.5, 'D6')], 2: [(2.5, 'A5')], 4: [(0.5, 'F#6')], 6: [(3.0, 'E6')], 8: [(0.0, 'D6'), (2.0, 'A5')], 9: [(1.0, 'B5'), (3.0, 'F#5')]}
+    for r in range(reps):
+        base = r * loop
+        for b, ch in enumerate(prog):
+            t0 = base + b * bar
+            halves = ch if isinstance(ch, tuple) else (ch, ch)
+            for h, c in enumerate(halves):
+                th = t0 + h * 2 * beat
+                s.note('pizz', CH[c][0], _hum(rng, th, 4), beat * 0.8, _vel(rng, 50))
+                for i in range(4):
+                    idx = ARP[(i + h * 4) % 8]
+                    s.note('harp', CH[c][1][idx], _hum(rng, th + i * beat / 2, 6), beat * 1.6, _vel(rng, 42 + (5 if i % 2 == 0 else 0)))
+            c0 = halves[0]
+            s.chord('pad', CH[c0][2], t0, bar * 0.98, vel=30)
+            s.chord('str', CH[c0][2], t0, bar * 0.98, vel=24)
+            s.chord('vibes', [n(p) + 12 for p in CH[c0][2][1:]], _hum(rng, t0 + 2 * beat, 4), beat * 1.8, 22)
+            if b < 8:
+                play_phrase(s, 'flute', M1_MELODY[b], t0, beat, 50 if b < 4 else 54, rng)
+            for xb, p in twinkle.get(b, []):
+                s.note('cel', p, t0 + xb * beat, 1.6, 26)
+    return {
+        'song': s, 'kind': 'loop', 'length': loop, 'target': -24.0,
+        'render': dict(reverb_room=0.7, reverb_level=0.58),
+        'tempo': '80 BPM（4/4，1 拍 = 0.75 s，1 小節 = 3.0 s）', 'key': 'D 大調五聲音階',
+        'mood': '溫暖的燈節夜晚；比白天的小燈鎮主題慢、柔、遠',
+        'instruments': '豎琴分解和弦、長笛主題（輕）、顫音琴、鋼片琴（燈籠微光）、撥奏低音、溫暖墊音、慢速弦樂',
+        'sync': '一圈 30.0 秒（10 小節 × 3.0 s）；0.0–24.0 s 長笛唱 M1 主題（12.0 s 第二句）；24.0–30.0 s 留白（只剩豎琴與微光）；'
+                '循環接縫在 30.0 s。a6_c002「M1 漸弱 → 安靜」用 music 事件 id:"none"（fade 2–3 s）。',
+    }
+
+
 PIECES = {
     'music_opening': opening,
     'music_town': town,
@@ -600,5 +1000,16 @@ PIECES = {
     'music_m6_courage': draft_m6_courage,
     'music_m7_recovery': draft_m7_recovery,
     'music_m1_bows': draft_m1_bows,
+    # G5 正式版（寫成 audio/music/<id>_v02.wav；版本見 build_all.VERSIONS）
+    'music_zhezhe': zhezhe,
+    'music_shiny': shiny,
+    'music_road': road,
+    'music_courage': courage,
+    'music_recovery': recovery,
+    'music_bows': bows,
+    'music_town_night': town_night,
+    'music_road_hold': road_hold,      # 加做（可選）
 }
-LOOPS = {'music_town': town, 'music_m4_light': m4_light}
+LOOPS = {'music_town': town, 'music_m4_light': m4_light,
+         'music_zhezhe': zhezhe, 'music_shiny': shiny, 'music_road': road, 'music_courage': courage,
+         'music_recovery': recovery, 'music_town_night': town_night, 'music_road_hold': road_hold}

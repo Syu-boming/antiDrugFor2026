@@ -1,0 +1,12 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: the school crossing guard "Uncle Chen" (陳伯伯) from the attached character master, SAME character, SAME outfit, SAME scale and art style, full body, PORTRAIT 2:3 (1024x1536), TRANSPARENT background.
+POSE: standing, body three-quarter turned to the VIEWER'S LEFT (same as the master), his near arm (on the viewer's left) reaching forward and down-left with the palm open and facing up, as if gently receiving a small key from someone sitting on a bench at his left; the other hand relaxed at his side. Kind, calm smile, eyes looking down-left at his open palm. Nothing in his hands (the key is added by software). Feet flat on the ground, same shoes.
+Outfit exactly as the master: grey short-sleeve uniform shirt with NO badge or text, yellow-green crossing-guard vest with cream reflective stripes (not glowing), dark grey trousers.
+One flat cardstock piece with a crisp knife-cut outline, exactly ONE white paper-core border around the outer silhouette, a thin dark warm-gray line inside it.
+Destination: review/G5/a4/raw/chen_receive_v02.png (a4 agent then makes assets/final/chr-chen_pose-receive_v02.png and re-measures the palm for the key).
+Attach as references: S4 style sheet, assets/final/chr-chen_master_v01.png.
+GLOBAL RULES:
+- Flat, even, SHADOWLESS lighting: no directional light, no baked cast shadows, no glow, no glossy highlights, no vignette. Soft flat daylight colors (stage lighting is added later by software).
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no school emblem, no brand marks, no license plate characters, no watermark, no signature.
+- No red cross symbols. No real company colors or logos. Calm, friendly, child-safe.
+
+After the image is generated: copy YOUR OWN generated PNG unmodified (no crop/resize/re-encode) to the destination path below inside the current workspace, print its pixel width x height and whether it has alpha, and the absolute source path. Do not create, edit or delete any other files. Do not regenerate unless the first generation failed.

@@ -1,0 +1,1983 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a4_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a4_c001_01",
+   "speaker": "旁白",
+   "script": "放學了。家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響，忘了答應過葉護理師不開車，林老師的電話也還沒打通。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "放學了 家長前幾天就拜託阿樂叔叔來接孩子叔叔的頭腦受到影響 忘了答應過業護理師不開車林老師的電話也還沒打通",
+     "hyp_trad": "放學了家長前幾天就拜託阿樂叔叔來接孩子叔叔的頭腦受到影響忘了答應過業護理師不開車林老師的電話也還沒打通",
+     "cer": 0.02,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "葉",
+       "hyp": "業",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "放學了。家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響,忘了答應過夜護理師不開車。林老師的電話也還沒打通。",
+     "hyp_trad": "放學了家長前幾天就拜託阿樂叔叔來接孩子叔叔的頭腦受到影響忘了答應過夜護理師不開車林老師的電話也還沒打通",
+     "cer": 0.02,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "葉",
+       "hyp": "夜",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "放學了,家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響,忘了答應過業護理師不開車。林老師的電話也還沒打通。",
+     "hyp_trad": "放學了家長前幾天就拜託阿樂叔叔來接孩子叔叔的頭腦受到影響忘了答應過業護理師不開車林老師的電話也還沒打通",
+     "cer": 0.02,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "葉",
+       "hyp": "業",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "放學了,家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響,忘了答應過夜護理師不開車。林老師的電話也還沒打通。",
+     "hyp_trad": "放學了家長前幾天就拜託阿樂叔叔來接孩子叔叔的頭腦受到影響忘了答應過夜護理師不開車林老師的電話也還沒打通",
+     "cer": 0.02,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "葉",
+       "hyp": "夜",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c001_02",
+   "speaker": "阿樂叔叔",
+   "script": "小晴、小宇……走吧，叔叔載你們去廣場。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c001_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "小晴、小玉,走吧,叔叔在你們去廣場。",
+     "hyp_trad": "小晴小玉走吧叔叔在你們去廣場",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "玉",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      },
+      {
+       "ref": "載",
+       "hyp": "在",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "載",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "小琴、小雨,走吧,叔叔載你們去廣場。",
+     "hyp_trad": "小琴小雨走吧叔叔載你們去廣場",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      },
+      {
+       "ref": "宇",
+       "hyp": "雨",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "載",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "小琴、蕭玉走吧,叔叔在你們去廣場",
+     "hyp_trad": "小琴蕭玉走吧叔叔在你們去廣場",
+     "cer": 0.286,
+     "per": 0.214,
+     "diffs": [
+      {
+       "ref": "晴小宇",
+       "hyp": "琴蕭玉",
+       "kind": "字不同"
+      },
+      {
+       "ref": "載",
+       "hyp": "在",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "載",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "小琴、小羽。走吧,叔叔載你們去廣場。",
+     "hyp_trad": "小琴小羽走吧叔叔載你們去廣場",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      },
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "載",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c002_01",
+   "speaker": "小晴",
+   "script": "叔叔講話慢慢的，站也站不穩。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c002_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "叔叔講話慢慢的,站也站不穩。",
+     "hyp_trad": "叔叔講話慢慢的站也站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔講話慢慢的,站也站不穩。",
+     "hyp_trad": "叔叔講話慢慢的站也站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "書書講話慢慢的 站也站不穩",
+     "hyp_trad": "書書講話慢慢的站也站不穩",
+     "cer": 0.167,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "叔叔",
+       "hyp": "書書",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔講話慢慢的,站也站不穩。",
+     "hyp_trad": "叔叔講話慢慢的站也站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c002_02",
+   "speaker": "小宇",
+   "script": "可是，他說要開車……",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c002_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "可是他說要開車。",
+     "hyp_trad": "可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "可是他說要開車",
+     "hyp_trad": "可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "可是他說要開車。",
+     "hyp_trad": "可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "可是,他說要開車。",
+     "hyp_trad": "可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c002_03",
+   "speaker": "折折",
+   "script": "等一下！我們先把故事暫停，用紙上的路想一想。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c002_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "等一下,我們先把故事暫停用紙上的錄想一想。",
+     "hyp_trad": "等一下我們先把故事暫停用紙上的錄想一想",
+     "cer": 0.053,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "路",
+       "hyp": "錄",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下,我們先把故事暫停,用紙上的路想一想。",
+     "hyp_trad": "等一下我們先把故事暫停用紙上的路想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "等一下,我們先把故事暫停用紙上的錄想一想。",
+     "hyp_trad": "等一下我們先把故事暫停用紙上的錄想一想",
+     "cer": 0.053,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "路",
+       "hyp": "錄",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下,我們先把故事暫停,用紙上的路想一想。",
+     "hyp_trad": "等一下我們先把故事暫停用紙上的路想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c003_01",
+   "speaker": "旁白",
+   "script": "受到毒品影響的人開車，可能昏昏沉沉、判斷變差，反應也變慢。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c003_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "受到毒品影響的人開車,可能昏昏沉沉,判斷變差,反應也變慢。",
+     "hyp_trad": "受到毒品影響的人開車可能昏昏沉沉判斷變差反應也變慢",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "受到毒品影響的人開車,可能昏昏沉沉,判斷變差,反應也變慢。",
+     "hyp_trad": "受到毒品影響的人開車可能昏昏沉沉判斷變差反應也變慢",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "受到毒品影響的人開車可能昏昏沉沉,判斷變差,反應也變慢。",
+     "hyp_trad": "受到毒品影響的人開車可能昏昏沉沉判斷變差反應也變慢",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "受到毒品影響的人開車,可能昏昏沉沉,判斷變差,反應也變慢。",
+     "hyp_trad": "受到毒品影響的人開車可能昏昏沉沉判斷變差反應也變慢",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c003_02",
+   "speaker": "旁白",
+   "script": "該轉彎的時候轉不好，該停的時候停不下來。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c003_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "該轉彎的時候轉不好, 該停的時候停不下來。",
+     "hyp_trad": "該轉彎的時候轉不好該停的時候停不下來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "該轉彎的時候轉不好,該停的時候停不下來。",
+     "hyp_trad": "該轉彎的時候轉不好該停的時候停不下來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "該轉彎的時候轉不好,該停的時候停不下來。",
+     "hyp_trad": "該轉彎的時候轉不好該停的時候停不下來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "該轉彎的時候轉不好,該停的時候停不下來。",
+     "hyp_trad": "該轉彎的時候轉不好該停的時候停不下來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c004_01",
+   "speaker": "旁白",
+   "script": "危險不會只留在車子裡。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c004_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "危險不會只留在車子裡。",
+     "hyp_trad": "危險不會只留在車子裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "危險不會只留在車子裡。",
+     "hyp_trad": "危險不會只留在車子裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "危險不會只留在車子裡。",
+     "hyp_trad": "危險不會只留在車子裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "危險不會只留在車子裡。",
+     "hyp_trad": "危險不會只留在車子裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不會",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c004_02",
+   "speaker": "旁白",
+   "script": "開車的人、坐車的人、走在路上的人，都可能受傷。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c004_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "開車的人、坐車的人、走在路上的人都可能受傷。",
+     "hyp_trad": "開車的人坐車的人走在路上的人都可能受傷",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "開車的人,坐車的人,走在路上的人,都可能受傷。",
+     "hyp_trad": "開車的人坐車的人走在路上的人都可能受傷",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "開車的人、坐車的人、走在路上的人都可能受傷。",
+     "hyp_trad": "開車的人坐車的人走在路上的人都可能受傷",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "拍車的人,坐車的人,走在路上的人,都可能受傷。",
+     "hyp_trad": "拍車的人坐車的人走在路上的人都可能受傷",
+     "cer": 0.053,
+     "per": 0.053,
+     "diffs": [
+      {
+       "ref": "開",
+       "hyp": "拍",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c005_01",
+   "speaker": "折折",
+   "script": "第五題！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c005_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第五題",
+     "hyp_trad": "第五題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第五題",
+     "hyp_trad": "第五題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第五題",
+     "hyp_trad": "第五題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第五題",
+     "hyp_trad": "第五題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c005_02",
+   "speaker": "旁白",
+   "script": "受到毒品影響還開車，可能危害到誰？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c005_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "受到毒品影響還開車,可能危害到誰。",
+     "hyp_trad": "受到毒品影響還開車可能危害到誰",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "受到毒品影響還開車,可能危害到誰?",
+     "hyp_trad": "受到毒品影響還開車可能危害到誰",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "受到毒品影響還開車,可能危害到誰。",
+     "hyp_trad": "受到毒品影響還開車可能危害到誰",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "受到毒品影響還開車,可能危害到誰?",
+     "hyp_trad": "受到毒品影響還開車可能危害到誰",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c005_03",
+   "speaker": "旁白",
+   "script": "一，只會危害開車的人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c005_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1.只會危害開車的人。",
+     "hyp_trad": "1只會危害開車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 只會危害開車的人。",
+     "hyp_trad": "1只會危害開車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1.只會危害開車的人。",
+     "hyp_trad": "1只會危害開車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 只會危害開車的人。",
+     "hyp_trad": "1只會危害開車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c005_04",
+   "speaker": "旁白",
+   "script": "二，只會危害坐車的人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c005_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2. 只會危害坐車的人",
+     "hyp_trad": "2只會危害坐車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 只會危害坐車的人。",
+     "hyp_trad": "2只會危害坐車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2. 只會危害坐車的人。",
+     "hyp_trad": "2只會危害坐車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 只會危害坐車的人。",
+     "hyp_trad": "2只會危害坐車的人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c005_05",
+   "speaker": "旁白",
+   "script": "三，駕駛、乘客和路人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c005_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3.駕駛乘客和路人",
+     "hyp_trad": "3駕駛乘客和路人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "3. 駕駛、乘客和路人。",
+     "hyp_trad": "3駕駛乘客和路人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "3.價值、乘客和路人",
+     "hyp_trad": "3價值乘客和路人",
+     "cer": 0.25,
+     "per": 0.125,
+     "diffs": [
+      {
+       "ref": "駕駛",
+       "hyp": "價值",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "3. 駕駛、乘客和路人",
+     "hyp_trad": "3駕駛乘客和路人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c006_01",
+   "speaker": "旁白",
+   "script": "正解是三：駕駛、乘客和路人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c006_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "鄭解釋 3 駕駛乘客和路人",
+     "hyp_trad": "鄭解釋3駕駛乘客和路人",
+     "cer": 0.182,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鄭",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋3,駕駛乘客和路人。",
+     "hyp_trad": "正解釋3駕駛乘客和路人",
+     "cer": 0.091,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "正解是三, 駕駛乘客和路人。",
+     "hyp_trad": "正解是三駕駛乘客和路人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋3,駕駛乘客和路人。",
+     "hyp_trad": "正解釋3駕駛乘客和路人",
+     "cer": 0.091,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c007_01",
+   "speaker": "折折",
+   "script": "第五盞燈，亮了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c007_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第五盞燈亮了。",
+     "hyp_trad": "第五盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第五盞燈 亮了。",
+     "hyp_trad": "第五盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第五盞燈亮了。",
+     "hyp_trad": "第五盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第五盞燈,亮了。",
+     "hyp_trad": "第五盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c008_01",
+   "speaker": "阿樂叔叔",
+   "script": "小晴、小宇……上車吧。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c008_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "小晴、小宇上車吧!",
+     "hyp_trad": "小晴小宇上車吧",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "小晴、小雨、上車吧!",
+     "hyp_trad": "小晴小雨上車吧",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "雨",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "小晴 小玉 上車吧",
+     "hyp_trad": "小晴小玉上車吧",
+     "cer": 0.143,
+     "per": 0.143,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "玉",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "小晴、小羽、上車吧!",
+     "hyp_trad": "小晴小羽上車吧",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c008_02",
+   "speaker": "折折",
+   "script": "他們還沒上車。換你想一想：現在該怎麼做？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c008_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "他們還沒上車 換你想一想現在該怎麼做",
+     "hyp_trad": "他們還沒上車換你想一想現在該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "他們還沒上車,換你想一想,現在該怎麼做?",
+     "hyp_trad": "他們還沒上車換你想一想現在該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "他們還沒上車,換你想一想現在該怎麼做。",
+     "hyp_trad": "他們還沒上車換你想一想現在該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "他們還沒上車,換你想一想,現在該怎麼做?",
+     "hyp_trad": "他們還沒上車換你想一想現在該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c009_01",
+   "speaker": "折折",
+   "script": "第六題！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c009_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第六題",
+     "hyp_trad": "第六題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第六題",
+     "hyp_trad": "第六題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第六題",
+     "hyp_trad": "第六題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第六題",
+     "hyp_trad": "第六題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c009_02",
+   "speaker": "旁白",
+   "script": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c009_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你還沒上車,接送的人站不穩,反應很不對勁,卻說要開車,怎麼做。",
+     "hyp_trad": "你還沒上車接送的人站不穩反應很不對勁卻說要開車怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不對",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你還沒上車,接送的人站不穩,反應很不對勁,卻說要開車,怎麼做?",
+     "hyp_trad": "你還沒上車接送的人站不穩反應很不對勁卻說要開車怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不對",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你還沒上車,接送的人站不穩,反應很不對勁,卻說要開車,怎麼做。",
+     "hyp_trad": "你還沒上車接送的人站不穩反應很不對勁卻說要開車怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不對",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你還沒上車,接送的人站不穩,反應很不對勁,卻說要開車,怎麼做?",
+     "hyp_trad": "你還沒上車接送的人站不穩反應很不對勁卻說要開車怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不對",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c009_03",
+   "speaker": "旁白",
+   "script": "一，坐後座、繫好安全帶就沒關係。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c009_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1. 做後做, 系好安全帶就沒關係。",
+     "hyp_trad": "1做後做繫好安全帶就沒關係",
+     "cer": 0.154,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "坐",
+       "hyp": "做",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "座",
+       "hyp": "做",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 坐後坐,系好安全帶就沒關係。",
+     "hyp_trad": "1坐後坐繫好安全帶就沒關係",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "座",
+       "hyp": "坐",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1. 坐後坐,系好安全帶就沒關係。",
+     "hyp_trad": "1坐後坐繫好安全帶就沒關係",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "座",
+       "hyp": "坐",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 座後座,系好安全帶就沒關係。",
+     "hyp_trad": "1座後座繫好安全帶就沒關係",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "坐",
+       "hyp": "座",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c009_04",
+   "speaker": "旁白",
+   "script": "二，先不上車，到安全處找大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c009_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2.先不上車到安全處找大人。",
+     "hyp_trad": "2先不上車到安全處找大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 先不上車到安全處找大人。",
+     "hyp_trad": "2先不上車到安全處找大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2.先不上車到安全處找大人",
+     "hyp_trad": "2先不上車到安全處找大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 先不上車到安全處找大人。",
+     "hyp_trad": "2先不上車到安全處找大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c009_05",
+   "speaker": "旁白",
+   "script": "三，請他開慢一點，小心就好。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c009_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3.請他開慢一點,小心就好。",
+     "hyp_trad": "3請他開慢一點小心就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "3. 請他開慢一點,小心就好。",
+     "hyp_trad": "3請他開慢一點小心就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "3.請他開慢一點,小心就好。",
+     "hyp_trad": "3請他開慢一點小心就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "3. 請他開慢一點,小心就好。",
+     "hyp_trad": "3請他開慢一點小心就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c010_01",
+   "speaker": "旁白",
+   "script": "正解是二：先不上車，到安全處找大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c010_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "正解釋二,先不上車到安全處找大人。",
+     "hyp_trad": "正解釋二先不上車到安全處找大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋二,先不上車到安全處找大人。",
+     "hyp_trad": "正解釋二先不上車到安全處找大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "正解釋二,先不上車,到安全處找大人。",
+     "hyp_trad": "正解釋二先不上車到安全處找大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋二,先不上車到安全處找大人。",
+     "hyp_trad": "正解釋二先不上車到安全處找大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c011_01",
+   "speaker": "折折",
+   "script": "第六盞！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c011_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第六盞",
+     "hyp_trad": "第六盞",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第六展",
+     "hyp_trad": "第六展",
+     "cer": 0.333,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第六集",
+     "hyp_trad": "第六集",
+     "cer": 0.333,
+     "per": 0.333,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "集",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第六展",
+     "hyp_trad": "第六展",
+     "cer": 0.333,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c012_01",
+   "speaker": "小晴",
+   "script": "叔叔，我們先不上車。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c012_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "叔叔 我們先不上車",
+     "hyp_trad": "叔叔我們先不上車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔,我們先不上車。",
+     "hyp_trad": "叔叔我們先不上車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "叔叔,我們先不上車。",
+     "hyp_trad": "叔叔我們先不上車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔,我們先不上車。",
+     "hyp_trad": "叔叔我們先不上車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c012_02",
+   "speaker": "小宇",
+   "script": "我們回學校等。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c012_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我們回學校等。",
+     "hyp_trad": "我們回學校等",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們回學校等。",
+     "hyp_trad": "我們回學校等",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我們回學校等。",
+     "hyp_trad": "我們回學校等",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們回學校等。",
+     "hyp_trad": "我們回學校等",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c012_03",
+   "speaker": "小宇",
+   "script": "陳伯伯、林老師，阿樂叔叔站不穩，可是他說要開車。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c012_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "陳伯伯、林老師、阿樂叔叔站不穩,可是他說要開車。",
+     "hyp_trad": "陳伯伯林老師阿樂叔叔站不穩可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯、林老師、阿樂叔叔站不穩,可是他說要開車。",
+     "hyp_trad": "陳伯伯林老師阿樂叔叔站不穩可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "陳伯伯、林老師、阿樂叔叔站不穩,可是他說要開車。",
+     "hyp_trad": "陳伯伯林老師阿樂叔叔站不穩可是他說要開車",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "陳波波、林老師、阿樂叔叔站不穩,可是他說要開車。",
+     "hyp_trad": "陳波波林老師阿樂叔叔站不穩可是他說要開車",
+     "cer": 0.1,
+     "per": 0.1,
+     "diffs": [
+      {
+       "ref": "伯伯",
+       "hyp": "波波",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c012_04",
+   "speaker": "林老師",
+   "script": "你們先待在校門裡面。老師繼續打給你們家人，也打給阿樂叔叔的家人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c012_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你們先待在校門裡面,老師繼續打給你們家人,也打給阿樂叔叔的家人。",
+     "hyp_trad": "你們先待在校門裡面老師繼續打給你們家人也打給阿樂叔叔的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你們先待在校門裡面,老師繼續打給你們家人,也打給阿樂叔叔的家人。",
+     "hyp_trad": "你們先待在校門裡面老師繼續打給你們家人也打給阿樂叔叔的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你們先待在校門裡面,老師繼續打給你們家人,也打給阿樂叔叔的家人。",
+     "hyp_trad": "你們先待在校門裡面老師繼續打給你們家人也打給阿樂叔叔的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "你們先待在校門裡面,老師繼續打給你們家人,也打給阿樂叔叔的家人。",
+     "hyp_trad": "你們先待在校門裡面老師繼續打給你們家人也打給阿樂叔叔的家人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c012_05",
+   "speaker": "陳伯伯",
+   "script": "車先不要開，我過去陪他。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c012_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "車先不要開,我過去陪他。",
+     "hyp_trad": "車先不要開我過去陪他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "車先不要開,我過去陪他。",
+     "hyp_trad": "車先不要開我過去陪他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "車先不要開,我過去陪他。",
+     "hyp_trad": "車先不要開我過去陪他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "車先不要開,我過去陪他。",
+     "hyp_trad": "車先不要開我過去陪他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c013_01",
+   "speaker": "陳伯伯",
+   "script": "鑰匙我先收著。小晴、小宇，你們待在門裡。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c013_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "鑰匙我先收著,小青、小羽,你們待在門裡。",
+     "hyp_trad": "鑰匙我先收著小青小羽你們待在門裡",
+     "cer": 0.125,
+     "per": 0.062,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "青",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      },
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "鑰匙",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "鑰匙我先收著,小琴、小羽,你們待在門裡。",
+     "hyp_trad": "鑰匙我先收著小琴小羽你們待在門裡",
+     "cer": 0.125,
+     "per": 0.062,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      },
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "鑰匙",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "鑰匙我先收紙,小青、小羽,你們待在門裡。",
+     "hyp_trad": "鑰匙我先收紙小青小羽你們待在門裡",
+     "cer": 0.188,
+     "per": 0.125,
+     "diffs": [
+      {
+       "ref": "著",
+       "hyp": "紙",
+       "kind": "字不同"
+      },
+      {
+       "ref": "晴",
+       "hyp": "青",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      },
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "鑰匙",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "鑰匙我先收整,小青、小羽,你們待在門裡。",
+     "hyp_trad": "鑰匙我先收整小青小羽你們待在門裡",
+     "cer": 0.188,
+     "per": 0.125,
+     "diffs": [
+      {
+       "ref": "著",
+       "hyp": "整",
+       "kind": "字不同"
+      },
+      {
+       "ref": "晴",
+       "hyp": "青",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      },
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "鑰匙",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4_c013_02",
+   "speaker": "林老師",
+   "script": "陳伯伯，我打完電話就出來換你。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c013_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "陳伯伯,我打完電話就出來換你。",
+     "hyp_trad": "陳伯伯我打完電話就出來換你",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯,我打完電話就出來換你。",
+     "hyp_trad": "陳伯伯我打完電話就出來換你",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "陳伯伯,我打完電話就出來換你。",
+     "hyp_trad": "陳伯伯我打完電話就出來換你",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯,我打完電話就出來換你。",
+     "hyp_trad": "陳伯伯我打完電話就出來換你",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a4_c013_03",
+   "speaker": "折折",
+   "script": "咦？大家看，叔叔的車子後面，那是什麼？看到的舉手。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a4_c013_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "咦?大家看,叔叔的車子後面,那是什麼?看到的舉手",
+     "hyp_trad": "咦大家看叔叔的車子後面那是什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "咦?大家看,叔叔的車子後面那是什麼?看到的舉手?",
+     "hyp_trad": "咦大家看叔叔的車子後面那是什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "咦?大家看叔叔的車子後面,那是什麼?看到的舉手",
+     "hyp_trad": "咦大家看叔叔的車子後面那是什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "咦?大家看,叔叔的車子後面,那是什麼?看到的舉手!",
+     "hyp_trad": "咦大家看叔叔的車子後面那是什麼看到的舉手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  }
+ ]
+}

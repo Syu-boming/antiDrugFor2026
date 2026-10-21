@@ -1,0 +1,101 @@
+{
+ "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+ "cues": [
+  {
+   "cue": "a1_c001",
+   "kind": "scene",
+   "duration_sec": 30.8,
+   "preroll_sec": 0.6,
+   "estimate_sec": 22.2,
+   "diff_sec": 8.6,
+   "vo_sec": 16.8,
+   "lines": 5
+  },
+  {
+   "cue": "a1_c002",
+   "kind": "scene",
+   "duration_sec": 14.53,
+   "preroll_sec": 0,
+   "estimate_sec": 16.8,
+   "diff_sec": -2.3,
+   "vo_sec": 8.73,
+   "lines": 3
+  },
+  {
+   "cue": "a1_c003",
+   "kind": "scene",
+   "duration_sec": 18.52,
+   "preroll_sec": 0,
+   "estimate_sec": 21.5,
+   "diff_sec": -3.0,
+   "vo_sec": 13.32,
+   "lines": 3
+  },
+  {
+   "cue": "a1_c004",
+   "kind": "scene",
+   "duration_sec": 30.2,
+   "preroll_sec": 0,
+   "estimate_sec": 27.8,
+   "diff_sec": 2.4,
+   "vo_sec": 20.7,
+   "lines": 6
+  },
+  {
+   "cue": "a1_c005",
+   "kind": "quiz",
+   "duration_sec": 23.34,
+   "preroll_sec": 0,
+   "estimate_sec": 21.8,
+   "diff_sec": 1.5,
+   "vo_sec": 19.14,
+   "lines": 5
+  },
+  {
+   "cue": "a1_c006",
+   "kind": "reveal",
+   "duration_sec": 6.97,
+   "preroll_sec": 0,
+   "estimate_sec": 7.0,
+   "diff_sec": -0.0,
+   "vo_sec": 4.77,
+   "lines": 1
+  },
+  {
+   "cue": "a1_c007",
+   "kind": "lamp",
+   "duration_sec": 7.62,
+   "preroll_sec": 0,
+   "estimate_sec": 6.0,
+   "diff_sec": 1.6,
+   "vo_sec": 2.02,
+   "lines": 1
+  },
+  {
+   "cue": "a1_c008",
+   "kind": "scene",
+   "duration_sec": 27.58,
+   "preroll_sec": 0.6,
+   "estimate_sec": 21.2,
+   "diff_sec": 6.4,
+   "vo_sec": 10.03,
+   "lines": 3
+  }
+ ],
+ "act_total_sec": 159.6,
+ "act_preroll_total_sec": 1.2,
+ "estimate_sum_sec": 144.3,
+ "act_budget_recorded_sec": 144.2,
+ "diff_vs_budget_sec": 16.6,
+ "playback_with_holds_sec": 186.26,
+ "holds_assumed_sec": {
+  "a1_c001": 3.5,
+  "a1_c002": 3.5,
+  "a1_c003": 3.5,
+  "a1_c004": 3.5,
+  "a1_c005": 3,
+  "a1_c006": 2.5,
+  "a1_c007": 2.5,
+  "a1_c008": 3.5
+ }
+}

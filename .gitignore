@@ -51,3 +51,7 @@ review/G5/*/pack/capture/
 review/G5/*/pack/frames*/
 review/G5/*/pack/strip_*/
 review/G5/*/pack/blink/
+review/G5/*/pack/audio/*.wav
+review/G5/*/pack/probe_dense.json
+review/G5/**/preview/data.js
+review/G5/*/pack/proj/16x9/

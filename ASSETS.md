@@ -262,3 +262,125 @@ G5 開工前的多幕共用角色與景。image_gen 用量：19 張角色／道�
 | assets/final/sets/gate/set-gate_{school-building,pillar,folding-gate,school-wall,guard-house,floor}_v01.png＋layout.draft.json | 景片：校門口分層景（透明；地面不透明；警衛室窗玻璃挖空） | 校門口（第三、四、五幕） | 三層樓走廊式校舍、洗石子門柱、伸縮門、圍牆＋樹籬、警衛室（右側校內）、地面（柏油路＋斑馬線、人行道、黃色接送線）；沿用廣場天空、遠山、對街騎樓、行道樹、花台；無校徽、無字 | a3_c003、a4_c001–a4_c013、a5_c001–a5_c007 | 程式繪製退路版（build_gate.py＋paperdraw.py；紙紋取自 G2 天空景片）：15:01 啟動的 image_gen 回「usage limit，19:50 後再試」，提示已備妥（raw/set_gate_*_v01.prompt.txt） | 原創（程式產生） | 平光預覽兒童身後投影 v2 中位 0.53–0.56（≥0.50）；sets/gate_preview_{medium,wide,mid_low}.png、preview_report.json | v01 |
 | assets/final/props/prop-bench_v01.png | 道具：長椅（透明，白色紙芯邊） | 共用（廣場、校門外、醫院走廊） | 木條長椅正面略俯視、灰綠鐵腳、三人座；座面世界高 0.92 | a1_c001、a1_c004、a4_c013、a5_c001、a5_c007、a5_c008 | 程式繪製（build_gate.py；image_gen 額度用完的退路） | 原創（程式產生） | 品安 P-PA1、林老師 P-LIN2 坐上去座面對齊（contact_characters.png 藍線、square_preview_medium.png） | v01 |
 | assets/final/props/prop-truck_v01.png、prop-truck-wheel_v01.png | 道具：阿樂叔叔的小貨車（側面、車頭朝右）＋可轉動輪子 | 第四幕 | 淡米色車身、無標誌無車牌字、帆布車斗、後窗旁露出竹篾貓耳尖；頭燈尾燈不亮 | a4_c001、a4_c008、a4_c013 | 程式繪製（build_gate.py；額度用完的退路，提示 raw/prop_truck_v01.prompt.txt） | 原創（程式產生） | 不用真實品牌或物流配色；輪心、貓耳尖、後窗、車門位置寫在 sets/gate/layout.draft.json | v01 |
+
+## G5 第一批（各幕代理與配樂音效代理，主線 2026-10-21 21:1x 合併）
+
+### 來源：review/G5/a1/ASSETS_rows.md
+
+# 開場＋第一幕（a0、a1）新素材：資產表列（給主線併進 ASSETS.md）
+
+2026-10-21 第 2 天傍晚，G5 開場＋第一幕代理。Codex image_gen 額度用完（約 19:50 恢復），本批**全部程式繪製**（Pillow＋G2 同款紙紋，`review/G5/shared_art/scripts/paperdraw.py`；腳本 `review/G5/a0/scripts/build_a01_art.py` 可重跑），沒有呼叫 codex、沒有用到任何外部圖。圖裡沒有任何文字、數字、標誌、紅十字、真實品牌或物流配色。三張角色補姿勢是既有母版／姿勢圖的程式加工（加手錶、左右鏡像）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/workshop_a0/design_v01.png | 景片（透明；450×555） | 燈籠店 workshop_a0 | 牆上的主燈設計圖：微黃圖紙，鉛筆線摺紙貓燈（折折同色系）、竹骨架小草圖、沒有數字的尺寸虛線、四顆黃銅圖釘 | a0_c002–a0_c005 | 程式繪製（build_a01_art.py design） | 本專案自製 | 無文字、無數字；引擎內 a0_c003 設計圖近景可辨識 | v01 |
+| assets/final/sets/workshop_a0/stand_v01.png | 道具（透明；339×132，白邊 6 px） | 燈籠店 | 工作台上空著的主燈底座：圓木座＋四個空插孔 | a0_c002–a0_c005 | 程式繪製（stand） | 本專案自製 | 「工作台中央空了一大塊」的視覺線索 | v01 |
+| assets/final/sets/workshop_a0/chime_v01.png | 道具（透明；193×470） | 燈籠店門口 | 風鈴：淺色玻璃鈴、舌、淺橙紙籤（沒有字） | a0_c004（S6 輕擺） | 程式繪製（chime） | 本專案自製 | 擺幅 ≤0.13 rad、0.85 Hz 阻尼漸停 | v01 |
+| assets/final/sets/workshop_a0/lamps_v01.png | 景片（透明；1984×248） | 台口 | 台口上方一串八盞還沒亮的紙燈（和題卡燈同造型：圓燈身、竹骨線、上下木蓋），下垂細繩 | a0_c005（後拉露出） | 程式繪製（lamps） | 本專案自製 | 不發光、不閃 | v01 |
+| assets/final/sets/workshop_a0/memoryframe_v01.png | 畫面疊層（透明；1920×1080） | 燈籠店 | 回憶小窗：暖杏色厚紙框、手撕邊圓角窗、窗緣紙芯白邊、窗內淡暖暈 | a0_c002 | 程式繪製（memoryframe） | 本專案自製 | 收進來 1.4 秒（單向漸變一次） | v01 |
+| assets/final/sets/workshop_a0/notebook_v01.png | 畫面疊層底圖（透明；900×600） | 燈籠店 | 小晴的小筆記本（攤開、格線、沒有字）；竹骨架與問號由程式逐筆畫 | a0_c004 | 程式繪製（notebook）＋app/src/sets/workshop_a0.ts 逐筆畫線 | 本專案自製 | 無文字 | v01 |
+| assets/final/sets/square_a1/pillar_v01.png | 景片（透明；172×870） | 廣場 square_a1 | 畫面左側的紅磚柱子（米色柱頭柱腳） | a1_c002–a1_c004 | 程式繪製（pillar） | 本專案自製 | 邀請者的手從後面伸出（左＝危險方位） | v01 |
+| assets/final/sets/square_a1/garland_v01.png | 景片（透明；1500×150） | 廣場 | 騎樓下的小燈籠串（白天、未點亮、粉彩） | a1 全段 | 程式繪製（garland） | 本專案自製 | — | v01 |
+| assets/final/sets/square_a1/townsfolk_v01.png | 景片（透明；780×390） | 廣場遠景 | 布置燈節的鎮民剪影三人（梯子掛燈籠、竿子挑燈籠、抱一箱燈籠）；淡暖灰平塗（引擎自發光 0.5，像隔著一層空氣）、沒有五官、沒有年齡族群標記 | a1 大全景右後方（遠景） | 程式繪製（townsfolk） | 本專案自製 | 中性設計（安全界線第 10 條） | v01 |
+| assets/final/sets/square_a1/wrapper_v01.png | 道具（透明；800×550，1000 px／單位） | 廣場 | 被風吹來的撕破包裝紙（貼紙花紋＝盒子同色系）＋撕口白色紙背＋一團灰色紙線（淺灰繩身＋深灰邊，同操偶線紙繩配色） | a1_c008（推近特寫） | 程式繪製（wrapper） | 本專案自製 | 沒有煙、沒有器具；台詞稱「一團細細的線」 | v01 |
+| assets/final/sets/square_a1/shopwindow_v01.png | 景片（透明；375×382） | 廣場騎樓 | 騎樓下燈籠店的窗：木窗框、格子窗洞（挖空）、窗台、只有燈籠圖示的小招牌 | a1 全段（窗內剪影只在 a1_c008） | 程式繪製（shopwindow） | 本專案自製 | 無文字 | v01 |
+| assets/final/sets/square_a1/windowpaper_v01.png | 景片（不透明；360×330） | 廣場騎樓 | 窗紙（暖色，屋裡點著燈；引擎自發光 0.75） | a1 全段 | 程式繪製（windowpaper） | 本專案自製 | — | v01 |
+| assets/final/sets/square_a1/silbody_v01.png、silarm_v01.png、silbamboo_v01.png | 剪影（半透明柔邊；481×857、300×300、60×520） | 窗內阿樂叔叔（FX10） | 上半身剪影（取自 assets/generated/chr-ale_master_v02.png 的外形，填暖深褐、柔化）、可轉動的右臂、竹篾；**沒有操偶線** | a1_c008 | 程式加工（silhouettes）；外形來源為本專案母版 | 本專案自製 | 隔一層半透明窗紙；手往旁一歪 0.45 秒、竹篾 0.7 秒落下（S7） | v01 |
+| assets/final/sets/square_a1/boxclose_v01.png | 特寫小窗圖（透明；616×533） | 邀請者的貼紙盒 | 盒子特寫：貼紙一層蓋一層、邊角翹起、一小截灰色線頭、沒有任何說明 | a1_c003（找找看 1）、a1_c004 開頭收起 | assets/final/props/prop-sticker-box_v01.png（G5 共用美術）只把透明處的雜色清掉、透明度二值化 | 使用者 ChatGPT 方案生成（同來源圖） | 無真實產品外形、品牌、卡通角色；固定反光不閃 | v01 |
+| assets/final/chr-xiaoyu_pose-standwatch_v01.png | 表演姿勢圖（透明；528×1446） | xiaoyu | standwatch：v04 母版站姿＋左腕兒童手錶（深藍錶帶、淺色錶面、只有四個圓點，沒有字）；透明度與母版完全相同，臉部沿用 xiaoyu:stand 退路換片 | a0_c004 起全段（伏筆）、a1 | 程式加工 chr-xiaoyu_master_v04.png（build_a01_art.py xiaoyu_watch） | 同母版 | 引擎：退路換片（同站姿） | v01 |
+| assets/final/chr-pinan_pose-sit-lantern-back_v01.png | 表演姿勢圖（透明；597×1454） | pinan | sit_lantern_back：P-PA1 坐長椅綁燈籠的左右鏡像（a1_c004「偷偷回頭看柱子」翻面；臉部沒有換片，這個姿勢不說話） | a1_c004 結尾、Q1 題卡、—— | 程式加工 chr-pinan_pose-sit-lantern_v01.png（左右鏡像） | 同來源圖 | 引擎：臉部「無」（不說話、只停 2–3 秒＋題卡背景） | v01 |
+| assets/final/chr-xiaoqing_pose-walkl_v01.png | 表演姿勢圖（透明；880×1448） | xiaoqing | walk_l：走路姿勢的左右鏡像（往畫面左走；星星髮夾回到和站姿同一側；臉部沒有換片，只在走進來的 2–3 秒用） | a0_c004、a1_c001 | 程式加工 chr-xiaoqing_pose-walk_v06.png（左右鏡像） | 同來源圖 | 引擎：臉部「無」 | v01 |
+
+另外沿用、沒有新增檔案但第一次在引擎裡用到：`props/prop-bench`（長椅）、`chr-inviter_hand-box`（邀請者的手）、`sets/square/*`（layout.json：天空加寬到 32、遠山加寬到 30 並下移、地面往前延伸到 z=10，站位與地標不變）。小宇往右走用 a2 代理新增的 `walk_r`（chr-xiaoyu_pose-walk-r_v01.png）。
+
+希望額度恢復後重抽（主線決定）：提示詞與用途寫在製作代理回報的 handoff（設計圖、包裝紙、燈籠店窗、鎮民剪影；換圖不改位置與尺寸）。
+
+### 來源：review/G5/a2/ASSETS_rows.md
+
+# 第二幕（a2）新素材：資產表列（給主線併入 ASSETS.md）
+
+2026-10-21 第 2 天下午，a2 代理。Codex image_gen 額度用完（約 19:50 恢復），本段新圖全部是程式繪製退路版：`review/G5/a2/scripts/build_a2_art.py`（Pillow＋G5 共用美術 paperdraw.py 的 G2 同款紙紋、暖深灰細線、無陰影無方向光）。圖裡沒有任何文字、數字、標誌、紅十字、真實品牌或物流配色；求助站用手捧愛心圖示（同葉護理師識別證）。重抽提示寫在回報的 handoff。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/chr-xiaoyu_pose-walk-r_v01.png | 表演姿勢圖（透明；850×1496） | xiaoyu | walk_r：`chr-xiaoyu_pose-walk_v06` 左右翻轉。名冊 facing:-1 時引擎再翻一次，畫面上就是原圖往畫面右走（小宇在 a2 一直面向左看阿樂叔叔，往右走時才不必換 facing） | a2_c001、a2_c012 | 程式（PIL ImageOps.mirror）；show_characters.json 新增 `xiaoyu.poses.walk_r` 與 `fallbackFaces["xiaoyu:walk_r"]`（眼框、嘴框依原圖鏡射） | 衍生自使用者 ChatGPT 方案生成圖 | 引擎擷取 review/G5/a2/pack/capture/keyframes（a2_c001、a2_c012）；翻面前後同一張原圖，不會左右跳 | v01 |
+| assets/final/sets/a2_memory/mem-box_v01.png | 景片（透明毛邊紙卡；1040×800） | a2_memory | 褪色回想小窗①：廣場地磚上的貼紙盒（a1_c003 的盒子） | a2_c003 | 程式：props/prop-sticker-box_v01 合成到程式畫的地磚上，降彩、偏暖（回憶）、米白毛邊紙框 | 衍生自使用者 ChatGPT 方案生成圖＋程式繪製 | 無文字；盒子只是俗豔貼紙層，沒有真實產品外形 | v01 |
+| assets/final/sets/a2_memory/mem-wrapper_v01.png | 景片（透明毛邊紙卡；1040×800） | a2_memory | 褪色回想小窗②：撕破的包裝紙（盒子貼紙紋）與撕口裡一團灰色紙線（a1_c008） | a2_c003 | 程式：取 prop-sticker-box 的貼紙紋裁成撕紙形、白色紙芯邊；灰線用操偶線同色（淡灰身＋深灰邊） | 同上 | 無文字；不出現打開或使用 | v01 |
+| assets/final/sets/a2_memory/layout.json | 景設定 | a2_memory | 燈籠店背牆（bg-workshop-back）、地板、兩張回想紙卡；鏡位 a2_memory_cu | a2_c003 | 手寫；小窗開合與翻面在 app/src/sets/a2_memory.ts | — | — | — |
+| assets/final/sets/a2_helpdesk/tent_v01.png | 景片（透明；1011×858） | a2_helpdesk | 廣場另一頭正在搭的求助站：鼠尾草綠三角篷、米白扇形垂邊、圓牌手捧愛心圖示（暖珊瑚色，不是飽和紅）、白桌布長桌、水杯、毛巾籃 | a2_c012 | 程式繪製 | 程式繪製（本專案） | 無紅十字、無文字 | v01 |
+| assets/final/sets/a2_helpdesk/crate_v01.png | 道具景片（透明；220×176） | a2_helpdesk | 紙箱 | a2_c012 | 程式繪製 | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_helpdesk/layout.json | 景設定 | a2_helpdesk | 天空、遠山、後排騎樓、行道樹、花台沿用 sets/square；帳篷、紙箱；鏡位 a2_help_mid | a2_c012 | 手寫 | — | — | — |
+| assets/final/sets/a2_window/sky_v01.png | 背牆（1600×760） | a2_window | 傍晚天空：淡紫→粉紫→暖杏漸層＋幾片剪紙雲 | a2_c013 | 程式繪製；cue 內 7 秒由暖轉淡紫（a2_window.ts，FX11） | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_window/facade_v01.png | 景片（透明；2400×1240） | a2_window | 燈籠店店面：瓦簷、一排紙燈籠（沒點亮）、左邊大窗（挖空）、右邊木門、門口石階、盆栽 | a2_c013 | 程式繪製 | 程式繪製（本專案） | 無招牌、無文字 | v01 |
+| assets/final/sets/a2_window/interior_v01.png | 景片（1200×800） | a2_window | 窗裡的店內暖牆、木架上的燈籠 | a2_c013 | 程式繪製（引擎另給暖色自發光，不套傍晚紫色分級） | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_window/stool_v01.png | 道具景片（透明；198×215） | a2_window | 阿樂叔叔坐的圓凳（同 G4 燈籠店的凳子造型） | a2_c013 | 程式繪製 | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_window/glass_v01.png | 半透明景片（64×64） | a2_window | 窗玻璃淡暖色（opacity 0.12） | a2_c013 | 程式 | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_window/sil-frame_v01.png | 景片（透明毛邊；1000×720） | a2_window | 剪影回憶小窗的背光紙框（中間亮、四周暖暗） | a2_c013 | 程式繪製；小窗內容由 a2_window.ts 畫在 canvas 上（裁在框內） | 程式繪製（本專案） | — | v01 |
+| assets/final/sets/a2_window/sil-hand-box_v01.png | 剪影（透明；866×377） | a2_window | 邀請者的手捧盒子（剪影，看不到膚色與衣著；中性） | a2_c013 | 程式：chr-inviter_hand-box_v01 的外形填暖深褐 | 衍生自使用者 ChatGPT 方案生成圖 | 剪影，不出現打開或使用 | v01 |
+| assets/final/sets/a2_window/sil-ale-hand_v01.png | 剪影（透明；243×311） | a2_window | 阿樂叔叔伸出去的前臂與手（剪影） | a2_c013 | 程式：rig/chr-ale_forearm-l_v05＋chr-ale_hand-l_v04 合成、旋轉、填暖深褐 | 衍生自使用者 ChatGPT 方案生成圖 | 小窗在手碰到盒子之前就收起 | v01 |
+| assets/final/sets/a2_window/notebook_v01.png | 景片（1500×960） | a2_window | 小晴的筆記本：淡格線（無字）、左頁燈籠竹骨架速寫、右頁一個鉛筆問號；第二個問號與鉛筆由 a2_window.ts 程式畫 | a2_c013 | 程式繪製 | 程式繪製（本專案） | 只有問號符號，沒有文字；和 a0 的筆記本特寫要由主線統一樣式 | v01 |
+| assets/final/sets/a2_window/layout.json | 景設定 | a2_window | 天空、後排騎樓、店內暖牆、工作台（bg-workshop-table）、圓凳、店面、窗玻璃；鏡位 a2_win_wide／a2_win_kids／a2_win_note | a2_c013 | 手寫；天色漸變、剪影小窗、筆記本在 app/src/sets/a2_window.ts | — | — | — |
+
+### 來源：review/G5/a4/ASSETS_rows.md
+
+# 第四幕（a4）新素材：資產表列（給主線併入 ASSETS.md）
+
+2026-10-21，G5 第四幕代理。Codex image_gen 額度用完（約 19:50 恢復），全部用 Pillow＋G2 同款紙紋程式繪製（review/G5/a4/scripts/build_a4_art.py，借用 review/G5/shared_art/scripts/paperdraw.py 的畫法；可重跑）。圖裡沒有任何文字、數字、品牌、標誌、紅十字；車子是通用小車、路人與剪影是通用人形。show_characters.json 只新增 chen.poses.receive、lin.poses.standr 與對應的 fallbackFaces（chen:receive、lin:standr，眼嘴範圍由母版平移／鏡射）。
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/a4_roadmap/set-a4map_map_v01.png | 景片（俯視地圖，不透明）；3240×1620 | a4_roadmap（紙上的路） | 牛皮紙地圖：主路＋支路、人行道與行道樹、斑馬線、停止線、公園水池、校園花圃與球場線、右下屋頂、3×2 摺痕、紙星指北（無字母） | a4_c002（後半，gate 景也用同一張淡入）–a4_c008（前半） | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-a_v01.png | 立體書小屋（透明，白邊）；420×343 | a4_roadmap | 平房：赤陶屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-b_v01.png | 立體書小屋（透明，白邊）；420×409 | a4_roadmap | 二樓透天：灰綠屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-c_v01.png | 立體書小屋（透明，白邊）；464×321 | a4_roadmap | 小店：素色遮雨棚（不放招牌字） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_house-d_v01.png | 立體書小屋（透明，白邊）；376×354 | a4_roadmap | 兩層小屋：石板灰屋頂 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_school_v01.png | 立體書景片（透明，白邊）；1035×453 | a4_roadmap | 地圖上的學校（無校徽、無字） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_gatepost_v01.png | 立體書景片（透明，白邊）；88×209 | a4_roadmap | 地圖上的校門柱 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_tree_v01.png | 立體書景片（透明，白邊）；231×297 | a4_roadmap | 圓樹 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_walker_v01.png | 立體書小人（透明，白邊）；192×368 | a4_roadmap | 斑馬線上背書包的路人（背影、往學校走；通用人形） | a4_c002–a4_c004、a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_car_v01.png | 道具（俯視，透明，白邊）；344×203 | a4_roadmap | 紙剪小車：通用小車、灰綠色、無標誌（不是阿樂叔叔的小貨車） | a4_c002–a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_screen_v01.png | 剪影幕（不透明）；2200×1040 | a4_roadmap | 背光紙幕：暖米色、中央亮四周暗、背光下紙纖維較明顯、牛皮紙摺邊框 | a4_c004–a4_c008（FX10） | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-ground_v01.png | 剪影（透明）；2132×124 | a4_roadmap | 地面剪影：路面＋路緣，右段斑馬線用亮縫表示 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-car_v01.png | 剪影（透明）；680×324 | a4_roadmap | 車子側面剪影（車頭朝右）：前窗駕駛（雙手握方向盤）、後窗乘客；窗挖空透出背光 | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-walker_v01.png | 剪影（透明）；190×390 | a4_roadmap | 背書包的路人側面剪影（往右走） | 同上 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-key_v01.png | 道具（透明，白邊）；424×244 | gate（校門口） | 車鑰匙：圓環鑰匙頭、鑰匙齒、灰色鑰匙圈、青綠小紙牌（無字）；跟著阿樂叔叔／陳伯伯的手 | a4_c001、a4_c002、a4_c008–a4_c011、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-flag_v01.png | 道具（透明，白邊）；336×544 | gate | 導護旗：黃綠色小旗（無字、無圖案）＋竹柄；陳伯伯另一手拿著 | a4_c001、a4_c012、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-phone_v01.png | 道具（透明，白邊）；152×262 | gate | 林老師的手機：深灰圓角、螢幕淡灰沒有內容 | a4_c012、a4_c013 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-lin-back_v01.png | 景片（透明，白邊）；307×352 | gate | 警衛室窗內林老師的小背影：低髮髻、酒紅開襟衫、拿手機貼耳（看不到臉） | a4_c001 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-lantern_v01.png | 景片（透明）；138×300 | gate | 騎樓下的小紙燈籠（暖米橘、低彩度、不發光）＋吊繩 | gate 景常駐；a4_c008 風吹擺動 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-walkers-a_v01.png | 遠景剪影（透明）；221×403 | gate | 家長牽孩子離開（灰藍平塗剪影、沒有五官、大人提袋） | a4_c001 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-walkers-b_v01.png | 遠景剪影（透明）；221×403 | gate | 家長牽孩子離開（灰綠平塗剪影、沒有五官） | a4_c001、a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art.py） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-chen_pose-receive_v01.png | 表演姿勢圖（透明）；819×1522 | chen | receive：伸手接鑰匙——畫面左側（他的右手）整段手臂以袖口下為軸往外轉 38°（轉軸藏在袖子後面）；頭臉、身體與 chr-chen_master_v01 相同；往左加寬 170 px | a4_c013 | 由 assets/final/chr-chen_master_v01.png 改畫前臂（build_a4_art.py chen_receive） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+| assets/final/chr-lin_pose-standr_v01.png | 表演姿勢圖（透明）；456×1546 | lin | standr：林老師站姿左右鏡射（臉朝畫面右）——說完話轉身走進辦公室前紙片翻面用 | a4_c013 | assets/final/chr-lin_master_v01.png 左右鏡射（build_a4_art.py lin_standr） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
+
+另：assets/final/sets/gate/layout.json 改兩處擺位（第四幕代理）：sq-tree-a 由 x −4.9 移到 −10.4（原位置擋住對面小貨車駕駛座與阿樂叔叔）；prop-bench 由 x −3.2 移到 −2.3（整張長椅在人行道上、不擋住車旁的阿樂叔叔），benchSeat 地標、marks.ale、gate_bench 鏡位同步更新。小貨車、警衛室、接送線、貓耳地標都沒動。
+
+### 來源：review/G5/audio/ASSETS_rows.md
+
+# G5 配樂與音效｜ASSETS.md 待合併列（主線合併）
+
+放在 ASSETS.md「配樂與音效」表下面（同欄位）。重建：`caffeinate -i tools/.venv/bin/python tools/music/build_all.py`；量測：review/G5/audio/metrics.json；對點：review/G5/audio/CUES.md；圖：review/G5/audio/waveforms_music.png、waveforms_sfx.png。聽感全部未驗證。
+
+| 檔名 | 類型 | 角色／場景 | 部件 | 使用 cue | 來源 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| audio/music/music_zhezhe_v02.wav | 配樂（無縫循環 16.0 s） | 折折 | M2 折折動機（短句 0–4 s＋循環底） | a0_c002、a0_c004、a3_c001、a7_c001 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-6.6 dBTP；100 ms 最大跳升 5.7 dB；接縫樣本差 42 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_shiny_v02.wav | 配樂（無縫循環 15.0 s） | 閃亮盒子 | M3 閃亮動機（音樂盒圓舞曲、增三和弦；最低音 C4、高通 200 Hz） | a1_c002–a1_c003、a2_c003、a2_c013、a3_c001 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-11.1 dBTP；100 ms 最大跳升 3.5 dB；接縫樣本差 125 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_road_v02.wav | 配樂（無縫循環 20.0 s） | 紙上的路 | M5（木塊 3+3+2，不是時鐘滴答、不像警報） | a4_c002、a4_c003、a4_c008 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-10.6 dBTP；100 ms 最大跳升 3.0 dB；接縫樣本差 42 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_road_hold_v01.wav | 配樂（無縫循環 16.0 s） | 背光剪影 | M5 長音（加做、可選） | a4_c004 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-13.4 dBTP；100 ms 最大跳升 0.8 dB；接縫樣本差 149 LSB；聽感未驗證 | v01（G5 正式版；加做） |
+| audio/music/music_courage_v02.wav | 配樂（無縫循環 30.0 s） | 拒絕、找大人 | M6 勇氣動機（M1 上行變奏） | a1_c004、a2_c012、a3_c002、a3_c004、a4_c012、a5_c005–a5_c007、a6_c006、a7_c002 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-10.6 dBTP；100 ms 最大跳升 5.8 dB；接縫樣本差 26 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_recovery_v02.wav | 配樂（無縫循環 24.0 s＝四季一輪） | 醫院走廊、四季 | M7 復原動機（M1 慢版鋼琴＋弦） | a5_c008、a6_c008、a6_c009 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-11.0 dBTP；100 ms 最大跳升 2.0 dB；接縫樣本差 180 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_town_night_v02.wav | 配樂（無縫循環 30.0 s） | 燈節夜晚廣場 | M1 夜晚版 | a6_c001、a6_c002 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -24.0 LUFS、-12.0 dBTP；100 ms 最大跳升 1.9 dB；接縫樣本差 17 LSB；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/music/music_bows_v02.wav | 配樂（一次播完 18.0 s） | 謝幕 | M1 謝幕版（7 組鞠躬對小節頭 1／3／…／13 s，15.0 s 最後和弦） | a8_c001 | 自製（程式作曲）＋FluidR3_GM 音色庫（MIT）；tools/music/compose.py | 原創；音色庫 MIT（audio/LICENSES/FluidR3_GM_copyright.txt） | -20.0 LUFS、-7.6 dBTP；100 ms 最大跳升 4.2 dB；檔尾 10 ms 峰值 -90.3 dBFS；聽感未驗證 | v02（G5 正式版；v01 主線佔位保留） |
+| audio/sfx/sfx_windchime_v01.wav | 音效（4.2 s，單聲道） | 燈籠店門 | S6 風鈴 | a0_c004 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -24.0 LUFS、峰值 -14.9 dBFS、-14.9 dBTP；起音 97.6 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_bamboo_drop_v01.wav | 音效（1.0 s，單聲道） | 窗內剪影 | S7 竹篾輕落地 | a1_c008 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -28.0 LUFS、峰值 -12.0 dBFS、-12.0 dBTP；起音 6.0 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_wind_v01.wav | 音效（30.0 s，單聲道） | 廣場、校門口 | S8 風聲（無縫循環 30.0 s，3.0 s 一陣風） | a1_c008、a5_c001、a5_c005 | 自製（程式合成）；tools/music/sfx.py | 原創 | 整合 -30.0 LUFS、峰值 -14.0 dBFS、-14.0 dBTP；接縫樣本差 12 LSB；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_school_bell_v01.wav | 音效（7.0 s，單聲道） | 教室 | S9 下課鐘（柔；西敏寺鐘聲前兩句，公有領域旋律） | a3_c008 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -24.0 LUFS、峰值 -14.1 dBFS、-14.1 dBTP；起音 605.3 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_gate_ambience_v01.wav | 音效（40.0 s，單聲道） | 校門口 | S10 校門口環境聲（無縫循環 40.0 s；人聲只有母音、聽不出字） | a3_c003、a4_c001、a4_c008 | 自製（程式合成）；tools/music/sfx.py | 原創 | 整合 -36.0 LUFS、峰值 -19.6 dBFS、-19.6 dBTP；接縫樣本差 4 LSB；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_watch_dial_v01.wav | 音效（2.2 s，單聲道） | 校門口 | S11 兒童手錶撥號音（輕；不是 DTMF） | a5_c005／a5_c006 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -28.0 LUFS、峰值 -18.2 dBFS、-18.2 dBTP；起音 6.2 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_phone_bed_v01.wav | 音效（40.0 s，單聲道） | 119 通話 | S12 電話音色底音（無縫循環 40.0 s；沒有電信撥號／回鈴音） | a5_c006 | 自製（程式合成）；tools/music/sfx.py | 原創 | 整合 -38.0 LUFS、峰值 -24.5 dBFS、-24.5 dBTP；接縫樣本差 7 LSB；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_ambulance_engine_v01.wav | 音效（16.0 s，單聲道） | 校門口 | S13 救護車引擎聲（無警笛、喇叭、煞車尖響） | a5_c007 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -24.0 LUFS、峰值 -16.2 dBFS、-16.2 dBTP；起音 5369.9 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_plane_whoosh_v01.wav | 音效（1.6 s，單聲道） | 騎樓、校門口 | S14 紙飛機咻聲（輕） | a3_c001、a4_c002 | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -26.0 LUFS、峰值 -15.5 dBFS、-15.5 dBTP；起音 387.0 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_crowd_far_v01.wav | 音效（40.0 s，單聲道） | 廣場 | S15 廣場人聲遠景（無縫循環 40.0 s；聽不出字） | a1_c001、a6_c001 | 自製（程式合成）；tools/music/sfx.py | 原創 | 整合 -34.0 LUFS、峰值 -18.4 dBFS、-18.4 dBTP；接縫樣本差 12 LSB；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+| audio/sfx/sfx_footsteps_v01.wav | 音效（4.0 s，單聲道） | 通用 | S16 紙偶腳步（8 步、每步 0.5 s） | 走路往右的 cue | 自製（程式合成）；tools/music/sfx.py | 原創 | 最大瞬間 -31.0 LUFS、峰值 -12.0 dBFS、-12.0 dBTP；起音 7.0 ms；聽感未驗證 | v01（G5 原地覆寫紙張摩擦佔位） |
+
+另：`audio/sfx/_placeholders.txt` 已清空（11 個音效與 music_town_night 都有正式檔）。

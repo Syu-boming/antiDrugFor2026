@@ -41,7 +41,7 @@
    "rig": "standee:ye",
    "x": 0.95,
    "z": 0.95,
-   "facing": -1,
+   "facing": 1,
    "fallback": "adult"
   }
  },
@@ -62,23 +62,166 @@
      "ale": {
       "visible": true,
       "emotion": "smile",
-      "pose": "sit"
+      "sit": 0.35,
+      "strings": [
+       "wrist"
+      ],
+      "stringTension": 0.25
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "emotion": "smile",
+      "x": 1,
+      "z": -0.5,
+      "facing": -1
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "zhezhe": {
-      "visible": true,
-      "emotion": "smile"
+      "emotion": "smile",
+      "pose": "watch",
+      "x": 0.35,
+      "z": 0.45
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "strings.fade",
+     "start": 0,
+     "target": "ale",
+     "duration": 0.01,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.72
+     }
+    },
+    {
+     "name": "puppet.sit",
+     "start": 0.3,
+     "target": "ale",
+     "duration": 1.3,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 1.2,
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c001_02-0.1",
+     "target": "ale",
+     "duration": 0.6,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "puppet.wave",
+     "start": "a2_c001_02+0.1",
+     "target": "ale",
+     "duration": 1.5,
+     "params": {}
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c001_02.end-0.3",
+     "target": "ale",
+     "duration": 0.7,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a2_c001_02.end-0.6",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a2_c001_02.end-0.15",
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": "a2_c001_02.end-0.05",
+     "target": "xiaoqing",
+     "duration": 1.5,
+     "params": {
+      "to": 1.5
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a2_c001_02.end+1.35",
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "watch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a2_c001_02.end+1.2",
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk_r"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": "a2_c001_02.end+1.3",
+     "target": "xiaoyu",
+     "duration": 1.7,
+     "params": {
+      "to": 2.35
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a2_c001_02.end+2.9",
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a2_c001_02.end+3.4",
+     "duration": 4.2,
+     "params": {
+      "to": {
+       "pos": [
+        -1.8,
+        1.95,
+        8.6
+       ],
+       "target": [
+        -1.8,
+        1.85,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    }
+   ],
    "audioId": "music_town",
    "lines": [
     {
@@ -89,12 +232,14 @@
     {
      "id": "a2_c001_02",
      "speaker": "阿樂叔叔",
-     "text": "沒事、沒事，手滑了一下。"
+     "text": "沒事、沒事，手滑了一下。",
+     "start": "a2_c001_01.end+0.45"
     },
     {
      "id": "a2_c001_03",
      "speaker": "折折",
-     "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。"
+     "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+     "start": "a2_c001_02.end+7.6"
     }
    ],
    "next": "a2_c002",
@@ -106,8 +251,8 @@
    ],
    "teacherNote": "找找看 2（約 30 秒，不計獎）：點一位。答案：手腕上多了一條細細的線。回應：「看得很仔細。這條線是什麼意思？我們繼續看。」",
    "checkpoint": null,
-   "voStart": 2.8,
-   "tail": 8.2,
+   "voStart": 1.6,
+   "tail": 1.6,
    "storyboard": {
     "beat": "阿樂撿起竹篾坐回工作台，笑一笑；右手腕背側一條細、淡的灰色紙線（L1）；鏡頭慢推到手腕近景（約 3 秒，無箭頭或提示音）；折折提問；停在推近畫面",
     "cast": "阿樂：分件坐姿、H5 竹篾、X2、L1；小宇 X5；小晴 X5",
@@ -119,9 +264,10 @@
      "（畫面停在推近後的近景。）",
      "（**L1 線投影可讀性規格（交 G2／G4 投影可讀性驗收）**：推近停格的畫面中，線寬 ≥ 8 px（1080p；以最後一排距離約為銀幕高 8 倍估算，約 3 弧分，場勘後依 v1.2 第 16.2 節公式修正）；線與相鄰的手腕皮膚、袖口的明度差 CIELAB ΔL* ≥ 25，套投影模擬（壓縮對比、抬高黑位、降低彩度）後仍 ≥ 15；線外加深灰細邊（v1.2 第 15.2 節）。未達標就加粗、加深或推得更近，不靠台詞或教師提示補救。）"
     ],
-    "estimateSec": 23.0,
-    "actionSec": 11.0
-   }
+    "estimateSec": 23,
+    "actionSec": 11
+   },
+   "musicLevel": 0.65
   },
   {
    "id": "a2_c002",
@@ -184,7 +330,7 @@
     },
     {
      "name": "camera.move",
-     "start": 2.0,
+     "start": 2,
      "duration": 2.6,
      "params": {
       "to": "g4_mid_up"
@@ -194,7 +340,7 @@
      "name": "strings.drop",
      "target": "ale",
      "start": 3.5,
-     "duration": 3.0,
+     "duration": 3,
      "params": {
       "anchors": [
        "wrist",
@@ -216,7 +362,7 @@
     {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 5.0,
+     "start": 5,
      "params": {
       "emotion": "worried"
      }
@@ -224,7 +370,7 @@
     {
      "name": "camera.move",
      "start": 6.8,
-     "duration": 2.0,
+     "duration": 2,
      "params": {
       "to": "g4_mid"
      }
@@ -271,7 +417,7 @@
     {
      "name": "camera.move",
      "start": "a2_c002_01.end+0.3",
-     "duration": 4.0,
+     "duration": 4,
      "params": {
       "to": "g4_push"
      }
@@ -321,7 +467,7 @@
    ],
    "teacherNote": "代表鏡頭：音樂收束、場景約 3 秒降彩；三條淡灰紙繩一根根落下，紙環扣在腕背、肘外、膝前（第一根約 4.5 秒落下）。叔叔先露出想打招呼的笑臉、自己把手抬到胸口高度揮兩下（線還鬆）→ 線繃直 → 手被拉到旁邊 → 才露出困惑的臉；想站起：半站 → 膝前線繃緊 → 膝蓋被提起、腳離地 → 身體晃一下 → 扶住桌邊停住。小晴喊「叔叔，小心！」時伸出手掌示意（不指人），約 1.4 秒後收回成擔心站姿。臉、膚色、衣服都不變。停格後等老師（配樂 3 秒內淡到很小聲）。",
    "checkpoint": null,
-   "tail": 2.0,
+   "tail": 2,
    "sfx": [
     {
      "id": "sfx_string_drop",
@@ -354,8 +500,8 @@
      "id": "music_m4_strings",
      "at": 0,
      "loop": false,
-     "fade": 1.0,
-     "offset": 7.0
+     "fade": 1,
+     "offset": 7
     }
    ],
    "musicLevel": 0.75,
@@ -369,29 +515,56 @@
      "（阿樂叔叔笑著想對孩子揮手：手先抬起——線繃緊——手被拉向旁邊。他想站起來，膝蓋被線一扯，身體晃了一下，趕快扶住桌邊。表情是困惑、需要幫忙，不可怕。）",
      "（停格。）"
     ],
-    "estimateSec": 28.0,
-    "actionSec": 22.0
+    "estimateSec": 28,
+    "actionSec": 22
    }
   },
   {
    "id": "a2_c003",
-   "sceneId": "workshop_g4",
+   "sceneId": "a2_memory",
    "kind": "scene",
    "title": "那個小盒子",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "g4_mid",
-     "light": 1
+     "camera": "a2_memory_cu",
+     "light": 0.94,
+     "desat": 0.5
     },
     "characters": {
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "worried",
+      "emotion": "worried",
+      "x": 2.15,
+      "z": 0.7,
+      "facing": 1
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "puppet.face",
+     "start": "a2_c003_01+0.4",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "start": "a2_c003_01.end+0.2",
+     "target": "xiaoqing"
+    },
+    {
+     "name": "puppet.face",
+     "start": "a2_c003_02+3.1",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "worried"
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -414,8 +587,8 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 1.5,
-   "tail": 4.5,
+   "voStart": 1.45,
+   "tail": 1.8,
    "storyboard": {
     "beat": "小晴想起廣場上的事：褪色回想小窗重用 a1_c003 盒子特寫、a1_c008 撕破的包裝紙與那團線；旁白說明「喪屍煙彈」可能是什麼；**不出現阿樂、不確認他用過**",
     "cast": "小晴 X8（回想）；無手、無剪影",
@@ -425,9 +598,20 @@
      "（小晴看著叔叔，想起廣場上的事。褪色的回想小窗，重用影格：a1_c003 盒子的貼紙特寫、a1_c008 撕破的包裝紙和紙邊那團線。小窗裡沒有阿樂叔叔，也不出現打開或使用。）",
      "（本段只說明盒子可能是什麼，不向觀眾確認阿樂叔叔用過；孩子和觀眾在 Q3 之前都停在「我們不知道，先找大人」。實情到 a2_c013 才由阿樂叔叔自己告訴葉護理師。）"
     ],
-    "estimateSec": 18.0,
-    "actionSec": 6.0
-   }
+    "estimateSec": 18,
+    "actionSec": 6
+   },
+   "set": "a2_memory",
+   "music": [
+    {
+     "id": "music_shiny",
+     "at": 0,
+     "loop": true,
+     "fade": 1.5,
+     "gain": 0.5
+    }
+   ],
+   "musicLevel": 0.7
   },
   {
    "id": "a2_c004",
@@ -504,7 +688,7 @@
     {
      "name": "puppet.lean",
      "target": "xiaoqing",
-     "start": 9.0,
+     "start": 9,
      "duration": 0.8,
      "params": {
       "to": 0.04
@@ -550,7 +734,7 @@
     {
      "name": "puppet.tilt",
      "target": "ale",
-     "start": 12.0,
+     "start": 12,
      "duration": 0.8,
      "params": {
       "to": 0.16
@@ -592,7 +776,7 @@
    "teacherNote": "必要旁白一（一字不改）。鏡頭在三人同框下慢慢移動：看腕背、肘外紙環 → 往下看膝前紙環 → 往上看線一路延伸出畫面，最後回到中景停格；兩個孩子一直在畫面裡（站在旁邊擔心地看，不靠近、不指人）；必要旁白第 2、3 頁之間有安靜的小動作：約 9 秒兩個孩子互看一眼（身體微微傾向對方、眨眼，約 11 秒回正），約 12 秒阿樂叔叔歪頭看手腕的線（約 14 秒回正）。停格後配樂 3 秒內淡到很小聲，等老師。",
    "checkpoint": null,
    "voStart": 0.8,
-   "tail": 2.0,
+   "tail": 2,
    "music": [
     {
      "id": "music_m4_light",
@@ -610,8 +794,8 @@
      "（回到工作室的停格。鏡頭沿著線慢慢移動：手腕背側、手肘外側、膝蓋正面的紙環，再往上到畫面外。）",
      "（停格，等老師。）"
     ],
-    "estimateSec": 22.0,
-    "actionSec": 7.0
+    "estimateSec": 22,
+    "actionSec": 7
    }
   },
   {
@@ -623,7 +807,10 @@
     "stage": {
      "curtain": "open",
      "camera": "g4_mid",
-     "light": 1
+     "light": 0.94,
+     "desat": 0.5,
+     "spot": 1,
+     "spotTarget": "ale"
     },
     "characters": {
      "ale": {
@@ -734,7 +921,7 @@
     "answer": 3
    },
    "voStart": 1.4,
-   "tail": 1.0,
+   "tail": 1,
    "storyboard": {
     "beat": "Q2 題卡模式 → 揭答第 3 項 → 第二盞燈",
     "cast": "折折",
@@ -744,8 +931,8 @@
      "（折折收摺音效＝收聲訊號；題卡模式。）",
      "（題卡靜止。）"
     ],
-    "estimateSec": 22.0,
-    "actionSec": 4.0
+    "estimateSec": 22,
+    "actionSec": 4
    }
   },
   {
@@ -758,7 +945,10 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "desat": 0.5,
+     "spot": 1,
+     "spotTarget": "ale"
     },
     "characters": {
      "ale": {
@@ -816,7 +1006,7 @@
      "at": 0.3
     }
    ],
-   "voStart": 1.0,
+   "voStart": 1,
    "tail": 1.2,
    "storyboard": {
     "beat": "Q2 題卡模式 → 揭答第 3 項 → 第二盞燈",
@@ -826,8 +1016,8 @@
     "directions": [
      "（「正解」紙印章蓋在第 3 項，加勾號與外框；其他選項變淡。）"
     ],
-    "estimateSec": 8.0,
-    "actionSec": 3.0
+    "estimateSec": 8,
+    "actionSec": 3
    }
   },
   {
@@ -840,7 +1030,10 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "desat": 0.5,
+     "spot": 1,
+     "spotTarget": "ale"
     },
     "characters": {
      "ale": {
@@ -930,8 +1123,8 @@
     "directions": [
      "（第二盞紙燈慢慢亮起，燈籠鈴音；回到故事。）"
     ],
-    "estimateSec": 10.0,
-    "actionSec": 4.0
+    "estimateSec": 10,
+    "actionSec": 4
    }
   },
   {
@@ -943,12 +1136,14 @@
     "stage": {
      "curtain": "open",
      "camera": "g4_mid",
-     "light": 1
+     "light": 1,
+     "desat": 0.5,
+     "spot": 1,
+     "spotTarget": "ale"
     },
     "characters": {
      "ale": {
       "visible": true,
-      "emotion": "confused",
       "pose": "pulled_half",
       "strings": [
        "wrist",
@@ -956,19 +1151,187 @@
        "knee"
       ],
       "stringTension": 1,
+      "emotion": "confused",
       "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "worried",
+      "emotion": "worried",
+      "x": 0.4,
+      "z": 1.5,
+      "facing": 1
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.45,
+      "z": 1.1,
+      "facing": -1
      }
     }
    },
-   "animation": [],
+   "animation": [
+    {
+     "name": "camera.cut",
+     "start": 0,
+     "duration": 0,
+     "params": {
+      "to": {
+       "pos": [
+        -1.6,
+        2.12,
+        13.6
+       ],
+       "target": [
+        -1.6,
+        2,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "start": 1,
+     "target": "ale",
+     "duration": 1.2,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.35
+     }
+    },
+    {
+     "name": "puppet.waveTry",
+     "start": 1.05,
+     "target": "ale",
+     "duration": 3.8,
+     "params": {
+      "greet": "worried",
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c008_01+0.6",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.13
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a2_c008_02",
+     "target": "ale",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c008_02+0.3",
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "fx.spot",
+     "start": "a2_c008_02.end+0.5",
+     "duration": 1.6,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a2_c008_02.end+0.5",
+     "duration": 0,
+     "params": {
+      "to": {
+       "pos": [
+        0.95,
+        1.98,
+        7.4
+       ],
+       "target": [
+        0.95,
+        1.88,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": "a2_c008_02.end+0.65",
+     "target": "xiaoyu",
+     "duration": 0.6,
+     "params": {
+      "dx": -0.2
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c008_02.end+0.7",
+     "target": "xiaoyu",
+     "duration": 0.6,
+     "params": {
+      "to": -0.045
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c008_03+0.6",
+     "target": "xiaoqing",
+     "duration": 0.6,
+     "params": {
+      "to": 0.03
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c008_04+0.2",
+     "target": "xiaoyu",
+     "duration": 0.7,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a2_c008_04+1.4",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c008_04+1.4",
+     "target": "xiaoqing",
+     "duration": 0.7,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a2_c008_04.end+0.25",
+     "duration": 0,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ],
    "audioId": null,
    "lines": [
     {
@@ -979,22 +1342,26 @@
     {
      "id": "a2_c008_02",
      "speaker": "阿樂叔叔",
-     "text": "骨架放到哪裡去了……我想不起來。"
+     "text": "骨架放到哪裡去了……我想不起來。",
+     "start": "a2_c008_01.end+0.45"
     },
     {
      "id": "a2_c008_03",
      "speaker": "小宇",
-     "text": "叔叔是不是……吸毒了？"
+     "text": "叔叔是不是……吸毒了？",
+     "start": "a2_c008_02.end+0.95"
     },
     {
      "id": "a2_c008_04",
      "speaker": "小晴",
-     "text": "我們不知道。可是，叔叔需要幫忙。"
+     "text": "我們不知道。可是，叔叔需要幫忙。",
+     "start": "a2_c008_03.end+0.45"
     },
     {
      "id": "a2_c008_05",
      "speaker": "旁白",
-     "text": "不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。"
+     "text": "不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。",
+     "start": "a2_c008_04.end+0.7"
     }
    ],
    "next": "a2_c009",
@@ -1004,10 +1371,10 @@
    "fx": [
     "FX9"
    ],
-   "teacherNote": "播完停格，等老師按下一步。",
+   "teacherNote": "必要旁白二（一字不改）時畫面是穩定的中景：阿樂叔叔在左、兩個孩子在右前方，沒有人動作。播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 1.5,
-   "tail": 4.5,
+   "voStart": 3.5,
+   "tail": 2,
    "storyboard": {
     "beat": "阿樂拿燈籠紙想摺，手被拉得一頓一頓，紙皺成一團；低頭看手；小宇小聲問；小晴說不知道、叔叔需要幫忙；必要旁白二；停格（給 G4／G5，只記錄：Q2、Q3 間隔偏短，手部近景可多給 2–3 秒無台詞表演，估計秒數未計入）",
     "cast": "阿樂：H6、X10、L2；小宇 X5（靠近小晴）；小晴 X5 → X7",
@@ -1019,9 +1386,17 @@
      "（小宇靠近小晴，小聲問。）",
      "（停格。）"
     ],
-    "estimateSec": 29.0,
-    "actionSec": 6.0
-   }
+    "estimateSec": 29,
+    "actionSec": 6
+   },
+   "sfx": [
+    {
+     "id": "sfx_string_taut",
+     "at": 2.85,
+     "gain": 0.7
+    }
+   ],
+   "musicLevel": 0.72
   },
   {
    "id": "a2_c009",
@@ -1032,12 +1407,12 @@
     "stage": {
      "curtain": "open",
      "camera": "g4_mid",
-     "light": 1
+     "light": 1,
+     "desat": 0.5
     },
     "characters": {
      "ale": {
       "visible": true,
-      "emotion": "confused",
       "pose": "pulled_half",
       "strings": [
        "wrist",
@@ -1045,15 +1420,24 @@
        "knee"
       ],
       "stringTension": 1,
+      "emotion": "worried",
       "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "worried",
+      "emotion": "neutral",
+      "x": 0.4,
+      "z": 1.5,
+      "facing": 1
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.25,
+      "z": 1.1,
+      "facing": -1
      }
     }
    },
@@ -1141,7 +1525,7 @@
     "answer": 1
    },
    "voStart": 1.4,
-   "tail": 1.0,
+   "tail": 1,
    "storyboard": {
     "beat": "Q3 題卡模式 → 揭答第 1 項 → 第三盞燈",
     "cast": "折折",
@@ -1151,8 +1535,8 @@
      "（折折收摺音效＝收聲訊號；題卡模式。）",
      "（題卡靜止。）"
     ],
-    "estimateSec": 20.0,
-    "actionSec": 4.0
+    "estimateSec": 20,
+    "actionSec": 4
    }
   },
   {
@@ -1165,12 +1549,12 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "desat": 0.5
     },
     "characters": {
      "ale": {
       "visible": true,
-      "emotion": "confused",
       "pose": "pulled_half",
       "strings": [
        "wrist",
@@ -1178,15 +1562,24 @@
        "knee"
       ],
       "stringTension": 1,
+      "emotion": "worried",
       "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "worried",
+      "emotion": "neutral",
+      "x": 0.4,
+      "z": 1.5,
+      "facing": 1
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.25,
+      "z": 1.1,
+      "facing": -1
      }
     }
    },
@@ -1221,7 +1614,7 @@
      "at": 0.3
     }
    ],
-   "voStart": 1.0,
+   "voStart": 1,
    "tail": 1.2,
    "storyboard": {
     "beat": "Q3 題卡模式 → 揭答第 1 項 → 第三盞燈",
@@ -1231,8 +1624,8 @@
     "directions": [
      "（「正解」紙印章蓋在第 1 項；其他選項變淡。）"
     ],
-    "estimateSec": 7.0,
-    "actionSec": 3.0
+    "estimateSec": 7,
+    "actionSec": 3
    }
   },
   {
@@ -1245,12 +1638,12 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true
+     "quiz": true,
+     "desat": 0.5
     },
     "characters": {
      "ale": {
       "visible": true,
-      "emotion": "confused",
       "pose": "pulled_half",
       "strings": [
        "wrist",
@@ -1258,15 +1651,24 @@
        "knee"
       ],
       "stringTension": 1,
+      "emotion": "worried",
       "hand": "grab"
      },
      "xiaoqing": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "worried",
+      "emotion": "neutral",
+      "x": 0.4,
+      "z": 1.5,
+      "facing": 1
      },
      "xiaoyu": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.25,
+      "z": 1.1,
+      "facing": -1
      }
     }
    },
@@ -1317,7 +1719,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q3 點燈收聲後",
-    "atMinute": 13.0,
+    "atMinute": 13,
     "escalate": {
      "behindSec": 90,
      "level": 1
@@ -1340,8 +1742,8 @@
     "directions": [
      "（第三盞紙燈慢慢亮起；回到故事。）"
     ],
-    "estimateSec": 6.0,
-    "actionSec": 4.0
+    "estimateSec": 6,
+    "actionSec": 4
    }
   },
   {
@@ -1352,25 +1754,13 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "g4_mid",
+     "light": 1,
+     "desat": 0.5
     },
     "characters": {
-     "xiaoqing": {
-      "visible": true,
-      "emotion": "smile"
-     },
-     "xiaoyu": {
-      "visible": true,
-      "emotion": "smile"
-     },
-     "ye": {
-      "visible": true,
-      "emotion": "smile"
-     },
      "ale": {
       "visible": true,
-      "emotion": "confused",
       "pose": "pulled_half",
       "strings": [
        "wrist",
@@ -1378,12 +1768,364 @@
        "knee"
       ],
       "stringTension": 1,
+      "emotion": "worried",
       "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "worried",
+      "emotion": "neutral",
+      "x": 0.4,
+      "z": 1.5,
+      "facing": 1
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.25,
+      "z": 1.1,
+      "facing": -1
+     },
+     "ye": {
+      "visible": true,
+      "pose": "stand",
+      "emotion": "neutral",
+      "x": 40,
+      "z": 0.1,
+      "facing": 1
      }
     }
    },
-   "animation": [],
-   "audioId": "music_town",
+   "animation": [
+    {
+     "name": "puppet.pose",
+     "start": 0.2,
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 0.3,
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk_r"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": 0.3,
+     "target": "xiaoqing",
+     "duration": 1.9,
+     "params": {
+      "to": 8.5
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": 0.3,
+     "target": "xiaoyu",
+     "duration": 1.9,
+     "params": {
+      "to": 8.5
+     }
+    },
+    {
+     "name": "fade.out",
+     "start": 2.3,
+     "duration": 0.6,
+     "params": {}
+    },
+    {
+     "name": "set.swap",
+     "start": 2.92,
+     "duration": 0,
+     "params": {
+      "set": "a2_helpdesk"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 2.92,
+     "duration": 0,
+     "params": {
+      "to": "a2_help_mid"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.92,
+     "target": "ale",
+     "duration": 0.03,
+     "params": {
+      "dx": -30
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.92,
+     "target": "xiaoqing",
+     "duration": 0.03,
+     "params": {
+      "dx": -11.8
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.92,
+     "target": "xiaoyu",
+     "duration": 0.03,
+     "params": {
+      "dx": -13.25
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.92,
+     "target": "ye",
+     "duration": 0.03,
+     "params": {
+      "dx": -38.1
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 3,
+     "duration": 0.6,
+     "params": {}
+    },
+    {
+     "name": "puppet.exit",
+     "start": 4.3,
+     "target": "xiaoqing",
+     "duration": 1.6,
+     "params": {
+      "to": 3.5
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": 4.3,
+     "target": "xiaoyu",
+     "duration": 1.6,
+     "params": {
+      "to": 3.5
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 5.8,
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "reach"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 5.949999999999999,
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 5.5,
+     "target": "ye",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": 5.6,
+     "target": "ye",
+     "duration": 0.5,
+     "params": {
+      "to": -0.035
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": 6.15,
+     "target": "ye",
+     "duration": 0.7,
+     "params": {
+      "to": -1.4
+     }
+    },
+    {
+     "name": "fade.out",
+     "start": 6.9,
+     "duration": 0.6,
+     "params": {}
+    },
+    {
+     "name": "set.swap",
+     "start": 7.5200000000000005,
+     "duration": 0,
+     "params": {
+      "set": "workshop_g4"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 7.5200000000000005,
+     "duration": 0,
+     "params": {
+      "to": {
+       "pos": [
+        -0.6,
+        1.5,
+        14.2
+       ],
+       "target": [
+        -0.6,
+        1.42,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 7.5200000000000005,
+     "target": "ale",
+     "duration": 0.03,
+     "params": {
+      "dx": 30
+     }
+    },
+    {
+     "name": "puppet.sit",
+     "start": 7.5200000000000005,
+     "target": "ale",
+     "duration": 0.03,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 7.5200000000000005,
+     "target": "ye",
+     "duration": 0.03,
+     "params": {
+      "dx": -1.15
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": 7.5200000000000005,
+     "target": "ye",
+     "duration": 0.03,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 7.54,
+     "target": "ye",
+     "duration": 0.24,
+     "params": {
+      "pose": "crouch"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 7.5200000000000005,
+     "target": "xiaoqing",
+     "duration": 0.03,
+     "params": {
+      "dx": 0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 7.5200000000000005,
+     "target": "xiaoyu",
+     "duration": 0.03,
+     "params": {
+      "dx": 1.9
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 7.54,
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "worried"
+     }
+    },
+    {
+     "name": "fx.desat",
+     "start": 7.5200000000000005,
+     "duration": 0.03,
+     "params": {
+      "to": 0.32
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 7.8500000000000005,
+     "duration": 0.6,
+     "params": {}
+    },
+    {
+     "name": "fx.desat",
+     "start": 8.5,
+     "duration": 3,
+     "params": {
+      "to": 0.2
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c012_02-0.2",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.1
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c012_02.end+0.5",
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c012_04-0.1",
+     "target": "xiaoqing",
+     "duration": 0.6,
+     "params": {
+      "to": -0.035
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c012_04.end+0.3",
+     "target": "xiaoqing",
+     "duration": 0.7,
+     "params": {
+      "to": 0
+     }
+    }
+   ],
+   "audioId": null,
    "lines": [
     {
      "id": "a2_c012_01",
@@ -1393,22 +2135,26 @@
     {
      "id": "a2_c012_02",
      "speaker": "阿樂叔叔",
-     "text": "不用……我休息一下就好。"
+     "text": "不用……我休息一下就好。",
+     "start": "a2_c012_01.end+0.45"
     },
     {
      "id": "a2_c012_03",
      "speaker": "葉護理師",
-     "text": "你家人的電話沒人接，我晚一點再打。"
+     "text": "你家人的電話沒人接，我晚一點再打。",
+     "start": "a2_c012_02.end+2.3"
     },
     {
      "id": "a2_c012_04",
      "speaker": "小晴",
-     "text": "還有，廣場上有人拿閃亮的盒子給小孩。"
+     "text": "還有，廣場上有人拿閃亮的盒子給小孩。",
+     "start": "a2_c012_03.end+0.45"
     },
     {
      "id": "a2_c012_05",
      "speaker": "葉護理師",
-     "text": "謝謝你們告訴我，我會請警察去看看。"
+     "text": "謝謝你們告訴我，我會請警察去看看。",
+     "start": "a2_c012_04.end+0.45"
     }
    ],
    "next": "a2_c013",
@@ -1418,10 +2164,10 @@
    "fx": [
     "FX8"
    ],
-   "teacherNote": "播完停格，等老師按下一步。",
+   "teacherNote": "兩個孩子往右跑出店門、到廣場另一頭的求助站（帳篷上是手捧愛心圖示，沒有紅十字）找葉護理師；葉護理師進店蹲下和阿樂叔叔平視、打電話給他的家人沒人接、答應請警察去看盒子。播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 2.5,
-   "tail": 7.5,
+   "voStart": 8.65,
+   "tail": 1.8,
    "storyboard": {
     "beat": "孩子往右跑出店門，跑到求助站；葉護理師快步進店，蹲下和阿樂平視；阿樂說休息就好；葉撥電話給阿樂的家人，沒人接，說晚一點再打（交代第二天接送照常的原因之一）；小晴說廣場上的盒子；葉答應請警察去看",
     "cast": "小晴、小宇：跑步循環往右；葉護理師：P-YE1、X5 → X2；阿樂 X11、L2；小晴 X7",
@@ -1431,42 +2177,192 @@
      "（小晴和小宇往右跑出店門，跑向廣場另一頭正在搭的求助站——帳篷上是自訂的愛心手掌圖示，沒有紅十字。不久，葉護理師跟著孩子們快步進來，蹲下和阿樂叔叔平視。）",
      "（葉護理師拿出手機撥號，等了一會兒，沒有人接。）"
     ],
-    "estimateSec": 31.0,
-    "actionSec": 10.0
-   }
+    "estimateSec": 31,
+    "actionSec": 10
+   },
+   "music": [
+    {
+     "id": "music_courage",
+     "at": 0.15,
+     "loop": false,
+     "fade": 1,
+     "gain": 1
+    },
+    {
+     "id": "music_town",
+     "at": 7.5,
+     "loop": true,
+     "fade": 1.6,
+     "gain": 0.5
+    }
+   ],
+   "musicLevel": 0.75,
+   "sfx": [
+    {
+     "id": "sfx_footsteps",
+     "at": 0.35,
+     "gain": 0.55
+    }
+   ]
   },
   {
    "id": "a2_c013",
-   "sceneId": "kraft_stage",
+   "sceneId": "a2_window",
    "kind": "scene",
    "title": "說出實情（懸念）",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "show_mid",
-     "light": 1
+     "camera": "a2_win_wide",
+     "light": 1,
+     "desat": 0.12
     },
     "characters": {
-     "xiaoqing": {
+     "ale": {
       "visible": true,
-      "emotion": "smile"
-     },
-     "xiaoyu": {
-      "visible": true,
-      "emotion": "smile"
-     },
-     "zhezhe": {
-      "visible": true,
-      "emotion": "smile"
+      "pose": "pulled_sit",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 1,
+      "emotion": "worried",
+      "hand": "lap",
+      "x": -2.95,
+      "z": -1.5
      },
      "ye": {
       "visible": true,
-      "emotion": "smile"
+      "pose": "crouch",
+      "emotion": "worried",
+      "x": -1.1,
+      "z": -1.15,
+      "facing": 1
+     },
+     "xiaoqing": {
+      "visible": true,
+      "pose": "watch",
+      "emotion": "worried",
+      "x": 0.4,
+      "z": 0.55,
+      "facing": 1
+     },
+     "xiaoyu": {
+      "visible": true,
+      "pose": "stand",
+      "emotion": "worried",
+      "x": 1.4,
+      "z": 0.95,
+      "facing": -1
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "worried",
+      "x": -0.62,
+      "y": 0.88,
+      "z": -0.45
      }
     }
    },
-   "animation": [],
-   "audioId": "music_m4_light",
+   "animation": [
+    {
+     "name": "light.dim",
+     "start": 0.5,
+     "duration": 6,
+     "params": {
+      "to": 0.88
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": 0,
+     "target": "ale",
+     "duration": 0.01,
+     "params": {
+      "to": 0.12
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a2_c013_01",
+     "target": "ye",
+     "duration": 1.2,
+     "params": {
+      "to": -0.03
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c013_01+2.4",
+     "target": "ale",
+     "duration": 1,
+     "params": {
+      "to": 0.08
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c013_02+0.8",
+     "target": "ale",
+     "duration": 1,
+     "params": {
+      "to": 0.13
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c013_03.end-1.0",
+     "target": "ale",
+     "duration": 0.6,
+     "params": {
+      "to": 0.02
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a2_c013_03.end-0.35",
+     "target": "ale",
+     "duration": 0.7,
+     "params": {
+      "to": 0.07
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a2_c013_03.end+0.5",
+     "duration": 0,
+     "params": {
+      "to": "a2_win_note"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a2_c013_03.end+3.1",
+     "duration": 0,
+     "params": {
+      "to": "a2_win_kids"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a2_c013_03.end+3.4",
+     "target": "zhezhe",
+     "duration": 0.9,
+     "params": {
+      "yaw": -0.45
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a2_c013_03.end+3.9",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "sad"
+     }
+    }
+   ],
+   "audioId": null,
    "lines": [
     {
      "id": "a2_c013_01",
@@ -1481,17 +2377,20 @@
     {
      "id": "a2_c013_03",
      "speaker": "葉護理師",
-     "text": "這幾天先不要開車。我會一直打給你的家人。"
+     "text": "這幾天先不要開車。我會一直打給你的家人。",
+     "start": "a2_c013_02.end+0.8"
     },
     {
      "id": "a2_c013_04",
      "speaker": "小宇",
-     "text": "明天就是紙燈節了……叔叔會好一點嗎？"
+     "text": "明天就是紙燈節了……叔叔會好一點嗎？",
+     "start": "a2_c013_03.end+4.7"
     },
     {
      "id": "a2_c013_05",
      "speaker": "小晴",
-     "text": "主燈骨架，到底在哪裡？"
+     "text": "主燈骨架，到底在哪裡？",
+     "start": "a2_c013_04.end+0.45"
     }
    ],
    "next": "a3_c001",
@@ -1503,11 +2402,11 @@
     "FX8",
     "FX11"
    ],
-   "teacherNote": "播完停格，等老師按下一步。",
+   "teacherNote": "傍晚的店外：窗裡葉護理師蹲在阿樂叔叔身邊；右上角剪影回憶小窗在阿樂叔叔伸手接過盒子之前就收起（不出現打開或使用）。筆記本特寫：小晴又畫一個問號；折折回頭看工作台、耳朵垂下。播完停格，等老師按下一步。",
    "checkpoint": null,
-   "set": "kraft_stage",
-   "voStart": 2.5,
-   "tail": 7.5,
+   "set": "a2_window",
+   "voStart": 1.6,
+   "tail": 2.2,
    "storyboard": {
     "beat": "傍晚淡紫；孩子在店門口等；窗內葉護理師蹲在阿樂身邊，阿樂低頭慢慢說話；剪影回憶小窗：一隻手把同樣的盒子遞給阿樂，伸手接過的瞬間切走；旁白：阿樂告訴葉護理師，有人說「試一次沒關係」，他就試了；小窗收起，回到同一個窗景（不加鏡頭）：葉護理師請阿樂這幾天先不要開車、說會一直打給他的家人，阿樂點頭；小晴在問號旁又畫一個問號；折折回頭看空工作台，耳朵垂下",
     "cast": "阿樂（窗內）X11 → 點頭、L2；葉護理師 P-YE1（窗內）、X5；邀請者的手 H10（剪影）；小晴 H5、X5；小宇 X5；折折耳朵垂",
@@ -1520,9 +2419,33 @@
      "（小晴在筆記本的問號旁邊，又畫了一個問號。折折回頭看空空的工作台，耳朵垂下來。）",
      "（實情放在 Q3 與葉護理師介入之後揭露，而且是阿樂叔叔自己對大人說出來，不是孩子看外表判斷；與必要旁白二、Q3 一致。葉護理師知情後的處置由 _03 交代：請他這幾天先不要開車，並繼續聯絡他的家人（接 a2_c012_03「我晚一點再打」）。第二天叔叔還是開車來接孩子，a4_c001 旁白說明他「忘了答應過葉護理師不開車」，呼應 a2_c008「我想不起來」。）"
     ],
-    "estimateSec": 33.0,
-    "actionSec": 10.0
-   }
+    "estimateSec": 33,
+    "actionSec": 10
+   },
+   "music": [
+    {
+     "id": "music_shiny",
+     "at": 0,
+     "loop": true,
+     "fade": 1.5,
+     "gain": 0.45
+    },
+    {
+     "id": "music_town_night",
+     "at": "a2_c013_02.end+0.4",
+     "loop": true,
+     "fade": 2,
+     "gain": 0.85
+    }
+   ],
+   "musicLevel": 0.72,
+   "sfx": [
+    {
+     "id": "sfx_wind",
+     "at": 0.6,
+     "gain": 0.3
+    }
+   ]
   }
  ]
 }

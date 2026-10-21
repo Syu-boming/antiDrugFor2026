@@ -1,0 +1,4594 @@
+{
+ "method": "縮成 640×360 後分析；投影 v2＝projsim.py projector(v2) 套在縮圖上；門檻同 capture_analyze.py",
+ "variants": {
+  "fine_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": false,
+   "max_changes_per_sec": {
+    "luma": 6,
+    "red": 3
+   },
+   "full_frame_luma_max_per_sec": 1,
+   "flagged": [
+    {
+     "type": "luma",
+     "region": "x0_y0",
+     "px": [
+      0,
+      0,
+      60,
+      60
+     ],
+     "count_per_sec": 4,
+     "window_start": 108.8333,
+     "cue": "a0_c005",
+     "cue_t": 4.7667
+    },
+    {
+     "type": "luma",
+     "region": "x3_y0",
+     "px": [
+      180,
+      0,
+      240,
+      60
+     ],
+     "count_per_sec": 4,
+     "window_start": 108.6667,
+     "cue": "a0_c005",
+     "cue_t": 4.6
+    },
+    {
+     "type": "luma",
+     "region": "x4_y0",
+     "px": [
+      240,
+      0,
+      300,
+      60
+     ],
+     "count_per_sec": 4,
+     "window_start": 108.4667,
+     "cue": "a0_c005",
+     "cue_t": 4.4
+    },
+    {
+     "type": "luma",
+     "region": "x5_y0",
+     "px": [
+      300,
+      0,
+      360,
+      60
+     ],
+     "count_per_sec": 5,
+     "window_start": 108.3,
+     "cue": "a0_c005",
+     "cue_t": 4.2333
+    },
+    {
+     "type": "luma",
+     "region": "x0_y1",
+     "px": [
+      0,
+      60,
+      60,
+      120
+     ],
+     "count_per_sec": 4,
+     "window_start": 109.0667,
+     "cue": "a0_c005",
+     "cue_t": 5.0
+    },
+    {
+     "type": "luma",
+     "region": "x7_y2",
+     "px": [
+      420,
+      120,
+      480,
+      180
+     ],
+     "count_per_sec": 5,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x7_y3",
+     "px": [
+      420,
+      180,
+      480,
+      240
+     ],
+     "count_per_sec": 5,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x8_y3",
+     "px": [
+      480,
+      180,
+      540,
+      240
+     ],
+     "count_per_sec": 5,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y3",
+     "px": [
+      540,
+      180,
+      600,
+      240
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.2333,
+     "cue": "a0_c002",
+     "cue_t": 13.9667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y4",
+     "px": [
+      420,
+      240,
+      480,
+      300
+     ],
+     "count_per_sec": 4,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x8_y4",
+     "px": [
+      480,
+      240,
+      540,
+      300
+     ],
+     "count_per_sec": 5,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y4",
+     "px": [
+      540,
+      240,
+      600,
+      300
+     ],
+     "count_per_sec": 5,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y5",
+     "px": [
+      420,
+      300,
+      480,
+      360
+     ],
+     "count_per_sec": 5,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x8_y5",
+     "px": [
+      480,
+      300,
+      540,
+      360
+     ],
+     "count_per_sec": 5,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y5",
+     "px": [
+      540,
+      300,
+      600,
+      360
+     ],
+     "count_per_sec": 5,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y6",
+     "px": [
+      1860,
+      360,
+      1920,
+      420
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.8,
+     "cue": "a0_c005",
+     "cue_t": 3.7333
+    },
+    {
+     "type": "luma",
+     "region": "x14_y7",
+     "px": [
+      840,
+      420,
+      900,
+      480
+     ],
+     "count_per_sec": 4,
+     "window_start": 31.8667,
+     "cue": "a0_c002",
+     "cue_t": 13.6
+    },
+    {
+     "type": "luma",
+     "region": "x15_y7",
+     "px": [
+      900,
+      420,
+      960,
+      480
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.1333,
+     "cue": "a0_c002",
+     "cue_t": 13.8667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y7",
+     "px": [
+      960,
+      420,
+      1020,
+      480
+     ],
+     "count_per_sec": 4,
+     "window_start": 106.7,
+     "cue": "a0_c005",
+     "cue_t": 2.6333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y7",
+     "px": [
+      1080,
+      420,
+      1140,
+      480
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.6333,
+     "cue": "a0_c002",
+     "cue_t": 14.3667
+    },
+    {
+     "type": "luma",
+     "region": "x31_y7",
+     "px": [
+      1860,
+      420,
+      1920,
+      480
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.8,
+     "cue": "a0_c005",
+     "cue_t": 3.7333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y8",
+     "px": [
+      1080,
+      480,
+      1140,
+      540
+     ],
+     "count_per_sec": 4,
+     "window_start": 33.0667,
+     "cue": "a0_c002",
+     "cue_t": 14.8
+    },
+    {
+     "type": "luma",
+     "region": "x31_y8",
+     "px": [
+      1860,
+      480,
+      1920,
+      540
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.8,
+     "cue": "a0_c005",
+     "cue_t": 3.7333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y9",
+     "px": [
+      360,
+      540,
+      420,
+      600
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.9667,
+     "cue": "a0_c002",
+     "cue_t": 14.7
+    },
+    {
+     "type": "luma",
+     "region": "x31_y9",
+     "px": [
+      1860,
+      540,
+      1920,
+      600
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.8333,
+     "cue": "a0_c005",
+     "cue_t": 3.7667
+    },
+    {
+     "type": "luma",
+     "region": "x30_y10",
+     "px": [
+      1800,
+      600,
+      1860,
+      660
+     ],
+     "count_per_sec": 4,
+     "window_start": 73.5667,
+     "cue": "a0_c004",
+     "cue_t": 2.5
+    },
+    {
+     "type": "luma",
+     "region": "x31_y10",
+     "px": [
+      1860,
+      600,
+      1920,
+      660
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.7667,
+     "cue": "a0_c005",
+     "cue_t": 3.7
+    },
+    {
+     "type": "luma",
+     "region": "x4_y11",
+     "px": [
+      240,
+      660,
+      300,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.5,
+     "cue": "a0_c002",
+     "cue_t": 14.2333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y11",
+     "px": [
+      360,
+      660,
+      420,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.7,
+     "cue": "a0_c002",
+     "cue_t": 14.4333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y11",
+     "px": [
+      1860,
+      660,
+      1920,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 107.7333,
+     "cue": "a0_c005",
+     "cue_t": 3.6667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y12",
+     "px": [
+      960,
+      720,
+      1020,
+      780
+     ],
+     "count_per_sec": 6,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x17_y12",
+     "px": [
+      1020,
+      720,
+      1080,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 73.2667,
+     "cue": "a0_c004",
+     "cue_t": 2.2
+    },
+    {
+     "type": "luma",
+     "region": "x18_y12",
+     "px": [
+      1080,
+      720,
+      1140,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 73.1333,
+     "cue": "a0_c004",
+     "cue_t": 2.0667
+    },
+    {
+     "type": "luma",
+     "region": "x19_y12",
+     "px": [
+      1140,
+      720,
+      1200,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 73.0667,
+     "cue": "a0_c004",
+     "cue_t": 2.0
+    },
+    {
+     "type": "luma",
+     "region": "x20_y12",
+     "px": [
+      1200,
+      720,
+      1260,
+      780
+     ],
+     "count_per_sec": 5,
+     "window_start": 74.2333,
+     "cue": "a0_c004",
+     "cue_t": 3.1667
+    },
+    {
+     "type": "luma",
+     "region": "x21_y12",
+     "px": [
+      1260,
+      720,
+      1320,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.8333,
+     "cue": "a0_c004",
+     "cue_t": 1.7667
+    },
+    {
+     "type": "luma",
+     "region": "x22_y12",
+     "px": [
+      1320,
+      720,
+      1380,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 74.0667,
+     "cue": "a0_c004",
+     "cue_t": 3.0
+    },
+    {
+     "type": "luma",
+     "region": "x23_y12",
+     "px": [
+      1380,
+      720,
+      1440,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 74.0,
+     "cue": "a0_c004",
+     "cue_t": 2.9333
+    },
+    {
+     "type": "luma",
+     "region": "x24_y12",
+     "px": [
+      1440,
+      720,
+      1500,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.7667,
+     "cue": "a0_c004",
+     "cue_t": 1.7
+    },
+    {
+     "type": "luma",
+     "region": "x27_y12",
+     "px": [
+      1620,
+      720,
+      1680,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.5667,
+     "cue": "a0_c004",
+     "cue_t": 1.5
+    },
+    {
+     "type": "luma",
+     "region": "x29_y12",
+     "px": [
+      1740,
+      720,
+      1800,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.4667,
+     "cue": "a0_c004",
+     "cue_t": 1.4
+    },
+    {
+     "type": "luma",
+     "region": "x30_y12",
+     "px": [
+      1800,
+      720,
+      1860,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.4,
+     "cue": "a0_c004",
+     "cue_t": 1.3333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y12",
+     "px": [
+      1860,
+      720,
+      1920,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.3,
+     "cue": "a0_c004",
+     "cue_t": 1.2333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y13",
+     "px": [
+      360,
+      780,
+      420,
+      840
+     ],
+     "count_per_sec": 4,
+     "window_start": 33.0333,
+     "cue": "a0_c002",
+     "cue_t": 14.7667
+    }
+   ],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x1_y0",
+     "px": [
+      60,
+      0,
+      120,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.9333,
+     "cue": "a0_c005",
+     "cue_t": 4.8667
+    },
+    {
+     "type": "luma",
+     "region": "x2_y0",
+     "px": [
+      120,
+      0,
+      180,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.1,
+     "cue": "a0_c005",
+     "cue_t": 5.0333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y0",
+     "px": [
+      360,
+      0,
+      420,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.8,
+     "cue": "a0_c005",
+     "cue_t": 3.7333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y0",
+     "px": [
+      420,
+      0,
+      480,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.4333,
+     "cue": "a0_c005",
+     "cue_t": 4.3667
+    },
+    {
+     "type": "luma",
+     "region": "x11_y0",
+     "px": [
+      660,
+      0,
+      720,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6333,
+     "cue": "a0_c001",
+     "cue_t": 8.6333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y0",
+     "px": [
+      780,
+      0,
+      840,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6,
+     "cue": "a0_c001",
+     "cue_t": 8.6
+    },
+    {
+     "type": "luma",
+     "region": "x14_y0",
+     "px": [
+      840,
+      0,
+      900,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.7333,
+     "cue": "a0_c005",
+     "cue_t": 4.6667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y0",
+     "px": [
+      960,
+      0,
+      1020,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6333,
+     "cue": "a0_c001",
+     "cue_t": 8.6333
+    },
+    {
+     "type": "luma",
+     "region": "x17_y0",
+     "px": [
+      1020,
+      0,
+      1080,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.5667,
+     "cue": "a0_c001",
+     "cue_t": 8.5667
+    },
+    {
+     "type": "luma",
+     "region": "x18_y0",
+     "px": [
+      1080,
+      0,
+      1140,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.0,
+     "cue": "a0_c001",
+     "cue_t": 9.0
+    },
+    {
+     "type": "luma",
+     "region": "x19_y0",
+     "px": [
+      1140,
+      0,
+      1200,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9667,
+     "cue": "a0_c001",
+     "cue_t": 8.9667
+    },
+    {
+     "type": "luma",
+     "region": "x20_y0",
+     "px": [
+      1200,
+      0,
+      1260,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.0667,
+     "cue": "a0_c001",
+     "cue_t": 9.0667
+    },
+    {
+     "type": "luma",
+     "region": "x23_y0",
+     "px": [
+      1380,
+      0,
+      1440,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.2667,
+     "cue": "a0_c001",
+     "cue_t": 9.2667
+    },
+    {
+     "type": "luma",
+     "region": "x24_y0",
+     "px": [
+      1440,
+      0,
+      1500,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.6333,
+     "cue": "a0_c001",
+     "cue_t": 9.6333
+    },
+    {
+     "type": "luma",
+     "region": "x26_y0",
+     "px": [
+      1560,
+      0,
+      1620,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.6333,
+     "cue": "a0_c001",
+     "cue_t": 9.6333
+    },
+    {
+     "type": "luma",
+     "region": "x29_y0",
+     "px": [
+      1740,
+      0,
+      1800,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.4,
+     "cue": "a0_c001",
+     "cue_t": 9.4
+    },
+    {
+     "type": "luma",
+     "region": "x30_y0",
+     "px": [
+      1800,
+      0,
+      1860,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6,
+     "cue": "a0_c001",
+     "cue_t": 8.6
+    },
+    {
+     "type": "luma",
+     "region": "x31_y0",
+     "px": [
+      1860,
+      0,
+      1920,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6,
+     "cue": "a0_c001",
+     "cue_t": 8.6
+    },
+    {
+     "type": "luma",
+     "region": "x2_y1",
+     "px": [
+      120,
+      60,
+      180,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.1333,
+     "cue": "a0_c005",
+     "cue_t": 5.0667
+    },
+    {
+     "type": "luma",
+     "region": "x3_y1",
+     "px": [
+      180,
+      60,
+      240,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.2667,
+     "cue": "a0_c005",
+     "cue_t": 5.2
+    },
+    {
+     "type": "luma",
+     "region": "x4_y1",
+     "px": [
+      240,
+      60,
+      300,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.4333,
+     "cue": "a0_c005",
+     "cue_t": 5.3667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y1",
+     "px": [
+      420,
+      60,
+      480,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.8,
+     "cue": "a0_c005",
+     "cue_t": 4.7333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y1",
+     "px": [
+      480,
+      60,
+      540,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y1",
+     "px": [
+      540,
+      60,
+      600,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y1",
+     "px": [
+      780,
+      60,
+      840,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.9,
+     "cue": "a0_c001",
+     "cue_t": 9.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y1",
+     "px": [
+      960,
+      60,
+      1020,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6667,
+     "cue": "a0_c001",
+     "cue_t": 8.6667
+    },
+    {
+     "type": "luma",
+     "region": "x17_y1",
+     "px": [
+      1020,
+      60,
+      1080,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.0,
+     "cue": "a0_c001",
+     "cue_t": 8.0
+    },
+    {
+     "type": "luma",
+     "region": "x18_y1",
+     "px": [
+      1080,
+      60,
+      1140,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.5,
+     "cue": "a0_c001",
+     "cue_t": 8.5
+    },
+    {
+     "type": "luma",
+     "region": "x19_y1",
+     "px": [
+      1140,
+      60,
+      1200,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.5667,
+     "cue": "a0_c001",
+     "cue_t": 8.5667
+    },
+    {
+     "type": "luma",
+     "region": "x22_y1",
+     "px": [
+      1320,
+      60,
+      1380,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.2333,
+     "cue": "a0_c001",
+     "cue_t": 9.2333
+    },
+    {
+     "type": "luma",
+     "region": "x23_y1",
+     "px": [
+      1380,
+      60,
+      1440,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.2333,
+     "cue": "a0_c001",
+     "cue_t": 9.2333
+    },
+    {
+     "type": "luma",
+     "region": "x25_y1",
+     "px": [
+      1500,
+      60,
+      1560,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.3,
+     "cue": "a0_c001",
+     "cue_t": 9.3
+    },
+    {
+     "type": "luma",
+     "region": "x26_y1",
+     "px": [
+      1560,
+      60,
+      1620,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.3,
+     "cue": "a0_c001",
+     "cue_t": 9.3
+    },
+    {
+     "type": "luma",
+     "region": "x28_y1",
+     "px": [
+      1680,
+      60,
+      1740,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9,
+     "cue": "a0_c001",
+     "cue_t": 8.9
+    },
+    {
+     "type": "luma",
+     "region": "x29_y1",
+     "px": [
+      1740,
+      60,
+      1800,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.9333,
+     "cue": "a0_c001",
+     "cue_t": 9.9333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y1",
+     "px": [
+      1860,
+      60,
+      1920,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.1667,
+     "cue": "a0_c001",
+     "cue_t": 9.1667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y2",
+     "px": [
+      300,
+      120,
+      360,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8667,
+     "cue": "a0_c002",
+     "cue_t": 13.6
+    },
+    {
+     "type": "luma",
+     "region": "x6_y2",
+     "px": [
+      360,
+      120,
+      420,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y2",
+     "px": [
+      480,
+      120,
+      540,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x9_y2",
+     "px": [
+      540,
+      120,
+      600,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y2",
+     "px": [
+      660,
+      120,
+      720,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.8333,
+     "cue": "a0_c005",
+     "cue_t": 3.7667
+    },
+    {
+     "type": "luma",
+     "region": "x12_y2",
+     "px": [
+      720,
+      120,
+      780,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.3,
+     "cue": "a0_c001",
+     "cue_t": 9.3
+    },
+    {
+     "type": "luma",
+     "region": "x13_y2",
+     "px": [
+      780,
+      120,
+      840,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.5,
+     "cue": "a0_c001",
+     "cue_t": 9.5
+    },
+    {
+     "type": "luma",
+     "region": "x15_y2",
+     "px": [
+      900,
+      120,
+      960,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.1667,
+     "cue": "a0_c001",
+     "cue_t": 9.1667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y2",
+     "px": [
+      960,
+      120,
+      1020,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.1667,
+     "cue": "a0_c001",
+     "cue_t": 9.1667
+    },
+    {
+     "type": "luma",
+     "region": "x22_y2",
+     "px": [
+      1320,
+      120,
+      1380,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.3333,
+     "cue": "a0_c001",
+     "cue_t": 8.3333
+    },
+    {
+     "type": "luma",
+     "region": "x23_y2",
+     "px": [
+      1380,
+      120,
+      1440,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7667,
+     "cue": "a0_c001",
+     "cue_t": 8.7667
+    },
+    {
+     "type": "luma",
+     "region": "x25_y2",
+     "px": [
+      1500,
+      120,
+      1560,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.8333,
+     "cue": "a0_c001",
+     "cue_t": 8.8333
+    },
+    {
+     "type": "luma",
+     "region": "x27_y2",
+     "px": [
+      1620,
+      120,
+      1680,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9667,
+     "cue": "a0_c001",
+     "cue_t": 8.9667
+    },
+    {
+     "type": "luma",
+     "region": "x28_y2",
+     "px": [
+      1680,
+      120,
+      1740,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.5,
+     "cue": "a0_c001",
+     "cue_t": 9.5
+    },
+    {
+     "type": "luma",
+     "region": "x30_y2",
+     "px": [
+      1800,
+      120,
+      1860,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7,
+     "cue": "a0_c001",
+     "cue_t": 8.7
+    },
+    {
+     "type": "luma",
+     "region": "x31_y2",
+     "px": [
+      1860,
+      120,
+      1920,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9333,
+     "cue": "a0_c001",
+     "cue_t": 8.9333
+    },
+    {
+     "type": "luma",
+     "region": "x3_y3",
+     "px": [
+      180,
+      180,
+      240,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.4333,
+     "cue": "a0_c005",
+     "cue_t": 3.3667
+    },
+    {
+     "type": "luma",
+     "region": "x4_y3",
+     "px": [
+      240,
+      180,
+      300,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8,
+     "cue": "a0_c002",
+     "cue_t": 13.5333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y3",
+     "px": [
+      300,
+      180,
+      360,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9333,
+     "cue": "a0_c002",
+     "cue_t": 13.6667
+    },
+    {
+     "type": "luma",
+     "region": "x6_y3",
+     "px": [
+      360,
+      180,
+      420,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.1667,
+     "cue": "a0_c002",
+     "cue_t": 13.9
+    },
+    {
+     "type": "luma",
+     "region": "x10_y3",
+     "px": [
+      600,
+      180,
+      660,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9,
+     "cue": "a0_c002",
+     "cue_t": 14.6333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y3",
+     "px": [
+      660,
+      180,
+      720,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.1,
+     "cue": "a0_c002",
+     "cue_t": 14.8333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y3",
+     "px": [
+      780,
+      180,
+      840,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.6333,
+     "cue": "a0_c005",
+     "cue_t": 4.5667
+    },
+    {
+     "type": "luma",
+     "region": "x15_y3",
+     "px": [
+      900,
+      180,
+      960,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7,
+     "cue": "a0_c001",
+     "cue_t": 8.7
+    },
+    {
+     "type": "luma",
+     "region": "x16_y3",
+     "px": [
+      960,
+      180,
+      1020,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7,
+     "cue": "a0_c001",
+     "cue_t": 8.7
+    },
+    {
+     "type": "luma",
+     "region": "x22_y3",
+     "px": [
+      1320,
+      180,
+      1380,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.2,
+     "cue": "a0_c001",
+     "cue_t": 8.2
+    },
+    {
+     "type": "luma",
+     "region": "x27_y3",
+     "px": [
+      1620,
+      180,
+      1680,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.0333,
+     "cue": "a0_c001",
+     "cue_t": 9.0333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y3",
+     "px": [
+      1860,
+      180,
+      1920,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9667,
+     "cue": "a0_c001",
+     "cue_t": 8.9667
+    },
+    {
+     "type": "luma",
+     "region": "x4_y4",
+     "px": [
+      240,
+      240,
+      300,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.6333,
+     "cue": "a0_c005",
+     "cue_t": 3.5667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y4",
+     "px": [
+      300,
+      240,
+      360,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9,
+     "cue": "a0_c002",
+     "cue_t": 13.6333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y4",
+     "px": [
+      360,
+      240,
+      420,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.1667,
+     "cue": "a0_c002",
+     "cue_t": 13.9
+    },
+    {
+     "type": "luma",
+     "region": "x10_y4",
+     "px": [
+      600,
+      240,
+      660,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9,
+     "cue": "a0_c002",
+     "cue_t": 14.6333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y4",
+     "px": [
+      660,
+      240,
+      720,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.0667,
+     "cue": "a0_c002",
+     "cue_t": 14.8
+    },
+    {
+     "type": "luma",
+     "region": "x21_y4",
+     "px": [
+      1260,
+      240,
+      1320,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.1333,
+     "cue": "a0_c001",
+     "cue_t": 8.1333
+    },
+    {
+     "type": "luma",
+     "region": "x26_y4",
+     "px": [
+      1560,
+      240,
+      1620,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.4,
+     "cue": "a0_c001",
+     "cue_t": 8.4
+    },
+    {
+     "type": "luma",
+     "region": "x30_y4",
+     "px": [
+      1800,
+      240,
+      1860,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.5667,
+     "cue": "a0_c001",
+     "cue_t": 8.5667
+    },
+    {
+     "type": "luma",
+     "region": "x31_y4",
+     "px": [
+      1860,
+      240,
+      1920,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9333,
+     "cue": "a0_c001",
+     "cue_t": 8.9333
+    },
+    {
+     "type": "luma",
+     "region": "x4_y5",
+     "px": [
+      240,
+      300,
+      300,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8,
+     "cue": "a0_c002",
+     "cue_t": 13.5333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y5",
+     "px": [
+      300,
+      300,
+      360,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.0667,
+     "cue": "a0_c002",
+     "cue_t": 13.8
+    },
+    {
+     "type": "luma",
+     "region": "x6_y5",
+     "px": [
+      360,
+      300,
+      420,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3,
+     "cue": "a0_c002",
+     "cue_t": 14.0333
+    },
+    {
+     "type": "luma",
+     "region": "x10_y5",
+     "px": [
+      600,
+      300,
+      660,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.0,
+     "cue": "a0_c002",
+     "cue_t": 14.7333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y5",
+     "px": [
+      660,
+      300,
+      720,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.2,
+     "cue": "a0_c002",
+     "cue_t": 14.9333
+    },
+    {
+     "type": "luma",
+     "region": "x12_y5",
+     "px": [
+      720,
+      300,
+      780,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.2667,
+     "cue": "a0_c005",
+     "cue_t": 4.2
+    },
+    {
+     "type": "luma",
+     "region": "x13_y5",
+     "px": [
+      780,
+      300,
+      840,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.2,
+     "cue": "a0_c003",
+     "cue_t": 13.2
+    },
+    {
+     "type": "luma",
+     "region": "x19_y5",
+     "px": [
+      1140,
+      300,
+      1200,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4333,
+     "cue": "a0_c004",
+     "cue_t": 3.3667
+    },
+    {
+     "type": "luma",
+     "region": "x31_y5",
+     "px": [
+      1860,
+      300,
+      1920,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9333,
+     "cue": "a0_c001",
+     "cue_t": 8.9333
+    },
+    {
+     "type": "luma",
+     "region": "x3_y6",
+     "px": [
+      180,
+      360,
+      240,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.4667,
+     "cue": "a0_c001",
+     "cue_t": 9.4667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y6",
+     "px": [
+      420,
+      360,
+      480,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x8_y6",
+     "px": [
+      480,
+      360,
+      540,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y6",
+     "px": [
+      540,
+      360,
+      600,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y6",
+     "px": [
+      660,
+      360,
+      720,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.8,
+     "cue": "a0_c005",
+     "cue_t": 3.7333
+    },
+    {
+     "type": "luma",
+     "region": "x12_y6",
+     "px": [
+      720,
+      360,
+      780,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 104.6667,
+     "cue": "a0_c005",
+     "cue_t": 0.6
+    },
+    {
+     "type": "luma",
+     "region": "x13_y6",
+     "px": [
+      780,
+      360,
+      840,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.1,
+     "cue": "a0_c003",
+     "cue_t": 13.1
+    },
+    {
+     "type": "luma",
+     "region": "x14_y6",
+     "px": [
+      840,
+      360,
+      900,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.4667,
+     "cue": "a0_c003",
+     "cue_t": 13.4667
+    },
+    {
+     "type": "luma",
+     "region": "x15_y6",
+     "px": [
+      900,
+      360,
+      960,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.8667,
+     "cue": "a0_c003",
+     "cue_t": 13.8667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y6",
+     "px": [
+      960,
+      360,
+      1020,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.3,
+     "cue": "a0_c004",
+     "cue_t": 2.2333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y6",
+     "px": [
+      1080,
+      360,
+      1140,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y6",
+     "px": [
+      1140,
+      360,
+      1200,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.3667,
+     "cue": "a0_c004",
+     "cue_t": 3.3
+    },
+    {
+     "type": "luma",
+     "region": "x20_y6",
+     "px": [
+      1200,
+      360,
+      1260,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.2333,
+     "cue": "a0_c004",
+     "cue_t": 3.1667
+    },
+    {
+     "type": "luma",
+     "region": "x29_y6",
+     "px": [
+      1740,
+      360,
+      1800,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5333,
+     "cue": "a0_c005",
+     "cue_t": 4.4667
+    },
+    {
+     "type": "luma",
+     "region": "x4_y7",
+     "px": [
+      240,
+      420,
+      300,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.3,
+     "cue": "a0_c005",
+     "cue_t": 4.2333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y7",
+     "px": [
+      540,
+      420,
+      600,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 54.8333,
+     "cue": "a0_c003",
+     "cue_t": 11.8333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y7",
+     "px": [
+      660,
+      420,
+      720,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.7667,
+     "cue": "a0_c005",
+     "cue_t": 3.7
+    },
+    {
+     "type": "luma",
+     "region": "x12_y7",
+     "px": [
+      720,
+      420,
+      780,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 105.7,
+     "cue": "a0_c005",
+     "cue_t": 1.6333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y7",
+     "px": [
+      780,
+      420,
+      840,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x17_y7",
+     "px": [
+      1020,
+      420,
+      1080,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.9333,
+     "cue": "a0_c005",
+     "cue_t": 2.8667
+    },
+    {
+     "type": "luma",
+     "region": "x19_y7",
+     "px": [
+      1140,
+      420,
+      1200,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.8,
+     "cue": "a0_c002",
+     "cue_t": 14.5333
+    },
+    {
+     "type": "luma",
+     "region": "x29_y7",
+     "px": [
+      1740,
+      420,
+      1800,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x30_y7",
+     "px": [
+      1800,
+      420,
+      1860,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.4333,
+     "cue": "a0_c001",
+     "cue_t": 8.4333
+    },
+    {
+     "type": "luma",
+     "region": "x4_y8",
+     "px": [
+      240,
+      480,
+      300,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.3333,
+     "cue": "a0_c005",
+     "cue_t": 4.2667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y8",
+     "px": [
+      300,
+      480,
+      360,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5333,
+     "cue": "a0_c005",
+     "cue_t": 4.4667
+    },
+    {
+     "type": "luma",
+     "region": "x9_y8",
+     "px": [
+      540,
+      480,
+      600,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 54.9667,
+     "cue": "a0_c003",
+     "cue_t": 11.9667
+    },
+    {
+     "type": "luma",
+     "region": "x10_y8",
+     "px": [
+      600,
+      480,
+      660,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 55.3,
+     "cue": "a0_c003",
+     "cue_t": 12.3
+    },
+    {
+     "type": "luma",
+     "region": "x12_y8",
+     "px": [
+      720,
+      480,
+      780,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.1,
+     "cue": "a0_c002",
+     "cue_t": 13.8333
+    },
+    {
+     "type": "red",
+     "region": "x12_y8",
+     "px": [
+      720,
+      480,
+      780,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 105.1,
+     "cue": "a0_c005",
+     "cue_t": 1.0333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y8",
+     "px": [
+      780,
+      480,
+      840,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3,
+     "cue": "a0_c002",
+     "cue_t": 14.0333
+    },
+    {
+     "type": "luma",
+     "region": "x14_y8",
+     "px": [
+      840,
+      480,
+      900,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4333,
+     "cue": "a0_c002",
+     "cue_t": 14.1667
+    },
+    {
+     "type": "luma",
+     "region": "x15_y8",
+     "px": [
+      900,
+      480,
+      960,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5667,
+     "cue": "a0_c002",
+     "cue_t": 14.3
+    },
+    {
+     "type": "luma",
+     "region": "x16_y8",
+     "px": [
+      960,
+      480,
+      1020,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.3667,
+     "cue": "a0_c004",
+     "cue_t": 2.3
+    },
+    {
+     "type": "luma",
+     "region": "x17_y8",
+     "px": [
+      1020,
+      480,
+      1080,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.7,
+     "cue": "a0_c005",
+     "cue_t": 2.6333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y8",
+     "px": [
+      1140,
+      480,
+      1200,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4,
+     "cue": "a0_c004",
+     "cue_t": 3.3333
+    },
+    {
+     "type": "luma",
+     "region": "x29_y8",
+     "px": [
+      1740,
+      480,
+      1800,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x12_y9",
+     "px": [
+      720,
+      540,
+      780,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8667,
+     "cue": "a0_c002",
+     "cue_t": 13.6
+    },
+    {
+     "type": "luma",
+     "region": "x13_y9",
+     "px": [
+      780,
+      540,
+      840,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2333,
+     "cue": "a0_c002",
+     "cue_t": 13.9667
+    },
+    {
+     "type": "luma",
+     "region": "x14_y9",
+     "px": [
+      840,
+      540,
+      900,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x15_y9",
+     "px": [
+      900,
+      540,
+      960,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.0333,
+     "cue": "a0_c002",
+     "cue_t": 13.7667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y9",
+     "px": [
+      960,
+      540,
+      1020,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2333,
+     "cue": "a0_c002",
+     "cue_t": 13.9667
+    },
+    {
+     "type": "red",
+     "region": "x16_y9",
+     "px": [
+      960,
+      540,
+      1020,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.3333,
+     "cue": "a0_c004",
+     "cue_t": 2.2667
+    },
+    {
+     "type": "luma",
+     "region": "x17_y9",
+     "px": [
+      1020,
+      540,
+      1080,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y9",
+     "px": [
+      1080,
+      540,
+      1140,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5667,
+     "cue": "a0_c002",
+     "cue_t": 14.3
+    },
+    {
+     "type": "luma",
+     "region": "x19_y9",
+     "px": [
+      1140,
+      540,
+      1200,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.6667,
+     "cue": "a0_c002",
+     "cue_t": 14.4
+    },
+    {
+     "type": "luma",
+     "region": "x20_y9",
+     "px": [
+      1200,
+      540,
+      1260,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9333,
+     "cue": "a0_c002",
+     "cue_t": 14.6667
+    },
+    {
+     "type": "luma",
+     "region": "x27_y9",
+     "px": [
+      1620,
+      540,
+      1680,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.8667,
+     "cue": "a0_c001",
+     "cue_t": 9.8667
+    },
+    {
+     "type": "luma",
+     "region": "x29_y9",
+     "px": [
+      1740,
+      540,
+      1800,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y10",
+     "px": [
+      300,
+      600,
+      360,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.1333,
+     "cue": "a0_c002",
+     "cue_t": 13.8667
+    },
+    {
+     "type": "luma",
+     "region": "x6_y10",
+     "px": [
+      360,
+      600,
+      420,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3,
+     "cue": "a0_c002",
+     "cue_t": 14.0333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y10",
+     "px": [
+      420,
+      600,
+      480,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4667,
+     "cue": "a0_c002",
+     "cue_t": 14.2
+    },
+    {
+     "type": "luma",
+     "region": "x9_y10",
+     "px": [
+      540,
+      600,
+      600,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x11_y10",
+     "px": [
+      660,
+      600,
+      720,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8,
+     "cue": "a0_c002",
+     "cue_t": 13.5333
+    },
+    {
+     "type": "luma",
+     "region": "x12_y10",
+     "px": [
+      720,
+      600,
+      780,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 20.7333,
+     "cue": "a0_c002",
+     "cue_t": 2.4667
+    },
+    {
+     "type": "red",
+     "region": "x12_y10",
+     "px": [
+      720,
+      600,
+      780,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 105.1667,
+     "cue": "a0_c005",
+     "cue_t": 1.1
+    },
+    {
+     "type": "luma",
+     "region": "x13_y10",
+     "px": [
+      780,
+      600,
+      840,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 50.2,
+     "cue": "a0_c003",
+     "cue_t": 7.2
+    },
+    {
+     "type": "luma",
+     "region": "x14_y10",
+     "px": [
+      840,
+      600,
+      900,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.7,
+     "cue": "a0_c002",
+     "cue_t": 13.4333
+    },
+    {
+     "type": "luma",
+     "region": "x15_y10",
+     "px": [
+      900,
+      600,
+      960,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.0,
+     "cue": "a0_c002",
+     "cue_t": 13.7333
+    },
+    {
+     "type": "luma",
+     "region": "x16_y10",
+     "px": [
+      960,
+      600,
+      1020,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x17_y10",
+     "px": [
+      1020,
+      600,
+      1080,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3667,
+     "cue": "a0_c002",
+     "cue_t": 14.1
+    },
+    {
+     "type": "luma",
+     "region": "x18_y10",
+     "px": [
+      1080,
+      600,
+      1140,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5667,
+     "cue": "a0_c002",
+     "cue_t": 14.3
+    },
+    {
+     "type": "luma",
+     "region": "x19_y10",
+     "px": [
+      1140,
+      600,
+      1200,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3667,
+     "cue": "a0_c002",
+     "cue_t": 14.1
+    },
+    {
+     "type": "luma",
+     "region": "x20_y10",
+     "px": [
+      1200,
+      600,
+      1260,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.2,
+     "cue": "a0_c004",
+     "cue_t": 3.1333
+    },
+    {
+     "type": "luma",
+     "region": "x26_y10",
+     "px": [
+      1560,
+      600,
+      1620,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.0333,
+     "cue": "a0_c001",
+     "cue_t": 9.0333
+    },
+    {
+     "type": "luma",
+     "region": "x27_y10",
+     "px": [
+      1620,
+      600,
+      1680,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.9667,
+     "cue": "a0_c001",
+     "cue_t": 8.9667
+    },
+    {
+     "type": "luma",
+     "region": "x29_y10",
+     "px": [
+      1740,
+      600,
+      1800,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.4667,
+     "cue": "a0_c005",
+     "cue_t": 4.4
+    },
+    {
+     "type": "luma",
+     "region": "x5_y11",
+     "px": [
+      300,
+      660,
+      360,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9,
+     "cue": "a0_c002",
+     "cue_t": 14.6333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y11",
+     "px": [
+      420,
+      660,
+      480,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.2333,
+     "cue": "a0_c002",
+     "cue_t": 14.9667
+    },
+    {
+     "type": "luma",
+     "region": "x8_y11",
+     "px": [
+      480,
+      660,
+      540,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.0333,
+     "cue": "a0_c002",
+     "cue_t": 14.7667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y11",
+     "px": [
+      960,
+      660,
+      1020,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x17_y11",
+     "px": [
+      1020,
+      660,
+      1080,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8333,
+     "cue": "a0_c005",
+     "cue_t": 2.7667
+    },
+    {
+     "type": "luma",
+     "region": "x18_y11",
+     "px": [
+      1080,
+      660,
+      1140,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.5667,
+     "cue": "a0_c004",
+     "cue_t": 3.5
+    },
+    {
+     "type": "luma",
+     "region": "x19_y11",
+     "px": [
+      1140,
+      660,
+      1200,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4,
+     "cue": "a0_c004",
+     "cue_t": 3.3333
+    },
+    {
+     "type": "luma",
+     "region": "x20_y11",
+     "px": [
+      1200,
+      660,
+      1260,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.2667,
+     "cue": "a0_c004",
+     "cue_t": 3.2
+    },
+    {
+     "type": "luma",
+     "region": "x24_y11",
+     "px": [
+      1440,
+      660,
+      1500,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 9.8333,
+     "cue": "a0_c001",
+     "cue_t": 7.8333
+    },
+    {
+     "type": "luma",
+     "region": "x29_y11",
+     "px": [
+      1740,
+      660,
+      1800,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x0_y12",
+     "px": [
+      0,
+      720,
+      60,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 9.4667,
+     "cue": "a0_c001",
+     "cue_t": 7.4667
+    },
+    {
+     "type": "luma",
+     "region": "x25_y12",
+     "px": [
+      1500,
+      720,
+      1560,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.3,
+     "cue": "a0_c005",
+     "cue_t": 4.2333
+    },
+    {
+     "type": "luma",
+     "region": "x28_y12",
+     "px": [
+      1680,
+      720,
+      1740,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.4333,
+     "cue": "a0_c005",
+     "cue_t": 4.3667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y13",
+     "px": [
+      420,
+      780,
+      480,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.1333,
+     "cue": "a0_c002",
+     "cue_t": 14.8667
+    },
+    {
+     "type": "luma",
+     "region": "x10_y13",
+     "px": [
+      600,
+      780,
+      660,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.4667,
+     "cue": "a0_c005",
+     "cue_t": 4.4
+    },
+    {
+     "type": "luma",
+     "region": "x19_y13",
+     "px": [
+      1140,
+      780,
+      1200,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.0333,
+     "cue": "a0_c005",
+     "cue_t": 2.9667
+    },
+    {
+     "type": "luma",
+     "region": "x8_y14",
+     "px": [
+      480,
+      840,
+      540,
+      900
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.6333,
+     "cue": "a0_c005",
+     "cue_t": 3.5667
+    },
+    {
+     "type": "luma",
+     "region": "x9_y14",
+     "px": [
+      540,
+      840,
+      600,
+      900
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.8667,
+     "cue": "a0_c005",
+     "cue_t": 3.8
+    },
+    {
+     "type": "luma",
+     "region": "x10_y14",
+     "px": [
+      600,
+      840,
+      660,
+      900
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.1,
+     "cue": "a0_c005",
+     "cue_t": 4.0333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y14",
+     "px": [
+      660,
+      840,
+      720,
+      900
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.3,
+     "cue": "a0_c005",
+     "cue_t": 4.2333
+    },
+    {
+     "type": "luma",
+     "region": "x12_y14",
+     "px": [
+      720,
+      840,
+      780,
+      900
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5333,
+     "cue": "a0_c005",
+     "cue_t": 4.4667
+    },
+    {
+     "type": "luma",
+     "region": "x8_y15",
+     "px": [
+      480,
+      900,
+      540,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.5333,
+     "cue": "a0_c005",
+     "cue_t": 3.4667
+    },
+    {
+     "type": "luma",
+     "region": "x9_y15",
+     "px": [
+      540,
+      900,
+      600,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.8667,
+     "cue": "a0_c005",
+     "cue_t": 3.8
+    }
+   ],
+   "near_limit_total": 609,
+   "near_limit_3_total": 171
+  },
+  "proj_16x9": {
+   "grid": [
+    16,
+    9
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x5_y2",
+     "px": [
+      600,
+      240,
+      720,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.1,
+     "cue": "a0_c005",
+     "cue_t": 4.0333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y3",
+     "px": [
+      1080,
+      360,
+      1200,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8333,
+     "cue": "a0_c005",
+     "cue_t": 2.7667
+    },
+    {
+     "type": "luma",
+     "region": "x8_y4",
+     "px": [
+      960,
+      480,
+      1080,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.2333,
+     "cue": "a0_c004",
+     "cue_t": 2.1667
+    },
+    {
+     "type": "luma",
+     "region": "x9_y4",
+     "px": [
+      1080,
+      480,
+      1200,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8667,
+     "cue": "a0_c005",
+     "cue_t": 2.8
+    },
+    {
+     "type": "luma",
+     "region": "x6_y5",
+     "px": [
+      720,
+      600,
+      840,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.0667,
+     "cue": "a0_c005",
+     "cue_t": 2.0
+    },
+    {
+     "type": "luma",
+     "region": "x9_y5",
+     "px": [
+      1080,
+      600,
+      1200,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8,
+     "cue": "a0_c005",
+     "cue_t": 2.7333
+    }
+   ],
+   "near_limit_total": 131,
+   "near_limit_3_total": 6
+  },
+  "proj_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 4,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [
+    {
+     "type": "luma",
+     "region": "x4_y11",
+     "px": [
+      240,
+      660,
+      300,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.6333,
+     "cue": "a0_c002",
+     "cue_t": 14.3667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y11",
+     "px": [
+      300,
+      660,
+      360,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.6667,
+     "cue": "a0_c002",
+     "cue_t": 14.4
+    },
+    {
+     "type": "luma",
+     "region": "x6_y11",
+     "px": [
+      360,
+      660,
+      420,
+      720
+     ],
+     "count_per_sec": 4,
+     "window_start": 32.8,
+     "cue": "a0_c002",
+     "cue_t": 14.5333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y12",
+     "px": [
+      1080,
+      720,
+      1140,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x30_y12",
+     "px": [
+      1800,
+      720,
+      1860,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.4333,
+     "cue": "a0_c004",
+     "cue_t": 1.3667
+    },
+    {
+     "type": "luma",
+     "region": "x31_y12",
+     "px": [
+      1860,
+      720,
+      1920,
+      780
+     ],
+     "count_per_sec": 4,
+     "window_start": 72.3333,
+     "cue": "a0_c004",
+     "cue_t": 1.2667
+    }
+   ],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x4_y0",
+     "px": [
+      240,
+      0,
+      300,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.9,
+     "cue": "a0_c005",
+     "cue_t": 3.8333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y0",
+     "px": [
+      360,
+      0,
+      420,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5333,
+     "cue": "a0_c005",
+     "cue_t": 4.4667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y0",
+     "px": [
+      420,
+      0,
+      480,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.7333,
+     "cue": "a0_c005",
+     "cue_t": 4.6667
+    },
+    {
+     "type": "luma",
+     "region": "x8_y0",
+     "px": [
+      480,
+      0,
+      540,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.9,
+     "cue": "a0_c005",
+     "cue_t": 4.8333
+    },
+    {
+     "type": "luma",
+     "region": "x14_y0",
+     "px": [
+      840,
+      0,
+      900,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.9667,
+     "cue": "a0_c005",
+     "cue_t": 4.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y0",
+     "px": [
+      960,
+      0,
+      1020,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.6,
+     "cue": "a0_c001",
+     "cue_t": 9.6
+    },
+    {
+     "type": "luma",
+     "region": "x18_y0",
+     "px": [
+      1080,
+      0,
+      1140,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6,
+     "cue": "a0_c001",
+     "cue_t": 8.6
+    },
+    {
+     "type": "luma",
+     "region": "x19_y0",
+     "px": [
+      1140,
+      0,
+      1200,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.0333,
+     "cue": "a0_c001",
+     "cue_t": 9.0333
+    },
+    {
+     "type": "luma",
+     "region": "x24_y0",
+     "px": [
+      1440,
+      0,
+      1500,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.6667,
+     "cue": "a0_c001",
+     "cue_t": 9.6667
+    },
+    {
+     "type": "luma",
+     "region": "x26_y0",
+     "px": [
+      1560,
+      0,
+      1620,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.4,
+     "cue": "a0_c001",
+     "cue_t": 9.4
+    },
+    {
+     "type": "luma",
+     "region": "x31_y0",
+     "px": [
+      1860,
+      0,
+      1920,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7,
+     "cue": "a0_c001",
+     "cue_t": 8.7
+    },
+    {
+     "type": "luma",
+     "region": "x8_y1",
+     "px": [
+      480,
+      60,
+      540,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.0667,
+     "cue": "a0_c005",
+     "cue_t": 5.0
+    },
+    {
+     "type": "luma",
+     "region": "x9_y1",
+     "px": [
+      540,
+      60,
+      600,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.3,
+     "cue": "a0_c005",
+     "cue_t": 5.2333
+    },
+    {
+     "type": "luma",
+     "region": "x16_y1",
+     "px": [
+      960,
+      60,
+      1020,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.2,
+     "cue": "a0_c001",
+     "cue_t": 9.2
+    },
+    {
+     "type": "luma",
+     "region": "x18_y1",
+     "px": [
+      1080,
+      60,
+      1140,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6,
+     "cue": "a0_c001",
+     "cue_t": 8.6
+    },
+    {
+     "type": "luma",
+     "region": "x19_y1",
+     "px": [
+      1140,
+      60,
+      1200,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.6333,
+     "cue": "a0_c001",
+     "cue_t": 8.6333
+    },
+    {
+     "type": "luma",
+     "region": "x23_y1",
+     "px": [
+      1380,
+      60,
+      1440,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.8333,
+     "cue": "a0_c001",
+     "cue_t": 8.8333
+    },
+    {
+     "type": "luma",
+     "region": "x31_y1",
+     "px": [
+      1860,
+      60,
+      1920,
+      120
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.2333,
+     "cue": "a0_c001",
+     "cue_t": 9.2333
+    },
+    {
+     "type": "luma",
+     "region": "x15_y2",
+     "px": [
+      900,
+      120,
+      960,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7,
+     "cue": "a0_c001",
+     "cue_t": 8.7
+    },
+    {
+     "type": "luma",
+     "region": "x16_y2",
+     "px": [
+      960,
+      120,
+      1020,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7333,
+     "cue": "a0_c001",
+     "cue_t": 8.7333
+    },
+    {
+     "type": "luma",
+     "region": "x23_y2",
+     "px": [
+      1380,
+      120,
+      1440,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.8333,
+     "cue": "a0_c001",
+     "cue_t": 8.8333
+    },
+    {
+     "type": "luma",
+     "region": "x30_y2",
+     "px": [
+      1800,
+      120,
+      1860,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.8,
+     "cue": "a0_c001",
+     "cue_t": 8.8
+    },
+    {
+     "type": "luma",
+     "region": "x5_y3",
+     "px": [
+      300,
+      180,
+      360,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.0,
+     "cue": "a0_c002",
+     "cue_t": 13.7333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y3",
+     "px": [
+      360,
+      180,
+      420,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2333,
+     "cue": "a0_c002",
+     "cue_t": 13.9667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y3",
+     "px": [
+      420,
+      180,
+      480,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y3",
+     "px": [
+      480,
+      180,
+      540,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.6,
+     "cue": "a0_c002",
+     "cue_t": 14.3333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y3",
+     "px": [
+      540,
+      180,
+      600,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.7667,
+     "cue": "a0_c002",
+     "cue_t": 14.5
+    },
+    {
+     "type": "luma",
+     "region": "x10_y3",
+     "px": [
+      600,
+      180,
+      660,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9333,
+     "cue": "a0_c002",
+     "cue_t": 14.6667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y3",
+     "px": [
+      960,
+      180,
+      1020,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.7667,
+     "cue": "a0_c001",
+     "cue_t": 8.7667
+    },
+    {
+     "type": "luma",
+     "region": "x22_y3",
+     "px": [
+      1320,
+      180,
+      1380,
+      240
+     ],
+     "count_per_sec": 3,
+     "window_start": 10.4333,
+     "cue": "a0_c001",
+     "cue_t": 8.4333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y4",
+     "px": [
+      300,
+      240,
+      360,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9667,
+     "cue": "a0_c002",
+     "cue_t": 13.7
+    },
+    {
+     "type": "luma",
+     "region": "x6_y4",
+     "px": [
+      360,
+      240,
+      420,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2,
+     "cue": "a0_c002",
+     "cue_t": 13.9333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y4",
+     "px": [
+      420,
+      240,
+      480,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y4",
+     "px": [
+      480,
+      240,
+      540,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5667,
+     "cue": "a0_c002",
+     "cue_t": 14.3
+    },
+    {
+     "type": "luma",
+     "region": "x9_y4",
+     "px": [
+      540,
+      240,
+      600,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.7333,
+     "cue": "a0_c002",
+     "cue_t": 14.4667
+    },
+    {
+     "type": "luma",
+     "region": "x10_y4",
+     "px": [
+      600,
+      240,
+      660,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.9333,
+     "cue": "a0_c002",
+     "cue_t": 14.6667
+    },
+    {
+     "type": "luma",
+     "region": "x4_y5",
+     "px": [
+      240,
+      300,
+      300,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.9,
+     "cue": "a0_c002",
+     "cue_t": 13.6333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y5",
+     "px": [
+      300,
+      300,
+      360,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.1333,
+     "cue": "a0_c002",
+     "cue_t": 13.8667
+    },
+    {
+     "type": "luma",
+     "region": "x6_y5",
+     "px": [
+      360,
+      300,
+      420,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3333,
+     "cue": "a0_c002",
+     "cue_t": 14.0667
+    },
+    {
+     "type": "luma",
+     "region": "x7_y5",
+     "px": [
+      420,
+      300,
+      480,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5,
+     "cue": "a0_c002",
+     "cue_t": 14.2333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y5",
+     "px": [
+      480,
+      300,
+      540,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.7,
+     "cue": "a0_c002",
+     "cue_t": 14.4333
+    },
+    {
+     "type": "luma",
+     "region": "x9_y5",
+     "px": [
+      540,
+      300,
+      600,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.8667,
+     "cue": "a0_c002",
+     "cue_t": 14.6
+    },
+    {
+     "type": "luma",
+     "region": "x10_y5",
+     "px": [
+      600,
+      300,
+      660,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.0667,
+     "cue": "a0_c002",
+     "cue_t": 14.8
+    },
+    {
+     "type": "luma",
+     "region": "x11_y5",
+     "px": [
+      660,
+      300,
+      720,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.2667,
+     "cue": "a0_c002",
+     "cue_t": 15.0
+    },
+    {
+     "type": "luma",
+     "region": "x14_y5",
+     "px": [
+      840,
+      300,
+      900,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.6333,
+     "cue": "a0_c003",
+     "cue_t": 13.6333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y5",
+     "px": [
+      1140,
+      300,
+      1200,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4667,
+     "cue": "a0_c004",
+     "cue_t": 3.4
+    },
+    {
+     "type": "luma",
+     "region": "x11_y6",
+     "px": [
+      660,
+      360,
+      720,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.9333,
+     "cue": "a0_c005",
+     "cue_t": 3.8667
+    },
+    {
+     "type": "luma",
+     "region": "x13_y6",
+     "px": [
+      780,
+      360,
+      840,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.2333,
+     "cue": "a0_c003",
+     "cue_t": 13.2333
+    },
+    {
+     "type": "luma",
+     "region": "x14_y6",
+     "px": [
+      840,
+      360,
+      900,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 56.5667,
+     "cue": "a0_c003",
+     "cue_t": 13.5667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y6",
+     "px": [
+      960,
+      360,
+      1020,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.3333,
+     "cue": "a0_c004",
+     "cue_t": 2.2667
+    },
+    {
+     "type": "luma",
+     "region": "x18_y6",
+     "px": [
+      1080,
+      360,
+      1140,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y6",
+     "px": [
+      1140,
+      360,
+      1200,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.3667,
+     "cue": "a0_c004",
+     "cue_t": 3.3
+    },
+    {
+     "type": "luma",
+     "region": "x29_y6",
+     "px": [
+      1740,
+      360,
+      1800,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5333,
+     "cue": "a0_c005",
+     "cue_t": 4.4667
+    },
+    {
+     "type": "luma",
+     "region": "x17_y7",
+     "px": [
+      1020,
+      420,
+      1080,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.9667,
+     "cue": "a0_c005",
+     "cue_t": 2.9
+    },
+    {
+     "type": "luma",
+     "region": "x18_y7",
+     "px": [
+      1080,
+      420,
+      1140,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.7,
+     "cue": "a0_c005",
+     "cue_t": 3.6333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y7",
+     "px": [
+      1140,
+      420,
+      1200,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.3667,
+     "cue": "a0_c004",
+     "cue_t": 3.3
+    },
+    {
+     "type": "luma",
+     "region": "x29_y7",
+     "px": [
+      1740,
+      420,
+      1800,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x13_y8",
+     "px": [
+      780,
+      480,
+      840,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3667,
+     "cue": "a0_c002",
+     "cue_t": 14.1
+    },
+    {
+     "type": "luma",
+     "region": "x14_y8",
+     "px": [
+      840,
+      480,
+      900,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5667,
+     "cue": "a0_c002",
+     "cue_t": 14.3
+    },
+    {
+     "type": "luma",
+     "region": "x15_y8",
+     "px": [
+      900,
+      480,
+      960,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.6333,
+     "cue": "a0_c002",
+     "cue_t": 14.3667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y8",
+     "px": [
+      960,
+      480,
+      1020,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 73.4,
+     "cue": "a0_c004",
+     "cue_t": 2.3333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y8",
+     "px": [
+      1080,
+      480,
+      1140,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8,
+     "cue": "a0_c005",
+     "cue_t": 2.7333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y8",
+     "px": [
+      1140,
+      480,
+      1200,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4333,
+     "cue": "a0_c004",
+     "cue_t": 3.3667
+    },
+    {
+     "type": "luma",
+     "region": "x29_y8",
+     "px": [
+      1740,
+      480,
+      1800,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y9",
+     "px": [
+      660,
+      540,
+      720,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8333,
+     "cue": "a0_c002",
+     "cue_t": 13.5667
+    },
+    {
+     "type": "luma",
+     "region": "x13_y9",
+     "px": [
+      780,
+      540,
+      840,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4,
+     "cue": "a0_c002",
+     "cue_t": 14.1333
+    },
+    {
+     "type": "luma",
+     "region": "x16_y9",
+     "px": [
+      960,
+      540,
+      1020,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3333,
+     "cue": "a0_c002",
+     "cue_t": 14.0667
+    },
+    {
+     "type": "luma",
+     "region": "x17_y9",
+     "px": [
+      1020,
+      540,
+      1080,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.5,
+     "cue": "a0_c002",
+     "cue_t": 14.2333
+    },
+    {
+     "type": "luma",
+     "region": "x18_y9",
+     "px": [
+      1080,
+      540,
+      1140,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.6667,
+     "cue": "a0_c002",
+     "cue_t": 14.4
+    },
+    {
+     "type": "luma",
+     "region": "x19_y9",
+     "px": [
+      1140,
+      540,
+      1200,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.8333,
+     "cue": "a0_c002",
+     "cue_t": 14.5667
+    },
+    {
+     "type": "luma",
+     "region": "x20_y9",
+     "px": [
+      1200,
+      540,
+      1260,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.0,
+     "cue": "a0_c002",
+     "cue_t": 14.7333
+    },
+    {
+     "type": "luma",
+     "region": "x29_y9",
+     "px": [
+      1740,
+      540,
+      1800,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y10",
+     "px": [
+      300,
+      600,
+      360,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3,
+     "cue": "a0_c002",
+     "cue_t": 14.0333
+    },
+    {
+     "type": "luma",
+     "region": "x6_y10",
+     "px": [
+      360,
+      600,
+      420,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.4667,
+     "cue": "a0_c002",
+     "cue_t": 14.2
+    },
+    {
+     "type": "luma",
+     "region": "x9_y10",
+     "px": [
+      540,
+      600,
+      600,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.3333,
+     "cue": "a0_c002",
+     "cue_t": 14.0667
+    },
+    {
+     "type": "luma",
+     "region": "x14_y10",
+     "px": [
+      840,
+      600,
+      900,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 31.8,
+     "cue": "a0_c002",
+     "cue_t": 13.5333
+    },
+    {
+     "type": "luma",
+     "region": "x15_y10",
+     "px": [
+      900,
+      600,
+      960,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.0667,
+     "cue": "a0_c002",
+     "cue_t": 13.8
+    },
+    {
+     "type": "luma",
+     "region": "x16_y10",
+     "px": [
+      960,
+      600,
+      1020,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 32.2667,
+     "cue": "a0_c002",
+     "cue_t": 14.0
+    },
+    {
+     "type": "luma",
+     "region": "x18_y10",
+     "px": [
+      1080,
+      600,
+      1140,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8,
+     "cue": "a0_c005",
+     "cue_t": 2.7333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y10",
+     "px": [
+      1140,
+      600,
+      1200,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.4667,
+     "cue": "a0_c004",
+     "cue_t": 3.4
+    },
+    {
+     "type": "luma",
+     "region": "x20_y10",
+     "px": [
+      1200,
+      600,
+      1260,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.3333,
+     "cue": "a0_c004",
+     "cue_t": 3.2667
+    },
+    {
+     "type": "luma",
+     "region": "x26_y10",
+     "px": [
+      1560,
+      600,
+      1620,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 11.1667,
+     "cue": "a0_c001",
+     "cue_t": 9.1667
+    },
+    {
+     "type": "luma",
+     "region": "x29_y10",
+     "px": [
+      1740,
+      600,
+      1800,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.4667,
+     "cue": "a0_c005",
+     "cue_t": 4.4
+    },
+    {
+     "type": "luma",
+     "region": "x8_y11",
+     "px": [
+      480,
+      660,
+      540,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.1667,
+     "cue": "a0_c002",
+     "cue_t": 14.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y11",
+     "px": [
+      960,
+      660,
+      1020,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.6,
+     "cue": "a0_c005",
+     "cue_t": 2.5333
+    },
+    {
+     "type": "luma",
+     "region": "x17_y11",
+     "px": [
+      1020,
+      660,
+      1080,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.8333,
+     "cue": "a0_c005",
+     "cue_t": 2.7667
+    },
+    {
+     "type": "luma",
+     "region": "x18_y11",
+     "px": [
+      1080,
+      660,
+      1140,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.6,
+     "cue": "a0_c004",
+     "cue_t": 3.5333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y11",
+     "px": [
+      1140,
+      660,
+      1200,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.9333,
+     "cue": "a0_c005",
+     "cue_t": 2.8667
+    },
+    {
+     "type": "luma",
+     "region": "x20_y11",
+     "px": [
+      1200,
+      660,
+      1260,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 74.2667,
+     "cue": "a0_c004",
+     "cue_t": 3.2
+    },
+    {
+     "type": "luma",
+     "region": "x23_y11",
+     "px": [
+      1380,
+      660,
+      1440,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.9667,
+     "cue": "a0_c005",
+     "cue_t": 3.9
+    },
+    {
+     "type": "luma",
+     "region": "x31_y11",
+     "px": [
+      1860,
+      660,
+      1920,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.3,
+     "cue": "a0_c005",
+     "cue_t": 3.2333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y12",
+     "px": [
+      1140,
+      720,
+      1200,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.9333,
+     "cue": "a0_c005",
+     "cue_t": 2.8667
+    },
+    {
+     "type": "luma",
+     "region": "x20_y12",
+     "px": [
+      1200,
+      720,
+      1260,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.9667,
+     "cue": "a0_c005",
+     "cue_t": 2.9
+    },
+    {
+     "type": "luma",
+     "region": "x29_y12",
+     "px": [
+      1740,
+      720,
+      1800,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 108.5,
+     "cue": "a0_c005",
+     "cue_t": 4.4333
+    },
+    {
+     "type": "luma",
+     "region": "x7_y13",
+     "px": [
+      420,
+      780,
+      480,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 33.2,
+     "cue": "a0_c002",
+     "cue_t": 14.9333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y15",
+     "px": [
+      300,
+      900,
+      360,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 106.7,
+     "cue": "a0_c005",
+     "cue_t": 2.6333
+    },
+    {
+     "type": "luma",
+     "region": "x8_y15",
+     "px": [
+      480,
+      900,
+      540,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 107.6333,
+     "cue": "a0_c005",
+     "cue_t": 3.5667
+    }
+   ],
+   "near_limit_total": 560,
+   "near_limit_3_total": 97
+  }
+ }
+}

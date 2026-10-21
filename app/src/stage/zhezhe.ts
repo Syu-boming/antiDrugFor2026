@@ -55,7 +55,7 @@ import { clamp, hashString, lerp, seeded, smoothstep } from '../util/math';
 import { LAYER } from './layers';
 import { PAPER_T, PaperBuilder, ZZ_COLORS, inkMaterial, outlineMaterial, paperMaterial, v3, type V3 } from './zhezhe_paper';
 import {
-  CardForm, FOLD_FORMS, HatForm, LanternForm, MagnifierForm, MegaphoneForm, PlaneForm, SheetForm, partMesh,
+  CardForm, FOLD_FORMS, FrogForm, HatForm, LanternForm, MagnifierForm, MegaphoneForm, PlaneForm, SheetForm, partMesh,
   type FoldForm, type FormObject, type PartCtx,
 } from './zhezhe_forms';
 
@@ -551,7 +551,7 @@ function zzShadowTexture(): CanvasTexture {
 /** 各造型的柔影強度、腳印大小 */
 const FORM_SHADOW: Record<FoldForm, [number, number, number]> = {
   idle: [1, 0.62, 0.42], card: [0.3, 1.1, 0.3], plane: [0.3, 0.9, 0.35], megaphone: [0.55, 0.7, 0.4], magnifier: [0.45, 0.6, 0.25],
-  lantern: [0.7, 0.55, 0.45], hat: [0.75, 0.7, 0.35], sheet: [0.5, 0.75, 0.3],
+  lantern: [0.7, 0.55, 0.45], hat: [0.75, 0.7, 0.35], sheet: [0.5, 0.75, 0.3], frog: [0.9, 0.8, 0.4],
 };
 
 // ─────────────────────────────────────────── 主類別 ───────────────────────────────────────────
@@ -605,7 +605,7 @@ export class Zhezhe {
     this.sheet = new SheetForm(fctx);
     const forms: Record<FoldForm, FormObject> = {
       idle: this.cat, card: this.card, plane: new PlaneForm(fctx, ink), megaphone: new MegaphoneForm(fctx), magnifier: new MagnifierForm(fctx),
-      lantern: this.lantern, hat: new HatForm(fctx), sheet: this.sheet,
+      lantern: this.lantern, hat: new HatForm(fctx), sheet: this.sheet, frog: new FrogForm(fctx, ink),
     };
     for (const k of FOLD_FORMS) {
       const h = new Group();

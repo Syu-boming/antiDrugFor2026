@@ -730,8 +730,8 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   await seek(p0.enterFade / 2); const p3 = await st();
   await seek(p0.enterFade + 0.02); const p4 = await st();
   const sets1 = await page.evaluate(() => window.__engineShow.sets());
-  check('換景亮度漸變：先把舊景漸暗（預捲 ≥ 0.6 秒），在全暗時換景，再漸亮（≥ 0.6 秒）', w0.cueId === 'a1_c008' && w0.set === 'kraft_stage' && p0.prerollSec >= 0.6 && p0.enterFade >= 0.6
-    && p1.set === 'kraft_stage' && p1.dim > 0.2 && p1.dim < 0.8 && p2.set === 'workshop_g4' && p2.dim >= 0.99 && p3.dim > 0.2 && p3.dim < 0.8 && p4.dim <= 0.01,
+  check('換景亮度漸變：先把舊景漸暗（預捲 ≥ 0.6 秒），在全暗時換景，再漸亮（≥ 0.6 秒）', w0.cueId === 'a1_c008' && w0.set !== 'workshop_g4' && p0.prerollSec >= 0.6 && p0.enterFade >= 0.6
+    && p1.set === w0.set && p1.dim > 0.2 && p1.dim < 0.8 && p2.set === 'workshop_g4' && p2.dim >= 0.99 && p3.dim > 0.2 && p3.dim < 0.8 && p4.dim <= 0.01,
   `預捲 ${p0.prerollSec} 秒（中點 ${p1.set} dim ${p1.dim}）→ 0 秒 ${p2.set} dim ${p2.dim} → ${p0.enterFade / 2} 秒 dim ${p3.dim} → ${p0.enterFade} 秒 dim ${p4.dim}`);
   check('換景時舊景釋放（場景裡只留一個景、釋放次數增加）', sets1.liveSetGroups === 1 && sets1.disposed > sets0.disposed && sets1.active === 'workshop_g4', JSON.stringify(sets1));
   // 跨檔上一步：a2_c001 播放中按上一步 → 回到 a1_c008（第一幕最後一個穩定節點）
@@ -783,7 +783,7 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   const n1 = await live.st();
   await sleep(1500);
   const n2 = await live.st();
-  check('即時播放的章節跳轉換景：先漸暗（0.25 秒時還是舊景、已變暗），1.75 秒後新景完全亮', n1.set === 'kraft_stage' && n1.dim > 0.05 && n1.dim < 0.95 && n2.set === 'workshop_g4' && n2.dim === 0,
+  check('即時播放的章節跳轉換景：先漸暗（0.25 秒時還是舊景、已變暗），1.75 秒後新景完全亮', n1.set !== 'workshop_g4' && n1.dim > 0.05 && n1.dim < 0.95 && n2.set === 'workshop_g4' && n2.dim === 0,
     `0.25 秒 ${n1.set} dim ${n1.dim}；1.75 秒 ${n2.set} dim ${n2.dim}`);
   check('全劇即時測試沒有頁面錯誤', live.errors.length === 0, live.errors.slice(0, 3).join(' | '));
   await live.page.close();
