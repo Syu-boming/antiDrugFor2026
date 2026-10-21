@@ -22,7 +22,7 @@
    "source": "audio/vo_el/vo_a2_c003_02_el01.wav",
    "lipsync_source": "audio/lipsync_el/a2_c003_02_el01.json",
    "file": "audio/vo/vo_a2_c003_02_v04.wav",
-   "sha1": "b017952b634960f63f5b162f2e94fbf973d9a095",
+   "sha1": "913096a177ff88bfe911310662d3ff77400e1587",
    "status": "fail",
    "failed": [
     "a",
@@ -31,7 +31,7 @@
    "request_ids": [
     "pbUV2nO4yNzU6u2YFeuq"
    ],
-   "time": "2026-10-21 13:29:08"
+   "time": "2026-10-21 14:25:35"
   },
   "a0_c001_01": {
    "role": "旁白",

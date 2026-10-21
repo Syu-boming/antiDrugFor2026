@@ -20,25 +20,25 @@
   "engine": "elevenlabs"
  },
  "a2_c003_02": {
-  "seconds": 7.91,
-  "speech_start": 0.11,
-  "speech_end": 7.66,
+  "seconds": 7.62,
+  "speech_start": 0.12,
+  "speech_end": 7.37,
   "speech_segments": [
    [
-    0.11,
-    1.23
+    0.12,
+    1.1
    ],
    [
-    1.48,
-    3.07
+    1.45,
+    2.9
    ],
    [
-    3.32,
-    5.07
+    3.15,
+    4.88
    ],
    [
-    5.43,
-    7.66
+    5.31,
+    7.37
    ]
   ],
   "file": "audio/vo/vo_a2_c003_02_v04.wav",
