@@ -23,16 +23,16 @@
  "audio": {
   "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
   "file": "audio/a6_mix.wav",
-  "duration_sec": 215.89,
+  "duration_sec": 215.86,
   "sample_peak_dBFS": -1.19,
   "clipped_samples": 0,
   "full_playback": {
    "I_LUFS": -16.1,
-   "LRA_LU": 14.2,
+   "LRA_LU": 14.1,
    "TP_dBTP": -1.2
   },
   "line_vo_file_I_spread_LU": 0.4,
-  "line_mix_I_spread_LU": 0.4,
+  "line_mix_I_spread_LU": 0.5,
   "momentary_max_LUFS": -8.9,
   "momentary_max_rise_within_1s_LU": 58.0,
   "momentary_max_rise_per_100ms_LU": 45.9,
@@ -106,9 +106,9 @@
    },
    {
     "cue": "a6_c009",
-    "hold_from_sec": 212.39,
+    "hold_from_sec": 212.36,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -48.0,
+    "momentary_max_after_3s_LUFS": -48.1,
     "pass_le_-35": true
    }
   ],
@@ -122,7 +122,8 @@
    "DUCK_BRIDGE": 0.9,
    "HOLD_MUSIC_RATIO": 0.1,
    "HOLD_TC": 0.6
-  }
+  },
+  "music_duck_by_cue": {}
  },
  "flash_playback": {
   "ok": true,
@@ -131,7 +132,7 @@
    "red": 2
   },
   "near_limit_total": 133,
-  "frames_analyzed": 6477
+  "frames_analyzed": 6476
  },
  "flash_variants": {
   "fine_32x18": {
@@ -175,7 +176,7 @@
  },
  "video": {
   "file": "a6_playback.mp4",
-  "frames": 6477,
+  "frames": 6476,
   "ffprobe": {
    "programs": [],
    "stream_groups": [],
@@ -185,7 +186,7 @@
      "width": 1920,
      "height": 1080,
      "r_frame_rate": "30/1",
-     "nb_frames": "6476",
+     "nb_frames": "6475",
      "side_data_list": [
       {}
      ]
@@ -193,17 +194,17 @@
     {
      "codec_name": "aac",
      "r_frame_rate": "0/0",
-     "nb_frames": "10121"
+     "nb_frames": "10120"
     }
    ],
    "format": {
-    "duration": "215.890000",
-    "size": "80349418"
+    "duration": "215.860000",
+    "size": "80387933"
    }
   }
  },
  "isolated_cuts": {
-  "frames": 6476,
+  "frames": 6475,
   "max_ratio": 1.137,
   "over_limit_count": 0,
   "pass": true
@@ -218,7 +219,7 @@
     "preroll_sec": 0.6,
     "estimate_sec": 18.0,
     "diff_sec": -4.3,
-    "vo_sec": 5.83,
+    "vo_sec": 6.0,
     "lines": 2
    },
    {
@@ -294,11 +295,11 @@
    {
     "cue": "a6_c009",
     "kind": "scene",
-    "duration_sec": 25.81,
+    "duration_sec": 25.78,
     "preroll_sec": 0.6,
     "estimate_sec": 27.0,
     "diff_sec": -1.2,
-    "vo_sec": 19.36,
+    "vo_sec": 19.33,
     "lines": 4
    }
   ],
@@ -307,7 +308,7 @@
   "estimate_sum_sec": 182.9,
   "act_budget_recorded_sec": 183.0,
   "diff_vs_budget_sec": 3.9,
-  "playback_with_holds_sec": 215.89,
+  "playback_with_holds_sec": 215.86,
   "holds_assumed_sec": {
    "a6_c001": 3.5,
    "a6_c002": 3.5,
@@ -388,7 +389,7 @@
   "engineDurations": {
    "a0_c000": 0,
    "a0_c001": 13.66,
-   "a0_c002": 22.3,
+   "a0_c002": 22.27,
    "a0_c003": 23.94,
    "a0_c004": 28.61,
    "a0_c005": 22.04,
@@ -450,7 +451,7 @@
    "a6_c006": 35.26,
    "a6_c007": 21.05,
    "a6_c008": 19.57,
-   "a6_c009": 25.81,
+   "a6_c009": 25.78,
    "a7_c001": 25.32,
    "a7_c002": 8.08,
    "a7_c003": 14.01,
@@ -463,9 +464,9 @@
    "active": "a6_shop",
    "built": 6,
    "disposed": 5,
-   "lastBuildMs": 29,
+   "lastBuildMs": 28,
    "liveSetGroups": 1,
-   "lastSwapMs": 0.3,
+   "lastSwapMs": 0.4,
    "preparedHits": 3,
    "prepared": []
   }

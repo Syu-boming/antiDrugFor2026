@@ -104,21 +104,21 @@
   "engine": "elevenlabs"
  },
  "a0_c002_03": {
-  "seconds": 2.62,
+  "seconds": 2.59,
   "speech_start": 0.12,
-  "speech_end": 2.37,
+  "speech_end": 2.34,
   "speech_segments": [
    [
     0.12,
-    1.09
+    1.03
    ],
    [
-    1.47,
-    2.41
+    1.42,
+    2.35
    ]
   ],
-  "file": "audio/vo/vo_a0_c002_03_v04.wav",
-  "lipsync": "audio/lipsync/a0_c002_03_v04.json",
+  "file": "audio/vo/vo_a0_c002_03_v05.wav",
+  "lipsync": "audio/lipsync/a0_c002_03_v05.json",
   "role": "阿樂叔叔",
   "text": "慢慢摺，燈才會亮。",
   "engine": "elevenlabs"
@@ -3392,17 +3392,21 @@
   "engine": "elevenlabs"
  },
  "a6_c001_02": {
-  "seconds": 2.01,
+  "seconds": 2.18,
   "speech_start": 0.12,
-  "speech_end": 1.76,
+  "speech_end": 1.93,
   "speech_segments": [
    [
     0.11,
-    1.76
+    0.8
+   ],
+   [
+    0.98,
+    1.92
    ]
   ],
-  "file": "audio/vo/vo_a6_c001_02_v04.wav",
-  "lipsync": "audio/lipsync/a6_c001_02_v04.json",
+  "file": "audio/vo/vo_a6_c001_02_v05.wav",
+  "lipsync": "audio/lipsync/a6_c001_02_v05.json",
   "role": "小宇",
   "text": "慢慢摺，燈才會亮。",
   "engine": "elevenlabs"
@@ -3868,25 +3872,25 @@
   "engine": "elevenlabs"
  },
  "a6_c009_03": {
-  "seconds": 8.08,
+  "seconds": 8.05,
   "speech_start": 0.12,
-  "speech_end": 7.83,
+  "speech_end": 7.8,
   "speech_segments": [
    [
     0.12,
-    3.3
+    3.07
    ],
    [
-    4.91,
-    5.88
+    4.45,
+    5.53
    ],
    [
-    6.72,
-    7.83
+    6.52,
+    7.81
    ]
   ],
-  "file": "audio/vo/vo_a6_c009_03_v04.wav",
-  "lipsync": "audio/lipsync/a6_c009_03_v04.json",
+  "file": "audio/vo/vo_a6_c009_03_v05.wav",
+  "lipsync": "audio/lipsync/a6_c009_03_v05.json",
   "role": "阿樂叔叔",
   "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
   "engine": "elevenlabs"

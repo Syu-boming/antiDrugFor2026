@@ -8196,5 +8196,12 @@
  ],
  "errors": [],
  "externalRequests": [],
- "requests": 134
+ "requests": 134,
+ "build": {
+  "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+  "cuesShowFile": "cues_show.js",
+  "cuesShowSha1": "24e0112b27b46a4e0f2917633a841db18947ddbb",
+  "distBuiltAt": "2026-10-22T15:12:20.497Z",
+  "appJsMtime": "2026-10-22T15:12:20.495Z"
+ }
 }

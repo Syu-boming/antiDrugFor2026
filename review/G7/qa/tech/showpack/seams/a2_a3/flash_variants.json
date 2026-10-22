@@ -1,0 +1,68 @@
+{
+ "method": "縮成 640×360 後分析；投影 v2＝projsim.py projector(v2) 套在縮圖上；門檻同 capture_analyze.py",
+ "variants": {
+  "fine_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": false,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 2
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x21_y12",
+     "px": [
+      1260,
+      720,
+      1320,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 4.033,
+     "cue": "a3_c001",
+     "cue_t": 1.433
+    }
+   ],
+   "near_limit_total": 480,
+   "near_limit_3_total": 1
+  },
+  "proj_16x9": {
+   "grid": [
+    16,
+    9
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 2,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [],
+   "near_limit_total": 140,
+   "near_limit_3_total": 0
+  },
+  "proj_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 2,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [],
+   "near_limit_total": 540,
+   "near_limit_3_total": 0
+  }
+ }
+}

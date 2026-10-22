@@ -54,13 +54,13 @@
      "text": "慢慢摺，燈才會亮。",
      "audioId": "vo_a6_c001_02",
      "start": 6.67,
-     "end": 8.68,
-     "duration": 2.01,
+     "end": 8.85,
+     "duration": 2.18,
      "placeholder": false,
      "pages": [
       {
        "start": 6.67,
-       "end": 8.68,
+       "end": 8.85,
        "rows": [
         "慢慢摺，燈才會亮。"
        ]
@@ -107,8 +107,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 8.78,
-     "end": 9.78,
+     "start": 8.95,
+     "end": 9.95,
      "params": {
       "emotion": "happy"
      }
@@ -116,8 +116,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 9.18,
-     "end": 9.19,
+     "start": 9.35,
+     "end": 9.36,
      "params": {
       "to": "a6_pinan"
      }
@@ -125,8 +125,8 @@
     {
      "name": "puppet.blink",
      "target": "pinan",
-     "start": 12.88,
-     "end": 12.88,
+     "start": 13.05,
+     "end": 13.05,
      "params": {}
     }
    ],
@@ -1764,7 +1764,7 @@
    "id": "a6_c009",
    "kind": "scene",
    "title": "又到了紙燈節",
-   "duration": 25.81,
+   "duration": 25.78,
    "autoAdvance": false,
    "set": "a6_shop",
    "enterFade": 0.8,
@@ -1820,13 +1820,13 @@
      "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
      "audioId": "vo_a6_c009_03",
      "start": 10.44,
-     "end": 18.52,
-     "duration": 8.08,
+     "end": 18.49,
+     "duration": 8.05,
      "placeholder": false,
      "pages": [
       {
        "start": 10.44,
-       "end": 18.52,
+       "end": 18.49,
        "rows": [
         "我現在還是會定期回去看醫生。",
         "慢慢摺，燈才會亮。"
@@ -1839,14 +1839,14 @@
      "speaker": "阿樂叔叔",
      "text": "謝謝你們，那天去找大人幫忙。",
      "audioId": "vo_a6_c009_04",
-     "start": 18.97,
-     "end": 22.31,
+     "start": 18.94,
+     "end": 22.28,
      "duration": 3.34,
      "placeholder": false,
      "pages": [
       {
-       "start": 18.97,
-       "end": 22.31,
+       "start": 18.94,
+       "end": 22.28,
        "rows": [
         "謝謝你們，那天去找大人幫忙。"
        ]
@@ -1872,14 +1872,14 @@
     },
     {
      "id": "sfx_lamp_on",
-     "at": 22.66,
+     "at": 22.63,
      "gain": 0.6
     }
    ],
    "music": [
     {
      "id": "music_town",
-     "at": 18.47,
+     "at": 18.44,
      "loop": true,
      "fade": 3,
      "gain": 0.85,
@@ -2076,8 +2076,8 @@
     {
      "name": "puppet.grab",
      "target": "ale",
-     "start": 20.81,
-     "end": 21.91,
+     "start": 20.78,
+     "end": 21.88,
      "params": {
       "to": 0
      }
@@ -2085,8 +2085,8 @@
     {
      "name": "puppet.chest",
      "target": "ale",
-     "start": 20.81,
-     "end": 21.91,
+     "start": 20.78,
+     "end": 21.88,
      "params": {
       "to": 1
      }
@@ -2094,8 +2094,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoyu",
-     "start": 22.51,
-     "end": 22.51,
+     "start": 22.48,
+     "end": 22.48,
      "params": {
       "emotion": "smile"
      }
@@ -2103,8 +2103,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 22.51,
-     "end": 23.51,
+     "start": 22.48,
+     "end": 23.48,
      "params": {
       "emotion": "happy"
      }
@@ -2112,8 +2112,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 22.61,
-     "end": 22.62,
+     "start": 22.58,
+     "end": 22.59,
      "params": {
       "to": "a6_shop_lamp"
      }
@@ -2121,8 +2121,8 @@
     {
      "name": "strings.loosen",
      "target": "ale",
-     "start": 22.81,
-     "end": 24.01,
+     "start": 22.78,
+     "end": 23.98,
      "params": {
       "anchors": [
        "wrist"
@@ -2133,8 +2133,8 @@
     {
      "name": "puppet.sit",
      "target": "ale",
-     "start": 23.01,
-     "end": 25.41,
+     "start": 22.98,
+     "end": 25.38,
      "params": {
       "to": 1
      }
@@ -2142,8 +2142,8 @@
     {
      "name": "puppet.lean",
      "target": "ale",
-     "start": 23.01,
-     "end": 25.41,
+     "start": 22.98,
+     "end": 25.38,
      "params": {
       "to": -0.05
      }
@@ -2151,8 +2151,8 @@
     {
      "name": "strings.fade",
      "target": "ale",
-     "start": 23.01,
-     "end": 25.01,
+     "start": 22.98,
+     "end": 24.98,
      "params": {
       "anchors": [
        "wrist"
@@ -2163,8 +2163,8 @@
     {
      "name": "strings.fade",
      "target": "ale",
-     "start": 25.01,
-     "end": 25.41,
+     "start": 24.98,
+     "end": 25.38,
      "params": {
       "anchors": [
        "wrist"
@@ -2175,8 +2175,8 @@
     {
      "name": "strings.detach",
      "target": "ale",
-     "start": 25.41,
-     "end": 25.81,
+     "start": 25.38,
+     "end": 25.78,
      "params": {
       "anchors": [
        "wrist"
@@ -2322,14 +2322,14 @@
    "kind": "scene",
    "preroll": 0.6,
    "start": 186.58,
-   "duration": 25.81,
+   "duration": 25.78,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "a6_shop",
    "enterFade": 0.8
   }
  ],
- "totalPlaybackSec": 215.89,
+ "totalPlaybackSec": 215.86,
  "audio": {
   "vo_a6_c001_01": {
    "source": "audio/vo/vo_a6_c001_01_v04.wav",
@@ -2337,8 +2337,8 @@
    "bus": "vo"
   },
   "vo_a6_c001_02": {
-   "source": "audio/vo/vo_a6_c001_02_v04.wav",
-   "duration": 2.01,
+   "source": "audio/vo/vo_a6_c001_02_v05.wav",
+   "duration": 2.18,
    "bus": "vo"
   },
   "vo_a6_c002_01": {
@@ -2462,8 +2462,8 @@
    "bus": "vo"
   },
   "vo_a6_c009_03": {
-   "source": "audio/vo/vo_a6_c009_03_v04.wav",
-   "duration": 8.08,
+   "source": "audio/vo/vo_a6_c009_03_v05.wav",
+   "duration": 8.05,
    "bus": "vo"
   },
   "vo_a6_c009_04": {
@@ -2530,9 +2530,9 @@
  "fps": 30,
  "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
  "segmentHash": {
-  "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
-  "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
-  "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+  "source": "db6afa71653e69c74b0f6618d53e9c67b488ab9a",
+  "built": "ae9437e4cd2abf792492210052500435e0197e3c",
+  "sourceMerged": "ae9437e4cd2abf792492210052500435e0197e3c",
   "builtFromSource": true
  }
 }

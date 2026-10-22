@@ -56,11 +56,11 @@
    "page": 1,
    "text": "慢慢摺，燈才會亮。",
    "subtitle_start_s": 17.68,
-   "voice_start_s": 17.815,
-   "diff_s": -0.135,
+   "voice_start_s": 17.814,
+   "diff_s": -0.134,
    "pass": true,
    "detect": "-40 dB／0.05 s",
-   "audio": "audio/vo/vo_a0_c002_03_v04.wav"
+   "audio": "audio/vo/vo_a0_c002_03_v05.wav"
   },
   {
    "cue": "a0_c003",

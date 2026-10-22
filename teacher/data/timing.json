@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026/10/22 22:03:04",
- "cueHash": "cca5916cc3",
+ "generatedAt": "2026/10/23 00:42:00",
+ "cueHash": "91b90f6887",
  "prerollSec": 0.6,
  "teacherTime": {
   "greeting": 30,
@@ -56,7 +56,7 @@
   "reasonL1": 8
  },
  "playback": {
-  "level0": 1322.3,
+  "level0": 1322.2,
   "level1": 1298.5,
   "level2": 1266.6
  },
@@ -166,7 +166,7 @@
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
      "planned": "31:25",
-     "actual": "34:39",
+     "actual": "34:38",
      "behind": 193,
      "level": 0
     },
@@ -213,7 +213,7 @@
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
      "planned": "31:25",
-     "actual": "34:09",
+     "actual": "34:08",
      "behind": 163,
      "level": 1
     },
@@ -221,7 +221,7 @@
      "cueId": "a6_c005",
      "label": "觸發 2 級",
      "planned": "31:25",
-     "actual": "34:09",
+     "actual": "34:08",
      "behind": 163,
      "level": 2,
      "trigger": true
@@ -346,7 +346,7 @@
    "kind": "scene",
    "start": "00:46",
    "startSec": 45.9,
-   "playSec": 22.3,
+   "playSec": 22.27,
    "teacherSec": 0,
    "teacher": []
   },
@@ -354,7 +354,7 @@
    "id": "a0_c003",
    "kind": "scene",
    "start": "01:10",
-   "startSec": 69.9,
+   "startSec": 69.8,
    "playSec": 23.94,
    "teacherSec": 0,
    "teacher": []
@@ -421,7 +421,7 @@
    "id": "a1_c005",
    "kind": "quiz",
    "start": "05:49",
-   "startSec": 348.8,
+   "startSec": 348.7,
    "playSec": 23.89,
    "teacherSec": 15,
    "teacher": [
@@ -474,7 +474,7 @@
    "id": "a2_c002",
    "kind": "scene",
    "start": "08:34",
-   "startSec": 513.6,
+   "startSec": 513.5,
    "playSec": 25.18,
    "teacherSec": 0,
    "teacher": []
@@ -483,7 +483,7 @@
    "id": "a2_c003",
    "kind": "scene",
    "start": "09:00",
-   "startSec": 539.9,
+   "startSec": 539.8,
    "playSec": 15.3,
    "teacherSec": 0,
    "teacher": []
@@ -492,7 +492,7 @@
    "id": "a2_c004",
    "kind": "scene",
    "start": "09:16",
-   "startSec": 556.3,
+   "startSec": 556.2,
    "playSec": 21.91,
    "teacherSec": 0,
    "teacher": []
@@ -501,7 +501,7 @@
    "id": "a2_c005",
    "kind": "quiz",
    "start": "09:39",
-   "startSec": 579.3,
+   "startSec": 579.2,
    "playSec": 23.86,
    "teacherSec": 15,
    "teacher": [
@@ -534,7 +534,7 @@
    "id": "a2_c008",
    "kind": "scene",
    "start": "11:10",
-   "startSec": 669.8,
+   "startSec": 669.7,
    "playSec": 39.4,
    "teacherSec": 0,
    "teacher": []
@@ -543,7 +543,7 @@
    "id": "a2_c009",
    "kind": "quiz",
    "start": "11:50",
-   "startSec": 710.3,
+   "startSec": 710.2,
    "playSec": 22.31,
    "teacherSec": 15,
    "teacher": [
@@ -554,7 +554,7 @@
    "id": "a2_c010",
    "kind": "reveal",
    "start": "12:29",
-   "startSec": 748.7,
+   "startSec": 748.6,
    "playSec": 6.49,
    "teacherSec": 29,
    "teacher": [
@@ -565,7 +565,7 @@
    "id": "a2_c011",
    "kind": "lamp",
    "start": "13:05",
-   "startSec": 785.3,
+   "startSec": 785.2,
    "playSec": 5.57,
    "teacherSec": 3,
    "teacher": [
@@ -621,7 +621,7 @@
    "id": "a3_c004",
    "kind": "scene",
    "start": "15:28",
-   "startSec": 927.6,
+   "startSec": 927.5,
    "playSec": 14.82,
    "teacherSec": 90,
    "teacher": [
@@ -732,7 +732,7 @@
    "id": "a4_c007",
    "kind": "lamp",
    "start": "21:50",
-   "startSec": 1310.4,
+   "startSec": 1310.3,
    "playSec": 7.16,
    "teacherSec": 3,
    "teacher": [
@@ -752,7 +752,7 @@
    "id": "a4_c009",
    "kind": "quiz",
    "start": "22:17",
-   "startSec": 1337.1,
+   "startSec": 1337,
    "playSec": 26.61,
    "teacherSec": 15,
    "teacher": [
@@ -763,7 +763,7 @@
    "id": "a4_c010",
    "kind": "reveal",
    "start": "23:00",
-   "startSec": 1379.8,
+   "startSec": 1379.7,
    "playSec": 7.32,
    "teacherSec": 29,
    "teacher": [
@@ -814,7 +814,7 @@
    "id": "a5_c002",
    "kind": "quiz",
    "start": "25:56",
-   "startSec": 1555.8,
+   "startSec": 1555.7,
    "playSec": 23.62,
    "teacherSec": 15,
    "teacher": [
@@ -825,7 +825,7 @@
    "id": "a5_c003",
    "kind": "reveal",
    "start": "26:35",
-   "startSec": 1595.5,
+   "startSec": 1595.4,
    "playSec": 7.02,
    "teacherSec": 29,
    "teacher": [
@@ -865,7 +865,7 @@
    "id": "a5_c007",
    "kind": "scene",
    "start": "28:14",
-   "startSec": 1694.1,
+   "startSec": 1694,
    "playSec": 24.08,
    "teacherSec": 0,
    "teacher": []
@@ -874,7 +874,7 @@
    "id": "a5_c008",
    "kind": "scene",
    "start": "28:40",
-   "startSec": 1719.9,
+   "startSec": 1719.8,
    "playSec": 27.41,
    "teacherSec": 0,
    "teacher": []
@@ -883,7 +883,7 @@
    "id": "a6_c001",
    "kind": "scene",
    "start": "29:09",
-   "startSec": 1749,
+   "startSec": 1748.9,
    "playSec": 13.68,
    "teacherSec": 0,
    "teacher": []
@@ -901,7 +901,7 @@
    "id": "a6_c003",
    "kind": "quiz",
    "start": "29:57",
-   "startSec": 1796.7,
+   "startSec": 1796.6,
    "playSec": 23.9,
    "teacherSec": 15,
    "teacher": [
@@ -912,7 +912,7 @@
    "id": "a6_c004",
    "kind": "reveal",
    "start": "30:37",
-   "startSec": 1836.7,
+   "startSec": 1836.6,
    "playSec": 6.94,
    "teacherSec": 29,
    "teacher": [
@@ -934,7 +934,7 @@
    "id": "a6_c006",
    "kind": "scene",
    "start": "31:25",
-   "startSec": 1884.9,
+   "startSec": 1884.8,
    "playSec": 35.26,
    "teacherSec": 0,
    "teacher": []
@@ -952,7 +952,7 @@
    "id": "a6_c008",
    "kind": "scene",
    "start": "32:24",
-   "startSec": 1944,
+   "startSec": 1943.9,
    "playSec": 19.57,
    "teacherSec": 0,
    "teacher": []
@@ -962,7 +962,7 @@
    "kind": "scene",
    "start": "32:45",
    "startSec": 1965.2,
-   "playSec": 25.81,
+   "playSec": 25.78,
    "teacherSec": 0,
    "teacher": []
   },
@@ -970,7 +970,7 @@
    "id": "a7_c001",
    "kind": "scene",
    "start": "33:13",
-   "startSec": 1992.8,
+   "startSec": 1992.7,
    "playSec": 25.32,
    "teacherSec": 0,
    "teacher": []
@@ -979,7 +979,7 @@
    "id": "a7_c002",
    "kind": "scene",
    "start": "33:39",
-   "startSec": 2019.2,
+   "startSec": 2019.1,
    "playSec": 8.08,
    "teacherSec": 30,
    "teacher": [
@@ -990,7 +990,7 @@
    "id": "a7_c003",
    "kind": "scene",
    "start": "34:18",
-   "startSec": 2058.4,
+   "startSec": 2058.3,
    "playSec": 14.01,
    "teacherSec": 0,
    "teacher": []
@@ -999,7 +999,7 @@
    "id": "a8_c001",
    "kind": "scene",
    "start": "34:34",
-   "startSec": 2074.1,
+   "startSec": 2074,
    "playSec": 18,
    "teacherSec": 0,
    "teacher": []
@@ -1008,7 +1008,7 @@
    "id": "a8_c002",
    "kind": "curtain",
    "start": "34:53",
-   "startSec": 2093.2,
+   "startSec": 2093.1,
    "playSec": 5.4,
    "teacherSec": 0,
    "teacher": []
@@ -1017,7 +1017,7 @@
    "id": "a8_c003",
    "kind": "title",
    "start": "34:59",
-   "startSec": 2098.7,
+   "startSec": 2098.6,
    "playSec": 1.4,
    "teacherSec": 45,
    "teacher": [

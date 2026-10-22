@@ -1,0 +1,11 @@
+D=same G=same 一頁操作卡.pdf
+D=same G=same 參與小卡.pdf
+D=same G=same 導師匿名回饋單.pdf
+D=same G=same 成果紀錄範本.pdf
+D=same G=same 故障一頁卡.pdf
+D=same G=same 教師講稿.pdf
+D=same G=same 教案_教學活動設計.pdf
+D=same G=same 觀課導覽單.pdf
+D=same G=same 角色貼紙.pdf
+D=same G=same 題卡_學生版.pdf
+D=same G=same 題卡_教師版.pdf

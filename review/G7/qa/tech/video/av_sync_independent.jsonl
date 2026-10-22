@@ -1,0 +1,8 @@
+{"line": "a0_c004_01", "vo": "vo_a0_c004_01_v04.wav", "expected_line_start": 72.85, "found_line_start": 72.85, "lag_ms": 0.0, "corr": 0.986}
+{"line": "a2_c008_01", "vo": "vo_a2_c008_01_v04.wav", "expected_line_start": 142.033, "found_line_start": 142.033, "lag_ms": 0.3, "corr": 0.986}
+{"line": "a2_c008_05", "vo": "vo_a2_c008_05_v04.wav", "expected_line_start": 162.223, "found_line_start": 162.223, "lag_ms": 0.3, "corr": 0.994}
+{"line": "a4_c012_01", "vo": "vo_a4_c012_01_v04.wav", "expected_line_start": 187.467, "found_line_start": 187.467, "lag_ms": -0.3, "corr": 0.98}
+{"line": "a5_c005_01", "vo": "vo_a5_c005_01_v04.wav", "expected_line_start": 86.15, "found_line_start": 86.15, "lag_ms": 0.0, "corr": 0.994}
+{"line": "a5_c005_03", "vo": "vo_a5_c005_03_v04.wav", "expected_line_start": 96.31, "found_line_start": 96.31, "lag_ms": 0.0, "corr": 0.994}
+{"line": "a6_c009_01", "vo": "vo_a6_c009_01_v04.wav", "expected_line_start": 179.633, "found_line_start": 179.633, "lag_ms": 0.3, "corr": 0.994}
+{"line": "a8_c001_01", "vo": "vo_a8_c001_01_v04.wav", "expected_line_start": 14.0, "found_line_start": 14.0, "lag_ms": 0.0, "corr": 0.975}

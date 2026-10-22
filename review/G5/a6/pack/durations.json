@@ -8,7 +8,7 @@
    "preroll_sec": 0.6,
    "estimate_sec": 18.0,
    "diff_sec": -4.3,
-   "vo_sec": 5.83,
+   "vo_sec": 6.0,
    "lines": 2
   },
   {
@@ -84,11 +84,11 @@
   {
    "cue": "a6_c009",
    "kind": "scene",
-   "duration_sec": 25.81,
+   "duration_sec": 25.78,
    "preroll_sec": 0.6,
    "estimate_sec": 27.0,
    "diff_sec": -1.2,
-   "vo_sec": 19.36,
+   "vo_sec": 19.33,
    "lines": 4
   }
  ],
@@ -97,7 +97,7 @@
  "estimate_sum_sec": 182.9,
  "act_budget_recorded_sec": 183.0,
  "diff_vs_budget_sec": 3.9,
- "playback_with_holds_sec": 215.89,
+ "playback_with_holds_sec": 215.86,
  "holds_assumed_sec": {
   "a6_c001": 3.5,
   "a6_c002": 3.5,

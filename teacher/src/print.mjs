@@ -4,6 +4,7 @@ import { BYLINE, SHOW_TITLE, htmlPage, esc, lampSvg } from './common.mjs';
 import { fmtClock } from './data.mjs';
 import { quizTable } from './docs.mjs';
 import { GOALS } from './lesson.mjs';
+import { PRINT_COUNTS } from './teacher_text.mjs';
 
 const SLOGAN = '不碰、不試；先離開，找大人。';
 const ACTS = [['act-cross', '不碰'], ['act-palmno', '不試'], ['act-pointr', '先離開'], ['act-forehead', '找大人']];
@@ -12,7 +13,7 @@ export function buildPrints(ctx, segs) {
   return [buildSmallCards(), buildStickers(), buildRecord(ctx, segs), buildFeedback()];
 }
 
-// ───────────────────────────── 參與小卡（名片大小 90×54 mm，A4 一頁 10 張） ─────────────────────────────
+// ───────────────────────────── 參與小卡（名片大小 90×54 mm，A4 一頁 10 張＝PRINT_COUNTS.cardsPerSheet） ─────────────────────────────
 
 const SMALL_CSS = `
 @page { size: A4 portrait; margin: 0; }
@@ -33,7 +34,7 @@ function buildSmallCards() {
   const card = `<div class="c"><div class="t">${lampSvg(true)}${SHOW_TITLE}｜參與小卡</div><div class="by">${BYLINE}</div>
 <div class="s">不碰、不試；<br>先離開，找大人。</div>
 <div class="acts">${ACTS.map(([img, l]) => `<div class="a"><img src="../img/${img}.png" alt=""><span>${l}</span></div>`).join('')}</div></div>`;
-  const sheet = `<section class="sheet">${Array.from({ length: 10 }, () => card).join('')}</section>`;
+  const sheet = `<section class="sheet">${Array.from({ length: PRINT_COUNTS.cardsPerSheet }, () => card).join('')}</section>`;
   return { name: '參與小卡', html: htmlPage({ title: `${SHOW_TITLE}｜參與小卡`, css: SMALL_CSS, body: sheet }), expectPages: 1 };
 }
 
@@ -118,7 +119,7 @@ function buildRecord(ctx, segs) {
 </tbody></table>
 
 <h2>二、學習目標對照與課中作答概況</h2>
-<p class="hint">協助教師揭答時逐題勾選全班作答概況（看全場手勢的大約比例，不記錄個人）。</p>
+<p class="hint">協助教師揭答時逐題勾選全班作答概況（看全場手勢的大約比例，不記錄個人）。學習目標：${GOALS.map((g) => `${g.n} ${esc(g.goal)}`).join('　')}。</p>
 <table><thead><tr><th style="width:7%">題</th><th style="width:30%">主題（學習目標）</th><th style="width:7%">正解</th><th>比出正解的大約比例</th></tr></thead><tbody>
 ${qs.map((q) => `<tr><td>${q.qid}</td><td>${esc(q.e.topic)}（${goalOf(q.qid)?.n ?? ''}）</td><td>${q.answer}</td><td>${CK(['幾乎全班', '約一半', '少數'])}</td></tr>`).join('\n')}
 <tr><td colspan="2">拒絕句與口訣動作（a3_c004）</td><td>—</td><td>${CK(['幾乎全班參與', '約一半', '少數'])}</td></tr>

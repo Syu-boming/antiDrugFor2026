@@ -1,0 +1,14 @@
+- 22:57 T：1 資料包缺檔改寫完成（packs.ts loadPackFiles 改 allSettled 回傳失敗清單＋PackLoadError；engine.ts vo/lipsync 失敗→missingVo＋missingPacks 確認流程，必要資料包→error 顯示檔名與怎麼辦，進度回呼只在 loading 時寫；overlays.ts confirmMissingVo 列缺檔）；tsc 通過
+- D（教師資料）22:57 開工：讀完 principal／completeness／tech 與 teacher/src、backup_video.py readme、tools/pages/index.html、review/G7/使用說明.md
+- 22:58 T：1 engine-test 加 7 項（少 vo_a3_c002.js→3 句 missingVo、確認後開演；少 sfx.js／img_ui.js→error 顯示檔名與怎麼辦、2.5 秒後不被進度蓋掉、按下一步不開演），快速子集 7／7
+- D 23:00 改完 teacher/src（AI 說明、操作卡、故障卡新列、列印清單、目標④、課前列、閉幕列、導覽單空格、預錄兩種數字）與 tools/pages/index.html 頁尾；開始第一次重建
+- 23:01 T：2 app/electron/pack.mjs 在 AntidrugTheater/ 寫「啟動說明.txt」（UTF-8 BOM、CRLF；複製整個交付資料夾、Win＋P 延伸、雙擊 exe、準備播放、只有一個畫面、按鍵表、故障一頁卡、署名）；3 delivery_smoke 加 startup_note 與 quiz_real_keys（PageDown 實鍵走 Q1 出題→揭答→點燈→續演），待實跑
+- D 23:02 review/G7/使用說明.md：預錄 22:02／22:13 關係、故障表加「準備播放灰、停在資料包 n／m」列、前一天列印清單（依 PDF 實際排版）
+- D 23:04 tools/backup_video.py readme 改寫（回饋指向 teacher_pdf\題卡_教師版.pdf 第 n 題／教師講稿.pdf、刪 v1.2 §17.2 與八題_v03.md、a6_c007 加全場捧燈手 02:21.4／主燈 02:23.4）；node tools/backup_video.mjs --readme-only --out 交付/backup_video 完成，mp4 未變
+- D 23:05 收尾：node tools/teacher_docs.mjs 25／25 通過（新增 4 項 G7 檢查）、--check exit 0（cca5916cc3）、操作卡 1 頁、故障卡 1 頁、教案 4 頁、導覽單 1 頁、講稿 16 頁；交付/teacher_pdf 與 交付/使用說明.md 尚未覆蓋（待主線重新打包）
+- 23:08 T：4 show_review_pack.mjs 每節新跑寫 <節>/build.json（app.js、cues_show.js sha1）＋build_check.json；.py INDEX 在 (b)(c)(d)(e)(f)(g) 開頭標「本次量測／沿用同一建置／沿用舊建置的數據」並列兩邊 sha1（舊資料沒有 sha1 時用檔案時間比）；scratchpad 複本測 --index-only 與 --skip-live --skip-seams --skip-engine-test（ops 新跑 fresh）通過；3 delivery_smoke 實跑（scratch 打包的 AntidrugTheater）10／10 通過
+- 23:14 T：收尾 npm run build（app.js sha1 61bd69382957b8b3bb318615169b0fa82b0afe61）→ node tools/engine-test.mjs 151／151 通過；scratch 打包＋delivery_smoke 10／10 通過；show_review_pack.py (h) 表加「實鍵走一題」「啟動說明」欄
+- R（報告）23:15 開工：讀總報告、素材與授權表、elevenlabs 回覆、qa 三份與 REVIEW.md 最後兩節
+- R 23:28 總報告.md 改寫完成（第 1 頁一頁決定清單 20 項；1.2 G7 列唯一〔主線補〕；1.3／N4–N6／R4–R5 已處理附證據；all_ok、D5／A5、3.8 GitHub 決定、7.1 新句、7.2 已決定＋待辦、D11 等漏列裁定、第四節 #18 #19、N8、5.7、附錄 A）
+- R 23:29 素材與授權表.md（清單時間 21:33、THIRD_PARTY_LICENSES 已隨包〔第 1、4.1、6 節〕、第 8 節 4、5 已處理、2.5 第 47–49 列來源、配音公開）與 elevenlabs_reply 對照表「不另外散布音檔」改成實情
+- R 23:30 收尾：總報告〔主線補〕只剩 1.2 G7 列 1 處；三份檔表格欄數檢查通過；沒動 交付/、REVIEW.md、PROJECT_STATE.md，沒有 commit；修改前備份在 scratchpad（總報告_before_fix1.md 等）

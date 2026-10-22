@@ -3,7 +3,7 @@
  "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
  "limit_ratio": 1.2,
  "file": "a6_playback.mp4",
- "frames": 6476,
+ "frames": 6475,
  "max_ratio": 1.137,
  "max_at": {
   "frame": 1250,
@@ -23,7 +23,7 @@
   {
    "frame": 533,
    "t": 17.767,
-   "before": 0.1361,
+   "before": 0.1362,
    "after": 0.1219,
    "ratio": 1.117,
    "direction": "變暗",
@@ -69,16 +69,16 @@
    "cue_t": 0.0
   },
   {
-   "frame": 6276,
-   "t": 209.2,
+   "frame": 6275,
+   "t": 209.167,
    "before": 0.5522,
    "after": 0.5046,
    "ratio": 1.094,
    "direction": "變暗",
-   "prev_delta": -0.0001,
+   "prev_delta": -0.0,
    "next_delta": 0.0002,
    "cue": "a6_c009",
-   "cue_t": 22.6333
+   "cue_t": 22.6
   }
  ],
  "pass": true

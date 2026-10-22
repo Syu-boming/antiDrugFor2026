@@ -78,7 +78,7 @@ function buildOpCard(ctx) {
 
 <h2><span class="n">1</span>開演前準備（T−60 到 T−15）</h2>
 <ol>
-<li>演出資料夾 <b>AntidrugTheater</b> 用隨身碟<b>複製到筆電本機硬碟</b>（不要從網路下載）。筆電插電、高效能模式，關掉通知與自動更新。</li>
+<li><b>整個交付資料夾</b>（AntidrugTheater、browser、backup_video、teacher_pdf）用隨身碟<b>複製到筆電本機硬碟</b>（不要從網路下載）。筆電插電、高效能模式，關掉通知與自動更新。</li>
 <li>接投影機與場地音響，按 <b>Win＋P</b> 選「<b>延伸</b>」。確認 Windows 的播放裝置是場地音響。</li>
 <li>雙擊 <b>AntidrugTheater.exe</b>：投影上出現舞台，筆電上出現深色大字的<b>教師控制台</b>。</li>
 <li>控制台按一次「<b>下一步</b>」＝<b>準備播放</b>（同時啟用聲音），畫面停在「${BYLINE}」署名卡。之後不再動滑鼠。</li>
@@ -183,6 +183,7 @@ function buildFaultCard(ctx) {
     ['只有一個畫面、控制台被投影出去', '按 Win＋P 選「延伸」。', '控制台會提示改用單一舞台視窗：只用舞台和簡報筆演出，看紙本講稿。'],
     ['控制台顯示「舞台：未連線」', '點一下舞台視窗，等 2–3 秒。', '只用舞台視窗演出（M 鍵選單可跳段），看紙本講稿與 cue 編號。'],
     ['投影機沒畫面或故障', '檢查訊號線與投影機的輸入來源；Win＋P 重選「延伸」。', '<b>改用紙本題卡完成八題</b>（題卡_學生版.pdf，可放大印成 A3），老師照講稿說故事。'],
+    ['準備播放是灰的、停在「資料包 n／m」', '看畫面上寫的原因。關掉程式，把<b>整個交付資料夾</b>重新複製到本機硬碟再開。', '改開<b>瀏覽器版</b>或備援影片（下方）。'],
     ['Windows 擋執行檔（「Windows 已保護您的電腦」）', '按「其他資訊」→「仍要執行」（學校允許時）。', '學校電腦禁止執行時，請資訊組協助，或改用<b>瀏覽器版</b>（下方）。'],
   ];
   const body = `
@@ -200,7 +201,7 @@ ${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).j
 </div>
 <p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\\index.html</code>（不用加參數，預設就是全劇），按「準備播放」，用簡報筆操作。要雙畫面：開 <code>browser\\console.html</code>，按「開啟舞台視窗」，把舞台拖到投影畫面，在舞台上按一次「準備播放」。不需要網路、不用安裝。</p>
 <p><b>${bv.ready ? '備援影片怎麼播' : bv.label}</b>：${md2html(bv.short)}</p>
-<p class="small">代理老師也能照「一頁操作卡」與本卡完成演出。正解依序 ${quizTable(ctx).map((q) => q.answer).join('、')}；看 ${quizTable(ctx).map((q) => q.zone).join('、')} 區。完全離線，不用攝影機與麥克風。</p>
+<p class="small">代理老師照「一頁操作卡」與本卡就能演出。正解依序 ${quizTable(ctx).map((q) => q.answer).join('、')}；看 ${quizTable(ctx).map((q) => q.zone).join('')} 區。完全離線。</p>
 `;
   return { name: '故障一頁卡', html: htmlPage({ title: `${SHOW_TITLE}｜故障一頁卡`, css: FAULT_CSS, body }), expectPages: 1 };
 }

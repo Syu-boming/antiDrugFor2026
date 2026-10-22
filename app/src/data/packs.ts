@@ -47,10 +47,26 @@ export function loadPackFile(file: string): Promise<void> {
   return p;
 }
 
-export async function loadPackFiles(files: Iterable<string>, onProgress?: (done: number, total: number) => void): Promise<void> {
+/**
+ * 載入多個資料包檔。等全部結束（成功或失敗）才回傳，回傳載入失敗的檔名；不丟例外，由呼叫端決定哪些檔是必要的
+ * （G7：以前用 Promise.all，一個檔失敗就先丟例外，其他檔載完時 onProgress 又把畫面上的錯誤訊息蓋回「資料包 n／m」）。
+ * onProgress 在每個檔結束時呼叫一次（失敗的檔也算），回傳之後不會再呼叫。
+ */
+export async function loadPackFiles(files: Iterable<string>, onProgress?: (done: number, total: number) => void): Promise<string[]> {
   const list = [...new Set(files)];
   let done = 0;
-  await Promise.all(list.map(async (f) => { await loadPackFile(f); onProgress?.(++done, list.length); }));
+  const settled = await Promise.allSettled(list.map(async (f) => {
+    try { await loadPackFile(f); } finally { onProgress?.(++done, list.length); }
+  }));
+  return list.filter((_, i) => settled[i].status === 'rejected');
+}
+
+/** 必要資料包（cue、總表、圖像、素材 JSON、配樂音效）載入失敗：準備畫面顯示是哪些檔、怎麼辦 */
+export class PackLoadError extends Error {
+  constructor(readonly files: string[], what = '必要資料檔') {
+    super(`缺少${what}（${files.length} 個）：${files.slice(0, 4).map((f) => `data/${f}`).join('、')}${files.length > 4 ? '…' : ''}`);
+    this.name = 'PackLoadError';
+  }
 }
 
 /** data URL（base64）→ ArrayBuffer，不經過 fetch，file:// 也能用 */

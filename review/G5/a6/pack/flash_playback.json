@@ -2,8 +2,8 @@
  "ok": true,
  "rule": "任一區域明暗或飽和紅色每秒變化 ≤ 3 次（不採面積豁免）",
  "method": "播放錄製的連續逐格（30 格／秒，含 cue 之間的接縫與停住格）；16×9 區域＋全畫面；亮度門檻 0.1（較暗端 < 0.8）；紅色門檻 20.0（R/(R+G+B) ≥ 0.8）",
- "frames_analyzed": 6477,
- "duration_sec": 215.9,
+ "frames_analyzed": 6476,
+ "duration_sec": 215.867,
  "max_changes_per_sec": {
   "luma": 2,
   "red": 2

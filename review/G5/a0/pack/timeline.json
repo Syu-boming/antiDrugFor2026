@@ -183,7 +183,7 @@
    "id": "a0_c002",
    "kind": "scene",
    "title": "折折登場",
-   "duration": 22.3,
+   "duration": 22.27,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0,
@@ -239,13 +239,13 @@
      "text": "慢慢摺，燈才會亮。",
      "audioId": "vo_a0_c002_03",
      "start": 17.68,
-     "end": 20.3,
-     "duration": 2.62,
+     "end": 20.27,
+     "duration": 2.59,
      "placeholder": false,
      "pages": [
       {
        "start": 17.68,
-       "end": 20.3,
+       "end": 20.27,
        "rows": [
         "慢慢摺，燈才會亮。"
        ]
@@ -444,8 +444,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 20.6,
-     "end": 21.6,
+     "start": 20.57,
+     "end": 21.57,
      "params": {
       "emotion": "proud"
      }
@@ -453,8 +453,8 @@
     {
      "name": "puppet.face",
      "target": "ale",
-     "start": 20.9,
-     "end": 20.9,
+     "start": 20.87,
+     "end": 20.87,
      "params": {
       "emotion": "smile"
      }
@@ -1490,7 +1490,7 @@
    "kind": "scene",
    "preroll": 0,
    "start": 17.66,
-   "duration": 22.3,
+   "duration": 22.27,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_a0",
@@ -1500,7 +1500,7 @@
    "id": "a0_c003",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 44.06,
+   "start": 44.03,
    "duration": 23.94,
    "hold": 3.5,
    "autoAdvance": false,
@@ -1511,7 +1511,7 @@
    "id": "a0_c004",
    "kind": "scene",
    "preroll": 0,
-   "start": 71.5,
+   "start": 71.47,
    "duration": 28.61,
    "hold": 3.5,
    "autoAdvance": false,
@@ -1522,7 +1522,7 @@
    "id": "a0_c005",
    "kind": "scene",
    "preroll": 0,
-   "start": 103.61,
+   "start": 103.58,
    "duration": 22.04,
    "hold": 3.5,
    "autoAdvance": false,
@@ -1530,7 +1530,7 @@
    "enterFade": 0
   }
  ],
- "totalPlaybackSec": 129.15,
+ "totalPlaybackSec": 129.12,
  "audio": {
   "vo_a0_c001_01": {
    "source": "audio/vo/vo_a0_c001_01_v04.wav",
@@ -1548,8 +1548,8 @@
    "bus": "vo"
   },
   "vo_a0_c002_03": {
-   "source": "audio/vo/vo_a0_c002_03_v04.wav",
-   "duration": 2.62,
+   "source": "audio/vo/vo_a0_c002_03_v05.wav",
+   "duration": 2.59,
    "bus": "vo"
   },
   "vo_a0_c003_01": {

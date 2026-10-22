@@ -4,6 +4,7 @@
   tools/.venv/bin/python tools/vo_el_promote.py --check          # 只檢查：每句都有 EL 檔、對嘴、時間資料（不寫檔）
   tools/.venv/bin/python tools/vo_el_promote.py                  # 升級：v04＝EL；edge 舊檔移到 audio/_archive_edge/
   tools/.venv/bin/python tools/vo_el_promote.py --line <id> ...  # 只重升指定台詞（例如某句重算後）
+  tools/.venv/bin/python tools/vo_el_promote.py --line <id> --ver v05   # 重做的句子升新版號（不覆蓋 v04；pack.mjs 取最新版號）
   tools/.venv/bin/python tools/vo_el_promote.py --pick <id>=<檔案> --line <id>   # 指定採用某次合成（_attempts 的母帶 wav，
                                                                  # 或 vo_el_variants.py 的原始 mp3，會先依同規格做母帶）
 做法：
@@ -74,7 +75,9 @@ def main():
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--line", action="append")
     ap.add_argument("--pick", action="append", default=[], help="<台詞編號>=<檔案>：指定採用的合成")
+    ap.add_argument("--ver", default=VER, help="輸出版號（預設 v04；重做的句子用 v05 等新版號，舊版檔保留）")
     a = ap.parse_args()
+    ver = a.ver
     for spec in a.pick:
         pick(*spec.split("=", 1))
     lines = V.load_lines()
@@ -118,16 +121,21 @@ def main():
     prom_path = VO / "promoted_el.json"
     prom = json.loads(prom_path.read_text("utf-8")) if prom_path.exists() else {"_說明": "ElevenLabs 全劇版升為正式 v04 的紀錄（tools/vo_el_promote.py）", "lines": {}}
     for i, r, wav, lip in todo:
-        dw, dl = VO / f"vo_{i}_{VER}.wav", LIP / f"{i}_{VER}.json"
+        dw, dl = VO / f"vo_{i}_{ver}.wav", LIP / f"{i}_{ver}.json"
         shutil.copy2(wav, dw)
         shutil.copy2(lip, dl)
         t = dict(tel[i])
         t["file"], t["lipsync"] = str(dw.relative_to(ROOT)), str(dl.relative_to(ROOT))
         t["engine"] = "elevenlabs"
         timings[i] = t
-        prom["lines"][i] = {"role": r.get("role"), "source": r["file"], "lipsync_source": r["lipsync"], "file": t["file"],
+        old = prom["lines"].get(i)
+        prom["lines"][i] = {"version": ver, "role": r.get("role"), "source": r["file"], "lipsync_source": r["lipsync"], "file": t["file"],
                             "sha1": sha1(dw), "status": r.get("status"), "failed": r.get("failed"),
                             "request_ids": r.get("request_ids"), "time": time.strftime("%Y-%m-%d %H:%M:%S")}
+        if old and old.get("file") != t["file"]:
+            prom["lines"][i]["previous"] = [{k: v for k, v in old.items() if k != "previous"}] + old.get("previous", [])
+        if r.get("manual_pick"):
+            prom["lines"][i]["manual_pick"] = r["manual_pick"]
     # timings 裡指向已封存 edge 檔的舊條目：移除（避免指到不存在的檔）
     for k in [k for k, v in timings.items() if isinstance(v, dict) and not (ROOT / v.get("file", "")).exists()]:
         timings.pop(k)
@@ -144,13 +152,15 @@ def main():
     cast["official_engine"] = {
         "service": "elevenlabs", "since": "2026-10-21", "decision": "DECISIONS.md D-G3-07（使用者：全部改用 ElevenLabs，不用 edge-tts）",
         "build": "tools/vo_el_prod.py（合成＋自動檢查）→ tools/vo_el_promote.py（升為 audio/vo 的 v04）",
-        "license": "Starter 付費方案；兒童用途書面核准待 ElevenLabs 回覆（review/G3/el/license_evidence.md）",
+        "license": cast.get("official_engine", {}).get("license")    # 已有的授權說明保留（2026-10-22：原本固定字串會蓋掉後來更新的內容）
+        or "Starter 付費方案；兒童用途書面核准待 ElevenLabs 回覆（review/G3/el/license_evidence.md）",
         "roles": roles,
         "edge_archive": "audio/_archive_edge/（舊 edge-tts 檔，只封存）；下方 services／roles 的 edge 設定只留作紀錄，不再用於演出",
     }
-    cast.setdefault("defaults", {})["version"] = VER
+    if not a.line:      # 只重升幾句時不改全劇預設版號（各句版號見 promoted_el.json）
+        cast.setdefault("defaults", {})["version"] = ver
     cpath.write_text(json.dumps(cast, ensure_ascii=False, indent=1), "utf-8")
-    print(f"已升級 {len(todo)} 句為 {VER}；封存 edge 舊檔 {moved} 個；timings.json {len(timings)} 筆")
+    print(f"已升級 {len(todo)} 句為 {ver}；封存 edge 舊檔 {moved} 個；timings.json {len(timings)} 筆")
 
 
 if __name__ == "__main__":

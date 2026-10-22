@@ -1,0 +1,2239 @@
+{
+ "keys": [
+  "format",
+  "builtAt",
+  "cueSets",
+  "audio",
+  "images",
+  "lipsync",
+  "json"
+ ],
+ "counts": {
+  "images": 370,
+  "imagesByType": {
+   "main": 358,
+   "fallback": 12
+  },
+  "audio": 239,
+  "audioByBus": {
+   "vo": 201,
+   "music": 13,
+   "sfx": 25
+  },
+  "lipsync": 201,
+  "json": 23
+ },
+ "missingInTable": [
+  {
+   "kind": "images",
+   "id": "chr-chen_pose-bow",
+   "source": "assets/final/chr-chen_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-chen_pose-receive",
+   "source": "assets/final/chr-chen_pose-receive_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-chen_pose-shoutr",
+   "source": "assets/final/chr-chen_pose-shoutr_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-chen_pose-standr",
+   "source": "assets/final/chr-chen_pose-standr_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-lin_pose-bow",
+   "source": "assets/final/chr-lin_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-lin_pose-crouch",
+   "source": "assets/final/chr-lin_pose-crouch_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-lin_pose-sit",
+   "source": "assets/final/chr-lin_pose-sit_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-lin_pose-stand-m",
+   "source": "assets/final/chr-lin_pose-stand-m_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-lin_pose-standr",
+   "source": "assets/final/chr-lin_pose-standr_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-medic-a_stand",
+   "source": "assets/final/chr-medic-a_stand_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-medic-b_stand",
+   "source": "assets/final/chr-medic-b_stand_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-pinan_pose-bow",
+   "source": "assets/final/chr-pinan_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-pinan_pose-sit-lantern-back",
+   "source": "assets/final/chr-pinan_pose-sit-lantern-back_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-pinan_pose-stand-m",
+   "source": "assets/final/chr-pinan_pose-stand-m_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-pinan_pose-walk-straps-m",
+   "source": "assets/final/chr-pinan_pose-walk-straps-m_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-pinan_pose-walk-straps",
+   "source": "assets/final/chr-pinan_pose-walk-straps_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-bow",
+   "source": "assets/final/chr-xiaoqing_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-cross",
+   "source": "assets/final/chr-xiaoqing_pose-cross_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-forehead-l",
+   "source": "assets/final/chr-xiaoqing_pose-forehead-l_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-forehead",
+   "source": "assets/final/chr-xiaoqing_pose-forehead_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-palm",
+   "source": "assets/final/chr-xiaoqing_pose-palm_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-palmno",
+   "source": "assets/final/chr-xiaoqing_pose-palmno_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-pointr",
+   "source": "assets/final/chr-xiaoqing_pose-pointr_v07.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-reach-worried-body",
+   "source": "assets/final/chr-xiaoqing_pose-reach-worried-body_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-reach-worried-head",
+   "source": "assets/final/chr-xiaoqing_pose-reach-worried-head_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-reach-worried",
+   "source": "assets/final/chr-xiaoqing_pose-reach-worried_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-sitb",
+   "source": "assets/final/chr-xiaoqing_pose-sitb_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-stand-m",
+   "source": "assets/final/chr-xiaoqing_pose-stand-m_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-walk",
+   "source": "assets/final/chr-xiaoqing_pose-walk_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-walkl",
+   "source": "assets/final/chr-xiaoqing_pose-walkl_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-watch",
+   "source": "assets/final/chr-xiaoqing_pose-watch_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-worried",
+   "source": "assets/final/chr-xiaoqing_pose-worried_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-bow",
+   "source": "assets/final/chr-xiaoyu_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-cross",
+   "source": "assets/final/chr-xiaoyu_pose-cross_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-forehead",
+   "source": "assets/final/chr-xiaoyu_pose-forehead_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-glasses",
+   "source": "assets/final/chr-xiaoyu_pose-glasses_v07.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-palmno",
+   "source": "assets/final/chr-xiaoyu_pose-palmno_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-pointr",
+   "source": "assets/final/chr-xiaoyu_pose-pointr_v07.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-sitb",
+   "source": "assets/final/chr-xiaoyu_pose-sitb_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-standwatch-m",
+   "source": "assets/final/chr-xiaoyu_pose-standwatch-m_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-standwatch",
+   "source": "assets/final/chr-xiaoyu_pose-standwatch_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-stepback-surprised-body",
+   "source": "assets/final/chr-xiaoyu_pose-stepback-surprised-body_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-stepback-surprised-head",
+   "source": "assets/final/chr-xiaoyu_pose-stepback-surprised-head_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-stepback-surprised",
+   "source": "assets/final/chr-xiaoyu_pose-stepback-surprised_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-walk-r",
+   "source": "assets/final/chr-xiaoyu_pose-walk-r_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-walk",
+   "source": "assets/final/chr-xiaoyu_pose-walk_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-watch-dial",
+   "source": "assets/final/chr-xiaoyu_pose-watch-dial_v06.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-ye_pose-bow",
+   "source": "assets/final/chr-ye_pose-bow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_closed",
+   "source": "assets/final/face/ale/chr-ale_eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_half",
+   "source": "assets/final/face/ale/chr-ale_eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_open",
+   "source": "assets/final/face/ale/chr-ale_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_closed",
+   "source": "assets/final/face/ale/chr-ale_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_half",
+   "source": "assets/final/face/ale/chr-ale_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_open",
+   "source": "assets/final/face/ale/chr-ale_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_round",
+   "source": "assets/final/face/ale/chr-ale_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_worried",
+   "source": "assets/final/face/ale/chr-ale_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-eyes_closed",
+   "source": "assets/final/face/chen/chr-chen_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-eyes_half",
+   "source": "assets/final/face/chen/chr-chen_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_closed",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_half",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_open",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_round",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_worried",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_crouch-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_crouch-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_smile",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_sit-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_sit-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_open",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_open",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_worried",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_worried",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_smile",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_closed_v03.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_smile",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_eyes_closed",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_eyes_closed_v03.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_eyes_half",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_eyes_open",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_closed",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_half",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_open",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_round",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_worried",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-eyes_closed",
+   "source": "assets/final/face/ye/chr-ye_crouch-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-eyes_half",
+   "source": "assets/final/face/ye/chr-ye_crouch-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_closed",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_half",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_open",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_round",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_worried",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-eyes_closed",
+   "source": "assets/final/face/ye/chr-ye_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-eyes_half",
+   "source": "assets/final/face/ye/chr-ye_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_closed",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_half",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_open",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_round",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_worried",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-l-outline",
+   "source": "assets/final/rig/chr-ale_forearm-l-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-l",
+   "source": "assets/final/rig/chr-ale_forearm-l_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-r-outline",
+   "source": "assets/final/rig/chr-ale_forearm-r-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-r",
+   "source": "assets/final/rig/chr-ale_forearm-r_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-l-outline",
+   "source": "assets/final/rig/chr-ale_hand-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-l",
+   "source": "assets/final/rig/chr-ale_hand-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-r-outline",
+   "source": "assets/final/rig/chr-ale_hand-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-r",
+   "source": "assets/final/rig/chr-ale_hand-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-greet-outline",
+   "source": "assets/final/rig/chr-ale_head-greet-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-greet",
+   "source": "assets/final/rig/chr-ale_head-greet_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-outline",
+   "source": "assets/final/rig/chr-ale_head-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-worried-outline",
+   "source": "assets/final/rig/chr-ale_head-worried-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-worried",
+   "source": "assets/final/rig/chr-ale_head-worried_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head",
+   "source": "assets/final/rig/chr-ale_head_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-l-outline",
+   "source": "assets/final/rig/chr-ale_shin-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-l",
+   "source": "assets/final/rig/chr-ale_shin-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-r-outline",
+   "source": "assets/final/rig/chr-ale_shin-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-r",
+   "source": "assets/final/rig/chr-ale_shin-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-l-outline",
+   "source": "assets/final/rig/chr-ale_thigh-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-l",
+   "source": "assets/final/rig/chr-ale_thigh-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-r-outline",
+   "source": "assets/final/rig/chr-ale_thigh-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-r",
+   "source": "assets/final/rig/chr-ale_thigh-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_torso-outline",
+   "source": "assets/final/rig/chr-ale_torso-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_torso",
+   "source": "assets/final/rig/chr-ale_torso_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-l-outline",
+   "source": "assets/final/rig/chr-ale_upper-arm-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-l",
+   "source": "assets/final/rig/chr-ale_upper-arm-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-r-outline",
+   "source": "assets/final/rig/chr-ale_upper-arm-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-r",
+   "source": "assets/final/rig/chr-ale_upper-arm-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_helpdesk/crate",
+   "source": "assets/final/sets/a2_helpdesk/crate_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_helpdesk/tent",
+   "source": "assets/final/sets/a2_helpdesk/tent_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/facade",
+   "source": "assets/final/sets/a2_window/facade_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/interior",
+   "source": "assets/final/sets/a2_window/interior_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/notebook",
+   "source": "assets/final/sets/a2_window/notebook_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/sil-frame",
+   "source": "assets/final/sets/a2_window/sil-frame_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/sky",
+   "source": "assets/final/sets/a2_window/sky_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a2_window/stool",
+   "source": "assets/final/sets/a2_window/stool_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a3_classroom/backwall",
+   "source": "assets/final/sets/a3_classroom/backwall_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a3_classroom/board",
+   "source": "assets/final/sets/a3_classroom/board_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a3_classroom/garland",
+   "source": "assets/final/sets/a3_classroom/garland_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a3_classroom/outside",
+   "source": "assets/final/sets/a3_classroom/outside_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a3_classroom/teacherdesk",
+   "source": "assets/final/sets/a3_classroom/teacherdesk_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_car",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_car_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_gatepost",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_gatepost_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_house-a",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_house-a_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_house-b",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_house-b_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_house-c",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_house-c_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_house-d",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_house-d_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_map",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_map_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_school",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_school_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_screen",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_screen_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_sil-ground",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_sil-ground_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_tree",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_tree_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a4_roadmap/set-a4map_walker",
+   "source": "assets/final/sets/a4_roadmap/set-a4map_walker_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a5_gate/a5-ambulance-light",
+   "source": "assets/final/sets/a5_gate/a5-ambulance-light_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a5_gate/a5-phone-arc1",
+   "source": "assets/final/sets/a5_gate/a5-phone-arc1_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a5_gate/a5-phone-arc2",
+   "source": "assets/final/sets/a5_gate/a5-phone-arc2_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a5_gate/a5-phone-arc3",
+   "source": "assets/final/sets/a5_gate/a5-phone-arc3_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a5_gate/a5-phone",
+   "source": "assets/final/sets/a5_gate/a5-phone_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_square_night/rack",
+   "source": "assets/final/sets/a6_square_night/rack_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_square_night/sky",
+   "source": "assets/final/sets/a6_square_night/sky_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/leaf",
+   "source": "assets/final/sets/a6_window/leaf_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/plant",
+   "source": "assets/final/sets/a6_window/plant_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/shelf",
+   "source": "assets/final/sets/a6_window/shelf_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/sky-autumn",
+   "source": "assets/final/sets/a6_window/sky-autumn_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/sky-spring",
+   "source": "assets/final/sets/a6_window/sky-spring_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/sky-summer",
+   "source": "assets/final/sets/a6_window/sky-summer_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/a6_window/sky-winter",
+   "source": "assets/final/sets/a6_window/sky-winter_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_a4-flag",
+   "source": "assets/final/sets/gate/set-gate_a4-flag_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_a4-key",
+   "source": "assets/final/sets/gate/set-gate_a4-key_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_a4-lantern",
+   "source": "assets/final/sets/gate/set-gate_a4-lantern_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_a4-lin-back",
+   "source": "assets/final/sets/gate/set-gate_a4-lin-back_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_a4-phone",
+   "source": "assets/final/sets/gate/set-gate_a4-phone_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_floor",
+   "source": "assets/final/sets/gate/set-gate_floor_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_arcade",
+   "source": "assets/final/sets/square/set-square_arcade_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_backrow",
+   "source": "assets/final/sets/square/set-square_backrow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_mountains",
+   "source": "assets/final/sets/square/set-square_mountains_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-long",
+   "source": "assets/final/sets/square/set-square_planter-long_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-mid",
+   "source": "assets/final/sets/square/set-square_planter-mid_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-tall",
+   "source": "assets/final/sets/square/set-square_planter-tall_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_sky",
+   "source": "assets/final/sets/square/set-square_sky_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_tree-b",
+   "source": "assets/final/sets/square/set-square_tree-b_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square_a1/garland",
+   "source": "assets/final/sets/square_a1/garland_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square_a1/shopwindow",
+   "source": "assets/final/sets/square_a1/shopwindow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square_a1/townsfolk",
+   "source": "assets/final/sets/square_a1/townsfolk_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square_a1/windowpaper",
+   "source": "assets/final/sets/square_a1/windowpaper_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/workshop_a0/design",
+   "source": "assets/final/sets/workshop_a0/design_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/workshop_a0/memoryframe",
+   "source": "assets/final/sets/workshop_a0/memoryframe_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/workshop_a0/notebook",
+   "source": "assets/final/sets/workshop_a0/notebook_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_ale",
+   "source": "assets/final/ui/ui-speaker_ale_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_guard",
+   "source": "assets/final/ui/ui-speaker_guard_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_inviter",
+   "source": "assets/final/ui/ui-speaker_inviter_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_narrator",
+   "source": "assets/final/ui/ui-speaker_narrator_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_nurse",
+   "source": "assets/final/ui/ui-speaker_nurse_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_pinan",
+   "source": "assets/final/ui/ui-speaker_pinan_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_teacher",
+   "source": "assets/final/ui/ui-speaker_teacher_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_xiaoqing",
+   "source": "assets/final/ui/ui-speaker_xiaoqing_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_xiaoyu",
+   "source": "assets/final/ui/ui-speaker_xiaoyu_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_zhezhe",
+   "source": "assets/final/ui/ui-speaker_zhezhe_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/torso",
+   "source": "assets/parts/ale_v03/torso.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/upper_arm_r",
+   "source": "assets/parts/ale_v03/upper_arm_r.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/forearm_r",
+   "source": "assets/parts/ale_v03/forearm_r.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/hand_r",
+   "source": "assets/parts/ale_v03/hand_r.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/upper_arm_l",
+   "source": "assets/parts/ale_v03/upper_arm_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/forearm_l",
+   "source": "assets/parts/ale_v03/forearm_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/hand_l",
+   "source": "assets/parts/ale_v03/hand_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/thigh_r",
+   "source": "assets/parts/ale_v03/thigh_r.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/shin_r",
+   "source": "assets/parts/ale_v03/shin_r.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/thigh_l",
+   "source": "assets/parts/ale_v03/thigh_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/shin_l",
+   "source": "assets/parts/ale_v03/shin_l.png"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-palm",
+   "source": "assets/final/face/xiaoqing/face-palm_v02.json"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-watch",
+   "source": "assets/final/face/xiaoqing/face-watch_v02.json"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-worried",
+   "source": "assets/final/face/xiaoqing/face-worried_v02.json"
+  },
+  {
+   "kind": "json",
+   "id": "g4_manifest",
+   "source": "assets/final/g4_manifest.json"
+  },
+  {
+   "kind": "json",
+   "id": "rig/ale_attach",
+   "source": "assets/final/rig/ale_attach_v05.json"
+  },
+  {
+   "kind": "json",
+   "id": "rig/ale_rig",
+   "source": "assets/final/rig/ale_rig_v05.json"
+  },
+  {
+   "kind": "json",
+   "id": "rig/show_characters",
+   "source": "assets/final/rig/show_characters.json"
+  }
+ ],
+ "missingInAssets": [
+  {
+   "kind": "images",
+   "id": "chr-xiaoqing_pose-reach-worried-body",
+   "source": "assets/final/chr-xiaoqing_pose-reach-worried-body_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "chr-xiaoyu_pose-stepback-surprised-body",
+   "source": "assets/final/chr-xiaoyu_pose-stepback-surprised-body_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_closed",
+   "source": "assets/final/face/ale/chr-ale_eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_half",
+   "source": "assets/final/face/ale/chr-ale_eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_eyes_open",
+   "source": "assets/final/face/ale/chr-ale_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_closed",
+   "source": "assets/final/face/ale/chr-ale_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_half",
+   "source": "assets/final/face/ale/chr-ale_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_open",
+   "source": "assets/final/face/ale/chr-ale_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_round",
+   "source": "assets/final/face/ale/chr-ale_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ale/chr-ale_mouth_worried",
+   "source": "assets/final/face/ale/chr-ale_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-eyes_closed",
+   "source": "assets/final/face/chen/chr-chen_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-eyes_half",
+   "source": "assets/final/face/chen/chr-chen_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_closed",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_half",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_open",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_round",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/chen/chr-chen_stand-mouth_worried",
+   "source": "assets/final/face/chen/chr-chen_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_crouch-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_crouch-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_smile",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_crouch-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_crouch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_sit-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_sit-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_open",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_sit-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_sit-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-eyes_closed",
+   "source": "assets/final/face/lin/chr-lin_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-eyes_half",
+   "source": "assets/final/face/lin/chr-lin_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_closed",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_half",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_open",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_round",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/lin/chr-lin_stand-mouth_worried",
+   "source": "assets/final/face/lin/chr-lin_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_sit-lantern-mouth_worried",
+   "source": "assets/final/face/pinan/chr-pinan_sit-lantern-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_stand-mouth_worried",
+   "source": "assets/final/face/pinan/chr-pinan_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-eyes_closed",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-eyes_half",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_closed",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_half",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_open",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_round",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/pinan/chr-pinan_walk-straps-mouth_smile",
+   "source": "assets/final/face/pinan/chr-pinan_walk-straps-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_palm-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_palm-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_smile",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_smile_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_watch-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_watch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_closed_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_half_v02.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-eyes_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_closed",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_half",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_open",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_round",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoqing/chr-xiaoqing_worried-mouth_worried",
+   "source": "assets/final/face/xiaoqing/chr-xiaoqing_worried-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_eyes_open",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_eyes_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_closed",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_half",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_open",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_round",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/xiaoyu/chr-xiaoyu_mouth_worried",
+   "source": "assets/final/face/xiaoyu/chr-xiaoyu_mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-eyes_closed",
+   "source": "assets/final/face/ye/chr-ye_crouch-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-eyes_half",
+   "source": "assets/final/face/ye/chr-ye_crouch-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_closed",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_half",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_open",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_round",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_crouch-mouth_worried",
+   "source": "assets/final/face/ye/chr-ye_crouch-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-eyes_closed",
+   "source": "assets/final/face/ye/chr-ye_stand-eyes_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-eyes_half",
+   "source": "assets/final/face/ye/chr-ye_stand-eyes_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_closed",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_closed_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_half",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_half_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_open",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_open_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_round",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_round_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "face/ye/chr-ye_stand-mouth_worried",
+   "source": "assets/final/face/ye/chr-ye_stand-mouth_worried_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-l-outline",
+   "source": "assets/final/rig/chr-ale_forearm-l-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-r-outline",
+   "source": "assets/final/rig/chr-ale_forearm-r-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_forearm-r",
+   "source": "assets/final/rig/chr-ale_forearm-r_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-l-outline",
+   "source": "assets/final/rig/chr-ale_hand-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-r-outline",
+   "source": "assets/final/rig/chr-ale_hand-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_hand-r",
+   "source": "assets/final/rig/chr-ale_hand-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-greet-outline",
+   "source": "assets/final/rig/chr-ale_head-greet-outline_v05.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-outline",
+   "source": "assets/final/rig/chr-ale_head-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-worried-outline",
+   "source": "assets/final/rig/chr-ale_head-worried-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_head-worried",
+   "source": "assets/final/rig/chr-ale_head-worried_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-l-outline",
+   "source": "assets/final/rig/chr-ale_shin-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-l",
+   "source": "assets/final/rig/chr-ale_shin-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-r-outline",
+   "source": "assets/final/rig/chr-ale_shin-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_shin-r",
+   "source": "assets/final/rig/chr-ale_shin-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-l-outline",
+   "source": "assets/final/rig/chr-ale_thigh-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-l",
+   "source": "assets/final/rig/chr-ale_thigh-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-r-outline",
+   "source": "assets/final/rig/chr-ale_thigh-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_thigh-r",
+   "source": "assets/final/rig/chr-ale_thigh-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_torso-outline",
+   "source": "assets/final/rig/chr-ale_torso-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_torso",
+   "source": "assets/final/rig/chr-ale_torso_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-l-outline",
+   "source": "assets/final/rig/chr-ale_upper-arm-l-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-l",
+   "source": "assets/final/rig/chr-ale_upper-arm-l_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-r-outline",
+   "source": "assets/final/rig/chr-ale_upper-arm-r-outline_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/chr-ale_upper-arm-r",
+   "source": "assets/final/rig/chr-ale_upper-arm-r_v04.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/gate/set-gate_floor",
+   "source": "assets/final/sets/gate/set-gate_floor_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_arcade",
+   "source": "assets/final/sets/square/set-square_arcade_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_backrow",
+   "source": "assets/final/sets/square/set-square_backrow_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_mountains",
+   "source": "assets/final/sets/square/set-square_mountains_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-long",
+   "source": "assets/final/sets/square/set-square_planter-long_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-mid",
+   "source": "assets/final/sets/square/set-square_planter-mid_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_planter-tall",
+   "source": "assets/final/sets/square/set-square_planter-tall_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_sky",
+   "source": "assets/final/sets/square/set-square_sky_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_tree-a",
+   "source": "assets/final/sets/square/set-square_tree-a_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "sets/square/set-square_tree-b",
+   "source": "assets/final/sets/square/set-square_tree-b_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_ale",
+   "source": "assets/final/ui/ui-speaker_ale_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_guard",
+   "source": "assets/final/ui/ui-speaker_guard_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_inviter",
+   "source": "assets/final/ui/ui-speaker_inviter_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_narrator",
+   "source": "assets/final/ui/ui-speaker_narrator_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_nurse",
+   "source": "assets/final/ui/ui-speaker_nurse_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_pinan",
+   "source": "assets/final/ui/ui-speaker_pinan_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_teacher",
+   "source": "assets/final/ui/ui-speaker_teacher_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_xiaoqing",
+   "source": "assets/final/ui/ui-speaker_xiaoqing_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_xiaoyu",
+   "source": "assets/final/ui/ui-speaker_xiaoyu_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "ui/ui-speaker_zhezhe",
+   "source": "assets/final/ui/ui-speaker_zhezhe_v01.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/upper_arm_l",
+   "source": "assets/parts/ale_v03/upper_arm_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/forearm_l",
+   "source": "assets/parts/ale_v03/forearm_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/hand_l",
+   "source": "assets/parts/ale_v03/hand_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/thigh_l",
+   "source": "assets/parts/ale_v03/thigh_l.png"
+  },
+  {
+   "kind": "images",
+   "id": "rig/ale_v03/shin_l",
+   "source": "assets/parts/ale_v03/shin_l.png"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-palm",
+   "source": "assets/final/face/xiaoqing/face-palm_v02.json"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-watch",
+   "source": "assets/final/face/xiaoqing/face-watch_v02.json"
+  },
+  {
+   "kind": "json",
+   "id": "face/xiaoqing/face-worried",
+   "source": "assets/final/face/xiaoqing/face-worried_v02.json"
+  }
+ ],
+ "sample": [
+  {
+   "kind": "images",
+   "id": "bg-workshop-back",
+   "source": "assets/final/bg-workshop-back_v03.jpg"
+  },
+  {
+   "kind": "images",
+   "id": "bg-workshop-floor",
+   "source": "assets/final/bg-workshop-floor_v01.jpg"
+  },
+  {
+   "kind": "images",
+   "id": "bg-workshop-lanterns",
+   "source": "assets/final/bg-workshop-lanterns_v01.png"
+  }
+ ],
+ "missingInTableCount": 276,
+ "missingInAssetsCount": 162
+}

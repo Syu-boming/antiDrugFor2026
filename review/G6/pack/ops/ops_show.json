@@ -41,13 +41,13 @@
    "group": "對白中的操作（全劇正式配音）",
    "name": "a1_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "5.703→5.703、suspended；差 0 ms"
+   "detail": "5.628→5.628、suspended；差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
    "name": "a1_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "t 5.916→0、差 0 ms"
+   "detail": "t 5.948→0、差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
@@ -59,13 +59,13 @@
    "group": "對白中的操作（全劇正式配音）",
    "name": "a4_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "2.417→2.417、suspended；差 0 ms"
+   "detail": "2.412→2.412、suspended；差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
    "name": "a4_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "t 2.844→0、差 0 ms"
+   "detail": "t 2.732→0、差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
@@ -83,25 +83,25 @@
    "group": "對白中的操作（全劇正式配音）",
    "name": "a6_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "4.364→4.364、suspended；差 0 ms"
+   "detail": "4.348→4.348、suspended；差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
    "name": "a6_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
    "ok": true,
-   "detail": "t 4.679→0、差 0 ms"
+   "detail": "t 4.545→0、差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
    "name": "a1_c001 頁面隱藏：自動暫停；恢復後仍停住不發聲；按下一步只繼續同一段、時間差 ≤ 50 ms",
    "ok": true,
-   "detail": "hidden；4.737→4.737（suspended）→ a1_c001 playing；差 0 ms"
+   "detail": "hidden；4.716→4.716（suspended）→ a1_c001 playing；差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
    "name": "a1_c001 分頁凍結（合成 freeze／resume 事件）：自動暫停、恢復後仍停住不發聲；老師按繼續後時間差 ≤ 50 ms",
    "ok": true,
-   "detail": "freeze；4.748→4.748（suspended）→ playing；差 0 ms"
+   "detail": "freeze；4.716→4.716（suspended）→ playing；差 0 ms"
   },
   {
    "group": "對白中的操作（全劇正式配音）",
@@ -129,5 +129,12 @@
   }
  ],
  "externalRequests": [],
- "requests": 134
+ "requests": 134,
+ "build": {
+  "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+  "cuesShowFile": "cues_show.js",
+  "cuesShowSha1": "24e0112b27b46a4e0f2917633a841db18947ddbb",
+  "distBuiltAt": "2026-10-22T15:12:20.497Z",
+  "appJsMtime": "2026-10-22T15:12:20.495Z"
+ }
 }

@@ -1,0 +1,377 @@
+{
+ "expected_answers": [
+  2,
+  3,
+  1,
+  1,
+  3,
+  2,
+  3,
+  2
+ ],
+ "observed_answers_stamp": [
+  2,
+  3,
+  1,
+  1,
+  3,
+  2,
+  3,
+  2
+ ],
+ "quizzes": 8,
+ "passed": 8,
+ "rows": [
+  {
+   "qid": "Q1",
+   "number": 1,
+   "cue": "a1_c005",
+   "answer_expected": 2,
+   "answer_cue_data": 2,
+   "answer_doc": 2,
+   "question_dom": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+   "question_doc": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+   "options_dom": [
+    "可以，包裝漂亮就很安全。",
+    "不行，外觀不能證明安全。",
+    "可以，聞起來香就沒問題。"
+   ],
+   "options_doc": [
+    "可以，包裝漂亮就很安全。",
+    "不行，外觀不能證明安全。",
+    "可以，聞起來香就沒問題。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-2 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a1_c008",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q2",
+   "number": 2,
+   "cue": "a2_c005",
+   "answer_expected": 3,
+   "answer_cue_data": 3,
+   "answer_doc": 3,
+   "question_dom": "阿樂叔叔身上的操偶線，在比喻什麼？",
+   "question_doc": "阿樂叔叔身上的操偶線，在比喻什麼？",
+   "options_dom": [
+    "叔叔在練習下一場紙偶戲的動作。",
+    "人真的會變成喪屍，被線拉著走。",
+    "毒品可能讓頭腦和身體不聽使喚。"
+   ],
+   "options_doc": [
+    "叔叔在練習下一場紙偶戲的動作。",
+    "人真的會變成喪屍，被線拉著走。",
+    "毒品可能讓頭腦和身體不聽使喚。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-3 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a2_c008",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q3",
+   "number": 3,
+   "cue": "a2_c009",
+   "answer_expected": 1,
+   "answer_cue_data": 1,
+   "answer_doc": 1,
+   "question_dom": "看見有人站不穩，就能確定他吸毒嗎？",
+   "question_doc": "看見有人站不穩，就能確定他吸毒嗎？",
+   "options_dom": [
+    "不能，要先找大人來幫忙。",
+    "可以，看起來像就一定是。",
+    "不能，所以直接走開不用管。"
+   ],
+   "options_doc": [
+    "不能，要先找大人來幫忙。",
+    "可以，看起來像就一定是。",
+    "不能，所以直接走開不用管。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-1 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a2_c012",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q4",
+   "number": 4,
+   "cue": "a3_c005",
+   "answer_expected": 1,
+   "answer_cue_data": 1,
+   "answer_doc": 1,
+   "question_dom": "有人說「試一次沒關係」，哪個做法比較安全？",
+   "question_doc": "有人說「試一次沒關係」，哪個做法比較安全？",
+   "options_dom": [
+    "說「不用，我不試」，離開找大人。",
+    "只試一次而已，應該沒關係。",
+    "先幫他保管，等一下再還給他。"
+   ],
+   "options_doc": [
+    "說「不用，我不試」，離開找大人。",
+    "只試一次而已，應該沒關係。",
+    "先幫他保管，等一下再還給他。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-1 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3,
+    4
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a3_c008",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q5",
+   "number": 5,
+   "cue": "a4_c005",
+   "answer_expected": 3,
+   "answer_cue_data": 3,
+   "answer_doc": 3,
+   "question_dom": "受到毒品影響還開車，可能危害到誰？",
+   "question_doc": "受到毒品影響還開車，可能危害到誰？",
+   "options_dom": [
+    "只會危害開車的人。",
+    "只會危害坐車的人。",
+    "駕駛、乘客和路人。"
+   ],
+   "options_doc": [
+    "只會危害開車的人。",
+    "只會危害坐車的人。",
+    "駕駛、乘客和路人。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-3 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a4_c008",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q6",
+   "number": 6,
+   "cue": "a4_c009",
+   "answer_expected": 2,
+   "answer_cue_data": 2,
+   "answer_doc": 2,
+   "question_dom": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+   "question_doc": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+   "options_dom": [
+    "坐後座、繫好安全帶就沒關係。",
+    "先不上車，到安全處找大人。",
+    "請他開慢一點，小心就好。"
+   ],
+   "options_doc": [
+    "坐後座、繫好安全帶就沒關係。",
+    "先不上車，到安全處找大人。",
+    "請他開慢一點，小心就好。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-2 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a4_c012",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q7",
+   "number": 7,
+   "cue": "a5_c002",
+   "answer_expected": 3,
+   "answer_cue_data": 3,
+   "answer_doc": 3,
+   "question_dom": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+   "question_doc": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+   "options_dom": [
+    "先拍下影片，再傳給同學看。",
+    "自己先跑過去，用力把他搖醒。",
+    "先找大人，沒大人就撥 119。"
+   ],
+   "options_doc": [
+    "先拍下影片，再傳給同學看。",
+    "自己先跑過去，用力把他搖醒。",
+    "先找大人，沒大人就撥 119。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-3 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a5_c005",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  },
+  {
+   "qid": "Q8",
+   "number": 8,
+   "cue": "a6_c003",
+   "answer_expected": 2,
+   "answer_cue_data": 2,
+   "answer_doc": 2,
+   "question_dom": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+   "question_doc": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+   "options_dom": [
+    "答應他，永遠不告訴任何人。",
+    "陪他一起找可信任的大人。",
+    "傳給全班同學，大家一起討論。"
+   ],
+   "options_doc": [
+    "答應他，永遠不告訴任何人。",
+    "陪他一起找可信任的大人。",
+    "傳給全班同學，大家一起討論。"
+   ],
+   "text_matches_doc": true,
+   "no_auto_reveal_after_sec": 1.6,
+   "no_auto_reveal": true,
+   "reveal_phase_after_press": "reveal_playing",
+   "stamp_classes": [
+    "quiz-opt opt-2 correct"
+   ],
+   "stamp_on_answer": true,
+   "lamp_lit_after": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "lamp_ok": true,
+   "continued_to": {
+    "cue": "a6_c006",
+    "kind": "scene",
+    "phase": "playing"
+   },
+   "continued_ok": true,
+   "pass": true
+  }
+ ],
+ "end_lamps": [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
+ "method": "即時播放（實體 PageDown）：出題畫面停住 → 讀 DOM 題卡（題幹、選項、有無印章）→ 等 --quiz-wait 秒確認沒有自動揭答 → 按下一步 → 揭答播完讀印章位置 → 點燈後讀 lampsLit → 按下一步確認續演；題卡文字與 script/八題_v03.md 比對（同 engine-test 的解析）。"
+}

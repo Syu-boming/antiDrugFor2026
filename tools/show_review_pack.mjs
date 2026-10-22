@@ -5,7 +5,7 @@
 // 選項：
 //   --out <資料夾>        輸出位置（預設 review/G6/pack）
 //   --packs <資料夾>      九段驗收包的根目錄（預設 review/G5；每段在 <packs>/<段>/pack）
-//   --skip-live           不跑即時播放（沿用 <out>/live/live_raw.json）
+//   --skip-live           不跑即時播放（沿用 <out>/live/live_raw.json；INDEX 會比對那次記下的建置，不同就標「沿用舊建置的數據」）
 //   --skip-seams          不重新擷取段落接縫（沿用 <out>/seams/seams_raw.json）
 //   --skip-ops            不跑全劇操作補測（沿用 <out>/ops/ops_show.json）
 //   --engine-test-log <檔> 引用已存在的 engine-test 輸出（不重跑）；預設重跑 node tools/engine-test.mjs 並存 <out>/ops/engine_test.log
@@ -29,9 +29,13 @@
 //   (f) attribution/           署名卡：片頭與片尾的 DOM 文字與截圖
 //   (g) quiz/                  八題：逐題出題→揭答→等待→續演、答案與題卡核對
 //   (h) delivery/              交付包冒煙測試結果（tools/delivery_smoke.mjs 另外跑、寫在這裡；INDEX.md 有結果才列）
+//   build_check.json           建置指紋（G7 修正第 1 輪，技術 QA G2）：每節新跑時在 <節>/build.json 記下 app/dist 的 app.js 與 cues_show.js sha1；
+//                              沿用舊資料（--skip-live、--skip-seams、--skip-ops、--engine-test-log、--perf-only、--index-only）時與目前 app/dist 比對，
+//                              INDEX.md 在該節開頭寫明「本次量測」「沿用、同一建置」或「沿用舊建置的數據」（列出兩邊 sha1）
 import { createRequire } from 'node:module';
+import { createHash } from 'node:crypto';
 import { execFileSync, spawnSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { loadavg } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -76,6 +80,53 @@ const bundle = async (rel) => {
 };
 const { buildTimelines } = await bundle('app/src/cues/timeline.ts');
 const engineSrc = readFileSync(join(ROOT, 'app/src/engine/engine.ts'), 'utf8');
+
+// ---------------------------------------------------------------- 建置指紋（G7 修正第 1 輪，技術 QA G2）
+// 每節新跑時把目前 app/dist 的 app.js、cues_show.js sha1 記進 <節>/build.json（也寫進原始資料檔）；沿用舊資料時拿來和目前建置比
+const sha1Of = (p) => (existsSync(p) ? createHash('sha1').update(readFileSync(p)).digest('hex') : null);
+const BUILD = {
+  appJsSha1: sha1Of(join(ROOT, 'app/dist/app.js')), cuesShowFile: manifest.cueSets.show ?? null,
+  cuesShowSha1: manifest.cueSets.show ? sha1Of(join(ROOT, 'app/dist/data', manifest.cueSets.show)) : null,
+  distBuiltAt: manifest.builtAt ?? null, appJsMtime: existsSync(join(ROOT, 'app/dist/app.js')) ? statSync(join(ROOT, 'app/dist/app.js')).mtime.toISOString() : null,
+};
+/** 各節的資料檔與建置紀錄：live＝(b)(d)(f)(g)、seams＝(c)、ops＝(e) 全劇補測、engine_test＝(e) engine-test */
+const SECTIONS = {
+  live: { data: 'live/live_raw.json', build: 'live/build.json', option: '--skip-live', rerun: '不加 --skip-live 重跑（或只用 --perf-only 重跑這一節）', rerunMin: 27 },
+  seams: { data: 'seams/seams_raw.json', build: 'seams/build.json', option: '--skip-seams', rerun: '不加 --skip-seams 重跑', rerunMin: 5 },
+  ops: { data: 'ops/ops_show.json', build: 'ops/build.json', option: '--skip-ops', rerun: '不加 --skip-ops 重跑', rerunMin: 3 },
+  engine_test: { data: 'ops/engine_test.log', build: 'ops/engine_test.build.json', option: '--engine-test-log／--skip-engine-test', rerun: '不加 --engine-test-log／--skip-engine-test 重跑', rerunMin: 6 },
+};
+const fresh = new Set();
+function recordBuild(section, extra = {}) {
+  fresh.add(section);
+  writeFileSync(join(OUT, SECTIONS[section].build), JSON.stringify({ ...BUILD, measuredAt: new Date().toISOString(), ...extra }, null, 1));
+}
+function writeBuildCheck() {
+  const sections = {};
+  for (const [k, v] of Object.entries(SECTIONS)) {
+    const dataP = join(OUT, v.data), buildP = join(OUT, v.build);
+    const row = { data: v.data, option: v.option, rerun: v.rerun, rerunMin: v.rerunMin, exists: existsSync(dataP), fresh: fresh.has(k), recorded: null };
+    if (row.exists) row.dataMtime = statSync(dataP).mtime.toISOString();
+    if (existsSync(buildP)) { try { row.recorded = JSON.parse(readFileSync(buildP, 'utf8')); } catch { row.recorded = null; } }
+    if (!row.exists) row.status = 'missing';
+    else if (row.fresh) row.status = 'fresh';
+    else if (row.recorded?.appJsSha1) {
+      row.appJsMatch = row.recorded.appJsSha1 === BUILD.appJsSha1;
+      row.cuesShowMatch = row.recorded.cuesShowSha1 === BUILD.cuesShowSha1;
+      row.status = row.appJsMatch && row.cuesShowMatch ? 'reused_same_build' : 'reused_other_build';
+    } else {
+      // 舊版工具產生的資料、或引用的 engine-test log，沒有記錄建置：退而比較檔案時間（資料比目前 app.js 舊＝一定不是用目前建置量的）
+      row.comparedTime = row.recorded?.citedMtime ?? row.dataMtime;
+      row.olderThanBuild = !!BUILD.appJsMtime && row.comparedTime < BUILD.appJsMtime;
+      row.status = row.olderThanBuild ? 'reused_other_build' : 'reused_unknown_build';
+    }
+    sections[k] = row;
+  }
+  writeFileSync(join(OUT, 'build_check.json'), JSON.stringify({ note: '建置指紋：current＝目前 app/dist；sections.<節>.recorded＝那一節資料量測時記下的建置（<節>/build.json）。status：fresh＝本次量測；reused_same_build＝沿用、sha1 相同；reused_other_build＝沿用舊建置的數據（sha1 不同，或舊資料沒有記錄 sha1 且檔案時間早於目前 app.js）；reused_unknown_build＝沿用、沒有記錄 sha1 且無法判斷；missing＝沒有資料。',
+    generated: new Date().toISOString(), current: BUILD, sections }, null, 1));
+  const stale = Object.entries(sections).filter(([, r]) => r.status === 'reused_other_build').map(([k]) => k);
+  log(`建置指紋：app.js ${BUILD.appJsSha1?.slice(0, 12)}、${BUILD.cuesShowFile} ${BUILD.cuesShowSha1?.slice(0, 12)}；${stale.length ? `沿用舊建置的數據：${stale.join('、')}` : '沒有沿用舊建置的數據'}`);
+}
 const PREROLL = Number(/export const PREROLL_SEC = ([\d.]+)/.exec(engineSrc)[1]);
 const MUSIC_LEVEL = Function(`return (${/const MUSIC_LEVEL[^=]*=\s*(\{[^}]*\})/.exec(engineSrc)[1]})`)();
 const WAIT_GUARD_MS = Number(/WAIT_GUARD_MS\s*=\s*(\d+)/.exec(engineSrc)?.[1] ?? 350);
@@ -126,7 +177,7 @@ async function writeSegmentHashes() {
 }
 await writeSegmentHashes();
 // --index-only：沿用上次的 show_timeline.json（即時播放量測的 cue 序號對的是那一版），只重比段落指紋與重產 INDEX.md
-if (has('--index-only')) { runPy(OUT, PACKS); process.exit(0); }
+if (has('--index-only')) { writeBuildCheck(); runPy(OUT, PACKS); process.exit(0); }
 writeFileSync(join(OUT, 'show_timeline.json'), JSON.stringify(showTl, null, 1));
 log(`全劇時間軸：${timelines.length} 個 cue、${show.segments.length} 段`);
 
@@ -308,7 +359,9 @@ async function liveRun() {
   raw.fsNote = 'fs：逐格狀態 [rAF 時間戳 ms, cue 序號（show_timeline.json cues 的索引）, cue 內秒數, 模式 1 播放／2 停住／0 其他, 調暗, 預捲秒數, 暫停]，每一格開頭記下引擎上一格做完後的狀態。';
   raw.cdpNote = 'jsHeapUsedMB＝CDP Performance.getMetrics JSHeapUsedSize；perfMemoryUsedMB＝performance.memory（--enable-precise-memory-info）；processRssMB＝SystemInfo.getProcessInfo 的各程序 ps RSS（macOS，依程序類型加總，MB）。';
   await browser.close();
+  raw.build = BUILD;
   writeFileSync(join(OUT, 'live', 'live_raw.json'), JSON.stringify(raw));
+  recordBuild('live');
   writeFileSync(join(OUT, 'live', 'network.json'), JSON.stringify({ requests: net.requests.length, external: net.requests.filter((r) => r.external), failed: net.failed,
     byType: net.requests.reduce((m, r) => ((m[r.type] = (m[r.type] ?? 0) + 1), m), {}), list: net.requests }, null, 1));
   log(`即時播放完成：${raw.visits.length} 段、${raw.ts.length} 格、最後 ${raw.end.cueId} ${raw.end.phase}、${(raw.end.wall_ms / 60000).toFixed(1)} 分`);
@@ -428,7 +481,8 @@ async function seams() {
     log(`接縫 ${A.id}→${B.id}：${prev} → ${next}（預捲 ${pre} 秒、漸亮 ${sb.enterFade} 秒）${seq.length} 格`);
   }
   await browser.close();
-  writeFileSync(join(OUT, 'seams', 'seams_raw.json'), JSON.stringify({ fps: FPS, seams: out, errors, externalRequests: net.requests.filter((r) => r.external), requests: net.requests.length }, null, 1));
+  writeFileSync(join(OUT, 'seams', 'seams_raw.json'), JSON.stringify({ fps: FPS, seams: out, errors, externalRequests: net.requests.filter((r) => r.external), requests: net.requests.length, build: BUILD }, null, 1));
+  recordBuild('seams');
 }
 
 // ---------------------------------------------------------------- (e) 全劇模式操作補測（即時、AudioContext 時鐘、正式配音）
@@ -591,7 +645,8 @@ async function opsShow() {
   check('全劇操作補測沒有頁面錯誤', errors.length === 0, errors.slice(0, 3).join(' | '), '');
   await browser.close();
   writeFileSync(join(OUT, 'ops', 'ops_show.json'), JSON.stringify({ note: '全劇模式（?cues=show&nofs=1）、即時 AudioContext 時鐘、正式配音（v04）；無頭 Chrome（Apple M4 GPU，--mute-audio）。', results,
-    externalRequests: net.requests.filter((r) => r.external), requests: net.requests.length }, null, 1));
+    externalRequests: net.requests.filter((r) => r.external), requests: net.requests.length, build: BUILD }, null, 1));
+  recordBuild('ops');
   log(`全劇操作補測：${results.filter((r) => r.ok).length}／${results.length} 通過`);
 }
 
@@ -600,16 +655,21 @@ const PERF_ONLY = has('--perf-only');
 if (!has('--skip-ops') && !PERF_ONLY) await opsShow();
 if (!has('--skip-engine-test') && !PERF_ONLY) {
   const given = opt('--engine-test-log', '');
-  if (given) writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# 引用：${given}\n` + readFileSync(resolve(ROOT, given), 'utf8'));
-  else {
+  if (given) {
+    // 引用別人跑的 log：不知道是哪個建置（沒有 sha1），只記引用的檔與它的時間，INDEX 依時間判斷是否早於目前建置
+    writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# 引用：${given}\n` + readFileSync(resolve(ROOT, given), 'utf8'));
+    writeFileSync(join(OUT, SECTIONS.engine_test.build), JSON.stringify({ cited: given, citedMtime: statSync(resolve(ROOT, given)).mtime.toISOString() }, null, 1));
+  } else {
     log('engine-test（約 6 分鐘）');
     const r = spawnSync('node', [join(ROOT, 'tools/engine-test.mjs')], { cwd: ROOT, encoding: 'utf8', maxBuffer: 64 * 1024 * 1024 });
-    writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# node tools/engine-test.mjs（${new Date().toISOString()}，結束碼 ${r.status}）\n${r.stdout}\n${r.stderr}`);
+    writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# node tools/engine-test.mjs（${new Date().toISOString()}，結束碼 ${r.status}；建置 app.js ${BUILD.appJsSha1}、${BUILD.cuesShowFile} ${BUILD.cuesShowSha1}）\n${r.stdout}\n${r.stderr}`);
+    recordBuild('engine_test', { exitCode: r.status });
   }
 }
 if (!has('--skip-seams') && !PERF_ONLY) await seams();
 if (!has('--skip-live') || PERF_ONLY) { await liveRun(); await stallFrames(); }
 else if (!existsSync(join(OUT, 'live', 'stall_frames.json'))) await stallFrames();
+writeBuildCheck();
 runPy(OUT, PACKS);
 rmSync(join(OUT, 'seams', '_work'), { recursive: true, force: true });
 log(`完成 → ${join(OUT, 'INDEX.md')}`);

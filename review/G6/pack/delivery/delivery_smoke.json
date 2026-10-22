@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T14:03:37.479Z",
+ "generated": "2026-10-22T17:29:40.519Z",
  "ref": "app/dist",
  "expectCues": 71,
  "expectedAnswers": [
@@ -29,6 +29,10 @@
     "audio_complete": {
      "ok": true,
      "detail": "缺配音 0、缺配樂音效 0"
+    },
+    "quiz_real_keys": {
+     "ok": true,
+     "detail": "起點：a1_c004 停格✓（a1_c004 story_waiting、燈 0）；出題✓（a1_c005 quiz_shown、燈 0）；出題後等 3 秒（不自動揭答）✓（a1_c005 quiz_shown、燈 0）；揭答✓（a1_c006 reveal_waiting、印章 2、燈 0）；點燈✓（a1_c007 story_waiting、燈 1）；續演✓（a1_c008 playing、燈 1）"
     },
     "quiz_order_answers": {
      "ok": true,
@@ -221,6 +225,146 @@
      2
     ]
    },
+   "keyWalk": {
+    "from": "a1_c004",
+    "cues": [
+     "a1_c005",
+     "a1_c006",
+     "a1_c007",
+     "a1_c008"
+    ],
+    "answer": 2,
+    "lamp": 1,
+    "steps": [
+     {
+      "step": "起點：a1_c004 停格",
+      "key": null,
+      "expectCue": "a1_c004",
+      "expectPhase": "story_waiting",
+      "cue": "a1_c004",
+      "phase": "story_waiting",
+      "mode": "waiting",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 30.2,
+      "cardShown": false,
+      "stamps": [],
+      "ok": true
+     },
+     {
+      "step": "出題",
+      "key": "PageDown",
+      "expectCue": "a1_c005",
+      "expectPhase": "quiz_shown",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c005",
+       "phase": "quiz_playing"
+      },
+      "cue": "a1_c005",
+      "phase": "quiz_shown",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 23.89,
+      "cardShown": true,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "出題後等 3 秒（不自動揭答）",
+      "key": null,
+      "expectCue": "a1_c005",
+      "expectPhase": "quiz_shown",
+      "cue": "a1_c005",
+      "phase": "quiz_shown",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 23.89,
+      "cardShown": true,
+      "stamps": [],
+      "ok": true
+     },
+     {
+      "step": "揭答",
+      "key": "PageDown",
+      "expectCue": "a1_c006",
+      "expectPhase": "reveal_waiting",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c006",
+       "phase": "reveal_playing"
+      },
+      "cue": "a1_c006",
+      "phase": "reveal_waiting",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": true,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 6.97,
+      "cardShown": true,
+      "stamps": [
+       2
+      ],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "點燈",
+      "key": "PageDown",
+      "expectCue": "a1_c007",
+      "expectPhase": "story_waiting",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c007",
+       "phase": "playing"
+      },
+      "cue": "a1_c007",
+      "phase": "story_waiting",
+      "mode": "waiting",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [
+       1
+      ],
+      "ignored": 0,
+      "cueTime": 5.72,
+      "cardShown": false,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "續演",
+      "key": "PageDown",
+      "expectCue": "a1_c008",
+      "expectPhase": "playing",
+      "cue": "a1_c008",
+      "phase": "playing",
+      "mode": "playing",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [
+       1
+      ],
+      "ignored": 0,
+      "cueTime": 1.028,
+      "cardShown": false,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     }
+    ]
+   },
    "attribution": {
     "start": {
      "text": "許博明老師製作",
@@ -256,6 +400,10 @@
      "ok": true,
      "detail": "main.js 相同、preload.js 相同、layout.js 相同、package.json 相同"
     },
+    "startup_note": {
+     "ok": true,
+     "detail": "交付/AntidrugTheater/啟動說明.txt：3064 位元組、BOM 有、CRLF 44 行、單獨 LF 0、含署名「許博明老師製作」與啟動步驟"
+    },
     "loads_show_without_params": {
      "ok": true,
      "detail": "網址參數「」、preparing、71 個 cue（應為 71）、第一個 a0_c000（段落 a0）、9 段"
@@ -263,6 +411,10 @@
     "audio_complete": {
      "ok": true,
      "detail": "缺配音 0、缺配樂音效 0"
+    },
+    "quiz_real_keys": {
+     "ok": true,
+     "detail": "起點：a1_c004 停格✓（a1_c004 story_waiting、燈 0）；出題✓（a1_c005 quiz_shown、燈 0）；出題後等 3 秒（不自動揭答）✓（a1_c005 quiz_shown、燈 0）；揭答✓（a1_c006 reveal_waiting、印章 2、燈 0）；點燈✓（a1_c007 story_waiting、燈 1）；續演✓（a1_c008 playing、燈 1）"
     },
     "quiz_order_answers": {
      "ok": true,
@@ -473,6 +625,146 @@
      2
     ]
    },
+   "keyWalk": {
+    "from": "a1_c004",
+    "cues": [
+     "a1_c005",
+     "a1_c006",
+     "a1_c007",
+     "a1_c008"
+    ],
+    "answer": 2,
+    "lamp": 1,
+    "steps": [
+     {
+      "step": "起點：a1_c004 停格",
+      "key": null,
+      "expectCue": "a1_c004",
+      "expectPhase": "story_waiting",
+      "cue": "a1_c004",
+      "phase": "story_waiting",
+      "mode": "waiting",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 30.2,
+      "cardShown": false,
+      "stamps": [],
+      "ok": true
+     },
+     {
+      "step": "出題",
+      "key": "PageDown",
+      "expectCue": "a1_c005",
+      "expectPhase": "quiz_shown",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c005",
+       "phase": "quiz_playing"
+      },
+      "cue": "a1_c005",
+      "phase": "quiz_shown",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 23.89,
+      "cardShown": true,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "出題後等 3 秒（不自動揭答）",
+      "key": null,
+      "expectCue": "a1_c005",
+      "expectPhase": "quiz_shown",
+      "cue": "a1_c005",
+      "phase": "quiz_shown",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": false,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 23.89,
+      "cardShown": true,
+      "stamps": [],
+      "ok": true
+     },
+     {
+      "step": "揭答",
+      "key": "PageDown",
+      "expectCue": "a1_c006",
+      "expectPhase": "reveal_waiting",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c006",
+       "phase": "reveal_playing"
+      },
+      "cue": "a1_c006",
+      "phase": "reveal_waiting",
+      "mode": "waiting",
+      "quizVisible": true,
+      "revealed": true,
+      "lampsLit": [],
+      "ignored": 0,
+      "cueTime": 6.97,
+      "cardShown": true,
+      "stamps": [
+       2
+      ],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "點燈",
+      "key": "PageDown",
+      "expectCue": "a1_c007",
+      "expectPhase": "story_waiting",
+      "reached": true,
+      "justAfter": {
+       "cue": "a1_c007",
+       "phase": "playing"
+      },
+      "cue": "a1_c007",
+      "phase": "story_waiting",
+      "mode": "waiting",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [
+       1
+      ],
+      "ignored": 0,
+      "cueTime": 5.72,
+      "cardShown": false,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     },
+     {
+      "step": "續演",
+      "key": "PageDown",
+      "expectCue": "a1_c008",
+      "expectPhase": "playing",
+      "cue": "a1_c008",
+      "phase": "playing",
+      "mode": "playing",
+      "quizVisible": false,
+      "revealed": false,
+      "lampsLit": [
+       1
+      ],
+      "ignored": 0,
+      "cueTime": 1.023,
+      "cardShown": false,
+      "stamps": [],
+      "ignoredDelta": 0,
+      "ok": true
+     }
+    ]
+   },
    "attribution": {
     "start": {
      "text": "許博明老師製作",
@@ -498,5 +790,5 @@
   }
  ],
  "pass": true,
- "seconds": 56
+ "seconds": 143
 }

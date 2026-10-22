@@ -123,3 +123,32 @@ export function backupVideoText(bv) {
     how: `依序播放 backup_video 資料夾的 ${bv.first} → … → ${bv.last}（每段一檔、每個 cue 一章），用 Windows 內建「媒體播放器」全螢幕播放，Win＋P 選「同步顯示」。影片不會停下來等老師：每題的出題畫面會停 3 秒，這時按**筆電的空白鍵**暫停，全班比完、揭答與回饋說完再按空白鍵繼續；規則說明、找找看、練習等要說話的地方也先按空白鍵暫停。簡報筆的翻頁鍵在播放器裡不一定有效。${bv.readme ? '每段在哪裡暫停，見 backup_video 資料夾的 README.txt。' : ''}`,
   };
 }
+
+// ───────────────────────────── AI 使用說明（G7 校長代理 G1：照實寫，不比事實好聽） ─────────────────────────────
+
+/** 教案第六節、線上入口頁用的完整說法 */
+export const AI_NOTE_LONG = '本課原創（不是官方教材，口訣也不是官方口號）。核心構想（操偶線比喻）與主題由許博明老師提出；劇本、八題、口訣、教案與教師資料由 AI（Claude）依許老師的規劃起草，美術（Codex 圖像生成）、台灣華語配音（ElevenLabs 語音合成；已取得 ElevenLabs 對兒童教育用途的書面同意）、程式與動畫（Claude）使用生成式 AI 工具製作；內容經 AI 代理多輪檢核，演出前由教師在學校設備上實機彩排確認。配樂與音效為自製；教師資料字型為開源授權（SIL OFL）。';
+/** 觀課導覽單「製作」列（一頁內）用的精簡說法：內容和完整說法相同，只省略括號說明 */
+export const AI_NOTE_SHORT = '本課原創（不是官方教材）。操偶線比喻與主題由許博明老師提出；劇本、八題、口訣與教師資料由 AI（Claude）依許老師的規劃起草，美術（Codex）、配音（ElevenLabs）、程式與動畫（Claude）使用生成式 AI 工具製作；內容經 AI 代理多輪檢核，演出前由教師實機彩排確認。配樂與音效自製。';
+/** 不能再出現的舊說法（checks.mjs 掃描） */
+export const AI_NOTE_BANNED = [/自行設計/, /生成式 AI 工具輔助/];
+
+// ───────────────────────────── 列印清單（教案「教學資源」、使用說明「開演前」） ─────────────────────────────
+
+/** 列印數量的依據：每張 A4 的卡數、貼紙數就是 print.mjs 實際排版的數量（checks.mjs 會數 HTML 與 PDF 頁數比對） */
+export const PRINT_COUNTS = { students: 110, cardsPerSheet: 10, bigStickers: 9, roundStickers: 20, winners: 8, tutors: 4 };
+const P = PRINT_COUNTS;
+const cardSheets = Math.ceil(P.students / P.cardsPerSheet);
+/**
+ * pages：該 PDF 的實際頁數（checks.mjs 和 PDF 比對；講稿頁數變了要更新這裡）
+ * qty／note：教案用的精簡寫法；paper：紙材
+ */
+export const PRINT_LIST = [
+  { file: '參與小卡', pdf: ['參與小卡'], pages: { 參與小卡: 1 }, qty: `${cardSheets}–${cardSheets + 1} 張 A4`, note: `每張 ${P.cardsPerSheet} 張卡，${P.students} 人需 ${cardSheets} 張，另 1 張備用`, paper: 'A4 卡紙或厚一點的紙，沿虛線剪開' },
+  { file: '角色貼紙', pdf: ['角色貼紙'], pages: { 角色貼紙: 2 }, qty: '1 份（2 頁）', note: `第 1 頁大貼紙 ${P.bigStickers} 張給 ${P.winners} 位得獎者＋1 張備用，第 2 頁圓貼紙 ${P.roundStickers} 張備用`, paper: 'A4 全張貼紙紙（不分格），沿虛線剪下' },
+  { file: '題卡學生版', pdf: ['題卡_學生版'], pages: { 題卡_學生版: 8 }, qty: '1 份（8 頁）', note: '投影故障時舉起作答，可放大印 A3', paper: 'A4 一般紙；要放大就印 A3' },
+  { file: '一頁操作卡、故障一頁卡', pdf: ['一頁操作卡', '故障一頁卡'], pages: { 一頁操作卡: 1, 故障一頁卡: 1 }, qty: '各 1–2 張', note: '主講 1 份、技術協助 1 份', paper: 'A4 一般紙' },
+  { file: '教師講稿', pdf: ['教師講稿'], pages: { 教師講稿: 16 }, qty: '1–2 份（16 頁）', note: '主講 1 份，協助教師可再印 1 份', paper: 'A4 一般紙，可雙面' },
+  { file: '導師匿名回饋單', pdf: ['導師匿名回饋單'], pages: { 導師匿名回饋單: 1 }, qty: `${P.tutors} 張`, note: '每位導師 1 張', paper: 'A4 一般紙' },
+  { file: '成果紀錄範本', pdf: ['成果紀錄範本'], pages: { 成果紀錄範本: 2 }, qty: '1 份（2 頁）', note: '課後彙整交學務處', paper: 'A4 一般紙' },
+];

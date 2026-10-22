@@ -1,19 +1,19 @@
 {
  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
  "file": "audio/a6_mix.wav",
- "duration_sec": 215.89,
+ "duration_sec": 215.86,
  "sample_peak_dBFS": -1.19,
  "clipped_samples": 0,
  "full_playback": {
   "I_LUFS": -16.1,
-  "LRA_LU": 14.2,
+  "LRA_LU": 14.1,
   "TP_dBTP": -1.2
  },
  "per_cue": {
   "a6_c001": {
-   "I_LUFS": -16.7,
+   "I_LUFS": -16.9,
    "LRA_LU": 14.5,
-   "TP_dBTP": -1.4
+   "TP_dBTP": -1.5
   },
   "a6_c002": {
    "I_LUFS": -15.7,
@@ -52,8 +52,8 @@
   },
   "a6_c009": {
    "I_LUFS": -15.4,
-   "LRA_LU": 7.2,
-   "TP_dBTP": -1.5
+   "LRA_LU": 5.3,
+   "TP_dBTP": -1.6
   }
  },
  "lines": [
@@ -76,14 +76,14 @@
    "cue": "a6_c001",
    "speaker": "小宇",
    "start": 7.27,
-   "end": 9.28,
-   "vo_file": "audio/vo/vo_a6_c001_02_v04.wav",
-   "vo_file_I_LUFS": -18.1,
+   "end": 9.45,
+   "vo_file": "audio/vo/vo_a6_c001_02_v05.wav",
+   "vo_file_I_LUFS": -18.2,
    "vo_file_TP_dBTP": -1.9,
-   "mix_I_LUFS": -15.0,
-   "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -32.7,
-   "vo_minus_background_LU": 17.7
+   "mix_I_LUFS": -15.3,
+   "vo_in_mix_I_LUFS": -15.2,
+   "background_I_LUFS": -32.8,
+   "vo_minus_background_LU": 17.6
   },
   {
    "id": "a6_c002_01",
@@ -426,21 +426,21 @@
    "cue": "a6_c009",
    "speaker": "阿樂叔叔",
    "start": 197.02,
-   "end": 205.1,
-   "vo_file": "audio/vo/vo_a6_c009_03_v04.wav",
-   "vo_file_I_LUFS": -18.2,
+   "end": 205.07,
+   "vo_file": "audio/vo/vo_a6_c009_03_v05.wav",
+   "vo_file_I_LUFS": -18.1,
    "vo_file_TP_dBTP": -1.9,
-   "mix_I_LUFS": -15.2,
-   "vo_in_mix_I_LUFS": -15.2,
+   "mix_I_LUFS": -15.1,
+   "vo_in_mix_I_LUFS": -15.1,
    "background_I_LUFS": -32.0,
-   "vo_minus_background_LU": 16.8
+   "vo_minus_background_LU": 16.9
   },
   {
    "id": "a6_c009_04",
    "cue": "a6_c009",
    "speaker": "阿樂叔叔",
-   "start": 205.55,
-   "end": 208.89,
+   "start": 205.52,
+   "end": 208.86,
    "vo_file": "audio/vo/vo_a6_c009_04_v04.wav",
    "vo_file_I_LUFS": -18.2,
    "vo_file_TP_dBTP": -1.9,
@@ -451,7 +451,7 @@
   }
  ],
  "line_vo_file_I_spread_LU": 0.4,
- "line_mix_I_spread_LU": 0.4,
+ "line_mix_I_spread_LU": 0.5,
  "momentary_max_LUFS": -8.9,
  "momentary_max_rise_within_1s_LU": 58.0,
  "momentary_max_rise_per_100ms_LU": 45.9,
@@ -525,9 +525,9 @@
   },
   {
    "cue": "a6_c009",
-   "hold_from_sec": 212.39,
+   "hold_from_sec": 212.36,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -48.0,
+   "momentary_max_after_3s_LUFS": -48.1,
    "pass_le_-35": true
   }
  ],
@@ -542,6 +542,7 @@
   "HOLD_MUSIC_RATIO": 0.1,
   "HOLD_TC": 0.6
  },
+ "music_duck_by_cue": {},
  "events": [
   {
    "t": 0.6,
@@ -576,7 +577,7 @@
    "offset": 0.0
   },
   {
-   "t": 205.05,
+   "t": 205.02,
    "music": "music_town",
    "loop": true,
    "fade": 3,

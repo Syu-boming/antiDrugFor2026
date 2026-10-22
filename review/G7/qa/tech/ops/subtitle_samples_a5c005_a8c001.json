@@ -1,0 +1,2412 @@
+{
+ "a5_c005": [
+  {
+   "cue": "a5_c005",
+   "t": 0.13,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 0.29,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 0.44,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 0.6,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 0.75,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 0.91,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.06,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.22,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.38,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.53,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.68,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 1.84,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.15,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.31,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.46,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.62,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_01",
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.77,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 2.93,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.08,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.24,
+   "sub": "陳伯伯——！",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.39,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.55,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.7,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 3.85,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.01,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.16,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.32,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.47,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.63,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.78,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 4.94,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.09,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.25,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.4,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.56,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.71,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 5.87,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.02,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.17,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.32,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.48,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.63,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.79,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 6.94,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.1,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.25,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.41,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.56,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.72,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 7.87,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.03,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.18,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.34,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.49,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.65,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.8,
+   "sub": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "vo": [
+    "vo_a5_c005_02",
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 8.95,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.11,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.27,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.42,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.58,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.73,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 9.89,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.04,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.19,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.35,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.51,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.65,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.81,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 10.97,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.12,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.28,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.43,
+   "sub": "",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.59,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.74,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 11.9,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.05,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.21,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.36,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.51,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.66,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.82,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 12.97,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.13,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.28,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.44,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.59,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.75,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 13.9,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.05,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.21,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.36,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.52,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.67,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.82,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 14.98,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.13,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.29,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.44,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.6,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.75,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 15.91,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.06,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.22,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.37,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.53,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.68,
+   "sub": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "vo": [
+    "vo_a5_c005_03"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.84,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 16.99,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.14,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.3,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.45,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.61,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.77,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a5_c005",
+   "t": 17.8,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "waiting"
+  }
+ ],
+ "a8_c001": [
+  {
+   "cue": "a8_c001",
+   "t": 0,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.05,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.21,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.36,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.52,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.67,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.83,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 0.99,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.14,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.3,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.45,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.61,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.77,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 1.92,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.08,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.23,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.38,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.54,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.69,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 2.85,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.01,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.16,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.32,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.47,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.63,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.79,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 3.94,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.1,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.25,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.41,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.57,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.72,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 4.88,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.04,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.19,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.35,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.5,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.66,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.82,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 5.97,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.12,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.28,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.44,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.6,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.75,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 6.91,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.06,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.22,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.37,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.53,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.69,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 7.84,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.16,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.32,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.47,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.63,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.78,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 8.94,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.1,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.26,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.41,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.56,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.72,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 9.87,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.03,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.19,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.34,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.5,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.65,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.81,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 10.97,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.12,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.28,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.43,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.59,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.74,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 11.9,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.06,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.21,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.37,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.53,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.69,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 12.85,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.16,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.32,
+   "sub": "",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.47,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.63,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.78,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 13.94,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.09,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.25,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.4,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.56,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.71,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 14.87,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.02,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.18,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.33,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.48,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.64,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.79,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 15.95,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.1,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.25,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.41,
+   "sub": "我們是小燈鎮的大家，下次見！",
+   "vo": [
+    "vo_a8_c001_01"
+   ],
+   "voSounding": 1,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.57,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.72,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 16.87,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.02,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.18,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.34,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.49,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.64,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.8,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 17.95,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "playing"
+  },
+  {
+   "cue": "a8_c001",
+   "t": 18,
+   "sub": "",
+   "vo": [],
+   "voSounding": 0,
+   "mode": "waiting"
+  }
+ ]
+}

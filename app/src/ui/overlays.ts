@@ -58,11 +58,14 @@ export class ReadyScreen {
     if (ready) this.btn.focus();
   }
 
-  /** 全劇缺配音：第一次按「準備播放」後改成確認按鈕（再按一次才開演） */
-  confirmMissingVo(n: number): void {
-    this.btn.textContent = `仍要播放（缺 ${n} 句配音）`;
+  /** 全劇缺配音：第一次按「準備播放」後改成確認按鈕（再按一次才開演）；files＝載不到的配音／嘴型資料檔（G7） */
+  confirmMissingVo(n: number, files: string[] = []): void {
+    const lip = files.filter((f) => !f.startsWith('vo_'));
+    const what = [n ? `缺 ${n} 句配音：這些句子只有字幕、沒有聲音。` : '', lip.length ? `缺嘴型資料：角色說話時嘴巴不會動。` : ''].join('');
+    const fileNote = files.length ? `缺的檔：${files.slice(0, 4).map((f) => `data/${f}`).join('、')}${files.length > 4 ? '…' : ''}。` : '';
+    this.btn.textContent = n ? `仍要播放（缺 ${n} 句配音）` : '仍要播放（缺嘴型資料）';
     this.btn.classList.add('confirm');
-    this.msg.textContent = `缺 ${n} 句配音：這些句子只有字幕、沒有聲音。請先確認交付資料夾是否完整複製；確定仍要開演，請再按一次「準備播放」（簡報筆按「下一步」也可以）。`;
+    this.msg.textContent = `${what}${fileNote}請先確認交付資料夾是否完整複製（最好把整個交付資料夾重新複製到本機硬碟）；確定仍要開演，請再按一次「準備播放」（簡報筆按「下一步」也可以）。`;
     this.msg.classList.add('warn');
     this.btn.focus();
   }

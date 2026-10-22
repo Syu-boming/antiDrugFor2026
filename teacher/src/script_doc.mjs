@@ -147,6 +147,7 @@ export function buildTeacherScript(ctx) {
   const playSum = sched.rows.reduce((n, r) => n + r.dur, 0);
   const teacherSum = sched.rows.reduce((n, r) => n + r.after, 0) + TEACHER_TIME.greeting;
   const overhead = total - playSum - teacherSum;
+  const prerollSum = sched.rows.reduce((n, r) => n + r.pre, 0); // 換景時的漸暗預捲（算在「按鍵與換景」裡）
   const LIMIT = 38 * 60;
 
   B.push({ h: 1, text: `${SHOW_TITLE}｜教師講稿` });
@@ -168,17 +169,21 @@ export function buildTeacherScript(ctx) {
   for (const sg of segs) {
     const rs = sg.cueIds.map((id) => rowsById[id]).filter(Boolean);
     if (!rs.length) continue;
-    const start = rs[0].index === 0 ? 0 : rs[0].start - rs[0].pre - TEACHER_TIME.lead;
+    // 課前（00:00–00:30，署名卡待機、問候）獨立一列，和教案的教學流程一致；開場從 00:30 按第一下開演算起
+    const first = rs[0].index === 0;
+    if (first) segRows.push(['課前：署名卡待機、問候', `${fmtClock(0)}–${fmtClock(TEACHER_TIME.greeting)}`, '—', fmtMinSec(TEACHER_TIME.greeting), '—']);
+    const start = first ? TEACHER_TIME.greeting : rs[0].start - rs[0].pre - TEACHER_TIME.lead;
     const last = rs[rs.length - 1];
     const end = last.leave + (last === sched.rows[sched.rows.length - 1] ? 0 : TEACHER_TIME.press);
     const play = rs.reduce((n, r) => n + r.dur, 0);
-    const teach = rs.reduce((n, r) => n + r.after, 0) + (rs[0].index === 0 ? TEACHER_TIME.greeting : 0);
+    const teach = rs.reduce((n, r) => n + r.after, 0);
     const qs = sg.cueIds.map((id) => merged.cues[ctx.indexOf[id]]).filter((c) => c.kind === 'quiz').map((c) => c.quiz.qid);
     segRows.push([sg.title, `${fmtClock(start)}–${fmtClock(end)}`, fmtMinSec(play), fmtMinSec(teach), qs.join('、') || '—']);
   }
   B.push({ table: { head: ['段落', '授課時鐘', '預錄播放', '教師時間', '題目'], rows: segRows, cls: 'tbl-time', widths: ['34%', '18%', '16%', '16%', '16%'] } });
   const ok = total <= LIMIT;
   B.push({ p: `**預估總長 ${fmtClock(total)}**（${ok ? '在' : '超過'} 38 分鐘上限${ok ? `內，緩衝 ${fmtMinSec(LIMIT - total)}` : ` ${fmtMinSec(total - LIMIT)}`}）＝預錄播放 ${fmtMinSec(playSum)}＋教師時間 ${fmtMinSec(teacherSum)}＋按鍵與換景 ${fmtMinSec(overhead)}。38–40 分不排內容，留給下課前的餘裕。` });
+  B.push({ note: `預錄播放有兩種數字：${fmtMinSec(playSum)}是各 cue 長度的合計（本表用這個）；換景時畫面會先漸暗約 ${ctx.mod.PREROLL_SEC} 秒（全劇共 ${+prerollSum.toFixed(1)} 秒，算在「按鍵與換景」裡），加上後約 ${fmtMinSec(playSum + prerollSum)}，使用說明與總報告寫的「約 ${fmtMinSec(playSum + prerollSum)}」就是這個數字。兩者都已算進預估總長 ${fmtClock(total)}。` });
   // 查核點一律用 cue 的 checkpoint.atMinute（控制台顯示的就是 atMinute×60）
   const cpRows = merged.cues.filter((c) => c.checkpoint && c.checkpoint.atMinute > 0).map((c) => {
     const esc = c.checkpoint.escalate;

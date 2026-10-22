@@ -1,0 +1,39 @@
+# 交付文件中與目前狀態不符（過時）的句子（grep 行號）
+## 交付/總報告.md
+64:| G7 交付 | G7 驗收小組（校長／教育專業、技術 QA、完整性檢查）進行中。最後結果：〔主線補〕 | v1.3 第 4.2 節 |
+70:| Windows 可攜版（**正式演出用**） | `交付/AntidrugTheater/`（雙擊 `AntidrugTheater.exe`） | 20:0x 從最新建置重新打包，冒煙測試全部通過；G6 重驗兩位各自比對，和建置 0 差異（REVIEW.md「G6 修正第 1 輪」；review/G6/qa/r2_failed.md S2；r2_regress.md）。第 2 輪修正（a5、a8、引擎）後主線會再打包一次（N6）。**從沒在 Windows 實機跑過**（REVIEW.md「初步完成版」）。 |
+72:| 備援影片 | `交付/backup_video/`（9 支影片＋`README.txt` 播放說明） | **已完成**（2026-10-22 21:33），明細見下表。a5、a8 用的是第 2 輪修正前的版本，主線會重新輸出這兩段（REVIEW.md「G6 重驗」；review/G6/PROGRESS_fix2.md 21:33） |
+73:| 教師與學校資料 PDF | `teacher/pdf/`（11 份：講稿、操作卡、故障卡、題卡學生版／教師版、教案、觀課導覽單、參與小卡、角色貼紙、成果紀錄範本、導師匿名回饋單）；最後打包時複製一份到 `交付/teacher_pdf/` | 自動檢查 21／21 通過（teacher/data/檢查報告.md）。故障卡等仍寫「備援影片（暫定）」，主線最後重建教師資料時拿掉（N4） |
+74:| 使用說明 | `review/G7/使用說明.md`，放進 `交付/` 取代 10:10 的舊版（N5） | 本次 G7 撰寫 |
+88:| backup_a5.mp4 | 第五幕：找得到的幫手（**第 2 輪後重新輸出**） | 03:13.8 | 8 | 123.3 MB | 0 ms（28 句） | 39.5 dB |
+96:- 注意：自動檢查裡另一個小項「逐格對齊」，在 a0、a3、a6 共 4 個抽樣格判「沒對齊」，所以這三段的總判定（all_ok）是「否」，其他六段是「是」。這 4 格都在靜止畫面或段落交界（a0 第 0 秒署名卡、a3 第 65.5 秒、a6 第 62.0 秒題卡、a6 第 155.3 秒），同一格和前後格的 PSNR 只差 0.2–0.7 dB。判讀：比較像檢查方法在靜止畫面上的誤判，不是畫面錯位；聲畫差用的是另一種方法，九段都是 0 ms（_check/backup_a0、a3、a6.json 的 frame_check）。
+215:| D5 | **a8 響度例外**：閉幕段整段 −18.2 LUFS，比中位數低 2.1 LU，記為例外 | REVIEW.md「G6 修正第 1 輪」最後一段「主線裁定（a8 段落響度）」 | 閉幕大部分是謝幕音樂與署名卡上的閉幕音樂淡出；對白偏差 0.4 LU、主奏段相差 1.8 LU 都在規則內。（第一次的例外理由被技術 QA 指出不成立，已撤回並加大謝幕音樂，見 C7）。重驗確認主奏段 −19.6／−19.3／−17.8 LUFS（review/G6/qa/r2_failed.md 第二節 #15） | 閉幕音量略小 | 彩排聽了再決定；閉幕 a8_c003 是 G4 cue，不改（同節） |
+359:| N4 | 備援影片已完成，但故障卡、觀課導覽單、教案、講稿仍寫「備援影片（暫定）」，要重跑 `node tools/teacher_docs.mjs` | teacher/data/檢查報告.md「備援影片」「注意」；review/G6/qa/r2_failed.md 第三節第 1 項 | 主線最後重新打包時處理（a5、a8 影片重新輸出後重建教師資料，拿掉「暫定」） |
+360:| N5 | 交付資料夾裡的 `使用說明_初步完成說明.md` 是 10:10 的舊版，內容仍寫「G5 未結案」「還沒做備援影片」、引擎測試 134 項 | 交付/使用說明_初步完成說明.md 檔案時間 10:10；review/G6/qa/r2_regress.md 一般問題 2 | 主線最後重新打包時處理（換成 review/G7/使用說明.md） |
+361:| N6 | 交付包是 20:03 打包的；第 2 輪修正（a5、a8、引擎、授權聲明）之後要重新打包並重跑冒煙測試 | review/G6/pack/INDEX.md (h)；review/G6/pack/delivery/delivery_smoke.md | 主線最後重新打包時處理 |
+392:| R4 | three.js 授權聲明沒有隨包（素材與授權表.md 第 6 節、第 8 節第 4 項） | 建置自動附 `dist/THIRD_PARTY_LICENSES.txt`（three.js、FluidR3_GM 音色庫，都是 MIT）（commit fecbdb7） | app/dist 已有（21:34）；交付包重新打包後才會帶上（N6） |
+393:| R5 | 線上教師網頁缺字型檔，會改用系統字型（r2_regress.md 一般問題 6） | tools/deploy_pages.sh 加複製 teacher/fonts（commit fecbdb7） | 線上版要重新發布才生效（gh-pages 目前仍是 20:03 的 b511dda） |
+396:- 主線最後重新打包時處理：N4（教師資料拿掉「暫定」）、N5（換新使用說明）、N6（重新打包、冒煙測試）。
+397:- 最終數據（a5、a8 驗收包的光敏與響度、交付冒煙測試、a5／a8 備援影片重新輸出、教師資料重建、線上版重新發布）：〔主線補〕
+475:出處：初步完成說明.md 第二節 A；review/G7/使用說明.md 第三節。
+## 交付/素材與授權表.md
+5:- **依據**：演出包的素材清單 `app/dist/data/manifest.js`（2026-10-22 20:00 產生）。交付資料夾 `交付/browser/` 和 `交付/AntidrugTheater/` 裡的同一份清單，和它逐位元相同。
+35:| 程式庫 | 2 個 | three.js 0.186.1、Electron 44.9.1 | 都是 MIT；**three.js 的授權聲明目前沒有隨包**（第 6 節） | app/package.json、交付/AntidrugTheater/version |
+176:| 47 | assets/final/sets/a5_hospital/layout.json | 沒有 | 查不到 | 未確認（檔案內容是場景擺位設定，不含圖） |
+177:| 48 | assets/final/sets/a6_square_night/layout.json | 沒有 | 查不到 | 未確認（同上） |
+178:| 49 | assets/final/sets/a6_window/layout.json | 沒有 | 查不到 | 未確認（同上） |
+220:- **音色庫**：FluidR3_GM（檔案 tools/sf/FluidR3_GM.sf2，tools/music/common.py 指定）。授權 MIT；版權 Frank Wen（2000–2002、2008）、Toby Smithe（2008）。授權檔在 audio/LICENSES/FluidR3_GM_copyright.txt。這個授權檔目前沒有放進交付包（見第 8 節）。
+277:| three.js（3D 繪圖；含 examples/jsm 的 ConvexHull.js） | 0.186.1 | 編進 app.js（交付/browser 與 交付/AntidrugTheater 兩版都有） | MIT（app/node_modules/three/LICENSE） | **沒有**。建置設定把授權註解拿掉了（app/build.mjs、console.build.mjs：`legalComments: 'none'`），交付資料夾也沒有 three.js 授權檔。MIT 條文要求「The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.」 | app/package.json dependencies；node_modules/three/package.json |
+306:| 4 | three.js 授權聲明沒有隨包 | MIT 條文要求附上版權與授權聲明，目前兩個交付版本都沒有（第 6 節） | 請主線在 交付/browser 與 交付/AntidrugTheater 各放一個授權說明檔（three.js MIT 全文）。我只能寫 review/G7/，不能改交付包 |
+## 對照：實際狀態
+交付/browser/THIRD_PARTY_LICENSES.txt 存在（three.js 0.186.1 MIT＋FluidR3_GM MIT）
+manifest builtAt 2026-10-22T13:33:58Z（21:33）
+backup_video/_check 九段 verify.all_ok 全 True；a5 22:00、a8 22:01 重新輸出；a5 122.6 MB
+teacher/data/檢查報告.md 22:03：備援影片寫實際檔名（無暫定）
+交付/delivery_smoke 14:03Z（22:03）通過
+gh-pages 23b30db 22:05 與 app/dist、teacher/pdf 0 差異，teacher/fonts 在線上 200
+G6 INDEX (a) a8 −18.3 LUFS、偏差 −2.2 LU
+## G6 INDEX (b) 字幕內容
+52:- 字幕內容（每 0.2 秒、台詞進行中、無題卡）：3053 筆，不符 2 筆。
+{'checked_samples': 3053, 'mismatch': 2, 'mismatch_where': [{'cue': 'a5_c005', 't': 2.25, 'line': 'a5_c005_01', 'subtitle': ''}, {'cue': 'a5_c005', 't': 2.45, 'line': 'a5_c005_01', 'subtitle': ''}]}
+a5 timeline: a5_c005_01 start 1.35 end 2.71（review/G5/a5/pack/timeline.json）；修正前起點 0.85→終點 2.21

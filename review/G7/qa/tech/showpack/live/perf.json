@@ -1,0 +1,558 @@
+{
+ "environment": {
+  "gpu": "ANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+  "clock": "audio",
+  "audioState": "running",
+  "quality": "A",
+  "lock30": false,
+  "headless": true,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36",
+  "fullscreen": true,
+  "viewport": [
+   1920,
+   1080
+  ],
+  "gapSec": 0.8,
+  "quizWaitSec": 1.6,
+  "note": "開發機實測（Apple M4、macOS、Chrome 無頭模式＋GPU〔ANGLE Metal〕、--mute-audio）；學校筆電：未驗證（探針結果回來後換算）。"
+ },
+ "load": {
+  "loadavg_before": [
+   2.5634765625,
+   2.20263671875,
+   2.6669921875
+  ],
+  "goto_ms": 5610,
+  "ready_button_ms": 5715,
+  "navigation": {
+   "domContentLoaded": 132.79999923706055,
+   "load": 5606.60000038147
+  },
+  "ready_click_to_title_ms": 1733,
+  "open_to_title_idle_ms": 7461,
+  "warm_ms": 833.2000007629395
+ },
+ "frames": {
+  "all_after_start": 84272,
+  "playing": 80366,
+  "p50_ms_playing": 16.7,
+  "p95_ms_playing": 16.7,
+  "p99_ms_playing": 16.8,
+  "max_ms_playing": 16.8,
+  "p95_ms_all": 16.7,
+  "mean_fps_playing": 60.0,
+  "over_34ms_playing": 0,
+  "over_50ms_playing": 0,
+  "engine_fps_median": 60.0
+ },
+ "frame_classification": "逐格狀態（live_raw.json fs）：前後兩格都是停格（停住等老師，或 cueTime ≥ cue 長度）＝停格，其餘（含預捲漸暗）＝播放中；暫停中的格不算",
+ "stalls_over_100ms": [],
+ "stalls_over_100ms_count": 0,
+ "stalls_over_100ms_playing_count": 0,
+ "stalls_in_dialog_or_reveal": 0,
+ "stalls_in_fade_black": 0,
+ "stalls_not_in_fade_black": 0,
+ "stalls_luma_unmeasured": 0,
+ "fade_black_rule": "卡住時與卡完的畫面（擷取模式重畫）全畫面平均線性亮度都 < 0.05＝在 fade 黑格內（live/stall_frames.json）",
+ "stalls_during_set_fade_in": 0,
+ "hold_stalls_over_100ms": [],
+ "hold_stalls_over_100ms_count": 0,
+ "hold_long_frames_over_50ms": {
+  "count": 13,
+  "max_ms": 100.0,
+  "list": [
+   {
+    "t_sec": 278.38,
+    "interval_ms": 100.0,
+    "cue": "a1_c008",
+    "cueTime": 26.78
+   },
+   {
+    "t_sec": 518.86,
+    "interval_ms": 66.6,
+    "cue": "a2_c012",
+    "cueTime": 32.32
+   },
+   {
+    "t_sec": 591.82,
+    "interval_ms": 50.1,
+    "cue": "a3_c002",
+    "cueTime": 13.23
+   },
+   {
+    "t_sec": 591.92,
+    "interval_ms": 83.4,
+    "cue": "a3_c002",
+    "cueTime": 13.23
+   },
+   {
+    "t_sec": 616.99,
+    "interval_ms": 83.4,
+    "cue": "a3_c003",
+    "cueTime": 23.55
+   },
+   {
+    "t_sec": 712.05,
+    "interval_ms": 83.3,
+    "cue": "a3_c008",
+    "cueTime": 36.69
+   },
+   {
+    "t_sec": 712.15,
+    "interval_ms": 66.6,
+    "cue": "a3_c008",
+    "cueTime": 36.69
+   },
+   {
+    "t_sec": 737.47,
+    "interval_ms": 66.7,
+    "cue": "a4_c001",
+    "cueTime": 23.92
+   },
+   {
+    "t_sec": 819.11,
+    "interval_ms": 83.3,
+    "cue": "a4_c006",
+    "cueTime": 6.26
+   },
+   {
+    "t_sec": 819.21,
+    "interval_ms": 66.6,
+    "cue": "a4_c006",
+    "cueTime": 6.26
+   },
+   {
+    "t_sec": 944.19,
+    "interval_ms": 100.0,
+    "cue": "a4_c013",
+    "cueTime": 24.75
+   },
+   {
+    "t_sec": 944.31,
+    "interval_ms": 66.8,
+    "cue": "a4_c013",
+    "cueTime": 24.75
+   },
+   {
+    "t_sec": 1129.48,
+    "interval_ms": 66.6,
+    "cue": "a5_c008",
+    "cueTime": 27.41
+   }
+  ],
+  "note": "停格中（前後兩格都是停格：畫面靜止）預先建下一個景的長格；不算播放中卡頓"
+ },
+ "criteria_v12_24_5": {
+  "p95_le_34ms": true,
+  "stalls_le_2": true,
+  "no_stall_in_dialog_or_reveal": true,
+  "heat_test_30min_idle_40min_show": "未驗證（本次只跑一次完整演出，沒有待機 30 分鐘）"
+ },
+ "per_segment": {
+  "a0": {
+   "frames": 6695,
+   "p50_ms": 16.7,
+   "p95_ms": 16.8,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a1": {
+   "frames": 9342,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a2": {
+   "frames": 15812,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a3": {
+   "frames": 8997,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a4": {
+   "frames": 13166,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a5": {
+   "frames": 10652,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a6": {
+   "frames": 11264,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a7": {
+   "frames": 2897,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a8": {
+   "frames": 1541,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  }
+ },
+ "worst_cues_p95": [
+  {
+   "cue": "a0_c001",
+   "frames": 825,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a0_c002",
+   "frames": 1343,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a0_c005",
+   "frames": 1327,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a1_c004",
+   "frames": 1818,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a1_c006",
+   "frames": 423,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a2_c001",
+   "frames": 1107,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a2_c002",
+   "frames": 1553,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a2_c004",
+   "frames": 1320,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a2_c011",
+   "frames": 340,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a3_c001",
+   "frames": 1331,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a3_c005",
+   "frames": 1428,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a4_c002",
+   "frames": 1170,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  }
+ ],
+ "long_animation_frames": {
+  "count": 18,
+  "over_100ms": 1,
+  "top": [
+   {
+    "t_sec": 944.1,
+    "dur_ms": 104.8,
+    "blocking_ms": 54.7,
+    "cue": "a4_c013",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 819.02,
+    "dur_ms": 95.9,
+    "blocking_ms": 38.8,
+    "cue": "a4_c006",
+    "phase": "reveal_playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 278.3,
+    "dur_ms": 95,
+    "blocking_ms": 44.9,
+    "cue": "a1_c008",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 616.92,
+    "dur_ms": 85.9,
+    "blocking_ms": 36,
+    "cue": "a3_c003",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 591.85,
+    "dur_ms": 82.6,
+    "blocking_ms": 32.6,
+    "cue": "a3_c002",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 711.98,
+    "dur_ms": 80.9,
+    "blocking_ms": 30,
+    "cue": "a3_c008",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 737.41,
+    "dur_ms": 77.7,
+    "blocking_ms": 27.6,
+    "cue": "a4_c001",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 944.24,
+    "dur_ms": 75.6,
+    "blocking_ms": 25.5,
+    "cue": "a4_c013",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 1129.42,
+    "dur_ms": 69.5,
+    "blocking_ms": 19.5,
+    "cue": "a5_c008",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 712.09,
+    "dur_ms": 67.5,
+    "blocking_ms": 17.4,
+    "cue": "a3_c008",
+    "phase": "story_waiting",
+    "mode": "waiting"
+   },
+   {
+    "t_sec": 819.15,
+    "dur_ms": 66.6,
+    "blocking_ms": 16.4,
+    "cue": "a4_c006",
+    "phase": "reveal_waiting",
+    "mode": "waiting"
+   },
+   {
+    "t_sec": 114.99,
+    "dur_ms": 62.4,
+    "blocking_ms": 9.9,
+    "cue": "a0_c005",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 518.81,
+    "dur_ms": 61.7,
+    "blocking_ms": 11.7,
+    "cue": "a2_c012",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 591.77,
+    "dur_ms": 59.8,
+    "blocking_ms": 8.8,
+    "cue": "a3_c002",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 983.99,
+    "dur_ms": 57.7,
+    "blocking_ms": 0,
+    "cue": "a5_c001",
+    "phase": "playing",
+    "mode": "playing"
+   }
+  ]
+ },
+ "memory": {
+  "samples": 280,
+  "title_idle": {
+   "t": 9158,
+   "label": "片頭待機",
+   "cue": "a0_c000",
+   "phase": "title_idle",
+   "jsHeapUsedMB": 236.227,
+   "jsHeapTotalMB": 262.422,
+   "perfMemoryUsedMB": 1013.002,
+   "nodes": 1725,
+   "listeners": 1047,
+   "processRssMB": {
+    "browser": 269.921875,
+    "renderer": 3592.171875,
+    "GPU": 765.4375,
+    "network.mojom.NetworkService": 97.390625,
+    "storage.mojom.StorageService": 76.625,
+    "audio.mojom.AudioService": 93.25
+   },
+   "loadavg1": 2.4697265625
+  },
+  "end": {
+   "t": 1414735,
+   "label": "片尾署名卡",
+   "cue": "a8_c003",
+   "phase": "ended",
+   "jsHeapUsedMB": 244.099,
+   "jsHeapTotalMB": 312.672,
+   "perfMemoryUsedMB": 458.107,
+   "nodes": 1278,
+   "listeners": 1054,
+   "processRssMB": {
+    "browser": 272.625,
+    "renderer": 2845.90625,
+    "GPU": 783.734375,
+    "network.mojom.NetworkService": 98.71875,
+    "storage.mojom.StorageService": 77.046875,
+    "audio.mojom.AudioService": 93.59375
+   },
+   "loadavg1": 1.38427734375
+  },
+  "js_heap_used_MB": {
+   "min": 215.008,
+   "max": 266.025,
+   "first_play": 228.053,
+   "last_play": 228.741,
+   "slope_MB_per_min_playing": 0.7,
+   "first10min_mean": 230.6,
+   "last10min_mean": 240.3
+  },
+  "process_rss_total_MB": {
+   "min": 4053.0,
+   "max": 4894.8,
+   "first_play": 4867.0,
+   "last_play": 4186.4
+  },
+  "process_rss_by_type_end_MB": {
+   "browser": 272.625,
+   "renderer": 2845.90625,
+   "GPU": 783.734375,
+   "network.mojom.NetworkService": 98.71875,
+   "storage.mojom.StorageService": 77.046875,
+   "audio.mojom.AudioService": 93.59375
+  },
+  "dom_nodes_max": 1787,
+  "loadavg1": {
+   "mean": 1.62,
+   "max": 2.6
+  },
+  "note": "jsHeapUsedMB＝CDP Performance.getMetrics JSHeapUsedSize；perfMemoryUsedMB＝performance.memory（--enable-precise-memory-info）；processRssMB＝SystemInfo.getProcessInfo 的各程序 ps RSS（macOS，依程序類型加總，MB）。 macOS 的 RSS 會因記憶體壓縮、清除快取而突然下降，只當走勢參考；學校 Windows 筆電請以工作管理員實測（未驗證）。"
+ },
+ "voice_sync": {
+  "samples": 880,
+  "max_abs_ms": 3,
+  "p95_abs_ms": 0.0,
+  "over_50ms": 0,
+  "over_50ms_where": []
+ },
+ "subtitles": {
+  "checked_samples": 3057,
+  "mismatch": 0,
+  "mismatch_where": []
+ },
+ "mouth": {
+  "lines_checked": 127,
+  "lines_moved": 125,
+  "not_moved": [
+   {
+    "line": "a1_c004_06",
+    "samples": 19,
+    "states": {
+     "pinan": [
+      ""
+     ]
+    },
+    "has_face": {
+     "pinan": true
+    },
+    "moved": false
+   },
+   {
+    "line": "a5_c001_03",
+    "samples": 10,
+    "states": {
+     "lin": [
+      "closed"
+     ]
+    },
+    "has_face": {
+     "lin": true
+    },
+    "moved": false
+   }
+  ],
+  "lines_without_face_data": 0
+ },
+ "flow": {
+  "visited": 70,
+  "expected": 70,
+  "all_visited_in_order": true,
+  "missing": [],
+  "end": {
+   "cueId": "a8_c003",
+   "phase": "ended",
+   "lampsLit": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "wall_ms": 1413078,
+   "timedOut": false
+  },
+  "wall_min": 23.55,
+  "presses": 69
+ },
+ "page_errors": []
+}

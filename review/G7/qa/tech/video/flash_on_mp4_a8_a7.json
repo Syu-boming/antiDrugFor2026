@@ -1,0 +1,34 @@
+{
+ "a8": {
+  "16x9": {
+   "frames": 1182,
+   "max_lum_transitions_per_1s": 0,
+   "at_cell_frame": null,
+   "max_red_transitions_per_1s": 0
+  },
+  "max_fullframe_step_ratio": 1.594,
+  "at_sec": 21.0,
+  "32x18": {
+   "frames": 1182,
+   "max_lum_transitions_per_1s": 0,
+   "at_cell_frame": null,
+   "max_red_transitions_per_1s": 0
+  }
+ },
+ "a7": {
+  "16x9": {
+   "frames": 1620,
+   "max_lum_transitions_per_1s": 0,
+   "at_cell_frame": null,
+   "max_red_transitions_per_1s": 0
+  },
+  "max_fullframe_step_ratio": 1.647,
+  "at_sec": 47.13,
+  "32x18": {
+   "frames": 1620,
+   "max_lum_transitions_per_1s": 0,
+   "at_cell_frame": null,
+   "max_red_transitions_per_1s": 0
+  }
+ }
+}

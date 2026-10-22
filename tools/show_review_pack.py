@@ -724,12 +724,65 @@ def fmt(x, nd=1):
     return str(x)
 
 
+# ====================================================================== 建置指紋（G7 修正第 1 輪，技術 QA G2）
+SECTION_NAME = {"live": "即時播放（live/live_raw.json）", "seams": "段落接縫（seams/seams_raw.json）", "ops": "全劇操作補測（ops/ops_show.json）", "engine_test": "engine-test（ops/engine_test.log）"}
+
+
+def _when(iso):
+    if not iso:
+        return "—"
+    try:
+        return datetime.fromisoformat(iso.replace("Z", "+00:00")).astimezone().strftime("%Y-%m-%d %H:%M")
+    except ValueError:
+        return iso
+
+
+def build_notes(BC, keys):
+    """該節開頭的建置說明：本次量測／沿用同一建置／沿用舊建置的數據（列出兩邊 sha1）。BC＝build_check.json"""
+    if not BC:
+        return ["- 建置：沒有 build_check.json（舊版工具），無法確認這一節的數據是不是用目前建置量的。"]
+    cur = BC.get("current") or {}
+    ca, cc, cf = cur.get("appJsSha1"), cur.get("cuesShowSha1"), cur.get("cuesShowFile") or "cues_show.js"
+    out = []
+    for k in keys:
+        r = (BC.get("sections") or {}).get(k)
+        if not r or r.get("status") == "missing":
+            continue
+        name = SECTION_NAME.get(k, k)
+        rec = r.get("recorded") or {}
+        st = r.get("status")
+        if st == "fresh":
+            out.append(f"- 建置：{name}本次以目前建置量測（app.js `{ca}`、{cf} `{cc}`）。")
+        elif st == "reused_same_build":
+            out.append(f"- 建置：{name}沿用 {_when(rec.get('measuredAt') or r.get('dataMtime'))} 的數據（{r.get('option')}），記錄的建置與目前 app/dist 相同（app.js `{ca}`、{cf} `{cc}`）。")
+        elif st == "reused_other_build":
+            if rec.get("appJsSha1"):
+                diff = "、".join(x for x, ok in (("app.js", r.get("appJsMatch")), (cf, r.get("cuesShowMatch"))) if not ok)
+                out.append(f"- **沿用舊建置的數據**：{name}是 {_when(rec.get('measuredAt') or r.get('dataMtime'))} 量的（{r.get('option')}），"
+                           f"當時建置 app.js `{rec.get('appJsSha1')}`、{rec.get('cuesShowFile') or cf} `{rec.get('cuesShowSha1')}`；"
+                           f"目前 app/dist app.js `{ca}`、{cf} `{cc}`（{diff} 不同）。這一節的數字不是用目前建置量的；要用目前建置請{r.get('rerun') or '重跑'}（約 {r.get('rerunMin')} 分鐘）。")
+            else:
+                cited = f"引用 {rec.get('cited')}、" if rec.get("cited") else ""
+                out.append(f"- **沿用舊建置的數據**：{name}（{cited}資料時間 {_when(r.get('comparedTime') or r.get('dataMtime'))}）早於目前建置 app.js（{_when(cur.get('appJsMtime'))}），"
+                           f"而且舊資料沒有記錄建置 sha1（當時建置：未記錄）；目前 app/dist app.js `{ca}`、{cf} `{cc}`。這一節的數字不是用目前建置量的；要用目前建置請{r.get('rerun') or '重跑'}（約 {r.get('rerunMin')} 分鐘）。")
+        else:
+            cited = f"引用 {rec.get('cited')}、" if rec.get("cited") else ""
+            out.append(f"- 建置：{name}沿用舊資料（{cited}資料時間 {_when(r.get('comparedTime') or r.get('dataMtime'))}，晚於目前 app.js），但沒有記錄建置 sha1，無法確認是同一建置；目前 app/dist app.js `{ca}`、{cf} `{cc}`。")
+    return out
+
+
 def index(out, packs, show, A, P, C, E, F, G, N):
+    BC = load(out / "build_check.json")
+    cur = (BC or {}).get("current") or {}
+    stale = [SECTION_NAME.get(k, k) for k, r in ((BC or {}).get("sections") or {}).items() if r.get("status") == "reused_other_build"]
     L = [f"# G6 全劇驗收包", "",
          f"- 產生：tools/show_review_pack.mjs（{datetime.now().strftime('%Y-%m-%d %H:%M')}）；建置 `app/dist`（{len(show['cues'])} 個 cue、{len(show['segments'])} 段）；九段驗收包 `{rel(packs, ROOT)}/<段>/pack`。本檔只列數字與檔案。",
+         f"- 建置指紋（build_check.json）：app.js `{cur.get('appJsSha1', '—')}`、{cur.get('cuesShowFile') or 'cues_show.js'} `{cur.get('cuesShowSha1', '—')}`（資料包 builtAt {cur.get('distBuiltAt', '—')}）。"
+         + (f"**沿用舊建置的數據：{'、'.join(stale)}**（見各節開頭）。" if stale else "各節數據都是目前建置（或沿用、但 sha1 相同）。" if BC else "沒有 build_check.json（舊版工具）。"),
          "- 未驗證：學校筆電效能（待探針換算）、實際投影、聽感、實機休眠與斷網、待機 30 分鐘＋演出 40 分鐘耐熱測試。", ""]
     L += ["## 檔案", "", "| 項目 | 檔案 |", "|---|---|",
           "| 目前建置時間軸 | show_timeline.json |",
+          "| 建置指紋（各節數據量測時的 app.js、cues_show.js sha1） | build_check.json、live/build.json、seams/build.json、ops/build.json、ops/engine_test.build.json |",
           "| (a) 九段彙整、響度、時長 | packs/show_table.json、packs/loudness_show.json、packs/segment_hashes.json（段落指紋）、packs/isolated/（舊包補算的孤立單格亮度比） |",
           "| (b) 即時播放效能 | live/perf.json、live/frametime_plot.png、live/memory_plot.png、live/live_raw.json、live/stall_frames.json、live/stall_frames/ |",
           "| (c) 段落接縫 | seams/seams.json、seams/seams_all.jpg、seams/seam_<前>_<後>.jpg、seams/<前>_<後>/flash_playback.json |",
@@ -786,7 +839,7 @@ def index(out, packs, show, A, P, C, E, F, G, N):
     if P:
         f_, ld = P["frames"], P["load"] or {}
         cr = P["criteria_v12_24_5"]
-        L += ["## (b) 即時播放效能（開發機實測；學校筆電未驗證）", "",
+        L += ["## (b) 即時播放效能（開發機實測；學校筆電未驗證）", ""] + build_notes(BC, ["live"]) + [
               f"- 環境：{P['environment'].get('gpu')}；時鐘 {P['environment'].get('clock')}；無頭 {fmt(P['environment'].get('headless'))}；畫質 {P['environment'].get('quality')}；鎖 30 fps {fmt(P['environment'].get('lock30'))}；1920×1080；"
               f"按鍵間隔 {P['environment'].get('gapSec')} 秒、出題等 {P['environment'].get('quizWaitSec')} 秒；系統負載（1 分鐘平均）平均 {fmt(P['memory']['loadavg1']['mean'], 2)}、最高 {fmt(P['memory']['loadavg1']['max'], 2)}。",
               f"- 載入：開頁到「準備播放」可按 {ld.get('ready_button_ms')} ms；按「準備播放」到片頭待機 {ld.get('ready_click_to_title_ms')} ms（預熱 {fmt(ld.get('warm_ms'), 0)} ms）；開頁到片頭待機合計 {ld.get('open_to_title_idle_ms')} ms。",
@@ -817,7 +870,7 @@ def index(out, packs, show, A, P, C, E, F, G, N):
             L.append(f"| {s} | {v['frames']} | {fmt(v['p50_ms'], 2)} | {fmt(v['p95_ms'], 2)} | {fmt(v['max_ms'])} | {v['over_50ms']} |")
         L += ["", "p95 最高的 cue：" + "、".join(f"{c['cue']} {fmt(c['p95_ms'], 1)} ms" for c in P["worst_cues_p95"][:8]), ""]
     if C:
-        L += ["## (c) 段落接縫", "",
+        L += ["## (c) 段落接縫", ""] + build_notes(BC, ["seams"]) + [
               f"- 8 個接縫光敏全部通過：{fmt(C['all_flash_pass'])}；一格硬切（沒有預捲、區域亮度差 > 0.1）：{'、'.join(C['hard_cuts']) or '無'}；按下一步後第一格與前段最後一格的平均亮度差最大 {fmt(C['max_abs_first_shown_delta'], 4)}。", "",
               "| 接縫 | cue | 景 | 預捲／漸亮 秒 | 前段最後 | 後段第一格 | 第一個全亮格 | Δ第一格（區域最大） | Δ全亮（區域最大） | 光敏 16×9 | 32×18 | 圖 |", "|---|---|---|---|---|---|---|---|---|---|---|---|"]
         for r in C["seams"]:
@@ -830,12 +883,12 @@ def index(out, packs, show, A, P, C, E, F, G, N):
                      f"{r['flash']['grid16x9']['luma']}／{r['flash']['grid16x9']['red']} | {r['flash']['fine32x18']['luma']}／{r['flash']['fine32x18']['red']} | {r['image']} |")
         L.append("")
     if N:
-        L += ["## (d) 離線", "",
+        L += ["## (d) 離線", ""] + build_notes(BC, ["live", "seams", "ops"]) + [
               f"- 外部請求合計 {N['external_total']}（即時播放 {N['live_external']}／{N['live_requests']} 個請求、接縫擷取 {N['seams_external']}／{N['seams_requests']}、操作補測 {N['ops_external']}／{N['ops_requests']}）；零外部請求：{fmt(N['pass_zero_external'])}；"
               f"失敗的本機請求 {N['live_failed']} 個。", ""]
     if E:
         et = E["engine_test"]
-        L += ["## (e) 操作", "",
+        L += ["## (e) 操作", ""] + build_notes(BC, ["engine_test", "ops"]) + [
               f"- engine-test：{(et['summary'] or {}).get('passed', et['passed'])}／{(et['summary'] or {}).get('total', et['checks'])} 項通過（{et['log']}）；失敗 {len(et['failed'])} 項。",
               f"- 全劇模式補測：{E['show_supplement']['passed']}／{E['show_supplement']['checks']} 項通過（ops/ops_show.json）。", "",
               "| 操作 | engine-test 項數（通過） | 全劇補測項數（通過） |", "|---|---|---|"]
@@ -846,11 +899,11 @@ def index(out, packs, show, A, P, C, E, F, G, N):
             L += ["", "失敗：" + "；".join(f"{f['name']}（{f.get('detail', '')}）" for f in fails[:10])]
         L.append("")
     if F:
-        L += ["## (f) 署名卡", "",
+        L += ["## (f) 署名卡", ""] + build_notes(BC, ["live"]) + [
               f"- 片頭：DOM「{F['start'].get('text')}」、顯示 {fmt(F['start']['visible'])}（{F['start'].get('cueId')} {F['start'].get('phase')}）；片尾：DOM「{F['end'].get('text')}」、顯示 {fmt(F['end']['visible'])}（{F['end'].get('cueId')} {F['end'].get('phase')}）；"
               f"都是「{SIGNATURE}」：{fmt(F['pass'])}。圖：attribution/attribution.jpg。", ""]
     if G:
-        L += ["## (g) 八題", "",
+        L += ["## (g) 八題", ""] + build_notes(BC, ["live"]) + [
               f"- {G['passed']}／{G['quizzes']} 題通過（出題 → 不自動揭答 → 揭答印章在正解 → 點燈 → 續演，題卡文字＝八題_v03.md）；印章位置依序 {G['observed_answers_stamp']}（應為 {G['expected_answers']}）；演完八盞燈 {G['end_lamps']}。", "",
               "| 題 | cue | 正解（應／cue／題卡檔） | 印章 | 題卡文字一致 | 不自動揭答 | 點燈後 | 續演 | 通過 |", "|---|---|---|---|---|---|---|---|---|"]
         for r in G["rows"]:
@@ -862,13 +915,14 @@ def index(out, packs, show, A, P, C, E, F, G, N):
     if D:
         L += ["## (h) 交付包與建置一致（tools/delivery_smoke.mjs）", "",
               f"- 測試時間 {D.get('generated')}；對照建置 `{D.get('ref')}`；整體 {'通過' if D.get('pass') else '不通過'}（delivery/delivery_smoke.md）。", "",
-              "| 交付資料夾 | 逐檔相同（diff 0） | 不加參數載入全劇 | 配音齊全 | 署名卡兩端 | 八題 | 外部請求 0 | 頁面錯誤 0 |", "|---|---|---|---|---|---|---|---|"]
+              "| 交付資料夾 | 逐檔相同（diff 0） | 不加參數載入全劇 | 配音齊全 | 署名卡兩端 | 八題 | 實鍵走一題 | 啟動說明 | 外部請求 0 | 頁面錯誤 0 |", "|---|---|---|---|---|---|---|---|---|---|"]
         w = lambda c: "—" if not c else ("通過" if c.get("ok") else "不通過")
         for t in D.get("targets", []):
             c = t.get("checks", {})
             diff = t.get("diff") or {}
             L.append(f"| {t['target']} | {w(c.get('identical_to_build'))}（不同 {len(diff.get('different', []))}、缺 {len(diff.get('missing', []))}、多 {len(diff.get('extra', []))}） | {w(c.get('loads_show_without_params'))} | "
-                     f"{w(c.get('audio_complete'))} | {w(c.get('attribution_both_ends'))} | {w(c.get('quiz_order_answers'))} | {w(c.get('zero_external_requests'))} | {w(c.get('no_page_errors'))} |")
+                     f"{w(c.get('audio_complete'))} | {w(c.get('attribution_both_ends'))} | {w(c.get('quiz_order_answers'))} | {w(c.get('quiz_real_keys'))} | {w(c.get('startup_note'))} | "
+                     f"{w(c.get('zero_external_requests'))} | {w(c.get('no_page_errors'))} |")
         try:
             gen = datetime.fromisoformat(D["generated"].replace("Z", "+00:00")).timestamp()
             js = ROOT / "app/dist/app.js"
@@ -901,7 +955,8 @@ def main(out, packs):
                "c_seams": ({"all_flash_pass": C["all_flash_pass"], "hard_cuts": C["hard_cuts"]} if C else None),
                "d_offline": {"external_total": N["external_total"], "pass": N["pass_zero_external"]},
                "e_ops": {"engine_test": E["engine_test"]["summary"], "show_supplement": f"{E['show_supplement']['passed']}/{E['show_supplement']['checks']}"},
-               "f_attribution": F["pass"] if F else None, "g_quiz": f"{G['passed']}/{G['quizzes']}" if G else None}
+               "f_attribution": F["pass"] if F else None, "g_quiz": f"{G['passed']}/{G['quizzes']}" if G else None,
+               "build": (lambda bc: {"current": bc.get("current"), "sections": {k: v.get("status") for k, v in (bc.get("sections") or {}).items()}} if bc else None)(load(out / "build_check.json"))}
     dump(out / "summary.json", summary)
     index(out, packs, show, A, P, C, E, F, G, N)
     print(f"[g6pack.py] → {out / 'INDEX.md'}")

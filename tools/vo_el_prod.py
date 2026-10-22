@@ -7,6 +7,8 @@
   tools/.venv/bin/python tools/vo_el_prod.py                                   # 所有有 EL 角色設定（status=active）的台詞
   tools/.venv/bin/python tools/vo_el_prod.py --baseline-edge [--role …|--line …]   # edge 基準（免費、不重算；不指定＝全劇）
   tools/.venv/bin/python tools/vo_el_prod.py --report                          # 彙整寫出 review/G3/el/full/
+  --reuse-edge-baseline：沿用既有 edge 基準（人名豁免用），不因簽章變動重算、不呼叫 edge-tts。
+  角色設定 lines.<id>.seed_base：逐句 seed 起點（重做時第 1 次沿用原採用的 seed）。
   其他選項：--force（不沿用既有輸出，從第 1 次嘗試重新判定；同 seed、同文字的 EL 原始檔快取會沿用，不重複計費——
             要拿到新的合成結果請改角色設定的 seed_base）、--include-draft（連 status=draft 的角色一起做）。
   續跑：--max-credits 到了會停在下一個呼叫之前（exit 3），已完成的句子沿用、未完成的句子從下一次嘗試接著做。
@@ -1024,7 +1026,7 @@ def render_attempt(lid: str, ln: dict, cfgs: list[dict], k: int, prev: list[dict
         st = dict(cfg["settings"], **lc.get("settings", {}))
         st["speed"] = adapt_speed(cfg, st.get("speed"), prev)
         settings_by[cfg["code"]] = st
-        seed = int(cfg["seed_base"]) + k
+        seed = int(lc.get("seed_base", cfg["seed_base"])) + k   # 逐句 seed_base（2026-10-22 加：重做時第 1 次沿用原採用的 seed）
         seeds[cfg["code"]] = seed
         gap = REQUIRED_INSERT_MS if required else int(lc.get("sentence_gap_ms", cfg.get("sentence_gap_ms", 450)))
         segs = plan_segments(synth_text_for(cfg, lid, ln["text"]), gap)
@@ -1179,7 +1181,7 @@ def run_line(lid: str, args, run: dict, report: dict, timings: dict) -> str:
                                                     "billed_total", "targets")})
     att_prefix = f"r{len(prev_rounds) + 1}_" if prev_rounds else ""
     base = jload(EDGE_METRICS, {}).get(lid)
-    if not base or base.get("signature") != edge_signature(lid):
+    if not base or (base.get("signature") != edge_signature(lid) and not getattr(args, "reuse_edge_baseline", False)):
         try:
             base = baseline_line(lid)
         except Exception as ex:  # noqa: BLE001
@@ -1688,6 +1690,8 @@ def main() -> None:
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--include-draft", action="store_true")
+    ap.add_argument("--reuse-edge-baseline", action="store_true",
+                    help="沿用既有 edge 基準（只用於人名豁免），簽章不同也不重算、不呼叫 edge-tts（2026-10-22 加）")
     args = ap.parse_args()
     verify_required()
     if args.max_attempts > MAX_ATTEMPTS_CAP:

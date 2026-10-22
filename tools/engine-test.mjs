@@ -2,10 +2,10 @@
 // 驗證 v1.2 第 19.1 節的規則（連按、長按、上一步、暫停、重播、題目恢復未揭答、播放中不跳段），
 // 以及 F5／Esc 攔截、頁面隱藏才暫停、GPU 中斷重建，與「有正式音檔」時的音訊排程與切換停止。
 // 三、G4 代表鏡頭 cue 集（g4）的流程、WAIT_GUARD；四、虛擬時鐘下的確定性（重播一致）、布幕與署名卡時間、
-// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出（全劇缺配音要按第二次確認）；六、字幕斷行與對白避讓的純函式測試；
+// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出（全劇缺配音要按第二次確認；G7：少了配音資料檔也走確認、少了必要資料包停在準備畫面並說明）；六、字幕斷行與對白避讓的純函式測試；
 // 七、G4 正式配音的操作測試（必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音）：
 // 對白聲音 ≤ 1、字幕與語音時間差 ≤ 50 ms（G4 修正第 29 項）。
-// 八、G5 全劇（?cues=show，app/cues/show/）：201 句配音都在且都是 v04、八題順序與答案、題目→揭答→等待→續演、八盞燈、
+// 八、G5 全劇（?cues=show，app/cues/show/）：201 句配音都在且都是 ElevenLabs 正式版（v04；重做句 v05）、八題順序與答案、題目→揭答→等待→續演、八盞燈、
 // 兩句必要旁白一字不差、每個 cue 都有景、G4 已完成的 cue 原樣搬進全劇、整齣從片頭按到片尾（每句字幕都出現）、
 // 換景亮度漸變與舊景釋放、跨檔上一步與章節跳轉、壓縮級別與查核點、上一步換景時即時漸暗漸亮；
 // G5 修正第 1 輪：台口八盞燈（全劇才有、quiz 鏡位看得到、亮度跟 world.lamps、上一步還原）、puppet.nod、操偶線螢幕最小寬度。
@@ -596,6 +596,73 @@ console.log('\n五、配樂與音效缺檔時照常演出（暫存資料夾）')
   }
 }
 
+// G7 修正第 1 輪（技術 QA G1）：交付資料夾少了一個資料包「檔案」（不是 manifest 少登記）。
+// 暫存資料夾：app/dist/data 每個檔用符號連結，只拿掉 omit 裡的檔；manifest.js 原封不動（等於複製交付資料夾時漏了檔）
+function tmpDistWithout(omit) {
+  const tmp = mkdtempSync(join(tmpdir(), 'antidrug-engine-packmiss-'));
+  copyFileSync(join(DIST, 'index.html'), join(tmp, 'index.html'));
+  copyFileSync(join(DIST, 'app.js'), join(tmp, 'app.js'));
+  mkdirSync(join(tmp, 'data'));
+  for (const f of readdirSync(join(DIST, 'data'))) if (!omit.includes(f)) symlinkSync(join(DIST, 'data', f), join(tmp, 'data', f));
+  return tmp;
+}
+{
+  // (a) 少一個配音資料檔 → 那個 cue 的台詞全部列進 missingVo，走「缺 N 句配音、再按一次確认」流程，可以開演
+  const voFile = 'vo_a3_c002.js';
+  const tmp = tmpDistWithout([voFile]);
+  try {
+    const src = readFileSync(join(DIST, 'data', 'manifest.js'), 'utf8');
+    const man = JSON.parse(/window\.__pack\("manifest",([\s\S]*)\);\s*$/.exec(src)[1]);
+    const lost = Object.keys(man.audio).filter((id) => man.audio[id].file === voFile).map((id) => id.slice(3)).sort();
+    const { page, st, waitPhase, errors } = await open(join(tmp, 'index.html'), 'nofs=1&cues=show');
+    await page.waitForFunction(() => window.__engine.getState().mode !== 'loading', null, { timeout: 120000 });
+    await sleep(1500); // 以前的毛病是其他資料包載完後進度把畫面蓋回「資料包 n／m」：多等一下再看
+    let s = await st();
+    const listText = await page.textContent('.ready-list');
+    check(`交付少了配音資料檔 data/${voFile}：停在準備畫面、按鈕可按，${lost.length} 句列進 missingVo、畫面寫缺幾句與缺哪個檔`,
+      s.mode === 'preparing' && await page.isEnabled('.ready-btn') && JSON.stringify([...s.missingVo].sort()) === JSON.stringify(lost)
+        && JSON.stringify(s.missingPacks) === JSON.stringify([voFile]) && listText.includes(`缺 ${lost.length} 句配音`) && listText.includes(voFile) && !/資料包\s*\d+／\d+/.test(listText) && s.errors.length === 0,
+      `mode ${s.mode}；missingVo ${s.missingVo.length}；missingPacks ${JSON.stringify(s.missingPacks)}；errors ${JSON.stringify(s.errors)}`);
+    await page.click('.ready-btn');
+    await sleep(250);
+    s = await st();
+    const btn1 = await page.textContent('.ready-btn');
+    const msg1 = await page.textContent('.ready-msg');
+    check('少了配音資料檔：第一次按「準備播放」不開演，按鈕與說明寫「缺 N 句配音」與缺的檔、要再按一次', s.mode === 'preparing' && s.voConfirmPending && btn1.includes(`缺 ${lost.length} 句配音`) && msg1.includes(voFile) && msg1.includes('再按一次'), `按鈕「${btn1}」`);
+    await sleep(900);
+    await page.keyboard.press('PageDown');
+    await waitPhase('title_idle', 60000);
+    s = await st();
+    check('少了配音資料檔：確認後開演，停在片頭署名卡、沒有頁面錯誤', s.phase === 'title_idle' && s.cueId === 'a0_c000' && errors.filter((e) => !e.includes('ERR_FILE_NOT_FOUND')).length === 0, errors.slice(0, 2).join(' | ')); // 缺的那個檔本身會有一筆「找不到檔案」的主控台訊息
+    await page.close();
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+for (const [need, label] of [['sfx.js', '配樂音效資料包'], ['img_ui.js', '圖像資料包']]) {
+  // (b) 少一個必要資料包 → 停在準備畫面（error），畫面寫是哪個檔、怎麼辦；其他資料包陸續載完也不會把訊息蓋掉
+  const tmp = tmpDistWithout([need]);
+  try {
+    const page = await browser.newPage({ viewport: { width: 1280, height: 720 } });
+    await page.goto(`${pathToFileURL(join(tmp, 'index.html')).href}?nofs=1&cues=show`);
+    await page.waitForFunction(() => window.__engine && window.__engine.getState().mode !== 'loading', null, { timeout: 120000, polling: 100 });
+    await sleep(2500);
+    const s = await page.evaluate(() => window.__engine.getState());
+    const listText = await page.textContent('.ready-list');
+    const msg = await page.textContent('.ready-msg');
+    check(`交付少了${label} data/${need}：停在準備畫面（error、按鈕停用），畫面寫缺哪個檔與「怎麼辦」，2.5 秒後仍沒被進度蓋掉`,
+      s.mode === 'error' && s.phase === 'error' && !(await page.isEnabled('.ready-btn')) && listText.includes('無法開始') && listText.includes(`data/${need}`) && listText.includes('怎麼辦')
+        && listText.includes('整個交付資料夾') && !/資料包\s*\d+／\d+|素材\s*\d+／\d+/.test(listText) && s.errors.some((e) => e.includes(need)) && msg.includes('重新開啟'),
+      `mode ${s.mode}；errors ${JSON.stringify(s.errors)}；畫面「${listText.slice(0, 60)}…」`);
+    await page.keyboard.press('PageDown');
+    await sleep(300);
+    check(`少了${label}：按「下一步」也不會開演`, (await page.evaluate(() => window.__engine.getState().mode)) === 'error');
+    await page.close();
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+
 // ======================================================================= 六、純函式（Node 直接執行 TypeScript）
 console.log('\n六、字幕斷行、對白避讓排程（純函式）');
 {
@@ -748,8 +815,12 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   const textBad = allLines.filter((l) => !scriptLines.has(l.id) || plain(l.text) !== scriptLines.get(l.id).text || l.speaker !== scriptLines.get(l.id).speaker).map((l) => l.id);
   check(`全劇台詞 ${allLines.length} 句＝劇本 v03 ${scriptLines.size} 句，說話者與字幕一字不差`, allLines.length === 201 && scriptLines.size === 201 && new Set(allLines.map((l) => l.id)).size === 201 && textBad.length === 0, textBad.slice(0, 5).join('、'));
   const manifest = JSON.parse(readFileSync(join(DIST, 'data/manifest.js'), 'utf8').replace(/^[\s\S]*?window\.__pack\("manifest",/, '').replace(/\);\s*$/, ''));
-  const voBad = allLines.filter((l) => !/_v04\.wav$/.test(manifest.audio[l.audioId ?? `vo_${l.id}`]?.source ?? '')).map((l) => l.id);
-  check('201 句配音都打包進資料包、而且都是 v04（ElevenLabs 正式版）', voBad.length === 0 && manifest.cueSets.show, voBad.slice(0, 5).join('、') || `cues_show.js＋${Object.values(manifest.audio).filter((a) => a.bus === 'vo').length} 個配音檔`);
+  // 正式版號以 audio/vo/timings.json（tools/vo_el_promote.py 寫）為準：全劇 v04，重做的句子升 v05 以上（2026-10-22「燈」讀音重做）
+  const voTimings = JSON.parse(readFileSync(join(ROOT, 'audio/vo/timings.json'), 'utf8'));
+  const voWant = (id) => (/_(v\d+)\.wav$/.exec(voTimings[id]?.file ?? '') ?? [])[1] ?? 'v04';
+  const voBad = allLines.filter((l) => { const src = manifest.audio[l.audioId ?? `vo_${l.id}`]?.source ?? ''; const v = voWant(l.id); return !src.endsWith(`_${v}.wav`) || Number(v.slice(1)) < 4; }).map((l) => l.id);
+  const voNewer = allLines.filter((l) => voWant(l.id) !== 'v04').map((l) => `${l.id}:${voWant(l.id)}`);
+  check('201 句配音都打包進資料包、而且都是 ElevenLabs 正式版（v04；重做句取 timings.json 記的新版號）', voBad.length === 0 && manifest.cueSets.show, voBad.slice(0, 5).join('、') || `cues_show.js＋${Object.values(manifest.audio).filter((a) => a.bus === 'vo').length} 個配音檔；新版 ${voNewer.join('、') || '無'}`);
   const quizCues = merged.cues.filter((c) => c.kind === 'quiz');
   check('八題依序 Q1–Q8、答案 2、3、1、1、3、2、3、2', quizCues.map((c) => c.quiz.number).join() === '1,2,3,4,5,6,7,8' && quizCues.map((c) => c.quiz.answer).join() === '2,3,1,1,3,2,3,2', quizCues.map((c) => `${c.quiz.qid}:${c.quiz.answer}`).join(' '));
   // 題卡文字與八題_v03.md 一字不差

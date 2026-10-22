@@ -22,7 +22,7 @@
 import type { Cue, CueFile } from '../types/cue';
 import { validateCueFile, type ValidationResult } from '../cues/validate';
 import { buildTimelines, type CueTimeline } from '../cues/timeline';
-import { getPack, loadPackFile, loadPackFiles, type PackManifest } from '../data/packs';
+import { getPack, loadPackFiles, PackLoadError, type PackManifest } from '../data/packs';
 import { AssetStore } from '../data/assets';
 import { AudioClock, PerformanceClock, VirtualClock, type Clock } from './clock';
 import { evaluateWorld, setsUsed, type WorldState } from './world';
@@ -102,6 +102,8 @@ export interface EngineState {
   showElapsedSec: number | null; enterFade: number; prerollSec: number; dim: number;
   /** G6：缺配音的台詞編號（用暫代音訊）；全劇模式缺配音時「準備播放」要按第二次確認（voConfirmPending＝已按第一次、等確認） */
   missingVo: string[]; voConfirmPending: boolean;
+  /** G7：載入失敗的配音／嘴型資料包檔名（例如 vo_a3_c002.js、lipsync.js）；配音資料包的那幾句列進 missingVo，全劇模式兩種都要按第二次確認 */
+  missingPacks: string[];
 }
 
 export class Engine {
@@ -130,6 +132,8 @@ export class Engine {
   missingAudio: string[] = [];
   /** 缺配音的台詞（暫代音訊）；全劇模式要老師再按一次「準備播放」確認 */
   missingVo: string[] = [];
+  /** 載入失敗的配音／嘴型資料包檔（不是必要資料包；必要資料包失敗直接進 error） */
+  missingPacks: string[] = [];
   /** 缺配音確認：第一次按「準備播放」的時間（0＝還沒按） */
   private voConfirmAt = 0;
   validation: ValidationResult | null = null;
@@ -186,13 +190,17 @@ export class Engine {
   async load(): Promise<void> {
     this.mode = 'loading';
     this.ui.ready.setStatus([{ label: '資料包', value: '載入中…', ok: null }]);
+    // 進度只在載入中顯示；一旦進 error，之後任何進度回呼都不能把錯誤訊息蓋掉（G7 技術 QA G1）
+    const progress = (label: string) => (d: number, n: number) => {
+      if (this.mode === 'loading') this.ui.ready.setStatus([{ label, value: `${d}／${n}`, ok: null }]);
+    };
     try {
       const man = getPack<PackManifest>('manifest');
-      if (!man) throw new Error('找不到 data/manifest.js。請先在 app 資料夾執行 npm run build。');
+      if (!man) throw new PackLoadError(['manifest.js'], '資料總表');
       this.manifest = man;
       const packFile = man.cueSets[this.cfg.cues];
       if (!packFile) throw new Error(`資料包裡沒有 cue 檔「${this.cfg.cues}」（可用：${Object.keys(man.cueSets).join('、') || '無'}）`);
-      await loadPackFile(packFile);
+      if ((await loadPackFiles([packFile])).length) throw new PackLoadError([packFile], '劇本 cue 資料檔');
       const file = getPack<CueFile>(`cues:${this.cfg.cues}`);
       this.validation = validateCueFile(file);
       if (!this.validation.ok || !file) throw new Error(`cue 檔有錯誤：\n${this.validation.errors.join('\n')}`);
@@ -200,7 +208,7 @@ export class Engine {
 
       // 素材（圖像、分件資料、臉部換片），然後依 cue 檔建立景與演員
       this.ui.ready.setStatus([{ label: '素材', value: '載入中…', ok: null }]);
-      await this.assets.load(man, (d, n) => this.ui.ready.setStatus([{ label: '素材', value: `${d}／${n}`, ok: null }]));
+      await this.assets.load(man, progress('素材'));
       this.stage.setScene(file, this.assets);
       const paper = getPack<string>('img:tex-titlecard-paper');
       if (paper) this.ui.title.setPaper(paper);
@@ -215,10 +223,21 @@ export class Engine {
         for (const s of c.sfx ?? []) { audioIds.add(s.id); nonVo.add(s.id); }
         for (const m of c.music ?? []) if (m.id !== 'none') { audioIds.add(m.id); nonVo.add(m.id); }
       }
+      // 配音（vo_*.js）與嘴型（lipsync.js）資料包缺檔：那幾句進暫代模式、列進 missingVo，全劇要按第二次確認；
+      // 配樂與音效資料包是必要的（manifest 有登記、檔案卻載不到＝交付資料夾不完整），缺了就停在準備畫面並說明
       const files = new Set<string>();
-      for (const id of audioIds) if (man.audio[id]) files.add(man.audio[id].file);
+      const needed = new Set<string>();
+      for (const id of audioIds) {
+        const a = man.audio[id];
+        if (!a) continue;
+        files.add(a.file);
+        if (a.bus !== 'vo') needed.add(a.file);
+      }
       for (const id of lipIds) if (man.lipsync[id]) files.add(man.lipsync[id].file);
-      await loadPackFiles(files, (d, n) => this.ui.ready.setStatus([{ label: '資料包', value: `${d}／${n}`, ok: null }]));
+      const failedPacks = await loadPackFiles(files, progress('資料包'));
+      const failedNeeded = failedPacks.filter((f) => needed.has(f));
+      if (failedNeeded.length) throw new PackLoadError(failedNeeded, '配樂音效資料檔');
+      this.missingPacks = failedPacks.filter((f) => !needed.has(f)).sort();
       let decoded = 0;
       await Promise.all([...audioIds].map(async (id) => {
         const data = getPack<string>(`audio:${id}`);
@@ -235,14 +254,18 @@ export class Engine {
       this.missingVo = this.timelines.flatMap((t) => t.lines.filter((l) => l.placeholder).map((l) => l.line.id));
       this.voConfirmAt = 0;
       const voConfirm = this.needsVoConfirm();
+      const voPacks = this.missingPacks.filter((f) => f.startsWith('vo_'));
+      const lipPacks = this.missingPacks.filter((f) => !f.startsWith('vo_'));
+      const voPackNote = voPacks.length ? `；缺資料檔 ${voPacks.slice(0, 4).map((f) => `data/${f}`).join('、')}${voPacks.length > 4 ? '…' : ''}（交付資料夾沒有複製完整）` : '';
       this.index = 0;
       this.mode = 'preparing';
       this.renderNow(performance.now());
       this.ui.ready.setStatus([
         { label: 'cue 檔', value: `${file.title}（${file.cues.length} 個 cue）`, ok: true },
-        voConfirm
-          ? { label: '配音', value: `缺 ${voTotal - voReal} 句配音（這些句子只有字幕、沒有聲音）：${this.missingVo.slice(0, 6).join('、')}${this.missingVo.length > 6 ? '…' : ''}`, ok: false }
-          : { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊`, ok: voReal === voTotal ? true : null },
+        voConfirm && this.missingVo.length
+          ? { label: '配音', value: `缺 ${voTotal - voReal} 句配音（這些句子只有字幕、沒有聲音）：${this.missingVo.slice(0, 6).join('、')}${this.missingVo.length > 6 ? '…' : ''}${voPackNote}`, ok: false }
+          : { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊${voPackNote}`, ok: voReal === voTotal ? true : null },
+        ...(lipPacks.length ? [{ label: '嘴型', value: `缺資料檔 ${lipPacks.map((f) => `data/${f}`).join('、')}（說話時嘴巴不動；聲音與字幕照常）`, ok: false }] : []),
         { label: '音訊', value: this.mixer.available ? `可用（已解碼 ${decoded} 個音檔）` : '無法建立音訊（只顯示字幕）', ok: this.mixer.available },
         { label: '配樂音效', value: this.missingAudio.length ? `缺 ${this.missingAudio.length} 個檔（照常演出、該處無聲）：${this.missingAudio.join('、')}` : '全部就緒', ok: this.missingAudio.length ? null : true },
         ...(file.segments?.length ? [{ label: '全劇', value: `${file.segments.length} 段：${file.segments.map((sg) => sg.title).join('、')}；景 ${[...new Set(this.timelines.map((t) => t.set))].join('、')}`, ok: true }] : []),
@@ -255,8 +278,18 @@ export class Engine {
       this.mode = 'error';
       const msg = err instanceof Error ? err.message : String(err);
       this.errors.push(msg);
-      this.ui.ready.setStatus([{ label: '無法開始', value: msg, ok: false }]);
-      this.ui.ready.setReady(false, '請依上面的訊息修正後重新整理。');
+      if (err instanceof PackLoadError) {
+        // 交付資料夾少了必要檔：說清楚是哪個檔、老師怎麼辦（故障一頁卡同一套退路）
+        this.ui.ready.setStatus([
+          { label: '無法開始', value: msg, ok: false },
+          { label: '原因', value: '交付資料夾沒有複製完整（少了上面的檔），或檔案被防毒軟體擋下。', ok: false },
+          { label: '怎麼辦', value: '把隨身碟上「整個交付資料夾」重新複製到本機硬碟（不要只複製部分檔案），再重新開啟。來不及時改放 backup_video 資料夾的備援影片（見 teacher_pdf/故障一頁卡.pdf）。', ok: null },
+        ]);
+        this.ui.ready.setReady(false, '「準備播放」不能按：請照上面的「怎麼辦」處理後，關閉程式（或瀏覽器分頁）再重新開啟。');
+      } else {
+        this.ui.ready.setStatus([{ label: '無法開始', value: msg, ok: false }]);
+        this.ui.ready.setReady(false, '請依上面的訊息修正後，關閉程式（或瀏覽器分頁）再重新開啟。');
+      }
       console.error('[engine]', err);
     }
   }
@@ -268,7 +301,7 @@ export class Engine {
     // 配樂、音效缺檔照常演出（只列在準備畫面）
     if (this.needsVoConfirm()) {
       const now = performance.now();
-      if (!this.voConfirmAt) { this.voConfirmAt = now; this.ui.ready.confirmMissingVo(this.missingVo.length); return; }
+      if (!this.voConfirmAt) { this.voConfirmAt = now; this.ui.ready.confirmMissingVo(this.missingVo.length, this.missingPacks); return; }
       if (now - this.voConfirmAt < VO_CONFIRM_GUARD_MS) { this.ignoredInputs++; return; }
     }
     this.mode = 'loading';
@@ -294,9 +327,9 @@ export class Engine {
     this.enterWaiting(0);
   }
 
-  /** 全劇模式（?cues=show）缺任何配音時要老師確認；擷取與自動開始（工具、測試）不問 */
+  /** 全劇模式（?cues=show）缺任何配音（或配音／嘴型資料包載不到）時要老師確認；擷取與自動開始（工具、測試）不問 */
   private needsVoConfirm(): boolean {
-    return this.cfg.cues === 'show' && !this.cfg.capture && !this.cfg.autostart && this.missingVo.length > 0;
+    return this.cfg.cues === 'show' && !this.cfg.capture && !this.cfg.autostart && (this.missingVo.length > 0 || this.missingPacks.length > 0);
   }
 
   // ---------------------------------------------------------------- 老師操作
@@ -730,7 +763,7 @@ export class Engine {
       showElapsedSec: this.showStartMs === null ? null : Math.round((performance.now() - this.showStartMs) / 100) / 10,
       enterFade: tl?.enterFade ?? 0, prerollSec: this.trans?.kind === 'preroll' && this.mode === 'playing' ? this.trans.out : 0,
       dim: w ? Math.round(w.dim * 1000) / 1000 : 0,
-      missingVo: [...this.missingVo], voConfirmPending: this.mode === 'preparing' && this.voConfirmAt > 0,
+      missingVo: [...this.missingVo], voConfirmPending: this.mode === 'preparing' && this.voConfirmAt > 0, missingPacks: [...this.missingPacks],
     };
   }
 

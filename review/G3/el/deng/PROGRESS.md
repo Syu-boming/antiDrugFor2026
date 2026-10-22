@@ -1,0 +1,7 @@
+- 2026-10-22 23:45 開工：找到 24 句含未替換「燈」的台詞（app/cues/show/*.json）。
+- 2026-10-22 23:53 步驟 1 完成：v04 24 句量測（tools/vo_tone_check.py、review/G3/el/deng/measure.py → tracks_v04.json、plots_v04/）。疑似第四聲 a0_c002_03（已知，方法驗證通過）、a6_c009_03；無法判定 a2_c013_05；其餘 21 句第一聲。
+- 2026-10-22 23:55 步驟 2 準備：pronounce.json 單句覆寫（lines.<id>.elevenlabs 燈→登）4 句：a0_c002_03、a6_c009_03、a6_c001_02、a2_c013_05；vo_el_prod.py 加逐句 seed_base 與 --reuse-edge-baseline；開始合成。
+- 2026-10-23 00:06 步驟 2 完成：a0_c002_03（seed 20261026）、a6_c009_03（20261023）、a6_c001_02（20261031）新版「登」量測皆第一聲；a2_c013_05 重做 4 次仍一路上升（無法判定、逗號停頓變短），維持 v04。本次 EL 計費 106 點。
+- 2026-10-23 00:08 步驟 3 完成：vo_el_promote.py --ver v05 升 3 句（a0_c002_03、a6_c009_03、a6_c001_02），v04 保留；npm run build 後 manifest 取到 v05 音檔與對嘴。步驟 4：a0_c002 −0.03 s、a6_c009 −0.03 s、a6_c001 句長 +0.17 s → tail 5.0→4.83（cue 總長不變）。
+- 2026-10-23 00:11 步驟 5 完成：review/G3/el/deng/listen.html（make_listen.py 產生；37 個音檔用相對路徑，瀏覽器實測全部可載入）；.gitignore 加 review/G3/el/deng/*.wav。
+- 2026-10-23 00:40 步驟 6 完成：npm run build；engine-test 151／151 通過（配音版號檢查改成依 timings.json，含 3 句 v05）；act_review_pack --acts a0,a6 --skip-asr：a0、a6 INDEX 光敏「整段 通過」。逐字稿沿用舊 transcripts.json（v04，--skip-asr）。

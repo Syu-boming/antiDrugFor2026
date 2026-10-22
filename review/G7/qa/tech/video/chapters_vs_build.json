@@ -1,0 +1,186 @@
+{
+ "allOk": true,
+ "total_chapters": 71,
+ "total_cues": 71,
+ "acts": [
+  {
+   "act": "a0",
+   "chapters": 6,
+   "cues": 6,
+   "idsMatch": true,
+   "chapIds": [
+    "a0_c000",
+    "a0_c001",
+    "a0_c002",
+    "a0_c003",
+    "a0_c004",
+    "a0_c005"
+   ],
+   "durationSec": 124.133333,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a1",
+   "chapters": 8,
+   "cues": 8,
+   "idsMatch": true,
+   "chapIds": [
+    "a1_c001",
+    "a1_c002",
+    "a1_c003",
+    "a1_c004",
+    "a1_c005",
+    "a1_c006",
+    "a1_c007",
+    "a1_c008"
+   ],
+   "durationSec": 171.967,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a2",
+   "chapters": 13,
+   "cues": 13,
+   "idsMatch": true,
+   "chapIds": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c003",
+    "a2_c004",
+    "a2_c005",
+    "a2_c006",
+    "a2_c007",
+    "a2_c008",
+    "a2_c009",
+    "a2_c010",
+    "a2_c011",
+    "a2_c012",
+    "a2_c013"
+   ],
+   "durationSec": 290.367,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a3",
+   "chapters": 8,
+   "cues": 8,
+   "idsMatch": true,
+   "chapIds": [
+    "a3_c001",
+    "a3_c002",
+    "a3_c003",
+    "a3_c004",
+    "a3_c005",
+    "a3_c006",
+    "a3_c007",
+    "a3_c008"
+   ],
+   "durationSec": 166.2,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a4",
+   "chapters": 13,
+   "cues": 13,
+   "idsMatch": true,
+   "chapIds": [
+    "a4_c001",
+    "a4_c002",
+    "a4_c003",
+    "a4_c004",
+    "a4_c005",
+    "a4_c006",
+    "a4_c007",
+    "a4_c008",
+    "a4_c009",
+    "a4_c010",
+    "a4_c011",
+    "a4_c012",
+    "a4_c013"
+   ],
+   "durationSec": 246.3,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a5",
+   "chapters": 8,
+   "cues": 8,
+   "idsMatch": true,
+   "chapIds": [
+    "a5_c001",
+    "a5_c002",
+    "a5_c003",
+    "a5_c004",
+    "a5_c005",
+    "a5_c006",
+    "a5_c007",
+    "a5_c008"
+   ],
+   "durationSec": 193.833333,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a6",
+   "chapters": 9,
+   "cues": 9,
+   "idsMatch": true,
+   "chapIds": [
+    "a6_c001",
+    "a6_c002",
+    "a6_c003",
+    "a6_c004",
+    "a6_c005",
+    "a6_c006",
+    "a6_c007",
+    "a6_c008",
+    "a6_c009"
+   ],
+   "durationSec": 205.833333,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a7",
+   "chapters": 3,
+   "cues": 3,
+   "idsMatch": true,
+   "chapIds": [
+    "a7_c001",
+    "a7_c002",
+    "a7_c003"
+   ],
+   "durationSec": 54,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  },
+  {
+   "act": "a8",
+   "chapters": 3,
+   "cues": 3,
+   "idsMatch": true,
+   "chapIds": [
+    "a8_c001",
+    "a8_c002",
+    "a8_c003"
+   ],
+   "durationSec": 39.4,
+   "durMismatch": [],
+   "verify_all_ok": true,
+   "av": null
+  }
+ ]
+}

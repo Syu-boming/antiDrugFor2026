@@ -24,11 +24,11 @@
   {
    "cue": "a0_c002",
    "kind": "scene",
-   "duration_sec": 22.3,
+   "duration_sec": 22.27,
    "preroll_sec": 0,
    "estimate_sec": 18.5,
    "diff_sec": 3.8,
-   "vo_sec": 10.25,
+   "vo_sec": 10.22,
    "lines": 3
   },
   {
@@ -67,7 +67,7 @@
  "estimate_sum_sec": 113.0,
  "act_budget_recorded_sec": 113.0,
  "diff_vs_budget_sec": -1.9,
- "playback_with_holds_sec": 129.15,
+ "playback_with_holds_sec": 129.12,
  "holds_assumed_sec": {
   "a0_c000": 2,
   "a0_c001": 2,

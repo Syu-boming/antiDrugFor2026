@@ -2,7 +2,8 @@
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
-import { PRODUCTION_NOTE_PATTERNS, SPOILERS, SPOILER_RE, STAFF_LINE, speechSeconds } from './teacher_text.mjs';
+import { PRODUCTION_NOTE_PATTERNS, SPOILERS, SPOILER_RE, STAFF_LINE, speechSeconds, AI_NOTE_LONG, AI_NOTE_SHORT, AI_NOTE_BANNED, PRINT_LIST, PRINT_COUNTS } from './teacher_text.mjs';
+import { GOALS } from './lesson.mjs';
 
 const fmtClock = (sec) => { const s = Math.max(0, Math.round(sec)); return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
 /** 「對全班說」的長度上限：每題回饋預算約 12 秒（每秒 4 字），容許到 13 秒 */
@@ -158,6 +159,53 @@ export function runChecks({ ROOT, TEACHER, merged, eight, outputs, md, pdfReport
     const { atGen, inScript, now } = fingerprint;
     const ok = atGen === now && inScript === now;
     add(`講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 ${atGen}、講稿上 ${inScript ?? '找不到'}、目前 ${now}；不排除任何欄位）`, ok, ok ? null : '產生途中或產生之後 cue 有變動：重跑 node tools/teacher_docs.mjs');
+  }
+
+  // 3c. G7 修正第 1 輪：AI 使用說明照實寫、列印清單、學習目標④、時間表
+  {
+    const bad = [];
+    if (!norm(docText['教案_教學活動設計']).includes(norm(AI_NOTE_LONG))) bad.push({ doc: '教案_教學活動設計', problem: '沒有完整的 AI 使用說明' });
+    if (!norm(docText['觀課導覽單']).includes(norm(AI_NOTE_SHORT))) bad.push({ doc: '觀課導覽單', problem: '沒有精簡的 AI 使用說明' });
+    for (const d of docs) for (const re of AI_NOTE_BANNED) { const m = re.exec(d.text); if (m) bad.push({ doc: d.name, problem: `還有舊說法「${m[0]}」`, at: ctxOf(d.text, m.index, 16) }); }
+    add('AI 使用說明照實寫（劇本、八題、口訣、教師資料由 AI 起草；不寫「自行設計」「輔助」）：教案、觀課導覽單', bad.length === 0, bad);
+  }
+  {
+    const bad = [];
+    const lesson = docText['教案_教學活動設計'] ?? '';
+    if (!lesson.includes('列印清單')) bad.push({ doc: '教案_教學活動設計', problem: '教學資源沒有列印清單' });
+    for (const r of PRINT_LIST) {
+      if (!lesson.includes(`${r.file} ${r.qty}`)) bad.push({ doc: '教案_教學活動設計', problem: `列印清單少了「${r.file} ${r.qty}」` });
+      if (!skipPdf) for (const [name, want] of Object.entries(r.pages)) {
+        const got = pdfReport.find((x) => x.name === name)?.pages;
+        if (got !== undefined && got !== want) bad.push({ doc: name, problem: `列印清單寫 ${want} 頁，PDF 實際 ${got} 頁（改 teacher_text.mjs 的 PRINT_LIST）` });
+      }
+    }
+    const html = Object.fromEntries(outputs.map((o) => [o.name, o.html]));
+    const sheets = (html['參與小卡'] ?? '').split('<section class="sheet">').slice(1);
+    for (const sh of sheets) { const n = (sh.match(/<div class="c">/g) ?? []).length; if (n !== PRINT_COUNTS.cardsPerSheet) bad.push({ doc: '參與小卡', problem: `一張 A4 實際 ${n} 張卡，列印清單用 ${PRINT_COUNTS.cardsPerSheet}` }); }
+    const big = ((html['角色貼紙'] ?? '').match(/<div class="st">/g) ?? []).length, round = ((html['角色貼紙'] ?? '').match(/<div class="rd">/g) ?? []).length;
+    if (big !== PRINT_COUNTS.bigStickers || round !== PRINT_COUNTS.roundStickers) bad.push({ doc: '角色貼紙', problem: `實際大貼紙 ${big}、圓貼紙 ${round}，列印清單用 ${PRINT_COUNTS.bigStickers}、${PRINT_COUNTS.roundStickers}` });
+    add(`列印清單的數量依實際排版（參與小卡每張 ${PRINT_COUNTS.cardsPerSheet} 張、${PRINT_COUNTS.students} 人；貼紙 ${PRINT_COUNTS.bigStickers}＋${PRINT_COUNTS.roundStickers} 張）與 PDF 頁數`, bad.length === 0, bad);
+  }
+  {
+    const bad = [];
+    const g4 = GOALS.find((g) => g.n === '④');
+    for (const doc of ['教案_教學活動設計', '觀課導覽單', '成果紀錄範本']) if (!(docText[doc] ?? '').includes(g4.goal)) bad.push({ doc, problem: `沒有學習目標④「${g4.goal}」` });
+    if (!/比喻/.test(g4.goal) || !/比喻/.test(g4.show) || !g4.where.includes('Q2')) bad.push({ problem: '目標④ 要涵蓋 Q2 的「操偶線是比喻」' });
+    for (const d of docs) if (/求助、不貼標籤（|④ ?求助、不貼標籤/.test(d.text)) bad.push({ doc: d.name, problem: '還有舊的目標④ 名稱' });
+    add(`學習目標④「${g4.goal}」三份一致（教案、觀課導覽單、成果紀錄範本）並涵蓋 Q2`, bad.length === 0, bad);
+  }
+  {
+    const bad = [];
+    const lesson = docText['教案_教學活動設計'] ?? '';
+    if (!/00:00–00:30\s*課前/.test(lesson)) bad.push({ doc: '教案_教學活動設計', problem: '沒有「00:00–00:30 課前」' });
+    if (!/\| 課前[^|]*\| 00:00–00:30 \|/.test(md)) bad.push({ doc: '教師講稿', problem: '時間總表沒有獨立的「課前 00:00–00:30」列' });
+    const nTalk = (lesson.match(/教師結語/g) ?? []).length;
+    const flow = lesson.slice(lesson.indexOf('三、教學流程與時間'), lesson.indexOf('四、評量方式'));
+    if ((flow.match(/說明退場/g) ?? []).length > 1) bad.push({ doc: '教案_教學活動設計', problem: '教學流程裡閉幕與教師結語兩列重複寫「說明退場」' });
+    if (/日期與場地：暫定/.test(docText['觀課導覽單'] ?? '')) bad.push({ doc: '觀課導覽單', problem: '還印「日期與場地：暫定」' });
+    if (!/預錄播放有兩種數字/.test(md)) bad.push({ doc: '教師講稿', problem: '沒有說明預錄播放兩種數字的關係' });
+    add('時間表：講稿與教案都把課前 00:00–00:30 獨立一列、閉幕與教師結語不重複；導覽單日期與場地留空格；講稿說明預錄播放兩種數字', bad.length === 0, bad.length ? bad : `教案「教師結語」出現 ${nTalk} 次`);
   }
 
   // 4. PDF 頁數

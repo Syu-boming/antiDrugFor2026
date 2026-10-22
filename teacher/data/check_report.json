@@ -1,15 +1,15 @@
 {
- "generatedAt": "2026/10/22 22:03:04",
- "cueHash": "cca5916cc3",
+ "generatedAt": "2026/10/23 00:42:00",
+ "cueHash": "91b90f6887",
  "fingerprint": {
-  "atGen": "cca5916cc3",
-  "inScript": "cca5916cc3",
-  "now": "cca5916cc3"
+  "atGen": "91b90f6887",
+  "inScript": "91b90f6887",
+  "now": "91b90f6887"
  },
  "dist": {
   "exists": true,
   "same": true,
-  "mtime": "2026-10-22T13:33:59.012Z"
+  "mtime": "2026-10-22T16:08:12.004Z"
  },
  "backupVideo": {
   "mode": "auto",
@@ -150,7 +150,7 @@
  ],
  "checks": {
   "failed": 0,
-  "summary": "21／21 項通過",
+  "summary": "25／25 項通過",
   "results": [
    {
     "name": "題卡_學生版.pdf：題目與三個選項和八題定稿、cue quiz 一字不差（pdftotext 抽字）",
@@ -378,9 +378,29 @@
     }
    },
    {
-    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 cca5916cc3、講稿上 cca5916cc3、目前 cca5916cc3；不排除任何欄位）",
+    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 91b90f6887、講稿上 91b90f6887、目前 91b90f6887；不排除任何欄位）",
     "ok": true,
     "detail": null
+   },
+   {
+    "name": "AI 使用說明照實寫（劇本、八題、口訣、教師資料由 AI 起草；不寫「自行設計」「輔助」）：教案、觀課導覽單",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "列印清單的數量依實際排版（參與小卡每張 10 張、110 人；貼紙 9＋20 張）與 PDF 頁數",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "學習目標④「理解比喻、不貼標籤、會求助」三份一致（教案、觀課導覽單、成果紀錄範本）並涵蓋 Q2",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "時間表：講稿與教案都把課前 00:00–00:30 獨立一列、閉幕與教師結語不重複；導覽單日期與場地留空格；講稿說明預錄播放兩種數字",
+    "ok": true,
+    "detail": "教案「教師結語」出現 1 次"
    },
    {
     "name": "PDF 頁數符合（操作卡、故障卡、導覽單、回饋單各 1 頁；題卡 8＋教師版封面）、圖與字型都載入",

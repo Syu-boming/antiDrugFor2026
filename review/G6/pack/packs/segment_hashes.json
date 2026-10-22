@@ -1,7 +1,7 @@
 {
  "note": "與建置一致＝驗收包記下的 built（量的那一版 app/dist 合併後的段落）＝目前 app/dist 的 built；sourceMatch＝段落檔 sha1 相同；builtFromSource＝目前 app/dist 是用目前段落檔建的。pack＝null：舊版工具產生的包沒有記錄（要重產）；timelineMatch＝後備參考：包裡解析後的時間軸（timeline.json cues）與目前建置相同（不含 initialState 的站位與鏡位）。",
  "method": "sha1（拿掉所有 checkpoint 欄位、JSON 鍵排序後序列化）；source＝app/cues/show/<段>.json；built＝app/dist/data/cues_show.js 合併後的這一段（段落資訊＋cue）；sourceMerged＝目前段落檔照建置方式合併後的這一段",
- "distBuiltAt": "2026-10-22T13:33:58.971Z",
+ "distBuiltAt": "2026-10-22T15:12:20.497Z",
  "sourceValid": true,
  "segments": {
   "a0": {

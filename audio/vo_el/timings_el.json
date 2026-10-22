@@ -53,17 +53,17 @@
   "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
  },
  "a0_c002_03": {
-  "seconds": 2.62,
+  "seconds": 2.59,
   "speech_start": 0.12,
-  "speech_end": 2.37,
+  "speech_end": 2.34,
   "speech_segments": [
    [
     0.12,
-    1.09
+    1.03
    ],
    [
-    1.47,
-    2.41
+    1.42,
+    2.35
    ]
   ],
   "file": "audio/vo_el/vo_a0_c002_03_el01.wav",
@@ -942,6 +942,29 @@
   "lipsync": "audio/lipsync_el/a2_c004_01_el01.json",
   "role": "旁白",
   "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。"
+ },
+ "a2_c004_02": {
+  "seconds": 13.45,
+  "speech_start": 0.12,
+  "speech_end": 13.2,
+  "speech_segments": [
+   [
+    0.12,
+    2.23
+   ],
+   [
+    3.87,
+    8.91
+   ],
+   [
+    10.55,
+    13.2
+   ]
+  ],
+  "file": "audio/vo_el/vo_a2_c004_02_el01.wav",
+  "lipsync": "audio/lipsync_el/a2_c004_02_el01.json",
+  "role": "旁白",
+  "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
  },
  "a2_c005_01": {
   "seconds": 1.6,
@@ -3182,13 +3205,17 @@
   "text": "叔叔不在，我們幫他把主燈完成！"
  },
  "a6_c001_02": {
-  "seconds": 2.01,
+  "seconds": 2.18,
   "speech_start": 0.12,
-  "speech_end": 1.76,
+  "speech_end": 1.93,
   "speech_segments": [
    [
     0.11,
-    1.76
+    0.8
+   ],
+   [
+    0.98,
+    1.92
    ]
   ],
   "file": "audio/vo_el/vo_a6_c001_02_el01.wav",
@@ -3653,21 +3680,21 @@
   "text": "那天我把骨架搬上車，要送去廣場，後來自己忘了。"
  },
  "a6_c009_03": {
-  "seconds": 8.08,
+  "seconds": 8.05,
   "speech_start": 0.12,
-  "speech_end": 7.83,
+  "speech_end": 7.8,
   "speech_segments": [
    [
     0.12,
-    3.3
+    3.07
    ],
    [
-    4.91,
-    5.88
+    4.45,
+    5.53
    ],
    [
-    6.72,
-    7.83
+    6.52,
+    7.81
    ]
   ],
   "file": "audio/vo_el/vo_a6_c009_03_el01.wav",
@@ -3798,28 +3825,5 @@
   "lipsync": "audio/lipsync_el/a8_c001_01_el01.json",
   "role": "折折",
   "text": "我們是小燈鎮的大家，下次見！"
- },
- "a2_c004_02": {
-  "seconds": 13.45,
-  "speech_start": 0.12,
-  "speech_end": 13.2,
-  "speech_segments": [
-   [
-    0.12,
-    2.23
-   ],
-   [
-    3.87,
-    8.91
-   ],
-   [
-    10.55,
-    13.2
-   ]
-  ],
-  "file": "audio/vo_el/vo_a2_c004_02_el01.wav",
-  "lipsync": "audio/lipsync_el/a2_c004_02_el01.json",
-  "role": "旁白",
-  "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
  }
 }

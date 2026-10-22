@@ -1,0 +1,290 @@
+{
+ "method": "擷取模式（?capture=1，固定步長 30 格／秒）：前段最後一個 cue 的最後 1 秒＋停住 1 秒 → 後段第一個 cue 的換景漸暗預捲＋前 3 秒；平均亮度＝線性亮度（capture_analyze.frame_stats），區域＝16×9；光敏用 g4_review_pack.flash_playback／flash_variants（同各段驗收包）。後段第一格＝老師按下一步後畫出的第一格（有預捲時是漸暗的第一格）。",
+ "seams": [
+  {
+   "seam": "a0_a1",
+   "from": "a0",
+   "to": "a1",
+   "prevCue": "a0_c005",
+   "nextCue": "a1_c001",
+   "setFrom": "workshop_a0",
+   "setTo": "square_a1",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.3784,
+    "nextFirstShown": 0.3784,
+    "nextFirstLit": 0.4435
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": 0.0651,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.6751,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 2
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a0_a1/flash_playback.json"
+   },
+   "image": "seams/seam_a0_a1.jpg"
+  },
+  {
+   "seam": "a1_a2",
+   "from": "a1",
+   "to": "a2",
+   "prevCue": "a1_c008",
+   "nextCue": "a2_c001",
+   "setFrom": "square_a1",
+   "setTo": "a2_shop",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.4417,
+    "nextFirstShown": 0.4417,
+    "nextFirstLit": 0.5202
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": 0.0785,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.7097,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 2,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a1_a2/flash_playback.json"
+   },
+   "image": "seams/seam_a1_a2.jpg"
+  },
+  {
+   "seam": "a2_a3",
+   "from": "a2",
+   "to": "a3",
+   "prevCue": "a2_c013",
+   "nextCue": "a3_c001",
+   "setFrom": "a2_window",
+   "setTo": "a3_arcade",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.3488,
+    "nextFirstShown": 0.3488,
+    "nextFirstLit": 0.4248
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": 0.076,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.5583,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 2
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a2_a3/flash_playback.json"
+   },
+   "image": "seams/seam_a2_a3.jpg"
+  },
+  {
+   "seam": "a3_a4",
+   "from": "a3",
+   "to": "a4",
+   "prevCue": "a3_c008",
+   "nextCue": "a4_c001",
+   "setFrom": "a3_classroom",
+   "setTo": "gate",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.54,
+    "nextFirstShown": 0.54,
+    "nextFirstLit": 0.43
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": -0.11,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.5972,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 2,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a3_a4/flash_playback.json"
+   },
+   "image": "seams/seam_a3_a4.jpg"
+  },
+  {
+   "seam": "a4_a5",
+   "from": "a4",
+   "to": "a5",
+   "prevCue": "a4_c013",
+   "nextCue": "a5_c001",
+   "setFrom": "gate",
+   "setTo": "a5_gate",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.2951,
+    "nextFirstShown": 0.2951,
+    "nextFirstLit": 0.3477
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": 0.0526,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.5167,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 2,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a4_a5/flash_playback.json"
+   },
+   "image": "seams/seam_a4_a5.jpg"
+  },
+  {
+   "seam": "a5_a6",
+   "from": "a5",
+   "to": "a6",
+   "prevCue": "a5_c008",
+   "nextCue": "a6_c001",
+   "setFrom": "a5_hospital",
+   "setTo": "a6_square_night",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.302,
+    "nextFirstShown": 0.302,
+    "nextFirstLit": 0.0997
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": -0.2023,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.5444,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 2,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a5_a6/flash_playback.json"
+   },
+   "image": "seams/seam_a5_a6.jpg"
+  },
+  {
+   "seam": "a6_a7",
+   "from": "a6",
+   "to": "a7",
+   "prevCue": "a6_c009",
+   "nextCue": "a7_c001",
+   "setFrom": "a6_shop",
+   "setTo": "a6_shop",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 0.8,
+   "mean_luma": {
+    "prevLast": 0.5118,
+    "nextFirstShown": 0.5118,
+    "nextFirstLit": 0.3983
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": -0.1135,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.7551,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 2,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a6_a7/flash_playback.json"
+   },
+   "image": "seams/seam_a6_a7.jpg"
+  },
+  {
+   "seam": "a7_a8",
+   "from": "a7",
+   "to": "a8",
+   "prevCue": "a7_c003",
+   "nextCue": "a8_c001",
+   "setFrom": "a6_shop",
+   "setTo": "a6_shop",
+   "preroll_sec": 0.6,
+   "enterFade_sec": 1,
+   "mean_luma": {
+    "prevLast": 0.3866,
+    "nextFirstShown": 0.3866,
+    "nextFirstLit": 0.4938
+   },
+   "first_shown_minus_last": 0.0,
+   "first_lit_minus_last": 0.1072,
+   "max_region_luma_delta_first_shown": 0.0,
+   "max_region_luma_delta_first_lit": 0.7467,
+   "hard_cut": false,
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 0
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 1
+    },
+    "pass": true,
+    "frames": 168,
+    "file": "seams/a7_a8/flash_playback.json"
+   },
+   "image": "seams/seam_a7_a8.jpg"
+  }
+ ],
+ "all_flash_pass": true,
+ "hard_cuts": [],
+ "max_abs_first_shown_delta": 0.0,
+ "external_requests": 0,
+ "page_errors": []
+}

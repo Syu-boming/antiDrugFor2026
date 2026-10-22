@@ -1,0 +1,28 @@
+{
+ "rule": "v1.2 第 24 節第 7 項：各段響度差 ±1 LU。基準＝九段整合響度（act_review_pack 播放錄製混音，含教師停格假設）的中位數；另列各段對白（混音中各句）響度中位數的差。",
+ "median_I_LUFS": -16.1,
+ "max_abs_dev_LU": 2.2,
+ "spread_LU": 2.5,
+ "pass_pm1": false,
+ "segments_over_1LU": [
+  "a8"
+ ],
+ "dialog_median_LUFS": -14.9,
+ "dialog_max_abs_dev_LU": 0.2,
+ "dialog_pass_pm1": true,
+ "show_concat": {
+  "I_LUFS": -16.1,
+  "TP_dBTP": -0.9,
+  "files": [
+   "review/G5/a0/pack/audio/a0_mix.wav",
+   "review/G5/a1/pack/audio/a1_mix.wav",
+   "review/G5/a2/pack/audio/a2_mix.wav",
+   "review/G5/a3/pack/audio/a3_mix.wav",
+   "review/G5/a4/pack/audio/a4_mix.wav",
+   "review/G5/a5/pack/audio/a5_mix.wav",
+   "review/G5/a6/pack/audio/a6_mix.wav",
+   "review/G5/a7/pack/audio/a7_mix.wav",
+   "review/G5/a8/pack/audio/a8_mix.wav"
+  ]
+ }
+}

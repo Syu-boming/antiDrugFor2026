@@ -273,25 +273,64 @@ def mux(work: Path, mp4: Path, report: Path, verify=True):
 
 
 # ====================================================================== README.txt
-def pause_action(c):
-    """老師在這個 cue 播完後要不要按暫停、要做什麼（依 cue 種類與 teacherNote 關鍵字；其他 cue 停 2 秒後影片自己往下播）"""
+# 交付資料夾裡老師拿得到的文件（README 只指向這些，不寫開發文件）
+TEACHER_PDF = "teacher_pdf\\"
+# 要老師說話的停格 → 教師講稿.pdf 第五節的講法（和 teacher/src/script_doc.mjs 第五節同一組編號）
+TALK = [
+    (r"今天有八題", "規則說明＋全班試做一次捧燈手（約 75 秒）", "5.1"),
+    (r"^找找看 ?1", "找找看 1（約 30 秒，不計獎）", "5.2"),
+    (r"^找找看 ?2", "找找看 2（約 30 秒，不計獎）", "5.3"),
+    (r"^找找看 ?3", "找找看 3（約 30 秒，不計獎）", "5.4"),
+    (r"^練習", "全班練習拒絕句與口訣動作（約 90 秒，全場只練這一次）", "5.5"),
+    (r"帶全場說口訣", "帶全場說口訣、做動作一次（約 30 秒）", "5.8"),
+]
+
+
+def main_lamp_info():
+    """高潮主燈（全場一起捧燈手）的時間：teacher/data/check_report.json 的 mainLamp（tools/teacher_docs.mjs 依時間軸算的）。"""
+    try:
+        m = json.loads((ROOT / "teacher/data/check_report.json").read_text(encoding="utf-8")).get("mainLamp")
+        return m if m and m.get("id") else None
+    except (OSError, ValueError):
+        return None
+
+
+def pause_action(c, main=None):
+    """老師在這個 cue 播完後要不要按暫停、要做什麼（回傳多行；空串列＝停 2 秒後影片自己往下播）。
+    依 cue 種類與 teacherNote 關鍵字判斷，文字改寫成指向交付資料夾 teacher_pdf 的文件（不引用開發文件）。"""
     note = re.sub(r"`", "", (c.get("teacherNote") or "").replace("\n", " ")).strip()
     short = lambda s, n=46: s if len(s) <= n else s[:n] + "…"
     k = c["kind"]
+    q = c.get("quiz") or {}
+    zone = (re.search(r"([A-D]) 區", note) or [None, "?"])[1]
     if k == "quiz":
-        q = c.get("quiz") or {}
-        return f"按暫停（題卡停 3 秒）：{short(note)}　正解 {q.get('answer', '?')}" if q else f"按暫停：{short(note)}"
+        if not q:
+            return [f"按暫停：{short(note)}"]
+        return [f"按暫停（題卡只停 3 秒）：說「想一想……3、2、1，一起比！」看 {zone} 區；全班比完再按播放。正解 {q.get('answer', '?')}"]
     if k == "reveal":
-        return f"按暫停：{short(note)}"
+        if not q:
+            return [f"按暫停：{short(note)}"]
+        ans, n, qid = q.get("answer", "?"), q.get("number", "?"), q.get("qid", "")
+        call = "最後一盞" if "最後一盞" in note else "大家一起"
+        return [f"按暫停：正解 {ans}。回饋照 {TEACHER_PDF}題卡_教師版.pdf 第 {n} 題（或 教師講稿.pdf 第六節 {qid}）；",
+                f"從 {zone} 區比 {ans} 的同學中點一位說理由，協助教師記錄區、排、座位；說「{call}，捧燈手——」後按播放"]
     if k == "lamp":
-        return "按暫停：燈亮後做安靜手勢，等全場安靜再按播放"
+        return ["按暫停：燈亮後做安靜手勢，等全場安靜再按播放"]
     if k == "title" and c["cue_start_sec"] < 0.5:
-        return "開頭先暫停在署名卡；學生坐定後按播放"
+        return ["開頭先暫停在署名卡；學生坐定後按播放"]
     if k == "title":
-        return "影片結束：停在署名卡（閉幕曲自然淡出）"
-    if re.search(r"找找看|練習|帶全場|今天有八題", note):
-        return f"按暫停：{short(note)}"
-    return ""
+        return ["影片結束：停在署名卡（閉幕曲自然淡出）；接著教師結語（教師講稿.pdf 5.9）"]
+    if main and c["id"] == main["id"]:
+        t_call = c["cue_start_sec"] + float(main.get("callAt0", 0))
+        t_lamp = c["cue_start_sec"] + float(main.get("at0", 0))
+        return [f"不用暫停，全場一起捧燈手：約 {mmss(t_call)}（八盞燈都亮、鏡頭往後拉時）帶大家說",
+                f"「最後的主燈，全場一起，捧燈手——」，主燈約 {mmss(t_lamp)} 亮起；燈亮後做安靜手勢（教師講稿.pdf 5.6）"]
+    if not main and re.search(r"主燈", c.get("title") or ""):
+        return ["不用暫停，全場一起捧燈手：看到八盞燈都亮、鏡頭往後拉時，帶大家說「最後的主燈，全場一起，捧燈手——」（教師講稿.pdf 5.6）"]
+    for pat, label, sec in TALK:
+        if re.search(pat, note):
+            return [f"按暫停：{label}，講法見 {TEACHER_PDF}教師講稿.pdf {sec}"]
+    return []
 
 
 def readme(out: Path, check: Path):
@@ -307,12 +346,15 @@ def readme(out: Path, check: Path):
     plan = json.loads((check / "plan.json").read_text(encoding="utf-8")) if (check / "plan.json").exists() else None
     titles = {r["act"]: r["title"] for r in (plan or {}).get("rows", [])}
     titles.update({a: r["title"] for a, r in reps.items()})
+    main = main_lamp_info()
     L = ["反毒剪紙劇場｜備援影片使用說明（許博明老師製作）", "",
          f"本檔由 tools/backup_video.mjs 自動產生（{datetime.now().strftime('%Y-%m-%d %H:%M')}）。", "",
          "一、什麼時候用", "",
          "  ・演出包（AntidrugTheater.exe 或瀏覽器版）打不開、畫面黑掉、顯示卡中斷後重建失敗時，改用這組影片繼續上課。",
          "  ・影片是同一套劇場程式逐格輸出的，劇情、配音、字幕、題卡都和現場版一樣，但沒有互動：",
-         "    答題、說明、發獎都要老師自己按暫停。每個段落播完會停 2 秒，八題的出題畫面停 3 秒，就在這時候按暫停。", "",
+         "    答題、說明、發獎都要老師自己按暫停。每個段落播完會停 2 秒，八題的出題畫面停 3 秒，就在這時候按暫停。",
+         f"  ・八題的正解、指定區與回饋：{TEACHER_PDF}題卡_教師版.pdf（第 n 題一頁）；規則、找找看、練習的講法：{TEACHER_PDF}教師講稿.pdf 第五節。",
+         "    兩份都在交付資料夾的 teacher_pdf 裡，備援時請放在手邊。", "",
          "二、檔案（照順序播放：a0 → a1 → … → a8）", ""]
     for a in segs:
         r = reps.get(a)
@@ -342,15 +384,15 @@ def readme(out: Path, check: Path):
         L += [f"  【{a}】{r['title']}（{mmss(r['duration_expected_sec'])}）", "",
               "    開始　　停格　　cue　　　　內容／老師要做的事"]
         for c in r["cues"]:
-            act_ = pause_action(c)
+            acts = pause_action(c, main)
             hold = f"{mmss(c['pause_from_sec'])}" if c["hold_sec"] > 0 else "（自動接下一段）"
             L.append(f"    {mmss(c['chapter_start_sec'])}　{hold}　{c['id']}　{c['title']}")
-            if act_:
-                L.append(f"    　　　　　　　　　　　　　→ {act_}")
+            for i, a_ in enumerate(acts):
+                L.append(f"    　　　　　　　　　　　　　{'→ ' if i == 0 else '　 '}{a_}")
         L.append("")
     L += ["五、畫質與聲音", "",
           "  ・1920×1080、每秒 30 格、H.264 高畫質（CRF 16）、AAC 立體聲 256 kbps。",
-          "  ・影片壓縮可能讓紙紋與漸層出現色帶、顏色略偏；正式使用前請許老師目視確認（v1.2 第 17.2 節）。",
+          "  ・影片壓縮可能讓紙紋與漸層出現色帶、顏色略偏；正式使用前請許老師目視確認。",
           "  ・聲音是用和演出包同一套混音規則離線混成；每段影片從無聲開始，上一段的配樂不會延續過來。",
           "  ・音量：先在播放器把音量開到 100%，再用投影機或喇叭調整，和演出包現場版大致相同。", "",
           "六、重新產生（給 Claude 或維護者；專案根目錄）", "",

@@ -1,0 +1,44 @@
+# 查核時間 2026-10-22 22:13:07
+## diff 交付/browser vs app/dist
+0 差異
+## diff 交付/AntidrugTheater/resources/app/dist vs app/dist
+0 差異
+## app/dist 檔數      144
+## manifest builtAt
+"builtAt":"2026-10-22T13:33:58.971Z"
+## git
+local main 78330b5 2026-10-22 22:06:09 +0800 G6 通過（修正第 2 輪）；G7 交付文件與最後打包
+fecbdb74a503e0997662ede762741b0a5f254205	HEAD
+23b30db3bc41825b280f97457d9d1304356d3f09	refs/heads/gh-pages
+fecbdb74a503e0997662ede762741b0a5f254205	refs/heads/main
+## gh-pages show/ vs app/dist
+0 差異
+teacher/pdf 0 差異
+## 公開 repo origin/main 舊歷史仍含試音的 commit
+fecbdb7 README 與授權聲明；開發用試音不再放進公開 repo
+dcd1773 G3／G4 結算；全劇配音改用 ElevenLabs（使用者決定 D-G3-07）
+bc116ad 第 2 天製作：G3 試音與選角、G4 正式台詞與對嘴；自製配樂與音效；燈籠工作室景片、臉部換片、阿樂 v04 分件；引擎（影像紙偶、操偶線、摺疊布幕、FX4/FX8）；G4 代表鏡頭整合與驗收包
+## 文件時間
+10-22 22:03 交付/使用說明.md
+10-22 22:03 交付/素材與授權表.md
+10-22 22:03 交付/總報告.md
+10-22 21:48 review/G7/使用說明.md
+10-22 21:36 review/G7/素材與授權表.md
+10-22 21:46 review/G7/總報告.md
+10-22 20:42 交付/backup_video/backup_a0.mp4
+10-22 20:48 交付/backup_video/backup_a1.mp4
+10-22 20:59 交付/backup_video/backup_a2.mp4
+10-22 21:05 交付/backup_video/backup_a3.mp4
+10-22 21:14 交付/backup_video/backup_a4.mp4
+10-22 22:00 交付/backup_video/backup_a5.mp4
+10-22 21:29 交付/backup_video/backup_a6.mp4
+10-22 21:32 交付/backup_video/backup_a7.mp4
+10-22 22:01 交付/backup_video/backup_a8.mp4
+10-22 22:03 teacher/data/timing.json
+10-22 22:05 review/G6/pack/INDEX.md
+10-22 22:05 review/G6/pack/live/perf.json
+## 線上版
+200 https://syu-boming.github.io/antiDrugFor2026/
+200 https://syu-boming.github.io/antiDrugFor2026/show/
+200 https://syu-boming.github.io/antiDrugFor2026/show/data/manifest.js
+200 https://syu-boming.github.io/antiDrugFor2026/teacher/fonts/OFL.txt

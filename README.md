@@ -20,4 +20,4 @@
 - 配樂與音效：自製（程式作曲，以 FluidR3_GM 音色庫算成音檔，MIT 授權，見 `audio/LICENSES/`；音效程式合成）。
 - 程式庫：three.js（MIT）；Windows 可攜版使用 Electron（MIT，含 Chromium 授權檔）。建置會在 `app/dist/THIRD_PARTY_LICENSES.txt` 附上授權聲明。
 - 字型：演出畫面使用系統字型；教師資料內嵌 Noto Sans TC（SIL OFL 1.1，`teacher/fonts/OFL.txt`）。
-- 美術、配音與程式使用生成式 AI 工具輔助；內容經 AI 代理多輪檢核，演出前由教師實機彩排確認。
+- 本課原創（不是官方教材）。核心構想（操偶線比喻）與主題由許博明老師提出；劇本、八題、口訣、教案與教師資料由 AI（Claude）依許老師的規劃起草，美術、配音、程式與動畫使用生成式 AI 工具製作；內容經 AI 代理多輪檢核，演出前由教師在學校設備上實機彩排確認。

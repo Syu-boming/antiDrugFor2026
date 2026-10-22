@@ -1,6 +1,6 @@
 // 素材庫：從資料包（data/img_*.js、data/assets_json.js）讀出圖像與素材 JSON，解碼成 HTMLImageElement。
 // 圖像 id＝相對 assets/final 的路徑（去掉副檔名與版本號），例如 face/ale/mouth_closed、chr-xiaoqing_master。
-import { dataUrlToImage, getPack, loadPackFiles, type PackManifest } from './packs';
+import { dataUrlToImage, getPack, loadPackFiles, PackLoadError, type PackManifest } from './packs';
 
 export class AssetStore {
   readonly images = new Map<string, HTMLImageElement>();
@@ -13,7 +13,9 @@ export class AssetStore {
     const files = new Set<string>();
     for (const v of Object.values(man.images ?? {})) files.add(v.file);
     for (const v of Object.values(man.json ?? {})) files.add(v.file);
-    await loadPackFiles(files, onProgress);
+    // 圖像與素材 JSON 都是必要資料包：缺任何一檔就停在準備畫面（等全部載完才丟，訊息不會被進度蓋掉）
+    const failed = await loadPackFiles(files, onProgress);
+    if (failed.length) throw new PackLoadError(failed, '圖像資料檔');
     for (const id of Object.keys(man.json ?? {})) {
       const d = getPack<unknown>(`json:${id}`);
       if (d !== undefined) this.json.set(id, d);

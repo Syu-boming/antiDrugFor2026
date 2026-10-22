@@ -1,0 +1,681 @@
+{
+ "requests": 134,
+ "external": [],
+ "failed": [],
+ "byType": {
+  "document": 1,
+  "script": 133
+ },
+ "list": [
+  {
+   "url": "<ROOT>/app/dist/index.html?cues=show",
+   "type": "document",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/manifest.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/app.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/cues_show.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_bg-workshop-back.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_bg-workshop-floor.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_bg-workshop-lanterns.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_bg-workshop-table.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_bg-workshop-wing.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-aqin.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-chen.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-inviter.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-lin.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-medic-a.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-medic-b.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-pinan.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-xiaoqing.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-xiaoyu.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_chr-ye.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_ale.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_chen.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_lin.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_pinan.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_xiaoqing.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_xiaoyu.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_face_ye.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_props.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_rig.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a2_helpdesk.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a2_memory.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a2_shop.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a2_window.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a3_arcade.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a3_classroom.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a3_gate.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a4_roadmap.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a5_gate.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a5_hospital.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a6_shop.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a6_square_night.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_a6_window.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_gate.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_square.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_square_a1.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_sets_workshop_a0.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_tex-curtain-paper.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_tex-string-ring.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_tex-string-rope.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_tex-titlecard-paper.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_ui.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/img_fallback_rig.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/assets_json.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a0_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/sfx.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_opening.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a0_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_zhezhe.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_town.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a0_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a0_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a0_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_shiny.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_courage.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a1_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_m4_light.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_m4_strings.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c009.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c010.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c011.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c012.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a2_c013.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_town_night.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a3_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_road.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c009.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c010.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c011.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c012.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a4_c013.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a5_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_recovery.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c004.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c005.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c006.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c007.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c008.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a6_c009.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a7_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a7_c002.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a7_c003.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/vo_a8_c001.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_bows.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/music_music_closing.js",
+   "type": "script",
+   "external": false
+  },
+  {
+   "url": "<ROOT>/app/dist/data/lipsync.js",
+   "type": "script",
+   "external": false
+  }
+ ]
+}

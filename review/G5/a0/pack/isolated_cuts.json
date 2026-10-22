@@ -3,11 +3,11 @@
  "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
  "limit_ratio": 1.2,
  "file": "a0_playback.mp4",
- "frames": 3874,
+ "frames": 3873,
  "max_ratio": 1.136,
  "max_at": {
-  "frame": 3268,
-  "t": 108.933,
+  "frame": 3267,
+  "t": 108.9,
   "before": 0.3757,
   "after": 0.3307,
   "ratio": 1.136,
@@ -57,9 +57,9 @@
    "cue_t": 14.7
   },
   {
-   "frame": 1357,
-   "t": 45.233,
-   "before": 0.6354,
+   "frame": 1356,
+   "t": 45.2,
+   "before": 0.6353,
    "after": 0.5915,
    "ratio": 1.074,
    "direction": "變暗",
@@ -69,8 +69,8 @@
    "cue_t": 1.1667
   },
   {
-   "frame": 1697,
-   "t": 56.567,
+   "frame": 1696,
+   "t": 56.533,
    "before": 0.5636,
    "after": 0.6128,
    "ratio": 1.087,
@@ -81,8 +81,8 @@
    "cue_t": 12.5
   },
   {
-   "frame": 2301,
-   "t": 76.7,
+   "frame": 2300,
+   "t": 76.667,
    "before": 0.5831,
    "after": 0.5364,
    "ratio": 1.087,
@@ -93,8 +93,8 @@
    "cue_t": 5.2
   },
   {
-   "frame": 3268,
-   "t": 108.933,
+   "frame": 3267,
+   "t": 108.9,
    "before": 0.3757,
    "after": 0.3307,
    "ratio": 1.136,
@@ -105,8 +105,8 @@
    "cue_t": 5.3333
   },
   {
-   "frame": 3713,
-   "t": 123.767,
+   "frame": 3712,
+   "t": 123.733,
    "before": 0.3545,
    "after": 0.376,
    "ratio": 1.061,

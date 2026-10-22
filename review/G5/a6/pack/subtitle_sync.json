@@ -36,7 +36,7 @@
    "diff_s": -0.122,
    "pass": true,
    "detect": "-40 dB／0.05 s",
-   "audio": "audio/vo/vo_a6_c001_02_v04.wav"
+   "audio": "audio/vo/vo_a6_c001_02_v05.wav"
   },
   {
    "cue": "a6_c002",
@@ -344,19 +344,19 @@
    "page": 1,
    "text": "我現在還是會定期回去看醫生。／慢慢摺，燈才會亮。",
    "subtitle_start_s": 10.44,
-   "voice_start_s": 10.572,
-   "diff_s": -0.132,
+   "voice_start_s": 10.578,
+   "diff_s": -0.138,
    "pass": true,
    "detect": "-40 dB／0.05 s",
-   "audio": "audio/vo/vo_a6_c009_03_v04.wav"
+   "audio": "audio/vo/vo_a6_c009_03_v05.wav"
   },
   {
    "cue": "a6_c009",
    "line": "a6_c009_04",
    "page": 1,
    "text": "謝謝你們，那天去找大人幫忙。",
-   "subtitle_start_s": 18.97,
-   "voice_start_s": 19.095,
+   "subtitle_start_s": 18.94,
+   "voice_start_s": 19.065,
    "diff_s": -0.125,
    "pass": true,
    "detect": "-40 dB／0.05 s",

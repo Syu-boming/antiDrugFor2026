@@ -77,17 +77,33 @@
    "time": "2026-10-21 13:29:08"
   },
   "a0_c002_03": {
+   "version": "v05",
    "role": "阿樂叔叔",
    "source": "audio/vo_el/vo_a0_c002_03_el01.wav",
    "lipsync_source": "audio/lipsync_el/a0_c002_03_el01.json",
-   "file": "audio/vo/vo_a0_c002_03_v04.wav",
-   "sha1": "6cb024819c907a60d893d306adfa06e5290cc114",
+   "file": "audio/vo/vo_a0_c002_03_v05.wav",
+   "sha1": "a17122d4ac927c6a20ec1749d01271023de0f337",
    "status": "pass",
    "failed": [],
    "request_ids": [
-    "8L9xVt0NF7zrnLYbPZzZ"
+    "zm8ykpeD3IG21KJAyebM"
    ],
-   "time": "2026-10-21 13:29:08"
+   "time": "2026-10-23 00:05:15",
+   "previous": [
+    {
+     "role": "阿樂叔叔",
+     "source": "audio/vo_el/vo_a0_c002_03_el01.wav",
+     "lipsync_source": "audio/lipsync_el/a0_c002_03_el01.json",
+     "file": "audio/vo/vo_a0_c002_03_v04.wav",
+     "sha1": "6cb024819c907a60d893d306adfa06e5290cc114",
+     "status": "pass",
+     "failed": [],
+     "request_ids": [
+      "8L9xVt0NF7zrnLYbPZzZ"
+     ],
+     "time": "2026-10-21 13:29:08"
+    }
+   ]
   },
   "a0_c003_01": {
    "role": "折折",
@@ -2226,17 +2242,33 @@
    "time": "2026-10-21 13:29:08"
   },
   "a6_c001_02": {
+   "version": "v05",
    "role": "小宇",
    "source": "audio/vo_el/vo_a6_c001_02_el01.wav",
    "lipsync_source": "audio/lipsync_el/a6_c001_02_el01.json",
-   "file": "audio/vo/vo_a6_c001_02_v04.wav",
-   "sha1": "7c7473a182ef1cd022aa12423d69cbda916cdd54",
+   "file": "audio/vo/vo_a6_c001_02_v05.wav",
+   "sha1": "93c82a19349c5528a427fa2060f521feb611b64c",
    "status": "pass",
    "failed": [],
    "request_ids": [
-    "3kBuHE6639zFKZAl7xDE"
+    "W3ciXJs9Np7TNA5f9DMn"
    ],
-   "time": "2026-10-21 13:29:08"
+   "time": "2026-10-23 00:05:15",
+   "previous": [
+    {
+     "role": "小宇",
+     "source": "audio/vo_el/vo_a6_c001_02_el01.wav",
+     "lipsync_source": "audio/lipsync_el/a6_c001_02_el01.json",
+     "file": "audio/vo/vo_a6_c001_02_v04.wav",
+     "sha1": "7c7473a182ef1cd022aa12423d69cbda916cdd54",
+     "status": "pass",
+     "failed": [],
+     "request_ids": [
+      "3kBuHE6639zFKZAl7xDE"
+     ],
+     "time": "2026-10-21 13:29:08"
+    }
+   ]
   },
   "a6_c002_01": {
    "role": "品安",
@@ -2542,17 +2574,33 @@
    "time": "2026-10-21 13:29:08"
   },
   "a6_c009_03": {
+   "version": "v05",
    "role": "阿樂叔叔",
    "source": "audio/vo_el/vo_a6_c009_03_el01.wav",
    "lipsync_source": "audio/lipsync_el/a6_c009_03_el01.json",
-   "file": "audio/vo/vo_a6_c009_03_v04.wav",
-   "sha1": "b82a8a0781fde108e6532e178924cf055cf93fa8",
+   "file": "audio/vo/vo_a6_c009_03_v05.wav",
+   "sha1": "ece19f3261178eb1b3b07a75c34d0229b63823d9",
    "status": "pass",
    "failed": [],
    "request_ids": [
-    "YoGvnQHv78G6t3WYVfuh"
+    "mEQxgxynAMVNJvCw3Hvb"
    ],
-   "time": "2026-10-21 13:29:08"
+   "time": "2026-10-23 00:05:15",
+   "previous": [
+    {
+     "role": "阿樂叔叔",
+     "source": "audio/vo_el/vo_a6_c009_03_el01.wav",
+     "lipsync_source": "audio/lipsync_el/a6_c009_03_el01.json",
+     "file": "audio/vo/vo_a6_c009_03_v04.wav",
+     "sha1": "b82a8a0781fde108e6532e178924cf055cf93fa8",
+     "status": "pass",
+     "failed": [],
+     "request_ids": [
+      "YoGvnQHv78G6t3WYVfuh"
+     ],
+     "time": "2026-10-21 13:29:08"
+    }
+   ]
   },
   "a6_c009_04": {
    "role": "阿樂叔叔",
