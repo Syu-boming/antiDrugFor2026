@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026/10/22 15:38:55",
- "cueHash": "589311ebb1",
+ "generatedAt": "2026/10/22 17:06:23",
+ "cueHash": "713e22e2ee",
  "prerollSec": 0.6,
  "teacherTime": {
   "greeting": 30,
@@ -73,33 +73,33 @@
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:00",
+     "planned": "13:16",
      "actual": "12:10",
-     "behind": -50,
+     "behind": -66,
      "level": 1
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:27",
+     "planned": "23:49",
      "actual": "22:17",
-     "behind": -70,
+     "behind": -93,
      "level": 1
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "30:49",
+     "planned": "31:29",
      "actual": "29:28",
-     "behind": -81,
+     "behind": -121,
      "level": 1
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "34:33",
+     "planned": "35:05",
      "actual": "33:00",
-     "behind": -93,
+     "behind": -125,
      "level": 1
     }
    ]
@@ -111,33 +111,33 @@
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:00",
+     "planned": "13:16",
      "actual": "12:10",
-     "behind": -50,
+     "behind": -66,
      "level": 2
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:27",
+     "planned": "23:49",
      "actual": "22:17",
-     "behind": -70,
+     "behind": -93,
      "level": 2
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "30:49",
+     "planned": "31:29",
      "actual": "29:28",
-     "behind": -81,
+     "behind": -121,
      "level": 2
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "34:33",
+     "planned": "35:05",
      "actual": "32:28",
-     "behind": -125,
+     "behind": -157,
      "level": 2
     }
    ]
@@ -149,89 +149,89 @@
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:00",
+     "planned": "13:16",
      "actual": "14:40",
-     "behind": 100,
+     "behind": 84,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:27",
+     "planned": "23:49",
      "actual": "26:22",
-     "behind": 175,
+     "behind": 153,
      "level": 0
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "30:49",
+     "planned": "31:29",
      "actual": "34:43",
-     "behind": 234,
+     "behind": 194,
      "level": 0
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "34:33",
+     "planned": "35:05",
      "actual": "38:19",
-     "behind": 226,
+     "behind": 194,
      "level": 0
     }
    ]
   },
   "stressDyn": {
-   "total": "37:38",
-   "totalSec": 2258,
+   "total": "37:43",
+   "totalSec": 2263,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:00",
+     "planned": "13:16",
      "actual": "14:40",
-     "behind": 100,
+     "behind": 84,
      "level": 0
-    },
-    {
-     "cueId": "a2_c011",
-     "label": "觸發 1 級",
-     "planned": "13:00",
-     "actual": "14:40",
-     "behind": 100,
-     "level": 1,
-     "trigger": true
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:27",
-     "actual": "26:17",
-     "behind": 170,
-     "level": 1
+     "planned": "23:49",
+     "actual": "26:22",
+     "behind": 153,
+     "level": 0
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "觸發 1 級",
+     "planned": "23:49",
+     "actual": "26:22",
+     "behind": 153,
+     "level": 1,
+     "trigger": true
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "30:49",
-     "actual": "34:08",
-     "behind": 199,
+     "planned": "31:29",
+     "actual": "34:13",
+     "behind": 164,
      "level": 1
     },
     {
      "cueId": "a6_c005",
      "label": "觸發 2 級",
-     "planned": "30:49",
-     "actual": "34:08",
-     "behind": 199,
+     "planned": "31:29",
+     "actual": "34:13",
+     "behind": 164,
      "level": 2,
      "trigger": true
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "34:33",
-     "actual": "37:08",
-     "behind": 155,
+     "planned": "35:05",
+     "actual": "37:13",
+     "behind": 128,
      "level": 2
     }
    ]
@@ -243,33 +243,33 @@
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:00",
+     "planned": "13:16",
      "actual": "13:36",
-     "behind": 36,
+     "behind": 20,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:27",
+     "planned": "23:49",
      "actual": "24:09",
-     "behind": 42,
+     "behind": 20,
      "level": 0
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "30:49",
+     "planned": "31:29",
      "actual": "31:49",
-     "behind": 60,
+     "behind": 21,
      "level": 0
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "34:33",
+     "planned": "35:05",
      "actual": "35:25",
-     "behind": 52,
+     "behind": 20,
      "level": 0
     }
    ]
@@ -279,30 +279,30 @@
   {
    "cueId": "a2_c011",
    "label": "Q3 點燈收聲後",
-   "planned": "13:00",
+   "planned": "13:16",
    "estimated": "13:16",
-   "behindSec": 16
+   "behindSec": 0
   },
   {
    "cueId": "a4_c011",
    "label": "Q6 點燈收聲後",
-   "planned": "23:27",
+   "planned": "23:49",
    "estimated": "23:49",
-   "behindSec": 22
+   "behindSec": 0
   },
   {
    "cueId": "a6_c005",
    "label": "Q8 點燈收聲後",
-   "planned": "30:49",
+   "planned": "31:29",
    "estimated": "31:29",
-   "behindSec": 40
+   "behindSec": 1
   },
   {
    "cueId": "a8_c003",
    "label": "停在署名卡（之後教師結語）",
-   "planned": "34:33",
+   "planned": "35:05",
    "estimated": "35:05",
-   "behindSec": 32
+   "behindSec": 0
   }
  ],
  "compression": {

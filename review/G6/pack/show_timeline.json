@@ -772,11 +772,11 @@
    "segment": "a1",
    "kind": "scene",
    "title": "一團線（懸念）",
-   "duration": 27.78,
+   "duration": 26.78,
    "autoAdvance": false,
    "set": "square_a1",
-   "enterFade": 0.8,
-   "preroll": 0.6,
+   "enterFade": 0,
+   "preroll": 0,
    "quiz": null,
    "lamp": null,
    "lines": [
@@ -807,8 +807,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 22.01,
-     "end": 24.18
+     "start": 21.71,
+     "end": 23.88
     }
    ]
   },
@@ -1559,7 +1559,7 @@
    "segment": "a3",
    "kind": "scene",
    "title": "換大家練習（口訣）",
-   "duration": 15.12,
+   "duration": 14.82,
    "autoAdvance": false,
    "set": "a3_card",
    "enterFade": 0.8,
@@ -1729,7 +1729,7 @@
    "segment": "a3",
    "kind": "scene",
    "title": "放學以後（懸念）",
-   "duration": 36.39,
+   "duration": 36.69,
    "autoAdvance": false,
    "set": "a3_classroom",
    "enterFade": 0.8,
@@ -1817,7 +1817,7 @@
    "segment": "a4",
    "kind": "scene",
    "title": "不對勁",
-   "duration": 20.36,
+   "duration": 18.86,
    "autoAdvance": false,
    "set": "gate",
    "enterFade": 0.6,
@@ -2339,7 +2339,7 @@
    "segment": "a5",
    "kind": "scene",
    "title": "叫不醒",
-   "duration": 41.07,
+   "duration": 38.32,
    "autoAdvance": false,
    "set": "a5_gate",
    "enterFade": 0.8,
@@ -2364,8 +2364,8 @@
      "actorIds": [
       "chen"
      ],
-     "start": 6.28,
-     "end": 13.6
+     "start": 5.98,
+     "end": 13.3
     },
     {
      "id": "a5_c001_03",
@@ -2374,8 +2374,8 @@
      "actorIds": [
       "lin"
      ],
-     "start": 13.9,
-     "end": 15.99
+     "start": 13.6,
+     "end": 15.69
     },
     {
      "id": "a5_c001_04",
@@ -2384,8 +2384,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 29.44,
-     "end": 32.34
+     "start": 26.94,
+     "end": 29.84
     },
     {
      "id": "a5_c001_05",
@@ -2394,8 +2394,8 @@
      "actorIds": [
       "xiaoqing"
      ],
-     "start": 32.79,
-     "end": 34.75
+     "start": 30.24,
+     "end": 32.2
     },
     {
      "id": "a5_c001_06",
@@ -2404,8 +2404,8 @@
      "actorIds": [
       "zhezhe"
      ],
-     "start": 35.25,
-     "end": 40.27
+     "start": 32.6,
+     "end": 37.62
     }
    ]
   },
@@ -2549,7 +2549,7 @@
    "segment": "a5",
    "kind": "scene",
    "title": "分頭求助",
-   "duration": 21.2,
+   "duration": 21.25,
    "autoAdvance": false,
    "set": "a5_gate",
    "enterFade": 0,
@@ -2564,8 +2564,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 4,
-     "end": 5.36
+     "start": 4.05,
+     "end": 5.41
     },
     {
      "id": "a5_c005_02",
@@ -2574,8 +2574,8 @@
      "actorIds": [
       "xiaoqing"
      ],
-     "start": 6.66,
-     "end": 12.26
+     "start": 6.71,
+     "end": 12.31
     },
     {
      "id": "a5_c005_03",
@@ -2584,8 +2584,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 14.91,
-     "end": 20.2
+     "start": 14.96,
+     "end": 20.25
     }
    ]
   },
@@ -2653,7 +2653,7 @@
    "segment": "a5",
    "kind": "scene",
    "title": "大人接手",
-   "duration": 25.83,
+   "duration": 24.08,
    "autoAdvance": false,
    "set": "a5_gate",
    "enterFade": 0,
@@ -2668,8 +2668,8 @@
      "actorIds": [
       "lin"
      ],
-     "start": 4.15,
-     "end": 8.99
+     "start": 3.95,
+     "end": 8.79
     },
     {
      "id": "a5_c007_02",
@@ -2678,8 +2678,8 @@
      "actorIds": [
       "lin"
      ],
-     "start": 20.3,
-     "end": 24.83
+     "start": 18.55,
+     "end": 23.08
     }
    ]
   },
@@ -2809,7 +2809,7 @@
     {
      "id": "a6_c002_02",
      "speaker": "品安",
-     "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+     "text": "那天你們走了以後，\n那個人把閃亮盒子塞給我。\n\n我沒有打開，\n可是我把它藏在書包裡。",
      "actorIds": [
       "pinan"
      ],
@@ -3125,7 +3125,7 @@
    "segment": "a6",
    "kind": "scene",
    "title": "又到了紙燈節",
-   "duration": 25.91,
+   "duration": 25.81,
    "autoAdvance": false,
    "set": "a6_shop",
    "enterFade": 0.8,
@@ -3265,8 +3265,8 @@
      "actorIds": [
       "pinan"
      ],
-     "start": 4.3,
-     "end": 9.12
+     "start": 3.85,
+     "end": 8.67
     },
     {
      "id": "a7_c003_02",

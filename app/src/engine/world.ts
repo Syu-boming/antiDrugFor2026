@@ -172,6 +172,13 @@ export function setAt(tl: CueTimeline, t: number): string {
   return s;
 }
 
+/** 這個 cue 從頭到尾會用到的景（開始時的景＋之後 set.swap 換上的景，依出現順序、不重複；換景預先準備用） */
+export function setsUsed(tl: CueTimeline): string[] {
+  const out = [setAt(tl, 0)];
+  for (const a of tl.anims) if (a.name === 'set.swap' && typeof a.params.set === 'string' && !out.includes(a.params.set)) out.push(a.params.set);
+  return out;
+}
+
 /** 已知的角色動畫名稱 */
 export const ACTOR_ANIMS = ['strings.drop', 'strings.tension', 'strings.loosen', 'strings.fade', 'strings.detach',
   'puppet.popup', 'puppet.enter', 'puppet.exit', 'puppet.sit', 'puppet.waveTry', 'puppet.kneeTug', 'puppet.reach', 'puppet.wave',

@@ -2,7 +2,7 @@
 // 解析八題定稿（script/八題_v03.md）與劇本的教師插話，算授課時鐘。
 // 只讀，不改任何 app／script 檔。由 tools/teacher_docs.mjs 呼叫。
 import { createRequire } from 'node:module';
-import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
@@ -54,14 +54,56 @@ export function voDurations(ROOT) {
 export function loadShow(ROOT, mod) {
   const idx = JSON.parse(readFileSync(join(ROOT, 'app/cues/show/index.json'), 'utf8'));
   const files = {};
-  const hash = createHash('sha1');
-  for (const f of idx.segments) {
-    const raw = readFileSync(join(ROOT, 'app/cues/show', f), 'utf8');
-    hash.update(raw);
-    files[f] = JSON.parse(raw);
-  }
+  const raws = idx.segments.map((f) => readFileSync(join(ROOT, 'app/cues/show', f), 'utf8'));
+  idx.segments.forEach((f, i) => { files[f] = JSON.parse(raws[i]); });
   const merged = mod.mergeShow(idx, files);
-  return { idx, files, merged, cueHash: hash.digest('hex').slice(0, 10) };
+  return { idx, files, merged, cueHash: hashRaw(raws) };
+}
+
+/**
+ * cue 指紋：app/cues/show 各段落檔（依 index.json 順序）原始內容的 SHA-1 前 10 碼。
+ * 不排除任何欄位：動畫、鏡頭、音效、配樂的時間都會改變每段長度與授課時鐘，只影響外觀的欄位也可能改到時間，
+ * 所以 cue 檔任何改動都算「講稿過期」，要重跑 tools/teacher_docs.mjs。
+ */
+export function cueFingerprint(ROOT) {
+  const idx = JSON.parse(readFileSync(join(ROOT, 'app/cues/show/index.json'), 'utf8'));
+  return hashRaw(idx.segments.map((f) => readFileSync(join(ROOT, 'app/cues/show', f), 'utf8')));
+}
+function hashRaw(raws) {
+  const hash = createHash('sha1');
+  for (const r of raws) hash.update(r);
+  return hash.digest('hex').slice(0, 10);
+}
+
+/** app/dist 的全劇 cue（tools/pack.mjs 打包的合併結果）和 app/cues/show 合併結果是否相同（只提示，不影響結束碼） */
+export function distCompare(ROOT, merged) {
+  const f = join(ROOT, 'app/dist/data/cues_show.js');
+  if (!existsSync(f)) return { exists: false };
+  try {
+    const txt = readFileSync(f, 'utf8');
+    const head = 'window.__pack("cues:show",';
+    const i = txt.indexOf(head);
+    const dist = JSON.parse(txt.slice(i + head.length).replace(/\);\s*$/, ''));
+    return { exists: true, same: JSON.stringify(dist) === JSON.stringify(merged), mtime: statSync(f).mtime.toISOString() };
+  } catch (err) {
+    return { exists: true, same: false, error: String(err.message ?? err) };
+  }
+}
+
+/**
+ * 備援影片（交付/backup_video/backup_<段>.mp4，tools/backup_video.mjs 產生）。
+ * mode：auto（預設，看檔案在不在）／on（當作已產生）／off（當作還沒產生）。
+ * ready＝每一段的 mp4 都在；資料夾不在或缺檔就是「暫定」，由 teacher_docs.mjs 在檢查報告列警告。
+ */
+export function backupVideoStatus(ROOT, segIds, mode = 'auto') {
+  const rel = '交付/backup_video';
+  const dir = join(ROOT, rel);
+  const dirExists = existsSync(dir);
+  const files = segIds.map((s) => ({ seg: s, file: `backup_${s}.mp4`, exists: dirExists && existsSync(join(dir, `backup_${s}.mp4`)) }));
+  const missing = files.filter((f) => !f.exists).map((f) => f.file);
+  const auto = dirExists && missing.length === 0;
+  const ready = mode === 'on' ? true : mode === 'off' ? false : auto;
+  return { mode, rel, dirExists, files, missing, ready, first: files[0]?.file, last: files[files.length - 1]?.file, readme: dirExists && existsSync(join(dir, 'README.txt')) };
 }
 
 // ───────────────────────────── 八題定稿（script/八題_v03.md 第 4 節） ─────────────────────────────

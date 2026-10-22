@@ -1473,8 +1473,8 @@
    "from": "a0_c005",
    "to": "a1_c001",
    "t": 2,
-   "mean_luma_before": 0.3785,
-   "mean_luma_after": 0.3785,
+   "mean_luma_before": 0.3784,
+   "mean_luma_after": 0.3784,
    "max_region_luma_delta": 0.0
   }
  ],

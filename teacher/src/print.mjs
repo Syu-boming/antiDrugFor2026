@@ -102,7 +102,8 @@ const CK = (opts) => opts.map((o) => `<span class="ck">□ ${o}</span>`).join('�
 function buildRecord(ctx, segs) {
   const qs = quizTable(ctx);
   const goalOf = (qid) => GOALS.find((g) => g.where.includes(qid));
-  const cps = ctx.sched.events.filter((e) => !e.trigger);
+  // 查核點一律用 cue 的 checkpoint.atMinute（控制台畫面上的目標時間）
+  const cps = ctx.merged.cues.filter((c) => c.checkpoint && c.checkpoint.atMinute > 0);
   const body = `
 <h1>反毒剪紙劇場《${SHOW_TITLE}》成果紀錄</h1>
 <div class="sub">範本｜${BYLINE}｜交學務處（1–2 頁）。不記錄學生姓名，不放可辨識正臉的照片，不寫家庭狀況。</div>
@@ -124,9 +125,9 @@ ${qs.map((q) => `<tr><td>${q.qid}</td><td>${esc(q.e.topic)}（${goalOf(q.qid)?.n
 </tbody></table>
 
 <h2>三、時間紀錄（教師控制台的查核點）</h2>
-<table><thead><tr><th>查核點</th><th style="width:22%">預估（控制台目標）</th><th style="width:16%">實際</th><th style="width:28%">備註</th></tr></thead><tbody>
-${cps.map((e) => `<tr><td>${esc(e.label)}（${e.cueId}）</td><td>${fmtClock(e.actual)}（${fmtClock(e.planned)}）</td><td></td><td></td></tr>`).join('\n')}
-<tr><td>下課（教師結語結束）</td><td>${fmtClock(ctx.sched.total)}</td><td></td><td></td></tr>
+<table><thead><tr><th>查核點</th><th style="width:22%">控制台目標</th><th style="width:16%">實際</th><th style="width:28%">備註</th></tr></thead><tbody>
+${cps.map((c) => `<tr><td>${esc(c.checkpoint.label)}（${c.id}）</td><td>${fmtClock(c.checkpoint.atMinute * 60)}</td><td></td><td></td></tr>`).join('\n')}
+<tr><td>下課（教師結語結束）</td><td>預估 ${fmtClock(ctx.sched.total)}</td><td></td><td></td></tr>
 </tbody></table>
 <p>壓縮級別使用：${CK(['沒有使用', '1 級（從　　　起）', '2 級（從　　　起）'])}</p>
 

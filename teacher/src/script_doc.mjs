@@ -2,6 +2,7 @@
 import { BYLINE, SHOW_TITLE, toMarkdown, toHtml, htmlPage, zh } from './common.mjs';
 import { ONE_LINERS, quizLine } from './oneliners.mjs';
 import { TEACHER_TIME, fmtClock, fmtMinSec } from './data.mjs';
+import { STAFF_LINE, backupVideoText } from './teacher_text.mjs';
 
 const KEY_NEXT = '下一步';
 
@@ -54,7 +55,7 @@ function teacherCell(ctx, cue, row) {
     }
     case 'reveal': {
       const z = zoneOf(cue, q);
-      say = `**正解 ${q?.answer}**。回饋（第六節 ${q?.qid}）→ 從 ${z} 區比 ${q?.answer} 的同學中點一位說一句理由 → 記錄區、排、座位 → 說「${/最後一盞/.test(n) ? '最後一盞，' : '大家一起，'}捧燈手——」**說完就按**，不等全班做好。`;
+      say = `**正解 ${q?.answer}**。回饋（第六節 ${q?.qid}）→ 從 ${z} 區比 ${q?.answer} 的同學中點一位說一句理由 → 協助教師記錄區、排、座位 → 說「${/最後一盞/.test(n) ? '最後一盞，' : '大家一起，'}捧燈手——」**說完就按**，不等全班做好。`;
       key = '下一步＝點燈';
       break;
     }
@@ -62,7 +63,8 @@ function teacherCell(ctx, cue, row) {
       say = '燈亮後做安靜手勢，等全場安靜再按。';
       break;
     default:
-      if (n.trim() === GENERIC || !n.trim() || /^播完停格[^。]*等老師按下一步。?$/.test(n.trim())) say = '（不用說話）畫面停住後按。';
+      if (ctx.mainLamp && cue.id === ctx.mainLamp.id) say = mainLampSay(ctx.mainLamp);
+      else if (n.trim() === GENERIC || !n.trim() || /^播完停格[^。]*等老師按下一步。?$/.test(n.trim())) say = '（不用說話）畫面停住後按。';
       else if (/^找找看 (\d)/.test(n)) say = `**${/^找找看 \d（[^）]*）/.exec(n)?.[0] ?? '找找看'}**：點一位安靜舉手的同學（講法見第五節）。`;
       else if (cue.id === 'a0_c005' || /今天有八題/.test(n)) say = '**規則說明＋捧燈手試做**（約 75 秒，講法見第五節）。全班安靜後再按。';
       else if (/練習/.test(n) && /口訣/.test(n) && /約 90 秒/.test(n)) say = '**全班練習**：拒絕句一次、口訣加動作一次（約 90 秒，講法見第五節）。安靜手勢後再按。';
@@ -86,6 +88,37 @@ function teacherCell(ctx, cue, row) {
   if (cue.compression === 2 && cue.level2) extra.push('〔2 級〕改短版。');
   if (cue.compression === 1) extra.push('〔1 級〕整段略過。');
   return { say: [say, ...extra].join('\n'), key };
+}
+
+/** 主燈亮起那一段的「老師說／做」 */
+function mainLampSay(L) {
+  return `**主燈亮起，全場捧燈手**（見 5.6）：${L.cueText}，說〔照念〕「最後的主燈，全場一起，捧燈手——」，主燈在大家捧手時亮起（約第 ${Math.round(L.at0)} 秒）。主燈亮後做安靜手勢；畫面停住後按。`;
+}
+
+/**
+ * 主燈亮起的時間（高潮 cue）：用該 cue 的點燈音效 sfx_lamp_on 在時間軸上的位置；
+ * 老師提前約 2 秒開口，讓「捧燈手——」說完時主燈剛好亮起。
+ */
+export function mainLampInfo(ctx) {
+  const cue = ctx.merged.cues.find((c) => c.id === 'a6_c007') ?? ctx.merged.cues.find((c) => c.kind === 'scene' && /主燈/.test(c.title ?? ''));
+  if (!cue) return null;
+  const i = ctx.indexOf[cue.id];
+  const lampAt = (lv) => {
+    const t = ctx.tl[lv]?.[i];
+    if (!t || t.skipped) return null;
+    const s = t.sfx.find((x) => x.id === 'sfx_lamp_on');
+    return s ? s.at : null;
+  };
+  const at0 = lampAt(0);
+  if (at0 === null) { ctx.warnings.push(`${cue.id} 找不到主燈的點燈音效（sfx_lamp_on），講稿的主燈捧燈手沒有時間`); return null; }
+  const at1 = lampAt(1);
+  const t0 = ctx.tl[0][i];
+  const clean = (x) => x.replace(/\s+/g, '');
+  const before = [...t0.lines].reverse().find((l) => l.end <= at0 + 0.05);
+  const after = t0.lines.find((l) => l.start >= at0 - 0.05);
+  const callAt0 = Math.max(0, at0 - 2);
+  const cueText = `${before ? `${before.line.speaker ?? ''}說完「${clean(before.line.text)}」${before.line.skippableWhenBehind ? '（1 級時這句略過）' : ''}、` : ''}鏡頭往後拉、看到台口八盞燈都亮著時（約播放第 ${Math.round(callAt0)} 秒）`;
+  return { id: cue.id, at0, at1, callAt0, cueText, afterText: after ? clean(after.line.text) : '' };
 }
 
 function screenCell(ctx, cue) {
@@ -118,7 +151,6 @@ export function buildTeacherScript(ctx) {
 
   B.push({ h: 1, text: `${SHOW_TITLE}｜教師講稿` });
   B.push({ p: `反毒剪紙劇場《${SHOW_TITLE}》｜${BYLINE}`, cls: 'byline' });
-  B.push({ note: `本講稿由 \`tools/teacher_docs.mjs\` 依演出資料自動產生（cue 資料指紋 ${ctx.cueHash}，${ctx.generatedAt}）。改了 cue 或配音之後重跑一次，時間與文字會一起更新。` });
 
   // 一、怎麼用
   B.push({ h: 2, text: '一、這份講稿怎麼用' });
@@ -147,15 +179,14 @@ export function buildTeacherScript(ctx) {
   B.push({ table: { head: ['段落', '授課時鐘', '預錄播放', '教師時間', '題目'], rows: segRows, cls: 'tbl-time', widths: ['34%', '18%', '16%', '16%', '16%'] } });
   const ok = total <= LIMIT;
   B.push({ p: `**預估總長 ${fmtClock(total)}**（${ok ? '在' : '超過'} 38 分鐘上限${ok ? `內，緩衝 ${fmtMinSec(LIMIT - total)}` : ` ${fmtMinSec(total - LIMIT)}`}）＝預錄播放 ${fmtMinSec(playSum)}＋教師時間 ${fmtMinSec(teacherSum)}＋按鍵與換景 ${fmtMinSec(overhead)}。38–40 分不排內容，留給下課前的餘裕。` });
-  const cpRows = sched.events.filter((e) => !e.trigger).map((e) => {
-    const cue = merged.cues[ctx.indexOf[e.cueId]];
-    const esc = cue.checkpoint?.escalate;
-    return [e.label, e.cueId, fmtClock(e.planned), fmtClock(e.actual), `${e.behind >= 0 ? '+' : '−'}${fmtMinSec(e.behind)}`, esc ? `落後 ≥ ${fmtMinSec(esc.behindSec)} → ${esc.level} 級` : '—'];
+  // 查核點一律用 cue 的 checkpoint.atMinute（控制台顯示的就是 atMinute×60）
+  const cpRows = merged.cues.filter((c) => c.checkpoint && c.checkpoint.atMinute > 0).map((c) => {
+    const esc = c.checkpoint.escalate;
+    return [c.checkpoint.label, c.id, fmtClock(c.checkpoint.atMinute * 60), esc ? `落後 ≥ ${fmtMinSec(esc.behindSec)} → ${esc.level} 級` : '—'];
   });
   B.push({ h: 3, text: '查核點（控制台會顯示落差）' });
-  B.push({ table: { head: ['查核點', 'cue', '控制台目標', '本講稿估計', '差', '落後多少要壓縮'], rows: cpRows, cls: 'tbl-cp' } });
-  const cpMax = Math.max(...sched.events.filter((e) => !e.trigger).map((e) => e.behind));
-  if (cpMax >= 30) B.push({ note: `「控制台目標」是 cue 檔裡的查核點時間（時長估算 v03），比實際配音長度算出的估計早；照本講稿的預設節奏走，控制台在 Q8 前後可能顯示「落後」約 ${fmtMinSec(cpMax)}，這是正常的，只要沒達到右欄門檻就不用壓縮。` });
+  B.push({ table: { head: ['查核點', 'cue', '控制台目標', '落後多少要壓縮'], rows: cpRows, cls: 'tbl-cp', widths: ['34%', '14%', '18%', '34%'] } });
+  B.push({ note: '控制台目標和控制台畫面上顯示的時間相同。照本講稿的節奏走，到查核點時落差應該在幾十秒內；只要沒達到右欄門檻就不用壓縮。' });
   const v = ctx.variants;
   B.push({ h: 3, text: '其他情境' });
   B.push({ table: { head: ['情境', '預估總長', '說明'], rows: [
@@ -171,7 +202,9 @@ export function buildTeacherScript(ctx) {
   B.push({ ul: [
     '控制台按一次「下一步」（或「準備播放」）＝啟用聲音，畫面停在署名卡。之後不再動滑鼠。',
     '確認：投影畫面是舞台、筆電是控制台；控制台上方「舞台：已連線」「焦點」正常；聲音從場地喇叭出來。',
+    `**人力**：${STAFF_LINE}（此時獎品改在課後發）。四區導師維持秩序、照看特殊需求學生。`,
     '學生入場、依區就座（四區 A、B、C、D）。協助教師拿好得獎座位記錄單與獎品（貼紙，不用食物）。',
+    '「故障一頁卡」放在手邊；演出出問題時照第十節的退路順序處理。',
     '鐘響、學生坐定：問候一句，接著按下一步開演（授課時鐘從 00:30 起跳）。',
   ] });
   B.push({ quote: '〔照念・可選〕各位小朋友好！今天我們要看一齣剪紙劇場，名字叫《紙燈節》。等一下會有八個問題，要請大家一起幫忙。準備好了嗎？我們開始！' });
@@ -219,17 +252,28 @@ export function buildTeacherScript(ctx) {
   B.push({ table: { head: ['口訣', '動作（坐著做，不離座）'], rows: [
     ['不碰', '雙手在胸前交叉。'], ['不試', '手掌左右搖。'], ['先離開', '手指向門口方向。'], ['找大人', '手掌放在額前，左右張望（和作答時的舉手不一樣）。'],
   ], cls: 'tbl-moves', widths: ['20%', '80%'] } });
+  if (ctx.mainLamp) {
+    const L = ctx.mainLamp;
+    B.push({ h: 3, text: `5.6 主燈亮起：全場一起捧燈手（${L.id} 播放中，不另花時間；${at(L.id) ? `授課時鐘約 ${fmtClock(rowsById[L.id].start + L.callAt0)}` : ''}）` });
+    B.push({ p: `八盞燈點完後，${L.id} 是全劇的高潮：八盞燈的光流進廣場，主燈亮起。這是全場最後一次捧燈手，讓大家的動作和主燈亮起同步。` });
+    B.push({ quote: '〔照念〕最後的主燈，全場一起，捧燈手——' });
+    B.push({ ul: [
+      `**什麼時候說**：${L.cueText}。說完不用按鍵，主燈會在大家捧手時亮起（播放約第 ${Math.round(L.at0)} 秒${L.at1 !== null && Math.abs(L.at1 - L.at0) >= 1 ? `；1 級約第 ${Math.round(L.at1)} 秒` : ''}）${L.afterText ? `，接著旁白說「${L.afterText}」` : '。'}`,
+      '主燈亮後放下手、做安靜手勢，讓大家聽完旁白；這一段播完停格再按下一步。',
+      '備援影片時也一樣：看到八盞燈都亮、鏡頭往後拉，就帶全場捧燈手。紙本時，說完第八盞燈後接著說這一句，全場一起捧燈手。',
+    ] });
+  }
   const opt = (ctx.scriptTeacher.a2_c004 ?? []).find((l) => /可選/.test(l));
   if (opt) {
-    B.push({ h: 3, text: '5.6 可選補充（a2_c004 播完後，約 20 秒；預設不講，進度超前時才講）' });
+    B.push({ h: 3, text: '5.7 可選補充（a2_c004 播完後，約 20 秒；預設不講，進度超前時才講）' });
     const said = /「(.+)」/.exec(opt)?.[1] ?? opt;
     B.push({ quote: `〔照念〕${said}` });
     B.push({ note: '只講這一次，不延伸說明成分、用法或新聞細節；不念任何藥名。' });
   }
-  B.push({ h: 3, text: `5.7 全場一起做口訣（a7_c002 播完後，約 30 秒；${at('a7_c002')}）` });
+  B.push({ h: 3, text: `5.8 全場一起做口訣（a7_c002 播完後，約 30 秒；${at('a7_c002')}）` });
   B.push({ quote: '〔照念〕我們一起說，一起做：不碰——不試——先離開——找大人！' });
   B.push({ p: '帶全場說一次、做動作一次。做完做安靜手勢，再按下一步。' });
-  B.push({ h: 3, text: `5.8 教師結語（停在片尾署名卡後，約 45 秒；2 級時縮成 30 秒）` });
+  B.push({ h: 3, text: `5.9 教師結語（停在片尾署名卡後，約 45 秒；2 級時縮成 30 秒）` });
   B.push({ quote: '〔照念〕謝謝大家，今天一起幫小燈鎮點亮了八盞燈。我們記住今天的口訣：不碰、不試；先離開，找大人。遇到不明的東西、覺得不對勁的時候，先保護自己，去找可以信任的大人。等一下退場的時候，導師會發給每個人一張參與小卡，上面有今天的口訣。' });
   B.push({ ul: [
     '2 級（縮成 30 秒）：只說第一、二句和發小卡。落後很多時只說一句「謝謝大家」，小卡由導師在門口發。',
@@ -239,7 +283,7 @@ export function buildTeacherScript(ctx) {
 
   // 六、八題
   B.push({ h: 2, text: '六、八題（正解、指定區與回饋）', cls: 'newpage' });
-  B.push({ note: '題目文字和題卡、八題定稿一字不差（腳本已比對）。「若不少人選了」只在揭答後對全班統一說，不點名、不追問是誰選的。答錯不羞辱，劇情照常前進。' });
+  B.push({ note: '題目文字和演出的題卡、紙本題卡一字不差（產生時已自動比對）。「對全班說」約 12 秒，只講這一題的重點，不先講後面的劇情。「若不少人選了」只在揭答後對全班統一說，不點名、不追問是誰選的。答錯不羞辱，劇情照常前進。' });
   for (const qid of Object.keys(eight).sort()) {
     const e = eight[qid];
     const quizCue = merged.cues[ctx.indexOf[e.cues.quiz]];
@@ -294,15 +338,27 @@ export function buildTeacherScript(ctx) {
     '**拍照**：以背影、舞台與老師為主，避開可辨識的臉，不用閃光燈；未經同意不上網。',
   ] });
 
+  // 十、故障時
+  const bv = backupVideoText(ctx.backup);
+  B.push({ h: 2, text: '十、故障時的退路' });
+  B.push({ p: '先照「故障一頁卡」依症狀處理；一層不行再換下一層。畫面一定停在某個停格點等老師，不會自己亂跳。' });
+  B.push({ ol: [
+    '**Windows 可攜版**（AntidrugTheater.exe）：關掉重開，用控制台「跳到」回到講稿上的 cue 編號。',
+    '**瀏覽器版**（browser 資料夾，用 Chrome 或 Edge 開）：開法見故障一頁卡。',
+    `**${bv.label}**：${bv.how}`,
+    '**紙本題卡＋講稿**：老師照本講稿說故事，舉起學生版題卡（可放大印成 A3）完成八題，全班照常比 1、2、3、一起做捧燈手。',
+  ] });
+
   // 附錄
   B.push({ h: 2, text: '附錄：時間怎麼算' });
   const T = TEACHER_TIME;
   B.push({ ul: [
-    `**預錄播放**：用演出程式自己的時間軸（app/src/cues/timeline.ts）與實際配音長度算出，每段＝最後一句＋停留、所有動畫結束、最短長度三者取大。全劇 0 級 ${fmtMinSec(playSum)}。`,
-    `**每題教師時間**：想＋全班比 ${T.quiz.think} 秒、點一位說理由 ${T.quiz.reason} 秒、回饋 ${T.quiz.feedback} 秒、說「捧燈手——」並按 ${T.quiz.lampCall} 秒、燈亮後收聲 ${T.quiz.quiet} 秒（時長估算 v03 第 4 節）。`,
+    `**預錄播放**：用演出程式自己的時間計算方式與實際配音長度算出，每段＝最後一句＋停留、所有動畫結束、最短長度三者取大。全劇 0 級 ${fmtMinSec(playSum)}。`,
+    `**每題教師時間**：想＋全班比 ${T.quiz.think} 秒、點一位說理由 ${T.quiz.reason} 秒、回饋 ${T.quiz.feedback} 秒、說「捧燈手——」並按 ${T.quiz.lampCall} 秒、燈亮後收聲 ${T.quiz.quiet} 秒。`,
     `**其他教師時間**：課前問候 ${T.greeting} 秒、規則與捧燈手試做 ${T.after.a0_c005.sec} 秒、找找看 3 次各 ${T.after.a1_c003.sec} 秒、練習 ${T.after.a3_c004.sec} 秒、全場口訣 ${T.after.a7_c002.sec} 秒、教師結語 ${T.after.a8_c003.sec} 秒；a2_c004 可選補充預設不講。`,
     `**按鍵與換景**：老師每按一次約 ${T.press} 秒；換景時先漸暗 ${ctx.mod.PREROLL_SEC} 秒；每段開頭的音訊延遲約 ${T.lead} 秒。`,
     '發獎與記錄座位由協助教師在下一段劇情播放時進行，不另計時間。',
+    `**主燈捧燈手**（${ctx.mainLamp?.id ?? 'a6_c007'}）在播放中進行，不另計時間。`,
   ] });
   const qRows = Object.keys(eight).sort().map((qid) => {
     const e = eight[qid];
@@ -313,6 +369,8 @@ export function buildTeacherScript(ctx) {
     return [qid, `${a.dur.toFixed(1)}`, `${b.dur.toFixed(1)}`, `${c.dur.toFixed(1)}`, `${teach}`, `${Math.round(tot)}`];
   });
   B.push({ table: { head: ['題', '出題 cue（秒）', '揭答 cue（秒）', '點燈 cue（秒）', '教師（秒）', '每題合計（秒）'], rows: qRows, cls: 'tbl-q' } });
+
+  B.push({ note: `印製版本：${ctx.generatedAt}（版本碼 ${ctx.cueHash}）。版本碼和演出資料對應；演出內容改過之後講稿會重新產生，版本碼也會跟著變。${BYLINE}。` });
 
   const md = toMarkdown(B);
   const html = htmlPage({ title: `${SHOW_TITLE}｜教師講稿`, css: SCRIPT_CSS, body: toHtml(B) });

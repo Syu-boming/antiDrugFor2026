@@ -2,6 +2,11 @@
 import { execFileSync } from 'node:child_process';
 import { join } from 'node:path';
 import { existsSync } from 'node:fs';
+import { PRODUCTION_NOTE_PATTERNS, SPOILERS, SPOILER_RE, STAFF_LINE, speechSeconds } from './teacher_text.mjs';
+
+const fmtClock = (sec) => { const s = Math.max(0, Math.round(sec)); return `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(s % 60).padStart(2, '0')}`; };
+/** 「對全班說」的長度上限：每題回饋預算約 12 秒（每秒 4 字），容許到 13 秒 */
+const SAY_LIMIT_SEC = 13;
 
 const norm = (s) => String(s ?? '').replace(/\s+/g, '');
 const plain = (html) => html.replace(/<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&amp;/g, '&');
@@ -17,7 +22,7 @@ const SIMPLIFIED = '们这说吗个时会对学医车线画灯请问点题样还
 // 非台灣用語（繁體字形寫出的中國大陸用語）
 const NON_TW = ['視頻', '軟件', '信息', '屏幕', '鼠標', '打印', '默認', '網絡', '質量', 'U盤', '用戶', '創建', '點擊', '菜單', '優化', '激活', '服務器', '數據'];
 
-export function runChecks({ ROOT, TEACHER, merged, eight, outputs, md, pdfReport, quizCheck, skipPdf }) {
+export function runChecks({ ROOT, TEACHER, merged, eight, outputs, md, pdfReport, quizCheck, skipPdf, backup, mainLamp, fingerprint }) {
   const results = [];
   const add = (name, ok, detail) => results.push({ name, ok, detail });
 
@@ -83,6 +88,77 @@ export function runChecks({ ROOT, TEACHER, merged, eight, outputs, md, pdfReport
   const N2 = '不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。';
   const n2cue = merged.cues.find((c) => c.id === 'a2_c008')?.lines.find((l) => l.id === 'a2_c008_05')?.text;
   add('必要旁白二在 cue 檔一字不差（講稿依 cue 產生）', norm(n2cue) === norm(N2), n2cue);
+
+  // 3b. G6 修正：製作備註、八題回饋、查核點、人力、備援影片、主燈捧燈手
+  const docText = Object.fromEntries(docs.map((d) => [d.name, d.text]));
+  docText['教師講稿'] = md; // 講稿用 Markdown 原文比對（和 HTML 同一份內容）
+  {
+    const found = [];
+    for (const d of docs) for (const p of PRODUCTION_NOTE_PATTERNS) {
+      const m = p.re.exec(d.text);
+      if (m) found.push({ doc: d.name, kind: p.name, at: ctxOf(d.text, m.index, 16) });
+    }
+    add('沒有製作備註（版本沿革、檔名、程式路徑、規劃書章節號、台詞編號）', found.length === 0, found);
+  }
+  {
+    const bad = []; const lens = [];
+    const tCard = norm(docText['題卡_教師版'] ?? '');
+    for (const [qid, e] of Object.entries(eight).sort()) {
+      const texts = [e.say, ...e.ifMany.map((x) => x.text)];
+      for (const t of texts) {
+        if (SPOILER_RE.test(t)) bad.push({ qid, problem: '用「像小晴／小宇……」引用劇情', text: t });
+        for (const w of SPOILERS[qid] ?? []) if (t.includes(w)) bad.push({ qid, problem: `提前講還沒演的劇情「${w}」`, text: t });
+      }
+      const sp = speechSeconds(e.say);
+      lens.push(`${qid} ${sp.chars} 字約 ${sp.sec.toFixed(1)} 秒`);
+      if (sp.sec > SAY_LIMIT_SEC) bad.push({ qid, problem: `「對全班說」${sp.chars} 字約 ${sp.sec.toFixed(1)} 秒，超過每題回饋預算約 12 秒`, text: e.say });
+      if (!norm(md).includes(norm(e.say))) bad.push({ qid, problem: '講稿的「對全班說」和產生用的文字不同' });
+      if (docText['題卡_教師版'] !== undefined && !tCard.includes(norm(e.say))) bad.push({ qid, problem: '教師版題卡的「對全班說」和講稿不同' });
+    }
+    add('八題「對全班說」不提前講劇情、約 12 秒內（每秒 4 字），講稿與教師版題卡同一句', bad.length === 0, bad.length ? bad : lens);
+  }
+  {
+    const cps = merged.cues.filter((c) => c.checkpoint && c.checkpoint.atMinute > 0);
+    const miss = [];
+    const need = { 教師講稿: cps, 一頁操作卡: cps.filter((c) => c.checkpoint.escalate), 成果紀錄範本: cps };
+    for (const [doc, list] of Object.entries(need)) {
+      const t = docText[doc];
+      if (t === undefined) { miss.push({ doc, problem: '沒有這份文件' }); continue; }
+      for (const c of list) { const want = fmtClock(c.checkpoint.atMinute * 60); if (!t.includes(want)) miss.push({ doc, cue: c.id, want }); }
+    }
+    for (const d of docs) if (/比實際配音長度算出的估計早|顯示「落後」約|落後約 ?\d+ ?秒，這是正常的/.test(d.text)) miss.push({ doc: d.name, problem: '還留著「控制台目標比估計早、落後是正常的」說明' });
+    add(`查核點時間一律用 cue 的 atMinute（${cps.map((c) => `${c.id} ${c.checkpoint.atMinute}＝${fmtClock(c.checkpoint.atMinute * 60)}`).join('、')}）：講稿、一頁操作卡、成果紀錄範本`, miss.length === 0, miss.length ? miss : '全部寫的是 cue 的目標時間');
+  }
+  {
+    const bad = [];
+    for (const doc of ['教師講稿', '教案_教學活動設計', '觀課導覽單']) if (!(docText[doc] ?? '').includes(STAFF_LINE)) bad.push({ doc, problem: '沒有統一的人力配置句' });
+    for (const d of docs) if (/協助教師 ?2 ?名/.test(d.text)) bad.push({ doc: d.name, problem: '還寫協助教師 2 名' });
+    const n = (md.match(/協助教師記錄區、排、座位/g) ?? []).length;
+    const reveals = merged.cues.filter((c) => c.kind === 'reveal').length;
+    if (n < reveals) bad.push({ doc: '教師講稿', problem: `揭答欄只有 ${n}／${reveals} 列寫「協助教師記錄區、排、座位」` });
+    add(`人力配置三份一致（講稿、教案、觀課導覽單：「${STAFF_LINE}」），講稿揭答欄由協助教師記錄`, bad.length === 0, bad);
+  }
+  if (backup) {
+    const bad = [];
+    const docsBV = ['故障一頁卡', '觀課導覽單', '教案_教學活動設計', '教師講稿'];
+    for (const doc of docsBV) {
+      const t = docText[doc] ?? '';
+      if (backup.ready) {
+        if (!t.includes(backup.first)) bad.push({ doc, problem: `沒寫備援影片檔名 ${backup.first}` });
+        if (/影片（暫定）/.test(t)) bad.push({ doc, problem: '備援影片已產生，還寫「暫定」' });
+      } else if (!/影片（暫定）/.test(t)) bad.push({ doc, problem: '備援影片還沒產生，卻沒有標「暫定」' });
+    }
+    add(`備援影片的說法和交付資料夾一致（${backup.ready ? `已產生：${backup.first}–${backup.last}` : `還沒產生：保留「暫定」，見注意`}）`, bad.length === 0, bad);
+  }
+  {
+    const ok = !!mainLamp && md.includes('最後的主燈，全場一起，捧燈手') && md.includes(`| ${mainLamp.id} |`);
+    add(`高潮主燈亮起時帶全場捧燈手（${mainLamp ? `${mainLamp.id}，主燈約第 ${mainLamp.at0.toFixed(1)} 秒亮起` : '找不到主燈的點燈時間'}）`, ok, mainLamp ?? null);
+  }
+  if (fingerprint) {
+    const { atGen, inScript, now } = fingerprint;
+    const ok = atGen === now && inScript === now;
+    add(`講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 ${atGen}、講稿上 ${inScript ?? '找不到'}、目前 ${now}；不排除任何欄位）`, ok, ok ? null : '產生途中或產生之後 cue 有變動：重跑 node tools/teacher_docs.mjs');
+  }
 
   // 4. PDF 頁數
   if (!skipPdf) {

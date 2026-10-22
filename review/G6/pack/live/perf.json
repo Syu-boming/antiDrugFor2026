@@ -18,227 +18,96 @@
  },
  "load": {
   "loadavg_before": [
-   4.08837890625,
-   3.16162109375,
-   3.82568359375
+   3.0283203125,
+   2.52099609375,
+   2.45947265625
   ],
-  "goto_ms": 5415,
-  "ready_button_ms": 5526,
+  "goto_ms": 5586,
+  "ready_button_ms": 5703,
   "navigation": {
-   "domContentLoaded": 129.5,
-   "load": 5412.700000762939
+   "domContentLoaded": 125.89999961853027,
+   "load": 5584
   },
-  "ready_click_to_title_ms": 1698,
-  "open_to_title_idle_ms": 7242,
-  "warm_ms": 851.6000003814697
+  "ready_click_to_title_ms": 1749,
+  "open_to_title_idle_ms": 7464,
+  "warm_ms": 845.1999988555908
  },
  "frames": {
-  "all_after_start": 84901,
-  "playing": 80998,
+  "all_after_start": 84544,
+  "playing": 80669,
   "p50_ms_playing": 16.7,
   "p95_ms_playing": 16.7,
   "p99_ms_playing": 16.8,
-  "max_ms_playing": 150.1,
+  "max_ms_playing": 100.0,
   "p95_ms_all": 16.7,
-  "mean_fps_playing": 59.9,
-  "over_34ms_playing": 19,
-  "over_50ms_playing": 19,
+  "mean_fps_playing": 60.0,
+  "over_34ms_playing": 14,
+  "over_50ms_playing": 11,
   "engine_fps_median": 60.0
  },
- "stalls_over_100ms": [
-  {
-   "t_sec": 281.46,
-   "interval_ms": 133.3,
-   "cue": "a2_c001",
-   "segment": "a2",
-   "phase": "playing",
-   "cueTime": 0.17,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 344.27,
-   "interval_ms": 133.4,
-   "cue": "a2_c004",
-   "segment": "a2",
-   "phase": "playing",
-   "cueTime": 0.18,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 523.05,
-   "interval_ms": 116.7,
-   "cue": "a2_c013",
-   "segment": "a2",
-   "phase": "playing",
-   "cueTime": 0.16,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 595.84,
-   "interval_ms": 116.7,
-   "cue": "a3_c003",
-   "segment": "a3",
-   "phase": "playing",
-   "cueTime": 0.15,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 716.12,
-   "interval_ms": 150.0,
-   "cue": "a4_c001",
-   "segment": "a4",
-   "phase": "playing",
-   "cueTime": 0.23,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 759.94,
-   "interval_ms": 133.3,
-   "cue": "a4_c002",
-   "segment": "a4",
-   "phase": "playing",
-   "cueTime": 18.45,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": false
-  },
-  {
-   "t_sec": 829.95,
-   "interval_ms": 116.7,
-   "cue": "a4_c007",
-   "segment": "a4",
-   "phase": "playing",
-   "cueTime": 5.97,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": false
-  },
-  {
-   "t_sec": 949.66,
-   "interval_ms": 150.0,
-   "cue": "a5_c001",
-   "segment": "a5",
-   "phase": "playing",
-   "cueTime": 0.17,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 1142.6,
-   "interval_ms": 150.1,
-   "cue": "a6_c001",
-   "segment": "a6",
-   "phase": "playing",
-   "cueTime": 0.31,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  },
-  {
-   "t_sec": 1311.25,
-   "interval_ms": 116.7,
-   "cue": "a6_c009",
-   "segment": "a6",
-   "phase": "playing",
-   "cueTime": 0.16,
-   "mode": "playing",
-   "in_dialog": false,
-   "line": null,
-   "in_reveal": false,
-   "during_set_fade_in": true
-  }
- ],
- "stalls_over_100ms_count": 10,
- "stalls_over_100ms_playing_count": 10,
+ "stalls_over_100ms": [],
+ "stalls_over_100ms_count": 0,
+ "stalls_over_100ms_playing_count": 0,
  "stalls_in_dialog_or_reveal": 0,
- "stalls_during_set_fade_in": 8,
+ "stalls_during_set_fade_in": 0,
  "criteria_v12_24_5": {
   "p95_le_34ms": true,
-  "stalls_le_2": false,
+  "stalls_le_2": true,
   "no_stall_in_dialog_or_reveal": true,
   "heat_test_30min_idle_40min_show": "未驗證（本次只跑一次完整演出，沒有待機 30 分鐘）"
  },
  "per_segment": {
   "a0": {
-   "frames": 6684,
+   "frames": 6694,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
-   "max_ms": 16.8,
+   "max_ms": 50.0,
    "over_50ms": 0
   },
   "a1": {
-   "frames": 9438,
+   "frames": 9325,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
-   "max_ms": 99.9,
+   "max_ms": 66.6,
    "over_50ms": 1
   },
   "a2": {
-   "frames": 15839,
+   "frames": 15895,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
-   "max_ms": 133.4,
-   "over_50ms": 5
+   "max_ms": 66.7,
+   "over_50ms": 2
   },
   "a3": {
-   "frames": 8993,
+   "frames": 8999,
    "p50_ms": 16.7,
    "p95_ms": 16.8,
-   "max_ms": 116.7,
-   "over_50ms": 5
+   "max_ms": 83.3,
+   "over_50ms": 3
   },
   "a4": {
-   "frames": 13222,
+   "frames": 13173,
    "p50_ms": 16.7,
-   "p95_ms": 16.7,
-   "max_ms": 150.0,
+   "p95_ms": 16.8,
+   "max_ms": 100.0,
    "over_50ms": 4
   },
   "a5": {
-   "frames": 11102,
+   "frames": 10857,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
-   "max_ms": 150.0,
+   "max_ms": 66.6,
    "over_50ms": 1
   },
   "a6": {
-   "frames": 11269,
+   "frames": 11286,
    "p50_ms": 16.7,
-   "p95_ms": 16.7,
-   "max_ms": 150.1,
-   "over_50ms": 3
+   "p95_ms": 16.8,
+   "max_ms": 50.0,
+   "over_50ms": 0
   },
   "a7": {
-   "frames": 2903,
+   "frames": 2892,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
    "max_ms": 16.8,
@@ -247,29 +116,35 @@
   "a8": {
    "frames": 1548,
    "p50_ms": 16.7,
-   "p95_ms": 16.7,
+   "p95_ms": 16.8,
    "max_ms": 16.8,
    "over_50ms": 0
   }
  },
  "worst_cues_p95": [
   {
-   "cue": "a0_c005",
-   "frames": 1320,
+   "cue": "a0_c002",
+   "frames": 1344,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
-   "cue": "a2_c001",
-   "frames": 1097,
+   "cue": "a0_c005",
+   "frames": 1330,
    "p95_ms": 16.8,
-   "max_ms": 133.3
+   "max_ms": 50.0
   },
   {
-   "cue": "a2_c004",
-   "frames": 1349,
+   "cue": "a1_c001",
+   "frames": 1704,
    "p95_ms": 16.8,
-   "max_ms": 133.4
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a2_c002",
+   "frames": 1559,
+   "p95_ms": 16.8,
+   "max_ms": 33.3
   },
   {
    "cue": "a2_c006",
@@ -284,255 +159,249 @@
    "max_ms": 16.8
   },
   {
+   "cue": "a2_c012",
+   "frames": 1941,
+   "p95_ms": 16.8,
+   "max_ms": 66.6
+  },
+  {
+   "cue": "a2_c013",
+   "frames": 2089,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
    "cue": "a3_c001",
-   "frames": 1329,
+   "frames": 1332,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a3_c002",
+   "frames": 799,
    "p95_ms": 16.8,
    "max_ms": 66.7
   },
   {
    "cue": "a3_c003",
-   "frames": 1446,
-   "p95_ms": 16.8,
-   "max_ms": 116.7
-  },
-  {
-   "cue": "a3_c004",
-   "frames": 941,
+   "frames": 1450,
    "p95_ms": 16.8,
    "max_ms": 83.3
   },
   {
-   "cue": "a3_c006",
-   "frames": 456,
-   "p95_ms": 16.8,
-   "max_ms": 16.8
-  },
-  {
-   "cue": "a4_c002",
-   "frames": 1248,
-   "p95_ms": 16.8,
-   "max_ms": 133.3
-  },
-  {
-   "cue": "a4_c004",
-   "frames": 924,
-   "p95_ms": 16.8,
-   "max_ms": 16.8
-  },
-  {
-   "cue": "a4_c005",
-   "frames": 1176,
+   "cue": "a3_c004",
+   "frames": 935,
    "p95_ms": 16.8,
    "max_ms": 16.8
   }
  ],
  "long_animation_frames": {
-  "count": 23,
-  "over_100ms": 14,
+  "count": 19,
+  "over_100ms": 1,
   "top": [
    {
-    "t_sec": 715.96,
-    "dur_ms": 176.3,
-    "blocking_ms": 112.1,
-    "cue": "a4_c001",
+    "t_sec": 945.38,
+    "dur_ms": 105.4,
+    "blocking_ms": 55.4,
+    "cue": "a4_c013",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 1142.44,
-    "dur_ms": 174.3,
-    "blocking_ms": 111.3,
-    "cue": "a6_c001",
-    "phase": "playing",
+    "t_sec": 820.33,
+    "dur_ms": 96.3,
+    "blocking_ms": 38.1,
+    "cue": "a4_c006",
+    "phase": "reveal_playing",
     "mode": "playing"
    },
    {
-    "t_sec": 949.5,
-    "dur_ms": 165.3,
-    "blocking_ms": 101.5,
-    "cue": "a5_c001",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 759.79,
-    "dur_ms": 160.1,
-    "blocking_ms": 94.2,
-    "cue": "a4_c002",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 281.31,
-    "dur_ms": 159.2,
-    "blocking_ms": 95.6,
-    "cue": "a2_c001",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 344.12,
-    "dur_ms": 154.8,
-    "blocking_ms": 92.7,
-    "cue": "a2_c004",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 829.82,
-    "dur_ms": 145,
-    "blocking_ms": 80.9,
-    "cue": "a4_c007",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 595.71,
-    "dur_ms": 142.6,
-    "blocking_ms": 77.9,
-    "cue": "a3_c003",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 522.92,
-    "dur_ms": 133.4,
-    "blocking_ms": 71.1,
-    "cue": "a2_c013",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 1311.12,
-    "dur_ms": 130.4,
-    "blocking_ms": 68.4,
-    "cue": "a6_c009",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 116.48,
-    "dur_ms": 125.7,
-    "blocking_ms": 59.6,
-    "cue": "a1_c001",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 1290.04,
-    "dur_ms": 121.9,
-    "blocking_ms": 60.5,
-    "cue": "a6_c008",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 758.52,
-    "dur_ms": 117.5,
-    "blocking_ms": 52.8,
-    "cue": "a4_c002",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 678.04,
-    "dur_ms": 103.2,
-    "blocking_ms": 35.3,
+    "t_sec": 713.21,
+    "dur_ms": 82.1,
+    "blocking_ms": 31.1,
     "cue": "a3_c008",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 622.46,
-    "dur_ms": 98.8,
-    "blocking_ms": 35.5,
-    "cue": "a3_c004",
+    "t_sec": 738.65,
+    "dur_ms": 77.8,
+    "blocking_ms": 27.7,
+    "cue": "a4_c001",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 341.16,
+    "dur_ms": 74,
+    "blocking_ms": 23.3,
+    "cue": "a2_c003",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 820.45,
+    "dur_ms": 73.5,
+    "blocking_ms": 15.6,
+    "cue": "a4_c006",
+    "phase": "reveal_playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 617.96,
+    "dur_ms": 72.5,
+    "blocking_ms": 22.3,
+    "cue": "a3_c003",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 1134.1,
+    "dur_ms": 68.8,
+    "blocking_ms": 18.7,
+    "cue": "a5_c008",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 592.96,
+    "dur_ms": 68.4,
+    "blocking_ms": 18.4,
+    "cue": "a3_c002",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 945.5,
+    "dur_ms": 67.2,
+    "blocking_ms": 17.2,
+    "cue": "a4_c013",
+    "phase": "story_waiting",
+    "mode": "waiting"
+   },
+   {
+    "t_sec": 278.22,
+    "dur_ms": 66.5,
+    "blocking_ms": 16.5,
+    "cue": "a1_c008",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 713.32,
+    "dur_ms": 66.5,
+    "blocking_ms": 16.3,
+    "cue": "a3_c008",
+    "phase": "story_waiting",
+    "mode": "waiting"
+   },
+   {
+    "t_sec": 114.93,
+    "dur_ms": 62,
+    "blocking_ms": 11.9,
+    "cue": "a0_c005",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 519.93,
+    "dur_ms": 61.7,
+    "blocking_ms": 11.8,
+    "cue": "a2_c012",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 592.88,
+    "dur_ms": 61.2,
+    "blocking_ms": 10.2,
+    "cue": "a3_c002",
     "phase": "playing",
     "mode": "playing"
    }
   ]
  },
  "memory": {
-  "samples": 282,
+  "samples": 281,
   "title_idle": {
-   "t": 8910,
+   "t": 9140,
    "label": "片頭待機",
    "cue": "a0_c000",
    "phase": "title_idle",
-   "jsHeapUsedMB": 217.454,
-   "jsHeapTotalMB": 262.688,
-   "perfMemoryUsedMB": 805.448,
-   "nodes": 1176,
-   "listeners": 1023,
+   "jsHeapUsedMB": 236.655,
+   "jsHeapTotalMB": 263.922,
+   "perfMemoryUsedMB": 1013.427,
+   "nodes": 1731,
+   "listeners": 1047,
    "processRssMB": {
-    "browser": 268.109375,
-    "renderer": 3258.953125,
-    "GPU": 710.609375,
-    "network.mojom.NetworkService": 97.5,
-    "storage.mojom.StorageService": 76.640625,
-    "audio.mojom.AudioService": 93.109375
+    "browser": 267.75,
+    "renderer": 3514.515625,
+    "GPU": 765.53125,
+    "network.mojom.NetworkService": 97.421875,
+    "storage.mojom.StorageService": 76.625,
+    "audio.mojom.AudioService": 93.203125
    },
-   "loadavg1": 4.4619140625
+   "loadavg1": 3.10595703125
   },
   "end": {
-   "t": 1425898,
+   "t": 1419303,
    "label": "片尾署名卡",
    "cue": "a8_c003",
    "phase": "ended",
-   "jsHeapUsedMB": 243.505,
-   "jsHeapTotalMB": 312.938,
-   "perfMemoryUsedMB": 438.194,
-   "nodes": 1275,
-   "listeners": 1040,
+   "jsHeapUsedMB": 224.146,
+   "jsHeapTotalMB": 311.672,
+   "perfMemoryUsedMB": 438.152,
+   "nodes": 1277,
+   "listeners": 1051,
    "processRssMB": {
-    "browser": 193.875,
-    "renderer": 1271.359375,
-    "GPU": 234.8125,
-    "network.mojom.NetworkService": 81.4375,
-    "storage.mojom.StorageService": 60.703125,
-    "audio.mojom.AudioService": 75.171875
+    "browser": 275.6875,
+    "renderer": 2777.359375,
+    "GPU": 784.6875,
+    "network.mojom.NetworkService": 99.640625,
+    "storage.mojom.StorageService": 78.453125,
+    "audio.mojom.AudioService": 94.578125
    },
-   "loadavg1": 2.10400390625
+   "loadavg1": 2.23291015625
   },
   "js_heap_used_MB": {
-   "min": 211.445,
-   "max": 270.538,
-   "first_play": 230.366,
-   "last_play": 230.921,
-   "slope_MB_per_min_playing": 0.93,
+   "min": 214.988,
+   "max": 263.508,
+   "first_play": 227.506,
+   "last_play": 237.85,
+   "slope_MB_per_min_playing": 0.69,
    "first10min_mean": 230.1,
-   "last10min_mean": 244.1
+   "last10min_mean": 238.7
   },
   "process_rss_total_MB": {
-   "min": 1549.1,
-   "max": 4578.5,
-   "first_play": 4499.9,
-   "last_play": 1937.2
+   "min": 3979.3,
+   "max": 4815.0,
+   "first_play": 4787.1,
+   "last_play": 4125.3
   },
   "process_rss_by_type_end_MB": {
-   "browser": 193.875,
-   "renderer": 1271.359375,
-   "GPU": 234.8125,
-   "network.mojom.NetworkService": 81.4375,
-   "storage.mojom.StorageService": 60.703125,
-   "audio.mojom.AudioService": 75.171875
+   "browser": 275.6875,
+   "renderer": 2777.359375,
+   "GPU": 784.6875,
+   "network.mojom.NetworkService": 99.640625,
+   "storage.mojom.StorageService": 78.453125,
+   "audio.mojom.AudioService": 94.578125
   },
-  "dom_nodes_max": 1686,
+  "dom_nodes_max": 1732,
   "loadavg1": {
-   "mean": 2.22,
-   "max": 4.46
+   "mean": 1.71,
+   "max": 3.11
   },
   "note": "jsHeapUsedMB＝CDP Performance.getMetrics JSHeapUsedSize；perfMemoryUsedMB＝performance.memory（--enable-precise-memory-info）；processRssMB＝SystemInfo.getProcessInfo 的各程序 ps RSS（macOS，依程序類型加總，MB）。 macOS 的 RSS 會因記憶體壓縮、清除快取而突然下降，只當走勢參考；學校 Windows 筆電請以工作管理員實測（未驗證）。"
  },
  "voice_sync": {
-  "samples": 875,
-  "max_abs_ms": 5,
+  "samples": 874,
+  "max_abs_ms": 0,
   "p95_abs_ms": 0.0,
   "over_50ms": 0,
   "over_50ms_where": []
  },
  "subtitles": {
-  "checked_samples": 3046,
+  "checked_samples": 3053,
   "mismatch": 0,
   "mismatch_where": []
  },
@@ -542,7 +411,7 @@
   "not_moved": [
    {
     "line": "a1_c004_06",
-    "samples": 18,
+    "samples": 19,
     "states": {
      "pinan": [
       ""
@@ -587,10 +456,10 @@
     7,
     8
    ],
-   "wall_ms": 1424263,
+   "wall_ms": 1417662,
    "timedOut": false
   },
-  "wall_min": 23.74,
+  "wall_min": 23.63,
   "presses": 69
  },
  "page_errors": []

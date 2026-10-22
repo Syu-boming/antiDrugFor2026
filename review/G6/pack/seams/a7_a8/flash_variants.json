@@ -16,6 +16,20 @@
    "near_limit_3": [
     {
      "type": "luma",
+     "region": "x0_y4",
+     "px": [
+      0,
+      240,
+      60,
+      300
+     ],
+     "count_per_sec": 3,
+     "window_start": 4.233,
+     "cue": "a8_c001",
+     "cue_t": 1.633
+    },
+    {
+     "type": "luma",
      "region": "x1_y4",
      "px": [
       60,
@@ -24,9 +38,9 @@
       300
      ],
      "count_per_sec": 3,
-     "window_start": 4.167,
+     "window_start": 4,
      "cue": "a8_c001",
-     "cue_t": 1.567
+     "cue_t": 1.4
     },
     {
      "type": "luma",
@@ -38,13 +52,13 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 3.967,
+     "window_start": 4.7,
      "cue": "a8_c001",
-     "cue_t": 1.367
+     "cue_t": 2.1
     }
    ],
-   "near_limit_total": 233,
-   "near_limit_3_total": 2
+   "near_limit_total": 252,
+   "near_limit_3_total": 3
   },
   "proj_16x9": {
    "grid": [
@@ -59,7 +73,7 @@
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
    "near_limit_3": [],
-   "near_limit_total": 75,
+   "near_limit_total": 78,
    "near_limit_3_total": 0
   },
   "proj_32x18": {
@@ -69,29 +83,14 @@
    ],
    "projector_v2": true,
    "max_changes_per_sec": {
-    "luma": 3,
+    "luma": 2,
     "red": 0
    },
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
-   "near_limit_3": [
-    {
-     "type": "luma",
-     "region": "x0_y11",
-     "px": [
-      0,
-      660,
-      60,
-      720
-     ],
-     "count_per_sec": 3,
-     "window_start": 4,
-     "cue": "a8_c001",
-     "cue_t": 1.4
-    }
-   ],
-   "near_limit_total": 281,
-   "near_limit_3_total": 1
+   "near_limit_3": [],
+   "near_limit_total": 298,
+   "near_limit_3_total": 0
   }
  }
 }

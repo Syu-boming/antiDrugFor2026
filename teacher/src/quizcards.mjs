@@ -106,7 +106,7 @@ export function buildQuizCards(ctx) {
 <div class="opts">${optRows(q, true)}</div>
 <div class="fb">
 <div><h3>揭答後對全班說</h3><div class="say">${inline(e.say)}</div>
-<h3 style="margin-top:2mm">接著</h3><ul><li>從 ${x.zone} 區比 ${q.answer} 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>記錄區、排、座位 →「${q.number === 8 ? '最後一盞，' : '大家一起，'}捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 ${x.zone} 區比 ${q.answer} 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「${q.number === 8 ? '最後一盞，' : '大家一起，'}捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
 <div>${e.ifMany.length ? `<h3>若不少人選了……（對全班統一說，不點名）</h3><ul>${e.ifMany.map((m) => `<li><b>選 ${esc(m.choice)}</b>：${inline(m.text)}</li>`).join('')}</ul>` : ''}
 ${e.background.length ? `<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg">${briefBackground(e.background).map((b) => `<li>${inline(b)}</li>`).join('')}</ul>` : ''}</div>
 </div>
@@ -122,7 +122,7 @@ ${e.background.length ? `<h3 style="margin-top:2mm">教師背景（不念給學�
 <ul><li>念法：「第 N 題。」→ 題目 →「一，……二，……三，……」→「想一想……3、2、1，一起比！」</li>
 <li>揭答：「正解是 N：……」→ 對全班說 → 點指定區一位說理由 → 捧燈手。</li>
 <li>紙本時沒有燈：老師說「第 N 盞燈，亮了！」，全班一起做捧燈手，再做安靜手勢。</li></ul>
-<p style="font-size:11pt;color:var(--muted)">題目與選項文字和演出題卡、八題定稿（script/八題_v03.md）一字不差，由 tools/teacher_docs.mjs 比對。${BYLINE}</p>
+<p style="font-size:11pt;color:var(--muted)">題目與選項文字和演出的題卡一字不差（產生時已自動比對）。「對全班說」約 12 秒，只講這一題的重點，不先講後面的劇情。${BYLINE}</p>
 </section>`;
   return [
     { name: '題卡_學生版', html: htmlPage({ title: `${SHOW_TITLE}｜紙本題卡（學生版）`, css: CARD_CSS, body: student.join('\n') }), expectPages: qs.length, quizPdf: 'student' },

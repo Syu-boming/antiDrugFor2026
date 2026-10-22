@@ -25,7 +25,7 @@ import { buildTimelines, type CueTimeline } from '../cues/timeline';
 import { getPack, loadPackFile, loadPackFiles, type PackManifest } from '../data/packs';
 import { AssetStore } from '../data/assets';
 import { AudioClock, PerformanceClock, VirtualClock, type Clock } from './clock';
-import { evaluateWorld, type WorldState } from './world';
+import { evaluateWorld, setsUsed, type WorldState } from './world';
 import type { Mixer } from '../audio/mixer';
 import type { Stage, Quality } from '../stage/stage';
 import type { UI } from '../ui/ui';
@@ -62,7 +62,7 @@ export interface ShowAPI {
   setCompression(level: number): CompressionLevel | 'pending';
   checkpoints(): { elapsedSec: number | null; suggested: CompressionLevel; list: CheckpointStatus[] };
   resetShowClock(): void;
-  sets(): { active: string; built: number; disposed: number; lastBuildMs: number; liveSetGroups: number };
+  sets(): { active: string; built: number; disposed: number; lastBuildMs: number; liveSetGroups: number; lastSwapMs: number; preparedHits: number; prepared: { name: string; pending: number; compiled: boolean }[] };
 }
 
 interface Transition { kind: 'preroll' | 'nav'; fromIndex: number; fromT: number; fromKey: string; start: number; out: number; inn: number; wall: boolean }
@@ -79,6 +79,8 @@ export const PHASE_LABEL: Record<Phase, string> = {
 
 /** 進入等待後這段時間內的「下一步」視為連按誤觸（毫秒；擷取模式不適用） */
 const WAIT_GUARD_MS = 350;
+/** 換景預先準備：停格時每格最多花這麼久（毫秒；建一個景本身不切開，一格最多建一個） */
+const PREFETCH_BUDGET_MS = 6;
 
 /** 依 cue 種類的配樂基準音量：題目與發獎時很低，署名卡待機沒有音樂 */
 const MUSIC_LEVEL: Record<Cue['kind'], number> = { title: 0, curtain: 0.8, scene: 0.8, wait: 0.35, quiz: 0.06, reveal: 0.06, lamp: 0.5 };
@@ -162,7 +164,8 @@ export class Engine {
       setCompression: (l) => this.setCompression(l),
       checkpoints: () => this.checkpointReport(),
       resetShowClock: () => { this.showStartMs = null; this.cpLog.clear(); },
-      sets: () => ({ active: this.stage.setName, built: this.stage.setStats.built, disposed: this.stage.setStats.disposed, lastBuildMs: Math.round(this.stage.setStats.lastBuildMs), liveSetGroups: this.stage.liveSetGroups }),
+      sets: () => ({ active: this.stage.setName, built: this.stage.setStats.built, disposed: this.stage.setStats.disposed, lastBuildMs: Math.round(this.stage.setStats.lastBuildMs), liveSetGroups: this.stage.liveSetGroups,
+        lastSwapMs: Math.round(this.stage.setStats.lastSwapMs * 10) / 10, preparedHits: this.stage.setStats.preparedHits, prepared: this.stage.preparedSets }),
     };
     (window as unknown as { __engineShow?: ShowAPI }).__engineShow = api;
   }
@@ -452,6 +455,27 @@ export class Engine {
     if (this.pendingCompression !== null) this.applyCompression(this.pendingCompression);
     if (!opts.keepAudio && this.clock.kind === 'audio') { const c = this.timelines[i].cue; this.mixer.setMusicLevel(c.musicLevel ?? MUSIC_LEVEL[c.kind] ?? 0.6); }
     this.renderNow(performance.now());
+    this.prefetchIdle = false;
+    // 擷取模式：停格當下就把下一段的景準備好（虛擬時鐘，不分格；和即時播放走同一條換景路徑）
+    if (this.capturing) this.prefetch(Infinity);
+  }
+
+  /** 換景預先準備已做完（這次停格不用再呼叫 stage.prepareSets） */
+  private prefetchIdle = false;
+  /** renderNow 次數（每格判斷這一格有沒有重畫） */
+  private renderCount = 0;
+
+  /**
+   * 換景預先準備（G6 效能修正）：停格等老師時（不在上一步、章節跳轉的漸變中），把按下一步要播的 cue 會用到的景
+   * 先建好、上傳貼圖、編譯著色器（stage.prepareSets；預備景不在場景裡，畫面不變）。換景那一格只要換上，不卡頓。
+   * @param budget 這一格最多花幾毫秒（Infinity＝一次做完）
+   */
+  private prefetch(budget: number): void {
+    if (this.prefetchIdle || this.mode !== 'waiting' || this.stage.contextLost || this.transActive()) return;
+    const tl = this.timelines[this.index];
+    const nx = tl && tl.nextIndex >= 0 ? this.timelines[tl.nextIndex] : undefined;
+    const busy = this.stage.prepareSets(nx ? setsUsed(nx) : [], performance.now() + budget);
+    if (!busy) this.prefetchIdle = true;
   }
 
   private finishCue(): void {
@@ -502,8 +526,11 @@ export class Engine {
     if (this.lastFrameMs && ms - this.lastFrameMs > 4000 && document.visibilityState === 'visible') this.autoPause('sleep');
     this.lastFrameMs = ms;
     if (this.clock instanceof VirtualClock && this.cfg.autostep && this.mode === 'playing') this.clock.advance();
+    const renders = this.renderCount;
     this.tick();
     if (this.shouldRender(ms)) this.renderNow(ms);
+    // 換景預先準備只用沒有重畫的格（停格時每 100 ms 才重畫一次）：大張貼圖上傳不和重畫擠在同一格
+    if (!this.capturing && this.renderCount === renders) this.prefetch(PREFETCH_BUDGET_MS);
   };
 
   private tick(): void {
@@ -562,6 +589,7 @@ export class Engine {
   renderNow(ms: number): void {
     const tl = this.timelines[this.index];
     if (!tl) return;
+    this.renderCount++;
     let extraDim = 0;
     const tr = this.trans;
     if (tr) {

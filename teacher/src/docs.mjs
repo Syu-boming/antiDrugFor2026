@@ -4,6 +4,9 @@ import { TEACHER_TIME, fmtClock, fmtMinSec } from './data.mjs';
 import { buildQuizCards } from './quizcards.mjs';
 import { buildLesson, buildGuide } from './lesson.mjs';
 import { buildPrints } from './print.mjs';
+import { backupVideoText } from './teacher_text.mjs';
+
+const md2html = (s) => String(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
 
 /** 各段的授課時鐘（和講稿同一套算法） */
 export function segTimes(ctx) {
@@ -134,8 +137,9 @@ function buildOpCard(ctx) {
 </ul>
 </div>
 <div>
-<h2><span class="n">7</span>結束</h2>
+<h2><span class="n">7</span>${ctx.mainLamp ? '主燈與結束' : '結束'}</h2>
 <ul>
+${ctx.mainLamp ? `<li><b>${ctx.mainLamp.id}</b> 八盞燈全亮、鏡頭後拉時：「最後的主燈，全場一起，捧燈手——」</li>` : ''}
 <li>謝幕後按一次：布幕合攏，自動停在「${BYLINE}」署名卡。</li>
 <li>教師結語約 45 秒（落後時 30 秒），說明退場發參與小卡。預估總長 <b>${fmtClock(ctx.sched.total)}</b>（上限 38:00）。</li>
 </ul>
@@ -150,10 +154,11 @@ function buildOpCard(ctx) {
 
 const FAULT_CSS = `
 @page { size: A4 portrait; margin: 9mm 9mm 8mm; }
-body { font-size: 10.8pt; line-height: 1.38; }
+body { font-size: 10.8pt; line-height: 1.35; }
 .top { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2pt solid var(--accent); padding-bottom: 2pt; margin-bottom: 5pt; }
 .top h1 { font-size: 20pt; margin: 0; }
 .top .by { font-size: 10pt; color: var(--muted); }
+p { margin: 3pt 0; }
 table.fault th { font-size: 11pt; }
 table.fault td { padding: 3pt 5pt; }
 table.fault td:first-child { font-weight: 800; width: 22%; }
@@ -167,10 +172,11 @@ table.fault td:nth-child(2) { width: 40%; }
 `;
 
 function buildFaultCard(ctx) {
+  const bv = backupVideoText(ctx.backup);
   const rows = [
     ['簡報筆按了沒反應', '看控制台上方「焦點」：點一下控制台（或舞台）任何地方取回焦點。檢查 USB 接收器與電池。', '用筆電鍵盤：PageDown 或 →＝下一步、空白鍵＝暫停；或按控制台的「下一步」。換備用簡報筆。鍵碼不同時用控制台「按鍵測試」設定。'],
     ['沒有聲音', '看控制台「聲音」狀態。檢查 Windows 播放裝置（接投影機後常被改成 HDMI）、音量、場地擴音與音源線。', '按黑屏鍵暫停再繼續。第一個字被吃掉：教師選單（M）「開頭靜音」改 200 或 400。仍沒聲音：<b>老師照字幕與講稿講述，劇情照常進行</b>。'],
-    ['畫面卡頓、不順', '等這一段播完停住。在停格時按 M → 畫質「B 級」或「鎖 30 fps」，再按 M 關掉選單。', '關掉其他程式、插電、高效能模式。仍卡：改用備援影片（暫定）或紙本題卡。'],
+    ['畫面卡頓、不順', '等這一段播完停住。在停格時按 M → 畫質「B 級」或「鎖 30 fps」，再按 M 關掉選單。', `關掉其他程式、插電、高效能模式。仍卡：改用${bv.label}${bv.ready ? '（下方）' : ''}或紙本題卡。`],
     ['出現「畫面暫停」或「顯示卡連線中斷」', '按一次「下一步」，重新建立畫面，回到目前的停格點。', '重建失敗：關掉程式重開，用控制台「跳到」選講稿上的 cue 編號、按「前往」。授課時鐘會保留。'],
     ['畫面黑掉、被重新整理或程式關掉', '不用慌：舞台回到「準備播放」畫面，不會自己出聲。按「準備播放」，再用控制台「跳到」回到剛才的 cue。', '程式關掉了：重新雙擊 AntidrugTheater.exe，同上跳回。'],
     ['螢幕被關掉或系統休眠', '喚醒後畫面停在原處，按黑屏鍵（或下一步）繼續，不會跳段。', '—'],
@@ -189,11 +195,12 @@ ${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).j
 <div class="path">
 <div class="st">Windows 可攜版<small>AntidrugTheater.exe</small></div><div class="ar">▶</div>
 <div class="st">瀏覽器版<small>Chrome／Edge 開 browser 資料夾</small></div><div class="ar">▶</div>
-<div class="st">備援影片（暫定）<small>分幕影片，隨身碟播放</small></div><div class="ar">▶</div>
+<div class="st">${bv.label}<small>${bv.step}</small></div><div class="ar">▶</div>
 <div class="st">紙本題卡＋講稿<small>老師講故事，八題照常</small></div>
 </div>
-<p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\\index.html</code>，在網址列最後加上 <code>?cues=show</code> 按 Enter，再按「準備播放」（只有舞台，用簡報筆操作）。要雙畫面：開 <code>browser\\console.html?cues=show</code>，按「開啟舞台視窗」，把舞台視窗拖到投影畫面，在舞台上按一次「準備播放」。不需要網路，也不用安裝。<span class="small">（建議彩排時先開好並加入書籤。）</span></p>
-<p class="small">代理老師也能照「一頁操作卡」與本卡完成演出。八題正解依序 ${quizTable(ctx).map((q) => q.answer).join('、')}；看哪一區依序 ${quizTable(ctx).map((q) => q.zone).join('、')}。演出完全離線，不使用攝影機與麥克風。</p>
+<p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\\index.html</code>，在網址列最後加上 <code>?cues=show</code> 按 Enter，再按「準備播放」（只有舞台，用簡報筆操作）。要雙畫面：開 <code>browser\\console.html?cues=show</code>，按「開啟舞台視窗」，把舞台視窗拖到投影畫面，在舞台上按一次「準備播放」。不需要網路，也不用安裝（建議彩排時先開好並加入書籤）。</p>
+<p><b>${bv.ready ? '備援影片怎麼播' : bv.label}</b>：${md2html(bv.short)}</p>
+<p class="small">代理老師也能照「一頁操作卡」與本卡完成演出。正解依序 ${quizTable(ctx).map((q) => q.answer).join('、')}；看 ${quizTable(ctx).map((q) => q.zone).join('、')} 區。完全離線，不用攝影機與麥克風。</p>
 `;
   return { name: '故障一頁卡', html: htmlPage({ title: `${SHOW_TITLE}｜故障一頁卡`, css: FAULT_CSS, body }), expectPages: 1 };
 }

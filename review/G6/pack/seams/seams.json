@@ -12,12 +12,12 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 0.8,
    "mean_luma": {
-    "prevLast": 0.3785,
-    "nextFirstShown": 0.3785,
+    "prevLast": 0.3784,
+    "nextFirstShown": 0.3784,
     "nextFirstLit": 0.4435
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": 0.065,
+   "first_lit_minus_last": 0.0651,
    "max_region_luma_delta_first_shown": 0.0,
    "max_region_luma_delta_first_lit": 0.6751,
    "hard_cut": false,
@@ -47,12 +47,12 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 0.8,
    "mean_luma": {
-    "prevLast": 0.4416,
-    "nextFirstShown": 0.4416,
+    "prevLast": 0.4417,
+    "nextFirstShown": 0.4417,
     "nextFirstLit": 0.5202
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": 0.0786,
+   "first_lit_minus_last": 0.0785,
    "max_region_luma_delta_first_shown": 0.0,
    "max_region_luma_delta_first_lit": 0.7097,
    "hard_cut": false,
@@ -84,12 +84,12 @@
    "mean_luma": {
     "prevLast": 0.3488,
     "nextFirstShown": 0.3488,
-    "nextFirstLit": 0.425
+    "nextFirstLit": 0.4248
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": 0.0762,
+   "first_lit_minus_last": 0.076,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.5511,
+   "max_region_luma_delta_first_lit": 0.5583,
    "hard_cut": false,
    "flash": {
     "grid16x9": {
@@ -117,14 +117,14 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 0.8,
    "mean_luma": {
-    "prevLast": 0.5436,
-    "nextFirstShown": 0.5436,
-    "nextFirstLit": 0.3264
+    "prevLast": 0.54,
+    "nextFirstShown": 0.54,
+    "nextFirstLit": 0.43
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": -0.2172,
+   "first_lit_minus_last": -0.11,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.562,
+   "max_region_luma_delta_first_lit": 0.5972,
    "hard_cut": false,
    "flash": {
     "grid16x9": {
@@ -152,14 +152,14 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 0.8,
    "mean_luma": {
-    "prevLast": 0.2369,
-    "nextFirstShown": 0.2369,
-    "nextFirstLit": 0.3486
+    "prevLast": 0.2951,
+    "nextFirstShown": 0.2951,
+    "nextFirstLit": 0.3477
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": 0.1117,
+   "first_lit_minus_last": 0.0526,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.5574,
+   "max_region_luma_delta_first_lit": 0.5167,
    "hard_cut": false,
    "flash": {
     "grid16x9": {
@@ -189,12 +189,12 @@
    "mean_luma": {
     "prevLast": 0.302,
     "nextFirstShown": 0.302,
-    "nextFirstLit": 0.1217
+    "nextFirstLit": 0.0997
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": -0.1803,
+   "first_lit_minus_last": -0.2023,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.5351,
+   "max_region_luma_delta_first_lit": 0.5444,
    "hard_cut": false,
    "flash": {
     "grid16x9": {
@@ -222,14 +222,14 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 0.8,
    "mean_luma": {
-    "prevLast": 0.4778,
-    "nextFirstShown": 0.4778,
+    "prevLast": 0.5118,
+    "nextFirstShown": 0.5118,
     "nextFirstLit": 0.3983
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": -0.0795,
+   "first_lit_minus_last": -0.1135,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.7522,
+   "max_region_luma_delta_first_lit": 0.7551,
    "hard_cut": false,
    "flash": {
     "grid16x9": {
@@ -257,14 +257,14 @@
    "preroll_sec": 0.6,
    "enterFade_sec": 1,
    "mean_luma": {
-    "prevLast": 0.3876,
-    "nextFirstShown": 0.3876,
-    "nextFirstLit": 0.4956
+    "prevLast": 0.3866,
+    "nextFirstShown": 0.3866,
+    "nextFirstLit": 0.4938
    },
    "first_shown_minus_last": 0.0,
-   "first_lit_minus_last": 0.108,
+   "first_lit_minus_last": 0.1072,
    "max_region_luma_delta_first_shown": 0.0,
-   "max_region_luma_delta_first_lit": 0.7512,
+   "max_region_luma_delta_first_lit": 0.7467,
    "hard_cut": false,
    "flash": {
     "grid16x9": {

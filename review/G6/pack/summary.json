@@ -1,10 +1,10 @@
 {
- "generated": "2026-10-22 11:19",
+ "generated": "2026-10-22 17:47",
  "a_packs": {
   "packs_matching_build": 9,
   "packs_total": 9,
   "flash_all_pass": true,
-  "subtitle_sync_all_pass": false,
+  "subtitle_sync_all_pass": true,
   "loudness": {
    "median_I_LUFS": -16.1,
    "max_abs_dev_LU": 3.3,
@@ -12,25 +12,25 @@
    "dialog_max_abs_dev_LU": 0.2
   },
   "duration": {
-   "playback_current_build_sec": 1345.4,
-   "total_min": 35.95,
+   "playback_current_build_sec": 1337.8,
+   "total_min": 35.83,
    "pass_le_38min": true,
-   "margin_sec": 123.0
+   "margin_sec": 130.0
   }
  },
  "b_perf": {
   "p95_ms_playing": 16.7,
-  "stalls_over_100ms_playing": 10,
+  "stalls_over_100ms_playing": 0,
   "stalls_in_dialog_or_reveal": 0,
   "criteria": {
    "p95_le_34ms": true,
-   "stalls_le_2": false,
+   "stalls_le_2": true,
    "no_stall_in_dialog_or_reveal": true,
    "heat_test_30min_idle_40min_show": "未驗證（本次只跑一次完整演出，沒有待機 30 分鐘）"
   },
-  "load_open_to_title_ms": 7242,
-  "js_heap_max_MB": 270.538,
-  "voice_sync_max_ms": 5,
+  "load_open_to_title_ms": 7464,
+  "js_heap_max_MB": 263.508,
+  "voice_sync_max_ms": 0,
   "subtitle_mismatch": 0,
   "flow_all_visited": true
  },

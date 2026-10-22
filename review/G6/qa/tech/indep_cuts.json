@@ -1,0 +1,46 @@
+{
+ "a0": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a1": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a2": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a3": {
+  "isolated_hard_cuts_gt20pct": [
+   {
+    "frame": 5073,
+    "t": 169.1,
+    "before": 0.411,
+    "after": 0.537,
+    "rel": 0.304
+   }
+  ],
+  "max_rel_isolated": 0.304
+ },
+ "a4": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a5": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a6": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a7": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ },
+ "a8": {
+  "isolated_hard_cuts_gt20pct": [],
+  "max_rel_isolated": 0
+ }
+}

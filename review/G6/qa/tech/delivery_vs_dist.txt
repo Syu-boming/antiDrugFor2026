@@ -1,0 +1,74 @@
+# 交付包與目前建置（app/dist，G6 驗收包所用）比對 2026-10-22 16:47:06
+
+## 時間
+-rw-r--r--@ 1 boming  staff  893176 10月 22 16:38:15 2026 app/dist/app.js
+-rw-r--r--@ 1 boming  staff  888221 10月 22 10:10:16 2026 交付/AntidrugTheater/resources/app/dist/app.js
+-rw-r--r--@ 1 boming  staff  888221 10月 22 10:10:22 2026 交付/browser/app.js
+
+## diff -rq 交付/browser app/dist
+Files 交付/browser/app.js and app/dist/app.js differ
+Files 交付/browser/console-link.js and app/dist/console-link.js differ
+Files 交付/browser/console.js and app/dist/console.js differ
+Files 交付/browser/data/assets_json.js and app/dist/data/assets_json.js differ
+Files 交付/browser/data/cues_show.js and app/dist/data/cues_show.js differ
+Files 交付/browser/data/img_chr-lin.js and app/dist/data/img_chr-lin.js differ
+Files 交付/browser/data/img_chr-pinan.js and app/dist/data/img_chr-pinan.js differ
+Files 交付/browser/data/img_sets_a2_shop.js and app/dist/data/img_sets_a2_shop.js differ
+Files 交付/browser/data/img_sets_a3_classroom.js and app/dist/data/img_sets_a3_classroom.js differ
+Files 交付/browser/data/img_sets_a5_gate.js and app/dist/data/img_sets_a5_gate.js differ
+Files 交付/browser/data/img_sets_workshop_a0.js and app/dist/data/img_sets_workshop_a0.js differ
+Files 交付/browser/data/manifest.js and app/dist/data/manifest.js differ
+Files 交付/browser/data/sfx.js and app/dist/data/sfx.js differ
+
+## diff -rq Electron 內 dist 與 交付/browser（相同則無輸出）
+
+## 預設 cue 集
+交付/browser/app.js: get("cues")??"demo"
+app/dist/app.js: get("cues")??"show"
+
+## cue 差異（71 個中不同的 cue）
+cues 71 71
+38 a0_c002 dur undefined->undefined
+a0_c004 dur undefined->undefined
+a1_c004 dur undefined->undefined
+a1_c005 dur undefined->undefined
+a1_c006 dur undefined->undefined
+a1_c007 dur undefined->undefined
+a1_c008 dur undefined->undefined
+a2_c011 dur undefined->undefined
+a2_c012 dur undefined->undefined
+a3_c001 dur undefined->undefined
+a3_c004 dur undefined->undefined
+a3_c008 dur undefined->undefined
+a4_c001 dur undefined->undefined
+a4_c002 dur undefined->undefined
+a4_c007 dur undefined->undefined
+a4_c008 dur undefined->undefined
+a4_c009 dur undefined->undefined
+a4_c010 dur undefined->undefined
+a4_c011 dur undefined->undefined
+a4_c012 dur undefined->undefined
+a4_c013 dur undefined->undefined
+a5_c001 dur undefined->undefined
+a5_c005 dur undefined->undefined
+a5_c006 dur undefined->undefined
+a5_c007 dur undefined->undefined
+a6_c001 dur undefined->undefined
+a6_c002 dur undefined->undefined
+a6_c003 dur undefined->undefined
+a6_c004 dur undefined->undefined
+a6_c005 dur undefined->undefined
+a6_c006 dur undefined->undefined
+a6_c007 dur undefined->undefined
+a6_c009 dur undefined->undefined
+a7_c002 dur undefined->undefined
+a7_c003 dur undefined->undefined
+a8_c001 dur undefined->undefined
+a8_c002 dur undefined->undefined
+a8_c003 dur undefined->undefined
+
+## 查核點
+交付:
+"atMinute":0 "atMinute":13 "atMinute":23.45 "atMinute":30.82 "atMinute":34.55 
+dist:
+"atMinute":0 "atMinute":13.27 "atMinute":23.82 "atMinute":31.48 "atMinute":35.08 

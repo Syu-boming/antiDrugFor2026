@@ -11,7 +11,7 @@
     "preroll_sec": 0.6,
     "lines": 17
    },
-   "pack_generated": "2026-10-22 09:28",
+   "pack_generated": "2026-10-22 12:23",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
@@ -49,7 +49,7 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 125,
+    "near_limit_total": 124,
     "frames": 3874
    },
    "subtitle_sync": {
@@ -93,21 +93,21 @@
    "exists": true,
    "cues": 8,
    "current_build": {
-    "cue_total_sec": 155.36,
-    "preroll_sec": 1.2,
+    "cue_total_sec": 154.36,
+    "preroll_sec": 0.6,
     "lines": 27
    },
-   "pack_generated": "2026-10-22 10:34",
+   "pack_generated": "2026-10-22 12:38",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 155.4,
-    "act_preroll_total_sec": 1.2,
+    "act_total_sec": 154.4,
+    "act_preroll_total_sec": 0.6,
     "act_budget_recorded_sec": 144.2,
-    "diff_vs_budget_sec": 12.4,
+    "diff_vs_budget_sec": 10.8,
     "estimate_sum_sec": 144.3,
-    "playback_with_holds_sec": 182.06
+    "playback_with_holds_sec": 180.46
    },
    "loudness": {
     "I_LUFS": -16.3,
@@ -135,8 +135,8 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 152,
-    "frames": 5462
+    "near_limit_total": 136,
+    "frames": 5414
    },
    "subtitle_sync": {
     "pages": 27,
@@ -183,7 +183,7 @@
     "preroll_sec": 3.0,
     "lines": 38
    },
-   "pack_generated": "2026-10-22 10:05",
+   "pack_generated": "2026-10-22 16:01",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
@@ -211,7 +211,7 @@
    },
    "flash": {
     "grid16x9": {
-     "luma": 3,
+     "luma": 2,
      "red": 2
     },
     "fine32x18": {
@@ -284,7 +284,7 @@
     "preroll_sec": 2.4,
     "lines": 23
    },
-   "pack_generated": "2026-10-22 09:19",
+   "pack_generated": "2026-10-22 12:34",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
@@ -305,7 +305,7 @@
     "dialog_median_mix_I_LUFS": -15.0,
     "line_mix_I_spread_LU": 0.4,
     "momentary_max_LUFS": -9.6,
-    "music_sfx_only_max_LUFS": -16.7,
+    "music_sfx_only_max_LUFS": -17.0,
     "freeze_holds_pass": "5/5",
     "dev_from_median_LU": 0.0,
     "dialog_dev_from_median_LU": -0.1
@@ -366,25 +366,25 @@
    "exists": true,
    "cues": 13,
    "current_build": {
-    "cue_total_sec": 218.59,
+    "cue_total_sec": 217.09,
     "preroll_sec": 1.2,
     "lines": 33
    },
-   "pack_generated": "2026-10-22 09:18",
+   "pack_generated": "2026-10-22 12:34",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 218.6,
+    "act_total_sec": 217.1,
     "act_preroll_total_sec": 1.2,
     "act_budget_recorded_sec": 224.0,
-    "diff_vs_budget_sec": -4.2,
+    "diff_vs_budget_sec": -5.7,
     "estimate_sum_sec": 224.0,
-    "playback_with_holds_sec": 260.29
+    "playback_with_holds_sec": 258.79
    },
    "loudness": {
-    "I_LUFS": -15.9,
-    "LRA_LU": 14.8,
+    "I_LUFS": -15.8,
+    "LRA_LU": 14.7,
     "TP_dBTP": -0.9,
     "sample_peak_dBFS": -0.87,
     "clipped_samples": 0,
@@ -393,7 +393,7 @@
     "momentary_max_LUFS": -8.4,
     "music_sfx_only_max_LUFS": -16.9,
     "freeze_holds_pass": "7/7",
-    "dev_from_median_LU": 0.2,
+    "dev_from_median_LU": 0.3,
     "dialog_dev_from_median_LU": 0.0
    },
    "flash": {
@@ -408,8 +408,8 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 145,
-    "frames": 7809
+    "near_limit_total": 146,
+    "frames": 7763
    },
    "subtitle_sync": {
     "pages": 34,
@@ -456,32 +456,32 @@
    "exists": true,
    "cues": 8,
    "current_build": {
-    "cue_total_sec": 183.53,
+    "cue_total_sec": 179.08,
     "preroll_sec": 1.2,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 09:43",
+   "pack_generated": "2026-10-22 12:23",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 183.5,
+    "act_total_sec": 179.1,
     "act_preroll_total_sec": 1.2,
     "act_budget_recorded_sec": 171.0,
-    "diff_vs_budget_sec": 13.7,
+    "diff_vs_budget_sec": 9.3,
     "estimate_sum_sec": 171.0,
-    "playback_with_holds_sec": 210.23
+    "playback_with_holds_sec": 205.78
    },
    "loudness": {
     "I_LUFS": -15.8,
-    "LRA_LU": 15.1,
+    "LRA_LU": 13.1,
     "TP_dBTP": -1.1,
     "sample_peak_dBFS": -1.11,
     "clipped_samples": 0,
     "dialog_median_mix_I_LUFS": -15.0,
     "line_mix_I_spread_LU": 4.1,
     "momentary_max_LUFS": -8.9,
-    "music_sfx_only_max_LUFS": -17.1,
+    "music_sfx_only_max_LUFS": -16.9,
     "freeze_holds_pass": "5/5",
     "dev_from_median_LU": 0.3,
     "dialog_dev_from_median_LU": -0.1
@@ -498,8 +498,8 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 151,
-    "frames": 6307
+    "near_limit_total": 148,
+    "frames": 6173
    },
    "subtitle_sync": {
     "pages": 28,
@@ -546,30 +546,30 @@
    "exists": true,
    "cues": 9,
    "current_build": {
-    "cue_total_sec": 185.19,
+    "cue_total_sec": 185.09,
     "preroll_sec": 1.8,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 10:36",
+   "pack_generated": "2026-10-22 15:55",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 185.2,
+    "act_total_sec": 185.1,
     "act_preroll_total_sec": 1.8,
     "act_budget_recorded_sec": 183.0,
-    "diff_vs_budget_sec": 4.0,
+    "diff_vs_budget_sec": 3.9,
     "estimate_sum_sec": 182.9,
-    "playback_with_holds_sec": 215.99
+    "playback_with_holds_sec": 215.89
    },
    "loudness": {
     "I_LUFS": -16.2,
-    "LRA_LU": 14.2,
+    "LRA_LU": 14.1,
     "TP_dBTP": -1.2,
     "sample_peak_dBFS": -1.19,
     "clipped_samples": 0,
     "dialog_median_mix_I_LUFS": -14.9,
-    "line_mix_I_spread_LU": 0.3,
+    "line_mix_I_spread_LU": 0.4,
     "momentary_max_LUFS": -8.9,
     "music_sfx_only_max_LUFS": -17.3,
     "freeze_holds_pass": "6/6",
@@ -588,15 +588,15 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 132,
-    "frames": 6480
+    "near_limit_total": 131,
+    "frames": 6477
    },
    "subtitle_sync": {
     "pages": 29,
-    "pass": 28,
-    "all_pass": false,
+    "pass": 29,
+    "all_pass": true,
     "max_s": -0.121,
-    "min_s": -0.854
+    "min_s": -0.577
    },
    "safety": {
     "anchors": [
@@ -640,7 +640,7 @@
     "preroll_sec": 0.6,
     "lines": 6
    },
-   "pack_generated": "2026-10-22 10:17",
+   "pack_generated": "2026-10-22 16:05",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
@@ -673,20 +673,20 @@
     },
     "fine32x18": {
      "luma": 3,
-     "red": 2
+     "red": 3
     },
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 122,
+    "near_limit_total": 113,
     "frames": 1755
    },
    "subtitle_sync": {
     "pages": 7,
-    "pass": 6,
-    "all_pass": false,
+    "pass": 7,
+    "all_pass": true,
     "max_s": -0.122,
-    "min_s": -2.577
+    "min_s": -0.361
    },
    "safety": {
     "anchors": [],
@@ -726,7 +726,7 @@
     "preroll_sec": 0.6,
     "lines": 1
    },
-   "pack_generated": "2026-10-22 10:20",
+   "pack_generated": "2026-10-22 15:57",
    "matches_current_build": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
@@ -755,7 +755,7 @@
    "flash": {
     "grid16x9": {
      "luma": 2,
-     "red": 1
+     "red": 2
     },
     "fine32x18": {
      "luma": 3,
@@ -764,7 +764,7 @@
     "pass16x9": true,
     "passFine": true,
     "pass": true,
-    "near_limit_total": 84,
+    "near_limit_total": 106,
     "frames": 927
    },
    "subtitle_sync": {
@@ -831,22 +831,22 @@
   }
  },
  "duration": {
-  "cue_sum_current_build_sec": 1332.8,
-  "preroll_sum_sec": 12.6,
-  "playback_current_build_sec": 1345.4,
-  "playback_current_build_min": 22.42,
-  "playback_from_packs_sec": 1345.4,
+  "cue_sum_current_build_sec": 1325.8,
+  "preroll_sum_sec": 12.0,
+  "playback_current_build_sec": 1337.8,
+  "playback_current_build_min": 22.3,
+  "playback_from_packs_sec": 1337.8,
   "estimate_recorded_sec": 1313.0,
   "teacher": {
    "teacher_sec": 824.2,
    "includes_preroll": true,
    "source": "teacher/data/timing.json",
-   "script_total_sec": 2157,
-   "script_playback_level0_sec": 1332.8,
+   "script_total_sec": 2150,
+   "script_playback_level0_sec": 1325.8,
    "script_teacher_speaking_sec": 706,
    "script_press_and_scene_sec": 118.2,
-   "script_generated": "2026/10/22 10:53:07",
-   "script_cue_hash": "fe73a104f6",
+   "script_generated": "2026/10/22 17:06:23",
+   "script_cue_hash": "713e22e2ee",
    "estimate_v03": {
     "default_scenario_sec": 2118.0,
     "recorded_sec": 1313.0,
@@ -868,15 +868,15 @@
    },
    "note": "教師時間＝講稿 totalSec − 預錄播放 level0（教師講述＋按鍵反應＋換景漸暗）"
   },
-  "total_sec": 2157.0,
-  "total_min": 35.95,
+  "total_sec": 2150.0,
+  "total_min": 35.83,
   "limit_min": 38.0,
   "pass_le_38min": true,
-  "margin_sec": 123.0,
+  "margin_sec": 130.0,
   "rule": "v1.3 第 8 節：以講稿估計的教師時間＋播放時間 ≤ 38 分；合計＝目前建置全部 cue 長度＋換景漸暗預捲＋教師時間（講稿：教師講述＋按鍵反應）"
  },
  "packs_matching_build": 9,
  "packs_total": 9,
  "flash_all_pass": true,
- "subtitle_sync_all_pass": false
+ "subtitle_sync_all_pass": true
 }

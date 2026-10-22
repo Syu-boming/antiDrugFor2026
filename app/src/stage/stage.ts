@@ -50,6 +50,36 @@ const DIMMER = { z: -0.6, order: 10000, color: '#0b0806' };
  */
 const G4_CUE_IDS = new Set(['a0_c000', 'a0_c001', 'a2_c002', 'a2_c004', 'a8_c002', 'a8_c003']);
 
+/**
+ * 預先準備好的景（G6 效能修正）：已建好但不在場景裡；貼圖分幾格上傳、著色器送出編譯。
+ * renderer＝為哪一個渲染器準備的（GPU 中斷或換渲染器後要重新上傳與編譯）。
+ */
+interface PreparedSet {
+  name: string;
+  built: BuiltSet;
+  /** 還沒上傳的貼圖（null＝還沒收集） */
+  pending: Texture[] | null;
+  /** 著色器：0 還沒送出、1 編譯中、2 完成 */
+  compile: 0 | 1 | 2;
+  renderer: WebGLRenderer | null;
+}
+
+/** 一個物件樹裡所有材質用到的貼圖（材質欄位與自訂 uniforms；預先上傳用） */
+function collectTextures(root: Object3D): Texture[] {
+  const out = new Set<Texture>();
+  root.traverse((o) => {
+    const mats = (o as Mesh).material as Material | Material[] | undefined;
+    if (!mats) return;
+    for (const m of Array.isArray(mats) ? mats : [mats]) {
+      if (!m) continue;
+      for (const v of Object.values(m)) if ((v as Texture | null)?.isTexture) out.add(v as Texture);
+      const u = (m as unknown as { uniforms?: Record<string, { value?: unknown } | undefined> }).uniforms;
+      if (u) for (const x of Object.values(u)) if ((x?.value as Texture | null | undefined)?.isTexture) out.add(x!.value as Texture);
+    }
+  });
+  return [...out];
+}
+
 /** 釋放一個物件樹裡的幾何、材質與貼圖（換景時舊景用） */
 function disposeTree(root: Object3D): void {
   const texKeys = ['map', 'emissiveMap', 'alphaMap', 'normalMap', 'roughnessMap', 'metalnessMap', 'bumpMap', 'aoMap', 'lightMap'];
@@ -119,8 +149,10 @@ export class Stage {
   readonly lamps = new ProsceniumLamps();
   private setReports = new Set<string>();
   private castPoolReport: string[] = [];
-  /** 景的建立與釋放次數（測試「舊景釋放資源」用） */
-  readonly setStats = { built: 0, disposed: 0, buildMs: 0, lastBuildMs: 0 };
+  /** 景的建立與釋放次數（測試「舊景釋放資源」用）；lastSwapMs＝最近一次換景在那一格花的時間、preparedHits＝換上預先準備好的景的次數 */
+  readonly setStats = { built: 0, disposed: 0, buildMs: 0, lastBuildMs: 0, lastSwapMs: 0, preparedHits: 0 };
+  /** 預先準備好的景（景名 → 景；不在場景裡，見 prepareSets） */
+  private prepared = new Map<string, PreparedSet>();
   private loseExt: WEBGL_lose_context | null = null;
   private size = { w: 1280, h: 720 };
   setName = '';
@@ -183,6 +215,7 @@ export class Stage {
 
   /** 依 cue 檔建立景與演員（載入後呼叫一次）：先建第一個 cue 的景，再建全劇演員池 */
   setScene(file: CueFile, assets: AssetStore | null): void {
+    this.disposeAllPrepared();
     this.disposeActiveSet();
     this.castGroup.clear();
     this.shadows.clear();
@@ -249,20 +282,18 @@ export class Stage {
     };
   }
 
-  /** 換景：同名不動；不同就釋放舊景、建新景（舞台全暗時呼叫，避免看到換景） */
+  /**
+   * 換景：同名不動；不同就釋放舊景、換上新景（舞台全暗時呼叫，避免看到換景）。
+   * 新景已經預先準備好（prepareSets）就直接換上；沒有才當場建（和以前相同）。
+   */
   private ensureSet(name: string): void {
     if (this.activeSet?.name === name) return;
-    this.disposeActiveSet();
     const t0 = performance.now();
-    const { built, report } = buildSet(name, { ...this.setContext(), name });
+    const prep = this.prepared.get(name);
+    if (prep) this.prepared.delete(name);
+    this.disposeActiveSet();
+    const built = prep ? prep.built : this.makeSet(name);
     this.setGroup.add(built.group);
-    if (built.materials) built.materials.forEach(enableDesat);
-    else built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableDesat); });
-    // 全劇模式：景片材質支援「遠景與天空不接收操偶線影子」（uniform＝0 時計算和原本相同）
-    if (this.showMode) {
-      if (built.materials) built.materials.forEach(enableNoStringShadow);
-      built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableNoStringShadow); });
-    }
     this.pieces = built.pieces ?? [];
     this.tableEdge = built.tableEdge ?? null;
     this.landmarks = built.landmarks ?? {};
@@ -270,10 +301,83 @@ export class Stage {
     this.applySetLight(built.light);
     this.activeSet = { name, built };
     this.setName = name;
+    if (prep) this.setStats.preparedHits++;
+    this.setStats.lastSwapMs = performance.now() - t0;
+  }
+
+  /** 建一個景（還沒加進場景）：降彩、全劇模式的「遠景不接收操偶線影子」都在這裡套上 */
+  private makeSet(name: string): BuiltSet {
+    const t0 = performance.now();
+    const { built, report } = buildSet(name, { ...this.setContext(), name });
+    if (built.materials) built.materials.forEach(enableDesat);
+    else built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableDesat); });
+    // 全劇模式：景片材質支援「遠景與天空不接收操偶線影子」（uniform＝0 時計算和原本相同）
+    if (this.showMode) {
+      if (built.materials) built.materials.forEach(enableNoStringShadow);
+      built.group.traverse((m) => { const mat = (m as Mesh).material as Material | Material[] | undefined; if (mat) (Array.isArray(mat) ? mat : [mat]).forEach(enableNoStringShadow); });
+    }
     for (const r of report) this.setReports.add(r);
     this.setStats.built++;
     this.setStats.lastBuildMs = performance.now() - t0;
     this.setStats.buildMs += this.setStats.lastBuildMs;
+    return built;
+  }
+
+  /**
+   * 換景預先準備（G6 效能修正）：引擎在停格等老師時每格呼叫一次，把下一段要用的景先建好（不加進場景，畫面不變）、
+   * 分幾格把貼圖上傳到顯示卡、送出著色器編譯；換景那一格（全暗）就直接換上，不必當場建景、上傳與編譯
+   * （以前這些工作落在新景漸亮的前幾格，造成 >100 ms 卡頓）。不在 names 裡的預備景會先釋放（老師跳到別處時）。
+   * @param names 要準備的景名（目前的景會略過）
+   * @param deadline performance.now() 的期限：每次最多建一個景、貼圖上傳到期限為止；Infinity＝一次做完（擷取模式，著色器用同步編譯）
+   * @returns 還有沒做完的工作（包括著色器還在編譯）
+   */
+  prepareSets(names: string[], deadline: number): boolean {
+    for (const [n, p] of this.prepared) if (!names.includes(n)) { this.prepared.delete(n); this.disposeBuilt(p.built); }
+    if (this.contextLost) return false;
+    let busy = false;
+    let builtNow = false;
+    for (const name of names) {
+      if (name === this.activeSet?.name) continue;
+      let p = this.prepared.get(name);
+      if (!p) {
+        if ((builtNow && deadline !== Infinity) || performance.now() >= deadline) return true; // 每次最多建一個景（一次做完時不限）
+        p = { name, built: this.makeSet(name), pending: null, compile: 0, renderer: this.renderer };
+        this.prepared.set(name, p);
+        builtNow = true;
+      }
+      if (p.renderer !== this.renderer) { p.renderer = this.renderer; p.pending = null; p.compile = 0; }
+      p.pending ??= collectTextures(p.built.group);
+      while (p.pending.length) {
+        if (performance.now() >= deadline) return true;
+        this.renderer.initTexture(p.pending.shift()!);
+      }
+      if (p.compile === 0) {
+        if (performance.now() >= deadline) return true;
+        p.compile = 1;
+        const r = this.renderer;
+        const entry = p;
+        if (deadline === Infinity) {
+          try { r.compile(entry.built.group, this.camera, this.scene); } catch { /* 交給第一次渲染 */ }
+          entry.compile = 2;
+        } else {
+          r.compileAsync(entry.built.group, this.camera, this.scene)
+            .catch(() => undefined)
+            .then(() => { if (entry.renderer === r) entry.compile = 2; });
+        }
+      }
+      if (p.compile !== 2) busy = true;
+    }
+    return busy;
+  }
+
+  /** 預備景（測試與效能紀錄用）：景名、還沒上傳的貼圖數、著色器是否編譯完成 */
+  get preparedSets(): { name: string; pending: number; compiled: boolean }[] {
+    return [...this.prepared.values()].map((p) => ({ name: p.name, pending: p.pending?.length ?? -1, compiled: p.compile === 2 && p.renderer === this.renderer }));
+  }
+
+  private disposeAllPrepared(): void {
+    this.prepared.forEach((p) => this.disposeBuilt(p.built));
+    this.prepared.clear();
   }
 
   /** 建立只算影子的平行光（全劇模式第一次 setScene 時）：位置、影子相機和主光相同，強度 0；影子貼圖不含操偶線 */
@@ -302,10 +406,16 @@ export class Stage {
     const a = this.activeSet;
     if (!a) { this.setGroup.clear(); return; }
     this.setGroup.remove(a.built.group);
-    disposeTree(a.built.group);
-    try { a.built.dispose?.(); } catch { /* 景自己的釋放失敗不影響演出 */ }
+    this.disposeBuilt(a.built);
     this.activeSet = null;
     this.pieces = [];
+  }
+
+  /** 釋放一個景（已從場景移除；先釋放 group 裡的幾何、材質與貼圖，再呼叫景自己的 dispose） */
+  private disposeBuilt(built: BuiltSet): void {
+    built.group.removeFromParent();
+    disposeTree(built.group);
+    try { built.dispose?.(); } catch { /* 景自己的釋放失敗不影響演出 */ }
     this.setStats.disposed++;
   }
 
@@ -382,6 +492,8 @@ export class Stage {
   private handleLost = (e: Event): void => {
     e.preventDefault(); // 允許之後恢復
     this.contextLost = true;
+    // 預備景在顯示卡上的貼圖與著色器跟著失效：恢復後重新上傳、編譯
+    this.prepared.forEach((p) => { p.renderer = null; });
     this.onContextLost?.();
   };
 
@@ -591,6 +703,7 @@ export class Stage {
   setQuality(q: Quality): void {
     if (q === this.quality) return;
     this.quality = q;
+    this.disposeAllPrepared(); // 預備景是用舊畫質（alphaToCoverage）建的
     this.key.shadow.radius = q === 'A' ? 4 : 2.5;
     if (this.keyNoStrings) this.keyNoStrings.shadow.radius = this.key.shadow.radius;
     this.recreateRenderer();

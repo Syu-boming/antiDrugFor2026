@@ -14,7 +14,7 @@
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
    "near_limit_3": [],
-   "near_limit_total": 352,
+   "near_limit_total": 367,
    "near_limit_3_total": 0
   },
   "proj_16x9": {
@@ -30,7 +30,7 @@
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
    "near_limit_3": [],
-   "near_limit_total": 89,
+   "near_limit_total": 91,
    "near_limit_3_total": 0
   },
   "proj_32x18": {
@@ -46,7 +46,7 @@
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
    "near_limit_3": [],
-   "near_limit_total": 351,
+   "near_limit_total": 366,
    "near_limit_3_total": 0
   }
  }

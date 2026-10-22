@@ -1760,7 +1760,7 @@
  ],
  "mean_luma_range": [
   0.0026,
-  0.4576
+  0.4502
  ],
- "max_sat_red_ratio": 0.01146
+ "max_sat_red_ratio": 0.01141
 }
