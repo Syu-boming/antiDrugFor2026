@@ -63,3 +63,7 @@ review/G5/**/PROGRESS*.md.bak
 review/G5/*/pack/_work/
 review/G5/qa/*/*/
 review/G5/*/checks/snaps/
+
+# 開發用試音（ElevenLabs 免費方案、edge-tts），本機保留、不放公開 repo
+review/G3/samples/
+audio/_archive_edge/

@@ -15,7 +15,7 @@ trap 'rm -rf "$TMP"' EXIT
 mkdir -p "$SITE/show" "$SITE/teacher"
 cp tools/pages/index.html "$SITE/index.html"
 cp -R app/dist/. "$SITE/show/"
-cp -R teacher/html teacher/img teacher/pdf "$SITE/teacher/"
+cp -R teacher/html teacher/img teacher/pdf teacher/fonts "$SITE/teacher/"
 touch "$SITE/.nojekyll"
 find "$SITE" -name .DS_Store -delete
 
@@ -54,7 +54,8 @@ if [[ -n "$PARENT" && "$(git rev-parse "$PARENT^{tree}")" == "$TREE" ]]; then
   echo "[pages] 內容和上次相同，不另建 commit"
 else
   MAIN=$(git rev-parse --short HEAD)
-  MSG="Pages：發布 main ${MAIN} 的建置（舞台、控制台、教師資料）
+  DIST=$(shasum app/dist/data/manifest.js app/dist/app.js | shasum | cut -c1-10)
+  MSG="Pages：發布 main ${MAIN}（dist 指紋 ${DIST}）的建置（舞台、控制台、教師資料）
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_013HpBRZnxMJ6dMY1xBFwjTq"

@@ -40,3 +40,12 @@ await runPack({});
 // 教師控制台、按鍵測試頁、舞台端連結（dist/console.html、keytest.html、stage.html、console-link.js）
 const { buildConsole } = await import('./console.build.mjs');
 await buildConsole({ dev });
+
+// 第三方授權聲明（legalComments 關掉了，改成隨包附一個檔）：three.js（MIT）、配樂用的 FluidR3_GM 音色庫（MIT）
+const notice = (title, file) => `==== ${title} ====\n${readFileSync(file, 'utf8').trim()}\n`;
+writeFileSync(join(dist, 'THIRD_PARTY_LICENSES.txt'), [
+  '反毒剪紙劇場《紙燈節》第三方授權聲明（許博明老師製作）\n'
+    + '配音：ElevenLabs 語音合成（付費方案、聲線庫聲線）。配樂與音效：自製；配樂以 FluidR3_GM 音色庫算成音檔。\n',
+  notice('three.js 0.186.1（MIT License）', join(here, 'node_modules/three/LICENSE')),
+  notice('FluidR3_GM SoundFont（MIT License）', join(here, '../audio/LICENSES/FluidR3_GM_copyright.txt')),
+].join('\n'));
