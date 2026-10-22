@@ -568,7 +568,7 @@ show_characters.json 只新增：xiaoqing/xiaoyu/pinan/chen/lin/ye 的 bow、xia
 | assets/final/sets/square_a1/silbamboo_v02.png | 阿樂母版外形程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
 | assets/final/sets/workshop_a0/hanglamps_v01.png | 燈籠店吊燈籠景片程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a0/ASSETS_rows.md |
 | assets/final/sets/workshop_a0/stand_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a1/ASSETS_rows.md |
-| assets/final/sets/a5_hospital/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
-| assets/final/sets/a6_square_night/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
-| assets/final/sets/a6_window/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
+| assets/final/sets/a5_hospital/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 c88a8fd） | 原創（程式產生） | git 歷史（c88a8fd）；app/src/sets/ |
+| assets/final/sets/a6_square_night/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 c88a8fd） | 原創（程式產生） | git 歷史（c88a8fd）；app/src/sets/ |
+| assets/final/sets/a6_window/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 c88a8fd） | 原創（程式產生） | git 歷史（c88a8fd）；app/src/sets/ |
 | audio/sfx/sfx_stamp_v02.wav | 程式合成（tools/music/sfx.py 重建、音量降約 3 dB） | 原創（程式合成） | review/G5/a4/PROGRESS_polish.md（11:33 那筆）、review/G6/qa/tech.md |

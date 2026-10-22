@@ -253,3 +253,10 @@
 - 驗收包工具：逐字稿以 audio/vo/timings.json 的正式版判斷版號；a0、a6 只重寫 INDEX（是；v04 16＋v05 1、v04 26＋v05 2）。
 - **主線裁定**：備援影片檢查報告的建置指紋記錄放行（下次重出影片時加）；a0_c002_03 的音高上升不改檔，總報告第四節 #20 請許老師特別聽；main 推送等使用者執行 tools/purge_history.sh（主線在複本試跑改寫與檢查：21 個 commit，試音紀錄 175→0 筆，最新版 tree 相同，沒有推送）。
 - **G7 關卡決定**：兩輪修正後沒有嚴重問題，依 v1.3 第 4.4 節一般問題記錄放行 → **G7 通過，帶一般問題放行**。全案代理驗收完成；剩下的是使用者的三件事（學校筆電探針、Windows 可攜版試開、第 3 天彩排），以及試聽「燈」的 3 句和執行 purge_history.sh。
+
+## 清掉 GitHub 歷史（2026-10-23 04:4x，主線）
+- **經過**：使用者在對話送出 `! zsh tools/purge_history.sh`，但指令以文字送達、沒有在本機執行（遠端 main 仍是 fecbdb7）。依使用者明確指令，主線先掃描要公開的 4 個 commit（.env 的值 0 命中、sk_／sk- 樣式 0 命中），再執行 tools/purge_history.sh。
+- **結果**：filter-branch 處理 23 個 commit、改寫 22 個（第一個 b9d3226 沒有試音，編號不變）；改寫後 main 的檔案樹和 e771b99 相同；分支歷史裡試音紀錄 175→0 筆；強制推送 `fecbdb7...1c48923 main`；本機 main 指到 1c48923，工作中的檔案沒有變動。
+- **線上版**：不重新發布。網站內容來自 app/dist 與 teacher/，和 b472041 相同；gh-pages 的 commit 說明保留清史前的舊編號。
+- **commit 編號**：本檔、各驗收報告、PROGRESS 檔與 gh-pages 說明保留舊編號；總報告、素材與授權表、ASSETS.md、PROJECT_STATE.md、ElevenLabs 回信對照表改用新編號；對照表 review/G7/commit_對照.md。
+- **還沒清乾淨的地方**：GitHub API 仍查得到舊 commit（fecbdb7、dcd1773、bc116ad），dcd1773 底下看得到 review/G3/samples 的 32 個檔；fork 數 0。要完全移除須由 repo 擁有者請 GitHub 客服清除快取並做垃圾回收 → 列為使用者的選擇性事項（總報告 7.2、8.4）。

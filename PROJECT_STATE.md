@@ -10,19 +10,19 @@
 | G2 母版與試作 | 以退路通過（D-G2-06；畫面品質併入 G4 驗收） | review/G2/*_v04；contrast_v04.json | 第 1 天 22:00（超時約 5 小時） |
 | G3 聲音 | 帶一般問題放行（13:50）；全劇配音改 ElevenLabs（使用者 D-G3-07），v04 已上線；a2_c003_02 使用者選 5 號（D-G3-08）；試聽頁 A–G 使用者確認 OK | REVIEW.md G3 關卡決定；review/G3/el/full/；audio/vo/promoted_el.json | 第 2 天 13:00 前 |
 | G4 代表鏡頭 | 帶一般問題放行（13:00）；嚴重問題（小宇站姿眨眼）主線修正、新代理複驗通過；共用元件凍結 | REVIEW.md G4 關卡決定；review/G4/qa/recheck_r4/ | 第 2 天 13:00 |
-| G5 各幕 | 結案（2026-10-22 16:1x，帶一般問題放行；commit 4940b62）：九段驗收包光敏全部整段通過，engine-test 134／134，教師時間加播放 35:50 | review/G5/ | 完成 |
+| G5 各幕 | 結案（2026-10-22 16:1x，帶一般問題放行；commit 7136243）：九段驗收包光敏全部整段通過，engine-test 134／134，教師時間加播放 35:50 | review/G5/ | 完成 |
 | G6 全劇 | 通過，帶一般問題放行（2026-10-22 21:0x）：第 1 輪 2 個嚴重問題修好，重驗 2 位沒有嚴重問題；修正第 2 輪（最後一輪）a8 末句 musicDuck、a5_c005 喊聲、engine-test 輪詢（144 項） | review/G6/pack/INDEX.md；review/G6/qa/r2_failed.md、r2_regress.md；REVIEW.md | 原訂第 3 天 15:00（延後） |
 | G7 交付 | **通過，帶一般問題放行（2026-10-23 02:3x）**：第 1 輪不通過（總報告）→ 修正第 1 輪 → 使用者回報「燈」念成「鄧」，3 句重做 v05 並重做受影響的一切 → 重驗 2 位無嚴重問題（完整性 3 分：文件過期、Pages 卡住）→ 修正第 2 輪（文件、故障卡、Pages 生效）→ 記錄放行 | review/G7/總報告.md、素材與授權表.md、使用說明.md | 第 3 天晚上 |
 
 ## 技術骨架（2026-10-20 完成）
-app/ 引擎：G4 版（影像紙偶、整體描邊、紙繩操偶線、摺疊布幕、FX4／FX8、臉部換片與對嘴）；typecheck／build 通過，engine-test 86/86，capture 0 錯誤 0 外部請求。第 1 天 QA 待修 7 項已全部修完（commit bc116ad）。
+app/ 引擎：G4 版（影像紙偶、整體描邊、紙繩操偶線、摺疊布幕、FX4／FX8、臉部換片與對嘴）；typecheck／build 通過，engine-test 86/86，capture 0 錯誤 0 外部請求。第 1 天 QA 待修 7 項已全部修完（commit 0fe237e）。
 配音（2026-10-21 更新）：Starter 付費方案；全劇 201 句 ElevenLabs eleven_v3（11 個聲線庫聲線），tools/vo_el_prod.py 合成＋自動檢查 → tools/vo_el_promote.py 升為 audio/vo 的 v04；edge-tts 舊檔封存在 audio/_archive_edge/、不打包。兒童用途已取得 ElevenLabs 書面回覆（review/G3/el/elevenlabs_reply_20261021.md）。配樂與音效全部自製（FluidR3_GM，MIT）。engine-test 102/102。
 
 ## 本時段目標（第 2 天下午起）
 G5 各幕兩批（第 3 天 09:00）：素材量產、六幕 cue 與表演、教師控制台。G4 未達 4 分的美術項目不當基準，改用 REVIEW.md G4 關卡決定列的目標（操偶線平面紙繩 v02 已做好；同場角色組成群體與前後景深）。
 
 ## 使用者事項
-0. GitHub（使用者 2026-10-22 提供，公開）：https://github.com/Syu-boming/antiDrugFor2026 ；線上版 https://syu-boming.github.io/antiDrugFor2026/（gh-pages，`zsh tools/deploy_pages.sh`）。使用者決定正式配音公開、清掉歷史裡的開發試音：scratchpad 的 purge.git 是 78330b5 之前改寫的（已過期，要在最新 main 上重做 filter-branch），強制推送被 Claude Code 自動安全檢查擋下，等使用者自己推送或放行（見 REVIEW.md 最後幾節）；在那之前主線不推送 main。
+0. GitHub（使用者 2026-10-22 提供，公開）：https://github.com/Syu-boming/antiDrugFor2026 ；線上版 https://syu-boming.github.io/antiDrugFor2026/（gh-pages，`zsh tools/deploy_pages.sh`）。使用者決定正式配音公開、清掉歷史裡的開發試音：**2026-10-23 04:4x 已完成**（使用者下指令，主線執行 `tools/purge_history.sh`），GitHub 的 main 與本機都是 1c48923，分支歷史裡試音 0 筆；main 照常推送。清史後 commit 全部換了編號，舊編號對照見 review/G7/commit_對照.md。剩下選擇性的一件：GitHub 仍保留舊 commit 的快取（知道舊編號才打得開），要不要請 GitHub 客服清除由使用者決定（總報告 7.2）。
 1. 探針：2026-10-20 19:16 已交付 AntidrugProbe_v01.zip（含 Electron 版、Edge kiosk .bat、file:// 單檔版），等待結果。
 2. 金鑰：ElevenLabs 新金鑰可用（TTS、讀聲線、聲線設計），存於 .env（不進 Git）。配樂與音效改自製，Artlist 不再需要。
 3. 第 3 天實機彩排：待排。

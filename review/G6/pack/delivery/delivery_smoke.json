@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T18:23:00.240Z",
+ "generated": "2026-10-22T20:47:52.826Z",
  "ref": "app/dist",
  "expectCues": 71,
  "expectedAnswers": [
@@ -357,7 +357,7 @@
        1
       ],
       "ignored": 0,
-      "cueTime": 1.017,
+      "cueTime": 1.012,
       "cardShown": false,
       "stamps": [],
       "ignoredDelta": 0,
@@ -757,7 +757,7 @@
        1
       ],
       "ignored": 0,
-      "cueTime": 1.028,
+      "cueTime": 1.017,
       "cardShown": false,
       "stamps": [],
       "ignoredDelta": 0,
@@ -790,5 +790,5 @@
   }
  ],
  "pass": true,
- "seconds": 142
+ "seconds": 145
 }
