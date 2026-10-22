@@ -1,0 +1,144 @@
+{
+ "st-xiaoqing": {
+  "source": "assets/final/chr-xiaoqing_master_v04.png",
+  "crop": 1,
+  "size": [
+   379,
+   1100
+  ]
+ },
+ "st-xiaoyu": {
+  "source": "assets/final/chr-xiaoyu_master_v04.png",
+  "crop": 1,
+  "size": [
+   386,
+   1100
+  ]
+ },
+ "st-ale": {
+  "source": "assets/generated/chr-ale_master_v02.png",
+  "crop": 1,
+  "size": [
+   388,
+   1100
+  ]
+ },
+ "st-pinan": {
+  "source": "assets/final/chr-pinan_master_v01.png",
+  "crop": 1,
+  "size": [
+   401,
+   1100
+  ]
+ },
+ "st-lin": {
+  "source": "assets/final/chr-lin_master_v01.png",
+  "crop": 1,
+  "size": [
+   308,
+   1100
+  ]
+ },
+ "st-ye": {
+  "source": "assets/final/chr-ye_master_v01.png",
+  "crop": 1,
+  "size": [
+   389,
+   1100
+  ]
+ },
+ "st-chen": {
+  "source": "assets/final/chr-chen_master_v01.png",
+  "crop": 1,
+  "size": [
+   456,
+   1100
+  ]
+ },
+ "st-xiaoqing-bow": {
+  "source": "assets/final/chr-xiaoqing_pose-bow_v01.png",
+  "crop": 1,
+  "size": [
+   369,
+   900
+  ]
+ },
+ "st-xiaoyu-bow": {
+  "source": "assets/final/chr-xiaoyu_pose-bow_v01.png",
+  "crop": 1,
+  "size": [
+   331,
+   900
+  ]
+ },
+ "bust-xiaoqing": {
+  "source": "assets/final/chr-xiaoqing_master_v04.png",
+  "crop": 0.36,
+  "size": [
+   438,
+   526
+  ]
+ },
+ "bust-xiaoyu": {
+  "source": "assets/final/chr-xiaoyu_master_v04.png",
+  "crop": 0.37,
+  "size": [
+   402,
+   523
+  ]
+ },
+ "bust-ale": {
+  "source": "assets/generated/chr-ale_master_v02.png",
+  "crop": 0.3,
+  "size": [
+   448,
+   483
+  ]
+ },
+ "bust-pinan": {
+  "source": "assets/final/chr-pinan_master_v01.png",
+  "crop": 0.36,
+  "size": [
+   412,
+   534
+  ]
+ },
+ "act-cross": {
+  "source": "assets/final/chr-xiaoqing_pose-cross_v06.png",
+  "crop": 0.62,
+  "size": [
+   310,
+   600
+  ]
+ },
+ "act-palmno": {
+  "source": "assets/final/chr-xiaoyu_pose-palmno_v06.png",
+  "crop": 0.62,
+  "size": [
+   482,
+   600
+  ]
+ },
+ "act-pointr": {
+  "source": "assets/final/chr-xiaoqing_pose-pointr_v07.png",
+  "crop": 0.62,
+  "size": [
+   578,
+   600
+  ]
+ },
+ "act-forehead": {
+  "source": "assets/final/chr-xiaoyu_pose-forehead_v06.png",
+  "crop": 0.62,
+  "size": [
+   417,
+   600
+  ]
+ },
+ "st-zhezhe": {
+  "source": "app/src/stage/zhezhe.ts（程式渲染，透明背景）"
+ },
+ "bust-zhezhe": {
+  "source": "app/src/stage/zhezhe.ts（程式渲染，透明背景）"
+ }
+}

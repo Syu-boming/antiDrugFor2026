@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>反毒剪紙劇場｜許博明老師製作</title>
+<link rel="icon" href="data:,">
+<style>/* 反毒剪紙劇場：疊層樣式（字幕、題卡、署名卡、準備畫面）。
+   尺寸一律以舞台高度 --H 的比例計算（v1.2 第 16.1 節），字型先用系統字型 fallback，之後隨包附字型。 */
+:root {
+  --font: "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", "Heiti TC", sans-serif;
+  --paper: #f5ecdc;
+  --ink: #2b2018;
+  --indigo: #24438c;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #000; color: #fff; font-family: var(--font); }
+body { cursor: none; }
+body.show-cursor, body.capture { cursor: default; }
+[hidden] { display: none !important; }
+
+#viewport { position: fixed; inset: 0; background: #000; --H: 1080px; }
+#stage-box { position: absolute; overflow: hidden; background: #000; }
+#stage-box canvas { position: absolute; inset: 0; width: 100% !important; height: 100% !important; display: block; }
+.layer { position: absolute; inset: 0; pointer-events: none; }
+
+/* ---------- 署名卡 ---------- */
+#title-card { display: flex; align-items: center; justify-content: center; }
+.sig-card {
+  position: relative;
+  padding: calc(var(--H) * 0.05) calc(var(--H) * 0.1);
+  background: linear-gradient(170deg, #f8f0e1 0%, #efe2cb 100%);
+  border-radius: calc(var(--H) * 0.012);
+  box-shadow: 0 calc(var(--H) * 0.012) calc(var(--H) * 0.04) rgba(0, 0, 0, 0.45);
+}
+.sig-card::before {
+  content: ""; position: absolute; inset: calc(var(--H) * 0.014);
+  border: calc(var(--H) * 0.003) solid rgba(110, 70, 40, 0.55);
+  border-radius: calc(var(--H) * 0.006);
+}
+/* 素材署名卡紙：16:9 紙卡（細框＋四角菱形），往右下有一道卡紙厚度 */
+.sig-card.papered {
+  width: calc(var(--H) * 0.98); height: calc(var(--H) * 0.98 * 9 / 16);
+  padding: 0; display: flex; align-items: center; justify-content: center;
+  background: #f4e8d2 center / 100% 100% no-repeat;
+  border-radius: calc(var(--H) * 0.004);
+  box-shadow: calc(var(--H) * 0.004) calc(var(--H) * 0.006) 0 #6b4a32, 0 calc(var(--H) * 0.016) calc(var(--H) * 0.045) rgba(0, 0, 0, 0.45);
+}
+.sig-card.papered::before { display: none; }
+.sig-text {
+  position: relative; font-size: calc(var(--H) * 0.083); font-weight: 700; color: #3a281c;
+  letter-spacing: 0.14em; padding-left: 0.14em; white-space: nowrap;
+}
+
+/* ---------- 字幕 ---------- */
+#subtitle-box { position: absolute; display: flex; align-items: flex-end; justify-content: center; pointer-events: none;
+  padding-bottom: calc(var(--H) * 0.025); }
+#subtitle-box.below { align-items: center; padding-bottom: 0; }
+.sub-strip {
+  display: flex; align-items: center; gap: 0.45em;
+  max-width: 94%;
+  font-size: calc(var(--H) * 0.063); /* 約 68 px @1080p */
+  line-height: 1.3;
+  padding: 0.24em 0.75em 0.26em 0.5em;
+  background: rgba(26, 20, 16, 0.84);
+  /* 紙條：四角略不規則的撕紙邊 */
+  clip-path: polygon(0.6% 6%, 18% 0%, 51% 3%, 83% 0.5%, 99.4% 4%, 100% 94%, 79% 100%, 46% 97%, 14% 100%, 0% 95%);
+  color: #fff;
+  /* 細描邊：約 2–3 px（0.035em × 68 px） */
+  text-shadow:
+    -0.035em 0 #120d0a, 0.035em 0 #120d0a, 0 -0.035em #120d0a, 0 0.035em #120d0a,
+    -0.025em -0.025em #120d0a, 0.025em -0.025em #120d0a, -0.025em 0.025em #120d0a, 0.025em 0.025em #120d0a;
+}
+.sub-tag { display: flex; flex-direction: column; align-items: center; gap: 0.08em; font-size: 0.42em; min-width: 3.4em; }
+.sub-avatar { width: 2.1em; height: 2.1em; border-radius: 50%; background: center / contain no-repeat; }
+.sub-avatar[hidden] { display: none; }
+.sub-name { white-space: nowrap; font-weight: 700; letter-spacing: 0.04em; }
+.sub-row { white-space: nowrap; }
+
+/* ---------- 題卡 ---------- */
+#quiz-card { display: flex; align-items: center; justify-content: center; }
+.quiz {
+  width: 90%;
+  max-height: 92%;
+  background: linear-gradient(175deg, #f8f1e4 0%, #efe4cf 100%);
+  color: var(--ink);
+  border-radius: calc(var(--H) * 0.022);
+  padding: calc(var(--H) * 0.035) calc(var(--H) * 0.04) calc(var(--H) * 0.025);
+  box-shadow: 0 calc(var(--H) * 0.015) calc(var(--H) * 0.05) rgba(0, 0, 0, 0.5);
+}
+.quiz-q { font-size: calc(var(--H) * 0.063); font-weight: 700; line-height: 1.3; text-align: center; margin-bottom: calc(var(--H) * 0.022); white-space: pre-line; }
+.quiz-opt {
+  position: relative; display: flex; align-items: center; gap: 0.3em;
+  font-size: calc(var(--H) * 0.0741); /* 約 80 px @1080p */
+  line-height: 1.22;
+  padding: 0.12em 0.3em; margin: 0.08em 0;
+  border-radius: 0.2em;
+  outline: 0.07em solid rgba(36, 67, 140, calc(var(--frame, 0)));
+  background: rgba(36, 67, 140, calc(var(--frame, 0) * 0.07));
+}
+.opt-num { font-size: 1.15em; font-weight: 800; width: 1em; text-align: center; flex: none; }
+.ico-hand { height: 1em; width: auto; flex: none; color: #6b4f3a; }
+.ico-shape { height: 0.66em; width: auto; flex: none; }
+.opt-1 .ico-shape { color: #c77b2e; }
+.opt-2 .ico-shape { color: #3c7f8f; }
+.opt-3 .ico-shape { color: #7a5aa6; }
+.opt-text { flex: 1; font-weight: 600; white-space: pre-line; }
+.opt-stamp {
+  position: absolute; right: 0.25em; top: 0;
+  display: flex; align-items: center; gap: 0.08em;
+  font-size: 0.6em; font-weight: 900; letter-spacing: 0.08em;
+  color: var(--indigo); background: rgba(248, 241, 228, 0.92);
+  border: 0.1em solid var(--indigo); border-radius: 0.18em;
+  padding: 0.04em 0.28em 0.04em 0.16em;
+  opacity: 0;
+  transform: translateY(-62%) rotate(-7deg);
+}
+.opt-stamp svg { width: 1em; height: 1em; }
+.quiz-lamps { display: flex; justify-content: center; gap: calc(var(--H) * 0.018); margin-top: calc(var(--H) * 0.018); }
+.lamp { width: calc(var(--H) * 0.044); --lit: 0; position: relative; }
+.lamp svg { width: 100%; height: auto; display: block; overflow: visible; }
+.lamp .lamp-body { fill: #b9ab98; stroke: #6b5440; stroke-width: 2; }
+.lamp .lamp-lit { fill: #f2b445; opacity: var(--lit); }
+.lamp .lamp-rib { stroke: rgba(107, 84, 64, 0.6); stroke-width: 1.6; }
+.lamp .lamp-cap { fill: #5a4332; }
+.lamp::after { /* 柔和光暈：只隨亮度漸變，不閃爍 */
+  content: ""; position: absolute; inset: -40%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 196, 90, 0.55) 0%, rgba(255, 196, 90, 0) 65%);
+  opacity: var(--lit); z-index: -1;
+}
+
+/* ---------- 角落標示 ---------- */
+.badge {
+  position: absolute; font-size: calc(var(--H) * 0.022); padding: 0.2em 0.6em; border-radius: 0.3em;
+  background: rgba(20, 16, 12, 0.6); color: rgba(255, 240, 220, 0.85); pointer-events: none; letter-spacing: 0.05em;
+}
+#badge-placeholder { right: 1.2%; top: 1.6%; }
+#badge-pause { left: 1.2%; top: 1.6%; }
+
+/* ---------- 準備畫面、GPU 中斷 ---------- */
+.screen { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: #15100c; z-index: 10; }
+.ready-box, .lost-box { width: min(92vw, 880px); text-align: center; padding: 16px; }
+.ready-title { font-size: clamp(28px, 6vh, 56px); font-weight: 800; color: #f3e6cf; letter-spacing: 0.1em; }
+.ready-sub { font-size: clamp(16px, 2.6vh, 24px); color: #c9b79b; margin: 6px 0 18px; }
+.ready-list { list-style: none; padding: 0; margin: 0 auto 20px; text-align: left; font-size: clamp(14px, 2.2vh, 20px); }
+.ready-list li { display: flex; gap: 12px; padding: 6px 4px; border-bottom: 1px solid #33291f; color: #e8dccb; }
+.ready-list li .k { flex: none; width: 6em; color: #b9a587; }
+.ready-list li .v { flex: 1; white-space: pre-wrap; word-break: break-word; }
+.ready-list li.good .v::before { content: "✓ "; color: #8fc79a; }
+.ready-list li.bad .v { color: #ffb4a0; }
+.ready-btn {
+  font: inherit; font-size: clamp(22px, 4vh, 36px); font-weight: 800; padding: 0.5em 1.6em; border-radius: 14px;
+  border: 0; background: #e8b04a; color: #2a1a08; cursor: pointer;
+}
+.ready-btn:disabled { background: #5a4c3c; color: #a89880; cursor: default; }
+.ready-btn.confirm { background: #f0c27a; font-size: clamp(18px, 3.2vh, 30px); }
+.ready-msg.warn { color: #ffd2a8; font-size: clamp(15px, 2.4vh, 22px); line-height: 1.5; }
+.ready-msg { margin-top: 14px; color: #b9a587; font-size: clamp(13px, 2vh, 18px); }
+.lost-title { font-size: clamp(28px, 6vh, 56px); font-weight: 800; color: #f3e6cf; margin-bottom: 12px; }
+.lost-text { font-size: clamp(18px, 3vh, 30px); color: #e8dccb; line-height: 1.5; }
+
+/* ---------- 教師選單（預設隱藏） ---------- */
+#teacher-menu {
+  position: fixed; left: 12px; top: 12px; z-index: 20; width: min(96vw, 720px);
+  background: rgba(16, 13, 10, 0.94); border: 1px solid #4a3d30; border-radius: 12px; padding: 12px 14px;
+  font-size: 16px; color: #efe3cf;
+}
+.tm-title { font-weight: 800; margin-bottom: 8px; }
+.tm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 6px 0; }
+.tm-row > span:first-child { width: 4.5em; color: #c2ad8d; }
+.tm-row button, .tm-row select { font: inherit; padding: 4px 10px; border-radius: 8px; border: 1px solid #5a4a3a; background: #2a221b; color: #efe3cf; }
+.tm-row button.on { background: #e8b04a; color: #2a1a08; border-color: #e8b04a; }
+.tm-hint { color: #9c8a70; font-size: 13px; }
+.tm-status, .tm-key { font-size: 13px; color: #c9b79b; word-break: break-all; }
+</style>
+<script>
+  // 資料包登錄：data/*.js 是傳統 script，載入時呼叫 window.__pack(id, 內容)。
+  // 這樣 file://、http 與 Electron 都能讀素材（file:// 不能用 fetch 與 ES module）。
+  window.__packs = window.__packs || {};
+  window.__pack = function (id, data) { window.__packs[id] = data; };
+</script>
+<script src="data/manifest.js"></script>
+</head>
+<body>
+<div id="viewport">
+  <div id="stage-box">
+    <div id="title-card" class="layer" hidden></div>
+    <div id="quiz-card" class="layer" hidden></div>
+    <div id="badge-placeholder" class="badge" hidden></div>
+    <div id="badge-pause" class="badge" hidden></div>
+  </div>
+  <div id="subtitle-box"></div>
+</div>
+<div id="ready-screen" class="screen"></div>
+<div id="lost-screen" class="screen" hidden></div>
+<div id="teacher-menu" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

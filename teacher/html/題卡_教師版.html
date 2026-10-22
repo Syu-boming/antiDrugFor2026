@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紙燈節｜紙本題卡（教師版）</title>
+<style>
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-400.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-700.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-800.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 800; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-900.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+:root {
+  --ink: #1f1a16; --ink2: #4a3f36; --muted: #6f6359; --line: #b9ab9b; --paper: #fbf7f0; --accent: #7a4e2d; --indigo: #2f4a7a; --soft: #f1e8da;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: var(--ink); }
+body { font-family: "Noto Sans TC Local", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 400; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3 { line-height: 1.3; margin: 0.6em 0 0.35em; font-weight: 800; }
+p { margin: 0.3em 0 0.5em; }
+strong { font-weight: 800; }
+code { font-family: inherit; background: var(--soft); padding: 0 0.25em; border-radius: 3px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 0.6pt solid var(--line); padding: 3pt 5pt; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 800; }
+blockquote { margin: 0.4em 0 0.6em; padding: 0.35em 0.7em; border-left: 3pt solid var(--accent); background: var(--paper); }
+.note { color: var(--muted); font-size: 0.86em; }
+.pb { break-after: page; height: 0; }
+.byline { color: var(--muted); }
+
+
+@page { size: A4 landscape; margin: 0; }
+body { font-size: 12pt; }
+.card { width: 297mm; height: 210mm; padding: 11mm 15mm 9mm; display: flex; flex-direction: column; break-after: page; position: relative; overflow: hidden; }
+.card:last-child { break-after: auto; }
+.head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5mm; }
+.qno { font-size: 22pt; font-weight: 900; display: flex; align-items: center; gap: 4mm; }
+.qno .badge { border: 2pt solid var(--ink); border-radius: 4mm; padding: 0 4mm; }
+.lamps { display: flex; gap: 1.6mm; }
+.lamps svg { width: 7mm; height: 9mm; }
+.q { font-size: 33pt; font-weight: 800; line-height: 1.32; margin: 0 0 7mm; }
+.opts { display: flex; flex-direction: column; gap: 5mm; flex: 1; max-height: 128mm; }
+.opts .opt { flex: 1; }
+.opt { display: flex; align-items: center; gap: 5mm; border: 1.6pt solid var(--ink2); border-radius: 5mm; padding: 3.5mm 6mm; position: relative; background: #fff; }
+.num { font-size: 50pt; font-weight: 900; width: 14mm; text-align: center; line-height: 1; }
+.ico-hand { width: 15mm; height: 16mm; color: #3c2f25; flex: none; }
+.ico-shape { width: 11mm; height: 11mm; color: #3c2f25; flex: none; }
+.otext { font-size: 32pt; font-weight: 700; line-height: 1.25; flex: 1; }
+.ph { display: inline-block; white-space: nowrap; }
+.foot { display: flex; justify-content: space-between; font-size: 10pt; color: var(--muted); margin-top: 4mm; }
+/* 教師版 */
+.t .q { font-size: 21pt; margin-bottom: 3mm; }
+.t .opts { gap: 2.4mm; flex: none; max-height: none; }
+.t .opts .opt { flex: none; }
+.t .opt { padding: 1.6mm 5mm; }
+.t .num { font-size: 26pt; width: 9mm; }
+.t .ico-hand { width: 9mm; height: 10mm; }
+.t .ico-shape { width: 7mm; height: 7mm; }
+.t .otext { font-size: 17pt; }
+.t .opt.correct { border: 3.2pt solid var(--ink); }
+.t .opt.dim .otext, .t .opt.dim .num { color: #8a8076; }
+.stamp { display: inline-flex; align-items: center; gap: 1.5mm; border: 2.4pt solid var(--indigo); color: var(--indigo); border-radius: 2.5mm; padding: 0.5mm 3mm; font-size: 16pt; font-weight: 900; transform: rotate(-6deg); flex: none; }
+.stamp svg { width: 6mm; height: 6mm; }
+.meta { display: flex; gap: 6mm; font-size: 13pt; margin: 0 0 2.5mm; }
+.meta b { font-size: 15pt; }
+.fb { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 7mm; margin-top: 3.5mm; font-size: 11.5pt; line-height: 1.45; flex: 1; }
+.fb h3 { font-size: 12pt; margin: 0 0 1mm; }
+.fb .say { border-left: 2.4pt solid var(--accent); padding: 1mm 3mm; background: var(--paper); }
+.fb ul { margin: 0; padding-left: 5mm; }
+.fb .bg { color: var(--ink2); font-size: 10pt; }
+.cover { width: 297mm; height: 210mm; padding: 18mm 22mm; break-after: page; display: flex; flex-direction: column; gap: 5mm; }
+.cover h1 { font-size: 30pt; margin: 0; }
+.cover p, .cover li { font-size: 14pt; }
+.cover table { font-size: 14pt; width: auto; }
+.cover th, .cover td { padding: 2mm 5mm; text-align: center; }
+</style>
+</head>
+<body>
+<section class="cover">
+<h1>紙燈節｜紙本題卡（教師版）</h1>
+<p>投影故障時的退路：老師舉起學生版題卡（可放大印成 A3），照念題目與三個選項，全班照常用手指比 1、2、3。這一份給老師看正解與回饋。</p>
+<table><thead><tr><th>題</th><th>Q1</th><th>Q2</th><th>Q3</th><th>Q4</th><th>Q5</th><th>Q6</th><th>Q7</th><th>Q8</th></tr></thead><tbody>
+<tr><th>看哪區</th><td><b>A</b></td><td><b>B</b></td><td><b>C</b></td><td><b>D</b></td><td><b>A</b></td><td><b>B</b></td><td><b>C</b></td><td><b>D</b></td></tr>
+<tr><th>正解</th><td><b>2</b></td><td><b>3</b></td><td><b>1</b></td><td><b>1</b></td><td><b>3</b></td><td><b>2</b></td><td><b>3</b></td><td><b>2</b></td></tr></tbody></table>
+<ul><li>念法：「第 N 題。」→ 題目 →「一，……二，……三，……」→「想一想……3、2、1，一起比！」</li>
+<li>揭答：「正解是 N：……」→ 對全班說 → 點指定區一位說理由 → 捧燈手。</li>
+<li>紙本時沒有燈：老師說「第 N 盞燈，亮了！」，全班一起做捧燈手，再做安靜手勢。</li></ul>
+<p style="font-size:11pt;color:var(--muted)">題目與選項文字和演出的題卡一字不差（產生時已自動比對）。「對全班說」約 12 秒，只講這一題的重點，不先講後面的劇情。許博明老師製作</p>
+</section><section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 1 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q1｜外表能證明安全嗎？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>A 區</b></span><span>正解 <b>2</b></span><span>出題 a1_c005｜揭答 a1_c006｜點燈 a1_c007</span></div>
+<div class="q"><span class="ph">有人拿出包裝漂亮的電子煙，</span><span class="ph">說「這個很安全」。</span><span class="ph">可以相信嗎？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">包裝漂亮就很安全。</span></span></div>
+<div class="opt opt-2 correct"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">不行，</span><span class="ph">外觀不能證明安全。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div>
+<div class="opt opt-3 dim"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">聞起來香就沒問題。</span></span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">包裝再漂亮、聞起來再香，都看不出裡面裝了什麼。電子煙在臺灣是禁止的；不明的東西，不碰、不試。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 A 區比 2 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 1 或 3</b>：漂亮和香味，就是包裝想讓我們相信的地方。想想剛才找找看：貼紙一層蓋一層，上面什麼都沒寫。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>不靠試聞、試吸來確認成分；即使沒有摻毒，電子煙也不是安全的玩具。</li><li>臺灣自 2023 年 3 月 22 日起，《菸害防制法》禁止任何人製造、輸入、販賣、供應、展示、廣告或使用電子煙等類菸品。對孩子只說「電子煙在臺灣是禁止的」，不談罰則。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 2 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q2｜操偶線在比喻什麼？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>B 區</b></span><span>正解 <b>3</b></span><span>出題 a2_c005｜揭答 a2_c006｜點燈 a2_c007</span></div>
+<div class="q"><span class="ph">阿樂叔叔身上的操偶線，</span><span class="ph">在比喻什麼？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">叔叔在練習下一場紙偶戲的動作。</span></span></div>
+<div class="opt opt-2 dim"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">人真的會變成喪屍，</span><span class="ph">被線拉著走。</span></span></div>
+<div class="opt opt-3 correct"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">毒品可能讓頭腦和身體不聽使喚。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">操偶線是故事的比喻。叔叔想揮手，手卻跑到旁邊去；毒品可能讓頭腦和身體不聽使喚。人不會真的變成喪屍。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 B 區比 3 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 1</b>：我們在看紙偶劇場，會這樣想很合理。可是叔叔想揮手，手卻跑到旁邊去，他自己也很困惑；那不是他想做的動作，也不是在表演。</li><li><b>選 2</b>：故事裡的線是比喻，真實世界的人不會變成喪屍，受到毒品影響的人還是他自己。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>畫面只表現「身體不聽使喚」；使用後的影響與程度不會人人相同。不描述藥物種類、作用細節或使用方式。選項 1 的說法不把受影響的樣子當成表演或娛樂；回饋也不要拿叔叔的動作開玩笑。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 3 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q3｜只看動作能下判斷嗎？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>C 區</b></span><span>正解 <b>1</b></span><span>出題 a2_c009｜揭答 a2_c010｜點燈 a2_c011</span></div>
+<div class="q"><span class="ph">看見有人站不穩，</span><span class="ph">就能確定他吸毒嗎？</span></div>
+<div class="opts"><div class="opt opt-1 correct"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">不能，</span><span class="ph">要先找大人來幫忙。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div>
+<div class="opt opt-2 dim"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">看起來像就一定是。</span></span></div>
+<div class="opt opt-3 dim"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">不能，</span><span class="ph">所以直接走開不用管。</span></span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">站不穩，可能是生病、受傷、太累，或其他身體狀況。不能只看動作就說別人吸毒，不取笑、不亂貼標籤，先找大人來幫忙。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 C 區比 1 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 3</b>：前半句『不能確定』是對的；可是對方可能真的需要幫忙，所以不是走開不管，而是去找大人。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>身體不舒服有很多原因。這一題對應必要旁白二（a2_c008），回饋不要變成「怎麼看出別人吸毒」的教學。作答時，劇中還沒有確認阿樂叔叔用過毒品（實情到 a2_c013 才由他自己告訴葉護理師），回饋不要提前替劇情下結論。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 4 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q4｜遇到邀請怎麼做？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>D 區</b></span><span>正解 <b>1</b></span><span>出題 a3_c005｜揭答 a3_c006｜點燈 a3_c007</span></div>
+<div class="q"><span class="ph">有人說「試一次沒關係」，</span><span class="ph">哪個做法比較安全？</span></div>
+<div class="opts"><div class="opt opt-1 correct"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">說「不用，</span><span class="ph">我不試」，</span><span class="ph">離開找大人。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div>
+<div class="opt opt-2 dim"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">只試一次而已，</span><span class="ph">應該沒關係。</span></span></div>
+<div class="opt opt-3 dim"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">先幫他保管，</span><span class="ph">等一下再還給他。</span></span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">說一句『不用，我不試』，然後離開、找大人。不用跟對方吵，也不用解釋。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 D 區比 1 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 2</b>：阿樂叔叔也是聽到『試一次沒關係』才試的。不碰、不試，最安全。</li><li><b>選 3</b>：幫忙保管，東西就留在自己身邊，更靠近危險。不碰，先離開，找大人。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>不要求兒童與對方爭辯或說服對方。拒絕句全班只在 a3_c004 練一次，這裡不再帶全班重說。回饋只說「不碰、不試」，不討論試多少、怎麼試、什麼時候停。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 5 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q5｜毒駕會危害誰？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>A 區</b></span><span>正解 <b>3</b></span><span>出題 a4_c005｜揭答 a4_c006｜點燈 a4_c007</span></div>
+<div class="q"><span class="ph">受到毒品影響還開車，</span><span class="ph">可能危害到誰？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">只會危害開車的人。</span></span></div>
+<div class="opt opt-2 dim"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">只會危害坐車的人。</span></span></div>
+<div class="opt opt-3 correct"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">駕駛、</span><span class="ph">乘客和路人。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">受到毒品影響開車，可能判斷變差、反應變慢。危險不會只留在車子裡：開車的人、坐車的人、走在路上的人，都可能受傷。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 A 區比 3 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 1 或 2</b>：回想紙上的路：小車偏向的是斑馬線，路上的人也在同一條路上。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>紙地圖只是示意一次溫和的偏離路線，不是精確的物理模擬，也不用真實車禍影像。法規分級與刑度不對孩子說。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 6 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q6｜接送的人不對勁，怎麼辦？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>B 區</b></span><span>正解 <b>2</b></span><span>出題 a4_c009｜揭答 a4_c010｜點燈 a4_c011</span></div>
+<div class="q"><span class="ph">你還沒上車，</span><span class="ph">接送的人站不穩、</span><span class="ph">反應很不對勁，</span><span class="ph">卻說要開車。</span><span class="ph">怎麼做？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">坐後座、</span><span class="ph">繫好安全帶就沒關係。</span></span></div>
+<div class="opt opt-2 correct"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">先不上車，</span><span class="ph">到安全處找大人。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div>
+<div class="opt opt-3 dim"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">請他開慢一點，</span><span class="ph">小心就好。</span></span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">還沒上車，就先不上車，回到安全的地方找大人。等一下看看小晴和小宇怎麼做。你不用先弄清楚他是不是吸毒，先保護自己。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 B 區比 2 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 1 或 3</b>：坐後座、請他開慢，車子還是由他來開，危險還在。先不上車，才是先保護自己。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>不安排孩子搶鑰匙、搶方向盤、追車或擋車，也不要求孩子去勸駕駛。</li><li>本題限定「尚未上車」，不和車輛行進中的處置混為一談；若有學生問「已經在車上怎麼辦」，回答「這個問題很好，下課可以和家人、老師一起討論；今天先記住：還沒上車，就先不上車、找大人」，不展開，也不教孩子在車上勸阻駕駛。</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 7 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q7｜有人叫不醒，接下來怎麼做？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>C 區</b></span><span>正解 <b>3</b></span><span>出題 a5_c002｜揭答 a5_c003｜點燈 a5_c004</span></div>
+<div class="q"><span class="ph">有人叫不醒。</span><span class="ph">你站在安全的地方，</span><span class="ph">接下來怎麼做？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">先拍下影片，</span><span class="ph">再傳給同學看。</span></span></div>
+<div class="opt opt-2 dim"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">自己先跑過去，</span><span class="ph">用力把他搖醒。</span></span></div>
+<div class="opt opt-3 correct"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">先找大人，</span><span class="ph">沒大人就撥 119。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">先確定自己安全，馬上找大人；找不到大人，就撥 119，說清楚在哪裡、發生什麼事，聽執勤人員的話。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 C 區比 3 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「大家一起，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 2</b>：想幫忙的心很好。可是自己跑過去，可能讓自己也有危險；找大人、打 119，才找得到會處理的人。</li><li><b>選 1</b>：拍影片傳出去，幫不上忙，也可能讓對方難過。先找大人。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>能找到大人就立刻請大人協助；找不到能幫忙的大人時，在安全的地方撥 119，說清楚地點與發生什麼事，聽從執勤人員指示。</li><li>出處：內政部消防署兒童版〈緊急報案宣導〉https://www.nfa.gov.tw/kid/index.php?code=list&amp;flag=detail&amp;ids=659&amp;article_id=1288（2026-10-20 查閱，演出前一週複查）。</li><li>撥號工具：劇中小宇用的兒童手錶，是家長事先設定好可以撥緊急電話的。</li><li>（完整內容見教師講稿第六節）</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card t">
+<div class="head"><div class="qno"><span class="badge">第 8 題（教師版）</span><span style="font-size:14pt;font-weight:700">Q8｜保密和幫忙，怎麼選？</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="meta"><span>看 <b>D 區</b></span><span>正解 <b>2</b></span><span>出題 a6_c003｜揭答 a6_c004｜點燈 a6_c005</span></div>
+<div class="q"><span class="ph">朋友可能碰到危險物品，</span><span class="ph">卻說「不要告訴老師」。</span><span class="ph">怎麼辦？</span></div>
+<div class="opts"><div class="opt opt-1 dim"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">答應他，</span><span class="ph">永遠不告訴任何人。</span></span></div>
+<div class="opt opt-2 correct"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">陪他一起找可信任的大人。</span></span><span class="stamp"><svg viewBox="0 0 24 24"><path d="M4 12.5 L9.5 18 L20 6" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>正解</span></div>
+<div class="opt opt-3 dim"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">傳給全班同學，</span><span class="ph">大家一起討論。</span></span></div></div>
+<div class="fb">
+<div><h3>揭答後對全班說</h3><div class="say">可以跟朋友說：『我在乎你，我們一起找人幫忙。』陪他去找老師、家人或護理師這些可以信任的大人。</div>
+<h3 style="margin-top:2mm">接著</h3><ul><li>從 D 區比 2 的同學中點一位說一句理由；說不出來也沒關係，老師幫他接完。</li><li>協助教師記錄區、排、座位 →「最後一盞，捧燈手——」說完就按（紙本時老師一起做捧燈手）。</li></ul></div>
+<div><h3>若不少人選了……（對全班統一說，不點名）</h3><ul><li><b>選 1</b>：想守住朋友的秘密，是因為在乎他。可是一直不說，朋友可能一直留在危險裡；會讓人擔心安全的秘密，可以找大人說。</li><li><b>選 3</b>：找能幫忙的大人，和傳給全班不一樣；傳出去可能讓朋友更難過。</li></ul>
+<h3 style="margin-top:2mm">教師背景（不念給學生聽）</h3><ul class="bg"><li>課堂上不詢問任何人的家庭或個人經驗。若有學生當場主動透露，簡短回應「謝謝你願意說，下課老師再跟你聊」，不公開追問；課後由導師帶到安靜處個別關心。</li><li><strong>責任通報</strong>：學生主動透露本人或家庭用藥狀況時，知悉的教師依法就是責任通報人員。<strong>當天</strong>告知輔導室與學務處，依《兒童及少年福利與權益保障法》第 53、54 條與學校的兒少保護通報、校安通報流程完成責任通報；第 53 條情形（例如兒少本人施用毒品，或已達未受適當養育照顧）至遲 24 小時內通報。</li><li>（完整內容見教師講稿第六節）</li></ul></div>
+</div>
+<div class="foot"><span>答錯不羞辱：比例對全班統一說，劇情照常前進。每題都點燈，不看答對率。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+</body>
+</html>
