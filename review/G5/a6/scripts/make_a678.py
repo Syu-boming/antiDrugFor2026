@@ -2,13 +2,14 @@
 
 從底稿備份（review/G5/a6/a{6,7,8}_skeleton_backup.json）讀台詞（編號、說話者、字幕）、題卡資料、查核點、流程欄位、storyboard，
 一律保留原樣（只加 line.start 時間錨點），重寫景、名冊站位、起始狀態、動畫、鏡頭、配樂、音效。
-a8_c002、a8_c003 是 G4 cue：整個 cue 原樣保留（表演不動）。
+a8_c002、a8_c003 是 G4 cue：整個 cue 原樣保留（表演不動）；修正第 2 輪主線授權只改 a8_c002 的鏡位（合幕前回到台口全景 a7_stage：漸暗切換）。
 寫到暫存檔 → validate_a678.mjs 驗證 → 通過才搬回（其他代理同時在 build）。
 用法：/opt/anaconda3/bin/python3 review/G5/a6/scripts/make_a678.py [a6 a7 a8]
 """
 import copy
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -104,12 +105,14 @@ A6_ROSTER = {
     "aqin": {"name": "阿琴阿姨", "rig": "standee:aqin", "x": -2.75, "z": 0.5, "facing": 1, "fallback": "adult"},
 }
 # 燈籠架後的角落（a6_c002–a6_c006 開頭）
-SEC = {"xiaoqing": (1.0, 0.45), "xiaoyu": (1.85, 0.05), "pinan": (2.7, 0.3), "zhezhe": (2.3, 1.05)}
+SEC = {"xiaoqing": (1.1, 0.45), "xiaoyu": (1.85, 0.05), "pinan": (2.7, 0.3), "zhezhe": (2.3, 1.05)}
 # 求助站（a6_c006 走到之後；帳篷景片 x 5.55，林老師、葉護理師站在帳篷前）
 TENT = {"xiaoqing": 3.85, "xiaoyu": 4.45, "pinan": 5.05, "zz": [3.65, 0, 1.45], "lin": 5.75, "ye": 6.5}
 # 題卡模式折折全劇統一位置（主線補充裁定，G5 第二批修正第 1 輪）
 ZQ = {"visible": True, "x": -4.7, "y": 0, "z": 4.15}
 ZQ_POS = [-4.7, 0, 4.15]
+# a6_c002 折折在角落的位置（修正第 2 輪：畫面右下、字幕框外；燈籠架右柱的右邊）
+ZZ2 = {"visible": True, "x": 3.95, "z": 0.0}      # 往後站一點：近景時整個臉在畫面裡、在字幕框右邊外
 
 
 def secret_chars(xy_pose="standwatch_m", emo_kids="neutral", pinan_emo="worried", zz=None, zz_emo="curious", plaza=True):
@@ -155,7 +158,7 @@ def a6(cues):
         "aqin": ch(-2.75, 0.5, 1),
         "xiaoqing": ch(-1.85, 0.85, 1, "stand_m"),
         "xiaoyu": ch(-1.15, 0.55, 1, "standwatch"),
-        "pinan": ch(0.75, 0.4, 1, "stand", "worried"),
+        "pinan": ch(1.25, 0.4, 1, "stand", "worried"),      # 修正第 2 輪：往右 0.5（燈籠架左柱不壓在品安臉上；鏡位 a6_pinan 跟著右移）
         "zhezhe": {"visible": True, "x": -2.1, "z": 1.55, "emotion": "smile"},
     }}
     c["animation"] = [
@@ -172,22 +175,29 @@ def a6(cues):
     c["voStart"], c["tail"] = 2.4, 5.0
 
     # a6_c002 品安的秘密：品安拉著小晴、小宇走進燈籠架後的角落（燈籠架框住三人）→ 小聲說秘密
+    # 修正第 2 輪：三人從燈籠架左柱的右邊起步、往角落裡走一小段（走進角落時柱子不壓在小晴身前；柱子在小晴這個深度投影在 x≈0.15）；
+    #   折折坐在右下角（字幕框外），推近時臉不被字幕框蓋住；問完觀眾往右邊出畫
     c = C["a6_c002"]
     c["set"] = c["sceneId"] = "a6_square_night"
-    st0 = {"pinan": 1.7, "xiaoyu": 0.8, "xiaoqing": -0.1}       # 起點（品安在前、兩人跟在後面，從畫面左側走進燈籠架角落；走短距離、慢：光敏）
-    chars = secret_chars(xy_pose="standwatch_m", plaza=False)
+    st0 = {"pinan": 1.85, "xiaoyu": 1.05, "xiaoqing": 0.64}       # 起點（品安在前、兩人跟在後面，往燈籠架角落裡走；走短距離、慢：光敏）
+    chars = secret_chars(xy_pose="standwatch_m", plaza=False, zz=ZZ2)
     for k, x in st0.items():
         chars[k]["x"] = x
     c["initialState"] = {"stage": stage("a6_secret"), "characters": chars}
     set_line_start(c, "a6_c002_01", 3.0)
     set_line_start(c, "a6_c002_04", ref("a6_c002_03", "end", 2.6))
+    # 第 2 頁字幕對齊語音（句中停頓 6.07–7.40 秒之後才說「我沒有打開」）：手動換頁（只影響排版，文字不變；同 a2_c008_05 必要旁白的寫法）
+    for l in c["lines"]:
+        if l["id"] == "a6_c002_02":
+            assert l["text"] == "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+            l["text"] = "那天你們走了以後，\n那個人把閃亮盒子塞給我。\n\n我沒有打開，\n可是我把它藏在書包裡。"
     c["animation"] = [
         # 走進來：平移（不加走路起伏）、前後錯開，一次只過一個人
-        an("puppet.move", 0.05, 3.6, "pinan", ease="inOut", dx=round(SEC["pinan"][0] - st0["pinan"], 3)),
-        an("puppet.move", 0.35, 3.6, "xiaoyu", ease="inOut", dx=round(SEC["xiaoyu"][0] - st0["xiaoyu"], 3)),
-        an("puppet.move", 0.65, 3.6, "xiaoqing", ease="inOut", dx=round(SEC["xiaoqing"][0] - st0["xiaoqing"], 3)),
-        an("zhezhe.look", 0.6, 0.6, "zhezhe", yaw=-0.3),
-        an("zhezhe.look", 2.6, 0.6, "zhezhe", yaw=0.2),
+        an("puppet.move", 0.05, 3.2, "pinan", ease="inOut", dx=round(SEC["pinan"][0] - st0["pinan"], 3)),
+        an("puppet.move", 0.35, 3.2, "xiaoyu", ease="inOut", dx=round(SEC["xiaoyu"][0] - st0["xiaoyu"], 3)),
+        an("puppet.move", 0.65, 3.2, "xiaoqing", ease="inOut", dx=round(SEC["xiaoqing"][0] - st0["xiaoqing"], 3)),
+        an("zhezhe.look", 0.6, 0.6, "zhezhe", yaw=-0.45),
+        an("zhezhe.look", 2.6, 0.6, "zhezhe", yaw=-0.25),
         cam("a6_secret_close", ref("a6_c002_01", "start"), 4.0),
         face("xiaoqing", ref("a6_c002_02", "start", 3.2), "worried"),
         face("xiaoyu", ref("a6_c002_02", "start", 3.45), "worried"),
@@ -198,8 +208,8 @@ def a6(cues):
         an("zhezhe.emote", ref("a6_c002_03", "end", 0.6), target="zhezhe", emotion="worried"),   # 尾巴慢慢收起
         pose("xiaoyu", ref("a6_c002_03", "end", 2.2), "glasses"),          # 推推眼鏡
         an("zhezhe.look", ref("a6_c002_04", "start", -0.4), 0.5, "zhezhe", yaw=0.0),
-        # 問完觀眾：折折從左邊出畫（去台口出題；畫面外再滑到題卡位置）
-        an("zhezhe.walkTo", ref("a6_c002_04", "end", 0.3), 1.5, "zhezhe", pos=[-3.0, 0, 1.05]),
+        # 問完觀眾：折折從右邊出畫（去台口出題；畫面外再滑到題卡位置）
+        an("zhezhe.walkTo", ref("a6_c002_04", "end", 0.3), 1.5, "zhezhe", pos=[6.4, 0, ZZ2["z"]]),
         an("zhezhe.glideTo", ref("a6_c002_04", "end", 1.9), 0.02, "zhezhe", pos=ZQ_POS),
     ]
     c["audioId"] = "music_town_night"
@@ -293,7 +303,7 @@ def a6(cues):
     #（林老師、葉護理師站在燈籠架前面：架上的燈籠在他們身後，不擋臉）
     c = C["a6_c007"]
     c["set"] = c["sceneId"] = "a6_square_night"
-    c["initialState"] = {"stage": stage("a6_plaza"), "characters": {
+    c["initialState"] = {"stage": stage("a6_glow"), "characters": {      # 修正第 2 輪：開頭就是 a6_glow（後拉、推回都回到同一個畫面；後拉時畫面邊緣的大人腿掃得慢）
         "chen": ch(-5.1, 0.45, -1),
         "aqin": ch(-2.75, 0.5, 1),
         "xiaoqing": ch(-1.6, 0.95, 1, "stand_m"),
@@ -304,18 +314,21 @@ def a6(cues):
         "zhezhe": {"visible": True, "x": -3.9, "y": 0.78, "z": -0.45, "emotion": "happy"},
     }}
     set_line_start(c, "a6_c007_02", ref("a6_c007_01", "end", 6.6))
+    # 修正第 2 輪：不經過黑場、不停在極小的台口遠景。說完「真的是燈籠」→ 鏡頭慢慢後拉到台口（3.4 秒，八盞燈都亮著）→
+    #   光從八盞燈流出來時鏡頭跟著光慢慢推回廣場（3.6 秒，比台口近一級的 a6_glow）→ 光流進主燈、主燈亮起、騎樓燈籠一盞接一盞都在這個畫面裡
+    #  （景 a6_square_night.ts：光流在 a6_c007_02 開始前 3.2 秒起、2.6 秒；主燈 −1.0 秒起 2.6 秒漸亮；騎樓燈籠 +0.4 秒起）
+    #   後拉 4.2 秒（正弦緩動：一開始右邊兩位大人的腿掃過明亮的帳篷桌，太快會超過細格光敏門檻）
+    E1 = "a6_c007_01"
     c["animation"] = [
         an("zhezhe.hopTo", 0.45, 0.7, "zhezhe", pos=[-3.9, 0.78, -0.45], height=0.45),
         an("zhezhe.fold", 0.7, 1.4, "zhezhe", form="lantern"),
         an("zhezhe.glow", 2.0, 1.5, "zhezhe", to=1),
-        # 後拉到台口全景：全畫面亮度差大 → 0.6 秒漸暗、全暗時切、0.6 秒漸亮（不硬切、不大幅運鏡）
-        an("fade.out", ref("a6_c007_01", "end", 0.2), 0.6),
-        cut("a6_full", ref("a6_c007_01", "end", 0.82)),
-        an("fade.in", ref("a6_c007_01", "end", 0.86), 0.6),
+        cam("a6_full", ref(E1, "end", 0.1), 4.2),
+        cam("a6_glow", ref(E1, "end", 4.45), 3.6),
     ]
     c["audioId"] = None
     c["music"] = [music("music_town", ref("a6_c007_01", "end"), 4.0, 1.0)]
-    c["sfx"] = [sfx("sfx_fold", 0.75, 0.6), sfx("sfx_crowd_far", 0, 0.4), sfx("sfx_lamp_on", ref("a6_c007_02", "start", -2.8), 0.7)]
+    c["sfx"] = [sfx("sfx_fold", 0.75, 0.6), sfx("sfx_crowd_far", 0, 0.4), sfx("sfx_lamp_on", ref("a6_c007_02", "start", -1.0), 0.7)]
     c["voStart"], c["tail"] = 2.0, 1.2
 
     # a6_c008 四季：固定窗框，不經過黑場（窗外 4.6／9.4／14.2 秒交叉淡換 1.2 秒；新來陪伴的人像立體書一樣立起來）
@@ -385,44 +398,58 @@ def a6(cues):
     c["voStart"], c["tail"] = 3.5, 5.0
 
     # a6_c009 又到了紙燈節：一年後的燈籠店。阿樂叔叔一摺、一摺摺小折折燈（三個手部循環＝燈籠紙摺三次），
-    # 孩子們站在工作台後面圍著看；燈亮時切到手與小燈近景，手腕上最後那根淡線鬆垂、淡到看不見才脫離
+    # 孩子們站在工作台後面圍著看。修正第 2 輪：
+    #   - 手部循環看得出「慢慢摺」：B 側手從紙上抬到胸前一半高（puppet.chest 0.85＋grab 0.35，0.8 秒）→ 低頭看 → 按回紙上摺一摺（0.8 秒）
+    #   - 道謝時把摺好的小燈捧到胸前（puppet.chest 1：景 a6_shop.ts 讓燈跟著手）→ 切近景（a6_shop_lamp：胸口以上＋手上的燈＋身後的孩子；
+    #     B 側手臂在胸前、不往桌面伸，上臂不離開軀幹，分件接縫不露出來）→ 小燈在手上亮起
+    #   - 最後一根腕線：先鬆（張力 0）→ 他捧著燈坐回凳子、身體往後靠一點（sit 0.88 → 1、lean −0.05，近景裡扣點跟著手腕往下約 25–30 px）
+    #     同時線淡到 0.15 → 再淡到看不見才脫離（不往上抽、不經過頭部）
     c = C["a6_c009"]
     c["set"] = c["sceneId"] = "a6_shop"
     c["initialState"] = {"stage": stage("a6_shop_mid"), "characters": {
-        "ale": {"visible": True, "x": -2.6, "z": 0, "facing": 1, "pose": "sit", "strings": ["wrist"], "stringTension": 0.05, "emotion": "smile", "hand": "grab"},
+        "ale": {"visible": True, "x": -2.6, "z": 0, "facing": 1, "pose": "sit", "sit": 0.88, "strings": ["wrist"], "stringTension": 0.05, "emotion": "smile", "hand": "grab"},
         "xiaoqing": ch(-1.45, -1.55, -1, "stand", "neutral"),
         "pinan": ch(-0.7, -1.7, -1, "stand_m", "neutral"),
         "xiaoyu": ch(0.05, -1.55, -1, "standwatch_m", "neutral"),
         "zhezhe": {"visible": True, "x": 0.95, "z": 0.75, "emotion": "happy"},
     }}
-    L2 = "a6_c009_02"
+    L2, E4 = "a6_c009_02", "a6_c009_04"
     fold_t = [ref(L2, "start", 0.9), ref(L2, "start", 3.5), ref("a6_c009_03", "start", 0.9)]
     anim = [
         an("strings.fade", 0, 0.01, "ale", anchors=["wrist"], to=0.35),
         an("zhezhe.look", ref("a6_c009_01", "end", 0.3), 0.6, "zhezhe", yaw=-0.4),
-        an("puppet.grab", 0.0, 0.01, "ale", at=[-2.02, 1.47]),
+        an("puppet.grab", 0.0, 0.01, "ale", at=[-1.9, 1.5]),      # 手按在燈籠紙上（修正第 2 輪：原本按在紙旁邊的桌緣）
         face("xiaoqing", ref(L2, "end"), "smile"),
         face("pinan", ref("a6_c009_03", "start", 1.0), "smile"),
     ]
-    for t0 in fold_t:     # 一個手部循環：手抬起離開紙（0.55 秒）→ 低頭看 → 按下去摺一摺（0.6 秒）
+    for t0 in fold_t:     # 一個手部循環：手從紙上抬起到胸前一半高（0.8 秒）→ 停一下、低頭看 → 慢慢按下去摺一摺（0.8 秒）
+        # （0.6 秒抬、0.6 秒按時，手和白袖子在深色圍裙前一秒內掃過同一格四次＝細格明暗 4）
         anim += [
-            an("puppet.grab", t0, 0.55, "ale", to=0.62),
-            an("puppet.nod", t0, 1.4, "ale", depth=0.8),
-            an("puppet.grab", _addref(t0, 0.7), 0.6, "ale", to=1.0),
+            an("puppet.chest", t0, 0.8, "ale", ease="sine", to=0.85),
+            an("puppet.grab", t0, 0.8, "ale", ease="sine", to=0.35),
+            an("puppet.nod", t0, 1.9, "ale", depth=0.8),
+            an("puppet.grab", _addref(t0, 1.1), 0.8, "ale", ease="sine", to=1.0),
+            an("puppet.chest", _addref(t0, 1.1), 0.8, "ale", ease="sine", to=0.0),
         ]
     anim += [
-        face("xiaoyu", ref("a6_c009_04", "end", 0.2), "smile"),
-        an("zhezhe.emote", ref("a6_c009_04", "end", 0.2), target="zhezhe", emotion="happy"),
-        # 小折折燈亮起（景：a6_c009_04 結束 +0.35 秒、2 秒漸亮）→ 切手與小燈近景
-        cut("a6_shop_hands", ref("a6_c009_04", "end", 0.3)),
-        an("strings.loosen", ref("a6_c009_04", "end", 0.6), 1.2, "ale", anchors=["wrist"], to=0.0),
-        an("strings.fade", ref("a6_c009_04", "end", 0.8), 2.2, "ale", anchors=["wrist"], to=0.0),
-        an("strings.detach", ref("a6_c009_04", "end", 3.1), 0.5, "ale", anchors=["wrist"]),
+        # 道謝時把小燈捧到胸前（景：燈跟著 B 側手）
+        an("puppet.grab", ref(E4, "end", -1.5), 1.1, "ale", to=0.0),
+        an("puppet.chest", ref(E4, "end", -1.5), 1.1, "ale", to=1.0),
+        face("xiaoyu", ref(E4, "end", 0.2), "smile"),
+        an("zhezhe.emote", ref(E4, "end", 0.2), target="zhezhe", emotion="happy"),
+        # 小折折燈在手上亮起（景：a6_c009_04 結束 +0.35 秒、2 秒漸亮）→ 切手捧小燈近景
+        cut("a6_shop_lamp", ref(E4, "end", 0.3)),
+        an("strings.loosen", ref(E4, "end", 0.5), 1.2, "ale", anchors=["wrist"], to=0.0),
+        an("puppet.sit", ref(E4, "end", 0.7), 2.4, "ale", ease="inOut", to=1.0),
+        an("puppet.lean", ref(E4, "end", 0.7), 2.4, "ale", ease="inOut", to=-0.05),
+        an("strings.fade", ref(E4, "end", 0.7), 2.0, "ale", anchors=["wrist"], to=0.15),
+        an("strings.fade", ref(E4, "end", 2.7), 0.4, "ale", anchors=["wrist"], to=0.0),
+        an("strings.detach", ref(E4, "end", 3.1), 0.4, "ale", anchors=["wrist"]),     # 看不見之後才脫離；cue 結束前做完（總長不變）
     ]
     c["animation"] = anim
     c["audioId"] = "music_recovery"
     c["music"] = [music("music_town", ref("a6_c009_04", "start", -0.5), 3.0, 0.85)]
-    c["sfx"] = [sfx("sfx_fold", _addref(t, 0.75), 0.4) for t in fold_t] + [sfx("sfx_lamp_on", ref("a6_c009_04", "end", 0.35), 0.6)]
+    c["sfx"] = [sfx("sfx_fold", _addref(t, 1.35), 0.4) for t in fold_t] + [sfx("sfx_lamp_on", ref("a6_c009_04", "end", 0.35), 0.6)]
     c["voStart"], c["tail"] = 1.6, 3.5
 
 
@@ -446,7 +473,7 @@ A7_ROSTER = {
     "pinan": {"name": "品安", "rig": "standee:pinan", "x": 0.0, "z": 3.4, "facing": 1, "fallback": "child"},
 }
 ZZ7 = {"start": [-2.4, 0, 3.7], "card2": [-0.75, 0, 2.7], "side": [-5.3, 0, 3.5], "final": [-2.6, 0, 3.75]}
-K7 = {"xiaoqing": -4.55, "xiaoyu": 4.6, "wing": 9.0, "q3": -1.15, "y3": 1.15}
+K7 = {"xiaoqing": -4.15, "xiaoyu": 4.2, "wing": 9.0, "q3": -2.0, "y3": 2.0}   # 修正第 2 輪：a7_mid2 推近後孩子站近卡片一點
 
 
 def a7(cues):
@@ -485,50 +512,56 @@ def a7(cues):
         "xiaoqing": ch(-K7["wing"], 3.0, 1, "stand"),
         "xiaoyu": ch(K7["wing"], 3.0, 1, "standwatch"),
     }}
-    # 一次只動一件事（光敏）：三張卡淡出（景 0.1–1.5 秒）→ 漸暗切到推近一級的鏡位（1.55–2.85 秒）→ 口訣卡立起（景 4.3 秒起）、
-    # 兩個孩子從兩側台外走到卡片兩邊（平移、緩入緩出）
+    # 一次只動一件事（光敏）：三張卡淡出（景 0.1–1.5 秒）→ 漸暗切到推近的鏡位（1.55–2.85 秒）→ 口訣卡立起（景 4.3 秒起）
+    # 修正第 2 輪：鏡位再推近一級（a7_mid2），兩個示範的孩子在全暗時就站到卡片兩側（淡回時已經在畫面裡、約 0.45 畫面高；
+    #   折折說「最後，大家一起做一次口訣！」時不是空房間）
     set_line_start(c, "a7_c002_01", 4.0)
     c["animation"] = [
-        # 推近一級：全畫面亮度差大（台口外框）→ 0.6 秒漸暗、全暗時切到 a7_mid、0.6 秒漸亮（大幅縮放不運鏡：八盞燈與層架燈籠掃過格子）
+        # 推近：全畫面亮度差大（台口外框）→ 0.6 秒漸暗、全暗時切到 a7_mid2、0.6 秒漸亮（大幅縮放不運鏡：八盞燈與層架燈籠掃過格子）
         an("fade.out", 1.55, 0.6),
-        cut("a7_mid", 2.2),
+        cut("a7_mid2", 2.2),
         an("zhezhe.glideTo", 2.2, 0.02, "zhezhe", pos=ZZ7["side"]),
+        an("puppet.move", 2.18, 0.02, "xiaoqing", dx=round(K7["xiaoqing"] + K7["wing"], 3)),
+        an("puppet.move", 2.18, 0.02, "xiaoyu", dx=round(K7["xiaoyu"] - K7["wing"], 3)),
         an("fade.in", 2.25, 0.6),
-        an("puppet.move", 4.4, 3.0, "xiaoqing", ease="inOut", dx=round(K7["xiaoqing"] + K7["wing"], 3)),
-        an("puppet.move", 4.6, 3.0, "xiaoyu", ease="inOut", dx=round(K7["xiaoyu"] - K7["wing"], 3)),
+        an("puppet.face", 3.2, target="xiaoqing", emotion="smile"),
+        an("puppet.blink", 3.6, target="xiaoyu"),
     ]
     c["audioId"] = None
     c["music"] = [music("music_courage", 0, 1.5, 0.6)]
-    c["sfx"] = [sfx("sfx_paper_rustle", 0.1, 0.4), sfx("sfx_card_in", 4.3, 0.6), sfx("sfx_footsteps", 4.6, 0.3)]
+    c["sfx"] = [sfx("sfx_paper_rustle", 0.1, 0.4), sfx("sfx_card_in", 4.3, 0.6)]
     c["voStart"], c["tail"] = 4.0, 1.4
 
     c = C["a7_c003"]
     c["set"] = c["sceneId"] = "a6_shop"
-    c["initialState"] = {"stage": stage("a7_mid"), "characters": {
+    c["initialState"] = {"stage": stage("a7_mid2"), "characters": {
         "zhezhe": {"visible": True, "x": ZZ7["side"][0], "z": ZZ7["side"][2], "emotion": "happy"},
         "xiaoqing": ch(K7["xiaoqing"], 3.0, 1, "stand"),
         "xiaoyu": ch(K7["xiaoyu"], 3.0, 1, "standwatch"),
         "pinan": ch(0.0, 3.4, 1, "stand", "smile"),
     }}
     # 收聲 → 口訣卡淡出 → 小晴、小宇往中間走 → 品安在兩人中間、前面半步立起來 → 說完鏡頭拉回舞台全景（八盞燈入鏡）→ 折折謝謝大家
-    set_line_start(c, "a7_c003_01", 4.3)
-    set_line_start(c, "a7_c003_02", ref("a7_c003_01", "end", 0.9))
+    # 修正第 2 輪：拉回舞台全景的漸暗／漸亮做完、畫面亮起之後折折才開口（原本台詞在全暗時開始）；品安的句子提早 0.45 秒（總長不變）
+    set_line_start(c, "a7_c003_01", 3.85)
+    set_line_start(c, "a7_c003_02", ref("a7_c003_01", "end", 1.35))
     c["animation"] = [
         an("zhezhe.hush", 0.0, target="zhezhe"),
-        an("puppet.move", 0.8, 3.9, "xiaoqing", ease="inOut", dx=round(K7["q3"] - K7["xiaoqing"], 3)),
-        an("puppet.move", 1.0, 3.9, "xiaoyu", ease="inOut", dx=round(K7["y3"] - K7["xiaoyu"], 3)),
-        an("zhezhe.walkTo", 1.5, 2.6, "zhezhe", pos=ZZ7["final"]),
-        an("puppet.popup", 2.7, 1.5, "pinan"),
-        # 拉回舞台全景（八盞燈入鏡）：亮度差大 → 漸暗、全暗時切、漸亮（不大幅運鏡）
+        # 推近後孩子大、走得快會超過細格光敏門檻：口訣卡淡完（景 0.4–1.4 秒）才起步、正弦緩動（最高速只有平均的 1.57 倍）、
+        # 走 4.5 秒、走到品安兩側（±2.0）；折折這時在畫面外（不和小晴的路線重疊），全暗切回舞台全景時才到台口前
+        an("puppet.move", 1.45, 4.5, "xiaoqing", ease="sine", dx=round(K7["q3"] - K7["xiaoqing"], 3)),
+        an("puppet.move", 1.65, 4.5, "xiaoyu", ease="sine", dx=round(K7["y3"] - K7["xiaoyu"], 3)),
+        an("puppet.popup", 2.2, 1.5, "pinan"),
+        # 拉回舞台全景（八盞燈入鏡）：亮度差大 → 漸暗、全暗時切、漸亮（不大幅運鏡）；漸亮在折折開口前 0.05 秒做完
         an("fade.out", ref("a7_c003_01", "end", 0.05), 0.6),
-        cut("a7_stage", ref("a7_c003_01", "end", 0.7)),
-        an("fade.in", ref("a7_c003_01", "end", 0.75), 0.6),
+        cut("a7_stage", ref("a7_c003_01", "end", 0.67)),
+        an("zhezhe.glideTo", ref("a7_c003_01", "end", 0.67), 0.02, "zhezhe", pos=ZZ7["final"]),
+        an("fade.in", ref("a7_c003_01", "end", 0.7), 0.6),
         an("zhezhe.look", ref("a7_c003_02", "start", -0.3), 0.5, "zhezhe", yaw=0.0),
     ]
     c["audioId"] = None
     c["music"] = [music("none", 0, 0.8), music("music_town", ref("a7_c003_02", "start"), 3.0, 0.75)]
     c["sfx"] = [sfx("sfx_quiet_fold", 0.55)]
-    c["voStart"], c["tail"] = 4.3, 0.5
+    c["voStart"], c["tail"] = 3.85, 0.5
 
 
 # ───────────────────────────── 閉幕 ─────────────────────────────
@@ -543,17 +576,33 @@ A8_ROSTER = {
     "ye": {"name": "葉護理師", "rig": "standee:ye", "x": 4.6, "z": 0.3, "facing": -1, "fallback": "adult"},
     "chen": {"name": "陳伯伯", "rig": "standee:chen", "x": -5.3, "z": 0.5, "facing": -1, "fallback": "adult"},
 }
-# 鞠躬（分件紙偶不換圖：puppet.nod 加大幅度＝以腳底為支點前傾約 14°、上身微縮；同一張圖、同一比例）
-BOW_DEPTH, BOW_DUR = 5.0, 1.7
-#   陳伯伯和林老師（從左邊台外走進來）→ 葉護理師（從右邊走進來）→ 阿樂叔叔（站起來、捧著小折折燈）→ 品安、小宇、小晴（像立體書一樣一個一個立起來）
-#   → 折折（跳到前面鞠躬、說再見）→ 全體一起鞠躬（music_bows 最後和弦 15 秒）
-BOW = {"chen": 3.6, "lin": 3.7, "ye": 5.2, "pinan": 9.0, "xiaoyu": 10.0, "xiaoqing": 11.0}
-WALK_IN = {"chen": (-2.4, 0.05), "lin": (-2.4, 0.2), "ye": (3.6, 1.6)}   # (dx 起點偏移, 開始時間)
-POP = {"pinan": 7.6, "xiaoyu": 8.6, "xiaoqing": 9.6}
-#   鏡頭固定在謝幕中景（show_mid＝a8_c002 起點）。台口八盞燈：a7_c003 結尾的舞台全景（換景漸暗前）入鏡；
-#   a8_c002 是 G4 cue（表演不改，鏡位 g4_stage 看不到燈），布幕合上前的八盞燈要主線決定是否改 a8_c002 的鏡位
+# 修正第 2 輪（b2r2）：
+#   - 鞠躬有軀幹前傾：阿樂叔叔（分件）軀幹繞髖前傾 25°、頭再前傾 10°；立牌整張以腳底為支點前傾＋上身微縮；
+#     各 0.6 秒緩入緩出（景 a6_shop.ts 讀 puppet.nod 的 bow／bowHead／squash／ramp；引擎的 depth 給 0，只留點頭開始時的眨眼）
+#   - 全體鞠躬前一起往台前走半步（puppet.move 的 dz，景 a6_shop.ts 加上），鞠躬完退回原位（a8_c002 起始站位不變）
+#   - 孩子入列改成從右邊台外走進來（不再「壓扁貼地 → 彈起」）：走最遠的先走、一次一個人經過同一區（光敏）；葉護理師最後從右邊進來
+BOW_ST = {"bow": 8, "squash": 0.14, "ramp": 0.6}           # 立牌：整張前傾 8°（再多紙面背光、臉變暗）＋整張縱向縮 14%（頭往下）
+BOW_ALE = {"bow": 27, "bowHead": 11, "ramp": 0.6}          # 分件紙偶：軀幹 27°、頭再 11°（景：真的轉 20%、其餘用縱向縮短補，臉不背光變暗）
+BOW_DUR = 1.5                                              # 0.6 緩入＋0.3 停住＋0.6 緩出
+#   陳伯伯和林老師（從左邊台外走進來）→ 品安、小宇、小晴（從右邊台外一個一個走進來）→ 葉護理師（從右邊走進來）
+#   → 阿樂叔叔（站起來、捧著小折折燈）→ 折折（跳到前面鞠躬、說再見）→ 全體往前半步一起鞠躬（music_bows 最後和弦 15 秒）→ 退回
+WALK_IN = {          # (dx 起點偏移, 開始時間, 走幾秒)；走路一律平移、緩入緩出（不加走路起伏：光敏）
+    "chen": (-2.4, 0.05, 3.2), "lin": (-2.4, 0.2, 3.2),
+    "pinan": (6.5, 0.3, 7.0), "xiaoyu": (5.4, 2.0, 5.8), "xiaoqing": (4.3, 3.7, 4.6),
+    "ye": (3.6, 5.6, 3.8),
+}
+WALK_EASE = "sine"   # 正弦：最高速度只有平均的 1.57 倍（inOut 三次方是 3 倍）
+BOW = {"chen": 3.6, "lin": 3.75, "pinan": 7.5, "xiaoyu": 8.0, "xiaoqing": 8.5, "ye": 9.6}
+#   鏡頭固定在謝幕中景（show_mid＝a8_c002 起點）；a8_c002 開始後拉到台口全景（八盞燈入鏡）再合幕（主線授權改 a8_c002 起始鏡位）
 REST = {"chen": "stand", "lin": "stand", "ye": "stand", "pinan": "stand", "xiaoyu": "stand", "xiaoqing": "stand"}
-ALE = {"stand": 5.5, "bow": 7.2, "sit": 16.75}
+ALE = {"stand": 9.7, "bow": 11.3, "back": 16.5, "sit": 17.05}
+STEP = {"fwd": 13.9, "back": 16.5, "dz": 0.45, "dur": 0.8}
+GROUP_BOW = 15.0
+
+
+def bow(target, t, base, dur=BOW_DUR):
+    """鞠躬（景 a6_shop.ts 加軀幹／整張前傾；引擎 puppet.nod depth 0 只留眨眼）"""
+    return an("puppet.nod", t, dur, target, depth=0, **base)
 
 
 def a8(cues):
@@ -570,47 +619,60 @@ def a8(cues):
     chars["zhezhe"] = {"visible": True, "x": A8_ROSTER["zhezhe"]["x"], "z": A8_ROSTER["zhezhe"]["z"], "emotion": "happy"}
     c["initialState"] = {"stage": stage("show_mid"), "characters": chars}
     anim = []
-    for cid, (dx, t0) in WALK_IN.items():      # 從台外走進來（平移、緩入緩出：不加走路起伏）
-        anim.append(an("puppet.move", t0, 3.2, cid, ease="inOut", dx=-dx))
-    for cid, t0 in POP.items():
-        anim.append(an("puppet.popup", t0, 1.3, cid))
+    for cid, (dx, t0, d) in WALK_IN.items():
+        anim.append(an("puppet.move", t0, d, cid, ease=WALK_EASE, dx=-dx))
     for cid, t in BOW.items():
-        anim.append(an("puppet.nod", t, BOW_DUR, cid, depth=BOW_DEPTH))
+        anim.append(bow(cid, t, BOW_ST))
     zz_front = [A8_ROSTER["zhezhe"]["x"], 0, 2.5]
     anim += [
-        # 阿樂叔叔：站起來 → 拿起小折折燈捧在胸前（景 a6_shop.ts 依這幾個時間把燈移到手上）→ 點頭鞠躬 → 全體鞠躬 → 放回桌上、坐回去
+        # 阿樂叔叔：站起來 → 拿起小折折燈捧在胸前（景 a6_shop.ts：燈跟著 B 側手）→ 鞠躬（軀幹前傾）→ 全體鞠躬 → 放回桌上、坐回去
         face("ale", ALE["stand"] - 0.2, "greet"),
         an("puppet.sit", ALE["stand"], 1.0, "ale", to=0.0),
         an("puppet.chest", ALE["stand"] + 0.8, 0.8, "ale", to=1.0),     # 拿起小折折燈捧在胸前
-        an("puppet.nod", ALE["bow"], BOW_DUR, "ale", depth=2.2),
-        face("ale", ALE["bow"] + 1.8, "smile"),
+        bow("ale", ALE["bow"], BOW_ALE),
+        face("ale", ALE["bow"] + 1.6, "smile"),
         an("zhezhe.emote", 3.6, target="zhezhe", emotion="happy"),
         an("zhezhe.hopTo", 12.6, 0.8, "zhezhe", pos=zz_front, height=0.4),
         an("zhezhe.hush", 13.0, target="zhezhe"),                 # 折折的鞠躬（耳朵壓低、身體縮一下）
         an("zhezhe.emote", 13.9, target="zhezhe", emotion="proud"),
     ]
-    for cid in BOW:
-        anim.append(an("puppet.nod", 15.0, BOW_DUR, cid, depth=BOW_DEPTH))
+    # 全體：往台前半步 → 一起鞠躬 → 退回原位
+    for cid in list(BOW) + ["ale"]:
+        anim.append(an("puppet.move", STEP["fwd"], STEP["dur"], cid, ease="sine", dx=0, dz=STEP["dz"]))
+        anim.append(bow(cid, GROUP_BOW, BOW_ALE if cid == "ale" else BOW_ST))
+        anim.append(an("puppet.move", STEP["back"], STEP["dur"] if cid != "ale" else 0.55, cid, ease="sine", dx=0, dz=-STEP["dz"]))
     anim += [
-        an("puppet.nod", 15.0, BOW_DUR, "ale", depth=2.2),
-        an("zhezhe.hush", 15.0, target="zhezhe"),
-        an("puppet.chest", ALE["sit"] - 0.6, 0.6, "ale", to=0.0),
-        an("puppet.sit", ALE["sit"], 1.0, "ale", to=1.0),
+        an("zhezhe.hush", GROUP_BOW, target="zhezhe"),
+        an("puppet.chest", ALE["back"], 0.55, "ale", to=0.0),
+        an("puppet.sit", ALE["sit"], 0.9, "ale", to=1.0),
         an("zhezhe.hopTo", 16.9, 0.8, "zhezhe", pos=[A8_ROSTER["zhezhe"]["x"], 0, A8_ROSTER["zhezhe"]["z"]], height=0.3),
         an("zhezhe.emote", 16.9, target="zhezhe", emotion="happy"),      # 和 a8_c002 起始（smile＝happy）一致
     ]
     c["animation"] = anim
     # 2 級短版（約 8 秒）：全體一起鞠躬一次（大家已經在台上；阿樂叔叔坐著點頭）
-    lvl2 = [an("puppet.move", 0, 0.01, cid, dx=-dx) for cid, (dx, _) in WALK_IN.items()]
+    lvl2 = [an("puppet.move", 0, 0.01, cid, dx=-dx) for cid, (dx, _, _) in WALK_IN.items()]
     for cid in BOW:
-        lvl2.append(an("puppet.nod", 4.6, BOW_DUR, cid, depth=BOW_DEPTH))
-    lvl2 += [an("puppet.nod", 4.6, BOW_DUR, "ale", depth=2.2), an("zhezhe.hush", 4.6, target="zhezhe")]
+        lvl2.append(bow(cid, 4.6, BOW_ST))
+    lvl2 += [an("puppet.nod", 4.6, 1.7, "ale", depth=2.2), an("zhezhe.hush", 4.6, target="zhezhe")]
     c["level2"] = {"voStart": 1.0, "tail": 3.95, "minDuration": 8.0, "animation": lvl2}
     c["audioId"] = "music_bows"
     c["musicLoop"] = False
     c["music"] = []
     c["sfx"] = []
     c["voStart"], c["tail"] = 13.4, 1.55
+
+    # a8_c002 閉幕（G4 cue）：主線授權改起始鏡位與狀態——合幕前回到台口全景（同 a7_c001 構圖 a7_stage：台口＋八盞燈全亮），
+    # 再合幕；布幕（curtain.close 3.3 秒起 2 秒）、追光收掉、閉幕曲、署名卡（a8_c003）都不改。
+    # 鏡頭：G4 是 5 秒等速後拉（布幕合到一半時才看得到台口上緣）。全景要在合幕前出現，3 秒內從謝幕中景後拉到台口全景太快
+    #（私人光敏：層架燈籠與上方吊燈掃過格子，細格明暗 4），改成 0.6 秒漸暗 → 全暗時切到台口全景 → 0.6 秒漸亮（1.25 秒亮好，布幕 3.3 秒才動）
+    c = C["a8_c002"]
+    moves = [a for a in c["animation"] if a["name"] == "camera.move"]
+    assert len(moves) == 1 and moves[0]["params"]["to"] == "g4_stage", moves
+    c["animation"] = [a for a in c["animation"] if a["name"] != "camera.move"] + [
+        an("fade.out", 0.0, 0.6),
+        cut("a7_stage", 0.62),
+        an("fade.in", 0.65, 0.6),
+    ]
 
 
 # ───────────────────────────── 寫檔 ─────────────────────────────
@@ -627,7 +689,9 @@ def finish(seg, data, roster, file_set, note):
         b = B[c["id"]]
         for k in LOCK:
             assert json.dumps(c.get(k), ensure_ascii=False) == json.dumps(b.get(k), ensure_ascii=False), f"{c['id']} 鎖定欄位 {k} 被改了"
-        strip = lambda ls: [{k: v for k, v in l.items() if k != "start"} for l in ls]   # noqa: E731
+        # 台詞：編號、說話者、文字都不能改（文字只比去掉手動換行後的內容：手動換行／換頁只影響字幕排版，引擎 plainText 同規則）
+        plain = lambda x: re.sub(r"\s*\n\s*", "", x)   # noqa: E731
+        strip = lambda ls: [{k: (plain(v) if k == "text" else v) for k, v in l.items() if k != "start"} for l in ls]   # noqa: E731
         assert strip(c["lines"]) == strip(b["lines"]), f"{c['id']} 台詞被改了"
     fd, name = tempfile.mkstemp(suffix=".json")
     os.close(fd)
@@ -665,7 +729,7 @@ def main():
     if "a8" in segs:
         d = json.loads((BK / "a8_skeleton_backup.json").read_text())
         a8(d["cues"])
-        ok &= finish("a8", d, A8_ROSTER, "a6_shop", NOTE + " a8_c002、a8_c003 是 G4 cue，原樣保留（a8_c002 的景＝本段的 a6_shop，畫面＝G4 燈籠店）。")
+        ok &= finish("a8", d, A8_ROSTER, "a6_shop", NOTE + " a8_c002、a8_c003 是 G4 cue，原樣保留（a8_c002 的景＝本段的 a6_shop，畫面＝G4 燈籠店）；修正第 2 輪主線授權改 a8_c002 的鏡頭：合幕前從謝幕中景漸暗切到台口全景（a7_stage，八盞燈入鏡），布幕與署名卡不改。")
     sys.exit(0 if ok else 1)
 
 

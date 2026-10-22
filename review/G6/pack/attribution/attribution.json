@@ -1,0 +1,30 @@
+{
+ "expected": "許博明老師製作",
+ "start": {
+  "text": "許博明老師製作",
+  "hidden": false,
+  "opacity": "1",
+  "cueId": "a0_c000",
+  "phase": "title_idle",
+  "titleCard": 1,
+  "text_ok": true,
+  "visible": true
+ },
+ "end": {
+  "text": "許博明老師製作",
+  "hidden": false,
+  "opacity": "1",
+  "cueId": "a8_c003",
+  "phase": "ended",
+  "titleCard": 1,
+  "text_ok": true,
+  "visible": true
+ },
+ "pass": true,
+ "files": [
+  "attribution/title_start.png",
+  "attribution/title_end.png",
+  "attribution/attribution.jpg"
+ ],
+ "method": "即時播放時讀 #title-card .sig-text 的 DOM 文字、#title-card 是否顯示（hidden／opacity）並全頁截圖；署名卡由程式排字（engine-test 第四段另驗）。"
+}

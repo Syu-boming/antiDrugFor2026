@@ -21,6 +21,7 @@ const shots = (opt('--shots', '') || '').split(';').filter(Boolean).map((s) => {
 const fps = Number(opt('--fps', '30'));
 const [W, H] = opt('--size', '960x540').split('x').map(Number);
 const from = Number(opt('--from', '0')), to = Number(opt('--to', '1e9'));
+const phase = Number(opt('--phase', '0'));   // 取樣相位（格的比例；驗收包播放錄製的格不一定落在 cue 的整數格上）
 if (!existsSync(join(dist, 'index.html'))) { console.error('先跑 build_private.mjs'); process.exit(1); }
 mkdirSync(out, { recursive: true });
 
@@ -45,7 +46,7 @@ if (cues.length) {
     const n = Math.floor(c.duration * fps + 1e-6);
     let k0 = Math.max(0, Math.ceil(from * fps)), k1 = Math.min(n, Math.floor(to * fps));
     for (let k = k0; k <= k1; k++) {
-      await page.evaluate((t) => window.__engine.capture.seek(t), k / fps);
+      await page.evaluate((t) => window.__engine.capture.seek(t), (k + phase) / fps);
       await page.screenshot({ path: join(dir, `${String(k).padStart(5, '0')}.jpg`), type: 'jpeg', quality: 85 });
     }
     list.push({ id, dir, fps, duration: c.duration });

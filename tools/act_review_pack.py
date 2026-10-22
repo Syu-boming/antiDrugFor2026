@@ -110,16 +110,24 @@ def compare_g4(out: Path):
 
 # ====================================================================== 字幕與語音時間差（G5 修正第 1 輪：靜音偵測 −40 dB、最短 0.05 秒）
 SYNC_NOISE_DB, SYNC_MIN_SIL = -40, 0.05
+# G6 精修（主線授權）：某一頁在 −40 dB／0.05 秒找不到範圍內的句中停頓時（例：a7_c001_03 第 2 頁「找不到大人，就打 119。」
+# 前面的停頓有呼吸聲、高於 −40 dB，原本只找到檔尾 6.74 秒 → 誤判 −2.58 秒），改用 −30 dB／0.12 秒重找這一頁
+SYNC_FALLBACK_DB, SYNC_FALLBACK_SIL = -30, 0.12
 
 
-def voice_onsets_g5(path: Path):
-    """配音檔的語音起點：ffmpeg silencedetect noise=−40 dB、d=0.05 s（G4 是 −45 dB、0.1 s，抓不到句中短停頓，b1 驗收兩處誤判）"""
+def voice_onsets_g5(path: Path, noise_db: float = SYNC_NOISE_DB, min_sil: float = SYNC_MIN_SIL):
+    """配音檔的語音起點：ffmpeg silencedetect noise=−40 dB、d=0.05 s（G4 是 −45 dB、0.1 s，抓不到句中短停頓，b1 驗收兩處誤判）。
+    G6 精修：檔尾靜音的 silence_end（＝檔案結尾，後面沒有語音）不算語音起點。"""
     import re
     import subprocess
-    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", f"silencedetect=noise={SYNC_NOISE_DB}dB:d={SYNC_MIN_SIL}", "-f", "null", "-"],
+    r = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", str(path), "-af", f"silencedetect=noise={noise_db}dB:d={min_sil}", "-f", "null", "-"],
                        capture_output=True, text=True)
     starts = [float(x) for x in re.findall(r"silence_start: (-?[\d.]+)", r.stderr)]
     ends = [float(x) for x in re.findall(r"silence_end: ([\d.]+)", r.stderr)]
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+    if m:
+        dur = int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3))
+        ends = [e for e in ends if e < dur - 0.03]
     out = []
     if not starts or starts[0] > 0.01:
         out.append(0.0)
@@ -127,8 +135,14 @@ def voice_onsets_g5(path: Path):
 
 
 def subtitle_sync_g5(out: Path, tl: dict):
-    """字幕頁起點 − 該頁語音起點；方法同 g4_review_pack.subtitle_sync，只把靜音偵測改成 −40 dB、0.05 秒"""
+    """字幕頁起點 − 該頁語音起點；方法同 g4_review_pack.subtitle_sync，只把靜音偵測改成 −40 dB、0.05 秒；
+    G6 精修：第 2 頁以後在 −40 dB／0.05 秒找不到範圍內的停頓時，用 −30 dB／0.12 秒重找那一頁（取離頁起點較近的那個；每頁記 detect）"""
     LO, HI = -0.8, 0.1
+
+    def pick(ons, relt):
+        cand = [o for o in ons if o >= relt + LO]
+        return min(cand, key=lambda o: abs(o - relt)) if cand else ons[-1]
+
     rows = []
     for c in tl["cues"]:
         for l in c["lines"]:
@@ -136,19 +150,30 @@ def subtitle_sync_g5(out: Path, tl: dict):
                 continue
             src = ROOT / tl["audio"][l["audioId"]]["source"]
             ons = voice_onsets_g5(src)
+            ons_fb = None
             for k, pg in enumerate(l["pages"]):
                 relt = pg["start"] - l["start"]
+                detect = f"{SYNC_NOISE_DB} dB／{SYNC_MIN_SIL} s"
                 if k == 0:
                     on = ons[0]
                 else:
-                    cand = [o for o in ons if o >= relt + LO]
-                    on = min(cand, key=lambda o: abs(o - relt)) if cand else ons[-1]
+                    on = pick(ons, relt)
+                    if not (LO <= relt - on <= HI):
+                        if ons_fb is None:
+                            ons_fb = voice_onsets_g5(src, SYNC_FALLBACK_DB, SYNC_FALLBACK_SIL)
+                        on2 = pick(ons_fb, relt)
+                        if abs(on2 - relt) < abs(on - relt):
+                            on, detect = on2, f"{SYNC_FALLBACK_DB} dB／{SYNC_FALLBACK_SIL} s（退路）"
                 d = round(pg["start"] - (l["start"] + on), 3)
                 rows.append({"cue": c["id"], "line": l["id"], "page": k + 1, "text": "／".join(pg["rows"]), "subtitle_start_s": pg["start"],
-                             "voice_start_s": round(l["start"] + on, 3), "diff_s": d, "pass": LO <= d <= HI, "audio": rel(src, ROOT)})
+                             "voice_start_s": round(l["start"] + on, 3), "diff_s": d, "pass": LO <= d <= HI, "detect": detect, "audio": rel(src, ROOT)})
     res = {"method": f"ffmpeg silencedetect noise={SYNC_NOISE_DB} dB、d={SYNC_MIN_SIL} s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，"
-                     "b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+                     "b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。"
+                     f"G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise={SYNC_FALLBACK_DB} dB、d={SYNC_FALLBACK_SIL} s 重找那一頁"
+                     "（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
            "silencedetect": {"noise_dB": SYNC_NOISE_DB, "min_silence_s": SYNC_MIN_SIL},
+           "silencedetect_fallback": {"noise_dB": SYNC_FALLBACK_DB, "min_silence_s": SYNC_FALLBACK_SIL,
+                                      "pages": sum(1 for r in rows if "退路" in r["detect"])},
            "range_s": [LO, HI], "rows": rows, "all_pass": all(r["pass"] for r in rows)}
     (out / "subtitle_sync.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
     return res
@@ -645,6 +670,11 @@ def index(out: Path):
           f"- {sum(1 for r in rows if r['pass'])}／{len(rows)} 頁在範圍內；最大 {fmt(max((r['diff_s'] for r in rows), default=None), 3)} 秒、最小 {fmt(min((r['diff_s'] for r in rows), default=None), 3)} 秒。",
           f"- 語音起點偵測：ffmpeg silencedetect {sd.get('noise_dB', -45)} dB、最短靜音 {sd.get('min_silence_s', 0.1)} 秒"
           + ("（G5 修正第 1 輪起；G4 是 −45 dB、0.1 秒，抓不到句中短停頓）。" if sd else "（G4 方法）。")]
+    fb = ss.get("silencedetect_fallback")
+    if fb:
+        used = [f"{r['line']} 第 {r['page']} 頁" for r in rows if "退路" in r.get("detect", "")]
+        L.append(f"- 退路（G6 精修）：某頁在範圍內找不到停頓時，改用 {fb['noise_dB']} dB、最短靜音 {fb['min_silence_s']} 秒重找那一頁；"
+                 f"本段用到退路 {len(used)} 頁" + (f"（{'、'.join(used)}）" if used else "") + "。")
     L += ["", "## 逐字稿（v04 配音）", ""]
     if tr:
         rws = tr["rows"]

@@ -1,9 +1,14 @@
-"""第五幕段落檔產生器：讀現有 app/cues/show/a5.json（台詞、題目、storyboard 不動），重排表演、鏡頭、聲音、景，
+"""第五幕段落檔產生器：讀底稿（台詞、題目、storyboard 不動），重排表演、鏡頭、聲音、景，
 寫到暫存檔、驗證 JSON 後再搬回（同時開工時段落檔隨時保持合法）。
 
-用法：/opt/anaconda3/bin/python3 review/G5/a5/scripts/make_a5_cues.py（修正第 1 輪前的版本：make_a5_cues_r0.py）
+用法：/opt/anaconda3/bin/python3 review/G5/a5/scripts/make_a5_cues.py
+      （修正第 1 輪前的版本：make_a5_cues_r0.py；修正第 2 輪前：make_a5_cues_r1.py）
+      環境變數 A5_OUT＝改寫到別的檔（私人建置用）、A5_ROOT＝專案根目錄。
 景：a5_gate（app/src/sets/a5_gate.ts＝gate 建構器＋第五幕程式景片）、a5_hospital（assets/final/sets/a5_hospital/layout.json）。
 setTrack＝景的程式動作（格式見 a5_gate.ts、gate.ts 檔頭；引擎不讀）。
+修正第 2 輪（b2r2_failed／b2r2_regress a5 條目）：a5_c001 小朋友只在遠景轉角、長度 −2.75 秒；a5_c005 環顧（空接送區 → 街角慢搖、
+露出背對的導護旗一角、停 1 秒；阿樂叔叔不切在畫框邊）；a5_c007 先開門、救護人員從門後出來（離車身 0.4 以上、車尾旁那位不點頭）、
+關門後緩入緩出開出畫面、長度 −1.8 秒。
 """
 import copy
 import json
@@ -11,8 +16,8 @@ import os
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[4]
-SRC = ROOT / "app/cues/show/a5.json"
+ROOT = Path(os.environ.get("A5_ROOT") or Path(__file__).resolve().parents[4])
+SRC = Path(os.environ.get("A5_OUT", str(ROOT / "app/cues/show/a5.json")))
 # 底稿（tools/build_show_skeleton.py 產生的原始段落檔；台詞、題目、storyboard 從這裡取）
 SKEL = ROOT / "review/G5/a5/scripts/a5_skeleton.json"
 
@@ -140,17 +145,24 @@ c["set"] = "a5_gate"
 c = finish(c)
 L1, L2, L3, L4, L5, L6 = (f"a5_c001_0{i}" for i in range(1, 7))
 CUT_CORNER = f"{L1}.end+0.15"
-CUT2 = f"{L3}.end+1.8"                     # 陳伯伯要走了：切到遠景轉角
-WALK = plus(CUT2, 1.4)                    # 起步（翻面在切鏡後 0.9 秒、起步再晚 0.5 秒：光敏錯開）
+# 修正第 2 輪（長度 −3 秒）：拍肩後早一點切遠景、早一點起步；陳伯伯轉進街角時阿樂叔叔的頭就開始垂下（同一個遠景裡），
+# 中途切長椅中景；垂下後停 1.3 秒（原 2 秒）就讓孩子喊
+CUT2 = f"{L3}.end+1.6"                     # 陳伯伯要走了：切到遠景轉角（拍肩翻面 L3.end+0.72–0.96，離切鏡 0.64 秒）
+WALK = plus(CUT2, 1.25)                   # 起步（翻面在切鏡後 0.75 秒、起步再晚 0.26 秒：光敏錯開）
 # 走路分兩段（等速）：經過長椅與阿樂叔叔前面（景物多）每秒 0.75 單位，之後每秒 0.95 單位
 # （遠景每秒約 120／150 px：兩條褲管與鞋子掃過細格每秒 ≤3 次）
 WALK_A, WALK_A_DX = 3.2, -2.4
 WALK_B, WALK_B_DX = 2.9, -2.75
-GONE = plus(WALK, 5.5)                    # 陳伯伯走到街角小店後面（長椅中景看不到他）→ 切長椅中景
-DROOP = plus(GONE, 0.45)                  # 頭慢慢垂下 2.3 秒，停 2 秒才讓孩子喊
+DROOP = plus(WALK, 4.8)                   # 陳伯伯轉進街角（遠景裡被小店擋住一半）時，阿樂叔叔的頭開始慢慢垂下 2.3 秒
+GONE = plus(WALK, 5.35)                   # 陳伯伯整個走到街角小店後面 → 切長椅中景（頭還在慢慢垂）
+STU_AT = [-5.6, -1.95]                    # 轉角小朋友：遠處轉角（街角小店右後方、馬路對面），只在遠景轉角鏡頭出現
 track = [
     {"do": "catEar", "start": 0, "duration": 0, "to": 1},
-    {"do": "student", "start": 0, "duration": 0, "to": 1},
+    # 小朋友只在遠景轉角鏡頭出現（越肩鏡頭、長椅中景都不帶到：不會看起來站在長椅、貨車旁邊）
+    {"do": "student", "start": 0, "duration": 0, "to": 0},
+    {"do": "student", "start": CUT_CORNER, "duration": 0, "to": 1, "at": STU_AT},
+    {"do": "student", "start": f"{L2}.start+3.05", "duration": 0, "to": 0},
+    {"do": "student", "start": CUT2, "duration": 0, "to": 1, "at": STU_AT},
     {"do": "chenFlag", "start": 0, "to": 1, **FLAG["stand"]},
     {"do": "studentWave", "start": f"{L1}.end+0.4", "duration": 3.4},
     {"do": "studentWave", "start": plus(WALK, 0.4), "duration": 2.0},
@@ -174,10 +186,10 @@ anims = [
     chen_pose(f"{L3}.start+0.15", "standr", track),
     A("puppet.lean", f"{L3}.end+0.05", 0.25, "chen", to=-0.05),
     A("puppet.lean", f"{L3}.end+0.32", 0.35, "chen", to=0.0),
-    chen_pose(f"{L3}.end+0.9", "receive", track),          # 拍拍阿樂叔叔的肩膀
+    chen_pose(f"{L3}.end+0.72", "receive", track),         # 拍拍阿樂叔叔的肩膀
     # 快步走向轉角（等速平移、沒有走路起伏：光敏），轉過街角就看不見
     A("camera.cut", CUT2, 0, None, to="a5_corner"),
-    chen_pose(plus(CUT2, 0.9), "stand", track),
+    chen_pose(plus(CUT2, 0.75), "stand", track),
     A("puppet.move", WALK, WALK_A, "chen", "linear", dx=WALK_A_DX),
     A("puppet.move", plus(WALK, WALK_A), WALK_B, "chen", "linear", dx=WALK_B_DX),
     # 長椅中景：陳伯伯走了，阿樂叔叔的頭慢慢垂下、身體歪向一邊、線鬆垂、閉眼
@@ -187,8 +199,8 @@ anims = [
     A("puppet.face", DROOP, None, "ale", emotion="neutral"),
     A("strings.tension", DROOP, 2.3, "ale", to=SLACK),
     A("fx.desat", DROOP, 3.2, None, to=0.35),
-    # 停 2 秒 → 孩子在門裡叫他（孩子前景右、長椅後景左：前後景深）
-    A("camera.cut", plus(DROOP, 3.95), 0, None, to="a5_deep"),
+    # 停 1.3 秒 → 孩子在門裡叫他（孩子前景右、長椅後景左：前後景深）
+    A("camera.cut", plus(DROOP, 3.3), 0, None, to="a5_deep"),
     A("puppet.face", f"{L4}.start", None, "xiaoyu", emotion="worried"),
     A("puppet.face", f"{L4}.start+0.3", None, "xiaoqing", emotion="worried"),
     pose("xiaoqing", f"{L5}.start-0.45", "worried"),
@@ -218,10 +230,10 @@ c["sfx"] = [
     {"id": "sfx_gust", "at": plus(CUT2, 11.9), "gain": 0.6},
     {"id": "sfx_gust", "at": plus(CUT2, 16.2), "gain": 0.5},
 ]
-set_line_starts(c, {L1: 0.95, L2: plus(CUT_CORNER, 1.55), L3: f"{L2}.end+0.3", L4: plus(DROOP, 4.3), L5: f"{L4}.end+0.45",
-                    L6: f"{L5}.end+0.5"})
+set_line_starts(c, {L1: 0.95, L2: plus(CUT_CORNER, 1.25), L3: f"{L2}.end+0.3", L4: plus(DROOP, 3.6), L5: f"{L4}.end+0.4",
+                    L6: f"{L5}.end+0.4"})
 c["voStart"] = 0.95
-c["tail"] = 0.8
+c["tail"] = 0.7
 c["setTrack"] = track
 c["fx"] = ["FX8"]
 cues.append(c)
@@ -304,7 +316,9 @@ c = base_cue("a5_c005")
 c["sceneId"] = c["set"] = "a5_gate"
 c = finish(c)
 M1, M2, M3 = "a5_c005_01", "a5_c005_02", "a5_c005_03"
-PAN0, PAN = 1.15, 2.7
+PAN0, PAN = 1.15, 2.75                     # PAN0＝切到街角；搖鏡在 PAN0+0.55 起、到 PAN0+PAN 停
+# 轉角後露出的導護旗（背面紙旗）：握點 x −5.75 時整面藏在街角小店後面，PEEK_SLIDE 慢慢滑出來只露出旗面一角（旗桿一直藏著）
+PEEK_AT, PEEK_SLIDE = [-5.75, 1.45, 0.6], 0.33
 c["initialState"] = {
     "stage": {"curtain": "open", "camera": "a5_pov_a", "light": 1, "set": 1, "desat": 0.35},
     "characters": {
@@ -316,10 +330,11 @@ c["initialState"] = {
     },
 }
 c["animation"] = slump_anims() + [
-    # 環顧（小宇的視線）：空空的接送區（靜止）→ 亮度相近的硬切到遠處街角 → 慢慢推近（2.6 秒、正弦緩入緩出、移動小）
-    # 到街角後面只露出的陳伯伯導護旗一角（他背對這邊）。整段從接送區一路慢搖到街角在細格光敏會超標（景物多、距離長），改成切＋短推
+    # 環顧（小宇的視線，修正第 2 輪）：空空的接送區（靜止；阿樂叔叔、小晴都不入鏡）→ 亮度相近的硬切到遠處街角
+    # （阿樂叔叔在畫面右外，不再只剩手臂和線切在畫框邊）→ 再慢慢往左搖一點（2.2 秒、正弦、約 170 px：對街騎樓的窗格
+    # 掃過細格每秒 ≤3 次）→ 小店牆邊慢慢露出背對的導護旗一角 → 停住
     A("camera.cut", PAN0, 0, None, to="a5_pov_b0"),
-    A("camera.move", PAN0 + 0.3, PAN - 0.3, None, to="a5_pov_b"),
+    A("camera.move", PAN0 + 0.55, PAN - 0.55, None, "sine", to="a5_pov_b"),
     # 喊完停在旗子上 1 秒，旗子不動（沒有回應）
     A("camera.cut", f"{M1}.end+1.05", 0, None, to="a5_kids"),
     pose("xiaoqing", f"{M2}.start+0.7", "stand"),
@@ -333,7 +348,8 @@ c["animation"] = slump_anims() + [
     A("puppet.face", f"{M3}.start+3.5", None, "xiaoyu", emotion="neutral"),
 ]
 c["setTrack"] = copy.deepcopy(SLEEP_TRACK) + [
-    {"do": "flagPeek", "start": 0, "duration": 0, "to": 1},
+    {"do": "flagPeek", "start": 0, "duration": 0, "to": 1, "at": PEEK_AT},
+    {"do": "flagSlide", "start": PAN0 + PAN - 0.9, "duration": 1.1, "dx": PEEK_SLIDE},
     # 搖鏡時對街紅磚騎樓降彩（細格紅色光敏），停住後慢慢回來
     {"do": "brick", "start": PAN0 - 0.6, "duration": 0.5, "to": 0.3},
     {"do": "brick", "start": PAN0 + PAN + 0.4, "duration": 1.2, "to": 0.0},
@@ -371,7 +387,8 @@ c["animation"] = slump_anims() + [
     A("camera.cut", f"{N[4]}.start-0.2", 0, None, to="a5_xy_close"),
     A("puppet.face", f"{N[4]}.end-0.6", None, "xiaoyu", emotion="smile"),
 ]
-track = copy.deepcopy(SLEEP_TRACK) + [{"do": "flagPeek", "start": 0, "duration": 0, "to": 1},   # 陳伯伯還在街角後面（同 a5_c005）
+track = copy.deepcopy(SLEEP_TRACK) + [{"do": "flagPeek", "start": 0, "duration": 0, "to": 1,       # 陳伯伯還在街角後面（同 a5_c005 結尾）
+                                      "at": [PEEK_AT[0] + PEEK_SLIDE, PEEK_AT[1], PEEK_AT[2]]},
                                      {"do": "phone", "start": 0.5, "duration": 0.6, "to": 1}]
 for i in (0, 2, 4):
     track.append({"do": "phoneTalk", "start": f"{N[i]}.start", "until": f"{N[i]}.end"})
@@ -389,25 +406,35 @@ c = base_cue("a5_c007")
 c["sceneId"] = c["set"] = "a5_gate"
 c = finish(c)
 P1, P2 = "a5_c007_01", "a5_c007_02"
-AMB_IN, AMB_DUR = f"{P1}.start+1.9", 4.5          # 救護車遠景（鏡頭不動）：倒車進來（林老師的話接著是畫外音）
+# 修正第 2 輪（b2r2：救護人員的頭肩浮在車身前、救護車沒有開走、長度 −2 秒）：
+#  - 救護車停遠一點（車尾 x −4.4）：後車門打開時不擋到長椅上的阿樂叔叔。
+#  - 先開後車門，救護人員推擔架從車門另一側（門後）走出來；救護人員站在 z 0.6／0.2（離車身 0.5 以上，
+#    車門、車身永遠在他們前面：不會再有頭肩畫在車身前面）；車尾旁那位整個藏在打開的車門後、不點頭（點頭的頭層前傾會穿到車身前）。
+#  - 送進車裡後，兩位救護人員再往車裡挪一點（都藏在車身後）才關門；關門後救護車緩入緩出（正弦）往左開出畫面（約 1.4 秒出框），
+#    車上的人用同一個 ease 一起移動；約 1.7 秒出框、再 0.35 秒切林老師與孩子。
+AMB_REAR = -4.4
+AMB_IN, AMB_DUR = f"{P1}.start+1.4", 4.0          # 救護車遠景（鏡頭不動）：倒車進來（林老師的話接著是畫外音）
 PARK = plus(AMB_IN, AMB_DUR)
-OUT, OUT_DUR = plus(PARK, 0.8), 3.4                # 救護人員推擔架從車後出來，到長椅前（每秒約 1 單位）
-G0, G1 = -6.1, -2.65                               # 擔架中心：車後 → 長椅前（阿樂叔叔的位置）
+DOOR_OPEN = plus(PARK, 0.25)                       # 後車門打開（0.7 秒）
+OUT, OUT_DUR = plus(PARK, 0.75), 3.1               # 推擔架從門後出來，到長椅前（每秒約 1.2 單位：經過阿樂叔叔前後的細格光敏）
+G0, G1 = -6.3, -2.65                               # 擔架中心：車裡 → 長椅前（阿樂叔叔的位置）
 DX = G1 - G0
-NOD = plus(OUT, OUT_DUR + 0.1)
-DOOR_OPEN = plus(OUT, OUT_DUR + 0.25)
-IN, IN_DUR = plus(OUT, OUT_DUR + 1.15), 3.0        # 阿樂叔叔坐在擔架上，推進後車門
-DOOR_CLOSE = plus(IN, IN_DUR + 0.1)
-GO, GO_DUR, GO_DX = plus(IN, IN_DUR + 0.75), 5.0, -8.0
+NOD = plus(OUT, OUT_DUR - 0.2)                     # 推到長椅前時點一下頭（我們來接手）
+IN, IN_DUR = plus(OUT, OUT_DUR + 0.45), 3.4        # 阿樂叔叔坐在擔架上，推進後車門（每秒約 1.07 單位：兩個人的頭先後掃過同一格要隔 1.2 秒以上）
+TUCK = plus(IN, IN_DUR)                            # 救護人員再往車裡挪 0.9（藏在車身後）
+DOOR_CLOSE = plus(IN, IN_DUR + 0.4)
+GO, GO_DUR, GO_DX = plus(IN, IN_DUR + 1.2), 2.6, -4.6
+CUT_LIN = plus(GO, 2.05)
 c["initialState"] = {
     "stage": {"curtain": "open", "camera": "a5_wide", "light": 1, "set": 1, "desat": 0.35},
     "characters": {
         "ale": slumped_ale(),
         # 陳伯伯從街角後面（a5_c001 走到的位置）快步回來，守在長椅右邊（救護車停在長椅左邊，他不在車後）
         "chen": {"visible": True, "x": -4.6, "z": 0.62, "pose": "standr", "emotion": "worried", "facing": 1},
-        # 救護人員一開始平躺在街角小店後面（popup 0：看不到），救護車停好後在車後面立起來
-        "medic_a": {"visible": True, "x": -7.0, "z": 1.0, "emotion": "neutral", "popup": 0},
-        "medic_b": {"visible": True, "x": -6.2, "z": 0.9, "emotion": "neutral", "popup": 0},
+        # 救護人員一開始平躺在車裡的位置（popup 0：看不到），救護車停好後在車身後面立起來
+        "medic_a": {"visible": True, "x": -7.4, "z": 0.6, "emotion": "neutral", "popup": 0},
+        # 推擔架右端的那位站在阿樂叔叔後面（z 0.2）：走過長椅時被阿樂叔叔擋住，不會深淺交替掃過他（細格光敏）
+        "medic_b": {"visible": True, "x": -6.6, "z": 0.2, "emotion": "neutral", "popup": 0},
         # 林老師、小晴從右邊跑來：林老師蹲在小宇右邊（小宇鏡射、錶在左腕、面向她）
         "lin": {"visible": True, "x": 7.4, "z": 1.35, "pose": "standr", "emotion": "worried", "facing": -1},
         "xiaoyu": {"visible": True, "x": 4.35, "z": 1.75, "pose": "dial", "emotion": "neutral", "facing": -1},
@@ -416,20 +443,19 @@ c["initialState"] = {
 }
 track = copy.deepcopy(SLEEP_TRACK) + [
     {"do": "chenFlag", "start": 0, "to": 1, **FLAG["standr"]},
-    {"do": "ambulance", "start": AMB_IN, "duration": AMB_DUR, "from": -4.4},
+    {"do": "ambulance", "start": AMB_IN, "duration": AMB_DUR, "from": -4.4, "rear": AMB_REAR},
     # 推擔架時對街紅磚騎樓降彩（操偶線跟著阿樂叔叔掃過紅磚：細格紅色光敏）
     {"do": "brick", "start": plus(PARK, 0.1), "duration": 0.6, "to": 0.35},
+    {"do": "ambDoor", "start": DOOR_OPEN, "duration": 0.7, "to": 1},
     {"do": "gurney", "start": PARK, "duration": 0, "x0": G0, "x1": G0, "to": 1},
     {"do": "gurney", "start": OUT, "duration": OUT_DUR, "x0": G0, "x1": G1, "to": 1, "ease": "linear"},
-    {"do": "ambDoor", "start": DOOR_OPEN, "duration": 0.7, "to": 1},
     {"do": "gurney", "start": IN, "duration": IN_DUR, "x0": G1, "x1": G0, "to": 1, "ease": "linear"},
     {"do": "ambDoor", "start": DOOR_CLOSE, "duration": 0.8, "to": 0},
     {"do": "gurney", "start": GO, "duration": 0, "x0": G0, "x1": G0, "to": 0},
-    {"do": "ambulanceGo", "start": GO, "duration": GO_DUR, "dx": GO_DX},
+    {"do": "ambulanceGo", "start": GO, "duration": GO_DUR, "dx": GO_DX, "ease": "sine"},
 ]
 anims = slump_anims() + [
     # 全景：陳伯伯從左邊街角快步回來；林老師、小晴從右邊跑來（短距離、等速；翻面在停下後 ≥0.5 秒、彼此錯開）
-    # 陳伯伯：從街角快步回來（全景裡每秒約 1 單位）；救護車進來時再往右讓開（遠景、鏡頭不動）
     A("puppet.move", 0.1, 3.75, "chen", "linear", dx=3.75),
     A("puppet.move", plus(AMB_IN, 0.4), 1.3, "chen", "linear", dx=1.15),
     A("puppet.move", 0.4, 1.9, "lin", "linear", dx=-2.4),
@@ -442,27 +468,28 @@ anims = slump_anims() + [
     # 救護車遠景（鏡頭不動；不拍擔架上的臉）
     A("camera.cut", AMB_IN, 0, None, to="a5_amb"),
     chen_pose(plus(AMB_IN, 2.0), "receive", track),
-    # 救護人員在車後面立起來、站到擔架兩端（都被車身擋住）
+    # 救護人員在車身後面立起來、站到擔架兩端（都被車身擋住）
     A("puppet.popup", plus(PARK, 0.05), 0.35, "medic_a"),
     A("puppet.popup", plus(PARK, 0.05), 0.35, "medic_b"),
-    A("puppet.move", plus(PARK, 0.42), 0.3, "medic_a", "linear", dx=-0.65),
+    A("puppet.move", plus(PARK, 0.42), 0.3, "medic_a", "linear", dx=-0.25),
     A("puppet.move", plus(PARK, 0.42), 0.3, "medic_b", "linear", dx=1.65),
-    # 推擔架出來 → 長椅前（阿樂叔叔坐上擔架）→ 推進後車門 → 隨車離開
-    A("puppet.move", OUT, OUT_DUR, "medic_a", "linear", dx=DX),
+    # 推擔架從門後出來 → 長椅前（阿樂叔叔坐上擔架）→ 推進後車門 → 隨車離開
+    A("puppet.move", OUT, OUT_DUR, "medic_a", "linear", dx=DX - 0.35),   # 車尾旁那位整個藏在車門後（只看得到門下的腳）
     A("puppet.move", OUT, OUT_DUR, "medic_b", "linear", dx=DX),
-    A("puppet.nod", NOD, 0.9, "medic_a", count=1),
-    A("puppet.nod", plus(NOD, 0.15), 0.9, "medic_b", count=1),
-    A("puppet.move", IN, IN_DUR, "medic_a", "linear", dx=-DX),
+    A("puppet.nod", NOD, 0.9, "medic_b", count=1),
+    A("puppet.move", IN, IN_DUR, "medic_a", "linear", dx=-(DX - 0.35)),
     A("puppet.move", IN, IN_DUR, "medic_b", "linear", dx=-DX),
     A("puppet.move", IN, IN_DUR, "ale", "linear", dx=-DX),
-    A("puppet.move", GO, GO_DUR, "medic_a", "in", dx=GO_DX),
-    A("puppet.move", GO, GO_DUR, "medic_b", "in", dx=GO_DX),
-    A("puppet.move", GO, GO_DUR, "ale", "in", dx=GO_DX),
+    A("puppet.move", TUCK, 0.4, "medic_a", "linear", dx=-0.9),
+    A("puppet.move", TUCK, 0.4, "medic_b", "linear", dx=-0.9),
+    A("puppet.move", GO, GO_DUR, "medic_a", "sine", dx=GO_DX),
+    A("puppet.move", GO, GO_DUR, "medic_b", "sine", dx=GO_DX),
+    A("puppet.move", GO, GO_DUR, "ale", "sine", dx=GO_DX),
     # 林老師與孩子中景：林老師站起來稱讚
-    A("camera.cut", plus(GO, 1.35), 0, None, to="a5_lin_kids2"),
-    pose("lin", plus(GO, 2.0), "stand"),
-    pose("xiaoqing", plus(GO, 2.6), "stand"),
-    pose("xiaoyu", plus(GO, 3.3), "standwatch_m"),
+    A("camera.cut", CUT_LIN, 0, None, to="a5_lin_kids2"),
+    pose("lin", plus(CUT_LIN, 0.65), "stand"),
+    pose("xiaoqing", plus(CUT_LIN, 1.25), "stand"),
+    pose("xiaoyu", plus(CUT_LIN, 1.95), "standwatch_m"),
     A("puppet.face", f"{P2}.end-0.8", None, "xiaoqing", emotion="smile"),
     A("puppet.face", f"{P2}.end-0.6", None, "xiaoyu", emotion="smile"),
 ]
@@ -471,8 +498,8 @@ c["setTrack"] = track
 c["audioId"] = None
 c["music"] = [{"id": "none", "at": f"{P2}.start+0.2", "fade": 3.5}]
 c["sfx"] = [{"id": "sfx_footsteps", "at": 0.4, "gain": 0.45}, {"id": "sfx_ambulance_engine", "at": plus(AMB_IN, -1.6), "gain": 0.75}]
-set_line_starts(c, {P1: 4.15, P2: plus(GO, 0.65)})
-c["voStart"] = 4.15
+set_line_starts(c, {P1: 3.95, P2: plus(GO, 0.3)})
+c["voStart"] = 3.95
 c["tail"] = 1.0
 cues.append(c)
 
@@ -511,7 +538,7 @@ cues.append(c)
 out = {k: v for k, v in src.items() if k != "cues"}
 out["set"] = "a5_gate"
 out["characters"] = ROSTER
-out["_note"] = ("第五幕（G5 第五幕代理排戲；review/G5/a5/scripts/make_a5_cues.py 產生；修正第 1 輪）。景：a5_gate（校門口，app/src/sets/a5_gate.ts＝"
+out["_note"] = ("第五幕（G5 第五幕代理排戲；review/G5/a5/scripts/make_a5_cues.py 產生；修正第 2 輪）。景：a5_gate（校門口，app/src/sets/a5_gate.ts＝"
                 "gate 建構器＋街角、轉角小朋友、救護車與後車門、擔架、電話圖示、阿樂叔叔閉眼與頭下沉）、a5_hospital（醫院走廊，layout.json）。"
                 "cue 的 setTrack＝景的程式動作（引擎不讀，景的 update 讀；格式見 a5_gate.ts 與 gate.ts 檔頭）。storyboard 是劇本與節拍表的摘錄，引擎不讀。")
 out["cues"] = cues

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-21 23:02:00",
+  "generated_at": "2026-10-22 11:33:02",
   "tool": "tools/music/build_all.py（ffmpeg ebur128 量測；真峰值 = ffmpeg true peak）",
   "spec": {
     "music_bed_lufs": -24,
@@ -867,32 +867,32 @@
       "spec_pass": true
     },
     {
-      "file": "audio/sfx/sfx_stamp_v01.wav",
+      "file": "audio/sfx/sfx_stamp_v02.wav",
       "kind": "sfx",
       "sample_rate": 48000,
       "channels": 1,
       "bit_depth": 16,
       "duration_s": 0.75,
-      "integrated_lufs": -29.6,
-      "true_peak_dbtp": -8.0,
+      "integrated_lufs": -33.6,
+      "true_peak_dbtp": -9.9,
       "lra_lu": 0.0,
-      "sample_peak_dbfs": -8.0,
-      "true_peak_dbtp_numpy_4x": -7.99,
+      "sample_peak_dbfs": -9.9,
+      "true_peak_dbtp_numpy_4x": -9.89,
       "size_bytes": 72044,
-      "momentary_max_lufs": -25.3,
-      "max_jump_100ms_db": 24.7,
+      "momentary_max_lufs": -28.3,
+      "max_jump_100ms_db": 21.7,
       "max_jump_100ms_at_s": 0.4,
-      "max_rise_1s_db": 24.7,
+      "max_rise_1s_db": 21.7,
       "max_rise_1s_at_s": 0.4,
-      "energy_below_100hz_rel_db": -9.9,
-      "energy_above_6khz_rel_db": -62.2,
-      "rise_time_ms": 7.1,
-      "first_5ms_peak_rel_db": -23.4,
+      "energy_below_100hz_rel_db": -9.2,
+      "energy_above_6khz_rel_db": -60.5,
+      "rise_time_ms": 11.4,
+      "first_5ms_peak_rel_db": -46.3,
       "last_10ms_peak_dbfs": -90.3,
       "first_sample_abs_lsb": 0,
       "desc": "「正解」紙印章（S4）：柔和一聲，0.32 s 輕抬",
-      "peak_target_dbfs": -8.0,
-      "momentary_cap_lufs": -20.0,
+      "peak_target_dbfs": -9.8,
+      "momentary_cap_lufs": -28.3,
       "spec_pass": true
     },
     {
@@ -1437,5 +1437,54 @@
       "momentary_cap_lufs": -30.0,
       "spec_pass": true
     }
-  ]
+  ],
+  "g6_polish_sfx_stamp": {
+    "note": "G6 精修（主線授權共用小修，第一批放行一般問題「揭答蓋章聲 100 ms 上升偏大、從靜音出現」）：tools/music/sfx.py 起音升餘弦 14 → 28 ms、SFX_LEVEL 峰值 −8 → −9.8 dBFS（最大瞬間響度上限 −28.3）；音色、長度、0.32 s 輕抬不變。新檔 sfx_stamp_v02.wav（tools/pack.mjs 取最新版本），v01 保留。",
+    "v01": {
+      "integrated_lufs": -29.6,
+      "momentary_max_lufs": -25.3,
+      "sample_peak_dbfs": -8.0,
+      "true_peak_dbtp": -8.0,
+      "rise_time_ms": 7.1,
+      "first_5ms_peak_rel_db": -23.4,
+      "max_jump_100ms_db": 24.7,
+      "duration_s": 0.75
+    },
+    "v02": {
+      "integrated_lufs": -33.6,
+      "momentary_max_lufs": -28.3,
+      "sample_peak_dbfs": -9.9,
+      "true_peak_dbtp": -9.9,
+      "rise_time_ms": 11.4,
+      "first_5ms_peak_rel_db": -46.3,
+      "max_jump_100ms_db": 21.7,
+      "duration_s": 0.75
+    },
+    "change_db": {
+      "momentary_max": -3.0,
+      "integrated": -4.0,
+      "sample_peak": -1.9
+    },
+    "rise_time_target_ms": [
+      10,
+      15
+    ],
+    "in_mix": {
+      "pack": "review/G5/a4/pack（2026-10-22T04:34Z，sfx_stamp_v02）",
+      "a4_c010_stamp_momentary_peak_LUFS": {
+        "before_b1r3": -22.0,
+        "after": -25.3
+      },
+      "a4_c010_stamp_max_rise_100ms_LU": {
+        "before_b1r3_music_sfx_only": 47.0,
+        "after_full_mix_0_to_0.95s": 44.2
+      },
+      "music_sfx_only_max_rise_100ms_now": {
+        "LU": 43.7,
+        "at": "a4_c011 0.35 秒（點燈鈴 sfx_lamp_on，不是蓋章聲）"
+      },
+      "note": "上升量以 −70 LUFS 為下限：揭答 cue 前面是數位靜音，任何聲音冒出來都會算成 40 LU 以上的「上升」；蓋章聲本身已變輕（瞬間最大 −3 dB）、起音變慢（11.4 ms）。聽感未驗證。"
+    },
+    "listening": "未驗證（Claude 聽不到音訊；彩排確認）"
+  }
 }

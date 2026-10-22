@@ -1,0 +1,84 @@
+{
+ "img": "png",
+ "ms_per_frame": 97,
+ "mux_sec_per_video_sec": 0.08,
+ "rate_source": "_check/backup_a8.json",
+ "rows": [
+  {
+   "act": "a0",
+   "title": "開場：主燈骨架不見了",
+   "cues": 6,
+   "frames": 3724,
+   "video_sec": 124.1,
+   "est_min": 7.2
+  },
+  {
+   "act": "a1",
+   "title": "第一幕：漂亮的外表",
+   "cues": 8,
+   "frames": 5207,
+   "video_sec": 173.6,
+   "est_min": 9.7
+  },
+  {
+   "act": "a2",
+   "title": "第二幕：看不見的操偶線",
+   "cues": 13,
+   "frames": 8747,
+   "video_sec": 291.6,
+   "est_min": 15.6
+  },
+  {
+   "act": "a3",
+   "title": "第三幕：我可以說不要",
+   "cues": 8,
+   "frames": 4986,
+   "video_sec": 166.2,
+   "est_min": 9.3
+  },
+  {
+   "act": "a4",
+   "title": "第四幕：危險會跑到路上",
+   "cues": 13,
+   "frames": 7436,
+   "video_sec": 247.9,
+   "est_min": 13.4
+  },
+  {
+   "act": "a5",
+   "title": "第五幕：找得到的幫手",
+   "cues": 8,
+   "frames": 6052,
+   "video_sec": 201.7,
+   "est_min": 11.1
+  },
+  {
+   "act": "a6",
+   "title": "第六幕：可以求助的秘密",
+   "cues": 9,
+   "frames": 6178,
+   "video_sec": 205.9,
+   "est_min": 11.3
+  },
+  {
+   "act": "a7",
+   "title": "複習與收束",
+   "cues": 3,
+   "frames": 1620,
+   "video_sec": 54,
+   "est_min": 3.7
+  },
+  {
+   "act": "a8",
+   "title": "閉幕",
+   "cues": 3,
+   "frames": 1182,
+   "video_sec": 39.4,
+   "est_min": 3
+  }
+ ],
+ "total_frames": 45132,
+ "total_video_min": 25.1,
+ "total_est_min": 84.3,
+ "disk_note": "截圖用管線送進 ffmpeg，不落地；每段工作檔（混音 WAV＋無聲影片）約 0.2–1 GB，做完即刪；成品約每分鐘 100–200 MB。"
+}

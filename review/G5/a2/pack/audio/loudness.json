@@ -36,7 +36,7 @@
    "TP_dBTP": -2.7
   },
   "a2_c006": {
-   "I_LUFS": -15.1,
+   "I_LUFS": -15.2,
    "LRA_LU": 2.6,
    "TP_dBTP": -2.4
   },
@@ -56,8 +56,8 @@
    "TP_dBTP": -1.9
   },
   "a2_c010": {
-   "I_LUFS": -15.6,
-   "LRA_LU": 2.7,
+   "I_LUFS": -15.7,
+   "LRA_LU": 2.8,
    "TP_dBTP": -4.6
   },
   "a2_c011": {
@@ -66,8 +66,8 @@
    "TP_dBTP": -2.9
   },
   "a2_c012": {
-   "I_LUFS": -16.1,
-   "LRA_LU": 11.7,
+   "I_LUFS": -16.3,
+   "LRA_LU": 11.2,
    "TP_dBTP": -1.5
   },
   "a2_c013": {
@@ -494,8 +494,8 @@
    "vo_file_TP_dBTP": -2.2,
    "mix_I_LUFS": -15.1,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -37.4,
-   "vo_minus_background_LU": 22.5
+   "background_I_LUFS": -37.3,
+   "vo_minus_background_LU": 22.4
   },
   {
    "id": "a2_c012_03",
@@ -508,8 +508,8 @@
    "vo_file_TP_dBTP": -2.6,
    "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -36.4,
-   "vo_minus_background_LU": 21.4
+   "background_I_LUFS": -36.3,
+   "vo_minus_background_LU": 21.3
   },
   {
    "id": "a2_c012_04",
@@ -522,8 +522,8 @@
    "vo_file_TP_dBTP": -5.2,
    "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -39.0,
-   "vo_minus_background_LU": 24.0
+   "background_I_LUFS": -38.8,
+   "vo_minus_background_LU": 23.8
   },
   {
    "id": "a2_c012_05",
@@ -536,8 +536,8 @@
    "vo_file_TP_dBTP": -1.9,
    "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -39.9,
-   "vo_minus_background_LU": 24.9
+   "background_I_LUFS": -39.8,
+   "vo_minus_background_LU": 24.8
   },
   {
    "id": "a2_c013_01",
@@ -623,7 +623,7 @@
    "cue": "a2_c009",
    "cue_t": 0.96
   },
-  "max_rise_per_100ms_LU": 27.2,
+  "max_rise_per_100ms_LU": 23.6,
   "max_rise_per_100ms_at_sec": 213.3,
   "max_rise_per_100ms_at": {
    "cue": "a2_c010",
@@ -631,13 +631,13 @@
   },
   "max_rise_within_1s_LU": 39.9,
   "max_rise_within_1s_at_sec": 1.6,
-  "sample_peak_dBFS": -7.96,
-  "sample_peak_at_sec": 213.27,
+  "sample_peak_dBFS": -8.23,
+  "sample_peak_at_sec": 35.09,
   "sample_peak_at": {
-   "cue": "a2_c010",
-   "cue_t": 0.32
+   "cue": "a2_c002",
+   "cue_t": 12.63
   },
-  "true_peak_dBTP": -8.0,
+  "true_peak_dBTP": -8.2,
   "I_LUFS": -29.3,
   "g4_reference": {
    "max_LUFS": -15.7,
@@ -687,7 +687,7 @@
    "cue": "a2_c012",
    "hold_from_sec": 262.33,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -51.6,
+   "momentary_max_after_3s_LUFS": -51.3,
    "pass_le_-35": true
   },
   {
@@ -751,7 +751,7 @@
    "offset": 0
   },
   {
-   "t": 233.38,
+   "t": 234.06,
    "music": "music_town",
    "loop": true,
    "fade": 1.6,

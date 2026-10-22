@@ -1,0 +1,1028 @@
+{
+ "generatedAt": "2026/10/22 15:38:55",
+ "cueHash": "589311ebb1",
+ "prerollSec": 0.6,
+ "teacherTime": {
+  "greeting": 30,
+  "press": 1,
+  "lead": 0.1,
+  "quiz": {
+   "think": 15,
+   "reason": 15,
+   "feedback": 12,
+   "lampCall": 2,
+   "quiet": 3
+  },
+  "after": {
+   "a0_c005": {
+    "sec": 75,
+    "label": "規則說明＋捧燈手試做"
+   },
+   "a1_c003": {
+    "sec": 30,
+    "label": "找找看 1",
+    "l1": 15
+   },
+   "a2_c001": {
+    "sec": 30,
+    "label": "找找看 2",
+    "l1": 15
+   },
+   "a3_c004": {
+    "sec": 90,
+    "label": "拒絕句與口訣練習"
+   },
+   "a4_c013": {
+    "sec": 30,
+    "label": "找找看 3",
+    "l1": 15
+   },
+   "a7_c002": {
+    "sec": 30,
+    "label": "全場一起做口訣"
+   },
+   "a8_c003": {
+    "sec": 45,
+    "label": "教師結語",
+    "l2": 30
+   }
+  },
+  "optional": {
+   "a2_c004": {
+    "sec": 20,
+    "label": "可選補充（預設不講，超前時才講）"
+   }
+  },
+  "reasonL1": 8
+ },
+ "playback": {
+  "level0": 1325.8,
+  "level1": 1302,
+  "level2": 1270.1
+ },
+ "totalSec": 2150,
+ "total": "35:50",
+ "limit": "38:00",
+ "withinLimit": true,
+ "bufferSec": 130,
+ "variants": {
+  "l1": {
+   "total": "33:45",
+   "totalSec": 2025,
+   "events": [
+    {
+     "cueId": "a2_c011",
+     "label": "Q3 點燈收聲後",
+     "planned": "13:00",
+     "actual": "12:10",
+     "behind": -50,
+     "level": 1
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "Q6 點燈收聲後",
+     "planned": "23:27",
+     "actual": "22:17",
+     "behind": -70,
+     "level": 1
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "Q8 點燈收聲後",
+     "planned": "30:49",
+     "actual": "29:28",
+     "behind": -81,
+     "level": 1
+    },
+    {
+     "cueId": "a8_c003",
+     "label": "停在署名卡（之後教師結語）",
+     "planned": "34:33",
+     "actual": "33:00",
+     "behind": -93,
+     "level": 1
+    }
+   ]
+  },
+  "l2": {
+   "total": "32:58",
+   "totalSec": 1978,
+   "events": [
+    {
+     "cueId": "a2_c011",
+     "label": "Q3 點燈收聲後",
+     "planned": "13:00",
+     "actual": "12:10",
+     "behind": -50,
+     "level": 2
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "Q6 點燈收聲後",
+     "planned": "23:27",
+     "actual": "22:17",
+     "behind": -70,
+     "level": 2
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "Q8 點燈收聲後",
+     "planned": "30:49",
+     "actual": "29:28",
+     "behind": -81,
+     "level": 2
+    },
+    {
+     "cueId": "a8_c003",
+     "label": "停在署名卡（之後教師結語）",
+     "planned": "34:33",
+     "actual": "32:28",
+     "behind": -125,
+     "level": 2
+    }
+   ]
+  },
+  "stress": {
+   "total": "39:04",
+   "totalSec": 2344,
+   "events": [
+    {
+     "cueId": "a2_c011",
+     "label": "Q3 點燈收聲後",
+     "planned": "13:00",
+     "actual": "14:40",
+     "behind": 100,
+     "level": 0
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "Q6 點燈收聲後",
+     "planned": "23:27",
+     "actual": "26:22",
+     "behind": 175,
+     "level": 0
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "Q8 點燈收聲後",
+     "planned": "30:49",
+     "actual": "34:43",
+     "behind": 234,
+     "level": 0
+    },
+    {
+     "cueId": "a8_c003",
+     "label": "停在署名卡（之後教師結語）",
+     "planned": "34:33",
+     "actual": "38:19",
+     "behind": 226,
+     "level": 0
+    }
+   ]
+  },
+  "stressDyn": {
+   "total": "37:38",
+   "totalSec": 2258,
+   "events": [
+    {
+     "cueId": "a2_c011",
+     "label": "Q3 點燈收聲後",
+     "planned": "13:00",
+     "actual": "14:40",
+     "behind": 100,
+     "level": 0
+    },
+    {
+     "cueId": "a2_c011",
+     "label": "觸發 1 級",
+     "planned": "13:00",
+     "actual": "14:40",
+     "behind": 100,
+     "level": 1,
+     "trigger": true
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "Q6 點燈收聲後",
+     "planned": "23:27",
+     "actual": "26:17",
+     "behind": 170,
+     "level": 1
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "Q8 點燈收聲後",
+     "planned": "30:49",
+     "actual": "34:08",
+     "behind": 199,
+     "level": 1
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "觸發 2 級",
+     "planned": "30:49",
+     "actual": "34:08",
+     "behind": 199,
+     "level": 2,
+     "trigger": true
+    },
+    {
+     "cueId": "a8_c003",
+     "label": "停在署名卡（之後教師結語）",
+     "planned": "34:33",
+     "actual": "37:08",
+     "behind": 155,
+     "level": 2
+    }
+   ]
+  },
+  "optional": {
+   "total": "36:10",
+   "totalSec": 2170,
+   "events": [
+    {
+     "cueId": "a2_c011",
+     "label": "Q3 點燈收聲後",
+     "planned": "13:00",
+     "actual": "13:36",
+     "behind": 36,
+     "level": 0
+    },
+    {
+     "cueId": "a4_c011",
+     "label": "Q6 點燈收聲後",
+     "planned": "23:27",
+     "actual": "24:09",
+     "behind": 42,
+     "level": 0
+    },
+    {
+     "cueId": "a6_c005",
+     "label": "Q8 點燈收聲後",
+     "planned": "30:49",
+     "actual": "31:49",
+     "behind": 60,
+     "level": 0
+    },
+    {
+     "cueId": "a8_c003",
+     "label": "停在署名卡（之後教師結語）",
+     "planned": "34:33",
+     "actual": "35:25",
+     "behind": 52,
+     "level": 0
+    }
+   ]
+  }
+ },
+ "checkpoints": [
+  {
+   "cueId": "a2_c011",
+   "label": "Q3 點燈收聲後",
+   "planned": "13:00",
+   "estimated": "13:16",
+   "behindSec": 16
+  },
+  {
+   "cueId": "a4_c011",
+   "label": "Q6 點燈收聲後",
+   "planned": "23:27",
+   "estimated": "23:49",
+   "behindSec": 22
+  },
+  {
+   "cueId": "a6_c005",
+   "label": "Q8 點燈收聲後",
+   "planned": "30:49",
+   "estimated": "31:29",
+   "behindSec": 40
+  },
+  {
+   "cueId": "a8_c003",
+   "label": "停在署名卡（之後教師結語）",
+   "planned": "34:33",
+   "estimated": "35:05",
+   "behindSec": 32
+  }
+ ],
+ "compression": {
+  "level1SavedSec": 23.7,
+  "level2SavedSec": 31.9,
+  "level1": [
+   "a0_c004〈小晴和小宇〉略過第 03、04 句「交給我！我摺成放大鏡，馬上找到！」「呃……謝謝，我剛好缺一頂帽子。」（約 9.7 秒）",
+   "a1_c001〈廣場上的品安〉略過第 04、05 句「我也來布置！看我摺一盞燈籠——」「……你是青蛙燈嗎？」（約 5.4 秒）",
+   "a3_c001〈又是那隻手〉略過第 01、02 句「折折，你又迷路了？」「我是在……測試風向。」（約 5.1 秒）",
+   "a6_c007〈八盞燈與主燈〉略過第 01 句「我……我摺成了！真的是燈籠！」（約 3.5 秒）"
+  ],
+  "level2": [
+   "a6_c008〈四季（時間轉場）〉改短版（只留第 03 句），約省 7.5 秒",
+   "a7_c001〈三張大圖〉改短版（只留第 03 句），約省 14.4 秒",
+   "a8_c001〈謝幕〉改短版，約省 10.0 秒"
+  ]
+ },
+ "cues": [
+  {
+   "id": "a0_c000",
+   "kind": "title",
+   "start": "00:00",
+   "startSec": 0,
+   "playSec": 0,
+   "teacherSec": 0,
+   "teacher": [
+    "課前問候 30 秒（署名卡待機）"
+   ]
+  },
+  {
+   "id": "a0_c001",
+   "kind": "curtain",
+   "start": "00:31",
+   "startSec": 31.1,
+   "playSec": 13.66,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a0_c002",
+   "kind": "scene",
+   "start": "00:46",
+   "startSec": 45.9,
+   "playSec": 22.3,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a0_c003",
+   "kind": "scene",
+   "start": "01:10",
+   "startSec": 69.9,
+   "playSec": 23.94,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a0_c004",
+   "kind": "scene",
+   "start": "01:35",
+   "startSec": 94.9,
+   "playSec": 28.61,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a0_c005",
+   "kind": "scene",
+   "start": "02:05",
+   "startSec": 124.6,
+   "playSec": 22.04,
+   "teacherSec": 75,
+   "teacher": [
+    "規則說明＋捧燈手試做 75 秒"
+   ]
+  },
+  {
+   "id": "a1_c001",
+   "kind": "scene",
+   "start": "03:43",
+   "startSec": 223.3,
+   "playSec": 27.75,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a1_c002",
+   "kind": "scene",
+   "start": "04:12",
+   "startSec": 252.2,
+   "playSec": 14.53,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a1_c003",
+   "kind": "scene",
+   "start": "04:28",
+   "startSec": 267.8,
+   "playSec": 18.52,
+   "teacherSec": 30,
+   "teacher": [
+    "找找看 1 30 秒"
+   ]
+  },
+  {
+   "id": "a1_c004",
+   "kind": "scene",
+   "start": "05:17",
+   "startSec": 317.4,
+   "playSec": 30.2,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a1_c005",
+   "kind": "quiz",
+   "start": "05:49",
+   "startSec": 348.8,
+   "playSec": 23.89,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a1_c006",
+   "kind": "reveal",
+   "start": "06:29",
+   "startSec": 388.7,
+   "playSec": 6.97,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a1_c007",
+   "kind": "lamp",
+   "start": "07:06",
+   "startSec": 425.8,
+   "playSec": 5.72,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a1_c008",
+   "kind": "scene",
+   "start": "07:16",
+   "startSec": 435.6,
+   "playSec": 26.78,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c001",
+   "kind": "scene",
+   "start": "07:44",
+   "startSec": 464.1,
+   "playSec": 17.76,
+   "teacherSec": 30,
+   "teacher": [
+    "找找看 2 30 秒"
+   ]
+  },
+  {
+   "id": "a2_c002",
+   "kind": "scene",
+   "start": "08:34",
+   "startSec": 513.6,
+   "playSec": 25.18,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c003",
+   "kind": "scene",
+   "start": "09:00",
+   "startSec": 540.5,
+   "playSec": 15.3,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c004",
+   "kind": "scene",
+   "start": "09:17",
+   "startSec": 557.5,
+   "playSec": 21.91,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c005",
+   "kind": "quiz",
+   "start": "09:40",
+   "startSec": 580.5,
+   "playSec": 23.86,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a2_c006",
+   "kind": "reveal",
+   "start": "10:20",
+   "startSec": 620.4,
+   "playSec": 7.16,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a2_c007",
+   "kind": "lamp",
+   "start": "10:58",
+   "startSec": 657.7,
+   "playSec": 9.17,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a2_c008",
+   "kind": "scene",
+   "start": "11:11",
+   "startSec": 671,
+   "playSec": 39.4,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c009",
+   "kind": "quiz",
+   "start": "11:51",
+   "startSec": 711.5,
+   "playSec": 22.31,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a2_c010",
+   "kind": "reveal",
+   "start": "12:30",
+   "startSec": 749.9,
+   "playSec": 6.49,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a2_c011",
+   "kind": "lamp",
+   "start": "13:06",
+   "startSec": 786.5,
+   "playSec": 5.57,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a2_c012",
+   "kind": "scene",
+   "start": "13:16",
+   "startSec": 796.1,
+   "playSec": 32.32,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a2_c013",
+   "kind": "scene",
+   "start": "13:50",
+   "startSec": 830.1,
+   "playSec": 34.14,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a3_c001",
+   "kind": "scene",
+   "start": "14:26",
+   "startSec": 866,
+   "playSec": 21.5,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a3_c002",
+   "kind": "scene",
+   "start": "14:49",
+   "startSec": 888.6,
+   "playSec": 13.23,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a3_c003",
+   "kind": "scene",
+   "start": "15:04",
+   "startSec": 903.5,
+   "playSec": 23.55,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a3_c004",
+   "kind": "scene",
+   "start": "15:29",
+   "startSec": 928.8,
+   "playSec": 14.82,
+   "teacherSec": 90,
+   "teacher": [
+    "拒絕句與口訣練習 90 秒"
+   ]
+  },
+  {
+   "id": "a3_c005",
+   "kind": "quiz",
+   "start": "17:15",
+   "startSec": 1034.7,
+   "playSec": 23.71,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a3_c006",
+   "kind": "reveal",
+   "start": "17:54",
+   "startSec": 1074.5,
+   "playSec": 7.44,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a3_c007",
+   "kind": "lamp",
+   "start": "18:32",
+   "startSec": 1112,
+   "playSec": 5.88,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a3_c008",
+   "kind": "scene",
+   "start": "18:43",
+   "startSec": 1122.6,
+   "playSec": 36.69,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c001",
+   "kind": "scene",
+   "start": "19:21",
+   "startSec": 1161,
+   "playSec": 23.92,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c002",
+   "kind": "scene",
+   "start": "19:47",
+   "startSec": 1186.6,
+   "playSec": 18.86,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c003",
+   "kind": "scene",
+   "start": "20:07",
+   "startSec": 1206.6,
+   "playSec": 15.52,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c004",
+   "kind": "scene",
+   "start": "20:23",
+   "startSec": 1223.2,
+   "playSec": 15.3,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c005",
+   "kind": "quiz",
+   "start": "20:40",
+   "startSec": 1239.6,
+   "playSec": 19.57,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a4_c006",
+   "kind": "reveal",
+   "start": "21:15",
+   "startSec": 1275.3,
+   "playSec": 6.26,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a4_c007",
+   "kind": "lamp",
+   "start": "21:52",
+   "startSec": 1311.6,
+   "playSec": 7.16,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a4_c008",
+   "kind": "scene",
+   "start": "22:03",
+   "startSec": 1322.9,
+   "playSec": 14.33,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c009",
+   "kind": "quiz",
+   "start": "22:18",
+   "startSec": 1338.3,
+   "playSec": 26.61,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a4_c010",
+   "kind": "reveal",
+   "start": "23:01",
+   "startSec": 1381,
+   "playSec": 7.32,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a4_c011",
+   "kind": "lamp",
+   "start": "23:38",
+   "startSec": 1418.4,
+   "playSec": 6.42,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a4_c012",
+   "kind": "scene",
+   "start": "23:49",
+   "startSec": 1429,
+   "playSec": 31.07,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a4_c013",
+   "kind": "scene",
+   "start": "24:21",
+   "startSec": 1461.1,
+   "playSec": 24.75,
+   "teacherSec": 30,
+   "teacher": [
+    "找找看 3 30 秒"
+   ]
+  },
+  {
+   "id": "a5_c001",
+   "kind": "scene",
+   "start": "25:18",
+   "startSec": 1517.6,
+   "playSec": 38.32,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a5_c002",
+   "kind": "quiz",
+   "start": "25:57",
+   "startSec": 1557,
+   "playSec": 23.62,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a5_c003",
+   "kind": "reveal",
+   "start": "26:37",
+   "startSec": 1596.7,
+   "playSec": 7.02,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a5_c004",
+   "kind": "lamp",
+   "start": "27:14",
+   "startSec": 1633.8,
+   "playSec": 6.2,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a5_c005",
+   "kind": "scene",
+   "start": "27:24",
+   "startSec": 1644.1,
+   "playSec": 21.25,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a5_c006",
+   "kind": "scene",
+   "start": "27:46",
+   "startSec": 1666.5,
+   "playSec": 31.18,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a5_c007",
+   "kind": "scene",
+   "start": "28:19",
+   "startSec": 1698.8,
+   "playSec": 24.08,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a5_c008",
+   "kind": "scene",
+   "start": "28:45",
+   "startSec": 1724.6,
+   "playSec": 27.41,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c001",
+   "kind": "scene",
+   "start": "29:14",
+   "startSec": 1753.7,
+   "playSec": 13.68,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c002",
+   "kind": "scene",
+   "start": "29:28",
+   "startSec": 1768.4,
+   "playSec": 31.81,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c003",
+   "kind": "quiz",
+   "start": "30:01",
+   "startSec": 1801.4,
+   "playSec": 23.9,
+   "teacherSec": 15,
+   "teacher": [
+    "想＋全班比 15 秒"
+   ]
+  },
+  {
+   "id": "a6_c004",
+   "kind": "reveal",
+   "start": "30:41",
+   "startSec": 1841.4,
+   "playSec": 6.94,
+   "teacherSec": 29,
+   "teacher": [
+    "點人說理由 15＋回饋 12＋「捧燈手」2 秒"
+   ]
+  },
+  {
+   "id": "a6_c005",
+   "kind": "lamp",
+   "start": "31:18",
+   "startSec": 1878.4,
+   "playSec": 7.07,
+   "teacherSec": 3,
+   "teacher": [
+    "燈亮後收聲 3 秒"
+   ]
+  },
+  {
+   "id": "a6_c006",
+   "kind": "scene",
+   "start": "31:30",
+   "startSec": 1889.6,
+   "playSec": 35.26,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c007",
+   "kind": "scene",
+   "start": "32:06",
+   "startSec": 1925.9,
+   "playSec": 21.05,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c008",
+   "kind": "scene",
+   "start": "32:29",
+   "startSec": 1948.7,
+   "playSec": 19.57,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a6_c009",
+   "kind": "scene",
+   "start": "32:50",
+   "startSec": 1969.9,
+   "playSec": 25.81,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a7_c001",
+   "kind": "scene",
+   "start": "33:17",
+   "startSec": 1997.5,
+   "playSec": 25.32,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a7_c002",
+   "kind": "scene",
+   "start": "33:44",
+   "startSec": 2023.9,
+   "playSec": 8.08,
+   "teacherSec": 30,
+   "teacher": [
+    "全場一起做口訣 30 秒"
+   ]
+  },
+  {
+   "id": "a7_c003",
+   "kind": "scene",
+   "start": "34:23",
+   "startSec": 2063.1,
+   "playSec": 14.01,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a8_c001",
+   "kind": "scene",
+   "start": "34:39",
+   "startSec": 2078.8,
+   "playSec": 18,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a8_c002",
+   "kind": "curtain",
+   "start": "34:58",
+   "startSec": 2097.9,
+   "playSec": 5.4,
+   "teacherSec": 0,
+   "teacher": []
+  },
+  {
+   "id": "a8_c003",
+   "kind": "title",
+   "start": "35:03",
+   "startSec": 2103.4,
+   "playSec": 1.4,
+   "teacherSec": 45,
+   "teacher": [
+    "教師結語 45 秒"
+   ]
+  }
+ ]
+}

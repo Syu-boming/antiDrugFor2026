@@ -59,7 +59,10 @@ ZZ_Q = [-4.7, 0.0, 4.15]           # 題卡模式折折的全劇統一位置（�
 KID_X, KID_Z = 3.45, 4.0           # a3_c004 練習卡兩側的示範位置（卡寬 6，左右緣 ±3）
 PINAN_X0, PINAN_Z = 5.45, -1.1     # a3_c003 品安起點：站姿（較窄）整個藏在警衛室右半段實牆後面（窗洞 x ≤4.85 右邊、房子實際右緣 x 5.93 左邊），矮牆（z −1.25）前面
 PINAN_DX, PINAN_T = 3.6, 3.75      # 往右走 3.6 單位、3.75 秒（約 0.96 單位／秒），最後一格整個人（含後腳）已在畫面右緣外
-LIN_DX, LIN_T = 2.15, 3.2          # a3_c008 林老師往右走出 a3_cls_lin 畫面（約 0.67 單位／秒：白襯衫＋深色外套的邊掃過細格不超過每秒 3 次）
+LIN_DX, LIN_T = 1.92, 4.8          # a3_c008 林老師邊講電話邊慢慢往右走（0.4 單位／秒：phone 姿勢兩腿分開，深色褲管＋白邊縫隙掃過細格，
+                                   # 走快了每格每秒 3 次；結束時間不超過 cue 結尾，不會把 cue 拉長）
+FOLLOW_T = 3.84                    # 修正第 2 輪（安全 G2）：a3_c001 開頭跟拍推鏡放慢 20%（3.2 → 3.84 秒），孩子走路同步放慢（3.0 → 3.6 秒）
+KIDS_WALK_T = 3.6
 
 
 def build(cues):
@@ -75,11 +78,11 @@ def build(cues):
     }}
     c["animation"] = [
         # 跟拍：孩子往右走（學校在右），鏡頭同速正弦緩動；走到定點翻面站好（小宇戴手錶的站姿 standwatch，臉朝左＝看得到從左邊伸出的手）
-        A("camera.move", 0.35, duration=3.2, ease="sine", to="a3_follow1"),
-        A("puppet.exit", 0.3, "xiaoqing", 3.0, "sine", to=1.6),
-        A("puppet.exit", 0.35, "xiaoyu", 3.0, "sine", to=1.6),
-        pose("xiaoqing", 3.15, "stand"),
-        pose("xiaoyu", 3.3, "standwatch"),
+        A("camera.move", 0.35, duration=FOLLOW_T, ease="sine", to="a3_follow1"),
+        A("puppet.exit", 0.3, "xiaoqing", KIDS_WALK_T, "sine", to=1.6),
+        A("puppet.exit", 0.35, "xiaoyu", KIDS_WALK_T, "sine", to=1.6),
+        pose("xiaoqing", 3.75, "stand"),
+        pose("xiaoyu", 3.9, "standwatch"),
         # 折折摺成紙飛機想帶路：往右前方飛、繞一大圈回來，落進小宇的連帽（在小宇背後，身體擋住下半截），摺回小小的貓
         A("zhezhe.fold", 0.15, "zhezhe", 1.2, form="plane", scale=0.65),
         A("zhezhe.flyTo", 1.4, "zhezhe", 1.6, pos=[1.5, 2.45, 0.9], height=0.4),
@@ -219,7 +222,7 @@ def build(cues):
     c["audioId"] = None
     c["sfx"] = [{"id": "sfx_fold", "at": 0.9, "gain": 0.6}, {"id": "sfx_paper_rustle", "at": 1.65, "gain": 0.6}]
     c["voStart"] = 3.0
-    c["tail"] = 1.8
+    c["tail"] = 1.5   # 修正第 2 輪：−0.3（給 a3_c008 結尾；最後一次換表情後還有 0.6 秒）
 
     END4 = {
         "xiaoqing": ch("forehead_l", -KID_X, KID_Z, "smile", 1),
@@ -284,7 +287,8 @@ def build(cues):
     c = by["a3_c008"]
     c["set"] = "a3_classroom"
     c["initialState"] = {"stage": stage("a3_cls_mid"), "characters": {
-        "lin": ch("stand_m", 1.3, 0.2, "smile", 1),
+        # 修正第 2 輪：林老師說話時臉朝孩子（母版 stand 臉朝畫面左；stand_m 是朝右，第 1 輪弄反了）
+        "lin": ch("stand", 1.3, 0.2, "smile", 1),
         "xiaoqing": ch("stand", -1.15, 0.45, "smile", 1),
         "xiaoyu": ch("standwatch_m", -2.4, 0.1, "smile", 1),
         "zhezhe": ch(None, -1.8, 1.25, "happy", y=0.0),
@@ -299,30 +303,34 @@ def build(cues):
         A("puppet.tilt", f"{L2}+5.3", "xiaoyu", 0.5, to=0.07),
         A("puppet.tilt", f"{L2}+5.6", "xiaoqing", 0.5, to=-0.06),
         A("zhezhe.emote", f"{L2}.end+0.15", "zhezhe", emotion="worried"),
-        A("puppet.tilt", f"{L2}.end+0.6", "xiaoyu", 0.6, to=0.0),
+        A("puppet.tilt", f"{L2}.end+0.1", "xiaoyu", 0.6, to=0.0),   # 修正第 2 輪：句末 +0.1 就回正（原 +0.6）
         # 林老師與小晴中景：小晴舉手、往前一步，當場告訴林老師（切鏡頭、舉手、放下手各隔 ≥0.5／1 秒）
-        A("camera.cut", f"{L2}.end+1.0", duration=0, to="a3_cls_lin"),
+        # 修正第 2 輪：切鏡提早到句末 +0.45（鏡位左移後，小宇聽完話身體回正〔引擎自動〕＋切鏡＋小晴舉手翻面會在同一細格湊滿 4 次；
+        # 在回正完成前切走）
+        A("camera.cut", f"{L2}.end+0.45", duration=0, to="a3_cls_lin"),
         pose("xiaoqing", f"{L2}.end+1.5", "reach"),
         face("lin", f"{L2}.end+1.65", "neutral"),
-        pose("xiaoqing", f"{L2}.end+2.75", "stand"),
+        pose("xiaoqing", f"{L2}.end+2.75", "stand_m"),      # 放下手時翻成朝右（面向林老師；舉手→放下本來就翻一次，不多翻）
         A("puppet.move", f"{L2}.end+2.8", "xiaoqing", 0.6, "sine", dx=0.5),
         A("puppet.tilt", f"{L2}.end+2.9", "xiaoqing", 0.4, to=0.0),
         face("lin", f"{L3}+1.6", "worried"),
         face("lin", L4, "smile"),
         face("lin", f"{L4}+2.3", "neutral"),
         face("xiaoqing", f"{L4}+6.0", "neutral"),
-        # 修正第 1 輪（導演 a3 第 2 項、美術 a3 第 1 項）：林老師翻回朝右的站姿、手上拿著手機（景放在她手上），
-        # 在這個中景裡往右走出畫面（約 2 秒，切鏡前已經完全出畫）去走廊打電話
-        pose("lin", f"{L4}.end+0.15", "stand"),
-        A("puppet.exit", f"{L4}.end+0.75", "lin", LIN_T, "linear", to=LIN_DX),
-        # 兩個孩子轉頭看窗外（窗在他們左後方）：小晴、小宇先後翻成朝左
-        pose("xiaoqing", f"{L4}.end+1.5", "stand_m"),
-        face("xiaoqing", f"{L4}.end+1.75", "worried"),
-        pose("xiaoyu", f"{L4}.end+2.3", "standwatch"),
-        face("xiaoyu", f"{L4}.end+2.55", "worried"),
-        # 最後一個鏡頭（林老師已經走出畫面）：窗外輕擺的燈籠串在上方、兩個孩子在右下望著它（懸念）
-        A("camera.cut", f"{L4}.end+4.1", duration=0, to="a3_cls_end"),
-        A("zhezhe.look", f"{L4}.end+4.35", "zhezhe", 0.8, yaw=-0.45),
+        # 修正第 2 輪（導演 G1）：林老師說完最後一句，轉身朝右、舉起手機貼在耳邊（新姿勢 phone，Codex 生成，手機是素面深灰），
+        # 站著講電話約 0.7 秒讓大家看清楚，再一邊講電話一邊慢慢往右走出畫面右緣（a3_cls_lin 鏡位第 2 輪往左移，老師離右緣近）；
+        # 兩個孩子先目送老師（臉朝右）。翻面和起步隔 0.9 秒（細格光敏：翻面 2 次＋起步不疊在同一秒）
+        pose("lin", f"{L4}.end+0.05", "phone"),
+        A("puppet.exit", f"{L4}.end+0.95", "lin", LIN_T, "linear", to=LIN_DX),
+        face("xiaoqing", f"{L4}.end+1.2", "worried"),
+        # 老師走向門口時，小宇先轉身朝左望向窗外的燈籠串（翻成原圖朝左的 standwatch：手錶在他的左手腕，和全劇一致；
+        # 不用鏡射的 walk_r）；和切鏡隔 ≥1 秒（細格光敏紅色＝連帽外套，翻面＋切鏡不能落在同一秒）
+        pose("xiaoyu", f"{L4}.end+2.2", "standwatch"),
+        # 最後一個鏡頭（老師走到畫面右緣、半個身子出畫時切；動作中切鏡）：鏡頭放低、往左看，窗外輕擺的燈籠串在孩子頭部左邊同一高度；
+        # 小宇已經朝左望著燈籠串，小晴接著轉身、手放額前朝左遠望（forehead_l）；兩人一起望著燈籠串到 cue 結束約 0.9 秒，之後停格（懸念）
+        # 小晴翻面和切鏡隔 1 秒（細格明暗：切鏡和翻面不疊在同一秒）；不移動、不再加鏡頭移動；折折在畫面下緣外
+        A("camera.cut", f"{L4}.end+3.6", duration=0, to="a3_cls_end"),
+        pose("xiaoqing", f"{L4}.end+4.6", "forehead_l"),
     ]
     c["audioId"] = None
     c["music"] = [
@@ -331,7 +339,7 @@ def build(cues):
     ]
     c["sfx"] = [{"id": "sfx_school_bell", "at": 0.1, "gain": 0.6}]
     c["voStart"] = 1.15
-    c["tail"] = 5.45
+    c["tail"] = 5.75   # 修正第 2 輪：+0.3（結尾望燈籠串）；a3_c004 tail −0.3 抵掉，整段總長不變
     lines = {l["id"]: l for l in c["lines"]}
     lines[L2]["start"] = "a3_c008_01.end+0.3"
     lines[L3]["start"] = f"{L2}.end+2.95"

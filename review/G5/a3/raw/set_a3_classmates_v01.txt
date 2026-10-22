@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a16198-230c-76b0-b9b5-d889eb0ded05/exec-41a1b5e7-e36b-46dc-a1f3-bbf5c97debbd.png`
+- Destination: [review/G5/a3/raw/set_a3_classmates_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/set_a3_classmates_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

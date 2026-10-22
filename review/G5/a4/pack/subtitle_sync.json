@@ -1,8 +1,13 @@
 {
- "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
  "silencedetect": {
   "noise_dB": -40,
   "min_silence_s": 0.05
+ },
+ "silencedetect_fallback": {
+  "noise_dB": -30,
+  "min_silence_s": 0.12,
+  "pages": 0
  },
  "range_s": [
   -0.8,
@@ -18,6 +23,7 @@
    "voice_start_s": 1.526,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c001_01_v04.wav"
   },
   {
@@ -29,6 +35,7 @@
    "voice_start_s": 8.865,
    "diff_s": 0.041,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c001_01_v04.wav"
   },
   {
@@ -40,6 +47,7 @@
    "voice_start_s": 15.536,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c001_02_v04.wav"
   },
   {
@@ -51,6 +59,7 @@
    "voice_start_s": 0.928,
    "diff_s": -0.128,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c002_01_v04.wav"
   },
   {
@@ -62,6 +71,7 @@
    "voice_start_s": 4.773,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c002_02_v04.wav"
   },
   {
@@ -73,6 +83,7 @@
    "voice_start_s": 8.309,
    "diff_s": -0.129,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c002_03_v04.wav"
   },
   {
@@ -84,6 +95,7 @@
    "voice_start_s": 1.722,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c003_01_v04.wav"
   },
   {
@@ -95,6 +107,7 @@
    "voice_start_s": 8.467,
    "diff_s": -0.137,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c003_02_v04.wav"
   },
   {
@@ -106,6 +119,7 @@
    "voice_start_s": 4.687,
    "diff_s": -0.187,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c004_01_v04.wav"
   },
   {
@@ -117,6 +131,7 @@
    "voice_start_s": 7.902,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c004_02_v04.wav"
   },
   {
@@ -128,6 +143,7 @@
    "voice_start_s": 1.582,
    "diff_s": -0.132,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c005_01_v04.wav"
   },
   {
@@ -139,6 +155,7 @@
    "voice_start_s": 4.112,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c005_02_v04.wav"
   },
   {
@@ -150,6 +167,7 @@
    "voice_start_s": 8.575,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c005_03_v04.wav"
   },
   {
@@ -161,6 +179,7 @@
    "voice_start_s": 12.035,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c005_04_v04.wav"
   },
   {
@@ -172,6 +191,7 @@
    "voice_start_s": 15.533,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c005_05_v04.wav"
   },
   {
@@ -183,6 +203,7 @@
    "voice_start_s": 1.131,
    "diff_s": -0.131,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c006_01_v04.wav"
   },
   {
@@ -194,6 +215,7 @@
    "voice_start_s": 2.023,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c007_01_v04.wav"
   },
   {
@@ -205,6 +227,7 @@
    "voice_start_s": 1.438,
    "diff_s": -0.138,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c008_01_v04.wav"
   },
   {
@@ -216,6 +239,7 @@
    "voice_start_s": 7.746,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c008_02_v04.wav"
   },
   {
@@ -227,6 +251,7 @@
    "voice_start_s": 1.59,
    "diff_s": -0.14,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c009_01_v04.wav"
   },
   {
@@ -238,6 +263,7 @@
    "voice_start_s": 4.232,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c009_02_v04.wav"
   },
   {
@@ -249,6 +275,7 @@
    "voice_start_s": 12.319,
    "diff_s": -0.129,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c009_03_v04.wav"
   },
   {
@@ -260,6 +287,7 @@
    "voice_start_s": 17.431,
    "diff_s": -0.121,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c009_04_v04.wav"
   },
   {
@@ -271,6 +299,7 @@
    "voice_start_s": 22.093,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c009_05_v04.wav"
   },
   {
@@ -282,6 +311,7 @@
    "voice_start_s": 1.126,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c010_01_v04.wav"
   },
   {
@@ -293,6 +323,7 @@
    "voice_start_s": 2.027,
    "diff_s": -0.127,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c011_01_v04.wav"
   },
   {
@@ -304,6 +335,7 @@
    "voice_start_s": 1.129,
    "diff_s": -0.129,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c012_01_v04.wav"
   },
   {
@@ -315,6 +347,7 @@
    "voice_start_s": 4.099,
    "diff_s": -0.199,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c012_02_v04.wav"
   },
   {
@@ -326,6 +359,7 @@
    "voice_start_s": 10.482,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c012_03_v04.wav"
   },
   {
@@ -337,6 +371,7 @@
    "voice_start_s": 16.275,
    "diff_s": -0.135,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c012_04_v04.wav"
   },
   {
@@ -348,6 +383,7 @@
    "voice_start_s": 25.752,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c012_05_v04.wav"
   },
   {
@@ -359,6 +395,7 @@
    "voice_start_s": 3.727,
    "diff_s": -0.127,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c013_01_v04.wav"
   },
   {
@@ -370,6 +407,7 @@
    "voice_start_s": 9.743,
    "diff_s": -0.133,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c013_02_v04.wav"
   },
   {
@@ -381,6 +419,7 @@
    "voice_start_s": 17.455,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a4_c013_03_v04.wav"
   }
  ],

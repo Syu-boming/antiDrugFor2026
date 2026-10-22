@@ -1,0 +1,258 @@
+{
+ "file": "review/G6/_test/backup/backup_a7.mp4",
+ "act": "a7",
+ "title": "複習與收束",
+ "generated": "2026-10-22 10:32",
+ "size_MB": 27.0,
+ "frames_expected": 1620,
+ "duration_expected_sec": 54.0,
+ "holds": {
+  "hold": 2,
+  "quiz": 3,
+  "title": 3,
+  "end": 12,
+  "autoAdvance": 0
+ },
+ "previous_cue": "a6_c009",
+ "chapters": [
+  {
+   "id": "a7_c001",
+   "title": "三張大圖（a7_c001）",
+   "start_ms": 0,
+   "end_ms": 27933,
+   "start": "00:00.0"
+  },
+  {
+   "id": "a7_c002",
+   "title": "一起做口訣（a7_c002）",
+   "start_ms": 27933,
+   "end_ms": 38000,
+   "start": "00:27.9"
+  },
+  {
+   "id": "a7_c003",
+   "title": "最後的話（a7_c003）",
+   "start_ms": 38000,
+   "end_ms": 54000,
+   "start": "00:38.0"
+  }
+ ],
+ "cues": [
+  {
+   "id": "a7_c001",
+   "kind": "scene",
+   "title": "三張大圖",
+   "chapter_start_sec": 0,
+   "cue_start_sec": 0.6,
+   "duration_sec": 25.32,
+   "pause_from_sec": 25.92,
+   "hold_sec": 2,
+   "preroll_sec": 0.6,
+   "teacherNote": "播完停格，等老師按下一步。",
+   "quiz": null
+  },
+  {
+   "id": "a7_c002",
+   "kind": "scene",
+   "title": "一起做口訣",
+   "chapter_start_sec": 27.933,
+   "cue_start_sec": 27.933,
+   "duration_sec": 8.08,
+   "pause_from_sec": 36.013,
+   "hold_sec": 2,
+   "preroll_sec": 0,
+   "teacherNote": "帶全場說口訣、做動作一次（約 30 秒）：「不碰、不試；先離開，找大人。」做完做安靜手勢，再按下一步。",
+   "quiz": null
+  },
+  {
+   "id": "a7_c003",
+   "kind": "scene",
+   "title": "最後的話",
+   "chapter_start_sec": 38,
+   "cue_start_sec": 38,
+   "duration_sec": 14.01,
+   "pause_from_sec": 52.01,
+   "hold_sec": 2,
+   "preroll_sec": 0,
+   "teacherNote": "播完停格，等老師按下一步。",
+   "quiz": null
+  }
+ ],
+ "mix": {
+  "source": "tools/g4_review_pack.py mix()（act_review_pack.py 同一套）＋引擎配樂規則修正",
+  "music_semantics": [],
+  "sample_peak_dBFS": -1.32,
+  "clipped_samples": 0,
+  "missing_audio": []
+ },
+ "capture": {
+  "img": "png",
+  "shots": 1443,
+  "written": 1620,
+  "capture_sec": 124.1,
+  "capture_ms_per_frame": 86,
+  "page_errors": [],
+  "encoder": {
+   "crf": 16,
+   "preset": "slow",
+   "profile": "high",
+   "level": "4.1",
+   "pix_fmt": "yuv420p",
+   "colorspace": "bt709",
+   "gop": 60,
+   "abr": "256k"
+  }
+ },
+ "capture_external_requests": 0,
+ "timing": {
+  "img": "png",
+  "capture_ms_per_frame": 86,
+  "capture_sec": 124.1,
+  "mux_sec": 0.9,
+  "mux_sec_per_video_sec": 0.018,
+  "verify_sec": 1.9,
+  "post_sec_per_video_sec": 0.053
+ },
+ "verify": {
+  "video": {
+   "codec_name": "h264",
+   "profile": "High",
+   "level": 41,
+   "width": 1920,
+   "height": 1080,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "avg_frame_rate": "30/1",
+   "color_space": "bt709",
+   "color_primaries": "bt709",
+   "color_transfer": "bt709",
+   "color_range": "tv",
+   "bit_rate": "3751920",
+   "nb_read_packets": "1620",
+   "duration": "54.000000"
+  },
+  "audio": {
+   "codec_name": "aac",
+   "profile": "LC",
+   "sample_rate": "48000",
+   "channels": 2,
+   "bit_rate": "242420",
+   "duration": "54.000000"
+  },
+  "format": {
+   "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+   "duration": "54.000000",
+   "size": "27024121",
+   "bit_rate": "4003573"
+  },
+  "frames_ok": true,
+  "duration_diff_av_sec": 0.0,
+  "chapters_in_file": 3,
+  "chapters_ok": true,
+  "chapter_titles_in_file": [
+   "三張大圖（a7_c001）",
+   "一起做口訣（a7_c002）",
+   "最後的話（a7_c003）"
+  ],
+  "av_sync": {
+   "method": "成品 AAC 音軌（解碼成 48 kHz 單聲道）與該句配音檔（從語音起點前 50 ms 取 1 秒）在預定時間 ±200 ms 內做正規化互相關；lag_ms＝成品比預定晚多少毫秒",
+   "lines": 6,
+   "max_abs_lag_ms": 0.0,
+   "median_abs_lag_ms": 0.0,
+   "min_corr": 0.975,
+   "pass_le_1_frame": true,
+   "rows": [
+    {
+     "line": "a7_c001_01",
+     "cue": "a7_c001",
+     "expected_sec": 2.877,
+     "lag_ms": 0.0,
+     "corr": 0.98
+    },
+    {
+     "line": "a7_c001_02",
+     "cue": "a7_c001",
+     "expected_sec": 12.17,
+     "lag_ms": 0.0,
+     "corr": 0.996
+    },
+    {
+     "line": "a7_c001_03",
+     "cue": "a7_c001",
+     "expected_sec": 17.674,
+     "lag_ms": 0.0,
+     "corr": 0.975
+    },
+    {
+     "line": "a7_c002_01",
+     "cue": "a7_c002",
+     "expected_sec": 32.019,
+     "lag_ms": 0.0,
+     "corr": 0.979
+    },
+    {
+     "line": "a7_c003_01",
+     "cue": "a7_c003",
+     "expected_sec": 42.39,
+     "lag_ms": 0.0,
+     "corr": 1.0
+    },
+    {
+     "line": "a7_c003_02",
+     "cue": "a7_c003",
+     "expected_sec": 48.092,
+     "lag_ms": 0.0,
+     "corr": 1.0
+    }
+   ]
+  },
+  "frame_check": {
+   "method": "擷取時存下的原始截圖 vs 成品解碼後同一格號（與前後各一格）的 PSNR；同格號最高＝沒有錯位（靜止畫面前後格相同時以 ±0.05 dB 視為相同）",
+   "samples": 4,
+   "min_psnr_dB": 40.29,
+   "mean_psnr_dB": 42.32,
+   "all_aligned": true,
+   "rows": [
+    {
+     "frame": 1,
+     "time_sec": 0.033,
+     "psnr_same_dB": 40.29,
+     "psnr_prev_dB": 39.75,
+     "psnr_next_dB": 34.55,
+     "aligned": true
+    },
+    {
+     "frame": 398,
+     "time_sec": 13.267,
+     "psnr_same_dB": 42.19,
+     "psnr_prev_dB": 42.19,
+     "psnr_next_dB": 42.19,
+     "aligned": true
+    },
+    {
+     "frame": 959,
+     "time_sec": 31.967,
+     "psnr_same_dB": 43.86,
+     "psnr_prev_dB": 43.67,
+     "psnr_next_dB": 43.83,
+     "aligned": true
+    },
+    {
+     "frame": 1350,
+     "time_sec": 45.0,
+     "psnr_same_dB": 42.94,
+     "psnr_prev_dB": 41.97,
+     "psnr_next_dB": 41.95,
+     "aligned": true
+    }
+   ]
+  },
+  "loudness_final": {
+   "I_LUFS": -16.0,
+   "LRA_LU": 14.7,
+   "TP_dBTP": -1.3
+  },
+  "decoded_audio_sec": 54.0,
+  "all_ok": true
+ }
+}

@@ -1,0 +1,25 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a full-body standing POSE of a NEW minor background character for a children's paper-cut puppet theater. PORTRAIT (vertical) orientation, request the tall 2:3 size (1024x1536), with a TRANSPARENT background (real alpha channel).
+
+THREE reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND and THIRD are approved child characters of the same show. Draw the new child in EXACTLY the same rendering style, line weight, face style, flat colors, white paper-core border and natural picture-book proportions as the second and third references (but younger and smaller):
+- A 6-year-old first-grade schoolchild (gender-neutral look), short neat dark hair mostly hidden under a plain bright-yellow round school safety cap with a short brim (the cap is plain: no logo, no text, no badge, no stripes).
+- Plain white short-sleeve shirt, navy-blue shorts, white socks, small light-gray sneakers; a small plain tan/light-brown school backpack with two shoulder straps (no logo, no text, no keychains, no characters).
+- Proportions: a younger child, about 4.0 heads tall (head including the cap = about 25% of the full height), slim natural picture-book child, NOT chibi, NOT big-headed.
+
+POSE (very important): standing on a street corner and waving to a crossing guard who is far away on the right. Standing upright, the whole body in a three-quarter view toward the VIEWER'S RIGHT, both soles flat on the floor, feet slightly apart. The arm on the RIGHT side of the image (the far arm) is raised HIGH above the head, elbow slightly bent, the small hand open with the palm facing right, waving; this raised arm must NOT touch or overlap the head or the cap: leave a clear EMPTY transparent gap of at least 40 px between the raised arm (including its white border) and the cap/head. The other arm (on the LEFT side of the image) hangs down relaxed along the body, that hand relaxed and empty. Head turned toward the right, looking right.
+EXPRESSION: calm and friendly, a small closed-mouth smile.
+
+The whole figure from the top of the hair to the soles and the fingertips is visible with empty transparent margin all around (nothing cropped). Face style exactly like the approved characters: simple dark eyes with one small white highlight, small simple nose, small mouth, soft rosy cheeks, thin dark lines. Her/his face must be fully visible (three-quarter view, both eyes visible, the far eye slightly narrower), never a strict side profile.
+
+ART STYLE (match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" style and the approved character references, but apply ALL of these corrections):
+- The figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of the figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props unless listed above, no scenery, no frame, no card behind the figure, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/a5/raw/a5_student_v03.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/a5/raw/a5_student_v03.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

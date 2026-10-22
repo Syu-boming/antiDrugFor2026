@@ -195,6 +195,24 @@
      "image": "chr-pinan_pose-walk-straps-m",
      "face": "pinan:walk_straps_m",
      "headTop": -43.3
+    },
+    "sit_lantern_look1": {
+     "feet": [
+      393.0,
+      1632.4
+     ],
+     "headTop": -78.4,
+     "image": "chr-pinan_pose-sit-lantern-look1",
+     "_note": "G6 精修 a1：品安偷偷回頭看柱子的中間格（眼珠往左上移一半、頭抬 4.5°）；和 sit_lantern_back 同方向，用 facing −1；review/G5/a0/scripts/build_polish_art.py"
+    },
+    "sit_lantern_look2": {
+     "feet": [
+      393.0,
+      1632.4
+     ],
+     "headTop": -78.4,
+     "image": "chr-pinan_pose-sit-lantern-look2",
+     "_note": "G6 精修 a1：品安看左上方的紅磚柱子（眼珠移到左上、頭抬 9°）"
     }
    },
    "face": "face/pinan/face",
@@ -232,10 +250,13 @@
     "stand_m": {
      "image": "chr-lin_pose-stand-m",
      "face": "lin:stand_m"
+    },
+    "phone": {
+     "image": "chr-lin_pose-phone"
     }
    },
    "face": "face/lin/face",
-   "_note": "林雅雯老師。crouch＝P-LIN1 蹲在小宇旁對著手錶說話（a5_c007）；sit＝P-LIN2 坐醫院長椅（a5_c008，長椅用 props/prop-bench）。背面（a4_c001 警衛室窗內）還沒有圖。"
+   "_note": "林雅雯老師。crouch＝P-LIN1 蹲在小宇旁對著手錶說話（a5_c007）；sit＝P-LIN2 坐醫院長椅（a5_c008，長椅用 props/prop-bench）。背面（a4_c001 警衛室窗內）還沒有圖。 phone＝朝右、手機貼耳講電話（a3_c008 走出教室前；第三幕修正第 2 輪 Codex）。"
   },
   "chen": {
    "rig": "standee",

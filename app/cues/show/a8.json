@@ -69,7 +69,7 @@
    "fallback": "adult"
   }
  },
- "_note": "G5 第六幕代理排戲（review/G5/a6/scripts/make_a678.py 產生；台詞、題卡、流程欄位、storyboard 照底稿）。景：a6_square_night（紙燈節晚上的廣場，app/src/sets/a6_square_night.ts）、a6_window（四季窗景）、a6_shop（一年後的燈籠店、複習紙卡、謝幕；G4 燈籠店＋程式景片）。storyboard 是劇本與節拍表的摘錄，引擎不讀。 a8_c002、a8_c003 是 G4 cue，原樣保留（a8_c002 的景＝本段的 a6_shop，畫面＝G4 燈籠店）。",
+ "_note": "G5 第六幕代理排戲（review/G5/a6/scripts/make_a678.py 產生；台詞、題卡、流程欄位、storyboard 照底稿）。景：a6_square_night（紙燈節晚上的廣場，app/src/sets/a6_square_night.ts）、a6_window（四季窗景）、a6_shop（一年後的燈籠店、複習紙卡、謝幕；G4 燈籠店＋程式景片）。storyboard 是劇本與節拍表的摘錄，引擎不讀。 a8_c002、a8_c003 是 G4 cue，原樣保留（a8_c002 的景＝本段的 a6_shop，畫面＝G4 燈籠店）；修正第 2 輪主線授權改 a8_c002 的鏡頭：合幕前從謝幕中景漸暗切到台口全景（a7_stage，八盞燈入鏡），布幕與署名卡不改。",
  "cues": [
   {
    "id": "a8_c001",
@@ -109,7 +109,7 @@
      },
      "pinan": {
       "visible": true,
-      "x": 0.9,
+      "x": 7.4,
       "z": 0.6,
       "facing": 1,
       "emotion": "smile",
@@ -117,7 +117,7 @@
      },
      "xiaoyu": {
       "visible": true,
-      "x": 2.0,
+      "x": 7.4,
       "z": 0.35,
       "facing": 1,
       "emotion": "smile",
@@ -125,7 +125,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 3.1,
+      "x": 7.4,
       "z": 0.65,
       "facing": -1,
       "emotion": "smile",
@@ -153,7 +153,7 @@
      "start": 0.05,
      "duration": 3.2,
      "target": "chen",
-     "ease": "inOut",
+     "ease": "sine",
      "params": {
       "dx": 2.4
      }
@@ -163,96 +163,126 @@
      "start": 0.2,
      "duration": 3.2,
      "target": "lin",
-     "ease": "inOut",
+     "ease": "sine",
      "params": {
       "dx": 2.4
      }
     },
     {
      "name": "puppet.move",
-     "start": 1.6,
-     "duration": 3.2,
+     "start": 0.3,
+     "duration": 7.0,
+     "target": "pinan",
+     "ease": "sine",
+     "params": {
+      "dx": -6.5
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.0,
+     "duration": 5.8,
+     "target": "xiaoyu",
+     "ease": "sine",
+     "params": {
+      "dx": -5.4
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 3.7,
+     "duration": 4.6,
+     "target": "xiaoqing",
+     "ease": "sine",
+     "params": {
+      "dx": -4.3
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 5.6,
+     "duration": 3.8,
      "target": "ye",
-     "ease": "inOut",
+     "ease": "sine",
      "params": {
       "dx": -3.6
      }
     },
     {
-     "name": "puppet.popup",
-     "start": 7.6,
-     "duration": 1.3,
-     "target": "pinan"
-    },
-    {
-     "name": "puppet.popup",
-     "start": 8.6,
-     "duration": 1.3,
-     "target": "xiaoyu"
-    },
-    {
-     "name": "puppet.popup",
-     "start": 9.6,
-     "duration": 1.3,
-     "target": "xiaoqing"
-    },
-    {
      "name": "puppet.nod",
      "start": 3.6,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "chen",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.nod",
-     "start": 3.7,
-     "duration": 1.7,
+     "start": 3.75,
+     "duration": 1.5,
      "target": "lin",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.nod",
-     "start": 5.2,
-     "duration": 1.7,
-     "target": "ye",
-     "params": {
-      "depth": 5.0
-     }
-    },
-    {
-     "name": "puppet.nod",
-     "start": 9.0,
-     "duration": 1.7,
+     "start": 7.5,
+     "duration": 1.5,
      "target": "pinan",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.nod",
-     "start": 10.0,
-     "duration": 1.7,
+     "start": 8.0,
+     "duration": 1.5,
      "target": "xiaoyu",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.nod",
-     "start": 11.0,
-     "duration": 1.7,
+     "start": 8.5,
+     "duration": 1.5,
      "target": "xiaoqing",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": 9.6,
+     "duration": 1.5,
+     "target": "ye",
+     "params": {
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.face",
-     "start": 5.3,
+     "start": 9.5,
      "target": "ale",
      "params": {
       "emotion": "greet"
@@ -260,7 +290,7 @@
     },
     {
      "name": "puppet.sit",
-     "start": 5.5,
+     "start": 9.7,
      "duration": 1.0,
      "target": "ale",
      "params": {
@@ -269,7 +299,7 @@
     },
     {
      "name": "puppet.chest",
-     "start": 6.3,
+     "start": 10.5,
      "duration": 0.8,
      "target": "ale",
      "params": {
@@ -278,16 +308,19 @@
     },
     {
      "name": "puppet.nod",
-     "start": 7.2,
-     "duration": 1.7,
+     "start": 11.3,
+     "duration": 1.5,
      "target": "ale",
      "params": {
-      "depth": 2.2
+      "depth": 0,
+      "bow": 27,
+      "bowHead": 11,
+      "ramp": 0.6
      }
     },
     {
      "name": "puppet.face",
-     "start": 9.0,
+     "start": 12.9,
      "target": "ale",
      "params": {
       "emotion": "smile"
@@ -329,66 +362,241 @@
      }
     },
     {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "chen",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
+     }
+    },
+    {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "chen",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "chen",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "lin",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
      }
     },
     {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "lin",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
      }
     },
     {
-     "name": "puppet.nod",
-     "start": 15.0,
-     "duration": 1.7,
-     "target": "ye",
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "lin",
+     "ease": "sine",
      "params": {
-      "depth": 5.0
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "pinan",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
      }
     },
     {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "pinan",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "pinan",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "xiaoyu",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
      }
     },
     {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "xiaoyu",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "xiaoyu",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "xiaoqing",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
      }
     },
     {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
      "target": "xiaoqing",
      "params": {
-      "depth": 5.0
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "xiaoqing",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "ye",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
      }
     },
     {
      "name": "puppet.nod",
      "start": 15.0,
-     "duration": 1.7,
+     "duration": 1.5,
+     "target": "ye",
+     "params": {
+      "depth": 0,
+      "bow": 8,
+      "squash": 0.14,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.8,
+     "target": "ye",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 13.9,
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": 0.45
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": 15.0,
+     "duration": 1.5,
      "target": "ale",
      "params": {
-      "depth": 2.2
+      "depth": 0,
+      "bow": 27,
+      "bowHead": 11,
+      "ramp": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 16.5,
+     "duration": 0.55,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "dx": 0,
+      "dz": -0.45
      }
     },
     {
@@ -398,8 +606,8 @@
     },
     {
      "name": "puppet.chest",
-     "start": 16.15,
-     "duration": 0.6,
+     "start": 16.5,
+     "duration": 0.55,
      "target": "ale",
      "params": {
       "to": 0.0
@@ -407,8 +615,8 @@
     },
     {
      "name": "puppet.sit",
-     "start": 16.75,
-     "duration": 1.0,
+     "start": 17.05,
+     "duration": 0.9,
      "target": "ale",
      "params": {
       "to": 1.0
@@ -499,6 +707,33 @@
       "name": "puppet.move",
       "start": 0,
       "duration": 0.01,
+      "target": "pinan",
+      "params": {
+       "dx": -6.5
+      }
+     },
+     {
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.01,
+      "target": "xiaoyu",
+      "params": {
+       "dx": -5.4
+      }
+     },
+     {
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.01,
+      "target": "xiaoqing",
+      "params": {
+       "dx": -4.3
+      }
+     },
+     {
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.01,
       "target": "ye",
       "params": {
        "dx": -3.6
@@ -507,55 +742,73 @@
      {
       "name": "puppet.nod",
       "start": 4.6,
-      "duration": 1.7,
+      "duration": 1.5,
       "target": "chen",
       "params": {
-       "depth": 5.0
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
       }
      },
      {
       "name": "puppet.nod",
       "start": 4.6,
-      "duration": 1.7,
+      "duration": 1.5,
       "target": "lin",
       "params": {
-       "depth": 5.0
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
       }
      },
      {
       "name": "puppet.nod",
       "start": 4.6,
-      "duration": 1.7,
-      "target": "ye",
-      "params": {
-       "depth": 5.0
-      }
-     },
-     {
-      "name": "puppet.nod",
-      "start": 4.6,
-      "duration": 1.7,
+      "duration": 1.5,
       "target": "pinan",
       "params": {
-       "depth": 5.0
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
       }
      },
      {
       "name": "puppet.nod",
       "start": 4.6,
-      "duration": 1.7,
+      "duration": 1.5,
       "target": "xiaoyu",
       "params": {
-       "depth": 5.0
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
       }
      },
      {
       "name": "puppet.nod",
       "start": 4.6,
-      "duration": 1.7,
+      "duration": 1.5,
       "target": "xiaoqing",
       "params": {
-       "depth": 5.0
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
+      }
+     },
+     {
+      "name": "puppet.nod",
+      "start": 4.6,
+      "duration": 1.5,
+      "target": "ye",
+      "params": {
+       "depth": 0,
+       "bow": 8,
+       "squash": 0.14,
+       "ramp": 0.6
       }
      },
      {
@@ -650,18 +903,27 @@
      }
     },
     {
-     "name": "camera.move",
-     "start": 0.3,
-     "duration": 5.0,
-     "params": {
-      "to": "g4_stage"
-     },
-     "ease": "linear"
-    },
-    {
      "name": "curtain.close",
      "start": 3.3,
      "duration": 2.0
+    },
+    {
+     "name": "fade.out",
+     "start": 0.0,
+     "duration": 0.6
+    },
+    {
+     "name": "camera.cut",
+     "start": 0.62,
+     "duration": 0.01,
+     "params": {
+      "to": "a7_stage"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.65,
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -732,7 +994,7 @@
    "teacherNote": "結束：停在署名卡，不自動重播、不跳網站。閉幕曲接著播完（署名卡出現時主題句進入，約 10 秒自然淡出），所以這一格保留配樂音量。",
    "checkpoint": {
     "label": "停在署名卡（之後教師結語）",
-    "atMinute": 34.55
+    "atMinute": 35.08
    },
    "minDuration": 1.4,
    "musicLevel": 0.8

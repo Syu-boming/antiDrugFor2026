@@ -34,7 +34,9 @@ VER = 'v01'
 VERSIONS = {'music_m4_light': 'v02',   # G3 修正第 1 輪：−27 → −24 LUFS（review/G3/mix_r1.json）
             # G5 正式版：v01 是主線放的佔位檔（不刪、不覆寫），正式版寫 v02
             'music_zhezhe': 'v02', 'music_shiny': 'v02', 'music_road': 'v02', 'music_courage': 'v02',
-            'music_recovery': 'v02', 'music_bows': 'v02', 'music_town_night': 'v02'}
+            'music_recovery': 'v02', 'music_bows': 'v02', 'music_town_night': 'v02',
+            # G6 精修：蓋章聲起音拉長、降 3 dB（v01 保留）
+            'sfx_stamp': 'v02'}
 REVIEW = ROOT / 'review' / 'G5' / 'audio'   # G3 紀錄在 review/G3/，G5 起寫這裡
 TP_CEIL = -2.3        # 真峰值上限（規格 ≤ −2 dBTP，留 0.3 dB 餘裕）
 SFX_PEAK = -8.0       # 音效樣本峰值（規格 ≤ −6 dBFS）
@@ -117,7 +119,7 @@ def build_sfx(pid: str, fn) -> dict:
     tp = true_peak_db(x)
     if tp > TP_CEIL:
         x = x * 10 ** ((TP_CEIL - tp) / 20)
-    out = SFX_OUT / f'{pid}_{VER}.wav'
+    out = SFX_OUT / f'{pid}_{VERSIONS.get(pid, VER)}.wav'
     write_pcm16(out, x)
     log(f'{pid}: {len(x) / SR:.2f}s → {out.relative_to(ROOT)}')
     return {'target_lufs': lv.get('lufs'), 'peak_target_dbfs': lv.get('peak', None if 'lufs' in lv else SFX_PEAK),
@@ -293,7 +295,7 @@ def main():
         r = measure_file(p, kind, extra)
         records.append(r)
     for pid in sfxmod.SFX:
-        p = SFX_OUT / f'{pid}_{VER}.wav'
+        p = SFX_OUT / f'{pid}_{VERSIONS.get(pid, VER)}.wav'
         if p.exists():
             sp = specs.get(pid, {})
             kind = 'sfx_loop' if pid in sfxmod.SFX_LOOPS else 'sfx'

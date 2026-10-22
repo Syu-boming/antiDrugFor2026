@@ -1075,38 +1075,38 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c004_06.end+1.20",
+     "start": "a1_c004_06.end+1.15",
      "target": "pinan",
-     "duration": 0.5,
+     "duration": 0,
      "params": {
-      "pose": "sit_lantern"
-     }
-    },
-    {
-     "name": "puppet.tilt",
-     "start": "a1_c004_06.end+1.40",
-     "target": "pinan",
-     "duration": 0.6,
-     "params": {
-      "to": 0.05
+      "pose": "sit_lantern_look1"
      }
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c004_06.end+2.60",
+     "start": "a1_c004_06.end+1.25",
      "target": "pinan",
-     "duration": 0.5,
+     "duration": 0,
      "params": {
-      "pose": "sit_lantern_back"
+      "pose": "sit_lantern_look2"
      }
     },
     {
-     "name": "puppet.tilt",
-     "start": "a1_c004_06.end+2.65",
+     "name": "puppet.pose",
+     "start": "a1_c004_06.end+2.30",
      "target": "pinan",
-     "duration": 0.5,
+     "duration": 0,
      "params": {
-      "to": 0.0
+      "pose": "sit_lantern_look1"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a1_c004_06.end+2.40",
+     "target": "pinan",
+     "duration": 0,
+     "params": {
+      "pose": "sit_lantern_back"
      }
     }
    ],
@@ -1210,16 +1210,16 @@
       "emotion": "worried",
       "pose": "walk",
       "x": 1.2,
-      "z": 0.45,
+      "z": 0.1,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "neutral",
-      "pose": "walk_r",
+      "pose": "walk",
       "x": 2.35,
-      "z": 0.15,
-      "facing": -1
+      "z": -0.25,
+      "facing": 1
      },
      "zhezhe": {
       "visible": true,
@@ -1317,6 +1317,42 @@
      "duration": 0.7,
      "params": {
       "form": "idle"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.605,
+     "target": "xiaoqing",
+     "duration": 0.02,
+     "params": {
+      "dx": -1.55
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.605,
+     "target": "xiaoyu",
+     "duration": 0.02,
+     "params": {
+      "dx": -1.75
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 0.61,
+     "target": "xiaoqing",
+     "duration": 0,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 0.61,
+     "target": "xiaoyu",
+     "duration": 0,
+     "params": {
+      "pose": "stand"
      }
     }
    ],
@@ -1419,18 +1455,18 @@
      "xiaoqing": {
       "visible": true,
       "emotion": "worried",
-      "pose": "walk",
-      "x": 1.2,
-      "z": 0.45,
+      "pose": "stand",
+      "x": -0.35,
+      "z": 0.1,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "neutral",
-      "pose": "walk_r",
-      "x": 2.35,
-      "z": 0.15,
-      "facing": -1
+      "pose": "stand",
+      "x": 0.6,
+      "z": -0.25,
+      "facing": 1
      },
      "zhezhe": {
       "visible": true,
@@ -1507,18 +1543,18 @@
      "xiaoqing": {
       "visible": true,
       "emotion": "worried",
-      "pose": "walk",
-      "x": 1.2,
-      "z": 0.45,
+      "pose": "stand",
+      "x": -0.35,
+      "z": 0.1,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "neutral",
-      "pose": "walk_r",
-      "x": 2.35,
-      "z": 0.15,
-      "facing": -1
+      "pose": "stand",
+      "x": 0.6,
+      "z": -0.25,
+      "facing": 1
      },
      "zhezhe": {
       "visible": true,
@@ -1564,7 +1600,7 @@
      "start": "a1_c007_01.end+1.17",
      "duration": 0,
      "params": {
-      "to": "a1_follow2"
+      "to": "a1_street2"
      }
     },
     {
@@ -1579,15 +1615,48 @@
     },
     {
      "name": "zhezhe.glideTo",
-     "start": "a1_c007_01.end+1.14",
+     "start": "a1_c007_01.end+1.155",
      "target": "zhezhe",
      "duration": 0.02,
      "params": {
       "pos": [
-       1.75,
+       -1.9,
        0.0,
-       1.05
+       1.2
       ]
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a1_c007_01.end+0.30",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": "a1_c007_01.end+1.155",
+     "target": "pinan",
+     "duration": 0.02,
+     "params": {
+      "to": -6
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a1_c007_01.end+1.16",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a1_c007_01.end+1.16",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "smile"
      }
     }
    ],
@@ -1624,7 +1693,8 @@
     "camera": "台口 → 故事",
     "sound": "S5",
     "directions": [
-     "（台口上方第一盞紙燈由暗慢慢亮起（約 1.5 秒漸亮），輕柔的燈籠鈴音；鏡頭回到故事，停在穩定畫面。發獎可以和下一段同時進行。）"
+     "（台口上方第一盞紙燈由暗慢慢亮起（約 1.5 秒漸亮），輕柔的燈籠鈴音；鏡頭回到故事，停在穩定畫面。發獎可以和下一段同時進行。）",
+     "（G6 精修：題卡淡出後在全暗中切到往燈籠店的街上，淡入停在孩子站在街上的穩定畫面；下一段不再換景預捲。）"
     ],
     "estimateSec": 6.0,
     "actionSec": 4.0
@@ -1645,7 +1715,7 @@
      "xiaoqing": {
       "visible": true,
       "emotion": "smile",
-      "pose": "walk",
+      "pose": "stand",
       "x": -0.35,
       "z": 0.1,
       "facing": 1
@@ -1653,7 +1723,7 @@
      "xiaoyu": {
       "visible": true,
       "emotion": "smile",
-      "pose": "walk",
+      "pose": "stand",
       "x": 0.6,
       "z": -0.25,
       "facing": 1
@@ -1669,19 +1739,37 @@
    },
    "animation": [
     {
-     "name": "puppet.move",
-     "start": 0.3,
+     "name": "puppet.pose",
+     "start": 0.05,
      "target": "xiaoqing",
-     "duration": 1.9,
+     "duration": 0.45,
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 0.15,
+     "target": "xiaoyu",
+     "duration": 0.45,
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.95,
+     "target": "xiaoqing",
+     "duration": 1.85,
      "params": {
       "dx": 0.8
      }
     },
     {
      "name": "puppet.move",
-     "start": 0.35,
+     "start": 1.0,
      "target": "xiaoyu",
-     "duration": 1.9,
+     "duration": 1.85,
      "params": {
       "dx": 0.8
      }
@@ -1701,18 +1789,18 @@
     },
     {
      "name": "puppet.pose",
-     "start": 3.8,
+     "start": 3.45,
      "target": "xiaoqing",
-     "duration": 0.24,
+     "duration": 0.42,
      "params": {
       "pose": "forehead_l"
      }
     },
     {
      "name": "puppet.pose",
-     "start": 4.0,
+     "start": 3.62,
      "target": "xiaoyu",
-     "duration": 0.24,
+     "duration": 0.42,
      "params": {
       "pose": "standwatch_m"
      }
@@ -1792,9 +1880,9 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c008_02-0.35",
+     "start": "a1_c008_02-0.30",
      "target": "xiaoqing",
-     "duration": 0.24,
+     "duration": 0,
      "params": {
       "pose": "cross"
      }
@@ -1835,18 +1923,18 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c008_02.end+0.20",
+     "start": "a1_c008_02.end+0.05",
      "target": "xiaoyu",
-     "duration": 0.24,
+     "duration": 0.42,
      "params": {
       "pose": "walk"
      }
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c008_02.end+0.30",
+     "start": "a1_c008_02.end+0.08",
      "target": "xiaoqing",
-     "duration": 0.24,
+     "duration": 0.42,
      "params": {
       "pose": "walk"
      }
@@ -1901,18 +1989,18 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c008_02.end+5.60",
+     "start": "a1_c008_02.end+5.35",
      "target": "xiaoyu",
-     "duration": 0.7,
+     "duration": 1.6,
      "params": {
       "pose": "standwatch"
      }
     },
     {
      "name": "puppet.pose",
-     "start": "a1_c008_02.end+6.20",
+     "start": "a1_c008_02.end+6.08",
      "target": "xiaoqing",
-     "duration": 0.24,
+     "duration": 0.5,
      "params": {
       "pose": "forehead"
      }
@@ -1928,7 +2016,7 @@
     },
     {
      "name": "zhezhe.twitch",
-     "start": "a1_c008_02.end+8.00",
+     "start": "a1_c008_02.end+7.90",
      "target": "zhezhe",
      "params": {
       "side": "both"
@@ -1936,7 +2024,7 @@
     },
     {
      "name": "zhezhe.emote",
-     "start": "a1_c008_02.end+8.10",
+     "start": "a1_c008_02.end+8.00",
      "target": "zhezhe",
      "params": {
       "emotion": "worried"
@@ -1944,7 +2032,7 @@
     },
     {
      "name": "puppet.face",
-     "start": "a1_c008_02.end+8.10",
+     "start": "a1_c008_02.end+8.00",
      "target": "xiaoyu",
      "params": {
       "emotion": "worried"
@@ -1952,7 +2040,7 @@
     },
     {
      "name": "puppet.face",
-     "start": "a1_c008_02.end+8.25",
+     "start": "a1_c008_02.end+8.10",
      "target": "xiaoqing",
      "params": {
       "emotion": "worried"
@@ -1960,8 +2048,8 @@
     },
     {
      "name": "light.dim",
-     "start": "a1_c008_03.end+0.40",
-     "duration": 3.2,
+     "start": "a1_c008_03.end+0.30",
+     "duration": 2.6,
      "params": {
       "to": 0.8
      }
@@ -1976,13 +2064,13 @@
     },
     {
      "name": "light.restore",
-     "start": 4.58,
-     "duration": 0.02
+     "start": 4.6,
+     "duration": 0
     },
     {
      "name": "light.dim",
-     "start": "a1_c008_02-0.32",
-     "duration": 0.02,
+     "start": "a1_c008_02-0.30",
+     "duration": 0,
      "params": {
       "to": 0.86
      }
@@ -2009,7 +2097,7 @@
      "id": "a1_c008_03",
      "speaker": "小宇",
      "text": "阿樂叔叔？",
-     "start": "a1_c008_02.end+8.50"
+     "start": "a1_c008_02.end+8.20"
     }
    ],
    "next": "a2_c001",
@@ -2024,7 +2112,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 5.2,
-   "tail": 3.2,
+   "tail": 2.6,
    "storyboard": {
     "beat": "往右走向燈籠店；風從左吹來撕破的包裝紙停在腳邊；孩子停下、不靠近、不撿；推近：紙邊裡一團灰色紙線（台詞說「一團細細的線」）；繞開跑到窗前；窗裡阿樂的剪影舉竹篾，手往旁一歪，竹篾掉落；燈光慢慢暗下",
     "cast": "小晴 X5 → X7（「不要碰」）；小宇 X5；阿樂（窗內剪影，L0，看不到線）",
@@ -2055,7 +2143,7 @@
    "sfx": [
     {
      "id": "sfx_footsteps",
-     "at": 0.5,
+     "at": 1.0,
      "gain": 0.35
     },
     {
@@ -2078,8 +2166,7 @@
      "at": "a1_c008_02.end+7.95",
      "gain": 0.4
     }
-   ],
-   "setFade": 0.8
+   ]
   }
  ]
 }

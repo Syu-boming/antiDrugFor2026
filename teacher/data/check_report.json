@@ -1,0 +1,292 @@
+{
+ "generatedAt": "2026/10/22 15:38:55",
+ "cueHash": "589311ebb1",
+ "timing": {
+  "total": "35:50",
+  "bufferSec": 130,
+  "withinLimit": true
+ },
+ "quizCheckOk": true,
+ "pdf": [
+  {
+   "name": "教師講稿",
+   "pages": 16,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "一頁操作卡",
+   "pages": 1,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "故障一頁卡",
+   "pages": 1,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "題卡_學生版",
+   "pages": 8,
+   "size": "841.92 x 594.96 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "題卡_教師版",
+   "pages": 9,
+   "size": "841.92 x 594.96 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "教案_教學活動設計",
+   "pages": 4,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "觀課導覽單",
+   "pages": 1,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "參與小卡",
+   "pages": 1,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "角色貼紙",
+   "pages": 2,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "成果紀錄範本",
+   "pages": 2,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  },
+  {
+   "name": "導師匿名回饋單",
+   "pages": 1,
+   "size": "594.96 x 841.92 pts (A4)",
+   "fontOk": true,
+   "missingImg": []
+  }
+ ],
+ "checks": {
+  "failed": 0,
+  "summary": "14／14 項通過",
+  "results": [
+   {
+    "name": "題卡_學生版.pdf：題目與三個選項和八題定稿、cue quiz 一字不差（pdftotext 抽字）",
+    "ok": true,
+    "detail": [
+     {
+      "qid": "Q1",
+      "page": 1,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q2",
+      "page": 2,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q3",
+      "page": 3,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q4",
+      "page": 4,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q5",
+      "page": 5,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q6",
+      "page": 6,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q7",
+      "page": 7,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q8",
+      "page": 8,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     }
+    ]
+   },
+   {
+    "name": "題卡_教師版.pdf：題目與三個選項和八題定稿、cue quiz 一字不差（pdftotext 抽字）",
+    "ok": true,
+    "detail": [
+     {
+      "qid": "Q1",
+      "page": 2,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q2",
+      "page": 3,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q3",
+      "page": 4,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q4",
+      "page": 5,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q5",
+      "page": 6,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q6",
+      "page": 7,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q7",
+      "page": 8,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     },
+     {
+      "qid": "Q8",
+      "page": 9,
+      "ok": true,
+      "missing": [],
+      "cueMatchesEight": true
+     }
+    ]
+   },
+   {
+    "name": "cue quiz ↔ 八題定稿 ↔ 旁白台詞（題幹、選項、正解、揭答句、指定區）",
+    "ok": true,
+    "detail": "112 項"
+   },
+   {
+    "name": "不念、不寫藥名",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "不用貶稱（毒蟲、廢人）",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "法規分級與刑度不進內容（兒童列印檔一律不出現；教師資料只出現在「不談」的說明）",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "「喪屍」只指物品或用在「人不會變成喪屍」的說明",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "不把操偶線叫成「灰線」",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "全部繁體字（常見簡體字掃描）",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "台灣用語（常見大陸用語掃描）",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "每份資料都有署名「許博明老師製作」",
+    "ok": true,
+    "detail": []
+   },
+   {
+    "name": "必要旁白一在 cue 檔一字不差（講稿依 cue 產生）",
+    "ok": true,
+    "detail": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。"
+   },
+   {
+    "name": "必要旁白二在 cue 檔一字不差（講稿依 cue 產生）",
+    "ok": true,
+    "detail": "不過，看見一個人站不穩，\n\n不能就說他吸毒，\n也可能有其他身體狀況。\n\n我們要先找大人幫忙。"
+   },
+   {
+    "name": "PDF 頁數符合（操作卡、故障卡、導覽單、回饋單各 1 頁；題卡 8＋教師版封面）、圖與字型都載入",
+    "ok": true,
+    "detail": [
+     "教師講稿 16 頁",
+     "一頁操作卡 1 頁",
+     "故障一頁卡 1 頁",
+     "題卡_學生版 8 頁",
+     "題卡_教師版 9 頁",
+     "教案_教學活動設計 4 頁",
+     "觀課導覽單 1 頁",
+     "參與小卡 1 頁",
+     "角色貼紙 2 頁",
+     "成果紀錄範本 2 頁",
+     "導師匿名回饋單 1 頁"
+    ]
+   }
+  ]
+ },
+ "warnings": []
+}

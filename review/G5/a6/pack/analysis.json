@@ -23,18 +23,18 @@
  "audio": {
   "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
   "file": "audio/a6_mix.wav",
-  "duration_sec": 215.99,
+  "duration_sec": 215.89,
   "sample_peak_dBFS": -1.19,
   "clipped_samples": 0,
   "full_playback": {
-   "I_LUFS": -16.1,
+   "I_LUFS": -16.2,
    "LRA_LU": 14.1,
    "TP_dBTP": -1.2
   },
   "line_vo_file_I_spread_LU": 0.4,
-  "line_mix_I_spread_LU": 1.1,
+  "line_mix_I_spread_LU": 0.4,
   "momentary_max_LUFS": -8.9,
-  "momentary_max_rise_within_1s_LU": 58.9,
+  "momentary_max_rise_within_1s_LU": 58.0,
   "momentary_max_rise_per_100ms_LU": 45.9,
   "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
   "music_sfx_only": {
@@ -52,13 +52,13 @@
    },
    "max_rise_within_1s_LU": 52.7,
    "max_rise_within_1s_at_sec": 90.1,
-   "sample_peak_dBFS": -8.0,
-   "sample_peak_at_sec": 80.31,
+   "sample_peak_dBFS": -9.9,
+   "sample_peak_at_sec": 80.32,
    "sample_peak_at": {
     "cue": "a6_c004",
-    "cue_t": 0.32
+    "cue_t": 0.33
    },
-   "true_peak_dBTP": -8.0,
+   "true_peak_dBTP": -9.9,
    "I_LUFS": -28.3,
    "g4_reference": {
     "max_LUFS": -15.7,
@@ -106,9 +106,9 @@
    },
    {
     "cue": "a6_c009",
-    "hold_from_sec": 212.49,
+    "hold_from_sec": 212.39,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -45.4,
+    "momentary_max_after_3s_LUFS": -45.5,
     "pass_le_-35": true
    }
   ],
@@ -130,8 +130,8 @@
    "luma": 2,
    "red": 2
   },
-  "near_limit_total": 132,
-  "frames_analyzed": 6480
+  "near_limit_total": 131,
+  "frames_analyzed": 6477
  },
  "flash_variants": {
   "fine_32x18": {
@@ -153,24 +153,29 @@
     "luma": 3,
     "red": 0
    },
-   "near_limit_3_total": 8
+   "near_limit_3_total": 4
   }
  },
  "subtitle_sync": {
-  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
   "silencedetect": {
    "noise_dB": -40,
    "min_silence_s": 0.05
+  },
+  "silencedetect_fallback": {
+   "noise_dB": -30,
+   "min_silence_s": 0.12,
+   "pages": 0
   },
   "range_s": [
    -0.8,
    0.1
   ],
-  "all_pass": false
+  "all_pass": true
  },
  "video": {
   "file": "a6_playback.mp4",
-  "frames": 6480,
+  "frames": 6477,
   "ffprobe": {
    "programs": [],
    "stream_groups": [],
@@ -180,7 +185,7 @@
      "width": 1920,
      "height": 1080,
      "r_frame_rate": "30/1",
-     "nb_frames": "6479",
+     "nb_frames": "6476",
      "side_data_list": [
       {}
      ]
@@ -188,12 +193,12 @@
     {
      "codec_name": "aac",
      "r_frame_rate": "0/0",
-     "nb_frames": "10126"
+     "nb_frames": "10121"
     }
    ],
    "format": {
-    "duration": "215.990000",
-    "size": "75315416"
+    "duration": "215.890000",
+    "size": "80175487"
    }
   }
  },
@@ -283,20 +288,20 @@
    {
     "cue": "a6_c009",
     "kind": "scene",
-    "duration_sec": 25.91,
+    "duration_sec": 25.81,
     "preroll_sec": 0.6,
     "estimate_sec": 27.0,
-    "diff_sec": -1.1,
+    "diff_sec": -1.2,
     "vo_sec": 19.36,
     "lines": 4
    }
   ],
-  "act_total_sec": 185.2,
+  "act_total_sec": 185.1,
   "act_preroll_total_sec": 1.8,
   "estimate_sum_sec": 182.9,
   "act_budget_recorded_sec": 183.0,
-  "diff_vs_budget_sec": 4.0,
-  "playback_with_holds_sec": 215.99,
+  "diff_vs_budget_sec": 3.9,
+  "playback_with_holds_sec": 215.89,
   "holds_assumed_sec": {
    "a6_c001": 3.5,
    "a6_c002": 3.5,
@@ -324,14 +329,14 @@
   "actors_with_strings": [
    "ale"
   ],
-  "probe_frames_with_strings": 496,
+  "probe_frames_with_strings": 499,
   "string_path_min_dist_to_head_box_px": 54.0,
   "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
   "string_head_offscreen_skipped": 0,
   "per_anchor": {
    "ale.wrist": {
     "min_dist_to_head_box_px": 55.3,
-    "frames": 496,
+    "frames": 499,
     "at": "a6_c008 t=1"
    },
    "ale.elbow": {
@@ -388,7 +393,7 @@
    "a1_c005": 23.89,
    "a1_c006": 6.97,
    "a1_c007": 5.72,
-   "a1_c008": 27.78,
+   "a1_c008": 26.78,
    "a2_c001": 17.76,
    "a2_c002": 25.18,
    "a2_c003": 15.3,
@@ -405,13 +410,13 @@
    "a3_c001": 21.5,
    "a3_c002": 13.23,
    "a3_c003": 23.55,
-   "a3_c004": 15.12,
+   "a3_c004": 14.82,
    "a3_c005": 23.71,
    "a3_c006": 7.44,
    "a3_c007": 5.88,
-   "a3_c008": 36.39,
+   "a3_c008": 36.69,
    "a4_c001": 23.92,
-   "a4_c002": 20.36,
+   "a4_c002": 18.86,
    "a4_c003": 15.52,
    "a4_c004": 15.3,
    "a4_c005": 19.57,
@@ -423,13 +428,13 @@
    "a4_c011": 6.42,
    "a4_c012": 31.07,
    "a4_c013": 24.75,
-   "a5_c001": 41.07,
+   "a5_c001": 38.32,
    "a5_c002": 23.62,
    "a5_c003": 7.02,
    "a5_c004": 6.2,
-   "a5_c005": 21.2,
+   "a5_c005": 21.25,
    "a5_c006": 31.18,
-   "a5_c007": 25.83,
+   "a5_c007": 24.08,
    "a5_c008": 27.41,
    "a6_c001": 13.68,
    "a6_c002": 31.81,
@@ -439,7 +444,7 @@
    "a6_c006": 35.26,
    "a6_c007": 21.05,
    "a6_c008": 19.57,
-   "a6_c009": 25.91,
+   "a6_c009": 25.81,
    "a7_c001": 25.32,
    "a7_c002": 8.08,
    "a7_c003": 14.01,
@@ -452,7 +457,7 @@
    "active": "a6_shop",
    "built": 5,
    "disposed": 4,
-   "lastBuildMs": 28,
+   "lastBuildMs": 30,
    "liveSetGroups": 1
   }
  }

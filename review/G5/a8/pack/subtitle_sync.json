@@ -1,8 +1,13 @@
 {
- "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
  "silencedetect": {
   "noise_dB": -40,
   "min_silence_s": 0.05
+ },
+ "silencedetect_fallback": {
+  "noise_dB": -30,
+  "min_silence_s": 0.12,
+  "pages": 0
  },
  "range_s": [
   -0.8,
@@ -14,10 +19,11 @@
    "line": "a8_c001_01",
    "page": 1,
    "text": "我們是小燈鎮的大家，下次見！",
-   "subtitle_start_s": 3.8,
-   "voice_start_s": 3.924,
+   "subtitle_start_s": 13.4,
+   "voice_start_s": 13.524,
    "diff_s": -0.124,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a8_c001_01_v04.wav"
   }
  ],

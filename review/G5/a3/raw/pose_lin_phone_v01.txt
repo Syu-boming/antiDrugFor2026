@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a16198-230c-7a10-b895-81711ccbf892/exec-c8ea2ea6-5bc9-4e38-9890-b49748b6af75.png`
+- Destination: [review/G5/a3/raw/pose_lin_phone_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_lin_phone_v01.png>)
+- Dimensions: **1024 × 1536 pixels**
+- Alpha channel: **Yes**
+- Copy verified byte-for-byte identical.

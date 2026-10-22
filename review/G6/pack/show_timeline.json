@@ -1,0 +1,3337 @@
+{
+ "note": "buildTimelines（app/src/cues/timeline.ts）解析目前 app/dist 的全劇 cue 集；preroll＝enterFade > 0 時的換景漸暗預捲（engine PREROLL_SEC）。",
+ "built": null,
+ "prerollSec": 0.6,
+ "waitGuardMs": 350,
+ "answersExpected": [
+  2,
+  3,
+  1,
+  1,
+  3,
+  2,
+  3,
+  2
+ ],
+ "segments": [
+  {
+   "id": "a0",
+   "title": "開場：主燈骨架不見了",
+   "file": "a0.json",
+   "cueIds": [
+    "a0_c000",
+    "a0_c001",
+    "a0_c002",
+    "a0_c003",
+    "a0_c004",
+    "a0_c005"
+   ]
+  },
+  {
+   "id": "a1",
+   "title": "第一幕：漂亮的外表",
+   "file": "a1.json",
+   "cueIds": [
+    "a1_c001",
+    "a1_c002",
+    "a1_c003",
+    "a1_c004",
+    "a1_c005",
+    "a1_c006",
+    "a1_c007",
+    "a1_c008"
+   ]
+  },
+  {
+   "id": "a2",
+   "title": "第二幕：看不見的操偶線",
+   "file": "a2.json",
+   "cueIds": [
+    "a2_c001",
+    "a2_c002",
+    "a2_c003",
+    "a2_c004",
+    "a2_c005",
+    "a2_c006",
+    "a2_c007",
+    "a2_c008",
+    "a2_c009",
+    "a2_c010",
+    "a2_c011",
+    "a2_c012",
+    "a2_c013"
+   ]
+  },
+  {
+   "id": "a3",
+   "title": "第三幕：我可以說不要",
+   "file": "a3.json",
+   "cueIds": [
+    "a3_c001",
+    "a3_c002",
+    "a3_c003",
+    "a3_c004",
+    "a3_c005",
+    "a3_c006",
+    "a3_c007",
+    "a3_c008"
+   ]
+  },
+  {
+   "id": "a4",
+   "title": "第四幕：危險會跑到路上",
+   "file": "a4.json",
+   "cueIds": [
+    "a4_c001",
+    "a4_c002",
+    "a4_c003",
+    "a4_c004",
+    "a4_c005",
+    "a4_c006",
+    "a4_c007",
+    "a4_c008",
+    "a4_c009",
+    "a4_c010",
+    "a4_c011",
+    "a4_c012",
+    "a4_c013"
+   ]
+  },
+  {
+   "id": "a5",
+   "title": "第五幕：找得到的幫手",
+   "file": "a5.json",
+   "cueIds": [
+    "a5_c001",
+    "a5_c002",
+    "a5_c003",
+    "a5_c004",
+    "a5_c005",
+    "a5_c006",
+    "a5_c007",
+    "a5_c008"
+   ]
+  },
+  {
+   "id": "a6",
+   "title": "第六幕：可以求助的秘密",
+   "file": "a6.json",
+   "cueIds": [
+    "a6_c001",
+    "a6_c002",
+    "a6_c003",
+    "a6_c004",
+    "a6_c005",
+    "a6_c006",
+    "a6_c007",
+    "a6_c008",
+    "a6_c009"
+   ]
+  },
+  {
+   "id": "a7",
+   "title": "複習與收束",
+   "file": "a7.json",
+   "cueIds": [
+    "a7_c001",
+    "a7_c002",
+    "a7_c003"
+   ]
+  },
+  {
+   "id": "a8",
+   "title": "閉幕",
+   "file": "a8.json",
+   "cueIds": [
+    "a8_c001",
+    "a8_c002",
+    "a8_c003"
+   ]
+  }
+ ],
+ "cues": [
+  {
+   "id": "a0_c000",
+   "segment": "a0",
+   "kind": "title",
+   "title": "署名卡待機",
+   "duration": 0,
+   "autoAdvance": false,
+   "set": "workshop_g4",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": []
+  },
+  {
+   "id": "a0_c001",
+   "segment": "a0",
+   "kind": "curtain",
+   "title": "開幕",
+   "duration": 13.66,
+   "autoAdvance": false,
+   "set": "workshop_a0",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a0_c001_01",
+     "speaker": "旁白",
+     "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+     "actorIds": [],
+     "start": 7.6,
+     "end": 12.76
+    }
+   ]
+  },
+  {
+   "id": "a0_c002",
+   "segment": "a0",
+   "kind": "scene",
+   "title": "折折登場",
+   "duration": 22.3,
+   "autoAdvance": false,
+   "set": "workshop_a0",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a0_c002_01",
+     "speaker": "折折",
+     "text": "喵！大家好，我是折折。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 6.6,
+     "end": 9.13
+    },
+    {
+     "id": "a0_c002_02",
+     "speaker": "折折",
+     "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 9.58,
+     "end": 14.68
+    },
+    {
+     "id": "a0_c002_03",
+     "speaker": "阿樂叔叔",
+     "text": "慢慢摺，燈才會亮。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 17.68,
+     "end": 20.3
+    }
+   ]
+  },
+  {
+   "id": "a0_c003",
+   "segment": "a0",
+   "kind": "scene",
+   "title": "主燈骨架不見了",
+   "duration": 23.94,
+   "autoAdvance": false,
+   "set": "workshop_a0",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a0_c003_01",
+     "speaker": "折折",
+     "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.15,
+     "end": 6.78
+    },
+    {
+     "id": "a0_c003_02",
+     "speaker": "折折",
+     "text": "可是……主燈的竹子骨架，不見了！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 7.38,
+     "end": 10.6
+    },
+    {
+     "id": "a0_c003_03",
+     "speaker": "阿樂叔叔",
+     "text": "奇怪，我昨天晚上明明放在這裡啊。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 13.5,
+     "end": 17.74
+    },
+    {
+     "id": "a0_c003_04",
+     "speaker": "折折",
+     "text": "沒有骨架，就沒有主燈。紙燈節怎麼辦？",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 18.19,
+     "end": 22.34
+    }
+   ]
+  },
+  {
+   "id": "a0_c004",
+   "segment": "a0",
+   "kind": "scene",
+   "title": "小晴和小宇",
+   "duration": 28.61,
+   "autoAdvance": false,
+   "set": "workshop_a0",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a0_c004_01",
+     "speaker": "小宇",
+     "text": "阿樂叔叔早！折折早！",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 3.35,
+     "end": 6.06
+    },
+    {
+     "id": "a0_c004_02",
+     "speaker": "小晴",
+     "text": "骨架不見了？我記下來。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 6.51,
+     "end": 9.71
+    },
+    {
+     "id": "a0_c004_03",
+     "speaker": "折折",
+     "text": "交給我！我摺成放大鏡，馬上找到！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 11.71,
+     "end": 15.58
+    },
+    {
+     "id": "a0_c004_04",
+     "speaker": "小宇",
+     "text": "呃……謝謝，我剛好缺一頂帽子。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 16.03,
+     "end": 19.37
+    },
+    {
+     "id": "a0_c004_05",
+     "speaker": "阿樂叔叔",
+     "text": "你們先去上學。放學再來幫叔叔找，好不好？",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 19.82,
+     "end": 25.51
+    },
+    {
+     "id": "a0_c004_06",
+     "speaker": "小晴、小宇",
+     "text": "好！",
+     "actorIds": [
+      "xiaoqing",
+      "xiaoyu"
+     ],
+     "start": 25.96,
+     "end": 27.11
+    }
+   ]
+  },
+  {
+   "id": "a0_c005",
+   "segment": "a0",
+   "kind": "scene",
+   "title": "請大家一起找",
+   "duration": 22.04,
+   "autoAdvance": false,
+   "set": "workshop_a0",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a0_c005_01",
+     "speaker": "折折",
+     "text": "大家也幫我找，好不好？看到線索，舉手就好，不用喊出來。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 5.3,
+     "end": 11.14
+    },
+    {
+     "id": "a0_c005_02",
+     "speaker": "折折",
+     "text": "台口上這八盞燈，每完成一題，我們就一起點亮一盞。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 11.59,
+     "end": 16.39
+    },
+    {
+     "id": "a0_c005_03",
+     "speaker": "折折",
+     "text": "八盞全亮，小燈鎮就會亮起來！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 16.84,
+     "end": 20.14
+    }
+   ]
+  },
+  {
+   "id": "a1_c001",
+   "segment": "a1",
+   "kind": "scene",
+   "title": "廣場上的品安",
+   "duration": 27.75,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c001_01",
+     "speaker": "小晴",
+     "text": "品安！你的燈籠好漂亮。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 3.7,
+     "end": 6.81
+    },
+    {
+     "id": "a1_c001_02",
+     "speaker": "品安",
+     "text": "我自己編的。你們在找什麼？",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 7.26,
+     "end": 11.94
+    },
+    {
+     "id": "a1_c001_03",
+     "speaker": "小宇",
+     "text": "主燈的骨架。它不見了！",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 12.39,
+     "end": 15.96
+    },
+    {
+     "id": "a1_c001_04",
+     "speaker": "折折",
+     "text": "我也來布置！看我摺一盞燈籠——",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 16.41,
+     "end": 19.81
+    },
+    {
+     "id": "a1_c001_05",
+     "speaker": "品安",
+     "text": "……你是青蛙燈嗎？",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 22.46,
+     "end": 24.5
+    }
+   ]
+  },
+  {
+   "id": "a1_c002",
+   "segment": "a1",
+   "kind": "scene",
+   "title": "閃亮的小盒子",
+   "duration": 14.53,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c002_01",
+     "speaker": "邀請者",
+     "text": "嘿，要不要看看這個？",
+     "actorIds": [],
+     "start": 2.7,
+     "end": 4.89
+    },
+    {
+     "id": "a1_c002_02",
+     "speaker": "邀請者",
+     "text": "亮晶晶的，聞起來香香的，很安全喔。",
+     "actorIds": [],
+     "start": 5.34,
+     "end": 9.59
+    },
+    {
+     "id": "a1_c002_03",
+     "speaker": "小宇",
+     "text": "哇……好亮。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 10.04,
+     "end": 12.33
+    }
+   ]
+  },
+  {
+   "id": "a1_c003",
+   "segment": "a1",
+   "kind": "scene",
+   "title": "哪裡怪怪的？（找找看 1）",
+   "duration": 18.52,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c003_01",
+     "speaker": "小宇",
+     "text": "等一下，我想一想。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 0.9,
+     "end": 2.93
+    },
+    {
+     "id": "a1_c003_02",
+     "speaker": "小晴",
+     "text": "這盒子上面什麼都沒寫。誰做的？裡面裝什麼？",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 3.38,
+     "end": 9.25
+    },
+    {
+     "id": "a1_c003_03",
+     "speaker": "折折",
+     "text": "大家找找看，這個盒子哪裡怪怪的？看到的舉手。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 9.7,
+     "end": 15.12
+    }
+   ]
+  },
+  {
+   "id": "a1_c004",
+   "segment": "a1",
+   "kind": "scene",
+   "title": "不用，我們不要",
+   "duration": 30.2,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c004_01",
+     "speaker": "邀請者",
+     "text": "這是電子煙啦，大家都在玩。試試看嘛。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.27
+    },
+    {
+     "id": "a1_c004_02",
+     "speaker": "小晴",
+     "text": "電子煙在臺灣是禁止的。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 5.72,
+     "end": 8.61
+    },
+    {
+     "id": "a1_c004_03",
+     "speaker": "小晴",
+     "text": "包裝漂亮、聞起來香，都不能證明安全。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 9.06,
+     "end": 13.19
+    },
+    {
+     "id": "a1_c004_04",
+     "speaker": "小宇",
+     "text": "不用，我們不要。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 13.64,
+     "end": 15.5
+    },
+    {
+     "id": "a1_c004_05",
+     "speaker": "小晴",
+     "text": "品安，快來，我們去跟阿樂叔叔說。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 18.8,
+     "end": 22.46
+    },
+    {
+     "id": "a1_c004_06",
+     "speaker": "品安",
+     "text": "你們先走，我把燈籠收好就來。",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 22.91,
+     "end": 26.8
+    }
+   ]
+  },
+  {
+   "id": "a1_c005",
+   "segment": "a1",
+   "kind": "quiz",
+   "title": "〔題卡 Q1〕出題",
+   "duration": 23.89,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q1",
+    "number": 1,
+    "answer": 2,
+    "question": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+    "options": [
+     "可以，包裝漂亮就很安全。",
+     "不行，外觀不能證明安全。",
+     "可以，聞起來香就沒問題。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c005_01",
+     "speaker": "折折",
+     "text": "第一題來囉！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.4,
+     "end": 3.32
+    },
+    {
+     "id": "a1_c005_02",
+     "speaker": "旁白",
+     "text": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+     "actorIds": [],
+     "start": 4.32,
+     "end": 10.93
+    },
+    {
+     "id": "a1_c005_03",
+     "speaker": "旁白",
+     "text": "一，可以，包裝漂亮就很安全。",
+     "actorIds": [],
+     "start": 11.38,
+     "end": 14.67
+    },
+    {
+     "id": "a1_c005_04",
+     "speaker": "旁白",
+     "text": "二，不行，外觀不能證明安全。",
+     "actorIds": [],
+     "start": 15.12,
+     "end": 18.71
+    },
+    {
+     "id": "a1_c005_05",
+     "speaker": "旁白",
+     "text": "三，可以，聞起來香就沒問題。",
+     "actorIds": [],
+     "start": 19.16,
+     "end": 22.89
+    }
+   ]
+  },
+  {
+   "id": "a1_c006",
+   "segment": "a1",
+   "kind": "reveal",
+   "title": "〔題卡 Q1〕揭答",
+   "duration": 6.97,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q1",
+    "number": 1,
+    "answer": 2,
+    "question": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+    "options": [
+     "可以，包裝漂亮就很安全。",
+     "不行，外觀不能證明安全。",
+     "可以，聞起來香就沒問題。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c006_01",
+     "speaker": "旁白",
+     "text": "正解是二：不行，外觀不能證明安全。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.77
+    }
+   ]
+  },
+  {
+   "id": "a1_c007",
+   "segment": "a1",
+   "kind": "lamp",
+   "title": "〔題卡 Q1〕點燈",
+   "duration": 5.72,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q1",
+    "number": 1,
+    "answer": 2,
+    "question": "有人拿出包裝漂亮的電子煙，說「這個很安全」。可以相信嗎？",
+    "options": [
+     "可以，包裝漂亮就很安全。",
+     "不行，外觀不能證明安全。",
+     "可以，聞起來香就沒問題。"
+    ]
+   },
+   "lamp": 1,
+   "lines": [
+    {
+     "id": "a1_c007_01",
+     "speaker": "折折",
+     "text": "第一盞燈，亮了！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 3.92
+    }
+   ]
+  },
+  {
+   "id": "a1_c008",
+   "segment": "a1",
+   "kind": "scene",
+   "title": "一團線（懸念）",
+   "duration": 27.78,
+   "autoAdvance": false,
+   "set": "square_a1",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a1_c008_01",
+     "speaker": "折折",
+     "text": "咦？包裝裡面，怎麼有一團細細的線？",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 5.2,
+     "end": 9.04
+    },
+    {
+     "id": "a1_c008_02",
+     "speaker": "小晴",
+     "text": "不要碰。我們快去跟阿樂叔叔說。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 9.49,
+     "end": 13.51
+    },
+    {
+     "id": "a1_c008_03",
+     "speaker": "小宇",
+     "text": "阿樂叔叔？",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 22.01,
+     "end": 24.18
+    }
+   ]
+  },
+  {
+   "id": "a2_c001",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "叔叔的手（找找看 2）",
+   "duration": 17.76,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c001_01",
+     "speaker": "小宇",
+     "text": "叔叔，你還好嗎？竹篾掉了。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 1.6,
+     "end": 5.05
+    },
+    {
+     "id": "a2_c001_02",
+     "speaker": "阿樂叔叔",
+     "text": "沒事、沒事，手滑了一下。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 5.5,
+     "end": 8.53
+    },
+    {
+     "id": "a2_c001_03",
+     "speaker": "折折",
+     "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 9.73,
+     "end": 15.76
+    }
+   ]
+  },
+  {
+   "id": "a2_c002",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "線落下來（代表鏡頭）",
+   "duration": 25.18,
+   "autoAdvance": false,
+   "set": "workshop_g4",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c002_01",
+     "speaker": "阿樂叔叔",
+     "text": "咦？我想揮手……手怎麼跑到旁邊去了？",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 13.45,
+     "end": 19.48
+    },
+    {
+     "id": "a2_c002_02",
+     "speaker": "小晴",
+     "text": "叔叔，小心！",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 21.48,
+     "end": 23.18
+    }
+   ]
+  },
+  {
+   "id": "a2_c003",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "那個小盒子",
+   "duration": 15.3,
+   "autoAdvance": false,
+   "set": "a2_memory",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c003_01",
+     "speaker": "旁白",
+     "text": "還記得廣場上，那個閃亮的小盒子嗎？",
+     "actorIds": [],
+     "start": 1.45,
+     "end": 5.43
+    },
+    {
+     "id": "a2_c003_02",
+     "speaker": "旁白",
+     "text": "有一種煙彈，外表像電子煙，裡面卻可能加了毒品，有人叫它「喪屍煙彈」。",
+     "actorIds": [],
+     "start": 5.88,
+     "end": 13.5
+    }
+   ]
+  },
+  {
+   "id": "a2_c004",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "操偶線（必要旁白一）",
+   "duration": 21.91,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c004_01",
+     "speaker": "旁白",
+     "text": "阿樂叔叔身上這一條一條的線，叫做操偶線。",
+     "actorIds": [],
+     "start": 0.8,
+     "end": 6.01
+    },
+    {
+     "id": "a2_c004_02",
+     "speaker": "旁白",
+     "text": "這些線是故事的比喻。毒品可能讓人的頭腦和身體受到影響，不聽使喚。人不會真的變成喪屍。",
+     "actorIds": [],
+     "start": 6.46,
+     "end": 19.91
+    }
+   ]
+  },
+  {
+   "id": "a2_c005",
+   "segment": "a2",
+   "kind": "quiz",
+   "title": "〔題卡 Q2〕出題",
+   "duration": 23.86,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q2",
+    "number": 2,
+    "answer": 3,
+    "question": "阿樂叔叔身上的操偶線，在比喻什麼？",
+    "options": [
+     "叔叔在練習下一場紙偶戲的動作。",
+     "人真的會變成喪屍，被線拉著走。",
+     "毒品可能讓頭腦和身體不聽使喚。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c005_01",
+     "speaker": "折折",
+     "text": "第二題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.4,
+     "end": 3
+    },
+    {
+     "id": "a2_c005_02",
+     "speaker": "旁白",
+     "text": "阿樂叔叔身上的操偶線，在比喻什麼？",
+     "actorIds": [],
+     "start": 4,
+     "end": 7.96
+    },
+    {
+     "id": "a2_c005_03",
+     "speaker": "旁白",
+     "text": "一，叔叔在練習下一場紙偶戲的動作。",
+     "actorIds": [],
+     "start": 8.41,
+     "end": 13.17
+    },
+    {
+     "id": "a2_c005_04",
+     "speaker": "旁白",
+     "text": "二，人真的會變成喪屍，被線拉著走。",
+     "actorIds": [],
+     "start": 13.62,
+     "end": 17.95
+    },
+    {
+     "id": "a2_c005_05",
+     "speaker": "旁白",
+     "text": "三，毒品可能讓頭腦和身體不聽使喚。",
+     "actorIds": [],
+     "start": 18.4,
+     "end": 22.86
+    }
+   ]
+  },
+  {
+   "id": "a2_c006",
+   "segment": "a2",
+   "kind": "reveal",
+   "title": "〔題卡 Q2〕揭答",
+   "duration": 7.16,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q2",
+    "number": 2,
+    "answer": 3,
+    "question": "阿樂叔叔身上的操偶線，在比喻什麼？",
+    "options": [
+     "叔叔在練習下一場紙偶戲的動作。",
+     "人真的會變成喪屍，被線拉著走。",
+     "毒品可能讓頭腦和身體不聽使喚。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c006_01",
+     "speaker": "旁白",
+     "text": "正解是三：毒品可能讓頭腦和身體不聽使喚。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.96
+    }
+   ]
+  },
+  {
+   "id": "a2_c007",
+   "segment": "a2",
+   "kind": "lamp",
+   "title": "〔題卡 Q2〕點燈",
+   "duration": 9.17,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q2",
+    "number": 2,
+    "answer": 3,
+    "question": "阿樂叔叔身上的操偶線，在比喻什麼？",
+    "options": [
+     "叔叔在練習下一場紙偶戲的動作。",
+     "人真的會變成喪屍，被線拉著走。",
+     "毒品可能讓頭腦和身體不聽使喚。"
+    ]
+   },
+   "lamp": 2,
+   "lines": [
+    {
+     "id": "a2_c007_01",
+     "speaker": "折折",
+     "text": "第二盞！不管答對幾個人，我們都一起完成了這一題。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 7.37
+    }
+   ]
+  },
+  {
+   "id": "a2_c008",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "想不起來（必要旁白二）",
+   "duration": 39.4,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c008_01",
+     "speaker": "阿樂叔叔",
+     "text": "奇怪……我的手，怎麼不聽話了？",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 5.5,
+     "end": 11.01
+    },
+    {
+     "id": "a2_c008_02",
+     "speaker": "阿樂叔叔",
+     "text": "骨架放到哪裡去了……我想不起來。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 11.46,
+     "end": 16.5
+    },
+    {
+     "id": "a2_c008_03",
+     "speaker": "小宇",
+     "text": "叔叔是不是……吸毒了？",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 17.25,
+     "end": 20.72
+    },
+    {
+     "id": "a2_c008_04",
+     "speaker": "小晴",
+     "text": "我們不知道。可是，叔叔需要幫忙。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 21.12,
+     "end": 25.09
+    },
+    {
+     "id": "a2_c008_05",
+     "speaker": "旁白",
+     "text": "不過，看見一個人站不穩，\n\n不能就說他吸毒，\n也可能有其他身體狀況。\n\n我們要先找大人幫忙。",
+     "actorIds": [],
+     "start": 25.69,
+     "end": 38
+    }
+   ]
+  },
+  {
+   "id": "a2_c009",
+   "segment": "a2",
+   "kind": "quiz",
+   "title": "〔題卡 Q3〕出題",
+   "duration": 22.31,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q3",
+    "number": 3,
+    "answer": 1,
+    "question": "看見有人站不穩，就能確定他吸毒嗎？",
+    "options": [
+     "不能，要先找大人來幫忙。",
+     "可以，看起來像就一定是。",
+     "不能，所以直接走開不用管。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c009_01",
+     "speaker": "折折",
+     "text": "第三題來了。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.4,
+     "end": 3.05
+    },
+    {
+     "id": "a2_c009_02",
+     "speaker": "旁白",
+     "text": "看見有人站不穩，就能確定他吸毒嗎？",
+     "actorIds": [],
+     "start": 4.05,
+     "end": 8.02
+    },
+    {
+     "id": "a2_c009_03",
+     "speaker": "旁白",
+     "text": "一，不能，要先找大人來幫忙。",
+     "actorIds": [],
+     "start": 8.47,
+     "end": 12.19
+    },
+    {
+     "id": "a2_c009_04",
+     "speaker": "旁白",
+     "text": "二，可以，看起來像就一定是。",
+     "actorIds": [],
+     "start": 12.64,
+     "end": 16.67
+    },
+    {
+     "id": "a2_c009_05",
+     "speaker": "旁白",
+     "text": "三，不能，所以直接走開不用管。",
+     "actorIds": [],
+     "start": 17.12,
+     "end": 21.31
+    }
+   ]
+  },
+  {
+   "id": "a2_c010",
+   "segment": "a2",
+   "kind": "reveal",
+   "title": "〔題卡 Q3〕揭答",
+   "duration": 6.49,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q3",
+    "number": 3,
+    "answer": 1,
+    "question": "看見有人站不穩，就能確定他吸毒嗎？",
+    "options": [
+     "不能，要先找大人來幫忙。",
+     "可以，看起來像就一定是。",
+     "不能，所以直接走開不用管。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c010_01",
+     "speaker": "旁白",
+     "text": "正解是一：不能，要先找大人來幫忙。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.29
+    }
+   ]
+  },
+  {
+   "id": "a2_c011",
+   "segment": "a2",
+   "kind": "lamp",
+   "title": "〔題卡 Q3〕點燈",
+   "duration": 5.57,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q3",
+    "number": 3,
+    "answer": 1,
+    "question": "看見有人站不穩，就能確定他吸毒嗎？",
+    "options": [
+     "不能，要先找大人來幫忙。",
+     "可以，看起來像就一定是。",
+     "不能，所以直接走開不用管。"
+    ]
+   },
+   "lamp": 3,
+   "lines": [
+    {
+     "id": "a2_c011_01",
+     "speaker": "折折",
+     "text": "第三盞燈，亮了。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 3.77
+    }
+   ]
+  },
+  {
+   "id": "a2_c012",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "去找葉護理師",
+   "duration": 32.32,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c012_01",
+     "speaker": "葉護理師",
+     "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 5.72,
+     "end": 10.78
+    },
+    {
+     "id": "a2_c012_02",
+     "speaker": "阿樂叔叔",
+     "text": "不用……我休息一下就好。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 11.23,
+     "end": 14.76
+    },
+    {
+     "id": "a2_c012_03",
+     "speaker": "葉護理師",
+     "text": "你家人的電話沒人接，我晚一點再打。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 18.21,
+     "end": 22.02
+    },
+    {
+     "id": "a2_c012_04",
+     "speaker": "小晴",
+     "text": "還有，廣場上有人拿閃亮的盒子給小孩。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 22.47,
+     "end": 26.84
+    },
+    {
+     "id": "a2_c012_05",
+     "speaker": "葉護理師",
+     "text": "謝謝你們告訴我，我會請警察去看看。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 27.29,
+     "end": 31.12
+    }
+   ]
+  },
+  {
+   "id": "a2_c013",
+   "segment": "a2",
+   "kind": "scene",
+   "title": "說出實情（懸念）",
+   "duration": 34.14,
+   "autoAdvance": false,
+   "set": "a2_window",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a2_c013_01",
+     "speaker": "旁白",
+     "text": "阿樂叔叔告訴葉護理師：前幾天，也有人給他一樣的閃亮小盒子。",
+     "actorIds": [],
+     "start": 1.6,
+     "end": 8.72
+    },
+    {
+     "id": "a2_c013_02",
+     "speaker": "旁白",
+     "text": "那個人說：「試一次沒關係。」他就試了。",
+     "actorIds": [],
+     "start": 9.17,
+     "end": 13.8
+    },
+    {
+     "id": "a2_c013_03",
+     "speaker": "葉護理師",
+     "text": "這幾天先不要開車。我會一直打給你的家人。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 14.6,
+     "end": 19.88
+    },
+    {
+     "id": "a2_c013_04",
+     "speaker": "小宇",
+     "text": "明天就是紙燈節了……叔叔會好一點嗎？",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 24.33,
+     "end": 28.7
+    },
+    {
+     "id": "a2_c013_05",
+     "speaker": "小晴",
+     "text": "主燈骨架，到底在哪裡？",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 29.15,
+     "end": 31.94
+    }
+   ]
+  },
+  {
+   "id": "a3_c001",
+   "segment": "a3",
+   "kind": "scene",
+   "title": "又是那隻手",
+   "duration": 21.5,
+   "autoAdvance": false,
+   "set": "a3_arcade",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c001_01",
+     "speaker": "小宇",
+     "text": "折折，你又迷路了？",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 4.9,
+     "end": 7.14
+    },
+    {
+     "id": "a3_c001_02",
+     "speaker": "折折",
+     "text": "我是在……測試風向。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 7.59,
+     "end": 10.03
+    },
+    {
+     "id": "a3_c001_03",
+     "speaker": "邀請者",
+     "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+     "actorIds": [],
+     "start": 12.03,
+     "end": 18.25
+    },
+    {
+     "id": "a3_c001_04",
+     "speaker": "邀請者",
+     "text": "大家都試過了。",
+     "actorIds": [],
+     "start": 18.7,
+     "end": 20.4
+    }
+   ]
+  },
+  {
+   "id": "a3_c002",
+   "segment": "a3",
+   "kind": "scene",
+   "title": "我想一想",
+   "duration": 13.23,
+   "autoAdvance": false,
+   "set": "a3_arcade",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c002_01",
+     "speaker": "小宇",
+     "text": "等一下，我想一想。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 1.9,
+     "end": 3.91
+    },
+    {
+     "id": "a3_c002_02",
+     "speaker": "小宇",
+     "text": "不用，我不試。我先離開。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 4.86,
+     "end": 7.75
+    },
+    {
+     "id": "a3_c002_03",
+     "speaker": "小晴",
+     "text": "我們走。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 8.2,
+     "end": 9.33
+    }
+   ]
+  },
+  {
+   "id": "a3_c003",
+   "segment": "a3",
+   "kind": "scene",
+   "title": "告訴林老師",
+   "duration": 23.55,
+   "autoAdvance": false,
+   "set": "a3_gate",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c003_01",
+     "speaker": "小晴",
+     "text": "林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 2.9,
+     "end": 8.64
+    },
+    {
+     "id": "a3_c003_02",
+     "speaker": "林老師",
+     "text": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 9.09,
+     "end": 14.79
+    },
+    {
+     "id": "a3_c003_03",
+     "speaker": "林老師",
+     "text": "你們沒有拿，還馬上來找我，做得很好。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 15.24,
+     "end": 19.55
+    }
+   ]
+  },
+  {
+   "id": "a3_c004",
+   "segment": "a3",
+   "kind": "scene",
+   "title": "換大家練習（口訣）",
+   "duration": 15.12,
+   "autoAdvance": false,
+   "set": "a3_card",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c004_01",
+     "speaker": "折折",
+     "text": "換大家了！先跟小宇說一次：不用，我不試。我先離開。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 3,
+     "end": 8.45
+    },
+    {
+     "id": "a3_c004_02",
+     "speaker": "折折",
+     "text": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 8.9,
+     "end": 13.32
+    }
+   ]
+  },
+  {
+   "id": "a3_c005",
+   "segment": "a3",
+   "kind": "quiz",
+   "title": "〔題卡 Q4〕出題",
+   "duration": 23.71,
+   "autoAdvance": false,
+   "set": "a3_card",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q4",
+    "number": 4,
+    "answer": 1,
+    "question": "有人說「試一次沒關係」，哪個做法比較安全？",
+    "options": [
+     "說「不用，我不試」，離開找大人。",
+     "只試一次而已，應該沒關係。",
+     "先幫他保管，等一下再還給他。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c005_01",
+     "speaker": "折折",
+     "text": "第四題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.4,
+     "end": 2.85
+    },
+    {
+     "id": "a3_c005_02",
+     "speaker": "旁白",
+     "text": "有人說「試一次沒關係」，哪個做法比較安全？",
+     "actorIds": [],
+     "start": 3.7,
+     "end": 8.27
+    },
+    {
+     "id": "a3_c005_03",
+     "speaker": "旁白",
+     "text": "一，說「不用，我不試」，離開找大人。",
+     "actorIds": [],
+     "start": 8.72,
+     "end": 13.76
+    },
+    {
+     "id": "a3_c005_04",
+     "speaker": "旁白",
+     "text": "二，只試一次而已，應該沒關係。",
+     "actorIds": [],
+     "start": 14.21,
+     "end": 17.99
+    },
+    {
+     "id": "a3_c005_05",
+     "speaker": "旁白",
+     "text": "三，先幫他保管，等一下再還給他。",
+     "actorIds": [],
+     "start": 18.44,
+     "end": 22.71
+    }
+   ]
+  },
+  {
+   "id": "a3_c006",
+   "segment": "a3",
+   "kind": "reveal",
+   "title": "〔題卡 Q4〕揭答",
+   "duration": 7.44,
+   "autoAdvance": false,
+   "set": "a3_card",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q4",
+    "number": 4,
+    "answer": 1,
+    "question": "有人說「試一次沒關係」，哪個做法比較安全？",
+    "options": [
+     "說「不用，我不試」，離開找大人。",
+     "只試一次而已，應該沒關係。",
+     "先幫他保管，等一下再還給他。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c006_01",
+     "speaker": "旁白",
+     "text": "正解是一：說「不用，我不試」，離開找大人。",
+     "actorIds": [],
+     "start": 1,
+     "end": 6.24
+    }
+   ]
+  },
+  {
+   "id": "a3_c007",
+   "segment": "a3",
+   "kind": "lamp",
+   "title": "〔題卡 Q4〕點燈",
+   "duration": 5.88,
+   "autoAdvance": false,
+   "set": "a3_card",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q4",
+    "number": 4,
+    "answer": 1,
+    "question": "有人說「試一次沒關係」，哪個做法比較安全？",
+    "options": [
+     "說「不用，我不試」，離開找大人。",
+     "只試一次而已，應該沒關係。",
+     "先幫他保管，等一下再還給他。"
+    ]
+   },
+   "lamp": 4,
+   "lines": [
+    {
+     "id": "a3_c007_01",
+     "speaker": "折折",
+     "text": "第四盞，已經一半了！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 4.08
+    }
+   ]
+  },
+  {
+   "id": "a3_c008",
+   "segment": "a3",
+   "kind": "scene",
+   "title": "放學以後（懸念）",
+   "duration": 36.39,
+   "autoAdvance": false,
+   "set": "a3_classroom",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a3_c008_01",
+     "speaker": "林老師",
+     "text": "今天紙燈節，學校提早放學。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 1.15,
+     "end": 4.84
+    },
+    {
+     "id": "a3_c008_02",
+     "speaker": "林老師",
+     "text": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 5.14,
+     "end": 13.7
+    },
+    {
+     "id": "a3_c008_03",
+     "speaker": "小晴",
+     "text": "林老師，叔叔昨天站都站不穩……",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 16.65,
+     "end": 20.12
+    },
+    {
+     "id": "a3_c008_04",
+     "speaker": "林老師",
+     "text": "謝謝你告訴老師。老師先打電話給你們家人；如果叔叔先到，你們先待在校門裡面。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 20.57,
+     "end": 30.94
+    }
+   ]
+  },
+  {
+   "id": "a4_c001",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "校門口",
+   "duration": 23.92,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c001_01",
+     "speaker": "旁白",
+     "text": "放學了。家長前幾天就拜託阿樂叔叔來接孩子。叔叔的頭腦受到影響，忘了答應過葉護理師不開車，林老師的電話也還沒打通。",
+     "actorIds": [],
+     "start": 1.4,
+     "end": 14.96
+    },
+    {
+     "id": "a4_c001_02",
+     "speaker": "阿樂叔叔",
+     "text": "小晴、小宇……走吧，叔叔載你們去廣場。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 15.41,
+     "end": 20.92
+    }
+   ]
+  },
+  {
+   "id": "a4_c002",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "不對勁",
+   "duration": 20.36,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0.6,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c002_01",
+     "speaker": "小晴",
+     "text": "叔叔講話慢慢的，站也站不穩。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 0.8,
+     "end": 4.2
+    },
+    {
+     "id": "a4_c002_02",
+     "speaker": "小宇",
+     "text": "可是，他說要開車……",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 4.65,
+     "end": 7.08
+    },
+    {
+     "id": "a4_c002_03",
+     "speaker": "折折",
+     "text": "等一下！我們先把故事暫停，用紙上的路想一想。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 8.18,
+     "end": 12.91
+    }
+   ]
+  },
+  {
+   "id": "a4_c003",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "紙上的路",
+   "duration": 15.52,
+   "autoAdvance": false,
+   "set": "a4_roadmap",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c003_01",
+     "speaker": "旁白",
+     "text": "受到毒品影響的人開車，可能昏昏沉沉、判斷變差，反應也變慢。",
+     "actorIds": [],
+     "start": 1.6,
+     "end": 7.88
+    },
+    {
+     "id": "a4_c003_02",
+     "speaker": "旁白",
+     "text": "該轉彎的時候轉不好，該停的時候停不下來。",
+     "actorIds": [],
+     "start": 8.33,
+     "end": 12.92
+    }
+   ]
+  },
+  {
+   "id": "a4_c004",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "同一條路上的人",
+   "duration": 15.3,
+   "autoAdvance": false,
+   "set": "a4_roadmap",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c004_01",
+     "speaker": "旁白",
+     "text": "危險不會只留在車子裡。",
+     "actorIds": [],
+     "start": 4.5,
+     "end": 7.33
+    },
+    {
+     "id": "a4_c004_02",
+     "speaker": "旁白",
+     "text": "開車的人、坐車的人、走在路上的人，都可能受傷。",
+     "actorIds": [],
+     "start": 7.78,
+     "end": 12.9
+    }
+   ]
+  },
+  {
+   "id": "a4_c005",
+   "segment": "a4",
+   "kind": "quiz",
+   "title": "〔題卡 Q5〕出題",
+   "duration": 19.57,
+   "autoAdvance": false,
+   "set": "a4_roadmap",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q5",
+    "number": 5,
+    "answer": 3,
+    "question": "受到毒品影響還開車，可能危害到誰？",
+    "options": [
+     "只會危害開車的人。",
+     "只會危害坐車的人。",
+     "駕駛、乘客和路人。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c005_01",
+     "speaker": "折折",
+     "text": "第五題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.45,
+     "end": 2.69
+    },
+    {
+     "id": "a4_c005_02",
+     "speaker": "旁白",
+     "text": "受到毒品影響還開車，可能危害到誰？",
+     "actorIds": [],
+     "start": 3.99,
+     "end": 8
+    },
+    {
+     "id": "a4_c005_03",
+     "speaker": "旁白",
+     "text": "一，只會危害開車的人。",
+     "actorIds": [],
+     "start": 8.45,
+     "end": 11.46
+    },
+    {
+     "id": "a4_c005_04",
+     "speaker": "旁白",
+     "text": "二，只會危害坐車的人。",
+     "actorIds": [],
+     "start": 11.91,
+     "end": 14.96
+    },
+    {
+     "id": "a4_c005_05",
+     "speaker": "旁白",
+     "text": "三，駕駛、乘客和路人。",
+     "actorIds": [],
+     "start": 15.41,
+     "end": 18.57
+    }
+   ]
+  },
+  {
+   "id": "a4_c006",
+   "segment": "a4",
+   "kind": "reveal",
+   "title": "〔題卡 Q5〕揭答",
+   "duration": 6.26,
+   "autoAdvance": false,
+   "set": "a4_roadmap",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q5",
+    "number": 5,
+    "answer": 3,
+    "question": "受到毒品影響還開車，可能危害到誰？",
+    "options": [
+     "只會危害開車的人。",
+     "只會危害坐車的人。",
+     "駕駛、乘客和路人。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c006_01",
+     "speaker": "旁白",
+     "text": "正解是三：駕駛、乘客和路人。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.06
+    }
+   ]
+  },
+  {
+   "id": "a4_c007",
+   "segment": "a4",
+   "kind": "lamp",
+   "title": "〔題卡 Q5〕點燈",
+   "duration": 7.16,
+   "autoAdvance": false,
+   "set": "a4_roadmap",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q5",
+    "number": 5,
+    "answer": 3,
+    "question": "受到毒品影響還開車，可能危害到誰？",
+    "options": [
+     "只會危害開車的人。",
+     "只會危害坐車的人。",
+     "駕駛、乘客和路人。"
+    ]
+   },
+   "lamp": 5,
+   "lines": [
+    {
+     "id": "a4_c007_01",
+     "speaker": "折折",
+     "text": "第五盞燈，亮了。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 3.76
+    }
+   ]
+  },
+  {
+   "id": "a4_c008",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "回到校門口",
+   "duration": 14.33,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c008_01",
+     "speaker": "阿樂叔叔",
+     "text": "小晴、小宇……上車吧。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 1.3,
+     "end": 4.32
+    },
+    {
+     "id": "a4_c008_02",
+     "speaker": "折折",
+     "text": "他們還沒上車。換你想一想：現在該怎麼做？",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 7.62,
+     "end": 12.13
+    }
+   ]
+  },
+  {
+   "id": "a4_c009",
+   "segment": "a4",
+   "kind": "quiz",
+   "title": "〔題卡 Q6〕出題",
+   "duration": 26.61,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q6",
+    "number": 6,
+    "answer": 2,
+    "question": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+    "options": [
+     "坐後座、繫好安全帶就沒關係。",
+     "先不上車，到安全處找大人。",
+     "請他開慢一點，小心就好。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c009_01",
+     "speaker": "折折",
+     "text": "第六題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.45,
+     "end": 2.81
+    },
+    {
+     "id": "a4_c009_02",
+     "speaker": "旁白",
+     "text": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+     "actorIds": [],
+     "start": 4.11,
+     "end": 11.74
+    },
+    {
+     "id": "a4_c009_03",
+     "speaker": "旁白",
+     "text": "一，坐後座、繫好安全帶就沒關係。",
+     "actorIds": [],
+     "start": 12.19,
+     "end": 16.86
+    },
+    {
+     "id": "a4_c009_04",
+     "speaker": "旁白",
+     "text": "二，先不上車，到安全處找大人。",
+     "actorIds": [],
+     "start": 17.31,
+     "end": 21.52
+    },
+    {
+     "id": "a4_c009_05",
+     "speaker": "旁白",
+     "text": "三，請他開慢一點，小心就好。",
+     "actorIds": [],
+     "start": 21.97,
+     "end": 25.61
+    }
+   ]
+  },
+  {
+   "id": "a4_c010",
+   "segment": "a4",
+   "kind": "reveal",
+   "title": "〔題卡 Q6〕揭答",
+   "duration": 7.32,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q6",
+    "number": 6,
+    "answer": 2,
+    "question": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+    "options": [
+     "坐後座、繫好安全帶就沒關係。",
+     "先不上車，到安全處找大人。",
+     "請他開慢一點，小心就好。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c010_01",
+     "speaker": "旁白",
+     "text": "正解是二：先不上車，到安全處找大人。",
+     "actorIds": [],
+     "start": 1,
+     "end": 6.12
+    }
+   ]
+  },
+  {
+   "id": "a4_c011",
+   "segment": "a4",
+   "kind": "lamp",
+   "title": "〔題卡 Q6〕點燈",
+   "duration": 6.42,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q6",
+    "number": 6,
+    "answer": 2,
+    "question": "你還沒上車，接送的人站不穩、反應很不對勁，卻說要開車。怎麼做？",
+    "options": [
+     "坐後座、繫好安全帶就沒關係。",
+     "先不上車，到安全處找大人。",
+     "請他開慢一點，小心就好。"
+    ]
+   },
+   "lamp": 6,
+   "lines": [
+    {
+     "id": "a4_c011_01",
+     "speaker": "折折",
+     "text": "第六盞！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 3.32
+    }
+   ]
+  },
+  {
+   "id": "a4_c012",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "先不上車",
+   "duration": 31.07,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c012_01",
+     "speaker": "小晴",
+     "text": "叔叔，我們先不上車。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 1,
+     "end": 3.45
+    },
+    {
+     "id": "a4_c012_02",
+     "speaker": "小宇",
+     "text": "我們回學校等。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 3.9,
+     "end": 5.76
+    },
+    {
+     "id": "a4_c012_03",
+     "speaker": "小宇",
+     "text": "陳伯伯、林老師，阿樂叔叔站不穩，可是他說要開車。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 10.36,
+     "end": 15.69
+    },
+    {
+     "id": "a4_c012_04",
+     "speaker": "林老師",
+     "text": "你們先待在校門裡面。老師繼續打給你們家人，也打給阿樂叔叔的家人。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 16.14,
+     "end": 25.18
+    },
+    {
+     "id": "a4_c012_05",
+     "speaker": "陳伯伯",
+     "text": "車先不要開，我過去陪他。",
+     "actorIds": [
+      "chen"
+     ],
+     "start": 25.63,
+     "end": 28.67
+    }
+   ]
+  },
+  {
+   "id": "a4_c013",
+   "segment": "a4",
+   "kind": "scene",
+   "title": "那是什麼？（找找看 3）",
+   "duration": 24.75,
+   "autoAdvance": false,
+   "set": "gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a4_c013_01",
+     "speaker": "陳伯伯",
+     "text": "鑰匙我先收著。小晴、小宇，你們待在門裡。",
+     "actorIds": [
+      "chen"
+     ],
+     "start": 3.6,
+     "end": 8.71
+    },
+    {
+     "id": "a4_c013_02",
+     "speaker": "林老師",
+     "text": "陳伯伯，我打完電話就出來換你。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 9.61,
+     "end": 13.83
+    },
+    {
+     "id": "a4_c013_03",
+     "speaker": "折折",
+     "text": "咦？大家看，叔叔的車子後面，那是什麼？看到的舉手。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 17.33,
+     "end": 22.85
+    }
+   ]
+  },
+  {
+   "id": "a5_c001",
+   "segment": "a5",
+   "kind": "scene",
+   "title": "叫不醒",
+   "duration": 41.07,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c001_01",
+     "speaker": "小晴",
+     "text": "主燈骨架！原來在叔叔車上！",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 0.95,
+     "end": 4.58
+    },
+    {
+     "id": "a5_c001_02",
+     "speaker": "陳伯伯",
+     "text": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+     "actorIds": [
+      "chen"
+     ],
+     "start": 6.28,
+     "end": 13.6
+    },
+    {
+     "id": "a5_c001_03",
+     "speaker": "林老師",
+     "text": "好，我馬上出來！",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 13.9,
+     "end": 15.99
+    },
+    {
+     "id": "a5_c001_04",
+     "speaker": "小宇",
+     "text": "阿樂叔叔？阿樂叔叔！",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 29.44,
+     "end": 32.34
+    },
+    {
+     "id": "a5_c001_05",
+     "speaker": "小晴",
+     "text": "他……叫不醒。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 32.79,
+     "end": 34.75
+    },
+    {
+     "id": "a5_c001_06",
+     "speaker": "折折",
+     "text": "陳伯伯在轉角，林老師在辦公室。他們該怎麼做？",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 35.25,
+     "end": 40.27
+    }
+   ]
+  },
+  {
+   "id": "a5_c002",
+   "segment": "a5",
+   "kind": "quiz",
+   "title": "〔題卡 Q7〕出題",
+   "duration": 23.62,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q7",
+    "number": 7,
+    "answer": 3,
+    "question": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+    "options": [
+     "先拍下影片，再傳給同學看。",
+     "自己先跑過去，用力把他搖醒。",
+     "先找大人，沒大人就撥 119。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c002_01",
+     "speaker": "折折",
+     "text": "第七題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.45,
+     "end": 2.68
+    },
+    {
+     "id": "a5_c002_02",
+     "speaker": "旁白",
+     "text": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+     "actorIds": [],
+     "start": 3.98,
+     "end": 9.76
+    },
+    {
+     "id": "a5_c002_03",
+     "speaker": "旁白",
+     "text": "一，先拍下影片，再傳給同學看。",
+     "actorIds": [],
+     "start": 10.21,
+     "end": 13.6
+    },
+    {
+     "id": "a5_c002_04",
+     "speaker": "旁白",
+     "text": "二，自己先跑過去，用力把他搖醒。",
+     "actorIds": [],
+     "start": 14.05,
+     "end": 17.86
+    },
+    {
+     "id": "a5_c002_05",
+     "speaker": "旁白",
+     "text": "三，先找大人，沒大人就撥 119。",
+     "actorIds": [],
+     "start": 18.31,
+     "end": 22.92
+    }
+   ]
+  },
+  {
+   "id": "a5_c003",
+   "segment": "a5",
+   "kind": "reveal",
+   "title": "〔題卡 Q7〕揭答",
+   "duration": 7.02,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q7",
+    "number": 7,
+    "answer": 3,
+    "question": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+    "options": [
+     "先拍下影片，再傳給同學看。",
+     "自己先跑過去，用力把他搖醒。",
+     "先找大人，沒大人就撥 119。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c003_01",
+     "speaker": "旁白",
+     "text": "正解是三：先找大人，沒大人就撥 119。",
+     "actorIds": [],
+     "start": 1,
+     "end": 6.02
+    }
+   ]
+  },
+  {
+   "id": "a5_c004",
+   "segment": "a5",
+   "kind": "lamp",
+   "title": "〔題卡 Q7〕點燈",
+   "duration": 6.2,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q7",
+    "number": 7,
+    "answer": 3,
+    "question": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+    "options": [
+     "先拍下影片，再傳給同學看。",
+     "自己先跑過去，用力把他搖醒。",
+     "先找大人，沒大人就撥 119。"
+    ]
+   },
+   "lamp": 7,
+   "lines": [
+    {
+     "id": "a5_c004_01",
+     "speaker": "折折",
+     "text": "第七盞燈，亮了。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 3.92
+    }
+   ]
+  },
+  {
+   "id": "a5_c005",
+   "segment": "a5",
+   "kind": "scene",
+   "title": "分頭求助",
+   "duration": 21.2,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c005_01",
+     "speaker": "小宇",
+     "text": "陳伯伯——！",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 4,
+     "end": 5.36
+    },
+    {
+     "id": "a5_c005_02",
+     "speaker": "小晴",
+     "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 6.66,
+     "end": 12.26
+    },
+    {
+     "id": "a5_c005_03",
+     "speaker": "小宇",
+     "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 14.91,
+     "end": 20.2
+    }
+   ]
+  },
+  {
+   "id": "a5_c006",
+   "segment": "a5",
+   "kind": "scene",
+   "title": "撥 119",
+   "duration": 31.18,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c006_01",
+     "speaker": "執勤人員",
+     "text": "119 您好，請問發生什麼事？在哪裡？",
+     "actorIds": [],
+     "start": 1.4,
+     "end": 6.55
+    },
+    {
+     "id": "a5_c006_02",
+     "speaker": "小宇",
+     "text": "這裡是小燈國小正門口。有一個大人坐在門口的椅子上，叫不醒。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 6.8,
+     "end": 13.72
+    },
+    {
+     "id": "a5_c006_03",
+     "speaker": "執勤人員",
+     "text": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？",
+     "actorIds": [],
+     "start": 13.97,
+     "end": 20.79
+    },
+    {
+     "id": "a5_c006_04",
+     "speaker": "小宇",
+     "text": "我在校門裡面。我同學去找老師了。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 21.04,
+     "end": 25.1
+    },
+    {
+     "id": "a5_c006_05",
+     "speaker": "執勤人員",
+     "text": "做得很好。待在安全的地方，聽我的指示。",
+     "actorIds": [],
+     "start": 25.35,
+     "end": 30.33
+    }
+   ]
+  },
+  {
+   "id": "a5_c007",
+   "segment": "a5",
+   "kind": "scene",
+   "title": "大人接手",
+   "duration": 25.83,
+   "autoAdvance": false,
+   "set": "a5_gate",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c007_01",
+     "speaker": "林老師",
+     "text": "您好，我是小燈國小的老師，我來接手。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 4.15,
+     "end": 8.99
+    },
+    {
+     "id": "a5_c007_02",
+     "speaker": "林老師",
+     "text": "你們沒有跑過去，還馬上找人幫忙，做得很好。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 20.3,
+     "end": 24.83
+    }
+   ]
+  },
+  {
+   "id": "a5_c008",
+   "segment": "a5",
+   "kind": "scene",
+   "title": "醫院的走廊",
+   "duration": 27.41,
+   "autoAdvance": false,
+   "set": "a5_hospital",
+   "enterFade": 1.2,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a5_c008_01",
+     "speaker": "葉護理師",
+     "text": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 1.3,
+     "end": 7.01
+    },
+    {
+     "id": "a5_c008_02",
+     "speaker": "小晴",
+     "text": "是我們害叔叔被送來醫院的嗎？",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 7.46,
+     "end": 11.1
+    },
+    {
+     "id": "a5_c008_03",
+     "speaker": "葉護理師",
+     "text": "不是喔。你們找大人、打 119，是在幫他。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 11.45,
+     "end": 16.85
+    },
+    {
+     "id": "a5_c008_04",
+     "speaker": "小宇",
+     "text": "叔叔會好起來嗎？",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 17.35,
+     "end": 19.37
+    },
+    {
+     "id": "a5_c008_05",
+     "speaker": "葉護理師",
+     "text": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 19.72,
+     "end": 26.11
+    }
+   ]
+  },
+  {
+   "id": "a6_c001",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "燈節的晚上",
+   "duration": 13.68,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c001_01",
+     "speaker": "小晴",
+     "text": "叔叔不在，我們幫他把主燈完成！",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 2.4,
+     "end": 6.22
+    },
+    {
+     "id": "a6_c001_02",
+     "speaker": "小宇",
+     "text": "慢慢摺，燈才會亮。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 6.67,
+     "end": 8.68
+    }
+   ]
+  },
+  {
+   "id": "a6_c002",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "品安的秘密",
+   "duration": 31.81,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c002_01",
+     "speaker": "品安",
+     "text": "我跟你們說一個秘密……",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 3,
+     "end": 5.85
+    },
+    {
+     "id": "a6_c002_02",
+     "speaker": "品安",
+     "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 6.3,
+     "end": 18.64
+    },
+    {
+     "id": "a6_c002_03",
+     "speaker": "品安",
+     "text": "不要告訴老師，好不好？我怕被罵。",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 19.09,
+     "end": 23.68
+    },
+    {
+     "id": "a6_c002_04",
+     "speaker": "折折",
+     "text": "如果你是小晴和小宇，你會怎麼做？",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 26.28,
+     "end": 29.81
+    }
+   ]
+  },
+  {
+   "id": "a6_c003",
+   "segment": "a6",
+   "kind": "quiz",
+   "title": "〔題卡 Q8〕出題",
+   "duration": 23.9,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "answer": 2,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c003_01",
+     "speaker": "折折",
+     "text": "最後一題！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.7,
+     "end": 3.05
+    },
+    {
+     "id": "a6_c003_02",
+     "speaker": "旁白",
+     "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+     "actorIds": [],
+     "start": 4.35,
+     "end": 10.08
+    },
+    {
+     "id": "a6_c003_03",
+     "speaker": "旁白",
+     "text": "一，答應他，永遠不告訴任何人。",
+     "actorIds": [],
+     "start": 10.53,
+     "end": 14.01
+    },
+    {
+     "id": "a6_c003_04",
+     "speaker": "旁白",
+     "text": "二，陪他一起找可信任的大人。",
+     "actorIds": [],
+     "start": 14.46,
+     "end": 18.54
+    },
+    {
+     "id": "a6_c003_05",
+     "speaker": "旁白",
+     "text": "三，傳給全班同學，大家一起討論。",
+     "actorIds": [],
+     "start": 18.99,
+     "end": 22.9
+    }
+   ]
+  },
+  {
+   "id": "a6_c004",
+   "segment": "a6",
+   "kind": "reveal",
+   "title": "〔題卡 Q8〕揭答",
+   "duration": 6.94,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "answer": 2,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ]
+   },
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c004_01",
+     "speaker": "旁白",
+     "text": "正解是二：陪他一起找可信任的大人。",
+     "actorIds": [],
+     "start": 1,
+     "end": 5.74
+    }
+   ]
+  },
+  {
+   "id": "a6_c005",
+   "segment": "a6",
+   "kind": "lamp",
+   "title": "〔題卡 Q8〕點燈",
+   "duration": 7.07,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "answer": 2,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ]
+   },
+   "lamp": 8,
+   "lines": [
+    {
+     "id": "a6_c005_01",
+     "speaker": "折折",
+     "text": "第八盞！全部亮了！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.9,
+     "end": 4.31
+    }
+   ]
+  },
+  {
+   "id": "a6_c006",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "我在乎你",
+   "duration": 35.26,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c006_01",
+     "speaker": "小晴",
+     "text": "品安，我在乎你，我們一起找人幫忙。",
+     "actorIds": [
+      "xiaoqing"
+     ],
+     "start": 0.8,
+     "end": 4.76
+    },
+    {
+     "id": "a6_c006_02",
+     "speaker": "小宇",
+     "text": "我們陪你去，跟老師說清楚。",
+     "actorIds": [
+      "xiaoyu"
+     ],
+     "start": 5.21,
+     "end": 8.17
+    },
+    {
+     "id": "a6_c006_03",
+     "speaker": "品安",
+     "text": "老師……我書包裡，有一個別人給的盒子。",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 14.12,
+     "end": 18.84
+    },
+    {
+     "id": "a6_c006_04",
+     "speaker": "林老師",
+     "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 19.29,
+     "end": 24.84
+    },
+    {
+     "id": "a6_c006_05",
+     "speaker": "林老師",
+     "text": "廣場那個人，警察已經在處理了。",
+     "actorIds": [
+      "lin"
+     ],
+     "start": 25.29,
+     "end": 28.8
+    },
+    {
+     "id": "a6_c006_06",
+     "speaker": "葉護理師",
+     "text": "說出來，就是在保護自己。",
+     "actorIds": [
+      "ye"
+     ],
+     "start": 31.3,
+     "end": 34.06
+    }
+   ]
+  },
+  {
+   "id": "a6_c007",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "八盞燈與主燈",
+   "duration": 21.05,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c007_01",
+     "speaker": "折折",
+     "text": "我……我摺成了！真的是燈籠！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 2,
+     "end": 5.52
+    },
+    {
+     "id": "a6_c007_02",
+     "speaker": "旁白",
+     "text": "這一晚，小燈鎮的燈都亮了。",
+     "actorIds": [],
+     "start": 12.12,
+     "end": 15.08
+    },
+    {
+     "id": "a6_c007_03",
+     "speaker": "旁白",
+     "text": "可是，阿樂叔叔要好起來，不是點亮燈就好。",
+     "actorIds": [],
+     "start": 15.53,
+     "end": 19.85
+    }
+   ]
+  },
+  {
+   "id": "a6_c008",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "四季（時間轉場）",
+   "duration": 19.57,
+   "autoAdvance": false,
+   "set": "a6_window",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c008_02",
+     "speaker": "旁白",
+     "text": "操偶線一天一天變鬆、變淡，一根一根脫落。",
+     "actorIds": [],
+     "start": 3.5,
+     "end": 9.48
+    },
+    {
+     "id": "a6_c008_03",
+     "speaker": "旁白",
+     "text": "好起來，需要求助、治療，還有時間。",
+     "actorIds": [],
+     "start": 9.93,
+     "end": 14.57
+    }
+   ]
+  },
+  {
+   "id": "a6_c009",
+   "segment": "a6",
+   "kind": "scene",
+   "title": "又到了紙燈節",
+   "duration": 25.91,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a6_c009_01",
+     "speaker": "折折",
+     "text": "叔叔，又到紙燈節了！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 1.6,
+     "end": 3.89
+    },
+    {
+     "id": "a6_c009_02",
+     "speaker": "阿樂叔叔",
+     "text": "那天我把骨架搬上車，要送去廣場，後來自己忘了。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 4.34,
+     "end": 9.99
+    },
+    {
+     "id": "a6_c009_03",
+     "speaker": "阿樂叔叔",
+     "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 10.44,
+     "end": 18.52
+    },
+    {
+     "id": "a6_c009_04",
+     "speaker": "阿樂叔叔",
+     "text": "謝謝你們，那天去找大人幫忙。",
+     "actorIds": [
+      "ale"
+     ],
+     "start": 18.97,
+     "end": 22.31
+    }
+   ]
+  },
+  {
+   "id": "a7_c001",
+   "segment": "a7",
+   "kind": "scene",
+   "title": "三張大圖",
+   "duration": 25.32,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0.8,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a7_c001_01",
+     "speaker": "折折",
+     "text": "第一張，拒絕與離開：說「不用，我不試」，然後離開。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 2.2,
+     "end": 7.14
+    },
+    {
+     "id": "a7_c001_02",
+     "speaker": "折折",
+     "text": "第二張，安全接送：覺得不對勁，先不上車，回去找大人。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 11.44,
+     "end": 16.53
+    },
+    {
+     "id": "a7_c001_03",
+     "speaker": "折折",
+     "text": "第三張，找大人求助：有人叫不醒，先找大人；找不到大人，就打 119。",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 16.98,
+     "end": 23.72
+    }
+   ]
+  },
+  {
+   "id": "a7_c002",
+   "segment": "a7",
+   "kind": "scene",
+   "title": "一起做口訣",
+   "duration": 8.08,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a7_c002_01",
+     "speaker": "折折",
+     "text": "最後，大家一起做一次口訣！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 4,
+     "end": 6.68
+    }
+   ]
+  },
+  {
+   "id": "a7_c003",
+   "segment": "a7",
+   "kind": "scene",
+   "title": "最後的話",
+   "duration": 14.01,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a7_c003_01",
+     "speaker": "品安",
+     "text": "有讓你擔心的秘密，也可以找大人說。",
+     "actorIds": [
+      "pinan"
+     ],
+     "start": 4.3,
+     "end": 9.12
+    },
+    {
+     "id": "a7_c003_02",
+     "speaker": "折折",
+     "text": "謝謝大家，幫小燈鎮點亮了八盞燈！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 10.02,
+     "end": 13.51
+    }
+   ]
+  },
+  {
+   "id": "a8_c001",
+   "segment": "a8",
+   "kind": "scene",
+   "title": "謝幕",
+   "duration": 18,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 1,
+   "preroll": 0.6,
+   "quiz": null,
+   "lamp": null,
+   "lines": [
+    {
+     "id": "a8_c001_01",
+     "speaker": "折折",
+     "text": "我們是小燈鎮的大家，下次見！",
+     "actorIds": [
+      "zhezhe"
+     ],
+     "start": 13.4,
+     "end": 16.45
+    }
+   ]
+  },
+  {
+   "id": "a8_c002",
+   "segment": "a8",
+   "kind": "curtain",
+   "title": "布幕合攏",
+   "duration": 5.4,
+   "autoAdvance": true,
+   "set": "a6_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": []
+  },
+  {
+   "id": "a8_c003",
+   "segment": "a8",
+   "kind": "title",
+   "title": "片尾署名卡",
+   "duration": 1.4,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0,
+   "preroll": 0,
+   "quiz": null,
+   "lamp": null,
+   "lines": []
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紙燈節｜故障一頁卡</title>
+<style>
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-400.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-700.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-800.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 800; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-900.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+:root {
+  --ink: #1f1a16; --ink2: #4a3f36; --muted: #6f6359; --line: #b9ab9b; --paper: #fbf7f0; --accent: #7a4e2d; --indigo: #2f4a7a; --soft: #f1e8da;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: var(--ink); }
+body { font-family: "Noto Sans TC Local", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 400; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3 { line-height: 1.3; margin: 0.6em 0 0.35em; font-weight: 800; }
+p { margin: 0.3em 0 0.5em; }
+strong { font-weight: 800; }
+code { font-family: inherit; background: var(--soft); padding: 0 0.25em; border-radius: 3px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 0.6pt solid var(--line); padding: 3pt 5pt; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 800; }
+blockquote { margin: 0.4em 0 0.6em; padding: 0.35em 0.7em; border-left: 3pt solid var(--accent); background: var(--paper); }
+.note { color: var(--muted); font-size: 0.86em; }
+.pb { break-after: page; height: 0; }
+.byline { color: var(--muted); }
+
+
+@page { size: A4 portrait; margin: 9mm 9mm 8mm; }
+body { font-size: 10.8pt; line-height: 1.38; }
+.top { display: flex; align-items: baseline; justify-content: space-between; border-bottom: 2pt solid var(--accent); padding-bottom: 2pt; margin-bottom: 5pt; }
+.top h1 { font-size: 20pt; margin: 0; }
+.top .by { font-size: 10pt; color: var(--muted); }
+table.fault th { font-size: 11pt; }
+table.fault td { padding: 3pt 5pt; }
+table.fault td:first-child { font-weight: 800; width: 22%; }
+table.fault td:nth-child(2) { width: 40%; }
+.path { display: flex; gap: 4pt; align-items: center; margin: 6pt 0 4pt; }
+.path .st { border: 1.4pt solid var(--ink); border-radius: 5pt; padding: 3pt 6pt; text-align: center; flex: 1; font-weight: 700; font-size: 10.6pt; line-height: 1.25; }
+.path .st small { display: block; font-weight: 400; font-size: 9pt; color: var(--ink2); }
+.path .ar { font-weight: 800; color: var(--accent); }
+.calm { border: 1.4pt solid var(--ink); border-radius: 5pt; padding: 3pt 7pt; font-size: 10.8pt; margin: 4pt 0; }
+.small { font-size: 9.3pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<div class="top"><h1>紙燈節｜故障一頁卡</h1><span class="by">反毒剪紙劇場｜許博明老師製作</span></div>
+<div class="calm">先深呼吸：畫面一定停在某個停格點等老師，<b>不會自己亂跳</b>；播放中多按的鍵會被忽略。學生照常坐著，老師可以先帶大家說一次口訣「不碰、不試；先離開，找大人。」</div>
+<table class="fault"><thead><tr><th>症狀</th><th>第一個動作</th><th>還不行（退路）</th></tr></thead><tbody>
+<tr><td>簡報筆按了沒反應</td><td>看控制台上方「焦點」：點一下控制台（或舞台）任何地方取回焦點。檢查 USB 接收器與電池。</td><td>用筆電鍵盤：PageDown 或 →＝下一步、空白鍵＝暫停；或按控制台的「下一步」。換備用簡報筆。鍵碼不同時用控制台「按鍵測試」設定。</td></tr>
+<tr><td>沒有聲音</td><td>看控制台「聲音」狀態。檢查 Windows 播放裝置（接投影機後常被改成 HDMI）、音量、場地擴音與音源線。</td><td>按黑屏鍵暫停再繼續。第一個字被吃掉：教師選單（M）「開頭靜音」改 200 或 400。仍沒聲音：<b>老師照字幕與講稿講述，劇情照常進行</b>。</td></tr>
+<tr><td>畫面卡頓、不順</td><td>等這一段播完停住。在停格時按 M → 畫質「B 級」或「鎖 30 fps」，再按 M 關掉選單。</td><td>關掉其他程式、插電、高效能模式。仍卡：改用備援影片（暫定）或紙本題卡。</td></tr>
+<tr><td>出現「畫面暫停」或「顯示卡連線中斷」</td><td>按一次「下一步」，重新建立畫面，回到目前的停格點。</td><td>重建失敗：關掉程式重開，用控制台「跳到」選講稿上的 cue 編號、按「前往」。授課時鐘會保留。</td></tr>
+<tr><td>畫面黑掉、被重新整理或程式關掉</td><td>不用慌：舞台回到「準備播放」畫面，不會自己出聲。按「準備播放」，再用控制台「跳到」回到剛才的 cue。</td><td>程式關掉了：重新雙擊 AntidrugTheater.exe，同上跳回。</td></tr>
+<tr><td>螢幕被關掉或系統休眠</td><td>喚醒後畫面停在原處，按黑屏鍵（或下一步）繼續，不會跳段。</td><td>—</td></tr>
+<tr><td>只有一個畫面、控制台被投影出去</td><td>按 Win＋P 選「延伸」。</td><td>控制台會提示改用單一舞台視窗：只用舞台和簡報筆演出，看紙本講稿。</td></tr>
+<tr><td>控制台顯示「舞台：未連線」</td><td>點一下舞台視窗，等 2–3 秒。</td><td>只用舞台視窗演出（M 鍵選單可跳段），看紙本講稿與 cue 編號。</td></tr>
+<tr><td>投影機沒畫面或故障</td><td>檢查訊號線與投影機的輸入來源；Win＋P 重選「延伸」。</td><td><b>改用紙本題卡完成八題</b>（題卡_學生版.pdf，可放大印成 A3），老師照講稿說故事。</td></tr>
+<tr><td>Windows 擋執行檔（「Windows 已保護您的電腦」）</td><td>按「其他資訊」→「仍要執行」（學校允許時）。</td><td>學校電腦禁止執行時，請資訊組協助，或改用<b>瀏覽器版</b>（下方）。</td></tr>
+</tbody></table>
+<h2 style="font-size:13pt;margin:7pt 0 2pt">退路順序（一層不行就換下一層）</h2>
+<div class="path">
+<div class="st">Windows 可攜版<small>AntidrugTheater.exe</small></div><div class="ar">▶</div>
+<div class="st">瀏覽器版<small>Chrome／Edge 開 browser 資料夾</small></div><div class="ar">▶</div>
+<div class="st">備援影片（暫定）<small>分幕影片，隨身碟播放</small></div><div class="ar">▶</div>
+<div class="st">紙本題卡＋講稿<small>老師講故事，八題照常</small></div>
+</div>
+<p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\index.html</code>，在網址列最後加上 <code>?cues=show</code> 按 Enter，再按「準備播放」（只有舞台，用簡報筆操作）。要雙畫面：開 <code>browser\console.html?cues=show</code>，按「開啟舞台視窗」，把舞台視窗拖到投影畫面，在舞台上按一次「準備播放」。不需要網路，也不用安裝。<span class="small">（建議彩排時先開好並加入書籤。）</span></p>
+<p class="small">代理老師也能照「一頁操作卡」與本卡完成演出。八題正解依序 2、3、1、1、3、2、3、2；看哪一區依序 A、B、C、D、A、B、C、D。演出完全離線，不使用攝影機與麥克風。</p>
+
+</body>
+</html>

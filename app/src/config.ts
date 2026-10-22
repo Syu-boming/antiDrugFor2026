@@ -1,5 +1,5 @@
 // 執行參數：URL 參數優先，其次是本機設定（localStorage 只存個人化設定，讀寫失敗也能正常演出）。
-//   ?cues=demo        要載入的 cue 檔（app/cues/<名稱>.json）
+//   ?cues=show        要載入的 cue 檔（app/cues/<名稱>.json；預設 show＝全劇）
 //   ?capture=1        虛擬時鐘擷取模式（固定步長，不發聲）
 //   ?autostart=1      跳過「準備播放」按鈕（擷取與測試用）
 //   ?q=A|B            畫質等級
@@ -46,7 +46,7 @@ export function readConfig(search = location.search): Config {
   const capture = flag('capture');
   const q = (p.get('q') ?? s.quality ?? 'A').toUpperCase();
   return {
-    cues: p.get('cues') ?? 'demo',
+    cues: p.get('cues') ?? 'show',  // 預設整齣戲（交付版直接開 index.html 就是全劇；示範用 ?cues=demo）
     capture,
     autostart: flag('autostart') || capture,
     autostep: flag('autostep'),

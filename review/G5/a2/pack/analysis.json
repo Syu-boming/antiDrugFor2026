@@ -45,7 +45,7 @@
     "cue": "a2_c009",
     "cue_t": 0.96
    },
-   "max_rise_per_100ms_LU": 27.2,
+   "max_rise_per_100ms_LU": 23.6,
    "max_rise_per_100ms_at_sec": 213.3,
    "max_rise_per_100ms_at": {
     "cue": "a2_c010",
@@ -53,13 +53,13 @@
    },
    "max_rise_within_1s_LU": 39.9,
    "max_rise_within_1s_at_sec": 1.6,
-   "sample_peak_dBFS": -7.96,
-   "sample_peak_at_sec": 213.27,
+   "sample_peak_dBFS": -8.23,
+   "sample_peak_at_sec": 35.09,
    "sample_peak_at": {
-    "cue": "a2_c010",
-    "cue_t": 0.32
+    "cue": "a2_c002",
+    "cue_t": 12.63
    },
-   "true_peak_dBTP": -8.0,
+   "true_peak_dBTP": -8.2,
    "I_LUFS": -29.3,
    "g4_reference": {
     "max_LUFS": -15.7,
@@ -109,7 +109,7 @@
     "cue": "a2_c012",
     "hold_from_sec": 262.33,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -51.6,
+    "momentary_max_after_3s_LUFS": -51.3,
     "pass_le_-35": true
    },
    {
@@ -135,7 +135,7 @@
  "flash_playback": {
   "ok": true,
   "max_changes_per_sec": {
-   "luma": 3,
+   "luma": 2,
    "red": 2
   },
   "near_limit_total": 148,
@@ -147,7 +147,7 @@
     "luma": 3,
     "red": 3
    },
-   "near_limit_3_total": 35
+   "near_limit_3_total": 29
   },
   "proj_16x9": {
    "max_changes_per_sec": {
@@ -161,14 +161,19 @@
     "luma": 3,
     "red": 0
    },
-   "near_limit_3_total": 20
+   "near_limit_3_total": 14
   }
  },
  "subtitle_sync": {
-  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
   "silencedetect": {
    "noise_dB": -40,
    "min_silence_s": 0.05
+  },
+  "silencedetect_fallback": {
+   "noise_dB": -30,
+   "min_silence_s": 0.12,
+   "pages": 0
   },
   "range_s": [
    -0.8,
@@ -201,7 +206,7 @@
    ],
    "format": {
     "duration": "304.066667",
-    "size": "99371847"
+    "size": "99375330"
    }
   }
  },
@@ -379,21 +384,21 @@
   "probe_frames_with_strings": 2692,
   "string_path_min_dist_to_head_box_px": 17.2,
   "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
-  "string_head_offscreen_skipped": 615,
+  "string_head_offscreen_skipped": 645,
   "per_anchor": {
    "ale.wrist": {
     "min_dist_to_head_box_px": 20.1,
-    "frames": 2487,
+    "frames": 2477,
     "at": "a2_c009 t=1"
    },
    "ale.elbow": {
     "min_dist_to_head_box_px": 20.3,
-    "frames": 2279,
+    "frames": 2269,
     "at": "a2_c009 t=1"
    },
    "ale.knee": {
     "min_dist_to_head_box_px": 17.2,
-    "frames": 2269,
+    "frames": 2259,
     "at": "a2_c005 t=10.4"
    }
   },
@@ -461,7 +466,7 @@
    "a1_c005": 23.89,
    "a1_c006": 6.97,
    "a1_c007": 5.72,
-   "a1_c008": 27.78,
+   "a1_c008": 26.78,
    "a2_c001": 17.76,
    "a2_c002": 25.18,
    "a2_c003": 15.3,
@@ -478,13 +483,13 @@
    "a3_c001": 21.5,
    "a3_c002": 13.23,
    "a3_c003": 23.55,
-   "a3_c004": 15.12,
+   "a3_c004": 14.82,
    "a3_c005": 23.71,
    "a3_c006": 7.44,
    "a3_c007": 5.88,
-   "a3_c008": 36.39,
+   "a3_c008": 36.69,
    "a4_c001": 23.92,
-   "a4_c002": 20.36,
+   "a4_c002": 18.86,
    "a4_c003": 15.52,
    "a4_c004": 15.3,
    "a4_c005": 19.57,
@@ -496,13 +501,13 @@
    "a4_c011": 6.42,
    "a4_c012": 31.07,
    "a4_c013": 24.75,
-   "a5_c001": 41.07,
+   "a5_c001": 38.32,
    "a5_c002": 23.62,
    "a5_c003": 7.02,
    "a5_c004": 6.2,
-   "a5_c005": 21.2,
+   "a5_c005": 21.25,
    "a5_c006": 31.18,
-   "a5_c007": 25.83,
+   "a5_c007": 24.08,
    "a5_c008": 27.41,
    "a6_c001": 13.68,
    "a6_c002": 31.81,
@@ -512,7 +517,7 @@
    "a6_c006": 35.26,
    "a6_c007": 21.05,
    "a6_c008": 19.57,
-   "a6_c009": 25.91,
+   "a6_c009": 25.81,
    "a7_c001": 25.32,
    "a7_c002": 8.08,
    "a7_c003": 14.01,
@@ -525,7 +530,7 @@
    "active": "a2_window",
    "built": 7,
    "disposed": 6,
-   "lastBuildMs": 56,
+   "lastBuildMs": 55,
    "liveSetGroups": 1
   }
  }

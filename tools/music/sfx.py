@@ -273,20 +273,26 @@ def sfx_lamp_on():
     return onset(x, 14, tail_ms=400)
 
 
+STAMP_RISE_MS = 28   # G6 精修：升餘弦起音 14 → 28 ms（量測起音 −40→−6 dB：7.1 → 約 11.4 ms）
+
+
 def sfx_stamp():
-    """「正解」紙印章：柔和的一聲（低中頻「噗」＋紙面接觸），之後輕輕抬起。"""
+    """「正解」紙印章：柔和的一聲（低中頻「噗」＋紙面接觸），之後輕輕抬起。
+    G6 精修（第一批放行一般問題「揭答蓋章聲 100 ms 上升偏大，從靜音出現」）：起音拉長（STAMP_RISE_MS），
+    響度降約 3 dB（SFX_LEVEL['sfx_stamp']）；音色、長度、0.32 s 輕抬不變。輸出 sfx_stamp_v02.wav（v01 保留）。"""
     rng = _rng(9)
     n = secs(0.75)
-    x = soft_thud(n, 0.0, f0=170, f1=95, decay=0.07, rise_ms=14, amp=0.9)
+    r = STAMP_RISE_MS / 1000
+    x = soft_thud(n, 0.0, f0=170, f1=95, decay=0.07, rise_ms=STAMP_RISE_MS, amp=0.9)
     m = secs(0.12)
-    contact = bp(rng.standard_normal(m), 300, 2200) * env_points(m, [(0, 0), (0.014, 0.6), (0.04, 0.2), (0.12, 0)])
+    contact = bp(rng.standard_normal(m), 300, 2200) * env_points(m, [(0, 0), (r, 0.6), (r + 0.026, 0.2), (0.12, 0)])
     x[:m] += contact
     lift_i = secs(0.32)
     lm = secs(0.2)
     lift = bp(pink(lm, rng), 1200, 4000) * env_points(lm, [(0, 0), (0.05, 0.12), (0.2, 0)])
     x[lift_i:lift_i + lm] += lift
     x = lp(hp(x, 60), 5000)
-    return onset(x, 14)
+    return onset(x, STAMP_RISE_MS)
 
 
 def sfx_quiet_fold():
@@ -815,6 +821,8 @@ SFX_LEVEL = {
     'sfx_phone_noanswer': {'peak': -14.0, 'mmax': -28.0},
     'sfx_truck_arrive': {'peak': -12.0, 'mmax': -27.0},
     'sfx_crowd_short': {'peak': -14.0, 'mmax': -30.0},
+    # G6 精修：蓋章聲降約 3 dB（v01 最大瞬間響度 −25.3 LUFS → −28.3；起音變慢後同峰值能量少約 1.2 dB，峰值只降 1.8 dB）
+    'sfx_stamp': {'peak': -9.8, 'mmax': -28.3},
 }
 # 可循環的音效（一圈秒數）；不做淡入淡出、不經過限制器，接縫量測見 build_all.py
 SFX_LOOPS = {'sfx_wind': WIND_LOOP, 'sfx_gate_ambience': GATE_LOOP, 'sfx_phone_bed': PHONE_LOOP, 'sfx_crowd_far': CROWD_LOOP}

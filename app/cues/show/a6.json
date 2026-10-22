@@ -124,7 +124,7 @@
      },
      "pinan": {
       "visible": true,
-      "x": 0.75,
+      "x": 1.25,
       "z": 0.4,
       "facing": 1,
       "emotion": "worried",
@@ -251,7 +251,7 @@
     "characters": {
      "pinan": {
       "visible": true,
-      "x": 1.7,
+      "x": 1.85,
       "z": 0.3,
       "facing": 1,
       "emotion": "worried",
@@ -259,7 +259,7 @@
      },
      "xiaoyu": {
       "visible": true,
-      "x": 0.8,
+      "x": 1.05,
       "z": 0.05,
       "facing": 1,
       "emotion": "neutral",
@@ -267,7 +267,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": -0.1,
+      "x": 0.64,
       "z": 0.45,
       "facing": 1,
       "emotion": "neutral",
@@ -275,8 +275,8 @@
      },
      "zhezhe": {
       "visible": true,
-      "x": 2.3,
-      "z": 1.05,
+      "x": 3.95,
+      "z": 0.0,
       "emotion": "curious"
      }
     }
@@ -285,31 +285,31 @@
     {
      "name": "puppet.move",
      "start": 0.05,
-     "duration": 3.6,
+     "duration": 3.2,
      "target": "pinan",
      "ease": "inOut",
      "params": {
-      "dx": 1.0
+      "dx": 0.85
      }
     },
     {
      "name": "puppet.move",
      "start": 0.35,
-     "duration": 3.6,
+     "duration": 3.2,
      "target": "xiaoyu",
      "ease": "inOut",
      "params": {
-      "dx": 1.05
+      "dx": 0.8
      }
     },
     {
      "name": "puppet.move",
      "start": 0.65,
-     "duration": 3.6,
+     "duration": 3.2,
      "target": "xiaoqing",
      "ease": "inOut",
      "params": {
-      "dx": 1.1
+      "dx": 0.46
      }
     },
     {
@@ -318,7 +318,7 @@
      "duration": 0.6,
      "target": "zhezhe",
      "params": {
-      "yaw": -0.3
+      "yaw": -0.45
      }
     },
     {
@@ -327,7 +327,7 @@
      "duration": 0.6,
      "target": "zhezhe",
      "params": {
-      "yaw": 0.2
+      "yaw": -0.25
      }
     },
     {
@@ -418,9 +418,9 @@
      "target": "zhezhe",
      "params": {
       "pos": [
-       -3.0,
+       6.4,
        0,
-       1.05
+       0.0
       ]
      }
     },
@@ -449,7 +449,7 @@
     {
      "id": "a6_c002_02",
      "speaker": "品安",
-     "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+     "text": "那天你們走了以後，\n那個人把閃亮盒子塞給我。\n\n我沒有打開，\n可是我把它藏在書包裡。"
     },
     {
      "id": "a6_c002_03",
@@ -537,7 +537,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 1.0,
+      "x": 1.1,
       "z": 0.45,
       "facing": 1,
       "emotion": "worried",
@@ -758,7 +758,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 1.0,
+      "x": 1.1,
       "z": 0.45,
       "facing": 1,
       "emotion": "neutral",
@@ -873,7 +873,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 1.0,
+      "x": 1.1,
       "z": 0.45,
       "facing": 1,
       "emotion": "neutral",
@@ -1005,7 +1005,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q8 點燈收聲後",
-    "atMinute": 30.82,
+    "atMinute": 31.48,
     "escalate": {
      "behindSec": 150,
      "level": 2
@@ -1063,7 +1063,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 1.0,
+      "x": 1.1,
       "z": 0.45,
       "facing": 1,
       "emotion": "smile",
@@ -1154,7 +1154,7 @@
      "target": "xiaoqing",
      "ease": "inOut",
      "params": {
-      "dx": 2.6
+      "dx": 2.5
      }
     },
     {
@@ -1362,7 +1362,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a6_plaza",
+     "camera": "a6_glow",
      "light": 1
     },
     "characters": {
@@ -1462,22 +1462,22 @@
      }
     },
     {
-     "name": "fade.out",
-     "start": "a6_c007_01.end+0.20",
-     "duration": 0.6
-    },
-    {
-     "name": "camera.cut",
-     "start": "a6_c007_01.end+0.82",
-     "duration": 0.01,
+     "name": "camera.move",
+     "start": "a6_c007_01.end+0.10",
+     "duration": 4.2,
+     "ease": "sine",
      "params": {
       "to": "a6_full"
      }
     },
     {
-     "name": "fade.in",
-     "start": "a6_c007_01.end+0.86",
-     "duration": 0.6
+     "name": "camera.move",
+     "start": "a6_c007_01.end+4.45",
+     "duration": 3.6,
+     "ease": "sine",
+     "params": {
+      "to": "a6_glow"
+     }
     }
    ],
    "audioId": null,
@@ -1550,7 +1550,7 @@
     },
     {
      "id": "sfx_lamp_on",
-     "at": "a6_c007_02.start-2.80",
+     "at": "a6_c007_02.start-1.00",
      "gain": 0.7
     }
    ]
@@ -2036,6 +2036,7 @@
       "z": 0,
       "facing": 1,
       "pose": "sit",
+      "sit": 0.88,
       "strings": [
        "wrist"
       ],
@@ -2104,8 +2105,8 @@
      "target": "ale",
      "params": {
       "at": [
-       -2.02,
-       1.47
+       -1.9,
+       1.5
       ]
      }
     },
@@ -2126,18 +2127,29 @@
      }
     },
     {
+     "name": "puppet.chest",
+     "start": "a6_c009_02.start+0.90",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.85
+     }
+    },
+    {
      "name": "puppet.grab",
      "start": "a6_c009_02.start+0.90",
-     "duration": 0.55,
+     "duration": 0.8,
      "target": "ale",
+     "ease": "sine",
      "params": {
-      "to": 0.62
+      "to": 0.35
      }
     },
     {
      "name": "puppet.nod",
      "start": "a6_c009_02.start+0.90",
-     "duration": 1.4,
+     "duration": 1.9,
      "target": "ale",
      "params": {
       "depth": 0.8
@@ -2145,26 +2157,48 @@
     },
     {
      "name": "puppet.grab",
-     "start": "a6_c009_02.start+1.60",
-     "duration": 0.6,
+     "start": "a6_c009_02.start+2.00",
+     "duration": 0.8,
      "target": "ale",
+     "ease": "sine",
      "params": {
       "to": 1.0
      }
     },
     {
+     "name": "puppet.chest",
+     "start": "a6_c009_02.start+2.00",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a6_c009_02.start+3.50",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.85
+     }
+    },
+    {
      "name": "puppet.grab",
      "start": "a6_c009_02.start+3.50",
-     "duration": 0.55,
+     "duration": 0.8,
      "target": "ale",
+     "ease": "sine",
      "params": {
-      "to": 0.62
+      "to": 0.35
      }
     },
     {
      "name": "puppet.nod",
      "start": "a6_c009_02.start+3.50",
-     "duration": 1.4,
+     "duration": 1.9,
      "target": "ale",
      "params": {
       "depth": 0.8
@@ -2172,26 +2206,48 @@
     },
     {
      "name": "puppet.grab",
-     "start": "a6_c009_02.start+4.20",
-     "duration": 0.6,
+     "start": "a6_c009_02.start+4.60",
+     "duration": 0.8,
      "target": "ale",
+     "ease": "sine",
      "params": {
       "to": 1.0
      }
     },
     {
+     "name": "puppet.chest",
+     "start": "a6_c009_02.start+4.60",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a6_c009_03.start+0.90",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.85
+     }
+    },
+    {
      "name": "puppet.grab",
      "start": "a6_c009_03.start+0.90",
-     "duration": 0.55,
+     "duration": 0.8,
      "target": "ale",
+     "ease": "sine",
      "params": {
-      "to": 0.62
+      "to": 0.35
      }
     },
     {
      "name": "puppet.nod",
      "start": "a6_c009_03.start+0.90",
-     "duration": 1.4,
+     "duration": 1.9,
      "target": "ale",
      "params": {
       "depth": 0.8
@@ -2199,8 +2255,37 @@
     },
     {
      "name": "puppet.grab",
-     "start": "a6_c009_03.start+1.60",
-     "duration": 0.6,
+     "start": "a6_c009_03.start+2.00",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 1.0
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a6_c009_03.start+2.00",
+     "duration": 0.8,
+     "target": "ale",
+     "ease": "sine",
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_04.end-1.50",
+     "duration": 1.1,
+     "target": "ale",
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a6_c009_04.end-1.50",
+     "duration": 1.1,
      "target": "ale",
      "params": {
       "to": 1.0
@@ -2227,12 +2312,12 @@
      "start": "a6_c009_04.end+0.30",
      "duration": 0.01,
      "params": {
-      "to": "a6_shop_hands"
+      "to": "a6_shop_lamp"
      }
     },
     {
      "name": "strings.loosen",
-     "start": "a6_c009_04.end+0.60",
+     "start": "a6_c009_04.end+0.50",
      "duration": 1.2,
      "target": "ale",
      "params": {
@@ -2243,9 +2328,41 @@
      }
     },
     {
+     "name": "puppet.sit",
+     "start": "a6_c009_04.end+0.70",
+     "duration": 2.4,
+     "target": "ale",
+     "ease": "inOut",
+     "params": {
+      "to": 1.0
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a6_c009_04.end+0.70",
+     "duration": 2.4,
+     "target": "ale",
+     "ease": "inOut",
+     "params": {
+      "to": -0.05
+     }
+    },
+    {
      "name": "strings.fade",
-     "start": "a6_c009_04.end+0.80",
-     "duration": 2.2,
+     "start": "a6_c009_04.end+0.70",
+     "duration": 2.0,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.15
+     }
+    },
+    {
+     "name": "strings.fade",
+     "start": "a6_c009_04.end+2.70",
+     "duration": 0.4,
      "target": "ale",
      "params": {
       "anchors": [
@@ -2257,7 +2374,7 @@
     {
      "name": "strings.detach",
      "start": "a6_c009_04.end+3.10",
-     "duration": 0.5,
+     "duration": 0.4,
      "target": "ale",
      "params": {
       "anchors": [
@@ -2325,17 +2442,17 @@
    "sfx": [
     {
      "id": "sfx_fold",
-     "at": "a6_c009_02.start+1.65",
+     "at": "a6_c009_02.start+2.25",
      "gain": 0.4
     },
     {
      "id": "sfx_fold",
-     "at": "a6_c009_02.start+4.25",
+     "at": "a6_c009_02.start+4.85",
      "gain": 0.4
     },
     {
      "id": "sfx_fold",
-     "at": "a6_c009_03.start+1.65",
+     "at": "a6_c009_03.start+2.25",
      "gain": 0.4
     },
     {

@@ -134,5 +134,114 @@
     0.5818181818181818
    ]
   }
+ },
+ "fix2": {
+  "flag": {
+   "canvas": [
+    672,
+    1088
+   ],
+   "note": "同第四幕旗子（336×544）的 2 倍；旗桿 x 96–132"
+  },
+  "set-gate_school-building": {
+   "src": "assets/final/sets/gate/set-gate_school-building_v01.png",
+   "scale": 1.35,
+   "size": [
+    2430,
+    1094
+   ]
+  },
+  "set-gate_school-wall": {
+   "src": "assets/final/sets/gate/set-gate_school-wall_v01.png",
+   "scale": 2.0,
+   "size": [
+    2100,
+    434
+   ]
+  },
+  "set-gate_folding-gate": {
+   "src": "assets/final/sets/gate/set-gate_folding-gate_v01.png",
+   "scale": 2.0,
+   "size": [
+    300,
+    600
+   ]
+  },
+  "set-gate_guard-house": {
+   "src": "assets/final/sets/gate/set-gate_guard-house_v01.png",
+   "scale": 2.0,
+   "size": [
+    810,
+    900
+   ]
+  },
+  "set-gate_pillar": {
+   "src": "assets/final/sets/gate/set-gate_pillar_v01.png",
+   "scale": 2.0,
+   "size": [
+    244,
+    900
+   ]
+  },
+  "a5-ambulance": {
+   "src": "a5-ambulance_v02.png",
+   "out": "a5-ambulance_v03.png",
+   "scale": 1.5,
+   "size": [
+    1797,
+    922
+   ]
+  },
+  "a5-ambulance-door": {
+   "src": "a5-ambulance-door_v01.png",
+   "out": "a5-ambulance-door_v02.png",
+   "scale": 1.5,
+   "size": [
+    250,
+    660
+   ]
+  },
+  "a5-gurney": {
+   "src": "a5-gurney_v02.png",
+   "out": "a5-gurney_v03.png",
+   "scale": 1.5,
+   "size": [
+    780,
+    366
+   ]
+  },
+  "a5-corner": {
+   "src": "a5-corner_v01.png",
+   "out": "a5-corner_v02.png",
+   "scale": 2.5,
+   "size": [
+    715,
+    1485
+   ]
+  },
+  "student": {
+   "body_w": 0.6056,
+   "body_h": 1.5644,
+   "arm_w": 0.3489,
+   "arm_h": 0.5144,
+   "pivot_in_body": [
+    0.2644,
+    1.0322
+   ],
+   "arm_origin_from_pivot": [
+    0.1161,
+    -0.0822
+   ],
+   "fig_h_world": 1.55,
+   "raw": "review/G5/a5/raw/a5_student_v03.png",
+   "body_px": [
+    172,
+    444
+   ],
+   "arm_px": [
+    99,
+    146
+   ]
+  }
  }
 }

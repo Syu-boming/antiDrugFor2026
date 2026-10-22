@@ -30,3 +30,17 @@
 | assets/final/sets/a5_gate/a5-gurney_v02.png | 道具（透明）；520×244 | a5_gate | 擔架 v02：床墊上緣 0.93（同長椅座面），阿樂叔叔遠景坐在擔架上送進後車門；灰色金屬架、摺好的毯子；白色紙芯邊 | a5_c007 | 程式繪製（review/G5/a5/scripts/build_a5_art_fix1.py，修正第 1 輪） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍、私人光敏檢查）；驗收包 review/G5/a5/pack/ | v02 |
 | assets/final/sets/a5_gate/a5-student_v02.png | 遠景小紙人（透明）；218×405 | a5_gate | 轉角的低年級小朋友 v02（主線裁定：淺紙色、不透明、有紙纖維的小紙人；側面朝右、小黃帽、書包、只有一點眼睛；白色紙芯邊）；放在馬路對面的遠處轉角 | a5_c001 | 程式繪製（review/G5/a5/scripts/build_a5_art_fix1.py，修正第 1 輪） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍、私人光敏檢查）；驗收包 review/G5/a5/pack/ | v02 |
 | assets/final/sets/a5_gate/a5-student-arm_v02.png | 部件（透明）；70×128 | a5_gate | 小朋友揮手的手臂 v02（遠側、在身體後面） | a5_c001 | 程式繪製（review/G5/a5/scripts/build_a5_art_fix1.py，修正第 1 輪） | 自製（程式繪製／由專案母版改畫） | 代理目視（私人建置試拍、私人光敏檢查）；驗收包 review/G5/a5/pack/ | v02 |
+
+## 修正第 2 輪（2026-10-22，review/G5/a5/scripts/build_a5_art_fix2.py、paperize.py、student_v03.py）
+
+| 檔案 | 類型 | 景／角色 | 內容 | 用在 | 來源 | 授權 | 檢查 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/a5_gate/a5-student_v03.png | 遠景小紙人（透明）；172×444 | a5_gate | 轉角的低年級小朋友 v03：同畫風不透明紙片小人（黃色安全帽、白上衣、深藍短褲、淺棕書包、白色紙芯邊），三分之四側面朝畫面右；人物高 1.55 世界單位；只在 a5_c001 遠景轉角鏡頭出現 | a5_c001 | Codex 生成（codex_log 修正第 2 輪第 1 張 → review/G5/a5/raw/a5_student_v03.png）；student_v03.py 沿袖口切出手臂 | Codex 內建 image_gen（ChatGPT 額度）生成，附專案母版當參考；使用者自有 | 代理目視（私人建置試拍、私人光敏檢查）；驗收包 review/G5/a5/pack/ | v03 |
+| assets/final/sets/a5_gate/a5-student-arm_v03.png | 部件（透明）；99×146 | a5_gate | 小朋友舉高揮手的手臂（在身體後面，以袖口為樞紐擺動；放下時轉到身體旁邊） | a5_c001 | 同上（切開） | 同上 | 同上 | v03 |
+| assets/final/sets/a5_gate/a5-flag_v01.png | 道具（透明）；672×1088 | a5_gate | 陳伯伯的導護旗（第五幕版）：黃綠紙旗＋米白條、旗面柔和波紋、紙纖維、白色紙芯邊＋深色細線、木紋旗桿；比例與握點同第四幕旗子（2 倍解析度） | a5_c001、a5_c007 | 程式繪製（build_a5_art_fix2.py flag） | 自製（程式繪製） | 同上 | v01 |
+| assets/final/sets/a5_gate/a5-flag-back_v01.png | 道具（透明）；672×1088 | a5_gate | 導護旗背面（米白條只透出一點、波紋方向相反）：a5_c005 環顧鏡頭在街角小店牆邊露出的一角（陳伯伯背對這邊；旗桿藏在牆後），不跟著場景降彩 | a5_c005、a5_c006 | 同上 | 自製（程式繪製） | 同上 | v01 |
+| assets/final/sets/a5_gate/set-gate_school-building_v01.png 等 5 張（school-wall、folding-gate、guard-house、pillar） | 景片（透明） | a5_gate | 第四幕校門口景片的第五幕紙感版：放大 1.35–2 倍、紙片浮雕（色塊邊左上亮右下暗）、深色線右下淡投影、紙纖維與斑駁、外輪廓紙邊；造形、平均亮度不變。imageSet 先找 sets/a5_gate/<id>，所以只有第五幕讀到（第四幕的 gate 景與圖不變） | a5_c001–a5_c007 | assets/final/sets/gate/set-gate_*_v01.png → paperize.py | 自製（由專案素材改畫） | 同上 | v01 |
+| assets/final/sets/a5_gate/a5-ambulance_v03.png | 道具（透明）；1797×922 | a5_gate | 救護車 v03＝v02 放大 1.5 倍＋paperize（紙纖維、紙片浮雕、紙邊）；比例不變 | a5_c007 | 同上 | 自製 | 同上 | v03 |
+| assets/final/sets/a5_gate/a5-ambulance-door_v02.png | 部件（透明）；250×660 | a5_gate | 後車門 v02（同上處理） | a5_c007 | 同上 | 自製 | 同上 | v02 |
+| assets/final/sets/a5_gate/a5-gurney_v03.png | 道具（透明）；780×366 | a5_gate | 擔架 v03（同上處理） | a5_c007 | 同上 | 自製 | 同上 | v03 |
+| assets/final/sets/a5_gate/a5-corner_v02.png | 景片（透明）；715×1485 | a5_gate | 街角小店 v02＝v01 放大 2.5 倍＋paperize | a5_c001、a5_c005、a5_c007 | 同上 | 自製 | 同上 | v02 |

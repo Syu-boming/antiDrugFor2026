@@ -1,0 +1,25 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: TWO background classmates seen from BEHIND, for a children's paper-cut puppet theater classroom scene. LANDSCAPE orientation, request the wide 3:2 size (1536x1024), with a TRANSPARENT background (real alpha channel).
+
+TWO reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND is an approved 9-year-old child of the same show, ONLY for scale, proportions, line weight and rendering style. Do NOT copy that child's design: the two classmates are ordinary background children who must look clearly DIFFERENT from him (different hair, different clothes, different colors).
+
+WHAT TO DRAW (very important):
+- Two 9-year-old schoolchildren standing side by side with a clear empty gap between them (they must NOT touch or overlap, so each can be cut out separately), both seen from DIRECTLY BEHIND (back view): we see the backs of their heads, their backs and the backs of their legs. NO faces, no eyes, no ears turned toward us, no profile. They are calmly standing in the classroom after school, as if about to go home.
+- Child A (on the left of the picture): short neat black hair seen from behind; a plain pale sky-blue short-sleeve T-shirt; dark navy shorts; white socks; light gray sneakers; a small pale butter-yellow school backpack with two shoulder straps on his back.
+- Child B (on the right of the picture): dark brown shoulder-length hair tied in a low ponytail with a plain light-green hair tie; a plain pale lavender long-sleeve top; light gray long pants; white sneakers; a small soft sage-green school backpack with two shoulder straps on her back.
+- Colors are soft, muted and light (paper-like pastel tones), calmer than the main characters, so they stay quietly in the background. No saturated red anywhere.
+- Same natural picture-book proportions as the reference child: about 4.3 heads tall, slim, natural, NOT chibi, NOT big-headed, NOT geometric, NOT a mannequin: real children with natural hair texture, natural arms and hands, clothing folds drawn with thin dark lines.
+- Both stand upright, both soles flat on the floor, arms relaxed (one may hold a backpack strap). The whole of both figures from the top of the hair to the soles is visible with empty transparent margin all around (nothing cropped).
+
+ART STYLE (match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" style and the approved character reference, but apply ALL of these corrections):
+- Each figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline. Fully opaque, not translucent, not a silhouette, not gray.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of each figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details use only thin dark lines, never extra white borders.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no glow, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture.
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no desks, no chairs, no scenery, no frame, no card behind the figures, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no badges, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions may be generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/a3/raw/set_a3_classmates_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/a3/raw/set_a3_classmates_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

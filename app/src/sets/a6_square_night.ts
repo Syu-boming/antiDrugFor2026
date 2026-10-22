@@ -6,6 +6,7 @@
 //   - 騎樓燈籠串：a6_c007 主燈亮了以後一盞接一盞亮（單盞 1.2 秒漸亮、相鄰間隔 0.45 秒）
 //   - 台口上方八盞燈：主線的 src/stage/lamps.ts（全劇共用）；本檔的備用燈列 OWN_LAMP_ROW＝false 不建立
 //   - 八盞燈流進廣場的光：一串小紙燈珠從台口上方八盞燈的中央沿弧線往主燈一顆一顆亮起（亮度固定，不閃）
+//   - 修正第 2 輪：Q8 題卡題目在「，」處換行（只調排版，文字不變；見 q8Layout）；鏡位 a6_glow（光流進廣場的畫面）
 // 光敏：每一區只有一次單向漸亮；沒有忽明忽暗；燈的泛光（加法混色）透明度只隨亮度慢慢變。
 import {
   AdditiveBlending, BufferAttribute, BufferGeometry, CanvasTexture, Color, DoubleSide, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial,
@@ -271,6 +272,29 @@ function buildCatLantern(mats: Material[], haloTex: CanvasTexture): CatLantern {
   };
 }
 
+// ───────────────────────────── Q8 題目斷行（修正第 2 輪） ─────────────────────────────
+// 題卡（src/ui/quizcard.ts，共用元件）用 textContent 自動斷行，Q8 會斷成「……怎麼／辦？」。
+// 題目文字不能改（engine-test 逐字比對八題_v03.md），所以只調排版：題卡寫入 Q8 題目後，把同一段文字拆成兩個 inline-block
+//（在「，」後面），textContent 完全不變；放得下一行就一行，放不下就在「，」處換行。字級不動（題卡樣式 0.063H ≈ 68 px）。
+const Q8_TEXT = '朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？';
+const Q8_BREAK = Q8_TEXT.indexOf('，') + 1;
+function q8Layout(el: Element | null): void {
+  if (!el || el.textContent !== Q8_TEXT || el.childNodes.length !== 1 || el.firstChild?.nodeType !== 3) return;
+  const doc = el.ownerDocument;
+  const part = (s: string): HTMLElement => { const sp = doc.createElement('span'); sp.style.display = 'inline-block'; sp.textContent = s; return sp; };
+  el.replaceChildren(part(Q8_TEXT.slice(0, Q8_BREAK)), part(Q8_TEXT.slice(Q8_BREAK)));
+}
+let q8Observer: MutationObserver | null = null;
+/** 裝一次（整頁共用；題卡換題時 quizcard.ts 重寫 textContent → 觀察到變化當下就重排，畫面上不會有斷錯的一格） */
+function installQ8Layout(): void {
+  if (q8Observer || typeof document === 'undefined' || typeof MutationObserver === 'undefined') return;
+  const el = document.querySelector('#quiz-card .quiz-q');
+  if (!el) return;
+  q8Observer = new MutationObserver(() => q8Layout(el));
+  q8Observer.observe(el, { childList: true, characterData: true, subtree: true });
+  q8Layout(el);
+}
+
 // ───────────────────────────── 位置與鏡位 ─────────────────────────────
 const MAIN = { x: -3.9, z: -0.8 };
 const LAMP_ROW = { y: 7.05, z: 4.05, x0: -5.6, dx: 1.6, w: 0.5 };
@@ -281,7 +305,7 @@ export const A6_SQUARE_CAMERAS: Record<string, CameraPreset> = {
   /** 孩子與主燈（小晴、小宇說話） */
   a6_kids: C([-1.55, 1.95, 14.8], [-1.55, 1.76, 0]),
   /** 品安近景（抓著書包背帶，一直沒說話；小晴、小宇在左） */
-  a6_pinan: C([0.85, 1.55, 6.9], [0.85, 1.42, 0]),
+  a6_pinan: C([1.3, 1.55, 6.9], [1.3, 1.42, 0]),       // 修正第 2 輪：品安往右站 0.5（燈籠架左柱不壓在她身上）
   /** 燈籠架後的角落：三人近景（架子的竹竿與燈籠在前景框住三人） */
   a6_secret: C([1.65, 1.8, 12.4], [1.65, 1.66, 0]),
   /** a6_c005 回故事＝a6_c006 起點：同 a6_secret 往左 0.5（帳篷前的林老師在畫面右緣外） */
@@ -300,6 +324,8 @@ export const A6_SQUARE_CAMERAS: Record<string, CameraPreset> = {
   a6_plaza: C([-2.4, 2.4, 17.5], [-2.4, 2.2, 0]),
   /** 後拉：台口＋廣場大全景（台口上方八盞燈都亮著） */
   a6_full: C([0, 4.6, 36], [0, 4.4, 0]),
+  /** 修正第 2 輪：光流進廣場、主燈亮起、騎樓燈籠一盞接一盞的畫面（比台口近一級；主燈、廣場群像、上方留夜空給光流進來） */
+  a6_glow: C([-1.5, 2.8, 20.2], [-1.5, 2.55, 0]),
 };
 
 export const A6_SQUARE_NIGHT: SetEntry = {
@@ -410,6 +436,10 @@ export const A6_SQUARE_NIGHT: SetEntry = {
         baseUpdate?.(o);
         const { tl, t, world } = o;
         const id = tl.cue.id;
+        if (id === 'a6_c003' || id === 'a6_c004' || id === 'a6_c005') {
+          installQ8Layout();
+          if (typeof document !== 'undefined') q8Layout(document.querySelector('#quiz-card .quiz-q'));
+        }
         // 主燈：a6_c001 糊紙 0.55 → 0.8（小晴說「幫他把主燈完成」之後加快），a6_c002–c006 停在 0.8，a6_c007 全部糊好
         let paper = 0.8, glow = 0, stream = 0, townT = -1;
         if (id === 'a6_c001') {
@@ -418,7 +448,9 @@ export const A6_SQUARE_NIGHT: SetEntry = {
         } else if (id === 'a6_c007') {
           paper = 1;
           const s2 = lineT(tl, 'a6_c007_02', 'start', 12);
-          const t0 = s2 - 5.0;                 // 光流（2.6 秒）→ 主燈漸亮（2.6 秒）→ 騎樓燈籠一盞接一盞
+          // 光流（2.6 秒）→ 主燈漸亮（2.6 秒）→ 騎樓燈籠一盞接一盞。修正第 2 輪：鏡頭先後拉到台口（看得到八盞燈），
+          // 光從燈下流出時鏡頭跟著推回廣場（a6.json），所以光流晚 1.8 秒起：主燈在推回後的畫面裡亮、騎樓燈籠在旁白「都亮了」時亮
+          const t0 = s2 - 3.2;
           stream = clamp((t - t0) / 2.6);
           glow = sine01((t - t0 - 2.2) / 2.6);
           townT = t - (t0 + 3.6);

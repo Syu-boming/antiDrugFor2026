@@ -1,0 +1,4 @@
+- 2026-10-22 開工：讀初步完成說明、v1.3 第 8 節、v1.2 第 1、3、5–10、19、23 節；建 teacher/ 目錄；字型用專案內 Noto Sans TC（review/G5/a3/fonts，SIL OFL 1.1，複製到 teacher/fonts/）。時長原型：全劇播放 0 級 1332.8 秒、1 級 1309.1、2 級 1277.2（esbuild 打包 app/src/cues 的 mergeShow＋buildTimelines，配音長度 ffprobe 最新版 wav）。
+- 教師講稿完成（teacher/教師講稿.md＋html）：逐 cue 71 列、八題回饋、互動講法、查核點與壓縮、輪區表；預估總長 35:57（≤38:00，緩衝 2 分 03 秒）；題目比對 112 項全部一致。產生器 tools/teacher_docs.mjs＋teacher/src/{data,common,oneliners,script_doc}.mjs。
+- 其他資料完成：一頁操作卡、故障一頁卡（各 A4 一頁）、PDF 題卡學生版 8 張＋教師版（封面＋8 張）、教案、觀課導覽單（一頁）、參與小卡（10 張／頁）、角色貼紙（9 款＋圓形 20 張）、成果紀錄範本（2 頁）、導師匿名回饋單（1 頁）。角色圖從 assets 母版裁切、折折用 app 的 zhezhe.ts 透明背景渲染（teacher/img）。
+- 自動檢查 14 項全部通過：八題 cue↔定稿↔旁白 112 項、PDF 題卡 pdftotext 抽字逐題比對、用語（藥名、貶稱、刑度、喪屍、灰線、簡體、大陸用語、署名）、必要旁白、PDF 頁數與字型。PDF 改用子集固定字重（CID TrueType），全部 PDF 從約 27 MB 降到約 11 MB（貼紙圖占 8 MB）。teacher/README.md 寫好檔案表與重建指令。

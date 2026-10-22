@@ -13,3 +13,12 @@
 2026-10-21 22:5x（接續）：沒有再生成。其餘全部程式繪製或鏡射：小晴 forehead-l（forehead_v06 鏡射）、林老師 stand-m（母版鏡射）、教室同學背影 students_v02（取代 v01 灰色人形）。上限 4 張用了 3 張，剩 1 張未用。
 
 2026-10-22 修正第 1 輪：沒有生成（上限 2 張，用 0 張）。盒角灰色短棒用程式修圖（review/G5/a3/scripts/build_a3_fix1_art.py → assets/final/sets/a3_arcade/handbox_v01.png）；品安、林老師、孩子的新走位都用既有姿勢（walk_straps_m、stand、stand_m、standwatch）。
+
+## 2026-10-22 修正第 2 輪（polish；上限 2 張，用 2 張，沒有重抽）
+
+| 第幾次 | 時間 | 檔名（raw） | 用途 | 結果 |
+|---|---|---|---|---|
+| 1 | 2026-10-22 11:1x | pose_lin_phone_v01 | 林老師朝右、手機貼耳講電話（a3_c008 說完最後一句轉身講電話、走出教室；導演 b2r2 G1「老師走出畫面前舉起手機」） | 採用。參考圖：G2a/S4 畫風、chr-lin_master_v01、chr-xiaoyu_master_v04（比例）。手機是素面深灰圓角長方形（沒有螢幕內容、標誌、鏡頭）、臉完整露出；白邊 8 px、霧邊 0、左右 L* 差 0.8、酒紅毛衣 ΔE 2.6（對母版）。處理：scripts/build_a3_fix2_art.py → assets/final/chr-lin_pose-phone_v01.png，登記 show_characters.json lin.poses.phone（只加這一筆） |
+| 2 | 2026-10-22 11:1x | set_a3_classmates_v01 | 教室後排兩個同學的背影（取代 students_v02 的幾何背影；美術 b2r2 抽查第 3 項） | 採用。背面（看不到臉）、同畫風、不透明、有紙纖維；衣服淺色低彩度（淺藍 T 恤＋鵝黃書包、淡紫上衣＋鼠尾草綠書包），和小晴、小宇的配色不同、沒有飽和紅；白邊 10 px、霧邊 0。程式切成兩片 → assets/final/sets/a3_classroom/classmate-a_v01.png、classmate-b_v01.png；students_v01／v02 已刪除（沒有地方再用） |
+
+紀錄：review/G5/a3/import.json（pose_lin_phone_v01、set_a3_classmates_v01）。

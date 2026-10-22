@@ -15,6 +15,10 @@
 //   { "do": "brick",   "to": 0.3, "start": …, "duration": 0.8 }         對街紅磚騎樓降彩（0＝原色、1＝全灰；鏡頭移動時約 0.3，細格紅色光敏）
 //   { "do": "lift",    "to": 1 }                                          孩子身後的中景景片（警衛室、校門柱、折疊門、校內圍牆）提亮：1＝貼圖顏色 ×(1＋LIFT_GAIN[景片])
 //                                                                         （G5 修正第 2 輪：兒童站位背景投影亮度 ≥ 0.50，D-G2-06）
+//   { "do": "haze",    "to": 1 }                                          校內那一側的景片（校舍、校內圍牆、警衛室、折疊門、門柱）蒙一層暖白（自發光加量 HAZE_ADD；
+//                                                                         像隔一張薄描圖紙＝輕微景深：深色窗格、粉磚帶、樹籬加最多，淺色牆面幾乎到頂；不受舞台燈影響）
+//                                                                         （G6 精修：兒童站位背景投影亮度 ≥ 0.50，D-G2-06；第四幕才寫，第三、五幕不受影響）
+//   { "do": "hazeStreet", "to": 1 }                                       對街中景（小貨車、路口大樹）也蒙一點 HAZE_STREET（隔馬路看阿樂叔叔的鏡頭要和孩子鏡頭亮度相近才能硬切）
 //   { "do": "gateOpen", "to": 1 }                                         折疊門收起來（放學時校門開著）：鐵柵往左邊門柱收攏成 GATE_OPEN_W 寬
 //                                                                         （G5 修正第 2 輪：小晴常站在折疊門前，深色鐵柵讓兒童站位背景偏暗）
 //   { "do": "zzpatch", "to": 1 }                                          原點的地板補片：引擎 stage.ts 給程式角色（折折）的接觸陰影放在 root 位置，
@@ -103,6 +107,14 @@ const LIN_HAND: [number, number] = [0.288, 1.462];
 const FAR_PIECES = ['sq-mountains', 'sq-backrow', 'school-building', 'school-wall', 'sq-tree-a'];
 /** setTrack lift 提亮的景片（layout.json 的 id）與增益（線性顏色倍數；×1.45 ≈ sRGB 明度 +18%；折疊門的深色鐵柵另外多提一點） */
 const LIFT_GAIN: Record<string, number> = { 'guard-house': 0.45, pillar: 0.45, 'pillar-2': 0.45, 'school-wall': 0.45, 'folding-gate': 0.8 };
+/** setTrack haze 的景片（layout.json 的 id）與自發光加量（線性；HAZE_COLOR × 量 × 軌值）。加法：暗的地方提得多、亮的地方幾乎不變 */
+const HAZE_ADD: Record<string, number> = {
+  'sq-mountains': 0.15, 'sq-backrow': 0.26, 'school-building': 0.36,                       // 遠景：最朦（空氣透視）
+  'school-wall': 0.3, 'folding-gate': 0.3, 'guard-house': 0.12, pillar: 0.14, 'pillar-2': 0.14,   // 孩子身後的中景
+};
+/** setTrack hazeStreet：對街的中景（小貨車、路口大樹）也蒙一點（隔馬路看阿樂叔叔的鏡頭和孩子鏡頭亮度拉近，才能硬切） */
+const HAZE_STREET: Record<string, number> = { 'prop-truck': 0.1, 'sq-tree-a': 0.15 };
+const HAZE_COLOR = new Color('#fff0dc');
 /** setTrack gateOpen：折疊門收攏後的寬度比例（layout 寬 0.9；左緣貼著右邊那根門柱不動） */
 const GATE_OPEN_W = 0.3;
 /** setTrack zzpatch：補片範圍（世界 x、z；接觸陰影 0.6×0.5 置中在 (0, 0.05)） */
@@ -214,6 +226,17 @@ export function buildGate(ctx: SetContext): BuiltSet {
     if (m && m.color) liftMats.push({ mat: m, c0: m.color.clone(), gain });
   });
   let liftOn = 0;
+  // 校內那一側蒙一層暖白（setTrack haze；layout 的這些景片沒有自發光貼圖，emissive 是整片均勻加量）
+  const hazeMats: { mat: MeshStandardMaterial; amt: number; street: number }[] = [];
+  group.traverse((o) => {
+    const id = o.name.startsWith('pop:') ? o.name.slice(4) : '';
+    const amt = HAZE_ADD[id] ?? 0, street = HAZE_STREET[id] ?? 0;
+    if (!amt && !street) return;
+    const m = (o.children[0] as Mesh | undefined)?.material as MeshStandardMaterial | undefined;
+    if (m && m.emissive && !m.emissiveMap) hazeMats.push({ mat: m, amt, street });
+  });
+  if (brickOv) hazeMats.push({ mat: brickOv.material as MeshStandardMaterial, amt: HAZE_ADD['sq-backrow'], street: 0 });   // 紅磚降彩疊層也蒙同樣的白
+  let hazeOn = '';
   // 折疊門（setTrack gateOpen）
   let foldGate: Mesh | null = null, foldGateW = 0.9;
   group.traverse((o) => { if (o.name === 'pop:folding-gate' && o.children[0]) foldGate = o.children[0] as Mesh; });
@@ -394,6 +417,8 @@ export function buildGate(ctx: SetContext): BuiltSet {
       }
       const lf = clamp(trackValue(tl, 'lift', t, 0));
       if (lf !== liftOn) { for (const L of liftMats) L.mat.color.copy(L.c0).multiplyScalar(1 + L.gain * lf); liftOn = lf; }
+      const hz = clamp(trackValue(tl, 'haze', t, 0)), hs = clamp(trackValue(tl, 'hazeStreet', t, 0));
+      if (`${hz},${hs}` !== hazeOn) { for (const H of hazeMats) H.mat.emissive.copy(HAZE_COLOR).multiplyScalar(H.amt * hz + H.street * hs); hazeOn = `${hz},${hs}`; }
       if (zzPatch) zzPatch.visible = trackValue(tl, 'zzpatch', t, 0, 'linear') > 0.5;
       const fg = foldGate as Mesh | null;
       if (fg) {

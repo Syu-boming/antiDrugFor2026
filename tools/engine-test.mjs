@@ -667,7 +667,7 @@ console.log('\n八、G5 全劇（?cues=show）：配音、八題、燈、必要�
   check('每個 cue 都有景（登記表或 assets/final/sets/<景名>/layout.json）', noSet.length === 0 && merged.cues.length > 0, noSet.slice(0, 5).join('、') || [...new Set(merged.cues.map((c) => c.set))].join('、'));
   // G4 已完成的 cue 原樣搬進全劇（表演、鏡頭、配樂、音效、時間不動；流程與授課時鐘欄位除外）
   const g4 = JSON.parse(readFileSync(join(ROOT, 'app/cues/g4.json'), 'utf8'));
-  const allow = { a0_c001: ['lines', 'title', 'teacherNote', 'initialState', 'animation']  /* 主線裁定（REVIEW.md G5 第一批驗收第 1 輪 2）：無角色＋劇名紙條 */, a2_c004: ['checkpoint'], a8_c002: ['initialState', 'teacherNote'], a8_c003: ['checkpoint'] };
+  const allow = { a0_c001: ['lines', 'title', 'teacherNote', 'initialState', 'animation']  /* 主線裁定（REVIEW.md G5 第一批驗收第 1 輪 2）：無角色＋劇名紙條 */, a2_c004: ['checkpoint'], a8_c002: ['initialState', 'teacherNote', 'animation']  /* 主線授權（REVIEW.md G5 第二批重驗）：合幕前回台口全景；布幕與署名卡動畫另由 a8_c003 與驗收確認 */, a8_c003: ['checkpoint'] };
   const g4Bad = [];
   for (const c of g4.cues) {
     const sc = byId.get(c.id);

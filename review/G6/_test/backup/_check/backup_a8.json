@@ -1,0 +1,223 @@
+{
+ "file": "review/G6/_test/backup/backup_a8.mp4",
+ "act": "a8",
+ "title": "閉幕",
+ "generated": "2026-10-22 10:33",
+ "size_MB": 26.5,
+ "frames_expected": 1182,
+ "duration_expected_sec": 39.4,
+ "holds": {
+  "hold": 2,
+  "quiz": 3,
+  "title": 3,
+  "end": 12,
+  "autoAdvance": 0
+ },
+ "previous_cue": "a7_c003",
+ "chapters": [
+  {
+   "id": "a8_c001",
+   "title": "謝幕（a8_c001）",
+   "start_ms": 0,
+   "end_ms": 20600,
+   "start": "00:00.0"
+  },
+  {
+   "id": "a8_c002",
+   "title": "布幕合攏（a8_c002）",
+   "start_ms": 20600,
+   "end_ms": 26000,
+   "start": "00:20.6"
+  },
+  {
+   "id": "a8_c003",
+   "title": "片尾署名卡（a8_c003）",
+   "start_ms": 26000,
+   "end_ms": 39400,
+   "start": "00:26.0"
+  }
+ ],
+ "cues": [
+  {
+   "id": "a8_c001",
+   "kind": "scene",
+   "title": "謝幕",
+   "chapter_start_sec": 0,
+   "cue_start_sec": 0.6,
+   "duration_sec": 18,
+   "pause_from_sec": 18.6,
+   "hold_sec": 2,
+   "preroll_sec": 0.6,
+   "teacherNote": "播完停格，等老師按下一步。",
+   "quiz": null
+  },
+  {
+   "id": "a8_c002",
+   "kind": "curtain",
+   "title": "布幕合攏",
+   "chapter_start_sec": 20.6,
+   "cue_start_sec": 20.6,
+   "duration_sec": 5.4,
+   "pause_from_sec": 26.0,
+   "hold_sec": 0,
+   "preroll_sec": 0,
+   "teacherNote": "最後謝幕等待時按一次：追光收掉、燈光回到台口（約 1.4 秒）→ 鏡頭等速慢慢拉回台口全景（5 秒；光敏：移動放慢、不加速）→ 摺層紙布幕約 2 秒合上（3.3 秒起，閉幕曲同時進來），接著自動顯示同款署名卡，保持畫面。（全劇版：起始畫面是謝幕後全體角色、沒有操偶線；閉幕動作與 G4 相同。）",
+   "quiz": null
+  },
+  {
+   "id": "a8_c003",
+   "kind": "title",
+   "title": "片尾署名卡",
+   "chapter_start_sec": 26,
+   "cue_start_sec": 26,
+   "duration_sec": 1.4,
+   "pause_from_sec": 27.4,
+   "hold_sec": 12,
+   "preroll_sec": 0,
+   "teacherNote": "結束：停在署名卡，不自動重播、不跳網站。閉幕曲接著播完（署名卡出現時主題句進入，約 10 秒自然淡出），所以這一格保留配樂音量。",
+   "quiz": null
+  }
+ ],
+ "mix": {
+  "source": "tools/g4_review_pack.py mix()（act_review_pack.py 同一套）＋引擎配樂規則修正",
+  "music_semantics": [],
+  "sample_peak_dBFS": -2.14,
+  "clipped_samples": 0,
+  "missing_audio": []
+ },
+ "capture": {
+  "img": "png",
+  "shots": 765,
+  "written": 1182,
+  "capture_sec": 74.2,
+  "capture_ms_per_frame": 97,
+  "page_errors": [],
+  "encoder": {
+   "crf": 16,
+   "preset": "slow",
+   "profile": "high",
+   "level": "4.1",
+   "pix_fmt": "yuv420p",
+   "colorspace": "bt709",
+   "gop": 60,
+   "abr": "256k"
+  }
+ },
+ "capture_external_requests": 0,
+ "timing": {
+  "img": "png",
+  "capture_ms_per_frame": 97,
+  "capture_sec": 74.2,
+  "mux_sec": 0.9,
+  "mux_sec_per_video_sec": 0.022,
+  "verify_sec": 2.3,
+  "post_sec_per_video_sec": 0.08
+ },
+ "verify": {
+  "video": {
+   "codec_name": "h264",
+   "profile": "High",
+   "level": 41,
+   "width": 1920,
+   "height": 1080,
+   "pix_fmt": "yuv420p",
+   "r_frame_rate": "30/1",
+   "avg_frame_rate": "30/1",
+   "color_space": "bt709",
+   "color_primaries": "bt709",
+   "color_transfer": "bt709",
+   "color_range": "tv",
+   "bit_rate": "5186133",
+   "nb_read_packets": "1182",
+   "duration": "39.400000"
+  },
+  "audio": {
+   "codec_name": "aac",
+   "profile": "LC",
+   "sample_rate": "48000",
+   "channels": 2,
+   "bit_rate": "182065",
+   "duration": "39.400000"
+  },
+  "format": {
+   "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+   "duration": "39.400000",
+   "size": "26484547",
+   "bit_rate": "5377572"
+  },
+  "frames_ok": true,
+  "duration_diff_av_sec": 0.0,
+  "chapters_in_file": 3,
+  "chapters_ok": true,
+  "chapter_titles_in_file": [
+   "謝幕（a8_c001）",
+   "布幕合攏（a8_c002）",
+   "片尾署名卡（a8_c003）"
+  ],
+  "av_sync": {
+   "method": "成品 AAC 音軌（解碼成 48 kHz 單聲道）與該句配音檔（從語音起點前 50 ms 取 1 秒）在預定時間 ±200 ms 內做正規化互相關；lag_ms＝成品比預定晚多少毫秒",
+   "lines": 1,
+   "max_abs_lag_ms": 0.0,
+   "median_abs_lag_ms": 0.0,
+   "min_corr": 0.973,
+   "pass_le_1_frame": true,
+   "rows": [
+    {
+     "line": "a8_c001_01",
+     "cue": "a8_c001",
+     "expected_sec": 14.08,
+     "lag_ms": 0.0,
+     "corr": 0.973
+    }
+   ]
+  },
+  "frame_check": {
+   "method": "擷取時存下的原始截圖 vs 成品解碼後同一格號（與前後各一格）的 PSNR；同格號最高＝沒有錯位（靜止畫面前後格相同時以 ±0.05 dB 視為相同）",
+   "samples": 4,
+   "min_psnr_dB": 39.55,
+   "mean_psnr_dB": 41.46,
+   "all_aligned": true,
+   "rows": [
+    {
+     "frame": 1,
+     "time_sec": 0.033,
+     "psnr_same_dB": 40.91,
+     "psnr_prev_dB": 40.55,
+     "psnr_next_dB": 35.09,
+     "aligned": true
+    },
+    {
+     "frame": 288,
+     "time_sec": 9.6,
+     "psnr_same_dB": 41.42,
+     "psnr_prev_dB": 29.94,
+     "psnr_next_dB": 30.3,
+     "aligned": true
+    },
+    {
+     "frame": 699,
+     "time_sec": 23.3,
+     "psnr_same_dB": 39.55,
+     "psnr_prev_dB": 21.7,
+     "psnr_next_dB": 21.77,
+     "aligned": true
+    },
+    {
+     "frame": 801,
+     "time_sec": 26.7,
+     "psnr_same_dB": 43.95,
+     "psnr_prev_dB": 37.98,
+     "psnr_next_dB": 42.64,
+     "aligned": true
+    }
+   ]
+  },
+  "loudness_final": {
+   "I_LUFS": -19.5,
+   "LRA_LU": 9.5,
+   "TP_dBTP": -2.1
+  },
+  "decoded_audio_sec": 39.4,
+  "all_ok": true
+ }
+}

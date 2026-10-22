@@ -250,6 +250,20 @@
   },
   {
    "type": "luma",
+   "region": "x14_y2",
+   "px": [
+    1680,
+    240,
+    1800,
+    360
+   ],
+   "count_per_sec": 2,
+   "window_start": 10.9,
+   "cue": "a0_c001",
+   "cue_t": 8.9
+  },
+  {
+   "type": "luma",
    "region": "x13_y0",
    "px": [
     1560,
@@ -432,20 +446,6 @@
   },
   {
    "type": "luma",
-   "region": "x11_y1",
-   "px": [
-    1320,
-    120,
-    1440,
-    240
-   ],
-   "count_per_sec": 2,
-   "window_start": 43.5,
-   "cue": "a0_c003",
-   "cue_t": -0.5667
-  },
-  {
-   "type": "luma",
    "region": "x12_y1",
    "px": [
     1440,
@@ -460,11 +460,11 @@
   },
   {
    "type": "luma",
-   "region": "x12_y2",
+   "region": "x11_y2",
    "px": [
-    1440,
+    1320,
     240,
-    1560,
+    1440,
     360
    ],
    "count_per_sec": 2,
@@ -1636,31 +1636,17 @@
   },
   {
    "type": "luma",
-   "region": "x14_y2",
+   "region": "x6_y3",
    "px": [
-    1680,
-    240,
-    1800,
-    360
-   ],
-   "count_per_sec": 2,
-   "window_start": 83.2333,
-   "cue": "a0_c004",
-   "cue_t": 11.7333
-  },
-  {
-   "type": "luma",
-   "region": "x5_y4",
-   "px": [
-    600,
-    480,
     720,
-    600
+    360,
+    840,
+    480
    ],
    "count_per_sec": 2,
-   "window_start": 103.6667,
-   "cue": "a0_c005",
-   "cue_t": 0.0667
+   "window_start": 87.1667,
+   "cue": "a0_c004",
+   "cue_t": 15.6667
   },
   {
    "type": "luma",
@@ -1706,17 +1692,17 @@
   },
   {
    "type": "luma",
-   "region": "x6_y3",
+   "region": "x5_y4",
    "px": [
+    600,
+    480,
     720,
-    360,
-    840,
-    480
+    600
    ],
    "count_per_sec": 2,
-   "window_start": 103.7333,
+   "window_start": 103.7,
    "cue": "a0_c005",
-   "cue_t": 0.1333
+   "cue_t": 0.1
   },
   {
    "type": "luma",
@@ -1761,7 +1747,7 @@
    "cue_t": 0.1333
   }
  ],
- "near_limit_total": 125,
+ "near_limit_total": 124,
  "cue_seams": [
   {
    "from": "a0_c000",
@@ -1775,38 +1761,38 @@
    "from": "a0_c001",
    "to": "a0_c002",
    "t": 17.6667,
-   "mean_luma_before": 0.5671,
-   "mean_luma_after": 0.6121,
+   "mean_luma_before": 0.5665,
+   "mean_luma_after": 0.609,
    "max_region_luma_delta": 0.5831
   },
   {
    "from": "a0_c002",
    "to": "a0_c003",
    "t": 43.4667,
-   "mean_luma_before": 0.5382,
-   "mean_luma_after": 0.5382,
+   "mean_luma_before": 0.538,
+   "mean_luma_after": 0.538,
    "max_region_luma_delta": 0.0
   },
   {
    "from": "a0_c003",
    "to": "a0_c004",
    "t": 71.5,
-   "mean_luma_before": 0.6148,
-   "mean_luma_after": 0.6178,
+   "mean_luma_before": 0.6134,
+   "mean_luma_after": 0.6174,
    "max_region_luma_delta": 0.6083
   },
   {
    "from": "a0_c004",
    "to": "a0_c005",
    "t": 103.6,
-   "mean_luma_before": 0.5189,
-   "mean_luma_after": 0.5187,
-   "max_region_luma_delta": 0.0221
+   "mean_luma_before": 0.5177,
+   "mean_luma_after": 0.5175,
+   "max_region_luma_delta": 0.022
   }
  ],
  "mean_luma_range": [
   0.0026,
-  0.6486
+  0.6484
  ],
  "max_sat_red_ratio": 0.01589
 }

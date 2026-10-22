@@ -27,7 +27,7 @@
   },
   "a3_c004": {
    "I_LUFS": -16.0,
-   "LRA_LU": 4.8,
+   "LRA_LU": 4.2,
    "TP_dBTP": -2.7
   },
   "a3_c005": {
@@ -41,9 +41,9 @@
    "TP_dBTP": -2.9
   },
   "a3_c007": {
-   "I_LUFS": -17.6,
+   "I_LUFS": -17.4,
    "LRA_LU": 2.5,
-   "TP_dBTP": -4.1
+   "TP_dBTP": -3.8
   },
   "a3_c008": {
    "I_LUFS": -15.3,
@@ -224,22 +224,22 @@
    "id": "a3_c005_01",
    "cue": "a3_c005",
    "speaker": "折折",
-   "start": 90.6,
-   "end": 92.05,
+   "start": 90.3,
+   "end": 91.75,
    "vo_file": "audio/vo/vo_a3_c005_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -6.1,
    "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -31.8,
-   "vo_minus_background_LU": 16.8
+   "background_I_LUFS": -32.2,
+   "vo_minus_background_LU": 17.2
   },
   {
    "id": "a3_c005_02",
    "cue": "a3_c005",
    "speaker": "旁白",
-   "start": 92.9,
-   "end": 97.47,
+   "start": 92.6,
+   "end": 97.17,
    "vo_file": "audio/vo/vo_a3_c005_02_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -4.3,
@@ -252,22 +252,22 @@
    "id": "a3_c005_03",
    "cue": "a3_c005",
    "speaker": "旁白",
-   "start": 97.92,
-   "end": 102.96,
+   "start": 97.62,
+   "end": 102.66,
    "vo_file": "audio/vo/vo_a3_c005_03_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -2.7,
    "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -52.7,
-   "vo_minus_background_LU": 37.7
+   "background_I_LUFS": -52.8,
+   "vo_minus_background_LU": 37.8
   },
   {
    "id": "a3_c005_04",
    "cue": "a3_c005",
    "speaker": "旁白",
-   "start": 103.41,
-   "end": 107.19,
+   "start": 103.11,
+   "end": 106.89,
    "vo_file": "audio/vo/vo_a3_c005_04_v04.wav",
    "vo_file_I_LUFS": -17.9,
    "vo_file_TP_dBTP": -1.8,
@@ -280,50 +280,50 @@
    "id": "a3_c005_05",
    "cue": "a3_c005",
    "speaker": "旁白",
-   "start": 107.64,
-   "end": 111.91,
+   "start": 107.34,
+   "end": 111.61,
    "vo_file": "audio/vo/vo_a3_c005_05_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.0,
-   "mix_I_LUFS": -15.0,
+   "mix_I_LUFS": -15.1,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -54.6,
-   "vo_minus_background_LU": 39.6
+   "background_I_LUFS": -53.9,
+   "vo_minus_background_LU": 38.9
   },
   {
    "id": "a3_c006_01",
    "cue": "a3_c006",
    "speaker": "旁白",
-   "start": 116.91,
-   "end": 122.15,
+   "start": 116.61,
+   "end": 121.85,
    "vo_file": "audio/vo/vo_a3_c006_01_v04.wav",
    "vo_file_I_LUFS": -18.1,
    "vo_file_TP_dBTP": -2.9,
    "mix_I_LUFS": -15.1,
    "vo_in_mix_I_LUFS": -15.1,
-   "background_I_LUFS": -55.2,
-   "vo_minus_background_LU": 40.1
+   "background_I_LUFS": -55.4,
+   "vo_minus_background_LU": 40.3
   },
   {
    "id": "a3_c007_01",
    "cue": "a3_c007",
    "speaker": "折折",
-   "start": 127.75,
-   "end": 129.93,
+   "start": 127.45,
+   "end": 129.63,
    "vo_file": "audio/vo/vo_a3_c007_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -4.1,
    "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -35.8,
-   "vo_minus_background_LU": 20.8
+   "background_I_LUFS": -34.7,
+   "vo_minus_background_LU": 19.7
   },
   {
    "id": "a3_c008_01",
    "cue": "a3_c008",
    "speaker": "林老師",
-   "start": 135.98,
-   "end": 139.67,
+   "start": 135.68,
+   "end": 139.37,
    "vo_file": "audio/vo/vo_a3_c008_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.1,
@@ -336,8 +336,8 @@
    "id": "a3_c008_02",
    "cue": "a3_c008",
    "speaker": "林老師",
-   "start": 139.97,
-   "end": 148.53,
+   "start": 139.67,
+   "end": 148.23,
    "vo_file": "audio/vo/vo_a3_c008_02_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -4.8,
@@ -350,8 +350,8 @@
    "id": "a3_c008_03",
    "cue": "a3_c008",
    "speaker": "小晴",
-   "start": 151.48,
-   "end": 154.95,
+   "start": 151.18,
+   "end": 154.65,
    "vo_file": "audio/vo/vo_a3_c008_03_v04.wav",
    "vo_file_I_LUFS": -17.8,
    "vo_file_TP_dBTP": -3.8,
@@ -364,8 +364,8 @@
    "id": "a3_c008_04",
    "cue": "a3_c008",
    "speaker": "林老師",
-   "start": 155.4,
-   "end": 165.77,
+   "start": 155.1,
+   "end": 165.47,
    "vo_file": "audio/vo/vo_a3_c008_04_v04.wav",
    "vo_file_I_LUFS": -17.9,
    "vo_file_TP_dBTP": -4.2,
@@ -379,31 +379,31 @@
  "line_mix_I_spread_LU": 0.4,
  "momentary_max_LUFS": -9.6,
  "momentary_max_rise_within_1s_LU": 45.7,
- "momentary_max_rise_per_100ms_LU": 39.2,
+ "momentary_max_rise_per_100ms_LU": 38.7,
  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
  "music_sfx_only": {
-  "max_LUFS": -16.7,
-  "max_at_sec": 126.6,
+  "max_LUFS": -17.0,
+  "max_at_sec": 89.9,
   "max_at": {
-   "cue": "a3_c007",
-   "cue_t": 0.75
+   "cue": "a3_c005",
+   "cue_t": 1.0
   },
-  "max_rise_per_100ms_LU": 29.6,
-  "max_rise_per_100ms_at_sec": 116.3,
+  "max_rise_per_100ms_LU": 27.9,
+  "max_rise_per_100ms_at_sec": 116.0,
   "max_rise_per_100ms_at": {
    "cue": "a3_c006",
    "cue_t": 0.39
   },
   "max_rise_within_1s_LU": 45.7,
   "max_rise_within_1s_at_sec": 1.2,
-  "sample_peak_dBFS": -8.0,
-  "sample_peak_at_sec": 116.23,
+  "sample_peak_dBFS": -8.64,
+  "sample_peak_at_sec": 3.92,
   "sample_peak_at": {
-   "cue": "a3_c006",
-   "cue_t": 0.32
+   "cue": "a3_c001",
+   "cue_t": 3.32
   },
-  "true_peak_dBTP": -8.0,
-  "I_LUFS": -27.8,
+  "true_peak_dBTP": -8.6,
+  "I_LUFS": -27.9,
   "g4_reference": {
    "max_LUFS": -15.7,
    "max_rise_within_1s_LU": 34.8,
@@ -436,16 +436,16 @@
   },
   {
    "cue": "a3_c004",
-   "hold_from_sec": 85.7,
+   "hold_from_sec": 85.4,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -48.1,
+   "momentary_max_after_3s_LUFS": -48.3,
    "pass_le_-35": true
   },
   {
    "cue": "a3_c008",
    "hold_from_sec": 171.22,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -47.4,
+   "momentary_max_after_3s_LUFS": -46.8,
    "pass_le_-35": true
   }
  ],
@@ -486,7 +486,7 @@
    "offset": 0
   },
   {
-   "t": 148.63,
+   "t": 148.33,
    "music": "music_m4_light",
    "loop": true,
    "fade": 2.5,

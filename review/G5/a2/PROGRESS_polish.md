@@ -1,0 +1,2 @@
+- 11:09 G6 精修開工（進度主檔 review/G5/a0/PROGRESS_polish.md）。
+- 12:00 a2 精修套上（polish_a2.py：a2_c012 廣場求助鏡頭全亮 2.15–4.15 共 2.0 秒，從工作室葉護理師走近那段扣回，cue 長不變；build_polish_art.py hands：insert-ale-hand-{r,l}_v02 上緣切口改 3 px 米白紙邊、指縫柔和陰影、手心淺色舌片改陰影膚色）。私人細格 a2_c012 3/2、a2_c008 3/3。a2_c002 膝線：引擎 stage.ts G4_CUE_IDS 刻意不套深灰邊與最小線寬 → 交主線。

@@ -4,10 +4,10 @@
   {
    "cue": "a5_c001",
    "kind": "scene",
-   "duration_sec": 41.07,
+   "duration_sec": 38.32,
    "preroll_sec": 0.6,
    "estimate_sec": 34.8,
-   "diff_sec": 6.3,
+   "diff_sec": 3.5,
    "vo_sec": 22.92,
    "lines": 6
   },
@@ -44,7 +44,7 @@
   {
    "cue": "a5_c005",
    "kind": "scene",
-   "duration_sec": 21.2,
+   "duration_sec": 21.25,
    "preroll_sec": 0,
    "estimate_sec": 22.0,
    "diff_sec": -0.8,
@@ -64,10 +64,10 @@
   {
    "cue": "a5_c007",
    "kind": "scene",
-   "duration_sec": 25.83,
+   "duration_sec": 24.08,
    "preroll_sec": 0,
    "estimate_sec": 21.2,
-   "diff_sec": 4.6,
+   "diff_sec": 2.9,
    "vo_sec": 9.37,
    "lines": 2
   },
@@ -82,12 +82,12 @@
    "lines": 5
   }
  ],
- "act_total_sec": 183.5,
+ "act_total_sec": 179.1,
  "act_preroll_total_sec": 1.2,
  "estimate_sum_sec": 171.0,
  "act_budget_recorded_sec": 171.0,
- "diff_vs_budget_sec": 13.7,
- "playback_with_holds_sec": 210.23,
+ "diff_vs_budget_sec": 9.3,
+ "playback_with_holds_sec": 205.78,
  "holds_assumed_sec": {
   "a5_c001": 3.5,
   "a5_c002": 3,

@@ -88,7 +88,7 @@
     {
      "name": "camera.move",
      "start": 0.35,
-     "duration": 3.2,
+     "duration": 3.84,
      "ease": "sine",
      "params": {
       "to": "a3_follow1"
@@ -98,7 +98,7 @@
      "name": "puppet.exit",
      "start": 0.3,
      "target": "xiaoqing",
-     "duration": 3.0,
+     "duration": 3.6,
      "ease": "sine",
      "params": {
       "to": 1.6
@@ -108,7 +108,7 @@
      "name": "puppet.exit",
      "start": 0.35,
      "target": "xiaoyu",
-     "duration": 3.0,
+     "duration": 3.6,
      "ease": "sine",
      "params": {
       "to": 1.6
@@ -116,7 +116,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": 3.15,
+     "start": 3.75,
      "target": "xiaoqing",
      "duration": 0.24,
      "params": {
@@ -125,7 +125,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": 3.3,
+     "start": 3.9,
      "target": "xiaoyu",
      "duration": 0.24,
      "params": {
@@ -1023,7 +1023,7 @@
    "teacherNote": "練習（約 90 秒，全場只練這一次）：\n①「跟小宇一起說：不用，我不試。我先離開。」（全班說一次。）\n②「口訣加動作，坐著做、不離座：不碰——雙手在胸前交叉；不試——手掌左右搖；先離開——手指向門口；找大人——手掌放在額前，左右看。」（老師示範一次，全班做一次。）\n③ 做安靜手勢，等全場安靜，再按下一步；題卡出現時的折折收摺音效就是收聲訊號。",
    "checkpoint": null,
    "voStart": 3.0,
-   "tail": 1.8,
+   "tail": 1.5,
    "storyboard": {
     "beat": "折折跳到台口前緣攤開練習卡（拒絕句＋口訣，每句旁動作小圖，程式排版）；小晴、小宇站在卡兩側依序做四個動作：不碰、不試、先離開、找大人，最後停在「找大人」",
     "cast": "小晴：P-QG1 → H3 左右搖 → H2 指右 → H4；小宇：P-XY1 → H3 → H2 → H4；兩人 X2",
@@ -1445,7 +1445,7 @@
      "lin": {
       "visible": true,
       "emotion": "smile",
-      "pose": "stand_m",
+      "pose": "stand",
       "x": 1.3,
       "z": 0.2,
       "facing": 1
@@ -1528,7 +1528,7 @@
     },
     {
      "name": "puppet.tilt",
-     "start": "a3_c008_02.end+0.6",
+     "start": "a3_c008_02.end+0.1",
      "target": "xiaoyu",
      "duration": 0.6,
      "params": {
@@ -1537,7 +1537,7 @@
     },
     {
      "name": "camera.cut",
-     "start": "a3_c008_02.end+1.0",
+     "start": "a3_c008_02.end+0.45",
      "duration": 0,
      "params": {
       "to": "a3_cls_lin"
@@ -1566,7 +1566,7 @@
      "target": "xiaoqing",
      "duration": 0.24,
      "params": {
-      "pose": "stand"
+      "pose": "stand_m"
      }
     },
     {
@@ -1622,35 +1622,26 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a3_c008_04.end+0.15",
+     "start": "a3_c008_04.end+0.05",
      "target": "lin",
      "duration": 0.24,
      "params": {
-      "pose": "stand"
+      "pose": "phone"
      }
     },
     {
      "name": "puppet.exit",
-     "start": "a3_c008_04.end+0.75",
+     "start": "a3_c008_04.end+0.95",
      "target": "lin",
-     "duration": 3.2,
+     "duration": 4.8,
      "ease": "linear",
      "params": {
-      "to": 2.15
-     }
-    },
-    {
-     "name": "puppet.pose",
-     "start": "a3_c008_04.end+1.5",
-     "target": "xiaoqing",
-     "duration": 0.24,
-     "params": {
-      "pose": "stand_m"
+      "to": 1.92
      }
     },
     {
      "name": "puppet.face",
-     "start": "a3_c008_04.end+1.75",
+     "start": "a3_c008_04.end+1.2",
      "target": "xiaoqing",
      "params": {
       "emotion": "worried"
@@ -1658,7 +1649,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a3_c008_04.end+2.3",
+     "start": "a3_c008_04.end+2.2",
      "target": "xiaoyu",
      "duration": 0.24,
      "params": {
@@ -1666,28 +1657,20 @@
      }
     },
     {
-     "name": "puppet.face",
-     "start": "a3_c008_04.end+2.55",
-     "target": "xiaoyu",
-     "params": {
-      "emotion": "worried"
-     }
-    },
-    {
      "name": "camera.cut",
-     "start": "a3_c008_04.end+4.1",
+     "start": "a3_c008_04.end+3.6",
      "duration": 0,
      "params": {
       "to": "a3_cls_end"
      }
     },
     {
-     "name": "zhezhe.look",
-     "start": "a3_c008_04.end+4.35",
-     "target": "zhezhe",
-     "duration": 0.8,
+     "name": "puppet.pose",
+     "start": "a3_c008_04.end+4.6",
+     "target": "xiaoqing",
+     "duration": 0.24,
      "params": {
-      "yaw": -0.45
+      "pose": "forehead_l"
      }
     }
    ],
@@ -1726,7 +1709,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 1.15,
-   "tail": 5.45,
+   "tail": 5.75,
    "storyboard": {
     "beat": "教室午後，窗外燈籠串輕擺；下課鐘柔和響；林老師說提早放學、家長前幾天就拜託阿樂叔叔開車來接；兩人互看；小晴筆停住；折折耳朵壓平；小晴舉手走到林老師面前說叔叔昨天站不穩；林老師道謝、說先打給家人、叔叔先到就待在校門裡；林老師拿手機走到走廊撥號",
     "cast": "林老師 X1 → X5 → X7；小晴 H5、X5 → X7；小宇 X5；其他學生為遠景剪影",

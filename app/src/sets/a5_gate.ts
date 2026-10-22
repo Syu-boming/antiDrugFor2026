@@ -12,14 +12,18 @@
 //     不改引擎，只動畫面上已有的換片網格的 visible；離開這個景或 sleep 關掉時還原）
 //
 // cue 的 setTrack（格式同 gate.ts：時間參照同 animation.start；數值軌從 0 開始依序套用）：
-//   { "do": "student", "to": 1 }                                      轉角小朋友出現（0 不顯示）
+//   { "do": "student", "to": 1, "at": [x, z] }                        轉角小朋友出現（0 不顯示；at＝站位，省略＝STUDENT）
 //   { "do": "studentWave", "start": …, "duration": … }                揮手（以肩為支點慢慢擺，每秒 1 下）
 //   { "do": "studentGo", "dx": -2.4, "start": …, "duration": … }      往左走（走進街角後面）
-//   { "do": "flagPeek", "to": 1, "start": …, "duration": 0.8 }        轉角後露出導護旗一角（慢慢出現；旗面輕微擺動、不轉過來）
+//   { "do": "flagPeek", "to": 1, "start": …, "duration": 0.8, "at": [x, y, z] }   轉角後露出導護旗一角（透明度；at＝握點世界座標，
+//                                                                      修正第 2 輪：背面紙旗 a5-flag-back，旗桿藏在街角小店後面，只露出旗面一角）
+//   { "do": "flagSlide", "dx": 0.3, "start": …, "duration": 1.0 }      導護旗一角慢慢從牆邊滑出來（正弦；陳伯伯在轉角後面挪了一步）
 //   { "do": "chenFlag", "to": 1, "at": [x, y], "dir": 1, "start": … } 陳伯伯手上的導護旗：at＝立牌身體座標（世界單位）的握點，
 //                                                                      dir＝旗面朝向（1 畫面右、−1 畫面左）；換姿勢時排一筆新的 at
-//   { "do": "ambulance", "from": -4.8, "start": …, "duration": 4 }    救護車從畫面左外倒車進來、正弦緩入緩出停在長椅左邊（車尾 x AMB.rear）
-//   { "do": "ambulanceGo", "dx": -8, "start": …, "duration": 5 }      救護車往左開走（三次方緩入＝慢慢起步；同 puppet.move 的 ease "in"）
+//   { "do": "ambulance", "from": -4.8, "start": …, "duration": 4, "rear": -4.4 }   救護車從畫面左外倒車進來、正弦緩入緩出停在長椅左邊
+//                                                                      （車尾 x＝rear，省略＝AMB.rear；修正第 2 輪停遠一點：後車門打開時不擋到阿樂叔叔）
+//   { "do": "ambulanceGo", "dx": -8, "start": …, "duration": 5, "ease": "sine" }   救護車往左開走（ease 預設 "in"＝三次方緩入；
+//                                                                      修正第 2 輪用 "sine" 緩入緩出開出畫面，車上的人用同一個 ease 的 puppet.move）
 //   { "do": "ambDoor", "to": 1, "start": …, "duration": 0.7 }          後車門打開（1）／關上（0）：以車尾為樞紐轉向鏡頭
 //   { "do": "gurney", "x0": -6.4, "x1": -3.6, "start": …, "duration": … , "to": 1, "ease": "linear" }   擔架（to 0 不顯示；ease 預設 inOut）
 //   { "do": "phone", "to": 1, "start": …, "duration": 0.6 }           電話圖示出現／收起（透明度漸變）
@@ -40,6 +44,8 @@ const CORNER = { x: -6.4, z: 1.0, w: 2.6 };
 /** 轉角小朋友的站位（修正第 1 輪：遠處轉角＝馬路對面、街角小店右後方，遠景小尺寸（約大人的 0.45 倍）；
  *  離長椅上的阿樂叔叔畫面上約 370 px（遠景轉角鏡頭），中間隔著馬路；往左走就被街角小店擋住） */
 const STUDENT = { x: -5.75, z: -2.1 };
+/** 小朋友 v03 的圖寬與樞紐（世界單位；student_v03.py 的 meta）：人物高 1.55（約主角孩子的 0.62 倍，遠景再小一些） */
+const STU = { bodyW: 0.6056, armW: 0.3489, pivot: [0.2644, 1.0322], armOrigin: [0.1161, -0.0822] };
 /** 救護車 v02（review/G5/a5/art_meta.json fix1.ambulance）：圖寬 8.557（車身 8.4＋紙芯邊）、車身下緣在圖下緣上方 0.264；
  *  rear＝停好時車尾（後車門）的世界 x；z 在救護人員（0.9／1.0）、長椅上的阿樂叔叔（0.3）、陳伯伯（0.62）前面，
  *  車廂頂 3.75 比救護人員高：人走到車後面就整個被擋住，不會從車頂冒出來 */
@@ -64,12 +70,12 @@ export const A5_GATE_CAMERAS: Record<string, CameraPreset> = {
   a5_deep: { pos: [3.1, 1.6, 12.8], target: [0.3, 1.42, 0], fov: 26 },
   /** 兩個孩子＋折折（折折把問題交給觀眾；停格） */
   a5_kids_z: { pos: [3.55, 1.25, 12.6], target: [3.55, 1.1, 1.9], fov: 20 },
-  /** 環顧（小宇的視線）第一格：空空的接送區（校門口、接送線、路邊沒有人也沒有車；長椅在畫面左緣） */
-  a5_pov_a: { pos: [0.4, 2.3, 11.0], target: [0.4, 0.8, -0.6], fov: 17 },
-  /** 環顧第二格起點：遠處街角（街角小店的右緣） */
-  a5_pov_b0: { pos: [-3.3, 1.75, 10.0], target: [-4.6, 1.35, 0.3], fov: 19 },
-  /** 環顧第二格終點：慢慢推近到街角後面露出的導護旗一角（陳伯伯背對這邊、在街角後面） */
-  a5_pov_b: { pos: [-3.9, 1.6, 8.0], target: [-4.9, 1.2, 0.3], fov: 17 },
+  /** 環顧（小宇的視線）第一格：空空的接送區（校門口、接送線、路邊沒有人也沒有車；長椅上的阿樂叔叔與身旁的小晴都不入鏡） */
+  a5_pov_a: { pos: [0.85, 2.3, 11.0], target: [0.85, 0.8, -0.6], fov: 15 },
+  /** 環顧第二格起點（修正第 2 輪）：遠處街角（街角小店在畫面左半；長椅上的阿樂叔叔在畫面右外，不入鏡） */
+  a5_pov_b0: { pos: [-5.2, 1.9, 8.6], target: [-5.2, 1.75, 0.6], fov: 15 },
+  /** 環顧第二格終點：再慢慢往左搖一點（約 160 px；前景的樹幹不入鏡），小店牆邊露出背對的導護旗一角（陳伯伯背對這邊、在街角後面） */
+  a5_pov_b: { pos: [-5.5, 1.9, 8.6], target: [-5.5, 1.75, 0.6], fov: 15 },
   /** 雙人（門內） */
   a5_kids: { pos: [3.95, 1.35, 11.6], target: [3.95, 1.2, 1.9], fov: 20 },
   /** 小宇中景（舉手錶；小宇鏡射、面向畫面右） */
@@ -147,31 +153,39 @@ export function buildA5Gate(ctx: SetContext): BuiltSet {
   const corner = prop('sets/a5_gate/a5-corner', CORNER.w, 260);
   if (corner) corner.position.set(CORNER.x, -0.02, CORNER.z);
 
-  // ---- 轉角的低年級小朋友（淺紙色分件小紙人 v02：身體＋揮手的手臂（遠側那隻，在身體後面）；手臂樞紐在肩）
-  const student = prop('sets/a5_gate/a5-student', 0.9 + 0.091, 255);
-  const arm = prop('sets/a5_gate/a5-student-arm', 0.24 + 0.027, 254, false);
+  // ---- 轉角的低年級小朋友 v03（修正第 2 輪：Codex 生成的同畫風紙片小人，黃色安全帽、書包、白色紙芯邊；
+  //      切成身體＋舉高揮手的手臂（在身體後面，樞紐在袖口；尺寸見 review/G5/a5/art_meta.json fix2.student）
+  const student = prop('sets/a5_gate/a5-student', STU.bodyW, 255);
+  const arm = prop('sets/a5_gate/a5-student-arm', STU.armW, 254, false);
   if (student) { student.position.set(STUDENT.x, -0.045, STUDENT.z); student.visible = false; }
   if (arm && student) {
-    arm.geometry.translate(0, -0.05, 0);                 // 肩膀在手臂圖的下緣稍上
+    arm.geometry.translate(STU.armOrigin[0], STU.armOrigin[1], 0);    // 樞紐（袖口）移到原點
     group.remove(arm);
     student.add(arm);
-    arm.position.set(0.02, 1.17, -0.01);
+    arm.position.set(STU.pivot[0], STU.pivot[1], -0.01);
     arm.renderOrder = 254;
   }
 
   // ---- 轉角後露出的導護旗一角
-  const peek = prop('sets/gate/set-gate_a4-flag', 0.78, 250, false);
+  // 修正第 2 輪：第五幕自己的紙旗（紙纖維、白色紙芯邊、旗面摺痕；背面版給轉角露出的那一角）；沒有圖就退回第四幕的旗子
+  const flagId = ctx.image('sets/a5_gate/a5-flag') ? 'sets/a5_gate/a5-flag' : 'sets/gate/set-gate_a4-flag';
+  const peekId = ctx.image('sets/a5_gate/a5-flag-back') ? 'sets/a5_gate/a5-flag-back' : flagId;
+  const peek = prop(peekId, 0.78, 250, false);
   if (peek) {
     peek.geometry.translate(0.78 * 0.5 - 0.78 * 0.14, -0.42, 0);
-    // 握點在街角右緣後面一點（z 0.3，被街角小店擋住），旗面往右只露出一角（a5_pov_b 鏡位下約露出旗面的 0.4）
+    // 預設握點在街角右緣後面（cue 的 flagPeek.at 會改寫：修正第 2 輪 z 0.6、旗桿藏在小店後面，flagSlide 慢慢露出旗面一角）
     peek.position.set(-5.14, 1.22, 0.3);
     peek.visible = false;
   }
   const peekMat = peek ? (peek.material as MeshStandardMaterial) : null;
-  if (peekMat) { peekMat.transparent = true; peekMat.depthWrite = false; peekMat.alphaTest = 0.02; }
+  if (peekMat) {
+    peekMat.transparent = true; peekMat.depthWrite = false; peekMat.alphaTest = 0.02;
+    // 修正第 2 輪：轉角露出的旗子不跟著場景降彩（FX8 叫不醒之後整個景降彩 0.35）：一小角的黃綠色才看得出來是導護旗
+    mats.splice(mats.indexOf(peekMat), 1);
+  }
 
   // ---- 陳伯伯手上的導護旗（握點在原點）
-  const flag = prop('sets/gate/set-gate_a4-flag', 0.78, 394, true);
+  const flag = prop(flagId, 0.78, 394, true);
   if (flag) { flag.geometry.translate(0.78 * 0.5 - 0.78 * 0.14, -0.42, 0); flag.visible = false; }
 
   // ---- 救護車 v02（車頭朝畫面左；輪子、頂燈畫在圖裡：輪子沒有輻條、不轉也看不出來；頂燈恆亮）＋後車門
@@ -256,23 +270,26 @@ export function buildA5Gate(ctx: SetContext): BuiltSet {
       // 轉角小朋友：揮手、往左走（走進街角後面就被擋住）
       if (student) {
         student.visible = trackValue(tl, 'student', t, 0, 'linear') > 0.5;
-        let dx = 0, walking = false, wave = 0;
+        let dx = 0, walking = false, wave = 0, sx = STUDENT.x, sz = STUDENT.z, turn = 0;
         for (const e of ev) {
+          if (e.do === 'student' && t >= e.start && Array.isArray(e.p.at)) { sx = Number(e.p.at[0]); sz = Number(e.p.at[1]); }
           if (e.do === 'studentGo' && t >= e.start) {
             const u = e.duration > 0 ? clamp((t - e.start) / e.duration) : 1;
             dx += Number(e.p.dx ?? -2.4) * ease('sine', u);   // 正弦：中段速度只有平均的 1.57 倍（光敏）
             if (u > 0 && u < 1) walking = true;
+            turn = Math.max(turn, clamp((t - e.start + 0.3) / 0.3));   // 起步前 0.3 秒翻面朝左（紙片翻面）
           }
           if (e.do === 'studentWave' && t >= e.start && t <= e.start + e.duration) {
             const u = (t - e.start) / Math.max(1e-6, e.duration);
             wave = Math.min(1, u * 6, (1 - u) * 6);
           }
         }
-        student.position.set(STUDENT.x + dx, -0.045 + (walking ? Math.abs(Math.sin(t * Math.PI * 1.5)) * 0.02 : 0), STUDENT.z);   // 走路起伏慢、小（光敏）
+        student.position.set(sx + dx, -0.045 + (walking ? Math.abs(Math.sin(t * Math.PI * 1.5)) * 0.02 : 0), sz);
+        student.scale.x = Math.cos(Math.PI * turn) >= 0 ? Math.max(0.08, Math.cos(Math.PI * turn)) : Math.min(-0.08, Math.cos(Math.PI * turn));   // 走路起伏慢、小（光敏）
         if (arm) {
-          // 手臂：揮手時舉起、以肩為支點左右擺（每秒 1 下）；不揮手時放下貼著身體
+          // 手臂：揮手時舉起、以袖口為支點左右擺（每秒 1 下）；不揮手時往外、往下放到身體旁邊（在身體後面）
           const up = wave;
-          arm.rotation.z = -(1 - up) * Math.PI * 0.93 + up * (-0.22 + 0.26 * Math.sin(t * Math.PI * 2));
+          arm.rotation.z = -(1 - up) * 2.7 + up * 0.2 * Math.sin(t * Math.PI * 2);
         }
       }
 
@@ -281,7 +298,15 @@ export function buildA5Gate(ctx: SetContext): BuiltSet {
         const v = trackValue(tl, 'flagPeek', t, 0);
         peek.visible = v > 0.002;
         peekMat.opacity = v;
-        peek.rotation.z = 0;                                // 旗子不動（小宇喊了也沒有回應）
+        let at: number[] = [-5.14, 1.22, 0.3], slide = 0;
+        for (const e of ev) {
+          if (t < e.start) continue;
+          if (e.do === 'flagPeek' && Array.isArray(e.p.at)) at = (e.p.at as unknown[]).map(Number);
+          if (e.do === 'flagSlide') slide += Number(e.p.dx ?? 0.3) * ease('sine', e.duration > 0 ? clamp((t - e.start) / e.duration) : 1);
+        }
+        peek.position.set(at[0] + slide, at[1], at[2]);
+        // 旗子沒有轉過來（小宇喊了也沒有回應）；只隨走路很慢、很小地晃（每 4 秒一次）
+        peek.rotation.z = 0.025 * Math.sin((t / 4.0) * Math.PI * 2);
       }
 
       // 陳伯伯手上的導護旗
@@ -308,20 +333,21 @@ export function buildA5Gate(ctx: SetContext): BuiltSet {
 
       // 救護車：倒車進來（正弦緩入緩出）→ 停好 → 往左開走（三次方緩入）
       if (amb) {
-        let vis = false, dx = 0, go = 0;
+        let vis = false, dx = 0, go = 0, rear0 = AMB.rear;
         for (const e of ev) {
           if (e.do === 'ambulance') {
             const from = Number(e.p.from ?? -4.8);
+            rear0 = Number(e.p.rear ?? AMB.rear);
             if (t < e.start) { dx = from; continue; }
             vis = true;
             const u = e.duration > 0 ? clamp((t - e.start) / e.duration) : 1;
             dx = from * (1 - ease('sine', u));
           } else if (e.do === 'ambulanceGo' && t >= e.start) {
             const u = e.duration > 0 ? clamp((t - e.start) / e.duration) : 1;
-            go += Number(e.p.dx ?? -8) * ease('in', u);
+            go += Number(e.p.dx ?? -8) * ease(String(e.p.ease ?? 'in'), u);
           }
         }
-        const rear = AMB.rear + dx + go;
+        const rear = rear0 + dx + go;
         amb.visible = vis && rear > -16;
         amb.position.set(rear - AMB.half, -AMB.bottom - 0.02, AMB.z);
         if (door) {

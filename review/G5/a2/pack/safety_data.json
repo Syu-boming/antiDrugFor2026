@@ -16,21 +16,21 @@
  "probe_frames_with_strings": 2692,
  "string_path_min_dist_to_head_box_px": 17.2,
  "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
- "string_head_offscreen_skipped": 615,
+ "string_head_offscreen_skipped": 645,
  "per_anchor": {
   "ale.wrist": {
    "min_dist_to_head_box_px": 20.1,
-   "frames": 2487,
+   "frames": 2477,
    "at": "a2_c009 t=1"
   },
   "ale.elbow": {
    "min_dist_to_head_box_px": 20.3,
-   "frames": 2279,
+   "frames": 2269,
    "at": "a2_c009 t=1"
   },
   "ale.knee": {
    "min_dist_to_head_box_px": 17.2,
-   "frames": 2269,
+   "frames": 2259,
    "at": "a2_c005 t=10.4"
   }
  },

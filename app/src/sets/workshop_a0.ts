@@ -2,6 +2,7 @@
 //   - 劇名紙條（a0_c001）：「紙燈節」程式排版（和署名卡同款字型），浮在畫面上方的紙條上，淡入、停約 3 秒、淡出收起（避開字幕區）
 //   - 主燈設計圖（牆上，摺紙貓燈，沒有任何文字）、工作台中央空著的主燈底座（跟著工作台一起立起）、門口風鈴
 //     （修正第 2 輪：上方吊燈籠不投影子；摺紙推近鏡位 a0_fold2）
+//     （G6 精修：牆上加一排吊燈籠 hanglamps；風鈴不投影子）
 //     （修正第 1 輪：工作台圖中央那個燈籠骨在本景擦掉，讓「空了一塊」看得出來；台口上方的八盞燈改由引擎的台口實景燈負責，本景不再畫）
 //   - 回憶小窗（a0_c002）：暖杏色手撕邊紙框從畫面外緣收進來＋景片轉暖色（角色不變色）
 //   - 小晴的筆記本特寫（a0_c004）：小窗裡的筆記本，竹骨架與問號一筆一筆畫上（程式畫線）
@@ -109,6 +110,8 @@ const WALL_Z = -3.6;
 const DESIGN = { x: -1.6, y: 2.45, w: 1.3 };
 const STAND = { x: -0.2, y: 1.36, z: -0.78, w: 1.1 };
 const CHIME = { x: 5.35, y: 4.75, z: -1.3, h: 1.12 };
+/** 牆上一排吊燈籠（G6 精修：a0_c002 摺紙鏡位上半部空牆；釘在牆上的竹竿，折折右上方，不投影子） */
+const HANGLAMPS = { x: 2.8, y: 2.58, w: 2.0 };
 /** 工作台圖（bg-workshop-table_v02，1479×791）上燈籠骨的範圍（像素；桌面在 y＝212）：本景擦掉 */
 const TABLE_LANTERN = [[702, 0, 930, 212], [684, 0, 702, 176]] as const;
 
@@ -199,6 +202,8 @@ export const WORKSHOP_A0: SetEntry = {
     // 主燈設計圖（貼在牆上，和牆一樣有自發光，兒童身後仍夠亮）
     const design = imagePiece(im('design'), { w: DESIGN.w, order: LAYER.far.order - 30, emissive: 0.3 }, mats);
     if (design) { design.position.set(DESIGN.x, DESIGN.y, WALL_Z + 0.06); design.receiveShadow = true; group.add(design); }
+    const hang = imagePiece(im('hanglamps'), { w: HANGLAMPS.w, order: LAYER.far.order - 29, emissive: 0.3 }, mats);
+    if (hang) { hang.position.set(HANGLAMPS.x, HANGLAMPS.y, WALL_Z + 0.07); hang.receiveShadow = true; group.add(hang); }
     // 工作台：擦掉圖上中央那個燈籠骨（本景的貼圖是這次建景新做的畫布，不影響 workshop_g4）
     const bench = ws.pieces.find((p) => p.name === 'bench');
     const benchMesh = bench?.hinge.children.find((o): o is Mesh => o instanceof Mesh);
@@ -217,7 +222,8 @@ export const WORKSHOP_A0: SetEntry = {
     // 門口風鈴（懸掛點在上緣中央）
     const chimeHinge = new Group();
     chimeHinge.position.set(CHIME.x, CHIME.y, CHIME.z);
-    const chime = imagePiece(im('chime'), { h: CHIME.h, pivot: [0.5, 1], order: LAYER.mid.order + 20, shadow: true }, mats);
+    // G6 精修：風鈴不投影子（門邊牆上那團離物件 30–90 px 的模糊灰影）
+    const chime = imagePiece(im('chime'), { h: CHIME.h, pivot: [0.5, 1], order: LAYER.mid.order + 20, shadow: false }, mats);
     if (chime) chimeHinge.add(chime);
     group.add(chimeHinge);
     // 劇名紙條（畫面疊層）

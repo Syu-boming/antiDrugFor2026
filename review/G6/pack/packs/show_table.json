@@ -1,0 +1,882 @@
+{
+ "segments": [
+  {
+   "act": "a0",
+   "title": "開場：主燈骨架不見了",
+   "pack": "review/G5/a0/pack",
+   "exists": true,
+   "cues": 6,
+   "current_build": {
+    "cue_total_sec": 110.55,
+    "preroll_sec": 0.6,
+    "lines": 17
+   },
+   "pack_generated": "2026-10-22 09:28",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 110.5,
+    "act_preroll_total_sec": 0.6,
+    "act_budget_recorded_sec": 113.0,
+    "diff_vs_budget_sec": -1.9,
+    "estimate_sum_sec": 113.0,
+    "playback_with_holds_sec": 129.15
+   },
+   "loudness": {
+    "I_LUFS": -16.5,
+    "LRA_LU": 13.9,
+    "TP_dBTP": -1.2,
+    "sample_peak_dBFS": -1.2,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -15.0,
+    "line_mix_I_spread_LU": 0.7,
+    "momentary_max_LUFS": -9.8,
+    "music_sfx_only_max_LUFS": -16.2,
+    "freeze_holds_pass": "4/4",
+    "dev_from_median_LU": -0.4,
+    "dialog_dev_from_median_LU": -0.1
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 125,
+    "frames": 3874
+   },
+   "subtitle_sync": {
+    "pages": 17,
+    "pass": 17,
+    "all_pass": true,
+    "max_s": -0.122,
+    "min_s": -0.14
+   },
+   "safety": {
+    "anchors": [],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": null,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 17,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 5,
+     "mix_exact": 5
+    },
+    "large-v3-turbo": {
+     "vo_exact": 8,
+     "mix_exact": 9
+    },
+    "lines": 17
+   }
+  },
+  {
+   "act": "a1",
+   "title": "第一幕：漂亮的外表",
+   "pack": "review/G5/a1/pack",
+   "exists": true,
+   "cues": 8,
+   "current_build": {
+    "cue_total_sec": 155.36,
+    "preroll_sec": 1.2,
+    "lines": 27
+   },
+   "pack_generated": "2026-10-22 10:34",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 155.4,
+    "act_preroll_total_sec": 1.2,
+    "act_budget_recorded_sec": 144.2,
+    "diff_vs_budget_sec": 12.4,
+    "estimate_sum_sec": 144.3,
+    "playback_with_holds_sec": 182.06
+   },
+   "loudness": {
+    "I_LUFS": -16.3,
+    "LRA_LU": 17.0,
+    "TP_dBTP": -1.2,
+    "sample_peak_dBFS": -1.21,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -15.0,
+    "line_mix_I_spread_LU": 0.5,
+    "momentary_max_LUFS": -8.9,
+    "music_sfx_only_max_LUFS": -16.9,
+    "freeze_holds_pass": "5/5",
+    "dev_from_median_LU": -0.2,
+    "dialog_dev_from_median_LU": -0.1
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 152,
+    "frames": 5462
+   },
+   "subtitle_sync": {
+    "pages": 27,
+    "pass": 27,
+    "all_pass": true,
+    "max_s": -0.122,
+    "min_s": -0.196
+   },
+   "safety": {
+    "anchors": [],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": null,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 27,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 23,
+     "mix_exact": 20
+    },
+    "large-v3-turbo": {
+     "vo_exact": 23,
+     "mix_exact": 21
+    },
+    "lines": 27
+   }
+  },
+  {
+   "act": "a2",
+   "title": "第二幕：看不見的操偶線",
+   "pack": "review/G5/a2/pack",
+   "exists": true,
+   "cues": 13,
+   "current_build": {
+    "cue_total_sec": 260.57,
+    "preroll_sec": 3.0,
+    "lines": 38
+   },
+   "pack_generated": "2026-10-22 10:05",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 260.6,
+    "act_preroll_total_sec": 3.0,
+    "act_budget_recorded_sec": 255.0,
+    "diff_vs_budget_sec": 8.6,
+    "estimate_sum_sec": 255.2,
+    "playback_with_holds_sec": 304.07
+   },
+   "loudness": {
+    "I_LUFS": -15.9,
+    "LRA_LU": 13.2,
+    "TP_dBTP": -1.4,
+    "sample_peak_dBFS": -1.44,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -14.9,
+    "line_mix_I_spread_LU": 0.6,
+    "momentary_max_LUFS": -8.9,
+    "music_sfx_only_max_LUFS": -16.9,
+    "freeze_holds_pass": "7/7",
+    "dev_from_median_LU": 0.2,
+    "dialog_dev_from_median_LU": 0.0
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 148,
+    "frames": 9122
+   },
+   "subtitle_sync": {
+    "pages": 43,
+    "pass": 43,
+    "all_pass": true,
+    "max_s": 0.051,
+    "min_s": -0.403
+   },
+   "safety": {
+    "anchors": [
+     "elbow",
+     "knee",
+     "wrist"
+    ],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": 17.2,
+    "string_through_child_frames": 0,
+    "required_narration": {
+     "a2_c004_02": {
+      "cue_eq_script": true,
+      "script_eq_claude_md": true,
+      "speaker": "旁白"
+     },
+     "a2_c008_05": {
+      "cue_eq_script": true,
+      "script_eq_claude_md": true,
+      "speaker": "旁白"
+     }
+    },
+    "lines_total": 38,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 28,
+     "mix_exact": 29
+    },
+    "large-v3-turbo": {
+     "vo_exact": 26,
+     "mix_exact": 26
+    },
+    "lines": 38
+   }
+  },
+  {
+   "act": "a3",
+   "title": "第三幕：我可以說不要",
+   "pack": "review/G5/a3/pack",
+   "exists": true,
+   "cues": 8,
+   "current_build": {
+    "cue_total_sec": 146.82,
+    "preroll_sec": 2.4,
+    "lines": 23
+   },
+   "pack_generated": "2026-10-22 09:19",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 146.8,
+    "act_preroll_total_sec": 2.4,
+    "act_budget_recorded_sec": 141.8,
+    "diff_vs_budget_sec": 7.4,
+    "estimate_sum_sec": 141.7,
+    "playback_with_holds_sec": 174.72
+   },
+   "loudness": {
+    "I_LUFS": -16.1,
+    "LRA_LU": 15.8,
+    "TP_dBTP": -1.2,
+    "sample_peak_dBFS": -1.22,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -15.0,
+    "line_mix_I_spread_LU": 0.4,
+    "momentary_max_LUFS": -9.6,
+    "music_sfx_only_max_LUFS": -16.7,
+    "freeze_holds_pass": "5/5",
+    "dev_from_median_LU": 0.0,
+    "dialog_dev_from_median_LU": -0.1
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 3
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 157,
+    "frames": 5242
+   },
+   "subtitle_sync": {
+    "pages": 25,
+    "pass": 25,
+    "all_pass": true,
+    "max_s": 0.02,
+    "min_s": -0.327
+   },
+   "safety": {
+    "anchors": [],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": null,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 23,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 12,
+     "mix_exact": 11
+    },
+    "large-v3-turbo": {
+     "vo_exact": 13,
+     "mix_exact": 12
+    },
+    "lines": 23
+   }
+  },
+  {
+   "act": "a4",
+   "title": "第四幕：危險會跑到路上",
+   "pack": "review/G5/a4/pack",
+   "exists": true,
+   "cues": 13,
+   "current_build": {
+    "cue_total_sec": 218.59,
+    "preroll_sec": 1.2,
+    "lines": 33
+   },
+   "pack_generated": "2026-10-22 09:18",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 218.6,
+    "act_preroll_total_sec": 1.2,
+    "act_budget_recorded_sec": 224.0,
+    "diff_vs_budget_sec": -4.2,
+    "estimate_sum_sec": 224.0,
+    "playback_with_holds_sec": 260.29
+   },
+   "loudness": {
+    "I_LUFS": -15.9,
+    "LRA_LU": 14.8,
+    "TP_dBTP": -0.9,
+    "sample_peak_dBFS": -0.87,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -14.9,
+    "line_mix_I_spread_LU": 0.4,
+    "momentary_max_LUFS": -8.4,
+    "music_sfx_only_max_LUFS": -16.9,
+    "freeze_holds_pass": "7/7",
+    "dev_from_median_LU": 0.2,
+    "dialog_dev_from_median_LU": 0.0
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 145,
+    "frames": 7809
+   },
+   "subtitle_sync": {
+    "pages": 34,
+    "pass": 34,
+    "all_pass": true,
+    "max_s": 0.041,
+    "min_s": -0.199
+   },
+   "safety": {
+    "anchors": [
+     "elbow",
+     "knee",
+     "wrist"
+    ],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": 16.9,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 33,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 26,
+     "mix_exact": 23
+    },
+    "large-v3-turbo": {
+     "vo_exact": 25,
+     "mix_exact": 23
+    },
+    "lines": 33
+   }
+  },
+  {
+   "act": "a5",
+   "title": "第五幕：找得到的幫手",
+   "pack": "review/G5/a5/pack",
+   "exists": true,
+   "cues": 8,
+   "current_build": {
+    "cue_total_sec": 183.53,
+    "preroll_sec": 1.2,
+    "lines": 28
+   },
+   "pack_generated": "2026-10-22 09:43",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 183.5,
+    "act_preroll_total_sec": 1.2,
+    "act_budget_recorded_sec": 171.0,
+    "diff_vs_budget_sec": 13.7,
+    "estimate_sum_sec": 171.0,
+    "playback_with_holds_sec": 210.23
+   },
+   "loudness": {
+    "I_LUFS": -15.8,
+    "LRA_LU": 15.1,
+    "TP_dBTP": -1.1,
+    "sample_peak_dBFS": -1.11,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -15.0,
+    "line_mix_I_spread_LU": 4.1,
+    "momentary_max_LUFS": -8.9,
+    "music_sfx_only_max_LUFS": -17.1,
+    "freeze_holds_pass": "5/5",
+    "dev_from_median_LU": 0.3,
+    "dialog_dev_from_median_LU": -0.1
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 3
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 151,
+    "frames": 6307
+   },
+   "subtitle_sync": {
+    "pages": 28,
+    "pass": 28,
+    "all_pass": true,
+    "max_s": -0.121,
+    "min_s": -0.149
+   },
+   "safety": {
+    "anchors": [
+     "elbow",
+     "knee",
+     "wrist"
+    ],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": 10.4,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 28,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 20,
+     "mix_exact": 17
+    },
+    "large-v3-turbo": {
+     "vo_exact": 21,
+     "mix_exact": 20
+    },
+    "lines": 28
+   }
+  },
+  {
+   "act": "a6",
+   "title": "第六幕：可以求助的秘密",
+   "pack": "review/G5/a6/pack",
+   "exists": true,
+   "cues": 9,
+   "current_build": {
+    "cue_total_sec": 185.19,
+    "preroll_sec": 1.8,
+    "lines": 28
+   },
+   "pack_generated": "2026-10-22 10:36",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 185.2,
+    "act_preroll_total_sec": 1.8,
+    "act_budget_recorded_sec": 183.0,
+    "diff_vs_budget_sec": 4.0,
+    "estimate_sum_sec": 182.9,
+    "playback_with_holds_sec": 215.99
+   },
+   "loudness": {
+    "I_LUFS": -16.2,
+    "LRA_LU": 14.2,
+    "TP_dBTP": -1.2,
+    "sample_peak_dBFS": -1.19,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -14.9,
+    "line_mix_I_spread_LU": 0.3,
+    "momentary_max_LUFS": -8.9,
+    "music_sfx_only_max_LUFS": -17.3,
+    "freeze_holds_pass": "6/6",
+    "dev_from_median_LU": -0.1,
+    "dialog_dev_from_median_LU": 0.0
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 3
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 132,
+    "frames": 6480
+   },
+   "subtitle_sync": {
+    "pages": 29,
+    "pass": 28,
+    "all_pass": false,
+    "max_s": -0.121,
+    "min_s": -0.854
+   },
+   "safety": {
+    "anchors": [
+     "elbow",
+     "knee",
+     "wrist"
+    ],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": 54.0,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 28,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 17,
+     "mix_exact": 16
+    },
+    "large-v3-turbo": {
+     "vo_exact": 19,
+     "mix_exact": 19
+    },
+    "lines": 28
+   }
+  },
+  {
+   "act": "a7",
+   "title": "複習與收束",
+   "pack": "review/G5/a7/pack",
+   "exists": true,
+   "cues": 3,
+   "current_build": {
+    "cue_total_sec": 47.41,
+    "preroll_sec": 0.6,
+    "lines": 6
+   },
+   "pack_generated": "2026-10-22 10:17",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 47.4,
+    "act_preroll_total_sec": 0.6,
+    "act_budget_recorded_sec": 50.5,
+    "diff_vs_budget_sec": -2.5,
+    "estimate_sum_sec": 50.4,
+    "playback_with_holds_sec": 58.51
+   },
+   "loudness": {
+    "I_LUFS": -16.1,
+    "LRA_LU": 16.0,
+    "TP_dBTP": -1.3,
+    "sample_peak_dBFS": -1.32,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -14.9,
+    "line_mix_I_spread_LU": 0.2,
+    "momentary_max_LUFS": -10.3,
+    "music_sfx_only_max_LUFS": -17.0,
+    "freeze_holds_pass": "3/3",
+    "dev_from_median_LU": 0.0,
+    "dialog_dev_from_median_LU": 0.0
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 3,
+     "red": 2
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 2
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 122,
+    "frames": 1755
+   },
+   "subtitle_sync": {
+    "pages": 7,
+    "pass": 6,
+    "all_pass": false,
+    "max_s": -0.122,
+    "min_s": -2.577
+   },
+   "safety": {
+    "anchors": [],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": null,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 6,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 16,
+    "subtitle_max_rows_per_page": 2,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 2,
+     "mix_exact": 2
+    },
+    "large-v3-turbo": {
+     "vo_exact": 3,
+     "mix_exact": 3
+    },
+    "lines": 6
+   }
+  },
+  {
+   "act": "a8",
+   "title": "閉幕",
+   "pack": "review/G5/a8/pack",
+   "exists": true,
+   "cues": 3,
+   "current_build": {
+    "cue_total_sec": 24.8,
+    "preroll_sec": 0.6,
+    "lines": 1
+   },
+   "pack_generated": "2026-10-22 10:20",
+   "matches_current_build": true,
+   "duration_diffs_vs_build": [],
+   "cues_missing_in_pack": [],
+   "durations": {
+    "act_total_sec": 24.8,
+    "act_preroll_total_sec": 0.6,
+    "act_budget_recorded_sec": 30.5,
+    "diff_vs_budget_sec": -5.1,
+    "estimate_sum_sec": 30.5,
+    "playback_with_holds_sec": 30.9
+   },
+   "loudness": {
+    "I_LUFS": -19.4,
+    "LRA_LU": 7.5,
+    "TP_dBTP": -2.1,
+    "sample_peak_dBFS": -2.14,
+    "clipped_samples": 0,
+    "dialog_median_mix_I_LUFS": -14.7,
+    "line_mix_I_spread_LU": 0.0,
+    "momentary_max_LUFS": -12.4,
+    "music_sfx_only_max_LUFS": -15.7,
+    "freeze_holds_pass": "1/1",
+    "dev_from_median_LU": -3.3,
+    "dialog_dev_from_median_LU": 0.2
+   },
+   "flash": {
+    "grid16x9": {
+     "luma": 2,
+     "red": 1
+    },
+    "fine32x18": {
+     "luma": 3,
+     "red": 2
+    },
+    "pass16x9": true,
+    "passFine": true,
+    "pass": true,
+    "near_limit_total": 84,
+    "frames": 927
+   },
+   "subtitle_sync": {
+    "pages": 1,
+    "pass": 1,
+    "all_pass": true,
+    "max_s": -0.124,
+    "min_s": -0.124
+   },
+   "safety": {
+    "anchors": [],
+    "anchors_only_allowed": true,
+    "min_dist_to_head_px": null,
+    "string_through_child_frames": 0,
+    "required_narration": {},
+    "lines_total": 1,
+    "lines_differ_from_script": 0,
+    "subtitle_max_chars_per_row": 14,
+    "subtitle_max_rows_per_page": 1,
+    "getUserMedia": 0,
+    "mediaDevices": 0,
+    "capture_external_requests": 0,
+    "capture_console_errors": 0
+   },
+   "transcripts": {
+    "small": {
+     "vo_exact": 0,
+     "mix_exact": 0
+    },
+    "large-v3-turbo": {
+     "vo_exact": 1,
+     "mix_exact": 0
+    },
+    "lines": 1
+   }
+  }
+ ],
+ "loudness": {
+  "rule": "v1.2 第 24 節第 7 項：各段響度差 ±1 LU。基準＝九段整合響度（act_review_pack 播放錄製混音，含教師停格假設）的中位數；另列各段對白（混音中各句）響度中位數的差。",
+  "median_I_LUFS": -16.1,
+  "max_abs_dev_LU": 3.3,
+  "spread_LU": 3.6,
+  "pass_pm1": false,
+  "segments_over_1LU": [
+   "a8"
+  ],
+  "dialog_median_LUFS": -14.9,
+  "dialog_max_abs_dev_LU": 0.2,
+  "dialog_pass_pm1": true,
+  "show_concat": {
+   "I_LUFS": -16.1,
+   "TP_dBTP": -0.9,
+   "files": [
+    "review/G5/a0/pack/audio/a0_mix.wav",
+    "review/G5/a1/pack/audio/a1_mix.wav",
+    "review/G5/a2/pack/audio/a2_mix.wav",
+    "review/G5/a3/pack/audio/a3_mix.wav",
+    "review/G5/a4/pack/audio/a4_mix.wav",
+    "review/G5/a5/pack/audio/a5_mix.wav",
+    "review/G5/a6/pack/audio/a6_mix.wav",
+    "review/G5/a7/pack/audio/a7_mix.wav",
+    "review/G5/a8/pack/audio/a8_mix.wav"
+   ]
+  }
+ },
+ "duration": {
+  "cue_sum_current_build_sec": 1332.8,
+  "preroll_sum_sec": 12.6,
+  "playback_current_build_sec": 1345.4,
+  "playback_current_build_min": 22.42,
+  "playback_from_packs_sec": 1345.4,
+  "estimate_recorded_sec": 1313.0,
+  "teacher": {
+   "teacher_sec": 824.2,
+   "includes_preroll": true,
+   "source": "teacher/data/timing.json",
+   "script_total_sec": 2157,
+   "script_playback_level0_sec": 1332.8,
+   "script_teacher_speaking_sec": 706,
+   "script_press_and_scene_sec": 118.2,
+   "script_generated": "2026/10/22 10:53:07",
+   "script_cue_hash": "fe73a104f6",
+   "estimate_v03": {
+    "default_scenario_sec": 2118.0,
+    "recorded_sec": 1313.0,
+    "teacher_sec": 805.0,
+    "components": [
+     {
+      "item": "八題作答（題卡 cue 277.5＋教師 8×47＋換 cue 24）",
+      "sec": 677.5
+     },
+     {
+      "item": "教師引導與練習（問候 30、規則 75、找找看 3×30、練習 90、口訣 30、結語 45）",
+      "sec": 360.0
+     },
+     {
+      "item": "故事段換 cue（45 次 × 1 秒）",
+      "sec": 45.0
+     }
+    ]
+   },
+   "note": "教師時間＝講稿 totalSec − 預錄播放 level0（教師講述＋按鍵反應＋換景漸暗）"
+  },
+  "total_sec": 2157.0,
+  "total_min": 35.95,
+  "limit_min": 38.0,
+  "pass_le_38min": true,
+  "margin_sec": 123.0,
+  "rule": "v1.3 第 8 節：以講稿估計的教師時間＋播放時間 ≤ 38 分；合計＝目前建置全部 cue 長度＋換景漸暗預捲＋教師時間（講稿：教師講述＋按鍵反應）"
+ },
+ "packs_matching_build": 9,
+ "packs_total": 9,
+ "flash_all_pass": true,
+ "subtitle_sync_all_pass": false
+}

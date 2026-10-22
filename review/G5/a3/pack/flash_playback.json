@@ -20,9 +20,9 @@
     480
    ],
    "count_per_sec": 3,
-   "window_start": 3.4,
+   "window_start": 3.9667,
    "cue": "a3_c001",
-   "cue_t": 2.8
+   "cue_t": 3.3667
   },
   {
    "type": "luma",
@@ -79,34 +79,6 @@
    "window_start": 35.5667,
    "cue": "a3_c002",
    "cue_t": 9.9667
-  },
-  {
-   "type": "luma",
-   "region": "x12_y1",
-   "px": [
-    1440,
-    120,
-    1560,
-    240
-   ],
-   "count_per_sec": 3,
-   "window_start": 165.9667,
-   "cue": "a3_c008",
-   "cue_t": 31.1333
-  },
-  {
-   "type": "luma",
-   "region": "x12_y5",
-   "px": [
-    1440,
-    600,
-    1560,
-    720
-   ],
-   "count_per_sec": 3,
-   "window_start": 166.0,
-   "cue": "a3_c008",
-   "cue_t": 31.1667
   },
   {
    "type": "luma",
@@ -199,6 +171,20 @@
     840,
     120,
     960,
+    240
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1333,
+   "cue": "a3_c001",
+   "cue_t": -0.4667
+  },
+  {
+   "type": "luma",
+   "region": "x12_y1",
+   "px": [
+    1440,
+    120,
+    1560,
     240
    ],
    "count_per_sec": 2,
@@ -1137,6 +1123,20 @@
     1320,
     600,
     1440,
+    720
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.2,
+   "cue": "a3_c001",
+   "cue_t": -0.4
+  },
+  {
+   "type": "luma",
+   "region": "x12_y5",
+   "px": [
+    1440,
+    600,
+    1560,
     720
    ],
    "count_per_sec": 2,
@@ -2204,9 +2204,9 @@
     600
    ],
    "count_per_sec": 2,
-   "window_start": 168.1333,
+   "window_start": 167.8,
    "cue": "a3_c008",
-   "cue_t": 33.3
+   "cue_t": 33.2667
   }
  ],
  "near_limit_total": 157,
@@ -2238,15 +2238,15 @@
   {
    "from": "a3_c004",
    "to": "a3_c005",
-   "t": 89.2,
+   "t": 88.9,
    "mean_luma_before": 0.423,
    "mean_luma_after": 0.4229,
-   "max_region_luma_delta": 0.0061
+   "max_region_luma_delta": 0.0058
   },
   {
    "from": "a3_c005",
    "to": "a3_c006",
-   "t": 115.9,
+   "t": 115.6,
    "mean_luma_before": 0.4277,
    "mean_luma_after": 0.4277,
    "max_region_luma_delta": 0.0015
@@ -2254,7 +2254,7 @@
   {
    "from": "a3_c006",
    "to": "a3_c007",
-   "t": 125.8667,
+   "t": 125.5333,
    "mean_luma_before": 0.4253,
    "mean_luma_after": 0.4277,
    "max_region_luma_delta": 0.1484
@@ -2262,7 +2262,7 @@
   {
    "from": "a3_c007",
    "to": "a3_c008",
-   "t": 134.2333,
+   "t": 133.9333,
    "mean_luma_before": 0.2761,
    "mean_luma_after": 0.2761,
    "max_region_luma_delta": 0.0
@@ -2270,7 +2270,7 @@
  ],
  "mean_luma_range": [
   0.0026,
-  0.5437
+  0.5546
  ],
  "max_sat_red_ratio": 0.02839
 }

@@ -90,7 +90,7 @@ const MAP_Y = 0.012;
 /** 預定路線（虛線）：支路北上 → 右轉進近車道 → 停在停止線前 */
 function planPoints(): [number, number][] {
   const pts: [number, number][] = [];
-  for (let v = 2.95; v > 1.95; v -= 0.1) pts.push([-3.25, v]);
+  for (let v = 2.7; v > 1.95; v -= 0.1) pts.push([-3.25, v]);   // G6 精修：起點從 v 2.95 往上移到 2.7（a4_map 鏡頭往上收，避開台口左側布幕）
   const c: [number, number] = [-2.3, 1.95], R = 0.95;
   for (let k = 0; k <= 16; k++) { const th = Math.PI + (Math.PI / 2) * (k / 16); pts.push([c[0] + R * Math.cos(th), c[1] + R * Math.sin(th)]); }
   for (let u = -2.2; u <= 2.17; u += 0.1) pts.push([u, 1.0]);
@@ -99,7 +99,7 @@ function planPoints(): [number, number][] {
 
 /** 實際路線（小車中心）：上坡慢慢晃 → 晚轉、轉太大跨到對向車道 → 拉回 → 過了停止線，偏向斑馬線 → 在碰到任何東西前凍結 */
 export const ACTUAL: [number, number][] = [
-  [-3.25, 2.95], [-3.17, 2.62], [-3.33, 2.28], [-3.18, 1.98], [-3.02, 1.6], [-2.62, 0.82], [-1.75, 0.4], [-0.55, 0.52], [0.7, 0.9], [1.7, 1.0], [2.4, 0.93], [2.92, 0.84],
+  [-3.25, 2.7], [-3.17, 2.42], [-3.33, 2.16], [-3.18, 1.92], [-3.02, 1.6], [-2.62, 0.82], [-1.75, 0.4], [-0.55, 0.52], [0.7, 0.9], [1.7, 1.0], [2.4, 0.93], [2.92, 0.84],
 ];
 /** 路人（斑馬線上，往學校方向走） */
 export const WALKER_UV: [number, number] = [4.4, 0.1];
@@ -229,8 +229,9 @@ export const A4_MAP_CAMERAS: Record<string, CameraPreset> = {
   // 俯視鏡位都在台口裡面（z < 4）：台口外的高鏡位會看到台口上緣與摺幕
   /** 俯視（a4_c002 街道摺平後；a4_c008 回街景前） */
   a4_map_top: { pos: [-5.2, 20.5, 2.4], target: [-5.2, 0, -0.4], fov: 20 },
-  /** 俯視整張地圖（a4_c003 起點；小車在左下支路） */
-  a4_map: { pos: [-4.3, 14.6, 3.35], target: [-4.3, 0, 1.1], fov: 20 },
+  /** 俯視整張地圖（a4_c003 起點；小車在左下支路）。G6 精修：畫面下緣往上收（下緣在地面 z≈3.32），
+   *  台口左側收攏的布幕摺頁（z 3.43–4.0、x −8.35～−7.35）不再從左下角露出來；小車起點跟著往上移（ACTUAL[0]） */
+  a4_map: { pos: [-4.3, 14.6, 3.25], target: [-4.3, 0, 0.75], fov: 20 },
   /** 小車偏離、凍結（看路口、停止線與斑馬線） */
   a4_map_cross: { pos: [-1.7, 10.6, 3.3], target: [-1.7, 0, 1.25], fov: 20 },
   /** 剪影幕從地圖上立起來（台口裡面、斜看；之後切到正面 a4_sil） */
@@ -321,6 +322,29 @@ export function buildA4Roadmap(ctx: SetContext): BuiltSet {
     m.receiveShadow = true;
     m.renderOrder = LAYER.backdrop.order + 2;
     group.add(m);
+  }
+  // 原點的地圖補片（G6 精修）：引擎 stage.ts 給程式角色（折折）的接觸陰影放在 root 位置＝永遠在 (0, 0.012, 0.05)，
+  // 和地圖同高、z-fighting 成斑馬線旁一條灰色殘影（a4_c002 換景後折折還在名冊上）。用同一張地圖貼圖、同樣的 UV、
+  // 不透明、高一點點（寫深度）蓋住它；和 gate 景的 zzpatch 同一個做法，本景一直開著（補片和底下的地圖一模一樣）
+  if (mapMat) {
+    const P = { x0: -0.45, x1: 0.45, z0: -0.32, z1: 0.42 };
+    const pg = new PlaneGeometry(P.x1 - P.x0, P.z1 - P.z0);
+    const pos = pg.attributes.position, uv = pg.attributes.uv;
+    const cx = (P.x0 + P.x1) / 2, cz = (P.z0 + P.z1) / 2;
+    for (let k = 0; k < pos.count; k++) {
+      const wx = cx + pos.getX(k), wz = cz - pos.getY(k);          // 平面轉 −90°：本地 y → 世界 −z
+      uv.setXY(k, (wx - MAP_X + MAP_W / 2) / MAP_W, (0 - wz + MAP_H / 2) / MAP_H);
+    }
+    uv.needsUpdate = true;
+    const pm = mapMat.clone();
+    mats.push(pm);
+    const patch = new Mesh(pg, pm);
+    patch.name = 'a4:zzPatch';
+    patch.rotation.x = -Math.PI / 2;
+    patch.position.set(cx, MAP_Y + 0.004, cz);
+    patch.receiveShadow = true;
+    patch.renderOrder = LAYER.backdrop.order + 3;
+    group.add(patch);
   }
   // 地圖淡成校門口地面（a4_c008 回街景前；gate 景同一張地面圖、同一位置）
   const streetImg = ctx.image('sets/gate/set-gate_floor');

@@ -16,17 +16,17 @@
    "near_limit_3": [
     {
      "type": "luma",
-     "region": "x10_y7",
+     "region": "x20_y6",
      "px": [
-      600,
-      420,
-      660,
-      480
+      1200,
+      360,
+      1260,
+      420
      ],
      "count_per_sec": 3,
-     "window_start": 19.5,
-     "cue": "a6_c002",
-     "cue_t": 1.7333
+     "window_start": 144.3,
+     "cue": "a6_c007",
+     "cue_t": 6.5333
     },
     {
      "type": "luma",
@@ -86,17 +86,17 @@
     },
     {
      "type": "luma",
-     "region": "x16_y9",
+     "region": "x9_y9",
      "px": [
-      960,
       540,
-      1020,
+      540,
+      600,
       600
      ],
      "count_per_sec": 3,
-     "window_start": 19.1667,
-     "cue": "a6_c002",
-     "cue_t": 1.4
+     "window_start": 194.8667,
+     "cue": "a6_c009",
+     "cue_t": 8.3
     },
     {
      "type": "red",
@@ -114,20 +114,6 @@
     },
     {
      "type": "luma",
-     "region": "x19_y9",
-     "px": [
-      1140,
-      540,
-      1200,
-      600
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.6333,
-     "cue": "a6_c002",
-     "cue_t": 1.8667
-    },
-    {
-     "type": "luma",
      "region": "x21_y9",
      "px": [
       1260,
@@ -139,20 +125,6 @@
      "window_start": 111.4667,
      "cue": "a6_c006",
      "cue_t": 12.4667
-    },
-    {
-     "type": "luma",
-     "region": "x16_y10",
-     "px": [
-      960,
-      600,
-      1020,
-      660
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.2333,
-     "cue": "a6_c002",
-     "cue_t": 1.4667
     },
     {
      "type": "red",
@@ -170,17 +142,17 @@
     },
     {
      "type": "luma",
-     "region": "x18_y10",
+     "region": "x21_y10",
      "px": [
-      1080,
+      1260,
       600,
-      1140,
+      1320,
       660
      ],
      "count_per_sec": 3,
-     "window_start": 19.3,
-     "cue": "a6_c002",
-     "cue_t": 1.5333
+     "window_start": 144.2667,
+     "cue": "a6_c007",
+     "cue_t": 6.5
     },
     {
      "type": "luma",
@@ -212,6 +184,48 @@
     },
     {
      "type": "luma",
+     "region": "x21_y12",
+     "px": [
+      1260,
+      720,
+      1320,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 149.9333,
+     "cue": "a6_c007",
+     "cue_t": 12.1667
+    },
+    {
+     "type": "luma",
+     "region": "x22_y12",
+     "px": [
+      1320,
+      720,
+      1380,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 144.4333,
+     "cue": "a6_c007",
+     "cue_t": 6.6667
+    },
+    {
+     "type": "luma",
+     "region": "x23_y12",
+     "px": [
+      1380,
+      720,
+      1440,
+      780
+     ],
+     "count_per_sec": 3,
+     "window_start": 150.0667,
+     "cue": "a6_c007",
+     "cue_t": 12.3
+    },
+    {
+     "type": "luma",
      "region": "x21_y13",
      "px": [
       1260,
@@ -240,62 +254,6 @@
     },
     {
      "type": "luma",
-     "region": "x10_y15",
-     "px": [
-      600,
-      900,
-      660,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.3667,
-     "cue": "a6_c002",
-     "cue_t": 1.6
-    },
-    {
-     "type": "luma",
-     "region": "x11_y15",
-     "px": [
-      660,
-      900,
-      720,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.2667,
-     "cue": "a6_c002",
-     "cue_t": 1.5
-    },
-    {
-     "type": "luma",
-     "region": "x12_y15",
-     "px": [
-      720,
-      900,
-      780,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.3333,
-     "cue": "a6_c002",
-     "cue_t": 1.5667
-    },
-    {
-     "type": "luma",
-     "region": "x16_y15",
-     "px": [
-      960,
-      900,
-      1020,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.1333,
-     "cue": "a6_c002",
-     "cue_t": 1.3667
-    },
-    {
-     "type": "luma",
      "region": "x17_y15",
      "px": [
       1020,
@@ -304,12 +262,54 @@
       960
      ],
      "count_per_sec": 3,
-     "window_start": 19.2667,
+     "window_start": 18.9333,
      "cue": "a6_c002",
-     "cue_t": 1.5
+     "cue_t": 1.1667
+    },
+    {
+     "type": "luma",
+     "region": "x18_y15",
+     "px": [
+      1080,
+      900,
+      1140,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 18.8667,
+     "cue": "a6_c002",
+     "cue_t": 1.1
+    },
+    {
+     "type": "luma",
+     "region": "x22_y15",
+     "px": [
+      1320,
+      900,
+      1380,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.3333,
+     "cue": "a6_c006",
+     "cue_t": 10.3333
+    },
+    {
+     "type": "luma",
+     "region": "x24_y15",
+     "px": [
+      1440,
+      900,
+      1500,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 144.0667,
+     "cue": "a6_c007",
+     "cue_t": 6.3
     }
    ],
-   "near_limit_total": 554,
+   "near_limit_total": 562,
    "near_limit_3_total": 21
   },
   "proj_16x9": {
@@ -357,45 +357,17 @@
     },
     {
      "type": "luma",
-     "region": "x16_y9",
+     "region": "x21_y8",
      "px": [
-      960,
-      540,
-      1020,
-      600
+      1260,
+      480,
+      1320,
+      540
      ],
      "count_per_sec": 3,
-     "window_start": 19.2333,
-     "cue": "a6_c002",
-     "cue_t": 1.4667
-    },
-    {
-     "type": "luma",
-     "region": "x19_y9",
-     "px": [
-      1140,
-      540,
-      1200,
-      600
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.6667,
-     "cue": "a6_c002",
-     "cue_t": 1.9
-    },
-    {
-     "type": "luma",
-     "region": "x16_y10",
-     "px": [
-      960,
-      600,
-      1020,
-      660
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.2667,
-     "cue": "a6_c002",
-     "cue_t": 1.5
+     "window_start": 111.8,
+     "cue": "a6_c006",
+     "cue_t": 12.8
     },
     {
      "type": "luma",
@@ -424,38 +396,10 @@
      "window_start": 176.9333,
      "cue": "a6_c008",
      "cue_t": 14.0333
-    },
-    {
-     "type": "luma",
-     "region": "x10_y15",
-     "px": [
-      600,
-      900,
-      660,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.5,
-     "cue": "a6_c002",
-     "cue_t": 1.7333
-    },
-    {
-     "type": "luma",
-     "region": "x11_y15",
-     "px": [
-      660,
-      900,
-      720,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 19.4,
-     "cue": "a6_c002",
-     "cue_t": 1.6333
     }
    ],
-   "near_limit_total": 544,
-   "near_limit_3_total": 8
+   "near_limit_total": 541,
+   "near_limit_3_total": 4
   }
  }
 }

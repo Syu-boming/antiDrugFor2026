@@ -1,0 +1,5 @@
+- 2026-10-22 11:10 第 2 輪開工：讀完 b2r2_failed／b2r2_regress a5 條目、REVIEW 最後四節、SHOW_INTERFACE 12–13；產生器輸出與現行 a5.json 一致（舊版存成 make_a5_cues_r1.py）；私人建置改成 scratch 工作版（a5_gate.ts 與 cue 檔都不碰共用檔）。下一步：查救護人員頭浮在車身前的原因。
+- 2026-10-22 11:35 素材與排戲草稿完成（scratch）：Codex 小朋友 1 張（同畫風紙片小人，切身體＋揮手手臂）、紙旗正反面、paperize（校門口五個景片、救護車、後車門、擔架、街角小店）；c001 −2.75 秒、小朋友只在遠景轉角；c005 環顧改成空接送區→阿樂整個人→慢搖到街角露出背對旗角；c007 先開門、救護人員從門後出來（z 0.6／0.7）、關門後緩入緩出開出畫面。下一步：私人光敏。
+- 2026-10-22 11:58 私人光敏 8 個 cue 全部 ≤3（fine_32x18／16×9），沒有一格超過 12% 的硬切；長度約 179.1 秒（原 183.5）。已裝回：assets/final/sets/a5_gate（fix2 素材）、app/src/sets/a5_gate.ts（tsc 通過）、app/cues/show/a5.json（台詞、題目、編號不變）。下一步：npm run build → engine-test → 正式驗收包。
+- 2026-10-22 12:02 npm run build 通過；engine-test 134／134。正式驗收包（--skip-asr）背景執行中，log：review/G5/a5/checks/pack_fix2.log。
+- 2026-10-22 12:24 完成：正式驗收包 review/G5/a5/pack（--skip-asr）INDEX 光敏「整段 通過」（fine_32x18 明暗 3、紅色 3、超標 0；16×9 通過）；長度 179.1 秒（原 183.5；a5_c001 41.1→38.3、a5_c007 25.8→24.1）；字幕 28／28 頁在範圍內；線到頭部框、兒童背景與上一版相同；engine-test 134／134。私人建置與暫存影格已刪。待主線：重驗、commit。

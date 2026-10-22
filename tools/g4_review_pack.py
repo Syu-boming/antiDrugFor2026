@@ -472,6 +472,8 @@ def mix(out: Path, tl: dict):
             v["stop"] = min(v["stop"], t + fade + 0.01)
 
     def crossfade(mid, t, loop=True, fade=1.5, gain=1.0, offset=0.0):
+        nonlocal current_music  # 記住目前的配樂：和引擎一樣，同一首不重新淡入（engine.ts 只在 mixer.musicId 不同時交叉淡化）
+        current_music = None if mid == 'none' else mid
         fade = max(0.05, fade)
         for v in voices:
             if v["bus"] != "music" or v["stop"] <= t:

@@ -255,7 +255,8 @@
      "target": "zhezhe",
      "duration": 5.4,
      "params": {
-      "form": "idle"
+      "form": "idle",
+      "minScale": 0.8
      }
     },
     {
@@ -984,12 +985,12 @@
     },
     {
      "name": "zhezhe.hopTo",
-     "start": "a0_c004_03-0.90",
+     "start": "a0_c004_03-1.40",
      "target": "zhezhe",
-     "duration": 0.7,
+     "duration": 0.6,
      "params": {
       "pos": [
-       1.0,
+       0.78,
        1.4,
        -0.6
       ],

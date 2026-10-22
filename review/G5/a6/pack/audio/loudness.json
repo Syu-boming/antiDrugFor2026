@@ -1,11 +1,11 @@
 {
  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
  "file": "audio/a6_mix.wav",
- "duration_sec": 215.99,
+ "duration_sec": 215.89,
  "sample_peak_dBFS": -1.19,
  "clipped_samples": 0,
  "full_playback": {
-  "I_LUFS": -16.1,
+  "I_LUFS": -16.2,
   "LRA_LU": 14.1,
   "TP_dBTP": -1.2
  },
@@ -16,17 +16,17 @@
    "TP_dBTP": -1.4
   },
   "a6_c002": {
-   "I_LUFS": -15.6,
+   "I_LUFS": -15.7,
    "LRA_LU": 6.3,
    "TP_dBTP": -1.8
   },
   "a6_c003": {
-   "I_LUFS": -15.0,
-   "LRA_LU": 3.6,
+   "I_LUFS": -15.2,
+   "LRA_LU": 3.9,
    "TP_dBTP": -2.6
   },
   "a6_c004": {
-   "I_LUFS": -15.3,
+   "I_LUFS": -15.4,
    "LRA_LU": 3.3,
    "TP_dBTP": -2.4
   },
@@ -42,8 +42,8 @@
   },
   "a6_c007": {
    "I_LUFS": -17.4,
-   "LRA_LU": 9.7,
-   "TP_dBTP": -2.8
+   "LRA_LU": 11.5,
+   "TP_dBTP": -2.9
   },
   "a6_c008": {
    "I_LUFS": -17.1,
@@ -51,9 +51,9 @@
    "TP_dBTP": -1.8
   },
   "a6_c009": {
-   "I_LUFS": -15.7,
-   "LRA_LU": 7.3,
-   "TP_dBTP": -1.3
+   "I_LUFS": -15.6,
+   "LRA_LU": 7.0,
+   "TP_dBTP": -1.4
   }
  },
  "lines": [
@@ -96,8 +96,8 @@
    "vo_file_TP_dBTP": -5.1,
    "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -34.6,
-   "vo_minus_background_LU": 19.6
+   "background_I_LUFS": -34.5,
+   "vo_minus_background_LU": 19.5
   },
   {
    "id": "a6_c002_02",
@@ -150,10 +150,10 @@
    "vo_file": "audio/vo/vo_a6_c003_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -7.0,
-   "mix_I_LUFS": -14.0,
+   "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -21.3,
-   "vo_minus_background_LU": 6.4
+   "background_I_LUFS": -38.3,
+   "vo_minus_background_LU": 23.4
   },
   {
    "id": "a6_c003_02",
@@ -348,8 +348,8 @@
    "vo_file_TP_dBTP": -3.1,
    "mix_I_LUFS": -14.8,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -30.0,
-   "vo_minus_background_LU": 15.1
+   "background_I_LUFS": -29.6,
+   "vo_minus_background_LU": 14.7
   },
   {
    "id": "a6_c007_03",
@@ -402,10 +402,10 @@
    "vo_file": "audio/vo/vo_a6_c009_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.1,
-   "mix_I_LUFS": -14.9,
+   "mix_I_LUFS": -14.8,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -32.0,
-   "vo_minus_background_LU": 17.1
+   "background_I_LUFS": -31.5,
+   "vo_minus_background_LU": 16.6
   },
   {
    "id": "a6_c009_02",
@@ -416,10 +416,10 @@
    "vo_file": "audio/vo/vo_a6_c009_02_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -2.7,
-   "mix_I_LUFS": -14.9,
+   "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -29.8,
-   "vo_minus_background_LU": 14.9
+   "background_I_LUFS": -30.0,
+   "vo_minus_background_LU": 15.1
   },
   {
    "id": "a6_c009_03",
@@ -430,10 +430,10 @@
    "vo_file": "audio/vo/vo_a6_c009_03_v04.wav",
    "vo_file_I_LUFS": -18.2,
    "vo_file_TP_dBTP": -1.9,
-   "mix_I_LUFS": -15.1,
+   "mix_I_LUFS": -15.2,
    "vo_in_mix_I_LUFS": -15.2,
-   "background_I_LUFS": -29.7,
-   "vo_minus_background_LU": 14.5
+   "background_I_LUFS": -29.8,
+   "vo_minus_background_LU": 14.6
   },
   {
    "id": "a6_c009_04",
@@ -451,9 +451,9 @@
   }
  ],
  "line_vo_file_I_spread_LU": 0.4,
- "line_mix_I_spread_LU": 1.1,
+ "line_mix_I_spread_LU": 0.4,
  "momentary_max_LUFS": -8.9,
- "momentary_max_rise_within_1s_LU": 58.9,
+ "momentary_max_rise_within_1s_LU": 58.0,
  "momentary_max_rise_per_100ms_LU": 45.9,
  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
  "music_sfx_only": {
@@ -471,13 +471,13 @@
   },
   "max_rise_within_1s_LU": 52.7,
   "max_rise_within_1s_at_sec": 90.1,
-  "sample_peak_dBFS": -8.0,
-  "sample_peak_at_sec": 80.31,
+  "sample_peak_dBFS": -9.9,
+  "sample_peak_at_sec": 80.32,
   "sample_peak_at": {
    "cue": "a6_c004",
-   "cue_t": 0.32
+   "cue_t": 0.33
   },
-  "true_peak_dBTP": -8.0,
+  "true_peak_dBTP": -9.9,
   "I_LUFS": -28.3,
   "g4_reference": {
    "max_LUFS": -15.7,
@@ -525,9 +525,9 @@
   },
   {
    "cue": "a6_c009",
-   "hold_from_sec": 212.49,
+   "hold_from_sec": 212.39,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -45.4,
+   "momentary_max_after_3s_LUFS": -45.5,
    "pass_le_-35": true
   }
  ],
@@ -552,14 +552,6 @@
    "offset": 0.0
   },
   {
-   "t": 17.78,
-   "music": "music_town_night",
-   "loop": true,
-   "fade": 1.0,
-   "gain": 1.0,
-   "offset": 0.0
-  },
-  {
    "t": 99,
    "music": "music_courage",
    "loop": true,
@@ -577,14 +569,6 @@
   },
   {
    "t": 162.91,
-   "music": "music_recovery",
-   "loop": true,
-   "fade": 1.0,
-   "gain": 1.0,
-   "offset": 0.0
-  },
-  {
-   "t": 186.58,
    "music": "music_recovery",
    "loop": true,
    "fade": 1.0,

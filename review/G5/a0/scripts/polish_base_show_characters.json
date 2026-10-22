@@ -1,0 +1,1386 @@
+{
+ "format": "antidrug-g5-show-characters/1",
+ "version": "v01",
+ "date": "2026-10-21",
+ "made_by": "review/G5/shared_art/scripts/build_show_characters.py（G5 共用美術代理）",
+ "format_note": "characters[角色 id]＝app/src/stage/cast.ts StandeeCharConfig（poses[名稱].image＝圖像 id，id 規則同 tools/pack.mjs：相對 assets/final 的路徑去掉副檔名與 _vNN）。poses[名稱].face＝fallbackFaces 的 key（standee.ts 預設也是「角色:姿勢」）。feet／headTop 只在坐、蹲與自動偵測不準的姿勢才寫（像素，該姿勢圖座標）。fallbackFaces＝app/src/stage/face.ts FALLBACK_FACES 同格式（ref＝alpha≥128 不透明範圍左上角），引擎要把它併進 FALLBACK_FACES。face＝face JSON 的素材 id：小晴、小宇沿用 G4；品安、林老師、陳伯伯、葉護理師是 G5 新做的原生 FaceConfig（perPose 正式換片，眼睛兩眼同閉、補片不蓋到頭髮與臉緣）。",
+ "world": {
+  "bench_seat_y": 0.92,
+  "child_height": "小晴 2.5、小宇 2.42、品安 2.45",
+  "adult_height": "阿樂 3.55（分件）、林老師 3.42、陳伯伯 3.45、葉護理師 3.58",
+  "facing": "姿勢圖的朝向寫在各角色 _note；cue 的 facing:-1 會左右翻面"
+ },
+ "characters": {
+  "xiaoqing": {
+   "rig": "standee",
+   "height": 2.5,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-xiaoqing_master"
+    },
+    "reach": {
+     "image": "chr-xiaoqing_pose-reach-worried"
+    },
+    "watch": {
+     "image": "chr-xiaoqing_pose-watch"
+    },
+    "palm": {
+     "image": "chr-xiaoqing_pose-palm"
+    },
+    "worried": {
+     "image": "chr-xiaoqing_pose-worried"
+    },
+    "cross": {
+     "image": "chr-xiaoqing_pose-cross",
+     "face": "xiaoqing:cross"
+    },
+    "palmno": {
+     "image": "chr-xiaoqing_pose-palmno",
+     "face": "xiaoqing:palmno"
+    },
+    "forehead": {
+     "image": "chr-xiaoqing_pose-forehead",
+     "face": "xiaoqing:forehead"
+    },
+    "walk": {
+     "image": "chr-xiaoqing_pose-walk",
+     "face": "xiaoqing:walk",
+     "headTop": -41.8
+    },
+    "walk_l": {
+     "image": "chr-xiaoqing_pose-walkl",
+     "headTop": -41.8
+    },
+    "bow": {
+     "image": "chr-xiaoqing_pose-bow",
+     "headTop": -135.5
+    },
+    "pointr": {
+     "image": "chr-xiaoqing_pose-pointr",
+     "face": "xiaoqing:pointr"
+    },
+    "forehead_l": {
+     "image": "chr-xiaoqing_pose-forehead-l",
+     "face": "xiaoqing:forehead_l"
+    },
+    "sitb": {
+     "image": "chr-xiaoqing_pose-sitb",
+     "face": "xiaoqing:sitb",
+     "feet": [
+      200,
+      1399.4
+     ],
+     "headTop": -12.0,
+     "_note": "第五幕代理新增（Codex）：P-QG2 坐醫院長椅、低頭自責，臉朝畫面右下；座面 0.92–0.94"
+    },
+    "stand_m": {
+     "image": "chr-xiaoqing_pose-stand-m",
+     "face": "xiaoqing:stand_m"
+    }
+   },
+   "face": "face/xiaoqing/face",
+   "_note": "小晴。G5 新增 cross（P-QG1 口訣「不碰」雙手胸前交叉，正面）、palmno（掌心向外說「不要／不試」，朝畫面左）、forehead（手放額前張望，口訣「找大人」，朝畫面右）、walk（行走，往畫面右）。"
+  },
+  "xiaoyu": {
+   "rig": "standee",
+   "height": 2.42,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-xiaoyu_master"
+    },
+    "stepback": {
+     "image": "chr-xiaoyu_pose-stepback-surprised"
+    },
+    "cross": {
+     "image": "chr-xiaoyu_pose-cross",
+     "face": "xiaoyu:cross"
+    },
+    "dial": {
+     "image": "chr-xiaoyu_pose-watch-dial",
+     "face": "xiaoyu:dial"
+    },
+    "palmno": {
+     "image": "chr-xiaoyu_pose-palmno",
+     "face": "xiaoyu:palmno"
+    },
+    "forehead": {
+     "image": "chr-xiaoyu_pose-forehead",
+     "face": "xiaoyu:forehead"
+    },
+    "walk": {
+     "image": "chr-xiaoyu_pose-walk",
+     "face": "xiaoyu:walk",
+     "headTop": -44.8
+    },
+    "walk_r": {
+     "image": "chr-xiaoyu_pose-walk-r",
+     "face": "xiaoyu:walk_r",
+     "headTop": -44.8
+    },
+    "standwatch": {
+     "image": "chr-xiaoyu_pose-standwatch",
+     "face": "xiaoyu:stand"
+    },
+    "bow": {
+     "image": "chr-xiaoyu_pose-bow",
+     "headTop": -138.2
+    },
+    "standwatch_m": {
+     "image": "chr-xiaoyu_pose-standwatch-m",
+     "face": "xiaoyu:standwatch_m"
+    },
+    "pointr": {
+     "image": "chr-xiaoyu_pose-pointr",
+     "face": "xiaoyu:pointr"
+    },
+    "glasses": {
+     "image": "chr-xiaoyu_pose-glasses",
+     "face": "xiaoyu:glasses"
+    },
+    "sitb": {
+     "image": "chr-xiaoyu_pose-sitb",
+     "face": "xiaoyu:sitb",
+     "feet": [
+      235,
+      1455.7
+     ],
+     "headTop": 59.8,
+     "_note": "第五幕代理新增（Codex）：P-XY3 坐醫院長椅，臉朝畫面右；戴兒童手錶；座面 0.92–0.94"
+    }
+   },
+   "face": "face/xiaoyu/face",
+   "_note": "小宇。G5 新增 cross（P-XY1）、palmno（a3_c002 掌心向外拒絕，朝畫面左）、forehead（找大人，朝畫面右）、walk（往畫面右）、dial（P-XY2 舉手錶撥號，朝畫面左；錶面只有電話圖示）。"
+  },
+  "pinan": {
+   "rig": "standee",
+   "height": 2.45,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-pinan_master"
+    },
+    "sit_lantern": {
+     "image": "chr-pinan_pose-sit-lantern",
+     "face": "pinan:sit_lantern",
+     "feet": [
+      204.0,
+      1632.4
+     ],
+     "headTop": -78.4
+    },
+    "walk_straps": {
+     "image": "chr-pinan_pose-walk-straps",
+     "face": "pinan:walk_straps",
+     "headTop": -43.3
+    },
+    "sit_lantern_back": {
+     "image": "chr-pinan_pose-sit-lantern-back",
+     "feet": [
+      393.0,
+      1632.4
+     ],
+     "headTop": -78.4
+    },
+    "bow": {
+     "image": "chr-pinan_pose-bow",
+     "headTop": -135.4
+    },
+    "stand_m": {
+     "image": "chr-pinan_pose-stand-m",
+     "face": "pinan:stand_m"
+    },
+    "walk_straps_m": {
+     "image": "chr-pinan_pose-walk-straps-m",
+     "face": "pinan:walk_straps_m",
+     "headTop": -43.3
+    }
+   },
+   "face": "face/pinan/face",
+   "_note": "周品安（9 歲，小晴同班）。sit_lantern＝P-PA1 坐長椅綁竹燈籠（長椅另外放 props/prop-bench，座面世界高 0.92）；walk_straps＝a3_c003 雙手抓書包背帶低頭快步走（往畫面右）。身上永遠沒有操偶線。"
+  },
+  "lin": {
+   "rig": "standee",
+   "height": 3.42,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-lin_master"
+    },
+    "crouch": {
+     "image": "chr-lin_pose-crouch",
+     "face": "lin:crouch",
+     "headTop": -856.1
+    },
+    "sit": {
+     "image": "chr-lin_pose-sit",
+     "face": "lin:sit",
+     "feet": [
+      195.0,
+      1512.8
+     ],
+     "headTop": -345.3
+    },
+    "standr": {
+     "image": "chr-lin_pose-standr"
+    },
+    "bow": {
+     "image": "chr-lin_pose-bow",
+     "headTop": -131.0
+    },
+    "stand_m": {
+     "image": "chr-lin_pose-stand-m",
+     "face": "lin:stand_m"
+    },
+    "phone": {
+     "image": "chr-lin_pose-phone"
+    }
+   },
+   "face": "face/lin/face",
+   "_note": "林雅雯老師。crouch＝P-LIN1 蹲在小宇旁對著手錶說話（a5_c007）；sit＝P-LIN2 坐醫院長椅（a5_c008，長椅用 props/prop-bench）。背面（a4_c001 警衛室窗內）還沒有圖。 phone＝朝右、手機貼耳講電話（a3_c008 走出教室前；第三幕修正第 2 輪 Codex）。"
+  },
+  "chen": {
+   "rig": "standee",
+   "height": 3.45,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-chen_master"
+    },
+    "receive": {
+     "image": "chr-chen_pose-receive"
+    },
+    "bow": {
+     "image": "chr-chen_pose-bow",
+     "headTop": -133.6
+    },
+    "standr": {
+     "image": "chr-chen_pose-standr",
+     "face": "chen:standr",
+     "_note": "第五幕代理新增：stand 左右翻轉（朝畫面左看轉角、對阿樂叔叔說話）"
+    },
+    "shoutr": {
+     "image": "chr-chen_pose-shoutr",
+     "face": "chen:shoutr",
+     "_note": "第五幕代理新增（Codex）：手圍在嘴邊朝畫面右（辦公室）大聲交代；另一手握拳垂下（身體座標約 −0.585, 1.397）"
+    }
+   },
+   "face": "face/chen/face",
+   "_note": "陳伯伯（警衛，導護背心，無任何徽章字樣）。只有站姿；P-CH1 扶阿樂（可選）沒做。導護旗沒做。"
+  },
+  "ye": {
+   "rig": "standee",
+   "height": 3.58,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-ye_master"
+    },
+    "crouch": {
+     "image": "chr-ye_pose-crouch",
+     "face": "ye:crouch",
+     "headTop": -668.7
+    },
+    "bow": {
+     "image": "chr-ye_pose-bow",
+     "headTop": -132.0
+    },
+    "crouchphone": {
+     "image": "chr-ye_pose-crouchphone",
+     "headTop": -743.0,
+     "_note": "a2 代理（G5 修正第 1 輪）：蹲姿、手機貼耳等人接（a2_c012）；Codex 生成 review/G5/a2/raw/a2_ye_phone_v01.png；headTop 依 crouch 的比例換算（人物高度一致）；沒有拆臉，表情是圖上的擔心。"
+    }
+   },
+   "face": "face/ye/face",
+   "_note": "葉護理師（鼠尾草綠護理服，識別證只有手捧愛心圖示）。crouch＝P-YE1 蹲下平視、掌心朝上（a2_c012、a5_c008）。"
+  },
+  "aqin": {
+   "rig": "standee",
+   "height": 3.32,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-aqin_master",
+     "face": "aqin:stand"
+    }
+   },
+   "_note": "阿琴阿姨（阿樂叔叔的姊姊，不說話；第六幕代理新增）。stand＝站姿，臉朝畫面左（名冊 facing:-1 朝右）。深棕開襟外套、燕麥色圍巾。"
+  },
+  "medic_a": {
+   "rig": "standee",
+   "height": 3.4,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-medic-a_stand",
+     "face": "medic_a:stand"
+    }
+   },
+   "_note": "救護人員 A（第五幕代理新增，Codex；不說話）。深灰藍工作服、反光條、臂章只有手捧愛心圖示（沒有紅十字、沒有真實單位標誌）。臉朝畫面右。"
+  },
+  "medic_b": {
+   "rig": "standee",
+   "height": 3.22,
+   "defaultPose": "stand",
+   "poses": {
+    "stand": {
+     "image": "chr-medic-b_stand",
+     "face": "medic_b:stand"
+    }
+   },
+   "_note": "救護人員 B（第五幕代理新增，Codex；不說話）。同 A 的工作服、手捧愛心臂章。臉朝畫面右。"
+  }
+ },
+ "fallbackFaces": {
+  "xiaoqing:cross": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     138,
+     229,
+     181,
+     281
+    ],
+    [
+     245,
+     221,
+     298,
+     274
+    ]
+   ],
+   "mouth": [
+    200,
+    310,
+    239,
+    319
+   ],
+   "paintedMouth": "closed"
+  },
+  "xiaoqing:palmno": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     287,
+     211,
+     322,
+     264
+    ],
+    [
+     383,
+     224,
+     435,
+     276
+    ]
+   ],
+   "mouth": [
+    332,
+    300,
+    363,
+    325
+   ],
+   "paintedMouth": "round"
+  },
+  "xiaoqing:forehead": {
+   "ref": [
+    16,
+    16
+   ],
+   "eyes": [
+    [
+     287,
+     215,
+     337,
+     267
+    ],
+    [
+     396,
+     199,
+     426,
+     249
+    ]
+   ],
+   "mouth": [
+    356,
+    296,
+    388,
+    302
+   ],
+   "paintedMouth": "smile"
+  },
+  "xiaoqing:walk": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     411,
+     238,
+     466,
+     295
+    ],
+    [
+     529,
+     224,
+     564,
+     279
+    ]
+   ],
+   "mouth": [
+    471,
+    321,
+    526,
+    333
+   ],
+   "paintedMouth": "smile"
+  },
+  "xiaoyu:cross": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     178,
+     238,
+     202,
+     277
+    ],
+    [
+     280,
+     250,
+     305,
+     289
+    ]
+   ],
+   "mouth": [
+    200,
+    315,
+    257,
+    327
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32
+  },
+  "xiaoyu:dial": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     190,
+     300,
+     211,
+     337
+    ],
+    [
+     268,
+     287,
+     295,
+     327
+    ]
+   ],
+   "mouth": [
+    242,
+    367,
+    269,
+    373
+   ],
+   "paintedMouth": "closed",
+   "glasses": true,
+   "patchK": 1.32
+  },
+  "xiaoyu:palmno": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     312,
+     244,
+     333,
+     288
+    ],
+    [
+     396,
+     255,
+     422,
+     299
+    ]
+   ],
+   "mouth": [
+    344,
+    330,
+    374,
+    349
+   ],
+   "paintedMouth": "open",
+   "glasses": true,
+   "patchK": 1.32
+  },
+  "xiaoyu:forehead": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     276,
+     242,
+     318,
+     290
+    ],
+    [
+     370,
+     240,
+     398,
+     282
+    ]
+   ],
+   "mouth": [
+    323,
+    321,
+    374,
+    335
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32
+  },
+  "xiaoyu:walk": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     469,
+     277,
+     497,
+     324
+    ],
+    [
+     568,
+     266,
+     590,
+     311
+    ]
+   ],
+   "mouth": [
+    504,
+    357,
+    562,
+    369
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32
+  },
+  "pinan:stand": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     116,
+     234,
+     160,
+     285
+    ],
+    [
+     218,
+     237,
+     279,
+     289
+    ]
+   ],
+   "mouth": [
+    165,
+    332,
+    220,
+    344
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.2
+  },
+  "pinan:sit_lantern": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     150,
+     310,
+     200,
+     361
+    ],
+    [
+     249,
+     289,
+     315,
+     336
+    ]
+   ],
+   "mouth": [
+    226,
+    379,
+    276,
+    402
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.2
+  },
+  "pinan:walk_straps": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     418,
+     285,
+     479,
+     335
+    ],
+    [
+     521,
+     302,
+     567,
+     350
+    ]
+   ],
+   "mouth": [
+    468,
+    384,
+    491,
+    390
+   ],
+   "paintedMouth": "worried",
+   "patchK": 1.2
+  },
+  "lin:stand": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     102,
+     186,
+     130,
+     218
+    ],
+    [
+     164,
+     176,
+     213,
+     211
+    ]
+   ],
+   "mouth": [
+    135,
+    251,
+    186,
+    270
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.3
+  },
+  "lin:crouch": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     160,
+     248,
+     197,
+     294
+    ],
+    [
+     249,
+     254,
+     316,
+     302
+    ]
+   ],
+   "mouth": [
+    201,
+    356,
+    264,
+    389
+   ],
+   "paintedMouth": "open",
+   "patchK": 1.3
+  },
+  "lin:sit": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     225,
+     227,
+     259,
+     270
+    ],
+    [
+     306,
+     215,
+     368,
+     259
+    ]
+   ],
+   "mouth": [
+    270,
+    309,
+    331,
+    329
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.2
+  },
+  "chen:stand": {
+   "ref": [
+    16,
+    16
+   ],
+   "eyes": [
+    [
+     195,
+     170,
+     222,
+     206
+    ],
+    [
+     262,
+     175,
+     297,
+     213
+    ]
+   ],
+   "mouth": [
+    209,
+    245,
+    275,
+    261
+   ],
+   "paintedMouth": "smile"
+  },
+  "ye:stand": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     167,
+     176,
+     184,
+     211
+    ],
+    [
+     223,
+     185,
+     244,
+     222
+    ]
+   ],
+   "mouth": [
+    184,
+    251,
+    234,
+    261
+   ],
+   "paintedMouth": "smile"
+  },
+  "ye:crouch": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     413,
+     226,
+     435,
+     271
+    ],
+    [
+     486,
+     238,
+     514,
+     285
+    ]
+   ],
+   "mouth": [
+    434,
+    323,
+    501,
+    336
+   ],
+   "paintedMouth": "smile"
+  },
+  "xiaoyu:walk_r": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     353,
+     277,
+     381,
+     324
+    ],
+    [
+     260,
+     266,
+     282,
+     311
+    ]
+   ],
+   "mouth": [
+    288,
+    357,
+    346,
+    369
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32,
+   "_note": "a2 代理新增：xiaoyu:walk 的鏡像（chr-xiaoyu_pose-walk-r 是 walk 圖左右翻轉；名冊 facing:-1 時翻面後就是原圖往畫面右走）"
+  },
+  "chen:receive": {
+   "ref": [
+    5,
+    16
+   ],
+   "eyes": [
+    [
+     365,
+     170,
+     392,
+     206
+    ],
+    [
+     432,
+     175,
+     467,
+     213
+    ]
+   ],
+   "mouth": [
+    379,
+    245,
+    445,
+    261
+   ],
+   "paintedMouth": "smile"
+  },
+  "lin:standr": {
+   "ref": [
+    18,
+    17
+   ],
+   "eyes": [
+    [
+     243,
+     176,
+     292,
+     211
+    ],
+    [
+     326,
+     186,
+     354,
+     218
+    ]
+   ],
+   "mouth": [
+    270,
+    251,
+    321,
+    270
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.3
+  },
+  "aqin:stand": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     111,
+     164,
+     141,
+     193
+    ],
+    [
+     183,
+     172,
+     222,
+     203
+    ]
+   ],
+   "mouth": [
+    132,
+    236,
+    190,
+    254
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.3,
+   "_note": "第六幕代理新增：阿琴阿姨站姿（review/G5/a6/aqin_blink.png 退路眨眼模擬：兩眼殘留 ≤0.4%）"
+  },
+  "xiaoyu:standwatch_m": {
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32,
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     233,
+     225,
+     258,
+     263
+    ],
+    [
+     329,
+     212,
+     351,
+     249
+    ]
+   ],
+   "mouth": [
+    278,
+    285,
+    332,
+    299
+   ],
+   "_note": "第六幕代理新增：standwatch 左右翻轉（眼框、嘴框依 xiaoyu:stand 鏡射）"
+  },
+  "pinan:stand_m": {
+   "paintedMouth": "smile",
+   "patchK": 1.2,
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     294,
+     237,
+     355,
+     289
+    ],
+    [
+     413,
+     234,
+     457,
+     285
+    ]
+   ],
+   "mouth": [
+    353,
+    332,
+    408,
+    344
+   ],
+   "_note": "第六幕代理新增：品安站姿左右翻轉（pinan:stand 鏡射）"
+  },
+  "pinan:walk_straps_m": {
+   "paintedMouth": "worried",
+   "patchK": 1.2,
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     198,
+     302,
+     244,
+     350
+    ],
+    [
+     286,
+     285,
+     347,
+     335
+    ]
+   ],
+   "mouth": [
+    274,
+    384,
+    297,
+    390
+   ],
+   "_note": "第六幕代理新增：walk_straps 左右翻轉"
+  },
+  "xiaoqing:pointr": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     261,
+     214,
+     319,
+     274
+    ],
+    [
+     373,
+     203,
+     413,
+     263
+    ]
+   ],
+   "mouth": [
+    315,
+    293,
+    373,
+    313
+   ],
+   "paintedMouth": "smile",
+   "_note": "第三幕代理新增：口訣「先離開」手指向畫面右（Codex 生成；星星髮夾由程式移回母版同側＝畫面右）"
+  },
+  "xiaoqing:forehead_l": {
+   "ref": [
+    16,
+    16
+   ],
+   "eyes": [
+    [
+     239,
+     199,
+     269,
+     249
+    ],
+    [
+     328,
+     215,
+     378,
+     267
+    ]
+   ],
+   "mouth": [
+    277,
+    296,
+    309,
+    302
+   ],
+   "paintedMouth": "smile",
+   "_note": "第三幕代理新增：xiaoqing:forehead 的鏡射（髮夾回到母版同側，朝畫面左張望）"
+  },
+  "xiaoyu:pointr": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     304,
+     256,
+     330,
+     297
+    ],
+    [
+     394,
+     237,
+     416,
+     277
+    ]
+   ],
+   "mouth": [
+    340,
+    319,
+    392,
+    332
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.32,
+   "_note": "第三幕代理新增：口訣「先離開」戴手錶的左手指向畫面右（Codex 生成）"
+  },
+  "xiaoyu:glasses": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     180,
+     255,
+     203,
+     297
+    ],
+    [
+     273,
+     273,
+     301,
+     316
+    ]
+   ],
+   "mouth": [
+    226,
+    347,
+    254,
+    357
+   ],
+   "paintedMouth": "closed",
+   "glasses": true,
+   "patchK": 1.32,
+   "_note": "第三幕代理新增：推推眼鏡想一想（a3_c002，朝畫面左；Codex 生成）"
+  },
+  "chen:standr": {
+   "ref": [
+    16,
+    16
+   ],
+   "eyes": [
+    [
+     427,
+     170,
+     454,
+     206
+    ],
+    [
+     352,
+     175,
+     387,
+     213
+    ]
+   ],
+   "mouth": [
+    374,
+    245,
+    440,
+    261
+   ],
+   "paintedMouth": "smile",
+   "_note": "第五幕代理新增：chen:stand 左右鏡射（寬 649）"
+  },
+  "chen:shoutr": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     375,
+     177,
+     409,
+     217
+    ],
+    [
+     439,
+     167,
+     458,
+     203
+    ]
+   ],
+   "mouth": [
+    389,
+    247,
+    449,
+    285
+   ],
+   "paintedMouth": "open",
+   "patchK": 1.2,
+   "_note": "第五幕代理新增：大聲交代（嘴原圖張開）"
+  },
+  "xiaoqing:sitb": {
+   "ref": [
+    16,
+    17
+   ],
+   "eyes": [
+    [
+     302,
+     260,
+     357,
+     312
+    ],
+    [
+     405,
+     285,
+     440,
+     330
+    ]
+   ],
+   "mouth": [
+    344,
+    362,
+    375,
+    373
+   ],
+   "paintedMouth": "worried",
+   "patchK": 1.2,
+   "_note": "第五幕代理新增：坐醫院長椅低頭"
+  },
+  "xiaoyu:sitb": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     314,
+     257,
+     335,
+     295
+    ],
+    [
+     394,
+     242,
+     411,
+     280
+    ]
+   ],
+   "mouth": [
+    345,
+    332,
+    395,
+    340
+   ],
+   "paintedMouth": "smile",
+   "glasses": true,
+   "patchK": 1.3,
+   "_note": "第五幕代理新增：坐醫院長椅（眼珠在鏡片內）"
+  },
+  "medic_a:stand": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     231,
+     137,
+     246,
+     163
+    ],
+    [
+     277,
+     137,
+     288,
+     162
+    ]
+   ],
+   "mouth": [
+    242,
+    184,
+    273,
+    191
+   ],
+   "paintedMouth": "smile",
+   "_note": "第五幕代理新增"
+  },
+  "medic_b:stand": {
+   "ref": [
+    17,
+    17
+   ],
+   "eyes": [
+    [
+     183,
+     120,
+     197,
+     145
+    ],
+    [
+     227,
+     118,
+     238,
+     144
+    ]
+   ],
+   "mouth": [
+    198,
+    165,
+    223,
+    171
+   ],
+   "paintedMouth": "smile",
+   "_note": "第五幕代理新增"
+  },
+  "lin:stand_m": {
+   "ref": [
+    18,
+    17
+   ],
+   "eyes": [
+    [
+     243,
+     176,
+     292,
+     211
+    ],
+    [
+     326,
+     186,
+     354,
+     218
+    ]
+   ],
+   "mouth": [
+    270,
+    251,
+    321,
+    270
+   ],
+   "paintedMouth": "smile",
+   "patchK": 1.3,
+   "_note": "第三幕代理新增：林老師站姿左右翻轉（lin:stand 退路眼框、嘴框鏡射；a3_c008 臉朝畫面左跟全班說話，走出教室時翻回 stand）"
+  },
+  "xiaoqing:stand_m": {
+   "ref": [
+    17,
+    16
+   ],
+   "eyes": [
+    [
+     242,
+     219,
+     286,
+     269
+    ],
+    [
+     353,
+     208,
+     387,
+     257
+    ]
+   ],
+   "mouth": [
+    299,
+    296,
+    347,
+    307
+   ],
+   "paintedMouth": "smile",
+   "_note": "第六幕代理新增：小晴站姿左右翻轉（xiaoqing:stand 鏡射）；a6 小晴轉身朝左用（紙片翻面）"
+  }
+ }
+}

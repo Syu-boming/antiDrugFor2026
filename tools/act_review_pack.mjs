@@ -173,6 +173,19 @@ for (const act of ACTS) {
     audio: audioSrc,
     fps: FPS,
   };
+  // G6 精修：audio 只列本段 cue 實際用到的音檔（配樂、音效、配音；含時間軸自動加的題卡音效）。
+  // 以前列整個資料包，第一批重驗看到第四幕的 timeline.json 有 sfx_ambulance_engine（第五幕的音效），誤以為第四幕還在用。
+  {
+    const used = new Set();
+    for (const c of tlOut.cues) {
+      if (c.audioId) used.add(c.audioId);
+      for (const m of c.music) used.add(m.id);
+      for (const x of c.sfx) used.add(x.id);
+      for (const l of c.lines) if (l.audioId) used.add(l.audioId);
+    }
+    tlOut.audio = Object.fromEntries(Object.entries(audioSrc).filter(([id]) => used.has(id)));
+    tlOut.audioNote = 'audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）';
+  }
   writeFileSync(join(OUT, 'timeline.json'), JSON.stringify(tlOut, null, 1));
 
   // ---------------------------------------------------------------- 3. Python：投影模擬、G4 並排、混音與響度、播放光敏、影片、長度、安全

@@ -1,8 +1,13 @@
 {
- "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
  "silencedetect": {
   "noise_dB": -40,
   "min_silence_s": 0.05
+ },
+ "silencedetect_fallback": {
+  "noise_dB": -30,
+  "min_silence_s": 0.12,
+  "pages": 0
  },
  "range_s": [
   -0.8,
@@ -18,6 +23,7 @@
    "voice_start_s": 3.826,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c001_01_v04.wav"
   },
   {
@@ -29,6 +35,7 @@
    "voice_start_s": 7.399,
    "diff_s": -0.139,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c001_02_v04.wav"
   },
   {
@@ -40,6 +47,7 @@
    "voice_start_s": 12.529,
    "diff_s": -0.139,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c001_03_v04.wav"
   },
   {
@@ -51,6 +59,7 @@
    "voice_start_s": 16.534,
    "diff_s": -0.124,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c001_04_v04.wav"
   },
   {
@@ -62,6 +71,7 @@
    "voice_start_s": 22.604,
    "diff_s": -0.144,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c001_05_v04.wav"
   },
   {
@@ -73,6 +83,7 @@
    "voice_start_s": 2.83,
    "diff_s": -0.13,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c002_01_v04.wav"
   },
   {
@@ -84,6 +95,7 @@
    "voice_start_s": 5.504,
    "diff_s": -0.164,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c002_02_v04.wav"
   },
   {
@@ -95,6 +107,7 @@
    "voice_start_s": 10.215,
    "diff_s": -0.175,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c002_03_v04.wav"
   },
   {
@@ -106,6 +119,7 @@
    "voice_start_s": 1.025,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c003_01_v04.wav"
   },
   {
@@ -117,6 +131,7 @@
    "voice_start_s": 3.513,
    "diff_s": -0.133,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c003_02_v04.wav"
   },
   {
@@ -128,6 +143,7 @@
    "voice_start_s": 9.835,
    "diff_s": -0.135,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c003_03_v04.wav"
   },
   {
@@ -139,6 +155,7 @@
    "voice_start_s": 1.125,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_01_v04.wav"
   },
   {
@@ -150,6 +167,7 @@
    "voice_start_s": 5.911,
    "diff_s": -0.191,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_02_v04.wav"
   },
   {
@@ -161,6 +179,7 @@
    "voice_start_s": 9.256,
    "diff_s": -0.196,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_03_v04.wav"
   },
   {
@@ -172,6 +191,7 @@
    "voice_start_s": 13.77,
    "diff_s": -0.13,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_04_v04.wav"
   },
   {
@@ -183,6 +203,7 @@
    "voice_start_s": 18.947,
    "diff_s": -0.147,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_05_v04.wav"
   },
   {
@@ -194,6 +215,7 @@
    "voice_start_s": 23.045,
    "diff_s": -0.135,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c004_06_v04.wav"
   },
   {
@@ -205,6 +227,7 @@
    "voice_start_s": 1.524,
    "diff_s": -0.124,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c005_01_v04.wav"
   },
   {
@@ -216,6 +239,7 @@
    "voice_start_s": 4.457,
    "diff_s": -0.137,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c005_02_v04.wav"
   },
   {
@@ -227,6 +251,7 @@
    "voice_start_s": 11.513,
    "diff_s": -0.133,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c005_03_v04.wav"
   },
   {
@@ -238,6 +263,7 @@
    "voice_start_s": 15.247,
    "diff_s": -0.127,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c005_04_v04.wav"
   },
   {
@@ -249,6 +275,7 @@
    "voice_start_s": 19.282,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c005_05_v04.wav"
   },
   {
@@ -260,6 +287,7 @@
    "voice_start_s": 1.14,
    "diff_s": -0.14,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c006_01_v04.wav"
   },
   {
@@ -271,6 +299,7 @@
    "voice_start_s": 2.025,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c007_01_v04.wav"
   },
   {
@@ -282,6 +311,7 @@
    "voice_start_s": 5.336,
    "diff_s": -0.136,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c008_01_v04.wav"
   },
   {
@@ -293,6 +323,7 @@
    "voice_start_s": 9.634,
    "diff_s": -0.144,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c008_02_v04.wav"
   },
   {
@@ -300,10 +331,11 @@
    "line": "a1_c008_03",
    "page": 1,
    "text": "阿樂叔叔？",
-   "subtitle_start_s": 22.01,
-   "voice_start_s": 22.135,
+   "subtitle_start_s": 21.71,
+   "voice_start_s": 21.835,
    "diff_s": -0.125,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a1_c008_03_v04.wav"
   }
  ],

@@ -233,7 +233,9 @@ export const SQUARE_A1: SetEntry = {
         // ---- 窗內剪影（a1_c008）：手垂著拿竹條 → 舉起（0.8 秒）→ 手被往旁邊一帶、往左歪（0.5 秒）→ 竹條慢慢落下（1 秒，
         //      在窗內看得到，落到窗台下被窗框擋住）→ 窗光漸亮約 12%（1.2 秒）。時間錨在小晴「不要碰…」說完（cue 的音效同一個錨）
         let raise = 0, tilt = 0, fall = 0, lit = 0, on = 0;
-        sil.visible = id === 'a1_c008';      // 剪影只在窗前這一段出現（前面幾段窗裡只有窗紙）
+        // 剪影只在窗前這一段出現（前面幾段窗裡只有窗紙）；G6 精修：a1_c007 題卡淡出全暗後就切到 a1_c008 開頭的街景，
+        // 剪影在全暗那一刻先出現（不在 a1_c008 第一格突然冒出來）
+        sil.visible = id === 'a1_c008' || (id === 'a1_c007' && t >= lineTime(tl, ['a1_c007_01'], 'end', 4) + 1.16);
         if (id === 'a1_c008') {
           const t02 = lineTime(tl, ['a1_c008_02'], 'end', 9);
           on = sine01((t - t02 - SIL_T.lit) / 1.2);
@@ -245,7 +247,7 @@ export const SQUARE_A1: SetEntry = {
         }
         // 白天的窗紙不發亮（窗格明暗對比小，鏡頭移動時不會一格一格閃過）；窗前這一段屋裡點著燈，竹條落下時再亮一點（焦點）
         if (paperMat) paperMat.emissiveIntensity = id === 'a1_c008' ? 0.2 + 0.55 * on + 0.12 * lit : 0.2;
-        const th = lerp(1.7, -0.15, raise) + 0.9 * tilt + 0.02 * Math.sin(Math.PI * 2 * 0.22 * t);
+        const th = lerp(1.7, -0.15, raise) + 0.9 * tilt + (id === 'a1_c008' ? 0.02 * Math.sin(Math.PI * 2 * 0.22 * t) : 0);   // a1_c007 結尾不擺（a1_c008 第 0 秒擺幅＝0，接得上）
         shoulder.rotation.z = th;
         if (bamboo) {
           // 手的位置（剪影座標）＝肩膀＋旋轉後的手；竹條從手上鬆開後往下掉（落到窗台下方被窗框擋住）

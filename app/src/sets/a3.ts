@@ -6,10 +6,10 @@
 //   a3_card      台口前緣的練習卡（a3_c004–a3_c007）：同一個校門口底景＋台口前緣立起的大紙卡（拒絕句＋口訣四格，字是程式排版的
 //                Noto Sans TC 粗體，見 review/G5/a3/scripts/build_a3_art.py）。題卡出題時紙卡收平（不和 DOM 題卡疊字）。
 //   a3_classroom 教室午後（a3_c008）：程式繪製的剪紙教室（後牆三扇窗、窗外對面騎樓屋頂與燈籠串輕擺、黑板只有粉筆畫沒有字、
-//                講桌、課桌、後排同學的背影）；林老師走出教室時手上拿著手機（沿用 gate 的手機小道具圖）。
+//                講桌、課桌、後排兩個同學的紙片背影 classmate-a／b）；林老師講電話走出教室（手機畫在姿勢圖 chr-lin_pose-phone 裡）。
 // 每格 update 只依（cue、cue 內秒數、鏡頭）決定畫面＝時間的純函式；動作時間錨在台詞上（配音長度改了會跟著移）。
 import {
-  CanvasTexture, Color, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, Vector3, type Material, type Object3D,
+  CanvasTexture, Color, Group, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, type Material, type Object3D,
 } from 'three';
 import { buildImageSet, readLayout, type SetLayout } from './imageSet';
 import { buildGate } from './gate';
@@ -50,10 +50,10 @@ export const A3_CLASSROOM_CAMERAS: Record<string, CameraPreset> = {
   a3_cls_mid: C([-0.6, 1.75, 17.0], [-0.6, 1.45, 0]),
   /** 修正第 1 輪：兩個孩子＋地上的折折三人中景（頭到腳都在畫面裡；取代原來的兩人近景＋只拍到腿的折折插鏡） */
   a3_cls_trio: C([-2.1, 1.45, 9.4], [-2.1, 1.3, 0.3]),
-  /** 林老師與小晴中景（林老師最後從這個鏡頭往右走出畫面） */
-  a3_cls_lin: C([-1.0, 1.75, 12.6], [-1.0, 1.55, 0]),
-  /** 結尾：兩個孩子轉頭看著窗外輕擺的燈籠串 */
-  a3_cls_end: C([-2.4, 2.3, 9.0], [-2.85, 2.45, -3.6]),
+  /** 林老師與小晴中景（林老師最後從這個鏡頭往右走出畫面；修正第 2 輪往左移 0.45：老師離右緣近，慢慢走也走得出去，窗外燈籠串多露一些） */
+  a3_cls_lin: C([-1.45, 1.75, 12.6], [-1.45, 1.55, 0]),
+  /** 結尾：兩個孩子轉頭看著窗外輕擺的燈籠串（修正第 2 輪：鏡頭放低、往左看，燈籠串在孩子頭部左邊同一高度，孩子腰以上都在畫面裡） */
+  a3_cls_end: C([-1.0, 2.1, 9.6], [-3.1, 2.4, -3.6]),
 };
 
 // ───────────────────────────── 位置（世界座標） ─────────────────────────────
@@ -64,8 +64,6 @@ const COOL = new Color('#9aa8c4');
 /** 回想小圓窗在 a3_xy_close 畫面上的位置（中心、佔畫面高） */
 const MEM = { cx: -0.226, cy: 0.193, h: 0.32 };
 const CARD = { z: 3.05, w: 6.0, lift: 0.6 };
-/** 林老師站姿（stand）畫面右側那隻手（立牌身體座標；同 gate.ts 的 LIN_HAND） */
-const LIN_HAND: [number, number] = [0.288, 1.462];
 
 /** 手周圍略偏冷的柔光（徑向漸層，半透明；同第一幕） */
 function coolGlow(): CanvasTexture {
@@ -224,6 +222,7 @@ function buildMorningGate(ctx: SetContext, withCard: boolean): BuiltSet {
       const id = tl.cue.id;
       // 立起：a3_c004 折折攤開小紙卡之後（1.6 秒起 0.9 秒，略過頭再回正）。a3_c005 出題：開頭 fade.out 全暗（0.6 秒）時收平
       //（修正第 1 輪：畫面黑著時收，看不到變化；不和 DOM 題卡疊字）；a3_c006、a3_c007 收著
+      // 修正第 2 輪試過放慢成 1.4 秒正弦緩動：卡上的字一筆一筆慢慢掃過細格，反而每秒 4–5 次（超標），所以維持原來的快起
       let up = 0;
       if (id === 'a3_c004') {
         const u = clamp((t - 1.6) / 0.9);
@@ -245,7 +244,10 @@ const CLASSROOM_LAYOUT: SetLayout = {
   layers: [
     { id: 'backwall', image: 'backwall', x: 0, y: 0, z: -3.6, width: 24, layer: 'far', emissive: 0.3, thick: 0 },
     { id: 'board', image: 'board', x: 2.35, y: 1.0, z: -3.55, width: 4.2, layer: 'far', order: 20, emissive: 0.15 },
-    { id: 'students', image: 'students', x: 6.4, y: 0, z: -2.6, width: 6.2, layer: 'far', order: 30, emissive: 0.15 },
+    // 修正第 2 輪（美術 b2r2 抽查第 3 項）：後排兩個同學換成同畫風的紙片背影（Codex，不透明、有紙纖維、看不到臉；
+    // classmate-a／b_v01），取代 students_v02 的幾何背影；站在右後方課桌後面（桌子擋住腿），只在開場教室中景入鏡
+    { id: 'classmate-a', image: 'classmate-a', x: 4.2, y: -0.04, z: -2.6, height: 2.5, layer: 'far', order: 31, emissive: 0.15 },
+    { id: 'classmate-b', image: 'classmate-b', x: 5.05, y: -0.04, z: -2.66, height: 2.4, layer: 'far', order: 30, emissive: 0.15 },
     { id: 'desk-a', image: 'desk', x: -5.0, y: 0, z: -1.6, width: 1.7, layer: 'mid', order: 1 },
     { id: 'desk-b', image: 'desk', x: -3.1, y: 0, z: -1.6, width: 1.7, layer: 'mid', order: 2 },
     { id: 'desk-c', image: 'desk', x: -1.2, y: 0, z: -1.6, width: 1.7, layer: 'mid', order: 3 },
@@ -274,32 +276,15 @@ function buildClassroom(ctx: SetContext): BuiltSet {
     group.add(m);
     garlands.push({ m, ph });
   }
-  // 林老師的手機（gate 的小道具圖；a3_c008 走出教室時拿在手上）
-  const phone = imagePiece(im('sets/gate/set-gate_a4-phone'), { w: 0.13, pivot: [0.5, 0.55], order: LAYER.actors.order + 200 }, mats);
-  if (phone) { phone.visible = false; group.add(phone); }
-  const tmp = new Vector3();
-
+  // 修正第 2 輪：林老師的手機改畫在新姿勢 chr-lin_pose-phone 裡（手機貼耳朵），不再另外掛小道具圖
   const baseUpdate = base.update;
   return {
     ...base, group, materials: mats, report,
     cameras: { ...(base.cameras ?? {}), ...A3_CLASSROOM_CAMERAS },
     update(o) {
       baseUpdate?.(o);
-      const { tl, t } = o;
+      const { t } = o;
       for (const g of garlands) g.m.rotation.z = 0.018 * Math.sin((t / 3.4) * Math.PI * 2 + g.ph) + 0.006 * Math.sin((t / 2.1) * Math.PI * 2 + g.ph * 2);
-      if (phone) {
-        const on = tl.cue.id === 'a3_c008' && t >= lineTime(tl, ['a3_c008_04'], 'end', 30) + 0.5;
-        const scene = group.parent?.parent ?? null;
-        const lin = on ? scene?.getObjectByName('standee:lin') : null;
-        phone.visible = !!lin && lin.visible;
-        if (phone.visible && lin) {
-          const body = lin.children[0];
-          body.updateWorldMatrix(true, false);
-          tmp.set(LIN_HAND[0], LIN_HAND[1], 0.06).applyMatrix4(body.matrixWorld);
-          phone.position.copy(tmp);
-          phone.rotation.z = 0.15;
-        }
-      }
     },
   };
 }

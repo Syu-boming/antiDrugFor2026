@@ -38,7 +38,7 @@ function install(): void {
   if (params.get('capture') === '1') return; // 擷取模式不需要控制台
   const transport = createTransport();
   const sessionId = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
-  const cueSetName = params.get('cues') ?? 'demo';
+  const cueSetName = params.get('cues') ?? 'show';
   const host: StageSnapshot['host'] = window.theaterHost ? 'electron' : 'browser';
   const canRemoteStart = host === 'electron';
 

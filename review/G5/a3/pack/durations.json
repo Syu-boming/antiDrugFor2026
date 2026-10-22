@@ -34,10 +34,10 @@
   {
    "cue": "a3_c004",
    "kind": "scene",
-   "duration_sec": 15.12,
+   "duration_sec": 14.82,
    "preroll_sec": 0.6,
    "estimate_sec": 16.5,
-   "diff_sec": -1.4,
+   "diff_sec": -1.7,
    "vo_sec": 9.87,
    "lines": 2
   },
@@ -74,10 +74,10 @@
   {
    "cue": "a3_c008",
    "kind": "scene",
-   "duration_sec": 36.39,
+   "duration_sec": 36.69,
    "preroll_sec": 0.6,
    "estimate_sec": 30.8,
-   "diff_sec": 5.6,
+   "diff_sec": 5.9,
    "vo_sec": 26.09,
    "lines": 4
   }

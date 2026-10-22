@@ -38,12 +38,15 @@ STRINGS = ["wrist", "elbow", "knee"]
 
 # G5 修正第 2 輪：鏡頭各自的舞台燈（曝光），讓硬切前後的全畫面平均亮度相差 ≤ 約 15%（主線更正裁定：> 約 20% 不能一格硬切）
 L_WIDE = 0.66       # a4_c001 放學大全景（燈 1 時亮度約 0.41；隔馬路看阿樂叔叔約 0.28）
-L_WIN = 0.70        # a4_c001 孩子＋警衛室窗（門房提亮後燈 1 時約 0.40）
+L_WIN = 0.80        # a4_c001 孩子＋警衛室窗（G6 精修：校內景片蒙白後，燈 0.8 時孩子身後投影 ≥ 0.50）
+L_WIN0 = 0.57       # a4_c001 切到警衛室窗那一格的燈（和隔馬路鏡頭亮度相差 ≤ 約 16%），鏡頭不動 0.7 秒慢慢升到 L_WIN（約 +14%）
 L_WIDE2 = 0.90      # a4_c013 校門內外全景（燈 1 時約 0.39；之後切到車斗近景約 0.33）
 L_SKY = 0.55        # a4_c002 天空（燈 1 時約 0.57、0.55 時約 0.41，從全暗淡入；之後硬切到俯視地圖約 0.36）
 # 景的程式動作（gate.ts）：lift＝孩子身後的警衛室、校門柱、折疊門、校內圍牆提亮（兒童站位背景亮度 ≥ 0.50）；gateOpen＝放學時折疊門收起來；
 # zzpatch＝蓋住引擎放在原點的折折接觸陰影（stage.ts 程式角色的接觸陰影用 root 位置＝永遠在 (0,0,0)；折折自己有影子）
-GATE_BASE = [{"do": "lift", "start": 0, "duration": 0, "to": 1}, {"do": "gateOpen", "start": 0, "duration": 0, "to": 1}]
+# G6 精修：haze＝校內那一側的景片蒙一層暖白（輕微景深；兒童站位背景投影 ≥ 0.50）
+GATE_BASE = [{"do": "lift", "start": 0, "duration": 0, "to": 1}, {"do": "gateOpen", "start": 0, "duration": 0, "to": 1},
+             {"do": "haze", "start": 0, "duration": 0, "to": 1}]
 GATE_ZZ = GATE_BASE + [{"do": "zzpatch", "start": 0, "duration": 0, "to": 1}]
 
 
@@ -174,8 +177,8 @@ def build(cues):
     c = C["a4_c001"]
     L1, L2 = "a4_c001_01", "a4_c001_02"
     cut1 = f"{L1}.start+5.3"         # 「叔叔的頭腦受到影響」：切到隔著馬路的阿樂叔叔（他剛下車）
-    cut2 = f"{L1}.start+10.0"        # 「林老師的電話也還沒打通」：孩子在接送線後、警衛室窗裡的小背影
-    cut3 = f"{L1}.end+0.15"          # 阿樂叔叔叫孩子
+    cut2 = f"{L1}.start+9.8"         # 「林老師的電話也還沒打通」：孩子在接送線後、警衛室窗裡的小背影（G6 精修：早 0.2 秒，燈升完才到 cue 中點）
+    cut3 = f"{L1}.end+0.15"          # 阿樂叔叔叫孩子（G6 精修：切到 a4_deep——孩子在前景、阿樂叔叔在對街，和 a4_c008 開頭同一個鏡位）
     c.update({
         "set": "gate", "sceneId": "gate", "voStart": 1.4, "tail": 3.0,
         # G5 修正第 2 輪（主線更正裁定：亮度差 > 約 20% 的硬切不行）：每個鏡頭各自的舞台燈（曝光），
@@ -203,9 +206,12 @@ def build(cues):
             an("puppet.move", cut1, 0.01, "chen", dx=-30),
             cam("a4_across", cut1, cut=True), an("light.restore", cut1, 0),
             cam("a4_across_push", f"{L1}.start+5.4", 4.4),
-            cam("a4_window", cut2, cut=True), an("light.dim", cut2, 0, to=L_WIN),
-            cam("a4_across", cut3, cut=True), an("light.restore", cut3, 0),
-            cam("a4_across_push", f"{L2}.start+0.2", 4.5),
+            # G6 精修：孩子＋警衛室窗比隔馬路鏡頭亮（孩子身後投影要 ≥ 0.50）→ 切過去那一格燈 L_WIN0（亮度相近），
+            # 鏡頭不動 0.7 秒升到 L_WIN（單向）。阿樂叔叔叫孩子時切到 a4_deep（孩子在前景、阿樂叔叔在對街；亮度和窗景相近），
+            # 不再切回隔馬路近景（以前窗景 → 近景一格暗 1.4 倍，要先降燈，會「亮一下又暗」）
+            cam("a4_window", cut2, cut=True), an("light.dim", cut2, 0, to=L_WIN0),
+            an("light.dim", f"{L1}.start+9.82", 0.7, to=L_WIN),
+            cam("a4_deep", cut3, cut=True), an("light.restore", cut3, 0),
         ],
         "audioId": "music_town",
         "music": [music("music_m4_light", f"{L1}.start+4.6", fade=3.0)],
@@ -220,6 +226,8 @@ def build(cues):
             tr("wind", to=0.25),
             # 隔馬路看阿樂叔叔的兩段推鏡掃過紅磚立面（細格紅色光敏）：切過去那一格起紅磚降彩 0.3（切鏡頭那一格改，看不到變化）
             tr("brick", cut1, 0, to=0.3),
+            # G6 精修：對街中景也蒙一點白（隔馬路看阿樂叔叔 ↔ 孩子＋警衛室窗的硬切亮度相近；孩子身後投影 ≥ 0.50）
+            tr("hazeStreet", to=1),
         ],
     })
 
@@ -234,6 +242,11 @@ def build(cues):
     # G5 修正第 2 輪：孩子近景（亮度約 0.34）→ 天空（約 0.57）差 1.7 倍，不能硬切 → 0.6 秒淡到全暗、全暗時切到天空、0.6 秒淡入；
     # 天空這個鏡頭燈 L_SKY（亮度約 0.42），之後切到俯視地圖（約 0.36–0.40）時燈回 1，亮度相差 ≤ 約 15%，可以硬切
     sky_dip, _ = dip(f"{L3}.end+0.1", "a4_up", L_SKY)
+    # G6 精修（第一批放行一般問題）：以前天空停 3.3 秒、再硬切到俯視，校門口景片的正上方俯視與左下深紅布幕露出 1.4 秒才換景。
+    # 改成：紙飛機一淡入就起飛（天空約 1.7 秒，含淡入淡出）→ 飛出畫面後 0.6 秒淡到全暗 → 全暗那一格同時換景（a4_roadmap）、
+    # 切俯視地圖、小屋收平、燈回 1 → 0.6 秒淡入地圖 → 停 0.25 秒 → 小屋立起 2 秒（立體書）。觀眾不會看到校門口景的俯視。
+    M_OUT = f"{L3}.end+2.45"
+    M_SW = f"{L3}.end+3.07"
     c.update({
         # G5 修正第 2 輪：a4_c001 停在隔馬路的阿樂叔叔（亮度約 0.32），這裡開在孩子近景（門房提亮後約 0.41），差 1.3 倍
         # → setFade：引擎先把上一格漸暗 0.6 秒（預捲），本 cue 從全暗 0.6 秒漸亮（SHOW_INTERFACE.md 第 4 節）
@@ -256,16 +269,19 @@ def build(cues):
             # → 直接切到俯視（不俯衝斑馬線；景片不在畫面上翻摺）→ 街道淡成牛皮紙地圖 → 換景、小屋立起
             an("zhezhe.fold", f0, 1.5, "zhezhe", form="plane"),
         ] + sky_dip + [
-            an("zhezhe.flyTo", f"{L3}.end+1.65", 2.0, "zhezhe", pos=[-0.5, 9.8, -1.2], height=1.0),
-            cam("a4_map", f"{L3}.end+4.0", cut=True), an("light.restore", f"{L3}.end+4.0", 0),
-            an("set.swap", f"{L3}.end+5.4", 0, set="a4_roadmap"),
-            an("set.popup", f"{L3}.end+5.45", 2.0),
+            an("zhezhe.flyTo", f"{L3}.end+1.0", 2.0, "zhezhe", pos=[-0.5, 9.8, -1.2], height=1.0),
+            an("fade.out", M_OUT, FADE),
+            an("set.swap", M_SW, 0, set="a4_roadmap"),
+            an("set.fold", M_SW, 0),
+            cam("a4_map", M_SW, cut=True), an("light.restore", M_SW, 0),
+            an("fade.in", f"{L3}.end+3.1", FADE),
+            an("set.popup", f"{L3}.end+3.95", 2.0),
         ],
         "audioId": None,
-        "music": [music("music_road", f"{L3}.end+2.0", fade=2.5, gain=0.9)],
-        "sfx": [sfx("sfx_fold", f0s, 0.9), sfx("sfx_plane_whoosh", f"{L3}.end+1.7", 0.8),
-                sfx("sfx_paper_rustle", f"{L3}.end+4.15", 0.7), sfx("sfx_paper_rustle", f"{L3}.end+5.5", 0.8)],
-        "setTrack": GATE_ZZ + [tr("farUp", to=1), tr("map", f"{L3}.end+4.1", 1.2, to=1), tr("key", hold="ale.A"), tr("catEar", to=0.5),
+        "music": [music("music_road", f"{L3}.end+1.6", fade=2.5, gain=0.9)],
+        "sfx": [sfx("sfx_fold", f0s, 0.9), sfx("sfx_plane_whoosh", f"{L3}.end+1.3", 0.8),
+                sfx("sfx_paper_rustle", f"{L3}.end+3.15", 0.7), sfx("sfx_paper_rustle", f"{L3}.end+4.0", 0.8)],
+        "setTrack": GATE_ZZ + [tr("farUp", to=1), tr("key", hold="ale.A"), tr("catEar", to=0.5),
                                tr("plan", to=0), tr("car", keys=[[0, 0]])],
     })
 
@@ -364,7 +380,7 @@ def build(cues):
             "zhezhe": {"visible": True, "x": ZZ_C008[0], "z": ZZ_C008[2], "emotion": "worried"},
         }},
         "animation": [
-            an("puppet.grab", 0, 0.005, "ale", at=DOOR),
+            an("puppet.grab", -0.01, 0.005, "ale", at=DOOR),   # G6 精修：−0.01，第 0 格就扶著車門（同 a4_c007 結尾）
             # 阿樂叔叔舉鑰匙招手 → 線繃直、手被拉偏（鑰匙晃兩下）→ 線鬆一點、手落回來
             an("puppet.waveTry", f"{L1}.start+1.15", 3.4, "ale", greet="confused", emotion="confused"),
             an("strings.loosen", f"{L1}.start+4.75", 1.3, "ale", anchors=["wrist", "elbow"], to=0.3),
@@ -414,9 +430,11 @@ def build(cues):
     quiz_cues(C, ("a4_c009", "a4_c010", "a4_c011"), GATE_ZZ + [tr("key", hold="ale.A"), tr("wind", to=0.6), tr("catEar", to=0.5)],
               q6_chars, 6, q6_exit, 3.1)
     C["a4_c009"]["initialState"]["stage"] = stage("a4_kids_z")
-    # a4_c008 結尾孩子微微前傾（lean／tilt 0.035）：initialState 沒有前傾欄位，用 0 秒動畫接上（題卡三段都一樣）
+    # a4_c008 結尾孩子微微前傾（lean／tilt 0.035）：initialState 沒有前傾欄位，用極短動畫接上（題卡三段都一樣）。
+    # G6 精修：開始時間 −0.01（以前是 0：紙偶動畫在 t=0 進度是 0，第一格孩子會站直一格再前傾——
+    # 校內景片蒙白後頭髮和背景的對比變大，a4_c009 第 0 格這一下在細格光敏算 2 次，加上進題卡的淡出淡入＝每秒 4 次）
     for cid in ("a4_c009", "a4_c010", "a4_c011"):
-        C[cid]["animation"][0:0] = [an("puppet.lean", 0, 0.001, "xiaoqing", to=0.035), an("puppet.tilt", 0, 0.001, "xiaoyu", to=0.035)]
+        C[cid]["animation"][0:0] = [an("puppet.lean", -0.01, 0.001, "xiaoqing", to=0.035), an("puppet.tilt", -0.01, 0.001, "xiaoyu", to=0.035)]
 
     # ============================================================ a4_c012 先不上車
     # G5 修正第 1 輪：細格 32×18 光敏對「畫面上橫向移動快的紙偶」很敏感（白邊、反光背心一條條掃過格子）。

@@ -237,7 +237,7 @@ function boot(): void {
   const stageUrl = (): string => {
     const p = new URLSearchParams(location.search);
     for (const k of ['dual', 'fallbackDelay', 'host']) p.delete(k);
-    if (!p.has('cues')) p.set('cues', 'demo');
+    if (!p.has('cues')) p.set('cues', 'show');
     return `stage.html?${p.toString()}`;
   };
 

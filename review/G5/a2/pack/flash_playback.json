@@ -5,39 +5,11 @@
  "frames_analyzed": 9122,
  "duration_sec": 304.067,
  "max_changes_per_sec": {
-  "luma": 3,
+  "luma": 2,
   "red": 2
  },
  "flagged": [],
  "near_limit": [
-  {
-   "type": "luma",
-   "region": "x10_y3",
-   "px": [
-    1200,
-    360,
-    1320,
-    480
-   ],
-   "count_per_sec": 3,
-   "window_start": 234.2,
-   "cue": "a2_c012",
-   "cue_t": 4.2
-  },
-  {
-   "type": "luma",
-   "region": "x10_y4",
-   "px": [
-    1200,
-    480,
-    1320,
-    600
-   ],
-   "count_per_sec": 3,
-   "window_start": 234.2333,
-   "cue": "a2_c012",
-   "cue_t": 4.2333
-  },
   {
    "type": "luma",
    "region": "x8_y2",
@@ -74,20 +46,6 @@
     360,
     1080,
     480
-   ],
-   "count_per_sec": 2,
-   "window_start": 0.1,
-   "cue": "a2_c001",
-   "cue_t": -0.5
-  },
-  {
-   "type": "luma",
-   "region": "x9_y6",
-   "px": [
-    1080,
-    720,
-    1200,
-    840
    ],
    "count_per_sec": 2,
    "window_start": 0.1,
@@ -460,6 +418,20 @@
   },
   {
    "type": "luma",
+   "region": "x10_y3",
+   "px": [
+    1200,
+    360,
+    1320,
+    480
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1333,
+   "cue": "a2_c001",
+   "cue_t": -0.4667
+  },
+  {
+   "type": "luma",
    "region": "x11_y3",
    "px": [
     1320,
@@ -558,20 +530,6 @@
   },
   {
    "type": "luma",
-   "region": "x3_y4",
-   "px": [
-    360,
-    480,
-    480,
-    600
-   ],
-   "count_per_sec": 2,
-   "window_start": 0.1333,
-   "cue": "a2_c001",
-   "cue_t": -0.4667
-  },
-  {
-   "type": "luma",
    "region": "x5_y4",
    "px": [
     600,
@@ -605,20 +563,6 @@
     960,
     480,
     1080,
-    600
-   ],
-   "count_per_sec": 2,
-   "window_start": 0.1333,
-   "cue": "a2_c001",
-   "cue_t": -0.4667
-  },
-  {
-   "type": "luma",
-   "region": "x11_y4",
-   "px": [
-    1320,
-    480,
-    1440,
     600
    ],
    "count_per_sec": 2,
@@ -843,6 +787,20 @@
     960,
     720,
     1080,
+    840
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1333,
+   "cue": "a2_c001",
+   "cue_t": -0.4667
+  },
+  {
+   "type": "luma",
+   "region": "x9_y6",
+   "px": [
+    1080,
+    720,
+    1200,
     840
    ],
    "count_per_sec": 2,
@@ -1292,6 +1250,48 @@
     360,
     1920,
     480
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1667,
+   "cue": "a2_c001",
+   "cue_t": -0.4333
+  },
+  {
+   "type": "luma",
+   "region": "x3_y4",
+   "px": [
+    360,
+    480,
+    480,
+    600
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1667,
+   "cue": "a2_c001",
+   "cue_t": -0.4333
+  },
+  {
+   "type": "luma",
+   "region": "x10_y4",
+   "px": [
+    1200,
+    480,
+    1320,
+    600
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.1667,
+   "cue": "a2_c001",
+   "cue_t": -0.4333
+  },
+  {
+   "type": "luma",
+   "region": "x11_y4",
+   "px": [
+    1320,
+    480,
+    1440,
+    600
    ],
    "count_per_sec": 2,
    "window_start": 0.1667,
@@ -1874,6 +1874,20 @@
   },
   {
    "type": "luma",
+   "region": "x4_y5",
+   "px": [
+    480,
+    600,
+    600,
+    720
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.3,
+   "cue": "a2_c001",
+   "cue_t": -0.3
+  },
+  {
+   "type": "luma",
    "region": "x12_y5",
    "px": [
     1440,
@@ -1882,9 +1896,9 @@
     720
    ],
    "count_per_sec": 2,
-   "window_start": 0.3,
+   "window_start": 0.3333,
    "cue": "a2_c001",
-   "cue_t": -0.3
+   "cue_t": -0.2667
   },
   {
    "type": "luma",
@@ -1896,23 +1910,23 @@
     840
    ],
    "count_per_sec": 2,
-   "window_start": 0.3,
-   "cue": "a2_c001",
-   "cue_t": -0.3
-  },
-  {
-   "type": "luma",
-   "region": "x4_y5",
-   "px": [
-    480,
-    600,
-    600,
-    720
-   ],
-   "count_per_sec": 2,
    "window_start": 0.3333,
    "cue": "a2_c001",
    "cue_t": -0.2667
+  },
+  {
+   "type": "luma",
+   "region": "x4_y6",
+   "px": [
+    480,
+    720,
+    600,
+    840
+   ],
+   "count_per_sec": 2,
+   "window_start": 0.5,
+   "cue": "a2_c001",
+   "cue_t": -0.1
   },
   {
    "type": "luma",
@@ -1950,20 +1964,6 @@
     600,
     1320,
     720
-   ],
-   "count_per_sec": 2,
-   "window_start": 22.0,
-   "cue": "a2_c002",
-   "cue_t": -0.4667
-  },
-  {
-   "type": "luma",
-   "region": "x4_y6",
-   "px": [
-    480,
-    720,
-    600,
-    840
    ],
    "count_per_sec": 2,
    "window_start": 22.0,
@@ -2138,7 +2138,7 @@
    "to": "a2_c008",
    "t": 144.7333,
    "mean_luma_before": 0.5415,
-   "mean_luma_after": 0.5192,
+   "mean_luma_after": 0.519,
    "max_region_luma_delta": 0.4169
   },
   {

@@ -283,7 +283,7 @@
      "start": 2.2,
      "duration": 0.01,
      "params": {
-      "to": "a7_mid"
+      "to": "a7_mid2"
      }
     },
     {
@@ -300,29 +300,40 @@
      }
     },
     {
+     "name": "puppet.move",
+     "start": 2.18,
+     "duration": 0.02,
+     "target": "xiaoqing",
+     "params": {
+      "dx": 4.85
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 2.18,
+     "duration": 0.02,
+     "target": "xiaoyu",
+     "params": {
+      "dx": -4.8
+     }
+    },
+    {
      "name": "fade.in",
      "start": 2.25,
      "duration": 0.6
     },
     {
-     "name": "puppet.move",
-     "start": 4.4,
-     "duration": 3.0,
+     "name": "puppet.face",
+     "start": 3.2,
      "target": "xiaoqing",
-     "ease": "inOut",
      "params": {
-      "dx": 4.45
+      "emotion": "smile"
      }
     },
     {
-     "name": "puppet.move",
-     "start": 4.6,
-     "duration": 3.0,
-     "target": "xiaoyu",
-     "ease": "inOut",
-     "params": {
-      "dx": -4.4
-     }
+     "name": "puppet.blink",
+     "start": 3.6,
+     "target": "xiaoyu"
     }
    ],
    "audioId": null,
@@ -377,11 +388,6 @@
      "id": "sfx_card_in",
      "at": 4.3,
      "gain": 0.6
-    },
-    {
-     "id": "sfx_footsteps",
-     "at": 4.6,
-     "gain": 0.3
     }
    ]
   },
@@ -393,7 +399,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a7_mid",
+     "camera": "a7_mid2",
      "light": 1
     },
     "characters": {
@@ -405,7 +411,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": -4.55,
+      "x": -4.15,
       "z": 3.0,
       "facing": 1,
       "emotion": "smile",
@@ -413,7 +419,7 @@
      },
      "xiaoyu": {
       "visible": true,
-      "x": 4.6,
+      "x": 4.2,
       "z": 3.0,
       "facing": 1,
       "emotion": "smile",
@@ -437,40 +443,27 @@
     },
     {
      "name": "puppet.move",
-     "start": 0.8,
-     "duration": 3.9,
+     "start": 1.45,
+     "duration": 4.5,
      "target": "xiaoqing",
-     "ease": "inOut",
+     "ease": "sine",
      "params": {
-      "dx": 3.4
+      "dx": 2.15
      }
     },
     {
      "name": "puppet.move",
-     "start": 1.0,
-     "duration": 3.9,
+     "start": 1.65,
+     "duration": 4.5,
      "target": "xiaoyu",
-     "ease": "inOut",
+     "ease": "sine",
      "params": {
-      "dx": -3.45
-     }
-    },
-    {
-     "name": "zhezhe.walkTo",
-     "start": 1.5,
-     "duration": 2.6,
-     "target": "zhezhe",
-     "params": {
-      "pos": [
-       -2.6,
-       0,
-       3.75
-      ]
+      "dx": -2.2
      }
     },
     {
      "name": "puppet.popup",
-     "start": 2.7,
+     "start": 2.2,
      "duration": 1.5,
      "target": "pinan"
     },
@@ -481,15 +474,28 @@
     },
     {
      "name": "camera.cut",
-     "start": "a7_c003_01.end+0.70",
+     "start": "a7_c003_01.end+0.67",
      "duration": 0.01,
      "params": {
       "to": "a7_stage"
      }
     },
     {
+     "name": "zhezhe.glideTo",
+     "start": "a7_c003_01.end+0.67",
+     "duration": 0.02,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -2.6,
+       0,
+       3.75
+      ]
+     }
+    },
+    {
      "name": "fade.in",
-     "start": "a7_c003_01.end+0.75",
+     "start": "a7_c003_01.end+0.70",
      "duration": 0.6
     },
     {
@@ -508,13 +514,13 @@
      "id": "a7_c003_01",
      "speaker": "品安",
      "text": "有讓你擔心的秘密，也可以找大人說。",
-     "start": 4.3
+     "start": 3.85
     },
     {
      "id": "a7_c003_02",
      "speaker": "折折",
      "text": "謝謝大家，幫小燈鎮點亮了八盞燈！",
-     "start": "a7_c003_01.end+0.90"
+     "start": "a7_c003_01.end+1.35"
     }
    ],
    "next": "a8_c001",
@@ -524,7 +530,7 @@
    "fx": [],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 4.3,
+   "voStart": 3.85,
    "tail": 0.5,
    "storyboard": {
     "beat": "收摺音效；小晴、小宇、品安走到台前，品安往前半步說秘密也可以找大人說；折折謝謝大家點亮八盞燈（只有兩句）",

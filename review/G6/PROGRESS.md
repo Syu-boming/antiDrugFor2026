@@ -1,0 +1,4 @@
+- 10-22 10:23 [備援影片＋G6 驗收包工具代理] 開工：讀完初步完成說明、v1.3 §8、v1.2 §17.2/§21/§24、act_review_pack、engine-test；輸出 tools/backup_video.*、tools/show_review_pack.*、review/G6/_test/、review/G6/pack/
+- 10-22 10:35 [工具代理] 備援影片工具完成並試跑 a7、a8（review/G6/_test/backup/）：影格數、章節、BT.709、聲畫互相關 0.0 ms（7 句）、逐格 PSNR ≥ 39.5 dB 全部通過；全劇預估見 _check/plan.json
+- 10-22 10:48 [工具代理] G6 驗收包工具寫好；全劇操作補測 21/21、接縫 8 段已試跑；開始完整試跑（engine-test＋即時播放）
+- 10-22 11:19 [工具代理] G6 驗收包完整試跑完成（review/G6/pack/，約 30 分鐘）：engine-test 134/134、全劇補測 21/21、八題 8/8、署名卡通過、外部請求 0、p95 16.7 ms、>100 ms 卡頓 10 次（8 次在換景漸亮中、0 次在對白或揭答中）、a8 響度偏差 −3.3 LU；全劇 35.95 分（講稿 timing.json）

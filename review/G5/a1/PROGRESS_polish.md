@@ -1,0 +1,2 @@
+- 11:09 G6 精修開工（進度主檔 review/G5/a0/PROGRESS_polish.md）。
+- 11:42 a1 精修套上（polish_a1.py、square_a1.ts 剪影在 a1_c007 全暗時先出現、build_polish_art.py 品安看柱子 look1／look2＋show_characters.json 兩筆姿勢）：Q1 點燈後只暗亮一次（a1_c007 淡入就停在 a1_c008 開頭街景、孩子站姿，a1_c008 拿掉換景預捲）；翻面 ≥0.42 秒（小宇轉向窗戶 1.6 秒慢翻，否則紅外套細格 4 次）；light.restore／dim 和切點同一刻；a1_c008 縮 1.0 秒（窗前走路照原時間，提前 0.2 秒試過細格 4）。私人細格 a1_c004 3/2、a1_c005 2/1、a1_c007 3/1、a1_c008 3/3。typecheck 通過。

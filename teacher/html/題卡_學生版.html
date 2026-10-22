@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紙燈節｜紙本題卡（學生版）</title>
+<style>
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-400.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-700.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 700; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-800.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 800; font-style: normal; }
+@font-face { font-family: "Noto Sans TC Local"; src: url("../fonts/subset/NotoSansTC-900.ttf") format("truetype"), url("../fonts/NotoSansTC-wght.ttf") format("truetype"); font-weight: 900; font-style: normal; }
+:root {
+  --ink: #1f1a16; --ink2: #4a3f36; --muted: #6f6359; --line: #b9ab9b; --paper: #fbf7f0; --accent: #7a4e2d; --indigo: #2f4a7a; --soft: #f1e8da;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; color: var(--ink); }
+body { font-family: "Noto Sans TC Local", "PingFang TC", "Microsoft JhengHei", sans-serif; font-weight: 400; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+h1, h2, h3 { line-height: 1.3; margin: 0.6em 0 0.35em; font-weight: 800; }
+p { margin: 0.3em 0 0.5em; }
+strong { font-weight: 800; }
+code { font-family: inherit; background: var(--soft); padding: 0 0.25em; border-radius: 3px; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 0.6pt solid var(--line); padding: 3pt 5pt; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 800; }
+blockquote { margin: 0.4em 0 0.6em; padding: 0.35em 0.7em; border-left: 3pt solid var(--accent); background: var(--paper); }
+.note { color: var(--muted); font-size: 0.86em; }
+.pb { break-after: page; height: 0; }
+.byline { color: var(--muted); }
+
+
+@page { size: A4 landscape; margin: 0; }
+body { font-size: 12pt; }
+.card { width: 297mm; height: 210mm; padding: 11mm 15mm 9mm; display: flex; flex-direction: column; break-after: page; position: relative; overflow: hidden; }
+.card:last-child { break-after: auto; }
+.head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 5mm; }
+.qno { font-size: 22pt; font-weight: 900; display: flex; align-items: center; gap: 4mm; }
+.qno .badge { border: 2pt solid var(--ink); border-radius: 4mm; padding: 0 4mm; }
+.lamps { display: flex; gap: 1.6mm; }
+.lamps svg { width: 7mm; height: 9mm; }
+.q { font-size: 33pt; font-weight: 800; line-height: 1.32; margin: 0 0 7mm; }
+.opts { display: flex; flex-direction: column; gap: 5mm; flex: 1; max-height: 128mm; }
+.opts .opt { flex: 1; }
+.opt { display: flex; align-items: center; gap: 5mm; border: 1.6pt solid var(--ink2); border-radius: 5mm; padding: 3.5mm 6mm; position: relative; background: #fff; }
+.num { font-size: 50pt; font-weight: 900; width: 14mm; text-align: center; line-height: 1; }
+.ico-hand { width: 15mm; height: 16mm; color: #3c2f25; flex: none; }
+.ico-shape { width: 11mm; height: 11mm; color: #3c2f25; flex: none; }
+.otext { font-size: 32pt; font-weight: 700; line-height: 1.25; flex: 1; }
+.ph { display: inline-block; white-space: nowrap; }
+.foot { display: flex; justify-content: space-between; font-size: 10pt; color: var(--muted); margin-top: 4mm; }
+/* 教師版 */
+.t .q { font-size: 21pt; margin-bottom: 3mm; }
+.t .opts { gap: 2.4mm; flex: none; max-height: none; }
+.t .opts .opt { flex: none; }
+.t .opt { padding: 1.6mm 5mm; }
+.t .num { font-size: 26pt; width: 9mm; }
+.t .ico-hand { width: 9mm; height: 10mm; }
+.t .ico-shape { width: 7mm; height: 7mm; }
+.t .otext { font-size: 17pt; }
+.t .opt.correct { border: 3.2pt solid var(--ink); }
+.t .opt.dim .otext, .t .opt.dim .num { color: #8a8076; }
+.stamp { display: inline-flex; align-items: center; gap: 1.5mm; border: 2.4pt solid var(--indigo); color: var(--indigo); border-radius: 2.5mm; padding: 0.5mm 3mm; font-size: 16pt; font-weight: 900; transform: rotate(-6deg); flex: none; }
+.stamp svg { width: 6mm; height: 6mm; }
+.meta { display: flex; gap: 6mm; font-size: 13pt; margin: 0 0 2.5mm; }
+.meta b { font-size: 15pt; }
+.fb { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm 7mm; margin-top: 3.5mm; font-size: 11.5pt; line-height: 1.45; flex: 1; }
+.fb h3 { font-size: 12pt; margin: 0 0 1mm; }
+.fb .say { border-left: 2.4pt solid var(--accent); padding: 1mm 3mm; background: var(--paper); }
+.fb ul { margin: 0; padding-left: 5mm; }
+.fb .bg { color: var(--ink2); font-size: 10pt; }
+.cover { width: 297mm; height: 210mm; padding: 18mm 22mm; break-after: page; display: flex; flex-direction: column; gap: 5mm; }
+.cover h1 { font-size: 30pt; margin: 0; }
+.cover p, .cover li { font-size: 14pt; }
+.cover table { font-size: 14pt; width: auto; }
+.cover th, .cover td { padding: 2mm 5mm; text-align: center; }
+</style>
+</head>
+<body>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 1 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">有人拿出包裝漂亮的電子煙，</span><span class="ph">說「這個很安全」。</span><span class="ph">可以相信嗎？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">包裝漂亮就很安全。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">不行，</span><span class="ph">外觀不能證明安全。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">聞起來香就沒問題。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 2 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">阿樂叔叔身上的操偶線，</span><span class="ph">在比喻什麼？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">叔叔在練習下一場紙偶戲的動作。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">人真的會變成喪屍，</span><span class="ph">被線拉著走。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">毒品可能讓頭腦和身體不聽使喚。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 3 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">看見有人站不穩，</span><span class="ph">就能確定他吸毒嗎？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">不能，</span><span class="ph">要先找大人來幫忙。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">可以，</span><span class="ph">看起來像就一定是。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">不能，</span><span class="ph">所以直接走開不用管。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 4 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">有人說「試一次沒關係」，</span><span class="ph">哪個做法比較安全？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">說「不用，</span><span class="ph">我不試」，</span><span class="ph">離開找大人。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">只試一次而已，</span><span class="ph">應該沒關係。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">先幫他保管，</span><span class="ph">等一下再還給他。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 5 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">受到毒品影響還開車，</span><span class="ph">可能危害到誰？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">只會危害開車的人。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">只會危害坐車的人。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">駕駛、</span><span class="ph">乘客和路人。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 6 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">你還沒上車，</span><span class="ph">接送的人站不穩、</span><span class="ph">反應很不對勁，</span><span class="ph">卻說要開車。</span><span class="ph">怎麼做？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">坐後座、</span><span class="ph">繫好安全帶就沒關係。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">先不上車，</span><span class="ph">到安全處找大人。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">請他開慢一點，</span><span class="ph">小心就好。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 7 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">有人叫不醒。</span><span class="ph">你站在安全的地方，</span><span class="ph">接下來怎麼做？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">先拍下影片，</span><span class="ph">再傳給同學看。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">自己先跑過去，</span><span class="ph">用力把他搖醒。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">先找大人，</span><span class="ph">沒大人就撥 119。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+<section class="card">
+<div class="head"><div class="qno"><span class="badge">第 8 題</span></div><div class="lamps"><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#f3c76a" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg><svg class="ico-lamp" viewBox="0 0 40 52" aria-hidden="true">
+<rect x="13" y="2" width="14" height="6" rx="2" fill="#5a4636"/>
+<ellipse cx="20" cy="27" rx="16" ry="18" fill="#fffaf0" stroke="#5a4636" stroke-width="1.6"/>
+<path d="M20 9 V45 M11 11 Q4 27 11 43 M29 11 Q36 27 29 43" fill="none" stroke="#5a4636" stroke-width="1.3"/>
+<rect x="13" y="44" width="14" height="6" rx="2" fill="#5a4636"/></svg></div></div>
+<div class="q"><span class="ph">朋友可能碰到危險物品，</span><span class="ph">卻說「不要告訴老師」。</span><span class="ph">怎麼辦？</span></div>
+<div class="opts"><div class="opt opt-1"><span class="num">1</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="19" width="6.6" height="10" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><circle cx="20" cy="20" r="15"/></g></svg><span class="otext"><span class="ph">答應他，</span><span class="ph">永遠不告訴任何人。</span></span></div>
+<div class="opt opt-2"><span class="num">2</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="19" width="6.6" height="10" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><polygon points="20,4 37,35 3,35"/></g></svg><span class="otext"><span class="ph">陪他一起找可信任的大人。</span></span></div>
+<div class="opt opt-3"><span class="num">3</span><svg class="ico-hand" viewBox="0 0 48 52" aria-hidden="true"><g fill="currentColor"><rect x="9" y="3" width="6.6" height="25" rx="3.3"/><rect x="17" y="3" width="6.6" height="25" rx="3.3"/><rect x="25" y="3" width="6.6" height="25" rx="3.3"/><rect x="33" y="19" width="6.6" height="10" rx="3.3"/><rect x="7" y="22" width="34" height="26" rx="10"/><rect x="0" y="27" width="13" height="7" rx="3.5" transform="rotate(-25 6 30)"/></g></svg><svg class="ico-shape" viewBox="0 0 40 40" aria-hidden="true"><g fill="currentColor"><rect x="5" y="5" width="30" height="30" rx="3"/></g></svg><span class="otext"><span class="ph">傳給全班同學，</span><span class="ph">大家一起討論。</span></span></div></div>
+<div class="foot"><span>想一想……3、2、1，一起比！用手指比 1、2、3，手舉過頭，不用喊。</span><span>紙燈節｜許博明老師製作</span></div>
+</section>
+</body>
+</html>

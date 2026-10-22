@@ -322,5 +322,194 @@
     "dE_vs_v04": 4.7
    }
   }
+ },
+ "pose_lin_phone_v01": {
+  "final": "assets/final/chr-lin_pose-phone_v01.png",
+  "size": [
+   470,
+   1524
+  ],
+  "offset_from_source": [
+   301,
+   4
+  ],
+  "stray_px_removed": 0,
+  "height_px": 1490,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 12663,
+   "semi_alpha_ratio_of_edge": 2.595,
+   "raw_fog_px": 5752,
+   "raw_margins": {
+    "left": 318,
+    "top": 21,
+    "right": 270,
+    "bottom": 25
+   },
+   "raw_touches_edge": [],
+   "crop_ok": true,
+   "white_profile_1_24": [
+    0.005,
+    0.796,
+    0.996,
+    0.998,
+    0.999,
+    0.999,
+    0.998,
+    0.997,
+    0.996,
+    0.472,
+    0.045,
+    0.034,
+    0.03,
+    0.027,
+    0.026,
+    0.022,
+    0.022,
+    0.019,
+    0.019,
+    0.017,
+    0.017,
+    0.015,
+    0.015,
+    0.013
+   ],
+   "white_border_start_px": 1,
+   "outer_dark_line": false,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.821,
+   "white_border_coverage": 0.998,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.8,
+   "mean_b": 10.1
+  },
+  "raw": "review/G5/a3/raw/pose_lin_phone_v01.png",
+  "generated": "assets/generated/chr-lin_pose-phone_v01.png",
+  "character": "lin",
+  "part": "pose-phone",
+  "garments": {
+   "酒紅毛衣": {
+    "px": 85318,
+    "L*": 31.7,
+    "median": "#803034",
+    "lab": [
+     31.7,
+     34.7,
+     15.7
+    ],
+    "dE_vs_master": 2.6
+   }
+  }
+ },
+ "set_a3_classmates_v01": {
+  "raw": "review/G5/a3/raw/set_a3_classmates_v01.png",
+  "generated": "assets/generated/set-a3-classroom_classmates_v01.png",
+  "stray_px_removed": 0,
+  "pieces": {
+   "a": {
+    "final": "assets/final/sets/a3_classroom/classmate-a_v01.png",
+    "size": [
+     378,
+     997
+    ],
+    "offset_from_source": [
+     295,
+     7
+    ],
+    "stray_px_removed": 0,
+    "height_px": 963,
+    "checks": {
+     "fog_px": 0,
+     "semi_alpha_px": 6893,
+     "semi_alpha_ratio_of_edge": 2.264,
+     "white_profile_1_24": [
+      0.001,
+      0.684,
+      0.992,
+      0.996,
+      0.998,
+      0.999,
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      0.845,
+      0.169,
+      0.09,
+      0.147,
+      0.198,
+      0.191,
+      0.174,
+      0.176,
+      0.167,
+      0.161,
+      0.166,
+      0.151,
+      0.156,
+      0.157
+     ],
+     "white_border_start_px": 1,
+     "outer_dark_line": false,
+     "white_border_px": 10,
+     "dark_line_inside_border": 0.531,
+     "white_border_coverage": 0.998,
+     "white_border_ok": true,
+     "lr_L_median_diff": 1.4,
+     "mean_b": 14.5
+    }
+   },
+   "b": {
+    "final": "assets/final/sets/a3_classroom/classmate-b_v01.png",
+    "size": [
+     381,
+     946
+    ],
+    "offset_from_source": [
+     850,
+     61
+    ],
+    "stray_px_removed": 0,
+    "height_px": 914,
+    "checks": {
+     "fog_px": 0,
+     "semi_alpha_px": 6637,
+     "semi_alpha_ratio_of_edge": 2.313,
+     "white_profile_1_24": [
+      0.0,
+      0.679,
+      0.99,
+      0.993,
+      0.996,
+      0.996,
+      0.997,
+      0.997,
+      0.997,
+      0.997,
+      0.826,
+      0.123,
+      0.075,
+      0.141,
+      0.205,
+      0.197,
+      0.197,
+      0.186,
+      0.178,
+      0.17,
+      0.168,
+      0.165,
+      0.155,
+      0.146
+     ],
+     "white_border_start_px": 1,
+     "outer_dark_line": false,
+     "white_border_px": 10,
+     "dark_line_inside_border": 0.545,
+     "white_border_coverage": 0.995,
+     "white_border_ok": true,
+     "lr_L_median_diff": 1.0,
+     "mean_b": 10.7
+    }
+   }
+  }
  }
 }

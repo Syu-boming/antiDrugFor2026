@@ -1,7 +1,7 @@
 {
  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
  "file": "audio/a1_mix.wav",
- "duration_sec": 182.06,
+ "duration_sec": 180.46,
  "sample_peak_dBFS": -1.21,
  "clipped_samples": 0,
  "full_playback": {
@@ -37,7 +37,7 @@
   },
   "a1_c006": {
    "I_LUFS": -15.3,
-   "LRA_LU": 2.6,
+   "LRA_LU": 2.7,
    "TP_dBTP": -4.0
   },
   "a1_c007": {
@@ -46,9 +46,9 @@
    "TP_dBTP": -2.5
   },
   "a1_c008": {
-   "I_LUFS": -17.2,
+   "I_LUFS": -17.0,
    "LRA_LU": 19.7,
-   "TP_dBTP": -1.6
+   "TP_dBTP": -1.8
   }
  },
  "lines": [
@@ -392,8 +392,8 @@
    "id": "a1_c008_01",
    "cue": "a1_c008",
    "speaker": "折折",
-   "start": 155.98,
-   "end": 159.82,
+   "start": 155.38,
+   "end": 159.22,
    "vo_file": "audio/vo/vo_a1_c008_01_v04.wav",
    "vo_file_I_LUFS": -18.1,
    "vo_file_TP_dBTP": -4.2,
@@ -406,8 +406,8 @@
    "id": "a1_c008_02",
    "cue": "a1_c008",
    "speaker": "小晴",
-   "start": 160.27,
-   "end": 164.29,
+   "start": 159.67,
+   "end": 163.69,
    "vo_file": "audio/vo/vo_a1_c008_02_v04.wav",
    "vo_file_I_LUFS": -17.8,
    "vo_file_TP_dBTP": -5.3,
@@ -420,15 +420,15 @@
    "id": "a1_c008_03",
    "cue": "a1_c008",
    "speaker": "小宇",
-   "start": 172.79,
-   "end": 174.96,
+   "start": 171.89,
+   "end": 174.06,
    "vo_file": "audio/vo/vo_a1_c008_03_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -1.8,
    "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -38.1,
-   "vo_minus_background_LU": 23.1
+   "background_I_LUFS": -37.0,
+   "vo_minus_background_LU": 22.0
   }
  ],
  "line_vo_file_I_spread_LU": 0.4,
@@ -444,21 +444,21 @@
    "cue": "a1_c007",
    "cue_t": 0.74
   },
-  "max_rise_per_100ms_LU": 21.3,
-  "max_rise_per_100ms_at_sec": 109.6,
+  "max_rise_per_100ms_LU": 23.0,
+  "max_rise_per_100ms_at_sec": 132.9,
   "max_rise_per_100ms_at": {
-   "cue": "a1_c005",
-   "cue_t": 4.0
+   "cue": "a1_c006",
+   "cue_t": 0.41
   },
   "max_rise_within_1s_LU": 42.2,
   "max_rise_within_1s_at_sec": 1.6,
-  "sample_peak_dBFS": -7.97,
-  "sample_peak_at_sec": 132.81,
+  "sample_peak_dBFS": -9.91,
+  "sample_peak_at_sec": 110.19,
   "sample_peak_at": {
-   "cue": "a1_c006",
-   "cue_t": 0.32
+   "cue": "a1_c005",
+   "cue_t": 4.59
   },
-  "true_peak_dBTP": -8.0,
+  "true_peak_dBTP": -9.9,
   "I_LUFS": -28.9,
   "g4_reference": {
    "max_LUFS": -15.7,
@@ -499,9 +499,9 @@
   },
   {
    "cue": "a1_c008",
-   "hold_from_sec": 178.56,
+   "hold_from_sec": 176.96,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -51.9,
+   "momentary_max_after_3s_LUFS": -48.5,
    "pass_le_-35": true
   }
  ],
@@ -542,7 +542,7 @@
    "offset": 0
   },
   {
-   "t": 150.78,
+   "t": 150.18,
    "music": "music_town",
    "loop": true,
    "fade": 1,
@@ -550,7 +550,7 @@
    "offset": 0
   },
   {
-   "t": 154.08,
+   "t": 153.48,
    "music": "music_m4_light",
    "loop": true,
    "fade": 3,

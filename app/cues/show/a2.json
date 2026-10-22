@@ -1992,7 +1992,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q3 點燈收聲後",
-    "atMinute": 13,
+    "atMinute": 13.27,
     "escalate": {
      "behindSec": 90,
      "level": 1
@@ -2112,13 +2112,13 @@
     },
     {
      "name": "fade.out",
-     "start": 1,
+     "start": 0.85,
      "duration": 0.6,
      "params": {}
     },
     {
      "name": "camera.cut",
-     "start": 1.62,
+     "start": 1.47,
      "duration": 0,
      "params": {
       "to": "a2s_help_mid"
@@ -2126,7 +2126,7 @@
     },
     {
      "name": "fx.desat",
-     "start": 1.62,
+     "start": 1.47,
      "duration": 0.03,
      "params": {
       "to": 0.3
@@ -2134,7 +2134,7 @@
     },
     {
      "name": "puppet.move",
-     "start": 1.62,
+     "start": 1.47,
      "target": "xiaoqing",
      "duration": 0.01,
      "params": {
@@ -2143,7 +2143,7 @@
     },
     {
      "name": "puppet.move",
-     "start": 1.62,
+     "start": 1.47,
      "target": "xiaoyu",
      "duration": 0.01,
      "params": {
@@ -2152,7 +2152,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": 1.6300000000000001,
+     "start": 1.48,
      "target": "xiaoqing",
      "duration": 0.01,
      "params": {
@@ -2161,7 +2161,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": 1.6300000000000001,
+     "start": 1.48,
      "target": "xiaoyu",
      "duration": 0.01,
      "params": {
@@ -2170,13 +2170,13 @@
     },
     {
      "name": "fade.in",
-     "start": 1.7000000000000002,
+     "start": 1.55,
      "duration": 0.6,
      "params": {}
     },
     {
      "name": "puppet.face",
-     "start": 2.12,
+     "start": 2.25,
      "target": "ye",
      "params": {
       "emotion": "worried"
@@ -2184,7 +2184,7 @@
     },
     {
      "name": "puppet.lean",
-     "start": 2.3200000000000003,
+     "start": 2.5,
      "target": "ye",
      "duration": 0.45,
      "params": {
@@ -2193,7 +2193,7 @@
     },
     {
      "name": "puppet.nod",
-     "start": 2.62,
+     "start": 2.9,
      "target": "ye",
      "duration": 0.8,
      "params": {
@@ -2202,7 +2202,7 @@
     },
     {
      "name": "puppet.lean",
-     "start": 3.02,
+     "start": 3.35,
      "target": "ye",
      "duration": 0.3,
      "params": {
@@ -2211,7 +2211,7 @@
     },
     {
      "name": "camera.cut",
-     "start": 3.47,
+     "start": 4.15,
      "duration": 0,
      "params": {
       "to": {
@@ -2231,7 +2231,7 @@
     },
     {
      "name": "fx.desat",
-     "start": 3.47,
+     "start": 4.15,
      "duration": 0.03,
      "params": {
       "to": 0.32
@@ -2239,34 +2239,25 @@
     },
     {
      "name": "puppet.move",
-     "start": 3.47,
+     "start": 4.15,
      "target": "ye",
      "duration": 0.01,
      "params": {
-      "dx": -41.95
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": 3.8200000000000003,
-     "target": "ye",
-     "duration": 0.8,
-     "params": {
-      "dx": -0.4
+      "dx": -42.35
      }
     },
     {
      "name": "puppet.pose",
-     "start": 4.67,
+     "start": 5.37,
      "target": "ye",
-     "duration": 0.24,
+     "duration": 0,
      "params": {
       "pose": "crouch"
      }
     },
     {
      "name": "puppet.move",
-     "start": 3.47,
+     "start": 4.15,
      "target": "xiaoqing",
      "duration": 0.01,
      "params": {
@@ -2275,7 +2266,7 @@
     },
     {
      "name": "puppet.move",
-     "start": 3.47,
+     "start": 4.15,
      "target": "xiaoyu",
      "duration": 0.01,
      "params": {
@@ -2284,7 +2275,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": 3.49,
+     "start": 4.17,
      "target": "xiaoqing",
      "duration": 0.01,
      "params": {
@@ -2293,7 +2284,7 @@
     },
     {
      "name": "puppet.lean",
-     "start": 3.49,
+     "start": 4.17,
      "target": "xiaoqing",
      "duration": 0.01,
      "params": {
@@ -2340,7 +2331,7 @@
     },
     {
      "name": "fx.desat",
-     "start": 4.2700000000000005,
+     "start": 4.45,
      "duration": 3,
      "params": {
       "to": 0.2
@@ -2348,7 +2339,7 @@
     },
     {
      "name": "puppet.nod",
-     "start": 3.77,
+     "start": 4.25,
      "target": "ale",
      "duration": 2.6,
      "params": {
@@ -2558,7 +2549,7 @@
     },
     {
      "id": "music_town",
-     "at": 3.37,
+     "at": 4.05,
      "loop": true,
      "fade": 1.6,
      "gain": 0.5
@@ -2573,7 +2564,7 @@
     },
     {
      "id": "sfx_crowd_short",
-     "at": 1.7200000000000002,
+     "at": 1.57,
      "gain": 0.45
     },
     {

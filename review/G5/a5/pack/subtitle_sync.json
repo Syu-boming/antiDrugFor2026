@@ -1,8 +1,13 @@
 {
- "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點。G6 精修：某頁在範圍內找不到停頓時，改用 silencedetect noise=-30 dB、d=0.12 s 重找那一頁（停頓裡有呼吸聲、高於 −40 dB 的情形，例：a7_c001_03 第 2 頁），取離頁起點較近的；檔尾靜音的結束點不算語音起點；每頁的 detect 欄寫用了哪一組",
  "silencedetect": {
   "noise_dB": -40,
   "min_silence_s": 0.05
+ },
+ "silencedetect_fallback": {
+  "noise_dB": -30,
+  "min_silence_s": 0.12,
+  "pages": 0
  },
  "range_s": [
   -0.8,
@@ -18,6 +23,7 @@
    "voice_start_s": 1.086,
    "diff_s": -0.136,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_01_v04.wav"
   },
   {
@@ -25,10 +31,11 @@
    "line": "a5_c001_02",
    "page": 1,
    "text": "阿樂，你坐著。林老師，我去／轉角帶小朋友過馬路，很快回來！",
-   "subtitle_start_s": 6.28,
-   "voice_start_s": 6.416,
+   "subtitle_start_s": 5.98,
+   "voice_start_s": 6.116,
    "diff_s": -0.136,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_02_v04.wav"
   },
   {
@@ -36,10 +43,11 @@
    "line": "a5_c001_03",
    "page": 1,
    "text": "好，我馬上出來！",
-   "subtitle_start_s": 13.9,
-   "voice_start_s": 14.04,
+   "subtitle_start_s": 13.6,
+   "voice_start_s": 13.74,
    "diff_s": -0.14,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_03_v04.wav"
   },
   {
@@ -47,10 +55,11 @@
    "line": "a5_c001_04",
    "page": 1,
    "text": "阿樂叔叔？阿樂叔叔！",
-   "subtitle_start_s": 29.44,
-   "voice_start_s": 29.561,
+   "subtitle_start_s": 26.94,
+   "voice_start_s": 27.061,
    "diff_s": -0.121,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_04_v04.wav"
   },
   {
@@ -58,10 +67,11 @@
    "line": "a5_c001_05",
    "page": 1,
    "text": "他……叫不醒。",
-   "subtitle_start_s": 32.79,
-   "voice_start_s": 32.93,
+   "subtitle_start_s": 30.24,
+   "voice_start_s": 30.38,
    "diff_s": -0.14,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_05_v04.wav"
   },
   {
@@ -69,10 +79,11 @@
    "line": "a5_c001_06",
    "page": 1,
    "text": "陳伯伯在轉角，林老師在辦公室。／他們該怎麼做？",
-   "subtitle_start_s": 35.25,
-   "voice_start_s": 35.372,
+   "subtitle_start_s": 32.6,
+   "voice_start_s": 32.722,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c001_06_v04.wav"
   },
   {
@@ -84,6 +95,7 @@
    "voice_start_s": 1.576,
    "diff_s": -0.126,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c002_01_v04.wav"
   },
   {
@@ -95,6 +107,7 @@
    "voice_start_s": 4.117,
    "diff_s": -0.137,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c002_02_v04.wav"
   },
   {
@@ -106,6 +119,7 @@
    "voice_start_s": 10.346,
    "diff_s": -0.136,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c002_03_v04.wav"
   },
   {
@@ -117,6 +131,7 @@
    "voice_start_s": 14.171,
    "diff_s": -0.121,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c002_04_v04.wav"
   },
   {
@@ -128,6 +143,7 @@
    "voice_start_s": 18.432,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c002_05_v04.wav"
   },
   {
@@ -139,6 +155,7 @@
    "voice_start_s": 1.122,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c003_01_v04.wav"
   },
   {
@@ -150,6 +167,7 @@
    "voice_start_s": 2.027,
    "diff_s": -0.127,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c004_01_v04.wav"
   },
   {
@@ -157,10 +175,11 @@
    "line": "a5_c005_01",
    "page": 1,
    "text": "陳伯伯——！",
-   "subtitle_start_s": 4,
-   "voice_start_s": 4.123,
+   "subtitle_start_s": 4.05,
+   "voice_start_s": 4.173,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c005_01_v04.wav"
   },
   {
@@ -168,10 +187,11 @@
    "line": "a5_c005_02",
    "page": 1,
    "text": "我去辦公室找林老師！／你待在門裡面，不要過去。",
-   "subtitle_start_s": 6.66,
-   "voice_start_s": 6.787,
+   "subtitle_start_s": 6.71,
+   "voice_start_s": 6.837,
    "diff_s": -0.127,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c005_02_v04.wav"
   },
   {
@@ -179,10 +199,11 @@
    "line": "a5_c005_03",
    "page": 1,
    "text": "陳伯伯聽不到，林老師還沒出來……／我來打 119。",
-   "subtitle_start_s": 14.91,
-   "voice_start_s": 15.033,
+   "subtitle_start_s": 14.96,
+   "voice_start_s": 15.083,
    "diff_s": -0.123,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c005_03_v04.wav"
   },
   {
@@ -194,6 +215,7 @@
    "voice_start_s": 1.532,
    "diff_s": -0.132,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c006_01_v04.wav"
   },
   {
@@ -205,6 +227,7 @@
    "voice_start_s": 6.939,
    "diff_s": -0.139,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c006_02_v04.wav"
   },
   {
@@ -216,6 +239,7 @@
    "voice_start_s": 14.119,
    "diff_s": -0.149,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c006_03_v04.wav"
   },
   {
@@ -227,6 +251,7 @@
    "voice_start_s": 21.17,
    "diff_s": -0.13,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c006_04_v04.wav"
   },
   {
@@ -238,6 +263,7 @@
    "voice_start_s": 25.481,
    "diff_s": -0.131,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c006_05_v04.wav"
   },
   {
@@ -245,10 +271,11 @@
    "line": "a5_c007_01",
    "page": 1,
    "text": "您好，我是小燈國小的老師，／我來接手。",
-   "subtitle_start_s": 4.15,
-   "voice_start_s": 4.278,
+   "subtitle_start_s": 3.95,
+   "voice_start_s": 4.078,
    "diff_s": -0.128,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c007_01_v04.wav"
   },
   {
@@ -256,10 +283,11 @@
    "line": "a5_c007_02",
    "page": 1,
    "text": "你們沒有跑過去，／還馬上找人幫忙，做得很好。",
-   "subtitle_start_s": 20.3,
-   "voice_start_s": 20.435,
+   "subtitle_start_s": 18.55,
+   "voice_start_s": 18.685,
    "diff_s": -0.135,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c007_02_v04.wav"
   },
   {
@@ -271,6 +299,7 @@
    "voice_start_s": 1.422,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c008_01_v04.wav"
   },
   {
@@ -282,6 +311,7 @@
    "voice_start_s": 7.582,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c008_02_v04.wav"
   },
   {
@@ -293,6 +323,7 @@
    "voice_start_s": 11.589,
    "diff_s": -0.139,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c008_03_v04.wav"
   },
   {
@@ -304,6 +335,7 @@
    "voice_start_s": 17.472,
    "diff_s": -0.122,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c008_04_v04.wav"
   },
   {
@@ -315,6 +347,7 @@
    "voice_start_s": 19.869,
    "diff_s": -0.149,
    "pass": true,
+   "detect": "-40 dB／0.05 s",
    "audio": "audio/vo/vo_a5_c008_05_v04.wav"
   }
  ],

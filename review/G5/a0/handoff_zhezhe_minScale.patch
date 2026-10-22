@@ -1,0 +1,64 @@
+--- a/app/src/stage/zhezhe.ts	2026-10-22 12:03:14
++++ b/app/src/stage/zhezhe.ts	2026-10-22 12:03:14
+@@ -92,7 +92,7 @@
+ 
+ export type MoveStyle = 'walk' | 'hop' | 'fly' | 'glide';
+ export type ZhezheEvent =
+-  | { type: 'fold'; t: number; form: FoldForm; dur?: number; scale?: number; fumble?: boolean }
++  | { type: 'fold'; t: number; form: FoldForm; dur?: number; scale?: number; fumble?: boolean; minScale?: number }
+   | { type: 'emotion'; t: number; emotion: ZhezheEmotion }
+   | { type: 'say'; t: number; lips: LipsyncFrames }
+   | { type: 'blink'; t: number }
+@@ -130,6 +130,9 @@
+ /** 收摺收聲訊號：snap＝耳朵、尾巴收好的瞬間（S3 對這裡），秒 */
+ export const HUSH_BEATS = { dur: 1.4, snap: 0.55 } as const;
+ 
++/** 摺紙變形中紙包縮到最小的比例（預設）；fold 的 minScale（0.34–0.9）可以讓紙包不縮那麼小（a0_c002：三角直接展開成貓） */
++export const FOLD_MIN = 0.34;
++
+ interface Phases { c0: number; c1: number; f0: number; swap: number; f1: number; o0: number; o1: number; antic: number; hop: number }
+ const PH_NORMAL: Phases = { c0: 0.08, c1: 0.42, f0: 0.24, swap: 0.45, f1: 0.66, o0: 0.5, o1: 0.94, antic: 1, hop: 0.14 };
+ const PH_SHEET: Phases = { c0: 0, c1: 0.6, f0: 0.6, swap: 0.68, f1: 0.82, o0: 0.72, o1: 0.97, antic: 0, hop: 0.08 };
+@@ -650,7 +653,7 @@
+   private push(e: ZhezheEvent): this { this.track.events.push(e); this.resort(); return this; }
+   private resort(): void { this.sorted = this.track.events.map((e, i) => ({ e, i })).sort((a, b) => a.e.t - b.e.t || a.i - b.i).map((x) => x.e); }
+   private at(t?: number): number { return t ?? this.lastT; }
+-  fold(form: FoldForm, dur = FOLD_BEATS.defaultDur, at?: number, o: { scale?: number; fumble?: boolean } = {}): this { return this.push({ type: 'fold', t: this.at(at), form, dur, ...o }); }
++  fold(form: FoldForm, dur = FOLD_BEATS.defaultDur, at?: number, o: { scale?: number; fumble?: boolean; minScale?: number } = {}): this { return this.push({ type: 'fold', t: this.at(at), form, dur, ...o }); }
+   say(lips: LipsyncFrames, at?: number): this { return this.push({ type: 'say', t: this.at(at), lips }); }
+   emote(emotion: ZhezheEmotion, at?: number): this { return this.push({ type: 'emotion', t: this.at(at), emotion }); }
+   blink(at?: number): this { return this.push({ type: 'blink', t: this.at(at) }); }
+@@ -690,13 +693,13 @@
+ 
+     // 摺紙變形
+     let form: FoldForm = p.form, formScale = 1, settledAt = -1e9, fumbleAt = -1e9;
+-    let trans: { from: FoldForm; to: FoldForm; s: number; ph: Phases; fromScale: number; toScale: number } | null = null;
++    let trans: { from: FoldForm; to: FoldForm; s: number; ph: Phases; fromScale: number; toScale: number; min: number } | null = null;
+     for (const e of ev) {
+       if (e.type !== 'fold' || e.t > t) continue;
+       const dur = Math.max(0.3, e.dur ?? FOLD_BEATS.defaultDur);
+       const sc = e.scale ?? 1;
+       if (t < e.t + dur) {
+-        trans = { from: form, to: e.form, s: (t - e.t) / dur, ph: form === 'sheet' ? PH_SHEET : PH_NORMAL, fromScale: formScale, toScale: sc };
++        trans = { from: form, to: e.form, s: (t - e.t) / dur, ph: form === 'sheet' ? PH_SHEET : PH_NORMAL, fromScale: formScale, toScale: sc, min: clamp(e.minScale ?? FOLD_MIN, FOLD_MIN, 0.9) };
+       } else { trans = null; settledAt = e.t + dur; if (e.fumble) fumbleAt = e.t + dur; }
+       form = e.form; formScale = sc;
+     }
+@@ -706,7 +709,7 @@
+       p.sy = 1 - 0.08 * antic; p.sx = 1 + 0.05 * antic;
+       // 換造型＝在收到最小的瞬間硬切（v1.2 第 15.4 節換片規則：動作中段硬切）。不翻到側面：
+       // 翻到側面時紙包會「消失再出現」，同一區域多兩次明暗轉折（光敏量測見 review/G5/zhezhe/flash.json）。
+-      const MIN = 0.34;
++      const MIN = trans.min;
+       if (s < ph.swap) {
+         p.form = trans.from; p.formScale = trans.fromScale;
+         p.open = 1 - (ph === PH_SHEET ? clamp((s - ph.c0) / (ph.c1 - ph.c0)) : easeIO((s - ph.c0) / (ph.c1 - ph.c0)));
+@@ -972,7 +975,7 @@
+   for (const a of anims) {
+     const p = a.params ?? {}, t = a.start, kind = a.name.slice('zhezhe.'.length);
+     switch (kind) {
+-      case 'fold': if (typeof p.form === 'string' && (FOLD_FORMS as string[]).includes(p.form)) events.push({ type: 'fold', t, form: p.form as FoldForm, dur: a.duration > 0 ? a.duration : FOLD_BEATS.defaultDur, scale: typeof p.scale === 'number' ? p.scale : undefined, fumble: p.fumble === true }); break;
++      case 'fold': if (typeof p.form === 'string' && (FOLD_FORMS as string[]).includes(p.form)) events.push({ type: 'fold', t, form: p.form as FoldForm, dur: a.duration > 0 ? a.duration : FOLD_BEATS.defaultDur, scale: typeof p.scale === 'number' ? p.scale : undefined, fumble: p.fumble === true, minScale: typeof p.minScale === 'number' ? p.minScale : undefined }); break;
+       case 'emote': if (typeof p.emotion === 'string' && (ZHEZHE_EMOTIONS as string[]).includes(p.emotion)) events.push({ type: 'emotion', t, emotion: p.emotion as ZhezheEmotion }); break;
+       case 'blink': events.push({ type: 'blink', t }); break;
+       case 'twitch': events.push({ type: 'twitch', t, ear: p.ear === 'l' || p.ear === 'r' ? p.ear : 'both' }); break;

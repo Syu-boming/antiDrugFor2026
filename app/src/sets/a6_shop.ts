@@ -12,14 +12,23 @@
 //   - a8_c002 閉幕：牆上吊燈籠的影子不投到背牆（灰色橢圓影子）。
 //   - 謝幕的燈籠微光（a8_c001，FX12）：亮度固定的小光點像落葉一樣慢慢飄，進出畫面淡入淡出 1 秒，cue 最後 1.5 秒全部淡出。
 // 全部是時間的純函式（只依 cue、cue 內秒數決定畫面）。
+//
+// 修正第 2 輪（b2r2）：引擎（perform.ts，共用元件）沒有的三個角色動作，由本景在引擎擺好姿勢之後補上（每格引擎都會重設姿勢，
+// 所以這裡只「加上去」、不會殘留到別的 cue 或別的景）。只讀本景 cue 動畫上引擎不讀的參數：
+//   - puppet.nod 的 params.bow＝鞠躬：分件紙偶（阿樂叔叔）軀幹繞髖前傾 bow 度、頭再前傾 bowHead 度（真的轉 20%，其餘用縱向縮短補到 cos θ：
+//     轉太多紙面會背光、臉變暗）；立牌整張以腳底為支點前傾 bow 度＋整張縱向縮 squash（比例）。
+//     包絡：ramp 秒（預設 0.6）正弦緩入 → 停住 → ramp 秒緩出（共 duration 秒）。引擎自己的 puppet.nod（depth）照常疊加（這裡都給 0）。
+//   - puppet.move 的 params.dz＝往台前（+z）走 dz 單位（引擎只讀 dx；緩動照 ease）。
+//   - a6_c009／a8_c001：小折折燈跟著阿樂叔叔 B 側手（hand_l 樞紐的世界座標）走：puppet.chest 舉到胸前＝捧在手上。
 import {
-  AdditiveBlending, CanvasTexture, DoubleSide, Group, Mesh, MeshStandardMaterial, PlaneGeometry, Sprite, SpriteMaterial, type Material,
+  AdditiveBlending, CanvasTexture, DoubleSide, Group, Mesh, MeshStandardMaterial, PlaneGeometry, Sprite, SpriteMaterial, Vector3, type Material, type Object3D,
 } from 'three';
+import type { CueTimeline } from '../cues/timeline';
 import { buildWorkshopG4 } from '../stage/workshop';
 import { Zhezhe } from '../stage/zhezhe';
 import { finishTexture, makeCanvas } from '../stage/paper';
 import { LAYER, type CameraPreset } from '../stage/layers';
-import { clamp, lerp, seeded } from '../util/math';
+import { clamp, ease as easeFn, lerp, seeded } from '../util/math';
 import { dropped, haloTexture, lineT, sine01 } from './a6_square_night';
 import type { BuiltSet, SetContext, SetEntry } from './types';
 
@@ -30,8 +39,9 @@ const SMALL = { x: -1.82, z: -0.42, h: 0.72 };
 /** 三張大紙卡：寬、高（世界單位）、站位 */
 const CARD = { w: 3.5, h: 2.7, z: 1.65, xs: [-4.3, 0.05, 4.4] };
 const MNEMO = { w: 7.4, h: 3.28, x: 0.05, z: 1.5 };
-/** 謝幕時阿樂叔叔站著、手放胸前時，小折折燈的位置（捧在胸前；世界座標，量自私人擷取） */
-const HAND = { x: -2.25, y: 1.62, z: 0.35 };
+/** 小折折燈捧在手上時，燈的底座相對 B 側手（hand_l 樞紐）的位移（世界單位；修正第 2 輪改成跟著手走。
+ *  數值＝舊版謝幕捧燈位置 (−2.25, 1.62, 0.35) − 站姿手放胸前時 hand_l 樞紐 (−2.56, 2.42, 0)，畫面和舊版相同） */
+const HAND_OFF: [number, number, number] = [0.31, -0.8, 0.35];
 const TITLES = ['拒絕與離開', '安全接送', '找大人求助'];
 const MNEMO_LABELS = ['不碰', '不試', '先離開', '找大人'];
 
@@ -51,7 +61,110 @@ export const A6_SHOP_CAMERAS: Record<string, CameraPreset> = {
   a7_stage: C([0, 4.65, 35], [0, 4.45, 0]),
   /** 口訣卡：推近一級（口訣卡約半個畫面寬、兩個孩子站在卡片兩邊、約 1/3 畫面高） */
   a7_mid: C([0, 2.35, 23.5], [0, 2.05, 0]),
+  /** 修正第 2 輪：口訣卡再推近一級（口訣卡約 2/3 畫面寬；兩個孩子站在卡片兩邊、約 0.45 畫面高） */
+  a7_mid2: C([0, 2.05, 19.0], [0, 1.85, 0]),
+  /** 修正第 2 輪：手捧小折折燈的近景（阿樂叔叔胸口以上＋手上的小燈＋身後的孩子） */
+  a6_shop_lamp: C([-1.55, 2.2, 8.6], [-1.6, 1.98, -0.3]),
 };
+
+// ───────────────────────────── 角色的額外程式動作（修正第 2 輪；見檔頭） ─────────────────────────────
+const DEG = Math.PI / 180;
+/** 鞠躬包絡：ramp 秒緩入 → 停住 → ramp 秒緩出 */
+const bowEnv = (t: number, s: number, d: number, r: number): number => sine01((t - s) / r) * (1 - sine01((t - (s + d - r)) / r));
+const actorCache = new Map<string, Object3D>();
+function findActor(scene: Object3D, id: string): Object3D | null {
+  const hit = actorCache.get(id);
+  if (hit && hit.parent && hit.visible) return hit;
+  let found: Object3D | null = null;
+  const want = id === 'ale' ? 'rig:' : `standee:${id}`;
+  scene.traverse((o) => {
+    if (found || !o.visible) return;
+    if (id === 'ale' ? o.name.startsWith(want) && !!o.getObjectByName('hand_l') : o.name === want) found = o;
+  });
+  if (found) actorCache.set(id, found);
+  return found;
+}
+const v3 = new Vector3();
+/** 本景改過縮放的分件樞紐（引擎每格會重設旋轉，但不會重設樞紐縮放）：每格先還原、換景時也還原 */
+const scaled = new Set<Object3D>();
+function restoreScaled(): void { scaled.forEach((o) => o.scale.set(1, 1, 1)); scaled.clear(); }
+/** 前傾 θ 的畫法：真的轉 0.2θ（透視線索；轉太多紙面會背光變暗、臉像換了膚色），其餘用縱向縮短補到 cos θ（輪廓和轉 θ 相同） */
+const ROT_PART = 0.2;
+/** 本 cue 的鞠躬／往前走（引擎不讀的參數），直接加在引擎擺好的姿勢上 */
+function applyActorExtras(scene: Object3D, tl: CueTimeline, t: number): void {
+  restoreScaled();
+  const bows = new Map<string, number[]>(), steps = new Map<string, number>();
+  for (const a of tl.anims) {
+    if (!a.target) continue;
+    if (a.name === 'puppet.nod' && a.params.bow !== undefined) {
+      const k = bowEnv(t, a.start, a.duration, Number(a.params.ramp ?? 0.6));
+      if (k <= 0) continue;
+      const cur = bows.get(a.target) ?? [0, 0, 0];
+      bows.set(a.target, [cur[0] + Number(a.params.bow) * DEG * k, cur[1] + Number(a.params.bowHead ?? 0) * DEG * k, cur[2] + Number(a.params.squash ?? 0) * k]);
+    } else if (a.name === 'puppet.move' && a.params.dz !== undefined) {
+      const u = clamp((t - a.start) / Math.max(1e-6, a.duration));
+      steps.set(a.target, (steps.get(a.target) ?? 0) + Number(a.params.dz) * easeFn(a.ease, u));
+    }
+  }
+  const lean = (o: Object3D | undefined, th: number): void => {
+    if (!o || th <= 0) return;
+    o.rotation.x += ROT_PART * th;
+    o.scale.y *= Math.cos(th) / Math.cos(ROT_PART * th);
+    scaled.add(o);
+  };
+  for (const id of new Set([...bows.keys(), ...steps.keys()])) {
+    const root = findActor(scene, id);
+    if (!root) continue;
+    const dz = steps.get(id) ?? 0;
+    if (dz) root.position.z += dz;
+    const b = bows.get(id);
+    if (b) {
+      if (id === 'ale') {
+        // 分件紙偶：軀幹（掛在骨盆）繞髖前傾，頭部樞紐再前傾；大腿也掛在骨盆，所以腿不動
+        lean(root.getObjectByName('torso'), b[0]);
+        lean(root.getObjectByName('head'), b[1]);
+      } else {
+        // 整張立牌：以腳底為支點前傾 bow 度＋上身微縮（squash：整張高度縮的比例）；同引擎 puppet.nod 的做法，幅度較大、有停住
+        const body = root.children[0];
+        if (body) { body.rotation.x += b[0]; body.scale.y *= 1 - b[2]; }
+      }
+    }
+    root.updateMatrixWorld(true);
+  }
+}
+/** 阿樂叔叔 B 側上臂（upper_arm_l）移到軀幹前面一層（a6_c009、a8_c001：B 側手抬到胸前或伸向桌面時，軀幹圖肩膀上那一小片
+ *  淡色袖子會蓋在上臂上，看起來像袖子半透明、透出軀幹外框；上臂在軀幹前面就蓋住它。紙芯白邊（背板）仍在所有部件後面）。
+ *  只改 a6_c009 近景（切鏡之後）與 a8_c001；離開時還原（引擎每格不會重設部件的深度與繪製順序）。 */
+let armSaved: { mesh: Object3D; z: number; order: number; back: Object3D | null; bz: number } | null = null;
+function armFront(scene: Object3D, on: boolean): void {
+  if (!on) {
+    if (armSaved) {
+      armSaved.mesh.position.z = armSaved.z; armSaved.mesh.renderOrder = armSaved.order;
+      if (armSaved.back) armSaved.back.position.z = armSaved.bz;
+      armSaved = null;
+    }
+    return;
+  }
+  if (armSaved) return;
+  const root = findActor(scene, 'ale');
+  const meshOf = (name: string): Object3D | undefined => root?.getObjectByName(name)?.children.find((c) => (c as Mesh).isMesh);
+  const arm = meshOf('upper_arm_l'), torso = meshOf('torso'), fore = meshOf('forearm_l');
+  if (!arm || !torso || !fore) return;
+  const back = arm.children.find((c) => (c as Mesh).isMesh) ?? null;
+  armSaved = { mesh: arm, z: arm.position.z, order: arm.renderOrder, back, bz: back ? back.position.z : 0 };
+  const z = (torso.position.z + fore.position.z) / 2;
+  if (back) back.position.z -= z - arm.position.z;     // 背板的絕對深度不變（仍在所有部件後面）
+  arm.position.z = z;
+  arm.renderOrder = (torso.renderOrder + fore.renderOrder) / 2;
+}
+/** 阿樂叔叔 B 側手（hand_l）樞紐的世界座標（找不到回傳 null） */
+function aleHand(scene: Object3D, out: Vector3): Vector3 | null {
+  const root = findActor(scene, 'ale');
+  const h = root?.getObjectByName('hand_l');
+  if (!h) return null;
+  root!.updateMatrixWorld(true);
+  return h.getWorldPosition(out);
+}
 /** 念到的卡的放大版：底邊在台口前方 (0, y, z)、原尺寸 S 倍（a7_stage 鏡位下約 46% 畫面寬，上緣在八盞燈下方、下緣在字幕上方；不被台口上方的布幔擋住標題） */
 const FOCUS = { x: 0.0, y: 1.8, z: 4.6, s: 2.5 };
 /** 放大／縮回：放大 1.1 秒、縮回 1.0 秒（正弦緩入緩出） */
@@ -188,21 +301,29 @@ export const A6_SHOP: SetEntry = {
       c.hinge.visible = u > 0.001; c.hinge.rotation.x = popAngle(u);
     };
     return {
+      dispose() { restoreScaled(); let sc: Object3D = group; while (sc.parent) sc = sc.parent; armFront(sc, false); actorCache.clear(); },
       group, pieces: ws.pieces, materials: mats, marks: ws.marks, tableEdge: ws.tableEdge,
       landmarks: { ...ws.landmarks, smallLantern: { x0: SMALL.x - 0.25, x1: SMALL.x + 0.25, y: TABLE_TOP, z: SMALL.z } },
       cameras: A6_SHOP_CAMERAS, report,
       update({ tl, t }) {
         const id = tl.cue.id;
+        let scene: Object3D = group;
+        while (scene.parent) scene = scene.parent;
+        applyActorExtras(scene, tl, t);
+        // a6_c009 只在切到手捧小燈的近景之後（中景摺紙時上臂一抬一放，白袖子在深色圍裙上掃過＝細格明暗 4）；切鏡蓋住這個換層
+        const lampCut = id === 'a6_c009' ? tl.anims.find((a) => a.name === 'camera.cut' && a.params.to === 'a6_shop_lamp') : undefined;
+        armFront(scene, id === 'a8_c001' || (!!lampCut && t >= lampCut.start));
         // ---- 小折折燈：a6_c009 從燈籠紙摺成燈籠、最後亮起；其他 cue 一直亮著
         if (smallKey !== id) {
           smallKey = id;
           if (id === 'a6_c009') {
-            // 一摺、一摺：三個手部循環（a6.json 的 puppet.grab：手抬起 0.55 秒 → 0.7 秒時按下去）各摺一次：方紙 → 對摺 → 帽形 → 燈籠
+            // 一摺、一摺：三個手部循環（a6.json 的 puppet.grab／chest：手抬起 0.8 秒 → 1.1 秒時按下去）各摺一次：方紙 → 對摺 → 帽形 → 燈籠
             small.reset({ pos: [SMALL.x, TABLE_TOP, SMALL.z], form: 'sheet', rise: 1, glow: 0, emotion: 'neutral' });
             const s2 = lineT(tl, 'a6_c009_02', 'start', 4), s3 = lineT(tl, 'a6_c009_03', 'start', 12);
-            small.fold('card', 0.9 as never, s2 + 0.9 + 0.75, { scale: 0.45 });   // dur 的型別在 zhezhe.ts 是字面值（同 zhezhe_program.ts）
-            small.fold('hat', 0.9 as never, s2 + 3.5 + 0.75);
-            small.fold('lantern', 1.1 as never, s3 + 0.9 + 0.75);
+            // 修正第 2 輪：手部循環放慢（抬 0.8 秒、1.1 秒起按 0.8 秒），摺紙在按下去的中段（+1.35 秒）
+            small.fold('card', 0.9 as never, s2 + 0.9 + 1.35, { scale: 0.45 });   // dur 的型別在 zhezhe.ts 是字面值（同 zhezhe_program.ts）
+            small.fold('hat', 0.9 as never, s2 + 3.5 + 1.35);
+            small.fold('lantern', 1.1 as never, s3 + 0.9 + 1.35);
             small.glow(1, 2.0, lineT(tl, 'a6_c009_04', 'end', 20) + 0.35);
           } else small.reset({ pos: [SMALL.x, TABLE_TOP, SMALL.z], form: 'lantern', glow: 1, emotion: 'neutral' });
         }
@@ -233,7 +354,7 @@ export const A6_SHOP: SetEntry = {
           u = [1, 1, 1];
           flip = 1;
           fade = 1 - sine01((t - 0.1) / 1.4);
-          um = clamp((t - 4.3) / 1.3);
+          um = clamp((t - 4.3) / 1.8);     // 修正第 2 輪：鏡頭推近後卡片大，立起放慢到 1.8 秒（細格光敏）
         } else if (id === 'a7_c003') { um = 1; mfade = 1 - sine01((t - 0.4) / 1.0); }
         const setFade = (m: MeshStandardMaterial, a: number): void => {
           const f = a < 0.999;
@@ -264,18 +385,18 @@ export const A6_SHOP: SetEntry = {
         if (mfade <= 0.002) mnemo.hinge.visible = false;
         setFade(mnemo.mesh.material as MeshStandardMaterial, mfade);
 
-        // ---- 謝幕：阿樂叔叔捧著小折折燈（a8_c001 的 puppet.chest：手放到胸前＝拿起，放下＝放回桌上）
-        if (id === 'a8_c001') {
+        // ---- 小折折燈捧在阿樂叔叔手上（a6_c009 最後拿起來、在手上亮起；a8_c001 謝幕捧著鞠躬、坐回去前放回桌上）
+        //   puppet.chest 舉到胸前（to ≥ 0.95）＝拿起（跟著 B 側手 hand_l 的世界座標走；鞠躬時手跟著軀幹前傾，燈也跟著）；
+        //   a6_c009 摺紙時手抬到一半（chest 0.85）不算拿起
+        if (id === 'a8_c001' || id === 'a6_c009') {
           const ch = tl.anims.filter((a) => a.target === 'ale' && a.name === 'puppet.chest');
-          const up = ch.find((a) => Number(a.params.to ?? 1) > 0.5), down = ch.find((a) => Number(a.params.to ?? 1) < 0.5);
-          if (up && down) {
-            const k = sine01((t - up.start) / Math.max(0.3, up.duration)) * (1 - sine01((t - down.start) / Math.max(0.3, down.duration)));
-            const nod = tl.anims.filter((a) => a.target === 'ale' && a.name === 'puppet.nod').reduce((m, a) => {
-              const u2 = (t - a.start) / a.duration; return u2 > 0 && u2 < 1 ? Math.max(m, Math.sin(Math.PI * u2) ** 2) : m;
-            }, 0);
-            const hx = HAND.x, hy = HAND.y - 0.06 * nod, hz = HAND.z;
+          const up = ch.find((a) => Number(a.params.to ?? 1) >= 0.95), down = ch.find((a) => Number(a.params.to ?? 1) < 0.5 && !!up && a.start > up.start);
+          const k = up ? sine01((t - up.start) / Math.max(0.3, up.duration)) * (down ? 1 - sine01((t - down.start) / Math.max(0.3, down.duration)) : 1) : 0;
+          const hand = k > 0 ? aleHand(scene, v3) : null;
+          if (hand) {
+            const hx = hand.x + HAND_OFF[0], hy = hand.y + HAND_OFF[1], hz = hand.z + HAND_OFF[2];
             small.group.position.set(lerp(SMALL.x, hx, k), lerp(TABLE_TOP, hy, k) + 0.25 * Math.sin(Math.PI * k), lerp(SMALL.z, hz, k));
-          }
+          } else small.group.position.set(SMALL.x, TABLE_TOP, SMALL.z);
         } else small.group.position.set(SMALL.x, TABLE_TOP, SMALL.z);
 
         // ---- 謝幕的燈籠微光
