@@ -260,3 +260,9 @@
 - **線上版**：不重新發布。網站內容來自 app/dist 與 teacher/，和 b472041 相同；gh-pages 的 commit 說明保留清史前的舊編號。
 - **commit 編號**：本檔、各驗收報告、PROGRESS 檔與 gh-pages 說明保留舊編號；總報告、素材與授權表、ASSETS.md、PROJECT_STATE.md、ElevenLabs 回信對照表改用新編號；對照表 review/G7/commit_對照.md。
 - **還沒清乾淨的地方**：GitHub API 仍查得到舊 commit（fecbdb7、dcd1773、bc116ad），dcd1773 底下看得到 review/G3/samples 的 32 個檔；fork 數 0。要完全移除須由 repo 擁有者請 GitHub 客服清除快取並做垃圾回收 → 列為使用者的選擇性事項（總報告 7.2、8.4）。
+
+## 備援影片完整版（2026-10-23 05:0x–05:1x，主線，使用者要求）
+- 使用者要求：把交付/backup_video 的 a0–a8 合併成完整影片，原本影片保留。
+- 做法：tools/backup_video.py 新增 full（backup_video.mjs --full-only；九段都在時產生影片後也會自動重接）。畫面以 concat 直接複製（auto_convert 0，第一次沒關時每個關鍵格多 43 位元組的 SPS/PPS，檢查判不通過後改正）；聲音各段解碼後接起來重新編成 AAC 256 kbps；a0–a7 結尾停格的配樂（−38～−51 dB）淡出 0.5 秒，避免接點突然斷掉；71 章照起點平移。
+- 結果：交付/backup_video/backup_full.mp4（24:52.0、44759 格、917.5 MB）；畫面封包 44759 個和九段逐一相同、完整解碼 0 錯誤、九個接點第一格和各段第一格相同、聲音時間差 0 ms（相關 ≥0.9999）、章節 71 個標題相同 → all_ok（_check/backup_full.json）。九段原檔 SHA-1、修改時間、大小都沒變。接點前後亮度差 ≤0.3（各段從上一段最後一格接續），不增加光敏風險。
+- README.txt 第二、三節加完整版，第四節加「完整版停格」欄；使用說明、總報告 1.3 更新。教師資料 PDF 沒改（仍寫九段依序播放，兩種播法都可行）。

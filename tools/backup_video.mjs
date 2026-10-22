@@ -19,6 +19,7 @@
 //   caffeinate -i node tools/backup_video.mjs --acts all                                → 全劇九段（預設輸出 交付/backup_video/）
 //   node tools/backup_video.mjs --acts all --plan                                       → 只列每段格數與預估時間，不擷取
 //   node tools/backup_video.mjs --readme-only --out 交付/backup_video                   → 只依現有檢查報告重寫 README.txt
+//   node tools/backup_video.mjs --full-only --out 交付/backup_video                     → 只把現有九段接成 backup_full.mp4（九段原檔不動），再重寫 README.txt
 // 選項：
 //   --out <資料夾>        影片與 README.txt 的位置（預設 交付/backup_video）；檢查報告在 <out>/_check/（--check 改位置）
 //   --img png|jpeg        截圖格式：png（預設，無損，約 0.1 秒／格）或 jpeg（品質 98，約 0.05 秒／格）
@@ -26,7 +27,8 @@
 //   --hold 2 --quiz-hold 3 --title-hold 3 --end-hold 12
 //   --keep-work           保留 <check>/_work_<段>/（時間軸、混音 WAV、無聲影片、取樣格）
 //   --no-verify           不做輸出後的檢查（不建議）
-// 產出：<out>/backup_<段>.mp4、<out>/README.txt（Windows 記事本可讀，UTF-8 BOM）；<check>/backup_<段>.json（ffprobe、章節、
+//   --no-full             九段都在時不自動重接完整版（預設會重接，完整版才不會和九段不一致；見 backup_video.py full）
+// 產出：<out>/backup_<段>.mp4、<out>/backup_full.mp4（九段都在時）、<out>/README.txt（Windows 記事本可讀，UTF-8 BOM）；<check>/backup_<段>.json（ffprobe、章節、
 //       聲畫對齊（每句配音與成品音軌的互相關時間差）、取樣格與成品逐格比對 PSNR、響度）；<check>/plan.json（--plan）。
 import { createRequire } from 'node:module';
 import { spawn, spawnSync } from 'node:child_process';
@@ -66,6 +68,11 @@ const run = (cmd, argv) => {
 mkdirSync(CHECK, { recursive: true });
 
 if (has('--readme-only')) {
+  run(PYTHON, [join(ROOT, 'tools/backup_video.py'), 'readme', OUT, CHECK]);
+  process.exit(0);
+}
+if (has('--full-only')) {
+  run(PYTHON, [join(ROOT, 'tools/backup_video.py'), 'full', OUT, CHECK]);
   run(PYTHON, [join(ROOT, 'tools/backup_video.py'), 'readme', OUT, CHECK]);
   process.exit(0);
 }
@@ -296,5 +303,7 @@ for (const act of ACTS) {
   if (!has('--keep-work')) rmSync(WORK, { recursive: true, force: true });
 }
 await browser.close();
+const allSegs = show.segments.every((s) => existsSync(join(OUT, `backup_${s.id}.mp4`)));
+if (allSegs && !has('--no-full')) run(PYTHON, [join(ROOT, 'tools/backup_video.py'), 'full', OUT, CHECK]);
 run(PYTHON, [join(ROOT, 'tools/backup_video.py'), 'readme', OUT, CHECK]);
-log(`完成：${ACTS.map((a) => `backup_${a}.mp4`).join('、')}＋README.txt → ${OUT}`);
+log(`完成：${ACTS.map((a) => `backup_${a}.mp4`).join('、')}${allSegs && !has('--no-full') ? '、backup_full.mp4' : ''}＋README.txt → ${OUT}`);
