@@ -585,19 +585,19 @@
     "preroll_sec": 1.2,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 18:41",
+   "pack_generated": "2026-10-22 21:53",
    "segment_hash": {
     "file": "app/cues/show/a5.json",
     "current": {
-     "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
-     "built": "226a678519043e1762cc5f82036e2882c5cd241b",
-     "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+     "source": "c43e1caa185e7d59bdb0f31e43aa04b358c9f399",
+     "built": "655c3dafb914cd68821e0e2d11400164889547fd",
+     "sourceMerged": "655c3dafb914cd68821e0e2d11400164889547fd",
      "builtFromSource": true
     },
     "pack": {
-     "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
-     "built": "226a678519043e1762cc5f82036e2882c5cd241b",
-     "generatedAt": "2026-10-22T10:35:56.859Z"
+     "source": "c43e1caa185e7d59bdb0f31e43aa04b358c9f399",
+     "built": "655c3dafb914cd68821e0e2d11400164889547fd",
+     "generatedAt": "2026-10-22T13:47:48.664Z"
     },
     "builtMatch": true,
     "sourceMatch": true,
@@ -620,7 +620,7 @@
    },
    "loudness": {
     "I_LUFS": -15.8,
-    "LRA_LU": 11.5,
+    "LRA_LU": 11.8,
     "TP_dBTP": -1.1,
     "sample_peak_dBFS": -1.11,
     "clipped_samples": 0,
@@ -926,19 +926,19 @@
     "preroll_sec": 0.6,
     "lines": 1
    },
-   "pack_generated": "2026-10-22 19:09",
+   "pack_generated": "2026-10-22 21:55",
    "segment_hash": {
     "file": "app/cues/show/a8.json",
     "current": {
-     "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
-     "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
-     "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+     "source": "ba2c131908ab617b87e8df36d9e4986f2dc52da4",
+     "built": "92823f56dece37db8c42ce27dd5498151a23ea42",
+     "sourceMerged": "92823f56dece37db8c42ce27dd5498151a23ea42",
      "builtFromSource": true
     },
     "pack": {
-     "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
-     "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
-     "generatedAt": "2026-10-22T11:08:23.168Z"
+     "source": "ba2c131908ab617b87e8df36d9e4986f2dc52da4",
+     "built": "92823f56dece37db8c42ce27dd5498151a23ea42",
+     "generatedAt": "2026-10-22T13:54:54.162Z"
     },
     "builtMatch": true,
     "sourceMatch": true,
@@ -960,18 +960,18 @@
     "playback_with_holds_sec": 30.9
    },
    "loudness": {
-    "I_LUFS": -18.2,
-    "LRA_LU": 6.6,
-    "TP_dBTP": -2.0,
-    "sample_peak_dBFS": -1.97,
+    "I_LUFS": -18.3,
+    "LRA_LU": 6.2,
+    "TP_dBTP": -2.1,
+    "sample_peak_dBFS": -2.16,
     "clipped_samples": 0,
-    "dialog_median_mix_I_LUFS": -14.5,
+    "dialog_median_mix_I_LUFS": -14.7,
     "line_mix_I_spread_LU": 0.0,
-    "momentary_max_LUFS": -12.3,
+    "momentary_max_LUFS": -12.4,
     "music_sfx_only_max_LUFS": -15.7,
     "freeze_holds_pass": "1/1",
-    "dev_from_median_LU": -2.1,
-    "dialog_dev_from_median_LU": 0.4
+    "dev_from_median_LU": -2.2,
+    "dialog_dev_from_median_LU": 0.2
    },
    "flash": {
     "grid16x9": {
@@ -1030,14 +1030,14 @@
  "loudness": {
   "rule": "v1.2 第 24 節第 7 項：各段響度差 ±1 LU。基準＝九段整合響度（act_review_pack 播放錄製混音，含教師停格假設）的中位數；另列各段對白（混音中各句）響度中位數的差。",
   "median_I_LUFS": -16.1,
-  "max_abs_dev_LU": 2.1,
-  "spread_LU": 2.4,
+  "max_abs_dev_LU": 2.2,
+  "spread_LU": 2.5,
   "pass_pm1": false,
   "segments_over_1LU": [
    "a8"
   ],
   "dialog_median_LUFS": -14.9,
-  "dialog_max_abs_dev_LU": 0.4,
+  "dialog_max_abs_dev_LU": 0.2,
   "dialog_pass_pm1": true,
   "show_concat": {
    "I_LUFS": -16.1,
@@ -1070,8 +1070,8 @@
    "script_playback_level0_sec": 1322.3,
    "script_teacher_speaking_sec": 706,
    "script_press_and_scene_sec": 116.7,
-   "script_generated": "2026/10/22 20:03:03",
-   "script_cue_hash": "0f6f4055f3",
+   "script_generated": "2026/10/22 22:03:04",
+   "script_cue_hash": "cca5916cc3",
    "estimate_v03": {
     "default_scenario_sec": 2118.0,
     "recorded_sec": 1313.0,

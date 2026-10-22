@@ -1,0 +1,71 @@
+{
+ "method": "sha1（拿掉所有 checkpoint 欄位、JSON 鍵排序後序列化）；source＝app/cues/show/<段>.json；built＝app/dist/data/cues_show.js 合併後的這一段（段落資訊＋cue）；sourceMerged＝目前段落檔照建置方式合併後的這一段",
+ "distBuiltAt": "2026-10-22T12:00:04.275Z",
+ "sourceValid": true,
+ "sourceError": null,
+ "segments": {
+  "a0": {
+   "file": "app/cues/show/a0.json",
+   "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
+   "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
+   "sourceMerged": "a865ba7d336f088ed4cca68052127ef721a57a29",
+   "builtFromSource": true
+  },
+  "a1": {
+   "file": "app/cues/show/a1.json",
+   "source": "55fd8363a2d8c8a22b8e115b2d3f87be64185f4b",
+   "built": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+   "sourceMerged": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+   "builtFromSource": true
+  },
+  "a2": {
+   "file": "app/cues/show/a2.json",
+   "source": "39fd12c7b3f98772f45de21dd4fbfc2c08a0022c",
+   "built": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+   "sourceMerged": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+   "builtFromSource": true
+  },
+  "a3": {
+   "file": "app/cues/show/a3.json",
+   "source": "3e71fbce63ac96f28d8330bf56b96fb619482d49",
+   "built": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+   "sourceMerged": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+   "builtFromSource": true
+  },
+  "a4": {
+   "file": "app/cues/show/a4.json",
+   "source": "e2ea0db5057008f528b89a63b40446417b712fdf",
+   "built": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+   "sourceMerged": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+   "builtFromSource": true
+  },
+  "a5": {
+   "file": "app/cues/show/a5.json",
+   "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
+   "built": "226a678519043e1762cc5f82036e2882c5cd241b",
+   "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+   "builtFromSource": true
+  },
+  "a6": {
+   "file": "app/cues/show/a6.json",
+   "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
+   "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+   "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+   "builtFromSource": true
+  },
+  "a7": {
+   "file": "app/cues/show/a7.json",
+   "source": "2b96d32c4ce752a26629bb5197d6b3996e16be2f",
+   "built": "d58767e3faced5c27da3728b178fccc232f1379d",
+   "sourceMerged": "d58767e3faced5c27da3728b178fccc232f1379d",
+   "builtFromSource": true
+  },
+  "a8": {
+   "file": "app/cues/show/a8.json",
+   "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
+   "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+   "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+   "builtFromSource": true
+  }
+ }
+}

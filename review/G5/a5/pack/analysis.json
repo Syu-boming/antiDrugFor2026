@@ -28,7 +28,7 @@
   "clipped_samples": 0,
   "full_playback": {
    "I_LUFS": -15.8,
-   "LRA_LU": 11.5,
+   "LRA_LU": 11.8,
    "TP_dBTP": -1.1
   },
   "line_vo_file_I_spread_LU": 4.2,
@@ -115,7 +115,8 @@
    "DUCK_BRIDGE": 0.9,
    "HOLD_MUSIC_RATIO": 0.1,
    "HOLD_TC": 0.6
-  }
+  },
+  "music_duck_by_cue": {}
  },
  "flash_playback": {
   "ok": true,
@@ -191,7 +192,7 @@
    ],
    "format": {
     "duration": "202.330000",
-    "size": "65002673"
+    "size": "64554109"
    }
   }
  },
@@ -320,21 +321,21 @@
   "probe_frames_with_strings": 1652,
   "string_path_min_dist_to_head_box_px": 10.4,
   "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
-  "string_head_offscreen_skipped": 1515,
+  "string_head_offscreen_skipped": 1572,
   "per_anchor": {
    "ale.wrist": {
     "min_dist_to_head_box_px": 17.9,
-    "frames": 1147,
+    "frames": 1128,
     "at": "a5_c002 t=12.4"
    },
    "ale.elbow": {
     "min_dist_to_head_box_px": 10.4,
-    "frames": 1147,
+    "frames": 1128,
     "at": "a5_c002 t=12.5"
    },
    "ale.knee": {
     "min_dist_to_head_box_px": 11.1,
-    "frames": 1147,
+    "frames": 1128,
     "at": "a5_c002 t=21.9"
    }
   },
@@ -444,9 +445,9 @@
    "active": "a5_hospital",
    "built": 6,
    "disposed": 4,
-   "lastBuildMs": 62,
+   "lastBuildMs": 77,
    "liveSetGroups": 1,
-   "lastSwapMs": 0.6,
+   "lastSwapMs": 1,
    "preparedHits": 2,
    "prepared": [
     {

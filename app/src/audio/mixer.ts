@@ -185,15 +185,18 @@ export class Mixer {
     g.gain.setTargetAtTime(level, Math.max(ctx.currentTime, when), timeConstant);
   }
 
-  /** 依台詞區間排好配樂避讓（排程規則見 ducking.ts 的 duckingPlan，可單獨測試） */
-  scheduleDucking(intervals: [number, number][]): void {
+  /**
+   * 依台詞區間排好配樂避讓（排程規則見 ducking.ts 的 duckingPlan，可單獨測試）。
+   * level＝這個 cue 說話時的避讓增益（cue 的 musicDuck）；省略時用 DUCK_LEVEL。
+   */
+  scheduleDucking(intervals: [number, number][], level?: number): void {
     const ctx = this.ctx;
     const d = this.musicDuck;
     if (!ctx || !d) return;
     const now = ctx.currentTime;
     d.gain.cancelScheduledValues(now);
     d.gain.setValueAtTime(d.gain.value, now);
-    for (const step of duckingPlan(intervals, now)) d.gain.setTargetAtTime(step.value, step.at, step.tc);
+    for (const step of duckingPlan(intervals, now, level)) d.gain.setTargetAtTime(step.value, step.at, step.tc);
   }
 
   resetDucking(): void {

@@ -1,5 +1,7 @@
 # 素材與授權表
 
+> 本檔是製作過程的流水帳（含舊版）。**最後演出實際用到的素材與授權，請看交付版整理 review/G7/素材與授權表.md**；先前漏登記的 50 檔已併在本檔最後一節。
+
 ## 正式版本（G2 第 3 輪，待 G2 第 3 輪重驗）
 
 第 3 輪只重做有問題的部分。三位角色母版（chr-*_master_v02.png）與阿樂困惑換片頭（chr-ale_head-worried_v02.png）**不變、繼續是正式版**；被取代的是 kit_ale_v02／parts/ale_v02（改由母版直接切件）與 bg-square_v02（改成分層景片）。生成方式與第 2 輪相同：`codex exec` 內建 image_gen，附 review/G2a/S4.png＋第二張參考圖（review/G2/raw/_run_batch.sh；提示檔 review/G2/raw/<id>.prompt.txt、第二張參考圖路徑 <id>.ref2）。第一次批次（2026-10-20 23:10）因 ChatGPT 用量上限全部失敗（錯誤訊息「You’ve hit your usage limit … try again at 02:17」；失敗紀錄已被重跑覆寫），額度恢復後 2026-10-21 02:19 重跑，8 張都是第 1 次生成成功、未修改。
@@ -512,3 +514,61 @@ show_characters.json 只新增：xiaoqing/xiaoyu/pinan/chen/lin/ye 的 bow、xia
 | assets/final/sets/a6_shop/card-mnemonic_v01.png | 紙卡（透明）；1400×620 | a6_shop | 口訣卡：四格動作小圖（小晴雙手交叉＝不碰、小宇掌心向外＝不試、小晴指右＝先離開、小宇手放額前＝找大人；取自現有姿勢圖）；文字「不碰、不試；先離開，找大人」程式排版 | a7_c002、a7_c003 | make_cards.py（姿勢圖 chr-xiaoqing_pose-cross_v06、chr-xiaoyu_pose-palmno_v06、chr-xiaoqing_pose-pointr_v07、chr-xiaoyu_pose-forehead_v06） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a6/pack 等）；投影與聽感依驗收包 | v01 |
 
 另有原始生成圖（不改、已複製進 assets/generated/）：assets/generated/chr-{xiaoqing,xiaoyu,pinan,chen,lin,ye}_pose-bow_v01.png（拼版依透明連通區切開的原像素）、assets/generated/chr-aqin_master_v01.png。
+
+
+## G7 合併：最後演出用到、先前未登記的素材（主線 2026-10-22 21:4x）
+
+依 review/G7/素材與授權表.md 第 2.5 節：app/dist 資料包裡有、本表先前沒有登記的 50 個檔。來源取自各幕代理的 review/G5/<幕>/ASSETS_rows.md 與進度紀錄；3 份 layout.json 取自 git 歷史。
+
+| 檔案 | 來源 | 授權 | 紀錄出處 |
+|---|---|---|---|
+| assets/final/chr-lin_pose-phone_v01.png | Codex 生成 | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a3/ASSETS_rows.md |
+| assets/final/chr-pinan_pose-sit-lantern-look1_v01.png | 品安姿勢圖程式加工（眼珠、抬頭） | 生成圖（Codex，ChatGPT 方案）的程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
+| assets/final/chr-pinan_pose-sit-lantern-look2_v01.png | 品安姿勢圖程式加工（眼珠、抬頭） | 生成圖（Codex，ChatGPT 方案）的程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
+| assets/final/chr-ye_pose-crouchphone_v01.png | Codex 生成 | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-forearm-l_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-forearm-l-outline_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-forearm-r_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-forearm-r-outline_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-hand-l-outline_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-hand-r-outline_v01.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-hand-l_v02.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_shop/insert-ale-hand-r_v02.png | 阿樂分件程式加工（母版為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_memory/mem-box_v02.png | 盒子特寫圖程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a2_window/sil-ale-hand_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a2/ASSETS_rows.md |
+| assets/final/sets/a3_arcade/handbox_v01.png | 邀請者手圖程式加工（拿掉盒角灰色短棒；底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a3/ASSETS_rows.md |
+| assets/final/sets/a3_classroom/classmate-a_v01.png | Codex 生成 | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a3/ASSETS_rows.md |
+| assets/final/sets/a3_classroom/classmate-b_v01.png | Codex 生成 | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a3/ASSETS_rows.md |
+| assets/final/sets/a4_roadmap/set-a4map_sil-car_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/a4_roadmap/set-a4map_sil-walker_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-ambulance_v03.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-ambulance-door_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-corner_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-flag_v01.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-flag-back_v01.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-gurney_v03.png | 程式繪製 | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-student_v03.png | Codex 生成 | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/a5-student-arm_v03.png | Codex 生成（從同一張切出） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）；依 OpenAI 使用條款產出歸使用者 | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/set-gate_school-building_v01.png | 程式繪製景片再加紙感（paperize.py） | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/set-gate_school-wall_v01.png | 程式繪製景片再加紙感（paperize.py） | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/set-gate_folding-gate_v01.png | 程式繪製景片再加紙感（paperize.py） | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/set-gate_guard-house_v01.png | 程式繪製景片再加紙感（paperize.py） | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a5_gate/set-gate_pillar_v01.png | 程式繪製景片再加紙感（paperize.py） | 原創（程式產生） | review/G5/a5/ASSETS_rows.md |
+| assets/final/sets/a6_square_night/folk-a_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a6/ASSETS_rows.md |
+| assets/final/sets/a6_square_night/folk-b_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a6/ASSETS_rows.md |
+| assets/final/sets/a6_square_night/folk-c_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a6/ASSETS_rows.md |
+| assets/final/sets/a6_square_night/folk-d_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a6/ASSETS_rows.md |
+| assets/final/sets/gate/set-gate_a4-truck_v01.png | 程式繪製（由程式畫的小貨車改畫） | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/gate/set-gate_a4-truck-tip_v01.png | 程式繪製（由程式畫的小貨車改畫） | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/gate/set-gate_a4-walkers-a_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/gate/set-gate_a4-walkers-b_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a4/ASSETS_rows.md |
+| assets/final/sets/square_a1/shopwall_v01.png | 程式繪製 | 原創（程式產生） | review/G5/a1/ASSETS_rows.md |
+| assets/final/sets/square_a1/silbody_v02.png | 阿樂母版外形程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
+| assets/final/sets/square_a1/silarm_v02.png | 阿樂母版外形程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
+| assets/final/sets/square_a1/silbamboo_v02.png | 阿樂母版外形程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a1/ASSETS_rows.md |
+| assets/final/sets/workshop_a0/hanglamps_v01.png | 燈籠店吊燈籠景片程式加工（底圖為 Codex 生成） | 生成圖（ChatGPT 方案的 Codex 內建圖像生成）與其程式加工；依 OpenAI 使用條款產出歸使用者 | review/G5/a0/ASSETS_rows.md |
+| assets/final/sets/workshop_a0/stand_v02.png | 程式繪製 | 原創（程式產生） | review/G5/a1/ASSETS_rows.md |
+| assets/final/sets/a5_hospital/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
+| assets/final/sets/a6_square_night/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
+| assets/final/sets/a6_window/layout.json | G5 第二批各幕代理撰寫的場景擺位設定（原創資料，只寫圖層位置與燈光，不含圖；首次提交 f7d722a） | 原創（程式產生） | git 歷史（f7d722a）；app/src/sets/ |
+| audio/sfx/sfx_stamp_v02.wav | 程式合成（tools/music/sfx.py 重建、音量降約 3 dB） | 原創（程式合成） | review/G5/a4/PROGRESS_polish.md（11:33 那筆）、review/G6/qa/tech.md |

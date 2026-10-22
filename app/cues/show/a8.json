@@ -870,7 +870,8 @@
    "musicLoop": false,
    "music": [],
    "sfx": [],
-   "musicLevel": 1.07
+   "musicLevel": 1.07,
+   "musicDuck": 0.4
   },
   {
    "id": "a8_c002",

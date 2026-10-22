@@ -14,6 +14,7 @@
 // 用法：node tools/engine-test.mjs [--headed]
 import { createRequire } from 'node:module';
 import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
+import { spawnSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -114,9 +115,17 @@ console.log('\n一、播放狀態機（示範 cue，暫代音訊）');
   const p2 = await st();
   check('句點鍵暫停：時間停在原地', p1.paused && Math.abs(p2.cueTime - p1.cueTime) < 0.03 && p2.cueId === 'a2_c002', `${p1.cueTime} → ${p2.cueTime}`);
   await page.keyboard.press('Period');
-  await sleep(500);
-  const p3 = await st();
-  check('再按句點鍵繼續', !p3.paused && p3.cueTime > p2.cueTime + 0.3, `${p2.cueTime} → ${p3.cueTime}`);
+  // 輪詢（G6 修正第 2 輪）：以前固定等 500 ms 再看 cueTime 有沒有前進 0.3 秒，機器忙（例如背景在算備援影片）時只走 0.256 秒就判失敗。
+  // 改成按下後 1.5 秒內：一直沒有暫停，而且 cueTime 前進 ≥ 0.3 秒才通過（還在暫停、時間不動、或 1.5 秒內走不到 0.3 秒都算失敗）
+  const resumeT0 = Date.now();
+  let p3 = await st();
+  let pausedAfter = false;
+  while (Date.now() - resumeT0 < 1500 && !(!p3.paused && p3.cueTime >= p2.cueTime + 0.3)) {
+    await sleep(50);
+    p3 = await st();
+    if (p3.paused && Date.now() - resumeT0 > 200) pausedAfter = true;
+  }
+  check('再按句點鍵繼續（1.5 秒內時間前進 ≥ 0.3 秒）', !p3.paused && !pausedAfter && p3.cueTime >= p2.cueTime + 0.3 && p3.cueId === 'a2_c002', `${p2.cueTime} → ${p3.cueTime}（${Date.now() - resumeT0} ms）`);
 
   await page.keyboard.press('Space');
   await sleep(300);
@@ -326,6 +335,24 @@ console.log('\n二、有正式音檔時（測試用合成音檔，暫存資料�
     }
     check('過程中沒有頁面錯誤', errors.length === 0, errors.slice(0, 3).join(' | '));
     await page.close();
+    // G6 修正第 2 輪：cue 寫了 musicDuck 時，引擎把它交給 mixer（說話時避讓到該值；配樂基準音量不變）
+    if (s.clock === 'audio') {
+      for (const c of demo.cues) if (c.id === 'a2_c002') c.musicDuck = 0.3;
+      writeFileSync(join(tmp, 'cues/demo.json'), JSON.stringify(demo));
+      await runPack({ audioDir: join(tmp, 'audio'), assetsDir: join(tmp, 'none'), outDir: join(tmp, 'data'), cuesDir: join(tmp, 'cues'), sourcesFile: join(tmp, 'none.json') });
+      const o2 = await open(join(tmp, 'index.html'));
+      await o2.page.click('.ready-btn');
+      await o2.waitPhase('title_idle');
+      await o2.page.evaluate(() => window.__engine.gotoCue('a2_c002', { mode: 'play' }));
+      await o2.waitFor(() => window.__engine.getState().cueTime > 1.5, null, 12000);
+      const d0 = await o2.page.evaluate(() => window.__engine.debug.audioLevels());
+      await o2.waitFor(() => window.__engine.getState().cueTime > 7.6, null, 12000);
+      const d1 = await o2.page.evaluate(() => window.__engine.debug.audioLevels());
+      check('cue 的 musicDuck（0.3）：說話前不避讓、說話時避讓到 0.3，配樂基準音量照舊約 0.8',
+        d0.duck > 0.9 && Math.abs(d1.duck - 0.3) < 0.06 && Math.abs(d1.musicBus - 0.8) < 0.1, `說話前 ${d0.duck.toFixed(2)}、說話時 ${d1.duck.toFixed(2)}、bus ${d1.musicBus.toFixed(2)}`);
+      check('musicDuck 測試過程中沒有頁面錯誤', o2.errors.length === 0, o2.errors.slice(0, 3).join(' | '));
+      await o2.page.close();
+    }
   } finally {
     rmSync(tmp, { recursive: true, force: true });
   }
@@ -591,8 +618,45 @@ console.log('\n六、字幕斷行、對白避讓排程（純函式）');
   check(`避讓排程：說話前 0.15 秒開始壓低、說話中約 ${dk.DUCK_LEVEL}`, at(1.5) > 0.95 && Math.abs(at(3) - dk.DUCK_LEVEL) < 0.02, `${at(1.5).toFixed(2)} / ${at(3).toFixed(2)}`);
   check('避讓排程：間隔 0.5 秒的兩句之間不回升；間隔 3 秒的會回升', at(4.3) < dk.DUCK_LEVEL + 0.08 && at(8.5) > 0.85, `${at(4.3).toFixed(2)} / ${at(8.5).toFixed(2)}`);
   check('避讓排程：最後一句說完 0.3 秒後回升', at(10.2) < dk.DUCK_LEVEL + 0.08 && at(11.5) > 0.9, `${at(10.2).toFixed(2)} / ${at(11.5).toFixed(2)}`);
+  // G6 修正第 2 輪：cue 的 musicDuck（這個 cue 台詞時的避讓增益）。沒寫的 cue 排程逐項不變；有寫的只換壓低的值，時間與時間常數不變
+  {
+    const iv = [[2, 4], [4.5, 6], [9, 10]];
+    const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+    check('musicDuck 省略（undefined）時避讓排程和原本逐項相同（DUCK_LEVEL）',
+      same(dk.duckingPlan(iv), dk.duckingPlan(iv, 0, undefined)) && same(dk.duckingPlan(iv, 3), dk.duckingPlan(iv, 3, dk.DUCK_LEVEL)) && plan.every((x) => x.value === dk.DUCK_LEVEL || x.value === 1));
+    const p4 = dk.duckingPlan(iv, 0, 0.4);
+    const at4 = (t) => dk.duckGainAt(p4, t);
+    check('musicDuck 0.4：說話中避讓到 0.4，說話前與說完 0.3 秒後的回升時間不變',
+      Math.abs(at4(3) - 0.4) < 0.02 && at4(1.5) > 0.95 && at4(4.3) < 0.48 && at4(11.5) > 0.9 && p4.length === plan.length && p4.every((x, i) => x.at === plan[i].at && x.tc === plan[i].tc && (plan[i].value === 1 ? x.value === 1 : x.value === 0.4)),
+      `${at4(1.5).toFixed(2)} / ${at4(3).toFixed(2)} / ${at4(11.5).toFixed(2)}`);
+    // 離線混音（驗收包、備援影片：tools/g4_review_pack.py 的 duck_plan）與引擎 duckingPlan 同規則（含 musicDuck）
+    const PY = '/opt/anaconda3/bin/python3';
+    const cases = [{ iv, level: null }, { iv, level: 0.4 }, { iv: [[1, 3.2], [3.5, 5], [5.6, 6.1]], level: 0.25 }];
+    if (!existsSync(PY)) check('離線混音的避讓排程與引擎相同（含 musicDuck）', true, `找不到 ${PY}，略過`);
+    else {
+      const code = `import json, sys\nsys.path.insert(0, ${JSON.stringify(join(ROOT, 'tools'))})\nimport g4_review_pack as g\nprint(json.dumps([g.duck_plan([tuple(x) for x in c["iv"]], c["level"])[0] for c in json.loads(sys.argv[1])]))`;
+      const r = spawnSync(PY, ['-c', code, JSON.stringify(cases)], { encoding: 'utf8', timeout: 60000 });
+      let ok = false;
+      let detail = (r.stderr || '').trim().split('\n').slice(-1)[0] ?? '';
+      try {
+        const py = JSON.parse(r.stdout.trim().split('\n').pop());
+        ok = cases.every((c, k) => {
+          const ts = dk.duckingPlan(c.iv, 0, c.level ?? undefined);
+          return ts.length === py[k].length && ts.every((x, i) => Math.abs(x.at - py[k][i][0]) < 1e-9 && Math.abs(x.value - py[k][i][1]) < 1e-9 && Math.abs(x.tc - py[k][i][2]) < 1e-9);
+        });
+        detail = `${cases.length} 組（musicDuck 省略、0.4、0.25）`;
+      } catch { /* detail 用 stderr */ }
+      check('離線混音的避讓排程與引擎相同（含 musicDuck）', ok, detail);
+    }
+  }
   const val = await import(pathToFileURL(join(ROOT, 'app/src/cues/validate.ts')).href);
   check('puppet.nod（點頭，G5 修正第 1 輪）在動畫白名單裡', val.KNOWN_ANIMS.includes('puppet.nod'));
+  {
+    const one = (extra) => ({ format: 'antidrug-cues/1', id: 't', cues: [{ id: 'a0_c000', sceneId: 's', kind: 'title', initialState: {}, animation: [], audioId: null, lines: [], next: null, prevStable: null, skippable: false, compression: 0, fx: [], teacherNote: '', checkpoint: null, ...extra }] });
+    const okDuck = val.validateCueFile(one({ musicDuck: 0.4 }));
+    const bad = [1.5, -0.1, '0.4', null].map((x) => val.validateCueFile(one({ musicDuck: x })));
+    check('cue 驗證：musicDuck 必須是 0–1 的數字（0.4 通過；1.5、−0.1、字串、null 不通過）', okDuck.ok && bad.every((v) => !v.ok && v.errors.some((e) => e.includes('musicDuck'))), okDuck.errors.join(' | '));
+  }
   for (const f of readdirSync(join(ROOT, 'app/cues')).filter((x) => x.endsWith('.json') && !x.includes('schema'))) {
     const v = val.validateCueFile(JSON.parse(readFileSync(join(ROOT, 'app/cues', f), 'utf8')));
     check(`cue 檔 ${f} 驗證通過、沒有未知動畫名稱`, v.ok && v.warnings.length === 0, [...v.errors, ...v.warnings].slice(0, 3).join(' | '));

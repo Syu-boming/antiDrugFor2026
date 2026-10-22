@@ -559,6 +559,12 @@
           "minimum": 0,
           "maximum": 1
         },
+        "musicDuck": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "這個 cue 台詞時的配樂避讓增益（乘在 musicLevel 上）；省略＝DUCK_LEVEL 0.56（app/src/audio/ducking.ts）"
+        },
         "musicLoop": {
           "type": "boolean"
         },

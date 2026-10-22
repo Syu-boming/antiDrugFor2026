@@ -118,7 +118,7 @@ export function backupVideoText(bv) {
     label: '備援影片',
     inline: `分幕備援影片（backup_video 資料夾 ${range}，每段一檔、每個 cue 一章；題卡處按空白鍵暫停作答）`,
     step: `backup_video 資料夾`,
-    short: `用 Windows「媒體播放器」依序開 ${bv.first} → … → ${bv.last}，全螢幕；Win＋P 選「同步顯示」。出題畫面停 3 秒時按**筆電空白鍵**暫停，作答、揭答說完再按空白鍵繼續（簡報筆不一定有效）${bv.readme ? '；暫停點見資料夾內 README.txt' : ''}。`,
+    short: `用 Windows「媒體播放器」依序開 ${bv.first} → … → ${bv.last}，全螢幕；Win＋P 選「同步顯示」。出題停 3 秒時按**筆電空白鍵**暫停，揭答說完再按空白鍵繼續${bv.readme ? '；暫停點見 README.txt' : ''}。`,
     range,
     how: `依序播放 backup_video 資料夾的 ${bv.first} → … → ${bv.last}（每段一檔、每個 cue 一章），用 Windows 內建「媒體播放器」全螢幕播放，Win＋P 選「同步顯示」。影片不會停下來等老師：每題的出題畫面會停 3 秒，這時按**筆電的空白鍵**暫停，全班比完、揭答與回饋說完再按空白鍵繼續；規則說明、找找看、練習等要說話的地方也先按空白鍵暫停。簡報筆的翻頁鍵在播放器裡不一定有效。${bv.readme ? '每段在哪裡暫停，見 backup_video 資料夾的 README.txt。' : ''}`,
   };

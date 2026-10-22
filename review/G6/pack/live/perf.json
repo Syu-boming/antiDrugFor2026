@@ -493,9 +493,22 @@
   "over_50ms_where": []
  },
  "subtitles": {
-  "checked_samples": 3054,
-  "mismatch": 0,
-  "mismatch_where": []
+  "checked_samples": 3053,
+  "mismatch": 2,
+  "mismatch_where": [
+   {
+    "cue": "a5_c005",
+    "t": 2.25,
+    "line": "a5_c005_01",
+    "subtitle": ""
+   },
+   {
+    "cue": "a5_c005",
+    "t": 2.45,
+    "line": "a5_c005_01",
+    "subtitle": ""
+   }
+  ]
  },
  "mouth": {
   "lines_checked": 127,

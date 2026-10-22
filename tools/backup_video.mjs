@@ -272,6 +272,7 @@ for (const act of ACTS) {
     cues: order.map((t) => ({
       id: t.cue.id, kind: t.cue.kind, title: t.cue.title, duration: t.duration, autoAdvance: !!t.cue.autoAdvance, set: t.set, enterFade: t.enterFade,
       audioId: t.cue.audioId ?? null, musicLoop: t.cue.musicLoop ?? true, musicLevel: t.cue.musicLevel ?? MUSIC_LEVEL[t.cue.kind] ?? 0.6,
+      ...(t.cue.musicDuck !== undefined ? { musicDuck: t.cue.musicDuck } : {}),   // 台詞時的配樂避讓增益（g4.mix 的 duck_plan 讀它；沒寫＝DUCK_LEVEL）
       teacherNote: t.cue.teacherNote ?? '', quiz: t.quiz ? { qid: t.quiz.qid, number: t.quiz.number, answer: t.quiz.answer } : null, lamp: t.cue.lamp ?? null,
       lines: t.lines.map((l) => ({ id: l.line.id, speaker: l.line.speaker, text: l.line.text, audioId: l.audioId, start: l.start, end: l.end, duration: l.duration, placeholder: l.placeholder })),
       sfx: t.sfx.map((s) => ({ ...s })),

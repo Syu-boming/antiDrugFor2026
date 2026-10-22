@@ -25,6 +25,7 @@
    "audioId": "music_bows",
    "musicLoop": false,
    "musicLevel": 1.07,
+   "musicDuck": 0.4,
    "compression": 2,
    "lamp": null,
    "quiz": null,
@@ -763,9 +764,9 @@
  "fps": 30,
  "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
  "segmentHash": {
-  "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
-  "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
-  "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+  "source": "ba2c131908ab617b87e8df36d9e4986f2dc52da4",
+  "built": "92823f56dece37db8c42ce27dd5498151a23ea42",
+  "sourceMerged": "92823f56dece37db8c42ce27dd5498151a23ea42",
   "builtFromSource": true
  }
 }

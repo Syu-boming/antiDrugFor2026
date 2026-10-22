@@ -72,6 +72,7 @@ export function validateCueFile(data: unknown, opts: ValidateOptions = {}): Vali
       else c.music.forEach((m, j) => { if (!isObj(m) || typeof m.id !== 'string' || !isTimeRef(m.at)) errors.push(`${at} music[${j}] 需要 id 與 at`); });
     }
     if (c.audioId !== null && typeof c.audioId !== 'string') errors.push(`${at} audioId 必須是字串或 null`);
+    if (c.musicDuck !== undefined && (typeof c.musicDuck !== 'number' || !Number.isFinite(c.musicDuck) || c.musicDuck < 0 || c.musicDuck > 1)) errors.push(`${at} musicDuck 必須是 0–1 的數字（台詞時的配樂避讓增益）`);
     if (!Array.isArray(c.lines)) errors.push(`${at} lines 必須是陣列`);
     else c.lines.forEach((l, j) => {
       if (!isObj(l)) { errors.push(`${at} lines[${j}] 不是物件`); return; }

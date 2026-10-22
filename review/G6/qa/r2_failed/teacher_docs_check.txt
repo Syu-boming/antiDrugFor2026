@@ -1,0 +1,4 @@
+[teacher] cue 指紋：目前 0f6f4055f3；講稿 0f6f4055f3；檢查報告 0f6f4055f3（2026/10/22 20:03:03）
+[teacher] 備援影片：缺 backup_a0.mp4、backup_a1.mp4、backup_a2.mp4、backup_a3.mp4、backup_a4.mp4、backup_a5.mp4、backup_a6.mp4、backup_a7.mp4、backup_a8.mp4
+[teacher] 教師資料和目前的 cue 一致。
+exit 0

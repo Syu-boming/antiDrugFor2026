@@ -1,8 +1,8 @@
 # a5 驗收包（第五幕：找得到的幫手）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T10:41Z）；段落檔 `app/cues/show/a5.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T13:53Z）；段落檔 `app/cues/show/a5.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
-- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e`；app/dist 合併後這一段 `226a678519043e1762cc5f82036e2882c5cd241b`；建置用的是目前段落檔：是。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `c43e1caa185e7d59bdb0f31e43aa04b358c9f399`；app/dist 合併後這一段 `655c3dafb914cd68821e0e2d11400164889547fd`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -72,7 +72,7 @@
 | a5_c002_05 | 旁白 | -18.0 | -15.0 | 55.0 |
 | a5_c003_01 | 旁白 | -18.0 | -15.0 | 55.0 |
 | a5_c004_01 | 折折 | -18.0 | -15.0 | 27.1 |
-| a5_c005_01 | 小宇 | -18.0 | -14.8 | 14.3 |
+| a5_c005_01 | 小宇 | -18.0 | -15.0 | 19.3 |
 | a5_c005_02 | 小晴 | -18.1 | -15.0 | 17.9 |
 | a5_c005_03 | 小宇 | -18.0 | -14.9 | 16.7 |
 | a5_c006_01 | 執勤人員 | -18.0 | -15.0 | 22.0 |
@@ -103,7 +103,7 @@
 ## 安全量測
 
 - 操偶線扣點：elbow、knee、wrist（只限 wrist／elbow／knee：True）；有操偶線的角色：ale。
-- 有操偶線的量測格 1652；線到頭部框最短 10.4 px（只算頭部框在畫面內的格；畫面外略過 1515 條）；線經過兒童立牌外框 0 格。
+- 有操偶線的量測格 1652；線到頭部框最短 10.4 px（只算頭部框在畫面內的格；畫面外略過 1572 條）；線經過兒童立牌外框 0 格。
 - 必要旁白：本段沒有必要旁白。
 - 台詞與劇本 v03 逐字不同：0 句（共 28 句）。
 - 字幕：每行最多 16 字、每頁最多 2 行。
@@ -112,5 +112,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a5_c001": 0.6, "a5_c008": 0.6}；景：a5_gate、a5_hospital；景的建立／釋放 {"active": "a5_hospital", "built": 6, "disposed": 4, "lastBuildMs": 62, "liveSetGroups": 1, "lastSwapMs": 0.6, "preparedHits": 2, "prepared": [{"name": "a6_square_night", "pending": 0, "compiled": true}]}。
+- 換景漸暗預捲：{"a5_c001": 0.6, "a5_c008": 0.6}；景：a5_gate、a5_hospital；景的建立／釋放 {"active": "a5_hospital", "built": 6, "disposed": 4, "lastBuildMs": 77, "liveSetGroups": 1, "lastSwapMs": 1, "preparedHits": 2, "prepared": [{"name": "a6_square_night", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

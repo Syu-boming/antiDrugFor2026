@@ -1244,13 +1244,13 @@
      "id": "a5_c005_01",
      "speaker": "小宇",
      "text": "陳伯伯——！",
-     "start": 0.85
+     "start": 1.35
     },
     {
      "id": "a5_c005_02",
      "speaker": "小晴",
      "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
-     "start": "a5_c005_01.end+1.05"
+     "start": "a5_c005_01.end+0.55"
     },
     {
      "id": "a5_c005_03",
@@ -1359,18 +1359,18 @@
     },
     {
      "name": "camera.move",
-     "start": 0.3,
-     "duration": 2.2,
+     "start": 0.1,
+     "duration": 0.9,
      "ease": "sine",
      "params": {
       "to": {
        "pos": [
-        -3.65,
+        -3.5,
         1.95,
         15.5
        ],
        "target": [
-        -4.25,
+        -4.1,
         1.72,
         0.6
        ],
@@ -1380,7 +1380,7 @@
     },
     {
      "name": "camera.cut",
-     "start": "a5_c005_01.end+0.75",
+     "start": "a5_c005_01.start-0.25",
      "duration": 0,
      "params": {
       "to": "a5_kids"
@@ -1514,7 +1514,7 @@
     },
     {
      "id": "sfx_gust",
-     "at": "a5_c005_01.end+0.1",
+     "at": "a5_c005_02.start-0.95",
      "gain": 0.5
     },
     {
@@ -1523,7 +1523,7 @@
      "gain": 0.4
     }
    ],
-   "voStart": 0.85,
+   "voStart": 1.35,
    "tail": 1.0
   },
   {

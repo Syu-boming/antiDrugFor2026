@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 FPS = 30
 SR = 48000
+ALIGN_TOL_DB = 1.0  # 逐格對齊：同格號 PSNR 不低於前後格最高值減這個量（G7 主線裁定：原本 0.05 dB 在靜止畫面誤判）
 W, H = 1920, 1080
 GENERIC_NOTE = "播完停格，等老師按下一步。"
 
@@ -186,10 +187,10 @@ def frame_check(mp4, work, samples):
         for d, key in ((-1, "psnr_prev_dB"), (1, "psnr_next_dB")):
             if s + d in frames:
                 row[key] = psnr(src, frames[s + d])
-        row["aligned"] = row["psnr_same_dB"] >= max(row.get("psnr_prev_dB", 0), row.get("psnr_next_dB", 0)) - 0.05
+        row["aligned"] = row["psnr_same_dB"] >= max(row.get("psnr_prev_dB", 0), row.get("psnr_next_dB", 0)) - ALIGN_TOL_DB
         rows.append(row)
     ps = [r["psnr_same_dB"] for r in rows]
-    return {"method": "擷取時存下的原始截圖 vs 成品解碼後同一格號（與前後各一格）的 PSNR；同格號最高＝沒有錯位（靜止畫面前後格相同時以 ±0.05 dB 視為相同）",
+    return {"method": "擷取時存下的原始截圖 vs 成品解碼後同一格號（與前後各一格）的 PSNR；同格號最高＝沒有錯位（靜止畫面前後格幾乎相同、H.264 雜訊會讓鄰格高出零點幾 dB，差距在 ALIGN_TOL_DB 內視為對齊；真的錯一格時有動作的地方會差數 dB）",
             "samples": len(rows), "min_psnr_dB": min(ps) if ps else None, "mean_psnr_dB": round(float(np.mean(ps)), 2) if ps else None,
             "all_aligned": all(r["aligned"] for r in rows) if rows else None, "rows": rows}
 

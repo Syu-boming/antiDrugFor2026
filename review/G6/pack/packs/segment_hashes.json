@@ -1,7 +1,7 @@
 {
  "note": "與建置一致＝驗收包記下的 built（量的那一版 app/dist 合併後的段落）＝目前 app/dist 的 built；sourceMatch＝段落檔 sha1 相同；builtFromSource＝目前 app/dist 是用目前段落檔建的。pack＝null：舊版工具產生的包沒有記錄（要重產）；timelineMatch＝後備參考：包裡解析後的時間軸（timeline.json cues）與目前建置相同（不含 initialState 的站位與鏡位）。",
  "method": "sha1（拿掉所有 checkpoint 欄位、JSON 鍵排序後序列化）；source＝app/cues/show/<段>.json；built＝app/dist/data/cues_show.js 合併後的這一段（段落資訊＋cue）；sourceMerged＝目前段落檔照建置方式合併後的這一段",
- "distBuiltAt": "2026-10-22T12:00:04.275Z",
+ "distBuiltAt": "2026-10-22T13:33:58.971Z",
  "sourceValid": true,
  "segments": {
   "a0": {
@@ -97,15 +97,15 @@
   "a5": {
    "file": "app/cues/show/a5.json",
    "current": {
-    "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
-    "built": "226a678519043e1762cc5f82036e2882c5cd241b",
-    "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+    "source": "c43e1caa185e7d59bdb0f31e43aa04b358c9f399",
+    "built": "655c3dafb914cd68821e0e2d11400164889547fd",
+    "sourceMerged": "655c3dafb914cd68821e0e2d11400164889547fd",
     "builtFromSource": true
    },
    "pack": {
-    "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
-    "built": "226a678519043e1762cc5f82036e2882c5cd241b",
-    "generatedAt": "2026-10-22T10:35:56.859Z"
+    "source": "c43e1caa185e7d59bdb0f31e43aa04b358c9f399",
+    "built": "655c3dafb914cd68821e0e2d11400164889547fd",
+    "generatedAt": "2026-10-22T13:47:48.664Z"
    },
    "builtMatch": true,
    "sourceMatch": true,
@@ -151,15 +151,15 @@
   "a8": {
    "file": "app/cues/show/a8.json",
    "current": {
-    "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
-    "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
-    "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+    "source": "ba2c131908ab617b87e8df36d9e4986f2dc52da4",
+    "built": "92823f56dece37db8c42ce27dd5498151a23ea42",
+    "sourceMerged": "92823f56dece37db8c42ce27dd5498151a23ea42",
     "builtFromSource": true
    },
    "pack": {
-    "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
-    "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
-    "generatedAt": "2026-10-22T11:08:23.168Z"
+    "source": "ba2c131908ab617b87e8df36d9e4986f2dc52da4",
+    "built": "92823f56dece37db8c42ce27dd5498151a23ea42",
+    "generatedAt": "2026-10-22T13:54:54.162Z"
    },
    "builtMatch": true,
    "sourceMatch": true,

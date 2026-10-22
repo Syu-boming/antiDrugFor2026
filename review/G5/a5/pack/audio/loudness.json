@@ -6,7 +6,7 @@
  "clipped_samples": 0,
  "full_playback": {
   "I_LUFS": -15.8,
-  "LRA_LU": 11.5,
+  "LRA_LU": 11.8,
   "TP_dBTP": -1.1
  },
  "per_cue": {
@@ -31,7 +31,7 @@
    "TP_dBTP": -1.9
   },
   "a5_c005": {
-   "I_LUFS": -15.7,
+   "I_LUFS": -15.8,
    "LRA_LU": 6.4,
    "TP_dBTP": -2.2
   },
@@ -238,15 +238,15 @@
    "id": "a5_c005_01",
    "cue": "a5_c005",
    "speaker": "小宇",
-   "start": 88.11,
-   "end": 89.47,
+   "start": 88.61,
+   "end": 89.97,
    "vo_file": "audio/vo/vo_a5_c005_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -6.2,
-   "mix_I_LUFS": -14.8,
+   "mix_I_LUFS": -15.0,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -29.3,
-   "vo_minus_background_LU": 14.3
+   "background_I_LUFS": -34.3,
+   "vo_minus_background_LU": 19.3
   },
   {
    "id": "a5_c005_02",
@@ -530,6 +530,7 @@
   "HOLD_MUSIC_RATIO": 0.1,
   "HOLD_TC": 0.6
  },
+ "music_duck_by_cue": {},
  "events": [
   {
    "t": 0.6,

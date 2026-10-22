@@ -1,31 +1,21 @@
 {
- "generatedAt": "2026/10/22 20:03:03",
- "cueHash": "0f6f4055f3",
+ "generatedAt": "2026/10/22 22:03:04",
+ "cueHash": "cca5916cc3",
  "fingerprint": {
-  "atGen": "0f6f4055f3",
-  "inScript": "0f6f4055f3",
-  "now": "0f6f4055f3"
+  "atGen": "cca5916cc3",
+  "inScript": "cca5916cc3",
+  "now": "cca5916cc3"
  },
  "dist": {
   "exists": true,
   "same": true,
-  "mtime": "2026-10-22T12:00:04.311Z"
+  "mtime": "2026-10-22T13:33:59.012Z"
  },
  "backupVideo": {
   "mode": "auto",
-  "ready": false,
-  "dirExists": false,
-  "missing": [
-   "backup_a0.mp4",
-   "backup_a1.mp4",
-   "backup_a2.mp4",
-   "backup_a3.mp4",
-   "backup_a4.mp4",
-   "backup_a5.mp4",
-   "backup_a6.mp4",
-   "backup_a7.mp4",
-   "backup_a8.mp4"
-  ]
+  "ready": true,
+  "dirExists": true,
+  "missing": []
  },
  "checkpoints": [
   {
@@ -371,7 +361,7 @@
     "detail": []
    },
    {
-    "name": "備援影片的說法和交付資料夾一致（還沒產生：保留「暫定」，見注意）",
+    "name": "備援影片的說法和交付資料夾一致（已產生：backup_a0.mp4–backup_a8.mp4）",
     "ok": true,
     "detail": []
    },
@@ -388,7 +378,7 @@
     }
    },
    {
-    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 0f6f4055f3、講稿上 0f6f4055f3、目前 0f6f4055f3；不排除任何欄位）",
+    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 cca5916cc3、講稿上 cca5916cc3、目前 cca5916cc3；不排除任何欄位）",
     "ok": true,
     "detail": null
    },
@@ -411,7 +401,5 @@
    }
   ]
  },
- "warnings": [
-  "備援影片還沒產生（交付/backup_video/ 不存在）：故障卡、觀課導覽單、教案、講稿保留「備援影片（暫定）」。影片產生後重跑本腳本"
- ]
+ "warnings": []
 }

@@ -422,15 +422,17 @@ def load_wav(path: Path):
     return x
 
 
-def duck_plan(intervals):
-    """app/src/audio/ducking.ts 的 duckingPlan（同參數）；另讀教師停格的 HOLD_MUSIC_RATIO、HOLD_TC"""
+def duck_plan(intervals, level=None):
+    """app/src/audio/ducking.ts 的 duckingPlan（同參數）；另讀教師停格的 HOLD_MUSIC_RATIO、HOLD_TC。
+    level＝cue 的 musicDuck（這個 cue 台詞時的避讓增益，G6 修正第 2 輪）；省略（None）時用 DUCK_LEVEL，和引擎相同"""
     src = (ROOT / "app/src/audio/ducking.ts").read_text(encoding="utf-8")
     c = {k: float(re.search(rf"export const {k} = ([\d.]+)", src).group(1)) for k in
          ("DUCK_LEVEL", "DUCK_LEAD", "DUCK_TC_DOWN", "DUCK_RELEASE", "DUCK_TC_UP", "DUCK_BRIDGE", "HOLD_MUSIC_RATIO", "HOLD_TC")}
+    lv = c["DUCK_LEVEL"] if level is None else float(level)
     out = []
     s = sorted(intervals)
     for i, (a, b) in enumerate(s):
-        out.append((a - c["DUCK_LEAD"], c["DUCK_LEVEL"], c["DUCK_TC_DOWN"]))
+        out.append((a - c["DUCK_LEAD"], lv, c["DUCK_TC_DOWN"]))
         nxt = s[i + 1][0] if i + 1 < len(s) else None
         if nxt is None or nxt - b > c["DUCK_BRIDGE"]:
             out.append((b + c["DUCK_RELEASE"], 1.0, c["DUCK_TC_UP"]))
@@ -528,7 +530,7 @@ def mix(out: Path, tl: dict):
             crossfade(m["id"], G + m["at"], loop=m["loop"], fade=m["fade"], gain=m["gain"], offset=m["offset"])
         cur_level = bus_level.at(G)
         bus_level.cancel(G); bus_level.target(c["musicLevel"], G, 0.35)
-        plan, dk = duck_plan(intervals)
+        plan, dk = duck_plan(intervals, c.get("musicDuck"))  # cue 的 musicDuck（沒寫＝DUCK_LEVEL），engine.ts scheduleDucking 同規則
         # 教師停格（engine.ts scheduleAudio）：劇情段落播完、停住等老師時，配樂降到基準音量 × HOLD_MUSIC_RATIO
         if c["kind"] == "scene" and not c.get("autoAdvance"):
             bus_level.target(c["musicLevel"] * dk["HOLD_MUSIC_RATIO"], G + c["duration"], dk["HOLD_TC"])

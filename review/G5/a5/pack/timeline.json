@@ -1011,14 +1011,14 @@
      "speaker": "小宇",
      "text": "陳伯伯——！",
      "audioId": "vo_a5_c005_01",
-     "start": 0.85,
-     "end": 2.21,
+     "start": 1.35,
+     "end": 2.71,
      "duration": 1.36,
      "placeholder": false,
      "pages": [
       {
-       "start": 0.85,
-       "end": 2.21,
+       "start": 1.35,
+       "end": 2.71,
        "rows": [
         "陳伯伯——！"
        ]
@@ -1115,17 +1115,17 @@
     {
      "name": "camera.move",
      "target": null,
-     "start": 0.3,
-     "end": 2.5,
+     "start": 0.1,
+     "end": 1,
      "params": {
       "to": {
        "pos": [
-        -3.65,
+        -3.5,
         1.95,
         15.5
        ],
        "target": [
-        -4.25,
+        -4.1,
         1.72,
         0.6
        ],
@@ -1136,8 +1136,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 2.96,
-     "end": 2.96,
+     "start": 1.1,
+     "end": 1.1,
      "params": {
       "to": "a5_kids"
      }
@@ -2307,9 +2307,9 @@
  "fps": 30,
  "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
  "segmentHash": {
-  "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
-  "built": "226a678519043e1762cc5f82036e2882c5cd241b",
-  "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+  "source": "c43e1caa185e7d59bdb0f31e43aa04b358c9f399",
+  "built": "655c3dafb914cd68821e0e2d11400164889547fd",
+  "sourceMerged": "655c3dafb914cd68821e0e2d11400164889547fd",
   "builtFromSource": true
  }
 }

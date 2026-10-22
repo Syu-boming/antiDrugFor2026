@@ -447,7 +447,7 @@ export class Engine {
     this.mixer.setMusicLevel(level, at(0));
     // 教師停格：劇情段落播完、停住等老師時，配樂慢慢降到約 −20 dB（3 秒內 ≤ −35 LUFS）
     if (tl.cue.kind === 'scene' && !tl.cue.autoAdvance) this.mixer.scheduleMusicLevel(level * HOLD_MUSIC_RATIO, at(tl.duration), HOLD_TC);
-    this.mixer.scheduleDucking(intervals);
+    this.mixer.scheduleDucking(intervals, tl.cue.musicDuck);
   }
 
   /** 照流程在第 i 個 cue 開始時應該在播的循環配樂（往前找最近的 music 事件或 audioId；一次播完的曲子、"none" 都算沒有） */

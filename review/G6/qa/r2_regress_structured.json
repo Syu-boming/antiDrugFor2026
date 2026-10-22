@@ -1,0 +1,340 @@
+{
+ "scores": [
+  {
+   "item": "技術 QA 1 操作",
+   "score": 4,
+   "evidence": "自己重跑 engine-test 138／138（review/G6/qa/r2_regress/engine_test_r2regress.log）；全劇補測 21／21（review/G6/pack/ops/ops_show.json）。驗收包的 ops/engine_test.log 是 137／138：計時型測試在高負載下失敗，不是程式改壞"
+  },
+  {
+   "item": "技術 QA 2 效能",
+   "score": 4,
+   "evidence": "review/G6/pack/live/perf.json、INDEX (b)：p95 16.70 ms，播放中 >100 ms 0 格、>50 ms 0 格；停格中最長 100.0 ms（13 格 >50 ms）；學校筆電未驗證"
+  },
+  {
+   "item": "技術 QA 3 同步與光敏",
+   "score": 4,
+   "evidence": "字幕時間差最大 3 ms、字幕內容 0 不符、嘴型 125／127（INDEX (b)）；自己獨立量九段 playback.mp4：沒有 >1.2 倍的單格硬切，16×9 每秒 ≤3、紅色 0（review/G6/qa/r2_regress/flash_a0…a8.json、indep_flash_r2.py）"
+  },
+  {
+   "item": "技術 QA 4 穩定與離線",
+   "score": 4,
+   "evidence": "外部請求 0、頁面錯誤 0（live/network.json）；diff -rq app/dist 交付/browser 與 交付/AntidrugTheater/resources/app/dist 都 0 差異；gh-pages show/ 143／143、teacher 42／42 個 blob 與本機相同"
+  },
+  {
+   "item": "校長／教育專業 3 用語與安全",
+   "score": 4,
+   "evidence": "teacher/data/檢查報告.md 21／21；node tools/teacher_docs.mjs --check：cue 指紋一致；r2_regress.md 逐條核對安全界線"
+  },
+  {
+   "item": "校長／教育專業 4 課堂可行",
+   "score": 3,
+   "evidence": "教師時間加播放 35:45（≤38 分）、查核點與 atMinute 一致；但 交付/使用說明_初步完成說明.md 停在 10:10 的舊內容，備援影片也還沒產生"
+  },
+  {
+   "item": "兒童劇場導演 3 表演與節奏",
+   "score": 4,
+   "evidence": "a6_c007 孩子轉頭看燈、品安點頭（r2_regress/a6_c007_kids_5s_vs_14s.jpg）；a8_c001 阿樂叔叔站起舉燈致意、全體鞠躬（review/G5/a8/pack/capture/contact_timeline_01.png）；a5_c005 開頭鏡頭容易誤認人物"
+  },
+  {
+   "item": "兒童劇場導演 5 情感",
+   "score": 4,
+   "evidence": "a8_c001 11–13 秒阿樂叔叔舉燈致意（frames/a8_c001_012.00.jpg）；a6_c007 主燈亮起時角色有反應（r2_regress/a6_c007_9-14s.jpg）"
+  }
+ ],
+ "severe": [],
+ "general": [
+  {
+   "issue": "a8 最後一句台詞被加大的謝幕音樂壓低 2.5 LU（這一輪 music_bows +2.5 dB 造成）",
+   "where": "a8_c001_01（折折「我們是小燈鎮的大家，下次見！」，a8_c001 約 13.5–16.6 秒）",
+   "evidence": "對白高出背景：G5 結案 11.7 LU（git show 4940b62:review/G5/a8/pack/INDEX.md）→ 現在 9.2 LU（review/G5/a8/pack/INDEX.md）。混音中 large-v3-turbo 把「鎮」轉成「正」（transcripts.md）",
+   "fix": "從 a8_c001_01 開始前 0.3 秒到結束後 0.3 秒，把 music_bows 壓低 3 dB（或這句配音增益 +2 dB），讓對白高出背景 ≥11.5 LU；謝幕音樂其他部分維持 +2.5 dB。改完重產 a8 驗收包與 G6 響度表"
+  },
+  {
+   "issue": "交付包裡唯一的使用說明還是 10:10 的舊版",
+   "where": "交付/使用說明_初步完成說明.md",
+   "evidence": "內容寫「引擎測試 134 項」「複習與閉幕還沒重產驗收包」「第二批還沒重驗」；段長 a1 155.4、a4 218.6、a5 183.5 秒，現在是 154.4、217.0、175.6 秒（review/G6/pack/INDEX.md）",
+   "fix": "重寫一份啟動說明（Windows／瀏覽器版開法、按鍵、目前長度、已知限制），取代舊檔；teacher/pdf 的操作卡、故障卡、題卡也複製一份進 交付/（v1.3 §8）"
+  },
+  {
+   "issue": "備援影片還沒產生，教師資料仍寫「暫定」",
+   "where": "交付/backup_video/（20:36 開始產生，目前只有 _check/_work_a0）",
+   "evidence": "teacher_docs.mjs --check 列出缺 backup_a0.mp4 到 backup_a8.mp4；v1.2 §24 第 13、14 項需要備援影片",
+   "fix": "影片產完後跑 node tools/teacher_docs.mjs，再跑 --check，讓故障卡、導覽單、教案、講稿寫上實際檔名；逐支抽查聲畫差與兩端署名卡"
+  },
+  {
+   "issue": "a5_c005 新的開頭鏡頭可能讓孩子把阿樂叔叔當成陳伯伯",
+   "where": "a5_c005 0–2.5 秒",
+   "evidence": "review/G5/a5/pack/capture/frames/a5_c005_001.00.jpg：畫面只有坐在長椅、身上有線的阿樂叔叔，字幕卻是畫面外的小宇喊「陳伯伯——！」（r2_regress/a4c002_a5c005_a7c002_contact.jpg）",
+   "fix": "前 1.5 秒改拍空著的警衛室，或讓小宇入鏡喊，再切到長椅上的阿樂叔叔；也可以把喊聲延到切到孩子的鏡頭之後"
+  },
+  {
+   "issue": "換景預先準備在停格時有接近 100 ms 的長格（新機制），學校筆電上可能超過 100 ms",
+   "where": "app/src/engine/engine.ts prefetch（PREFETCH_BUDGET_MS 6）；停在 a1_c008、a3_c002、a3_c008、a4_c006 等 cue",
+   "evidence": "review/G6/pack/INDEX.md (b)：停格中 >50 ms 13 格、最長 100.0 ms（多格 83 ms），開發機是 M4",
+   "fix": "PREFETCH_BUDGET_MS 改成 4，大張貼圖改成分塊上傳；學校探針換算後再確認"
+  },
+  {
+   "issue": "驗收包的操作紀錄與線上版發布紀錄有小瑕疵",
+   "where": "review/G6/pack/ops/engine_test.log 與 INDEX (e)；gh-pages commit b511dda；tools/deploy_pages.sh",
+   "evidence": "(a) 驗收包寫 137／138，「再按句點鍵繼續」0.5 秒只前進 0.256 秒；重跑 138／138。(b) commit 訊息寫「發布 main 2bd5a3f」，內容其實是 20:00 的 app/dist（與 897c8e1 的建置逐檔相同）。deploy 沒有複製 teacher/fonts，線上教師網頁的 ../fonts/*.ttf 會 404，改用系統字型",
+   "fix": "engine-test 這一項改成等 0.8 秒，或用音訊時鐘前進 ≥0.3 秒判定，重跑後更新 INDEX；先 commit 再發布，訊息加上 app/dist 指紋；deploy_pages.sh 加複製 teacher/fonts/subset"
+  }
+ ],
+ "released_recheck": [
+  {
+   "item": "G4：小宇站姿半閉格眼皮雜點、閉眼補片明暗差",
+   "status": "未驗證",
+   "evidence": "驗收包沒有逐格眨眼放大圖"
+  },
+  {
+   "item": "G4：小宇 stepback 閉眼線下方眼白殘影",
+   "status": "未驗證",
+   "evidence": "驗收包沒有逐格眨眼放大圖"
+  },
+  {
+   "item": "G4：翻面到第一次眨眼 0.32 s（建議 ≥0.4 s）",
+   "status": "not",
+   "evidence": "REVIEW G6 第 1 輪主線裁定 FLIP_BLINK_GAP 維持 0.3 秒（接受）"
+  },
+  {
+   "item": "G4：ASSETS／REVIEW 的 ElevenLabs 用量改指向 ledger.json",
+   "status": "resolved",
+   "evidence": "ASSETS.md 第 88、142 行以 audio/vo_el/ledger.json 為準，不再抄合計數字"
+  },
+  {
+   "item": "G4：膝前線到阿樂頭部框 21.6 px（a8_c002）",
+   "status": "resolved",
+   "evidence": "review/G5/a8/pack/INDEX.md：本段沒有操偶線"
+  },
+  {
+   "item": "G4 未達 4 分：操偶線改平面紙繩",
+   "status": "partial",
+   "evidence": "a5_c005_001／010 線身平滑、兩側深灰邊；沒有量週期斜紋，投影未驗證"
+  },
+  {
+   "item": "G4 未達 4 分：構圖群體與景深",
+   "status": "partial",
+   "evidence": "a6_c007、a8_c001 群體構圖成立；a5_c005_010 孩子與阿樂分在畫面兩端（劇情需要）"
+  },
+  {
+   "item": "G3：自動檢查未通過的 23 句",
+   "status": "未驗證",
+   "evidence": "聽感；a0–a4 驗收包用 --skip-asr"
+  },
+  {
+   "item": "G3：PSOLA 重後製角色的失真",
+   "status": "未驗證",
+   "evidence": "只能用耳朵判斷"
+  },
+  {
+   "item": "G3：全劇配音總長 14.15 分，G5 依實際句長排時間",
+   "status": "resolved",
+   "evidence": "預錄 1322.3 秒＋預捲 10.8 秒，教師時間加播放 35:45 ≤38（INDEX (a)）"
+  },
+  {
+   "item": "G3：a2_c002＋a2_c004 46.84 s 超過 45 s",
+   "status": "resolved",
+   "evidence": "G4 已結案；全劇時間在 38 分內（teacher/data/檢查報告.md）"
+  },
+  {
+   "item": "G3：a2_c002_02 small 模型轉成「竹樹」",
+   "status": "未驗證",
+   "evidence": "a2 transcripts.md 是 10/21 版，這次用 --skip-asr"
+  },
+  {
+   "item": "G5 共用元件：資料包約 212 MB 一次載入",
+   "status": "partial",
+   "evidence": "開發機 JS heap 215–266 MB、斜率 0.68 MB／分（live/perf.json）；學校筆電未驗證"
+  },
+  {
+   "item": "G5 共用元件：換景全暗那一格最長 83 ms",
+   "status": "partial",
+   "evidence": "播放中 >50 ms 0 格；停格中預先建景仍有 13 格 >50 ms、最長 100.0 ms（INDEX (b)）"
+  },
+  {
+   "item": "G5 共用元件：全劇 1391 s 比 v03 多 78 s",
+   "status": "resolved",
+   "evidence": "現在 1333.1 秒（INDEX (a)）"
+  },
+  {
+   "item": "G5 共用元件：Electron 只在 macOS 跑過",
+   "status": "未驗證",
+   "evidence": "沒有 Windows 實機"
+  },
+  {
+   "item": "G5 共用元件：控制台與引擎授課時鐘一致",
+   "status": "resolved",
+   "evidence": "查核點一律用 atMinute，cue、講稿、操作卡、範本一致（檢查報告.md）"
+  },
+  {
+   "item": "a1：Q1 點燈後連兩次暗亮、孩子停在走路中途約 3 秒",
+   "status": "partial",
+   "evidence": "獨立量測只剩 a1_c007 第 4.9 秒一次暗亮，a1_c008 開頭沒有（flash_a1.json）；停在走路中途沒有查"
+  },
+  {
+   "item": "a1：小晴翻面約 0.15 秒",
+   "status": "未驗證",
+   "evidence": "沒有逐格證據"
+  },
+  {
+   "item": "a1：切近景前一格亮 11%",
+   "status": "partial",
+   "evidence": "a1_c008 9.2 秒仍有單格 1.122 倍（低於 1.2，isolated_cuts.json）"
+  },
+  {
+   "item": "a1：品安轉身看不出在看柱子",
+   "status": "未驗證",
+   "evidence": "a1 本輪只改音效，沒有目視證據"
+  },
+  {
+   "item": "a4：a4_c002 轉場露出俯視與深紅布幕、3.3 秒空天空",
+   "status": "resolved",
+   "evidence": "天空鏡頭已拿掉，改成地圖立起（r2_regress/a4c002_a5c005_a7c002_contact.jpg）"
+  },
+  {
+   "item": "a4：地圖左下深紅棕色塊、斑馬線影子殘影",
+   "status": "未驗證",
+   "evidence": "接觸表解析度不夠"
+  },
+  {
+   "item": "a4：兒童身後背景投影 0.34–0.41",
+   "status": "未驗證",
+   "evidence": "投影"
+  },
+  {
+   "item": "a4：sfx_ambulance_engine 未改名",
+   "status": "resolved",
+   "evidence": "主線裁定名稱正確、不改（REVIEW G6 第 1 輪）"
+  },
+  {
+   "item": "a2：a2_c012 求助鏡頭約 1.2 秒太短",
+   "status": "not",
+   "evidence": "a2.json 本輪沒改 a2_c012"
+  },
+  {
+   "item": "a2：a2_c002 膝線對比 13.9／投影 9.9",
+   "status": "not",
+   "evidence": "G4 cue，表演不改"
+  },
+  {
+   "item": "a2：手部近景手指簡化",
+   "status": "not",
+   "evidence": "沒有改動"
+  },
+  {
+   "item": "a0：摺紙最後縮成小點",
+   "status": "未驗證",
+   "evidence": "沒有逐格證據"
+  },
+  {
+   "item": "a0：摺放大鏡時折折被小宇擋住一半",
+   "status": "resolved",
+   "evidence": "a0 contact_keyframes a0_c004 14.30 秒折折完整可見"
+  },
+  {
+   "item": "a0：上半部空牆",
+   "status": "partial",
+   "evidence": "a0_c003 仍有大片空牆，a0_c004 有架上燈籠"
+  },
+  {
+   "item": "a0：門邊吊牌模糊灰影",
+   "status": "未驗證",
+   "evidence": "解析度不夠"
+  },
+  {
+   "item": "共同：揭答蓋章聲 100 ms 上升約 47 LU",
+   "status": "not",
+   "evidence": "a4 只有配樂音效時 100 ms 最大上升 46.9 LU、a6 45.4、a5 43.3（各段 INDEX）；聽感未驗證"
+  },
+  {
+   "item": "a5：低年級小朋友幾何粗模",
+   "status": "未驗證",
+   "evidence": "沒有對應影格"
+  },
+  {
+   "item": "a5：救護人員的頭單獨浮在車身前約 0.3 秒",
+   "status": "未驗證",
+   "evidence": "沒有逐格證據"
+  },
+  {
+   "item": "a5：景片平",
+   "status": "not",
+   "evidence": "a5_c005_010 景片仍是平面層"
+  },
+  {
+   "item": "a6：灰色無臉人影",
+   "status": "partial",
+   "evidence": "a6 contact_keyframes 沒看到，只查了關鍵影格"
+  },
+  {
+   "item": "a6：Q8 孤字斷行",
+   "status": "resolved",
+   "evidence": "a6_c003 題卡三行都沒有孤字（a6 contact_keyframes）"
+  },
+  {
+   "item": "a6：a6_c009 沒有摺燈的手部動作",
+   "status": "partial",
+   "evidence": "a6_c009 結尾阿樂叔叔雙手在燈前；動作過程沒有逐格查"
+  },
+  {
+   "item": "a6：夜景偏粉褐",
+   "status": "not",
+   "evidence": "a6_c007 夜景色調大致沒變"
+  },
+  {
+   "item": "a6：a6_c007 高潮中段黑場",
+   "status": "resolved",
+   "evidence": "獨立量測 a6 在 137.8–158.8 秒沒有漸暗（flash_a6.json）；接觸表是台口後拉"
+  },
+  {
+   "item": "a8：合幕沒回台口",
+   "status": "resolved",
+   "evidence": "a8_c002 1.0–4.0 秒台口全景加八盞燈（a8 contact_timeline_01）"
+  },
+  {
+   "item": "a8：鞠躬只有點頭",
+   "status": "resolved",
+   "evidence": "a8.json a8_c001 第 15.0 秒全體 bow 12°、阿樂 32°"
+  },
+  {
+   "item": "a8：孩子壓扁彈起進場",
+   "status": "partial",
+   "evidence": "進場點頭仍帶 squash 0.14（a8.json a8_c001 第 3.6–8.75 秒）"
+  },
+  {
+   "item": "a8：阿樂叔叔沒有謝幕時刻",
+   "status": "resolved",
+   "evidence": "a8_c001 11–13 秒站起舉小折折燈致意（frames/a8_c001_012.00.jpg）"
+  },
+  {
+   "item": "a3：練習卡立起佔多數「3 次」窗",
+   "status": "not",
+   "evidence": "a3 fine_32x18 仍是 3／3（INDEX），沒有改"
+  },
+  {
+   "item": "a5：a5_c007 只縮 1.75 秒",
+   "status": "partial",
+   "evidence": "a5 本輪又短 3.45 秒（a5_c005），a5 總長 175.6 秒"
+  },
+  {
+   "item": "a5：遠景小朋友身後看得到貨車車尾",
+   "status": "未驗證",
+   "evidence": "沒有對應影格"
+  },
+  {
+   "item": "G5 第二批：小宇手錶左右腕不一",
+   "status": "未驗證",
+   "evidence": "a6_c007 鏡像姿勢下手錶看不清"
+  }
+ ],
+ "unverified": [
+  "聽感：a1_c001_05「青蛙燈」、a0_c004_01、a8_c001_01 在混音中是否聽得清；蓋章聲的起音",
+  "實際投影：灰階、對比、操偶線 ΔL*、a6_c007 主燈亮度",
+  "學校筆電：效能、停格長格是否超過 100 ms、待機 30 分＋演出 40 分的耐熱測試",
+  "Windows 實機 Electron 啟動與 SmartScreen",
+  "備援影片內容（仍在產生）",
+  "GitHub Pages 實際線上載入（只比對了 gh-pages 分支的檔案內容）",
+  "壓縮 2 級的 a8_c001 短版畫面（驗收包只拍 0 級）"
+ ],
+ "report": "我是 G6 修正第 1 輪後的抽查改壞代理。結論：沒有嚴重問題；這一輪改壞或新出現的一般問題有 6 項。\n\n完整報告在 /Users/boming/Documents/AI tool/反毒小劇場/review/G6/qa/r2_regress.md，證據在 /Users/boming/Documents/AI tool/反毒小劇場/review/G6/qa/r2_regress/（包括 indep_flash_r2.py、flash_a0…a8.json、engine_test_r2regress.log、改動 cue 的接觸表）。\n\n我自己查過的項目：\n- **GitHub Pages**：gh-pages 的 show/ 143 個檔和 app/dist 逐檔相同（比 blob 雜湊），teacher/ 42 個檔和本機相同；本機分支與 origin/gh-pages 一致。\n- **交付包**：交付/browser 與 Electron 版的 dist 和 app/dist 都 0 差異；沒有比建置還新的原始碼。\n- **教師資料**：`node tools/teacher_docs.mjs --check` 結果一致；只差備援影片還沒產生。\n- **引擎測試**：自己重跑 138／138。驗收包裡的 137／138 是計時型測試在高負載下失敗。\n- **光敏與硬切**：自己從九段 playback.mp4 重算。超過 1.2 倍的亮度變化都在連續漸暗、漸亮裡，沒有單格硬切；16×9 每秒 ≤3，紅色 0。32×18 簡化法在 a1、a4 各有一格算出 4，和第 1 輪同位置，是量法不同，不是這一輪造成的。\n- **兒童安全界線 11 條**：逐條確認沒有被改壞（a5 線只連腕、肘、膝；a8 已康復、沒有線；a2_c013 的手是遞盒子的手，G5 就有）。\n- **固定需求**：八題順序、兩端署名卡、35:45 都正確。\n\n一般問題，依重要性排列：\n1. a8_c001_01 對白高出背景由 11.7 降到 9.2 LU，原因是 music_bows +2.5 dB。修法：在這句的時段把音樂壓低 3 dB。\n2. 交付/使用說明_初步完成說明.md 還是 10:10 的舊版：寫「134 項」「還沒重驗」，段長也不對。修法：換成新的啟動說明，並附上教師 PDF。\n3. 備援影片還沒產生，教師資料仍寫「暫定」。影片產完後要重跑教師資料。\n4. a5_c005 開頭只拍阿樂叔叔，字幕卻是畫面外喊「陳伯伯——！」，孩子可能認錯人。\n5. 換景預先準備在停格時最長有 100.0 ms 的一格，學校筆電上可能更長。\n6. 紀錄小瑕疵：驗收包寫 137／138；gh-pages 的 commit 訊息寫 2bd5a3f，內容其實是最新建置；線上教師網頁沒有字型檔，會 404。\n\n帶問題放行回查共 49 項：resolved 14、partial 11、not 8、未驗證 16。not 的項目都是放行後沒有再改的細節，多數有主線裁定接受，沒有一項因這一輪修正而變差。\n\n分數：技術 QA 4／4／4／4；校長／教育專業第 3 項 4、第 4 項 3（交付說明過期、備援影片未產生）；兒童劇場導演第 3、5 項 4。聽感、實際投影、學校硬體都標未驗證。"
+}

@@ -255,6 +255,8 @@ def audio_analysis(out: Path, tl: dict):
         "freeze_holds": holds,
         "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
         "ducking_constants": dk,
+        # cue 的 musicDuck（台詞時的配樂避讓增益，G6 修正第 2 輪；沒寫的 cue 用 DUCK_LEVEL）：混音照它算，這裡列出來給驗收對照
+        "music_duck_by_cue": {c["id"]: c["musicDuck"] for c in tl["cues"] if c.get("musicDuck") is not None},
         "events": elog,
     }
     (adir / "loudness.json").write_text(json.dumps(res, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -767,6 +769,10 @@ def index(out: Path):
           f"- 各句對白：配音檔響度差 {fmt(loud.get('line_vo_file_I_spread_LU'), 2)} LU、混音中響度差 {fmt(loud.get('line_mix_I_spread_LU'), 2)} LU。",
           f"- 瞬間響度最大 {fmt(loud.get('momentary_max_LUFS'))} LUFS；1 秒內最大上升 {fmt(loud.get('momentary_max_rise_within_1s_LU'))} LU；100 ms 最大上升 {fmt(loud.get('momentary_max_rise_per_100ms_LU'))} LU。",
           f"- 教師停格 3 秒後配樂 ≤ −35 LUFS：{sum(1 for h in loud.get('freeze_holds', []) if h.get('pass_le_-35'))}／{len(loud.get('freeze_holds', []))} 段通過。"]
+    md = loud.get("music_duck_by_cue") or {}
+    if md:
+        dkc = loud.get("ducking_constants") or {}
+        L.append(f"- 對白避讓：一般 cue 說話時配樂 ×{dkc.get('DUCK_LEVEL', '—')}（DUCK_LEVEL）；本段另設 musicDuck 的 cue：" + "、".join(f"{k} ×{v}" for k, v in md.items()) + "（引擎與離線混音同規則）。")
     ms = loud.get("music_sfx_only") or {}
     if ms:
         g4r = ms.get("g4_reference") or {}

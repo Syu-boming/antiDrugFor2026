@@ -198,7 +198,7 @@ ${rows.map((r) => `<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).j
 <div class="st">${bv.label}<small>${bv.step}</small></div><div class="ar">▶</div>
 <div class="st">紙本題卡＋講稿<small>老師講故事，八題照常</small></div>
 </div>
-<p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\\index.html</code>，在網址列最後加上 <code>?cues=show</code> 按 Enter，再按「準備播放」（只有舞台，用簡報筆操作）。要雙畫面：開 <code>browser\\console.html?cues=show</code>，按「開啟舞台視窗」，把舞台視窗拖到投影畫面，在舞台上按一次「準備播放」。不需要網路，也不用安裝（建議彩排時先開好並加入書籤）。</p>
+<p><b>瀏覽器版怎麼開</b>：用 Chrome 或 Edge 開啟 <code>browser\\index.html</code>（不用加參數，預設就是全劇），按「準備播放」，用簡報筆操作。要雙畫面：開 <code>browser\\console.html</code>，按「開啟舞台視窗」，把舞台拖到投影畫面，在舞台上按一次「準備播放」。不需要網路、不用安裝。</p>
 <p><b>${bv.ready ? '備援影片怎麼播' : bv.label}</b>：${md2html(bv.short)}</p>
 <p class="small">代理老師也能照「一頁操作卡」與本卡完成演出。正解依序 ${quizTable(ctx).map((q) => q.answer).join('、')}；看 ${quizTable(ctx).map((q) => q.zone).join('、')} 區。完全離線，不用攝影機與麥克風。</p>
 `;

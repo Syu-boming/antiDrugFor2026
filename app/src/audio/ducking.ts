@@ -23,13 +23,17 @@ export const HOLD_TC = 0.6;
 
 export interface DuckStep { at: number; value: number; tc: number }
 
-/** 依台詞區間（AudioContext 時間）排出 setTargetAtTime 步驟 */
-export function duckingPlan(intervals: [number, number][], now = 0): DuckStep[] {
+/**
+ * 依台詞區間（AudioContext 時間）排出 setTargetAtTime 步驟。
+ * level＝說話時的避讓增益：cue 的 musicDuck（G6 修正第 2 輪；只有少數配樂較大聲的 cue 會寫），省略時用 DUCK_LEVEL。
+ * 離線混音 tools/g4_review_pack.py 的 duck_plan 用同一條規則（level＝cue 的 musicDuck）。
+ */
+export function duckingPlan(intervals: [number, number][], now = 0, level: number = DUCK_LEVEL): DuckStep[] {
   const sorted = [...intervals].sort((a, b) => a[0] - b[0]);
   const out: DuckStep[] = [];
   for (let i = 0; i < sorted.length; i++) {
     const [s, e] = sorted[i];
-    out.push({ at: Math.max(now, s - DUCK_LEAD), value: DUCK_LEVEL, tc: DUCK_TC_DOWN });
+    out.push({ at: Math.max(now, s - DUCK_LEAD), value: level, tc: DUCK_TC_DOWN });
     const next = sorted[i + 1]?.[0];
     if (next === undefined || next - e > DUCK_BRIDGE) out.push({ at: Math.max(now, e + DUCK_RELEASE), value: 1, tc: DUCK_TC_UP });
   }

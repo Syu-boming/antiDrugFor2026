@@ -55,6 +55,8 @@ export function packTimelineCues(tls, MUSIC_LEVEL) {
   return tls.map((t) => ({
     id: t.cue.id, kind: t.cue.kind, title: t.cue.title, duration: r3(t.duration), autoAdvance: !!t.cue.autoAdvance, set: t.set, enterFade: t.enterFade,
     audioId: t.cue.audioId ?? null, musicLoop: t.cue.musicLoop ?? true, musicLevel: t.cue.musicLevel ?? MUSIC_LEVEL[t.cue.kind] ?? 0.6,
+    // musicDuck（台詞時的配樂避讓增益，G6 修正第 2 輪）只在 cue 有寫時才列：沒寫的 cue 時間軸與舊包逐字相同，離線混音照 DUCK_LEVEL
+    ...(t.cue.musicDuck !== undefined ? { musicDuck: t.cue.musicDuck } : {}),
     compression: t.cue.compression, lamp: t.cue.lamp ?? null, quiz: t.quiz ?? null,
     lines: t.lines.map((l) => ({ id: l.line.id, speaker: l.line.speaker, text: l.line.text, audioId: l.audioId, start: r3(l.start), end: r3(l.end), duration: r3(l.duration), placeholder: l.placeholder, pages: l.pages.map((p) => ({ start: r3(p.start), end: r3(p.end), rows: p.rows })) })),
     sfx: t.sfx.map((s) => ({ ...s, at: r3(s.at) })),

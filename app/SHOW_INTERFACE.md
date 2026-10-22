@@ -57,6 +57,7 @@ cd .. && caffeinate -i node tools/act_review_pack.mjs --acts a1      # 本段驗
 | `setFade` | 進入這個 cue 時從暗漸亮的秒數（≥0.6）。**跟流程上前一個 cue 的景不同時自動套用 0.8 秒**，不用寫；景相同但想從暗開始（例如時間跳躍）才寫。 |
 | `level1`／`level2` | 壓縮 1／2 級時的替代版本：`{ lines: [只留的台詞編號], animation: [整組替換], minDuration, voStart, tail }`。1 級另外自動略過 `lines[].skippableWhenBehind: true` 的句子；2 級套用於 `compression: 2` 的 cue（底稿已依劇本寫好 a6_c008、a7_c001 的 `level2.lines`）。略過的句子在時間軸上收成 0 秒，錨在它上面的動作照樣解析。 |
 | `checkpoint.escalate` | `{ behindSec, level }`：查核點落後多少秒建議啟用幾級（底稿：Q3 a2_c011 90 秒→1 級、Q6 a4_c011 120 秒→1 級、Q8 a6_c005 150 秒→2 級；時長估算_v03.md 第 5 節）。 |
+| `musicDuck` | （G6 修正第 2 輪，選填）這個 cue 台詞時配樂避讓到多少（0–1，乘在 `musicLevel` 上）；省略＝`ducking.ts` 的 `DUCK_LEVEL` 0.56。只改壓低的值，壓低與回升的時間不變；引擎（`mixer.scheduleDucking`）與離線混音（`tools/g4_review_pack.py` 的 `duck_plan`，驗收包與備援影片共用）同規則，engine-test 第二、六段有測。目前只有 a8_c001 謝幕寫 0.4（謝幕曲 `musicLevel` 1.07，讓最後一句對白高出背景 ≥11.5 LU）。 |
 | `storyboard` | 動態分鏡底稿（引擎不讀）。 |
 | `segment` | 合併時填入，作者不用寫。 |
 | 名冊 `fallback` | `adult`／`child`：rig 找不到時用哪種程式佔位紙偶。 |

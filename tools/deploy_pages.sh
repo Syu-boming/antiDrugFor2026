@@ -59,7 +59,8 @@ else
 
 Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
 Claude-Session: https://claude.ai/code/session_013HpBRZnxMJ6dMY1xBFwjTq"
-  COMMIT=$(git -c user.name=許博明 -c user.email=ulycessjp@gmail.com commit-tree "$TREE" ${PARENT:+-p $PARENT} -m "$MSG")
+  PARENT_ARGS=(); [[ -n "$PARENT" ]] && PARENT_ARGS=(-p "$PARENT")
+  COMMIT=$(git -c user.name=許博明 -c user.email=ulycessjp@gmail.com commit-tree "$TREE" "${PARENT_ARGS[@]}" -m "$MSG")
   git update-ref refs/heads/gh-pages "$COMMIT"
   echo "[pages] gh-pages → ${COMMIT:0:7}（${SIZE_MB} MB）"
 fi

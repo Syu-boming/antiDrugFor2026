@@ -225,6 +225,11 @@ export interface Cue {
   music?: MusicEvent[];
   /** 配樂基準音量（0–1）；省略時依 cue 種類（劇情 0.8、題卡 0.06、署名卡 0） */
   musicLevel?: number;
+  /**
+   * 這個 cue 台詞時的配樂避讓增益（0–1，乘在基準音量上）；省略時用 app/src/audio/ducking.ts 的 DUCK_LEVEL（0.56，約 −5 dB）。
+   * 只給配樂較大聲、對白容易被蓋住的 cue 用（G6 修正第 2 輪：a8_c001 謝幕 0.4）。離線混音 tools/g4_review_pack.py 同規則。
+   */
+  musicDuck?: number;
   /** audioId 的配樂是否循環（預設 true） */
   musicLoop?: boolean;
   /** 落後 6 分鐘時的短版說明（壓縮級別 2 用） */

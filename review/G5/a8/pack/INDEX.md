@@ -1,8 +1,8 @@
 # a8 驗收包（閉幕）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T11:09Z）；段落檔 `app/cues/show/a8.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T13:55Z）；段落檔 `app/cues/show/a8.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
-- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `3fc48e344e24120a672608aabd1b8879298c8b31`；app/dist 合併後這一段 `7316245cf5b2e1fd7745f567e700d7847016cd80`；建置用的是目前段落檔：是。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `ba2c131908ab617b87e8df36d9e4986f2dc52da4`；app/dist 合併後這一段 `92823f56dece37db8c42ce27dd5498151a23ea42`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -46,15 +46,16 @@
 
 ## 聲音
 
-- 整段：-18.2 LUFS、真峰值 -2.0 dBTP、取樣峰值 -1.97 dBFS、削波 0 個。
+- 整段：-18.3 LUFS、真峰值 -2.1 dBTP、取樣峰值 -2.16 dBFS、削波 0 個。
 - 各句對白：配音檔響度差 0.00 LU、混音中響度差 0.00 LU。
-- 瞬間響度最大 -12.3 LUFS；1 秒內最大上升 54.0 LU；100 ms 最大上升 29.0 LU。
+- 瞬間響度最大 -12.4 LUFS；1 秒內最大上升 54.0 LU；100 ms 最大上升 29.0 LU。
 - 教師停格 3 秒後配樂 ≤ −35 LUFS：1／1 段通過。
+- 對白避讓：一般 cue 說話時配樂 ×0.56（DUCK_LEVEL）；本段另設 musicDuck 的 cue：a8_c001 ×0.4（引擎與離線混音同規則）。
 - 只有配樂與音效（不含配音）：瞬間響度最大 -15.7 LUFS（a8_c002 4.4 秒）；100 ms 最大上升 29.0 LU（a8_c002 3.4 秒）；1 秒內最大上升 54.0 LU；取樣峰值 -7.04 dBFS（a8_c002 4.11 秒）、真峰值 -7.0 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
 
 | 台詞 | 說話者 | 配音檔 LUFS | 混音中 LUFS | 對白−背景 LU |
 |---|---|---|---|---|
-| a8_c001_01 | 折折 | -18.0 | -14.5 | 9.2 |
+| a8_c001_01 | 折折 | -18.0 | -14.7 | 12.1 |
 
 ## 字幕與語音時間差（字幕頁起點 − 語音起點，範圍 −0.8～+0.1 秒）
 
@@ -80,5 +81,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a8_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 3, "disposed": 2, "lastBuildMs": 10, "liveSetGroups": 1, "lastSwapMs": 9.9, "preparedHits": 0, "prepared": []}。
+- 換景漸暗預捲：{"a8_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 3, "disposed": 2, "lastBuildMs": 14, "liveSetGroups": 1, "lastSwapMs": 14.3, "preparedHits": 0, "prepared": []}。
 - 逐格擷取時的頁面錯誤 0 則。

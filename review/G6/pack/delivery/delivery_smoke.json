@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22T12:03:46.651Z",
+ "generated": "2026-10-22T14:03:37.479Z",
  "ref": "app/dist",
  "expectCues": 71,
  "expectedAnswers": [
@@ -20,7 +20,7 @@
    "checks": {
     "identical_to_build": {
      "ok": true,
-     "detail": "與 app/dist 不同 0、缺少 0、多出 0（143 個檔）"
+     "detail": "與 app/dist 不同 0、缺少 0、多出 0（144 個檔）"
     },
     "loads_show_without_params": {
      "ok": true,
@@ -48,8 +48,8 @@
     }
    },
    "diff": {
-    "files_ref": 143,
-    "files_target": 143,
+    "files_ref": 144,
+    "files_target": 144,
     "different": [],
     "missing": [],
     "extra": [],
@@ -250,7 +250,7 @@
    "checks": {
     "identical_to_build": {
      "ok": true,
-     "detail": "與 app/dist 不同 0、缺少 0、多出 0（143 個檔）"
+     "detail": "與 app/dist 不同 0、缺少 0、多出 0（144 個檔）"
     },
     "electron_shell_matches_source": {
      "ok": true,
@@ -282,8 +282,8 @@
     }
    },
    "diff": {
-    "files_ref": 143,
-    "files_target": 143,
+    "files_ref": 144,
+    "files_target": 144,
     "different": [],
     "missing": [],
     "extra": [],
@@ -498,5 +498,5 @@
   }
  ],
  "pass": true,
- "seconds": 55
+ "seconds": 56
 }
