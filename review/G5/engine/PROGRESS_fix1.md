@@ -1,0 +1,11 @@
+- 22:13 開工（接續）：git diff 顯示只有 tools/capture.mjs 的 probe 記錄加了 dim（任務 5 一部分）；其餘任務未開始。下一步：讀程式碼，先做任務 1 台口燈。
+- 22:23 私人建置 review/G5/engine/scripts/build_private.mjs、G4 逐像素比對 g4hash.mjs；基準（修改前）在 scratchpad base_dist、g4_base.json（140 格）、show_g4_base.json。下一步：任務 4 點頭（小）→ 任務 1 台口燈。
+- 22:24 任務 4 puppet.nod 完成（perform.ts、world.ts ACTOR_ANIMS、validate.ts KNOWN_ANIMS、timeline 預設長度＝count×1 秒），tsc 通過。下一步：任務 1 台口燈。
+- 22:34 任務 1 台口燈完成：app/src/stage/lamps.ts（木條上 8 盞，quiz 鏡位 y≈13–90 px、寬 60%；wide 看不到）、stage.ts 接上（全劇才啟用）、main.ts debug.stageLamps()、engine-test 第四段＋第八段 5 項（隔離跑過）。G4 逐像素 0 格不同。下一步：任務 3 頭像。
+- 22:36 任務 3 頭像完成：assets/final/ui/ui-speaker_{nurse,guard,teacher,pinan,zhezhe,inviter}_v01.png（review/G5/engine/scripts/make_speaker_icons_fix1.py；檢查圖 review/G5/engine/art/speaker_icons_fix1.png）。下一步：任務 2 操偶線（先量 a4_c008、a4_c013）。
+- 22:46 任務 2 程式完成第一版：strings.ts（深灰邊 2 px 著色器、onBeforeShadow 排除、enableNoStringShadow 景片材質）、perform.ts（stringMinWidth 依深度 8/7 px）、stage.ts（G4_CUE_IDS 不套用、keyNoStrings 只算影子平行光、probe widthTruePx）、capture_probe.py 用實際紙帶寬。G4 模式 140 格 0 不同；全劇的 G4 cue a2_c002 每格 1 px ±1（浮點）。下一步：a4 量測。
+- 22:56 任務 2 完成：a4_c001/c008/c011/c013、a2_c001/c012 量測（scratchpad probe_after2）全部 t>0 的線 ΔL* ≥ 28、投影 ≥ 17.6、線寬 ≥ 7（中景 8）；天空與遠景的線影子消失。engine-test 第六段＋第八段加線寬、G4 線寬、puppet.nod 測項（隔離跑過）。下一步：任務 5 驗收包工具。
+- 22:59 任務 5 完成：act_review_pack.py（subtitle_sync_g5 −40 dB／0.05 s、music_sfx_only 分軌、INDEX 光敏通過判定、字幕偵測註明）、capture.mjs 記 dim／quiz、capture_probe 排除 dim>0.05 或題卡>0.5 的格。下一步：任務 6 短音效。
+- 23:03 任務 6 完成：sfx.py 新增 sfx_gust／sfx_phone_noanswer／sfx_truck_arrive／sfx_crowd_short（SFX_LEVEL、SFX 登記），build_all --only 原地覆寫，metrics.json 44 檔（其他不變、全部合規格），waveforms 重畫，review/G5/audio/ASSETS_rows_fix1.md，_placeholders.txt 清空。下一步：任務 7 文件、ASSETS 列（頭像）、最後 build＋engine-test。
+- 23:07 任務 7 SHOW_INTERFACE 第 13 節、ASSETS 列完成；私人建置 G4 逐像素 0 格不同；tsc 乾淨。下一步：npm run build＋engine-test。
+- 23:11 完成：npm run build 通過；engine-test 130／134（我的新增 9 項全過；4 項失敗都因別段：a0_c001 依主線裁定 2 改了 initialState／animation（測試允許清單沒更新）、a2_c001 的景改成 a2_shop（換景三項測試寫死 workshop_g4））。紀錄 review/G5/engine/engine_test_fix1.log。

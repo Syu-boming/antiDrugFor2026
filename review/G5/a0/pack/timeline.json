@@ -41,7 +41,7 @@
    "title": "開幕",
    "duration": 13.66,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "workshop_a0",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -167,27 +167,6 @@
      "params": {}
     },
     {
-     "name": "puppet.popup",
-     "target": "ale",
-     "start": 4.15,
-     "end": 5.15,
-     "params": {}
-    },
-    {
-     "name": "puppet.popup",
-     "target": "xiaoyu",
-     "start": 5.05,
-     "end": 6.05,
-     "params": {}
-    },
-    {
-     "name": "puppet.popup",
-     "target": "xiaoqing",
-     "start": 5.2,
-     "end": 6.2,
-     "params": {}
-    },
-    {
      "name": "camera.move",
      "target": null,
      "start": 7,
@@ -204,10 +183,10 @@
    "id": "a0_c002",
    "kind": "scene",
    "title": "折折登場",
-   "duration": 20.65,
+   "duration": 22.3,
    "autoAdvance": false,
    "set": "workshop_a0",
-   "enterFade": 0.8,
+   "enterFade": 0,
    "audioId": "music_zhezhe",
    "musicLoop": true,
    "musicLevel": 0.8,
@@ -220,14 +199,14 @@
      "speaker": "折折",
      "text": "喵！大家好，我是折折。",
      "audioId": "vo_a0_c002_01",
-     "start": 4.55,
-     "end": 7.08,
+     "start": 6.6,
+     "end": 9.13,
      "duration": 2.53,
      "placeholder": false,
      "pages": [
       {
-       "start": 4.55,
-       "end": 7.08,
+       "start": 6.6,
+       "end": 9.13,
        "rows": [
         "喵！大家好，我是折折。"
        ]
@@ -239,14 +218,14 @@
      "speaker": "折折",
      "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。",
      "audioId": "vo_a0_c002_02",
-     "start": 7.53,
-     "end": 12.63,
+     "start": 9.58,
+     "end": 14.68,
      "duration": 5.1,
      "placeholder": false,
      "pages": [
       {
-       "start": 7.53,
-       "end": 12.63,
+       "start": 9.58,
+       "end": 14.68,
        "rows": [
         "我是燈籠紙摺成的貓，",
         "是阿樂叔叔把我摺出來的喔。"
@@ -259,14 +238,14 @@
      "speaker": "阿樂叔叔",
      "text": "慢慢摺，燈才會亮。",
      "audioId": "vo_a0_c002_03",
-     "start": 15.63,
-     "end": 18.25,
+     "start": 17.68,
+     "end": 20.3,
      "duration": 2.62,
      "placeholder": false,
      "pages": [
       {
-       "start": 15.63,
-       "end": 18.25,
+       "start": 17.68,
+       "end": 20.3,
        "rows": [
         "慢慢摺，燈才會亮。"
        ]
@@ -277,29 +256,29 @@
    "sfx": [
     {
      "id": "sfx_fold",
-     "at": 1.554,
+     "at": 1.957,
      "gain": 0.7
     },
     {
      "id": "sfx_fold",
-     "at": 2.166,
+     "at": 3.059,
      "gain": 0.7
     },
     {
      "id": "sfx_fold",
-     "at": 2.778,
+     "at": 4.16,
      "gain": 0.7
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 3.95,
+     "at": 6.4,
      "gain": 0.35
     }
    ],
    "music": [
     {
      "id": "music_town",
-     "at": 12.03,
+     "at": 14.08,
      "loop": true,
      "fade": 2.5,
      "gain": 1,
@@ -313,14 +292,15 @@
      "start": -1.2,
      "end": -0.9,
      "params": {
-      "form": "sheet"
+      "form": "sheet",
+      "scale": 1.4
      }
     },
     {
      "name": "zhezhe.fold",
      "target": "zhezhe",
      "start": 1.05,
-     "end": 4.05,
+     "end": 6.45,
      "params": {
       "form": "idle"
      }
@@ -328,8 +308,8 @@
     {
      "name": "zhezhe.twitch",
      "target": "zhezhe",
-     "start": 3.96,
-     "end": 4.96,
+     "start": 6.45,
+     "end": 7.45,
      "params": {
       "side": "both"
      }
@@ -337,8 +317,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 4.45,
-     "end": 5.45,
+     "start": 6.5,
+     "end": 7.5,
      "params": {
       "emotion": "happy"
      }
@@ -346,8 +326,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 5.5,
-     "end": 6.5,
+     "start": 7.55,
+     "end": 8.55,
      "params": {
       "emotion": "neutral"
      }
@@ -355,8 +335,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 6.3,
-     "end": 7.3,
+     "start": 8.35,
+     "end": 9.35,
      "params": {
       "emotion": "proud"
      }
@@ -364,8 +344,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 7.38,
-     "end": 8.38,
+     "start": 9.43,
+     "end": 10.43,
      "params": {
       "emotion": "neutral"
      }
@@ -373,8 +353,8 @@
     {
      "name": "zhezhe.look",
      "target": "zhezhe",
-     "start": 9.53,
-     "end": 10.13,
+     "start": 11.58,
+     "end": 12.18,
      "params": {
       "yaw": -0.42
      }
@@ -382,8 +362,8 @@
     {
      "name": "zhezhe.twitch",
      "target": "zhezhe",
-     "start": 9.73,
-     "end": 10.73,
+     "start": 11.78,
+     "end": 12.78,
      "params": {
       "side": "l"
      }
@@ -391,42 +371,26 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 10.73,
-     "end": 11.73,
+     "start": 12.78,
+     "end": 13.78,
      "params": {
       "emotion": "happy"
      }
     },
     {
-     "name": "camera.move",
+     "name": "camera.cut",
      "target": null,
-     "start": 13.18,
-     "end": 15.98,
+     "start": 15.58,
+     "end": 15.58,
      "params": {
       "to": "a0_memory"
      }
     },
     {
-     "name": "puppet.popup",
-     "target": "ale",
-     "start": 13.88,
-     "end": 14.88,
-     "params": {}
-    },
-    {
-     "name": "puppet.chest",
-     "target": "ale",
-     "start": 14.68,
-     "end": 15.38,
-     "params": {
-      "to": 1
-     }
-    },
-    {
      "name": "zhezhe.look",
      "target": "zhezhe",
-     "start": 15.03,
-     "end": 15.53,
+     "start": 17.08,
+     "end": 17.58,
      "params": {
       "yaw": -0.5
      }
@@ -434,8 +398,8 @@
     {
      "name": "puppet.face",
      "target": "ale",
-     "start": 15.18,
-     "end": 15.18,
+     "start": 17.23,
+     "end": 17.23,
      "params": {
       "emotion": "greet"
      }
@@ -443,8 +407,8 @@
     {
      "name": "puppet.tilt",
      "target": "ale",
-     "start": 15.23,
-     "end": 15.93,
+     "start": 17.28,
+     "end": 17.98,
      "params": {
       "to": 0.05
      }
@@ -452,8 +416,17 @@
     {
      "name": "puppet.chest",
      "target": "ale",
-     "start": 15.48,
-     "end": 16.08,
+     "start": 17.78,
+     "end": 18.58,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "target": "ale",
+     "start": 18.88,
+     "end": 19.68,
      "params": {
       "to": 0.55
      }
@@ -461,8 +434,8 @@
     {
      "name": "puppet.chest",
      "target": "ale",
-     "start": 16.13,
-     "end": 16.73,
+     "start": 19.98,
+     "end": 20.78,
      "params": {
       "to": 1
      }
@@ -470,8 +443,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 18.55,
-     "end": 19.55,
+     "start": 20.6,
+     "end": 21.6,
      "params": {
       "emotion": "proud"
      }
@@ -479,8 +452,8 @@
     {
      "name": "puppet.face",
      "target": "ale",
-     "start": 18.85,
-     "end": 18.85,
+     "start": 20.9,
+     "end": 20.9,
      "params": {
       "emotion": "smile"
      }
@@ -493,7 +466,7 @@
    "id": "a0_c003",
    "kind": "scene",
    "title": "主燈骨架不見了",
-   "duration": 24.54,
+   "duration": 23.94,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0.8,
@@ -586,12 +559,12 @@
    "sfx": [
     {
      "id": "sfx_footsteps",
-     "at": 10.4,
-     "gain": 0.35
+     "at": 11,
+     "gain": 0.3
     },
     {
      "id": "sfx_footsteps",
-     "at": 12.2,
+     "at": 12.1,
      "gain": 0.35
     }
    ],
@@ -660,34 +633,12 @@
      }
     },
     {
-     "name": "puppet.enter",
-     "target": "ale",
-     "start": 7.38,
-     "end": 12.98,
-     "params": {
-      "from": -4
-     }
-    },
-    {
      "name": "zhezhe.look",
      "target": "zhezhe",
      "start": 7.48,
      "end": 8.08,
      "params": {
-      "yaw": -0.25
-     }
-    },
-    {
-     "name": "zhezhe.walkTo",
-     "target": "zhezhe",
-     "start": 7.78,
-     "end": 8.98,
-     "params": {
-      "pos": [
-       0.62,
-       1.4,
-       -0.6
-      ]
+      "yaw": -0.45
      }
     },
     {
@@ -700,6 +651,15 @@
      }
     },
     {
+     "name": "puppet.move",
+     "target": "ale",
+     "start": 11.2,
+     "end": 13.8,
+     "params": {
+      "dx": 2.58
+     }
+    },
+    {
      "name": "zhezhe.look",
      "target": "zhezhe",
      "start": 11.5,
@@ -709,10 +669,10 @@
      }
     },
     {
-     "name": "camera.move",
+     "name": "camera.cut",
      "target": null,
-     "start": 12.6,
-     "end": 15.2,
+     "start": 12.5,
+     "end": 12.5,
      "params": {
       "to": "a0_ale"
      }
@@ -733,6 +693,33 @@
      "end": 13.2,
      "params": {
       "emotion": "confused"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 13.45,
+     "end": 13.45,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 13.55,
+     "end": 14.25,
+     "params": {
+      "to": 0.09
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "target": "ale",
+     "start": 13.55,
+     "end": 14.35,
+     "params": {
+      "to": 0.7
      }
     },
     {
@@ -806,7 +793,7 @@
    "id": "a0_c004",
    "kind": "scene",
    "title": "小晴和小宇",
-   "duration": 29.51,
+   "duration": 28.61,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0,
@@ -860,14 +847,14 @@
      "speaker": "折折",
      "text": "交給我！我摺成放大鏡，馬上找到！",
      "audioId": "vo_a0_c004_03",
-     "start": 12.11,
-     "end": 15.98,
+     "start": 11.71,
+     "end": 15.58,
      "duration": 3.87,
      "placeholder": false,
      "pages": [
       {
-       "start": 12.11,
-       "end": 15.98,
+       "start": 11.71,
+       "end": 15.58,
        "rows": [
         "交給我！我摺成放大鏡，馬上找到！"
        ]
@@ -879,14 +866,14 @@
      "speaker": "小宇",
      "text": "呃……謝謝，我剛好缺一頂帽子。",
      "audioId": "vo_a0_c004_04",
-     "start": 16.43,
-     "end": 19.77,
+     "start": 16.03,
+     "end": 19.37,
      "duration": 3.34,
      "placeholder": false,
      "pages": [
       {
-       "start": 16.43,
-       "end": 19.77,
+       "start": 16.03,
+       "end": 19.37,
        "rows": [
         "呃……謝謝，我剛好缺一頂帽子。"
        ]
@@ -898,14 +885,14 @@
      "speaker": "阿樂叔叔",
      "text": "你們先去上學。放學再來幫叔叔找，好不好？",
      "audioId": "vo_a0_c004_05",
-     "start": 20.22,
-     "end": 25.91,
+     "start": 19.82,
+     "end": 25.51,
      "duration": 5.69,
      "placeholder": false,
      "pages": [
       {
-       "start": 20.22,
-       "end": 25.91,
+       "start": 19.82,
+       "end": 25.51,
        "rows": [
         "你們先去上學。",
         "放學再來幫叔叔找，好不好？"
@@ -918,14 +905,14 @@
      "speaker": "小晴、小宇",
      "text": "好！",
      "audioId": "vo_a0_c004_06",
-     "start": 26.36,
-     "end": 27.51,
+     "start": 25.96,
+     "end": 27.11,
      "duration": 1.15,
      "placeholder": false,
      "pages": [
       {
-       "start": 26.36,
-       "end": 27.51,
+       "start": 25.96,
+       "end": 27.11,
        "rows": [
         "好！"
        ]
@@ -946,19 +933,19 @@
     },
     {
      "id": "sfx_fold",
-     "at": 15.86,
+     "at": 15.46,
      "gain": 0.7
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 18.23,
+     "at": 17.83,
      "gain": 0.35
     }
    ],
    "music": [
     {
      "id": "music_zhezhe",
-     "at": 11.81,
+     "at": 11.41,
      "loop": true,
      "fade": 0.9,
      "gain": 1,
@@ -966,7 +953,7 @@
     },
     {
      "id": "music_town",
-     "at": 19.62,
+     "at": 19.22,
      "loop": true,
      "fade": 1.6,
      "gain": 1,
@@ -975,21 +962,21 @@
    ],
    "anims": [
     {
-     "name": "puppet.enter",
+     "name": "puppet.move",
      "target": "xiaoyu",
      "start": 0.35,
-     "end": 2.95,
+     "end": 3.35,
      "params": {
-      "from": 5.4
+      "dx": -6.9
      }
     },
     {
-     "name": "puppet.enter",
+     "name": "puppet.move",
      "target": "xiaoqing",
-     "start": 1.45,
-     "end": 4.05,
+     "start": 1.75,
+     "end": 4.55,
      "params": {
-      "from": 5
+      "dx": -6
      }
     },
     {
@@ -1022,8 +1009,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoyu",
-     "start": 2.72,
-     "end": 2.96,
+     "start": 3.1,
+     "end": 3.34,
      "params": {
       "pose": "standwatch"
      }
@@ -1031,17 +1018,17 @@
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 3.82,
-     "end": 4.06,
+     "start": 4.6,
+     "end": 4.84,
      "params": {
       "pose": "stand"
      }
     },
     {
-     "name": "camera.move",
+     "name": "camera.cut",
      "target": null,
-     "start": 6.11,
-     "end": 8.51,
+     "start": 5.2,
+     "end": 5.2,
      "params": {
       "to": "a0_kids"
      }
@@ -1056,10 +1043,33 @@
      }
     },
     {
+     "name": "zhezhe.hopTo",
+     "target": "zhezhe",
+     "start": 10.81,
+     "end": 11.51,
+     "params": {
+      "pos": [
+       1,
+       1.4,
+       -0.6
+      ],
+      "height": 0.25
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 11.21,
+     "end": 14.21,
+     "params": {
+      "to": "a0_hat"
+     }
+    },
+    {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 12.01,
-     "end": 13.01,
+     "start": 11.61,
+     "end": 12.61,
      "params": {
       "emotion": "proud"
      }
@@ -1067,8 +1077,8 @@
     {
      "name": "zhezhe.fold",
      "target": "zhezhe",
-     "start": 15.73,
-     "end": 17.03,
+     "start": 15.33,
+     "end": 16.63,
      "params": {
       "form": "hat",
       "fumble": true
@@ -1077,8 +1087,8 @@
     {
      "name": "puppet.tilt",
      "target": "xiaoyu",
-     "start": 16.73,
-     "end": 17.33,
+     "start": 16.33,
+     "end": 16.93,
      "params": {
       "to": 0.05
      }
@@ -1086,22 +1096,22 @@
     {
      "name": "zhezhe.hopTo",
      "target": "zhezhe",
-     "start": 17.23,
-     "end": 18.28,
+     "start": 16.83,
+     "end": 17.73,
      "params": {
       "pos": [
        1.62,
        1.99,
        0.47
       ],
-      "height": 0.55
+      "height": 0.45
      }
     },
     {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 17.43,
-     "end": 17.43,
+     "start": 17.03,
+     "end": 17.03,
      "params": {
       "emotion": "smile"
      }
@@ -1109,8 +1119,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoyu",
-     "start": 18.03,
-     "end": 18.03,
+     "start": 17.63,
+     "end": 17.63,
      "params": {
       "emotion": "smile"
      }
@@ -1118,8 +1128,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoyu",
-     "start": 18.23,
-     "end": 18.23,
+     "start": 17.83,
+     "end": 17.83,
      "params": {
       "emotion": "surprised"
      }
@@ -1127,8 +1137,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 18.33,
-     "end": 18.33,
+     "start": 17.93,
+     "end": 17.93,
      "params": {
       "emotion": "surprised"
      }
@@ -1136,8 +1146,8 @@
     {
      "name": "puppet.lean",
      "target": "ale",
-     "start": 20.42,
-     "end": 21.22,
+     "start": 20.02,
+     "end": 20.82,
      "params": {
       "to": -0.03
      }
@@ -1145,46 +1155,10 @@
     {
      "name": "puppet.lean",
      "target": "ale",
-     "start": 26.21,
-     "end": 27.01,
+     "start": 25.81,
+     "end": 26.61,
      "params": {
       "to": 0
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "xiaoyu",
-     "start": 26.31,
-     "end": 26.31,
-     "params": {
-      "emotion": "surprised"
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "xiaoqing",
-     "start": 26.31,
-     "end": 26.31,
-     "params": {
-      "emotion": "surprised"
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "xiaoyu",
-     "start": 27.56,
-     "end": 27.56,
-     "params": {
-      "emotion": "smile"
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "xiaoqing",
-     "start": 27.56,
-     "end": 27.56,
-     "params": {
-      "emotion": "smile"
      }
     }
    ],
@@ -1195,7 +1169,7 @@
    "id": "a0_c005",
    "kind": "scene",
    "title": "請大家一起找",
-   "duration": 22.74,
+   "duration": 22.04,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0,
@@ -1269,12 +1243,12 @@
    "sfx": [
     {
      "id": "sfx_paper_rustle",
-     "at": 1.7,
+     "at": 2.3,
      "gain": 0.3
     },
     {
      "id": "sfx_fold",
-     "at": 1.88,
+     "at": 2.43,
      "gain": 0.7
     },
     {
@@ -1300,15 +1274,40 @@
      }
     },
     {
+     "name": "fade.out",
+     "target": null,
+     "start": 0,
+     "end": 0.6,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 0.62,
+     "end": 0.62,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 0.64,
+     "end": 1.24,
+     "params": {}
+    },
+    {
      "name": "zhezhe.hopTo",
      "target": "zhezhe",
-     "start": 0.35,
-     "end": 1.7,
+     "start": 0.95,
+     "end": 2.3,
      "params": {
       "pos": [
-       0.35,
+       -7,
        0,
-       3.35
+       6
       ],
       "height": 1.1
      }
@@ -1316,8 +1315,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoyu",
-     "start": 1,
-     "end": 1.24,
+     "start": 1.3,
+     "end": 1.54,
      "params": {
       "pose": "walk_r"
      }
@@ -1325,27 +1324,27 @@
     {
      "name": "puppet.wave",
      "target": "ale",
-     "start": 1.1,
-     "end": 3.7,
+     "start": 1.35,
+     "end": 3.95,
      "params": {}
     },
     {
-     "name": "zhezhe.fold",
-     "target": "zhezhe",
-     "start": 1.75,
-     "end": 3.05,
-     "params": {
-      "form": "idle",
-      "scale": 1.3
-     }
-    },
-    {
-     "name": "puppet.exit",
+     "name": "puppet.move",
      "target": "xiaoyu",
      "start": 1.9,
      "end": 4.5,
      "params": {
-      "to": 9.2
+      "dx": 9.2
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 2.3,
+     "end": 3.6,
+     "params": {
+      "form": "idle",
+      "scale": 1.6
      }
     },
     {
@@ -1358,21 +1357,12 @@
      }
     },
     {
-     "name": "camera.move",
-     "target": null,
-     "start": 3,
-     "end": 6.6,
-     "params": {
-      "to": "a0_apron"
-     }
-    },
-    {
-     "name": "puppet.exit",
+     "name": "puppet.move",
      "target": "xiaoqing",
      "start": 3.35,
      "end": 5.75,
      "params": {
-      "to": 8.6
+      "dx": 8.6
      }
     },
     {
@@ -1383,6 +1373,33 @@
      "params": {
       "to": 0.6,
       "target": "zhezhe"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 4.6,
+     "end": 4.6,
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 4.7,
+     "end": 5.5,
+     "params": {
+      "to": 0.09
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "target": "ale",
+     "start": 5,
+     "end": 5.9,
+     "params": {
+      "to": 0.6
      }
     },
     {
@@ -1464,26 +1481,26 @@
    "duration": 13.66,
    "hold": 2,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "workshop_a0",
    "enterFade": 0
   },
   {
    "id": "a0_c002",
    "kind": "scene",
-   "preroll": 0.6,
-   "start": 18.26,
-   "duration": 20.65,
+   "preroll": 0,
+   "start": 17.66,
+   "duration": 22.3,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_a0",
-   "enterFade": 0.8
+   "enterFade": 0
   },
   {
    "id": "a0_c003",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 43.01,
-   "duration": 24.54,
+   "start": 44.06,
+   "duration": 23.94,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_a0",
@@ -1493,8 +1510,8 @@
    "id": "a0_c004",
    "kind": "scene",
    "preroll": 0,
-   "start": 71.05,
-   "duration": 29.51,
+   "start": 71.5,
+   "duration": 28.61,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_a0",
@@ -1504,15 +1521,15 @@
    "id": "a0_c005",
    "kind": "scene",
    "preroll": 0,
-   "start": 104.06,
-   "duration": 22.74,
+   "start": 103.61,
+   "duration": 22.04,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0
   }
  ],
- "totalPlaybackSec": 130.3,
+ "totalPlaybackSec": 129.15,
  "audio": {
   "vo_a0_c001_01": {
    "source": "audio/vo/vo_a0_c001_01_v04.wav",
@@ -2604,6 +2621,11 @@
    "duration": 40,
    "bus": "sfx"
   },
+  "sfx_crowd_short": {
+   "source": "audio/sfx/sfx_crowd_short_v01.wav",
+   "duration": 4,
+   "bus": "sfx"
+  },
   "sfx_curtain_close": {
    "source": "audio/sfx/sfx_curtain_close_v01.wav",
    "duration": 2.3,
@@ -2629,6 +2651,11 @@
    "duration": 40,
    "bus": "sfx"
   },
+  "sfx_gust": {
+   "source": "audio/sfx/sfx_gust_v01.wav",
+   "duration": 2.6,
+   "bus": "sfx"
+  },
   "sfx_lamp_on": {
    "source": "audio/sfx/sfx_lamp_on_v01.wav",
    "duration": 3.4,
@@ -2642,6 +2669,11 @@
   "sfx_phone_bed": {
    "source": "audio/sfx/sfx_phone_bed_v01.wav",
    "duration": 40,
+   "bus": "sfx"
+  },
+  "sfx_phone_noanswer": {
+   "source": "audio/sfx/sfx_phone_noanswer_v01.wav",
+   "duration": 2.6,
    "bus": "sfx"
   },
   "sfx_plane_whoosh": {
@@ -2672,6 +2704,11 @@
   "sfx_string_taut": {
    "source": "audio/sfx/sfx_string_taut_v01.wav",
    "duration": 0.75,
+   "bus": "sfx"
+  },
+  "sfx_truck_arrive": {
+   "source": "audio/sfx/sfx_truck_arrive_v01.wav",
+   "duration": 5,
    "bus": "sfx"
   },
   "sfx_watch_dial": {

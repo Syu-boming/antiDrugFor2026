@@ -1,0 +1,80 @@
+{
+ "xq_stand": {
+  "img": "chr-xiaoqing_master_v04",
+  "feet": [
+   282.0,
+   1471
+  ],
+  "top": 16,
+  "s": 0.001718213058419244
+ },
+ "xy_stand": {
+  "img": "chr-xiaoyu_master_v04",
+  "feet": [
+   282.5,
+   1426
+  ],
+  "top": 16,
+  "s": 0.0017163120567375886
+ },
+ "chen_shoutr": {
+  "img": "chr-chen_pose-shoutr_v01",
+  "feet": [
+   345.0,
+   1509
+  ],
+  "top": 17,
+  "s": 0.0023123324396782845,
+  "fist_body": [
+   -0.585,
+   1.397
+  ]
+ },
+ "chen_stand": {
+  "img": "chr-chen_master_v01",
+  "feet": [
+   307.0,
+   1502
+  ],
+  "top": 17,
+  "s": 0.0023232323232323234
+ },
+ "medic_a": {
+  "img": "chr-medic-a_stand_v01",
+  "feet": [
+   214.5,
+   1020
+  ],
+  "top": 17,
+  "s": 0.003389830508474576
+ },
+ "medic_b": {
+  "img": "chr-medic-b_stand_v01",
+  "feet": [
+   181.0,
+   943
+  ],
+  "top": 17,
+  "s": 0.00347732181425486
+ },
+ "xq_sitb": {
+  "img": "chr-xiaoqing_pose-sitb_v01",
+  "feet": [
+   200,
+   1399.4
+  ],
+  "headTop": -12.0,
+  "s": 0.0017713536684734474,
+  "seat_row": 880
+ },
+ "xy_sitb": {
+  "img": "chr-xiaoyu_pose-sitb_v01",
+  "feet": [
+   235,
+   1455.7
+  ],
+  "headTop": 59.8,
+  "s": 0.0017336485421591804,
+  "seat_row": 925
+ }
+}

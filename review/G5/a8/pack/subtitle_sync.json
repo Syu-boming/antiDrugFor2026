@@ -1,0 +1,25 @@
+{
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a8_c001",
+   "line": "a8_c001_01",
+   "page": 1,
+   "text": "我們是小燈鎮的大家，下次見！",
+   "subtitle_start_s": 3.8,
+   "voice_start_s": 3.924,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a8_c001_01_v04.wav"
+  }
+ ],
+ "all_pass": true
+}

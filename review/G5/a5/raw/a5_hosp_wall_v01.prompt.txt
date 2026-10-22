@@ -1,0 +1,21 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a flat stage BACKDROP (the far wall of a quiet hospital corridor at early evening) for a children's paper-cut puppet theater. LANDSCAPE orientation, request the wide 3:2 size (1536x1024). Opaque image (no transparency needed).
+
+TWO reference images are attached. The FIRST is the art-style reference ("3D pop-up picture book made of thick matte cardstock": paper fiber texture, layered cut-paper shapes, soft warm colors). The SECOND is an approved interior backdrop of the same show (match its paper texture, line weight and level of detail).
+
+CONTENT (very important):
+- A straight-on, frontal ELEVATION view of one long corridor wall (like a theater flat seen face-on): NO perspective vanishing lines, NO floor, NO ceiling, NO people, NO animals. The wall fills the whole picture; along the very bottom edge runs a simple wooden baseboard and just above it a horizontal light-wood handrail along the whole wall.
+- Wall: soft warm cream / pale butter-yellow plaster in two tones (lower half slightly darker warm beige, upper half light cream), gentle.
+- On the LEFT THIRD: two large tall windows with simple light-wood frames showing a calm early-evening sky (soft apricot and lavender gradient, one or two tiny cut-paper clouds, a far row of low rooftops as simple silhouettes, no lit windows, no stars, no moon).
+- In the CENTER: plain wall with one small framed picture of a simple cut-paper landscape (green hills and a round sun shape, no text), hung at about 60% of the picture height.
+- On the RIGHT THIRD: a closed light-wood clinic door with a narrow frosted vertical glass strip and a simple round door handle; next to it a small blank cream sign plate with NOTHING written on it (completely empty), and a small round wall clock with a plain face and NO numbers, only two hands.
+- Two soft round ceiling-light glows on the upper wall (warm yellow, very soft, even, not bright, no rays, no lens flare).
+- Gentle warm-yellow, soft, even evening light overall; calm and safe mood; NOT dark, NOT scary, NOT clinical blue.
+- Absolutely NO red cross, NO plus/cross symbol of any kind, NO hospital logo, NO medical equipment, NO beds, NO wheelchairs, NO exit sign, NO running-man sign, NO arrows.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers (not even on the clock or door), no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Keep the lower 35% of the picture calm and low-contrast (plain wall, baseboard, handrail): characters and a bench will stand in front of it.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/a5/raw/a5_hosp_wall_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/a5/raw/a5_hosp_wall_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

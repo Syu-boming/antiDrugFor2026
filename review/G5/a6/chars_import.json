@@ -1,0 +1,628 @@
+{
+ "xiaoqing:bow": {
+  "raw": "review/G5/a6/raw/bow_kids_v01.png",
+  "generated": "assets/generated/chr-xiaoqing_pose-bow_v01.png",
+  "final": "assets/final/chr-xiaoqing_pose-bow_v01.png",
+  "sheet_box": [
+   90,
+   23,
+   525,
+   1015
+  ],
+  "size": [
+   419,
+   976
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   227.0,
+   954
+  ],
+  "bbox_top": 17,
+  "headTop_virtual": -135.5,
+  "head_width_px": {
+   "master": 394.0,
+   "bow": 371.3
+  },
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    65540,
+    38.9,
+    37.0,
+    "#20656A",
+    "#1A6065"
+   ]
+  ],
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 5192,
+   "semi_alpha_ratio_of_edge": 2.216,
+   "white_profile_1_24": [
+    0.0,
+    0.453,
+    0.994,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.988,
+    0.318,
+    0.043,
+    0.038,
+    0.099,
+    0.134,
+    0.136,
+    0.127,
+    0.133,
+    0.135,
+    0.134,
+    0.139,
+    0.134,
+    0.142,
+    0.146
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.752,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.8,
+   "mean_b": 16.4
+  },
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 64089,
+    "L*": 36.9,
+    "median": "#1A6065",
+    "lab": [
+     36.9,
+     -18.7,
+     -9.0
+    ],
+    "dE_vs_master": 3.4
+   },
+   "芥末黃上衣": {
+    "px": 18886,
+    "L*": 75.3,
+    "median": "#F4AB2C",
+    "lab": [
+     75.3,
+     16.6,
+     70.1
+    ],
+    "dE_vs_master": 1.3
+   }
+  }
+ },
+ "xiaoyu:bow": {
+  "raw": "review/G5/a6/raw/bow_kids_v01.png",
+  "generated": "assets/generated/chr-xiaoyu_pose-bow_v01.png",
+  "final": "assets/final/chr-xiaoyu_pose-bow_v01.png",
+  "sheet_box": [
+   566,
+   14,
+   964,
+   1015
+  ],
+  "size": [
+   382,
+   985
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   207.0,
+   963
+  ],
+  "bbox_top": 16,
+  "headTop_virtual": -138.2,
+  "head_width_px": {
+   "master": 358.0,
+   "bow": 325.0
+  },
+  "recolor": [
+   [
+    "橘紅外套",
+    49094,
+    45.7,
+    39.0,
+    "#C63912",
+    "#B12500"
+   ]
+  ],
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4929,
+   "semi_alpha_ratio_of_edge": 2.158,
+   "white_profile_1_24": [
+    0.0,
+    0.454,
+    0.995,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.986,
+    0.348,
+    0.055,
+    0.042,
+    0.139,
+    0.167,
+    0.155,
+    0.145,
+    0.152,
+    0.146,
+    0.137,
+    0.149,
+    0.145,
+    0.154,
+    0.161
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.717,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.1,
+   "mean_b": 26.1
+  },
+  "garments": {
+   "橘紅外套": {
+    "px": 49731,
+    "L*": 39.0,
+    "median": "#B12500",
+    "lab": [
+     39.0,
+     54.1,
+     51.8
+    ],
+    "dE_vs_master": 4.5
+   },
+   "卡其短褲": {
+    "px": 11960,
+    "L*": 65.2,
+    "median": "#C29665",
+    "lab": [
+     65.2,
+     10.4,
+     32.0
+    ],
+    "dE_vs_master": 8.3
+   }
+  }
+ },
+ "pinan:bow": {
+  "raw": "review/G5/a6/raw/bow_kids_v01.png",
+  "generated": "assets/generated/chr-pinan_pose-bow_v01.png",
+  "final": "assets/final/chr-pinan_pose-bow_v01.png",
+  "sheet_box": [
+   1045,
+   24,
+   1471,
+   1014
+  ],
+  "size": [
+   410,
+   974
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   218.5,
+   953
+  ],
+  "bbox_top": 17,
+  "headTop_virtual": -135.4,
+  "head_width_px": {
+   "master": 393.0,
+   "bow": 302.0
+  },
+  "recolor": null,
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4757,
+   "semi_alpha_ratio_of_edge": 2.152,
+   "white_profile_1_24": [
+    0.0,
+    0.463,
+    0.998,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.972,
+    0.233,
+    0.028,
+    0.021,
+    0.097,
+    0.144,
+    0.15,
+    0.152,
+    0.15,
+    0.164,
+    0.157,
+    0.163,
+    0.169,
+    0.161,
+    0.155
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.84,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.2,
+   "mean_b": 8.5
+  },
+  "garments": {
+   "茄紫上衣": {
+    "px": 31674,
+    "L*": 30.8,
+    "median": "#693952",
+    "lab": [
+     30.8,
+     24.8,
+     -5.5
+    ],
+    "dE_vs_master": 6.6
+   },
+   "橄欖綠書包": null
+  }
+ },
+ "chen:bow": {
+  "raw": "review/G5/a6/raw/bow_adults_v01.png",
+  "generated": "assets/generated/chr-chen_pose-bow_v01.png",
+  "final": "assets/final/chr-chen_pose-bow_v01.png",
+  "sheet_box": [
+   79,
+   23,
+   530,
+   1002
+  ],
+  "size": [
+   435,
+   963
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   218.5,
+   942
+  ],
+  "bbox_top": 17,
+  "headTop_virtual": -133.6,
+  "head_width_px": {
+   "master": 274.8,
+   "bow": 228.6
+  },
+  "recolor": null,
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4724,
+   "semi_alpha_ratio_of_edge": 2.061,
+   "white_profile_1_24": [
+    0.0,
+    0.351,
+    0.984,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.551,
+    0.064,
+    0.035,
+    0.025,
+    0.067,
+    0.011,
+    0.005,
+    0.003,
+    0.002,
+    0.001,
+    0.003,
+    0.001,
+    0.002,
+    0.0,
+    0.001
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.74,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.4,
+   "mean_b": 21.1
+  },
+  "garments": {
+   "黃綠背心": {
+    "px": 25621,
+    "L*": 86.4,
+    "median": "#DEDF4A",
+    "lab": [
+     86.4,
+     -17.7,
+     69.1
+    ],
+    "dE_vs_master": 3.6
+   },
+   "淺灰制服": {
+    "px": 49934,
+    "L*": 81.8,
+    "median": "#D9C9B8",
+    "lab": [
+     81.8,
+     3.6,
+     8.2
+    ],
+    "dE_vs_master": 0.7
+   }
+  }
+ },
+ "lin:bow": {
+  "raw": "review/G5/a6/raw/bow_adults_v01.png",
+  "generated": "assets/generated/chr-lin_pose-bow_v01.png",
+  "final": "assets/final/chr-lin_pose-bow_v01.png",
+  "sheet_box": [
+   610,
+   36,
+   938,
+   1000
+  ],
+  "size": [
+   312,
+   948
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   159.0,
+   926
+  ],
+  "bbox_top": 17,
+  "headTop_virtual": -131.0,
+  "head_width_px": {
+   "master": 293.5,
+   "bow": 235.0
+  },
+  "recolor": null,
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4423,
+   "semi_alpha_ratio_of_edge": 2.126,
+   "white_profile_1_24": [
+    0.0,
+    0.362,
+    0.99,
+    0.998,
+    0.999,
+    0.999,
+    1.0,
+    1.0,
+    1.0,
+    0.487,
+    0.031,
+    0.021,
+    0.015,
+    0.012,
+    0.009,
+    0.009,
+    0.008,
+    0.008,
+    0.01,
+    0.014,
+    0.017,
+    0.015,
+    0.013,
+    0.01
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 7,
+   "dark_line_inside_border": 0.855,
+   "white_border_coverage": 0.999,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.3,
+   "mean_b": 14.5
+  },
+  "garments": {
+   "酒紅毛衣": {
+    "px": 42347,
+    "L*": 30.9,
+    "median": "#802D2D",
+    "lab": [
+     30.9,
+     35.9,
+     18.8
+    ],
+    "dE_vs_master": 4.4
+   }
+  }
+ },
+ "ye:bow": {
+  "raw": "review/G5/a6/raw/bow_adults_v01.png",
+  "generated": "assets/generated/chr-ye_pose-bow_v01.png",
+  "final": "assets/final/chr-ye_pose-bow_v01.png",
+  "sheet_box": [
+   1049,
+   31,
+   1463,
+   1001
+  ],
+  "size": [
+   398,
+   954
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   207.0,
+   932
+  ],
+  "bbox_top": 17,
+  "headTop_virtual": -132.0,
+  "head_width_px": {
+   "master": 292.0,
+   "bow": 230.0
+  },
+  "recolor": null,
+  "bow_visible_height_ratio": 0.86,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 4577,
+   "semi_alpha_ratio_of_edge": 2.053,
+   "white_profile_1_24": [
+    0.0,
+    0.338,
+    0.986,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.549,
+    0.045,
+    0.028,
+    0.084,
+    0.144,
+    0.153,
+    0.142,
+    0.15,
+    0.14,
+    0.138,
+    0.144,
+    0.132,
+    0.142,
+    0.132,
+    0.127
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 8,
+   "dark_line_inside_border": 0.707,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 0.8,
+   "mean_b": 13.6
+  },
+  "garments": {
+   "鼠尾草綠護理服": {
+    "px": 57937,
+    "L*": 63.1,
+    "median": "#8F9D88",
+    "lab": [
+     63.1,
+     -8.8,
+     9.4
+    ],
+    "dE_vs_master": 1.5
+   }
+  }
+ },
+ "aqin:stand": {
+  "raw": "review/G5/a6/raw/chr_aqin_stand_v01.png",
+  "generated": "assets/generated/chr-aqin_master_v01.png",
+  "final": "assets/final/chr-aqin_master_v01.png",
+  "offset_from_source": [
+   294,
+   7
+  ],
+  "size": [
+   456,
+   1526
+  ],
+  "stray_px_removed": 0,
+  "feet": [
+   241.0,
+   1504
+  ],
+  "alpha_ref": [
+   16,
+   17
+  ],
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 8996,
+   "semi_alpha_ratio_of_edge": 2.151,
+   "raw_fog_px": 3889,
+   "raw_margins": {
+    "left": 310,
+    "top": 24,
+    "right": 290,
+    "bottom": 20
+   },
+   "raw_touches_edge": [],
+   "crop_ok": true,
+   "white_profile_1_24": [
+    0.857,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.978,
+    0.302,
+    0.024,
+    0.013,
+    0.01,
+    0.022,
+    0.028,
+    0.017,
+    0.013,
+    0.009,
+    0.005,
+    0.004,
+    0.004,
+    0.004,
+    0.004,
+    0.004,
+    0.004,
+    0.004
+   ],
+   "white_border_start_px": 0,
+   "outer_dark_line": false,
+   "white_border_px": 7,
+   "dark_line_inside_border": 0.863,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 1.2,
+   "mean_b": 14.8
+  }
+ },
+ "chr-pinan_pose-stand-m_v01.png": {
+  "from": "assets/final/chr-pinan_master_v01.png",
+  "op": "PIL ImageOps.mirror",
+  "size": [
+   573,
+   1515
+  ]
+ },
+ "chr-pinan_pose-walk-straps-m_v01.png": {
+  "from": "assets/final/chr-pinan_pose-walk-straps_v01.png",
+  "op": "PIL ImageOps.mirror",
+  "size": [
+   765,
+   1486
+  ]
+ },
+ "chr-xiaoyu_pose-standwatch-m_v01.png": {
+  "from": "assets/final/chr-xiaoyu_pose-standwatch_v01.png",
+  "op": "PIL ImageOps.mirror",
+  "size": [
+   528,
+   1446
+  ]
+ }
+}

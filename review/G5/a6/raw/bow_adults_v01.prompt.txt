@@ -1,0 +1,26 @@
+Use your built-in image generation tool (image_gen) to generate exactly ONE image: a curtain-call BOW pose sheet of THREE existing adult characters for a children's paper-cut puppet theater. LANDSCAPE (horizontal) orientation, request the wide 3:2 size (1536x1024), with a TRANSPARENT background (real alpha channel).
+
+FOUR reference images are attached. The FIRST is only the art-style reference (thick matte cardstock pop-up picture book). The SECOND, THIRD and FOURTH are the FINAL approved character masters. Draw THE SAME THREE ADULTS - identical faces, hair, clothes and colors - only the pose and expression change. From LEFT to RIGHT:
+1. (second reference) Grandpa Chen, the school gate guard in his 60s: short gray-white crew-cut hair, thick gray eyebrows, sturdy build; light gray short-sleeve button-up shirt with two plain chest pockets and nothing on it; a yellow-green crossing-guard vest with two matte cream stripes (not shiny); dark charcoal trousers; black shoes. No badge, no cap, no text.
+2. (third reference) Ms. Lin, the teacher in her 30s: black hair in a neat low bun; deep wine-red open knitted cardigan over a cream top; dark charcoal straight pants; dark brown flat shoes; a dark-gray lanyard with a completely BLANK cream ID card.
+3. (fourth reference) Nurse Ye, a male nurse in his 30s: short black hair with a neat side part; sage-green short-sleeve V-neck scrub top; dark charcoal pants; white nurse shoes; a small cream badge showing ONLY an open hand holding a soft coral heart (no text); a pen in the chest pocket; a plain wristwatch. Absolutely NO red cross or plus symbol, no stethoscope.
+Same exact colors as the references. Natural adult proportions exactly like the masters: about 6.2-6.3 heads tall when standing, NOT chibi, NOT big-headed. All three at the SAME scale (same head size), standing in one row with LARGE empty transparent gaps between them (they must NOT touch or overlap; each figure is a separate cut-out).
+
+POSE (identical for all three, very important): a polite thank-you BOW to the audience at the end of a play. Each adult faces the VIEWER (front view, turned only very slightly), both soles flat on the floor, feet together, legs straight. The upper body is bent forward about 30 degrees from the hips toward the viewer, so the head is lowered and we see a bit more of the top of the head; the face is still visible (tilted down). Both arms hang straight down, hands lightly at the front of the thighs.
+EXPRESSION: warm and grateful: eyes gently CLOSED as soft downward arcs (both eyes closed in the same way), a small warm closed-mouth smile.
+
+Every figure is fully visible from the top of the hair to the soles and the fingertips with empty transparent margin all around (nothing cropped). Face style exactly like the approved characters: simple features, small simple nose, small mouth, soft rosy cheeks, thin dark lines.
+
+ART STYLE (match the FIRST attached reference image's "3D pop-up picture book made of thick matte cardstock" style and the approved character references, but apply ALL of these corrections):
+- Each figure is a single flat cut-out piece of thick matte cardstock with a subtle paper-fiber texture and crisp knife-cut outline.
+- Exactly ONE fixed-width white paper-core border runs around the entire OUTER silhouette of each figure (same width everywhere, roughly 10-12 px at this canvas size). Directly inside that white border there is a thin dark warm-gray outline (2-3 px) separating the white border from the colored figure. Interior details (clothing seams, fingers, facial features) use only thin dark lines, never extra white borders.
+- Completely FLAT, EVEN, SHADOWLESS lighting: no directional light, no rim light, no warm lantern glow, no orange cast, no glossy highlights, no baked-in shading gradients, no cast shadow, no drop shadow, no ground shadow, no floor, no reflection. Only flat color areas plus very light paper texture. (Stage lighting will be added later by software.)
+- TRANSPARENT background (real alpha channel). Nothing else in the image: no ground, no props, no scenery, no frame, no card behind the figures, no checkerboard pattern drawn in.
+- Absolutely NO text of any kind: no letters, no Chinese characters, no numbers, no logos, no brand marks, no symbols that look like writing, no watermark, no signature.
+- Child-friendly, warm, gentle storybook character design.
+
+After the image is generated:
+1. The tool saves the PNG under ${CODEX_HOME:-$HOME/.codex}/generated_images/<session-id>/<call-id>.png. Other Codex sessions are generating images in parallel into sibling folders, so copy YOUR OWN image (match your session id / image call id; do not just take the newest file across all folders).
+2. Copy it unmodified (no crop, no resize, no re-encode) to review/G5/a6/raw/bow_adults_v01.png inside the current workspace.
+3. Print the copied file's pixel width and height (e.g. `sips -g pixelWidth -g pixelHeight -g hasAlpha review/G5/a6/raw/bow_adults_v01.png`) and the absolute source path you copied from.
+Do not create, edit or delete any other files. Do not regenerate unless the first generation failed. Final answer: source path, destination path, pixel width x height, whether it has alpha.

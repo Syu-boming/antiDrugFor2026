@@ -29,3 +29,14 @@
 | assets/final/chr-lin_pose-standr_v01.png | 表演姿勢圖（透明）；456×1546 | lin | standr：林老師站姿左右鏡射（臉朝畫面右）——說完話轉身走進辦公室前紙片翻面用 | a4_c013 | assets/final/chr-lin_master_v01.png 左右鏡射（build_a4_art.py lin_standr） | 自製（程式繪製／由專案母版改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影與聽感依驗收包 | v01 |
 
 另：assets/final/sets/gate/layout.json 改兩處擺位（第四幕代理）：sq-tree-a 由 x −4.9 移到 −10.4（原位置擋住對面小貨車駕駛座與阿樂叔叔）；prop-bench 由 x −3.2 移到 −2.3（整張長椅在人行道上、不擋住車旁的阿樂叔叔），benchSeat 地標、marks.ale、gate_bench 鏡位同步更新。小貨車、警衛室、接送線、貓耳地標都沒動。
+
+## G5 修正第 1 輪（2026-10-21，review/G5/a4/scripts/build_a4_art_fix1.py；v01 不動，同名新版號由 pack 取最新版）
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/sets/gate/set-gate_a4-truck_v01.png | 景片貼圖（透明，同 props/prop-truck_v01 尺寸與位置）；1532×857 | gate | 小貨車第四幕版：帆布下露出竹編貓頭骨架（兩隻尖耳＋一小段十二邊形頭框，輪廓同 a0 主燈設計圖；竹色 L*≈40，比車身 ΔL* 51.5）；舊的單一米色三角形拿掉 | a4_c012、a4_c013（setTrack catEar 1） | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-truck-tip_v01.png | 景片貼圖（透明，同上尺寸）；1532×857 | gate | 小貨車第四幕版一小角：帆布蓋在骨架上鼓起，只露左耳尖（劇本：只露一小角、不推近、不打光） | a4_c001、a4_c002、a4_c008–a4_c011（setTrack catEar 0.5） | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v01 |
+| assets/final/sets/gate/set-gate_a4-walkers-a_v02.png | 遠景小紙人（透明，白邊）；247×442 | gate | 家長牽孩子離開：淺紙色、不透明的分件小紙人背影（短鮑伯頭、淺藍外套、提袋；孩子小馬尾、書包），看不到臉 | a4_c001 | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v02 |
+| assets/final/sets/gate/set-gate_a4-walkers-b_v02.png | 遠景小紙人（透明，白邊）；247×442 | gate | 家長牽孩子離開：淺紙色背影小紙人（米色外套；孩子淺綠上衣、書包） | a4_c001、a4_c008 | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v02 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-car_v02.png | 剪影（透明）；1020×486 | a4_roadmap | 車子側面剪影改手剪紙：剪刀直線折角＋1–2 px 紙纖維毛邊；駕駛（頭髮剪邊、握小方向盤）、乘客（馬尾）；門縫、門把、輪框細環是透光剪縫 | a4_c004–a4_c007 | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v02 |
+| assets/final/sets/a4_roadmap/set-a4map_sil-walker_v02.png | 剪影（透明）；285×585 | a4_roadmap | 背書包的路人剪影改手剪紙：書包肩帶剪縫、上衣下襬皺褶缺口、瀏海剪邊、跨步 | a4_c004–a4_c007 | 程式繪製（review/G5/a4/scripts/build_a4_art_fix1.py） | 自製（程式繪製；車圖由 props/prop-truck_v01 改畫） | 代理目視（引擎擷取，review/G5/a4/pack/）；投影依驗收包 | v02 |

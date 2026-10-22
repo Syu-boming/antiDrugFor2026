@@ -13,22 +13,24 @@
  "actors_with_strings": [
   "ale"
  ],
- "probe_frames_with_strings": 2784,
+ "probe_frames_with_strings": 2692,
  "string_path_min_dist_to_head_box_px": 17.2,
+ "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+ "string_head_offscreen_skipped": 615,
  "per_anchor": {
   "ale.wrist": {
-   "min_dist_to_head_box_px": 24.2,
-   "frames": 2784,
-   "at": "a2_c002 t=4.3"
+   "min_dist_to_head_box_px": 20.1,
+   "frames": 2487,
+   "at": "a2_c009 t=1"
   },
   "ale.elbow": {
-   "min_dist_to_head_box_px": 34.3,
-   "frames": 2510,
-   "at": "a2_c002 t=5.2"
+   "min_dist_to_head_box_px": 20.3,
+   "frames": 2279,
+   "at": "a2_c009 t=1"
   },
   "ale.knee": {
    "min_dist_to_head_box_px": 17.2,
-   "frames": 2500,
+   "frames": 2269,
    "at": "a2_c005 t=10.4"
   }
  },
@@ -184,9 +186,9 @@
   },
   {
    "id": "a2_c008_05",
-   "pages": 2,
+   "pages": 3,
    "max_rows_per_page": 2,
-   "max_chars_per_row": 16
+   "max_chars_per_row": 12
   },
   {
    "id": "a2_c009_01",

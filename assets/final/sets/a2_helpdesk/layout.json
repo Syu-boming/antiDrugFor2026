@@ -9,9 +9,10 @@
   "emissive": 0.32
  },
  "floor": {
-  "color": "#d9c3a0",
+  "color": "#e8d7b8",
   "z": 16.0,
-  "depth": 24
+  "depth": 24,
+  "_note": "G5 修正第 2 輪：地面提亮（#d9c3a0→#e8d7b8），求助站畫面切回店內時全畫面亮度差 < 15%（主線更正裁定：切場亮度漸變）"
  },
  "layers": [
   {
@@ -31,7 +32,7 @@
    "z": -3.2,
    "width": 15.5,
    "layer": "far",
-   "emissive": 0.3
+   "emissive": 0.5
   },
   {
    "id": "tree-a",
@@ -50,7 +51,8 @@
    "z": -0.9,
    "width": 4.6,
    "layer": "mid",
-   "order": 10
+   "order": 10,
+   "emissive": 0.2
   },
   {
    "id": "crate",
@@ -60,7 +62,8 @@
    "z": -0.5,
    "width": 1.0,
    "layer": "mid",
-   "order": 12
+   "order": 12,
+   "emissive": 0.2
   },
   {
    "id": "planter-long",

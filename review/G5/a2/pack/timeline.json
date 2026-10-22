@@ -18,9 +18,9 @@
    "id": "a2_c001",
    "kind": "scene",
    "title": "叔叔的手（找找看 2）",
-   "duration": 23.76,
+   "duration": 17.76,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8,
    "audioId": "music_town",
    "musicLoop": true,
@@ -72,14 +72,14 @@
      "speaker": "折折",
      "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
      "audioId": "vo_a2_c001_03",
-     "start": 16.13,
-     "end": 22.16,
+     "start": 9.73,
+     "end": 15.76,
      "duration": 6.03,
      "placeholder": false,
      "pages": [
       {
-       "start": 16.13,
-       "end": 22.16,
+       "start": 9.73,
+       "end": 15.76,
        "rows": [
         "大家仔細看，叔叔的手上，",
         "是不是多了什麼？看到的舉手。"
@@ -100,7 +100,7 @@
       "anchors": [
        "wrist"
       ],
-      "to": 0.72
+      "to": 0.98
      }
     },
     {
@@ -119,6 +119,15 @@
      "end": 1.2,
      "params": {
       "emotion": "worried"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 1.9,
+     "end": 2.7,
+     "params": {
+      "yaw": -0.3
      }
     },
     {
@@ -156,74 +165,57 @@
      }
     },
     {
-     "name": "puppet.pose",
+     "name": "puppet.blink",
      "target": "xiaoqing",
-     "start": 8.38,
-     "end": 8.62,
+     "start": 8.83,
+     "end": 8.83,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 9.03,
+     "end": 9.83,
      "params": {
-      "pose": "walk"
+      "yaw": 0
      }
     },
     {
-     "name": "puppet.exit",
-     "target": "xiaoqing",
-     "start": 8.48,
-     "end": 9.98,
+     "name": "camera.cut",
+     "target": null,
+     "start": 9.43,
+     "end": 9.43,
      "params": {
-      "to": 1.5
-     }
-    },
-    {
-     "name": "puppet.pose",
-     "target": "xiaoyu",
-     "start": 9.73,
-     "end": 9.97,
-     "params": {
-      "pose": "walk_r"
-     }
-    },
-    {
-     "name": "puppet.exit",
-     "target": "xiaoyu",
-     "start": 9.83,
-     "end": 11.53,
-     "params": {
-      "to": 2.35
-     }
-    },
-    {
-     "name": "puppet.pose",
-     "target": "xiaoqing",
-     "start": 9.88,
-     "end": 10.12,
-     "params": {
-      "pose": "watch"
-     }
-    },
-    {
-     "name": "puppet.pose",
-     "target": "xiaoyu",
-     "start": 11.43,
-     "end": 11.67,
-     "params": {
-      "pose": "stand"
+      "to": {
+       "pos": [
+        -2.5,
+        1.65,
+        9.95
+       ],
+       "target": [
+        -2.5,
+        1.55,
+        0
+       ],
+       "fov": 20
+      }
      }
     },
     {
      "name": "camera.move",
      "target": null,
-     "start": 11.93,
-     "end": 16.13,
+     "start": 9.63,
+     "end": 14.13,
      "params": {
       "to": {
        "pos": [
-        -1.8,
-        1.95,
-        8.6
+        -2.7,
+        1.4,
+        7.1
        ],
        "target": [
-        -1.8,
-        1.85,
+        -2.7,
+        1.3,
         0
        ],
        "fov": 20
@@ -253,7 +245,7 @@
    "duration": 25.18,
    "autoAdvance": false,
    "set": "workshop_g4",
-   "enterFade": 0,
+   "enterFade": 0.8,
    "audioId": null,
    "musicLoop": true,
    "musicLevel": 0.75,
@@ -608,7 +600,7 @@
    "title": "操偶線（必要旁白一）",
    "duration": 21.91,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8,
    "audioId": null,
    "musicLoop": true,
@@ -802,9 +794,9 @@
    "id": "a2_c005",
    "kind": "quiz",
    "title": "〔題卡 Q2〕出題",
-   "duration": 23.31,
+   "duration": 23.86,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -847,14 +839,14 @@
      "speaker": "旁白",
      "text": "阿樂叔叔身上的操偶線，在比喻什麼？",
      "audioId": "vo_a2_c005_02",
-     "start": 3.45,
-     "end": 7.41,
+     "start": 4,
+     "end": 7.96,
      "duration": 3.96,
      "placeholder": false,
      "pages": [
       {
-       "start": 3.45,
-       "end": 7.41,
+       "start": 4,
+       "end": 7.96,
        "rows": [
         "阿樂叔叔身上的操偶線，",
         "在比喻什麼？"
@@ -867,14 +859,14 @@
      "speaker": "旁白",
      "text": "一，叔叔在練習下一場紙偶戲的動作。",
      "audioId": "vo_a2_c005_03",
-     "start": 7.86,
-     "end": 12.62,
+     "start": 8.41,
+     "end": 13.17,
      "duration": 4.76,
      "placeholder": false,
      "pages": [
       {
-       "start": 7.86,
-       "end": 12.62,
+       "start": 8.41,
+       "end": 13.17,
        "rows": [
         "一，叔叔在練習下",
         "一場紙偶戲的動作。"
@@ -887,14 +879,14 @@
      "speaker": "旁白",
      "text": "二，人真的會變成喪屍，被線拉著走。",
      "audioId": "vo_a2_c005_04",
-     "start": 13.07,
-     "end": 17.4,
+     "start": 13.62,
+     "end": 17.95,
      "duration": 4.33,
      "placeholder": false,
      "pages": [
       {
-       "start": 13.07,
-       "end": 17.4,
+       "start": 13.62,
+       "end": 17.95,
        "rows": [
         "二，人真的會變成喪屍，",
         "被線拉著走。"
@@ -907,14 +899,14 @@
      "speaker": "旁白",
      "text": "三，毒品可能讓頭腦和身體不聽使喚。",
      "audioId": "vo_a2_c005_05",
-     "start": 17.85,
-     "end": 22.31,
+     "start": 18.4,
+     "end": 22.86,
      "duration": 4.46,
      "placeholder": false,
      "pages": [
       {
-       "start": 17.85,
-       "end": 22.31,
+       "start": 18.4,
+       "end": 22.86,
        "rows": [
         "三，毒品可能讓頭腦",
         "和身體不聽使喚。"
@@ -931,36 +923,86 @@
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": 3.6,
      "gain": 0.8
     }
    ],
    "music": [],
    "anims": [
     {
-     "name": "camera.move",
+     "name": "fade.out",
      "target": null,
      "start": 0,
-     "end": 2.4,
+     "end": 0.6,
      "params": {
-      "to": "quiz"
+      "to": 1
      }
     },
     {
      "name": "light.dim",
      "target": null,
-     "start": 0,
-     "end": 1.2,
+     "start": 0.6,
+     "end": 0.62,
      "params": {
       "to": 0.55
      }
     },
     {
+     "name": "camera.cut",
+     "target": null,
+     "start": 0.62,
+     "end": 0.62,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 0.64,
+     "end": 1.24,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.hush",
+     "target": "zhezhe",
+     "start": 0.7,
+     "end": 2.1,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 1,
+     "end": 2,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 3.05,
+     "end": 4.25,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
      "name": "quiz.show",
      "target": null,
-     "start": 0.7,
-     "end": 1.3,
+     "start": 3.6,
+     "end": 4.2,
      "params": {}
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 4.35,
+     "end": 5.05,
+     "params": {
+      "form": "idle"
+     }
     }
    ],
    "strings": {
@@ -978,7 +1020,7 @@
    "title": "〔題卡 Q2〕揭答",
    "duration": 7.16,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1048,9 +1090,9 @@
    "id": "a2_c007",
    "kind": "lamp",
    "title": "〔題卡 Q2〕點燈",
-   "duration": 10.17,
+   "duration": 9.17,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1116,20 +1158,49 @@
      "params": {}
     },
     {
+     "name": "fade.out",
+     "target": null,
+     "start": 7.92,
+     "end": 8.52,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "target": "zhezhe",
+     "start": 8.51,
+     "end": 8.53,
+     "params": {
+      "pos": [
+       -13,
+       0,
+       4.15
+      ]
+     }
+    },
+    {
      "name": "light.restore",
      "target": null,
-     "start": 7.67,
-     "end": 8.87,
+     "start": 8.52,
+     "end": 8.54,
      "params": {}
     },
     {
-     "name": "camera.move",
+     "name": "camera.cut",
      "target": null,
-     "start": 7.67,
-     "end": 10.17,
+     "start": 8.54,
+     "end": 8.54,
      "params": {
       "to": "g4_mid"
      }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 8.56,
+     "end": 9.16,
+     "params": {}
     }
    ],
    "strings": {
@@ -1145,9 +1216,9 @@
    "id": "a2_c008",
    "kind": "scene",
    "title": "想不起來（必要旁白二）",
-   "duration": 38.35,
+   "duration": 39.4,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1161,14 +1232,14 @@
      "speaker": "阿樂叔叔",
      "text": "奇怪……我的手，怎麼不聽話了？",
      "audioId": "vo_a2_c008_01",
-     "start": 3.5,
-     "end": 9.01,
+     "start": 5.5,
+     "end": 11.01,
      "duration": 5.51,
      "placeholder": false,
      "pages": [
       {
-       "start": 3.5,
-       "end": 9.01,
+       "start": 5.5,
+       "end": 11.01,
        "rows": [
         "奇怪……我的手，怎麼不聽話了？"
        ]
@@ -1180,14 +1251,14 @@
      "speaker": "阿樂叔叔",
      "text": "骨架放到哪裡去了……我想不起來。",
      "audioId": "vo_a2_c008_02",
-     "start": 9.46,
-     "end": 14.5,
+     "start": 11.46,
+     "end": 16.5,
      "duration": 5.04,
      "placeholder": false,
      "pages": [
       {
-       "start": 9.46,
-       "end": 14.5,
+       "start": 11.46,
+       "end": 16.5,
        "rows": [
         "骨架放到哪裡去了……我想不起來。"
        ]
@@ -1199,14 +1270,14 @@
      "speaker": "小宇",
      "text": "叔叔是不是……吸毒了？",
      "audioId": "vo_a2_c008_03",
-     "start": 15.45,
-     "end": 18.92,
+     "start": 17.25,
+     "end": 20.72,
      "duration": 3.47,
      "placeholder": false,
      "pages": [
       {
-       "start": 15.45,
-       "end": 18.92,
+       "start": 17.25,
+       "end": 20.72,
        "rows": [
         "叔叔是不是……吸毒了？"
        ]
@@ -1218,14 +1289,14 @@
      "speaker": "小晴",
      "text": "我們不知道。可是，叔叔需要幫忙。",
      "audioId": "vo_a2_c008_04",
-     "start": 19.37,
-     "end": 23.34,
+     "start": 21.12,
+     "end": 25.09,
      "duration": 3.97,
      "placeholder": false,
      "pages": [
       {
-       "start": 19.37,
-       "end": 23.34,
+       "start": 21.12,
+       "end": 25.09,
        "rows": [
         "我們不知道。可是，叔叔需要幫忙。"
        ]
@@ -1235,24 +1306,31 @@
     {
      "id": "a2_c008_05",
      "speaker": "旁白",
-     "text": "不過，看見一個人站不穩，不能就說他吸毒，也可能有其他身體狀況。我們要先找大人幫忙。",
+     "text": "不過，看見一個人站不穩，\n\n不能就說他吸毒，\n也可能有其他身體狀況。\n\n我們要先找大人幫忙。",
      "audioId": "vo_a2_c008_05",
-     "start": 24.04,
-     "end": 36.35,
+     "start": 25.69,
+     "end": 38,
      "duration": 12.31,
      "placeholder": false,
      "pages": [
       {
-       "start": 24.04,
-       "end": 33.348,
+       "start": 25.69,
+       "end": 29.293,
        "rows": [
-        "不過，看見一個人站不穩，不能就",
-        "說他吸毒，也可能有其他身體狀況。"
+        "不過，看見一個人站不穩，"
        ]
       },
       {
-       "start": 33.348,
-       "end": 36.35,
+       "start": 29.293,
+       "end": 34.998,
+       "rows": [
+        "不能就說他吸毒，",
+        "也可能有其他身體狀況。"
+       ]
+      },
+      {
+       "start": 34.998,
+       "end": 38,
        "rows": [
         "我們要先找大人幫忙。"
        ]
@@ -1262,9 +1340,34 @@
    ],
    "sfx": [
     {
+     "id": "sfx_paper_rustle",
+     "at": 0.4,
+     "gain": 0.4
+    },
+    {
      "id": "sfx_string_taut",
-     "at": 2.85,
-     "gain": 0.7
+     "at": 1.3,
+     "gain": 0.55
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 1.95,
+     "gain": 0.35
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 2.75,
+     "gain": 0.55
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 4.15,
+     "gain": 0.55
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 4.25,
+     "gain": 0.5
     }
    ],
    "music": [],
@@ -1275,15 +1378,102 @@
      "start": 0,
      "end": 0,
      "params": {
+      "to": "a2s_hands"
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "target": "ale",
+     "start": 0.8,
+     "end": 2.8,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "to": 0.45
+     }
+    },
+    {
+     "name": "puppet.sit",
+     "target": "ale",
+     "start": 0.8,
+     "end": 2.4,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 0.8,
+     "end": 2,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ale",
+     "start": 0.8,
+     "end": 2,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 0.8,
+     "end": 1.8,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "fx.spot",
+     "target": null,
+     "start": 0.8,
+     "end": 0.81,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 1,
+     "end": 1,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 5,
+     "end": 9.8,
+     "params": {
+      "count": 1,
+      "depth": 0.9
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 5.3,
+     "end": 5.3,
+     "params": {
       "to": {
        "pos": [
-        -1.6,
-        2.12,
-        13.6
+        -2.3,
+        1.72,
+        10.8
        ],
        "target": [
-        -1.6,
-        2,
+        -2.3,
+        1.62,
         0
        ],
        "fov": 20
@@ -1291,78 +1481,37 @@
      }
     },
     {
-     "name": "strings.loosen",
+     "name": "puppet.face",
      "target": "ale",
-     "start": 1,
-     "end": 2.2,
+     "start": 11.46,
+     "end": 11.46,
      "params": {
-      "anchors": [
-       "wrist",
-       "elbow"
-      ],
-      "to": 0.35
-     }
-    },
-    {
-     "name": "puppet.waveTry",
-     "target": "ale",
-     "start": 1.05,
-     "end": 4.85,
-     "params": {
-      "greet": "worried",
       "emotion": "confused"
      }
     },
     {
      "name": "puppet.tilt",
      "target": "ale",
-     "start": 4.1,
-     "end": 4.9,
+     "start": 11.76,
+     "end": 12.66,
      "params": {
-      "to": 0.13
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "ale",
-     "start": 9.46,
-     "end": 9.46,
-     "params": {
-      "emotion": "worried"
-     }
-    },
-    {
-     "name": "puppet.tilt",
-     "target": "ale",
-     "start": 9.76,
-     "end": 10.66,
-     "params": {
-      "to": 0.05
-     }
-    },
-    {
-     "name": "fx.spot",
-     "target": null,
-     "start": 15,
-     "end": 16.6,
-     "params": {
-      "to": 0
+      "to": 0.07
      }
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 15,
-     "end": 15,
+     "start": 16.85,
+     "end": 16.85,
      "params": {
       "to": {
        "pos": [
-        0.95,
+        2,
         1.98,
-        7.4
+        8.4
        ],
        "target": [
-        0.95,
+        2,
         1.88,
         0
        ],
@@ -1371,10 +1520,28 @@
      }
     },
     {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 16.9,
+     "end": 17.7,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 16.9,
+     "end": 16.9,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
      "name": "puppet.move",
      "target": "xiaoyu",
-     "start": 15.15,
-     "end": 15.75,
+     "start": 17,
+     "end": 17.6,
      "params": {
       "dx": -0.2
      }
@@ -1382,8 +1549,8 @@
     {
      "name": "puppet.lean",
      "target": "xiaoyu",
-     "start": 15.2,
-     "end": 15.8,
+     "start": 17.05,
+     "end": 17.65,
      "params": {
       "to": -0.045
      }
@@ -1391,8 +1558,8 @@
     {
      "name": "puppet.lean",
      "target": "xiaoqing",
-     "start": 16.05,
-     "end": 16.65,
+     "start": 17.85,
+     "end": 18.45,
      "params": {
       "to": 0.03
      }
@@ -1400,8 +1567,8 @@
     {
      "name": "puppet.lean",
      "target": "xiaoyu",
-     "start": 19.57,
-     "end": 20.27,
+     "start": 21.32,
+     "end": 22.02,
      "params": {
       "to": 0
      }
@@ -1409,8 +1576,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 20.77,
-     "end": 20.77,
+     "start": 22.52,
+     "end": 22.52,
      "params": {
       "emotion": "neutral"
      }
@@ -1418,8 +1585,8 @@
     {
      "name": "puppet.lean",
      "target": "xiaoqing",
-     "start": 20.77,
-     "end": 21.47,
+     "start": 22.52,
+     "end": 23.22,
      "params": {
       "to": 0
      }
@@ -1427,8 +1594,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 23.59,
-     "end": 23.59,
+     "start": 25.34,
+     "end": 25.34,
      "params": {
       "to": "g4_mid"
      }
@@ -1447,7 +1614,8 @@
      "name": "strings.loosen",
      "anchors": [
       "wrist",
-      "elbow"
+      "elbow",
+      "knee"
      ]
     }
    ]
@@ -1456,9 +1624,9 @@
    "id": "a2_c009",
    "kind": "quiz",
    "title": "〔題卡 Q3〕出題",
-   "duration": 21.76,
+   "duration": 22.31,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1501,14 +1669,14 @@
      "speaker": "旁白",
      "text": "看見有人站不穩，就能確定他吸毒嗎？",
      "audioId": "vo_a2_c009_02",
-     "start": 3.5,
-     "end": 7.47,
+     "start": 4.05,
+     "end": 8.02,
      "duration": 3.97,
      "placeholder": false,
      "pages": [
       {
-       "start": 3.5,
-       "end": 7.47,
+       "start": 4.05,
+       "end": 8.02,
        "rows": [
         "看見有人站不穩，",
         "就能確定他吸毒嗎？"
@@ -1521,14 +1689,14 @@
      "speaker": "旁白",
      "text": "一，不能，要先找大人來幫忙。",
      "audioId": "vo_a2_c009_03",
-     "start": 7.92,
-     "end": 11.64,
+     "start": 8.47,
+     "end": 12.19,
      "duration": 3.72,
      "placeholder": false,
      "pages": [
       {
-       "start": 7.92,
-       "end": 11.64,
+       "start": 8.47,
+       "end": 12.19,
        "rows": [
         "一，不能，要先找大人來幫忙。"
        ]
@@ -1540,14 +1708,14 @@
      "speaker": "旁白",
      "text": "二，可以，看起來像就一定是。",
      "audioId": "vo_a2_c009_04",
-     "start": 12.09,
-     "end": 16.12,
+     "start": 12.64,
+     "end": 16.67,
      "duration": 4.03,
      "placeholder": false,
      "pages": [
       {
-       "start": 12.09,
-       "end": 16.12,
+       "start": 12.64,
+       "end": 16.67,
        "rows": [
         "二，可以，看起來像就一定是。"
        ]
@@ -1559,14 +1727,14 @@
      "speaker": "旁白",
      "text": "三，不能，所以直接走開不用管。",
      "audioId": "vo_a2_c009_05",
-     "start": 16.57,
-     "end": 20.76,
+     "start": 17.12,
+     "end": 21.31,
      "duration": 4.19,
      "placeholder": false,
      "pages": [
       {
-       "start": 16.57,
-       "end": 20.76,
+       "start": 17.12,
+       "end": 21.31,
        "rows": [
         "三，不能，所以直接走開不用管。"
        ]
@@ -1582,36 +1750,86 @@
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": 3.65,
      "gain": 0.8
     }
    ],
    "music": [],
    "anims": [
     {
-     "name": "camera.move",
+     "name": "fade.out",
      "target": null,
      "start": 0,
-     "end": 2.4,
+     "end": 0.6,
      "params": {
-      "to": "quiz"
+      "to": 1
      }
     },
     {
      "name": "light.dim",
      "target": null,
-     "start": 0,
-     "end": 1.2,
+     "start": 0.6,
+     "end": 0.62,
      "params": {
       "to": 0.55
      }
     },
     {
+     "name": "camera.cut",
+     "target": null,
+     "start": 0.62,
+     "end": 0.62,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 0.64,
+     "end": 1.24,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.hush",
+     "target": "zhezhe",
+     "start": 0.7,
+     "end": 2.1,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 1,
+     "end": 2,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 3.1,
+     "end": 4.3,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
      "name": "quiz.show",
      "target": null,
-     "start": 0.7,
-     "end": 1.3,
+     "start": 3.65,
+     "end": 4.25,
      "params": {}
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 4.4,
+     "end": 5.1,
+     "params": {
+      "form": "idle"
+     }
     }
    ],
    "strings": {
@@ -1629,7 +1847,7 @@
    "title": "〔題卡 Q3〕揭答",
    "duration": 6.49,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1699,9 +1917,9 @@
    "id": "a2_c011",
    "kind": "lamp",
    "title": "〔題卡 Q3〕點燈",
-   "duration": 6.57,
+   "duration": 5.57,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1766,20 +1984,49 @@
      "params": {}
     },
     {
+     "name": "fade.out",
+     "target": null,
+     "start": 4.32,
+     "end": 4.92,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "target": "zhezhe",
+     "start": 4.91,
+     "end": 4.93,
+     "params": {
+      "pos": [
+       -13,
+       0,
+       4.15
+      ]
+     }
+    },
+    {
      "name": "light.restore",
      "target": null,
-     "start": 4.07,
-     "end": 5.27,
+     "start": 4.92,
+     "end": 4.94,
      "params": {}
     },
     {
-     "name": "camera.move",
+     "name": "camera.cut",
      "target": null,
-     "start": 4.07,
-     "end": 6.57,
+     "start": 4.94,
+     "end": 4.94,
      "params": {
       "to": "g4_mid"
      }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 4.96,
+     "end": 5.56,
+     "params": {}
     }
    ],
    "strings": {
@@ -1795,9 +2042,9 @@
    "id": "a2_c012",
    "kind": "scene",
    "title": "去找葉護理師",
-   "duration": 34.7,
+   "duration": 32.32,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
@@ -1811,14 +2058,14 @@
      "speaker": "葉護理師",
      "text": "阿樂，你哪裡不舒服？我陪你去看醫生，好嗎？",
      "audioId": "vo_a2_c012_01",
-     "start": 8.65,
-     "end": 13.71,
+     "start": 5.72,
+     "end": 10.78,
      "duration": 5.06,
      "placeholder": false,
      "pages": [
       {
-       "start": 8.65,
-       "end": 13.71,
+       "start": 5.72,
+       "end": 10.78,
        "rows": [
         "阿樂，你哪裡不舒服？",
         "我陪你去看醫生，好嗎？"
@@ -1831,14 +2078,14 @@
      "speaker": "阿樂叔叔",
      "text": "不用……我休息一下就好。",
      "audioId": "vo_a2_c012_02",
-     "start": 14.16,
-     "end": 17.69,
+     "start": 11.23,
+     "end": 14.76,
      "duration": 3.53,
      "placeholder": false,
      "pages": [
       {
-       "start": 14.16,
-       "end": 17.69,
+       "start": 11.23,
+       "end": 14.76,
        "rows": [
         "不用……我休息一下就好。"
        ]
@@ -1850,14 +2097,14 @@
      "speaker": "葉護理師",
      "text": "你家人的電話沒人接，我晚一點再打。",
      "audioId": "vo_a2_c012_03",
-     "start": 19.99,
-     "end": 23.8,
+     "start": 18.21,
+     "end": 22.02,
      "duration": 3.81,
      "placeholder": false,
      "pages": [
       {
-       "start": 19.99,
-       "end": 23.8,
+       "start": 18.21,
+       "end": 22.02,
        "rows": [
         "你家人的電話沒人接，",
         "我晚一點再打。"
@@ -1870,14 +2117,14 @@
      "speaker": "小晴",
      "text": "還有，廣場上有人拿閃亮的盒子給小孩。",
      "audioId": "vo_a2_c012_04",
-     "start": 24.25,
-     "end": 28.62,
+     "start": 22.47,
+     "end": 26.84,
      "duration": 4.37,
      "placeholder": false,
      "pages": [
       {
-       "start": 24.25,
-       "end": 28.62,
+       "start": 22.47,
+       "end": 26.84,
        "rows": [
         "還有，廣場上有人拿閃亮的",
         "盒子給小孩。"
@@ -1890,14 +2137,14 @@
      "speaker": "葉護理師",
      "text": "謝謝你們告訴我，我會請警察去看看。",
      "audioId": "vo_a2_c012_05",
-     "start": 29.07,
-     "end": 32.9,
+     "start": 27.29,
+     "end": 31.12,
      "duration": 3.83,
      "placeholder": false,
      "pages": [
       {
-       "start": 29.07,
-       "end": 32.9,
+       "start": 27.29,
+       "end": 31.12,
        "rows": [
         "謝謝你們告訴我，",
         "我會請警察去看看。"
@@ -1910,7 +2157,22 @@
     {
      "id": "sfx_footsteps",
      "at": 0.35,
-     "gain": 0.55
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_crowd_short",
+     "at": 1.72,
+     "gain": 0.45
+    },
+    {
+     "id": "sfx_phone_noanswer",
+     "at": 15.36,
+     "gain": 0.6
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 16.11,
+     "gain": 0.35
     }
    ],
    "music": [
@@ -1924,7 +2186,7 @@
     },
     {
      "id": "music_town",
-     "at": 7.5,
+     "at": 3.37,
      "loop": true,
      "fade": 1.6,
      "gain": 0.5,
@@ -1933,150 +2195,90 @@
    ],
    "anims": [
     {
-     "name": "puppet.pose",
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 0.2,
+     "end": 2.4,
+     "params": {
+      "count": 1,
+      "depth": 0.6
+     }
+    },
+    {
+     "name": "puppet.lean",
      "target": "xiaoqing",
      "start": 0.2,
-     "end": 0.44,
+     "end": 0.7,
      "params": {
-      "pose": "walk"
+      "to": 0.03
      }
     },
     {
-     "name": "puppet.pose",
+     "name": "puppet.move",
      "target": "xiaoyu",
-     "start": 0.3,
-     "end": 0.54,
+     "start": 0.35,
+     "end": 1.65,
      "params": {
-      "pose": "walk_r"
+      "dx": 2.6
      }
     },
     {
-     "name": "puppet.exit",
+     "name": "puppet.move",
      "target": "xiaoqing",
-     "start": 0.3,
-     "end": 2.2,
+     "start": 0.45,
+     "end": 1.75,
      "params": {
-      "to": 8.5
-     }
-    },
-    {
-     "name": "puppet.exit",
-     "target": "xiaoyu",
-     "start": 0.3,
-     "end": 2.2,
-     "params": {
-      "to": 8.5
+      "dx": 2.6
      }
     },
     {
      "name": "fade.out",
      "target": null,
-     "start": 2.3,
-     "end": 2.9,
+     "start": 1,
+     "end": 1.6,
      "params": {}
-    },
-    {
-     "name": "set.swap",
-     "target": null,
-     "start": 2.92,
-     "end": 2.92,
-     "params": {
-      "set": "a2_helpdesk"
-     }
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 2.92,
-     "end": 2.92,
+     "start": 1.62,
+     "end": 1.62,
      "params": {
-      "to": "a2_help_mid"
+      "to": "a2s_help_mid"
      }
     },
     {
-     "name": "puppet.move",
-     "target": "ale",
-     "start": 2.92,
-     "end": 2.95,
-     "params": {
-      "dx": -30
-     }
-    },
-    {
-     "name": "puppet.move",
-     "target": "xiaoqing",
-     "start": 2.92,
-     "end": 2.95,
-     "params": {
-      "dx": -11.8
-     }
-    },
-    {
-     "name": "puppet.move",
-     "target": "xiaoyu",
-     "start": 2.92,
-     "end": 2.95,
-     "params": {
-      "dx": -13.25
-     }
-    },
-    {
-     "name": "puppet.move",
-     "target": "ye",
-     "start": 2.92,
-     "end": 2.95,
-     "params": {
-      "dx": -38.1
-     }
-    },
-    {
-     "name": "fade.in",
+     "name": "fx.desat",
      "target": null,
-     "start": 3,
-     "end": 3.6,
-     "params": {}
+     "start": 1.62,
+     "end": 1.65,
+     "params": {
+      "to": 0.3
+     }
     },
     {
-     "name": "puppet.exit",
+     "name": "puppet.move",
      "target": "xiaoqing",
-     "start": 4.3,
-     "end": 5.9,
+     "start": 1.62,
+     "end": 1.63,
      "params": {
-      "to": 3.5
+      "dx": 36.35
      }
     },
     {
-     "name": "puppet.exit",
+     "name": "puppet.move",
      "target": "xiaoyu",
-     "start": 4.3,
-     "end": 5.9,
+     "start": 1.62,
+     "end": 1.63,
      "params": {
-      "to": 3.5
-     }
-    },
-    {
-     "name": "puppet.face",
-     "target": "ye",
-     "start": 5.5,
-     "end": 5.5,
-     "params": {
-      "emotion": "worried"
-     }
-    },
-    {
-     "name": "puppet.lean",
-     "target": "ye",
-     "start": 5.6,
-     "end": 6.1,
-     "params": {
-      "to": -0.035
+      "dx": 34.55
      }
     },
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 5.8,
-     "end": 6.04,
+     "start": 1.63,
+     "end": 1.64,
      "params": {
       "pose": "reach"
      }
@@ -2084,52 +2286,182 @@
     {
      "name": "puppet.pose",
      "target": "xiaoyu",
-     "start": 5.95,
-     "end": 6.19,
+     "start": 1.63,
+     "end": 1.64,
      "params": {
       "pose": "stand"
      }
     },
     {
-     "name": "puppet.exit",
-     "target": "ye",
-     "start": 6.15,
-     "end": 6.85,
-     "params": {
-      "to": -1.4
-     }
-    },
-    {
-     "name": "fade.out",
+     "name": "fade.in",
      "target": null,
-     "start": 6.9,
-     "end": 7.5,
+     "start": 1.7,
+     "end": 2.3,
      "params": {}
     },
     {
-     "name": "set.swap",
-     "target": null,
-     "start": 7.52,
-     "end": 7.52,
+     "name": "puppet.face",
+     "target": "ye",
+     "start": 2.12,
+     "end": 2.12,
      "params": {
-      "set": "workshop_g4"
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ye",
+     "start": 2.32,
+     "end": 2.77,
+     "params": {
+      "to": -0.035
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ye",
+     "start": 2.62,
+     "end": 3.42,
+     "params": {
+      "count": 1
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ye",
+     "start": 3.02,
+     "end": 3.32,
+     "params": {
+      "to": 0
      }
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 7.52,
-     "end": 7.52,
+     "start": 3.47,
+     "end": 3.47,
      "params": {
       "to": {
        "pos": [
-        -0.6,
-        1.5,
-        14.2
+        -2.2,
+        1.95,
+        13
        ],
        "target": [
-        -0.6,
-        1.42,
+        -2.2,
+        1.85,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
+     "name": "fx.desat",
+     "target": null,
+     "start": 3.47,
+     "end": 3.5,
+     "params": {
+      "to": 0.32
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "ye",
+     "start": 3.47,
+     "end": 3.48,
+     "params": {
+      "dx": -41.95
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 3.47,
+     "end": 3.48,
+     "params": {
+      "dx": -35.05
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoyu",
+     "start": 3.47,
+     "end": 3.48,
+     "params": {
+      "dx": -33.25
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 3.49,
+     "end": 3.5,
+     "params": {
+      "pose": "worried"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "xiaoqing",
+     "start": 3.49,
+     "end": 3.5,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 3.77,
+     "end": 6.37,
+     "params": {
+      "count": 1,
+      "depth": 0.5
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "ye",
+     "start": 3.82,
+     "end": 4.62,
+     "params": {
+      "dx": -0.4
+     }
+    },
+    {
+     "name": "fx.desat",
+     "target": null,
+     "start": 4.27,
+     "end": 7.27,
+     "params": {
+      "to": 0.2
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "ye",
+     "start": 4.67,
+     "end": 4.91,
+     "params": {
+      "pose": "crouch"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 5.37,
+     "end": 5.37,
+     "params": {
+      "to": {
+       "pos": [
+        -2.1,
+        1.5,
+        11.6
+       ],
+       "target": [
+        -2.1,
+        1.4,
         0
        ],
        "fov": 20
@@ -2138,124 +2470,137 @@
     },
     {
      "name": "puppet.move",
-     "target": "ale",
-     "start": 7.52,
-     "end": 7.55,
-     "params": {
-      "dx": 30
-     }
-    },
-    {
-     "name": "puppet.sit",
-     "target": "ale",
-     "start": 7.52,
-     "end": 7.55,
-     "params": {
-      "to": 1
-     }
-    },
-    {
-     "name": "puppet.move",
-     "target": "ye",
-     "start": 7.52,
-     "end": 7.55,
-     "params": {
-      "dx": -1.15
-     }
-    },
-    {
-     "name": "puppet.lean",
-     "target": "ye",
-     "start": 7.52,
-     "end": 7.55,
-     "params": {
-      "to": 0
-     }
-    },
-    {
-     "name": "puppet.move",
      "target": "xiaoqing",
-     "start": 7.52,
-     "end": 7.55,
+     "start": 5.47,
+     "end": 5.48,
      "params": {
-      "dx": 0.45
+      "dx": -3.9
      }
     },
     {
      "name": "puppet.move",
      "target": "xiaoyu",
-     "start": 7.52,
-     "end": 7.55,
+     "start": 5.47,
+     "end": 5.48,
      "params": {
-      "dx": 1.9
+      "dx": -3.9
      }
     },
     {
-     "name": "fx.desat",
-     "target": null,
-     "start": 7.52,
-     "end": 7.55,
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 11.03,
+     "end": 11.83,
      "params": {
-      "to": 0.32
+      "to": 0.08
      }
     },
     {
      "name": "puppet.pose",
      "target": "ye",
-     "start": 7.54,
-     "end": 7.78,
+     "start": 15.06,
+     "end": 15.3,
+     "params": {
+      "pose": "crouchphone"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "target": "ale",
+     "start": 15.26,
+     "end": 16.16,
+     "params": {
+      "to": 0.03
+     }
+    },
+    {
+     "name": "strings.tension",
+     "target": "ale",
+     "start": 16.11,
+     "end": 16.23,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ale",
+     "start": 16.16,
+     "end": 16.46,
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "strings.tension",
+     "target": "ale",
+     "start": 16.51,
+     "end": 17.01,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.45
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ale",
+     "start": 16.56,
+     "end": 17.06,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "ye",
+     "start": 17.11,
+     "end": 17.35,
      "params": {
       "pose": "crouch"
      }
     },
     {
-     "name": "puppet.pose",
-     "target": "xiaoqing",
-     "start": 7.54,
-     "end": 7.78,
+     "name": "puppet.face",
+     "target": "ye",
+     "start": 17.36,
+     "end": 17.36,
      "params": {
-      "pose": "worried"
+      "emotion": "worried"
      }
     },
     {
-     "name": "fade.in",
+     "name": "camera.cut",
      "target": null,
-     "start": 7.85,
-     "end": 8.45,
-     "params": {}
-    },
-    {
-     "name": "fx.desat",
-     "target": null,
-     "start": 8.5,
-     "end": 11.5,
+     "start": 22.22,
+     "end": 22.22,
      "params": {
-      "to": 0.2
-     }
-    },
-    {
-     "name": "puppet.tilt",
-     "target": "ale",
-     "start": 13.96,
-     "end": 14.76,
-     "params": {
-      "to": 0.1
-     }
-    },
-    {
-     "name": "puppet.tilt",
-     "target": "ale",
-     "start": 18.19,
-     "end": 19.09,
-     "params": {
-      "to": 0.05
+      "to": {
+       "pos": [
+        -0.3,
+        1.5,
+        14.6
+       ],
+       "target": [
+        -0.3,
+        1.42,
+        0
+       ],
+       "fov": 20
+      }
      }
     },
     {
      "name": "puppet.lean",
      "target": "xiaoqing",
-     "start": 24.15,
-     "end": 24.75,
+     "start": 22.37,
+     "end": 22.97,
      "params": {
       "to": -0.035
      }
@@ -2263,10 +2608,19 @@
     {
      "name": "puppet.lean",
      "target": "xiaoqing",
-     "start": 28.92,
-     "end": 29.62,
+     "start": 27.14,
+     "end": 27.84,
      "params": {
       "to": 0
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ye",
+     "start": 27.49,
+     "end": 28.49,
+     "params": {
+      "count": 1
      }
     }
    ],
@@ -2277,13 +2631,30 @@
      "knee"
     ]
    },
-   "stringAnims": []
+   "stringAnims": [
+    {
+     "target": "ale",
+     "name": "strings.tension",
+     "anchors": [
+      "wrist",
+      "elbow"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.tension",
+     "anchors": [
+      "wrist",
+      "elbow"
+     ]
+    }
+   ]
   },
   {
    "id": "a2_c013",
    "kind": "scene",
    "title": "說出實情（懸念）",
-   "duration": 34.39,
+   "duration": 34.14,
    "autoAdvance": false,
    "set": "a2_window",
    "enterFade": 0.8,
@@ -2359,14 +2730,14 @@
      "speaker": "小宇",
      "text": "明天就是紙燈節了……叔叔會好一點嗎？",
      "audioId": "vo_a2_c013_04",
-     "start": 24.58,
-     "end": 28.95,
+     "start": 24.33,
+     "end": 28.7,
      "duration": 4.37,
      "placeholder": false,
      "pages": [
       {
-       "start": 24.58,
-       "end": 28.95,
+       "start": 24.33,
+       "end": 28.7,
        "rows": [
         "明天就是紙燈節了……",
         "叔叔會好一點嗎？"
@@ -2379,14 +2750,14 @@
      "speaker": "小晴",
      "text": "主燈骨架，到底在哪裡？",
      "audioId": "vo_a2_c013_05",
-     "start": 29.4,
-     "end": 32.19,
+     "start": 29.15,
+     "end": 31.94,
      "duration": 2.79,
      "placeholder": false,
      "pages": [
       {
-       "start": 29.4,
-       "end": 32.19,
+       "start": 29.15,
+       "end": 31.94,
        "rows": [
         "主燈骨架，到底在哪裡？"
        ]
@@ -2398,6 +2769,11 @@
     {
      "id": "sfx_wind",
      "at": 0.6,
+     "gain": 0.3
+    },
+    {
+     "id": "sfx_string_taut",
+     "at": 13.95,
      "gain": 0.3
     }
    ],
@@ -2421,15 +2797,6 @@
    ],
    "anims": [
     {
-     "name": "puppet.tilt",
-     "target": "ale",
-     "start": 0,
-     "end": 0.01,
-     "params": {
-      "to": 0.12
-     }
-    },
-    {
      "name": "light.dim",
      "target": null,
      "start": 0.5,
@@ -2448,64 +2815,134 @@
      }
     },
     {
-     "name": "puppet.tilt",
+     "name": "puppet.nod",
      "target": "ale",
-     "start": 4,
-     "end": 5,
+     "start": 1.8,
+     "end": 5.4,
      "params": {
-      "to": 0.08
+      "count": 2,
+      "depth": 1.3
      }
     },
     {
-     "name": "puppet.tilt",
+     "name": "puppet.nod",
      "target": "ale",
-     "start": 9.97,
-     "end": 10.97,
+     "start": 9.47,
+     "end": 12.07,
      "params": {
-      "to": 0.13
+      "count": 1,
+      "depth": 1.3
      }
     },
     {
-     "name": "puppet.tilt",
+     "name": "strings.tension",
      "target": "ale",
-     "start": 18.88,
-     "end": 19.48,
+     "start": 13.95,
+     "end": 14.07,
      "params": {
-      "to": 0.02
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 1
      }
     },
     {
-     "name": "puppet.tilt",
+     "name": "puppet.lean",
      "target": "ale",
-     "start": 19.53,
-     "end": 20.23,
+     "start": 14,
+     "end": 14.3,
      "params": {
-      "to": 0.07
+      "to": 0.035
+     }
+    },
+    {
+     "name": "strings.tension",
+     "target": "ale",
+     "start": 14.35,
+     "end": 14.85,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.45
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ale",
+     "start": 14.4,
+     "end": 14.9,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 17.58,
+     "end": 19.78,
+     "params": {
+      "count": 2,
+      "depth": 1.6
+     }
+    },
+    {
+     "name": "fade.out",
+     "target": null,
+     "start": 20.13,
+     "end": 20.73,
+     "params": {
+      "to": 1
      }
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 20.38,
-     "end": 20.38,
+     "start": 20.75,
+     "end": 20.75,
      "params": {
       "to": "a2_win_note"
      }
     },
     {
+     "name": "fade.in",
+     "target": null,
+     "start": 20.77,
+     "end": 21.37,
+     "params": {}
+    },
+    {
+     "name": "fade.out",
+     "target": null,
+     "start": 22.93,
+     "end": 23.53,
+     "params": {
+      "to": 1
+     }
+    },
+    {
      "name": "camera.cut",
      "target": null,
-     "start": 22.98,
-     "end": 22.98,
+     "start": 23.55,
+     "end": 23.55,
      "params": {
       "to": "a2_win_kids"
      }
     },
     {
+     "name": "fade.in",
+     "target": null,
+     "start": 23.57,
+     "end": 24.17,
+     "params": {}
+    },
+    {
      "name": "zhezhe.look",
      "target": "zhezhe",
-     "start": 23.28,
-     "end": 24.18,
+     "start": 24.18,
+     "end": 25.08,
      "params": {
       "yaw": -0.45
      }
@@ -2513,8 +2950,8 @@
     {
      "name": "zhezhe.emote",
      "target": "zhezhe",
-     "start": 23.78,
-     "end": 24.78,
+     "start": 24.68,
+     "end": 25.68,
      "params": {
       "emotion": "sad"
      }
@@ -2527,7 +2964,24 @@
      "knee"
     ]
    },
-   "stringAnims": []
+   "stringAnims": [
+    {
+     "target": "ale",
+     "name": "strings.tension",
+     "anchors": [
+      "wrist",
+      "elbow"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.tension",
+     "anchors": [
+      "wrist",
+      "elbow"
+     ]
+    }
+   ]
   }
  ],
  "schedule": [
@@ -2536,28 +2990,28 @@
    "kind": "scene",
    "preroll": 0.6,
    "start": 0.6,
-   "duration": 23.76,
+   "duration": 17.76,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a2_shop",
+   "enterFade": 0.8
+  },
+  {
+   "id": "a2_c002",
+   "kind": "scene",
+   "preroll": 0.6,
+   "start": 22.46,
+   "duration": 25.18,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "workshop_g4",
    "enterFade": 0.8
   },
   {
-   "id": "a2_c002",
-   "kind": "scene",
-   "preroll": 0,
-   "start": 27.86,
-   "duration": 25.18,
-   "hold": 3.5,
-   "autoAdvance": false,
-   "set": "workshop_g4",
-   "enterFade": 0
-  },
-  {
    "id": "a2_c003",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 57.14,
+   "start": 51.74,
    "duration": 15.3,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2568,114 +3022,114 @@
    "id": "a2_c004",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 76.54,
+   "start": 71.14,
    "duration": 21.91,
    "hold": 3.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8
   },
   {
    "id": "a2_c005",
    "kind": "quiz",
    "preroll": 0,
-   "start": 101.95,
-   "duration": 23.31,
+   "start": 96.55,
+   "duration": 23.86,
    "hold": 3,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c006",
    "kind": "reveal",
    "preroll": 0,
-   "start": 128.26,
+   "start": 123.41,
    "duration": 7.16,
    "hold": 2.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c007",
    "kind": "lamp",
    "preroll": 0,
-   "start": 137.92,
-   "duration": 10.17,
+   "start": 133.07,
+   "duration": 9.17,
    "hold": 2.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c008",
    "kind": "scene",
    "preroll": 0,
-   "start": 150.59,
-   "duration": 38.35,
+   "start": 144.74,
+   "duration": 39.4,
    "hold": 3.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c009",
    "kind": "quiz",
    "preroll": 0,
-   "start": 192.44,
-   "duration": 21.76,
+   "start": 187.64,
+   "duration": 22.31,
    "hold": 3,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c010",
    "kind": "reveal",
    "preroll": 0,
-   "start": 217.2,
+   "start": 212.95,
    "duration": 6.49,
    "hold": 2.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c011",
    "kind": "lamp",
    "preroll": 0,
-   "start": 226.19,
-   "duration": 6.57,
+   "start": 221.94,
+   "duration": 5.57,
    "hold": 2.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c012",
    "kind": "scene",
    "preroll": 0,
-   "start": 235.26,
-   "duration": 34.7,
+   "start": 230.01,
+   "duration": 32.32,
    "hold": 3.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0
   },
   {
    "id": "a2_c013",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 274.06,
-   "duration": 34.39,
+   "start": 266.43,
+   "duration": 34.14,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "a2_window",
    "enterFade": 0.8
   }
  ],
- "totalPlaybackSec": 311.95,
+ "totalPlaybackSec": 304.07,
  "audio": {
   "vo_a0_c001_01": {
    "source": "audio/vo/vo_a0_c001_01_v04.wav",
@@ -3767,6 +4221,11 @@
    "duration": 40,
    "bus": "sfx"
   },
+  "sfx_crowd_short": {
+   "source": "audio/sfx/sfx_crowd_short_v01.wav",
+   "duration": 4,
+   "bus": "sfx"
+  },
   "sfx_curtain_close": {
    "source": "audio/sfx/sfx_curtain_close_v01.wav",
    "duration": 2.3,
@@ -3792,6 +4251,11 @@
    "duration": 40,
    "bus": "sfx"
   },
+  "sfx_gust": {
+   "source": "audio/sfx/sfx_gust_v01.wav",
+   "duration": 2.6,
+   "bus": "sfx"
+  },
   "sfx_lamp_on": {
    "source": "audio/sfx/sfx_lamp_on_v01.wav",
    "duration": 3.4,
@@ -3805,6 +4269,11 @@
   "sfx_phone_bed": {
    "source": "audio/sfx/sfx_phone_bed_v01.wav",
    "duration": 40,
+   "bus": "sfx"
+  },
+  "sfx_phone_noanswer": {
+   "source": "audio/sfx/sfx_phone_noanswer_v01.wav",
+   "duration": 2.6,
    "bus": "sfx"
   },
   "sfx_plane_whoosh": {
@@ -3835,6 +4304,11 @@
   "sfx_string_taut": {
    "source": "audio/sfx/sfx_string_taut_v01.wav",
    "duration": 0.75,
+   "bus": "sfx"
+  },
+  "sfx_truck_arrive": {
+   "source": "audio/sfx/sfx_truck_arrive_v01.wav",
+   "duration": 5,
    "bus": "sfx"
   },
   "sfx_watch_dial": {

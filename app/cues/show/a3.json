@@ -271,7 +271,7 @@
      "id": "a3_c001_03",
      "speaker": "邀請者",
      "text": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
-     "start": "a3_c001_02.end+2.3"
+     "start": "a3_c001_02.end+2.0"
     },
     {
      "id": "a3_c001_04",
@@ -536,7 +536,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 1.9,
-   "tail": 4.3,
+   "tail": 3.9,
    "storyboard": {
     "beat": "小宇腦中浮出小畫面（重用 a2_c002 被拉偏的手）；推推眼鏡；抬頭、掌心向外，平穩拒絕；小晴說「我們走」；兩人轉身往右",
     "cast": "小宇：H8、X8 → H3、X7；小晴 X7",
@@ -612,9 +612,9 @@
      "pinan": {
       "visible": true,
       "emotion": "neutral",
-      "pose": "walk_straps",
-      "x": 5.75,
-      "z": -1.4,
+      "pose": "stand",
+      "x": 5.45,
+      "z": -1.1,
       "facing": 1
      }
     }
@@ -745,18 +745,27 @@
      }
     },
     {
-     "name": "puppet.exit",
-     "start": "a3_c003_03.end+0.3",
+     "name": "puppet.pose",
+     "start": "a3_c003_03.end+0.15",
      "target": "pinan",
-     "duration": 3.6,
+     "duration": 0.24,
+     "params": {
+      "pose": "walk_straps"
+     }
+    },
+    {
+     "name": "puppet.exit",
+     "start": "a3_c003_03.end+0.25",
+     "target": "pinan",
+     "duration": 3.75,
      "ease": "linear",
      "params": {
-      "to": 3.3
+      "to": 3.6
      }
     },
     {
      "name": "zhezhe.twitch",
-     "start": "a3_c003_03.end+1.1",
+     "start": "a3_c003_03.end+0.9",
      "target": "zhezhe",
      "params": {
       "side": "r"
@@ -764,7 +773,7 @@
     },
     {
      "name": "zhezhe.look",
-     "start": "a3_c003_03.end+1.2",
+     "start": "a3_c003_03.end+1.0",
      "target": "zhezhe",
      "duration": 0.6,
      "params": {
@@ -773,7 +782,7 @@
     },
     {
      "name": "zhezhe.look",
-     "start": "a3_c003_03.end+3.4",
+     "start": "a3_c003_03.end+3.2",
      "target": "zhezhe",
      "duration": 0.6,
      "params": {
@@ -807,7 +816,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 2.9,
-   "tail": 4.3,
+   "tail": 4.0,
    "storyboard": {
     "beat": "校門口，林老師迎接學生；小晴報告；林老師道謝、說會請警衛和警察處理、口語稱讚「你們沒有拿，還馬上來找我，做得很好」（不逐條列步驟）；約 3 秒無台詞：品安從校門另一側走進來，雙手緊抓書包背帶、低頭避開目光、快步走過；折折耳朵動一下",
     "cast": "林老師：H3（迎接）→ H1、X2 → X7；小晴 X7；小宇 X1；品安：H5 抓背帶、X5、行走分件；折折耳朵動一下",
@@ -837,7 +846,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a3_apron",
+     "camera": "a3_apron2",
      "light": 1
     },
     "characters": {
@@ -845,47 +854,33 @@
       "visible": true,
       "emotion": "smile",
       "pose": "stand",
-      "x": -4.3,
-      "z": 2.4,
+      "x": -3.45,
+      "z": 4.0,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "smile",
       "pose": "standwatch",
-      "x": 4.3,
-      "z": 2.4,
+      "x": 3.45,
+      "z": 4.0,
       "facing": 1
      },
      "zhezhe": {
       "visible": true,
       "emotion": "happy",
-      "x": -1.6,
+      "x": -4.7,
       "y": 0.0,
-      "z": 1.6
+      "z": 4.15
      }
     }
    },
    "animation": [
     {
-     "name": "zhezhe.hopTo",
-     "start": 0.45,
+     "name": "zhezhe.fold",
+     "start": 0.85,
      "target": "zhezhe",
      "duration": 0.9,
-     "params": {
-      "pos": [
-       -3.55,
-       0.0,
-       3.5
-      ],
-      "height": 0.6
-     }
-    },
-    {
-     "name": "zhezhe.fold",
-     "start": 1.4,
-     "target": "zhezhe",
-     "duration": 1.0,
      "params": {
       "form": "card",
       "scale": 0.55
@@ -893,16 +888,16 @@
     },
     {
      "name": "zhezhe.fold",
-     "start": 2.6,
+     "start": 2.3,
      "target": "zhezhe",
-     "duration": 1.0,
+     "duration": 0.8,
      "params": {
       "form": "idle"
      }
     },
     {
      "name": "zhezhe.emote",
-     "start": 3.6,
+     "start": 3.1,
      "target": "zhezhe",
      "params": {
       "emotion": "happy"
@@ -1027,8 +1022,8 @@
    ],
    "teacherNote": "練習（約 90 秒，全場只練這一次）：\n①「跟小宇一起說：不用，我不試。我先離開。」（全班說一次。）\n②「口訣加動作，坐著做、不離座：不碰——雙手在胸前交叉；不試——手掌左右搖；先離開——手指向門口；找大人——手掌放在額前，左右看。」（老師示範一次，全班做一次。）\n③ 做安靜手勢，等全場安靜，再按下一步；題卡出現時的折折收摺音效就是收聲訊號。",
    "checkpoint": null,
-   "voStart": 3.6,
-   "tail": 2.2,
+   "voStart": 3.0,
+   "tail": 1.8,
    "storyboard": {
     "beat": "折折跳到台口前緣攤開練習卡（拒絕句＋口訣，每句旁動作小圖，程式排版）；小晴、小宇站在卡兩側依序做四個動作：不碰、不試、先離開、找大人，最後停在「找大人」",
     "cast": "小晴：P-QG1 → H3 左右搖 → H2 指右 → H4；小宇：P-XY1 → H3 → H2 → H4；兩人 X2",
@@ -1045,12 +1040,12 @@
    "sfx": [
     {
      "id": "sfx_fold",
-     "at": 1.5,
+     "at": 0.9,
      "gain": 0.6
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 1.95,
+     "at": 1.65,
      "gain": 0.6
     }
    ]
@@ -1063,7 +1058,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a3_apron",
+     "camera": "a3_apron2",
      "light": 1
     },
     "characters": {
@@ -1071,54 +1066,93 @@
       "visible": true,
       "emotion": "smile",
       "pose": "forehead_l",
-      "x": -4.3,
-      "z": 2.4,
+      "x": -3.45,
+      "z": 4.0,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "smile",
       "pose": "forehead",
-      "x": 4.3,
-      "z": 2.4,
+      "x": 3.45,
+      "z": 4.0,
       "facing": 1
      },
      "zhezhe": {
       "visible": true,
       "emotion": "happy",
-      "x": -3.55,
+      "x": -4.7,
       "y": 0.0,
-      "z": 3.5
+      "z": 4.15
      }
     }
    },
    "animation": [
     {
-     "name": "camera.move",
-     "start": 0.75,
-     "duration": 2.8,
+     "name": "fade.out",
+     "start": 0,
+     "duration": 0.6,
      "params": {
-      "to": "quiz"
+      "to": 1
      }
     },
     {
      "name": "light.dim",
      "start": 0,
-     "duration": 1.2,
+     "duration": 0.6,
      "params": {
       "to": 0.55
      }
     },
     {
-     "name": "quiz.show",
-     "start": 0.7,
+     "name": "camera.cut",
+     "start": 0.6,
+     "duration": 0,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.62,
      "duration": 0.6
     },
     {
      "name": "zhezhe.hush",
-     "start": -0.55,
+     "start": 0.0,
      "target": "zhezhe",
      "duration": 1.4
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 1.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a3_c005_01.end+0.05",
+     "target": "zhezhe",
+     "duration": 1.2,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": "a3_c005_01.end+0.3",
+     "duration": 0.55
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a3_c005_01.end+1.35",
+     "target": "zhezhe",
+     "duration": 0.7,
+     "params": {
+      "form": "idle"
+     }
     }
    ],
    "audioId": null,
@@ -1131,7 +1165,8 @@
     {
      "id": "a3_c005_02",
      "speaker": "旁白",
-     "text": "有人說「試一次沒關係」，哪個做法比較安全？"
+     "text": "有人說「試一次沒關係」，哪個做法比較安全？",
+     "start": "a3_c005_01.end+0.85"
     },
     {
      "id": "a3_c005_03",
@@ -1166,7 +1201,7 @@
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": "a3_c005_01.end+0.3",
      "gain": 0.8
     }
    ],
@@ -1214,24 +1249,24 @@
       "visible": true,
       "emotion": "smile",
       "pose": "forehead_l",
-      "x": -4.3,
-      "z": 2.4,
+      "x": -3.45,
+      "z": 4.0,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "smile",
       "pose": "forehead",
-      "x": 4.3,
-      "z": 2.4,
+      "x": 3.45,
+      "z": 4.0,
       "facing": 1
      },
      "zhezhe": {
       "visible": true,
       "emotion": "happy",
-      "x": -3.55,
+      "x": -4.7,
       "y": 0.0,
-      "z": 3.5
+      "z": 4.15
      }
     }
    },
@@ -1240,6 +1275,14 @@
      "name": "quiz.reveal",
      "start": 0.3,
      "duration": 0.45
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 0.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
     }
    ],
    "audioId": null,
@@ -1298,24 +1341,24 @@
       "visible": true,
       "emotion": "smile",
       "pose": "forehead_l",
-      "x": -4.3,
-      "z": 2.4,
+      "x": -3.45,
+      "z": 4.0,
       "facing": 1
      },
      "xiaoyu": {
       "visible": true,
       "emotion": "smile",
       "pose": "forehead",
-      "x": 4.3,
-      "z": 2.4,
+      "x": 3.45,
+      "z": 4.0,
       "facing": 1
      },
      "zhezhe": {
       "visible": true,
       "emotion": "happy",
-      "x": -3.55,
+      "x": -4.7,
       "y": 0.0,
-      "z": 3.5
+      "z": 4.15
      }
     }
    },
@@ -1329,6 +1372,14 @@
      }
     },
     {
+     "name": "zhezhe.emote",
+     "start": 0.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
      "name": "quiz.hide",
      "start": "a3_c007_01.end+0.3",
      "duration": 0.6
@@ -1337,14 +1388,6 @@
      "name": "light.restore",
      "start": "a3_c007_01.end+0.3",
      "duration": 1.2
-    },
-    {
-     "name": "camera.move",
-     "start": "a3_c007_01.end+0.3",
-     "duration": 1.2,
-     "params": {
-      "to": "quiz"
-     }
     }
    ],
    "audioId": null,
@@ -1438,7 +1481,7 @@
      "start": "a3_c008_02+2.3",
      "duration": 0,
      "params": {
-      "to": "a3_cls_kids"
+      "to": "a3_cls_trio"
      }
     },
     {
@@ -1476,6 +1519,14 @@
      }
     },
     {
+     "name": "zhezhe.emote",
+     "start": "a3_c008_02.end+0.15",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
      "name": "puppet.tilt",
      "start": "a3_c008_02.end+0.6",
      "target": "xiaoyu",
@@ -1486,23 +1537,7 @@
     },
     {
      "name": "camera.cut",
-     "start": "a3_c008_02.end+0.1",
-     "duration": 0,
-     "params": {
-      "to": "a3_cls_zz"
-     }
-    },
-    {
-     "name": "zhezhe.emote",
-     "start": "a3_c008_02.end+0.3",
-     "target": "zhezhe",
-     "params": {
-      "emotion": "worried"
-     }
-    },
-    {
-     "name": "camera.cut",
-     "start": "a3_c008_02.end+0.95",
+     "start": "a3_c008_02.end+1.0",
      "duration": 0,
      "params": {
       "to": "a3_cls_lin"
@@ -1510,7 +1545,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a3_c008_02.end+1.45",
+     "start": "a3_c008_02.end+1.5",
      "target": "xiaoqing",
      "duration": 0.24,
      "params": {
@@ -1519,7 +1554,7 @@
     },
     {
      "name": "puppet.face",
-     "start": "a3_c008_02.end+1.6",
+     "start": "a3_c008_02.end+1.65",
      "target": "lin",
      "params": {
       "emotion": "neutral"
@@ -1587,7 +1622,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a3_c008_04.end+0.3",
+     "start": "a3_c008_04.end+0.15",
      "target": "lin",
      "duration": 0.24,
      "params": {
@@ -1595,29 +1630,64 @@
      }
     },
     {
-     "name": "camera.cut",
+     "name": "puppet.exit",
+     "start": "a3_c008_04.end+0.75",
+     "target": "lin",
+     "duration": 3.2,
+     "ease": "linear",
+     "params": {
+      "to": 2.15
+     }
+    },
+    {
+     "name": "puppet.pose",
      "start": "a3_c008_04.end+1.5",
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "stand_m"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a3_c008_04.end+1.75",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a3_c008_04.end+2.3",
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a3_c008_04.end+2.55",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a3_c008_04.end+4.1",
      "duration": 0,
      "params": {
       "to": "a3_cls_end"
      }
     },
     {
-     "name": "puppet.exit",
-     "start": "a3_c008_04.end+1.6",
-     "target": "lin",
-     "duration": 2.0,
-     "ease": "linear",
+     "name": "zhezhe.look",
+     "start": "a3_c008_04.end+4.35",
+     "target": "zhezhe",
+     "duration": 0.8,
      "params": {
-      "to": 3.0
-     }
-    },
-    {
-     "name": "puppet.face",
-     "start": "a3_c008_04.end+2.0",
-     "target": "xiaoyu",
-     "params": {
-      "emotion": "worried"
+      "yaw": -0.45
      }
     }
    ],
@@ -1638,7 +1708,7 @@
      "id": "a3_c008_03",
      "speaker": "小晴",
      "text": "林老師，叔叔昨天站都站不穩……",
-     "start": "a3_c008_02.end+3.25"
+     "start": "a3_c008_02.end+2.95"
     },
     {
      "id": "a3_c008_04",
@@ -1656,7 +1726,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 1.15,
-   "tail": 3.1,
+   "tail": 5.45,
    "storyboard": {
     "beat": "教室午後，窗外燈籠串輕擺；下課鐘柔和響；林老師說提早放學、家長前幾天就拜託阿樂叔叔開車來接；兩人互看；小晴筆停住；折折耳朵壓平；小晴舉手走到林老師面前說叔叔昨天站不穩；林老師道謝、說先打給家人、叔叔先到就待在校門裡；林老師拿手機走到走廊撥號",
     "cast": "林老師 X1 → X5 → X7；小晴 H5、X5 → X7；小宇 X5；其他學生為遠景剪影",

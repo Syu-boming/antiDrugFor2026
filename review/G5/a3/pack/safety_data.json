@@ -1,0 +1,171 @@
+{
+ "string_anchors_in_cues": [],
+ "string_anchors_allowed": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "string_anchors_only_allowed": true,
+ "actors_with_strings": [],
+ "probe_frames_with_strings": 0,
+ "string_path_min_dist_to_head_box_px": null,
+ "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+ "string_head_offscreen_skipped": 0,
+ "per_anchor": {},
+ "string_path_intersects_child_box": [],
+ "string_path_intersects_child_box_count": 0,
+ "probe_sources": [
+  "capture/probe.json",
+  "probe_dense.json"
+ ],
+ "probe_method": "線路徑＝引擎實際畫的中心線投影到螢幕；頭部框＝分件紙偶 head* 部件圖外框（含透明邊）；兒童框＝立牌外框（含透明邊）。",
+ "required_narration": {},
+ "lines_total": 23,
+ "lines_differ_from_script_v03": [],
+ "subtitle_max_chars_per_row": 16,
+ "subtitle_max_rows_per_page": 2,
+ "subtitles": [
+  {
+   "id": "a3_c001_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a3_c001_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a3_c001_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a3_c001_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 7
+  },
+  {
+   "id": "a3_c002_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a3_c002_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a3_c002_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 4
+  },
+  {
+   "id": "a3_c003_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a3_c003_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a3_c003_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a3_c004_01",
+   "pages": 2,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a3_c004_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a3_c005_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 4
+  },
+  {
+   "id": "a3_c005_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a3_c005_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a3_c005_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a3_c005_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a3_c006_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a3_c007_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a3_c008_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a3_c008_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a3_c008_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a3_c008_04",
+   "pages": 2,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 16
+  }
+ ],
+ "app_js_getUserMedia_count": 0,
+ "app_js_mediaDevices_count": 0,
+ "capture_external_requests": 0,
+ "capture_console_errors": 0
+}

@@ -1,0 +1,202 @@
+{
+ "xiaoqing:pointr": {
+  "image": "assets/final/chr-xiaoqing_pose-pointr_v07.png",
+  "closed": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 1338,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 412,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 835,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 285,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "half": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 787,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 402,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 442,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 281,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "both_closed_ok": true
+ },
+ "xiaoyu:pointr": {
+  "image": "assets/final/chr-xiaoyu_pose-pointr_v07.png",
+  "closed": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 702,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 132,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 559,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 114,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "half": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 327,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 127,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 270,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 118,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "both_closed_ok": true
+ },
+ "xiaoyu:glasses": {
+  "image": "assets/final/chr-xiaoyu_pose-glasses_v07.png",
+  "closed": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 604,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 117,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 717,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 146,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "half": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 288,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 125,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 338,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 144,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "both_closed_ok": true
+ },
+ "xiaoqing:forehead_l": {
+  "image": "assets/final/chr-xiaoqing_pose-forehead-l_v01.png",
+  "closed": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 738,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 185,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 1131,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 332,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "half": {
+   "eyes": [
+    {
+     "eye": 0,
+     "orig_dark_px": 388,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 186,
+     "spill_px": 0
+    },
+    {
+     "eye": 1,
+     "orig_dark_px": 591,
+     "residual_dark_px": 0,
+     "residual_ratio": 0.0,
+     "highlight_left_px": 0,
+     "lid_line_px": 311,
+     "spill_px": 0
+    }
+   ],
+   "ok": true
+  },
+  "both_closed_ok": true
+ }
+}

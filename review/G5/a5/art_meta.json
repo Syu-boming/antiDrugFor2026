@@ -1,0 +1,138 @@
+{
+ "made_by": "review/G5/a5/scripts/build_a5_art.py",
+ "ambulance": {
+  "size_world": [
+   5.6,
+   2.5
+  ],
+  "wheels_world_from_bottom_center": [
+   [
+    -1.7999999999999998,
+    0.44666666666666666
+   ],
+   [
+    1.75,
+    0.44666666666666666
+   ]
+  ],
+  "wheel_diameter_world": 0.84,
+  "light_world_from_bottom_center": [
+   1.4500000000000002,
+   2.08
+  ]
+ },
+ "ambulance_light": {
+  "size_world": [
+   1.1,
+   0.28
+  ]
+ },
+ "gurney": {
+  "size_world": [
+   2.2,
+   1.05
+  ]
+ },
+ "corner": {
+  "size_world": [
+   2.6,
+   5.4
+  ]
+ },
+ "student": {
+  "size_world": [
+   0.95,
+   2.05
+  ],
+  "arm_size_world": [
+   0.3,
+   0.62
+  ],
+  "shoulder_world_from_bottom_center": [
+   0.045454545454545456,
+   1.309090909090909
+  ]
+ },
+ "hosp_bench": {
+  "size_world": [
+   4.6,
+   1.9
+  ],
+  "seat_top_world": 0.9400000000000001
+ },
+ "fix1": {
+  "made_by": "review/G5/a5/scripts/build_a5_art_fix1.py",
+  "ambulance": {
+   "size_world_core": [
+    8.4,
+    4.05
+   ],
+   "pad_px": 11,
+   "ppu": 140,
+   "image_px": [
+    1198,
+    615
+   ],
+   "image_world": [
+    8.557142857142857,
+    4.392857142857143
+   ],
+   "bottom_core_from_image_bottom_world": 0.2642857142857143,
+   "rear_end_from_center_world": 4.2,
+   "roof_world": 3.75,
+   "L_body": 94.90941502258109,
+   "L_stripe": 83.24917933113122,
+   "L_tire": 62.831710887373674,
+   "L_stripe_v01": 71.19923029110556,
+   "L_tire_v01": 36.301989735026254
+  },
+  "ambulance_door": {
+   "size_world_core": [
+    1.05,
+    3.0
+   ],
+   "pad_px": 10,
+   "ppu": 140,
+   "image_world": [
+    1.1928571428571428,
+    3.142857142857143
+   ],
+   "top_from_box_top_world": 0.02
+  },
+  "gurney": {
+   "size_world_core": [
+    2.5,
+    1.12
+   ],
+   "pad_px": 10,
+   "ppw": 200,
+   "image_world": [
+    2.6,
+    1.22
+   ],
+   "mattress_top_world_core": 0.93
+  },
+  "student": {
+   "size_world_core": [
+    0.9,
+    1.75
+   ],
+   "arm_size_world_core": [
+    0.24,
+    0.5
+   ],
+   "shoulder_world_from_bottom_center": [
+    0.045454545454545456,
+    1.12
+   ],
+   "image_world": [
+    0.990909090909091,
+    1.8409090909090908
+   ],
+   "arm_image_world": [
+    0.3181818181818182,
+    0.5818181818181818
+   ]
+  }
+ }
+}

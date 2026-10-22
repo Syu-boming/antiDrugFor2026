@@ -1,0 +1,167 @@
+{
+ "method": "縮成 640×360 後分析；投影 v2＝projsim.py projector(v2) 套在縮圖上；門檻同 capture_analyze.py",
+ "variants": {
+  "fine_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": false,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 2
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x22_y0",
+     "px": [
+      1320,
+      0,
+      1380,
+      60
+     ],
+     "count_per_sec": 3,
+     "window_start": 22.6,
+     "cue": "a8_c002",
+     "cue_t": 0.5
+    },
+    {
+     "type": "luma",
+     "region": "x6_y2",
+     "px": [
+      360,
+      120,
+      420,
+      180
+     ],
+     "count_per_sec": 3,
+     "window_start": 25.3333,
+     "cue": "a8_c002",
+     "cue_t": 3.2333
+    },
+    {
+     "type": "luma",
+     "region": "x3_y5",
+     "px": [
+      180,
+      300,
+      240,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 22.6333,
+     "cue": "a8_c002",
+     "cue_t": 0.5333
+    },
+    {
+     "type": "luma",
+     "region": "x0_y7",
+     "px": [
+      0,
+      420,
+      60,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 24.6667,
+     "cue": "a8_c002",
+     "cue_t": 2.5667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y8",
+     "px": [
+      300,
+      480,
+      360,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 23.3,
+     "cue": "a8_c002",
+     "cue_t": 1.2
+    },
+    {
+     "type": "luma",
+     "region": "x0_y13",
+     "px": [
+      0,
+      780,
+      60,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 25.0,
+     "cue": "a8_c002",
+     "cue_t": 2.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y13",
+     "px": [
+      960,
+      780,
+      1020,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 26.9,
+     "cue": "a8_c002",
+     "cue_t": 4.8
+    }
+   ],
+   "near_limit_total": 409,
+   "near_limit_3_total": 7
+  },
+  "proj_16x9": {
+   "grid": [
+    16,
+    9
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 2,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [],
+   "near_limit_total": 101,
+   "near_limit_3_total": 0
+  },
+  "proj_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x0_y13",
+     "px": [
+      0,
+      780,
+      60,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 25.2,
+     "cue": "a8_c002",
+     "cue_t": 3.1
+    }
+   ],
+   "near_limit_total": 444,
+   "near_limit_3_total": 1
+  }
+ }
+}

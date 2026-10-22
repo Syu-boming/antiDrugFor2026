@@ -21,3 +21,15 @@
 | assets/final/sets/a2_window/sil-ale-hand_v01.png | 剪影（透明；243×311） | a2_window | 阿樂叔叔伸出去的前臂與手（剪影） | a2_c013 | 程式：rig/chr-ale_forearm-l_v05＋chr-ale_hand-l_v04 合成、旋轉、填暖深褐 | 衍生自使用者 ChatGPT 方案生成圖 | 小窗在手碰到盒子之前就收起 | v01 |
 | assets/final/sets/a2_window/notebook_v01.png | 景片（1500×960） | a2_window | 小晴的筆記本：淡格線（無字）、左頁燈籠竹骨架速寫、右頁一個鉛筆問號；第二個問號與鉛筆由 a2_window.ts 程式畫 | a2_c013 | 程式繪製 | 程式繪製（本專案） | 只有問號符號，沒有文字；和 a0 的筆記本特寫要由主線統一樣式 | v01 |
 | assets/final/sets/a2_window/layout.json | 景設定 | a2_window | 天空、後排騎樓、店內暖牆、工作台（bg-workshop-table）、圓凳、店面、窗玻璃；鏡位 a2_win_wide／a2_win_kids／a2_win_note | a2_c013 | 手寫；天色漸變、剪影小窗、筆記本在 app/src/sets/a2_window.ts | — | — | — |
+
+## G5 修正第 1 輪（2026-10-21 晚，a2 代理）
+
+| 檔名 | 類型 | 角色／場景 | 部件／表情 | 使用 cue | 來源／生成參考 | 授權 | 檢視結果 | 版本 |
+|---|---|---|---|---|---|---|---|---|
+| assets/final/chr-ye_pose-crouchphone_v01.png | 表演姿勢圖（透明；862×1449） | ye | crouchphone：蹲姿、左手（畫面右）拿手機貼耳等人接，另一手放在膝上；表情擔心 | a2_c012 | Codex image_gen（review/G5/a2/raw/a2_ye_phone_v01.png，參考 G2a S4、chr-ye_pose-crouch_v01、chr-ye_master_v01）；裁到不透明範圍＋16 px、清掉 alpha<32；原圖 assets/generated/chr-ye_pose-crouchphone_v01.png。show_characters.json `ye.poses.crouchphone`（headTop −743，依 crouch 比例換算） | 使用者 ChatGPT 方案生成圖 | 手機是無字的深灰圓角長方形，沒有螢幕畫面、按鍵、標誌；識別證只有手捧愛心；臉、髮型、制服與 crouch 一致 | v01 |
+| assets/final/sets/a2_memory/mem-box_v02.png | 景片（透明毛邊紙卡；1040×800） | a2_memory | 褪色回想小窗①（v02）：直接用 a1_c003 盒子特寫貼圖（sets/square_a1/boxclose，含右上角的灰線頭），放大到小窗寬 80%、輕微褪色 | a2_c003 | 程式：build_a2_art.py `mem_box_v2`（`python3 build_a2_art.py v02`） | 衍生自使用者 ChatGPT 方案生成圖＋程式繪製 | 無文字；灰線頭清楚 | v02 |
+| assets/final/sets/a2_window/sil-ale-hand_v02.png | 剪影（透明；636×310） | a2_window | 阿樂叔叔伸手接盒子的手（v02）：張開的手掌、五指分開、捲起的袖口；指尖在圖上 (25, 202) | a2_c013 | 程式：build_a2_art.py `sil_ale_hand_v2`（多邊形＋圓頭膠囊，4 倍超取樣） | 程式繪製（本專案） | 不是塊狀或爪子；在指尖碰到盒子前小窗就收起 | v02 |
+| （程式）app/src/sets/a2_shop.ts | 程式景 | a2_shop | G4 燈籠店＋L1 短線（腕線頂點透明度）、竹篾、手部近景小台（阿樂叔叔分件手臂＋白紙芯外框圖、程式燈籠紙四態與紙團、同款紙繩與紙環）、求助站（a2_helpdesk/layout.json 建在 x＝40） | a2_c001、a2_c004–a2_c012 | 程式 | 本專案 | a2_c004 與 workshop_g4 逐像素相同（7 格比對差 0） | — |
+| （程式）app/src/sets/a2_window.ts | 程式景 | a2_window | 加開著的店門暖光門口（孩子身後投影亮度 ≥ 0.50）、接盒子剪影手 v02 的位置 | a2_c013 | 程式 | 本專案 | — | — |
+| assets/final/sets/a2_shop/insert-ale-forearm-{r,l}_v01.png、insert-ale-hand-{r,l}_v01.png 與各自的 -outline_v01.png | 分件（透明；母版 2 倍：前臂 360×590／296×608、手 270×342／238×294） | a2_shop 手部近景 | 修正第 2 輪：阿樂母版 forearm（v05）／hand（v04）分件放大 2 倍處理版——全劇共用紙纖維紋理（對比 1.6 倍）、邊緣往內 6 px 漸暗 10%（紙片厚度）、2 px 深色紙邊；白紙芯外框加紙纖維與 1.5 px 淡灰外緣。形狀不改 | a2_c008（開頭手部近景） | 程式加工（review/G5/a2/scripts/build_fix2_a2_art.py）；來源為本專案母版分件 | 本專案自製 | 驗收「手部近景平塗、像橡膠」（b1r2_regress a2 一般問題 5）；紙環同時移到腕背橫紋上（a2_shop.ts buildArm wb） | v01 |
+| assets/final/sets/a2_helpdesk/layout.json（修改） | 景設定 | 求助站 | 修正第 2 輪：地面 #d9c3a0→#e8d7b8、後排騎樓自發光 0.3→0.5、帳篷與木箱自發光 0.2：求助站切回店內時全畫面亮度 0.48→0.52（相差 < 10%，原 0.41→0.52） | a2_c012 | 設定檔（修改前備份 review/G5/a2/scripts/a2_helpdesk_layout_fix1_base.json） | — | 主線更正裁定「切場亮度漸變」；不加第二次切黑（第 1 輪導演 6） | — |

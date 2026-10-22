@@ -1,0 +1,46 @@
+{
+ "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+ "cues": [
+  {
+   "cue": "a7_c001",
+   "kind": "scene",
+   "duration_sec": 25.62,
+   "preroll_sec": 0.6,
+   "estimate_sec": 27.0,
+   "diff_sec": -1.4,
+   "vo_sec": 16.77,
+   "lines": 3
+  },
+  {
+   "cue": "a7_c002",
+   "kind": "scene",
+   "duration_sec": 8.58,
+   "preroll_sec": 0,
+   "estimate_sec": 9.2,
+   "diff_sec": -0.6,
+   "vo_sec": 2.68,
+   "lines": 1
+  },
+  {
+   "cue": "a7_c003",
+   "kind": "scene",
+   "duration_sec": 13.26,
+   "preroll_sec": 0,
+   "estimate_sec": 14.2,
+   "diff_sec": -0.9,
+   "vo_sec": 8.31,
+   "lines": 2
+  }
+ ],
+ "act_total_sec": 47.5,
+ "act_preroll_total_sec": 0.6,
+ "estimate_sum_sec": 50.4,
+ "act_budget_recorded_sec": 50.5,
+ "diff_vs_budget_sec": -2.4,
+ "playback_with_holds_sec": 58.56,
+ "holds_assumed_sec": {
+  "a7_c001": 3.5,
+  "a7_c002": 3.5,
+  "a7_c003": 3.5
+ }
+}

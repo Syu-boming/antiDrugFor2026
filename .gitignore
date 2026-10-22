@@ -57,3 +57,9 @@ review/G5/**/preview/data.js
 review/G5/*/pack/proj/16x9/
 review/G5/*/dist/
 review/G5/**/PROGRESS*.md.bak
+
+# 交付建置產物（由 app/dist 與 app/electron/pack.mjs 產生，可重組）
+交付/
+review/G5/*/pack/_work/
+review/G5/qa/*/*/
+review/G5/*/checks/snaps/

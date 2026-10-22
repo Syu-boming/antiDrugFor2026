@@ -1,0 +1,119 @@
+{
+ "xiaoqing:pointr": {
+  "ref": [
+   16,
+   17
+  ],
+  "eyes": [
+   [
+    261,
+    214,
+    319,
+    274
+   ],
+   [
+    373,
+    203,
+    413,
+    263
+   ]
+  ],
+  "mouth": [
+   315,
+   293,
+   373,
+   313
+  ],
+  "paintedMouth": "smile",
+  "_image": "assets/final/chr-xiaoqing_pose-pointr_v07.png"
+ },
+ "xiaoyu:pointr": {
+  "ref": [
+   16,
+   17
+  ],
+  "eyes": [
+   [
+    304,
+    256,
+    330,
+    297
+   ],
+   [
+    394,
+    237,
+    416,
+    277
+   ]
+  ],
+  "mouth": [
+   340,
+   319,
+   392,
+   332
+  ],
+  "paintedMouth": "smile",
+  "glasses": true,
+  "patchK": 1.32,
+  "_image": "assets/final/chr-xiaoyu_pose-pointr_v07.png"
+ },
+ "xiaoyu:glasses": {
+  "ref": [
+   16,
+   17
+  ],
+  "eyes": [
+   [
+    180,
+    255,
+    203,
+    297
+   ],
+   [
+    273,
+    273,
+    301,
+    316
+   ]
+  ],
+  "mouth": [
+   226,
+   347,
+   254,
+   357
+  ],
+  "paintedMouth": "closed",
+  "glasses": true,
+  "patchK": 1.32,
+  "_image": "assets/final/chr-xiaoyu_pose-glasses_v07.png"
+ },
+ "xiaoqing:forehead_l": {
+  "ref": [
+   16,
+   16
+  ],
+  "eyes": [
+   [
+    239,
+    199,
+    269,
+    249
+   ],
+   [
+    328,
+    215,
+    378,
+    267
+   ]
+  ],
+  "mouth": [
+   277,
+   296,
+   309,
+   302
+  ],
+  "paintedMouth": "smile",
+  "_image": "assets/final/chr-xiaoqing_pose-forehead-l_v01.png",
+  "_note": "xiaoqing:forehead 的鏡射"
+ }
+}

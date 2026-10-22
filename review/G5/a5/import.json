@@ -1,0 +1,517 @@
+{
+ "_reference": {
+  "xiaoqing": {
+   "湖水綠吊帶褲": {
+    "px": 181890,
+    "L*": 37.2,
+    "median": "#216160",
+    "lab": [
+     37.2,
+     -19.5,
+     -5.7
+    ]
+   },
+   "芥末黃上衣": {
+    "px": 29391,
+    "L*": 74.1,
+    "median": "#F1A827",
+    "lab": [
+     74.1,
+     17.0,
+     70.5
+    ]
+   }
+  },
+  "xiaoyu": {
+   "橘紅外套": {
+    "px": 123681,
+    "L*": 39.0,
+    "median": "#AC2D03",
+    "lab": [
+     39.0,
+     49.9,
+     50.2
+    ]
+   },
+   "卡其短褲": {
+    "px": 50724,
+    "L*": 57.1,
+    "median": "#AE804F",
+    "lab": [
+     57.1,
+     11.9,
+     33.0
+    ]
+   }
+  },
+  "chen": {
+   "黃綠背心": {
+    "px": 90171,
+    "L*": 84.2,
+    "median": "#D6D94B",
+    "lab": [
+     84.2,
+     -17.9,
+     66.3
+    ]
+   },
+   "淺灰制服": {
+    "px": 124229,
+    "L*": 81.6,
+    "median": "#D5C9B5",
+    "lab": [
+     81.6,
+     2.9,
+     8.1
+    ]
+   }
+  }
+ },
+ "a5_chen_shout_v01": {
+  "raw": "review/G5/a5/raw/a5_chen_shout_v01.png",
+  "character": "chen",
+  "part": "pose-shoutr",
+  "generated": "assets/generated/chr-chen_pose-shoutr_v01.png",
+  "final": "assets/final/chr-chen_pose-shoutr_v01.png",
+  "offset_from_source": [
+   179,
+   0
+  ],
+  "size": [
+   724,
+   1530
+  ],
+  "stray_px_removed": 0,
+  "feet_bottom_px": [
+   171.5,
+   1512
+  ],
+  "height_px": 1496,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 12176,
+   "semi_alpha_ratio_of_edge": 2.498,
+   "raw_fog_px": 3753,
+   "raw_margins": {
+    "left": 196,
+    "top": 17,
+    "right": 138,
+    "bottom": 23
+   },
+   "raw_touches_edge": [],
+   "crop_ok": true,
+   "white_profile_1_24": [
+    0.0,
+    0.286,
+    0.977,
+    0.996,
+    0.997,
+    0.998,
+    0.999,
+    0.999,
+    1.0,
+    1.0,
+    1.0,
+    0.707,
+    0.113,
+    0.066,
+    0.054,
+    0.061,
+    0.077,
+    0.052,
+    0.042,
+    0.037,
+    0.032,
+    0.031,
+    0.032,
+    0.028
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 10,
+   "dark_line_inside_border": 0.798,
+   "white_border_coverage": 0.999,
+   "white_border_ok": true,
+   "lr_L_median_diff": 6.1,
+   "mean_b": 21.3
+  },
+  "garments": {
+   "黃綠背心": {
+    "px": 85895,
+    "L*": 87.0,
+    "median": "#DBE24A",
+    "lab": [
+     87.0,
+     -20.1,
+     69.6
+    ],
+    "dE_vs_master": 4.9
+   },
+   "淺灰制服": {
+    "px": 102834,
+    "L*": 83.0,
+    "median": "#DACCBE",
+    "lab": [
+     83.0,
+     3.3,
+     6.9
+    ],
+    "dE_vs_master": 1.9
+   }
+  }
+ },
+ "a5_xq_sitb_v01": {
+  "raw": "review/G5/a5/raw/a5_xq_sitb_v01.png",
+  "character": "xiaoqing",
+  "part": "pose-sitb",
+  "raw_main_L*": 38.3,
+  "recolor": [
+   [
+    "湖水綠吊帶褲",
+    124096,
+    38.3,
+    37.0,
+    "#226365",
+    "#1E6062"
+   ]
+  ],
+  "generated": "assets/generated/chr-xiaoqing_pose-sitb_v01.png",
+  "final": "assets/final/chr-xiaoqing_pose-sitb_v01.png",
+  "offset_from_source": [
+   234,
+   108
+  ],
+  "size": [
+   575,
+   1332
+  ],
+  "stray_px_removed": 0,
+  "feet_bottom_px": [
+   387.0,
+   1314
+  ],
+  "height_px": 1298,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 7311,
+   "semi_alpha_ratio_of_edge": 2.043,
+   "raw_fog_px": 2152,
+   "raw_margins": {
+    "left": 250,
+    "top": 125,
+    "right": 231,
+    "bottom": 113
+   },
+   "raw_touches_edge": [],
+   "crop_ok": true,
+   "white_profile_1_24": [
+    0.0,
+    0.351,
+    0.988,
+    0.999,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.977,
+    0.468,
+    0.067,
+    0.055,
+    0.151,
+    0.176,
+    0.154,
+    0.153,
+    0.14,
+    0.133,
+    0.124,
+    0.118,
+    0.123,
+    0.126
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 9,
+   "dark_line_inside_border": 0.662,
+   "white_border_coverage": 1.0,
+   "white_border_ok": true,
+   "lr_L_median_diff": 13.0,
+   "mean_b": 17.0
+  },
+  "garments": {
+   "湖水綠吊帶褲": {
+    "px": 123107,
+    "L*": 37.0,
+    "median": "#1F6062",
+    "lab": [
+     37.0,
+     -19.0,
+     -7.0
+    ],
+    "dE_vs_master": 1.4
+   },
+   "芥末黃上衣": {
+    "px": 32164,
+    "L*": 75.1,
+    "median": "#F0AD34",
+    "lab": [
+     75.1,
+     14.7,
+     67.0
+    ],
+    "dE_vs_master": 4.3
+   }
+  }
+ },
+ "a5_xy_sitb_v01": {
+  "raw": "review/G5/a5/raw/a5_xy_sitb_v01.png",
+  "character": "xiaoyu",
+  "part": "pose-sitb",
+  "raw_main_L*": 46.5,
+  "recolor": [
+   [
+    "橘紅外套",
+    118910,
+    46.5,
+    39.0,
+    "#CA3A0F",
+    "#B22200"
+   ]
+  ],
+  "generated": "assets/generated/chr-xiaoyu_pose-sitb_v01.png",
+  "final": "assets/final/chr-xiaoyu_pose-sitb_v01.png",
+  "offset_from_source": [
+   211,
+   79
+  ],
+  "size": [
+   675,
+   1366
+  ],
+  "stray_px_removed": 0,
+  "feet_bottom_px": [
+   441.5,
+   1348
+  ],
+  "height_px": 1332,
+  "checks": {
+   "fog_px": 0,
+   "semi_alpha_px": 8501,
+   "semi_alpha_ratio_of_edge": 2.198,
+   "raw_fog_px": 2851,
+   "raw_margins": {
+    "left": 228,
+    "top": 96,
+    "right": 155,
+    "bottom": 108
+   },
+   "raw_touches_edge": [],
+   "crop_ok": true,
+   "white_profile_1_24": [
+    0.0,
+    0.198,
+    0.964,
+    0.996,
+    0.999,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    0.997,
+    0.456,
+    0.1,
+    0.082,
+    0.205,
+    0.228,
+    0.227,
+    0.223,
+    0.224,
+    0.232,
+    0.224,
+    0.225,
+    0.221
+   ],
+   "white_border_start_px": 2,
+   "outer_dark_line": true,
+   "white_border_px": 10,
+   "dark_line_inside_border": 0.632,
+   "white_border_coverage": 0.999,
+   "white_border_ok": true,
+   "lr_L_median_diff": 39.9,
+   "mean_b": 27.4
+  },
+  "garments": {
+   "橘紅外套": {
+    "px": 116771,
+    "L*": 39.0,
+    "median": "#B22200",
+    "lab": [
+     39.0,
+     55.0,
+     52.1
+    ],
+    "dE_vs_master": 5.4
+   },
+   "卡其短褲": {
+    "px": 28684,
+    "L*": 61.4,
+    "median": "#B98C5B",
+    "lab": [
+     61.4,
+     11.2,
+     31.7
+    ],
+    "dE_vs_master": 4.5
+   }
+  }
+ },
+ "a5_medics_v01": {
+  "raw": "review/G5/a5/raw/a5_medics_v01.png",
+  "generated": "assets/generated/chr-medic_pair_v01.png",
+  "cut_x": 804,
+  "a": {
+   "final": "assets/final/chr-medic-a_stand_v01.png",
+   "offset_from_source": [
+    306,
+    -8
+   ],
+   "size": [
+    434,
+    1040
+   ],
+   "stray_px_removed": 0,
+   "feet_bottom_px": [
+    342.5,
+    1023
+   ],
+   "height_px": 1007,
+   "checks": {
+    "fog_px": 0,
+    "semi_alpha_px": 6717,
+    "semi_alpha_ratio_of_edge": 2.074,
+    "raw_fog_px": 0,
+    "raw_margins": {
+     "left": 323,
+     "top": 9,
+     "right": 813,
+     "bottom": 8
+    },
+    "raw_touches_edge": [],
+    "crop_ok": true,
+    "white_profile_1_24": [
+     0.0,
+     0.613,
+     0.991,
+     0.996,
+     0.997,
+     0.998,
+     0.998,
+     0.999,
+     0.999,
+     0.723,
+     0.111,
+     0.068,
+     0.083,
+     0.109,
+     0.096,
+     0.094,
+     0.083,
+     0.082,
+     0.08,
+     0.07,
+     0.075,
+     0.072,
+     0.077,
+     0.077
+    ],
+    "white_border_start_px": 1,
+    "outer_dark_line": false,
+    "white_border_px": 9,
+    "dark_line_inside_border": 0.818,
+    "white_border_coverage": 0.997,
+    "white_border_ok": true,
+    "lr_L_median_diff": 0.4,
+    "mean_b": 5.6
+   },
+   "garments": {}
+  },
+  "b": {
+   "final": "assets/final/chr-medic-b_stand_v01.png",
+   "offset_from_source": [
+    870,
+    69
+   ],
+   "size": [
+    351,
+    964
+   ],
+   "stray_px_removed": 0,
+   "feet_bottom_px": [
+    91.5,
+    946
+   ],
+   "height_px": 930,
+   "checks": {
+    "fog_px": 0,
+    "semi_alpha_px": 5958,
+    "semi_alpha_ratio_of_edge": 2.186,
+    "raw_fog_px": 0,
+    "raw_margins": {
+     "left": 887,
+     "top": 86,
+     "right": 332,
+     "bottom": 8
+    },
+    "raw_touches_edge": [],
+    "crop_ok": true,
+    "white_profile_1_24": [
+     0.0,
+     0.642,
+     0.997,
+     0.999,
+     0.999,
+     0.999,
+     0.999,
+     0.999,
+     0.999,
+     0.634,
+     0.056,
+     0.03,
+     0.076,
+     0.107,
+     0.101,
+     0.102,
+     0.088,
+     0.086,
+     0.077,
+     0.067,
+     0.069,
+     0.064,
+     0.07,
+     0.074
+    ],
+    "white_border_start_px": 1,
+    "outer_dark_line": false,
+    "white_border_px": 9,
+    "dark_line_inside_border": 0.841,
+    "white_border_coverage": 0.999,
+    "white_border_ok": true,
+    "lr_L_median_diff": 0.0,
+    "mean_b": 5.3
+   },
+   "garments": {}
+  }
+ },
+ "a5_hosp_wall_v01": {
+  "raw": "review/G5/a5/raw/a5_hosp_wall_v01.png",
+  "generated": "assets/generated/bg-hospital-wall_v01.png",
+  "final": "assets/final/sets/a5_hospital/wall_v01.png",
+  "size": [
+   1536,
+   1024
+  ]
+ }
+}

@@ -4,10 +4,10 @@
   {
    "cue": "a1_c001",
    "kind": "scene",
-   "duration_sec": 30.8,
+   "duration_sec": 27.75,
    "preroll_sec": 0.6,
    "estimate_sec": 22.2,
-   "diff_sec": 8.6,
+   "diff_sec": 5.6,
    "vo_sec": 16.8,
    "lines": 5
   },
@@ -44,10 +44,10 @@
   {
    "cue": "a1_c005",
    "kind": "quiz",
-   "duration_sec": 23.34,
+   "duration_sec": 23.89,
    "preroll_sec": 0,
    "estimate_sec": 21.8,
-   "diff_sec": 1.5,
+   "diff_sec": 2.1,
    "vo_sec": 19.14,
    "lines": 5
   },
@@ -64,30 +64,30 @@
   {
    "cue": "a1_c007",
    "kind": "lamp",
-   "duration_sec": 7.62,
+   "duration_sec": 5.72,
    "preroll_sec": 0,
    "estimate_sec": 6.0,
-   "diff_sec": 1.6,
+   "diff_sec": -0.3,
    "vo_sec": 2.02,
    "lines": 1
   },
   {
    "cue": "a1_c008",
    "kind": "scene",
-   "duration_sec": 27.58,
+   "duration_sec": 27.78,
    "preroll_sec": 0.6,
    "estimate_sec": 21.2,
-   "diff_sec": 6.4,
+   "diff_sec": 6.6,
    "vo_sec": 10.03,
    "lines": 3
   }
  ],
- "act_total_sec": 159.6,
+ "act_total_sec": 155.4,
  "act_preroll_total_sec": 1.2,
  "estimate_sum_sec": 144.3,
  "act_budget_recorded_sec": 144.2,
- "diff_vs_budget_sec": 16.6,
- "playback_with_holds_sec": 186.26,
+ "diff_vs_budget_sec": 12.4,
+ "playback_with_holds_sec": 182.06,
  "holds_assumed_sec": {
   "a1_c001": 3.5,
   "a1_c002": 3.5,

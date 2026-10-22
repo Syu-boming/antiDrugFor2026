@@ -318,3 +318,4 @@ registerProgramRig('zhezhe', (o) => new ZhezheProgram(o.place, o));
 
 - `tools/act_review_pack.py`：字幕同步改用 `subtitle_sync_g5`（silencedetect −40 dB、最短 0.05 秒，報告與 INDEX.md 註明）；`audio/loudness.json` 新增 `music_sfx_only`（只有配樂＋音效的分軌：瞬間響度最大、100 ms 最大上升、1 秒內最大上升、取樣峰值、真峰值，附發生的 cue 與 G4 基準 −15.7 LUFS 對照）；INDEX.md 光敏節加「16×9 與 fine_32x18 每秒 ≤ 3（明暗與紅色）」的通過／不通過。
 - `tools/capture.mjs`：每筆量測記 `dim`（換景漸暗）與 `quiz`（DOM 題卡不透明度）；`tools/capture_probe.py` 在 dim > 0.05 或題卡 > 0.5 的格不量兒童身後亮度、也不量線的 ΔL*（列 `excluded_dim`）。
+- **切場亮度（主線更正，2026-10-22 08:0x）**：全畫面平均亮度相差超過約 20% 的切換（含進出題卡）不能一格硬切：用 fade.out／fade.in（各 ≥0.3 秒），或先 light.dim 拉近亮度（≥0.6 秒、鏡頭不動）再切；同一秒內不要疊其他明暗變化。出題台詞「第 N 題」開始時間 ≥1.4 秒。

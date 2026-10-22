@@ -1,0 +1,112 @@
+{
+ "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+ "cues": [
+  {
+   "cue": "a6_c001",
+   "kind": "scene",
+   "duration_sec": 13.68,
+   "preroll_sec": 0.6,
+   "estimate_sec": 18.0,
+   "diff_sec": -4.3,
+   "vo_sec": 5.83,
+   "lines": 2
+  },
+  {
+   "cue": "a6_c002",
+   "kind": "scene",
+   "duration_sec": 31.81,
+   "preroll_sec": 0,
+   "estimate_sec": 25.5,
+   "diff_sec": 6.3,
+   "vo_sec": 23.31,
+   "lines": 4
+  },
+  {
+   "cue": "a6_c003",
+   "kind": "quiz",
+   "duration_sec": 23.9,
+   "preroll_sec": 0,
+   "estimate_sec": 22.0,
+   "diff_sec": 1.9,
+   "vo_sec": 18.55,
+   "lines": 5
+  },
+  {
+   "cue": "a6_c004",
+   "kind": "reveal",
+   "duration_sec": 6.94,
+   "preroll_sec": 0,
+   "estimate_sec": 7.2,
+   "diff_sec": -0.3,
+   "vo_sec": 4.74,
+   "lines": 1
+  },
+  {
+   "cue": "a6_c005",
+   "kind": "lamp",
+   "duration_sec": 7.07,
+   "preroll_sec": 0,
+   "estimate_sec": 6.2,
+   "diff_sec": 0.9,
+   "vo_sec": 2.41,
+   "lines": 1
+  },
+  {
+   "cue": "a6_c006",
+   "kind": "scene",
+   "duration_sec": 35.26,
+   "preroll_sec": 0,
+   "estimate_sec": 31.5,
+   "diff_sec": 3.8,
+   "vo_sec": 23.46,
+   "lines": 6
+  },
+  {
+   "cue": "a6_c007",
+   "kind": "scene",
+   "duration_sec": 21.05,
+   "preroll_sec": 0,
+   "estimate_sec": 23.0,
+   "diff_sec": -1.9,
+   "vo_sec": 10.8,
+   "lines": 3
+  },
+  {
+   "cue": "a6_c008",
+   "kind": "scene",
+   "duration_sec": 19.57,
+   "preroll_sec": 0.6,
+   "estimate_sec": 22.5,
+   "diff_sec": -2.9,
+   "vo_sec": 10.62,
+   "lines": 2
+  },
+  {
+   "cue": "a6_c009",
+   "kind": "scene",
+   "duration_sec": 25.91,
+   "preroll_sec": 0.6,
+   "estimate_sec": 27.0,
+   "diff_sec": -1.1,
+   "vo_sec": 19.36,
+   "lines": 4
+  }
+ ],
+ "act_total_sec": 185.2,
+ "act_preroll_total_sec": 1.8,
+ "estimate_sum_sec": 182.9,
+ "act_budget_recorded_sec": 183.0,
+ "diff_vs_budget_sec": 4.0,
+ "playback_with_holds_sec": 215.99,
+ "holds_assumed_sec": {
+  "a6_c001": 3.5,
+  "a6_c002": 3.5,
+  "a6_c003": 3,
+  "a6_c004": 2.5,
+  "a6_c005": 2.5,
+  "a6_c006": 3.5,
+  "a6_c007": 3.5,
+  "a6_c008": 3.5,
+  "a6_c009": 3.5
+ }
+}

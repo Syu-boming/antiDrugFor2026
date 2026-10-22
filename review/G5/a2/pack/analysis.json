@@ -1,5 +1,6 @@
 {
  "act": "a2",
+ "capture_probe_rerun": true,
  "proj": {
   "16x9": 39
  },
@@ -23,67 +24,99 @@
  "audio": {
   "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
   "file": "audio/a2_mix.wav",
-  "duration_sec": 311.95,
-  "sample_peak_dBFS": -1.33,
+  "duration_sec": 304.07,
+  "sample_peak_dBFS": -1.44,
   "clipped_samples": 0,
   "full_playback": {
-   "I_LUFS": -16.0,
-   "LRA_LU": 13.7,
-   "TP_dBTP": -1.3
+   "I_LUFS": -15.9,
+   "LRA_LU": 13.2,
+   "TP_dBTP": -1.4
   },
   "line_vo_file_I_spread_LU": 0.3,
-  "line_mix_I_spread_LU": 0.5,
+  "line_mix_I_spread_LU": 0.6,
   "momentary_max_LUFS": -8.9,
-  "momentary_max_rise_within_1s_LU": 43.9,
-  "momentary_max_rise_per_100ms_LU": 40.0,
+  "momentary_max_rise_within_1s_LU": 44.9,
+  "momentary_max_rise_per_100ms_LU": 43.5,
+  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
+  "music_sfx_only": {
+   "max_LUFS": -16.9,
+   "max_at_sec": 188.6,
+   "max_at": {
+    "cue": "a2_c009",
+    "cue_t": 0.96
+   },
+   "max_rise_per_100ms_LU": 27.2,
+   "max_rise_per_100ms_at_sec": 213.3,
+   "max_rise_per_100ms_at": {
+    "cue": "a2_c010",
+    "cue_t": 0.35
+   },
+   "max_rise_within_1s_LU": 39.9,
+   "max_rise_within_1s_at_sec": 1.6,
+   "sample_peak_dBFS": -7.96,
+   "sample_peak_at_sec": 213.27,
+   "sample_peak_at": {
+    "cue": "a2_c010",
+    "cue_t": 0.32
+   },
+   "true_peak_dBTP": -8.0,
+   "I_LUFS": -29.3,
+   "g4_reference": {
+    "max_LUFS": -15.7,
+    "max_rise_within_1s_LU": 34.8,
+    "max_rise_per_100ms_LU": 18.6
+   },
+   "within_g4_max_LUFS": true,
+   "note": "不含配音的配樂＋音效分軌；上升量以 −70 LUFS 為下限（從靜音起音會算成大上升，要看發生的 cue 與聲音是否本來就是輕的起音）；聽感未驗證。"
+  },
   "freeze_holds": [
    {
     "cue": "a2_c001",
-    "hold_from_sec": 24.36,
+    "hold_from_sec": 18.36,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -49.7,
+    "momentary_max_after_3s_LUFS": -48.6,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c002",
-    "hold_from_sec": 53.04,
+    "hold_from_sec": 47.64,
     "hold_sec": 3.5,
     "momentary_max_after_3s_LUFS": -44.7,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c003",
-    "hold_from_sec": 72.44,
+    "hold_from_sec": 67.04,
     "hold_sec": 3.5,
     "momentary_max_after_3s_LUFS": -52.8,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c004",
-    "hold_from_sec": 98.45,
+    "hold_from_sec": 93.05,
     "hold_sec": 3.5,
     "momentary_max_after_3s_LUFS": -41.9,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c008",
-    "hold_from_sec": 188.94,
+    "hold_from_sec": 184.14,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -45.7,
+    "momentary_max_after_3s_LUFS": -45.8,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c012",
-    "hold_from_sec": 269.96,
+    "hold_from_sec": 262.33,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -50.8,
+    "momentary_max_after_3s_LUFS": -51.6,
     "pass_le_-35": true
    },
    {
     "cue": "a2_c013",
-    "hold_from_sec": 308.45,
+    "hold_from_sec": 300.57,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -47.7,
+    "momentary_max_after_3s_LUFS": -46.1,
     "pass_le_-35": true
    }
   ],
@@ -103,45 +136,49 @@
   "ok": true,
   "max_changes_per_sec": {
    "luma": 3,
-   "red": 3
+   "red": 2
   },
-  "near_limit_total": 170,
-  "frames_analyzed": 9358
+  "near_limit_total": 148,
+  "frames_analyzed": 9122
  },
  "flash_variants": {
   "fine_32x18": {
    "max_changes_per_sec": {
-    "luma": 6,
-    "red": 4
+    "luma": 3,
+    "red": 3
    },
-   "near_limit_3_total": 188
+   "near_limit_3_total": 35
   },
   "proj_16x9": {
    "max_changes_per_sec": {
     "luma": 3,
     "red": 0
    },
-   "near_limit_3_total": 21
+   "near_limit_3_total": 1
   },
   "proj_32x18": {
    "max_changes_per_sec": {
-    "luma": 6,
+    "luma": 3,
     "red": 0
    },
-   "near_limit_3_total": 154
+   "near_limit_3_total": 20
   }
  },
  "subtitle_sync": {
-  "method": "ffmpeg silencedetect noise=−45 dB、d=0.1 s 找配音檔的語音起點（第 1 頁＝第一個起點；之後各頁＝頁起點前後最接近的停頓後起點）；差值＝字幕頁起點 − 語音起點",
+  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+  "silencedetect": {
+   "noise_dB": -40,
+   "min_silence_s": 0.05
+  },
   "range_s": [
    -0.8,
    0.1
   ],
-  "all_pass": false
+  "all_pass": true
  },
  "video": {
   "file": "a2_playback.mp4",
-  "frames": 9358,
+  "frames": 9122,
   "ffprobe": {
    "programs": [],
    "stream_groups": [],
@@ -151,7 +188,7 @@
      "width": 1920,
      "height": 1080,
      "r_frame_rate": "30/1",
-     "nb_frames": "9358",
+     "nb_frames": "9122",
      "side_data_list": [
       {}
      ]
@@ -159,12 +196,12 @@
     {
      "codec_name": "aac",
      "r_frame_rate": "0/0",
-     "nb_frames": "14622"
+     "nb_frames": "14254"
     }
    ],
    "format": {
-    "duration": "311.933333",
-    "size": "114280981"
+    "duration": "304.066667",
+    "size": "99371847"
    }
   }
  },
@@ -174,10 +211,10 @@
    {
     "cue": "a2_c001",
     "kind": "scene",
-    "duration_sec": 23.76,
+    "duration_sec": 17.76,
     "preroll_sec": 0.6,
     "estimate_sec": 22.8,
-    "diff_sec": 1.0,
+    "diff_sec": -5.0,
     "vo_sec": 12.51,
     "lines": 3
    },
@@ -185,7 +222,7 @@
     "cue": "a2_c002",
     "kind": "scene",
     "duration_sec": 25.18,
-    "preroll_sec": 0,
+    "preroll_sec": 0.6,
     "estimate_sec": 27.5,
     "diff_sec": -2.3,
     "vo_sec": 7.73,
@@ -214,10 +251,10 @@
    {
     "cue": "a2_c005",
     "kind": "quiz",
-    "duration_sec": 23.31,
+    "duration_sec": 23.86,
     "preroll_sec": 0,
     "estimate_sec": 22.0,
-    "diff_sec": 1.3,
+    "diff_sec": 1.9,
     "vo_sec": 19.11,
     "lines": 5
    },
@@ -234,30 +271,30 @@
    {
     "cue": "a2_c007",
     "kind": "lamp",
-    "duration_sec": 10.17,
+    "duration_sec": 9.17,
     "preroll_sec": 0,
     "estimate_sec": 9.8,
-    "diff_sec": 0.4,
+    "diff_sec": -0.6,
     "vo_sec": 5.47,
     "lines": 1
    },
    {
     "cue": "a2_c008",
     "kind": "scene",
-    "duration_sec": 38.35,
+    "duration_sec": 39.4,
     "preroll_sec": 0,
     "estimate_sec": 28.8,
-    "diff_sec": 9.6,
+    "diff_sec": 10.6,
     "vo_sec": 30.3,
     "lines": 5
    },
    {
     "cue": "a2_c009",
     "kind": "quiz",
-    "duration_sec": 21.76,
+    "duration_sec": 22.31,
     "preroll_sec": 0,
     "estimate_sec": 20.0,
-    "diff_sec": 1.8,
+    "diff_sec": 2.3,
     "vo_sec": 17.56,
     "lines": 5
    },
@@ -274,40 +311,40 @@
    {
     "cue": "a2_c011",
     "kind": "lamp",
-    "duration_sec": 6.57,
+    "duration_sec": 5.57,
     "preroll_sec": 0,
     "estimate_sec": 6.0,
-    "diff_sec": 0.6,
+    "diff_sec": -0.4,
     "vo_sec": 1.87,
     "lines": 1
    },
    {
     "cue": "a2_c012",
     "kind": "scene",
-    "duration_sec": 34.7,
+    "duration_sec": 32.32,
     "preroll_sec": 0,
     "estimate_sec": 30.5,
-    "diff_sec": 4.2,
+    "diff_sec": 1.8,
     "vo_sec": 20.6,
     "lines": 5
    },
    {
     "cue": "a2_c013",
     "kind": "scene",
-    "duration_sec": 34.39,
+    "duration_sec": 34.14,
     "preroll_sec": 0.6,
     "estimate_sec": 33.0,
-    "diff_sec": 1.4,
+    "diff_sec": 1.1,
     "vo_sec": 24.19,
     "lines": 5
    }
   ],
-  "act_total_sec": 269.1,
-  "act_preroll_total_sec": 2.4,
+  "act_total_sec": 260.6,
+  "act_preroll_total_sec": 3.0,
   "estimate_sum_sec": 255.2,
   "act_budget_recorded_sec": 255.0,
-  "diff_vs_budget_sec": 16.5,
-  "playback_with_holds_sec": 311.95,
+  "diff_vs_budget_sec": 8.6,
+  "playback_with_holds_sec": 304.07,
   "holds_assumed_sec": {
    "a2_c001": 3.5,
    "a2_c002": 3.5,
@@ -339,22 +376,24 @@
   "actors_with_strings": [
    "ale"
   ],
-  "probe_frames_with_strings": 2784,
+  "probe_frames_with_strings": 2692,
   "string_path_min_dist_to_head_box_px": 17.2,
+  "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+  "string_head_offscreen_skipped": 615,
   "per_anchor": {
    "ale.wrist": {
-    "min_dist_to_head_box_px": 24.2,
-    "frames": 2784,
-    "at": "a2_c002 t=4.3"
+    "min_dist_to_head_box_px": 20.1,
+    "frames": 2487,
+    "at": "a2_c009 t=1"
    },
    "ale.elbow": {
-    "min_dist_to_head_box_px": 34.3,
-    "frames": 2510,
-    "at": "a2_c002 t=5.2"
+    "min_dist_to_head_box_px": 20.3,
+    "frames": 2279,
+    "at": "a2_c009 t=1"
    },
    "ale.knee": {
     "min_dist_to_head_box_px": 17.2,
-    "frames": 2500,
+    "frames": 2269,
     "at": "a2_c005 t=10.4"
    }
   },
@@ -395,7 +434,7 @@
  "frames_meta": {
   "preroll": {
    "a2_c001": 0.6,
-   "a2_c002": 0,
+   "a2_c002": 0.6,
    "a2_c003": 0.6,
    "a2_c004": 0.6,
    "a2_c005": 0,
@@ -411,82 +450,82 @@
   "engineDurations": {
    "a0_c000": 0,
    "a0_c001": 13.66,
-   "a0_c002": 20.65,
-   "a0_c003": 26.04,
-   "a0_c004": 29.51,
-   "a0_c005": 22.74,
-   "a1_c001": 30.8,
+   "a0_c002": 22.3,
+   "a0_c003": 23.94,
+   "a0_c004": 28.61,
+   "a0_c005": 22.04,
+   "a1_c001": 27.75,
    "a1_c002": 14.53,
    "a1_c003": 18.52,
    "a1_c004": 30.2,
-   "a1_c005": 23.34,
+   "a1_c005": 23.89,
    "a1_c006": 6.97,
-   "a1_c007": 7.62,
-   "a1_c008": 26.38,
-   "a2_c001": 23.76,
+   "a1_c007": 5.72,
+   "a1_c008": 27.78,
+   "a2_c001": 17.76,
    "a2_c002": 25.18,
    "a2_c003": 15.3,
    "a2_c004": 21.91,
-   "a2_c005": 23.31,
+   "a2_c005": 23.86,
    "a2_c006": 7.16,
-   "a2_c007": 10.17,
-   "a2_c008": 38.35,
-   "a2_c009": 21.76,
+   "a2_c007": 9.17,
+   "a2_c008": 39.4,
+   "a2_c009": 22.31,
    "a2_c010": 6.49,
-   "a2_c011": 6.57,
-   "a2_c012": 34.7,
-   "a2_c013": 34.39,
-   "a3_c001": 21.95,
-   "a3_c002": 16.93,
-   "a3_c003": 24.65,
-   "a3_c004": 16.32,
-   "a3_c005": 23.31,
+   "a2_c011": 5.57,
+   "a2_c012": 32.32,
+   "a2_c013": 34.14,
+   "a3_c001": 21.5,
+   "a3_c002": 13.23,
+   "a3_c003": 23.55,
+   "a3_c004": 15.12,
+   "a3_c005": 23.71,
    "a3_c006": 7.44,
-   "a3_c007": 6.88,
-   "a3_c008": 35.44,
+   "a3_c007": 5.88,
+   "a3_c008": 36.39,
    "a4_c001": 23.92,
-   "a4_c002": 25.46,
+   "a4_c002": 20.36,
    "a4_c003": 15.52,
-   "a4_c004": 14.7,
-   "a4_c005": 18.67,
+   "a4_c004": 15.3,
+   "a4_c005": 19.57,
    "a4_c006": 6.26,
-   "a4_c007": 6.56,
-   "a4_c008": 20.03,
-   "a4_c009": 25.71,
+   "a4_c007": 7.16,
+   "a4_c008": 14.33,
+   "a4_c009": 26.61,
    "a4_c010": 7.32,
-   "a4_c011": 8.62,
-   "a4_c012": 28.67,
-   "a4_c013": 28.35,
-   "a5_c001": 39.17,
-   "a5_c002": 23.02,
-   "a5_c003": 7.22,
-   "a5_c004": 6.72,
-   "a5_c005": 25.15,
-   "a5_c006": 34.73,
-   "a5_c007": 21.82,
-   "a5_c008": 30.96,
-   "a6_c001": 18.28,
-   "a6_c002": 30.66,
-   "a6_c003": 22.75,
+   "a4_c011": 6.42,
+   "a4_c012": 31.07,
+   "a4_c013": 24.75,
+   "a5_c001": 41.07,
+   "a5_c002": 23.62,
+   "a5_c003": 7.02,
+   "a5_c004": 6.2,
+   "a5_c005": 21.2,
+   "a5_c006": 31.18,
+   "a5_c007": 25.83,
+   "a5_c008": 27.41,
+   "a6_c001": 13.68,
+   "a6_c002": 31.81,
+   "a6_c003": 23.9,
    "a6_c004": 6.94,
-   "a6_c005": 7.11,
-   "a6_c006": 33.71,
-   "a6_c007": 23.7,
-   "a6_c008": 25.07,
-   "a6_c009": 30.71,
-   "a7_c001": 26.67,
-   "a7_c002": 8.68,
-   "a7_c003": 14.76,
-   "a8_c001": 18.05,
+   "a6_c005": 7.07,
+   "a6_c006": 35.26,
+   "a6_c007": 21.05,
+   "a6_c008": 19.57,
+   "a6_c009": 25.91,
+   "a7_c001": 25.32,
+   "a7_c002": 8.08,
+   "a7_c003": 14.01,
+   "a8_c001": 18,
    "a8_c002": 5.4,
    "a8_c003": 1.4
   },
   "errors": [],
   "sets": {
    "active": "a2_window",
-   "built": 8,
-   "disposed": 7,
-   "lastBuildMs": 75,
+   "built": 7,
+   "disposed": 6,
+   "lastBuildMs": 56,
    "liveSetGroups": 1
   }
  }

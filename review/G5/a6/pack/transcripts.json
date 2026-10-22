@@ -1,0 +1,1809 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a6_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a6_c001_01",
+   "speaker": "小晴",
+   "script": "叔叔不在，我們幫他把主燈完成！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "叔叔不在,我們幫他把主燈完成。",
+     "hyp_trad": "叔叔不在我們幫他把主燈完成",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔不在,我們幫他把主燈完成。",
+     "hyp_trad": "叔叔不在我們幫他把主燈完成",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "叔叔不在,我們幫他把主燈完成。",
+     "hyp_trad": "叔叔不在我們幫他把主燈完成",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔不在,我們幫他把主燈完成。",
+     "hyp_trad": "叔叔不在我們幫他把主燈完成",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c001_02",
+   "speaker": "小宇",
+   "script": "慢慢摺，燈才會亮。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c001_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "慢慢折,燈才會亮。",
+     "hyp_trad": "慢慢折燈才會亮",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "慢慢折,燈才會亮。",
+     "hyp_trad": "慢慢折燈才會亮",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "慢慢折 燈才會亮。",
+     "hyp_trad": "慢慢折燈才會亮",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "慢慢折,燈才會亮。",
+     "hyp_trad": "慢慢折燈才會亮",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c002_01",
+   "speaker": "品安",
+   "script": "我跟你們說一個秘密……",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c002_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我跟你們說一個秘密。",
+     "hyp_trad": "我跟你們說一個秘密",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我跟你們說一個秘密。",
+     "hyp_trad": "我跟你們說一個秘密",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我跟你們說一個秘密。",
+     "hyp_trad": "我跟你們說一個秘密",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我跟你們說一個秘密。",
+     "hyp_trad": "我跟你們說一個秘密",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c002_02",
+   "speaker": "品安",
+   "script": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c002_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "那天你們走了以後,那個人把閃亮盒子塞給我。我沒有打開,可是我把它藏在書包裡。",
+     "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "那天你們走了以後,那個人把閃亮盒子塞給我,我沒有打開,可是我把它藏在書包裡。",
+     "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "那天你們走了以後,那個人把閃亮盒子塞給我。我沒有打開,可是我把它藏在書包裡。",
+     "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "那天你們走了以後,那個人把閃亮盒子塞給我,我沒有打開,可是我把它藏在書包裏。",
+     "hyp_trad": "那天你們走了以後那個人把閃亮盒子塞給我我沒有打開可是我把它藏在書包裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c002_03",
+   "speaker": "品安",
+   "script": "不要告訴老師，好不好？我怕被罵。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c002_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "不要告訴老師好不好,我怕被罵。",
+     "hyp_trad": "不要告訴老師好不好我怕被罵",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不要告訴老師好不好,我怕被罵。",
+     "hyp_trad": "不要告訴老師好不好我怕被罵",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "不要告訴老師好不好,我怕被罵。",
+     "hyp_trad": "不要告訴老師好不好我怕被罵",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不要告訴老師好不好,我怕被罵。",
+     "hyp_trad": "不要告訴老師好不好我怕被罵",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c002_04",
+   "speaker": "折折",
+   "script": "如果你是小晴和小宇，你會怎麼做？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c002_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "如果你是小琴和小宇,你會怎麼做?",
+     "hyp_trad": "如果你是小琴和小宇你會怎麼做",
+     "cer": 0.071,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "如果你是小琴和小雨,你會怎麼做?",
+     "hyp_trad": "如果你是小琴和小雨你會怎麼做",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      },
+      {
+       "ref": "宇",
+       "hyp": "雨",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "如果你是小琴和小宇,你會怎麼做?",
+     "hyp_trad": "如果你是小琴和小宇你會怎麼做",
+     "cer": 0.071,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "如果你是小琴和小雨,你會怎麼做?",
+     "hyp_trad": "如果你是小琴和小雨你會怎麼做",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "琴",
+       "kind": "字不同"
+      },
+      {
+       "ref": "宇",
+       "hyp": "雨",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c003_01",
+   "speaker": "折折",
+   "script": "最後一題！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c003_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "最後一題",
+     "hyp_trad": "最後一題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "最後一題。",
+     "hyp_trad": "最後一題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "最後一題",
+     "hyp_trad": "最後一題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "最後一題。",
+     "hyp_trad": "最後一題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c003_02",
+   "speaker": "旁白",
+   "script": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c003_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "朋友可能碰到危險物品,卻說不要告訴老師,怎麼辦。",
+     "hyp_trad": "朋友可能碰到危險物品卻說不要告訴老師怎麼辦",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "朋友可能碰到危險物品,卻說,不要告訴老師,怎麼辦?",
+     "hyp_trad": "朋友可能碰到危險物品卻說不要告訴老師怎麼辦",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "朋友可能碰到危險物品,卻說,不要告訴老師,怎麼辦。",
+     "hyp_trad": "朋友可能碰到危險物品卻說不要告訴老師怎麼辦",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "朋友可能碰到危險物品,卻說,不要告訴老師怎麼辦。",
+     "hyp_trad": "朋友可能碰到危險物品卻說不要告訴老師怎麼辦",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c003_03",
+   "speaker": "旁白",
+   "script": "一，答應他，永遠不告訴任何人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c003_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1.答應他永遠不告訴任何人。",
+     "hyp_trad": "1答應他永遠不告訴任何人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1.答應他永遠不告訴任何人。",
+     "hyp_trad": "1答應他永遠不告訴任何人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1.答應他永遠不告訴任何人。",
+     "hyp_trad": "1答應他永遠不告訴任何人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1.答應他永遠不告訴任何人。",
+     "hyp_trad": "1答應他永遠不告訴任何人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c003_04",
+   "speaker": "旁白",
+   "script": "二，陪他一起找可信任的大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c003_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2.陪他一起找可信任的大人。",
+     "hyp_trad": "2陪他一起找可信任的大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 陪他一起找可信任的大人。",
+     "hyp_trad": "2陪他一起找可信任的大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2.陪他一起找可信任的大人。",
+     "hyp_trad": "2陪他一起找可信任的大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 陪他一起找可信任的大人。",
+     "hyp_trad": "2陪他一起找可信任的大人",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c003_05",
+   "speaker": "旁白",
+   "script": "三，傳給全班同學，大家一起討論。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c003_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3.傳給全班同學大家一起討論。",
+     "hyp_trad": "3傳給全班同學大家一起討論",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,傳給全班同學,大家一起討論。",
+     "hyp_trad": "三傳給全班同學大家一起討論",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "3.傳點全班同學,大家一起討論。",
+     "hyp_trad": "3傳點全班同學大家一起討論",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "給",
+       "hyp": "點",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,傳給全班同學,大家一起討論。",
+     "hyp_trad": "三傳給全班同學大家一起討論",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c004_01",
+   "speaker": "旁白",
+   "script": "正解是二：陪他一起找可信任的大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c004_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "鄭解釋二,陪他一起找可信任的大人。",
+     "hyp_trad": "鄭解釋二陪他一起找可信任的大人",
+     "cer": 0.133,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鄭",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋二,陪他一起找可信任的大人。",
+     "hyp_trad": "正解釋二陪他一起找可信任的大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "鄭解釋二,陪他一起找可信任的大人。",
+     "hyp_trad": "鄭解釋二陪他一起找可信任的大人",
+     "cer": 0.133,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鄭",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋二,陪他一起找可信任的大人。",
+     "hyp_trad": "正解釋二陪他一起找可信任的大人",
+     "cer": 0.067,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c005_01",
+   "speaker": "折折",
+   "script": "第八盞！全部亮了！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c005_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第八展,全部亮了。",
+     "hyp_trad": "第八展全部亮了",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第八展,全部亮了。",
+     "hyp_trad": "第八展全部亮了",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第八展 全部亮了。",
+     "hyp_trad": "第八展全部亮了",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第八展,全部亮了。",
+     "hyp_trad": "第八展全部亮了",
+     "cer": 0.143,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "展",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c006_01",
+   "speaker": "小晴",
+   "script": "品安，我在乎你，我們一起找人幫忙。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "平安,我在呼你,我們一起找人幫忙。",
+     "hyp_trad": "平安我在呼你我們一起找人幫忙",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎",
+       "hyp": "呼",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,我在呼你,我們一起找人幫忙。",
+     "hyp_trad": "平安我在呼你我們一起找人幫忙",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎",
+       "hyp": "呼",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "平安,我在呼你,我們一起找人幫忙。",
+     "hyp_trad": "平安我在呼你我們一起找人幫忙",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎",
+       "hyp": "呼",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "平安,我在呼你,我們一起找人幫忙。",
+     "hyp_trad": "平安我在呼你我們一起找人幫忙",
+     "cer": 0.143,
+     "per": 0.071,
+     "diffs": [
+      {
+       "ref": "品",
+       "hyp": "平",
+       "kind": "字不同"
+      },
+      {
+       "ref": "乎",
+       "hyp": "呼",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一起",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c006_02",
+   "speaker": "小宇",
+   "script": "我們陪你去，跟老師說清楚。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我們陪你去,跟老師說清楚。",
+     "hyp_trad": "我們陪你去跟老師說清楚",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們陪你去,跟老師說清楚。",
+     "hyp_trad": "我們陪你去跟老師說清楚",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我們陪你去 跟老師說清楚。",
+     "hyp_trad": "我們陪你去跟老師說清楚",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們陪你去,跟老師說清楚。",
+     "hyp_trad": "我們陪你去跟老師說清楚",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c006_03",
+   "speaker": "品安",
+   "script": "老師……我書包裡，有一個別人給的盒子。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "老師,我書包裡有一個別人給的盒子。",
+     "hyp_trad": "老師我書包裡有一個別人給的盒子",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "老師,我書包裡有一個別人給的盒子。",
+     "hyp_trad": "老師我書包裡有一個別人給的盒子",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "老師,我書包裡有一個別人給的盒子。",
+     "hyp_trad": "老師我書包裡有一個別人給的盒子",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "老師,我書包裡有一個別人給的盒子。",
+     "hyp_trad": "老師我書包裡有一個別人給的盒子",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c006_04",
+   "speaker": "林老師",
+   "script": "謝謝你願意說出來。盒子不要碰，交給大人處理。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "謝謝你願意說出來,盒子不要碰,交給大人處理。",
+     "hyp_trad": "謝謝你願意說出來盒子不要碰交給大人處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你願意說出來,盒子不要碰,交給大人處理。",
+     "hyp_trad": "謝謝你願意說出來盒子不要碰交給大人處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "謝謝你願意說出來,盒子不要碰,交給大人處理。",
+     "hyp_trad": "謝謝你願意說出來盒子不要碰交給大人處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你願意說出來,盒子不要碰,交給大人處理。",
+     "hyp_trad": "謝謝你願意說出來盒子不要碰交給大人處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c006_05",
+   "speaker": "林老師",
+   "script": "廣場那個人，警察已經在處理了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "廣場那個人,警察已經在處理了。",
+     "hyp_trad": "廣場那個人警察已經在處理了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "廣場那個人,警察已經在處理了。",
+     "hyp_trad": "廣場那個人警察已經在處理了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "廣場那個人,警察已經在處理了。",
+     "hyp_trad": "廣場那個人警察已經在處理了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "廣場那個人,警察已經在處理了。",
+     "hyp_trad": "廣場那個人警察已經在處理了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c006_06",
+   "speaker": "葉護理師",
+   "script": "說出來，就是在保護自己。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c006_06_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "說出來就是在保護自己",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "說出來,就是在保護自己。",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "說出來就是在保護自己",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "說出來,就是在保護自己。",
+     "hyp_trad": "說出來就是在保護自己",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c007_01",
+   "speaker": "折折",
+   "script": "我……我摺成了！真的是燈籠！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c007_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我 我折成了 真的是燈籠",
+     "hyp_trad": "我我折成了真的是燈籠",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "哇,我絕場了,真的是燈籠。",
+     "hyp_trad": "哇我絕場了真的是燈籠",
+     "cer": 0.4,
+     "per": 0.4,
+     "diffs": [
+      {
+       "ref": "",
+       "hyp": "哇",
+       "kind": "多字"
+      },
+      {
+       "ref": "我摺成",
+       "hyp": "絕場",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我 我折腸了 真的是當狼",
+     "hyp_trad": "我我折腸了真的是當狼",
+     "cer": 0.4,
+     "per": 0.3,
+     "diffs": [
+      {
+       "ref": "摺成",
+       "hyp": "折腸",
+       "kind": "字不同"
+      },
+      {
+       "ref": "燈籠",
+       "hyp": "當狼",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "不一致（需複查）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "我,我折成了,真的是燈籠。",
+     "hyp_trad": "我我折成了真的是燈籠",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "燈籠",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c007_02",
+   "speaker": "旁白",
+   "script": "這一晚，小燈鎮的燈都亮了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c007_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "這一碗小燈陣的燈都亮了。",
+     "hyp_trad": "這一碗小燈陣的燈都亮了",
+     "cer": 0.182,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "晚",
+       "hyp": "碗",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這一晚小燈陣的燈都亮了。",
+     "hyp_trad": "這一晚小燈陣的燈都亮了",
+     "cer": 0.091,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "這一碗小燈陣的燈都亮了。",
+     "hyp_trad": "這一碗小燈陣的燈都亮了",
+     "cer": 0.182,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "晚",
+       "hyp": "碗",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這一晚小燈陣的燈都亮了",
+     "hyp_trad": "這一晚小燈陣的燈都亮了",
+     "cer": 0.091,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c007_03",
+   "speaker": "旁白",
+   "script": "可是，阿樂叔叔要好起來，不是點亮燈就好。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c007_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "可是阿樂叔叔要好起來,不是點亮燈就好。",
+     "hyp_trad": "可是阿樂叔叔要好起來不是點亮燈就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "可是阿樂叔叔要好起來,不是點亮燈就好。",
+     "hyp_trad": "可是阿樂叔叔要好起來不是點亮燈就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "可是阿樂叔叔要好起來,不是點亮燈就好。",
+     "hyp_trad": "可是阿樂叔叔要好起來不是點亮燈就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "可是阿樂叔叔要好起來,不是點亮燈就好。",
+     "hyp_trad": "可是阿樂叔叔要好起來不是點亮燈就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c008_02",
+   "speaker": "旁白",
+   "script": "操偶線一天一天變鬆、變淡，一根一根脫落。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c008_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "超限一天一天變鬆,變淡,一根一根脫落。",
+     "hyp_trad": "超限一天一天變鬆變淡一根一根脫落",
+     "cer": 0.176,
+     "per": 0.118,
+     "diffs": [
+      {
+       "ref": "操偶線",
+       "hyp": "超限",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "操偶線",
+       "status": "不一致（需複查）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "操偶線一天一天變鬆變淡,一根一根脫落。",
+     "hyp_trad": "操偶線一天一天變鬆變淡一根一根脫落",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "操偶線",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "超限一天一天變鬆,變淡,一根一根脫落。",
+     "hyp_trad": "超限一天一天變鬆變淡一根一根脫落",
+     "cer": 0.176,
+     "per": 0.118,
+     "diffs": [
+      {
+       "ref": "操偶線",
+       "hyp": "超限",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "操偶線",
+       "status": "不一致（需複查）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "操偶線一天一天變鬆變淡,一根一根脫落。",
+     "hyp_trad": "操偶線一天一天變鬆變淡一根一根脫落",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "操偶線",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c008_03",
+   "speaker": "旁白",
+   "script": "好起來，需要求助、治療，還有時間。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c008_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "好起來,需要求助,治療,還有時間。",
+     "hyp_trad": "好起來需要求助治療還有時間",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好起來,需要求助、治療,還有時間。",
+     "hyp_trad": "好起來需要求助治療還有時間",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "好起來 需要求助 治療 還有時間。",
+     "hyp_trad": "好起來需要求助治療還有時間",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好起來,需要求助、治療,還有時間。",
+     "hyp_trad": "好起來需要求助治療還有時間",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c009_01",
+   "speaker": "折折",
+   "script": "叔叔，又到紙燈節了！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c009_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "叔叔 又到指燈節了",
+     "hyp_trad": "叔叔又到指燈節了",
+     "cer": 0.125,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "紙",
+       "hyp": "指",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "楚書,又到紙燈節了。",
+     "hyp_trad": "楚書又到紙燈節了",
+     "cer": 0.25,
+     "per": 0.25,
+     "diffs": [
+      {
+       "ref": "叔叔",
+       "hyp": "楚書",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "廚說又到指燈節了",
+     "hyp_trad": "廚說又到指燈節了",
+     "cer": 0.375,
+     "per": 0.25,
+     "diffs": [
+      {
+       "ref": "叔叔",
+       "hyp": "廚說",
+       "kind": "字不同"
+      },
+      {
+       "ref": "紙",
+       "hyp": "指",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "蜘蛛,又到紫燈節了。",
+     "hyp_trad": "蜘蛛又到紫燈節了",
+     "cer": 0.375,
+     "per": 0.375,
+     "diffs": [
+      {
+       "ref": "叔叔",
+       "hyp": "蜘蛛",
+       "kind": "字不同"
+      },
+      {
+       "ref": "紙",
+       "hyp": "紫",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "不一致（需複查）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a6_c009_02",
+   "speaker": "阿樂叔叔",
+   "script": "那天我把骨架搬上車，要送去廣場，後來自己忘了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c009_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "那天我把股價搬上車要送去廣場,後來自己忘了。",
+     "hyp_trad": "那天我把股價搬上車要送去廣場後來自己忘了",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "骨架",
+       "hyp": "股價",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "那天我把骨架搬上車要送去廣場,後來自己忘了。",
+     "hyp_trad": "那天我把骨架搬上車要送去廣場後來自己忘了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "那天我把股價搬上車要送去廣場後來自己忘了",
+     "hyp_trad": "那天我把股價搬上車要送去廣場後來自己忘了",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "骨架",
+       "hyp": "股價",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "那天我把骨架搬上車要送去廣場,後來自己忘了。",
+     "hyp_trad": "那天我把骨架搬上車要送去廣場後來自己忘了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c009_03",
+   "speaker": "阿樂叔叔",
+   "script": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c009_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我現在還是會定期回去看醫生,慢慢折, 燈才會亮。",
+     "hyp_trad": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我現在還是會定期回去看醫生,慢慢折,燈才會亮。",
+     "hyp_trad": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+     "hyp_trad": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我現在還是會定期回去看醫生,慢慢折,燈才會亮。",
+     "hyp_trad": "我現在還是會定期回去看醫生慢慢折燈才會亮",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "摺",
+       "hyp": "折",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a6_c009_04",
+   "speaker": "阿樂叔叔",
+   "script": "謝謝你們，那天去找大人幫忙。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a6_c009_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "謝謝你們那天去找大人幫忙。",
+     "hyp_trad": "謝謝你們那天去找大人幫忙",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你們那天去找大人幫忙。",
+     "hyp_trad": "謝謝你們那天去找大人幫忙",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "謝謝你們那天去找大人幫忙。",
+     "hyp_trad": "謝謝你們那天去找大人幫忙",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你們那天去找大人幫忙。",
+     "hyp_trad": "謝謝你們那天去找大人幫忙",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  }
+ ]
+}

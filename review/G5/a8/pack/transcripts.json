@@ -1,0 +1,67 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a8_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a8_c001_01",
+   "speaker": "折折",
+   "script": "我們是小燈鎮的大家，下次見！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a8_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我們是小燈陣的大家,下次見!",
+     "hyp_trad": "我們是小燈陣的大家下次見",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們是小燈鎮的大家,下次見!",
+     "hyp_trad": "我們是小燈鎮的大家下次見",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我們是小燈陣的大家,下次見!",
+     "hyp_trad": "我們是小燈陣的大家下次見",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "鎮",
+       "hyp": "陣",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們是小燈正的大家,下次見!",
+     "hyp_trad": "我們是小燈正的大家下次見",
+     "cer": 0.083,
+     "per": 0.083,
+     "diffs": [
+      {
+       "ref": "鎮",
+       "hyp": "正",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  }
+ ]
+}

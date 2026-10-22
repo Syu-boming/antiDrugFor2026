@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4998-74b1-8d15-6c4645babee3/exec-4a9bf1cf-5a6e-4135-8f07-8854f2887bef.png`
+- Destination: [review/G5/a6/raw/bow_kids_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_kids_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.

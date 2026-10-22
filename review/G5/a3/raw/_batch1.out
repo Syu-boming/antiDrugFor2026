@@ -1,0 +1,19 @@
+started pose_xq_pointr_v07 pid 27705
+started pose_xy_pointr_v07 pid 27707
+started pose_xy_glasses_v07 pid 27709
+== pose_xq_pointr_v07
+- Source: [/Users/boming/.codex/generated_images/01a15ea0-305b-7a42-bef2-1d61caaf9d4a/exec-b12338ad-4690-4f0b-af6a-4bdd5253e9d4.png](/Users/boming/.codex/generated_images/01a15ea0-305b-7a42-bef2-1d61caaf9d4a/exec-b12338ad-4690-4f0b-af6a-4bdd5253e9d4.png)
+- Destination: [/Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xq_pointr_v07.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xq_pointr_v07.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, actual transparent pixels verified.-rw-r--r--@ 1 boming  staff  1956895 10月 21 21:24 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xq_pointr_v07.png
+== pose_xy_pointr_v07
+- Source: `/Users/boming/.codex/generated_images/01a15ea0-305b-7fb3-9367-9a344834e6ea/exec-eb2eca70-5e5b-4c3f-9da9-f8ba0d2fdcf3.png`
+- Destination: [review/G5/a3/raw/pose_xy_pointr_v07.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xy_pointr_v07.png>)
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**
+- Copy verified byte-for-byte identical.-rw-r--r--@ 1 boming  staff  1928457 10月 21 21:24 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xy_pointr_v07.png
+== pose_xy_glasses_v07
+- Source: [/Users/boming/.codex/generated_images/01a15ea0-305b-7460-8dfb-d90437f234e8/exec-a5bbc29b-7c3c-4027-92c4-a7be766a7e41.png](/Users/boming/.codex/generated_images/01a15ea0-305b-7460-8dfb-d90437f234e8/exec-a5bbc29b-7c3c-4027-92c4-a7be766a7e41.png)
+- Destination: [review/G5/a3/raw/pose_xy_glasses_v07.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xy_glasses_v07.png>)
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, transparency verified. Copy is byte-for-byte identical.-rw-r--r--@ 1 boming  staff  1903871 10月 21 21:24 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xy_glasses_v07.png

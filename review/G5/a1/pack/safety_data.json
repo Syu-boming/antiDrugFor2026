@@ -9,6 +9,8 @@
  "actors_with_strings": [],
  "probe_frames_with_strings": 0,
  "string_path_min_dist_to_head_box_px": null,
+ "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+ "string_head_offscreen_skipped": 0,
  "per_anchor": {},
  "string_path_intersects_child_box": [],
  "string_path_intersects_child_box_count": 0,

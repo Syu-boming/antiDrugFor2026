@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4997-7f53-9f76-8833863ead15/exec-b34d6295-5c35-474b-86ce-ea9a02d24faa.png`
+- Destination: [review/G5/a6/raw/chr_aqin_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/chr_aqin_stand_v01.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.

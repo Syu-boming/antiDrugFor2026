@@ -1,0 +1,4 @@
+- Source: [/Users/boming/.codex/generated_images/01a15ea0-1346-7763-bb74-5499250b503d/exec-46c3ed87-e3f9-4774-b172-92756f3aeb34.png](/Users/boming/.codex/generated_images/01a15ea0-1346-7763-bb74-5499250b503d/exec-46c3ed87-e3f9-4774-b172-92756f3aeb34.png)
+- Destination: [review/G5/a5/raw/a5_xy_sitb_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a5/raw/a5_xy_sitb_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**

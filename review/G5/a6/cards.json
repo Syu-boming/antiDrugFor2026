@@ -1,0 +1,28 @@
+{
+ "cards": [
+  {
+   "file": "assets/final/sets/a6_shop/card-1_v01.png",
+   "src": "review/G5/a6/cards_src/a3_c002_6.8.png",
+   "crop_cx": 0.36
+  },
+  {
+   "file": "assets/final/sets/a6_shop/card-2_v01.png",
+   "src": "review/G5/a6/cards_src/a4_c012_6.0.png",
+   "crop_cx": 0.5
+  },
+  {
+   "file": "assets/final/sets/a6_shop/card-3_v01.png",
+   "src": "review/G5/a6/cards_src/a5_c006_15.8.png",
+   "crop_cx": 0.62
+  }
+ ],
+ "mnemonic": {
+  "file": "assets/final/sets/a6_shop/card-mnemonic_v01.png",
+  "poses": [
+   "chr-xiaoqing_pose-cross_v06.png",
+   "chr-xiaoyu_pose-palmno_v06.png",
+   "chr-xiaoqing_pose-pointr_v07.png",
+   "chr-xiaoyu_pose-forehead_v06.png"
+  ]
+ }
+}

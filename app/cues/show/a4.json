@@ -64,7 +64,7 @@
     "stage": {
      "curtain": "open",
      "camera": "a4_gate_wide",
-     "light": 1,
+     "light": 0.66,
      "set": 1
     },
     "characters": {
@@ -177,6 +177,18 @@
      "target": "ale"
     },
     {
+     "name": "puppet.grab",
+     "start": "a4_c001_02.end+0.5",
+     "duration": 1.0,
+     "target": "ale",
+     "params": {
+      "at": [
+       -5.6,
+       1.42
+      ]
+     }
+    },
+    {
      "name": "puppet.move",
      "start": "a4_c001_01.start+5.3",
      "duration": 0.01,
@@ -192,6 +204,11 @@
      "params": {
       "to": "a4_across"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c001_01.start+5.3",
+     "duration": 0
     },
     {
      "name": "camera.move",
@@ -210,12 +227,25 @@
      }
     },
     {
+     "name": "light.dim",
+     "start": "a4_c001_01.start+10.0",
+     "duration": 0,
+     "params": {
+      "to": 0.7
+     }
+    },
+    {
      "name": "camera.cut",
      "start": "a4_c001_01.end+0.15",
      "duration": 0,
      "params": {
       "to": "a4_across"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c001_01.end+0.15",
+     "duration": 0
     },
     {
      "name": "camera.move",
@@ -292,6 +322,18 @@
    ],
    "setTrack": [
     {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
      "do": "lin",
      "start": 0,
      "duration": 0,
@@ -346,6 +388,12 @@
      "start": 0,
      "duration": 0,
      "to": 0.25
+    },
+    {
+     "do": "brick",
+     "start": "a4_c001_01.start+5.3",
+     "duration": 0,
+     "to": 0.3
     }
    ]
   },
@@ -441,12 +489,30 @@
      }
     },
     {
+     "name": "fade.out",
+     "start": "a4_c002_03.end+0.1",
+     "duration": 0.6
+    },
+    {
      "name": "camera.cut",
-     "start": "a4_c002_03.end+0.25",
+     "start": "a4_c002_03.end+0.72",
      "duration": 0,
      "params": {
       "to": "a4_up"
      }
+    },
+    {
+     "name": "light.dim",
+     "start": "a4_c002_03.end+0.72",
+     "duration": 0,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a4_c002_03.end+0.75",
+     "duration": 0.6
     },
     {
      "name": "zhezhe.flyTo",
@@ -469,6 +535,11 @@
      "params": {
       "to": "a4_map"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c002_03.end+4.0",
+     "duration": 0
     },
     {
      "name": "set.swap",
@@ -562,6 +633,24 @@
    ],
    "setTrack": [
     {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
      "do": "farUp",
      "start": 0,
      "duration": 0,
@@ -602,7 +691,8 @@
       ]
      ]
     }
-   ]
+   ],
+   "setFade": 0.6
   },
   {
    "id": "a4_c003",
@@ -764,12 +854,22 @@
    },
    "animation": [
     {
+     "name": "fade.out",
+     "start": 0,
+     "duration": 0.6
+    },
+    {
      "name": "camera.cut",
-     "start": 0.3,
+     "start": 0.62,
      "duration": 0,
      "params": {
       "to": "a4_sil"
      }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.65,
+     "duration": 0.6
     },
     {
      "name": "light.dim",
@@ -945,8 +1045,13 @@
    },
    "animation": [
     {
-     "name": "camera.cut",
+     "name": "fade.out",
      "start": 0,
+     "duration": 0.6
+    },
+    {
+     "name": "camera.cut",
+     "start": 0.62,
      "duration": 0,
      "params": {
       "to": "quiz"
@@ -954,11 +1059,16 @@
     },
     {
      "name": "light.dim",
-     "start": 0,
-     "duration": 1.2,
+     "start": 0.62,
+     "duration": 0,
      "params": {
       "to": 0.55
      }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.65,
+     "duration": 0.6
     },
     {
      "name": "quiz.show",
@@ -967,7 +1077,7 @@
     },
     {
      "name": "zhezhe.hush",
-     "start": -0.55,
+     "start": 0.0,
      "duration": 1.4,
      "target": "zhezhe"
     },
@@ -1040,7 +1150,8 @@
    "sfx": [
     {
      "id": "sfx_quiet_fold",
-     "at": 0
+     "at": 0,
+     "gain": 1.0
     },
     {
      "id": "sfx_card_in",
@@ -1059,7 +1170,7 @@
     ],
     "answer": 3
    },
-   "voStart": 0.75,
+   "voStart": 1.45,
    "tail": 1.0,
    "storyboard": {
     "beat": "Q5 題卡模式 → 揭答第 3 項 → 第五盞燈 → 回到剪影畫面",
@@ -1123,8 +1234,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true,
-     "set": 1
+     "set": 1,
+     "quiz": true
     },
     "characters": {
      "zhezhe": {
@@ -1237,8 +1348,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true,
-     "set": 1
+     "set": 1,
+     "quiz": true
     },
     "characters": {
      "zhezhe": {
@@ -1246,6 +1357,35 @@
       "x": -4.7,
       "z": 4.15,
       "emotion": "curious"
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "confused",
+      "strings": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "stringTension": 0.18,
+      "sit": 0,
+      "x": -6.3,
+      "z": -1.95,
+      "facing": 1,
+      "hand": "grab"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "x": 2.35,
+      "z": 2.0,
+      "pose": "stand",
+      "emotion": "worried"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "x": 3.1,
+      "z": 1.75,
+      "pose": "stand",
+      "emotion": "worried"
      }
     }
    },
@@ -1259,24 +1399,6 @@
      }
     },
     {
-     "name": "quiz.hide",
-     "start": "a4_c007_01.end+0.3",
-     "duration": 0.6
-    },
-    {
-     "name": "light.restore",
-     "start": "a4_c007_01.end+0.3",
-     "duration": 1.2
-    },
-    {
-     "name": "camera.cut",
-     "start": "a4_c007_01.end+0.95",
-     "duration": 0,
-     "params": {
-      "to": "a4_sil"
-     }
-    },
-    {
      "name": "zhezhe.emote",
      "start": 0.2,
      "target": "zhezhe",
@@ -1285,18 +1407,91 @@
      }
     },
     {
-     "name": "zhezhe.hopTo",
+     "name": "quiz.hide",
      "start": "a4_c007_01.end+0.3",
-     "duration": 1.2,
+     "duration": 0.6
+    },
+    {
+     "name": "fade.out",
+     "start": "a4_c007_01.end+1.45",
+     "duration": 0.6
+    },
+    {
+     "name": "set.swap",
+     "start": "a4_c007_01.end+2.1",
+     "duration": 0,
+     "params": {
+      "set": "gate"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c007_01.end+2.1",
+     "duration": 0,
+     "params": {
+      "to": "a4_deep"
+     }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c007_01.end+2.1",
+     "duration": 0
+    },
+    {
+     "name": "puppet.popup",
+     "start": "a4_c007_01.end+2.11",
+     "duration": 0.005,
+     "target": "ale"
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a4_c007_01.end+2.11",
+     "duration": 0.005,
+     "target": "ale",
+     "params": {
+      "at": [
+       -5.6,
+       1.42
+      ]
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "start": "a4_c007_01.end+2.11",
+     "duration": 0.005,
+     "target": "xiaoqing"
+    },
+    {
+     "name": "puppet.popup",
+     "start": "a4_c007_01.end+2.11",
+     "duration": 0.005,
+     "target": "xiaoyu"
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": "a4_c007_01.end+2.11",
+     "duration": 0.01,
      "target": "zhezhe",
      "params": {
       "pos": [
-       -12.5,
+       3.05,
        0,
-       4.15
-      ],
-      "height": 0.6
+       2.6
+      ]
      }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a4_c007_01.end+2.11",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a4_c007_01.end+2.15",
+     "duration": 0.8
     }
    ],
    "audioId": null,
@@ -1325,7 +1520,7 @@
     }
    ],
    "voStart": 1.9,
-   "tail": 1.9,
+   "tail": 3.4,
    "storyboard": {
     "beat": "Q5 題卡模式 → 揭答第 3 項 → 第五盞燈 → 回到剪影畫面",
     "cast": "折折",
@@ -1374,18 +1569,60 @@
      "duration": 0,
      "target": "all",
      "to": 0.8
+    },
+    {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "key",
+     "start": 0,
+     "duration": 0,
+     "hold": "ale.A"
+    },
+    {
+     "do": "farUp",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "catEar",
+     "start": 0,
+     "duration": 0,
+     "to": 0.5
+    },
+    {
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.3
     }
    ]
   },
   {
    "id": "a4_c008",
-   "sceneId": "a4_roadmap",
+   "sceneId": "gate",
    "kind": "scene",
    "title": "回到校門口",
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a4_sil",
+     "camera": "a4_deep",
      "light": 1,
      "set": 1
     },
@@ -1421,48 +1658,16 @@
      },
      "zhezhe": {
       "visible": true,
-      "x": 14.0,
-      "z": 1.05,
+      "x": 3.05,
+      "z": 2.6,
       "emotion": "worried"
      }
     }
    },
    "animation": [
     {
-     "name": "set.fold",
-     "start": 1.5,
-     "duration": 1.0
-    },
-    {
-     "name": "fade.out",
-     "start": 2.6,
-     "duration": 0.7
-    },
-    {
-     "name": "set.swap",
-     "start": 3.32,
-     "duration": 0,
-     "params": {
-      "set": "gate"
-     }
-    },
-    {
-     "name": "camera.cut",
-     "start": 3.32,
-     "duration": 0,
-     "params": {
-      "to": "a4_deep"
-     }
-    },
-    {
-     "name": "puppet.popup",
-     "start": 3.3299999999999996,
-     "duration": 0.005,
-     "target": "ale"
-    },
-    {
      "name": "puppet.grab",
-     "start": 3.3299999999999996,
+     "start": 0,
      "duration": 0.005,
      "target": "ale",
      "params": {
@@ -1471,41 +1676,6 @@
        1.42
       ]
      }
-    },
-    {
-     "name": "puppet.popup",
-     "start": 3.3299999999999996,
-     "duration": 0.005,
-     "target": "xiaoqing"
-    },
-    {
-     "name": "puppet.popup",
-     "start": 3.3299999999999996,
-     "duration": 0.005,
-     "target": "xiaoyu"
-    },
-    {
-     "name": "zhezhe.glideTo",
-     "start": 3.3299999999999996,
-     "duration": 0.01,
-     "target": "zhezhe",
-     "params": {
-      "pos": [
-       3.05,
-       0,
-       2.6
-      ]
-     }
-    },
-    {
-     "name": "fade.in",
-     "start": 3.4,
-     "duration": 0.8
-    },
-    {
-     "name": "set.popup",
-     "start": 4.32,
-     "duration": 3.6
     },
     {
      "name": "puppet.waveTry",
@@ -1629,7 +1799,7 @@
      "id": "a4_c008_01",
      "speaker": "阿樂叔叔",
      "text": "小晴、小宇……上車吧。",
-     "start": 7.0
+     "start": 1.3
     },
     {
      "id": "a4_c008_02",
@@ -1648,7 +1818,7 @@
    ],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 7.0,
+   "voStart": 1.3,
    "tail": 2.2,
    "storyboard": {
     "beat": "剪影翻回地圖，地圖立起變回校門口街景；**會動的節拍（約 10 秒，不停格）**：風吹騎樓小燈籠、接送區人更少；阿樂扶著車門舉鑰匙招手，再叫一次「上車吧」；鑰匙被線拉得晃兩下；兩個孩子在接送線後各退半步、互看，不往車子走；林老師在警衛室裡，不入鏡；折折把問題交給觀眾",
@@ -1663,11 +1833,11 @@
     "estimateSec": 16.0,
     "actionSec": 9.0
    },
-   "set": "a4_roadmap",
+   "set": "gate",
    "music": [
     {
      "id": "none",
-     "at": 2.2,
+     "at": 0,
      "loop": true,
      "fade": 1.0,
      "gain": 1.0
@@ -1675,28 +1845,13 @@
    ],
    "sfx": [
     {
-     "id": "sfx_paper_rustle",
-     "at": 1.0,
-     "gain": 0.8
-    },
-    {
-     "id": "sfx_paper_rustle",
-     "at": 1.6,
-     "gain": 0.6
-    },
-    {
      "id": "sfx_gate_ambience",
-     "at": 3.42,
+     "at": 0,
      "gain": 0.4
     },
     {
-     "id": "sfx_paper_rustle",
-     "at": 4.37,
-     "gain": 0.8
-    },
-    {
      "id": "sfx_wind",
-     "at": 3.92,
+     "at": 0.4,
      "gain": 0.2
     },
     {
@@ -1707,59 +1862,22 @@
    ],
    "setTrack": [
     {
-     "do": "plan",
+     "do": "lift",
      "start": 0,
      "duration": 0,
      "to": 1
     },
     {
-     "do": "car",
-     "start": 0,
-     "duration": 0,
-     "keys": [
-      [
-       0,
-       11
-      ]
-     ]
-    },
-    {
-     "do": "screen",
+     "do": "gateOpen",
      "start": 0,
      "duration": 0,
      "to": 1
     },
     {
-     "do": "glow",
+     "do": "zzpatch",
      "start": 0,
      "duration": 0,
      "to": 1
-    },
-    {
-     "do": "spot",
-     "start": 0,
-     "duration": 0,
-     "target": "all",
-     "to": 0.8
-    },
-    {
-     "do": "spot",
-     "start": 0.05,
-     "duration": 0.8,
-     "target": "all",
-     "to": 0
-    },
-    {
-     "do": "glow",
-     "start": 0.2,
-     "duration": 1.0,
-     "to": 0
-    },
-    {
-     "do": "screen",
-     "start": 1.0,
-     "duration": 1.4,
-     "to": 0
     },
     {
      "do": "key",
@@ -1774,26 +1892,22 @@
      "to": 1
     },
     {
-     "do": "wind",
-     "start": 3.82,
-     "duration": 2.0,
-     "to": 1
-    },
-    {
      "do": "catEar",
      "start": 0,
      "duration": 0,
      "to": 0.5
     },
     {
-     "do": "walkers",
-     "start": 3.52,
-     "duration": 8.2,
-     "kind": "b",
-     "x0": 0.7,
-     "x1": -3.4,
-     "z": -2.7,
-     "z1": -3.3
+     "do": "wind",
+     "start": 0,
+     "duration": 0,
+     "to": 0.3
+    },
+    {
+     "do": "wind",
+     "start": 0.6,
+     "duration": 2.0,
+     "to": 1
     }
    ]
   },
@@ -1849,8 +1963,31 @@
    },
    "animation": [
     {
-     "name": "camera.cut",
+     "name": "puppet.lean",
      "start": 0,
+     "duration": 0.001,
+     "target": "xiaoqing",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": 0,
+     "duration": 0.001,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "fade.out",
+     "start": 0,
+     "duration": 0.6
+    },
+    {
+     "name": "camera.cut",
+     "start": 0.62,
      "duration": 0,
      "params": {
       "to": "quiz"
@@ -1858,11 +1995,16 @@
     },
     {
      "name": "light.dim",
-     "start": 0,
-     "duration": 1.2,
+     "start": 0.62,
+     "duration": 0,
      "params": {
       "to": 0.55
      }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.65,
+     "duration": 0.6
     },
     {
      "name": "quiz.show",
@@ -1871,7 +2013,7 @@
     },
     {
      "name": "zhezhe.hush",
-     "start": -0.55,
+     "start": 0.0,
      "duration": 1.4,
      "target": "zhezhe"
     },
@@ -1944,7 +2086,8 @@
    "sfx": [
     {
      "id": "sfx_quiet_fold",
-     "at": 0
+     "at": 0,
+     "gain": 1.0
     },
     {
      "id": "sfx_card_in",
@@ -1963,7 +2106,7 @@
     ],
     "answer": 2
    },
-   "voStart": 0.75,
+   "voStart": 1.45,
    "tail": 1.0,
    "storyboard": {
     "beat": "Q6 題卡模式 → 揭答第 2 項 → 第六盞燈",
@@ -1979,6 +2122,24 @@
    },
    "set": "gate",
    "setTrack": [
+    {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
     {
      "do": "key",
      "start": 0,
@@ -2009,8 +2170,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true,
-     "set": 1
+     "set": 1,
+     "quiz": true
     },
     "characters": {
      "ale": {
@@ -2051,6 +2212,24 @@
     }
    },
    "animation": [
+    {
+     "name": "puppet.lean",
+     "start": 0,
+     "duration": 0.001,
+     "target": "xiaoqing",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": 0,
+     "duration": 0.001,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0.035
+     }
+    },
     {
      "name": "quiz.reveal",
      "start": 0.3,
@@ -2105,6 +2284,24 @@
    "set": "gate",
    "setTrack": [
     {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
      "do": "key",
      "start": 0,
      "duration": 0,
@@ -2134,8 +2331,8 @@
      "curtain": "open",
      "camera": "quiz",
      "light": 0.55,
-     "quiz": true,
-     "set": 1
+     "set": 1,
+     "quiz": true
     },
     "characters": {
      "ale": {
@@ -2177,29 +2374,29 @@
    },
    "animation": [
     {
+     "name": "puppet.lean",
+     "start": 0,
+     "duration": 0.001,
+     "target": "xiaoqing",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": 0,
+     "duration": 0.001,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0.035
+     }
+    },
+    {
      "name": "lamp.light",
      "start": 0.3,
      "duration": 1.5,
      "params": {
       "index": 6
-     }
-    },
-    {
-     "name": "quiz.hide",
-     "start": "a4_c011_01.end+0.3",
-     "duration": 0.6
-    },
-    {
-     "name": "light.restore",
-     "start": "a4_c011_01.end+0.3",
-     "duration": 1.6
-    },
-    {
-     "name": "camera.cut",
-     "start": "a4_c011_01.end+1.0",
-     "duration": 0,
-     "params": {
-      "to": "a4_kids"
      }
     },
     {
@@ -2209,6 +2406,61 @@
      "params": {
       "emotion": "happy"
      }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a4_c011_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "fade.out",
+     "start": "a4_c011_01.end+1.45",
+     "duration": 0.6
+    },
+    {
+     "name": "camera.cut",
+     "start": "a4_c011_01.end+2.1",
+     "duration": 0,
+     "params": {
+      "to": "a4_kids"
+     }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c011_01.end+2.1",
+     "duration": 0
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a4_c011_01.end+2.1",
+     "duration": 0.001,
+     "target": "xiaoqing",
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a4_c011_01.end+2.1",
+     "duration": 0.001,
+     "target": "xiaoyu",
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a4_c011_01.end+2.1",
+     "duration": 0.001,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a4_c011_01.end+2.15",
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -2244,7 +2496,7 @@
     }
    ],
    "voStart": 1.9,
-   "tail": 2.4,
+   "tail": 3.1,
    "storyboard": {
     "beat": "Q6 題卡模式 → 揭答第 2 項 → 第六盞燈",
     "cast": "折折",
@@ -2258,6 +2510,24 @@
    },
    "set": "gate",
    "setTrack": [
+    {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
     {
      "do": "key",
      "start": 0,
@@ -2580,6 +2850,18 @@
    ],
    "setTrack": [
     {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
      "do": "flag",
      "start": 0,
      "duration": 0,
@@ -2760,6 +3042,14 @@
      }
     },
     {
+     "name": "light.dim",
+     "start": "a4_c013_01.end+0.1",
+     "duration": 0,
+     "params": {
+      "to": 0.9
+     }
+    },
+    {
      "name": "puppet.pose",
      "start": "a4_c013_02.end+0.2",
      "duration": 0.24,
@@ -2808,6 +3098,11 @@
      "params": {
       "to": "a4_truck_close"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a4_c013_02.end+2.3",
+     "duration": 0
     },
     {
      "name": "camera.move",
@@ -2889,6 +3184,24 @@
     }
    ],
    "setTrack": [
+    {
+     "do": "lift",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "gateOpen",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
+    {
+     "do": "zzpatch",
+     "start": 0,
+     "duration": 0,
+     "to": 1
+    },
     {
      "do": "key",
      "start": 0,

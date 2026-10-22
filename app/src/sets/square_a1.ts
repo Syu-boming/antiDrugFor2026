@@ -4,7 +4,7 @@
 //     ＋手周圍的背景略偏冷、略降彩（FX8：手後面一層冷灰藍半透明紙，右緣漸淡；盒子與手在它前面，不降彩）
 //   - 盒子特寫小窗（a1_c003「找找看 1」：老師指得到貼紙一層蓋一層、邊角翹起、一小截灰色線頭、沒有任何說明；放在畫面左上，不蓋住品安）
 //   - 被風吹來的撕破包裝紙（a1_c008，FX12：停在孩子身後左下方，離孩子一個身寬以上）；
-//     燈籠店門面與窗內阿樂叔叔的剪影（FX10：兩階深色剪影看得出圍裙與髮型；手垂著 → 舉起竹條 → 手被往旁邊一帶、往左歪 →
+//     燈籠店門面（修正第 2 輪：窗嵌進店面牆，有屋簷、木柱、店門）與窗內阿樂叔叔的剪影（FX10：兩階深色剪影看得出圍裙與髮型；手垂著 → 舉起竹條 → 手被往旁邊一帶、往左歪 →
 //     竹條慢慢落下（在窗內看得到）、窗光漸亮一點；看不到線）。右側行道樹移到窗戶右邊，窗戶整個露出來
 // 每格 update 只依（cue、cue 內秒數、鏡頭）決定畫面＝時間的純函式；動作時間錨在台詞上。
 // 素材：assets/final/sets/square_a1/*（review/G5/a0/scripts/build_a01_art.py 程式繪製）、chr-inviter_hand-box、props/prop-sticker-box。
@@ -55,6 +55,9 @@ const COOLBAND = { xl: -10.5, x0: -3.9, x1: -2.95, y0: -0.3, y1: 6.5, z: 0.4 };
 const HAND = { y: 1.08, z: 0.74, w: 2.3, xHide: -6.95, xOut: -4.8 };
 /** 騎樓最右邊那一間的燈籠店窗（掛在騎樓景片前面） */
 const SHOP = { x: 5.0, y: 1.3, z: -1.54, w: 2.5 };
+/** 燈籠店門面牆（修正第 2 輪：窗嵌進店面，不再像獨立立在廣場上的窗框）：在窗紙後面、騎樓柱子前面；
+ *  左下角 x 3.35、y −0.07，3.75 × 3.85 單位（review/G5/a0/scripts/build_fix2_art.py） */
+const SHOPWALL = { x0: 3.35, y0: -0.07, w: 3.75, z: -1.59 };
 /** 窗框圖的窗洞（世界單位，相對窗框圖左上角；build_a01_art.py 的 window_units_from_topleft） */
 const WIN = { x0: 0.147, y0: 0.56, x1: 2.353, y1: 2.24, imgH: 2.547 };
 const SIL = { w: 0.9, ppu: 453 * 1.06 / 0.9 };
@@ -125,6 +128,10 @@ export const SQUARE_A1: SetEntry = {
     glow.visible = false;
     group.add(glow);
 
+    // 燈籠店門面牆（窗、窗紙、剪影都在它前面；只接受影子、不投影子到後排騎樓）
+    const wall = add(imagePiece(im('sets/square_a1/shopwall'), { w: SHOPWALL.w, order: LAYER.mid.order - 36, emissive: 0.3, shadow: true }, mats),
+      SHOPWALL.x0 + SHOPWALL.w / 2, SHOPWALL.y0, SHOPWALL.z);
+    if (wall) wall.castShadow = false;
     // 騎樓下燈籠店的窗（窗格挖空）＋窗紙＋窗內剪影
     const shopImg = im('sets/square_a1/shopwindow');
     const shop = add(imagePiece(shopImg, { w: SHOP.w, order: LAYER.mid.order - 20, shadow: false }, mats), SHOP.x, SHOP.y, SHOP.z);

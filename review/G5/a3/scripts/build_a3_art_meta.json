@@ -1,0 +1,101 @@
+{
+ "forehead_l": {
+  "source": "chr-xiaoqing_pose-forehead_v06.png",
+  "op": "左右翻轉",
+  "size": [
+   665,
+   1485
+  ]
+ },
+ "backwall": {
+  "width": 24,
+  "windows_x": [
+   [
+    -6.6,
+    -4.8
+   ],
+   [
+    -4.5,
+    -2.7
+   ],
+   [
+    -2.3999999999999995,
+    -0.5999999999999994
+   ]
+  ],
+  "window_y": [
+   1.35,
+   3.55
+  ],
+  "door_x": [
+   8.4,
+   9.8
+  ]
+ },
+ "memory": {
+  "source": "review/G5/a2/pack/capture/keyframes/a2_c002_025.18_after.png",
+  "crop_box": [
+   20,
+   0,
+   395,
+   375
+  ],
+  "note": "不含阿樂叔叔的臉；褪色"
+ },
+ "card": {
+  "size_px": [
+   2400,
+   1360
+  ],
+  "world_width": 6.0,
+  "sentence_box_px": [
+   70,
+   64,
+   2330,
+   290
+  ],
+  "cells": [
+   {
+    "label": "不碰",
+    "box_px": [
+     70,
+     330,
+     560,
+     1294
+    ],
+    "thumb": "chr-xiaoqing_pose-cross_v06.png"
+   },
+   {
+    "label": "不試",
+    "box_px": [
+     594,
+     330,
+     1085,
+     1294
+    ],
+    "thumb": "chr-xiaoyu_pose-palmno_v06.png"
+   },
+   {
+    "label": "先離開",
+    "box_px": [
+     1119,
+     330,
+     1806,
+     1294
+    ],
+    "thumb": "chr-xiaoqing_pose-pointr_v07.png"
+   },
+   {
+    "label": "找大人",
+    "box_px": [
+     1840,
+     330,
+     2330,
+     1294
+    ],
+    "thumb": "chr-xiaoyu_pose-forehead_v06.png"
+   }
+  ],
+  "font": "Noto Sans TC（OFL，review/G5/a3/fonts）weight 850"
+ }
+}

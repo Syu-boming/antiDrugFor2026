@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15ea0-1347-7251-b3db-56b1d8365445/exec-9f6296d4-fbb8-4589-b7f0-35a496a3f6e1.png`
+- Destination: [review/G5/a5/raw/a5_xq_sitb_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a5/raw/a5_xq_sitb_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, transparent pixels verified.

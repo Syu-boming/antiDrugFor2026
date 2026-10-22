@@ -41,24 +41,28 @@ export const A3_GATE_CAMERAS: Record<string, CameraPreset> = {
   a3_apron: C([0, 1.9, 21.5], [0, 1.75, 0]),
   /** 台口全景（稍遠；Q4 點燈後從題卡鏡位回來，推近幅度小，練習卡的字不會快速掃過畫面） */
   a3_apron_far: C([0, 2.5, 27.5], [0, 2.15, 0]),
+  /** 修正第 1 輪：練習卡近一級（a3_c004–a3_c005 開頭）：兩個示範的孩子在卡的左右兩邊、比 a3_apron 大約 1.3 倍；
+   *  題卡模式折折的統一位置（x −4.7、z 4.15）剛好在左下角畫面內 */
+  a3_apron2: C([-0.6, 1.85, 18.9], [-0.6, 1.7, 0]),
 };
 export const A3_CLASSROOM_CAMERAS: Record<string, CameraPreset> = {
   /** 教室中景：窗（燈籠串）在孩子身後、林老師在右邊的黑板前 */
   a3_cls_mid: C([-0.6, 1.75, 17.0], [-0.6, 1.45, 0]),
-  /** 兩個孩子近景 */
-  a3_cls_kids: C([-0.9, 1.5, 8.8], [-2.0, 1.35, 0]),
-  /** 折折（地上，耳朵慢慢壓平） */
-  a3_cls_zz: C([-1.85, 0.9, 7.2], [-1.8, 0.55, 1.25]),
-  /** 林老師與小晴中景 */
-  a3_cls_lin: C([-0.5, 1.75, 12.6], [-0.5, 1.55, 0]),
-  /** 結尾：兩個孩子看著窗外的燈籠串 */
-  a3_cls_end: C([-2.6, 1.8, 10.6], [-2.6, 1.7, 0]),
+  /** 修正第 1 輪：兩個孩子＋地上的折折三人中景（頭到腳都在畫面裡；取代原來的兩人近景＋只拍到腿的折折插鏡） */
+  a3_cls_trio: C([-2.1, 1.45, 9.4], [-2.1, 1.3, 0.3]),
+  /** 林老師與小晴中景（林老師最後從這個鏡頭往右走出畫面） */
+  a3_cls_lin: C([-1.0, 1.75, 12.6], [-1.0, 1.55, 0]),
+  /** 結尾：兩個孩子轉頭看著窗外輕擺的燈籠串 */
+  a3_cls_end: C([-2.4, 2.3, 9.0], [-2.85, 2.45, -3.6]),
 };
 
 // ───────────────────────────── 位置（世界座標） ─────────────────────────────
 const PILLAR = { x: -5.75, z: 0.9, w: 1.15 };
-const HAND = { y: 1.08, z: 0.74, w: 2.3, xHide: -6.95, xOut: -4.6 };
+/** 修正第 1 輪（美術 a3 第 3 項）：手和盒子往左下退（約 80 px）、稍微縮小；圖改用第三幕副本（拿掉盒角灰色短棒、彩度 −15%） */
+const HAND = { y: 0.88, z: 0.74, w: 2.15, xHide: -7.0, xOut: -4.85 };
 const COOL = new Color('#9aa8c4');
+/** 回想小圓窗在 a3_xy_close 畫面上的位置（中心、佔畫面高） */
+const MEM = { cx: -0.226, cy: 0.193, h: 0.32 };
 const CARD = { z: 3.05, w: 6.0, lift: 0.6 };
 /** 林老師站姿（stand）畫面右側那隻手（立牌身體座標；同 gate.ts 的 LIN_HAND） */
 const LIN_HAND: [number, number] = [0.288, 1.462];
@@ -98,7 +102,11 @@ function buildArcade(ctx: SetContext): BuiltSet {
   add(imagePiece(im('sets/square_a1/pillar'), { w: PILLAR.w, order: LAYER.mid.order + 60, shadow: true }, mats), PILLAR.x, -0.03, PILLAR.z);
   // 邀請者的手＋貼紙盒（不降彩；固定反光，不閃）
   const handMats: Material[] = [];
-  const hand = add(imagePiece(im('chr-inviter_hand-box'), { w: HAND.w, order: LAYER.mid.order + 55, shadow: true }, handMats), HAND.xHide, HAND.y, HAND.z);
+  // 第三幕副本 sets/a3_arcade/handbox（review/G5/a3/scripts/build_a3_fix1_art.py：拿掉盒子右上角的灰色短棒與白色圓錐紙角——安全界線第 3 條、
+  // 彩度 −15%——美術 a3 第 3 項）；缺圖才退回第一幕共用的 chr-inviter_hand-box
+  const handImg = ctx.image('sets/a3_arcade/handbox') ?? im('chr-inviter_hand-box');
+  if (!ctx.image('sets/a3_arcade/handbox')) report.push('景 a3_arcade：缺圖 sets/a3_arcade/handbox（退回 chr-inviter_hand-box）');
+  const hand = add(imagePiece(handImg, { w: HAND.w, order: LAYER.mid.order + 55, shadow: true }, handMats), HAND.xHide, HAND.y, HAND.z);
   const glowMat = new MeshBasicMaterial({ map: coolGlow(), color: COOL, transparent: true, opacity: 0, depthWrite: false });
   const glow = new Mesh(new PlaneGeometry(4.6, 4.0), glowMat);
   glow.position.set(-5.3, 1.7, 0.5);
@@ -131,7 +139,7 @@ function buildArcade(ctx: SetContext): BuiltSet {
         }
       } else if (id === 'a3_c002') {
         push = 1 - sine01((t - (lineTime(tl, ['a3_c002_02'], 'end', 7) + 0.2)) / 1.2);   // 拒絕之後手停在原地、不再往前
-        out = 1 - sine01((t - (lineTime(tl, ['a3_c002_03'], 'end', 9) + 2.4)) / 1.8);
+        out = 1 - sine01((t - (lineTime(tl, ['a3_c002_03'], 'end', 9) + 2.0)) / 1.6);
       }
       if (hand) {
         hand.visible = out > 0.002;
@@ -150,7 +158,8 @@ function buildArcade(ctx: SetContext): BuiltSet {
         }
         mem.visible = v > 0.002;
         if (mem.visible) {
-          placeOnCamera(mem, camera, -0.31, 0.31, 0.37 * (0.92 + 0.08 * v), 1, 0.8);
+          // 修正第 1 輪（美術 a3 第 4 項）：往右下移、稍微縮小，不壓到畫面上緣的騎樓串燈（也不碰到下面的盒子）
+          placeOnCamera(mem, camera, MEM.cx, MEM.cy, MEM.h * (0.92 + 0.08 * v), 1, 0.8);
           (mem.material as MeshBasicMaterial).opacity = v;
         }
       }
@@ -213,13 +222,13 @@ function buildMorningGate(ctx: SetContext, withCard: boolean): BuiltSet {
       if (!hinge) return;
       const { tl, t } = o;
       const id = tl.cue.id;
-      // 立起：a3_c004 折折攤開小紙卡之後（1.9 秒起 0.9 秒，略過頭再回正）。a3_c005 出題：DOM 題卡 0.7–1.3 秒蓋上之後才收平
-      //（1.5 秒起 0.8 秒，整個動作在題卡後面，不和題卡下緣疊字）；a3_c006、a3_c007 收著
+      // 立起：a3_c004 折折攤開小紙卡之後（1.6 秒起 0.9 秒，略過頭再回正）。a3_c005 出題：開頭 fade.out 全暗（0.6 秒）時收平
+      //（修正第 1 輪：畫面黑著時收，看不到變化；不和 DOM 題卡疊字）；a3_c006、a3_c007 收著
       let up = 0;
       if (id === 'a3_c004') {
-        const u = clamp((t - 1.9) / 0.9);
+        const u = clamp((t - 1.6) / 0.9);
         up = u <= 0 ? 0 : Math.min(1.03, (1 - Math.pow(1 - u, 3)) * 1.03) - Math.max(0, (u - 0.75) / 0.25) * 0.03;
-      } else if (id === 'a3_c005') up = 1 - sine01((t - 1.5) / 0.8);
+      } else if (id === 'a3_c005') up = t < 0.6 ? 1 : 0;
       hinge.visible = up > 0.004;
       hinge.rotation.x = -(1 - Math.min(1, up)) * Math.PI / 2 + Math.max(0, up - 1) * 0.6;
     },

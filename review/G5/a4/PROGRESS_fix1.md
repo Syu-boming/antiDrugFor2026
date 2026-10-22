@@ -1,0 +1,9 @@
+- 22:14 接續開工：a4.json／gate.ts／a4_roadmap.ts 都還沒改（只有 build_private.mjs、flashcheck.* 與 capture.mjs --dist）。下一步：讀美術腳本、量現況。
+- 22:31 美術完成（review/G5/a4/scripts/build_a4_art_fix1.py）：set-gate_a4-truck_v01（兩耳竹編貓頭骨架，ΔL* 51.5）、walkers v02（淺紙色背影小紙人）、sil-car／sil-walker v02（手剪紙）。下一步：gate.ts（catEar 換貼圖、新鏡位）、a4_roadmap.ts（車影 alpha、剪影鏡位）。
+- 22:39 gate.ts（catEar、brick 灰階疊層、新鏡位 a4_truck_close／a4_ears／a4_map）、a4_roadmap.ts（車影 alpha、a4_sil 鏡位）、make_a4_cues.py 全部改完並寫入 a4.json（驗證通過）。下一步：私人建置、量長度、擷取檢查。
+- 22:48 貓耳一小角版（帆布鼓起、只露左耳尖）＋家長小紙人往左後走遠＋c013 鏡位不見台口摺幕。下一步：細格光敏（c002、c008、c011、c013）、鑰匙與膝線距離。
+- 22:53 c008、c011 細格通過；c002 改成孩子身後摺平＋靜止俯視、c013 推拉改硬切；陳伯伯 x −0.3。下一步：全幕細格光敏、操偶線 ΔL*。
+- 23:07 全幕細格第 2 次：c001/3/4/6/8/10/11 通過；c002、c005、c007、c009、c012、c013 修改（題卡進出硬切、c002 只摺近景＋紙飛機後飛、c012 推拉改硬切、c013 翻面提前）。下一步：重測這 6 段。
+- 23:29 細格光敏逐段修完：c002（切天空、靜止俯視淡成地圖、折折走出來）、c005/c007/c009 題卡進出硬切、c012 走位放大全景＋滑步減速、c013 翻面提前；分段重測都 ≤3。折折題卡位置 z 4.15。下一步：看畫面、共用建置、engine-test、正式驗收包。
+- 23:32 題卡折折改成先說「第 N 題」再摺題卡（第六題題卡會擋臉）；c012 細格通過。下一步：npm run build、engine-test、act_review_pack --acts a4。
+- 23:38 npm run build 完成；engine-test 130／134（失敗 4 項都在別段：a0_c001 G4 原樣、a1→a2 換景漸變與釋放、章節跳轉換景），a4 無失敗。下一步：act_review_pack --acts a4。

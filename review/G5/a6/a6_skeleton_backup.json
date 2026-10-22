@@ -1,0 +1,838 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a6",
+ "title": "第六幕：可以求助的秘密",
+ "set": "kraft_stage",
+ "characters": {
+  "ale": {
+   "name": "阿樂叔叔",
+   "rig": "ale_v03",
+   "x": -2.6,
+   "z": 0,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "pinan": {
+   "name": "品安",
+   "rig": "standee:pinan",
+   "x": 4.5,
+   "z": -0.1,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "lin": {
+   "name": "林老師",
+   "rig": "standee:lin",
+   "x": 5.3,
+   "z": -0.6,
+   "facing": -1,
+   "fallback": "adult"
+  },
+  "ye": {
+   "name": "葉護理師",
+   "rig": "standee:ye",
+   "x": 6.2,
+   "z": -0.3,
+   "facing": -1,
+   "fallback": "adult"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a6_c001",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "燈節的晚上",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": "music_town",
+   "lines": [
+    {
+     "id": "a6_c001_01",
+     "speaker": "小晴",
+     "text": "叔叔不在，我們幫他把主燈完成！"
+    },
+    {
+     "id": "a6_c001_02",
+     "speaker": "小宇",
+     "text": "慢慢摺，燈才會亮。"
+    }
+   ],
+   "next": "a6_c002",
+   "prevStable": "a5_c008",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX7",
+    "FX12",
+    "FX14"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.0,
+   "tail": 9.0,
+   "storyboard": {
+    "beat": "〔1 級可略，約 4 秒〕陳伯伯和阿琴阿姨把骨架從小貨車抬下來 → 骨架已立在廣場中央（v01 的退路畫面），大家一起糊燈籠紙；孩子說要幫叔叔完成主燈；品安緊抓書包背帶不說話",
+    "cast": "P-GRP1（可選，只用在搬運鏡頭）；廣場群像；小晴 X3；小宇 X2；品安 H5、X5",
+    "camera": "（搬運中景）→ 大全景 → 品安近景",
+    "sound": "M1 夜晚版、S15",
+    "directions": [
+     "（〔1 級可略鏡頭，約 4 秒〕紙燈節晚上，廣場邊。陳伯伯和阿樂叔叔的姊姊阿琴阿姨，把主燈骨架從小貨車上抬下來。1 級壓縮時不播這一鏡，直接從下一個畫面開始；P-GRP1 沒做成時也一律從下一個畫面開始。）",
+     "（主燈骨架已經立在廣場中央（即 v01 的退路畫面）。鎮上的大人和孩子圍著骨架，一起糊上燈籠紙；阿琴阿姨和陳伯伯也在其中。這是主燈收尾的鋪陳，必保。）",
+     "（品安站在旁邊，緊緊抓著書包背帶，一直沒說話。）"
+    ],
+    "estimateSec": 18.0,
+    "actionSec": 12.0
+   }
+  },
+  {
+   "id": "a6_c002",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "品安的秘密",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c002_01",
+     "speaker": "品安",
+     "text": "我跟你們說一個秘密……"
+    },
+    {
+     "id": "a6_c002_02",
+     "speaker": "品安",
+     "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。"
+    },
+    {
+     "id": "a6_c002_03",
+     "speaker": "品安",
+     "text": "不要告訴老師，好不好？我怕被罵。"
+    },
+    {
+     "id": "a6_c002_04",
+     "speaker": "折折",
+     "text": "如果你是小晴和小宇，你會怎麼做？"
+    }
+   ],
+   "next": "a6_c003",
+   "prevStable": "a6_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.5,
+   "tail": 4.5,
+   "storyboard": {
+    "beat": "品安把兩人拉到燈籠架後小聲說秘密；兩人互看；小宇推眼鏡；折折尾巴慢慢收起；折折把問題交給觀眾",
+    "cast": "品安 X5（身上無線）；小晴 X5；小宇 H8、X8",
+    "camera": "三人近景",
+    "sound": "M1 漸弱 → 安靜",
+    "directions": [
+     "（品安把小晴和小宇拉到燈籠架後面，小聲說。她身上沒有任何線。）",
+     "（小晴和小宇互看。小宇推推眼鏡。折折的尾巴慢慢收起來。）"
+    ],
+    "estimateSec": 26.0,
+    "actionSec": 6.0
+   }
+  },
+  {
+   "id": "a6_c003",
+   "sceneId": "kraft_stage",
+   "kind": "quiz",
+   "title": "〔題卡 Q8〕出題",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "camera.move",
+     "start": 0,
+     "duration": 2.4,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.2,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": 0.7,
+     "duration": 0.6
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c003_01",
+     "speaker": "折折",
+     "text": "最後一題！"
+    },
+    {
+     "id": "a6_c003_02",
+     "speaker": "旁白",
+     "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？"
+    },
+    {
+     "id": "a6_c003_03",
+     "speaker": "旁白",
+     "text": "一，答應他，永遠不告訴任何人。"
+    },
+    {
+     "id": "a6_c003_04",
+     "speaker": "旁白",
+     "text": "二，陪他一起找可信任的大人。"
+    },
+    {
+     "id": "a6_c003_05",
+     "speaker": "旁白",
+     "text": "三，傳給全班同學，大家一起討論。"
+    }
+   ],
+   "next": "a6_c004",
+   "prevStable": "a6_c002",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "3、2、1，一起比！（本題看 D 區。）",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 0
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 0.7,
+     "gain": 0.8
+    }
+   ],
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ],
+    "answer": 2
+   },
+   "voStart": 1.4,
+   "tail": 1.0,
+   "storyboard": {
+    "beat": "Q8 題卡模式 → 揭答第 2 項 → 第八盞燈，八盞都亮",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（折折收摺音效＝收聲訊號；題卡模式。）",
+     "（題卡靜止。）"
+    ],
+    "estimateSec": 22.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a6_c004",
+   "sceneId": "kraft_stage",
+   "kind": "reveal",
+   "title": "〔題卡 Q8〕揭答",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "quiz.reveal",
+     "start": 0.3,
+     "duration": 0.45
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c004_01",
+     "speaker": "旁白",
+     "text": "正解是二：陪他一起找可信任的大人。"
+    }
+   ],
+   "next": "a6_c005",
+   "prevStable": "a6_c003",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "回饋見 `八題_v03.md` Q8；點 D 區一位說理由。最後：「最後一盞，捧燈手——」說完就按下一步，不等全班都做好。",
+   "checkpoint": null,
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.0,
+   "tail": 1.2,
+   "storyboard": {
+    "beat": "Q8 題卡模式 → 揭答第 2 項 → 第八盞燈，八盞都亮",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（「正解」紙印章蓋在第 2 項；其他選項變淡。）"
+    ],
+    "estimateSec": 7.0,
+    "actionSec": 3.0
+   }
+  },
+  {
+   "id": "a6_c005",
+   "sceneId": "kraft_stage",
+   "kind": "lamp",
+   "title": "〔題卡 Q8〕點燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "quiz",
+     "light": 0.55,
+     "quiz": true
+    },
+    "characters": {
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "lamp.light",
+     "start": 0.3,
+     "duration": 1.5,
+     "params": {
+      "index": 8
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "start": "a6_c005_01.end+0.3",
+     "duration": 0.6
+    },
+    {
+     "name": "light.restore",
+     "start": "a6_c005_01.end+0.3",
+     "duration": 1.2
+    },
+    {
+     "name": "camera.move",
+     "start": "a6_c005_01.end+0.3",
+     "duration": 2.5,
+     "params": {
+      "to": "show_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c005_01",
+     "speaker": "折折",
+     "text": "第八盞！全部亮了！"
+    }
+   ],
+   "next": "a6_c006",
+   "prevStable": "a6_c004",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX14"
+   ],
+   "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
+   "checkpoint": {
+    "label": "Q8 點燈收聲後",
+    "atMinute": 30.82,
+    "escalate": {
+     "behindSec": 150,
+     "level": 2
+    }
+   },
+   "lamp": 8,
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3
+    }
+   ],
+   "voStart": 1.9,
+   "tail": 0.6,
+   "storyboard": {
+    "beat": "Q8 題卡模式 → 揭答第 2 項 → 第八盞燈，八盞都亮",
+    "cast": "折折",
+    "camera": "台口",
+    "sound": "S3、S4、S5",
+    "directions": [
+     "（第八盞紙燈慢慢亮起，八盞燈都亮著；回到廣場。）"
+    ],
+    "estimateSec": 6.0,
+    "actionSec": 4.0
+   }
+  },
+  {
+   "id": "a6_c006",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "我在乎你",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "lin": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "ye": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c006_01",
+     "speaker": "小晴",
+     "text": "品安，我在乎你，我們一起找人幫忙。"
+    },
+    {
+     "id": "a6_c006_02",
+     "speaker": "小宇",
+     "text": "我們陪你去，跟老師說清楚。"
+    },
+    {
+     "id": "a6_c006_03",
+     "speaker": "品安",
+     "text": "老師……我書包裡，有一個別人給的盒子。"
+    },
+    {
+     "id": "a6_c006_04",
+     "speaker": "林老師",
+     "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。"
+    },
+    {
+     "id": "a6_c006_05",
+     "speaker": "林老師",
+     "text": "廣場那個人，警察已經在處理了。"
+    },
+    {
+     "id": "a6_c006_06",
+     "speaker": "葉護理師",
+     "text": "說出來，就是在保護自己。"
+    }
+   ],
+   "next": "a6_c007",
+   "prevStable": "a6_c005",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 2.0,
+   "tail": 6.0,
+   "storyboard": {
+    "beat": "小晴說「我在乎你」；小宇說「我們陪你去，跟老師說清楚」；三人往右走到求助站；品安向林老師說出來；林老師道謝並說盒子不要碰、交給大人，再說廣場那個人警察已經在處理了；約 2 秒無台詞：品安抬頭、看看林老師和兩位朋友、肩膀放鬆、輕輕點頭（v03，大人不連說三句）；葉護理師說說出來就是保護自己",
+    "cast": "小晴 X7 → X2；小宇 X2；品安 X5 → 抬頭、點頭 → X7；林老師 H3、X2；葉護理師 X2",
+    "camera": "跟拍往右 → 帳篷中景",
+    "sound": "M6 溫柔版",
+    "directions": [
+     "（三人往右走到求助站。林老師和葉護理師都在帳篷裡。）",
+     "（約 2 秒，無台詞：品安抬起頭，看看林老師，又看看身邊的小晴和小宇，肩膀慢慢放鬆下來，輕輕點頭。v03 起大人不連說三句，留這一拍給品安的反應。）"
+    ],
+    "estimateSec": 32.0,
+    "actionSec": 8.0
+   }
+  },
+  {
+   "id": "a6_c007",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "八盞燈與主燈",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c007_01",
+     "speaker": "折折",
+     "text": "我……我摺成了！真的是燈籠！",
+     "skippableWhenBehind": true
+    },
+    {
+     "id": "a6_c007_02",
+     "speaker": "旁白",
+     "text": "這一晚，小燈鎮的燈都亮了。"
+    },
+    {
+     "id": "a6_c007_03",
+     "speaker": "旁白",
+     "text": "可是，阿樂叔叔要好起來，不是點亮燈就好。"
+    }
+   ],
+   "next": "a6_c008",
+   "prevStable": "a6_c006",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX13",
+    "FX14",
+    "FX12",
+    "FX4"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.0,
+   "tail": 9.0,
+   "storyboard": {
+    "beat": "後拉：八盞燈都亮；折折跳起一摺，終於摺成小燈籠；八盞燈的光像一條線流進廣場；主燈柔和亮起；鎮上燈籠一盞接一盞亮；旁白提醒「可是，阿樂叔叔要好起來，不是點亮燈就好」（安全界線第 5 條）",
+    "cast": "折折（變小燈籠）；廣場群像小尺寸",
+    "camera": "後拉 → 台口＋廣場大全景",
+    "sound": "M1 全編制（漸強）",
+    "directions": [
+     "（鏡頭後拉：台口上方，大家點亮的八盞燈都亮著。折折跳起來一摺——這次，真的摺成了一盞小燈籠！）",
+     "（八盞燈的光像一條線，慢慢流進廣場；主燈——一隻大大的摺紙貓——柔和地亮起來，鎮上的燈籠一盞接一盞亮了。亮度慢慢升高，不閃爍。）",
+     "（安全界線第 5 條：主燈亮起的高潮之後，立刻說明點亮燈不等於好起來；「需要求助、治療，還有時間」留給下一段 a6_c008_03 說，v03 起不在這裡重複。）"
+    ],
+    "estimateSec": 23.0,
+    "actionSec": 12.0
+   }
+  },
+  {
+   "id": "a6_c008",
+   "sceneId": "kraft_stage",
+   "kind": "scene",
+   "title": "四季（時間轉場）",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c008_02",
+     "speaker": "旁白",
+     "text": "操偶線一天一天變鬆、變淡，一根一根脫落。"
+    },
+    {
+     "id": "a6_c008_03",
+     "speaker": "旁白",
+     "text": "好起來，需要求助、治療，還有時間。"
+    }
+   ],
+   "next": "a6_c009",
+   "prevStable": "a6_c007",
+   "skippable": false,
+   "compression": 2,
+   "fx": [
+    "FX11"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "shortVersion": "只播 _03，畫面縮成 8 秒的四季窗景（約 12 秒）",
+   "level2": {
+    "lines": [
+     "a6_c008_03"
+    ]
+   },
+   "voStart": 3.5,
+   "tail": 10.5,
+   "storyboard": {
+    "beat": "窗框構圖：窗外秋黃葉 → 冬光禿 → 春新芽 → 夏濃綠；窗內依序：葉護理師陪阿樂回診說話（秋）、阿琴陪他散步（冬）、孩子們帶折折來看他（春到夏）；線一季比一季鬆、淡，一根根脫落；旁白只有 _02（線變鬆變淡）、_03（好起來需要求助、治療與時間），v03 刪掉 _01，陪伴由窗景演出",
+    "cast": "窗景小圖 W1、W2、W3；阿樂 L4a → L4c",
+    "camera": "固定窗框",
+    "sound": "M7",
+    "directions": [
+     "（窗框構圖：窗外的樹從秋天的黃葉、冬天的光禿、春天的新芽，到夏天的濃綠。窗內依序是：葉護理師陪阿樂叔叔回診、說話；阿琴阿姨陪他散步；小晴、小宇和品安帶著折折來看他。他身上的操偶線一季比一季鬆、一季比一季淡，一根一根輕輕脫落——不是剪斷。治療與陪伴由窗景演出，不再用旁白重複。）",
+     "（v03 刪除 _01「阿樂叔叔接受治療，家人、朋友和醫護人員一直陪著他。」；句號不遞補，短版「只播 _03」不變。）"
+    ],
+    "estimateSec": 23.0,
+    "actionSec": 14.0
+   }
+  },
+  {
+   "id": "a6_c009",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "又到了紙燈節",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "show_mid",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "smile",
+      "pose": "sit",
+      "strings": [
+       "wrist"
+      ],
+      "stringTension": 0
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "pinan": {
+      "visible": true,
+      "emotion": "smile"
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "smile"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 0,
+     "duration": 0.01,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.35
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a6_c009_01",
+     "speaker": "折折",
+     "text": "叔叔，又到紙燈節了！"
+    },
+    {
+     "id": "a6_c009_02",
+     "speaker": "阿樂叔叔",
+     "text": "那天我把骨架搬上車，要送去廣場，後來自己忘了。"
+    },
+    {
+     "id": "a6_c009_03",
+     "speaker": "阿樂叔叔",
+     "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。"
+    },
+    {
+     "id": "a6_c009_04",
+     "speaker": "阿樂叔叔",
+     "text": "謝謝你們，那天去找大人幫忙。"
+    }
+   ],
+   "next": "a7_c001",
+   "prevStable": "a6_c008",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX14"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "set": "workshop_g4",
+   "voStart": 2.5,
+   "tail": 7.5,
+   "storyboard": {
+    "beat": "一年後燈籠店；阿樂坐在工作台前慢慢摺小折折燈，手腕只剩一根很淡很鬆、正在滑落的線；孩子與折折圍在旁；阿樂交代那天把骨架搬上車要送去廣場、後來自己忘了；說定期回診、口頭禪、道謝；小折折燈柔和亮起；孩子們笑",
+    "cast": "阿樂：分件坐姿、H6 → H9、X2 → X3、L5；小晴、小宇、品安 X2 → X3",
+    "camera": "中景 → 手與小燈近景 → 群像",
+    "sound": "M7 → M1",
+    "directions": [
+     "（一年後，燈籠店。阿樂叔叔坐在工作台前，手還有一點慢，一摺、一摺，認真摺一盞小小的折折燈。手腕上只剩一根很淡、很鬆的線，正慢慢滑落。小晴、小宇、品安和折折圍在旁邊。）",
+     "（小折折燈柔和地亮起來。孩子們笑了。）"
+    ],
+    "estimateSec": 27.0,
+    "actionSec": 10.0
+   }
+  }
+ ]
+}

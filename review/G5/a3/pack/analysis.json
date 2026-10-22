@@ -1,0 +1,418 @@
+{
+ "act": "a3",
+ "capture_probe_rerun": true,
+ "proj": {
+  "16x9": 24
+ },
+ "compare_g4": {
+  "sheets": [
+   "compare_g4/compare_g4_01.png",
+   "compare_g4/compare_g4_02.png"
+  ],
+  "g4_refs": [
+   "review/G4/pack/capture/keyframes/a2_c002_012.59_mid.png",
+   "review/G4/pack/capture/keyframes/a2_c004_010.96_mid.png",
+   "review/G4/pack/capture/keyframes/a0_c001_011.60_after.png",
+   "review/G4/pack/capture/keyframes/a2_c002_025.18_after.png"
+  ],
+  "size": [
+   640,
+   360
+  ]
+ },
+ "audio": {
+  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
+  "file": "audio/a3_mix.wav",
+  "duration_sec": 174.72,
+  "sample_peak_dBFS": -1.22,
+  "clipped_samples": 0,
+  "full_playback": {
+   "I_LUFS": -16.1,
+   "LRA_LU": 15.8,
+   "TP_dBTP": -1.2
+  },
+  "line_vo_file_I_spread_LU": 0.3,
+  "line_mix_I_spread_LU": 0.4,
+  "momentary_max_LUFS": -9.6,
+  "momentary_max_rise_within_1s_LU": 45.7,
+  "momentary_max_rise_per_100ms_LU": 39.2,
+  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
+  "music_sfx_only": {
+   "max_LUFS": -16.7,
+   "max_at_sec": 126.6,
+   "max_at": {
+    "cue": "a3_c007",
+    "cue_t": 0.75
+   },
+   "max_rise_per_100ms_LU": 29.6,
+   "max_rise_per_100ms_at_sec": 116.3,
+   "max_rise_per_100ms_at": {
+    "cue": "a3_c006",
+    "cue_t": 0.39
+   },
+   "max_rise_within_1s_LU": 45.7,
+   "max_rise_within_1s_at_sec": 1.2,
+   "sample_peak_dBFS": -8.0,
+   "sample_peak_at_sec": 116.23,
+   "sample_peak_at": {
+    "cue": "a3_c006",
+    "cue_t": 0.32
+   },
+   "true_peak_dBTP": -8.0,
+   "I_LUFS": -27.8,
+   "g4_reference": {
+    "max_LUFS": -15.7,
+    "max_rise_within_1s_LU": 34.8,
+    "max_rise_per_100ms_LU": 18.6
+   },
+   "within_g4_max_LUFS": true,
+   "note": "不含配音的配樂＋音效分軌；上升量以 −70 LUFS 為下限（從靜音起音會算成大上升，要看發生的 cue 與聲音是否本來就是輕的起音）；聽感未驗證。"
+  },
+  "freeze_holds": [
+   {
+    "cue": "a3_c001",
+    "hold_from_sec": 22.1,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -46.5,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a3_c002",
+    "hold_from_sec": 38.83,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -42.7,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a3_c003",
+    "hold_from_sec": 66.48,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -37.1,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a3_c004",
+    "hold_from_sec": 85.7,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -48.1,
+    "pass_le_-35": true
+   },
+   {
+    "cue": "a3_c008",
+    "hold_from_sec": 171.22,
+    "hold_sec": 3.5,
+    "momentary_max_after_3s_LUFS": -47.4,
+    "pass_le_-35": true
+   }
+  ],
+  "freeze_rule": "教師停格（劇情段落播完、等老師按鍵）：配樂在停住後 3 秒內降到 ≤ −35 LUFS（瞬間響度，400 ms 窗）",
+  "ducking_constants": {
+   "DUCK_LEVEL": 0.56,
+   "DUCK_LEAD": 0.15,
+   "DUCK_TC_DOWN": 0.06,
+   "DUCK_RELEASE": 0.3,
+   "DUCK_TC_UP": 0.25,
+   "DUCK_BRIDGE": 0.9,
+   "HOLD_MUSIC_RATIO": 0.1,
+   "HOLD_TC": 0.6
+  }
+ },
+ "flash_playback": {
+  "ok": true,
+  "max_changes_per_sec": {
+   "luma": 3,
+   "red": 3
+  },
+  "near_limit_total": 157,
+  "frames_analyzed": 5242
+ },
+ "flash_variants": {
+  "fine_32x18": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 3
+   },
+   "near_limit_3_total": 82
+  },
+  "proj_16x9": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "near_limit_3_total": 2
+  },
+  "proj_32x18": {
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "near_limit_3_total": 31
+  }
+ },
+ "subtitle_sync": {
+  "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+  "silencedetect": {
+   "noise_dB": -40,
+   "min_silence_s": 0.05
+  },
+  "range_s": [
+   -0.8,
+   0.1
+  ],
+  "all_pass": true
+ },
+ "video": {
+  "file": "a3_playback.mp4",
+  "frames": 5242,
+  "ffprobe": {
+   "programs": [],
+   "stream_groups": [],
+   "streams": [
+    {
+     "codec_name": "h264",
+     "width": 1920,
+     "height": 1080,
+     "r_frame_rate": "30/1",
+     "nb_frames": "5241",
+     "side_data_list": [
+      {}
+     ]
+    },
+    {
+     "codec_name": "aac",
+     "r_frame_rate": "0/0",
+     "nb_frames": "8191"
+    }
+   ],
+   "format": {
+    "duration": "174.720000",
+    "size": "56404692"
+   }
+  }
+ },
+ "durations": {
+  "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
+  "cues": [
+   {
+    "cue": "a3_c001",
+    "kind": "scene",
+    "duration_sec": 21.5,
+    "preroll_sec": 0.6,
+    "estimate_sec": 20.2,
+    "diff_sec": 1.3,
+    "vo_sec": 12.6,
+    "lines": 4
+   },
+   {
+    "cue": "a3_c002",
+    "kind": "scene",
+    "duration_sec": 13.23,
+    "preroll_sec": 0,
+    "estimate_sec": 16.2,
+    "diff_sec": -3.0,
+    "vo_sec": 6.03,
+    "lines": 3
+   },
+   {
+    "cue": "a3_c003",
+    "kind": "scene",
+    "duration_sec": 23.55,
+    "preroll_sec": 0.6,
+    "estimate_sec": 23.5,
+    "diff_sec": 0.1,
+    "vo_sec": 15.75,
+    "lines": 3
+   },
+   {
+    "cue": "a3_c004",
+    "kind": "scene",
+    "duration_sec": 15.12,
+    "preroll_sec": 0.6,
+    "estimate_sec": 16.5,
+    "diff_sec": -1.4,
+    "vo_sec": 9.87,
+    "lines": 2
+   },
+   {
+    "cue": "a3_c005",
+    "kind": "quiz",
+    "duration_sec": 23.71,
+    "preroll_sec": 0,
+    "estimate_sec": 20.8,
+    "diff_sec": 2.9,
+    "vo_sec": 19.11,
+    "lines": 5
+   },
+   {
+    "cue": "a3_c006",
+    "kind": "reveal",
+    "duration_sec": 7.44,
+    "preroll_sec": 0,
+    "estimate_sec": 7.2,
+    "diff_sec": 0.2,
+    "vo_sec": 5.24,
+    "lines": 1
+   },
+   {
+    "cue": "a3_c007",
+    "kind": "lamp",
+    "duration_sec": 5.88,
+    "preroll_sec": 0,
+    "estimate_sec": 6.5,
+    "diff_sec": -0.6,
+    "vo_sec": 2.18,
+    "lines": 1
+   },
+   {
+    "cue": "a3_c008",
+    "kind": "scene",
+    "duration_sec": 36.39,
+    "preroll_sec": 0.6,
+    "estimate_sec": 30.8,
+    "diff_sec": 5.6,
+    "vo_sec": 26.09,
+    "lines": 4
+   }
+  ],
+  "act_total_sec": 146.8,
+  "act_preroll_total_sec": 2.4,
+  "estimate_sum_sec": 141.7,
+  "act_budget_recorded_sec": 141.8,
+  "diff_vs_budget_sec": 7.4,
+  "playback_with_holds_sec": 174.72,
+  "holds_assumed_sec": {
+   "a3_c001": 3.5,
+   "a3_c002": 3.5,
+   "a3_c003": 3.5,
+   "a3_c004": 3.5,
+   "a3_c005": 3,
+   "a3_c006": 2.5,
+   "a3_c007": 2.5,
+   "a3_c008": 3.5
+  }
+ },
+ "safety": {
+  "string_anchors_in_cues": [],
+  "string_anchors_allowed": [
+   "elbow",
+   "knee",
+   "wrist"
+  ],
+  "string_anchors_only_allowed": true,
+  "actors_with_strings": [],
+  "probe_frames_with_strings": 0,
+  "string_path_min_dist_to_head_box_px": null,
+  "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+  "string_head_offscreen_skipped": 0,
+  "per_anchor": {},
+  "string_path_intersects_child_box": [],
+  "string_path_intersects_child_box_count": 0,
+  "probe_sources": [
+   "capture/probe.json",
+   "probe_dense.json"
+  ],
+  "probe_method": "線路徑＝引擎實際畫的中心線投影到螢幕；頭部框＝分件紙偶 head* 部件圖外框（含透明邊）；兒童框＝立牌外框（含透明邊）。",
+  "required_narration": {},
+  "lines_total": 23,
+  "lines_differ_from_script_v03": [],
+  "subtitle_max_chars_per_row": 16,
+  "subtitle_max_rows_per_page": 2,
+  "app_js_getUserMedia_count": 0,
+  "app_js_mediaDevices_count": 0,
+  "capture_external_requests": 0,
+  "capture_console_errors": 0
+ },
+ "frames_meta": {
+  "preroll": {
+   "a3_c001": 0.6,
+   "a3_c002": 0,
+   "a3_c003": 0.6,
+   "a3_c004": 0.6,
+   "a3_c005": 0,
+   "a3_c006": 0,
+   "a3_c007": 0,
+   "a3_c008": 0.6
+  },
+  "engineDurations": {
+   "a0_c000": 0,
+   "a0_c001": 13.66,
+   "a0_c002": 21.3,
+   "a0_c003": 24.64,
+   "a0_c004": 28.91,
+   "a0_c005": 22.34,
+   "a1_c001": 27.75,
+   "a1_c002": 14.53,
+   "a1_c003": 18.52,
+   "a1_c004": 30.2,
+   "a1_c005": 23.89,
+   "a1_c006": 6.97,
+   "a1_c007": 5.72,
+   "a1_c008": 27.78,
+   "a2_c001": 17.76,
+   "a2_c002": 25.18,
+   "a2_c003": 15.3,
+   "a2_c004": 21.91,
+   "a2_c005": 23.86,
+   "a2_c006": 7.16,
+   "a2_c007": 9.17,
+   "a2_c008": 39.4,
+   "a2_c009": 22.31,
+   "a2_c010": 6.49,
+   "a2_c011": 5.57,
+   "a2_c012": 32.32,
+   "a2_c013": 34.14,
+   "a3_c001": 21.5,
+   "a3_c002": 13.23,
+   "a3_c003": 23.55,
+   "a3_c004": 15.12,
+   "a3_c005": 23.71,
+   "a3_c006": 7.44,
+   "a3_c007": 5.88,
+   "a3_c008": 36.39,
+   "a4_c001": 23.92,
+   "a4_c002": 20.36,
+   "a4_c003": 15.52,
+   "a4_c004": 15.3,
+   "a4_c005": 19.57,
+   "a4_c006": 6.26,
+   "a4_c007": 7.16,
+   "a4_c008": 14.33,
+   "a4_c009": 26.61,
+   "a4_c010": 7.32,
+   "a4_c011": 6.42,
+   "a4_c012": 31.07,
+   "a4_c013": 24.75,
+   "a5_c001": 40.62,
+   "a5_c002": 23.62,
+   "a5_c003": 7.02,
+   "a5_c004": 6.2,
+   "a5_c005": 21.2,
+   "a5_c006": 31.18,
+   "a5_c007": 25.83,
+   "a5_c008": 27.41,
+   "a6_c001": 13.68,
+   "a6_c002": 31.81,
+   "a6_c003": 23.9,
+   "a6_c004": 6.94,
+   "a6_c005": 7.07,
+   "a6_c006": 35.06,
+   "a6_c007": 21.05,
+   "a6_c008": 19.57,
+   "a6_c009": 25.91,
+   "a7_c001": 25.62,
+   "a7_c002": 8.58,
+   "a7_c003": 13.26,
+   "a8_c001": 18,
+   "a8_c002": 5.4,
+   "a8_c003": 1.4
+  },
+  "errors": [],
+  "sets": {
+   "active": "a3_classroom",
+   "built": 6,
+   "disposed": 5,
+   "lastBuildMs": 48,
+   "liveSetGroups": 1
+  }
+ }
+}

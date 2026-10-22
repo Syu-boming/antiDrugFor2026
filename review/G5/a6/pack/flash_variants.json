@@ -1,0 +1,461 @@
+{
+ "method": "縮成 640×360 後分析；投影 v2＝projsim.py projector(v2) 套在縮圖上；門檻同 capture_analyze.py",
+ "variants": {
+  "fine_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": false,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 3
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x10_y7",
+     "px": [
+      600,
+      420,
+      660,
+      480
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.5,
+     "cue": "a6_c002",
+     "cue_t": 1.7333
+    },
+    {
+     "type": "luma",
+     "region": "x5_y8",
+     "px": [
+      300,
+      480,
+      360,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 168.6,
+     "cue": "a6_c008",
+     "cue_t": 5.7
+    },
+    {
+     "type": "luma",
+     "region": "x6_y8",
+     "px": [
+      360,
+      480,
+      420,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 171.7667,
+     "cue": "a6_c008",
+     "cue_t": 8.8667
+    },
+    {
+     "type": "luma",
+     "region": "x5_y9",
+     "px": [
+      300,
+      540,
+      360,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 171.9,
+     "cue": "a6_c008",
+     "cue_t": 9.0
+    },
+    {
+     "type": "luma",
+     "region": "x6_y9",
+     "px": [
+      360,
+      540,
+      420,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 171.8,
+     "cue": "a6_c008",
+     "cue_t": 8.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y9",
+     "px": [
+      960,
+      540,
+      1020,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.1667,
+     "cue": "a6_c002",
+     "cue_t": 1.4
+    },
+    {
+     "type": "red",
+     "region": "x18_y9",
+     "px": [
+      1080,
+      540,
+      1140,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 109.8333,
+     "cue": "a6_c006",
+     "cue_t": 10.8333
+    },
+    {
+     "type": "luma",
+     "region": "x19_y9",
+     "px": [
+      1140,
+      540,
+      1200,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.6333,
+     "cue": "a6_c002",
+     "cue_t": 1.8667
+    },
+    {
+     "type": "luma",
+     "region": "x21_y9",
+     "px": [
+      1260,
+      540,
+      1320,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 111.4667,
+     "cue": "a6_c006",
+     "cue_t": 12.4667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y10",
+     "px": [
+      960,
+      600,
+      1020,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.2333,
+     "cue": "a6_c002",
+     "cue_t": 1.4667
+    },
+    {
+     "type": "red",
+     "region": "x16_y10",
+     "px": [
+      960,
+      600,
+      1020,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 128.5,
+     "cue": "a6_c006",
+     "cue_t": 29.5
+    },
+    {
+     "type": "luma",
+     "region": "x18_y10",
+     "px": [
+      1080,
+      600,
+      1140,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.3,
+     "cue": "a6_c002",
+     "cue_t": 1.5333
+    },
+    {
+     "type": "luma",
+     "region": "x26_y10",
+     "px": [
+      1560,
+      600,
+      1620,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 173.8,
+     "cue": "a6_c008",
+     "cue_t": 10.9
+    },
+    {
+     "type": "luma",
+     "region": "x26_y11",
+     "px": [
+      1560,
+      660,
+      1620,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 173.7667,
+     "cue": "a6_c008",
+     "cue_t": 10.8667
+    },
+    {
+     "type": "luma",
+     "region": "x21_y13",
+     "px": [
+      1260,
+      780,
+      1320,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 176.9,
+     "cue": "a6_c008",
+     "cue_t": 14.0
+    },
+    {
+     "type": "luma",
+     "region": "x23_y13",
+     "px": [
+      1380,
+      780,
+      1440,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 176.4,
+     "cue": "a6_c008",
+     "cue_t": 13.5
+    },
+    {
+     "type": "luma",
+     "region": "x10_y15",
+     "px": [
+      600,
+      900,
+      660,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.3667,
+     "cue": "a6_c002",
+     "cue_t": 1.6
+    },
+    {
+     "type": "luma",
+     "region": "x11_y15",
+     "px": [
+      660,
+      900,
+      720,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.2667,
+     "cue": "a6_c002",
+     "cue_t": 1.5
+    },
+    {
+     "type": "luma",
+     "region": "x12_y15",
+     "px": [
+      720,
+      900,
+      780,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.3333,
+     "cue": "a6_c002",
+     "cue_t": 1.5667
+    },
+    {
+     "type": "luma",
+     "region": "x16_y15",
+     "px": [
+      960,
+      900,
+      1020,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.1333,
+     "cue": "a6_c002",
+     "cue_t": 1.3667
+    },
+    {
+     "type": "luma",
+     "region": "x17_y15",
+     "px": [
+      1020,
+      900,
+      1080,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.2667,
+     "cue": "a6_c002",
+     "cue_t": 1.5
+    }
+   ],
+   "near_limit_total": 554,
+   "near_limit_3_total": 21
+  },
+  "proj_16x9": {
+   "grid": [
+    16,
+    9
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 2,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [],
+   "near_limit_total": 136,
+   "near_limit_3_total": 0
+  },
+  "proj_32x18": {
+   "grid": [
+    32,
+    18
+   ],
+   "projector_v2": true,
+   "max_changes_per_sec": {
+    "luma": 3,
+    "red": 0
+   },
+   "full_frame_luma_max_per_sec": 2,
+   "flagged": [],
+   "near_limit_3": [
+    {
+     "type": "luma",
+     "region": "x6_y8",
+     "px": [
+      360,
+      480,
+      420,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 171.8333,
+     "cue": "a6_c008",
+     "cue_t": 8.9333
+    },
+    {
+     "type": "luma",
+     "region": "x16_y9",
+     "px": [
+      960,
+      540,
+      1020,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.2333,
+     "cue": "a6_c002",
+     "cue_t": 1.4667
+    },
+    {
+     "type": "luma",
+     "region": "x19_y9",
+     "px": [
+      1140,
+      540,
+      1200,
+      600
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.6667,
+     "cue": "a6_c002",
+     "cue_t": 1.9
+    },
+    {
+     "type": "luma",
+     "region": "x16_y10",
+     "px": [
+      960,
+      600,
+      1020,
+      660
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.2667,
+     "cue": "a6_c002",
+     "cue_t": 1.5
+    },
+    {
+     "type": "luma",
+     "region": "x26_y11",
+     "px": [
+      1560,
+      660,
+      1620,
+      720
+     ],
+     "count_per_sec": 3,
+     "window_start": 173.7667,
+     "cue": "a6_c008",
+     "cue_t": 10.8667
+    },
+    {
+     "type": "luma",
+     "region": "x21_y13",
+     "px": [
+      1260,
+      780,
+      1320,
+      840
+     ],
+     "count_per_sec": 3,
+     "window_start": 176.9333,
+     "cue": "a6_c008",
+     "cue_t": 14.0333
+    },
+    {
+     "type": "luma",
+     "region": "x10_y15",
+     "px": [
+      600,
+      900,
+      660,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.5,
+     "cue": "a6_c002",
+     "cue_t": 1.7333
+    },
+    {
+     "type": "luma",
+     "region": "x11_y15",
+     "px": [
+      660,
+      900,
+      720,
+      960
+     ],
+     "count_per_sec": 3,
+     "window_start": 19.4,
+     "cue": "a6_c002",
+     "cue_t": 1.6333
+    }
+   ],
+   "near_limit_total": 544,
+   "near_limit_3_total": 8
+  }
+ }
+}

@@ -117,5 +117,56 @@
    1.7,
    3.1
   ]
+ },
+ "fix1": {
+  "made_by": "review/G5/a4/scripts/build_a4_art_fix1.py",
+  "truck_catear": {
+   "visible_box_px": [
+    683,
+    203,
+    940,
+    348
+   ],
+   "visible_center_world_from_bottom_center": [
+    0.178,
+    2.277
+   ],
+   "visible_height_world": 0.568,
+   "body_L": 91.4,
+   "bamboo_L_mean": 39.7,
+   "dL": 51.7
+  },
+  "truck_catear_tip": {
+   "visible_box_px": [
+    683,
+    203,
+    750,
+    307
+   ],
+   "visible_center_world_from_bottom_center": [
+    -0.194,
+    2.358
+   ],
+   "visible_height_world": 0.407,
+   "body_L": 91.4,
+   "bamboo_L_mean": 37.1,
+   "dL": 54.3
+  },
+  "walkers-a": [
+   1.5,
+   2.8
+  ],
+  "walkers-b": [
+   1.5,
+   2.8
+  ],
+  "sil-car": [
+   3.4,
+   1.62
+  ],
+  "sil-walker": [
+   0.95,
+   1.95
+  ]
  }
 }

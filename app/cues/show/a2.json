@@ -235,7 +235,7 @@
      "id": "a2_c001_03",
      "speaker": "折折",
      "text": "大家仔細看，叔叔的手上，是不是多了什麼？看到的舉手。",
-     "start": "a2_c001_02.end+1.5"
+     "start": "a2_c001_02.end+1.2"
     }
    ],
    "next": "a2_c002",
@@ -838,29 +838,22 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
    "animation": [
     {
-     "name": "zhezhe.hush",
-     "start": -0.55,
-     "target": "zhezhe",
-     "duration": 1.4
-    },
-    {
-     "name": "zhezhe.fold",
-     "start": 0.1,
-     "target": "zhezhe",
-     "duration": 1.3,
+     "name": "fade.out",
+     "start": 0,
+     "duration": 0.6,
      "params": {
-      "form": "card"
+      "to": 1
      }
     },
     {
      "name": "camera.cut",
-     "start": 0,
+     "start": 0.62,
      "duration": 0,
      "params": {
       "to": "quiz"
@@ -868,16 +861,53 @@
     },
     {
      "name": "light.dim",
-     "start": 0,
-     "duration": 1.2,
+     "start": 0.6,
+     "duration": 0.02,
      "params": {
       "to": 0.55
      }
     },
     {
-     "name": "quiz.show",
-     "start": 0.7,
+     "name": "fade.in",
+     "start": 0.64,
      "duration": 0.6
+    },
+    {
+     "name": "zhezhe.hush",
+     "start": 0.7,
+     "target": "zhezhe",
+     "duration": 1.4
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 1.0,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a2_c005_01.end+0.05",
+     "target": "zhezhe",
+     "duration": 1.2,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": "a2_c005_01.end+0.6",
+     "duration": 0.6
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a2_c005_01.end+1.35",
+     "target": "zhezhe",
+     "duration": 0.7,
+     "params": {
+      "form": "idle"
+     }
     }
    ],
    "audioId": null,
@@ -890,7 +920,8 @@
     {
      "id": "a2_c005_02",
      "speaker": "旁白",
-     "text": "阿樂叔叔身上的操偶線，在比喻什麼？"
+     "text": "阿樂叔叔身上的操偶線，在比喻什麼？",
+     "start": "a2_c005_01.end+1.0"
     },
     {
      "id": "a2_c005_03",
@@ -925,7 +956,7 @@
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": "a2_c005_01.end+0.6",
      "gain": 0.8
     }
    ],
@@ -999,20 +1030,11 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
    "animation": [
-    {
-     "name": "zhezhe.fold",
-     "start": 0.05,
-     "target": "zhezhe",
-     "duration": 1,
-     "params": {
-      "form": "idle"
-     }
-    },
     {
      "name": "quiz.reveal",
      "start": 0.3,
@@ -1101,7 +1123,7 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
@@ -1115,35 +1137,48 @@
      }
     },
     {
-     "name": "zhezhe.walkTo",
-     "start": "a2_c007_01.end+0.05",
-     "target": "zhezhe",
-     "duration": 1.5,
-     "params": {
-      "pos": [
-       -8.6,
-       0,
-       4.2
-      ]
-     }
-    },
-    {
      "name": "quiz.hide",
-     "start": "a2_c007_01.end+0.3",
+     "start": "a2_c007_01.end+0.30",
      "duration": 0.6
     },
     {
-     "name": "light.restore",
-     "start": "a2_c007_01.end+0.3",
-     "duration": 1.2
+     "name": "fade.out",
+     "start": "a2_c007_01.end+0.55",
+     "duration": 0.6,
+     "params": {
+      "to": 1
+     }
     },
     {
      "name": "camera.cut",
-     "start": "a2_c007_01.end+0.95",
+     "start": "a2_c007_01.end+1.17",
      "duration": 0,
      "params": {
       "to": "g4_mid"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a2_c007_01.end+1.15",
+     "duration": 0.02
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": "a2_c007_01.end+1.14",
+     "target": "zhezhe",
+     "duration": 0.02,
+     "params": {
+      "pos": [
+       -13.0,
+       0,
+       4.15
+      ]
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a2_c007_01.end+1.19",
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -1494,7 +1529,7 @@
    "teacherNote": "開頭是阿樂叔叔的手部近景：想摺燈籠紙，手被線拉得一頓一頓，紙皺成一團（無台詞約 5 秒）。必要旁白二（一字不改）時畫面是穩定的中景：阿樂叔叔坐在左邊、兩個孩子在右前方，沒有人動作。播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 5.5,
-   "tail": 1.8,
+   "tail": 1.4,
    "storyboard": {
     "beat": "阿樂拿燈籠紙想摺，手被拉得一頓一頓，紙皺成一團；低頭看手；小宇小聲問；小晴說不知道、叔叔需要幫忙；必要旁白二；停格（給 G4／G5，只記錄：Q2、Q3 間隔偏短，手部近景可多給 2–3 秒無台詞表演，估計秒數未計入）",
     "cast": "阿樂：H6、X10、L2；小宇 X5（靠近小晴）；小晴 X5 → X7",
@@ -1589,29 +1624,22 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
    "animation": [
     {
-     "name": "zhezhe.hush",
-     "start": -0.55,
-     "target": "zhezhe",
-     "duration": 1.4
-    },
-    {
-     "name": "zhezhe.fold",
-     "start": 0.1,
-     "target": "zhezhe",
-     "duration": 1.3,
+     "name": "fade.out",
+     "start": 0,
+     "duration": 0.6,
      "params": {
-      "form": "card"
+      "to": 1
      }
     },
     {
      "name": "camera.cut",
-     "start": 0,
+     "start": 0.62,
      "duration": 0,
      "params": {
       "to": "quiz"
@@ -1619,16 +1647,53 @@
     },
     {
      "name": "light.dim",
-     "start": 0,
-     "duration": 1.2,
+     "start": 0.6,
+     "duration": 0.02,
      "params": {
       "to": 0.55
      }
     },
     {
-     "name": "quiz.show",
-     "start": 0.7,
+     "name": "fade.in",
+     "start": 0.64,
      "duration": 0.6
+    },
+    {
+     "name": "zhezhe.hush",
+     "start": 0.7,
+     "target": "zhezhe",
+     "duration": 1.4
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 1.0,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a2_c009_01.end+0.05",
+     "target": "zhezhe",
+     "duration": 1.2,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": "a2_c009_01.end+0.6",
+     "duration": 0.6
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a2_c009_01.end+1.35",
+     "target": "zhezhe",
+     "duration": 0.7,
+     "params": {
+      "form": "idle"
+     }
     }
    ],
    "audioId": null,
@@ -1641,7 +1706,8 @@
     {
      "id": "a2_c009_02",
      "speaker": "旁白",
-     "text": "看見有人站不穩，就能確定他吸毒嗎？"
+     "text": "看見有人站不穩，就能確定他吸毒嗎？",
+     "start": "a2_c009_01.end+1.0"
     },
     {
      "id": "a2_c009_03",
@@ -1676,7 +1742,7 @@
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": "a2_c009_01.end+0.6",
      "gain": 0.8
     }
    ],
@@ -1753,20 +1819,11 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
    "animation": [
-    {
-     "name": "zhezhe.fold",
-     "start": 0.05,
-     "target": "zhezhe",
-     "duration": 1,
-     "params": {
-      "form": "idle"
-     }
-    },
     {
      "name": "quiz.reveal",
      "start": 0.3,
@@ -1858,7 +1915,7 @@
       "emotion": "happy",
       "x": -4.7,
       "y": 0,
-      "z": 4.2
+      "z": 4.15
      }
     }
    },
@@ -1872,35 +1929,48 @@
      }
     },
     {
-     "name": "zhezhe.walkTo",
-     "start": "a2_c011_01.end+0.05",
-     "target": "zhezhe",
-     "duration": 1.5,
-     "params": {
-      "pos": [
-       -8.6,
-       0,
-       4.2
-      ]
-     }
-    },
-    {
      "name": "quiz.hide",
-     "start": "a2_c011_01.end+0.3",
+     "start": "a2_c011_01.end+0.30",
      "duration": 0.6
     },
     {
-     "name": "light.restore",
-     "start": "a2_c011_01.end+0.3",
-     "duration": 1.2
+     "name": "fade.out",
+     "start": "a2_c011_01.end+0.55",
+     "duration": 0.6,
+     "params": {
+      "to": 1
+     }
     },
     {
      "name": "camera.cut",
-     "start": "a2_c011_01.end+0.95",
+     "start": "a2_c011_01.end+1.17",
      "duration": 0,
      "params": {
       "to": "g4_mid"
      }
+    },
+    {
+     "name": "light.restore",
+     "start": "a2_c011_01.end+1.15",
+     "duration": 0.02
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": "a2_c011_01.end+1.14",
+     "target": "zhezhe",
+     "duration": 0.02,
+     "params": {
+      "pos": [
+       -13.0,
+       0,
+       4.15
+      ]
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a2_c011_01.end+1.19",
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -2464,7 +2534,7 @@
    "teacherNote": "兩個孩子往右跑出店門、到廣場另一頭的求助站（帳篷上是手捧愛心圖示，沒有紅十字）找葉護理師；葉護理師跟著回到店裡、蹲下和阿樂叔叔平視、拿手機打給他的家人沒人接、答應請警察去看盒子。播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 5.720000000000001,
-   "tail": 1.8,
+   "tail": 1.2,
    "storyboard": {
     "beat": "孩子往右跑出店門，跑到求助站；葉護理師快步進店，蹲下和阿樂平視；阿樂說休息就好；葉撥電話給阿樂的家人，沒人接，說晚一點再打（交代第二天接送照常的原因之一）；小晴說廣場上的盒子；葉答應請警察去看",
     "cast": "小晴、小宇：跑步循環往右；葉護理師：P-YE1、X5 → X2；阿樂 X11、L2；小晴 X7",
@@ -2599,10 +2669,10 @@
      "name": "puppet.nod",
      "start": "a2_c013_01+0.2",
      "target": "ale",
-     "duration": 4.6,
+     "duration": 3.6,
      "params": {
       "count": 2,
-      "depth": 0.8
+      "depth": 1.3
      }
     },
     {
@@ -2612,7 +2682,7 @@
      "duration": 2.6,
      "params": {
       "count": 1,
-      "depth": 0.9
+      "depth": 1.3
      }
     },
     {
@@ -2661,33 +2731,59 @@
     },
     {
      "name": "puppet.nod",
-     "start": "a2_c013_03.end-0.6",
+     "start": "a2_c013_03.end-2.3",
      "target": "ale",
-     "duration": 2,
+     "duration": 2.2,
      "params": {
       "count": 2,
-      "depth": 1
+      "depth": 1.6
+     }
+    },
+    {
+     "name": "fade.out",
+     "start": "a2_c013_03.end+0.25",
+     "duration": 0.6,
+     "params": {
+      "to": 1
      }
     },
     {
      "name": "camera.cut",
-     "start": "a2_c013_03.end+0.5",
+     "start": "a2_c013_03.end+0.87",
      "duration": 0,
      "params": {
       "to": "a2_win_note"
      }
     },
     {
+     "name": "fade.in",
+     "start": "a2_c013_03.end+0.89",
+     "duration": 0.6
+    },
+    {
+     "name": "fade.out",
+     "start": "a2_c013_03.end+3.05",
+     "duration": 0.6,
+     "params": {
+      "to": 1
+     }
+    },
+    {
      "name": "camera.cut",
-     "start": "a2_c013_03.end+3.1",
+     "start": "a2_c013_03.end+3.67",
      "duration": 0,
      "params": {
       "to": "a2_win_kids"
      }
     },
     {
+     "name": "fade.in",
+     "start": "a2_c013_03.end+3.69",
+     "duration": 0.6
+    },
+    {
      "name": "zhezhe.look",
-     "start": "a2_c013_03.end+3.4",
+     "start": "a2_c013_03.end+4.3",
      "target": "zhezhe",
      "duration": 0.9,
      "params": {
@@ -2696,7 +2792,7 @@
     },
     {
      "name": "zhezhe.emote",
-     "start": "a2_c013_03.end+3.9",
+     "start": "a2_c013_03.end+4.8",
      "target": "zhezhe",
      "params": {
       "emotion": "sad"
@@ -2725,7 +2821,7 @@
      "id": "a2_c013_04",
      "speaker": "小宇",
      "text": "明天就是紙燈節了……叔叔會好一點嗎？",
-     "start": "a2_c013_03.end+4.7"
+     "start": "a2_c013_03.end+4.45"
     },
     {
      "id": "a2_c013_05",

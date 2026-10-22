@@ -149,9 +149,10 @@
      }
     },
     {
-     "name": "camera.cut",
-     "start": "a6_c001_01.start-0.15",
-     "duration": 0.01,
+     "name": "camera.move",
+     "start": 0.15,
+     "duration": 3.0,
+     "ease": "sine",
      "params": {
       "to": "a6_kids"
      }
@@ -212,7 +213,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 2.4,
-   "tail": 6.0,
+   "tail": 5.0,
    "storyboard": {
     "beat": "〔1 級可略，約 4 秒〕陳伯伯和阿琴阿姨把骨架從小貨車抬下來 → 骨架已立在廣場中央（v01 的退路畫面），大家一起糊燈籠紙；孩子說要幫叔叔完成主燈；品安緊抓書包背帶不說話",
     "cast": "P-GRP1（可選，只用在搬運鏡頭）；廣場群像；小晴 X3；小宇 X2；品安 H5、X5",
@@ -227,6 +228,7 @@
     "actionSec": 12.0
    },
    "set": "a6_square_night",
+   "musicLevel": 0.5,
    "sfx": [
     {
      "id": "sfx_crowd_far",
@@ -249,7 +251,7 @@
     "characters": {
      "pinan": {
       "visible": true,
-      "x": 2.7,
+      "x": 1.7,
       "z": 0.3,
       "facing": 1,
       "emotion": "worried",
@@ -257,7 +259,7 @@
      },
      "xiaoyu": {
       "visible": true,
-      "x": 1.85,
+      "x": 0.8,
       "z": 0.05,
       "facing": 1,
       "emotion": "neutral",
@@ -265,7 +267,7 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 1.0,
+      "x": -0.1,
       "z": 0.45,
       "facing": 1,
       "emotion": "neutral",
@@ -280,6 +282,54 @@
     }
    },
    "animation": [
+    {
+     "name": "puppet.move",
+     "start": 0.05,
+     "duration": 3.6,
+     "target": "pinan",
+     "ease": "inOut",
+     "params": {
+      "dx": 1.0
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.35,
+     "duration": 3.6,
+     "target": "xiaoyu",
+     "ease": "inOut",
+     "params": {
+      "dx": 1.05
+     }
+    },
+    {
+     "name": "puppet.move",
+     "start": 0.65,
+     "duration": 3.6,
+     "target": "xiaoqing",
+     "ease": "inOut",
+     "params": {
+      "dx": 1.1
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": 0.6,
+     "duration": 0.6,
+     "target": "zhezhe",
+     "params": {
+      "yaw": -0.3
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": 2.6,
+     "duration": 0.6,
+     "target": "zhezhe",
+     "params": {
+      "yaw": 0.2
+     }
+    },
     {
      "name": "camera.move",
      "start": "a6_c002_01.start",
@@ -323,7 +373,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a6_c002_03.end+0.35",
+     "start": "a6_c002_03.end+1.00",
      "duration": 0.24,
      "target": "xiaoyu",
      "params": {
@@ -332,12 +382,12 @@
     },
     {
      "name": "puppet.blink",
-     "start": "a6_c002_03.end+0.50",
+     "start": "a6_c002_03.end+1.20",
      "target": "xiaoqing"
     },
     {
      "name": "zhezhe.emote",
-     "start": "a6_c002_03.end+0.50",
+     "start": "a6_c002_03.end+0.60",
      "target": "zhezhe",
      "params": {
       "emotion": "worried"
@@ -345,7 +395,7 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a6_c002_03.end+1.20",
+     "start": "a6_c002_03.end+2.20",
      "duration": 0.24,
      "target": "xiaoyu",
      "params": {
@@ -360,6 +410,32 @@
      "params": {
       "yaw": 0.0
      }
+    },
+    {
+     "name": "zhezhe.walkTo",
+     "start": "a6_c002_04.end+0.30",
+     "duration": 1.5,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -3.0,
+       0,
+       1.05
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": "a6_c002_04.end+1.90",
+     "duration": 0.02,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       -4.7,
+       0,
+       4.15
+      ]
+     }
     }
    ],
    "audioId": "music_town_night",
@@ -367,7 +443,8 @@
     {
      "id": "a6_c002_01",
      "speaker": "品安",
-     "text": "我跟你們說一個秘密……"
+     "text": "我跟你們說一個秘密……",
+     "start": 3.0
     },
     {
      "id": "a6_c002_02",
@@ -383,7 +460,7 @@
      "id": "a6_c002_04",
      "speaker": "折折",
      "text": "如果你是小晴和小宇，你會怎麼做？",
-     "start": "a6_c002_03.end+2.30"
+     "start": "a6_c002_03.end+2.60"
     }
    ],
    "next": "a6_c003",
@@ -393,8 +470,8 @@
    "fx": [],
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
-   "voStart": 1.25,
-   "tail": 1.6,
+   "voStart": 3.0,
+   "tail": 2.0,
    "storyboard": {
     "beat": "品安把兩人拉到燈籠架後小聲說秘密；兩人互看；小宇推眼鏡；折折尾巴慢慢收起；折折把問題交給觀眾",
     "cast": "品安 X5（身上無線）；小晴 X5；小宇 H8、X8",
@@ -422,6 +499,11 @@
      "id": "sfx_crowd_far",
      "at": 0,
      "gain": 0.32
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": 0.3,
+     "gain": 0.3
     }
    ]
   },
@@ -450,7 +532,7 @@
       "x": 1.85,
       "z": 0.05,
       "facing": 1,
-      "emotion": "neutral",
+      "emotion": "worried",
       "pose": "glasses"
      },
      "xiaoqing": {
@@ -458,13 +540,14 @@
       "x": 1.0,
       "z": 0.45,
       "facing": 1,
-      "emotion": "neutral",
+      "emotion": "worried",
       "pose": "stand"
      },
      "zhezhe": {
       "visible": true,
-      "x": 2.3,
-      "z": 1.05,
+      "x": -4.7,
+      "y": 0,
+      "z": 4.15,
       "emotion": "curious"
      },
      "chen": {
@@ -486,25 +569,83 @@
    },
    "animation": [
     {
-     "name": "camera.move",
-     "start": 0,
-     "duration": 2.4,
-     "params": {
-      "to": "quiz"
-     }
+     "name": "fade.out",
+     "start": 0.0,
+     "duration": 0.6
     },
     {
      "name": "light.dim",
-     "start": 0,
-     "duration": 1.2,
+     "start": 0.61,
+     "duration": 0.03,
      "params": {
       "to": 0.55
      }
     },
     {
-     "name": "quiz.show",
-     "start": 0.7,
+     "name": "camera.cut",
+     "start": 0.65,
+     "duration": 0.01,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": 0.68,
      "duration": 0.6
+    },
+    {
+     "name": "zhezhe.hush",
+     "start": 0.0,
+     "duration": 1.4,
+     "target": "zhezhe"
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 1.45,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a6_c003_01.end+0.05",
+     "duration": 1.2,
+     "target": "zhezhe",
+     "params": {
+      "form": "card"
+     }
+    },
+    {
+     "name": "quiz.show",
+     "start": "a6_c003_01.end+0.60",
+     "duration": 0.7
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a6_c003_01.end+1.35",
+     "duration": 0.7,
+     "target": "zhezhe",
+     "params": {
+      "form": "idle"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 0.5,
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 0.5,
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "neutral"
+     }
     }
    ],
    "audioId": null,
@@ -512,12 +653,14 @@
     {
      "id": "a6_c003_01",
      "speaker": "折折",
-     "text": "最後一題！"
+     "text": "最後一題！",
+     "start": 1.7
     },
     {
      "id": "a6_c003_02",
      "speaker": "旁白",
-     "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？"
+     "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+     "start": "a6_c003_01.end+1.30"
     },
     {
      "id": "a6_c003_03",
@@ -548,11 +691,12 @@
    "sfx": [
     {
      "id": "sfx_quiet_fold",
-     "at": 0
+     "at": 0.0,
+     "gain": 0.8
     },
     {
      "id": "sfx_card_in",
-     "at": 0.7,
+     "at": "a6_c003_01.end+0.60",
      "gain": 0.8
     }
    ],
@@ -567,7 +711,7 @@
     ],
     "answer": 2
    },
-   "voStart": 1.4,
+   "voStart": 1.7,
    "tail": 1.0,
    "storyboard": {
     "beat": "Q8 題卡模式 → 揭答第 2 項 → 第八盞燈，八盞都亮",
@@ -622,8 +766,9 @@
      },
      "zhezhe": {
       "visible": true,
-      "x": 2.3,
-      "z": 1.05,
+      "x": -4.7,
+      "y": 0,
+      "z": 4.15,
       "emotion": "curious"
      },
      "chen": {
@@ -648,6 +793,14 @@
      "name": "quiz.reveal",
      "start": 0.3,
      "duration": 0.45
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 0.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "curious"
+     }
     }
    ],
    "audioId": null,
@@ -728,8 +881,9 @@
      },
      "zhezhe": {
       "visible": true,
-      "x": 2.3,
-      "z": 1.05,
+      "x": -4.7,
+      "y": 0,
+      "z": 4.15,
       "emotion": "curious"
      },
      "chen": {
@@ -759,23 +913,77 @@
      }
     },
     {
+     "name": "zhezhe.emote",
+     "start": 0.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
      "name": "quiz.hide",
-     "start": "a6_c005_01.end+0.3",
+     "start": "a6_c005_01.end+0.30",
+     "duration": 0.7
+    },
+    {
+     "name": "fade.out",
+     "start": "a6_c005_01.end+1.10",
      "duration": 0.6
     },
     {
      "name": "light.restore",
-     "start": "a6_c005_01.end+0.3",
-     "duration": 1.2
+     "start": "a6_c005_01.end+1.71",
+     "duration": 0.03
     },
     {
-     "name": "camera.move",
-     "start": "a6_c005_01.end+0.3",
-     "duration": 3.0,
+     "name": "camera.cut",
+     "start": "a6_c005_01.end+1.75",
+     "duration": 0.01,
      "params": {
-      "to": "a6_secret"
-     },
-     "ease": "sine"
+      "to": "a6_secret_c6"
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "start": "a6_c005_01.end+1.75",
+     "duration": 0.02,
+     "target": "zhezhe",
+     "params": {
+      "pos": [
+       2.3,
+       0,
+       1.05
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a6_c005_01.end+1.76",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a6_c005_01.end+1.76",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a6_c005_01.end+1.76",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "fade.in",
+     "start": "a6_c005_01.end+1.80",
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -811,7 +1019,7 @@
     }
    ],
    "voStart": 1.9,
-   "tail": 0.6,
+   "tail": 2.5,
    "storyboard": {
     "beat": "Q8 題卡模式 → 揭答第 2 項 → 第八盞燈，八盞都亮",
     "cast": "折折",
@@ -833,7 +1041,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a6_secret",
+     "camera": "a6_secret_c6",
      "light": 1
     },
     "characters": {
@@ -869,7 +1077,7 @@
      },
      "lin": {
       "visible": true,
-      "x": 6.05,
+      "x": 5.75,
       "z": 0.15,
       "facing": -1,
       "emotion": "smile",
@@ -877,7 +1085,7 @@
      },
      "ye": {
       "visible": true,
-      "x": 7.05,
+      "x": 6.5,
       "z": -0.05,
       "facing": -1,
       "emotion": "smile"
@@ -920,137 +1128,68 @@
      }
     },
     {
-     "name": "puppet.pose",
+     "name": "puppet.move",
      "start": "a6_c006_02.end+0.35",
-     "duration": 0.24,
+     "duration": 4.7,
      "target": "pinan",
+     "ease": "inOut",
      "params": {
-      "pose": "walk_straps_m"
+      "dx": 2.35
      }
     },
     {
      "name": "puppet.move",
-     "start": "a6_c006_02.end+1.25",
-     "duration": 0.3,
-     "target": "pinan",
-     "params": {
-      "dx": 0.0
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.55",
-     "duration": 0.02,
-     "target": "pinan",
-     "params": {
-      "dx": 1.95
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.95",
-     "duration": 1.4,
-     "target": "pinan",
-     "params": {
-      "dx": 0.6
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.25",
-     "duration": 0.3,
+     "start": "a6_c006_02.end+0.45",
+     "duration": 4.7,
      "target": "xiaoyu",
+     "ease": "inOut",
      "params": {
-      "dx": 0.0
+      "dx": 2.6
      }
     },
     {
      "name": "puppet.move",
-     "start": "a6_c006_02.end+1.55",
-     "duration": 0.02,
-     "target": "xiaoyu",
-     "params": {
-      "dx": 2.2
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.95",
-     "duration": 1.4,
-     "target": "xiaoyu",
-     "params": {
-      "dx": 0.6
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.25",
-     "duration": 0.3,
+     "start": "a6_c006_02.end+0.55",
+     "duration": 4.7,
      "target": "xiaoqing",
+     "ease": "inOut",
      "params": {
-      "dx": 0.0
+      "dx": 2.6
      }
     },
     {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.55",
-     "duration": 0.02,
-     "target": "xiaoqing",
-     "params": {
-      "dx": 2.15
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": "a6_c006_02.end+1.95",
-     "duration": 1.4,
-     "target": "xiaoqing",
-     "params": {
-      "dx": 0.6
-     }
-    },
-    {
-     "name": "zhezhe.glideTo",
-     "start": "a6_c006_02.end+1.55",
-     "duration": 0.02,
+     "name": "zhezhe.walkTo",
+     "start": "a6_c006_02.end+0.45",
+     "duration": 4.7,
      "target": "zhezhe",
      "params": {
       "pos": [
-       3.7,
+       3.65,
        0,
-       1.3
+       1.45
       ]
      }
     },
     {
-     "name": "zhezhe.glideTo",
-     "start": "a6_c006_02.end+1.95",
-     "duration": 1.3,
-     "target": "zhezhe",
+     "name": "camera.move",
+     "start": "a6_c006_02.end+0.35",
+     "duration": 5.0,
+     "ease": "sine",
      "params": {
-      "pos": [
-       4.25,
-       0,
-       1.3
-      ]
+      "to": "a6_follow"
      }
     },
     {
-     "name": "camera.cut",
-     "start": "a6_c006_02.end+1.55",
-     "duration": 0.01,
-     "params": {
-      "to": "a6_tent"
-     }
+     "name": "puppet.popup",
+     "start": "a6_c006_02.end+4.95",
+     "duration": 1.4,
+     "target": "lin"
     },
     {
-     "name": "puppet.pose",
-     "start": "a6_c006_02.end+3.35",
-     "duration": 0.24,
-     "target": "pinan",
-     "params": {
-      "pose": "stand_m"
-     }
+     "name": "puppet.popup",
+     "start": "a6_c006_02.end+5.65",
+     "duration": 1.4,
+     "target": "ye"
     },
     {
      "name": "puppet.face",
@@ -1092,7 +1231,7 @@
      "duration": 0.24,
      "target": "pinan",
      "params": {
-      "pose": "stand"
+      "pose": "stand_m"
      }
     },
     {
@@ -1113,16 +1252,17 @@
     },
     {
      "name": "puppet.pose",
-     "start": "a6_c006_05.end+1.80",
+     "start": "a6_c006_05.end+1.60",
      "duration": 0.24,
      "target": "pinan",
      "params": {
-      "pose": "stand_m"
+      "pose": "stand"
      }
     },
     {
-     "name": "puppet.blink",
-     "start": "a6_c006_05.end+2.30",
+     "name": "puppet.nod",
+     "start": "a6_c006_05.end+1.95",
+     "duration": 1.0,
      "target": "pinan"
     },
     {
@@ -1132,6 +1272,14 @@
      "target": "ye",
      "params": {
       "to": 0.02
+     }
+    },
+    {
+     "name": "light.dim",
+     "start": "a6_c006_06.end+0.20",
+     "duration": 1.0,
+     "params": {
+      "to": 0.84
      }
     }
    ],
@@ -1151,7 +1299,7 @@
      "id": "a6_c006_03",
      "speaker": "品安",
      "text": "老師……我書包裡，有一個別人給的盒子。",
-     "start": "a6_c006_02.end+3.95"
+     "start": "a6_c006_02.end+5.95"
     },
     {
      "id": "a6_c006_04",
@@ -1178,7 +1326,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 0.8,
-   "tail": 1.6,
+   "tail": 1.0,
    "storyboard": {
     "beat": "小晴說「我在乎你」；小宇說「我們陪你去，跟老師說清楚」；三人往右走到求助站；品安向林老師說出來；林老師道謝並說盒子不要碰、交給大人，再說廣場那個人警察已經在處理了；約 2 秒無台詞：品安抬頭、看看林老師和兩位朋友、肩膀放鬆、輕輕點頭（v03，大人不連說三句）；葉護理師說說出來就是保護自己",
     "cast": "小晴 X7 → X2；小宇 X2；品安 X5 → 抬頭、點頭 → X7；林老師 H3、X2；葉護理師 X2",
@@ -1258,16 +1406,16 @@
      },
      "lin": {
       "visible": true,
-      "x": 1.0,
-      "z": 0.6,
+      "x": 1.05,
+      "z": 1.75,
       "facing": -1,
       "emotion": "smile",
       "pose": "standr"
      },
      "ye": {
       "visible": true,
-      "x": 1.95,
-      "z": 0.35,
+      "x": 2.05,
+      "z": 1.6,
       "facing": -1,
       "emotion": "smile"
      },
@@ -1314,12 +1462,22 @@
      }
     },
     {
+     "name": "fade.out",
+     "start": "a6_c007_01.end+0.20",
+     "duration": 0.6
+    },
+    {
      "name": "camera.cut",
-     "start": "a6_c007_01.end+0.30",
+     "start": "a6_c007_01.end+0.82",
      "duration": 0.01,
      "params": {
       "to": "a6_full"
      }
+    },
+    {
+     "name": "fade.in",
+     "start": "a6_c007_01.end+0.86",
+     "duration": 0.6
     }
    ],
    "audioId": null,
@@ -1355,7 +1513,7 @@
    "teacherNote": "播完停格，等老師按下一步。",
    "checkpoint": null,
    "voStart": 2.0,
-   "tail": 1.4,
+   "tail": 1.2,
    "storyboard": {
     "beat": "後拉：八盞燈都亮；折折跳起一摺，終於摺成小燈籠；八盞燈的光像一條線流進廣場；主燈柔和亮起；鎮上燈籠一盞接一盞亮；旁白提醒「可是，阿樂叔叔要好起來，不是點亮燈就好」（安全界線第 5 條）",
     "cast": "折折（變小燈籠）；廣場群像小尺寸",
@@ -1411,7 +1569,7 @@
     "characters": {
      "ale": {
       "visible": true,
-      "x": -0.05,
+      "x": -0.65,
       "z": 0.25,
       "facing": 1,
       "sit": 0,
@@ -1425,46 +1583,46 @@
      },
      "ye": {
       "visible": true,
-      "x": 1.6,
+      "x": 1.2,
       "z": 0.4,
       "facing": -1,
       "emotion": "smile"
      },
      "aqin": {
       "visible": true,
-      "x": 40.0,
+      "x": -2.65,
       "z": 0.45,
-      "facing": -1,
+      "facing": 1,
       "emotion": "smile"
      },
      "xiaoqing": {
       "visible": true,
-      "x": 40.0,
-      "z": 0.55,
-      "facing": 1,
+      "x": 2.25,
+      "z": 0.6,
+      "facing": -1,
       "emotion": "smile",
       "pose": "stand"
      },
      "xiaoyu": {
       "visible": true,
-      "x": 40.0,
-      "z": 0.3,
-      "facing": 1,
+      "x": 3.0,
+      "z": 0.35,
+      "facing": -1,
       "emotion": "smile",
       "pose": "standwatch_m"
      },
      "pinan": {
       "visible": true,
-      "x": 40.0,
+      "x": 3.75,
       "z": 0.2,
-      "facing": 1,
+      "facing": -1,
       "emotion": "smile",
       "pose": "stand_m"
      },
      "zhezhe": {
       "visible": true,
-      "x": 40.0,
-      "z": 1.2,
+      "x": 6.0,
+      "z": 1.3,
       "emotion": "happy"
      }
     }
@@ -1472,7 +1630,7 @@
    "animation": [
     {
      "name": "puppet.lean",
-     "start": 1.0,
+     "start": 0.6,
      "duration": 1.0,
      "target": "ye",
      "params": {
@@ -1481,8 +1639,8 @@
     },
     {
      "name": "strings.loosen",
-     "start": 1.2,
-     "duration": 4.0,
+     "start": 1.0,
+     "duration": 3.0,
      "target": "ale",
      "params": {
       "anchors": [
@@ -1490,63 +1648,61 @@
        "elbow",
        "knee"
       ],
-      "to": 0.04
+      "to": 0.0
      }
     },
     {
      "name": "puppet.face",
-     "start": 3.6,
+     "start": 3.0,
      "target": "ale",
      "params": {
       "emotion": "smile"
      }
     },
     {
-     "name": "fade.out",
-     "start": 5.4,
-     "duration": 0.6
-    },
-    {
-     "name": "puppet.move",
-     "start": 6.0,
-     "duration": 0.02,
+     "name": "puppet.lean",
+     "start": 3.6,
+     "duration": 1.0,
      "target": "ye",
      "params": {
-      "dx": 40.0
+      "to": 0.0
      }
     },
     {
-     "name": "puppet.move",
-     "start": 6.0,
-     "duration": 0.02,
-     "target": "aqin",
-     "params": {
-      "dx": -41.2
-     }
-    },
-    {
-     "name": "fade.in",
-     "start": 6.02,
-     "duration": 0.6
+     "name": "puppet.popup",
+     "start": 5.3,
+     "duration": 1.6,
+     "target": "aqin"
     },
     {
      "name": "strings.fade",
-     "start": 6.7,
-     "duration": 1.8,
+     "start": 5.6,
+     "duration": 2.2,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "knee"
+      ],
+      "to": 0.0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "start": 5.6,
+     "duration": 2.2,
      "target": "ale",
      "params": {
       "anchors": [
        "wrist",
-       "elbow",
-       "knee"
+       "elbow"
       ],
-      "to": 0.5
+      "to": 0.55
      }
     },
     {
      "name": "strings.detach",
-     "start": 6.9,
-     "duration": 1.6,
+     "start": 8.0,
+     "duration": 0.6,
      "target": "ale",
      "params": {
       "anchors": [
@@ -1555,105 +1711,72 @@
      }
     },
     {
-     "name": "puppet.exit",
-     "start": 8.6,
-     "duration": 2.7,
-     "target": "ale",
-     "params": {
-      "to": 0.6
-     }
-    },
-    {
-     "name": "puppet.exit",
-     "start": 8.6,
-     "duration": 2.7,
-     "target": "aqin",
-     "params": {
-      "to": 0.6
-     }
-    },
-    {
-     "name": "fade.out",
-     "start": 11.4,
-     "duration": 0.6
-    },
-    {
      "name": "puppet.move",
-     "start": 12.0,
-     "duration": 0.02,
-     "target": "aqin",
-     "params": {
-      "dx": 40.0
-     }
-    },
-    {
-     "name": "puppet.move",
-     "start": 12.0,
-     "duration": 0.02,
+     "start": 8.3,
+     "duration": 2.0,
      "target": "ale",
+     "ease": "inOut",
      "params": {
       "dx": 0.6
      }
     },
     {
      "name": "puppet.move",
-     "start": 12.0,
-     "duration": 0.02,
-     "target": "xiaoqing",
+     "start": 8.3,
+     "duration": 2.0,
+     "target": "aqin",
+     "ease": "inOut",
      "params": {
-      "dx": -42.0
+      "dx": 0.6
      }
     },
     {
-     "name": "puppet.move",
-     "start": 12.0,
-     "duration": 0.02,
-     "target": "xiaoyu",
-     "params": {
-      "dx": -41.05
-     }
+     "name": "puppet.popup",
+     "start": 10.6,
+     "duration": 1.5,
+     "target": "pinan"
     },
     {
-     "name": "puppet.move",
-     "start": 12.0,
-     "duration": 0.02,
-     "target": "pinan",
-     "params": {
-      "dx": -42.95
-     }
+     "name": "puppet.popup",
+     "start": 11.7,
+     "duration": 1.5,
+     "target": "xiaoyu"
     },
     {
-     "name": "zhezhe.glideTo",
-     "start": 12.0,
-     "duration": 0.03,
+     "name": "puppet.popup",
+     "start": 12.6,
+     "duration": 1.5,
+     "target": "xiaoqing"
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": 13.0,
+     "duration": 1.4,
      "target": "zhezhe",
      "params": {
       "pos": [
-       0.05,
+       1.75,
        0,
-       1.2
-      ]
-     }
-    },
-    {
-     "name": "fade.in",
-     "start": 12.02,
-     "duration": 0.6
-    },
-    {
-     "name": "strings.detach",
-     "start": 13.0,
-     "duration": 1.6,
-     "target": "ale",
-     "params": {
-      "anchors": [
-       "elbow"
-      ]
+       1.3
+      ],
+      "height": 0.4
      }
     },
     {
      "name": "strings.fade",
-     "start": 13.0,
+     "start": 12.0,
+     "duration": 2.2,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "elbow"
+      ],
+      "to": 0.0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "start": 12.0,
      "duration": 3.0,
      "target": "ale",
      "params": {
@@ -1664,22 +1787,33 @@
      }
     },
     {
+     "name": "strings.detach",
+     "start": 14.4,
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "elbow"
+      ]
+     }
+    },
+    {
      "name": "zhezhe.hopTo",
-     "start": 14.6,
+     "start": 14.7,
      "duration": 0.8,
      "target": "zhezhe",
      "params": {
       "pos": [
-       0.4,
+       1.45,
        0,
-       1.25
+       1.35
       ],
-      "height": 0.4
+      "height": 0.35
      }
     },
     {
      "name": "puppet.chest",
-     "start": 19.0,
+     "start": 15.6,
      "duration": 1.0,
      "target": "ale",
      "params": {
@@ -1688,11 +1822,11 @@
     },
     {
      "name": "zhezhe.look",
-     "start": 19.2,
+     "start": 15.8,
      "duration": 0.6,
      "target": "zhezhe",
      "params": {
-      "yaw": 0.35
+      "yaw": -0.35
      }
     }
    ],
@@ -1736,22 +1870,44 @@
       }
      },
      {
-      "name": "strings.loosen",
-      "start": 0.3,
-      "duration": 1.8,
-      "target": "ale",
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.02,
+      "target": "aqin",
       "params": {
-       "anchors": [
-        "wrist",
-        "elbow",
-        "knee"
-       ],
-       "to": 0.04
+       "dx": 40.0
       }
      },
      {
-      "name": "strings.fade",
-      "start": 2.2,
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.02,
+      "target": "xiaoqing",
+      "params": {
+       "dx": 40.0
+      }
+     },
+     {
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.02,
+      "target": "xiaoyu",
+      "params": {
+       "dx": 40.0
+      }
+     },
+     {
+      "name": "puppet.move",
+      "start": 0,
+      "duration": 0.02,
+      "target": "pinan",
+      "params": {
+       "dx": 40.0
+      }
+     },
+     {
+      "name": "strings.loosen",
+      "start": 0.3,
       "duration": 1.6,
       "target": "ale",
       "params": {
@@ -1760,13 +1916,38 @@
         "elbow",
         "knee"
        ],
+       "to": 0.0
+      }
+     },
+     {
+      "name": "strings.fade",
+      "start": 1.8,
+      "duration": 2.0,
+      "target": "ale",
+      "params": {
+       "anchors": [
+        "knee"
+       ],
+       "to": 0.0
+      }
+     },
+     {
+      "name": "strings.fade",
+      "start": 1.8,
+      "duration": 2.0,
+      "target": "ale",
+      "params": {
+       "anchors": [
+        "wrist",
+        "elbow"
+       ],
        "to": 0.55
       }
      },
      {
       "name": "strings.detach",
-      "start": 3.0,
-      "duration": 1.4,
+      "start": 3.9,
+      "duration": 0.6,
       "target": "ale",
       "params": {
        "anchors": [
@@ -1783,20 +1964,21 @@
       }
      },
      {
-      "name": "strings.detach",
-      "start": 5.0,
-      "duration": 1.4,
+      "name": "strings.fade",
+      "start": 4.6,
+      "duration": 2.0,
       "target": "ale",
       "params": {
        "anchors": [
         "elbow"
-       ]
+       ],
+       "to": 0.0
       }
      },
      {
       "name": "strings.fade",
-      "start": 5.0,
-      "duration": 2.0,
+      "start": 4.6,
+      "duration": 2.4,
       "target": "ale",
       "params": {
        "anchors": [
@@ -1804,11 +1986,22 @@
        ],
        "to": 0.35
       }
+     },
+     {
+      "name": "strings.detach",
+      "start": 6.7,
+      "duration": 0.6,
+      "target": "ale",
+      "params": {
+       "anchors": [
+        "elbow"
+       ]
+      }
      }
     ]
    },
    "voStart": 3.5,
-   "tail": 8.9,
+   "tail": 5.0,
    "storyboard": {
     "beat": "窗框構圖：窗外秋黃葉 → 冬光禿 → 春新芽 → 夏濃綠；窗內依序：葉護理師陪阿樂回診說話（秋）、阿琴陪他散步（冬）、孩子們帶折折來看他（春到夏）；線一季比一季鬆、淡，一根根脫落；旁白只有 _02（線變鬆變淡）、_03（好起來需要求助、治療與時間），v03 刪掉 _01，陪伴由窗景演出",
     "cast": "窗景小圖 W1、W2、W3；阿樂 L4a → L4c",
@@ -1852,33 +2045,32 @@
      },
      "xiaoqing": {
       "visible": true,
-      "x": 0.95,
-      "z": 0.6,
-      "facing": 1,
+      "x": -1.45,
+      "z": -1.55,
+      "facing": -1,
+      "emotion": "neutral",
+      "pose": "stand"
+     },
+     "pinan": {
+      "visible": true,
+      "x": -0.7,
+      "z": -1.7,
+      "facing": -1,
       "emotion": "neutral",
       "pose": "stand_m"
      },
      "xiaoyu": {
       "visible": true,
-      "x": 1.85,
-      "z": 0.2,
-      "facing": 1,
+      "x": 0.05,
+      "z": -1.55,
+      "facing": -1,
       "emotion": "neutral",
-      "pose": "standwatch"
-     },
-     "pinan": {
-      "visible": true,
-      "x": 2.75,
-      "z": 0.65,
-      "facing": 1,
-      "emotion": "neutral",
-      "pose": "stand"
+      "pose": "standwatch_m"
      },
      "zhezhe": {
       "visible": true,
-      "x": -0.55,
-      "y": 1.4,
-      "z": -0.55,
+      "x": 0.95,
+      "z": 0.75,
       "emotion": "happy"
      }
     }
@@ -1906,21 +2098,15 @@
      }
     },
     {
-     "name": "puppet.lean",
-     "start": "a6_c009_02.start+1.00",
-     "duration": 1.2,
+     "name": "puppet.grab",
+     "start": 0.0,
+     "duration": 0.01,
      "target": "ale",
      "params": {
-      "to": 0.04
-     }
-    },
-    {
-     "name": "puppet.lean",
-     "start": "a6_c009_02.end+0.20",
-     "duration": 1.0,
-     "target": "ale",
-     "params": {
-      "to": 0.0
+      "at": [
+       -2.02,
+       1.47
+      ]
      }
     },
     {
@@ -1940,24 +2126,89 @@
      }
     },
     {
-     "name": "camera.cut",
-     "start": "a6_c009_03.start-0.10",
-     "duration": 0.01,
+     "name": "puppet.grab",
+     "start": "a6_c009_02.start+0.90",
+     "duration": 0.55,
+     "target": "ale",
      "params": {
-      "to": "a6_shop_hands"
+      "to": 0.62
      }
     },
     {
-     "name": "camera.cut",
-     "start": "a6_c009_04.start-0.15",
-     "duration": 0.01,
+     "name": "puppet.nod",
+     "start": "a6_c009_02.start+0.90",
+     "duration": 1.4,
+     "target": "ale",
      "params": {
-      "to": "a6_shop_group"
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_02.start+1.60",
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "to": 1.0
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_02.start+3.50",
+     "duration": 0.55,
+     "target": "ale",
+     "params": {
+      "to": 0.62
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": "a6_c009_02.start+3.50",
+     "duration": 1.4,
+     "target": "ale",
+     "params": {
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_02.start+4.20",
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "to": 1.0
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_03.start+0.90",
+     "duration": 0.55,
+     "target": "ale",
+     "params": {
+      "to": 0.62
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": "a6_c009_03.start+0.90",
+     "duration": 1.4,
+     "target": "ale",
+     "params": {
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "start": "a6_c009_03.start+1.60",
+     "duration": 0.6,
+     "target": "ale",
+     "params": {
+      "to": 1.0
      }
     },
     {
      "name": "puppet.face",
-     "start": "a6_c009_04.end+0.50",
+     "start": "a6_c009_04.end+0.20",
      "target": "xiaoyu",
      "params": {
       "emotion": "smile"
@@ -1965,16 +2216,48 @@
     },
     {
      "name": "zhezhe.emote",
-     "start": "a6_c009_04.end+0.50",
+     "start": "a6_c009_04.end+0.20",
      "target": "zhezhe",
      "params": {
       "emotion": "happy"
      }
     },
     {
+     "name": "camera.cut",
+     "start": "a6_c009_04.end+0.30",
+     "duration": 0.01,
+     "params": {
+      "to": "a6_shop_hands"
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "start": "a6_c009_04.end+0.60",
+     "duration": 1.2,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "start": "a6_c009_04.end+0.80",
+     "duration": 2.2,
+     "target": "ale",
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.0
+     }
+    },
+    {
      "name": "strings.detach",
-     "start": "a6_c009_04.end+0.90",
-     "duration": 2.6,
+     "start": "a6_c009_04.end+3.10",
+     "duration": 0.5,
      "target": "ale",
      "params": {
       "anchors": [
@@ -2017,7 +2300,7 @@
    "checkpoint": null,
    "set": "a6_shop",
    "voStart": 1.6,
-   "tail": 3.6,
+   "tail": 3.5,
    "storyboard": {
     "beat": "一年後燈籠店；阿樂坐在工作台前慢慢摺小折折燈，手腕只剩一根很淡很鬆、正在滑落的線；孩子與折折圍在旁；阿樂交代那天把骨架搬上車要送去廣場、後來自己忘了；說定期回診、口頭禪、道謝；小折折燈柔和亮起；孩子們笑",
     "cast": "阿樂：分件坐姿、H6 → H9、X2 → X3、L5；小晴、小宇、品安 X2 → X3",
@@ -2042,8 +2325,18 @@
    "sfx": [
     {
      "id": "sfx_fold",
-     "at": "a6_c009_02.start+1.25",
-     "gain": 0.45
+     "at": "a6_c009_02.start+1.65",
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_fold",
+     "at": "a6_c009_02.start+4.25",
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_fold",
+     "at": "a6_c009_03.start+1.65",
+     "gain": 0.4
     },
     {
      "id": "sfx_lamp_on",

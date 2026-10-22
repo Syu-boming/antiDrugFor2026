@@ -481,6 +481,102 @@ def qmark(s, cx, cy, k, col):
     s.ellipse(cx - 13 * k, cy + 120 * k, cx + 13 * k, cy + 146 * k, col, line=0)
 
 
+# ------------------------------------------------------------------ G5 修正第 1 輪（v02）
+def out_v(setname, name, v):
+    return FINAL / "sets" / setname / f"{name}_v{v:02d}.png"
+
+
+def mem_box_v2():
+    """回想小窗盒子 v02：直接用 a1_c003 盒子特寫的貼圖（sets/square_a1/boxclose，含右上角的灰線頭），放大到小窗寬的 80%，輕微褪色。"""
+    W, H = 1040, 800
+    pw, ph = W - 92, H - 92
+    bg = ground(pw, ph, 3)
+    box = Image.open(FINAL / "sets/square_a1/boxclose_v01.png").convert("RGBA")
+    bw = int(pw * 0.8)
+    box = box.resize((bw, int(box.height * bw / box.width)), Image.LANCZOS)
+    ba = np.array(box).astype(np.float32)
+    x0, y0 = (pw - bw) // 2, int(ph * 0.52 - ba.shape[0] * 0.5)
+    sh = Image.new("L", (pw, ph), 0)
+    ImageDraw.Draw(sh).ellipse([x0 + 30, y0 + ba.shape[0] - 46, x0 + bw - 20, y0 + ba.shape[0] + 24], fill=120)
+    sh = np.array(sh.filter(ImageFilter.GaussianBlur(14))).astype(np.float32)[..., None] / 255
+    bg[..., :3] *= 1 - 0.28 * sh
+    al = ba[..., 3:4] / 255
+    y1 = min(ph, y0 + ba.shape[0])
+    reg = bg[y0:y1, x0:x0 + bw, :3]
+    bg[y0:y1, x0:x0 + bw, :3] = reg * (1 - al[: y1 - y0]) + ba[: y1 - y0, :, :3] * al[: y1 - y0]
+    bg[..., :3] = fade_photo(bg[..., :3], 0.28)
+    bg[..., 3] = 255
+    return framed_card(bg, W, H, 11)
+
+
+def _hand_polys(k):
+    """張開的手（掌心朝上、五指分開）＋前臂＋捲起的袖口，指尖朝 −x。單位：手掌寬約 0.95；回傳 (多邊形清單, 膠囊清單)。"""
+    polys = []
+    # 前臂（往右延伸出小窗）：平順變粗
+    polys.append([(0.95, -0.34), (1.9, -0.42), (3.7, -0.5), (3.7, 0.5), (1.9, 0.42), (0.95, 0.34)])
+    # 捲起的袖口（圓角的寬帶）
+    cuff = []
+    for t in range(0, 360, 12):                    # 圓角的寬帶（超橢圓）
+        a = math.radians(t)
+        cx, cy = math.cos(a), math.sin(a)
+        cuff.append((2.43 + 0.43 * math.copysign(abs(cx) ** 0.45, cx), 0.64 * math.copysign(abs(cy) ** 0.45, cy)))
+    polys.append(cuff)
+    # 手掌（手腕 → 指根，圓弧）
+    palm = [(1.0, -0.33), (0.7, -0.44), (0.3, -0.5), (-0.05, -0.47), (-0.2, -0.38), (-0.24, -0.12), (-0.24, 0.12), (-0.2, 0.36), (-0.05, 0.46), (0.3, 0.48), (0.7, 0.43), (1.0, 0.33)]
+    polys.append(palm)
+    caps = []
+    # 四指（由上往下：食指、中指、無名指、小指），扇形分開，末端微微往上彎（接盒子）
+    # （影像座標 y 向下：角度 > 180° 往上、< 180° 往下）
+    for y0, ang, L, w in ((-0.35, 11, 0.68, 0.175), (-0.12, 4, 0.8, 0.185), (0.12, -4, 0.75, 0.18), (0.35, -11, 0.57, 0.165)):
+        a = math.radians(180 + ang)
+        bx, by = -0.18, y0
+        mx, my = bx + math.cos(a) * L * 0.6, by + math.sin(a) * L * 0.6
+        a2 = a + math.radians(5)
+        ex, ey = mx + math.cos(a2) * L * 0.4, my + math.sin(a2) * L * 0.4
+        caps.append(([(bx, by), (mx, my), (ex, ey)], w))
+    # 拇指：從手掌上緣靠手腕處往左上伸出，和食指之間有明顯空隙
+    a = math.radians(180 + 42)
+    bx, by = 0.48, -0.42
+    mx, my = bx + math.cos(a) * 0.34, by + math.sin(a) * 0.34
+    a2 = math.radians(180 + 24)
+    caps.append(([(bx, by), (mx, my), (mx + math.cos(a2) * 0.32, my + math.sin(a2) * 0.32)], 0.19))
+    return polys, caps
+
+
+def sil_ale_hand_v2():
+    """阿樂叔叔伸手接盒子的剪影 v02（安全視角一般問題 3）：五指輪廓清楚的張開手掌＋前臂（捲袖），指尖朝左、微微往上。
+    同 sil-hand-box 的剪影色；指尖位置印出來給 app/src/sets/a2_window.ts 用。"""
+    S = 120 * 4        # 每單位像素（4 倍超取樣）
+    rot = math.radians(-14)   # 指尖往左上 14°
+    polys, caps = _hand_polys(1)
+    def tr(x, y):
+        return (x * math.cos(rot) - y * math.sin(rot), x * math.sin(rot) + y * math.cos(rot))
+    pts = [tr(x, y) for poly in polys for (x, y) in poly] + [tr(x, y) for c, _ in caps for (x, y) in c]
+    minx = min(p[0] for p in pts) - 0.3; maxx = max(p[0] for p in pts) + 0.3
+    miny = min(p[1] for p in pts) - 0.3; maxy = max(p[1] for p in pts) + 0.3
+    W, H = int((maxx - minx) * S), int((maxy - miny) * S)
+    m = Image.new("L", (W, H), 0)
+    d = ImageDraw.Draw(m)
+    P_ = lambda x, y: ((tr(x, y)[0] - minx) * S, (tr(x, y)[1] - miny) * S)
+    for poly in polys:
+        d.polygon([P_(x, y) for x, y in poly], fill=255)
+    for chain, w in caps:
+        q = [P_(x, y) for x, y in chain]
+        d.line(q, fill=255, width=int(w * S), joint="curve")
+        for (x, y) in (q[0], q[-1]):
+            r = w * S / 2
+            d.ellipse([x - r, y - r, x + r, y + r], fill=255)
+    m = m.filter(ImageFilter.GaussianBlur(1.2)).resize((W // 4, H // 4), Image.LANCZOS)
+    a = np.zeros((m.height, m.width, 4), np.uint8)
+    a[..., :3] = SIL
+    a[..., 3] = np.where(np.array(m) > 110, 255, 0)
+    # 指尖（最左的不透明點）
+    ys, xs = np.nonzero(a[..., 3])
+    i = int(np.argmin(xs))
+    print("sil-ale-hand v02 指尖 px", int(xs[i]), int(ys[i]), "大小", a.shape[1], a.shape[0])
+    return a
+
+
 def main():
     jobs = [
         ("a2_memory", "mem-box", mem_box), ("a2_memory", "mem-wrapper", mem_wrapper),
@@ -490,6 +586,12 @@ def main():
         ("a2_window", "sil-hand-box", sil_hand_box), ("a2_window", "sil-ale-hand", sil_ale_hand), ("a2_window", "notebook", notebook),
     ]
     only = set(sys.argv[1:])
+    if "v02" in only:
+        for setname, name, fn in (("a2_memory", "mem-box", mem_box_v2), ("a2_window", "sil-ale-hand", sil_ale_hand_v2)):
+            a = fn()
+            p = P.save(np.asarray(a).astype(np.uint8), out_v(setname, name, 2))
+            print(p.relative_to(ROOT), a.shape[1], a.shape[0])
+        return
     for setname, name, fn in jobs:
         if only and name not in only:
             continue

@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15ea0-305b-7fb3-9367-9a344834e6ea/exec-eb2eca70-5e5b-4c3f-9da9-f8ba0d2fdcf3.png`
+- Destination: [review/G5/a3/raw/pose_xy_pointr_v07.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a3/raw/pose_xy_pointr_v07.png>)
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**
+- Copy verified byte-for-byte identical.

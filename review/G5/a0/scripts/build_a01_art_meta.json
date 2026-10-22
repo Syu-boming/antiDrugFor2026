@@ -68,5 +68,24 @@
    780,
    390
   ]
+ },
+ "assets/final/sets/workshop_a0/stand_v02.png": {
+  "px_per_unit": 300,
+  "note": "底邊中央為原點；座面中心約在高度 0.66（由下往上）",
+  "size": [
+   384,
+   174
+  ]
+ },
+ "assets/final/sets/square_a1/sil*_v02.png": {
+  "body_size_px": [
+   481,
+   857
+  ],
+  "bamboo_size_px": [
+   60,
+   260
+  ],
+  "dark_ratio": 0.504
  }
 }

@@ -1,0 +1,223 @@
+{
+ "string_anchors_in_cues": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "string_anchors_allowed": [
+  "elbow",
+  "knee",
+  "wrist"
+ ],
+ "string_anchors_only_allowed": true,
+ "actors_with_strings": [
+  "ale"
+ ],
+ "probe_frames_with_strings": 496,
+ "string_path_min_dist_to_head_box_px": 54.0,
+ "head_box_rule": "只算頭部框（至少一部分）在 1920×1080 畫面內的格；頭部框整個在畫面外的線不算",
+ "string_head_offscreen_skipped": 0,
+ "per_anchor": {
+  "ale.wrist": {
+   "min_dist_to_head_box_px": 55.3,
+   "frames": 496,
+   "at": "a6_c008 t=1"
+  },
+  "ale.elbow": {
+   "min_dist_to_head_box_px": 54.0,
+   "frames": 155,
+   "at": "a6_c008 t=1"
+  },
+  "ale.knee": {
+   "min_dist_to_head_box_px": 57.4,
+   "frames": 85,
+   "at": "a6_c008 t=0"
+  }
+ },
+ "string_path_intersects_child_box": [],
+ "string_path_intersects_child_box_count": 0,
+ "probe_sources": [
+  "capture/probe.json",
+  "probe_dense.json"
+ ],
+ "probe_method": "線路徑＝引擎實際畫的中心線投影到螢幕；頭部框＝分件紙偶 head* 部件圖外框（含透明邊）；兒童框＝立牌外框（含透明邊）。",
+ "required_narration": {},
+ "lines_total": 28,
+ "lines_differ_from_script_v03": [],
+ "subtitle_max_chars_per_row": 16,
+ "subtitle_max_rows_per_page": 2,
+ "subtitles": [
+  {
+   "id": "a6_c001_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a6_c001_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a6_c002_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 11
+  },
+  {
+   "id": "a6_c002_02",
+   "pages": 2,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a6_c002_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a6_c002_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a6_c003_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 5
+  },
+  {
+   "id": "a6_c003_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a6_c003_03",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a6_c003_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a6_c003_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 16
+  },
+  {
+   "id": "a6_c004_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a6_c005_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a6_c006_01",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a6_c006_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a6_c006_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a6_c006_04",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a6_c006_05",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 15
+  },
+  {
+   "id": "a6_c006_06",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a6_c007_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a6_c007_02",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a6_c007_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 12
+  },
+  {
+   "id": "a6_c008_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a6_c008_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 9
+  },
+  {
+   "id": "a6_c009_01",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 10
+  },
+  {
+   "id": "a6_c009_02",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 13
+  },
+  {
+   "id": "a6_c009_03",
+   "pages": 1,
+   "max_rows_per_page": 2,
+   "max_chars_per_row": 14
+  },
+  {
+   "id": "a6_c009_04",
+   "pages": 1,
+   "max_rows_per_page": 1,
+   "max_chars_per_row": 14
+  }
+ ],
+ "app_js_getUserMedia_count": 0,
+ "app_js_mediaDevices_count": 0,
+ "capture_external_requests": 0,
+ "capture_console_errors": 0
+}

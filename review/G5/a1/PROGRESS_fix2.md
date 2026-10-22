@@ -1,0 +1,2 @@
+- 08:02 開工（修正第 2 輪 a0+a1+a2，同一代理；進度主檔 review/G5/a0/PROGRESS_fix2.md）：讀完 b1r2_recheck、b1r2_regress、REVIEW 更正裁定、SHOW_INTERFACE 12–13。下一步：備份 fix1 段落檔為基準、寫 fix2 套用腳本。
+- 09:16 修正第 2 輪的進度與決定都寫在主檔 review/G5/a0/PROGRESS_fix2.md（a0、a1、a2 同一代理）。套用腳本 review/G5/a0/scripts/fix2_a1.py（基準 a1_fix1_base.json）、美術 build_fix2_art.py。

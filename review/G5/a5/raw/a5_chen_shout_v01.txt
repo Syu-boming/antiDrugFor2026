@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15ea0-1345-7063-9785-c89cb1f3890d/exec-59ebb5f3-bb0b-4f41-8d45-70350c1b0ff4.png`
+- Destination: [review/G5/a5/raw/a5_chen_shout_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a5/raw/a5_chen_shout_v01.png>) — copied unmodified.
+- Dimensions: **1024 × 1536**
+- Alpha: **Yes**, actual transparency verified.

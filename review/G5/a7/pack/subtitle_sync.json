@@ -1,0 +1,91 @@
+{
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a7_c001",
+   "line": "a7_c001_01",
+   "page": 1,
+   "text": "第一張，拒絕與離開：／說「不用，我不試」，然後離開。",
+   "subtitle_start_s": 2.2,
+   "voice_start_s": 2.323,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c001_01_v04.wav"
+  },
+  {
+   "cue": "a7_c001",
+   "line": "a7_c001_02",
+   "page": 1,
+   "text": "第二張，安全接送：覺得不對勁，／先不上車，回去找大人。",
+   "subtitle_start_s": 11.14,
+   "voice_start_s": 11.271,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c001_02_v04.wav"
+  },
+  {
+   "cue": "a7_c001",
+   "line": "a7_c001_03",
+   "page": 1,
+   "text": "第三張，找大人求助：／有人叫不醒，先找大人；",
+   "subtitle_start_s": 16.68,
+   "voice_start_s": 16.808,
+   "diff_s": -0.128,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c001_03_v04.wav"
+  },
+  {
+   "cue": "a7_c001",
+   "line": "a7_c001_03",
+   "page": 2,
+   "text": "找不到大人，就打 119。",
+   "subtitle_start_s": 20.843,
+   "voice_start_s": 23.42,
+   "diff_s": -2.577,
+   "pass": false,
+   "audio": "audio/vo/vo_a7_c001_03_v04.wav"
+  },
+  {
+   "cue": "a7_c002",
+   "line": "a7_c002_01",
+   "page": 1,
+   "text": "最後，大家一起做一次口訣！",
+   "subtitle_start_s": 3.9,
+   "voice_start_s": 4.035,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c002_01_v04.wav"
+  },
+  {
+   "cue": "a7_c003",
+   "line": "a7_c003_01",
+   "page": 1,
+   "text": "有讓你擔心的秘密，／也可以找大人說。",
+   "subtitle_start_s": 2.9,
+   "voice_start_s": 3.038,
+   "diff_s": -0.138,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c003_01_v04.wav"
+  },
+  {
+   "cue": "a7_c003",
+   "line": "a7_c003_02",
+   "page": 1,
+   "text": "謝謝大家，幫小燈鎮點亮了八盞燈！",
+   "subtitle_start_s": 8.17,
+   "voice_start_s": 8.292,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a7_c003_02_v04.wav"
+  }
+ ],
+ "all_pass": false
+}

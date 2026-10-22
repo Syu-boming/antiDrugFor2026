@@ -1,0 +1,1775 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a3_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a3_c001_01",
+   "speaker": "小宇",
+   "script": "折折，你又迷路了？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "哲哲,你又迷路了。",
+     "hyp_trad": "哲哲你又迷路了",
+     "cer": 0.286,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "折折",
+       "hyp": "哲哲",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "折折",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "哲哲,你又迷路了。",
+     "hyp_trad": "哲哲你又迷路了",
+     "cer": 0.286,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "折折",
+       "hyp": "哲哲",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "折折",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "哲哲,你又迷路了?",
+     "hyp_trad": "哲哲你又迷路了",
+     "cer": 0.286,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "折折",
+       "hyp": "哲哲",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "折折",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "哲哲,你又迷路了。",
+     "hyp_trad": "哲哲你又迷路了",
+     "cer": 0.286,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "折折",
+       "hyp": "哲哲",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "折折",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c001_02",
+   "speaker": "折折",
+   "script": "我是在……測試風向。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c001_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我是在測試風向。",
+     "hyp_trad": "我是在測試風向",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我是在測試風向。",
+     "hyp_trad": "我是在測試風向",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我是在測試風向",
+     "hyp_trad": "我是在測試風向",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我是在測試風向。",
+     "hyp_trad": "我是在測試風向",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c001_03",
+   "speaker": "邀請者",
+   "script": "昨天那個，再給你看看。試一次沒關係啦，一下下就好。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c001_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "昨天那個,再給你看看。試一次沒關係啦,一下下就好。",
+     "hyp_trad": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "昨天那個,再給你看看。試一次沒關係啦,一下下就好。",
+     "hyp_trad": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "昨天那個,再給你看看。試一次沒關係啦,一下下就好。",
+     "hyp_trad": "昨天那個再給你看看試一次沒關係啦一下下就好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "昨天那個,再給你看看。試一次沒關係啦,以下下就好。",
+     "hyp_trad": "昨天那個再給你看看試一次沒關係啦以下下就好",
+     "cer": 0.048,
+     "per": 0.048,
+     "diffs": [
+      {
+       "ref": "一",
+       "hyp": "以",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c001_04",
+   "speaker": "邀請者",
+   "script": "大家都試過了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c001_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "大家都試過了。",
+     "hyp_trad": "大家都試過了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "大家都試過了。",
+     "hyp_trad": "大家都試過了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "大家都試過了。",
+     "hyp_trad": "大家都試過了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "大家都試過了。",
+     "hyp_trad": "大家都試過了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c002_01",
+   "speaker": "小宇",
+   "script": "等一下，我想一想。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c002_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "等一下我想一想。",
+     "hyp_trad": "等一下我想一想",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一想",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c002_02",
+   "speaker": "小宇",
+   "script": "不用，我不試。我先離開。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c002_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "不用,我不是,我先離開。",
+     "hyp_trad": "不用我不是我先離開",
+     "cer": 0.111,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不用,我不是,我先離開。",
+     "hyp_trad": "不用我不是我先離開",
+     "cer": 0.111,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "不用,我不是,我先離開。",
+     "hyp_trad": "不用我不是我先離開",
+     "cer": 0.111,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不用,我不是,我先離開。",
+     "hyp_trad": "不用我不是我先離開",
+     "cer": 0.111,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c002_03",
+   "speaker": "小晴",
+   "script": "我們走。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c002_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我們走!",
+     "hyp_trad": "我們走",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們走!",
+     "hyp_trad": "我們走",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我們走!",
+     "hyp_trad": "我們走",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我們走!",
+     "hyp_trad": "我們走",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c003_01",
+   "speaker": "小晴",
+   "script": "林老師，騎樓那邊有人拿閃亮的盒子，叫我們試一次。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c003_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "林老師,棋樓那邊有人拿閃亮的盒子,叫我們試一次。",
+     "hyp_trad": "林老師棋樓那邊有人拿閃亮的盒子叫我們試一次",
+     "cer": 0.048,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "騎",
+       "hyp": "棋",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "林老師,騎樓那邊有人拿閃亮的盒子,叫我們試一次。",
+     "hyp_trad": "林老師騎樓那邊有人拿閃亮的盒子叫我們試一次",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "林老師,七樓那邊有人拿閃亮的盒子,叫我們試一次。",
+     "hyp_trad": "林老師七樓那邊有人拿閃亮的盒子叫我們試一次",
+     "cer": 0.048,
+     "per": 0.048,
+     "diffs": [
+      {
+       "ref": "騎",
+       "hyp": "七",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "林老師,騎樓那邊有人拿閃亮的盒子,叫我們試一次。",
+     "hyp_trad": "林老師騎樓那邊有人拿閃亮的盒子叫我們試一次",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c003_02",
+   "speaker": "林老師",
+   "script": "謝謝你們告訴我。老師會請警衛伯伯和警察處理。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c003_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "謝謝你們告訴我,老師會請警衛伯伯和警察處理。",
+     "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你們告訴我,老師會請警衛伯伯和警察處理。",
+     "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "謝謝你們告訴我,老師會請警衛伯伯和警察處理。",
+     "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你們告訴我,老師會請警衛伯伯和警察處理。",
+     "hyp_trad": "謝謝你們告訴我老師會請警衛伯伯和警察處理",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c003_03",
+   "speaker": "林老師",
+   "script": "你們沒有拿，還馬上來找我，做得很好。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c003_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你們沒有拿,還馬上來找我,做得很好。",
+     "hyp_trad": "你們沒有拿還馬上來找我做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你們沒有拿,還馬上來找我,做得很好。",
+     "hyp_trad": "你們沒有拿還馬上來找我做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你們沒有拿,還馬上來找我,做得很好。",
+     "hyp_trad": "你們沒有拿還馬上來找我做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你們沒有拿,還馬上來找我,做得很好。",
+     "hyp_trad": "你們沒有拿還馬上來找我做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c004_01",
+   "speaker": "折折",
+   "script": "換大家了！先跟小宇說一次：不用，我不試。我先離開。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c004_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "換大家了,先跟小宇說一次,不用我不是,我先離開。",
+     "hyp_trad": "換大家了先跟小宇說一次不用我不是我先離開",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "換大家了,先跟小語說一次,不用,我不是,我先離開。",
+     "hyp_trad": "換大家了先跟小語說一次不用我不是我先離開",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "語",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "換大家了。先跟小宇說一次,不用,我不是。我先離開。",
+     "hyp_trad": "換大家了先跟小宇說一次不用我不是我先離開",
+     "cer": 0.05,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "換大家了,先跟小羽說一次,不用,我不是,我先離開。",
+     "hyp_trad": "換大家了先跟小羽說一次不用我不是我先離開",
+     "cer": 0.1,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c004_02",
+   "speaker": "折折",
+   "script": "再加上口訣和動作：不碰、不試；先離開，找大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c004_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "再加上口訣和動作,不碰不是,先離開,找大人。",
+     "hyp_trad": "再加上口訣和動作不碰不是先離開找大人",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不碰",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "再加上口訣和動作,不碰,不適,先離開,找大人。",
+     "hyp_trad": "再加上口訣和動作不碰不適先離開找大人",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "適",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不碰",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "再加上口訣和動作,不碰不是,先離開,找大人。",
+     "hyp_trad": "再加上口訣和動作不碰不是先離開找大人",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不碰",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "再加上口訣和動作,不碰,不適,先離開,找大人。",
+     "hyp_trad": "再加上口訣和動作不碰不適先離開找大人",
+     "cer": 0.056,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "適",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不碰",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c005_01",
+   "speaker": "折折",
+   "script": "第四題！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c005_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第四題",
+     "hyp_trad": "第四題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第四題",
+     "hyp_trad": "第四題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第四題",
+     "hyp_trad": "第四題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第四題",
+     "hyp_trad": "第四題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c005_02",
+   "speaker": "旁白",
+   "script": "有人說「試一次沒關係」，哪個做法比較安全？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c005_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "有人說,試一次沒關係,哪個做法比較安全。",
+     "hyp_trad": "有人說試一次沒關係哪個做法比較安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "有人說,試一次沒關係,哪個做法比較安全。",
+     "hyp_trad": "有人說試一次沒關係哪個做法比較安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "有人說,試一次沒關係,哪個做法比較安全。",
+     "hyp_trad": "有人說試一次沒關係哪個做法比較安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "有人說,試一次沒關係,哪個做法比較安全?",
+     "hyp_trad": "有人說試一次沒關係哪個做法比較安全",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c005_03",
+   "speaker": "旁白",
+   "script": "一，說「不用，我不試」，離開找大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c005_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1.說,不用,我不是。離開找大人。",
+     "hyp_trad": "1說不用我不是離開找大人",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 說不用,我不是,離開找大人。",
+     "hyp_trad": "1說不用我不是離開找大人",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1.說,不用,我不是。離開找大人。",
+     "hyp_trad": "1說不用我不是離開找大人",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 說,不用,我不是,離開找大人。",
+     "hyp_trad": "1說不用我不是離開找大人",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c005_04",
+   "speaker": "旁白",
+   "script": "二，只試一次而已，應該沒關係。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c005_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2. 只是一次而已,應該沒關係。",
+     "hyp_trad": "2只是一次而已應該沒關係",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 只是一次而已,應該沒關係。",
+     "hyp_trad": "2只是一次而已應該沒關係",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2.只是一次而已,應該沒關係。",
+     "hyp_trad": "2只是一次而已應該沒關係",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 只是一次而已,應該沒關係。",
+     "hyp_trad": "2只是一次而已應該沒關係",
+     "cer": 0.083,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一次",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c005_05",
+   "speaker": "旁白",
+   "script": "三，先幫他保管，等一下再還給他。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c005_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3.先幫他保管,等一下再還給他。",
+     "hyp_trad": "3先幫他保管等一下再還給他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,先幫他保管,等一下再還給他。",
+     "hyp_trad": "三先幫他保管等一下再還給他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "先幫他保管,等一下再還給他。",
+     "hyp_trad": "先幫他保管等一下再還給他",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "三",
+       "hyp": "",
+       "kind": "漏字"
+      }
+     ],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,先幫他保管,等一下再還給他。",
+     "hyp_trad": "三先幫他保管等一下再還給他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "一下",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c006_01",
+   "speaker": "旁白",
+   "script": "正解是一：說「不用，我不試」，離開找大人。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c006_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "鄭解事醫說,不用,我不是,離開找大人。",
+     "hyp_trad": "鄭解事醫說不用我不是離開找大人",
+     "cer": 0.267,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鄭",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "是一",
+       "hyp": "事醫",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋一,說不用,我不是,離開找大人。",
+     "hyp_trad": "正解釋一說不用我不是離開找大人",
+     "cer": 0.133,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "鄭解事醫說 不用我不是 離開找大人。",
+     "hyp_trad": "鄭解事醫說不用我不是離開找大人",
+     "cer": 0.267,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鄭",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "是一",
+       "hyp": "事醫",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋一,說不用,我不是,離開找大人。",
+     "hyp_trad": "正解釋一說不用我不是離開找大人",
+     "cer": 0.133,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "試",
+       "hyp": "是",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "不試",
+       "status": "未驗證（變調轉寫看不出）"
+      },
+      {
+       "word": "不用",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c007_01",
+   "speaker": "折折",
+   "script": "第四盞，已經一半了！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c007_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第四章已經一半了。",
+     "hyp_trad": "第四章已經一半了",
+     "cer": 0.125,
+     "per": 0.125,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "章",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第四斬已經一半了。",
+     "hyp_trad": "第四斬已經一半了",
+     "cer": 0.125,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "斬",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第四章已經一半了。",
+     "hyp_trad": "第四章已經一半了",
+     "cer": 0.125,
+     "per": 0.125,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "章",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第四斬已經一半了。",
+     "hyp_trad": "第四斬已經一半了",
+     "cer": 0.125,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "盞",
+       "hyp": "斬",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c008_01",
+   "speaker": "林老師",
+   "script": "今天紙燈節，學校提早放學。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c008_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "今天只登結學校提早放學。",
+     "hyp_trad": "今天只登結學校提早放學",
+     "cer": 0.273,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "紙燈節",
+       "hyp": "只登結",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "今天只登節,學校提早放學。",
+     "hyp_trad": "今天只登節學校提早放學",
+     "cer": 0.182,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "紙燈",
+       "hyp": "只登",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "今天只登結學校提早放學。",
+     "hyp_trad": "今天只登結學校提早放學",
+     "cer": 0.273,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "紙燈節",
+       "hyp": "只登結",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "今天只登節,學校提早放學。",
+     "hyp_trad": "今天只登節學校提早放學",
+     "cer": 0.182,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "紙燈",
+       "hyp": "只登",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "紙燈節",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c008_02",
+   "speaker": "林老師",
+   "script": "小晴、小宇，你們家長前幾天就拜託阿樂叔叔，開車來接你們去廣場。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c008_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "小情、小玉,你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場。",
+     "hyp_trad": "小情小玉你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "cer": 0.074,
+     "per": 0.037,
+     "diffs": [
+      {
+       "ref": "晴",
+       "hyp": "情",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "宇",
+       "hyp": "玉",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "小晴、小羽,你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場。",
+     "hyp_trad": "小晴小羽你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "cer": 0.037,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "羽",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "寶琴 小玉 你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "hyp_trad": "寶琴小玉你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "cer": 0.185,
+     "per": 0.185,
+     "diffs": [
+      {
+       "ref": "",
+       "hyp": "寶琴",
+       "kind": "多字"
+      },
+      {
+       "ref": "晴小宇",
+       "hyp": "玉",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "小晴、小玉,你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場。",
+     "hyp_trad": "小晴小玉你們家長前幾天就拜託阿樂叔叔開車來接你們去廣場",
+     "cer": 0.037,
+     "per": 0.037,
+     "diffs": [
+      {
+       "ref": "宇",
+       "hyp": "玉",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a3_c008_03",
+   "speaker": "小晴",
+   "script": "林老師，叔叔昨天站都站不穩……",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c008_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "林老師,叔叔昨天站都站不穩。",
+     "hyp_trad": "林老師叔叔昨天站都站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "林老師,叔叔昨天站都站不穩。",
+     "hyp_trad": "林老師叔叔昨天站都站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "林老師,叔叔昨天站都站不穩",
+     "hyp_trad": "林老師叔叔昨天站都站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "林老師,叔叔昨天站都站不穩。",
+     "hyp_trad": "林老師叔叔昨天站都站不穩",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a3_c008_04",
+   "speaker": "林老師",
+   "script": "謝謝你告訴老師。老師先打電話給你們家人；如果叔叔先到，你們先待在校門裡面。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a3_c008_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "謝謝你告訴老師,老師先打電話給你們家人,如果叔叔先到,你們先待在校門裡面。",
+     "hyp_trad": "謝謝你告訴老師老師先打電話給你們家人如果叔叔先到你們先待在校門裡面",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你告訴老師,老師先打電話給你們家人,如果叔叔先到,你們先待在校門裡面。",
+     "hyp_trad": "謝謝你告訴老師老師先打電話給你們家人如果叔叔先到你們先待在校門裡面",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "謝謝你告訴老師,老師先打電話給你們家人,如果叔叔先到,你們先待在校門裡面。",
+     "hyp_trad": "謝謝你告訴老師老師先打電話給你們家人如果叔叔先到你們先待在校門裡面",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "謝謝你告訴老師,老師先打電話給你們家人,如果叔叔先到,你們先待在校門裡面。",
+     "hyp_trad": "謝謝你告訴老師老師先打電話給你們家人如果叔叔先到你們先待在校門裡面",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  }
+ ]
+}

@@ -1,5 +1,9 @@
 {
- "method": "ffmpeg silencedetect noise=−45 dB、d=0.1 s 找配音檔的語音起點（第 1 頁＝第一個起點；之後各頁＝頁起點前後最接近的停頓後起點）；差值＝字幕頁起點 − 語音起點",
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
  "range_s": [
   -0.8,
   0.1
@@ -21,9 +25,9 @@
    "line": "a0_c002_01",
    "page": 1,
    "text": "喵！大家好，我是折折。",
-   "subtitle_start_s": 4.55,
-   "voice_start_s": 4.675,
-   "diff_s": -0.125,
+   "subtitle_start_s": 6.6,
+   "voice_start_s": 6.727,
+   "diff_s": -0.127,
    "pass": true,
    "audio": "audio/vo/vo_a0_c002_01_v04.wav"
   },
@@ -32,8 +36,8 @@
    "line": "a0_c002_02",
    "page": 1,
    "text": "我是燈籠紙摺成的貓，／是阿樂叔叔把我摺出來的喔。",
-   "subtitle_start_s": 7.53,
-   "voice_start_s": 7.653,
+   "subtitle_start_s": 9.58,
+   "voice_start_s": 9.704,
    "diff_s": -0.123,
    "pass": true,
    "audio": "audio/vo/vo_a0_c002_02_v04.wav"
@@ -43,8 +47,8 @@
    "line": "a0_c002_03",
    "page": 1,
    "text": "慢慢摺，燈才會亮。",
-   "subtitle_start_s": 15.63,
-   "voice_start_s": 15.765,
+   "subtitle_start_s": 17.68,
+   "voice_start_s": 17.815,
    "diff_s": -0.135,
    "pass": true,
    "audio": "audio/vo/vo_a0_c002_03_v04.wav"
@@ -55,8 +59,8 @@
    "page": 1,
    "text": "明天就是紙燈節。／今年的主燈，是照著我的樣子做的！",
    "subtitle_start_s": 1.15,
-   "voice_start_s": 1.273,
-   "diff_s": -0.123,
+   "voice_start_s": 1.274,
+   "diff_s": -0.124,
    "pass": true,
    "audio": "audio/vo/vo_a0_c003_01_v04.wav"
   },
@@ -66,8 +70,8 @@
    "page": 1,
    "text": "可是……主燈的竹子骨架，不見了！",
    "subtitle_start_s": 7.38,
-   "voice_start_s": 7.503,
-   "diff_s": -0.123,
+   "voice_start_s": 7.504,
+   "diff_s": -0.124,
    "pass": true,
    "audio": "audio/vo/vo_a0_c003_02_v04.wav"
   },
@@ -77,8 +81,8 @@
    "page": 1,
    "text": "奇怪，我昨天晚上明明放在這裡啊。",
    "subtitle_start_s": 13.5,
-   "voice_start_s": 13.623,
-   "diff_s": -0.123,
+   "voice_start_s": 13.624,
+   "diff_s": -0.124,
    "pass": true,
    "audio": "audio/vo/vo_a0_c003_03_v04.wav"
   },
@@ -88,8 +92,8 @@
    "page": 1,
    "text": "沒有骨架，就沒有主燈。／紙燈節怎麼辦？",
    "subtitle_start_s": 18.19,
-   "voice_start_s": 18.328,
-   "diff_s": -0.138,
+   "voice_start_s": 18.33,
+   "diff_s": -0.14,
    "pass": true,
    "audio": "audio/vo/vo_a0_c003_04_v04.wav"
   },
@@ -110,8 +114,8 @@
    "page": 1,
    "text": "骨架不見了？我記下來。",
    "subtitle_start_s": 6.51,
-   "voice_start_s": 6.644,
-   "diff_s": -0.134,
+   "voice_start_s": 6.645,
+   "diff_s": -0.135,
    "pass": true,
    "audio": "audio/vo/vo_a0_c004_02_v04.wav"
   },
@@ -120,8 +124,8 @@
    "line": "a0_c004_03",
    "page": 1,
    "text": "交給我！我摺成放大鏡，馬上找到！",
-   "subtitle_start_s": 12.11,
-   "voice_start_s": 12.236,
+   "subtitle_start_s": 11.71,
+   "voice_start_s": 11.837,
    "diff_s": -0.127,
    "pass": true,
    "audio": "audio/vo/vo_a0_c004_03_v04.wav"
@@ -131,9 +135,9 @@
    "line": "a0_c004_04",
    "page": 1,
    "text": "呃……謝謝，我剛好缺一頂帽子。",
-   "subtitle_start_s": 16.43,
-   "voice_start_s": 16.56,
-   "diff_s": -0.13,
+   "subtitle_start_s": 16.03,
+   "voice_start_s": 16.161,
+   "diff_s": -0.131,
    "pass": true,
    "audio": "audio/vo/vo_a0_c004_04_v04.wav"
   },
@@ -142,8 +146,8 @@
    "line": "a0_c004_05",
    "page": 1,
    "text": "你們先去上學。／放學再來幫叔叔找，好不好？",
-   "subtitle_start_s": 20.22,
-   "voice_start_s": 20.355,
+   "subtitle_start_s": 19.82,
+   "voice_start_s": 19.955,
    "diff_s": -0.135,
    "pass": true,
    "audio": "audio/vo/vo_a0_c004_05_v04.wav"
@@ -153,8 +157,8 @@
    "line": "a0_c004_06",
    "page": 1,
    "text": "好！",
-   "subtitle_start_s": 26.36,
-   "voice_start_s": 26.482,
+   "subtitle_start_s": 25.96,
+   "voice_start_s": 26.082,
    "diff_s": -0.122,
    "pass": true,
    "audio": "audio/vo/vo_a0_c004_06_v04.wav"
@@ -165,8 +169,8 @@
    "page": 1,
    "text": "大家也幫我找，好不好？／看到線索，舉手就好，不用喊出來。",
    "subtitle_start_s": 5.3,
-   "voice_start_s": 5.426,
-   "diff_s": -0.126,
+   "voice_start_s": 5.428,
+   "diff_s": -0.128,
    "pass": true,
    "audio": "audio/vo/vo_a0_c005_01_v04.wav"
   },
@@ -176,8 +180,8 @@
    "page": 1,
    "text": "台口上這八盞燈，每完成一題，／我們就一起點亮一盞。",
    "subtitle_start_s": 11.59,
-   "voice_start_s": 11.715,
-   "diff_s": -0.125,
+   "voice_start_s": 11.721,
+   "diff_s": -0.131,
    "pass": true,
    "audio": "audio/vo/vo_a0_c005_02_v04.wav"
   },
@@ -187,8 +191,8 @@
    "page": 1,
    "text": "八盞全亮，小燈鎮就會亮起來！",
    "subtitle_start_s": 16.84,
-   "voice_start_s": 16.966,
-   "diff_s": -0.126,
+   "voice_start_s": 16.969,
+   "diff_s": -0.129,
    "pass": true,
    "audio": "audio/vo/vo_a0_c005_03_v04.wav"
   }

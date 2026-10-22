@@ -13,6 +13,13 @@
 //   { "do": "catEar",  "to": 1 }                                          小貨車換第四幕版貼圖：帆布下露出竹編貓頭骨架（1＝兩隻尖耳＋一小段頭框，同 a0 設計圖輪廓；
 //                                                                         0.5＝帆布蓋住、只露左耳尖一小角；0＝layout 原圖）。G5 修正第 1 輪；第五幕要同一個骨架時在 a5 cue 的 setTrack 也寫 to 1
 //   { "do": "brick",   "to": 0.3, "start": …, "duration": 0.8 }         對街紅磚騎樓降彩（0＝原色、1＝全灰；鏡頭移動時約 0.3，細格紅色光敏）
+//   { "do": "lift",    "to": 1 }                                          孩子身後的中景景片（警衛室、校門柱、折疊門、校內圍牆）提亮：1＝貼圖顏色 ×(1＋LIFT_GAIN[景片])
+//                                                                         （G5 修正第 2 輪：兒童站位背景投影亮度 ≥ 0.50，D-G2-06）
+//   { "do": "gateOpen", "to": 1 }                                         折疊門收起來（放學時校門開著）：鐵柵往左邊門柱收攏成 GATE_OPEN_W 寬
+//                                                                         （G5 修正第 2 輪：小晴常站在折疊門前，深色鐵柵讓兒童站位背景偏暗）
+//   { "do": "zzpatch", "to": 1 }                                          原點的地板補片：引擎 stage.ts 給程式角色（折折）的接觸陰影放在 root 位置，
+//                                                                         root 永遠在 (0,0,0)，地上多一個沒有主人的橢圓影子（折折自己另有影子）；有折折的 cue 打開，
+//                                                                         用同一張地板貼圖、同樣的 UV 蓋住它（引擎修好後可以拿掉；見 review/G5/a4 handoff）
 // setTrack 的時間參照同 animation.start；所有量都是時間的純函式。
 import { CanvasTexture, Color, LinearMipmapLinearFilter, Matrix4, Mesh, MeshBasicMaterial, MeshStandardMaterial, PlaneGeometry, SRGBColorSpace, Vector3, type Material, type Object3D, type Texture } from 'three';
 import { finishTexture, makeCanvas } from '../stage/paper';
@@ -33,14 +40,16 @@ const LAYOUT_CAMERAS: Record<string, CameraPreset> = {
 export const GATE_A4_CAMERAS: Record<string, CameraPreset> = {
   /** 放學大全景（第四幕開場；比 gate_wide 低一點、往左一點，看得到小貨車停的位置與警衛室） */
   a4_gate_wide: { pos: [0, 2.6, 24.5], target: [0, 2.3, 0], fov: 20 },
-  /** 隔著馬路看阿樂叔叔（孩子那一側的視角） */
-  a4_across: { pos: [-0.5, 1.95, 12.4], target: [-6.0, 1.72, -1.9], fov: 20 },
-  /** 隔著馬路看阿樂叔叔：慢慢推近 */
-  a4_across_push: { pos: [-1.6, 1.9, 10.7], target: [-6.05, 1.72, -1.9], fov: 20 },
+  /** 隔著馬路看阿樂叔叔（孩子那一側的視角）。G5 修正第 2 輪：斜角從約 21° 收到約 14°——引擎把紙環畫在紙偶前 0.24，
+   *  斜看時紙環對前臂的視差約 0.24·sin(斜角)·每單位像素，斜 20° 的近景會偏 15–20 px（停格時腕環、肘環浮在前臂外） */
+  a4_across: { pos: [-2.4, 1.95, 12.6], target: [-6.0, 1.72, -1.9], fov: 20 },
+  /** 隔著馬路看阿樂叔叔：慢慢推近（斜角約 10°，停格時紙環落在前臂上） */
+  a4_across_push: { pos: [-3.5, 1.9, 10.9], target: [-6.05, 1.72, -1.9], fov: 20 },
   /** 孩子在接送線後、背後是警衛室的窗（窗裡林老師的小背影） */
   a4_window: { pos: [3.7, 1.9, 13.2], target: [3.85, 1.7, -0.6], fov: 20 },
-  /** 孩子在前景（右）、阿樂叔叔在對街（左）：前後景深 */
-  a4_deep: { pos: [-0.75, 1.85, 13.4], target: [-0.85, 1.55, 0], fov: 29 },
+  /** 孩子在前景（右）、阿樂叔叔在對街（左）：前後景深。G5 修正第 2 輪：鏡頭往左 1.25、注視點往右，
+   *  看阿樂叔叔的斜角從約 20° 收到約 15.5°（紙環視差見 a4_across 的說明；a4_c007 結尾＝a4_c008 開頭的停格） */
+  a4_deep: { pos: [-2.0, 1.85, 13.4], target: [-1.0, 1.55, 0], fov: 29 },
   /** 兩個孩子近景（接送線後） */
   a4_kids: { pos: [2.85, 1.2, 13.0], target: [2.85, 1.08, 1.85], fov: 20 },
   /** 小晴說話（往她推近一點） */
@@ -92,6 +101,12 @@ const LIN_HAND: [number, number] = [0.288, 1.462];
 
 /** farUp 時一直站著的遠景景片（layout.json 的 id） */
 const FAR_PIECES = ['sq-mountains', 'sq-backrow', 'school-building', 'school-wall', 'sq-tree-a'];
+/** setTrack lift 提亮的景片（layout.json 的 id）與增益（線性顏色倍數；×1.45 ≈ sRGB 明度 +18%；折疊門的深色鐵柵另外多提一點） */
+const LIFT_GAIN: Record<string, number> = { 'guard-house': 0.45, pillar: 0.45, 'pillar-2': 0.45, 'school-wall': 0.45, 'folding-gate': 0.8 };
+/** setTrack gateOpen：折疊門收攏後的寬度比例（layout 寬 0.9；左緣貼著右邊那根門柱不動） */
+const GATE_OPEN_W = 0.3;
+/** setTrack zzpatch：補片範圍（世界 x、z；接觸陰影 0.6×0.5 置中在 (0, 0.05)） */
+const ZZ_PATCH = { x0: -0.38, x1: 0.38, z0: -0.26, z1: 0.36, y: 0.02 };
 /** 第四幕版小貨車的竹編貓頭骨架露出部分中心（車圖底邊中央為原點的世界座標；review/G5/a4/art_meta.json fix1.truck_catear） */
 const CAT_EAR_LOCAL: [number, number] = [0.178, 2.277];
 
@@ -187,6 +202,59 @@ export function buildGate(ctx: SetContext): BuiltSet {
       brickOv.receiveShadow = src.receiveShadow;
       brickOv.visible = false;
       backrow.hinge.add(brickOv);
+    }
+  }
+
+  // ---- 孩子身後的中景景片提亮（setTrack lift）
+  const liftMats: { mat: MeshStandardMaterial; c0: Color; gain: number }[] = [];
+  group.traverse((o) => {
+    const gain = o.name.startsWith('pop:') ? LIFT_GAIN[o.name.slice(4)] : undefined;
+    if (gain === undefined) return;
+    const m = (o.children[0] as Mesh | undefined)?.material as MeshStandardMaterial | undefined;
+    if (m && m.color) liftMats.push({ mat: m, c0: m.color.clone(), gain });
+  });
+  let liftOn = 0;
+  // 折疊門（setTrack gateOpen）
+  let foldGate: Mesh | null = null, foldGateW = 0.9;
+  group.traverse((o) => { if (o.name === 'pop:folding-gate' && o.children[0]) foldGate = o.children[0] as Mesh; });
+  {
+    const fgLayer = (layout.layers ?? []).find((l) => l.id === 'folding-gate') as { width?: number } | undefined;
+    foldGateW = fgLayer?.width ?? 0.9;
+  }
+
+  // ---- 原點的地板補片（setTrack zzpatch；同一張地板貼圖、同樣的 UV、同樣接收影子，只是畫在接觸陰影之後）
+  let zzPatch: Mesh | null = null;
+  {
+    let floor: Mesh | null = null;
+    group.traverse((o) => {
+      const m = o as Mesh;
+      const g = m.geometry as PlaneGeometry | undefined;
+      if (!floor && m.isMesh && Math.abs(m.rotation.x + Math.PI / 2) < 1e-3 && g?.type === 'PlaneGeometry' && g.parameters.width >= 10) floor = m;
+    });
+    const fl = floor as Mesh | null;
+    if (fl) {
+      const g = fl.geometry as PlaneGeometry;
+      const W = g.parameters.width, D = g.parameters.height;
+      const fz = fl.position.z, fx = fl.position.x;
+      const pg = new PlaneGeometry(ZZ_PATCH.x1 - ZZ_PATCH.x0, ZZ_PATCH.z1 - ZZ_PATCH.z0);
+      const pos = pg.attributes.position, uv = pg.attributes.uv;
+      const cx = (ZZ_PATCH.x0 + ZZ_PATCH.x1) / 2, cz = (ZZ_PATCH.z0 + ZZ_PATCH.z1) / 2;
+      for (let k = 0; k < pos.count; k++) {
+        const wx = cx + pos.getX(k), wz = cz - pos.getY(k);          // 平面轉 −90°：本地 y → 世界 −z
+        uv.setXY(k, (wx - fx + W / 2) / W, (fz - wz + D / 2) / D);    // 和地板 PlaneGeometry 的 UV 一樣
+      }
+      uv.needsUpdate = true;
+      // 不透明、寫深度：接觸陰影是半透明（三維引擎在不透明物件之後才畫），比補片低（y 0.012），深度測試就被擋掉
+      const fm = (fl.material as MeshStandardMaterial).clone();
+      mats.push(fm);
+      zzPatch = new Mesh(pg, fm);
+      zzPatch.name = 'gate:zzPatch';
+      zzPatch.rotation.x = -Math.PI / 2;
+      zzPatch.position.set(cx, ZZ_PATCH.y, cz);
+      zzPatch.receiveShadow = true;
+      zzPatch.renderOrder = fl.renderOrder + 1;
+      zzPatch.visible = false;
+      group.add(zzPatch);
     }
   }
 
@@ -323,6 +391,15 @@ export function buildGate(ctx: SetContext): BuiltSet {
         const k = clamp(trackValue(tl, 'brick', t, 0));
         (brickOv.material as MeshStandardMaterial).opacity = k;
         brickOv.visible = k > 0.002;
+      }
+      const lf = clamp(trackValue(tl, 'lift', t, 0));
+      if (lf !== liftOn) { for (const L of liftMats) L.mat.color.copy(L.c0).multiplyScalar(1 + L.gain * lf); liftOn = lf; }
+      if (zzPatch) zzPatch.visible = trackValue(tl, 'zzpatch', t, 0, 'linear') > 0.5;
+      const fg = foldGate as Mesh | null;
+      if (fg) {
+        const k = lerp(1, GATE_OPEN_W, clamp(trackValue(tl, 'gateOpen', t, 0)));
+        fg.scale.x = k;
+        fg.position.x = -(1 - k) * foldGateW / 2;
       }
       if (lin) lin.visible = trackValue(tl, 'lin', t, 0, 'linear') > 0.5;
       for (const [k, m] of Object.entries(walkers)) {

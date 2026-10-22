@@ -1,6 +1,7 @@
 // 開場（a0_c001–a0_c005）的燈籠店：沿用 G4 燈籠店景（buildWorkshopG4，不改它），再疊上開場需要的程式景片。G5 開場＋第一幕代理。
 //   - 劇名紙條（a0_c001）：「紙燈節」程式排版（和署名卡同款字型），浮在畫面上方的紙條上，淡入、停約 3 秒、淡出收起（避開字幕區）
 //   - 主燈設計圖（牆上，摺紙貓燈，沒有任何文字）、工作台中央空著的主燈底座（跟著工作台一起立起）、門口風鈴
+//     （修正第 2 輪：上方吊燈籠不投影子；摺紙推近鏡位 a0_fold2）
 //     （修正第 1 輪：工作台圖中央那個燈籠骨在本景擦掉，讓「空了一塊」看得出來；台口上方的八盞燈改由引擎的台口實景燈負責，本景不再畫）
 //   - 回憶小窗（a0_c002）：暖杏色手撕邊紙框從畫面外緣收進來＋景片轉暖色（角色不變色）
 //   - 小晴的筆記本特寫（a0_c004）：小窗裡的筆記本，竹骨架與問號一筆一筆畫上（程式畫線）
@@ -79,6 +80,8 @@ export const WORKSHOP_A0_CAMERAS: Record<string, CameraPreset> = {
   a0_table: C([1.55, 2.12, 9.4], [1.55, 1.95, -0.6]),
   /** 摺紙近景（a0_c002 開頭）：燈籠紙約佔畫面高 27%，摺成折折後約佔畫面高 39%、桌面約在畫面高 67%（字幕區之上） */
   a0_fold: C([0.75, 1.95, 6.6], [0.75, 1.83, -0.6]),
+  /** 摺紙鏡位（修正第 2 輪）：和 a0_fold 同距離（折折大小不變），鏡頭略往下看，桌面在畫面高約 62%（上半部空牆少一點） */
+  a0_fold2: C([0.75, 1.79, 6.6], [0.75, 1.67, -0.6]),
   /** 工作台中景（a0_c003 開頭）：桌面約在畫面高 66%、折折頭頂約 30%；左邊看得到空底座與設計圖一角 */
   a0_table2: C([0.45, 1.97, 7.4], [0.45, 1.85, -0.6]),
   /** 主燈設計圖近景（牆上的設計圖＋桌上的折折在右下回頭看） */
@@ -190,6 +193,9 @@ export const WORKSHOP_A0: SetEntry = {
     const stool = ws.pieces.find((p) => p.name === 'stool')?.hinge;
     const stool0 = stool ? stool.position.clone() : null;
 
+    // 修正第 2 輪：上方吊燈籠不投影子（牆上那排灰色圓影；G4 燈籠店景本身不動，只改本景這一份）
+    const lanterns = ws.pieces.find((p) => p.name === 'lanterns')?.hinge;
+    lanterns?.traverse((o) => { if ((o as Mesh).isMesh) (o as Mesh).castShadow = false; });
     // 主燈設計圖（貼在牆上，和牆一樣有自發光，兒童身後仍夠亮）
     const design = imagePiece(im('design'), { w: DESIGN.w, order: LAYER.far.order - 30, emissive: 0.3 }, mats);
     if (design) { design.position.set(DESIGN.x, DESIGN.y, WALL_Z + 0.06); design.receiveShadow = true; group.add(design); }

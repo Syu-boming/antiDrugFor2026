@@ -1,0 +1,20 @@
+started bow_kids_v01 pid 24367
+started bow_adults_v01 pid 24369
+started chr_aqin_stand_v01 pid 24371
+== bow_kids_v01
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4998-74b1-8d15-6c4645babee3/exec-4a9bf1cf-5a6e-4135-8f07-8854f2887bef.png`
+- Destination: [review/G5/a6/raw/bow_kids_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_kids_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  2232421 10月 21 21:24 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_kids_v01.png
+== bow_adults_v01
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4997-7f51-a2a4-ffe4a6dda141/exec-2592a87a-6880-499e-ab35-9369f3c06083.png`
+- Destination: [review/G5/a6/raw/bow_adults_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_adults_v01.png>) — copied unmodified.
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, verified transparent pixels.-rw-r--r--@ 1 boming  staff  2100415 10月 21 21:24 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_adults_v01.png
+== chr_aqin_stand_v01
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4997-7f53-9f76-8833863ead15/exec-b34d6295-5c35-474b-86ce-ea9a02d24faa.png`
+- Destination: [review/G5/a6/raw/chr_aqin_stand_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/chr_aqin_stand_v01.png>)
+- Dimensions: **1024 × 1536**
+- Alpha channel: **Yes**
+- Copied unmodified; byte-for-byte match verified.-rw-r--r--@ 1 boming  staff  1752863 10月 21 21:23 /Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/chr_aqin_stand_v01.png

@@ -1,0 +1,333 @@
+{
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a6_c001",
+   "line": "a6_c001_01",
+   "page": 1,
+   "text": "叔叔不在，我們幫他把主燈完成！",
+   "subtitle_start_s": 2.4,
+   "voice_start_s": 2.523,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c001_01_v04.wav"
+  },
+  {
+   "cue": "a6_c001",
+   "line": "a6_c001_02",
+   "page": 1,
+   "text": "慢慢摺，燈才會亮。",
+   "subtitle_start_s": 6.67,
+   "voice_start_s": 6.792,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c001_02_v04.wav"
+  },
+  {
+   "cue": "a6_c002",
+   "line": "a6_c002_01",
+   "page": 1,
+   "text": "我跟你們說一個秘密……",
+   "subtitle_start_s": 3,
+   "voice_start_s": 3.131,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c002_01_v04.wav"
+  },
+  {
+   "cue": "a6_c002",
+   "line": "a6_c002_02",
+   "page": 1,
+   "text": "那天你們走了以後，那個人／把閃亮盒子塞給我。我沒有打開，",
+   "subtitle_start_s": 6.3,
+   "voice_start_s": 6.437,
+   "diff_s": -0.137,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c002_02_v04.wav"
+  },
+  {
+   "cue": "a6_c002",
+   "line": "a6_c002_02",
+   "page": 2,
+   "text": "可是我把它藏在書包裡。",
+   "subtitle_start_s": 15.068,
+   "voice_start_s": 15.922,
+   "diff_s": -0.854,
+   "pass": false,
+   "audio": "audio/vo/vo_a6_c002_02_v04.wav"
+  },
+  {
+   "cue": "a6_c002",
+   "line": "a6_c002_03",
+   "page": 1,
+   "text": "不要告訴老師，好不好？我怕被罵。",
+   "subtitle_start_s": 19.09,
+   "voice_start_s": 19.231,
+   "diff_s": -0.141,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c002_03_v04.wav"
+  },
+  {
+   "cue": "a6_c002",
+   "line": "a6_c002_04",
+   "page": 1,
+   "text": "如果你是小晴和小宇，你會怎麼做？",
+   "subtitle_start_s": 26.28,
+   "voice_start_s": 26.404,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c002_04_v04.wav"
+  },
+  {
+   "cue": "a6_c003",
+   "line": "a6_c003_01",
+   "page": 1,
+   "text": "最後一題！",
+   "subtitle_start_s": 1.7,
+   "voice_start_s": 1.837,
+   "diff_s": -0.137,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c003_01_v04.wav"
+  },
+  {
+   "cue": "a6_c003",
+   "line": "a6_c003_02",
+   "page": 1,
+   "text": "朋友可能碰到危險物品，／卻說「不要告訴老師」。怎麼辦？",
+   "subtitle_start_s": 4.35,
+   "voice_start_s": 4.48,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c003_02_v04.wav"
+  },
+  {
+   "cue": "a6_c003",
+   "line": "a6_c003_03",
+   "page": 1,
+   "text": "一，答應他，永遠不告訴任何人。",
+   "subtitle_start_s": 10.53,
+   "voice_start_s": 10.662,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c003_03_v04.wav"
+  },
+  {
+   "cue": "a6_c003",
+   "line": "a6_c003_04",
+   "page": 1,
+   "text": "二，陪他一起找可信任的大人。",
+   "subtitle_start_s": 14.46,
+   "voice_start_s": 14.596,
+   "diff_s": -0.136,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c003_04_v04.wav"
+  },
+  {
+   "cue": "a6_c003",
+   "line": "a6_c003_05",
+   "page": 1,
+   "text": "三，傳給全班同學，大家一起討論。",
+   "subtitle_start_s": 18.99,
+   "voice_start_s": 19.112,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c003_05_v04.wav"
+  },
+  {
+   "cue": "a6_c004",
+   "line": "a6_c004_01",
+   "page": 1,
+   "text": "正解是二：／陪他一起找可信任的大人。",
+   "subtitle_start_s": 1,
+   "voice_start_s": 1.121,
+   "diff_s": -0.121,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c004_01_v04.wav"
+  },
+  {
+   "cue": "a6_c005",
+   "line": "a6_c005_01",
+   "page": 1,
+   "text": "第八盞！全部亮了！",
+   "subtitle_start_s": 1.9,
+   "voice_start_s": 2.074,
+   "diff_s": -0.174,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c005_01_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_01",
+   "page": 1,
+   "text": "品安，我在乎你，／我們一起找人幫忙。",
+   "subtitle_start_s": 0.8,
+   "voice_start_s": 0.955,
+   "diff_s": -0.155,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_01_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_02",
+   "page": 1,
+   "text": "我們陪你去，跟老師說清楚。",
+   "subtitle_start_s": 5.21,
+   "voice_start_s": 5.345,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_02_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_03",
+   "page": 1,
+   "text": "老師……我書包裡，／有一個別人給的盒子。",
+   "subtitle_start_s": 14.12,
+   "voice_start_s": 14.245,
+   "diff_s": -0.125,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_03_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_04",
+   "page": 1,
+   "text": "謝謝你願意說出來。／盒子不要碰，交給大人處理。",
+   "subtitle_start_s": 19.29,
+   "voice_start_s": 19.436,
+   "diff_s": -0.146,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_04_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_05",
+   "page": 1,
+   "text": "廣場那個人，警察已經在處理了。",
+   "subtitle_start_s": 25.29,
+   "voice_start_s": 25.414,
+   "diff_s": -0.124,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_05_v04.wav"
+  },
+  {
+   "cue": "a6_c006",
+   "line": "a6_c006_06",
+   "page": 1,
+   "text": "說出來，就是在保護自己。",
+   "subtitle_start_s": 31.3,
+   "voice_start_s": 31.422,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c006_06_v04.wav"
+  },
+  {
+   "cue": "a6_c007",
+   "line": "a6_c007_01",
+   "page": 1,
+   "text": "我……我摺成了！真的是燈籠！",
+   "subtitle_start_s": 2,
+   "voice_start_s": 2.17,
+   "diff_s": -0.17,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c007_01_v04.wav"
+  },
+  {
+   "cue": "a6_c007",
+   "line": "a6_c007_02",
+   "page": 1,
+   "text": "這一晚，小燈鎮的燈都亮了。",
+   "subtitle_start_s": 12.12,
+   "voice_start_s": 12.246,
+   "diff_s": -0.126,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c007_02_v04.wav"
+  },
+  {
+   "cue": "a6_c007",
+   "line": "a6_c007_03",
+   "page": 1,
+   "text": "可是，阿樂叔叔要好起來，／不是點亮燈就好。",
+   "subtitle_start_s": 15.53,
+   "voice_start_s": 15.668,
+   "diff_s": -0.138,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c007_03_v04.wav"
+  },
+  {
+   "cue": "a6_c008",
+   "line": "a6_c008_02",
+   "page": 1,
+   "text": "操偶線一天一天變鬆、／變淡，一根一根脫落。",
+   "subtitle_start_s": 3.5,
+   "voice_start_s": 3.629,
+   "diff_s": -0.129,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c008_02_v04.wav"
+  },
+  {
+   "cue": "a6_c008",
+   "line": "a6_c008_03",
+   "page": 1,
+   "text": "好起來，需要求助、／治療，還有時間。",
+   "subtitle_start_s": 9.93,
+   "voice_start_s": 10.061,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c008_03_v04.wav"
+  },
+  {
+   "cue": "a6_c009",
+   "line": "a6_c009_01",
+   "page": 1,
+   "text": "叔叔，又到紙燈節了！",
+   "subtitle_start_s": 1.6,
+   "voice_start_s": 1.723,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c009_01_v04.wav"
+  },
+  {
+   "cue": "a6_c009",
+   "line": "a6_c009_02",
+   "page": 1,
+   "text": "那天我把骨架搬上車，／要送去廣場，後來自己忘了。",
+   "subtitle_start_s": 4.34,
+   "voice_start_s": 4.473,
+   "diff_s": -0.133,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c009_02_v04.wav"
+  },
+  {
+   "cue": "a6_c009",
+   "line": "a6_c009_03",
+   "page": 1,
+   "text": "我現在還是會定期回去看醫生。／慢慢摺，燈才會亮。",
+   "subtitle_start_s": 10.44,
+   "voice_start_s": 10.572,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c009_03_v04.wav"
+  },
+  {
+   "cue": "a6_c009",
+   "line": "a6_c009_04",
+   "page": 1,
+   "text": "謝謝你們，那天去找大人幫忙。",
+   "subtitle_start_s": 18.97,
+   "voice_start_s": 19.095,
+   "diff_s": -0.125,
+   "pass": true,
+   "audio": "audio/vo/vo_a6_c009_04_v04.wav"
+  }
+ ],
+ "all_pass": false
+}

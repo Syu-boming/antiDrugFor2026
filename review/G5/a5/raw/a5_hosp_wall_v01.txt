@@ -1,0 +1,5 @@
+- Source: `/Users/boming/.codex/generated_images/01a15ea0-1345-74e0-bc94-ced74c9b9376/exec-2efd2062-7571-4a5c-bbcb-84b6a801afe4.png`
+- Destination: [review/G5/a5/raw/a5_hosp_wall_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a5/raw/a5_hosp_wall_v01.png>)
+- Dimensions: **1536 × 1024**
+- Alpha: **No**
+- Copy verified byte-for-byte identical.

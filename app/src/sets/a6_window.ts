@@ -1,8 +1,8 @@
 // 第六幕 a6_c008 四季（時間轉場，FX11）：固定窗框構圖。G5 第六幕代理。
 // 室內一面牆＋一扇大窗（assets/final/sets/a6_window/room，窗洞透明）；窗外是樹與天空，依季節換：秋黃葉 → 冬光禿 → 春新芽 → 夏濃綠。
 // 窗內由 cue 的角色演出陪伴（葉護理師陪阿樂叔叔回診說話、阿琴阿姨陪他散步、孩子們帶折折來看他）。
-// 換季：完整版在 cue 的 fade.out 全暗那一格（6／12／18 秒，對 music_recovery 的換季點）直接換窗外；
-//       2 級短版（a6_c008_02 被略過）沒有暗場，窗外每 2 秒交叉淡換一次（1 秒，單向漸變）。
+// 換季（修正第 1 輪：不經過黑場）：完整版在 4.6／9.4／14.2 秒各交叉淡換 1.2 秒（後一季疊在前一季上面淡入，窗外亮度單向漸變）；
+//       2 級短版（a6_c008_02 被略過）每 2 秒交叉淡換一次（1 秒）。
 // 秋天窗外有幾片葉子慢慢飄落（亮度固定、只有位置移動）。全部是時間的純函式。
 import { Group, Mesh, MeshStandardMaterial, type Material } from 'three';
 import { buildImageSet, readLayout } from './imageSet';
@@ -19,8 +19,8 @@ const WIN = { x0: -1.75, x1: 3.05, y0: 1.3, y1: 4.25 };
 const ROOM = { x0: -6.2, w: 13.0, z: -1.2 };
 
 export const A6_WINDOW_CAMERAS: Record<string, CameraPreset> = {
-  /** 固定窗框構圖：窗在畫面中上，窗外的樹在右半，窗內角色腳在字幕之上 */
-  a6_win: { pos: [0.55, 1.9, 17], target: [0.55, 1.68, 0], fov: 20 },
+  /** 固定窗框構圖（修正第 1 輪推近：窗框當畫框，地板只留下緣一小條） */
+  a6_win: { pos: [0.55, 1.72, 15.0], target: [0.55, 1.92, 0], fov: 20 },
 };
 
 export const A6_WINDOW: SetEntry = {
@@ -78,17 +78,17 @@ export const A6_WINDOW: SetEntry = {
         baseUpdate?.(o);
         const { tl, t } = o;
         const short = tl.cue.id === 'a6_c008' && dropped(tl, 'a6_c008_02');
-        // 季節：完整版在 6／12／18 秒（全暗那一格）硬換；短版 2／4／6 秒各交叉淡換 1 秒（後一季疊在前一季上面淡入，窗外亮度單向變化）
+        // 季節：交叉淡換（後一季疊在前一季上面淡入，窗外亮度單向變化）；完整版 4.6／9.4／14.2 秒各 1.2 秒，短版 1.5／3.5／5.5 秒各 1 秒
         let cur = 3, u = 0;
         if (tl.cue.id === 'a6_c008') {
-          if (short) {
-            cur = 0;
-            for (let k = 1; k < 4; k++) { const p = sine01((t - (2 * k - 0.5)) / 1.0); if (p >= 1) cur = k; else { u = p; break; } }
-          } else cur = t < 6 ? 0 : t < 12 ? 1 : t < 18 ? 2 : 3;
+          const at = short ? [1.5, 3.5, 5.5] : [4.6, 9.4, 14.2];
+          const dur = short ? 1.0 : 1.2;
+          cur = 0;
+          for (let k = 1; k < 4; k++) { const p = sine01((t - at[k - 1]) / dur); if (p >= 1) cur = k; else { u = p; break; } }
         }
         SEASONS.forEach((s, k) => setVis(s, k === cur ? 1 : k === cur + 1 ? u : 0));
-        // 葉子：秋天（完整版 0–6 秒、短版 0–2.5 秒）慢慢飄落，進出畫面時淡入淡出
-        const autumnEnd = short ? 2.5 : 6;
+        // 葉子：秋天（完整版 0–5.4 秒、短版 0–2.3 秒）慢慢飄落，進出畫面時淡入淡出
+        const autumnEnd = short ? 2.3 : 5.4;
         leaves.forEach((leaf, i) => {
           const period = 4.2 + (i % 3) * 0.7;
           const ph = ((t + i * 1.37) % period) / period;

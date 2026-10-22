@@ -1,0 +1,322 @@
+{
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_01",
+   "page": 1,
+   "text": "主燈骨架！原來在叔叔車上！",
+   "subtitle_start_s": 0.95,
+   "voice_start_s": 1.086,
+   "diff_s": -0.136,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_01_v04.wav"
+  },
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_02",
+   "page": 1,
+   "text": "阿樂，你坐著。林老師，我去／轉角帶小朋友過馬路，很快回來！",
+   "subtitle_start_s": 6.28,
+   "voice_start_s": 6.416,
+   "diff_s": -0.136,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_02_v04.wav"
+  },
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_03",
+   "page": 1,
+   "text": "好，我馬上出來！",
+   "subtitle_start_s": 13.9,
+   "voice_start_s": 14.04,
+   "diff_s": -0.14,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_03_v04.wav"
+  },
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_04",
+   "page": 1,
+   "text": "阿樂叔叔？阿樂叔叔！",
+   "subtitle_start_s": 29.44,
+   "voice_start_s": 29.561,
+   "diff_s": -0.121,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_04_v04.wav"
+  },
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_05",
+   "page": 1,
+   "text": "他……叫不醒。",
+   "subtitle_start_s": 32.79,
+   "voice_start_s": 32.93,
+   "diff_s": -0.14,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_05_v04.wav"
+  },
+  {
+   "cue": "a5_c001",
+   "line": "a5_c001_06",
+   "page": 1,
+   "text": "陳伯伯在轉角，林老師在辦公室。／他們該怎麼做？",
+   "subtitle_start_s": 35.25,
+   "voice_start_s": 35.372,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c001_06_v04.wav"
+  },
+  {
+   "cue": "a5_c002",
+   "line": "a5_c002_01",
+   "page": 1,
+   "text": "第七題！",
+   "subtitle_start_s": 1.45,
+   "voice_start_s": 1.576,
+   "diff_s": -0.126,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c002_01_v04.wav"
+  },
+  {
+   "cue": "a5_c002",
+   "line": "a5_c002_02",
+   "page": 1,
+   "text": "有人叫不醒。／你站在安全的地方，接下來怎麼做？",
+   "subtitle_start_s": 3.98,
+   "voice_start_s": 4.117,
+   "diff_s": -0.137,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c002_02_v04.wav"
+  },
+  {
+   "cue": "a5_c002",
+   "line": "a5_c002_03",
+   "page": 1,
+   "text": "一，先拍下影片，再傳給同學看。",
+   "subtitle_start_s": 10.21,
+   "voice_start_s": 10.346,
+   "diff_s": -0.136,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c002_03_v04.wav"
+  },
+  {
+   "cue": "a5_c002",
+   "line": "a5_c002_04",
+   "page": 1,
+   "text": "二，自己先跑過去，用力把他搖醒。",
+   "subtitle_start_s": 14.05,
+   "voice_start_s": 14.171,
+   "diff_s": -0.121,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c002_04_v04.wav"
+  },
+  {
+   "cue": "a5_c002",
+   "line": "a5_c002_05",
+   "page": 1,
+   "text": "三，先找大人，／沒大人就撥 119。",
+   "subtitle_start_s": 18.31,
+   "voice_start_s": 18.432,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c002_05_v04.wav"
+  },
+  {
+   "cue": "a5_c003",
+   "line": "a5_c003_01",
+   "page": 1,
+   "text": "正解是三：先找大人，／沒大人就撥 119。",
+   "subtitle_start_s": 1,
+   "voice_start_s": 1.122,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c003_01_v04.wav"
+  },
+  {
+   "cue": "a5_c004",
+   "line": "a5_c004_01",
+   "page": 1,
+   "text": "第七盞燈，亮了。",
+   "subtitle_start_s": 1.9,
+   "voice_start_s": 2.027,
+   "diff_s": -0.127,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c004_01_v04.wav"
+  },
+  {
+   "cue": "a5_c005",
+   "line": "a5_c005_01",
+   "page": 1,
+   "text": "陳伯伯——！",
+   "subtitle_start_s": 4,
+   "voice_start_s": 4.123,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c005_01_v04.wav"
+  },
+  {
+   "cue": "a5_c005",
+   "line": "a5_c005_02",
+   "page": 1,
+   "text": "我去辦公室找林老師！／你待在門裡面，不要過去。",
+   "subtitle_start_s": 6.66,
+   "voice_start_s": 6.787,
+   "diff_s": -0.127,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c005_02_v04.wav"
+  },
+  {
+   "cue": "a5_c005",
+   "line": "a5_c005_03",
+   "page": 1,
+   "text": "陳伯伯聽不到，林老師還沒出來……／我來打 119。",
+   "subtitle_start_s": 14.91,
+   "voice_start_s": 15.033,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c005_03_v04.wav"
+  },
+  {
+   "cue": "a5_c006",
+   "line": "a5_c006_01",
+   "page": 1,
+   "text": "119 您好，請問發生什麼事？／在哪裡？",
+   "subtitle_start_s": 1.4,
+   "voice_start_s": 1.532,
+   "diff_s": -0.132,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c006_01_v04.wav"
+  },
+  {
+   "cue": "a5_c006",
+   "line": "a5_c006_02",
+   "page": 1,
+   "text": "這裡是小燈國小正門口。有一個／大人坐在門口的椅子上，叫不醒。",
+   "subtitle_start_s": 6.8,
+   "voice_start_s": 6.939,
+   "diff_s": -0.139,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c006_02_v04.wav"
+  },
+  {
+   "cue": "a5_c006",
+   "line": "a5_c006_03",
+   "page": 1,
+   "text": "好，我們會派救護車過去。／你現在安全嗎？旁邊有大人嗎？",
+   "subtitle_start_s": 13.97,
+   "voice_start_s": 14.119,
+   "diff_s": -0.149,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c006_03_v04.wav"
+  },
+  {
+   "cue": "a5_c006",
+   "line": "a5_c006_04",
+   "page": 1,
+   "text": "我在校門裡面。我同學去找老師了。",
+   "subtitle_start_s": 21.04,
+   "voice_start_s": 21.17,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c006_04_v04.wav"
+  },
+  {
+   "cue": "a5_c006",
+   "line": "a5_c006_05",
+   "page": 1,
+   "text": "做得很好。／待在安全的地方，聽我的指示。",
+   "subtitle_start_s": 25.35,
+   "voice_start_s": 25.481,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c006_05_v04.wav"
+  },
+  {
+   "cue": "a5_c007",
+   "line": "a5_c007_01",
+   "page": 1,
+   "text": "您好，我是小燈國小的老師，／我來接手。",
+   "subtitle_start_s": 4.15,
+   "voice_start_s": 4.278,
+   "diff_s": -0.128,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c007_01_v04.wav"
+  },
+  {
+   "cue": "a5_c007",
+   "line": "a5_c007_02",
+   "page": 1,
+   "text": "你們沒有跑過去，／還馬上找人幫忙，做得很好。",
+   "subtitle_start_s": 20.3,
+   "voice_start_s": 20.435,
+   "diff_s": -0.135,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c007_02_v04.wav"
+  },
+  {
+   "cue": "a5_c008",
+   "line": "a5_c008_01",
+   "page": 1,
+   "text": "阿樂叔叔現在有醫生和護理師照顧，／他的家人也來了。",
+   "subtitle_start_s": 1.3,
+   "voice_start_s": 1.422,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c008_01_v04.wav"
+  },
+  {
+   "cue": "a5_c008",
+   "line": "a5_c008_02",
+   "page": 1,
+   "text": "是我們害叔叔被送來醫院的嗎？",
+   "subtitle_start_s": 7.46,
+   "voice_start_s": 7.582,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c008_02_v04.wav"
+  },
+  {
+   "cue": "a5_c008",
+   "line": "a5_c008_03",
+   "page": 1,
+   "text": "不是喔。你們找大人、／打 119，是在幫他。",
+   "subtitle_start_s": 11.45,
+   "voice_start_s": 11.589,
+   "diff_s": -0.139,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c008_03_v04.wav"
+  },
+  {
+   "cue": "a5_c008",
+   "line": "a5_c008_04",
+   "page": 1,
+   "text": "叔叔會好起來嗎？",
+   "subtitle_start_s": 17.35,
+   "voice_start_s": 17.472,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c008_04_v04.wav"
+  },
+  {
+   "cue": "a5_c008",
+   "line": "a5_c008_05",
+   "page": 1,
+   "text": "他需要治療，也需要時間。／大家會陪著他，慢慢來。",
+   "subtitle_start_s": 19.72,
+   "voice_start_s": 19.869,
+   "diff_s": -0.149,
+   "pass": true,
+   "audio": "audio/vo/vo_a5_c008_05_v04.wav"
+  }
+ ],
+ "all_pass": true
+}

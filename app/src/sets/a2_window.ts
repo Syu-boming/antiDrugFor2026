@@ -5,7 +5,7 @@
 //   2. FX10 剪影回憶小窗（畫面右上，不蓋到窗內的阿樂叔叔與說話者的臉、不進字幕區）：
 //      a2_c013_01 開始後小窗立起 → 一隻手（剪影）捧著同樣的盒子從左邊伸進來 → a2_c013_02 時阿樂叔叔的手（剪影）從右下慢慢伸過去，
 //      在碰到之前（「伸手接過的那一刻」）小窗就收起（0.35 秒）。不出現打開或使用。
-//   3. 筆記本特寫：x=30 的獨立小台；cue 用 camera.cut 切到 a2_win_note 時，0.4 秒後鉛筆在第一個問號旁邊畫出第二個問號（1.4 秒）。
+//   3. 筆記本特寫：x=30 的獨立小台；cue 用 camera.cut 切到 a2_win_note 時（前後各漸暗漸亮 0.6 秒），0.7 秒後在第一個問號旁邊畫出第二個問號（1.4 秒）。
 //   4. 開著的店門（G5 修正第 1 輪）：店面圖的門洞上蓋一張暖光門口（門板往裡打開、店內暖黃燈光），孩子站在門前
 //      （兒童身後投影亮度 ≥ 0.50；傍晚外牆在投影後太暗）。不受舞台燈影響、不閃。
 //   接盒子的剪影手 v02：五指分開的手掌剪影（build_a2_art.py sil_ale_hand_v2），指尖停在盒子右緣外約 28 px 就收起小窗。
@@ -244,13 +244,13 @@ export const A2_WINDOW: SetEntry = {
           drawInset(lerp(-600, 40, slide), hand);
         }
       } else insetHinge.visible = false;
-      // 3. 筆記本：切到 a2_win_note 之後 0.4 秒開始畫
+      // 3. 筆記本：切到 a2_win_note 之後 0.7 秒開始畫（修正第 2 輪：切進來時漸亮 0.6 秒，筆畫等漸亮完成才開始，同一秒不疊明暗變化）
       const cut = tl.anims.find((a) => (a.name === 'camera.cut' || a.name === 'camera.move') && a.params.to === 'a2_win_note');
       if (cut) {
-        const s0 = cut.start + 0.4;
+        const s0 = cut.start + 0.7;
         const u = clamp((t - s0) / 1.4);
         const pencil = t < s0 ? 0 : t < s0 + 1.45 ? 1 : 1 - clamp((t - s0 - 1.45) / 0.5);
-        drawNote(u, Math.max(0, Math.min(1, t < s0 ? clamp((t - cut.start) / 0.4) : pencil)));
+        drawNote(u, Math.max(0, Math.min(1, t < s0 ? clamp((t - cut.start) / 0.7) : pencil)));
       }
     };
     base.report = report;

@@ -27,6 +27,7 @@ sys.path.insert(0, str(ROOT / "tools"))
 FPS = 30
 G4_REFS = ["a2_c002_012.59_mid", "a2_c004_010.96_mid", "a0_c001_011.60_after", "a2_c002_025.18_after"]
 CHILDREN = ("xiaoqing", "xiaoyu", "pinan")
+FRAME_W, FRAME_H = 1920, 1080
 
 
 def rel(p, base):
@@ -349,7 +350,11 @@ def safety_data(out: Path, tl: dict):
             probe += d["probes"]
             src.append(name)
     head_d, kid_hits, frames = [], [], 0
+    head_offscreen = 0
     per_anchor = {}
+    # G5 修正第 2 輪（主線授權）：線到頭部框只算頭部框在 1920×1080 畫面內（至少一部分）的格；
+    # 角色在鏡頭外時（例如 a2_c008 手部近景，阿樂紙偶 x≈26600）頭部框和線都看不到，不算（以前會量到 0.0 px）。
+    in_frame = lambda b: b[2] > 0 and b[0] < FRAME_W and b[3] > 0 and b[1] < FRAME_H
     for pr in probe:
         acts = {a["id"]: a for a in pr["actors"]}
         vis = [s for s in pr["strings"] if s.get("visible") and s.get("path")]
@@ -359,7 +364,9 @@ def safety_data(out: Path, tl: dict):
         for s in vis:
             path = s["path"]
             hb = acts.get(s["actor"], {}).get("headBox")
-            if hb:
+            if hb and not in_frame(hb):
+                head_offscreen += 1
+            elif hb:
                 dd = min(g4.seg_box_dist(path[i], path[i + 1], hb) for i in range(len(path) - 1))
                 head_d.append(dd)
                 pa = per_anchor.setdefault(f"{s['actor']}.{s['anchor']}", {"min_dist_to_head_box_px": np.inf, "frames": 0, "at": None})
@@ -407,6 +414,8 @@ def safety_data(out: Path, tl: dict):
         "actors_with_strings": sorted(string_actors),
         "probe_frames_with_strings": frames,
         "string_path_min_dist_to_head_box_px": round(float(min(head_d)), 1) if head_d else None,
+        "head_box_rule": f"只算頭部框（至少一部分）在 {FRAME_W}×{FRAME_H} 畫面內的格；頭部框整個在畫面外的線不算",
+        "string_head_offscreen_skipped": head_offscreen,
         "per_anchor": per_anchor,
         "string_path_intersects_child_box": kid_hits[:50],
         "string_path_intersects_child_box_count": len(kid_hits),
@@ -477,6 +486,11 @@ def analyze(out: Path):
     tl = json.loads((out / "timeline.json").read_text(encoding="utf-8"))
     act = tl["act"]
     res = {"act": act}
+    # G5 修正第 2 輪：capture.mjs 呼叫 capture_probe.py 時這次的 timeline.json 還沒寫好；這裡用新的時間軸重跑，題卡格才排除得正確
+    if (out / "capture/probe.json").exists():
+        print("[actpack.py] 操偶線量測（依時間軸排除題卡格）")
+        r = subprocess.run([sys.executable, str(ROOT / "tools/capture_probe.py"), str(out / "capture"), "--timeline", str(out / "timeline.json")])
+        res["capture_probe_rerun"] = r.returncode == 0
     print("[actpack.py] 投影模擬")
     res["proj"] = {k: len(v) for k, v in g4.proj_keyframes(out).items()}
     print("[actpack.py] 與 G4 並排")
@@ -643,7 +657,7 @@ def index(out: Path):
         L.append("- 未產生（--skip-asr）。")
     L += ["", "## 安全量測", "",
           f"- 操偶線扣點：{'、'.join(sa.get('string_anchors_in_cues', [])) or '本段沒有操偶線'}（只限 wrist／elbow／knee：{sa.get('string_anchors_only_allowed')}）；有操偶線的角色：{'、'.join(sa.get('actors_with_strings', [])) or '無'}。",
-          f"- 有操偶線的量測格 {sa.get('probe_frames_with_strings', 0)}；線到頭部框最短 {fmt(sa.get('string_path_min_dist_to_head_box_px'))} px；線經過兒童立牌外框 {sa.get('string_path_intersects_child_box_count', 0)} 格。",
+          f"- 有操偶線的量測格 {sa.get('probe_frames_with_strings', 0)}；線到頭部框最短 {fmt(sa.get('string_path_min_dist_to_head_box_px'))} px（只算頭部框在畫面內的格；畫面外略過 {sa.get('string_head_offscreen_skipped', 0)} 條）；線經過兒童立牌外框 {sa.get('string_path_intersects_child_box_count', 0)} 格。",
           f"- 必要旁白：{json.dumps({k: {'cue＝劇本': v['cue_equals_script'], '劇本＝CLAUDE.md': v['script_equals_claude_md'], '說話者': v['speaker']} for k, v in (sa.get('required_narration') or {}).items()}, ensure_ascii=False) if sa.get('required_narration') else '本段沒有必要旁白'}。",
           f"- 台詞與劇本 v03 逐字不同：{len(sa.get('lines_differ_from_script_v03', []))} 句（共 {sa.get('lines_total', '—')} 句）。",
           f"- 字幕：每行最多 {sa.get('subtitle_max_chars_per_row', '—')} 字、每頁最多 {sa.get('subtitle_max_rows_per_page', '—')} 行。",

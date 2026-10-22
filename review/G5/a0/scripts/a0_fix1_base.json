@@ -1,0 +1,1393 @@
+{
+ "format": "antidrug-cues/1",
+ "id": "a0",
+ "title": "開場：主燈骨架不見了",
+ "set": "workshop_g4",
+ "characters": {
+  "ale": {
+   "name": "阿樂叔叔",
+   "rig": "ale_v03",
+   "x": -2.6,
+   "z": 0,
+   "facing": 1,
+   "fallback": "adult"
+  },
+  "xiaoqing": {
+   "name": "小晴",
+   "rig": "standee:xiaoqing",
+   "x": 1.85,
+   "z": 0.45,
+   "facing": 1,
+   "fallback": "child"
+  },
+  "xiaoyu": {
+   "name": "小宇",
+   "rig": "standee:xiaoyu",
+   "x": 3.35,
+   "z": -0.5,
+   "facing": -1,
+   "fallback": "child"
+  },
+  "zhezhe": {
+   "name": "折折",
+   "rig": "zhezhe",
+   "x": 0.55,
+   "z": 1.2,
+   "facing": 1,
+   "fallback": "child"
+  }
+ },
+ "_note": "動態分鏡底稿（tools/build_show_skeleton.py 產生）。本段落由該幕代理擁有；介面見 app/SHOW_INTERFACE.md。cue 的 storyboard 是劇本與節拍表的摘錄，引擎不讀。",
+ "cues": [
+  {
+   "id": "a0_c000",
+   "sceneId": "stage",
+   "kind": "title",
+   "title": "署名卡待機",
+   "initialState": {
+    "stage": {
+     "curtain": "closed",
+     "titleCard": true,
+     "camera": "wide",
+     "set": 0
+    }
+   },
+   "animation": [],
+   "audioId": null,
+   "lines": [],
+   "next": "a0_c001",
+   "prevStable": null,
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "課前待機：布幕閉合、中央署名卡，沒有音樂。學生坐定後按下一步開演。",
+   "checkpoint": {
+    "label": "開演",
+    "atMinute": 0
+   }
+  },
+  {
+   "id": "a0_c001",
+   "sceneId": "workshop",
+   "kind": "curtain",
+   "title": "開幕",
+   "initialState": {
+    "stage": {
+     "curtain": "closed",
+     "titleCard": true,
+     "camera": "wide",
+     "set": 0
+    },
+    "characters": {}
+   },
+   "animation": [
+    {
+     "name": "title.fadeOut",
+     "start": 0,
+     "duration": 1.0
+    },
+    {
+     "name": "light.dim",
+     "start": 0,
+     "duration": 1.0,
+     "params": {
+      "to": 0.82
+     }
+    },
+    {
+     "name": "fx.spot",
+     "start": 0.1,
+     "duration": 2.6,
+     "params": {
+      "to": 0.7,
+      "sweep": [
+       [
+        -6.0,
+        4.0,
+        4.0
+       ],
+       [
+        3.5,
+        4.4,
+        4.0
+       ]
+      ]
+     }
+    },
+    {
+     "name": "light.restore",
+     "start": 2.4,
+     "duration": 1.6
+    },
+    {
+     "name": "curtain.open",
+     "start": 1.0,
+     "duration": 2.0
+    },
+    {
+     "name": "camera.move",
+     "start": 1.6,
+     "duration": 2.6,
+     "params": {
+      "to": "g4_wide"
+     }
+    },
+    {
+     "name": "set.popup",
+     "start": 3.0,
+     "duration": 4.5
+    },
+    {
+     "name": "camera.move",
+     "start": 7.0,
+     "duration": 4.6,
+     "params": {
+      "to": "g4_mid"
+     }
+    }
+   ],
+   "audioId": null,
+   "music": [
+    {
+     "id": "music_opening",
+     "at": 0,
+     "loop": false,
+     "fade": 0.2
+    }
+   ],
+   "lines": [
+    {
+     "id": "a0_c001_01",
+     "speaker": "旁白",
+     "text": "這裡是小燈鎮。每年秋天，鎮上都會辦紙燈節。",
+     "start": 7.6
+    }
+   ],
+   "next": "a0_c002",
+   "prevStable": "a0_c000",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX5",
+    "FX4",
+    "FX6",
+    "FX3"
+   ],
+   "teacherNote": "一次按鍵完成：署名卡約 1 秒淡出、場燈漸暗、柔和追光慢慢掃過台口 → 摺層紙布幕約 2 秒打開（3.0 秒對上開幕曲落點）→ 立體書景片依序立起（空的燈籠店，還沒有人）→ 劇名「紙燈節」紙條約 5.2 秒淡入、停約 3 秒後收起 → 鏡頭慢慢推到工作台中景（4.6 秒，光敏：放慢），停住等老師。開幕曲一次播完、自然收尾。（全劇版：旁白 a0_c001_01 在 7.6 秒進來。）",
+   "checkpoint": null,
+   "minDuration": 11.6,
+   "sfx": [
+    {
+     "id": "sfx_curtain_open",
+     "at": 1.0
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 4.0,
+     "gain": 0.5
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 6.0,
+     "gain": 0.45
+    }
+   ],
+   "storyboard": {
+    "beat": "署名卡約 1 秒淡出 → 場燈漸暗、聚光燈慢掃台口 → 布幕約 2 秒張開 → 立體書景片依序立起 → 劇名紙條約 3 秒（v02 動作 21 秒，縮停格不刪內容）",
+    "cast": "無角色",
+    "camera": "固定台口 → 推進大全景",
+    "sound": "S1 對上 M1 落點；旁白",
+    "directions": [
+     "（課前待機：布幕閉合，中央是「許博明老師製作」署名卡，只有極輕的紙面光影，沒有音樂。）",
+     "（老師按下一步：署名卡約 1 秒淡出 → 場燈漸暗，聚光燈慢慢掃過台口 → 摺層紙布幕約 2 秒張開，紙張摩擦聲對上音樂落點。）",
+     "（立體書式揭露：前景桂花葉片、中景紅磚騎樓與燈籠店、遠景山稜和一串串小燈籠，依不同節奏立起；鏡頭帶觀眾推進小鎮廣場。）",
+     "（劇名「紙燈節」以程式字型浮在天空的紙條上，約 3 秒後收起。）"
+    ],
+    "estimateSec": 26.0,
+    "actionSec": 21.0
+   },
+   "set": "workshop_a0"
+  },
+  {
+   "id": "a0_c002",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "折折登場",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "a0_fold",
+     "light": 1
+    },
+    "characters": {
+     "zhezhe": {
+      "visible": true,
+      "emotion": "neutral",
+      "x": 0.85,
+      "y": 1.4,
+      "z": -0.6
+     },
+     "ale": {
+      "visible": true,
+      "pose": "sit",
+      "emotion": "smile",
+      "x": -2.6,
+      "z": 0,
+      "facing": 1,
+      "popup": 0
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "zhezhe.fold",
+     "start": -1.2,
+     "target": "zhezhe",
+     "duration": 0.3,
+     "params": {
+      "form": "sheet"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": 1.05,
+     "target": "zhezhe",
+     "duration": 4.0,
+     "params": {
+      "form": "idle"
+     }
+    },
+    {
+     "name": "zhezhe.twitch",
+     "start": 5.05,
+     "target": "zhezhe",
+     "params": {
+      "side": "both"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_01-0.10",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_01+0.95",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_01+1.75",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_02-0.15",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c002_02+2.00",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": -0.42
+     }
+    },
+    {
+     "name": "zhezhe.twitch",
+     "start": "a0_c002_02+2.20",
+     "target": "zhezhe",
+     "params": {
+      "side": "l"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_02+3.20",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a0_c002_02.end+1.30",
+     "duration": 0,
+     "params": {
+      "to": "a0_memory"
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "start": "a0_c002_02.end+1.60",
+     "target": "ale",
+     "duration": 1.6
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c002_02.end+3.10",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c002_02.end+4.20",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c002_02.end+5.30",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c002_03-0.45",
+     "target": "ale",
+     "params": {
+      "emotion": "greet"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a0_c002_03-0.40",
+     "target": "ale",
+     "duration": 0.7,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c002_03-0.60",
+     "target": "zhezhe",
+     "duration": 0.5,
+     "params": {
+      "yaw": -0.5
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c002_03.end+0.60",
+     "target": "ale",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c002_03.end+0.30",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    }
+   ],
+   "audioId": "music_zhezhe",
+   "lines": [
+    {
+     "id": "a0_c002_01",
+     "speaker": "折折",
+     "text": "喵！大家好，我是折折。"
+    },
+    {
+     "id": "a0_c002_02",
+     "speaker": "折折",
+     "text": "我是燈籠紙摺成的貓，是阿樂叔叔把我摺出來的喔。"
+    },
+    {
+     "id": "a0_c002_03",
+     "speaker": "阿樂叔叔",
+     "text": "慢慢摺，燈才會亮。",
+     "start": "a0_c002_02.end+3.00"
+    }
+   ],
+   "next": "a0_c003",
+   "prevStable": "a0_c001",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX13",
+    "FX8"
+   ],
+   "teacherNote": "播完停格（回憶小窗），等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 5.2,
+   "tail": 2.4,
+   "storyboard": {
+    "beat": "燈籠紙自己摺、摺、摺成折折，耳朵立起；回憶小窗：阿樂摺燈籠、抬頭笑",
+    "cast": "折折（程式）；阿樂：分件坐姿、H6 捏、X2",
+    "camera": "推進燈籠店 → 工作台中景 → 回憶小窗",
+    "sound": "S2×3、M2",
+    "directions": [
+     "（鏡頭推進騎樓下的燈籠店。招牌只有燈籠圖示，沒有字。工作台上，一張白色帶淺橙色的燈籠紙自己摺了起來——摺、摺、摺——變成一隻摺紙貓，耳朵啪地立起。）",
+     "（回憶小窗，暖色：阿樂叔叔坐在工作台前，雙手靈巧地摺燈籠，抬頭對折折笑。）"
+    ],
+    "estimateSec": 19.0,
+    "actionSec": 8.0
+   },
+   "set": "workshop_a0",
+   "music": [
+    {
+     "id": "music_town",
+     "at": "a0_c002_02.end-0.60",
+     "fade": 2.5
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_fold",
+     "at": 1.722,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_fold",
+     "at": 2.538,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_fold",
+     "at": 3.354,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": 5.0,
+     "gain": 0.35
+    }
+   ]
+  },
+  {
+   "id": "a0_c003",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "主燈骨架不見了",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "a0_table2",
+     "light": 1
+    },
+    "characters": {
+     "zhezhe": {
+      "visible": true,
+      "emotion": "happy",
+      "x": 0.85,
+      "y": 1.4,
+      "z": -0.6
+     },
+     "ale": {
+      "visible": true,
+      "emotion": "worried",
+      "x": -3.2,
+      "z": -1.55,
+      "facing": 1,
+      "sit": 0
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c003_01+0.20",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a0_c003_01+2.10",
+     "duration": 0,
+     "params": {
+      "to": "a0_design"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c003_01+2.20",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": -0.5
+     }
+    },
+    {
+     "name": "zhezhe.twitch",
+     "start": "a0_c003_01+3.30",
+     "target": "zhezhe",
+     "params": {
+      "side": "both"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a0_c003_02-0.20",
+     "duration": 0,
+     "params": {
+      "to": "a0_base"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c003_02+0.10",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": -0.45
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c003_02+1.40",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "ale",
+     "start": "a0_c003_02.end+0.60",
+     "duration": 2.6,
+     "params": {
+      "dx": 2.58
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": "a0_c003_02.end+1.90",
+     "duration": 0,
+     "params": {
+      "to": "a0_ale"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c003_02.end+0.90",
+     "target": "zhezhe",
+     "duration": 0.5,
+     "params": {
+      "yaw": -0.45
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c003_02.end+2.85",
+     "target": "ale",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a0_c003_02.end+2.95",
+     "target": "ale",
+     "duration": 0.7,
+     "params": {
+      "to": 0.09
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c003_02.end+2.95",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.7
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a0_c003_03-0.35",
+     "target": "ale",
+     "duration": 0.7,
+     "params": {
+      "to": 0.07
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c003_03-0.30",
+     "target": "ale",
+     "params": {
+      "emotion": "confused"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a0_c003_03+1.20",
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c003_03+0.90",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": "a0_c003_04+1.00",
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c003_04-0.10",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "sad"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c003_04+1.20",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": 0.0
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a0_c003_04+0.40",
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c003_04+1.50",
+     "target": "ale",
+     "params": {
+      "emotion": "worried"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a0_c003_01",
+     "speaker": "折折",
+     "text": "明天就是紙燈節。今年的主燈，是照著我的樣子做的！"
+    },
+    {
+     "id": "a0_c003_02",
+     "speaker": "折折",
+     "text": "可是……主燈的竹子骨架，不見了！",
+     "start": "a0_c003_01.end+0.60"
+    },
+    {
+     "id": "a0_c003_03",
+     "speaker": "阿樂叔叔",
+     "text": "奇怪，我昨天晚上明明放在這裡啊。",
+     "start": "a0_c003_02.end+3.20"
+    },
+    {
+     "id": "a0_c003_04",
+     "speaker": "折折",
+     "text": "沒有骨架，就沒有主燈。紙燈節怎麼辦？"
+    }
+   ],
+   "next": "a0_c004",
+   "prevStable": "a0_c002",
+   "skippable": false,
+   "compression": 0,
+   "fx": [],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 1.15,
+   "tail": 2.0,
+   "storyboard": {
+    "beat": "工作台空了一塊；設計圖；音樂停半拍；阿樂從裡間走出、抓抓頭",
+    "cast": "阿樂：站姿、H1→手抬到頭側、X11 疲倦；折折耳朵微垂",
+    "camera": "工作台中景 → 設計圖近景 → 阿樂中景",
+    "sound": "M1 停半拍",
+    "directions": [
+     "（回到現在。工作台中央空了一大塊，牆上釘著主燈設計圖：一隻大大的摺紙貓燈，沒有任何文字。）",
+     "（音樂停半拍。阿樂叔叔從裡間走出來，抓抓頭，看起來有點累。）"
+    ],
+    "estimateSec": 24.0,
+    "actionSec": 6.0
+   },
+   "set": "workshop_a0",
+   "setFade": 0.8,
+   "music": [
+    {
+     "id": "none",
+     "at": "a0_c003_02.end-0.10",
+     "fade": 0.35
+    },
+    {
+     "id": "music_town",
+     "at": "a0_c003_03-0.20",
+     "fade": 1.4
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_footsteps",
+     "at": "a0_c003_02.end+0.40",
+     "gain": 0.3
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": "a0_c003_02.end+1.50",
+     "gain": 0.35
+    }
+   ]
+  },
+  {
+   "id": "a0_c004",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "小晴和小宇",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "a0_shopwide",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "worried",
+      "x": -0.62,
+      "z": -1.55,
+      "facing": 1,
+      "sit": 0
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "worried",
+      "x": 0.62,
+      "y": 1.4,
+      "z": -0.6
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile",
+      "x": 8.5,
+      "z": 0.35,
+      "facing": -1,
+      "pose": "walk"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile",
+      "x": 8.7,
+      "z": 0.15,
+      "facing": 1,
+      "pose": "walk_l"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "puppet.move",
+     "target": "xiaoyu",
+     "start": 0.35,
+     "duration": 3.0,
+     "params": {
+      "dx": -6.9
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 1.75,
+     "duration": 2.8,
+     "params": {
+      "dx": -6.0
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 3.1,
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 4.6,
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 2.0,
+     "target": "ale",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": 2.2,
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": 2.3,
+     "target": "zhezhe",
+     "duration": 0.5,
+     "params": {
+      "yaw": 0.4
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 5.2,
+     "duration": 0,
+     "params": {
+      "to": "a0_kids"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a0_c004_02+0.20",
+     "target": "xiaoqing",
+     "duration": 0.6,
+     "params": {
+      "to": 0.04
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c004_03-0.10",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": "a0_c004_03.end-0.25",
+     "target": "zhezhe",
+     "duration": 1.3,
+     "params": {
+      "form": "hat",
+      "fumble": true
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": "a0_c004_03.end+1.25",
+     "target": "zhezhe",
+     "duration": 0.9,
+     "params": {
+      "pos": [
+       1.62,
+       1.99,
+       0.47
+      ],
+      "height": 0.45
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c004_03.end+2.25",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "surprised"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": "a0_c004_04+0.30",
+     "target": "xiaoyu",
+     "duration": 0.6,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c004_04+1.60",
+     "target": "xiaoyu",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c004_03.end+2.35",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "surprised"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a0_c004_04+1.00",
+     "target": "xiaoqing",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a0_c004_05+0.20",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": -0.03
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "start": "a0_c004_05.end+0.30",
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.0
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": "a0_c004_03-0.90",
+     "target": "zhezhe",
+     "duration": 0.7,
+     "params": {
+      "pos": [
+       1.0,
+       1.4,
+       -0.6
+      ],
+      "height": 0.25
+     }
+    },
+    {
+     "name": "camera.move",
+     "start": "a0_c004_03-0.50",
+     "duration": 3.0,
+     "params": {
+      "to": "a0_hat"
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a0_c004_01",
+     "speaker": "小宇",
+     "text": "阿樂叔叔早！折折早！"
+    },
+    {
+     "id": "a0_c004_02",
+     "speaker": "小晴",
+     "text": "骨架不見了？我記下來。"
+    },
+    {
+     "id": "a0_c004_03",
+     "speaker": "折折",
+     "text": "交給我！我摺成放大鏡，馬上找到！",
+     "skippableWhenBehind": true,
+     "start": "a0_c004_02.end+2.00"
+    },
+    {
+     "id": "a0_c004_04",
+     "speaker": "小宇",
+     "text": "呃……謝謝，我剛好缺一頂帽子。",
+     "skippableWhenBehind": true
+    },
+    {
+     "id": "a0_c004_05",
+     "speaker": "阿樂叔叔",
+     "text": "你們先去上學。放學再來幫叔叔找，好不好？"
+    },
+    {
+     "id": "a0_c004_06",
+     "speaker": "小晴、小宇",
+     "text": "好！"
+    }
+   ],
+   "next": "a0_c005",
+   "prevStable": "a0_c003",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX13"
+   ],
+   "teacherNote": "播完停格，等老師按下一步。",
+   "checkpoint": null,
+   "voStart": 3.35,
+   "tail": 1.8,
+   "storyboard": {
+    "beat": "風鈴；兩孩子從右側進門；小晴記筆記；折折想摺放大鏡卻摺成帽子落在小宇頭上；阿樂請他們先上學",
+    "cast": "小晴：H5 握筆＋筆記本、X8；小宇：H3 揮手、X2 → 戴帽子 X4 → X2；阿樂 X2；小宇左腕的兒童手錶從這裡起就看得見（伏筆）",
+    "camera": "店內全景 → 筆記本特寫（竹骨架與問號由程式畫線）",
+    "sound": "S6、S2、M2",
+    "directions": [
+     "（門口風鈴輕響。小晴和小宇背著書包從右側進來，上學前順路來看主燈。）",
+     "（小晴翻開小筆記本，畫下一個竹骨架和一個大問號。）",
+     "（折折一摺——卻摺成一頂紙帽子，輕輕落在小宇頭上。）"
+    ],
+    "estimateSec": 25.0,
+    "actionSec": 7.0
+   },
+   "set": "workshop_a0",
+   "music": [
+    {
+     "id": "music_zhezhe",
+     "at": "a0_c004_03-0.30",
+     "fade": 0.9
+    },
+    {
+     "id": "music_town",
+     "at": "a0_c004_05-0.60",
+     "fade": 1.6
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_windchime",
+     "at": 0.15,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": 0.45,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_fold",
+     "at": "a0_c004_03.end-0.12",
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_paper_rustle",
+     "at": "a0_c004_03.end+2.25",
+     "gain": 0.35
+    }
+   ]
+  },
+  {
+   "id": "a0_c005",
+   "sceneId": "workshop_g4",
+   "kind": "scene",
+   "title": "請大家一起找",
+   "initialState": {
+    "stage": {
+     "curtain": "open",
+     "camera": "a0_hat",
+     "light": 1
+    },
+    "characters": {
+     "ale": {
+      "visible": true,
+      "emotion": "smile",
+      "x": -0.62,
+      "z": -1.55,
+      "facing": 1,
+      "sit": 0
+     },
+     "zhezhe": {
+      "visible": true,
+      "emotion": "happy",
+      "x": 1.62,
+      "y": 1.99,
+      "z": 0.47
+     },
+     "xiaoyu": {
+      "visible": true,
+      "emotion": "smile",
+      "x": 1.6,
+      "z": 0.35,
+      "facing": -1,
+      "pose": "standwatch"
+     },
+     "xiaoqing": {
+      "visible": true,
+      "emotion": "smile",
+      "x": 2.7,
+      "z": 0.15,
+      "facing": 1,
+      "pose": "stand"
+     }
+    }
+   },
+   "animation": [
+    {
+     "name": "zhezhe.fold",
+     "start": -1.2,
+     "target": "zhezhe",
+     "duration": 0.3,
+     "params": {
+      "form": "hat"
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "start": 0.35,
+     "target": "zhezhe",
+     "duration": 1.35,
+     "params": {
+      "pos": [
+       -7.0,
+       0.0,
+       6.0
+      ],
+      "height": 1.1
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "start": 1.75,
+     "target": "zhezhe",
+     "duration": 1.3,
+     "params": {
+      "form": "idle",
+      "scale": 1.6
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 1.0,
+     "target": "xiaoyu",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk_r"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoyu",
+     "start": 1.9,
+     "duration": 2.6,
+     "params": {
+      "dx": 9.2
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": 2.5,
+     "target": "xiaoqing",
+     "duration": 0.24,
+     "params": {
+      "pose": "walk"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 3.35,
+     "duration": 2.4,
+     "params": {
+      "dx": 8.6
+     }
+    },
+    {
+     "name": "puppet.wave",
+     "start": 1.1,
+     "target": "ale",
+     "duration": 2.6
+    },
+    {
+     "name": "camera.cut",
+     "start": 0.3,
+     "duration": 0,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fx.spot",
+     "start": 3.6,
+     "duration": 2.0,
+     "params": {
+      "to": 0.6,
+      "target": "zhezhe"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c005_01-0.20",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c005_02+0.20",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": 0.35
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c005_02+2.60",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": -0.3
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "start": "a0_c005_03-0.20",
+     "target": "zhezhe",
+     "duration": 0.6,
+     "params": {
+      "yaw": 0.0
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "start": "a0_c005_03+0.30",
+     "target": "zhezhe",
+     "params": {
+      "emotion": "proud"
+     }
+    },
+    {
+     "name": "zhezhe.twitch",
+     "start": "a0_c005_03.end+0.25",
+     "target": "zhezhe",
+     "params": {
+      "side": "both"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": 4.6,
+     "target": "ale",
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.tilt",
+     "start": 4.7,
+     "target": "ale",
+     "duration": 0.8,
+     "params": {
+      "to": 0.05
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": 5.0,
+     "target": "ale",
+     "duration": 0.9,
+     "params": {
+      "to": 0.6
+     }
+    }
+   ],
+   "audioId": null,
+   "lines": [
+    {
+     "id": "a0_c005_01",
+     "speaker": "折折",
+     "text": "大家也幫我找，好不好？看到線索，舉手就好，不用喊出來。"
+    },
+    {
+     "id": "a0_c005_02",
+     "speaker": "折折",
+     "text": "台口上這八盞燈，每完成一題，我們就一起點亮一盞。"
+    },
+    {
+     "id": "a0_c005_03",
+     "speaker": "折折",
+     "text": "八盞全亮，小燈鎮就會亮起來！"
+    }
+   ],
+   "next": "a1_c001",
+   "prevStable": "a0_c004",
+   "skippable": false,
+   "compression": 0,
+   "fx": [
+    "FX4",
+    "FX13"
+   ],
+   "teacherNote": "（約 1 分鐘）今天有八題，每題三個答案。聽到「3、2、1，一起比」，用手指比 1、2、3，手舉過頭；不用喊，也不離開座位。\n看到老師這個安靜手勢，再聽到折折「收摺」的聲音，就是要安靜下來。\n不管答對幾個人，每完成一題，大家一起做「捧燈手」：雙手在胸前捧成一盞燈，老師一按，燈就亮；燈亮了，看老師的安靜手勢，就把手放下、安靜下來。我們先試一次。（全班試一次捧燈手，接著做一次安靜手勢，等安靜再按下一步。正式作答時，老師說完「捧燈手——」就按，不等全班都做好。）",
+   "checkpoint": null,
+   "voStart": 5.3,
+   "tail": 2.4,
+   "storyboard": {
+    "beat": "孩子往右跑出門；折折把帽子摺回自己，跳到台口前緣對全場說話；後拉露出八盞未亮的燈；停在穩定畫面",
+    "cast": "小晴、小宇：分件跑步循環往右；折折",
+    "camera": "後拉到台口全景",
+    "sound": "M1 輕版收尾",
+    "directions": [
+     "（小晴、小宇往右跑出門。折折把紙帽子摺回自己身上，跳到台口前緣，直接對全場說話。鏡頭後拉，露出台口上方一串八盞還沒亮的紙燈。）",
+     "（停在穩定畫面，等老師說明規則。）"
+    ],
+    "estimateSec": 20.0,
+    "actionSec": 5.0
+   },
+   "set": "workshop_a0",
+   "music": [],
+   "sfx": [
+    {
+     "id": "sfx_paper_rustle",
+     "at": 1.7,
+     "gain": 0.3
+    },
+    {
+     "id": "sfx_fold",
+     "at": 1.88,
+     "gain": 0.7
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": 1.95,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": 3.4,
+     "gain": 0.35
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,4 @@
+- Source: `/Users/boming/.codex/generated_images/01a15e9f-4997-7f51-a2a4-ffe4a6dda141/exec-2592a87a-6880-499e-ab35-9369f3c06083.png`
+- Destination: [review/G5/a6/raw/bow_adults_v01.png](</Users/boming/Documents/AI tool/反毒小劇場/review/G5/a6/raw/bow_adults_v01.png>) — copied unmodified.
+- Dimensions: **1536 × 1024**
+- Alpha: **Yes**, verified transparent pixels.

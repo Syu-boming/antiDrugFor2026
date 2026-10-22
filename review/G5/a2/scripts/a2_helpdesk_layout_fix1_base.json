@@ -1,0 +1,111 @@
+{
+ "format": "antidrug-set/1",
+ "title": "廣場另一頭的求助站（第二幕 a2_c012）",
+ "wall": {
+  "image": "sets/square/set-square_sky",
+  "width": 26,
+  "y": -0.5,
+  "z": -5.0,
+  "emissive": 0.32
+ },
+ "floor": {
+  "color": "#d9c3a0",
+  "z": 16.0,
+  "depth": 24
+ },
+ "layers": [
+  {
+   "id": "mountains",
+   "image": "sets/square/set-square_mountains",
+   "x": 0,
+   "y": -1.724,
+   "z": -4.2,
+   "width": 24,
+   "layer": "far"
+  },
+  {
+   "id": "backrow",
+   "image": "sets/square/set-square_backrow",
+   "x": -1.5,
+   "y": -0.08,
+   "z": -3.2,
+   "width": 15.5,
+   "layer": "far",
+   "emissive": 0.3
+  },
+  {
+   "id": "tree-a",
+   "image": "sets/square/set-square_tree-a",
+   "x": -5.6,
+   "y": -0.057,
+   "z": -1.4,
+   "width": 4.2,
+   "layer": "mid"
+  },
+  {
+   "id": "tent",
+   "image": "tent",
+   "x": 2.5,
+   "y": -0.02,
+   "z": -0.9,
+   "width": 4.6,
+   "layer": "mid",
+   "order": 10
+  },
+  {
+   "id": "crate",
+   "image": "crate",
+   "x": 5.1,
+   "y": -0.02,
+   "z": -0.5,
+   "width": 1.0,
+   "layer": "mid",
+   "order": 12
+  },
+  {
+   "id": "planter-long",
+   "image": "sets/square/set-square_planter-long",
+   "x": -2.6,
+   "y": -0.054,
+   "z": -1.0,
+   "width": 3.6,
+   "layer": "mid",
+   "order": 8
+  },
+  {
+   "id": "planter-mid",
+   "image": "sets/square/set-square_planter-mid",
+   "x": 6.9,
+   "y": -0.039,
+   "z": 2.4,
+   "width": 1.6,
+   "layer": "fore"
+  }
+ ],
+ "grade": {
+  "preset": "day_warm"
+ },
+ "marks": {
+  "ye": {
+   "x": 1.9,
+   "z": 0.1
+  }
+ },
+ "cameras": {
+  "a2_help_mid": {
+   "pos": [
+    0.9,
+    1.9,
+    17.5
+   ],
+   "target": [
+    0.9,
+    1.72,
+    0
+   ],
+   "fov": 20
+  }
+ },
+ "_made_by": "review/G5/a2/scripts/build_a2_art.py（a2 代理）；遠景、行道樹、花台沿用 G5 共用美術的廣場景片（sets/square）",
+ "_note": "求助站帳篷的圓牌是手捧愛心圖示（同葉護理師識別證），沒有紅十字、沒有文字。孩子從畫面左邊走進來（往右＝安全方位）。"
+}

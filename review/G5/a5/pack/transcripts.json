@@ -1,0 +1,1673 @@
+{
+ "method": "faster-whisper（tools/vo_lib.py 的模型與設定）逐句轉寫；比對沿用 vo_lib.compare（轉繁體、去標點後與劇本逐字對齊，字不同的段落再比含聲調拼音）。來源「配音檔」＝audio/vo 的單句檔（v04）；「混音中該句」＝audio/a5_mix.wav 中該句時段（前後各加 0.1 秒），含配樂與音效。",
+ "rows": [
+  {
+   "id": "a5_c001_01",
+   "speaker": "小晴",
+   "script": "主燈骨架！原來在叔叔車上！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "主燈骨架,原來在叔叔車上。",
+     "hyp_trad": "主燈骨架原來在叔叔車上",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "主燈骨架,原來在叔叔車上。",
+     "hyp_trad": "主燈骨架原來在叔叔車上",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "主燈骨架,原來在叔叔車上。",
+     "hyp_trad": "主燈骨架原來在叔叔車上",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "主燈骨架,原來在叔叔車上。",
+     "hyp_trad": "主燈骨架原來在叔叔車上",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c001_02",
+   "speaker": "陳伯伯",
+   "script": "阿樂，你坐著。林老師，我去轉角帶小朋友過馬路，很快回來！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "阿勒,你坐著。林老師,我去轉角帶小朋友過馬路,很快回來。",
+     "hyp_trad": "阿勒你坐著林老師我去轉角帶小朋友過馬路很快回來",
+     "cer": 0.043,
+     "per": 0.043,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂,你坐著。林老師,我去轉腳帶小朋友過馬路,很快回來。",
+     "hyp_trad": "阿樂你坐著林老師我去轉腳帶小朋友過馬路很快回來",
+     "cer": 0.043,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "角",
+       "hyp": "腳",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "阿勒,你坐著。林老師,我去轉角帶小朋友過馬路,很快回來。",
+     "hyp_trad": "阿勒你坐著林老師我去轉角帶小朋友過馬路很快回來",
+     "cer": 0.043,
+     "per": 0.043,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂,你坐著。林老師,我去轉腳帶小朋友過馬路,很快回來。",
+     "hyp_trad": "阿樂你坐著林老師我去轉腳帶小朋友過馬路很快回來",
+     "cer": 0.043,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "角",
+       "hyp": "腳",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c001_03",
+   "speaker": "林老師",
+   "script": "好，我馬上出來！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "好,我馬上出來。",
+     "hyp_trad": "好我馬上出來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好,我馬上出來",
+     "hyp_trad": "好我馬上出來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "好 我馬上出來",
+     "hyp_trad": "好我馬上出來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好,我馬上出來。",
+     "hyp_trad": "好我馬上出來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c001_04",
+   "speaker": "小宇",
+   "script": "阿樂叔叔？阿樂叔叔！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "阿樂叔叔 阿樂叔叔",
+     "hyp_trad": "阿樂叔叔阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂叔叔!阿樂叔叔!",
+     "hyp_trad": "阿樂叔叔阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "阿樂叔叔",
+     "hyp_trad": "阿樂叔叔",
+     "cer": 0.5,
+     "per": 0.5,
+     "diffs": [
+      {
+       "ref": "阿樂叔叔",
+       "hyp": "",
+       "kind": "漏字"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿樂叔叔,阿樂叔叔。",
+     "hyp_trad": "阿樂叔叔阿樂叔叔",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c001_05",
+   "speaker": "小晴",
+   "script": "他……叫不醒。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "他叫不行。",
+     "hyp_trad": "他叫不行",
+     "cer": 0.25,
+     "per": 0.25,
+     "diffs": [
+      {
+       "ref": "醒",
+       "hyp": "行",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "他叫不醒。",
+     "hyp_trad": "他叫不醒",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "他叫不行。",
+     "hyp_trad": "他叫不行",
+     "cer": 0.25,
+     "per": 0.25,
+     "diffs": [
+      {
+       "ref": "醒",
+       "hyp": "行",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "他叫不醒。",
+     "hyp_trad": "他叫不醒",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c001_06",
+   "speaker": "折折",
+   "script": "陳伯伯在轉角，林老師在辦公室。他們該怎麼做？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c001_06_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "陳伯伯在轉角,林老師在辦公室。他們該怎麼做?",
+     "hyp_trad": "陳伯伯在轉角林老師在辦公室他們該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯在轉角,林老師在辦公室。他們該怎麼做?",
+     "hyp_trad": "陳伯伯在轉角林老師在辦公室他們該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "陳伯伯在轉角,林老師在辦公室。他們該怎麼做?",
+     "hyp_trad": "陳伯伯在轉角林老師在辦公室他們該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯在轉角,林老師在辦公室,他們該怎麼做?",
+     "hyp_trad": "陳伯伯在轉角林老師在辦公室他們該怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c002_01",
+   "speaker": "折折",
+   "script": "第七題！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c002_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第七題",
+     "hyp_trad": "第七題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第七題",
+     "hyp_trad": "第七題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第七題",
+     "hyp_trad": "第七題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第七題",
+     "hyp_trad": "第七題",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c002_02",
+   "speaker": "旁白",
+   "script": "有人叫不醒。你站在安全的地方，接下來怎麼做？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c002_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "有人叫不行,你站在安全的地方,接下來怎麼做?",
+     "hyp_trad": "有人叫不行你站在安全的地方接下來怎麼做",
+     "cer": 0.053,
+     "per": 0.053,
+     "diffs": [
+      {
+       "ref": "醒",
+       "hyp": "行",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "有人叫不醒。你站在安全的地方,接下來怎麼做?",
+     "hyp_trad": "有人叫不醒你站在安全的地方接下來怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "有人叫不行,你站在安全的地方,接下來怎麼做?",
+     "hyp_trad": "有人叫不行你站在安全的地方接下來怎麼做",
+     "cer": 0.053,
+     "per": 0.053,
+     "diffs": [
+      {
+       "ref": "醒",
+       "hyp": "行",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "有人叫不醒。你站在安全的地方,接下來怎麼做?",
+     "hyp_trad": "有人叫不醒你站在安全的地方接下來怎麼做",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c002_03",
+   "speaker": "旁白",
+   "script": "一，先拍下影片，再傳給同學看。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c002_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "1 先拍下影片再傳給同學看",
+     "hyp_trad": "1先拍下影片再傳給同學看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 先拍下影片,再傳給同學看。",
+     "hyp_trad": "1先拍下影片再傳給同學看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "1 先拍下影片再傳給同學看。",
+     "hyp_trad": "1先拍下影片再傳給同學看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "1. 先拍下影片,再傳給同學看。",
+     "hyp_trad": "1先拍下影片再傳給同學看",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c002_04",
+   "speaker": "旁白",
+   "script": "二，自己先跑過去，用力把他搖醒。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c002_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "2. 自己先跑過去,用力把它搖醒。",
+     "hyp_trad": "2自己先跑過去用力把它搖醒",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "他",
+       "hyp": "它",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 自己先跑過去,用力把它搖醒。",
+     "hyp_trad": "2自己先跑過去用力把它搖醒",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "他",
+       "hyp": "它",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "2. 自己先跑過去,用力把他咬醒。",
+     "hyp_trad": "2自己先跑過去用力把他咬醒",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "搖",
+       "hyp": "咬",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "2. 自己先跑過去,用力把它搖醒。",
+     "hyp_trad": "2自己先跑過去用力把它搖醒",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "他",
+       "hyp": "它",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c002_05",
+   "speaker": "旁白",
+   "script": "三，先找大人，沒大人就撥 119。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c002_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "3.先找大人,梅大人就播119。",
+     "hyp_trad": "3先找大人梅大人就播119",
+     "cer": 0.154,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "沒",
+       "hyp": "梅",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,先找大人,沒大人就播一一九。",
+     "hyp_trad": "三先找大人沒大人就播一一九",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "3.先找大人,沒大人就撥119。",
+     "hyp_trad": "3先找大人沒大人就撥119",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "三,先找大人,沒大人就播一一九。",
+     "hyp_trad": "三先找大人沒大人就播一一九",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c003_01",
+   "speaker": "旁白",
+   "script": "正解是三：先找大人，沒大人就撥 119。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c003_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "正解是三,先找大人,沒大人就播一一九。",
+     "hyp_trad": "正解是三先找大人沒大人就播一一九",
+     "cer": 0.062,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋3,先找大人,沒大人就播119。",
+     "hyp_trad": "正解釋3先找大人沒大人就播119",
+     "cer": 0.125,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "正解是三,先找大人,沒大人就播一一九。",
+     "hyp_trad": "正解是三先找大人沒大人就播一一九",
+     "cer": 0.062,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "正解釋3,先找大人,沒大人就播119。",
+     "hyp_trad": "正解釋3先找大人沒大人就播119",
+     "cer": 0.125,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "是",
+       "hyp": "釋",
+       "kind": "同音字（讀音一致）"
+      },
+      {
+       "ref": "撥",
+       "hyp": "播",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c004_01",
+   "speaker": "折折",
+   "script": "第七盞燈，亮了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c004_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "第七盞燈 亮了",
+     "hyp_trad": "第七盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第七盞燈,亮了。",
+     "hyp_trad": "第七盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第七盞燈 亮了",
+     "hyp_trad": "第七盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "第七盞燈,亮了。",
+     "hyp_trad": "第七盞燈亮了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c005_01",
+   "speaker": "小宇",
+   "script": "陳伯伯——！",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c005_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "陳伯伯",
+     "hyp_trad": "陳伯伯",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯!",
+     "hyp_trad": "陳伯伯",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "陳伯伯",
+     "hyp_trad": "陳伯伯",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯",
+     "hyp_trad": "陳伯伯",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c005_02",
+   "speaker": "小晴",
+   "script": "我去辦公室找林老師！你待在門裡面，不要過去。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c005_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我去辦公室找林老師,你待在門裡面,不要過去。",
+     "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "我去辦公室找林老師,你待在門裡面,不要過去。",
+     "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我去辦公室找林老師,你待在門裡面,不要過去。",
+     "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "我去辦公室找林老師,你待在門裡面,不要過去。",
+     "hyp_trad": "我去辦公室找林老師你待在門裡面不要過去",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "不要",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c005_03",
+   "speaker": "小宇",
+   "script": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c005_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "陳伯伯聽不到,林老師還沒出來,我來打119。",
+     "hyp_trad": "陳伯伯聽不到林老師還沒出來我來打119",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯聽不到,林老師還沒出來,我來打119。",
+     "hyp_trad": "陳伯伯聽不到林老師還沒出來我來打119",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "陳伯伯聽不到,林老師還沒出來,我來打119。",
+     "hyp_trad": "陳伯伯聽不到林老師還沒出來我來打119",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "陳伯伯聽不到,林老師還沒出來,我來打119。",
+     "hyp_trad": "陳伯伯聽不到林老師還沒出來我來打119",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c006_01",
+   "speaker": "執勤人員",
+   "script": "119 您好，請問發生什麼事？在哪裡？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c006_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "119,您好,請問發生什麼事?在哪裡?",
+     "hyp_trad": "119您好請問發生什麼事在哪裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "119,您好,請問發生什麼事?在哪裡?",
+     "hyp_trad": "119您好請問發生什麼事在哪裡",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "第19 您好,請問發生什麼事在哪裡?",
+     "hyp_trad": "第19您好請問發生什麼事在哪裡",
+     "cer": 0.067,
+     "per": 0.067,
+     "diffs": [
+      {
+       "ref": "一",
+       "hyp": "第",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "不一致（需複查）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "第19,您好,請問發生什麼事,在哪裡?",
+     "hyp_trad": "第19您好請問發生什麼事在哪裡",
+     "cer": 0.067,
+     "per": 0.067,
+     "diffs": [
+      {
+       "ref": "一",
+       "hyp": "第",
+       "kind": "字不同"
+      }
+     ],
+     "checks": [
+      {
+       "word": "119",
+       "status": "不一致（需複查）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c006_02",
+   "speaker": "小宇",
+   "script": "這裡是小燈國小正門口。有一個大人坐在門口的椅子上，叫不醒。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c006_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "這裡是小燈國小鎮門口,有一個大人坐在門口的椅子上叫不行。",
+     "hyp_trad": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫不行",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鎮",
+       "kind": "字不同"
+      },
+      {
+       "ref": "醒",
+       "hyp": "行",
+       "kind": "聲調不同（疑讀錯，或轉寫偏好）"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這裡是小燈國小鎮門口,有一個大人坐在門口的椅子上,叫不醒。",
+     "hyp_trad": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫不醒",
+     "cer": 0.038,
+     "per": 0.038,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鎮",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "這裡是小燈國小駿門口。有一個大人坐在門口的椅子上叫不醒。",
+     "hyp_trad": "這裡是小燈國小駿門口有一個大人坐在門口的椅子上叫不醒",
+     "cer": 0.038,
+     "per": 0.038,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "駿",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "這裡是小燈國小鎮門口,有一個大人坐在門口的椅子上,叫不醒。",
+     "hyp_trad": "這裡是小燈國小鎮門口有一個大人坐在門口的椅子上叫不醒",
+     "cer": 0.038,
+     "per": 0.038,
+     "diffs": [
+      {
+       "ref": "正",
+       "hyp": "鎮",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c006_03",
+   "speaker": "執勤人員",
+   "script": "好，我們會派救護車過去。你現在安全嗎？旁邊有大人嗎？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c006_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "好,我們會派救護車過去,你現在安全嗎? 旁邊有大人嗎?",
+     "hyp_trad": "好我們會派救護車過去你現在安全嗎旁邊有大人嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好,我們會派救護車過去,你現在安全嗎?旁邊有大人嗎?",
+     "hyp_trad": "好我們會派救護車過去你現在安全嗎旁邊有大人嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "好,我們會派救護車過去,你現在安全嗎?旁邊有大人嗎?",
+     "hyp_trad": "好我們會派救護車過去你現在安全嗎旁邊有大人嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "好,我們會派救護車過去,你現在安全嗎?旁邊有大人嗎?",
+     "hyp_trad": "好我們會派救護車過去你現在安全嗎旁邊有大人嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c006_04",
+   "speaker": "小宇",
+   "script": "我在校門裡面。我同學去找老師了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c006_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "我在校門裡面,我同學去找老師了。",
+     "hyp_trad": "我在校門裡面我同學去找老師了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我在校門裡面,我同學去找老師了。",
+     "hyp_trad": "我在校門裡面我同學去找老師了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "我在校門裡面, 我同學去找老師了。",
+     "hyp_trad": "我在校門裡面我同學去找老師了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "我在校門裡面,我同學去找老師了。",
+     "hyp_trad": "我在校門裡面我同學去找老師了",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c006_05",
+   "speaker": "執勤人員",
+   "script": "做得很好。待在安全的地方，聽我的指示。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c006_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "做得很好,待在安全的地方聽我的指示。",
+     "hyp_trad": "做得很好待在安全的地方聽我的指示",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "做得很好,待在安全的地方聽我的指示。",
+     "hyp_trad": "做得很好待在安全的地方聽我的指示",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "做得很好,來在安全的地方聽我的指示。",
+     "hyp_trad": "做得很好來在安全的地方聽我的指示",
+     "cer": 0.062,
+     "per": 0.062,
+     "diffs": [
+      {
+       "ref": "待",
+       "hyp": "來",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "做得很好,待在安全的地方聽我的指示。",
+     "hyp_trad": "做得很好待在安全的地方聽我的指示",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c007_01",
+   "speaker": "林老師",
+   "script": "您好，我是小燈國小的老師，我來接手。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c007_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "您好 我是小燈國小的老師 我來接手",
+     "hyp_trad": "您好我是小燈國小的老師我來接手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "您好,我是小燈國小的老師,我來接手。",
+     "hyp_trad": "您好我是小燈國小的老師我來接手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "您好,我是小燈國小的老師,我來接手。",
+     "hyp_trad": "您好我是小燈國小的老師我來接手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "您好,我是小燈國小的老師,我來接手。",
+     "hyp_trad": "您好我是小燈國小的老師我來接手",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c007_02",
+   "speaker": "林老師",
+   "script": "你們沒有跑過去，還馬上找人幫忙，做得很好。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c007_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "你們沒有跑過去,還馬上找人幫忙,做得很好。",
+     "hyp_trad": "你們沒有跑過去還馬上找人幫忙做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你們沒有跑過去,還馬上找人幫忙,做得很好。",
+     "hyp_trad": "你們沒有跑過去還馬上找人幫忙做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "你們沒有跑過去,還馬上找人幫忙,做得很好。",
+     "hyp_trad": "你們沒有跑過去還馬上找人幫忙做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "你們沒有跑過去,還馬上找人幫忙,做得很好。",
+     "hyp_trad": "你們沒有跑過去還馬上找人幫忙做得很好",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c008_01",
+   "speaker": "葉護理師",
+   "script": "阿樂叔叔現在有醫生和護理師照顧，他的家人也來了。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c008_01_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "阿勒叔叔現在有醫生和護理師照顧,他的家人也來了。",
+     "hyp_trad": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿勒叔叔現在有醫生和護理師照顧,他的家人也來了。",
+     "hyp_trad": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "hyp_trad": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "阿勒叔叔現在有醫生和護理師照顧,他的家人也來了。",
+     "hyp_trad": "阿勒叔叔現在有醫生和護理師照顧他的家人也來了",
+     "cer": 0.045,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "樂",
+       "hyp": "勒",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": [
+      {
+       "word": "阿樂",
+       "status": "同音轉寫（讀音一致）"
+      },
+      {
+       "word": "和",
+       "status": "轉寫一致"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c008_02",
+   "speaker": "小晴",
+   "script": "是我們害叔叔被送來醫院的嗎？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c008_02_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "是我們害叔叔被送來醫院的嗎?",
+     "hyp_trad": "是我們害叔叔被送來醫院的嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "是我們亥叔叔被送來醫院的嗎?",
+     "hyp_trad": "是我們亥叔叔被送來醫院的嗎",
+     "cer": 0.077,
+     "per": 0.0,
+     "diffs": [
+      {
+       "ref": "害",
+       "hyp": "亥",
+       "kind": "同音字（讀音一致）"
+      }
+     ],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "是我們害叔叔被送來醫院的嗎?",
+     "hyp_trad": "是我們害叔叔被送來醫院的嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "是我們翰叔叔被送來醫院的嗎?",
+     "hyp_trad": "是我們翰叔叔被送來醫院的嗎",
+     "cer": 0.077,
+     "per": 0.077,
+     "diffs": [
+      {
+       "ref": "害",
+       "hyp": "翰",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c008_03",
+   "speaker": "葉護理師",
+   "script": "不是喔。你們找大人、打 119，是在幫他。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c008_03_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "不是喔,你們找大人打119是在幫他。",
+     "hyp_trad": "不是喔你們找大人打119是在幫他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不是喔,你們找大人打119是在幫他。",
+     "hyp_trad": "不是喔你們找大人打119是在幫他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "不是喔,你們找大人打119是在幫他。",
+     "hyp_trad": "不是喔你們找大人打119是在幫他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    },
+    "large-v3-turbo": {
+     "hyp": "不是喔,你們找大人打119是在幫他。",
+     "hyp_trad": "不是喔你們找大人打119是在幫他",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": [
+      {
+       "word": "119",
+       "status": "轉寫一致"
+      },
+      {
+       "word": "不是",
+       "status": "未驗證（變調轉寫看不出）"
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a5_c008_04",
+   "speaker": "小宇",
+   "script": "叔叔會好起來嗎？",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c008_04_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "叔叔會好起來嗎?",
+     "hyp_trad": "叔叔會好起來嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔會好起來嗎?",
+     "hyp_trad": "叔叔會好起來嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "手術會好起來嗎?",
+     "hyp_trad": "手術會好起來嗎",
+     "cer": 0.286,
+     "per": 0.286,
+     "diffs": [
+      {
+       "ref": "叔叔",
+       "hyp": "手術",
+       "kind": "字不同"
+      }
+     ],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "叔叔會好起來嗎?",
+     "hyp_trad": "叔叔會好起來嗎",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  },
+  {
+   "id": "a5_c008_05",
+   "speaker": "葉護理師",
+   "script": "他需要治療，也需要時間。大家會陪著他，慢慢來。",
+   "cue_text_equals_script": true,
+   "vo_file": "audio/vo/vo_a5_c008_05_v04.wav",
+   "vo_version_v04": true,
+   "vo": {
+    "small": {
+     "hyp": "他需要治療,也需要時間,大家會陪著他慢慢來。",
+     "hyp_trad": "他需要治療也需要時間大家會陪著他慢慢來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "他需要治療,也需要時間,大家會陪著他慢慢來。",
+     "hyp_trad": "他需要治療也需要時間大家會陪著他慢慢來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   },
+   "mix": {
+    "small": {
+     "hyp": "他需要治療,也需要時間,大家會陪著他慢慢來。",
+     "hyp_trad": "他需要治療也需要時間大家會陪著他慢慢來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    },
+    "large-v3-turbo": {
+     "hyp": "他需要治療,也需要時間。大家會陪著他慢慢來。",
+     "hyp_trad": "他需要治療也需要時間大家會陪著他慢慢來",
+     "cer": 0.0,
+     "per": 0.0,
+     "diffs": [],
+     "checks": []
+    }
+   }
+  }
+ ]
+}

@@ -182,17 +182,22 @@ function insertBackdrop(): HTMLCanvasElement {
 // ───────────────────────────── 手部近景：一隻手臂（前臂＋手，白紙芯外框，肘在原點） ─────────────────────────────
 interface ArmParts { group: Group; wristBack: Vector3; mats: Material[] }
 function buildArm(ctx: { image(id: string): HTMLImageElement | undefined }, side: 'r' | 'l', k: number, order: number): ArmParts | null {
-  const fa = ctx.image(`rig/chr-ale_forearm-${side}`), hd = ctx.image(`rig/chr-ale_hand-${side}`);
-  const faO = ctx.image(`rig/chr-ale_forearm-${side}-outline`), hdO = ctx.image(`rig/chr-ale_hand-${side}-outline`);
+  // G5 修正第 2 輪：優先用母版分件的近景處理版（2 倍解析度、紙纖維、2 px 深色紙邊；review/G5/a2/scripts/build_fix2_a2_art.py），
+  // 沒有才用紙偶本體的分件（座標都以母版 px 計，近景版 ×2）
+  const ins = ctx.image(`sets/a2_shop/insert-ale-forearm-${side}`) && ctx.image(`sets/a2_shop/insert-ale-hand-${side}`);
+  const S = ins ? 2 : 1;
+  const src = (part: string): HTMLImageElement | undefined => ctx.image(ins ? `sets/a2_shop/insert-ale-${part}` : `rig/chr-ale_${part}`);
+  const fa = src(`forearm-${side}`), hd = src(`hand-${side}`);
+  const faO = src(`forearm-${side}-outline`), hdO = src(`hand-${side}-outline`);
   if (!fa || !hd) return null;
   // ale_rig.json：forearm_r pivot [83,53]、hand_r pivot [49,32] 接在前臂 [84,238]；forearm_l [71,53]、hand_l [54,32] 接在 [95,251]
-  // 腕背扣點 ale_attach.json wrist_back：forearm_r local [69,210]
-  const P = side === 'r' ? { fa: [83, 53], hd: [49, 32], joint: [84, 238], wb: [69, 210] } : { fa: [71, 53], hd: [54, 32], joint: [95, 251], wb: [80, 222] };
+  // 紙環（修正第 2 輪）：從 ale_attach.json wrist_back〔forearm_r 69,210〕往手的方向移到腕背橫紋上（離關節約 10 px）
+  const P = side === 'r' ? { fa: [83, 53], hd: [49, 32], joint: [84, 238], wb: [77, 229] } : { fa: [71, 53], hd: [54, 32], joint: [95, 251], wb: [89, 243] };
   const mats: Material[] = [];
   const group = new Group();
   const add = (img: HTMLImageElement | undefined, pivot: number[], off: [number, number], z: number, ord: number): void => {
     if (!img) return;
-    const m = imgPlane(img, img.naturalWidth, img.naturalHeight, [pivot[0], pivot[1]], k, mats);
+    const m = imgPlane(img, img.naturalWidth, img.naturalHeight, [pivot[0] * S, pivot[1] * S], k / S, mats);
     m.position.set(off[0], off[1], z);
     m.renderOrder = ord;
     group.add(m);

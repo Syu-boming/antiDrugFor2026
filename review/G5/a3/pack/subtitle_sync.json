@@ -1,0 +1,289 @@
+{
+ "method": "ffmpeg silencedetect noise=-40 dB、d=0.05 s 找配音檔的語音起點（G5 修正第 1 輪：G4 的 −45 dB、0.1 s 抓不到句中短停頓，b1 驗收 a2_c003_02、a4_c001_01 兩頁誤判）；第 1 頁＝第一個起點，之後各頁＝頁起點前後最接近的停頓後起點；差值＝字幕頁起點 − 語音起點",
+ "silencedetect": {
+  "noise_dB": -40,
+  "min_silence_s": 0.05
+ },
+ "range_s": [
+  -0.8,
+  0.1
+ ],
+ "rows": [
+  {
+   "cue": "a3_c001",
+   "line": "a3_c001_01",
+   "page": 1,
+   "text": "折折，你又迷路了？",
+   "subtitle_start_s": 4.9,
+   "voice_start_s": 5.023,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c001_01_v04.wav"
+  },
+  {
+   "cue": "a3_c001",
+   "line": "a3_c001_02",
+   "page": 1,
+   "text": "我是在……測試風向。",
+   "subtitle_start_s": 7.59,
+   "voice_start_s": 7.717,
+   "diff_s": -0.127,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c001_02_v04.wav"
+  },
+  {
+   "cue": "a3_c001",
+   "line": "a3_c001_03",
+   "page": 1,
+   "text": "昨天那個，再給你看看。／試一次沒關係啦，一下下就好。",
+   "subtitle_start_s": 12.03,
+   "voice_start_s": 12.18,
+   "diff_s": -0.15,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c001_03_v04.wav"
+  },
+  {
+   "cue": "a3_c001",
+   "line": "a3_c001_04",
+   "page": 1,
+   "text": "大家都試過了。",
+   "subtitle_start_s": 18.7,
+   "voice_start_s": 18.843,
+   "diff_s": -0.143,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c001_04_v04.wav"
+  },
+  {
+   "cue": "a3_c002",
+   "line": "a3_c002_01",
+   "page": 1,
+   "text": "等一下，我想一想。",
+   "subtitle_start_s": 1.9,
+   "voice_start_s": 2.025,
+   "diff_s": -0.125,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c002_01_v04.wav"
+  },
+  {
+   "cue": "a3_c002",
+   "line": "a3_c002_02",
+   "page": 1,
+   "text": "不用，我不試。我先離開。",
+   "subtitle_start_s": 4.86,
+   "voice_start_s": 4.994,
+   "diff_s": -0.134,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c002_02_v04.wav"
+  },
+  {
+   "cue": "a3_c002",
+   "line": "a3_c002_03",
+   "page": 1,
+   "text": "我們走。",
+   "subtitle_start_s": 8.2,
+   "voice_start_s": 8.382,
+   "diff_s": -0.182,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c002_03_v04.wav"
+  },
+  {
+   "cue": "a3_c003",
+   "line": "a3_c003_01",
+   "page": 1,
+   "text": "林老師，騎樓那邊有人拿閃亮的／盒子，叫我們試一次。",
+   "subtitle_start_s": 2.9,
+   "voice_start_s": 3.03,
+   "diff_s": -0.13,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c003_01_v04.wav"
+  },
+  {
+   "cue": "a3_c003",
+   "line": "a3_c003_02",
+   "page": 1,
+   "text": "謝謝你們告訴我。／老師會請警衛伯伯和警察處理。",
+   "subtitle_start_s": 9.09,
+   "voice_start_s": 9.227,
+   "diff_s": -0.137,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c003_02_v04.wav"
+  },
+  {
+   "cue": "a3_c003",
+   "line": "a3_c003_03",
+   "page": 1,
+   "text": "你們沒有拿，／還馬上來找我，做得很好。",
+   "subtitle_start_s": 15.24,
+   "voice_start_s": 15.424,
+   "diff_s": -0.184,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c003_03_v04.wav"
+  },
+  {
+   "cue": "a3_c004",
+   "line": "a3_c004_01",
+   "page": 1,
+   "text": "換大家了！／先跟小宇說一次：不用，我不試。",
+   "subtitle_start_s": 3,
+   "voice_start_s": 3.138,
+   "diff_s": -0.138,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c004_01_v04.wav"
+  },
+  {
+   "cue": "a3_c004",
+   "line": "a3_c004_01",
+   "page": 2,
+   "text": "我先離開。",
+   "subtitle_start_s": 7.36,
+   "voice_start_s": 7.34,
+   "diff_s": 0.02,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c004_01_v04.wav"
+  },
+  {
+   "cue": "a3_c004",
+   "line": "a3_c004_02",
+   "page": 1,
+   "text": "再加上口訣和動作：不碰、不試；／先離開，找大人。",
+   "subtitle_start_s": 8.9,
+   "voice_start_s": 9.029,
+   "diff_s": -0.129,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c004_02_v04.wav"
+  },
+  {
+   "cue": "a3_c005",
+   "line": "a3_c005_01",
+   "page": 1,
+   "text": "第四題！",
+   "subtitle_start_s": 1.4,
+   "voice_start_s": 1.529,
+   "diff_s": -0.129,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c005_01_v04.wav"
+  },
+  {
+   "cue": "a3_c005",
+   "line": "a3_c005_02",
+   "page": 1,
+   "text": "有人說「試一次沒關係」，／哪個做法比較安全？",
+   "subtitle_start_s": 3.7,
+   "voice_start_s": 3.84,
+   "diff_s": -0.14,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c005_02_v04.wav"
+  },
+  {
+   "cue": "a3_c005",
+   "line": "a3_c005_03",
+   "page": 1,
+   "text": "一，說「不用，／我不試」，離開找大人。",
+   "subtitle_start_s": 8.72,
+   "voice_start_s": 8.847,
+   "diff_s": -0.127,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c005_03_v04.wav"
+  },
+  {
+   "cue": "a3_c005",
+   "line": "a3_c005_04",
+   "page": 1,
+   "text": "二，只試一次而已，應該沒關係。",
+   "subtitle_start_s": 14.21,
+   "voice_start_s": 14.332,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c005_04_v04.wav"
+  },
+  {
+   "cue": "a3_c005",
+   "line": "a3_c005_05",
+   "page": 1,
+   "text": "三，先幫他保管，等一下再還給他。",
+   "subtitle_start_s": 18.44,
+   "voice_start_s": 18.563,
+   "diff_s": -0.123,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c005_05_v04.wav"
+  },
+  {
+   "cue": "a3_c006",
+   "line": "a3_c006_01",
+   "page": 1,
+   "text": "正解是一：說「不用，／我不試」，離開找大人。",
+   "subtitle_start_s": 1,
+   "voice_start_s": 1.131,
+   "diff_s": -0.131,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c006_01_v04.wav"
+  },
+  {
+   "cue": "a3_c007",
+   "line": "a3_c007_01",
+   "page": 1,
+   "text": "第四盞，已經一半了！",
+   "subtitle_start_s": 1.9,
+   "voice_start_s": 2.022,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c007_01_v04.wav"
+  },
+  {
+   "cue": "a3_c008",
+   "line": "a3_c008_01",
+   "page": 1,
+   "text": "今天紙燈節，學校提早放學。",
+   "subtitle_start_s": 1.15,
+   "voice_start_s": 1.341,
+   "diff_s": -0.191,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c008_01_v04.wav"
+  },
+  {
+   "cue": "a3_c008",
+   "line": "a3_c008_02",
+   "page": 1,
+   "text": "小晴、小宇，你們家長前幾天就拜託／阿樂叔叔，開車來接你們去廣場。",
+   "subtitle_start_s": 5.14,
+   "voice_start_s": 5.266,
+   "diff_s": -0.126,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c008_02_v04.wav"
+  },
+  {
+   "cue": "a3_c008",
+   "line": "a3_c008_03",
+   "page": 1,
+   "text": "林老師，叔叔昨天站都站不穩……",
+   "subtitle_start_s": 16.65,
+   "voice_start_s": 16.784,
+   "diff_s": -0.134,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c008_03_v04.wav"
+  },
+  {
+   "cue": "a3_c008",
+   "line": "a3_c008_04",
+   "page": 1,
+   "text": "謝謝你告訴老師。",
+   "subtitle_start_s": 20.57,
+   "voice_start_s": 20.692,
+   "diff_s": -0.122,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c008_04_v04.wav"
+  },
+  {
+   "cue": "a3_c008",
+   "line": "a3_c008_04",
+   "page": 2,
+   "text": "老師先打電話給你們家人；如果叔叔／先到，你們先待在校門裡面。",
+   "subtitle_start_s": 22.812,
+   "voice_start_s": 23.139,
+   "diff_s": -0.327,
+   "pass": true,
+   "audio": "audio/vo/vo_a3_c008_04_v04.wav"
+  }
+ ],
+ "all_pass": true
+}

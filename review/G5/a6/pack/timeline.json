@@ -1,0 +1,3374 @@
+{
+ "note": "由 app/src/cues/timeline.ts 的 buildTimelines 解析（與引擎相同），全劇 cue 集取自 app/dist/data/cues_show.js，音檔長度取自 manifest.js。schedule：start＝該 cue 第 0 秒在播放錄製中的秒數（前面是換景漸暗預捲 preroll）；hold＝教師按鍵間隔假設（秒）。",
+ "act": "a6",
+ "title": "第六幕：可以求助的秘密",
+ "segmentFile": "app/cues/show/a6.json",
+ "musicLevelDefaults": {
+  "title": 0,
+  "curtain": 0.8,
+  "scene": 0.8,
+  "wait": 0.35,
+  "quiz": 0.06,
+  "reveal": 0.06,
+  "lamp": 0.5
+ },
+ "prerollSec": 0.6,
+ "cues": [
+  {
+   "id": "a6_c001",
+   "kind": "scene",
+   "title": "燈節的晚上",
+   "duration": 13.68,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0.8,
+   "audioId": "music_town_night",
+   "musicLoop": true,
+   "musicLevel": 0.5,
+   "compression": 0,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c001_01",
+     "speaker": "小晴",
+     "text": "叔叔不在，我們幫他把主燈完成！",
+     "audioId": "vo_a6_c001_01",
+     "start": 2.4,
+     "end": 6.22,
+     "duration": 3.82,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 2.4,
+       "end": 6.22,
+       "rows": [
+        "叔叔不在，我們幫他把主燈完成！"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c001_02",
+     "speaker": "小宇",
+     "text": "慢慢摺，燈才會亮。",
+     "audioId": "vo_a6_c001_02",
+     "start": 6.67,
+     "end": 8.68,
+     "duration": 2.01,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 6.67,
+       "end": 8.68,
+       "rows": [
+        "慢慢摺，燈才會亮。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_crowd_far",
+     "at": 0,
+     "gain": 0.55
+    }
+   ],
+   "music": [],
+   "anims": [
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 0.15,
+     "end": 3.15,
+     "params": {
+      "to": "a6_kids"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 0.9,
+     "end": 1.5,
+     "params": {
+      "yaw": -0.4
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 2.7,
+     "end": 3.2,
+     "params": {
+      "yaw": 0.3
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 8.78,
+     "end": 9.78,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 9.18,
+     "end": 9.19,
+     "params": {
+      "to": "a6_pinan"
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "target": "pinan",
+     "start": 12.88,
+     "end": 12.88,
+     "params": {}
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c002",
+   "kind": "scene",
+   "title": "品安的秘密",
+   "duration": 31.81,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": "music_town_night",
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "compression": 0,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c002_01",
+     "speaker": "品安",
+     "text": "我跟你們說一個秘密……",
+     "audioId": "vo_a6_c002_01",
+     "start": 3,
+     "end": 5.85,
+     "duration": 2.85,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 3,
+       "end": 5.85,
+       "rows": [
+        "我跟你們說一個秘密……"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c002_02",
+     "speaker": "品安",
+     "text": "那天你們走了以後，那個人把閃亮盒子塞給我。我沒有打開，可是我把它藏在書包裡。",
+     "audioId": "vo_a6_c002_02",
+     "start": 6.3,
+     "end": 18.64,
+     "duration": 12.34,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 6.3,
+       "end": 15.068,
+       "rows": [
+        "那天你們走了以後，那個人",
+        "把閃亮盒子塞給我。我沒有打開，"
+       ]
+      },
+      {
+       "start": 15.068,
+       "end": 18.64,
+       "rows": [
+        "可是我把它藏在書包裡。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c002_03",
+     "speaker": "品安",
+     "text": "不要告訴老師，好不好？我怕被罵。",
+     "audioId": "vo_a6_c002_03",
+     "start": 19.09,
+     "end": 23.68,
+     "duration": 4.59,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 19.09,
+       "end": 23.68,
+       "rows": [
+        "不要告訴老師，好不好？我怕被罵。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c002_04",
+     "speaker": "折折",
+     "text": "如果你是小晴和小宇，你會怎麼做？",
+     "audioId": "vo_a6_c002_04",
+     "start": 26.28,
+     "end": 29.81,
+     "duration": 3.53,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 26.28,
+       "end": 29.81,
+       "rows": [
+        "如果你是小晴和小宇，你會怎麼做？"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_crowd_far",
+     "at": 0,
+     "gain": 0.32
+    },
+    {
+     "id": "sfx_footsteps",
+     "at": 0.3,
+     "gain": 0.3
+    }
+   ],
+   "music": [
+    {
+     "id": "none",
+     "at": 2.8,
+     "loop": true,
+     "fade": 3,
+     "gain": 1,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "puppet.move",
+     "target": "pinan",
+     "start": 0.05,
+     "end": 3.65,
+     "params": {
+      "dx": 1
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoyu",
+     "start": 0.35,
+     "end": 3.95,
+     "params": {
+      "dx": 1.05
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 0.6,
+     "end": 1.2,
+     "params": {
+      "yaw": -0.3
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 0.65,
+     "end": 4.25,
+     "params": {
+      "dx": 1.1
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 2.6,
+     "end": 3.2,
+     "params": {
+      "yaw": 0.2
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 3,
+     "end": 7,
+     "params": {
+      "to": "a6_secret_close"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 9.5,
+     "end": 9.5,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 9.75,
+     "end": 9.75,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 12.9,
+     "end": 12.91,
+     "params": {
+      "to": "a6_secret_pinan"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 23.88,
+     "end": 23.89,
+     "params": {
+      "to": "a6_secret"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 24.28,
+     "end": 25.28,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 24.68,
+     "end": 24.92,
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.blink",
+     "target": "xiaoqing",
+     "start": 24.88,
+     "end": 24.88,
+     "params": {}
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 25.88,
+     "end": 26.12,
+     "params": {
+      "pose": "glasses"
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 25.88,
+     "end": 26.38,
+     "params": {
+      "yaw": 0
+     }
+    },
+    {
+     "name": "zhezhe.walkTo",
+     "target": "zhezhe",
+     "start": 30.11,
+     "end": 31.61,
+     "params": {
+      "pos": [
+       -3,
+       0,
+       1.05
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "target": "zhezhe",
+     "start": 31.71,
+     "end": 31.73,
+     "params": {
+      "pos": [
+       -4.7,
+       0,
+       4.15
+      ]
+     }
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c003",
+   "kind": "quiz",
+   "title": "〔題卡 Q8〕出題",
+   "duration": 23.9,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.06,
+   "compression": 0,
+   "lamp": null,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ],
+    "answer": 2
+   },
+   "lines": [
+    {
+     "id": "a6_c003_01",
+     "speaker": "折折",
+     "text": "最後一題！",
+     "audioId": "vo_a6_c003_01",
+     "start": 1.7,
+     "end": 3.05,
+     "duration": 1.35,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 1.7,
+       "end": 3.05,
+       "rows": [
+        "最後一題！"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c003_02",
+     "speaker": "旁白",
+     "text": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+     "audioId": "vo_a6_c003_02",
+     "start": 4.35,
+     "end": 10.08,
+     "duration": 5.73,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 4.35,
+       "end": 10.08,
+       "rows": [
+        "朋友可能碰到危險物品，",
+        "卻說「不要告訴老師」。怎麼辦？"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c003_03",
+     "speaker": "旁白",
+     "text": "一，答應他，永遠不告訴任何人。",
+     "audioId": "vo_a6_c003_03",
+     "start": 10.53,
+     "end": 14.01,
+     "duration": 3.48,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 10.53,
+       "end": 14.01,
+       "rows": [
+        "一，答應他，永遠不告訴任何人。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c003_04",
+     "speaker": "旁白",
+     "text": "二，陪他一起找可信任的大人。",
+     "audioId": "vo_a6_c003_04",
+     "start": 14.46,
+     "end": 18.54,
+     "duration": 4.08,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 14.46,
+       "end": 18.54,
+       "rows": [
+        "二，陪他一起找可信任的大人。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c003_05",
+     "speaker": "旁白",
+     "text": "三，傳給全班同學，大家一起討論。",
+     "audioId": "vo_a6_c003_05",
+     "start": 18.99,
+     "end": 22.9,
+     "duration": 3.91,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 18.99,
+       "end": 22.9,
+       "rows": [
+        "三，傳給全班同學，大家一起討論。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_quiet_fold",
+     "at": 1.25,
+     "gain": 0.8
+    },
+    {
+     "id": "sfx_card_in",
+     "at": 3.65,
+     "gain": 0.8
+    }
+   ],
+   "music": [],
+   "anims": [
+    {
+     "name": "fade.out",
+     "target": null,
+     "start": 0,
+     "end": 0.6,
+     "params": {}
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 0.5,
+     "end": 0.5,
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 0.5,
+     "end": 0.5,
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "light.dim",
+     "target": null,
+     "start": 0.61,
+     "end": 0.64,
+     "params": {
+      "to": 0.55
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 0.65,
+     "end": 0.66,
+     "params": {
+      "to": "quiz"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 0.68,
+     "end": 1.28,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.hush",
+     "target": "zhezhe",
+     "start": 1.25,
+     "end": 2.65,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 1.45,
+     "end": 2.45,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 3.1,
+     "end": 4.3,
+     "params": {
+      "form": "card"
+     }
+    },
+    {
+     "name": "quiz.show",
+     "target": null,
+     "start": 3.65,
+     "end": 4.35,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 4.4,
+     "end": 5.1,
+     "params": {
+      "form": "idle"
+     }
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c004",
+   "kind": "reveal",
+   "title": "〔題卡 Q8〕揭答",
+   "duration": 6.94,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.06,
+   "compression": 0,
+   "lamp": null,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ],
+    "answer": 2
+   },
+   "lines": [
+    {
+     "id": "a6_c004_01",
+     "speaker": "旁白",
+     "text": "正解是二：陪他一起找可信任的大人。",
+     "audioId": "vo_a6_c004_01",
+     "start": 1,
+     "end": 5.74,
+     "duration": 4.74,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 1,
+       "end": 5.74,
+       "rows": [
+        "正解是二：",
+        "陪他一起找可信任的大人。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_stamp",
+     "at": 0.3,
+     "gain": 1
+    }
+   ],
+   "music": [],
+   "anims": [
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 0.2,
+     "end": 1.2,
+     "params": {
+      "emotion": "curious"
+     }
+    },
+    {
+     "name": "quiz.reveal",
+     "target": null,
+     "start": 0.3,
+     "end": 0.75,
+     "params": {}
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c005",
+   "kind": "lamp",
+   "title": "〔題卡 Q8〕點燈",
+   "duration": 7.07,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.5,
+   "compression": 0,
+   "lamp": 8,
+   "quiz": {
+    "qid": "Q8",
+    "number": 8,
+    "question": "朋友可能碰到危險物品，卻說「不要告訴老師」。怎麼辦？",
+    "options": [
+     "答應他，永遠不告訴任何人。",
+     "陪他一起找可信任的大人。",
+     "傳給全班同學，大家一起討論。"
+    ],
+    "answer": 2
+   },
+   "lines": [
+    {
+     "id": "a6_c005_01",
+     "speaker": "折折",
+     "text": "第八盞！全部亮了！",
+     "audioId": "vo_a6_c005_01",
+     "start": 1.9,
+     "end": 4.31,
+     "duration": 2.41,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 1.9,
+       "end": 4.31,
+       "rows": [
+        "第八盞！全部亮了！"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_lamp_on",
+     "at": 0.3,
+     "gain": 1
+    }
+   ],
+   "music": [],
+   "anims": [
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 0.2,
+     "end": 1.2,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "lamp.light",
+     "target": null,
+     "start": 0.3,
+     "end": 1.8,
+     "params": {
+      "index": 8
+     }
+    },
+    {
+     "name": "quiz.hide",
+     "target": null,
+     "start": 4.61,
+     "end": 5.31,
+     "params": {}
+    },
+    {
+     "name": "fade.out",
+     "target": null,
+     "start": 5.41,
+     "end": 6.01,
+     "params": {}
+    },
+    {
+     "name": "light.restore",
+     "target": null,
+     "start": 6.02,
+     "end": 6.05,
+     "params": {}
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 6.06,
+     "end": 6.07,
+     "params": {
+      "to": "a6_secret_c6"
+     }
+    },
+    {
+     "name": "zhezhe.glideTo",
+     "target": "zhezhe",
+     "start": 6.06,
+     "end": 6.08,
+     "params": {
+      "pos": [
+       2.3,
+       0,
+       1.05
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 6.07,
+     "end": 7.07,
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 6.07,
+     "end": 6.07,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 6.07,
+     "end": 6.07,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 6.11,
+     "end": 6.71,
+     "params": {}
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c006",
+   "kind": "scene",
+   "title": "我在乎你",
+   "duration": 35.26,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": "music_courage",
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "compression": 0,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c006_01",
+     "speaker": "小晴",
+     "text": "品安，我在乎你，我們一起找人幫忙。",
+     "audioId": "vo_a6_c006_01",
+     "start": 0.8,
+     "end": 4.76,
+     "duration": 3.96,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 0.8,
+       "end": 4.76,
+       "rows": [
+        "品安，我在乎你，",
+        "我們一起找人幫忙。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c006_02",
+     "speaker": "小宇",
+     "text": "我們陪你去，跟老師說清楚。",
+     "audioId": "vo_a6_c006_02",
+     "start": 5.21,
+     "end": 8.17,
+     "duration": 2.96,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 5.21,
+       "end": 8.17,
+       "rows": [
+        "我們陪你去，跟老師說清楚。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c006_03",
+     "speaker": "品安",
+     "text": "老師……我書包裡，有一個別人給的盒子。",
+     "audioId": "vo_a6_c006_03",
+     "start": 14.12,
+     "end": 18.84,
+     "duration": 4.72,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 14.12,
+       "end": 18.84,
+       "rows": [
+        "老師……我書包裡，",
+        "有一個別人給的盒子。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c006_04",
+     "speaker": "林老師",
+     "text": "謝謝你願意說出來。盒子不要碰，交給大人處理。",
+     "audioId": "vo_a6_c006_04",
+     "start": 19.29,
+     "end": 24.84,
+     "duration": 5.55,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 19.29,
+       "end": 24.84,
+       "rows": [
+        "謝謝你願意說出來。",
+        "盒子不要碰，交給大人處理。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c006_05",
+     "speaker": "林老師",
+     "text": "廣場那個人，警察已經在處理了。",
+     "audioId": "vo_a6_c006_05",
+     "start": 25.29,
+     "end": 28.8,
+     "duration": 3.51,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 25.29,
+       "end": 28.8,
+       "rows": [
+        "廣場那個人，警察已經在處理了。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c006_06",
+     "speaker": "葉護理師",
+     "text": "說出來，就是在保護自己。",
+     "audioId": "vo_a6_c006_06",
+     "start": 31.3,
+     "end": 34.06,
+     "duration": 2.76,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 31.3,
+       "end": 34.06,
+       "rows": [
+        "說出來，就是在保護自己。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_footsteps",
+     "at": 8.72,
+     "gain": 0.45
+    },
+    {
+     "id": "sfx_crowd_far",
+     "at": 0,
+     "gain": 0.3
+    }
+   ],
+   "music": [],
+   "anims": [
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 0.3,
+     "end": 0.54,
+     "params": {
+      "pose": "standwatch_m"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 1,
+     "end": 1.8,
+     "params": {
+      "dx": 0.25
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 8.17,
+     "end": 9.17,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "pinan",
+     "start": 8.22,
+     "end": 8.22,
+     "params": {
+      "emotion": "neutral"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "pinan",
+     "start": 8.52,
+     "end": 13.22,
+     "params": {
+      "dx": 2.35
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 8.52,
+     "end": 13.52,
+     "params": {
+      "to": "a6_follow"
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoyu",
+     "start": 8.62,
+     "end": 13.32,
+     "params": {
+      "dx": 2.6
+     }
+    },
+    {
+     "name": "zhezhe.walkTo",
+     "target": "zhezhe",
+     "start": 8.62,
+     "end": 13.32,
+     "params": {
+      "pos": [
+       3.65,
+       0,
+       1.45
+      ]
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "xiaoqing",
+     "start": 8.72,
+     "end": 13.42,
+     "params": {
+      "dx": 2.6
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "target": "lin",
+     "start": 13.12,
+     "end": 14.52,
+     "params": {}
+    },
+    {
+     "name": "puppet.popup",
+     "target": "ye",
+     "start": 13.82,
+     "end": 15.22,
+     "params": {}
+    },
+    {
+     "name": "puppet.face",
+     "target": "pinan",
+     "start": 14.12,
+     "end": 14.12,
+     "params": {
+      "emotion": "worried"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "lin",
+     "start": 19.14,
+     "end": 19.38,
+     "params": {
+      "pose": "crouch"
+     }
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 19.49,
+     "end": 22.49,
+     "params": {
+      "to": "a6_tent_close"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "pinan",
+     "start": 29.05,
+     "end": 29.05,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "pinan",
+     "start": 29.35,
+     "end": 29.59,
+     "params": {
+      "pose": "stand_m"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 29.6,
+     "end": 29.6,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 29.65,
+     "end": 29.65,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "pinan",
+     "start": 30.4,
+     "end": 30.64,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "pinan",
+     "start": 30.75,
+     "end": 31.75,
+     "params": {}
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ye",
+     "start": 31.3,
+     "end": 32.1,
+     "params": {
+      "to": 0.02
+     }
+    },
+    {
+     "name": "light.dim",
+     "target": null,
+     "start": 34.26,
+     "end": 35.26,
+     "params": {
+      "to": 0.84
+     }
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c007",
+   "kind": "scene",
+   "title": "八盞燈與主燈",
+   "duration": 21.05,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0,
+   "audioId": null,
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "compression": 0,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c007_01",
+     "speaker": "折折",
+     "text": "我……我摺成了！真的是燈籠！",
+     "audioId": "vo_a6_c007_01",
+     "start": 2,
+     "end": 5.52,
+     "duration": 3.52,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 2,
+       "end": 5.52,
+       "rows": [
+        "我……我摺成了！真的是燈籠！"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c007_02",
+     "speaker": "旁白",
+     "text": "這一晚，小燈鎮的燈都亮了。",
+     "audioId": "vo_a6_c007_02",
+     "start": 12.12,
+     "end": 15.08,
+     "duration": 2.96,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 12.12,
+       "end": 15.08,
+       "rows": [
+        "這一晚，小燈鎮的燈都亮了。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c007_03",
+     "speaker": "旁白",
+     "text": "可是，阿樂叔叔要好起來，不是點亮燈就好。",
+     "audioId": "vo_a6_c007_03",
+     "start": 15.53,
+     "end": 19.85,
+     "duration": 4.32,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 15.53,
+       "end": 19.85,
+       "rows": [
+        "可是，阿樂叔叔要好起來，",
+        "不是點亮燈就好。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_fold",
+     "at": 0.75,
+     "gain": 0.6
+    },
+    {
+     "id": "sfx_crowd_far",
+     "at": 0,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_lamp_on",
+     "at": 9.32,
+     "gain": 0.7
+    }
+   ],
+   "music": [
+    {
+     "id": "music_town",
+     "at": 5.52,
+     "loop": true,
+     "fade": 4,
+     "gain": 1,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "zhezhe.hopTo",
+     "target": "zhezhe",
+     "start": 0.45,
+     "end": 1.15,
+     "params": {
+      "pos": [
+       -3.9,
+       0.78,
+       -0.45
+      ],
+      "height": 0.45
+     }
+    },
+    {
+     "name": "zhezhe.fold",
+     "target": "zhezhe",
+     "start": 0.7,
+     "end": 2.1,
+     "params": {
+      "form": "lantern"
+     }
+    },
+    {
+     "name": "zhezhe.glow",
+     "target": "zhezhe",
+     "start": 2,
+     "end": 3.5,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "fade.out",
+     "target": null,
+     "start": 5.72,
+     "end": 6.32,
+     "params": {}
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 6.34,
+     "end": 6.35,
+     "params": {
+      "to": "a6_full"
+     }
+    },
+    {
+     "name": "fade.in",
+     "target": null,
+     "start": 6.38,
+     "end": 6.98,
+     "params": {}
+    }
+   ],
+   "strings": {},
+   "stringAnims": []
+  },
+  {
+   "id": "a6_c008",
+   "kind": "scene",
+   "title": "四季（時間轉場）",
+   "duration": 19.57,
+   "autoAdvance": false,
+   "set": "a6_window",
+   "enterFade": 0.8,
+   "audioId": "music_recovery",
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "compression": 2,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c008_02",
+     "speaker": "旁白",
+     "text": "操偶線一天一天變鬆、變淡，一根一根脫落。",
+     "audioId": "vo_a6_c008_02",
+     "start": 3.5,
+     "end": 9.48,
+     "duration": 5.98,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 3.5,
+       "end": 9.48,
+       "rows": [
+        "操偶線一天一天變鬆、",
+        "變淡，一根一根脫落。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c008_03",
+     "speaker": "旁白",
+     "text": "好起來，需要求助、治療，還有時間。",
+     "audioId": "vo_a6_c008_03",
+     "start": 9.93,
+     "end": 14.57,
+     "duration": 4.64,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 9.93,
+       "end": 14.57,
+       "rows": [
+        "好起來，需要求助、",
+        "治療，還有時間。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [],
+   "music": [],
+   "anims": [
+    {
+     "name": "puppet.lean",
+     "target": "ye",
+     "start": 0.6,
+     "end": 1.6,
+     "params": {
+      "to": 0.025
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "target": "ale",
+     "start": 1,
+     "end": 4,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow",
+       "knee"
+      ],
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 3,
+     "end": 3,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.lean",
+     "target": "ye",
+     "start": 3.6,
+     "end": 4.6,
+     "params": {
+      "to": 0
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "target": "aqin",
+     "start": 5.3,
+     "end": 6.9,
+     "params": {}
+    },
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 5.6,
+     "end": 7.8,
+     "params": {
+      "anchors": [
+       "knee"
+      ],
+      "to": 0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 5.6,
+     "end": 7.8,
+     "params": {
+      "anchors": [
+       "wrist",
+       "elbow"
+      ],
+      "to": 0.55
+     }
+    },
+    {
+     "name": "strings.detach",
+     "target": "ale",
+     "start": 8,
+     "end": 8.6,
+     "params": {
+      "anchors": [
+       "knee"
+      ]
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "ale",
+     "start": 8.3,
+     "end": 10.3,
+     "params": {
+      "dx": 0.6
+     }
+    },
+    {
+     "name": "puppet.move",
+     "target": "aqin",
+     "start": 8.3,
+     "end": 10.3,
+     "params": {
+      "dx": 0.6
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "target": "pinan",
+     "start": 10.6,
+     "end": 12.1,
+     "params": {}
+    },
+    {
+     "name": "puppet.popup",
+     "target": "xiaoyu",
+     "start": 11.7,
+     "end": 13.2,
+     "params": {}
+    },
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 12,
+     "end": 14.2,
+     "params": {
+      "anchors": [
+       "elbow"
+      ],
+      "to": 0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 12,
+     "end": 15,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.35
+     }
+    },
+    {
+     "name": "puppet.popup",
+     "target": "xiaoqing",
+     "start": 12.6,
+     "end": 14.1,
+     "params": {}
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "target": "zhezhe",
+     "start": 13,
+     "end": 14.4,
+     "params": {
+      "pos": [
+       1.75,
+       0,
+       1.3
+      ],
+      "height": 0.4
+     }
+    },
+    {
+     "name": "strings.detach",
+     "target": "ale",
+     "start": 14.4,
+     "end": 15,
+     "params": {
+      "anchors": [
+       "elbow"
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.hopTo",
+     "target": "zhezhe",
+     "start": 14.7,
+     "end": 15.5,
+     "params": {
+      "pos": [
+       1.45,
+       0,
+       1.35
+      ],
+      "height": 0.35
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "target": "ale",
+     "start": 15.6,
+     "end": 16.6,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 15.8,
+     "end": 16.4,
+     "params": {
+      "yaw": -0.35
+     }
+    }
+   ],
+   "strings": {
+    "ale": [
+     "wrist",
+     "elbow",
+     "knee"
+    ]
+   },
+   "stringAnims": [
+    {
+     "target": "ale",
+     "name": "strings.loosen",
+     "anchors": [
+      "wrist",
+      "elbow",
+      "knee"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "knee"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "wrist",
+      "elbow"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.detach",
+     "anchors": [
+      "knee"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "elbow"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "wrist"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.detach",
+     "anchors": [
+      "elbow"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "a6_c009",
+   "kind": "scene",
+   "title": "又到了紙燈節",
+   "duration": 25.91,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0.8,
+   "audioId": "music_recovery",
+   "musicLoop": true,
+   "musicLevel": 0.8,
+   "compression": 0,
+   "lamp": null,
+   "quiz": null,
+   "lines": [
+    {
+     "id": "a6_c009_01",
+     "speaker": "折折",
+     "text": "叔叔，又到紙燈節了！",
+     "audioId": "vo_a6_c009_01",
+     "start": 1.6,
+     "end": 3.89,
+     "duration": 2.29,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 1.6,
+       "end": 3.89,
+       "rows": [
+        "叔叔，又到紙燈節了！"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c009_02",
+     "speaker": "阿樂叔叔",
+     "text": "那天我把骨架搬上車，要送去廣場，後來自己忘了。",
+     "audioId": "vo_a6_c009_02",
+     "start": 4.34,
+     "end": 9.99,
+     "duration": 5.65,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 4.34,
+       "end": 9.99,
+       "rows": [
+        "那天我把骨架搬上車，",
+        "要送去廣場，後來自己忘了。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c009_03",
+     "speaker": "阿樂叔叔",
+     "text": "我現在還是會定期回去看醫生。慢慢摺，燈才會亮。",
+     "audioId": "vo_a6_c009_03",
+     "start": 10.44,
+     "end": 18.52,
+     "duration": 8.08,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 10.44,
+       "end": 18.52,
+       "rows": [
+        "我現在還是會定期回去看醫生。",
+        "慢慢摺，燈才會亮。"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "a6_c009_04",
+     "speaker": "阿樂叔叔",
+     "text": "謝謝你們，那天去找大人幫忙。",
+     "audioId": "vo_a6_c009_04",
+     "start": 18.97,
+     "end": 22.31,
+     "duration": 3.34,
+     "placeholder": false,
+     "pages": [
+      {
+       "start": 18.97,
+       "end": 22.31,
+       "rows": [
+        "謝謝你們，那天去找大人幫忙。"
+       ]
+      }
+     ]
+    }
+   ],
+   "sfx": [
+    {
+     "id": "sfx_fold",
+     "at": 5.99,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_fold",
+     "at": 8.59,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_fold",
+     "at": 12.09,
+     "gain": 0.4
+    },
+    {
+     "id": "sfx_lamp_on",
+     "at": 22.66,
+     "gain": 0.6
+    }
+   ],
+   "music": [
+    {
+     "id": "music_town",
+     "at": 18.47,
+     "loop": true,
+     "fade": 3,
+     "gain": 0.85,
+     "offset": 0
+    }
+   ],
+   "anims": [
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 0,
+     "end": 0.01,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0.35
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 0,
+     "end": 0.01,
+     "params": {
+      "at": [
+       -2.02,
+       1.47
+      ]
+     }
+    },
+    {
+     "name": "zhezhe.look",
+     "target": "zhezhe",
+     "start": 4.19,
+     "end": 4.79,
+     "params": {
+      "yaw": -0.4
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 5.24,
+     "end": 5.79,
+     "params": {
+      "to": 0.62
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 5.24,
+     "end": 6.64,
+     "params": {
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 5.94,
+     "end": 6.54,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 7.84,
+     "end": 8.39,
+     "params": {
+      "to": 0.62
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 7.84,
+     "end": 9.24,
+     "params": {
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 8.54,
+     "end": 9.14,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoqing",
+     "start": 9.99,
+     "end": 9.99,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 11.34,
+     "end": 11.89,
+     "params": {
+      "to": 0.62
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "ale",
+     "start": 11.34,
+     "end": 12.74,
+     "params": {
+      "depth": 0.8
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "pinan",
+     "start": 11.44,
+     "end": 11.44,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.grab",
+     "target": "ale",
+     "start": 12.04,
+     "end": 12.64,
+     "params": {
+      "to": 1
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "xiaoyu",
+     "start": 22.51,
+     "end": 22.51,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "zhezhe.emote",
+     "target": "zhezhe",
+     "start": 22.51,
+     "end": 23.51,
+     "params": {
+      "emotion": "happy"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 22.61,
+     "end": 22.62,
+     "params": {
+      "to": "a6_shop_hands"
+     }
+    },
+    {
+     "name": "strings.loosen",
+     "target": "ale",
+     "start": 22.91,
+     "end": 24.11,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0
+     }
+    },
+    {
+     "name": "strings.fade",
+     "target": "ale",
+     "start": 23.11,
+     "end": 25.31,
+     "params": {
+      "anchors": [
+       "wrist"
+      ],
+      "to": 0
+     }
+    },
+    {
+     "name": "strings.detach",
+     "target": "ale",
+     "start": 25.41,
+     "end": 25.91,
+     "params": {
+      "anchors": [
+       "wrist"
+      ]
+     }
+    }
+   ],
+   "strings": {
+    "ale": [
+     "wrist"
+    ]
+   },
+   "stringAnims": [
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "wrist"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.loosen",
+     "anchors": [
+      "wrist"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.fade",
+     "anchors": [
+      "wrist"
+     ]
+    },
+    {
+     "target": "ale",
+     "name": "strings.detach",
+     "anchors": [
+      "wrist"
+     ]
+    }
+   ]
+  }
+ ],
+ "schedule": [
+  {
+   "id": "a6_c001",
+   "kind": "scene",
+   "preroll": 0.6,
+   "start": 0.6,
+   "duration": 13.68,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0.8
+  },
+  {
+   "id": "a6_c002",
+   "kind": "scene",
+   "preroll": 0,
+   "start": 17.78,
+   "duration": 31.81,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c003",
+   "kind": "quiz",
+   "preroll": 0,
+   "start": 53.09,
+   "duration": 23.9,
+   "hold": 3,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c004",
+   "kind": "reveal",
+   "preroll": 0,
+   "start": 79.99,
+   "duration": 6.94,
+   "hold": 2.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c005",
+   "kind": "lamp",
+   "preroll": 0,
+   "start": 89.43,
+   "duration": 7.07,
+   "hold": 2.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c006",
+   "kind": "scene",
+   "preroll": 0,
+   "start": 99,
+   "duration": 35.26,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c007",
+   "kind": "scene",
+   "preroll": 0,
+   "start": 137.76,
+   "duration": 21.05,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_square_night",
+   "enterFade": 0
+  },
+  {
+   "id": "a6_c008",
+   "kind": "scene",
+   "preroll": 0.6,
+   "start": 162.91,
+   "duration": 19.57,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_window",
+   "enterFade": 0.8
+  },
+  {
+   "id": "a6_c009",
+   "kind": "scene",
+   "preroll": 0.6,
+   "start": 186.58,
+   "duration": 25.91,
+   "hold": 3.5,
+   "autoAdvance": false,
+   "set": "a6_shop",
+   "enterFade": 0.8
+  }
+ ],
+ "totalPlaybackSec": 215.99,
+ "audio": {
+  "vo_a0_c001_01": {
+   "source": "audio/vo/vo_a0_c001_01_v04.wav",
+   "duration": 5.16,
+   "bus": "vo"
+  },
+  "vo_a0_c002_01": {
+   "source": "audio/vo/vo_a0_c002_01_v04.wav",
+   "duration": 2.53,
+   "bus": "vo"
+  },
+  "vo_a0_c002_02": {
+   "source": "audio/vo/vo_a0_c002_02_v04.wav",
+   "duration": 5.1,
+   "bus": "vo"
+  },
+  "vo_a0_c002_03": {
+   "source": "audio/vo/vo_a0_c002_03_v04.wav",
+   "duration": 2.62,
+   "bus": "vo"
+  },
+  "vo_a0_c003_01": {
+   "source": "audio/vo/vo_a0_c003_01_v04.wav",
+   "duration": 5.63,
+   "bus": "vo"
+  },
+  "vo_a0_c003_02": {
+   "source": "audio/vo/vo_a0_c003_02_v04.wav",
+   "duration": 3.22,
+   "bus": "vo"
+  },
+  "vo_a0_c003_03": {
+   "source": "audio/vo/vo_a0_c003_03_v04.wav",
+   "duration": 4.24,
+   "bus": "vo"
+  },
+  "vo_a0_c003_04": {
+   "source": "audio/vo/vo_a0_c003_04_v04.wav",
+   "duration": 4.15,
+   "bus": "vo"
+  },
+  "vo_a0_c004_01": {
+   "source": "audio/vo/vo_a0_c004_01_v04.wav",
+   "duration": 2.71,
+   "bus": "vo"
+  },
+  "vo_a0_c004_02": {
+   "source": "audio/vo/vo_a0_c004_02_v04.wav",
+   "duration": 3.2,
+   "bus": "vo"
+  },
+  "vo_a0_c004_03": {
+   "source": "audio/vo/vo_a0_c004_03_v04.wav",
+   "duration": 3.87,
+   "bus": "vo"
+  },
+  "vo_a0_c004_04": {
+   "source": "audio/vo/vo_a0_c004_04_v04.wav",
+   "duration": 3.34,
+   "bus": "vo"
+  },
+  "vo_a0_c004_05": {
+   "source": "audio/vo/vo_a0_c004_05_v04.wav",
+   "duration": 5.69,
+   "bus": "vo"
+  },
+  "vo_a0_c004_06": {
+   "source": "audio/vo/vo_a0_c004_06_v04.wav",
+   "duration": 1.15,
+   "bus": "vo"
+  },
+  "vo_a0_c005_01": {
+   "source": "audio/vo/vo_a0_c005_01_v04.wav",
+   "duration": 5.84,
+   "bus": "vo"
+  },
+  "vo_a0_c005_02": {
+   "source": "audio/vo/vo_a0_c005_02_v04.wav",
+   "duration": 4.8,
+   "bus": "vo"
+  },
+  "vo_a0_c005_03": {
+   "source": "audio/vo/vo_a0_c005_03_v04.wav",
+   "duration": 3.3,
+   "bus": "vo"
+  },
+  "vo_a1_c001_01": {
+   "source": "audio/vo/vo_a1_c001_01_v04.wav",
+   "duration": 3.11,
+   "bus": "vo"
+  },
+  "vo_a1_c001_02": {
+   "source": "audio/vo/vo_a1_c001_02_v04.wav",
+   "duration": 4.68,
+   "bus": "vo"
+  },
+  "vo_a1_c001_03": {
+   "source": "audio/vo/vo_a1_c001_03_v04.wav",
+   "duration": 3.57,
+   "bus": "vo"
+  },
+  "vo_a1_c001_04": {
+   "source": "audio/vo/vo_a1_c001_04_v04.wav",
+   "duration": 3.4,
+   "bus": "vo"
+  },
+  "vo_a1_c001_05": {
+   "source": "audio/vo/vo_a1_c001_05_v04.wav",
+   "duration": 2.04,
+   "bus": "vo"
+  },
+  "vo_a1_c002_01": {
+   "source": "audio/vo/vo_a1_c002_01_v04.wav",
+   "duration": 2.19,
+   "bus": "vo"
+  },
+  "vo_a1_c002_02": {
+   "source": "audio/vo/vo_a1_c002_02_v04.wav",
+   "duration": 4.25,
+   "bus": "vo"
+  },
+  "vo_a1_c002_03": {
+   "source": "audio/vo/vo_a1_c002_03_v04.wav",
+   "duration": 2.29,
+   "bus": "vo"
+  },
+  "vo_a1_c003_01": {
+   "source": "audio/vo/vo_a1_c003_01_v04.wav",
+   "duration": 2.03,
+   "bus": "vo"
+  },
+  "vo_a1_c003_02": {
+   "source": "audio/vo/vo_a1_c003_02_v04.wav",
+   "duration": 5.87,
+   "bus": "vo"
+  },
+  "vo_a1_c003_03": {
+   "source": "audio/vo/vo_a1_c003_03_v04.wav",
+   "duration": 5.42,
+   "bus": "vo"
+  },
+  "vo_a1_c004_01": {
+   "source": "audio/vo/vo_a1_c004_01_v04.wav",
+   "duration": 4.27,
+   "bus": "vo"
+  },
+  "vo_a1_c004_02": {
+   "source": "audio/vo/vo_a1_c004_02_v04.wav",
+   "duration": 2.89,
+   "bus": "vo"
+  },
+  "vo_a1_c004_03": {
+   "source": "audio/vo/vo_a1_c004_03_v04.wav",
+   "duration": 4.13,
+   "bus": "vo"
+  },
+  "vo_a1_c004_04": {
+   "source": "audio/vo/vo_a1_c004_04_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a1_c004_05": {
+   "source": "audio/vo/vo_a1_c004_05_v04.wav",
+   "duration": 3.66,
+   "bus": "vo"
+  },
+  "vo_a1_c004_06": {
+   "source": "audio/vo/vo_a1_c004_06_v04.wav",
+   "duration": 3.89,
+   "bus": "vo"
+  },
+  "vo_a1_c005_01": {
+   "source": "audio/vo/vo_a1_c005_01_v04.wav",
+   "duration": 1.92,
+   "bus": "vo"
+  },
+  "vo_a1_c005_02": {
+   "source": "audio/vo/vo_a1_c005_02_v04.wav",
+   "duration": 6.61,
+   "bus": "vo"
+  },
+  "vo_a1_c005_03": {
+   "source": "audio/vo/vo_a1_c005_03_v04.wav",
+   "duration": 3.29,
+   "bus": "vo"
+  },
+  "vo_a1_c005_04": {
+   "source": "audio/vo/vo_a1_c005_04_v04.wav",
+   "duration": 3.59,
+   "bus": "vo"
+  },
+  "vo_a1_c005_05": {
+   "source": "audio/vo/vo_a1_c005_05_v04.wav",
+   "duration": 3.73,
+   "bus": "vo"
+  },
+  "vo_a1_c006_01": {
+   "source": "audio/vo/vo_a1_c006_01_v04.wav",
+   "duration": 4.77,
+   "bus": "vo"
+  },
+  "vo_a1_c007_01": {
+   "source": "audio/vo/vo_a1_c007_01_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a1_c008_01": {
+   "source": "audio/vo/vo_a1_c008_01_v04.wav",
+   "duration": 3.84,
+   "bus": "vo"
+  },
+  "vo_a1_c008_02": {
+   "source": "audio/vo/vo_a1_c008_02_v04.wav",
+   "duration": 4.02,
+   "bus": "vo"
+  },
+  "vo_a1_c008_03": {
+   "source": "audio/vo/vo_a1_c008_03_v04.wav",
+   "duration": 2.17,
+   "bus": "vo"
+  },
+  "vo_a2_c001_01": {
+   "source": "audio/vo/vo_a2_c001_01_v04.wav",
+   "duration": 3.45,
+   "bus": "vo"
+  },
+  "vo_a2_c001_02": {
+   "source": "audio/vo/vo_a2_c001_02_v04.wav",
+   "duration": 3.03,
+   "bus": "vo"
+  },
+  "vo_a2_c001_03": {
+   "source": "audio/vo/vo_a2_c001_03_v04.wav",
+   "duration": 6.03,
+   "bus": "vo"
+  },
+  "vo_a2_c002_01": {
+   "source": "audio/vo/vo_a2_c002_01_v04.wav",
+   "duration": 6.03,
+   "bus": "vo"
+  },
+  "vo_a2_c002_02": {
+   "source": "audio/vo/vo_a2_c002_02_v04.wav",
+   "duration": 1.7,
+   "bus": "vo"
+  },
+  "vo_a2_c003_01": {
+   "source": "audio/vo/vo_a2_c003_01_v04.wav",
+   "duration": 3.98,
+   "bus": "vo"
+  },
+  "vo_a2_c003_02": {
+   "source": "audio/vo/vo_a2_c003_02_v04.wav",
+   "duration": 7.62,
+   "bus": "vo"
+  },
+  "vo_a2_c004_01": {
+   "source": "audio/vo/vo_a2_c004_01_v04.wav",
+   "duration": 5.21,
+   "bus": "vo"
+  },
+  "vo_a2_c004_02": {
+   "source": "audio/vo/vo_a2_c004_02_v04.wav",
+   "duration": 13.45,
+   "bus": "vo"
+  },
+  "vo_a2_c005_01": {
+   "source": "audio/vo/vo_a2_c005_01_v04.wav",
+   "duration": 1.6,
+   "bus": "vo"
+  },
+  "vo_a2_c005_02": {
+   "source": "audio/vo/vo_a2_c005_02_v04.wav",
+   "duration": 3.96,
+   "bus": "vo"
+  },
+  "vo_a2_c005_03": {
+   "source": "audio/vo/vo_a2_c005_03_v04.wav",
+   "duration": 4.76,
+   "bus": "vo"
+  },
+  "vo_a2_c005_04": {
+   "source": "audio/vo/vo_a2_c005_04_v04.wav",
+   "duration": 4.33,
+   "bus": "vo"
+  },
+  "vo_a2_c005_05": {
+   "source": "audio/vo/vo_a2_c005_05_v04.wav",
+   "duration": 4.46,
+   "bus": "vo"
+  },
+  "vo_a2_c006_01": {
+   "source": "audio/vo/vo_a2_c006_01_v04.wav",
+   "duration": 4.96,
+   "bus": "vo"
+  },
+  "vo_a2_c007_01": {
+   "source": "audio/vo/vo_a2_c007_01_v04.wav",
+   "duration": 5.47,
+   "bus": "vo"
+  },
+  "vo_a2_c008_01": {
+   "source": "audio/vo/vo_a2_c008_01_v04.wav",
+   "duration": 5.51,
+   "bus": "vo"
+  },
+  "vo_a2_c008_02": {
+   "source": "audio/vo/vo_a2_c008_02_v04.wav",
+   "duration": 5.04,
+   "bus": "vo"
+  },
+  "vo_a2_c008_03": {
+   "source": "audio/vo/vo_a2_c008_03_v04.wav",
+   "duration": 3.47,
+   "bus": "vo"
+  },
+  "vo_a2_c008_04": {
+   "source": "audio/vo/vo_a2_c008_04_v04.wav",
+   "duration": 3.97,
+   "bus": "vo"
+  },
+  "vo_a2_c008_05": {
+   "source": "audio/vo/vo_a2_c008_05_v04.wav",
+   "duration": 12.31,
+   "bus": "vo"
+  },
+  "vo_a2_c009_01": {
+   "source": "audio/vo/vo_a2_c009_01_v04.wav",
+   "duration": 1.65,
+   "bus": "vo"
+  },
+  "vo_a2_c009_02": {
+   "source": "audio/vo/vo_a2_c009_02_v04.wav",
+   "duration": 3.97,
+   "bus": "vo"
+  },
+  "vo_a2_c009_03": {
+   "source": "audio/vo/vo_a2_c009_03_v04.wav",
+   "duration": 3.72,
+   "bus": "vo"
+  },
+  "vo_a2_c009_04": {
+   "source": "audio/vo/vo_a2_c009_04_v04.wav",
+   "duration": 4.03,
+   "bus": "vo"
+  },
+  "vo_a2_c009_05": {
+   "source": "audio/vo/vo_a2_c009_05_v04.wav",
+   "duration": 4.19,
+   "bus": "vo"
+  },
+  "vo_a2_c010_01": {
+   "source": "audio/vo/vo_a2_c010_01_v04.wav",
+   "duration": 4.29,
+   "bus": "vo"
+  },
+  "vo_a2_c011_01": {
+   "source": "audio/vo/vo_a2_c011_01_v04.wav",
+   "duration": 1.87,
+   "bus": "vo"
+  },
+  "vo_a2_c012_01": {
+   "source": "audio/vo/vo_a2_c012_01_v04.wav",
+   "duration": 5.06,
+   "bus": "vo"
+  },
+  "vo_a2_c012_02": {
+   "source": "audio/vo/vo_a2_c012_02_v04.wav",
+   "duration": 3.53,
+   "bus": "vo"
+  },
+  "vo_a2_c012_03": {
+   "source": "audio/vo/vo_a2_c012_03_v04.wav",
+   "duration": 3.81,
+   "bus": "vo"
+  },
+  "vo_a2_c012_04": {
+   "source": "audio/vo/vo_a2_c012_04_v04.wav",
+   "duration": 4.37,
+   "bus": "vo"
+  },
+  "vo_a2_c012_05": {
+   "source": "audio/vo/vo_a2_c012_05_v04.wav",
+   "duration": 3.83,
+   "bus": "vo"
+  },
+  "vo_a2_c013_01": {
+   "source": "audio/vo/vo_a2_c013_01_v04.wav",
+   "duration": 7.12,
+   "bus": "vo"
+  },
+  "vo_a2_c013_02": {
+   "source": "audio/vo/vo_a2_c013_02_v04.wav",
+   "duration": 4.63,
+   "bus": "vo"
+  },
+  "vo_a2_c013_03": {
+   "source": "audio/vo/vo_a2_c013_03_v04.wav",
+   "duration": 5.28,
+   "bus": "vo"
+  },
+  "vo_a2_c013_04": {
+   "source": "audio/vo/vo_a2_c013_04_v04.wav",
+   "duration": 4.37,
+   "bus": "vo"
+  },
+  "vo_a2_c013_05": {
+   "source": "audio/vo/vo_a2_c013_05_v04.wav",
+   "duration": 2.79,
+   "bus": "vo"
+  },
+  "vo_a3_c001_01": {
+   "source": "audio/vo/vo_a3_c001_01_v04.wav",
+   "duration": 2.24,
+   "bus": "vo"
+  },
+  "vo_a3_c001_02": {
+   "source": "audio/vo/vo_a3_c001_02_v04.wav",
+   "duration": 2.44,
+   "bus": "vo"
+  },
+  "vo_a3_c001_03": {
+   "source": "audio/vo/vo_a3_c001_03_v04.wav",
+   "duration": 6.22,
+   "bus": "vo"
+  },
+  "vo_a3_c001_04": {
+   "source": "audio/vo/vo_a3_c001_04_v04.wav",
+   "duration": 1.7,
+   "bus": "vo"
+  },
+  "vo_a3_c002_01": {
+   "source": "audio/vo/vo_a3_c002_01_v04.wav",
+   "duration": 2.01,
+   "bus": "vo"
+  },
+  "vo_a3_c002_02": {
+   "source": "audio/vo/vo_a3_c002_02_v04.wav",
+   "duration": 2.89,
+   "bus": "vo"
+  },
+  "vo_a3_c002_03": {
+   "source": "audio/vo/vo_a3_c002_03_v04.wav",
+   "duration": 1.13,
+   "bus": "vo"
+  },
+  "vo_a3_c003_01": {
+   "source": "audio/vo/vo_a3_c003_01_v04.wav",
+   "duration": 5.74,
+   "bus": "vo"
+  },
+  "vo_a3_c003_02": {
+   "source": "audio/vo/vo_a3_c003_02_v04.wav",
+   "duration": 5.7,
+   "bus": "vo"
+  },
+  "vo_a3_c003_03": {
+   "source": "audio/vo/vo_a3_c003_03_v04.wav",
+   "duration": 4.31,
+   "bus": "vo"
+  },
+  "vo_a3_c004_01": {
+   "source": "audio/vo/vo_a3_c004_01_v04.wav",
+   "duration": 5.45,
+   "bus": "vo"
+  },
+  "vo_a3_c004_02": {
+   "source": "audio/vo/vo_a3_c004_02_v04.wav",
+   "duration": 4.42,
+   "bus": "vo"
+  },
+  "vo_a3_c005_01": {
+   "source": "audio/vo/vo_a3_c005_01_v04.wav",
+   "duration": 1.45,
+   "bus": "vo"
+  },
+  "vo_a3_c005_02": {
+   "source": "audio/vo/vo_a3_c005_02_v04.wav",
+   "duration": 4.57,
+   "bus": "vo"
+  },
+  "vo_a3_c005_03": {
+   "source": "audio/vo/vo_a3_c005_03_v04.wav",
+   "duration": 5.04,
+   "bus": "vo"
+  },
+  "vo_a3_c005_04": {
+   "source": "audio/vo/vo_a3_c005_04_v04.wav",
+   "duration": 3.78,
+   "bus": "vo"
+  },
+  "vo_a3_c005_05": {
+   "source": "audio/vo/vo_a3_c005_05_v04.wav",
+   "duration": 4.27,
+   "bus": "vo"
+  },
+  "vo_a3_c006_01": {
+   "source": "audio/vo/vo_a3_c006_01_v04.wav",
+   "duration": 5.24,
+   "bus": "vo"
+  },
+  "vo_a3_c007_01": {
+   "source": "audio/vo/vo_a3_c007_01_v04.wav",
+   "duration": 2.18,
+   "bus": "vo"
+  },
+  "vo_a3_c008_01": {
+   "source": "audio/vo/vo_a3_c008_01_v04.wav",
+   "duration": 3.69,
+   "bus": "vo"
+  },
+  "vo_a3_c008_02": {
+   "source": "audio/vo/vo_a3_c008_02_v04.wav",
+   "duration": 8.56,
+   "bus": "vo"
+  },
+  "vo_a3_c008_03": {
+   "source": "audio/vo/vo_a3_c008_03_v04.wav",
+   "duration": 3.47,
+   "bus": "vo"
+  },
+  "vo_a3_c008_04": {
+   "source": "audio/vo/vo_a3_c008_04_v04.wav",
+   "duration": 10.37,
+   "bus": "vo"
+  },
+  "vo_a4_c001_01": {
+   "source": "audio/vo/vo_a4_c001_01_v04.wav",
+   "duration": 13.56,
+   "bus": "vo"
+  },
+  "vo_a4_c001_02": {
+   "source": "audio/vo/vo_a4_c001_02_v04.wav",
+   "duration": 5.51,
+   "bus": "vo"
+  },
+  "vo_a4_c002_01": {
+   "source": "audio/vo/vo_a4_c002_01_v04.wav",
+   "duration": 3.4,
+   "bus": "vo"
+  },
+  "vo_a4_c002_02": {
+   "source": "audio/vo/vo_a4_c002_02_v04.wav",
+   "duration": 2.43,
+   "bus": "vo"
+  },
+  "vo_a4_c002_03": {
+   "source": "audio/vo/vo_a4_c002_03_v04.wav",
+   "duration": 4.73,
+   "bus": "vo"
+  },
+  "vo_a4_c003_01": {
+   "source": "audio/vo/vo_a4_c003_01_v04.wav",
+   "duration": 6.28,
+   "bus": "vo"
+  },
+  "vo_a4_c003_02": {
+   "source": "audio/vo/vo_a4_c003_02_v04.wav",
+   "duration": 4.59,
+   "bus": "vo"
+  },
+  "vo_a4_c004_01": {
+   "source": "audio/vo/vo_a4_c004_01_v04.wav",
+   "duration": 2.83,
+   "bus": "vo"
+  },
+  "vo_a4_c004_02": {
+   "source": "audio/vo/vo_a4_c004_02_v04.wav",
+   "duration": 5.12,
+   "bus": "vo"
+  },
+  "vo_a4_c005_01": {
+   "source": "audio/vo/vo_a4_c005_01_v04.wav",
+   "duration": 1.24,
+   "bus": "vo"
+  },
+  "vo_a4_c005_02": {
+   "source": "audio/vo/vo_a4_c005_02_v04.wav",
+   "duration": 4.01,
+   "bus": "vo"
+  },
+  "vo_a4_c005_03": {
+   "source": "audio/vo/vo_a4_c005_03_v04.wav",
+   "duration": 3.01,
+   "bus": "vo"
+  },
+  "vo_a4_c005_04": {
+   "source": "audio/vo/vo_a4_c005_04_v04.wav",
+   "duration": 3.05,
+   "bus": "vo"
+  },
+  "vo_a4_c005_05": {
+   "source": "audio/vo/vo_a4_c005_05_v04.wav",
+   "duration": 3.16,
+   "bus": "vo"
+  },
+  "vo_a4_c006_01": {
+   "source": "audio/vo/vo_a4_c006_01_v04.wav",
+   "duration": 4.06,
+   "bus": "vo"
+  },
+  "vo_a4_c007_01": {
+   "source": "audio/vo/vo_a4_c007_01_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a4_c008_01": {
+   "source": "audio/vo/vo_a4_c008_01_v04.wav",
+   "duration": 3.02,
+   "bus": "vo"
+  },
+  "vo_a4_c008_02": {
+   "source": "audio/vo/vo_a4_c008_02_v04.wav",
+   "duration": 4.51,
+   "bus": "vo"
+  },
+  "vo_a4_c009_01": {
+   "source": "audio/vo/vo_a4_c009_01_v04.wav",
+   "duration": 1.36,
+   "bus": "vo"
+  },
+  "vo_a4_c009_02": {
+   "source": "audio/vo/vo_a4_c009_02_v04.wav",
+   "duration": 7.63,
+   "bus": "vo"
+  },
+  "vo_a4_c009_03": {
+   "source": "audio/vo/vo_a4_c009_03_v04.wav",
+   "duration": 4.67,
+   "bus": "vo"
+  },
+  "vo_a4_c009_04": {
+   "source": "audio/vo/vo_a4_c009_04_v04.wav",
+   "duration": 4.21,
+   "bus": "vo"
+  },
+  "vo_a4_c009_05": {
+   "source": "audio/vo/vo_a4_c009_05_v04.wav",
+   "duration": 3.64,
+   "bus": "vo"
+  },
+  "vo_a4_c010_01": {
+   "source": "audio/vo/vo_a4_c010_01_v04.wav",
+   "duration": 5.12,
+   "bus": "vo"
+  },
+  "vo_a4_c011_01": {
+   "source": "audio/vo/vo_a4_c011_01_v04.wav",
+   "duration": 1.42,
+   "bus": "vo"
+  },
+  "vo_a4_c012_01": {
+   "source": "audio/vo/vo_a4_c012_01_v04.wav",
+   "duration": 2.45,
+   "bus": "vo"
+  },
+  "vo_a4_c012_02": {
+   "source": "audio/vo/vo_a4_c012_02_v04.wav",
+   "duration": 1.86,
+   "bus": "vo"
+  },
+  "vo_a4_c012_03": {
+   "source": "audio/vo/vo_a4_c012_03_v04.wav",
+   "duration": 5.33,
+   "bus": "vo"
+  },
+  "vo_a4_c012_04": {
+   "source": "audio/vo/vo_a4_c012_04_v04.wav",
+   "duration": 9.04,
+   "bus": "vo"
+  },
+  "vo_a4_c012_05": {
+   "source": "audio/vo/vo_a4_c012_05_v04.wav",
+   "duration": 3.04,
+   "bus": "vo"
+  },
+  "vo_a4_c013_01": {
+   "source": "audio/vo/vo_a4_c013_01_v04.wav",
+   "duration": 5.11,
+   "bus": "vo"
+  },
+  "vo_a4_c013_02": {
+   "source": "audio/vo/vo_a4_c013_02_v04.wav",
+   "duration": 4.22,
+   "bus": "vo"
+  },
+  "vo_a4_c013_03": {
+   "source": "audio/vo/vo_a4_c013_03_v04.wav",
+   "duration": 5.52,
+   "bus": "vo"
+  },
+  "vo_a5_c001_01": {
+   "source": "audio/vo/vo_a5_c001_01_v04.wav",
+   "duration": 3.63,
+   "bus": "vo"
+  },
+  "vo_a5_c001_02": {
+   "source": "audio/vo/vo_a5_c001_02_v04.wav",
+   "duration": 7.32,
+   "bus": "vo"
+  },
+  "vo_a5_c001_03": {
+   "source": "audio/vo/vo_a5_c001_03_v04.wav",
+   "duration": 2.09,
+   "bus": "vo"
+  },
+  "vo_a5_c001_04": {
+   "source": "audio/vo/vo_a5_c001_04_v04.wav",
+   "duration": 2.9,
+   "bus": "vo"
+  },
+  "vo_a5_c001_05": {
+   "source": "audio/vo/vo_a5_c001_05_v04.wav",
+   "duration": 1.96,
+   "bus": "vo"
+  },
+  "vo_a5_c001_06": {
+   "source": "audio/vo/vo_a5_c001_06_v04.wav",
+   "duration": 5.02,
+   "bus": "vo"
+  },
+  "vo_a5_c002_01": {
+   "source": "audio/vo/vo_a5_c002_01_v04.wav",
+   "duration": 1.23,
+   "bus": "vo"
+  },
+  "vo_a5_c002_02": {
+   "source": "audio/vo/vo_a5_c002_02_v04.wav",
+   "duration": 5.78,
+   "bus": "vo"
+  },
+  "vo_a5_c002_03": {
+   "source": "audio/vo/vo_a5_c002_03_v04.wav",
+   "duration": 3.39,
+   "bus": "vo"
+  },
+  "vo_a5_c002_04": {
+   "source": "audio/vo/vo_a5_c002_04_v04.wav",
+   "duration": 3.81,
+   "bus": "vo"
+  },
+  "vo_a5_c002_05": {
+   "source": "audio/vo/vo_a5_c002_05_v04.wav",
+   "duration": 4.61,
+   "bus": "vo"
+  },
+  "vo_a5_c003_01": {
+   "source": "audio/vo/vo_a5_c003_01_v04.wav",
+   "duration": 5.02,
+   "bus": "vo"
+  },
+  "vo_a5_c004_01": {
+   "source": "audio/vo/vo_a5_c004_01_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a5_c005_01": {
+   "source": "audio/vo/vo_a5_c005_01_v04.wav",
+   "duration": 1.36,
+   "bus": "vo"
+  },
+  "vo_a5_c005_02": {
+   "source": "audio/vo/vo_a5_c005_02_v04.wav",
+   "duration": 5.6,
+   "bus": "vo"
+  },
+  "vo_a5_c005_03": {
+   "source": "audio/vo/vo_a5_c005_03_v04.wav",
+   "duration": 5.29,
+   "bus": "vo"
+  },
+  "vo_a5_c006_01": {
+   "source": "audio/vo/vo_a5_c006_01_v04.wav",
+   "duration": 5.15,
+   "bus": "vo"
+  },
+  "vo_a5_c006_02": {
+   "source": "audio/vo/vo_a5_c006_02_v04.wav",
+   "duration": 6.92,
+   "bus": "vo"
+  },
+  "vo_a5_c006_03": {
+   "source": "audio/vo/vo_a5_c006_03_v04.wav",
+   "duration": 6.82,
+   "bus": "vo"
+  },
+  "vo_a5_c006_04": {
+   "source": "audio/vo/vo_a5_c006_04_v04.wav",
+   "duration": 4.06,
+   "bus": "vo"
+  },
+  "vo_a5_c006_05": {
+   "source": "audio/vo/vo_a5_c006_05_v04.wav",
+   "duration": 4.98,
+   "bus": "vo"
+  },
+  "vo_a5_c007_01": {
+   "source": "audio/vo/vo_a5_c007_01_v04.wav",
+   "duration": 4.84,
+   "bus": "vo"
+  },
+  "vo_a5_c007_02": {
+   "source": "audio/vo/vo_a5_c007_02_v04.wav",
+   "duration": 4.53,
+   "bus": "vo"
+  },
+  "vo_a5_c008_01": {
+   "source": "audio/vo/vo_a5_c008_01_v04.wav",
+   "duration": 5.71,
+   "bus": "vo"
+  },
+  "vo_a5_c008_02": {
+   "source": "audio/vo/vo_a5_c008_02_v04.wav",
+   "duration": 3.64,
+   "bus": "vo"
+  },
+  "vo_a5_c008_03": {
+   "source": "audio/vo/vo_a5_c008_03_v04.wav",
+   "duration": 5.4,
+   "bus": "vo"
+  },
+  "vo_a5_c008_04": {
+   "source": "audio/vo/vo_a5_c008_04_v04.wav",
+   "duration": 2.02,
+   "bus": "vo"
+  },
+  "vo_a5_c008_05": {
+   "source": "audio/vo/vo_a5_c008_05_v04.wav",
+   "duration": 6.39,
+   "bus": "vo"
+  },
+  "vo_a6_c001_01": {
+   "source": "audio/vo/vo_a6_c001_01_v04.wav",
+   "duration": 3.82,
+   "bus": "vo"
+  },
+  "vo_a6_c001_02": {
+   "source": "audio/vo/vo_a6_c001_02_v04.wav",
+   "duration": 2.01,
+   "bus": "vo"
+  },
+  "vo_a6_c002_01": {
+   "source": "audio/vo/vo_a6_c002_01_v04.wav",
+   "duration": 2.85,
+   "bus": "vo"
+  },
+  "vo_a6_c002_02": {
+   "source": "audio/vo/vo_a6_c002_02_v04.wav",
+   "duration": 12.34,
+   "bus": "vo"
+  },
+  "vo_a6_c002_03": {
+   "source": "audio/vo/vo_a6_c002_03_v04.wav",
+   "duration": 4.59,
+   "bus": "vo"
+  },
+  "vo_a6_c002_04": {
+   "source": "audio/vo/vo_a6_c002_04_v04.wav",
+   "duration": 3.53,
+   "bus": "vo"
+  },
+  "vo_a6_c003_01": {
+   "source": "audio/vo/vo_a6_c003_01_v04.wav",
+   "duration": 1.35,
+   "bus": "vo"
+  },
+  "vo_a6_c003_02": {
+   "source": "audio/vo/vo_a6_c003_02_v04.wav",
+   "duration": 5.73,
+   "bus": "vo"
+  },
+  "vo_a6_c003_03": {
+   "source": "audio/vo/vo_a6_c003_03_v04.wav",
+   "duration": 3.48,
+   "bus": "vo"
+  },
+  "vo_a6_c003_04": {
+   "source": "audio/vo/vo_a6_c003_04_v04.wav",
+   "duration": 4.08,
+   "bus": "vo"
+  },
+  "vo_a6_c003_05": {
+   "source": "audio/vo/vo_a6_c003_05_v04.wav",
+   "duration": 3.91,
+   "bus": "vo"
+  },
+  "vo_a6_c004_01": {
+   "source": "audio/vo/vo_a6_c004_01_v04.wav",
+   "duration": 4.74,
+   "bus": "vo"
+  },
+  "vo_a6_c005_01": {
+   "source": "audio/vo/vo_a6_c005_01_v04.wav",
+   "duration": 2.41,
+   "bus": "vo"
+  },
+  "vo_a6_c006_01": {
+   "source": "audio/vo/vo_a6_c006_01_v04.wav",
+   "duration": 3.96,
+   "bus": "vo"
+  },
+  "vo_a6_c006_02": {
+   "source": "audio/vo/vo_a6_c006_02_v04.wav",
+   "duration": 2.96,
+   "bus": "vo"
+  },
+  "vo_a6_c006_03": {
+   "source": "audio/vo/vo_a6_c006_03_v04.wav",
+   "duration": 4.72,
+   "bus": "vo"
+  },
+  "vo_a6_c006_04": {
+   "source": "audio/vo/vo_a6_c006_04_v04.wav",
+   "duration": 5.55,
+   "bus": "vo"
+  },
+  "vo_a6_c006_05": {
+   "source": "audio/vo/vo_a6_c006_05_v04.wav",
+   "duration": 3.51,
+   "bus": "vo"
+  },
+  "vo_a6_c006_06": {
+   "source": "audio/vo/vo_a6_c006_06_v04.wav",
+   "duration": 2.76,
+   "bus": "vo"
+  },
+  "vo_a6_c007_01": {
+   "source": "audio/vo/vo_a6_c007_01_v04.wav",
+   "duration": 3.52,
+   "bus": "vo"
+  },
+  "vo_a6_c007_02": {
+   "source": "audio/vo/vo_a6_c007_02_v04.wav",
+   "duration": 2.96,
+   "bus": "vo"
+  },
+  "vo_a6_c007_03": {
+   "source": "audio/vo/vo_a6_c007_03_v04.wav",
+   "duration": 4.32,
+   "bus": "vo"
+  },
+  "vo_a6_c008_02": {
+   "source": "audio/vo/vo_a6_c008_02_v04.wav",
+   "duration": 5.98,
+   "bus": "vo"
+  },
+  "vo_a6_c008_03": {
+   "source": "audio/vo/vo_a6_c008_03_v04.wav",
+   "duration": 4.64,
+   "bus": "vo"
+  },
+  "vo_a6_c009_01": {
+   "source": "audio/vo/vo_a6_c009_01_v04.wav",
+   "duration": 2.29,
+   "bus": "vo"
+  },
+  "vo_a6_c009_02": {
+   "source": "audio/vo/vo_a6_c009_02_v04.wav",
+   "duration": 5.65,
+   "bus": "vo"
+  },
+  "vo_a6_c009_03": {
+   "source": "audio/vo/vo_a6_c009_03_v04.wav",
+   "duration": 8.08,
+   "bus": "vo"
+  },
+  "vo_a6_c009_04": {
+   "source": "audio/vo/vo_a6_c009_04_v04.wav",
+   "duration": 3.34,
+   "bus": "vo"
+  },
+  "vo_a7_c001_01": {
+   "source": "audio/vo/vo_a7_c001_01_v04.wav",
+   "duration": 4.94,
+   "bus": "vo"
+  },
+  "vo_a7_c001_02": {
+   "source": "audio/vo/vo_a7_c001_02_v04.wav",
+   "duration": 5.09,
+   "bus": "vo"
+  },
+  "vo_a7_c001_03": {
+   "source": "audio/vo/vo_a7_c001_03_v04.wav",
+   "duration": 6.74,
+   "bus": "vo"
+  },
+  "vo_a7_c002_01": {
+   "source": "audio/vo/vo_a7_c002_01_v04.wav",
+   "duration": 2.68,
+   "bus": "vo"
+  },
+  "vo_a7_c003_01": {
+   "source": "audio/vo/vo_a7_c003_01_v04.wav",
+   "duration": 4.82,
+   "bus": "vo"
+  },
+  "vo_a7_c003_02": {
+   "source": "audio/vo/vo_a7_c003_02_v04.wav",
+   "duration": 3.49,
+   "bus": "vo"
+  },
+  "vo_a8_c001_01": {
+   "source": "audio/vo/vo_a8_c001_01_v04.wav",
+   "duration": 3.05,
+   "bus": "vo"
+  },
+  "music_bows": {
+   "source": "audio/music/music_bows_v02.wav",
+   "duration": 18,
+   "bus": "music"
+  },
+  "music_closing": {
+   "source": "audio/music/music_closing_v01.wav",
+   "duration": 10,
+   "bus": "music"
+  },
+  "music_courage": {
+   "source": "audio/music/music_courage_v02.wav",
+   "duration": 30,
+   "bus": "music"
+  },
+  "music_m4_light": {
+   "source": "audio/music/music_m4_light_v02.wav",
+   "duration": 32,
+   "bus": "music"
+  },
+  "music_m4_strings": {
+   "source": "audio/music/music_m4_strings_v01.wav",
+   "duration": 46,
+   "bus": "music"
+  },
+  "music_opening": {
+   "source": "audio/music/music_opening_v01.wav",
+   "duration": 15,
+   "bus": "music"
+  },
+  "music_recovery": {
+   "source": "audio/music/music_recovery_v02.wav",
+   "duration": 24,
+   "bus": "music"
+  },
+  "music_road": {
+   "source": "audio/music/music_road_v02.wav",
+   "duration": 20,
+   "bus": "music"
+  },
+  "music_road_hold": {
+   "source": "audio/music/music_road_hold_v01.wav",
+   "duration": 16,
+   "bus": "music"
+  },
+  "music_shiny": {
+   "source": "audio/music/music_shiny_v02.wav",
+   "duration": 15,
+   "bus": "music"
+  },
+  "music_town": {
+   "source": "audio/music/music_town_v01.wav",
+   "duration": 30,
+   "bus": "music"
+  },
+  "music_town_night": {
+   "source": "audio/music/music_town_night_v02.wav",
+   "duration": 30,
+   "bus": "music"
+  },
+  "music_zhezhe": {
+   "source": "audio/music/music_zhezhe_v02.wav",
+   "duration": 16,
+   "bus": "music"
+  },
+  "sfx_ambulance_engine": {
+   "source": "audio/sfx/sfx_ambulance_engine_v01.wav",
+   "duration": 16,
+   "bus": "sfx"
+  },
+  "sfx_bamboo_drop": {
+   "source": "audio/sfx/sfx_bamboo_drop_v01.wav",
+   "duration": 1,
+   "bus": "sfx"
+  },
+  "sfx_card_in": {
+   "source": "audio/sfx/sfx_card_in_v01.wav",
+   "duration": 1.35,
+   "bus": "sfx"
+  },
+  "sfx_crowd_far": {
+   "source": "audio/sfx/sfx_crowd_far_v01.wav",
+   "duration": 40,
+   "bus": "sfx"
+  },
+  "sfx_crowd_short": {
+   "source": "audio/sfx/sfx_crowd_short_v01.wav",
+   "duration": 4,
+   "bus": "sfx"
+  },
+  "sfx_curtain_close": {
+   "source": "audio/sfx/sfx_curtain_close_v01.wav",
+   "duration": 2.3,
+   "bus": "sfx"
+  },
+  "sfx_curtain_open": {
+   "source": "audio/sfx/sfx_curtain_open_v01.wav",
+   "duration": 2.3,
+   "bus": "sfx"
+  },
+  "sfx_fold": {
+   "source": "audio/sfx/sfx_fold_v01.wav",
+   "duration": 0.95,
+   "bus": "sfx"
+  },
+  "sfx_footsteps": {
+   "source": "audio/sfx/sfx_footsteps_v01.wav",
+   "duration": 4,
+   "bus": "sfx"
+  },
+  "sfx_gate_ambience": {
+   "source": "audio/sfx/sfx_gate_ambience_v01.wav",
+   "duration": 40,
+   "bus": "sfx"
+  },
+  "sfx_gust": {
+   "source": "audio/sfx/sfx_gust_v01.wav",
+   "duration": 2.6,
+   "bus": "sfx"
+  },
+  "sfx_lamp_on": {
+   "source": "audio/sfx/sfx_lamp_on_v01.wav",
+   "duration": 3.4,
+   "bus": "sfx"
+  },
+  "sfx_paper_rustle": {
+   "source": "audio/sfx/sfx_paper_rustle_v01.wav",
+   "duration": 1.3,
+   "bus": "sfx"
+  },
+  "sfx_phone_bed": {
+   "source": "audio/sfx/sfx_phone_bed_v01.wav",
+   "duration": 40,
+   "bus": "sfx"
+  },
+  "sfx_phone_noanswer": {
+   "source": "audio/sfx/sfx_phone_noanswer_v01.wav",
+   "duration": 2.6,
+   "bus": "sfx"
+  },
+  "sfx_plane_whoosh": {
+   "source": "audio/sfx/sfx_plane_whoosh_v01.wav",
+   "duration": 1.6,
+   "bus": "sfx"
+  },
+  "sfx_quiet_fold": {
+   "source": "audio/sfx/sfx_quiet_fold_v01.wav",
+   "duration": 2.8,
+   "bus": "sfx"
+  },
+  "sfx_school_bell": {
+   "source": "audio/sfx/sfx_school_bell_v01.wav",
+   "duration": 7,
+   "bus": "sfx"
+  },
+  "sfx_stamp": {
+   "source": "audio/sfx/sfx_stamp_v01.wav",
+   "duration": 0.75,
+   "bus": "sfx"
+  },
+  "sfx_string_drop": {
+   "source": "audio/sfx/sfx_string_drop_v01.wav",
+   "duration": 1,
+   "bus": "sfx"
+  },
+  "sfx_string_taut": {
+   "source": "audio/sfx/sfx_string_taut_v01.wav",
+   "duration": 0.75,
+   "bus": "sfx"
+  },
+  "sfx_truck_arrive": {
+   "source": "audio/sfx/sfx_truck_arrive_v01.wav",
+   "duration": 5,
+   "bus": "sfx"
+  },
+  "sfx_watch_dial": {
+   "source": "audio/sfx/sfx_watch_dial_v01.wav",
+   "duration": 2.2,
+   "bus": "sfx"
+  },
+  "sfx_wind": {
+   "source": "audio/sfx/sfx_wind_v01.wav",
+   "duration": 30,
+   "bus": "sfx"
+  },
+  "sfx_windchime": {
+   "source": "audio/sfx/sfx_windchime_v01.wav",
+   "duration": 4.2,
+   "bus": "sfx"
+  }
+ },
+ "fps": 30
+}

@@ -20,9 +20,17 @@
 5. 換景漸暗中、題卡蓋住舞台的格（G5 修正第 1 輪）：capture.mjs 在每筆量測記下 world.dim（換景漸暗 0＝正常、1＝全暗）與
    world.quizVisible（DOM 題卡）；dim > 0.05 或題卡 > 0.5 的格不量兒童身後亮度、也不量操偶線 ΔL*（畫面是暗的或被題卡蓋住，
    數字沒有意義；列 dim、quiz 值與 excluded_dim）。
-輸出：probe_report.json，並在終端機印摘要。
+   G5 修正第 2 輪（主線授權）：引擎 getState().world 沒有 quizVisible，capture.mjs 記的 quiz 一直是 0，題卡格沒有被排除
+   （a2_c005–c011 線 ΔL* 0.0、紙環 51 個「剪影外」）。改成依時間軸自己算題卡不透明度（同 app/src/engine/world.ts：
+   起始＝initialState.stage.quiz，沒寫時 reveal 為 1；quiz.show／hide／reveal 正弦緩動），取 max(capture 記錄, 時間軸)；
+   這些格也不做紙環剪影判定（rings 另列 excluded_rings）。時間軸＝--timeline 指定的檔，沒指定時用擷取資料夾上一層的 timeline.json
+   （驗收包；act_review_pack.py analyze 會在寫好新 timeline.json 後重跑本檔）；cue 長度和 capture.json 不同的 cue 視為過期、不用。
+輸出：probe_report.json（--report-dir 可改寫到別的資料夾，連同 ring_crops/、ring_crops.png、rope_crop_4x.png），並在終端機印摘要。
+
+用法：/opt/anaconda3/bin/python3 tools/capture_probe.py <擷取資料夾> [--timeline <timeline.json>] [--report-dir <資料夾>]
 """
 import json
+import math
 import sys
 from pathlib import Path
 
@@ -32,6 +40,63 @@ from PIL import Image
 PROJ = (0.65, 0.18, 0.87)
 # 換景漸暗（world.dim）超過這個值的格不量兒童背景與線的 ΔL*
 DIM_MAX = 0.05
+# 題卡不透明度超過這個值的格不量兒童背景、線的 ΔL*、紙環剪影判定
+QUIZ_MAX = 0.5
+ROOT = Path(__file__).resolve().parent.parent
+
+
+def _sine(u):
+    u = min(1.0, max(0.0, u))
+    return 0.5 - 0.5 * math.cos(math.pi * u)
+
+
+def quiz_timeline(out, tl_path=None):
+    """依時間軸算題卡不透明度：回傳 (quiz_at(cueId, t) → float|None, 說明)。None＝這個 cue 沒有可用的時間軸。"""
+    p = Path(tl_path) if tl_path else out.parent / "timeline.json"
+    if not p.exists():
+        return (lambda cid, t: None), "沒有時間軸（只用 capture 記錄的 quiz）"
+    tl = json.loads(p.read_text(encoding="utf-8"))
+    cap = {}
+    try:
+        cap = {c["id"]: c.get("duration") for c in json.loads((out / "capture.json").read_text(encoding="utf-8")).get("cueList", [])}
+    except (OSError, ValueError):
+        pass
+    init = {}
+    for f in sorted((ROOT / "app/cues/show").glob("a*.json")):
+        try:
+            for c in json.loads(f.read_text(encoding="utf-8")).get("cues", []):
+                st = (c.get("initialState") or {}).get("stage") or {}
+                init[c["id"]] = bool(st["quiz"]) if "quiz" in st else c.get("kind") == "reveal"
+        except (OSError, ValueError, KeyError):
+            continue
+    cues, stale = {}, []
+    for c in tl.get("cues", []):
+        if c["id"] in cap and cap[c["id"]] is not None and abs(float(cap[c["id"]]) - float(c["duration"])) > 0.02:
+            stale.append(c["id"])
+            continue
+        q0 = init.get(c["id"], c.get("kind") == "reveal")
+        an = [a for a in c.get("anims", []) if a["name"] in ("quiz.show", "quiz.hide", "quiz.reveal") and not a.get("target")]
+        cues[c["id"]] = (1.0 if q0 else 0.0, an)
+
+    def quiz_at(cid, t):
+        if cid not in cues:
+            return None
+        q, an = cues[cid]
+        for a in an:
+            dur = a["end"] - a["start"]
+            if t < a["start"] and dur > 0:
+                continue
+            pr = (1.0 if t >= a["start"] else 0.0) if dur <= 0 else _sine((t - a["start"]) / dur)
+            if a["name"] == "quiz.show":
+                q = q + (1 - q) * pr
+            elif a["name"] == "quiz.hide":
+                q = q * (1 - pr)
+            else:
+                q = 1.0
+        return q
+
+    note = f"時間軸 {p}（{len(cues)} 個 cue）" + (f"；長度和 capture.json 不同、不用：{'、'.join(stale)}" if stale else "")
+    return quiz_at, note
 
 
 def to_linear(a):
@@ -185,10 +250,16 @@ def ring_sheet(out, crops):
 
 
 def main():
-    out = Path(sys.argv[1]).resolve()
+    argv = sys.argv[1:]
+    opt = lambda k: argv[argv.index(k) + 1] if k in argv and argv.index(k) + 1 < len(argv) else None
+    out = Path(argv[0]).resolve()
+    rdir = Path(opt("--report-dir")).resolve() if opt("--report-dir") else out
+    rdir.mkdir(parents=True, exist_ok=True)
+    quiz_at, quiz_note = quiz_timeline(out, opt("--timeline"))
     data = json.loads((out / "probe.json").read_text(encoding="utf-8"))
     rows, bg_rows, ring_rows, crops = [], [], [], []
-    cdir = out / "ring_crops"
+    excluded_rings = offscreen_rings = 0
+    cdir = rdir / "ring_crops"
     cdir.mkdir(exist_ok=True)
     for f in cdir.glob("*.png"):
         f.unlink()
@@ -208,7 +279,9 @@ def main():
         proj = projector(img)
         bgp = out / rec.get("bgFrame", "")
         bg = np.asarray(Image.open(bgp).convert("RGB")) if rec.get("bgFrame") and bgp.exists() else None
-        dimmed = (rec.get("dim") or 0) > DIM_MAX or (rec.get("quiz") or 0) > 0.5
+        qt = quiz_at(rec["cueId"], float(rec["t"]))
+        quiz = max(float(rec.get("quiz") or 0), qt or 0.0)
+        dimmed = (rec.get("dim") or 0) > DIM_MAX or quiz > QUIZ_MAX
         for s in rec["strings"]:
             if not s["visible"] or rec.get("curtain", 1) < 0.95:  # 布幕沒全開（線在布幕後面）不量
                 continue
@@ -221,9 +294,13 @@ def main():
             else:
                 row.update({"deltaL": None, "deltaL_proj": None})
             if dimmed:
-                row.update({"dim": rec.get("dim"), "quiz": rec.get("quiz"), "excluded_dim": True})
+                row.update({"dim": rec.get("dim"), "quiz": round(quiz, 3), "excluded_dim": True})
             rows.append(row)
-            if s.get("ringPx") and bg is not None:
+            if s.get("ringPx") and bg is not None and dimmed:
+                excluded_rings += 1
+            elif s.get("ringPx") and bg is not None and ring_inside(img, bg, s["ringPx"])[0] is None:
+                offscreen_rings += 1       # 紙環中心在畫面外（角色在鏡頭外）：不判定
+            elif s.get("ringPx") and bg is not None:
                 dv, inside = ring_inside(img, bg, s["ringPx"])
                 rx, ry = s["ringPx"]
                 body = ring_body(img, s["ringPx"], s.get("ringRadiusPx") or 0, s.get("dir")) if s.get("ringRadiusPx") else None
@@ -245,7 +322,7 @@ def main():
                         dx, dy = s["dir"]
                         cx, cy = rx + dx * 70, ry + dy * 70
                         rb = (int(cx) - 24, int(cy) - 48, int(cx) + 24, int(cy) + 48)
-                        Image.open(fp).convert("RGB").crop(rb).resize((192, 384), Image.NEAREST).save(out / "rope_crop_4x.png")
+                        Image.open(fp).convert("RGB").crop(rb).resize((192, 384), Image.NEAREST).save(rdir / "rope_crop_4x.png")
                         rope_crop_done = True
         if bg is not None and rec.get("curtain", 1) >= 0.95 and not dimmed:  # 布幕沒全開、換景漸暗中（dim > 0.05）不量背景
             H, W = bg.shape[:2]
@@ -264,13 +341,14 @@ def main():
                                 "upright": round(bh / max(1, max_h.get(a["id"], bh)), 2),
                                 "region": [rx0, ry0, rx1, ry1], "proj_lum_median": round(float(np.median(lum)), 3),
                                 "proj_lum_p10": round(float(np.percentile(lum, 10)), 3)})
-    sheet = ring_sheet(out, crops)
+    sheet = ring_sheet(rdir, crops)
     close = [r for r in rows if r.get("deltaL") is not None]
     up = [r for r in bg_rows if r["upright"] >= 0.6]
     report = {
         "rule": {"string_width_px": "6–10（中景，G4 修正第 22 項）；G5 修正第 1 輪：全劇非 G4 cue 中景 ≥ 8、遠景 ≥ 6–7（widthPx＝實際紙帶寬）", "deltaL": ">= 25（投影模擬後 >= 15）；ΔL*＝每一側取繩身或該側深灰邊對背景的較大者、再取兩側較小者（判定方式待主線確認）",
                  "ring_center_inside_silhouette": "全部 true（G4 修正第 23 項）", "child_bg_proj_lum": ">= 0.50",
-                 "dim_excluded": f"換景漸暗中 world.dim > {DIM_MAX}、或題卡 quizVisible > 0.5（DOM 題卡蓋住舞台）的格不量兒童背景與線的 ΔL*"},
+                 "dim_excluded": f"換景漸暗中 world.dim > {DIM_MAX}、或題卡 quizVisible > {QUIZ_MAX}（DOM 題卡蓋住舞台）的格不量兒童背景、線的 ΔL*、紙環剪影判定",
+                 "quiz_source": "max(capture.mjs 記錄的 quiz, 依時間軸算的題卡不透明度)；" + quiz_note},
         "strings": rows,
         "rings": ring_rows,
         "ring_crops": {"sheet": sheet, "dir": "ring_crops/", "rope_crop_4x": "rope_crop_4x.png" if rope_crop_done else None},
@@ -299,14 +377,16 @@ def main():
             "min_child_bg_p10": min((r["proj_lum_p10"] for r in bg_rows), default=None),
             "min_child_bg_median_upright": min((r["proj_lum_median"] for r in up), default=None),
             "child_bg_frames": len(bg_rows),
-            "frames_excluded_dim": sum(1 for r in data["probes"] if ((r.get("dim") or 0) > DIM_MAX or (r.get("quiz") or 0) > 0.5) and r.get("frame")),
+            "frames_excluded_dim": sum(1 for r in data["probes"] if ((r.get("dim") or 0) > DIM_MAX or max(float(r.get("quiz") or 0), quiz_at(r["cueId"], float(r["t"])) or 0.0) > QUIZ_MAX) and r.get("frame")),
+            "rings_excluded_dim_or_quiz": excluded_rings,
+            "rings_offscreen": offscreen_rings,
         },
         "limits": "ΔL* 以線兩側緊鄰像素計（可能是皮膚、袖口或背景）；紙環剪影判定只看紙環中心；實際投影無法由此驗證。",
     }
-    (out / "probe_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
+    (rdir / "probe_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     s = report["summary"]
     print(f"[probe] 線寬 {s['min_string_width_px']}–{s['max_string_width_px']} px；ΔL* 最小 {s['min_deltaL']}（投影 {s['min_deltaL_proj']}；繩身 {s['min_deltaL_body']}、深灰邊 {s['min_deltaL_edge']}）；"
-          f"紙環中心在剪影內 {s['rings_center_inside']}／{s['rings_measured']}；環身亮度最低 {s['ring_body_luma_min']}、色相中位 {s['ring_body_hue_median']}；兒童背景投影亮度 中位數最低 {s['min_child_bg_median']}、p10 最低 {s['min_child_bg_p10']} → probe_report.json")
+          f"紙環中心在剪影內 {s['rings_center_inside']}／{s['rings_measured']}（題卡／漸暗格不判定 {excluded_rings}、畫面外 {offscreen_rings}）；環身亮度最低 {s['ring_body_luma_min']}、色相中位 {s['ring_body_hue_median']}；兒童背景投影亮度 中位數最低 {s['min_child_bg_median']}、p10 最低 {s['min_child_bg_p10']} → {rdir / 'probe_report.json'}")
 
 
 if __name__ == "__main__":
