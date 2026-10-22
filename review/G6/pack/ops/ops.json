@@ -2,11 +2,11 @@
  "engine_test": {
   "log": "ops/engine_test.log",
   "summary": {
-   "passed": 144,
-   "total": 144
+   "passed": 151,
+   "total": 151
   },
-  "checks": 144,
-  "passed": 144,
+  "checks": 151,
+  "passed": 151,
   "failed": []
  },
  "show_supplement": {
@@ -55,13 +55,13 @@
     "group": "對白中的操作（全劇正式配音）",
     "name": "a1_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "5.703→5.703、suspended；差 0 ms"
+    "detail": "5.66→5.66、suspended；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a1_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "t 5.916→0、差 0 ms"
+    "detail": "t 6.055→0、差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
@@ -73,13 +73,13 @@
     "group": "對白中的操作（全劇正式配音）",
     "name": "a4_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "2.417→2.417、suspended；差 0 ms"
+    "detail": "2.439→2.439、suspended；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a4_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "t 2.844→0、差 0 ms"
+    "detail": "t 2.817→0、差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
@@ -97,31 +97,31 @@
     "group": "對白中的操作（全劇正式配音）",
     "name": "a6_c001 暫停 0.6 秒：時間停住、音訊一起停；繼續後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "4.364→4.364、suspended；差 0 ms"
+    "detail": "4.343→4.343、suspended；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a6_c001 按 R：同一段從頭播、舊台詞停掉；重播後時間差 ≤ 50 ms、對白 ≤ 1",
     "ok": true,
-    "detail": "t 4.679→0、差 0 ms"
+    "detail": "t 4.572→0、差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a1_c001 頁面隱藏：自動暫停；恢復後仍停住不發聲；按下一步只繼續同一段、時間差 ≤ 50 ms",
     "ok": true,
-    "detail": "hidden；4.737→4.737（suspended）→ a1_c001 playing；差 0 ms"
+    "detail": "hidden；4.727→4.727（suspended）→ a1_c001 playing；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a1_c001 分頁凍結（合成 freeze／resume 事件）：自動暫停、恢復後仍停住不發聲；老師按繼續後時間差 ≤ 50 ms",
     "ok": true,
-    "detail": "freeze；4.748→4.748（suspended）→ playing；差 0 ms"
+    "detail": "freeze；4.753→4.753（suspended）→ playing；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",
     "name": "a1_c001 畫面更新中斷 4.5 秒（模擬休眠喚醒）：自動暫停、之後不自行播放；老師按繼續後時間差 ≤ 50 ms",
     "ok": true,
-    "detail": "sleep、9.212→9.212 → playing；差 0 ms"
+    "detail": "sleep、9.239→9.239 → playing；差 0 ms"
    },
    {
     "group": "對白中的操作（全劇正式配音）",

@@ -192,7 +192,7 @@
    "segment": "a0",
    "kind": "scene",
    "title": "折折登場",
-   "duration": 22.3,
+   "duration": 22.27,
    "autoAdvance": false,
    "set": "workshop_a0",
    "enterFade": 0,
@@ -228,7 +228,7 @@
       "ale"
      ],
      "start": 17.68,
-     "end": 20.3
+     "end": 20.27
     }
    ]
   },
@@ -2779,7 +2779,7 @@
       "xiaoyu"
      ],
      "start": 6.67,
-     "end": 8.68
+     "end": 8.85
     }
    ]
   },
@@ -3125,7 +3125,7 @@
    "segment": "a6",
    "kind": "scene",
    "title": "又到了紙燈節",
-   "duration": 25.81,
+   "duration": 25.78,
    "autoAdvance": false,
    "set": "a6_shop",
    "enterFade": 0.8,
@@ -3161,7 +3161,7 @@
       "ale"
      ],
      "start": 10.44,
-     "end": 18.52
+     "end": 18.49
     },
     {
      "id": "a6_c009_04",
@@ -3170,8 +3170,8 @@
      "actorIds": [
       "ale"
      ],
-     "start": 18.97,
-     "end": 22.31
+     "start": 18.94,
+     "end": 22.28
     }
    ]
   },

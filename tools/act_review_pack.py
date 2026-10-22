@@ -18,6 +18,7 @@ transcripts：配音（v04）逐句 faster-whisper 逐字稿與劇本差異（�
 index：INDEX.md（只列數字與檔案，不寫評語）。
 """
 import json
+from collections import Counter
 import os
 import re
 import subprocess
@@ -651,7 +652,7 @@ def transcripts(out: Path):
             items.append({"id": l["id"], "speaker": l["speaker"], "script": ref, "cue_text": l["text"], "synth_text": syn, "vo": ROOT / src,
                           "mix": out / "_work" / "mixseg" / f"{l['id']}.wav"})
     rows = [{"id": it["id"], "speaker": it["speaker"], "script": it["script"], "cue_text_equals_script": it["cue_text"].replace("\n", "") == it["script"],
-             "vo_file": str(it["vo"].relative_to(ROOT)), "vo_version_v04": it["vo"].name.endswith("_v04.wav"), "vo": {}, "mix": {}} for it in items]
+             "vo_file": str(it["vo"].relative_to(ROOT)), "vo": {}, "mix": {}} for it in items]
     for mname in vo_lib.ASR_MODELS:
         for src in ("vo", "mix"):
             paths = [it[src] for it in items if it[src].exists()]
@@ -795,14 +796,18 @@ def index(out: Path):
         used = [f"{r['line']} 第 {r['page']} 頁" for r in rows if "退路" in r.get("detect", "")]
         L.append(f"- 退路（G6 精修）：某頁在範圍內找不到停頓時，改用 {fb['noise_dB']} dB、最短靜音 {fb['min_silence_s']} 秒重找那一頁；"
                  f"本段用到退路 {len(used)} 頁" + (f"（{'、'.join(used)}）" if used else "") + "。")
-    L += ["", "## 逐字稿（v04 配音）", ""]
+    L += ["", "## 逐字稿（正式配音）", ""]
     if tr:
         rws = tr["rows"]
         for m in ("small", "large-v3-turbo"):
             vo0 = sum(1 for r in rws if (r["vo"].get(m) or {}).get("cer") == 0)
             mx0 = sum(1 for r in rws if (r["mix"].get(m) or {}).get("cer") == 0)
             L.append(f"- {m}：配音檔逐字正確 {vo0}／{len(rws)} 句、混音中 {mx0}／{len(rws)} 句。")
-        L.append(f"- 配音檔都是 v04：{all(r.get('vo_version_v04') for r in rws)}；cue 文字與劇本相同：{sum(1 for r in rws if r['cue_text_equals_script'])}／{len(rws)}。")
+        # 正式版號以 audio/vo/timings.json 為準（舊的 transcripts.json 沒有版號欄，直接從 vo_file 判斷）
+        official = {k: v.get("file") for k, v in json.loads((ROOT / "audio/vo/timings.json").read_text(encoding="utf-8")).items()}
+        vers = Counter(Path(r["vo_file"]).stem.rsplit("_", 1)[-1] for r in rws)
+        L.append(f"- 配音檔都是 audio/vo/timings.json 記的正式版：{'是' if all(official.get(r['id']) == r['vo_file'] for r in rws) else '否'}（{'、'.join(f'{k} {v} 句' for k, v in sorted(vers.items()))}）；"
+                 f"cue 文字與劇本相同：{sum(1 for r in rws if r['cue_text_equals_script'])}／{len(rws)}。")
     else:
         L.append("- 未產生（--skip-asr）。")
     L += ["", "## 安全量測", "",

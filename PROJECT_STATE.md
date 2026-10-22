@@ -12,7 +12,7 @@
 | G4 代表鏡頭 | 帶一般問題放行（13:00）；嚴重問題（小宇站姿眨眼）主線修正、新代理複驗通過；共用元件凍結 | REVIEW.md G4 關卡決定；review/G4/qa/recheck_r4/ | 第 2 天 13:00 |
 | G5 各幕 | 結案（2026-10-22 16:1x，帶一般問題放行；commit 4940b62）：九段驗收包光敏全部整段通過，engine-test 134／134，教師時間加播放 35:50 | review/G5/ | 完成 |
 | G6 全劇 | 通過，帶一般問題放行（2026-10-22 21:0x）：第 1 輪 2 個嚴重問題修好，重驗 2 位沒有嚴重問題；修正第 2 輪（最後一輪）a8 末句 musicDuck、a5_c005 喊聲、engine-test 輪詢（144 項） | review/G6/pack/INDEX.md；review/G6/qa/r2_failed.md、r2_regress.md；REVIEW.md | 原訂第 3 天 15:00（延後） |
-| G7 交付 | 進行中：交付/ 最後打包（Windows 可攜版、瀏覽器版、九段備援影片、teacher_pdf、使用說明、素材與授權表、總報告）→ 3 位驗收（校長／教育專業、技術 QA、完整性檢查） | review/G7/總報告.md、素材與授權表.md、使用說明.md | 第 3 天晚上 |
+| G7 交付 | **通過，帶一般問題放行（2026-10-23 02:3x）**：第 1 輪不通過（總報告）→ 修正第 1 輪 → 使用者回報「燈」念成「鄧」，3 句重做 v05 並重做受影響的一切 → 重驗 2 位無嚴重問題（完整性 3 分：文件過期、Pages 卡住）→ 修正第 2 輪（文件、故障卡、Pages 生效）→ 記錄放行 | review/G7/總報告.md、素材與授權表.md、使用說明.md | 第 3 天晚上 |
 
 ## 技術骨架（2026-10-20 完成）
 app/ 引擎：G4 版（影像紙偶、整體描邊、紙繩操偶線、摺疊布幕、FX4／FX8、臉部換片與對嘴）；typecheck／build 通過，engine-test 86/86，capture 0 錯誤 0 外部請求。第 1 天 QA 待修 7 項已全部修完（commit bc116ad）。
@@ -22,9 +22,10 @@ app/ 引擎：G4 版（影像紙偶、整體描邊、紙繩操偶線、摺疊布
 G5 各幕兩批（第 3 天 09:00）：素材量產、六幕 cue 與表演、教師控制台。G4 未達 4 分的美術項目不當基準，改用 REVIEW.md G4 關卡決定列的目標（操偶線平面紙繩 v02 已做好；同場角色組成群體與前後景深）。
 
 ## 使用者事項
-0. GitHub（使用者 2026-10-22 提供，公開）：https://github.com/Syu-boming/antiDrugFor2026 ；線上版 https://syu-boming.github.io/antiDrugFor2026/（gh-pages，`zsh tools/deploy_pages.sh`）。使用者決定正式配音公開、清掉歷史裡的開發試音：改寫好的歷史在 scratchpad 的 purge.git，強制推送被 Claude Code 自動安全檢查擋下，等使用者自己推送或放行（見 REVIEW.md 最後幾節）；在那之前主線不推送 main。
+0. GitHub（使用者 2026-10-22 提供，公開）：https://github.com/Syu-boming/antiDrugFor2026 ；線上版 https://syu-boming.github.io/antiDrugFor2026/（gh-pages，`zsh tools/deploy_pages.sh`）。使用者決定正式配音公開、清掉歷史裡的開發試音：scratchpad 的 purge.git 是 78330b5 之前改寫的（已過期，要在最新 main 上重做 filter-branch），強制推送被 Claude Code 自動安全檢查擋下，等使用者自己推送或放行（見 REVIEW.md 最後幾節）；在那之前主線不推送 main。
 1. 探針：2026-10-20 19:16 已交付 AntidrugProbe_v01.zip（含 Electron 版、Edge kiosk .bat、file:// 單檔版），等待結果。
 2. 金鑰：ElevenLabs 新金鑰可用（TTS、讀聲線、聲線設計），存於 .env（不進 Git）。配樂與音效改自製，Artlist 不再需要。
 3. 第 3 天實機彩排：待排。
 4. 試聽頁 https://claude.ai/artifact/35yBSYoPKVCWFSDB8m6r3y ：已完成（5 號定版；A–G 使用者回覆 OK）。
 5. ElevenLabs 兒童用途書面回覆：已取得（2026-10-21），請保存原始郵件（含寄件地址、日期）；課前知會學務處、輔導室時一併說明配音使用 AI 聲線庫。
+6. 「燈」讀音試聽：review/G3/el/deng/listen.html（a0_c002_03、a6_c009_03、a6_c001_02 的 v05，與 a2_c013_05 候選），等使用者聽過回覆；改回或換候選的指令在試聽頁與 review/G3/el/deng/PROGRESS.md。

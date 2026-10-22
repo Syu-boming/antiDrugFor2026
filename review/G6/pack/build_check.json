@@ -1,0 +1,86 @@
+{
+ "note": "建置指紋：current＝目前 app/dist；sections.<節>.recorded＝那一節資料量測時記下的建置（<節>/build.json）。status：fresh＝本次量測；reused_same_build＝沿用、sha1 相同；reused_other_build＝沿用舊建置的數據（sha1 不同，或舊資料沒有記錄 sha1 且檔案時間早於目前 app.js）；reused_unknown_build＝沿用、沒有記錄 sha1 且無法判斷；missing＝沒有資料。",
+ "generated": "2026-10-22T18:02:35.210Z",
+ "current": {
+  "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+  "cuesShowFile": "cues_show.js",
+  "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+  "distBuiltAt": "2026-10-22T16:08:11.962Z",
+  "appJsMtime": "2026-10-22T16:08:11.960Z"
+ },
+ "sections": {
+  "live": {
+   "data": "live/live_raw.json",
+   "option": "--skip-live",
+   "rerun": "不加 --skip-live 重跑（或只用 --perf-only 重跑這一節）",
+   "rerunMin": 27,
+   "exists": true,
+   "fresh": true,
+   "recorded": {
+    "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+    "cuesShowFile": "cues_show.js",
+    "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+    "distBuiltAt": "2026-10-22T16:08:11.962Z",
+    "appJsMtime": "2026-10-22T16:08:11.960Z",
+    "measuredAt": "2026-10-22T18:02:35.192Z"
+   },
+   "dataMtime": "2026-10-22T18:02:35.192Z",
+   "status": "fresh"
+  },
+  "seams": {
+   "data": "seams/seams_raw.json",
+   "option": "--skip-seams",
+   "rerun": "不加 --skip-seams 重跑",
+   "rerunMin": 5,
+   "exists": true,
+   "fresh": true,
+   "recorded": {
+    "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+    "cuesShowFile": "cues_show.js",
+    "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+    "distBuiltAt": "2026-10-22T16:08:11.962Z",
+    "appJsMtime": "2026-10-22T16:08:11.960Z",
+    "measuredAt": "2026-10-22T17:39:00.376Z"
+   },
+   "dataMtime": "2026-10-22T17:39:00.377Z",
+   "status": "fresh"
+  },
+  "ops": {
+   "data": "ops/ops_show.json",
+   "option": "--skip-ops",
+   "rerun": "不加 --skip-ops 重跑",
+   "rerunMin": 3,
+   "exists": true,
+   "fresh": true,
+   "recorded": {
+    "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+    "cuesShowFile": "cues_show.js",
+    "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+    "distBuiltAt": "2026-10-22T16:08:11.962Z",
+    "appJsMtime": "2026-10-22T16:08:11.960Z",
+    "measuredAt": "2026-10-22T17:34:39.028Z"
+   },
+   "dataMtime": "2026-10-22T17:34:39.028Z",
+   "status": "fresh"
+  },
+  "engine_test": {
+   "data": "ops/engine_test.log",
+   "option": "--engine-test-log／--skip-engine-test",
+   "rerun": "不加 --engine-test-log／--skip-engine-test 重跑",
+   "rerunMin": 6,
+   "exists": true,
+   "fresh": true,
+   "recorded": {
+    "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+    "cuesShowFile": "cues_show.js",
+    "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+    "distBuiltAt": "2026-10-22T16:08:11.962Z",
+    "appJsMtime": "2026-10-22T16:08:11.960Z",
+    "measuredAt": "2026-10-22T17:37:56.195Z",
+    "exitCode": 0
+   },
+   "dataMtime": "2026-10-22T17:37:56.195Z",
+   "status": "fresh"
+  }
+ }
+}

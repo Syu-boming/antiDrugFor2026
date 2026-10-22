@@ -1,7 +1,7 @@
 {
  "note": "與建置一致＝驗收包記下的 built（量的那一版 app/dist 合併後的段落）＝目前 app/dist 的 built；sourceMatch＝段落檔 sha1 相同；builtFromSource＝目前 app/dist 是用目前段落檔建的。pack＝null：舊版工具產生的包沒有記錄（要重產）；timelineMatch＝後備參考：包裡解析後的時間軸（timeline.json cues）與目前建置相同（不含 initialState 的站位與鏡位）。",
  "method": "sha1（拿掉所有 checkpoint 欄位、JSON 鍵排序後序列化）；source＝app/cues/show/<段>.json；built＝app/dist/data/cues_show.js 合併後的這一段（段落資訊＋cue）；sourceMerged＝目前段落檔照建置方式合併後的這一段",
- "distBuiltAt": "2026-10-22T15:12:20.497Z",
+ "distBuiltAt": "2026-10-22T16:08:11.962Z",
  "sourceValid": true,
  "segments": {
   "a0": {
@@ -15,7 +15,7 @@
    "pack": {
     "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
     "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
-    "generatedAt": "2026-10-22T11:39:21.456Z"
+    "generatedAt": "2026-10-22T17:01:41.582Z"
    },
    "builtMatch": true,
    "sourceMatch": true,
@@ -115,15 +115,15 @@
   "a6": {
    "file": "app/cues/show/a6.json",
    "current": {
-    "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
-    "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
-    "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+    "source": "db6afa71653e69c74b0f6618d53e9c67b488ab9a",
+    "built": "ae9437e4cd2abf792492210052500435e0197e3c",
+    "sourceMerged": "ae9437e4cd2abf792492210052500435e0197e3c",
     "builtFromSource": true
    },
    "pack": {
-    "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
-    "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
-    "generatedAt": "2026-10-22T10:51:46.824Z"
+    "source": "db6afa71653e69c74b0f6618d53e9c67b488ab9a",
+    "built": "ae9437e4cd2abf792492210052500435e0197e3c",
+    "generatedAt": "2026-10-22T17:18:32.350Z"
    },
    "builtMatch": true,
    "sourceMatch": true,

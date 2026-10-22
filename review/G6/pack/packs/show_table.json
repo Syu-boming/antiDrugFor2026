@@ -7,11 +7,11 @@
    "exists": true,
    "cues": 6,
    "current_build": {
-    "cue_total_sec": 110.55,
+    "cue_total_sec": 110.52,
     "preroll_sec": 0.6,
     "lines": 17
    },
-   "pack_generated": "2026-10-22 19:42",
+   "pack_generated": "2026-10-23 01:08",
    "segment_hash": {
     "file": "app/cues/show/a0.json",
     "current": {
@@ -23,7 +23,7 @@
     "pack": {
      "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
      "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
-     "generatedAt": "2026-10-22T11:39:21.456Z"
+     "generatedAt": "2026-10-22T17:01:41.582Z"
     },
     "builtMatch": true,
     "sourceMatch": true,
@@ -42,21 +42,21 @@
     "act_budget_recorded_sec": 113.0,
     "diff_vs_budget_sec": -1.9,
     "estimate_sum_sec": 113.0,
-    "playback_with_holds_sec": 129.15
+    "playback_with_holds_sec": 129.12
    },
    "loudness": {
     "I_LUFS": -16.5,
-    "LRA_LU": 14.0,
-    "TP_dBTP": -1.2,
-    "sample_peak_dBFS": -1.2,
+    "LRA_LU": 13.9,
+    "TP_dBTP": -1.3,
+    "sample_peak_dBFS": -1.3,
     "clipped_samples": 0,
-    "dialog_median_mix_I_LUFS": -15.0,
+    "dialog_median_mix_I_LUFS": -15.1,
     "line_mix_I_spread_LU": 0.7,
-    "momentary_max_LUFS": -9.8,
+    "momentary_max_LUFS": -9.5,
     "music_sfx_only_max_LUFS": -16.2,
     "freeze_holds_pass": "4/4",
     "dev_from_median_LU": -0.4,
-    "dialog_dev_from_median_LU": -0.1
+    "dialog_dev_from_median_LU": -0.2
    },
    "flash": {
     "grid16x9": {
@@ -102,11 +102,11 @@
    "transcripts": {
     "small": {
      "vo_exact": 5,
-     "mix_exact": 5
+     "mix_exact": 6
     },
     "large-v3-turbo": {
      "vo_exact": 8,
-     "mix_exact": 9
+     "mix_exact": 8
     },
     "lines": 17
    }
@@ -696,23 +696,23 @@
    "exists": true,
    "cues": 9,
    "current_build": {
-    "cue_total_sec": 185.09,
+    "cue_total_sec": 185.06,
     "preroll_sec": 1.8,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 18:57",
+   "pack_generated": "2026-10-23 01:28",
    "segment_hash": {
     "file": "app/cues/show/a6.json",
     "current": {
-     "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
-     "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
-     "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+     "source": "db6afa71653e69c74b0f6618d53e9c67b488ab9a",
+     "built": "ae9437e4cd2abf792492210052500435e0197e3c",
+     "sourceMerged": "ae9437e4cd2abf792492210052500435e0197e3c",
      "builtFromSource": true
     },
     "pack": {
-     "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
-     "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
-     "generatedAt": "2026-10-22T10:51:46.824Z"
+     "source": "db6afa71653e69c74b0f6618d53e9c67b488ab9a",
+     "built": "ae9437e4cd2abf792492210052500435e0197e3c",
+     "generatedAt": "2026-10-22T17:18:32.350Z"
     },
     "builtMatch": true,
     "sourceMatch": true,
@@ -731,16 +731,16 @@
     "act_budget_recorded_sec": 183.0,
     "diff_vs_budget_sec": 3.9,
     "estimate_sum_sec": 182.9,
-    "playback_with_holds_sec": 215.89
+    "playback_with_holds_sec": 215.86
    },
    "loudness": {
     "I_LUFS": -16.1,
-    "LRA_LU": 14.2,
+    "LRA_LU": 14.1,
     "TP_dBTP": -1.2,
     "sample_peak_dBFS": -1.19,
     "clipped_samples": 0,
     "dialog_median_mix_I_LUFS": -14.9,
-    "line_mix_I_spread_LU": 0.4,
+    "line_mix_I_spread_LU": 0.5,
     "momentary_max_LUFS": -8.9,
     "music_sfx_only_max_LUFS": -17.3,
     "freeze_holds_pass": "6/6",
@@ -764,7 +764,7 @@
     "passIsolated": true,
     "pass": true,
     "near_limit_total": 133,
-    "frames": 6477
+    "frames": 6476
    },
    "subtitle_sync": {
     "pages": 29,
@@ -1056,22 +1056,22 @@
   }
  },
  "duration": {
-  "cue_sum_current_build_sec": 1322.3,
+  "cue_sum_current_build_sec": 1322.2,
   "preroll_sum_sec": 10.8,
-  "playback_current_build_sec": 1333.1,
+  "playback_current_build_sec": 1333.0,
   "playback_current_build_min": 22.22,
   "playback_from_packs_sec": 1333.0,
   "estimate_recorded_sec": 1313.0,
   "teacher": {
-   "teacher_sec": 822.7,
+   "teacher_sec": 822.8,
    "includes_preroll": true,
    "source": "teacher/data/timing.json",
    "script_total_sec": 2145,
-   "script_playback_level0_sec": 1322.3,
+   "script_playback_level0_sec": 1322.2,
    "script_teacher_speaking_sec": 706,
-   "script_press_and_scene_sec": 116.7,
-   "script_generated": "2026/10/22 22:03:04",
-   "script_cue_hash": "cca5916cc3",
+   "script_press_and_scene_sec": 116.8,
+   "script_generated": "2026/10/23 00:42:00",
+   "script_cue_hash": "91b90f6887",
    "estimate_v03": {
     "default_scenario_sec": 2118.0,
     "recorded_sec": 1313.0,

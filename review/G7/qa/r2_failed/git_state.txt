@@ -1,0 +1,20 @@
+## ls-remote
+fecbdb74a503e0997662ede762741b0a5f254205	HEAD
+7c2459130e9ff2cbcfa3c06cb54577cbd8f7d0ce	refs/heads/gh-pages
+fecbdb74a503e0997662ede762741b0a5f254205	refs/heads/main
+## local branches
+  gh-pages                7c24591 Pages：發布 main cd8a2bd（dist 指紋 98e4748714）的建置（舞台、控制台、教師資料）
+* main                    cd8a2bd [ahead 2] 配音讀音修正：「燈」念成「鄧」；G7 修正第 1 輪
+  remotes/origin/HEAD     -> origin/main
+  remotes/origin/gh-pages 7c24591 Pages：發布 main cd8a2bd（dist 指紋 98e4748714）的建置（舞台、控制台、教師資料）
+  remotes/origin/main     fecbdb7 README 與授權聲明；開發用試音不再放進公開 repo
+## gh-pages log
+7c24591 2026-10-23 01:33:05 +0800 Pages：發布 main cd8a2bd（dist 指紋 98e4748714）的建置（舞台、控制台、教師資料）
+23b30db 2026-10-22 22:05:19 +0800 Pages：發布 main fecbdb7（dist 指紋 05c67f5752）的建置（舞台、控制台、教師資料）
+b511dda 2026-10-22 20:03:30 +0800 Pages：發布 main 2bd5a3f 的建置（舞台、控制台、教師資料）
+7c24591 2026-10-23 01:33:05 +0800 Pages：發布 main cd8a2bd（dist 指紋 98e4748714）的建置（舞台、控制台、教師資料）
+23b30db 2026-10-22 22:05:19 +0800 Pages：發布 main fecbdb7（dist 指紋 05c67f5752）的建置（舞台、控制台、教師資料）
+b511dda 2026-10-22 20:03:30 +0800 Pages：發布 main 2bd5a3f 的建置（舞台、控制台、教師資料）
+## main ahead of origin/main
+0	2
+23:- 美術、配音與程式使用生成式 AI 工具輔助；內容經 AI 代理多輪檢核，演出前由教師實機彩排確認。

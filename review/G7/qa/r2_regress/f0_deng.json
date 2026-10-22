@@ -1,0 +1,108 @@
+{
+ "a0_c002_03_v04": {
+  "segments": [
+   [
+    0.13,
+    1.06
+   ],
+   [
+    1.48,
+    2.27
+   ]
+  ],
+  "deng_onset_s": 1.48,
+  "f0_start_hz": 109.9,
+  "f0_end_hz": 86.4,
+  "change_semitones": -4.16,
+  "voiced_frames": 18
+ },
+ "a0_c002_03_v05": {
+  "segments": [
+   [
+    0.14,
+    1.0
+   ],
+   [
+    1.43,
+    2.25
+   ]
+  ],
+  "deng_onset_s": 1.43,
+  "f0_start_hz": 124.4,
+  "f0_end_hz": 283.4,
+  "change_semitones": 14.26,
+  "voiced_frames": 18
+ },
+ "a6_c001_02_v04": {
+  "segments": [
+   [
+    0.12,
+    1.61
+   ]
+  ],
+  "deng_onset_s": 0.12,
+  "f0_start_hz": 322.1,
+  "f0_end_hz": 275.9,
+  "change_semitones": -2.68,
+  "voiced_frames": 28
+ },
+ "a6_c001_02_v05": {
+  "segments": [
+   [
+    0.12,
+    0.78
+   ],
+   [
+    0.99,
+    1.72
+   ]
+  ],
+  "deng_onset_s": 0.99,
+  "f0_start_hz": 250.0,
+  "f0_end_hz": 256.0,
+  "change_semitones": 0.41,
+  "voiced_frames": 16
+ },
+ "a6_c009_03_v04": {
+  "segments": [
+   [
+    0.13,
+    3.19
+   ],
+   [
+    4.92,
+    5.85
+   ],
+   [
+    6.73,
+    7.76
+   ]
+  ],
+  "deng_onset_s": 6.73,
+  "f0_start_hz": 103.7,
+  "f0_end_hz": 84.3,
+  "change_semitones": -3.58,
+  "voiced_frames": 22
+ },
+ "a6_c009_03_v05": {
+  "segments": [
+   [
+    0.14,
+    3.04
+   ],
+   [
+    4.46,
+    5.51
+   ],
+   [
+    6.53,
+    7.71
+   ]
+  ],
+  "deng_onset_s": 6.53,
+  "f0_start_hz": 116.2,
+  "f0_end_hz": 111.9,
+  "change_semitones": -0.66,
+  "voiced_frames": 27
+ }
+}

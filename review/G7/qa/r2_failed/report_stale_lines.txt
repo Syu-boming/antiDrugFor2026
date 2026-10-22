@@ -1,0 +1,21 @@
+108:| G7 交付 | 第 1 輪不通過（完整性第 3 項 2 分、用語與安全 3）→ 修正第 1 輪 → 重驗〔主線補〕 | REVIEW.md「G7 驗收第 1 輪」（校長／教育專業 4／4／3／4、技術 QA 4／4／4／4、完整
+112:交付資料夾 `交付/` 在 **2026-10-23 00:5x** 用最後的建置（app/dist 00:08，含 G7 修正第 1 輪的程式與「燈」的 3 句新配音）重新打包；教師資料 PDF 是 00:42 版，三份說明文件從
+116:| Windows 可攜版（**正式演出用**） | `交付/AntidrugTheater/`（雙擊 `AntidrugTheater.exe`；同資料夾有 `啟動說明.txt`） | 10-23 00:5x 重新打包；冒煙測試全
+123:| 原始碼（GitHub） | https://github.com/Syu-boming/antiDrugFor2026 （公開） | GitHub 上的 main 停在 fecbdb7（20:59，停止追蹤試音並加 README
+124:| 線上版 | https://syu-boming.github.io/antiDrugFor2026/ | gh-pages 7c24591（10-23 00:5x 發布），內容是本機 cd8a2bd 的建置（含「燈」的新配音、
+157:1. ~~重新打包 `交付/`~~：00:5x 完成，冒煙測試全部通過（1.3）。
+292:| E8 | **備援影片 a0–a4、a6、a7 沿用 20:00 建置輸出**，只把 a5、a8 用最終建置重出 | 主線（REVIEW.md「G7 準備：最後打包」） | 之後的程式改動只有音訊避讓（沒寫 musicDuck 
+343:| **GitHub 的音檔（2026-10-22 21:4x）**：清掉 git 歷史裡的開發試音；正式配音維持公開（repo 公開、線上版保留）。**現況**：主線在複本（scratchpad 的 purge.git）把 rev
+436:| N5 | 交付資料夾裡的 `使用說明_初步完成說明.md` 是 10:10 的舊版 | review/G6/qa/r2_regress.md 一般問題 2 | **已處理**：22:03 重新打包時換成 `交付/使用說明.md`
+437:| N6 | 第 2 輪修正（a5、a8、引擎、授權聲明）之後要重新打包並重跑冒煙測試 | review/G6/pack/INDEX.md (h) | **已處理**：22:03 從 21:33 建置重新打包，冒煙測試 22:04 
+439:| N8 | **G6 全劇驗收包 (b) 寫「字幕內容 3053 筆，不符 2 筆」**（a5_c005 第 2.25、2.45 秒，台詞 a5_c005_01） | review/G6/pack/INDEX.md (b)；rev
+440:| N9 | 交付資料夾少一個配音資料檔時，畫面卡在「資料包 81／82」，看不到原因 | review/G7/qa/tech.md 一般問題 G1 | **已修（程式）**：見 5.7 T1、3.6 F13；交付資料夾要重新打包後
+493:| T2 | 可攜版資料夾沒有啟動說明（完整性 G6） | 打包程式在 `AntidrugTheater/` 寫「啟動說明.txt」（44 行，3064 位元組）：複製整個交付資料夾（四個資料夾）、插電與高效能、Win＋P 選延伸、
+495:| T4 | --skip-live 沿用舊建置的數據，報告看不出來（技術 QA G2） | G6 驗收包工具每一節記下量測時的建置指紋（app.js、cues_show.js 的 sha1）；產生報告前比對，INDEX 開頭列出目
+511:教師資料這一輪沒做的：`交付/teacher_pdf/` 和 `交付/使用說明.md` 沒有覆蓋（等主線重新打包）；線上版沒有重新發布；備援影片出題停格加長到 6–8 秒（校長選做建議，要重新輸出影片）；README 印出建置指紋（
+556:- 新句已在 `teacher/pdf/`、`交付/teacher_pdf/`、線上版入口頁（gh-pages 7c24591）與 README.md 最後一行（10-23 00:5x）。
+589:- 主線不推送 main：GitHub 上的 main 停在 fecbdb7（20:59）；本機 78330b5（22:06）、cd8a2bd（10-23 00:5x）都還沒推上去。
+590:- 線上版（gh-pages 7c24591，10-23 00:5x）的內容是本機 cd8a2bd 的建置，比 GitHub 上的 main 新。舊的 23b30db 說明寫「發布 main fecbdb7」不準確（review/G
+5:- **依據**：演出包的素材清單 `data/manifest.js`，建置時間 **2026-10-22 21:33**（builtAt 2026-10-22T13:33:58Z）。交付資料夾 `交付/browser/` 和 `交付
+278:| three.js（3D 繪圖；含 examples/jsm 的 ConvexHull.js） | 0.186.1 | 編進 app.js（交付/browser 與 交付/AntidrugTheater 兩版都有） | MIT（a
+307:| 4 | three.js 授權聲明隨包 | MIT 條文要求附上版權與授權聲明（第 6 節） | **已處理**：建置自動附 THIRD_PARTY_LICENSES.txt（three.js MIT 全文；commit fec

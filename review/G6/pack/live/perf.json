@@ -18,23 +18,23 @@
  },
  "load": {
   "loadavg_before": [
-   2.71630859375,
-   2.1318359375,
-   2.4755859375
+   3.30419921875,
+   3.21630859375,
+   3.5966796875
   ],
-  "goto_ms": 5600,
-  "ready_button_ms": 5709,
+  "goto_ms": 5580,
+  "ready_button_ms": 5687,
   "navigation": {
-   "domContentLoaded": 128.79999923706055,
-   "load": 5596.699998855591
+   "domContentLoaded": 129.30000114440918,
+   "load": 5577.400001525879
   },
-  "ready_click_to_title_ms": 1739,
-  "open_to_title_idle_ms": 7466,
-  "warm_ms": 831.3999996185303
+  "ready_click_to_title_ms": 1719,
+  "open_to_title_idle_ms": 7425,
+  "warm_ms": 830.8999996185303
  },
  "frames": {
-  "all_after_start": 84287,
-  "playing": 80396,
+  "all_after_start": 84247,
+  "playing": 80364,
   "p50_ms_playing": 16.7,
   "p95_ms_playing": 16.7,
   "p99_ms_playing": 16.8,
@@ -59,10 +59,10 @@
  "hold_stalls_over_100ms_count": 0,
  "hold_long_frames_over_50ms": {
   "count": 13,
-  "max_ms": 100.0,
+  "max_ms": 99.9,
   "list": [
    {
-    "t_sec": 278.38,
+    "t_sec": 278.35,
     "interval_ms": 83.3,
     "cue": "a1_c008",
     "cueTime": 26.78
@@ -74,70 +74,70 @@
     "cueTime": 32.32
    },
    {
-    "t_sec": 591.74,
-    "interval_ms": 50.1,
-    "cue": "a3_c002",
-    "cueTime": 13.23
-   },
-   {
-    "t_sec": 591.86,
+    "t_sec": 591.84,
     "interval_ms": 83.3,
     "cue": "a3_c002",
     "cueTime": 13.23
    },
    {
-    "t_sec": 616.92,
-    "interval_ms": 83.3,
+    "t_sec": 616.86,
+    "interval_ms": 83.2,
     "cue": "a3_c003",
     "cueTime": 23.55
    },
    {
-    "t_sec": 712.1,
+    "t_sec": 712.15,
     "interval_ms": 83.3,
     "cue": "a3_c008",
     "cueTime": 36.69
    },
    {
-    "t_sec": 712.2,
+    "t_sec": 712.25,
     "interval_ms": 66.7,
     "cue": "a3_c008",
     "cueTime": 36.69
    },
    {
-    "t_sec": 737.53,
-    "interval_ms": 83.3,
+    "t_sec": 737.57,
+    "interval_ms": 66.7,
     "cue": "a4_c001",
     "cueTime": 23.92
    },
    {
-    "t_sec": 819.13,
+    "t_sec": 819.11,
     "interval_ms": 83.3,
     "cue": "a4_c006",
     "cueTime": 6.26
    },
    {
-    "t_sec": 819.23,
+    "t_sec": 819.21,
     "interval_ms": 66.7,
     "cue": "a4_c006",
     "cueTime": 6.26
    },
    {
-    "t_sec": 944.21,
-    "interval_ms": 100.0,
+    "t_sec": 944.19,
+    "interval_ms": 99.9,
     "cue": "a4_c013",
     "cueTime": 24.75
    },
    {
-    "t_sec": 944.31,
-    "interval_ms": 66.7,
+    "t_sec": 944.29,
+    "interval_ms": 66.6,
     "cue": "a4_c013",
     "cueTime": 24.75
    },
    {
-    "t_sec": 1129.35,
+    "t_sec": 1129.25,
     "interval_ms": 66.7,
     "cue": "a5_c008",
     "cueTime": 27.41
+   },
+   {
+    "t_sec": 1297.96,
+    "interval_ms": 50.1,
+    "cue": "a6_c008",
+    "cueTime": 19.57
    }
   ],
   "note": "停格中（前後兩格都是停格：畫面靜止）預先建下一個景的長格；不算播放中卡頓"
@@ -150,21 +150,21 @@
  },
  "per_segment": {
   "a0": {
-   "frames": 6696,
+   "frames": 6695,
    "p50_ms": 16.7,
-   "p95_ms": 16.7,
+   "p95_ms": 16.8,
    "max_ms": 16.8,
    "over_50ms": 0
   },
   "a1": {
-   "frames": 9342,
+   "frames": 9341,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
    "max_ms": 16.8,
    "over_50ms": 0
   },
   "a2": {
-   "frames": 15816,
+   "frames": 15814,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
    "max_ms": 16.8,
@@ -178,37 +178,37 @@
    "over_50ms": 0
   },
   "a4": {
-   "frames": 13166,
+   "frames": 13164,
    "p50_ms": 16.7,
-   "p95_ms": 16.77,
+   "p95_ms": 16.7,
    "max_ms": 16.8,
    "over_50ms": 0
   },
   "a5": {
-   "frames": 10653,
+   "frames": 10654,
+   "p50_ms": 16.7,
+   "p95_ms": 16.7,
+   "max_ms": 16.8,
+   "over_50ms": 0
+  },
+  "a6": {
+   "frames": 11263,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
    "max_ms": 33.3,
    "over_50ms": 0
   },
-  "a6": {
-   "frames": 11289,
+  "a7": {
+   "frames": 2897,
    "p50_ms": 16.7,
    "p95_ms": 16.7,
    "max_ms": 16.8,
    "over_50ms": 0
   },
-  "a7": {
-   "frames": 2897,
-   "p50_ms": 16.7,
-   "p95_ms": 16.8,
-   "max_ms": 16.8,
-   "over_50ms": 0
-  },
   "a8": {
-   "frames": 1541,
+   "frames": 1540,
    "p50_ms": 16.7,
-   "p95_ms": 16.8,
+   "p95_ms": 16.7,
    "max_ms": 16.8,
    "over_50ms": 0
   }
@@ -221,20 +221,32 @@
    "max_ms": 16.8
   },
   {
+   "cue": "a0_c004",
+   "frames": 1722,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a0_c005",
+   "frames": 1328,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
    "cue": "a1_c002",
    "frames": 877,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
-   "cue": "a1_c004",
-   "frames": 1818,
+   "cue": "a1_c008",
+   "frames": 1612,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
-   "cue": "a2_c002",
-   "frames": 1553,
+   "cue": "a2_c001",
+   "frames": 1107,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
@@ -245,44 +257,32 @@
    "max_ms": 16.8
   },
   {
-   "cue": "a2_c008",
-   "frames": 2370,
+   "cue": "a2_c004",
+   "frames": 1320,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
-   "cue": "a2_c013",
-   "frames": 2090,
+   "cue": "a2_c007",
+   "frames": 556,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
-   "cue": "a3_c002",
-   "frames": 799,
+   "cue": "a3_c005",
+   "frames": 1428,
+   "p95_ms": 16.8,
+   "max_ms": 16.8
+  },
+  {
+   "cue": "a3_c006",
+   "frames": 451,
    "p95_ms": 16.8,
    "max_ms": 16.8
   },
   {
    "cue": "a3_c007",
    "frames": 358,
-   "p95_ms": 16.8,
-   "max_ms": 16.8
-  },
-  {
-   "cue": "a3_c008",
-   "frames": 2242,
-   "p95_ms": 16.8,
-   "max_ms": 16.8
-  },
-  {
-   "cue": "a4_c002",
-   "frames": 1170,
-   "p95_ms": 16.8,
-   "max_ms": 16.8
-  },
-  {
-   "cue": "a4_c004",
-   "frames": 924,
    "p95_ms": 16.8,
    "max_ms": 16.8
   }
@@ -292,120 +292,120 @@
   "over_100ms": 1,
   "top": [
    {
-    "t_sec": 944.12,
+    "t_sec": 944.1,
     "dur_ms": 104.8,
-    "blocking_ms": 54.8,
+    "blocking_ms": 54,
     "cue": "a4_c013",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 819.04,
-    "dur_ms": 97.1,
-    "blocking_ms": 42.7,
+    "t_sec": 819.02,
+    "dur_ms": 97.8,
+    "blocking_ms": 39.6,
     "cue": "a4_c006",
     "phase": "reveal_playing",
     "mode": "playing"
    },
    {
-    "t_sec": 278.31,
-    "dur_ms": 90.8,
-    "blocking_ms": 40.7,
+    "t_sec": 278.28,
+    "dur_ms": 91.5,
+    "blocking_ms": 41.4,
     "cue": "a1_c008",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 616.84,
-    "dur_ms": 85,
-    "blocking_ms": 19.6,
+    "t_sec": 616.78,
+    "dur_ms": 85.3,
+    "blocking_ms": 35.2,
     "cue": "a3_c003",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 712.02,
-    "dur_ms": 83.6,
-    "blocking_ms": 32.7,
+    "t_sec": 712.08,
+    "dur_ms": 80.6,
+    "blocking_ms": 29.9,
     "cue": "a3_c008",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 737.46,
-    "dur_ms": 78.1,
-    "blocking_ms": 28.1,
-    "cue": "a4_c001",
+    "t_sec": 591.77,
+    "dur_ms": 79.3,
+    "blocking_ms": 29.4,
+    "cue": "a3_c002",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 944.24,
-    "dur_ms": 78,
-    "blocking_ms": 27.9,
+    "t_sec": 944.23,
+    "dur_ms": 79,
+    "blocking_ms": 25.8,
     "cue": "a4_c013",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 712.13,
-    "dur_ms": 76,
-    "blocking_ms": 25.9,
-    "cue": "a3_c008",
-    "phase": "story_waiting",
-    "mode": "waiting"
+    "t_sec": 737.51,
+    "dur_ms": 76.1,
+    "blocking_ms": 26.2,
+    "cue": "a4_c001",
+    "phase": "playing",
+    "mode": "playing"
    },
    {
-    "t_sec": 1129.29,
-    "dur_ms": 69.9,
-    "blocking_ms": 18.9,
+    "t_sec": 1129.19,
+    "dur_ms": 69.2,
+    "blocking_ms": 18.2,
     "cue": "a5_c008",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 591.79,
-    "dur_ms": 67.4,
-    "blocking_ms": 17.2,
-    "cue": "a3_c002",
-    "phase": "playing",
-    "mode": "playing"
-   },
-   {
-    "t_sec": 819.17,
-    "dur_ms": 65.8,
-    "blocking_ms": 15.8,
+    "t_sec": 819.15,
+    "dur_ms": 67.8,
+    "blocking_ms": 17.8,
     "cue": "a4_c006",
     "phase": "reveal_waiting",
     "mode": "waiting"
    },
    {
-    "t_sec": 591.69,
-    "dur_ms": 63.4,
-    "blocking_ms": 9.6,
-    "cue": "a3_c002",
-    "phase": "playing",
-    "mode": "playing"
+    "t_sec": 712.19,
+    "dur_ms": 66.2,
+    "blocking_ms": 16.3,
+    "cue": "a3_c008",
+    "phase": "story_waiting",
+    "mode": "waiting"
    },
    {
     "t_sec": 518.84,
-    "dur_ms": 61.2,
-    "blocking_ms": 10.6,
+    "dur_ms": 61.8,
+    "blocking_ms": 11.3,
     "cue": "a2_c012",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 115.0,
-    "dur_ms": 60.8,
-    "blocking_ms": 3.7,
+    "t_sec": 114.96,
+    "dur_ms": 61.7,
+    "blocking_ms": 11.5,
     "cue": "a0_c005",
     "phase": "playing",
     "mode": "playing"
    },
    {
-    "t_sec": 984.01,
-    "dur_ms": 57.7,
+    "t_sec": 591.69,
+    "dur_ms": 60.7,
+    "blocking_ms": 9.9,
+    "cue": "a3_c002",
+    "phase": "playing",
+    "mode": "playing"
+   },
+   {
+    "t_sec": 983.9,
+    "dur_ms": 60.3,
     "blocking_ms": 0,
     "cue": "a5_c001",
     "phase": "playing",
@@ -416,99 +416,86 @@
  "memory": {
   "samples": 280,
   "title_idle": {
-   "t": 9162,
+   "t": 9127,
    "label": "片頭待機",
    "cue": "a0_c000",
    "phase": "title_idle",
-   "jsHeapUsedMB": 236.623,
-   "jsHeapTotalMB": 263.172,
-   "perfMemoryUsedMB": 1013.398,
-   "nodes": 1532,
+   "jsHeapUsedMB": 237.374,
+   "jsHeapTotalMB": 262.688,
+   "perfMemoryUsedMB": 1014.174,
+   "nodes": 1303,
    "listeners": 1047,
    "processRssMB": {
-    "browser": 267.359375,
-    "renderer": 3504.4375,
-    "GPU": 764.234375,
-    "network.mojom.NetworkService": 97.40625,
-    "storage.mojom.StorageService": 76.625,
-    "audio.mojom.AudioService": 93.296875
+    "browser": 267.296875,
+    "renderer": 3440.890625,
+    "GPU": 765.671875,
+    "network.mojom.NetworkService": 97.421875,
+    "storage.mojom.StorageService": 76.515625,
+    "audio.mojom.AudioService": 93.234375
    },
-   "loadavg1": 5.29296875
+   "loadavg1": 3.41748046875
   },
   "end": {
-   "t": 1414943,
+   "t": 1414323,
    "label": "片尾署名卡",
    "cue": "a8_c003",
    "phase": "ended",
-   "jsHeapUsedMB": 223.315,
-   "jsHeapTotalMB": 313.922,
-   "perfMemoryUsedMB": 437.323,
-   "nodes": 1273,
-   "listeners": 1049,
+   "jsHeapUsedMB": 242.362,
+   "jsHeapTotalMB": 313.938,
+   "perfMemoryUsedMB": 456.372,
+   "nodes": 1274,
+   "listeners": 1051,
    "processRssMB": {
-    "browser": 184.046875,
-    "renderer": 585.21875,
-    "GPU": 168.859375,
-    "network.mojom.NetworkService": 80.734375,
-    "storage.mojom.StorageService": 60.484375,
-    "audio.mojom.AudioService": 74.5625
+    "browser": 270.0625,
+    "renderer": 2767.078125,
+    "GPU": 773.0625,
+    "network.mojom.NetworkService": 98.765625,
+    "storage.mojom.StorageService": 76.9375,
+    "audio.mojom.AudioService": 93.59375
    },
-   "loadavg1": 2.17529296875
+   "loadavg1": 1.4365234375
   },
   "js_heap_used_MB": {
-   "min": 215.162,
-   "max": 265.669,
-   "first_play": 228.433,
-   "last_play": 265.669,
-   "slope_MB_per_min_playing": 0.68,
-   "first10min_mean": 231.1,
-   "last10min_mean": 240.3
+   "min": 211.508,
+   "max": 266.264,
+   "first_play": 229.077,
+   "last_play": 229.21,
+   "slope_MB_per_min_playing": 0.69,
+   "first10min_mean": 231.7,
+   "last10min_mean": 240.7
   },
   "process_rss_total_MB": {
-   "min": 1005.9,
-   "max": 4803.4,
-   "first_play": 4775.4,
-   "last_play": 1104.3
+   "min": 3980.3,
+   "max": 4741.0,
+   "first_play": 4713.2,
+   "last_play": 4102.1
   },
   "process_rss_by_type_end_MB": {
-   "browser": 184.046875,
-   "renderer": 585.21875,
-   "GPU": 168.859375,
-   "network.mojom.NetworkService": 80.734375,
-   "storage.mojom.StorageService": 60.484375,
-   "audio.mojom.AudioService": 74.5625
+   "browser": 270.0625,
+   "renderer": 2767.078125,
+   "GPU": 773.0625,
+   "network.mojom.NetworkService": 98.765625,
+   "storage.mojom.StorageService": 76.9375,
+   "audio.mojom.AudioService": 93.59375
   },
-  "dom_nodes_max": 1594,
+  "dom_nodes_max": 1505,
   "loadavg1": {
-   "mean": 1.99,
-   "max": 5.29
+   "mean": 1.77,
+   "max": 3.42
   },
   "note": "jsHeapUsedMB＝CDP Performance.getMetrics JSHeapUsedSize；perfMemoryUsedMB＝performance.memory（--enable-precise-memory-info）；processRssMB＝SystemInfo.getProcessInfo 的各程序 ps RSS（macOS，依程序類型加總，MB）。 macOS 的 RSS 會因記憶體壓縮、清除快取而突然下降，只當走勢參考；學校 Windows 筆電請以工作管理員實測（未驗證）。"
  },
  "voice_sync": {
-  "samples": 880,
-  "max_abs_ms": 3,
+  "samples": 889,
+  "max_abs_ms": 5,
   "p95_abs_ms": 0.0,
   "over_50ms": 0,
   "over_50ms_where": []
  },
  "subtitles": {
-  "checked_samples": 3053,
-  "mismatch": 2,
-  "mismatch_where": [
-   {
-    "cue": "a5_c005",
-    "t": 2.25,
-    "line": "a5_c005_01",
-    "subtitle": ""
-   },
-   {
-    "cue": "a5_c005",
-    "t": 2.45,
-    "line": "a5_c005_01",
-    "subtitle": ""
-   }
-  ]
+  "checked_samples": 3050,
+  "mismatch": 0,
+  "mismatch_where": []
  },
  "mouth": {
   "lines_checked": 127,
@@ -529,7 +516,7 @@
    },
    {
     "line": "a5_c001_03",
-    "samples": 10,
+    "samples": 9,
     "states": {
      "lin": [
       "closed"
@@ -561,10 +548,10 @@
     7,
     8
    ],
-   "wall_ms": 1413288,
+   "wall_ms": 1412667,
    "timedOut": false
   },
-  "wall_min": 23.55,
+  "wall_min": 23.54,
   "presses": 69
  },
  "page_errors": []

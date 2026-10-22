@@ -1,0 +1,104 @@
+{
+ "app/dist/data:a0_c002_03": {
+  "pack_frames": 124320,
+  "sr": 48000,
+  "pack_pcm_md5": "10f2f4b1a04d984838acaaa2a249d8dc",
+  "v04": {
+   "frames": 125760,
+   "sr": 48000,
+   "md5": "1f8e1b5f27620a2e15c0d8991bd53361",
+   "match": false
+  },
+  "v05": {
+   "frames": 124320,
+   "sr": 48000,
+   "md5": "10f2f4b1a04d984838acaaa2a249d8dc",
+   "match": true
+  }
+ },
+ "app/dist/data:a6_c001_02": {
+  "pack_frames": 104640,
+  "sr": 48000,
+  "pack_pcm_md5": "5e14da931eef1db7b7dfaf0a82451012",
+  "v04": {
+   "frames": 96480,
+   "sr": 48000,
+   "md5": "5082f5490b7294bbcdd41e0e8f24b054",
+   "match": false
+  },
+  "v05": {
+   "frames": 104640,
+   "sr": 48000,
+   "md5": "5e14da931eef1db7b7dfaf0a82451012",
+   "match": true
+  }
+ },
+ "app/dist/data:a6_c009_03": {
+  "pack_frames": 386400,
+  "sr": 48000,
+  "pack_pcm_md5": "c5d03734dad4e7b69b603d1251f1e09b",
+  "v04": {
+   "frames": 387840,
+   "sr": 48000,
+   "md5": "e6990d3bbfc571caf806cc025bb68744",
+   "match": false
+  },
+  "v05": {
+   "frames": 386400,
+   "sr": 48000,
+   "md5": "c5d03734dad4e7b69b603d1251f1e09b",
+   "match": true
+  }
+ },
+ "交付/browser/data:a0_c002_03": {
+  "pack_frames": 124320,
+  "sr": 48000,
+  "pack_pcm_md5": "10f2f4b1a04d984838acaaa2a249d8dc",
+  "v04": {
+   "frames": 125760,
+   "sr": 48000,
+   "md5": "1f8e1b5f27620a2e15c0d8991bd53361",
+   "match": false
+  },
+  "v05": {
+   "frames": 124320,
+   "sr": 48000,
+   "md5": "10f2f4b1a04d984838acaaa2a249d8dc",
+   "match": true
+  }
+ },
+ "交付/browser/data:a6_c001_02": {
+  "pack_frames": 104640,
+  "sr": 48000,
+  "pack_pcm_md5": "5e14da931eef1db7b7dfaf0a82451012",
+  "v04": {
+   "frames": 96480,
+   "sr": 48000,
+   "md5": "5082f5490b7294bbcdd41e0e8f24b054",
+   "match": false
+  },
+  "v05": {
+   "frames": 104640,
+   "sr": 48000,
+   "md5": "5e14da931eef1db7b7dfaf0a82451012",
+   "match": true
+  }
+ },
+ "交付/browser/data:a6_c009_03": {
+  "pack_frames": 386400,
+  "sr": 48000,
+  "pack_pcm_md5": "c5d03734dad4e7b69b603d1251f1e09b",
+  "v04": {
+   "frames": 387840,
+   "sr": 48000,
+   "md5": "e6990d3bbfc571caf806cc025bb68744",
+   "match": false
+  },
+  "v05": {
+   "frames": 386400,
+   "sr": 48000,
+   "md5": "c5d03734dad4e7b69b603d1251f1e09b",
+   "match": true
+  }
+ }
+}

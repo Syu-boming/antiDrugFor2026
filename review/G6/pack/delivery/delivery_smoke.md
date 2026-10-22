@@ -1,6 +1,6 @@
 # 交付包冒煙測試
 
-- 產生：tools/delivery_smoke.mjs（2026-10-22T17:29:40.519Z，143 秒）；對照建置 `app/dist`。本檔只列結果。
+- 產生：tools/delivery_smoke.mjs（2026-10-22T18:23:00.240Z，142 秒）；對照建置 `app/dist`。本檔只列結果。
 - 整體：通過。
 
 ## 交付/browser：通過

@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-22 22:05",
+ "generated": "2026-10-23 02:03",
  "a_packs": {
   "packs_matching_build": 9,
   "packs_total": 9,
@@ -12,7 +12,7 @@
    "dialog_max_abs_dev_LU": 0.2
   },
   "duration": {
-   "playback_current_build_sec": 1333.1,
+   "playback_current_build_sec": 1333.0,
    "total_min": 35.75,
    "pass_le_38min": true,
    "margin_sec": 135.0
@@ -28,10 +28,10 @@
    "no_stall_in_dialog_or_reveal": true,
    "heat_test_30min_idle_40min_show": "未驗證（本次只跑一次完整演出，沒有待機 30 分鐘）"
   },
-  "load_open_to_title_ms": 7466,
-  "js_heap_max_MB": 265.669,
-  "voice_sync_max_ms": 3,
-  "subtitle_mismatch": 2,
+  "load_open_to_title_ms": 7425,
+  "js_heap_max_MB": 266.264,
+  "voice_sync_max_ms": 5,
+  "subtitle_mismatch": 0,
   "flow_all_visited": true
  },
  "c_seams": {
@@ -44,11 +44,26 @@
  },
  "e_ops": {
   "engine_test": {
-   "passed": 144,
-   "total": 144
+   "passed": 151,
+   "total": 151
   },
   "show_supplement": "21/21"
  },
  "f_attribution": true,
- "g_quiz": "8/8"
+ "g_quiz": "8/8",
+ "build": {
+  "current": {
+   "appJsSha1": "61bd69382957b8b3bb318615169b0fa82b0afe61",
+   "cuesShowFile": "cues_show.js",
+   "cuesShowSha1": "30af06ef6bae8ba8d70951a96c29d3aa694e4273",
+   "distBuiltAt": "2026-10-22T16:08:11.962Z",
+   "appJsMtime": "2026-10-22T16:08:11.960Z"
+  },
+  "sections": {
+   "live": "fresh",
+   "seams": "fresh",
+   "ops": "fresh",
+   "engine_test": "fresh"
+  }
+ }
 }

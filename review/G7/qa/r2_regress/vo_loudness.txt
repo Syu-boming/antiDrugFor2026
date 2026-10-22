@@ -1,0 +1,6 @@
+a0_c002_03 v04  I: -18.0 LUFS  Peak: -1.6 dBFS 
+a0_c002_03 v05  I: -18.2 LUFS  Peak: -1.9 dBFS 
+a6_c001_02 v04  I: -18.1 LUFS  Peak: -1.9 dBFS 
+a6_c001_02 v05  I: -18.2 LUFS  Peak: -1.9 dBFS 
+a6_c009_03 v04  I: -18.2 LUFS  Peak: -1.9 dBFS 
+a6_c009_03 v05  I: -18.1 LUFS  Peak: -1.9 dBFS 

@@ -1,0 +1,138 @@
+{
+  "vo": {
+    "snaps": [
+      {
+        "sec": 5,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 3,
+        "missingPacks": [
+          "vo_a3_c002.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n缺 3 句配音（這些句子只有字幕、沒有聲音）：a3_c002_01、a3_c002_02、a3_c002_03；缺資料檔 data/vo_a3_c002.js（交付資料夾沒有複製完整）\n音訊\n可用（已解碼 235 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、foreh"
+      },
+      {
+        "sec": 20,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 3,
+        "missingPacks": [
+          "vo_a3_c002.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n缺 3 句配音（這些句子只有字幕、沒有聲音）：a3_c002_01、a3_c002_02、a3_c002_03；缺資料檔 data/vo_a3_c002.js（交付資料夾沒有複製完整）\n音訊\n可用（已解碼 235 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、foreh"
+      },
+      {
+        "sec": 40,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 3,
+        "missingPacks": [
+          "vo_a3_c002.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n缺 3 句配音（這些句子只有字幕、沒有聲音）：a3_c002_01、a3_c002_02、a3_c002_03；缺資料檔 data/vo_a3_c002.js（交付資料夾沒有複製完整）\n音訊\n可用（已解碼 235 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、foreh"
+      }
+    ],
+    "afterFirst": {
+      "mode": "preparing",
+      "phase": "preparing",
+      "voConfirmPending": true,
+      "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n缺 3 句配音（這些句子只有字幕、沒有聲音）：a3_c002_01、a3_c002_02、a3_c002_03；缺資料檔 data/vo_a3_c002.js（交付資料夾沒有複製完整）\n音訊\n可用（已解碼 235 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_s"
+    },
+    "afterSecond": {
+      "mode": "waiting",
+      "phase": "title_idle",
+      "cueId": "a0_c000"
+    },
+    "pageErrors": []
+  },
+  "lip": {
+    "snaps": [
+      {
+        "sec": 5,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 0,
+        "missingPacks": [
+          "lipsync.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n201 句全部就緒\n嘴型\n缺資料檔 data/lipsync.js（說話時嘴巴不動；聲音與字幕照常）\n音訊\n可用（已解碼 238 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片、walk_l=無、bow=無、pointr=退"
+      },
+      {
+        "sec": 20,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 0,
+        "missingPacks": [
+          "lipsync.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n201 句全部就緒\n嘴型\n缺資料檔 data/lipsync.js（說話時嘴巴不動；聲音與字幕照常）\n音訊\n可用（已解碼 238 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片、walk_l=無、bow=無、pointr=退"
+      },
+      {
+        "sec": 40,
+        "mode": "preparing",
+        "errors": [],
+        "missingVo": 0,
+        "missingPacks": [
+          "lipsync.js"
+        ],
+        "readyDisabled": false,
+        "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n201 句全部就緒\n嘴型\n缺資料檔 data/lipsync.js（說話時嘴巴不動；聲音與字幕照常）\n音訊\n可用（已解碼 238 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoqing、xiaoyu；ale：臉部 head=退路換片、head_worried=正式換片、head_greet=退路換片；xiaoqing：臉部 stand=退路換片、reach=正式換片、watch=正式換片、palm=正式換片、worried=正式換片、cross=退路換片、palmno=退路換片、forehead=退路換片、walk=退路換片、walk_l=無、bow=無、pointr=退"
+      }
+    ],
+    "afterFirst": {
+      "mode": "preparing",
+      "phase": "preparing",
+      "voConfirmPending": true,
+      "text": "許博明老師製作\n反毒剪紙劇場\n許博明老師製作\ncue 檔\n紙燈節（全劇）（71 個 cue）\n配音\n201 句全部就緒\n嘴型\n缺資料檔 data/lipsync.js（說話時嘴巴不動；聲音與字幕照常）\n音訊\n可用（已解碼 238 個音檔）\n配樂音效\n全部就緒\n全劇\n9 段：開場：主燈骨架不見了、第一幕：漂亮的外表、第二幕：看不見的操偶線、第三幕：我可以說不要、第四幕：危險會跑到路上、第五幕：找得到的幫手、第六幕：可以求助的秘密、複習與收束、閉幕；景 workshop_g4、workshop_a0、square_a1、a2_shop、a2_window、a3_arcade、a3_gate、a3_card、a3_classroom、gate、a4_roadmap、a5_gate、a5_hospital、a6_square_night、a6_window、a6_shop\n紙偶\nale、xiaoq"
+    },
+    "afterSecond": {
+      "mode": "waiting",
+      "phase": "title_idle",
+      "cueId": "a0_c000"
+    },
+    "pageErrors": []
+  },
+  "img": {
+    "snaps": [
+      {
+        "sec": 5,
+        "mode": "error",
+        "errors": [
+          "缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js"
+        ],
+        "missingVo": 0,
+        "missingPacks": [],
+        "readyDisabled": true,
+        "text": "反毒剪紙劇場\n許博明老師製作\n無法開始\n缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js\n原因\n交付資料夾沒有複製完整（少了上面的檔），或檔案被防毒軟體擋下。\n怎麼辦\n把隨身碟上「整個交付資料夾」重新複製到本機硬碟（不要只複製部分檔案），再重新開啟。來不及時改放 backup_video 資料夾的備援影片（見 teacher_pdf/故障一頁卡.pdf）。\n準備播放\n「準備播放」不能按：請照上面的「怎麼辦」處理後，關閉程式（或瀏覽器分頁）再重新開啟。"
+      },
+      {
+        "sec": 20,
+        "mode": "error",
+        "errors": [
+          "缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js"
+        ],
+        "missingVo": 0,
+        "missingPacks": [],
+        "readyDisabled": true,
+        "text": "反毒剪紙劇場\n許博明老師製作\n無法開始\n缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js\n原因\n交付資料夾沒有複製完整（少了上面的檔），或檔案被防毒軟體擋下。\n怎麼辦\n把隨身碟上「整個交付資料夾」重新複製到本機硬碟（不要只複製部分檔案），再重新開啟。來不及時改放 backup_video 資料夾的備援影片（見 teacher_pdf/故障一頁卡.pdf）。\n準備播放\n「準備播放」不能按：請照上面的「怎麼辦」處理後，關閉程式（或瀏覽器分頁）再重新開啟。"
+      },
+      {
+        "sec": 40,
+        "mode": "error",
+        "errors": [
+          "缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js"
+        ],
+        "missingVo": 0,
+        "missingPacks": [],
+        "readyDisabled": true,
+        "text": "反毒剪紙劇場\n許博明老師製作\n無法開始\n缺少圖像資料檔（1 個）：data/img_bg-workshop-back.js\n原因\n交付資料夾沒有複製完整（少了上面的檔），或檔案被防毒軟體擋下。\n怎麼辦\n把隨身碟上「整個交付資料夾」重新複製到本機硬碟（不要只複製部分檔案），再重新開啟。來不及時改放 backup_video 資料夾的備援影片（見 teacher_pdf/故障一頁卡.pdf）。\n準備播放\n「準備播放」不能按：請照上面的「怎麼辦」處理後，關閉程式（或瀏覽器分頁）再重新開啟。"
+      }
+    ],
+    "pageErrors": []
+  }
+}

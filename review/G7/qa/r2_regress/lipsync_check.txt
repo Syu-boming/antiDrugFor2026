@@ -1,0 +1,6 @@
+a0_c002_03 v04 dist frames 32 file frames 32 equal False dur_s 2.6666666666666665
+a0_c002_03 v05 dist frames 32 file frames 32 equal True dur_s 2.6666666666666665
+a6_c001_02 v04 dist frames 27 file frames 25 equal False dur_s 2.25
+a6_c001_02 v05 dist frames 27 file frames 27 equal True dur_s 2.25
+a6_c009_03 v04 dist frames 97 file frames 97 equal False dur_s 8.083333333333334
+a6_c009_03 v05 dist frames 97 file frames 97 equal True dur_s 8.083333333333334

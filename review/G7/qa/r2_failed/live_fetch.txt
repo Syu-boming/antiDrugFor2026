@@ -1,0 +1,28 @@
+200  cb392f24d1b51ea93ec39071b50b9be9f6974c06
+200 show/index.html a8c21891b165588df70ca2274ccf2078264d1b1f
+200 show/app.js 42a04b590f737ded1c9d0ba8dd46677cb4643626
+200 show/data/cues_show.js 24e0112b27b46a4e0f2917633a841db18947ddbb
+200 show/data/manifest.js 623a0f19fbe3a79ee7e2c7fbad2162ab79cea9f2
+200 teacher/pdf/%E6%95%99%E6%A1%88_%E6%95%99%E5%AD%B8%E6%B4%BB%E5%8B%95%E8%A8%AD%E8%A8%88.pdf 844d74cd41f69ffe26061fd1b93ac3539455e830
+local:
+a8c21891b165588df70ca2274ccf2078264d1b1f  app/dist/index.html
+61bd69382957b8b3bb318615169b0fa82b0afe61  app/dist/app.js
+30af06ef6bae8ba8d70951a96c29d3aa694e4273  app/dist/data/cues_show.js
+2d38b56553a36d2495edafc1dcba81ac45da8d71  app/dist/data/manifest.js
+e70d64676ab79d40eabe0a4f9ebe867b4f500baa  交付/teacher_pdf/教案_教學活動設計.pdf
+## 線上版實際內容 vs gh-pages 各版（2026-10-23 02:08 本機）
+23b30db index cb392f24d1b5 app 42a04b590f73 manifest 623a0f19fbe3 cues 24e0112b27b4
+7c24591 index 49882d9eed26 app 61bd69382957 manifest 2d38b56553a3 cues 30af06ef6bae
+live    index cb392f24d1b5 app 42a04b590f73 manifest 623a0f19fbe3 cues 24e0112b27b4
+## live index AI 說明句
+118:    <p>美術（Codex 圖像生成）、配音（ElevenLabs 語音合成）與程式（Claude）使用生成式 AI 工具輔助；內容經 AI 代理多輪檢核，演出前由教師實機彩排確認。配樂與音效為自製，字型為開源授權（SIL OFL）。</p>
+## Pages builds (gh api)
+7c24591	building	2026-10-22T17:33:12Z	2026-10-22T17:33:12Z
+23b30db	built	2026-10-22T14:05:24Z	2026-10-22T14:09:04Z
+b511dda	built	2026-10-22T12:04:09Z	2026-10-22T12:05:21Z
+## curl -I show/app.js
+last-modified: Thu, 22 Oct 2026 14:09:04 GMT
+etag: "6ada1900-db543"
+date: Thu, 22 Oct 2026 18:09:07 GMT
+224:許博明老師製作。劇情、角色、八題與口訣為本課自行設計（口訣不是官方口號）
+recheck 02:12 build=7c24591 building; live builtAt 13:33:58Z

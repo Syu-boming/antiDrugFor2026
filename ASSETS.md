@@ -78,7 +78,7 @@
 | audio/sfx/sfx_quiet_fold_v01.wav | 音效（2.80 s） | 折折 | S3 收摺音效（收聲訊號，加做） | 題卡模式開頭、教師插話點 | 自製（程式合成） | 原創 | 峰值 −11.4 dBFS；聽感未驗證 | v01 |
 
 ## 配音（正式：ElevenLabs v04，2026-10-21 13:4x 起；使用者決定 DECISIONS.md D-G3-07）
-- **正式檔**：audio/vo/vo_<台詞編號>_v04.wav（201 句）＋audio/lipsync/<台詞編號>_v04.json；來源 audio/vo_el/vo_<id>_el01.wav（tools/vo_el_prod.py 合成＋自動檢查）→ tools/vo_el_promote.py 複製升版。逐句來源、sha1、自動檢查狀態、request_id 見 `audio/vo/promoted_el.json`；聲線、模型、seed、逐次計費見 `audio/vo_el/build_report_el.json`、`audio/vo_el/FILES.md`、`audio/vo_el/ledger.json`；人工指定採用的句子記在 build_report_el.json 的 manual_pick。
+- **正式檔**：audio/vo/vo_<台詞編號>_v04.wav（201 句）＋audio/lipsync/<台詞編號>_v04.json；〔2026-10-23〕a0_c002_03、a6_c009_03、a6_c001_02 因「燈」念成「鄧」重做為 _v05（wav＋lipsync；ElevenLabs 同聲線、單句覆寫「燈→登」；review/G3/el/deng/），版號以 audio/vo/timings.json 為準；來源 audio/vo_el/vo_<id>_el01.wav（tools/vo_el_prod.py 合成＋自動檢查）→ tools/vo_el_promote.py 複製升版。逐句來源、sha1、自動檢查狀態、request_id 見 `audio/vo/promoted_el.json`；聲線、模型、seed、逐次計費見 `audio/vo_el/build_report_el.json`、`audio/vo_el/FILES.md`、`audio/vo_el/ledger.json`；人工指定採用的句子記在 build_report_el.json 的 manual_pick。
 - **服務與聲線**：ElevenLabs eleven_v3，全部是聲線庫聲線（旁白 Door Chow、折折 Chloe、小晴 Tiffy、小宇 Vivian、阿樂叔叔 Kuo Yu、品安 Yui、葉護理師 Devon、林老師 Jui、陳伯伯 Neil Chuang、邀請者 Chihiro Yoko、執勤人員 Angel；voice_id 見 audio/vo/casting.json 的 official_engine）。
 - **授權**：Starter 付費方案（2026-10-21 06:30 起），官方說明付費方案含商用授權（Beta 服務除外；eleven_v3 不是 Beta），聲線庫聲線附免費商用授權。ElevenLabs 使用政策「Use by and for Minors」要求兒童對象的產品取得書面核准：**2026-10-21 已取得 ElevenLabs 書面回覆**（教育用途、有適當監督時允許；學生用專案優先用聲線庫聲線），本專案三項條件都符合，原文與對照見 review/G3/el/elevenlabs_reply_20261021.md；原始郵件由使用者保存。證據：review/G3/el/license_evidence.md。
 - **edge-tts**：不再用於演出。舊 v01–v03 檔移到 audio/_archive_edge/（只封存、不打包）；下方「配音（G3 選角提案＋G4 代表鏡頭正式台詞）」與兩輪修正紀錄是歷史紀錄。

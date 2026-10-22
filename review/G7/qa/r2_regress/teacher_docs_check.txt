@@ -1,0 +1,3 @@
+[teacher] cue 指紋：目前 91b90f6887；講稿 91b90f6887；檢查報告 91b90f6887（2026/10/23 00:42:00）
+[teacher] 備援影片：九段都在（backup_a0.mp4–backup_a8.mp4）
+[teacher] 教師資料和目前的 cue 一致。

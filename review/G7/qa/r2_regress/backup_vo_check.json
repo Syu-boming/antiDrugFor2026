@@ -1,0 +1,26 @@
+{
+ "backup_a0:a0_c002_03:v04": {
+  "peak_ncc": 0.122,
+  "at_s": 17.06
+ },
+ "backup_a0:a0_c002_03:v05": {
+  "peak_ncc": 0.977,
+  "at_s": 36.35
+ },
+ "backup_a6:a6_c001_02:v04": {
+  "peak_ncc": 0.13,
+  "at_s": 20.4
+ },
+ "backup_a6:a6_c001_02:v05": {
+  "peak_ncc": 0.987,
+  "at_s": 7.27
+ },
+ "backup_a6:a6_c009_03:v04": {
+  "peak_ncc": 0.088,
+  "at_s": 183.23
+ },
+ "backup_a6:a6_c009_03:v05": {
+  "peak_ncc": 0.986,
+  "at_s": 188.47
+ }
+}

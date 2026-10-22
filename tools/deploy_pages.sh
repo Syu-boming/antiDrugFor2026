@@ -1,6 +1,7 @@
 #!/bin/zsh
 # 把 app/dist（舞台、控制台、按鍵測試）與 teacher/（網頁、圖、PDF）發布到 gh-pages 分支（GitHub Pages）。
 # 用法：先 cd app && npm run build，再在專案根目錄跑 zsh tools/deploy_pages.sh [--no-push]
+# 推送後會等到線上的 version.txt 換成這次的網站指紋才結束（Pages 偶爾卡在 queued：10 分鐘後重新要求建置一次，30 分鐘仍沒換就 exit 1）。
 # 不切換工作目錄、不動 main：用暫存索引直接寫 gh-pages 的 commit。
 set -euo pipefail
 ROOT=${0:A:h:h}
@@ -18,6 +19,8 @@ cp -R app/dist/. "$SITE/show/"
 cp -R teacher/html teacher/img teacher/pdf teacher/fonts "$SITE/teacher/"
 touch "$SITE/.nojekyll"
 find "$SITE" -name .DS_Store -delete
+SITEFP=$(cd "$SITE" && find . -type f -print0 | sort -z | xargs -0 shasum | shasum | cut -c1-12)
+echo "$SITEFP" > "$SITE/version.txt"
 
 # GitHub Pages：單檔 < 100 MB、整站 < 1 GB
 BIG=$(find "$SITE" -type f -size +95M | wc -l | tr -d ' ')
@@ -64,5 +67,16 @@ Claude-Session: https://claude.ai/code/session_013HpBRZnxMJ6dMY1xBFwjTq"
   git update-ref refs/heads/gh-pages "$COMMIT"
   echo "[pages] gh-pages → ${COMMIT:0:7}（${SIZE_MB} MB）"
 fi
-(( PUSH )) && git push origin gh-pages
+if (( PUSH )); then
+  git push origin gh-pages
+  URL="https://syu-boming.github.io/antiDrugFor2026/version.txt"
+  for i in {1..60}; do
+    GOT=$(curl -s "$URL?v=$RANDOM$i" | tr -d '[:space:]')
+    [[ "$GOT" == "$SITEFP" ]] && break
+    (( i == 20 )) && gh api -X POST repos/Syu-boming/antiDrugFor2026/pages/builds >/dev/null && echo "[pages] 10 分鐘還沒生效，重新要求建置一次"
+    sleep 30
+  done
+  [[ "$GOT" == "$SITEFP" ]] || { echo "[pages] 30 分鐘後線上版仍不是這次的內容（線上 ${GOT:-無}、這次 $SITEFP）；查 gh api repos/Syu-boming/antiDrugFor2026/pages/builds/latest"; exit 1 }
+  echo "[pages] 線上版已生效（網站指紋 $SITEFP）"
+fi
 echo "[pages] 完成"

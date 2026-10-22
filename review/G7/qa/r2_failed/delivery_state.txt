@@ -1,0 +1,51 @@
+## diff 交付/browser vs app/dist
+exit=0
+## diff 交付/AntidrugTheater/resources/app/dist vs app/dist
+## diff teacher_pdf
+## stat
+10-23 00:08:11 app/dist/app.js
+10-23 00:08:19 app/dist/data/manifest.js
+10-23 01:29:40 交付/browser/app.js
+10-23 01:29:40 交付/使用說明.md
+10-23 01:36:06 交付/素材與授權表.md
+10-23 01:36:06 交付/總報告.md
+10-23 01:29:40 交付/teacher_pdf/一頁操作卡.pdf
+10-23 01:29:40 交付/teacher_pdf/參與小卡.pdf
+10-23 01:29:40 交付/teacher_pdf/導師匿名回饋單.pdf
+10-23 01:29:40 交付/teacher_pdf/成果紀錄範本.pdf
+10-23 01:29:40 交付/teacher_pdf/故障一頁卡.pdf
+10-23 01:29:40 交付/teacher_pdf/教師講稿.pdf
+10-23 01:29:40 交付/teacher_pdf/教案_教學活動設計.pdf
+10-23 01:29:40 交付/teacher_pdf/觀課導覽單.pdf
+10-23 01:29:40 交付/teacher_pdf/角色貼紙.pdf
+10-23 01:29:40 交付/teacher_pdf/題卡_學生版.pdf
+10-23 01:29:40 交付/teacher_pdf/題卡_教師版.pdf
+10-23 00:55:07 交付/backup_video/_check
+10-23 00:47:02 交付/backup_video/backup_a0.mp4
+10-22 20:48:40 交付/backup_video/backup_a1.mp4
+10-22 20:59:02 交付/backup_video/backup_a2.mp4
+10-22 21:05:17 交付/backup_video/backup_a3.mp4
+10-22 21:14:02 交付/backup_video/backup_a4.mp4
+10-22 22:00:26 交付/backup_video/backup_a5.mp4
+10-23 00:55:00 交付/backup_video/backup_a6.mp4
+10-22 21:32:03 交付/backup_video/backup_a7.mp4
+10-22 22:01:52 交付/backup_video/backup_a8.mp4
+10-23 00:55:07 交付/backup_video/README.txt
+10-23 00:47:06 交付/backup_video/_check/backup_a0.json
+10-22 21:51:17 交付/backup_video/_check/backup_a1.json
+10-22 21:51:17 交付/backup_video/_check/backup_a2.json
+10-22 21:51:17 交付/backup_video/_check/backup_a3.json
+10-22 21:51:17 交付/backup_video/_check/backup_a4.json
+10-22 22:00:33 交付/backup_video/_check/backup_a5.json
+10-23 00:55:07 交付/backup_video/_check/backup_a6.json
+10-22 21:51:17 交付/backup_video/_check/backup_a7.json
+10-22 22:01:53 交付/backup_video/_check/backup_a8.json
+10-23 02:03:27 review/G6/pack/INDEX.md
+10-23 01:32:03 review/G6/pack/delivery/delivery_smoke.md
+10-23 00:42:03 teacher/data/檢查報告.md
+10-23 00:42:00 teacher/data/timing.json
+10-23 01:29:35 交付/AntidrugTheater/啟動說明.txt
+## sha1
+61bd69382957b8b3bb318615169b0fa82b0afe61  app/dist/app.js
+30af06ef6bae8ba8d70951a96c29d3aa694e4273  app/dist/data/cues_show.js
+61bd69382957b8b3bb318615169b0fa82b0afe61  交付/browser/app.js
