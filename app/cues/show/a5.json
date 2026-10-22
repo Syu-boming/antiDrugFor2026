@@ -1134,7 +1134,19 @@
      "start": "a5_c004_01.end+1.58",
      "duration": 0,
      "params": {
-      "to": "a5_pov_a"
+      "to": {
+       "pos": [
+        -3.4,
+        1.95,
+        15.5
+       ],
+       "target": [
+        -4.0,
+        1.72,
+        0.6
+       ],
+       "fov": 18
+      }
      }
     },
     {
@@ -1232,13 +1244,13 @@
      "id": "a5_c005_01",
      "speaker": "小宇",
      "text": "陳伯伯——！",
-     "start": 4.05
+     "start": 0.85
     },
     {
      "id": "a5_c005_02",
      "speaker": "小晴",
      "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
-     "start": "a5_c005_01.end+1.3"
+     "start": "a5_c005_01.end+1.05"
     },
     {
      "id": "a5_c005_03",
@@ -1271,7 +1283,19 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a5_pov_a",
+     "camera": {
+      "pos": [
+       -3.4,
+       1.95,
+       15.5
+      ],
+      "target": [
+       -4.0,
+       1.72,
+       0.6
+      ],
+      "fov": 18
+     },
      "light": 1,
      "set": 1,
      "desat": 0.35
@@ -1334,25 +1358,29 @@
      }
     },
     {
-     "name": "camera.cut",
-     "start": 1.15,
-     "duration": 0,
-     "params": {
-      "to": "a5_pov_b0"
-     }
-    },
-    {
      "name": "camera.move",
-     "start": 1.7,
+     "start": 0.3,
      "duration": 2.2,
      "ease": "sine",
      "params": {
-      "to": "a5_pov_b"
+      "to": {
+       "pos": [
+        -3.65,
+        1.95,
+        15.5
+       ],
+       "target": [
+        -4.25,
+        1.72,
+        0.6
+       ],
+       "fov": 18
+      }
      }
     },
     {
      "name": "camera.cut",
-     "start": "a5_c005_01.end+1.05",
+     "start": "a5_c005_01.end+0.75",
      "duration": 0,
      "params": {
       "to": "a5_kids"
@@ -1451,19 +1479,19 @@
     },
     {
      "do": "flagSlide",
-     "start": 3.0,
-     "duration": 1.1,
-     "dx": 0.33
+     "start": 0.15,
+     "duration": 1.0,
+     "dx": 0.4
     },
     {
      "do": "brick",
-     "start": 0.5499999999999999,
-     "duration": 0.5,
+     "start": 0,
+     "duration": 0.3,
      "to": 0.3
     },
     {
      "do": "brick",
-     "start": 4.3,
+     "start": 2.6,
      "duration": 1.2,
      "to": 0.0
     }
@@ -1486,8 +1514,8 @@
     },
     {
      "id": "sfx_gust",
-     "at": 3.0,
-     "gain": 0.7
+     "at": "a5_c005_01.end+0.1",
+     "gain": 0.5
     },
     {
      "id": "sfx_footsteps",
@@ -1495,7 +1523,7 @@
      "gain": 0.4
     }
    ],
-   "voStart": 4.05,
+   "voStart": 0.85,
    "tail": 1.0
   },
   {

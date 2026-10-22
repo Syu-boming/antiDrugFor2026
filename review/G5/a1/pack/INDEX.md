@@ -1,7 +1,8 @@
 # a1 驗收包（第一幕：漂亮的外表）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T04:38Z）；段落檔 `app/cues/show/a1.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T11:33Z）；段落檔 `app/cues/show/a1.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `55fd8363a2d8c8a22b8e115b2d3f87be64185f4b`；app/dist 合併後這一段 `2d4632c0587f7e9a61e7b4459f7e7cf326d822a4`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,12 +14,13 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png、compare_g4/compare_g4_02.png |
 | 播放錄製（30 格／秒＋混音） | a1_playback.mp4 |
 | 混音與響度 | audio/a1_mix.wav、audio/loudness.json、audio/a1_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
@@ -42,7 +44,8 @@
 - fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 121。
 - proj_16x9：每秒最多 明暗 2、紅色 0；超標 0；3 次 0。
 - proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 75。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.122（a1_c008 9.2 秒，播放錄製第 159.367 秒，0.3627→0.4071）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 3}}
 - cue 接縫全畫面亮度差最大 0.002；區域亮度差最大 0.199。
 
@@ -52,15 +55,15 @@
 - 各句對白：配音檔響度差 0.40 LU、混音中響度差 0.50 LU。
 - 瞬間響度最大 -8.9 LUFS；1 秒內最大上升 43.2 LU；100 ms 最大上升 39.4 LU。
 - 教師停格 3 秒後配樂 ≤ −35 LUFS：5／5 段通過。
-- 只有配樂與音效（不含配音）：瞬間響度最大 -16.9 LUFS（a1_c007 0.74 秒）；100 ms 最大上升 23.0 LU（a1_c006 0.41 秒）；1 秒內最大上升 42.2 LU；取樣峰值 -9.91 dBFS（a1_c005 4.59 秒）、真峰值 -9.9 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
+- 只有配樂與音效（不含配音）：瞬間響度最大 -16.9 LUFS（a1_c007 0.74 秒）；100 ms 最大上升 23.0 LU（a1_c006 0.41 秒）；1 秒內最大上升 42.0 LU；取樣峰值 -9.91 dBFS（a1_c005 4.59 秒）、真峰值 -9.9 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
 
 | 台詞 | 說話者 | 配音檔 LUFS | 混音中 LUFS | 對白−背景 LU |
 |---|---|---|---|---|
-| a1_c001_01 | 小晴 | -18.0 | -14.8 | 15.3 |
+| a1_c001_01 | 小晴 | -18.0 | -14.8 | 15.4 |
 | a1_c001_02 | 品安 | -18.0 | -15.0 | 15.4 |
 | a1_c001_03 | 小宇 | -18.1 | -15.1 | 14.0 |
 | a1_c001_04 | 折折 | -18.0 | -15.0 | 14.7 |
-| a1_c001_05 | 品安 | -18.0 | -14.8 | 14.7 |
+| a1_c001_05 | 品安 | -18.0 | -14.9 | 16.9 |
 | a1_c002_01 | 邀請者 | -18.0 | -15.2 | 17.3 |
 | a1_c002_02 | 邀請者 | -18.0 | -15.0 | 15.3 |
 | a1_c002_03 | 小宇 | -18.0 | -15.0 | 17.2 |
@@ -108,5 +111,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a1_c001": 0.6}；景：square_a1；景的建立／釋放 {"active": "square_a1", "built": 3, "disposed": 2, "lastBuildMs": 61, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a1_c001": 0.6}；景：square_a1；景的建立／釋放 {"active": "square_a1", "built": 4, "disposed": 2, "lastBuildMs": 82, "liveSetGroups": 1, "lastSwapMs": 0.1, "preparedHits": 2, "prepared": [{"name": "a2_shop", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

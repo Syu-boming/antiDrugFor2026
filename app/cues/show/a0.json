@@ -1083,12 +1083,12 @@
     {
      "id": "sfx_windchime",
      "at": 0.15,
-     "gain": 0.7
+     "gain": 0.5
     },
     {
      "id": "sfx_footsteps",
      "at": 0.45,
-     "gain": 0.4
+     "gain": 0.28
     },
     {
      "id": "sfx_fold",
@@ -1100,7 +1100,8 @@
      "at": "a0_c004_03.end+2.25",
      "gain": 0.35
     }
-   ]
+   ],
+   "_note_g6": "G6 修正第 1 輪：a0_c004_01 開頭被腳步聲與風鈴尾音蓋住的跡象（混音轉寫錯）→ sfx_footsteps 0.4→0.28、sfx_windchime 0.7→0.5（各約 −3 dB）"
   },
   {
    "id": "a0_c005",

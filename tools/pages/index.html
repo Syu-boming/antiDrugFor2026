@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>紙燈節｜反毒剪紙劇場</title>
+<meta name="description" content="國小三、四年級反毒剪紙劇場《紙燈節》線上版與教師資料。許博明老師製作。">
+<style>
+  :root {
+    --paper: #f3e7cf;
+    --card: #fffaf0;
+    --ink: #2b2118;
+    --muted: #6b5a48;
+    --line: #d9c6a3;
+    --accent: #b5452f;
+    --accent-ink: #fff;
+    --lamp: #e8a33a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+    line-height: 1.7;
+  }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 56px; }
+  header { text-align: center; margin-bottom: 28px; }
+  .lamps { font-size: 22px; letter-spacing: 6px; color: var(--lamp); }
+  h1 { font-size: clamp(30px, 6vw, 46px); margin: 6px 0 2px; letter-spacing: 4px; }
+  .sub { color: var(--muted); margin: 0; }
+  .credit { margin-top: 10px; font-weight: 700; letter-spacing: 2px; }
+  h2 { font-size: 22px; margin: 34px 0 12px; padding-bottom: 6px; border-bottom: 2px dashed var(--line); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 18px; box-shadow: 3px 4px 0 var(--line);
+  }
+  .card h3 { margin: 0 0 6px; font-size: 19px; }
+  .card p { margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+  a.btn {
+    display: inline-block; background: var(--accent); color: var(--accent-ink);
+    text-decoration: none; font-weight: 700; padding: 9px 16px; border-radius: 8px;
+  }
+  a.btn:focus-visible, a.btn:hover { outline: 3px solid var(--lamp); outline-offset: 2px; }
+  .note { background: var(--card); border-left: 5px solid var(--lamp); padding: 12px 16px; border-radius: 6px; }
+  .note p { margin: 4px 0; }
+  table { width: 100%; border-collapse: collapse; background: var(--card); border-radius: 8px; overflow: hidden; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { background: #efe0c2; }
+  ul.docs { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 8px; }
+  ul.docs li { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 9px 14px; display: flex; justify-content: space-between; gap: 10px; }
+  ul.docs a { color: var(--accent); font-weight: 700; }
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="lamps" aria-hidden="true">● ● ● ● ● ● ● ●</div>
+    <h1>紙燈節</h1>
+    <p class="sub">2.5D 反毒剪紙劇場｜國小三、四年級｜一節 40 分鐘｜喪屍煙彈、毒駕</p>
+    <p class="credit">許博明老師製作</p>
+  </header>
+
+  <div class="note">
+    <p><strong>這是線上版，方便預覽與練習。</strong>正式演出請用隨身碟複製到筆電的離線版（Windows 可攜版或瀏覽器離線版），不依賴網路。</p>
+    <p>第一次開啟要下載約 420 MB 的圖片與聲音，請用穩定的網路，等「準備播放」可以按之後再開始。建議用電腦版 Chrome 或 Edge。</p>
+  </div>
+
+  <h2>開始演出</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>舞台（單一視窗）</h3>
+      <p>投影畫面只開這一頁。按一次「準備播放」啟用聲音，停在署名卡後用簡報筆或鍵盤推進。</p>
+      <a class="btn" href="show/index.html">開啟舞台</a>
+    </div>
+    <div class="card">
+      <h3>教師控制台（雙視窗）</h3>
+      <p>筆電顯示講稿、正解、下一步預告與授課時鐘；按「開啟舞台視窗」，把舞台拖到投影畫面。</p>
+      <a class="btn" href="show/console.html">開啟控制台</a>
+    </div>
+    <div class="card">
+      <h3>簡報筆按鍵測試</h3>
+      <p>確認簡報筆每顆鍵送出的按鍵，必要時現場調整按鍵設定。</p>
+      <a class="btn" href="show/keytest.html">按鍵測試</a>
+    </div>
+  </div>
+
+  <h2>簡報筆與鍵盤</h2>
+  <table>
+    <tr><th>按鍵</th><th>動作</th></tr>
+    <tr><td>PageDown（簡報筆下一頁）</td><td>下一步</td></tr>
+    <tr><td>PageUp（簡報筆上一頁）</td><td>回上一個穩定節點</td></tr>
+    <tr><td>句點（簡報筆黑屏鍵）、空白鍵</td><td>暫停／繼續</td></tr>
+    <tr><td>F5／Esc（簡報筆放映鍵）</td><td>已攔截，不會跳出全螢幕</td></tr>
+    <tr><td>R</td><td>重播這一段</td></tr>
+    <tr><td>M</td><td>教師選單（章節跳轉、壓縮級別、聲畫偏移）</td></tr>
+  </table>
+
+  <h2>教師與學校資料</h2>
+  <ul class="docs">
+    <li><span>教師講稿</span><span><a href="teacher/html/教師講稿.html">網頁</a>｜<a href="teacher/pdf/教師講稿.pdf">PDF</a></span></li>
+    <li><span>一頁操作卡</span><span><a href="teacher/html/一頁操作卡.html">網頁</a>｜<a href="teacher/pdf/一頁操作卡.pdf">PDF</a></span></li>
+    <li><span>故障一頁卡</span><span><a href="teacher/html/故障一頁卡.html">網頁</a>｜<a href="teacher/pdf/故障一頁卡.pdf">PDF</a></span></li>
+    <li><span>題卡（教師版）</span><span><a href="teacher/html/題卡_教師版.html">網頁</a>｜<a href="teacher/pdf/題卡_教師版.pdf">PDF</a></span></li>
+    <li><span>題卡（學生版）</span><span><a href="teacher/html/題卡_學生版.html">網頁</a>｜<a href="teacher/pdf/題卡_學生版.pdf">PDF</a></span></li>
+    <li><span>教案（教學活動設計）</span><span><a href="teacher/html/教案_教學活動設計.html">網頁</a>｜<a href="teacher/pdf/教案_教學活動設計.pdf">PDF</a></span></li>
+    <li><span>觀課導覽單</span><span><a href="teacher/html/觀課導覽單.html">網頁</a>｜<a href="teacher/pdf/觀課導覽單.pdf">PDF</a></span></li>
+    <li><span>參與小卡</span><span><a href="teacher/html/參與小卡.html">網頁</a>｜<a href="teacher/pdf/參與小卡.pdf">PDF</a></span></li>
+    <li><span>角色貼紙</span><span><a href="teacher/html/角色貼紙.html">網頁</a>｜<a href="teacher/pdf/角色貼紙.pdf">PDF</a></span></li>
+    <li><span>導師匿名回饋單</span><span><a href="teacher/html/導師匿名回饋單.html">網頁</a>｜<a href="teacher/pdf/導師匿名回饋單.pdf">PDF</a></span></li>
+    <li><span>成果紀錄範本</span><span><a href="teacher/html/成果紀錄範本.html">網頁</a>｜<a href="teacher/pdf/成果紀錄範本.pdf">PDF</a></span></li>
+  </ul>
+
+  <footer>
+    <p>程式不使用攝影機與麥克風，不辨識手勢，也不蒐集姓名或使用紀錄。</p>
+    <p>美術、配音與程式使用生成式 AI 工具輔助，所有內容由教師審定。配樂與音效為自製。</p>
+    <p>許博明老師製作</p>
+  </footer>
+</main>
+</body>
+</html>

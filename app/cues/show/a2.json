@@ -2,7 +2,7 @@
  "format": "antidrug-cues/1",
  "id": "a2",
  "title": "第二幕：看不見的操偶線",
- "set": "workshop_g4",
+ "set": "a2_shop",
  "characters": {
   "ale": {
    "name": "阿樂叔叔",
@@ -514,7 +514,8 @@
     ],
     "estimateSec": 28,
     "actionSec": 22
-   }
+   },
+   "setFade": 0.8
   },
   {
    "id": "a2_c003",
@@ -524,7 +525,7 @@
    "initialState": {
     "stage": {
      "curtain": "open",
-     "camera": "a2_memory_cu",
+     "camera": "a2s_memory_cu",
      "light": 0.94,
      "desat": 0.5
     },
@@ -533,7 +534,7 @@
       "visible": true,
       "pose": "worried",
       "emotion": "worried",
-      "x": 2.15,
+      "x": -77.85,
       "z": 0.7,
       "facing": 1
      }
@@ -598,7 +599,7 @@
     "estimateSec": 18,
     "actionSec": 6
    },
-   "set": "a2_memory",
+   "set": "a2_shop",
    "music": [
     {
      "id": "music_shiny",
@@ -1992,7 +1993,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q3 點燈收聲後",
-    "atMinute": 13.27,
+    "atMinute": 13.25,
     "escalate": {
      "behindSec": 90,
      "level": 1
@@ -2731,14 +2732,6 @@
      }
     },
     {
-     "name": "fade.out",
-     "start": "a2_c013_03.end+0.25",
-     "duration": 0.6,
-     "params": {
-      "to": 1
-     }
-    },
-    {
      "name": "camera.cut",
      "start": "a2_c013_03.end+0.87",
      "duration": 0,
@@ -2747,17 +2740,30 @@
      }
     },
     {
-     "name": "fade.in",
-     "start": "a2_c013_03.end+0.89",
-     "duration": 0.6
+     "name": "light.dim",
+     "start": "a2_c013_03.end+0.87",
+     "duration": 0,
+     "params": {
+      "to": 0.38
+     },
+     "_note": "G6 修正第 1 輪：窗景→筆記本不再經過全黑：切進來那一格燈壓到和窗景亮度相近（≤1.2 倍），0.6 秒恢復到 0.88，第二個問號等恢復完才開始畫"
     },
     {
-     "name": "fade.out",
-     "start": "a2_c013_03.end+3.05",
+     "name": "light.dim",
+     "start": "a2_c013_03.end+0.89",
      "duration": 0.6,
      "params": {
-      "to": 1
+      "to": 0.88
      }
+    },
+    {
+     "name": "light.dim",
+     "start": "a2_c013_03.end+3.0",
+     "duration": 0.62,
+     "params": {
+      "to": 0.45
+     },
+     "_note": "G6 修正第 1 輪：筆記本→孩子不再第二次經過全黑：鏡頭不動時先把筆記本調暗（a2_window 的筆記本跟著舞台燈）到和孩子鏡頭亮度相近（≤1.2 倍）再直接切，切的那一格燈光回到 0.88"
     },
     {
      "name": "camera.cut",
@@ -2768,9 +2774,12 @@
      }
     },
     {
-     "name": "fade.in",
-     "start": "a2_c013_03.end+3.69",
-     "duration": 0.6
+     "name": "light.dim",
+     "start": "a2_c013_03.end+3.67",
+     "duration": 0,
+     "params": {
+      "to": 0.88
+     }
     },
     {
      "name": "zhezhe.look",
@@ -2880,5 +2889,6 @@
     }
    ]
   }
- ]
+ ],
+ "_note_g6": "G6 修正第 1 輪：段落層級的景改成 a2_shop（只有 a2_c002 沿用；a2_shop 沒寫到的 cue 畫面與 workshop_g4 逐像素相同），a2_c001→a2_c002 同一個景不再換景；a2_c003 的回想小台也搬進 a2_shop（MEM_X），a2_c002→a2_c003→a2_c004 鏡頭直接切。"
 }

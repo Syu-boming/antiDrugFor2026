@@ -230,6 +230,8 @@ function install(): void {
       if (before.mode !== 'preparing') { ack(false, 'not-preparing'); return; }
       if (!canRemoteStart) { ack(false, 'need-gesture'); return; }
       void e.start().then(() => publish(true));
+      // 全劇缺配音：引擎第一次只顯示「缺 N 句配音」、等再按一次（舊版引擎沒有 voConfirmPending 欄位）
+      if ((e.getState() as { voConfirmPending?: boolean }).voConfirmPending) { ack(true, 'confirm-vo'); publish(true); return; }
       ack(true, 'starting');
       publish(true);
       return;

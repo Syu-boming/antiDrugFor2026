@@ -11,6 +11,8 @@
   summary.json、INDEX.md（只列數字與檔案）
 方法與門檻：v1.3 第 8 節、v1.2 第 24 節（第 5 項效能：第 95 百分位 ≤ 34 ms、超過 100 ms 的卡頓 ≤ 2 次且不在對白或揭答中；第 7 項各段響度差 ±1 LU；
 第 12 項時長 ≤ 38 分；第 11 項署名卡）。光敏通過判定沿用 act_review_pack.py（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）。
+G6 修正第 1 輪：(a) 與建置一致改比段落 sha1（packs/segment_hashes.json，去掉 checkpoint 欄）；光敏另加孤立單格全畫面亮度比 ≤ 1.2（舊包從播放錄製補算）；
+(b) 播放中／停格用逐格狀態判定（cueTime ≥ cue 長度＝停格），停格中預先建景的長格另列；卡頓依「是否在 fade 黑格內（全畫面亮度 < 0.05）」分類。
 """
 import bisect
 import json
@@ -25,6 +27,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 FPS = 30
+FADE_BLACK = 0.05
 LIMIT_MIN = 38.0
 SIGNATURE = "許博明老師製作"
 ANSWERS = [2, 3, 1, 1, 3, 2, 3, 2]
@@ -55,6 +58,14 @@ def rel(p, base):
         return str(Path(p).resolve().relative_to(Path(base).resolve())).replace("\\", "/")
     except ValueError:
         return str(p)
+
+
+def mean_linear_luma(path):
+    """圖檔全畫面平均線性亮度（128×72 縮圖、sRGB→線性、Rec.709；同 act_review_pack.py 的孤立單格亮度比）"""
+    from PIL import Image
+    x = np.asarray(Image.open(path).convert("RGB").resize((128, 72), Image.BOX), dtype=np.float32) / 255
+    x = np.where(x <= 0.04045, x / 12.92, ((x + 0.055) / 1.055) ** 2.4)
+    return float((0.2126 * x[..., 0] + 0.7152 * x[..., 1] + 0.0722 * x[..., 2]).mean())
 
 
 def pct(a, q):
@@ -101,19 +112,45 @@ def teacher_time():
             "note": "教師時間＝預設情境合計 − 預錄合計（八題教師 8×47 秒＋換 cue、教師引導與練習 360 秒、故事段換 cue 45 秒）；不含換景預捲，預捲另加"}
 
 
-def flash_pass(fl, fv):
+def flash_pass(fl, fv, iso=None):
     def ok(mc):
         return None if not mc else (mc.get("luma", 99) <= 3 and mc.get("red", 99) <= 3)
     p169 = ok((fl or {}).get("max_changes_per_sec"))
     fine = ((fv or {}).get("variants") or {}).get("fine_32x18") or {}
     pf = ok(fine.get("max_changes_per_sec"))
+    # G6 修正：孤立單格全畫面亮度比 ≤ 1.2（act_review_pack.py isolated_cuts.json；舊包由本工具從播放錄製補算）
+    pi = None if not iso else bool(iso.get("pass"))
     return {"grid16x9": (fl or {}).get("max_changes_per_sec"), "fine32x18": fine.get("max_changes_per_sec"), "pass16x9": p169, "passFine": pf,
-            "pass": None if p169 is None or pf is None else bool(p169 and pf), "near_limit_total": (fl or {}).get("near_limit_total"),
+            "isolated_max_ratio": (iso or {}).get("max_ratio"), "isolated_over_limit": [{k: c.get(k) for k in ("cue", "cue_t", "t", "ratio")} for c in (iso or {}).get("over_limit", [])],
+            "isolated_source": (iso or {}).get("_source"), "passIsolated": pi,
+            "pass": None if p169 is None or pf is None or pi is None else bool(p169 and pf and pi), "near_limit_total": (fl or {}).get("near_limit_total"),
             "frames": (fl or {}).get("frames_analyzed")}
+
+
+def isolated_for_pack(out, pk, tl):
+    """驗收包的孤立單格亮度比：包裡有 isolated_cuts.json 就用；沒有（舊包）就從包的播放錄製補算，存在 <out>/packs/isolated/<段>.json（不寫進別人的包）"""
+    iso = load(pk / "isolated_cuts.json")
+    if iso:
+        iso["_source"] = "驗收包 isolated_cuts.json"
+        return iso
+    if not tl:
+        return None
+    mp4 = pk / f"{tl['act']}_playback.mp4"
+    if not mp4.exists():
+        return None
+    cache = out / "packs" / "isolated" / f"{tl['act']}.json"
+    if cache.exists() and cache.stat().st_mtime >= mp4.stat().st_mtime:
+        return load(cache)
+    import act_review_pack as ap
+    iso = ap.isolated_report(mp4, ap.schedule_where(tl))
+    iso["_source"] = f"show_review_pack 從 {rel(mp4, ROOT)} 補算（舊包沒有 isolated_cuts.json）"
+    dump(cache, iso)
+    return iso
 
 
 def packs_table(out, packs, show):
     cur = {c["id"]: c for c in show["cues"]}
+    hashes = (load(out / "packs" / "segment_hashes.json") or {}).get("segments", {})
     rows = []
     wavs = []
     for seg in show["segments"]:
@@ -130,10 +167,17 @@ def packs_table(out, packs, show):
             continue
         idx = pk / "INDEX.md"
         row["pack_generated"] = datetime.fromtimestamp(idx.stat().st_mtime).strftime("%Y-%m-%d %H:%M") if idx.exists() else None
+        # 與建置一致（G6 修正）：驗收包記下的段落指紋（app/dist 合併後這一段的 sha1，去掉 checkpoint 欄）＝目前 app/dist 的指紋；
+        # 舊版工具產生的包沒有指紋 → 不判一致（None），cue 長度比對只留作參考
+        h = hashes.get(a)
+        row["segment_hash"] = h
+        row["matches_current_build"] = (h or {}).get("builtMatch")
+        row["matches_by"] = "段落 sha1" if row["matches_current_build"] is not None else "沒有指紋（舊版工具產生的包，要重產）"
+        row["timeline_match_fallback"] = (h or {}).get("timelineMatch")
         if tl:
             diffs = [{"cue": c["id"], "pack": c["duration"], "build": cur[c["id"]]["duration"]} for c in tl["cues"] if c["id"] in cur and abs(c["duration"] - cur[c["id"]]["duration"]) > 0.01]
             missing = [i for i in seg["cueIds"] if i not in {c["id"] for c in tl["cues"]}]
-            row["matches_current_build"] = not diffs and not missing
+            row["cue_lengths_match"] = not diffs and not missing
             row["duration_diffs_vs_build"] = diffs
             row["cues_missing_in_pack"] = missing
         if du:
@@ -150,7 +194,7 @@ def packs_table(out, packs, show):
             w = pk / "audio" / f"{a}_mix.wav"
             if w.exists():
                 wavs.append(w)
-        row["flash"] = flash_pass(fl, fv)
+        row["flash"] = flash_pass(fl, fv, isolated_for_pack(out, pk, tl))
         if ss:
             r_ = ss.get("rows", [])
             row["subtitle_sync"] = {"pages": len(r_), "pass": sum(1 for x in r_ if x["pass"]), "all_pass": ss.get("all_pass"),
@@ -211,6 +255,12 @@ def packs_table(out, packs, show):
            "rule": "v1.3 第 8 節：以講稿估計的教師時間＋播放時間 ≤ 38 分；合計＝目前建置全部 cue 長度＋換景漸暗預捲＋教師時間（講稿：教師講述＋按鍵反應）"}
     res = {"segments": rows, "loudness": loud, "duration": dur,
            "packs_matching_build": sum(1 for r in rows if r.get("matches_current_build")), "packs_total": len(rows),
+           "packs_matching_rule": "驗收包記下的段落指紋（app/dist 合併後這一段的 sha1，去掉 checkpoint 欄）＝目前 app/dist；packs/segment_hashes.json",
+           "packs_without_hash": [r["act"] for r in rows if r.get("exists") and r.get("matches_current_build") is None],
+           "packs_hash_mismatch": [r["act"] for r in rows if r.get("matches_current_build") is False],
+           "packs_cue_lengths_match": sum(1 for r in rows if r.get("cue_lengths_match")),
+           "packs_without_hash_timeline_match": [r["act"] for r in rows if r.get("exists") and r.get("matches_current_build") is None and r.get("timeline_match_fallback")],
+           "dist_not_built_from_source": [a for a, h in hashes.items() if not (h.get("current") or {}).get("builtFromSource")],
            "flash_all_pass": all((r.get("flash") or {}).get("pass") for r in rows if r.get("exists")),
            "subtitle_sync_all_pass": all((r.get("subtitle_sync") or {}).get("all_pass") for r in rows if r.get("exists"))}
     dump(out / "packs" / "show_table.json", res)
@@ -224,12 +274,16 @@ def perf(out, show):
     if not raw:
         return None
     cues = {c["id"]: c for c in show["cues"]}
+    clist = show["cues"]
     ts = np.array(raw["ts"], dtype=np.float64)
     S = sorted(raw["samples"], key=lambda x: x[0])
     st = [s[0] for s in S]
     presses = raw.get("presses", [])
+    fsr = raw.get("fs") or []
     t_first = presses[0]["t"] if presses else (st[0] if st else 0)
     t_last = max(st) if st else ts[-1]
+    if fsr:
+        t_last = max(t_last, fsr[-1][0])
 
     def at(t):
         i = bisect.bisect_right(st, t) - 1
@@ -242,24 +296,82 @@ def perf(out, show):
     def in_line(cue, t):
         c = cues.get(cue)
         return next((l["id"] for l in (c or {}).get("lines", []) if l["start"] - 0.1 <= t <= l["end"] + 0.1), None)
-    iv = np.diff(ts)
-    tmid = ts[1:]
-    sel = (tmid >= t_first) & (tmid <= t_last)
-    ivs, tms = iv[sel], tmid[sel]
-    info = [at(t) for t in tms]
-    playing = np.array([bool(x and x["mode"] == "playing" and not x["paused"]) for x in info])
-    seg_of = {c["id"]: c["segment"] for c in show["cues"]}
-    stalls = []
-    for k in np.flatnonzero(ivs > 100):
-        x = info[k] or {}
-        cue = x.get("cue")
-        line = in_line(cue, x.get("cueTime", -1)) if x.get("mode") == "playing" else None
-        stalls.append({"t_sec": round((tms[k] - t_first) / 1000, 2), "interval_ms": round(float(ivs[k]), 1), "cue": cue, "segment": seg_of.get(cue), "phase": x.get("phase"),
-                       "cueTime": x.get("cueTime"), "mode": x.get("mode"), "in_dialog": bool(line) or (x.get("voSounding") or 0) > 0, "line": line,
-                       "in_reveal": (cues.get(cue) or {}).get("kind") == "reveal" and x.get("mode") == "playing",
-                       # 換景：預捲漸暗後在全暗那一格建新景（SHOW_INTERFACE 第 11 節），卡頓落在新景漸亮的前段時畫面還很暗
-                       "during_set_fade_in": (cues.get(cue) or {}).get("enterFade", 0) > 0 and x.get("mode") == "playing" and (x.get("cueTime") or 99) <= (cues.get(cue) or {}).get("enterFade", 0) + 0.1})
-    stalls_play = [s for s in stalls if s["mode"] == "playing"]
+    seg_of = {c["id"]: c["segment"] for c in clist}
+    # 卡頓前後畫面的全畫面亮度（stall_frames.json：擷取模式重畫；在 fade 黑格內＝前後兩格全畫面平均線性亮度都 < 0.05）
+    sf = load(out / "live" / "stall_frames.json") or {}
+    sf_by_k = {x["k"]: x for x in sf.get("list", [])}
+
+    def shot_luma(x):
+        f = (x or {}).get("file")
+        return mean_linear_luma(out / "live" / f) if f and (out / "live" / f).exists() else None
+    if fsr:
+        # G6 修正：逐格狀態（每一格開頭記下引擎上一格做完後的狀態）。第 k−1 格到第 k 格的間隔：卡住時畫面＝第 k−1 格的狀態、卡完＝第 k 格。
+        # 停格＝停住等老師，或播放中 cueTime ≥ cue 長度（播完停在最後一格）；前後兩格都是停格的間隔＝畫面靜止（預先建下一個景），另列、不算播放中。
+        F = np.array([r[:7] for r in fsr], dtype=np.float64)
+        tsf = F[:, 0]
+        iv_all = np.diff(tsf)
+        k_all = np.arange(1, len(F))
+        sel = (tsf[1:] >= t_first) & (tsf[1:] <= t_last)
+        ks, ivs, tms = k_all[sel], iv_all[sel], tsf[1:][sel]
+        durs = np.array([c["duration"] for c in clist])
+        ci = F[:, 1].astype(int).clip(0, len(clist) - 1)
+        hold_f = (F[:, 3] == 2) | ((F[:, 3] == 1) & (F[:, 2] >= durs[ci] - 1e-3))
+        paused_f = F[:, 6] > 0
+        hb, ha = hold_f[ks - 1], hold_f[ks]
+        anyplay = (F[ks - 1, 3] == 1) | (F[ks, 3] == 1)
+        pz = paused_f[ks - 1] | paused_f[ks]
+        playing = anyplay & ~(hb & ha) & ~pz
+        holding = hb & ha & ~pz
+
+        def state(k):
+            r = F[k]
+            c = clist[int(ci[k])]
+            return {"cue": c["id"], "cueTime": round(float(r[2]), 3), "mode": {1: "playing", 2: "waiting"}.get(int(r[3]), "other"), "hold": bool(hold_f[k]), "dim": round(float(r[4]), 3),
+                    "preroll": bool(r[5] > 0 and r[2] <= 1e-6 and int(r[3]) == 1), "paused": bool(paused_f[k])}
+        info = [state(int(k)) for k in ks]
+        stalls, hold_stalls = [], []
+        for j in np.flatnonzero(ivs > 100):
+            k = int(ks[j])
+            b, a = state(k - 1), state(k)
+            cue = a["cue"]
+            line = (in_line(b["cue"], b["cueTime"]) or in_line(a["cue"], a["cueTime"])) if playing[j] else None
+            x = sf_by_k.get(k) or {}
+            lb, la = shot_luma(x.get("before")), shot_luma(x.get("after"))
+            rec = {"t_sec": round((tms[j] - t_first) / 1000, 2), "interval_ms": round(float(ivs[j]), 1), "cue": cue, "segment": seg_of.get(cue), "cueTime": a["cueTime"],
+                   "before": b, "after": a, "mode": "playing" if playing[j] else ("hold" if holding[j] else ("paused" if pz[j] else "other")),
+                   "in_dialog": bool(line), "line": line, "in_reveal": (cues.get(cue) or {}).get("kind") == "reveal" and bool(playing[j]),
+                   "luma_before": None if lb is None else round(lb, 4), "luma_after": None if la is None else round(la, 4),
+                   "in_fade_black": None if lb is None or la is None else bool(max(lb, la) < FADE_BLACK),
+                   "during_set_fade_in": (cues.get(cue) or {}).get("enterFade", 0) > 0 and bool(playing[j]) and a["cueTime"] <= (cues.get(cue) or {}).get("enterFade", 0) + 0.1}
+            (stalls if playing[j] else hold_stalls).append(rec)
+        stalls_play = stalls
+        hold_long = [{"t_sec": round((tms[j] - t_first) / 1000, 2), "interval_ms": round(float(ivs[j]), 1), "cue": info[j]["cue"], "cueTime": info[j]["cueTime"]}
+                     for j in np.flatnonzero(holding & (ivs > 50))]
+        frame_method = "逐格狀態（live_raw.json fs）：前後兩格都是停格（停住等老師，或 cueTime ≥ cue 長度）＝停格，其餘（含預捲漸暗）＝播放中；暫停中的格不算"
+    else:
+        # 舊資料（沒有逐格狀態）：每 200 ms 取樣推測；cueTime 推到 ≥ cue 長度的算停格
+        iv = np.diff(ts)
+        tmid = ts[1:]
+        sel = (tmid >= t_first) & (tmid <= t_last)
+        ivs, tms = iv[sel], tmid[sel]
+        info = [at(t) for t in tms]
+        hold_s = np.array([bool(x and (x["mode"] == "waiting" or x["cueTime"] >= ((cues.get(x["cue"]) or {}).get("duration", 1e9) - 1e-3))) for x in info])
+        playing = np.array([bool(x and x["mode"] == "playing" and not x["paused"]) for x in info]) & ~hold_s
+        holding = hold_s
+        stalls, hold_stalls = [], []
+        for k in np.flatnonzero(ivs > 100):
+            x = info[k] or {}
+            cue = x.get("cue")
+            line = in_line(cue, x.get("cueTime", -1)) if playing[k] else None
+            rec = {"t_sec": round((tms[k] - t_first) / 1000, 2), "interval_ms": round(float(ivs[k]), 1), "cue": cue, "segment": seg_of.get(cue), "phase": x.get("phase"),
+                   "cueTime": x.get("cueTime"), "mode": "playing" if playing[k] else "hold", "in_dialog": bool(line) or (x.get("voSounding") or 0) > 0, "line": line,
+                   "in_reveal": (cues.get(cue) or {}).get("kind") == "reveal" and bool(playing[k]), "luma_before": None, "luma_after": None, "in_fade_black": None,
+                   "during_set_fade_in": (cues.get(cue) or {}).get("enterFade", 0) > 0 and bool(playing[k]) and (x.get("cueTime") or 99) <= (cues.get(cue) or {}).get("enterFade", 0) + 0.1}
+            (stalls if playing[k] else hold_stalls).append(rec)
+        stalls_play = stalls
+        hold_long = [{"t_sec": round((tms[j] - t_first) / 1000, 2), "interval_ms": round(float(ivs[j]), 1), "cue": (info[j] or {}).get("cue"), "cueTime": (info[j] or {}).get("cueTime")}
+                     for j in np.flatnonzero(holding & (ivs > 50))]
+        frame_method = "舊資料：每 200 ms 取樣推測（沒有逐格狀態）；推到 cueTime ≥ cue 長度或停住等老師＝停格"
     per_seg = {}
     per_cue = {}
     for k in np.flatnonzero(playing):
@@ -338,9 +450,17 @@ def perf(out, show):
                    "p95_ms_all": pct(ivs, 95), "mean_fps_playing": round(1000.0 / float(np.mean(ivp)), 1) if len(ivp) else None,
                    "over_34ms_playing": int((ivp > 34).sum()), "over_50ms_playing": int((ivp > 50).sum()),
                    "engine_fps_median": round(float(np.median([s[8] for s in S if s[9] == "playing" and s[8]])), 1) if any(s[9] == "playing" and s[8] for s in S) else None},
-        "stalls_over_100ms": stalls, "stalls_over_100ms_count": len(stalls), "stalls_over_100ms_playing_count": len(stalls_play),
+        "frame_classification": frame_method,
+        "stalls_over_100ms": stalls, "stalls_over_100ms_count": len(stalls) + len(hold_stalls), "stalls_over_100ms_playing_count": len(stalls_play),
         "stalls_in_dialog_or_reveal": sum(1 for s in stalls_play if s["in_dialog"] or s["in_reveal"]),
+        "stalls_in_fade_black": sum(1 for s in stalls_play if s.get("in_fade_black")),
+        "stalls_not_in_fade_black": sum(1 for s in stalls_play if s.get("in_fade_black") is False),
+        "stalls_luma_unmeasured": sum(1 for s in stalls_play if s.get("in_fade_black") is None),
+        "fade_black_rule": f"卡住時與卡完的畫面（擷取模式重畫）全畫面平均線性亮度都 < {FADE_BLACK}＝在 fade 黑格內（live/stall_frames.json）",
         "stalls_during_set_fade_in": sum(1 for s in stalls_play if s["during_set_fade_in"]),
+        "hold_stalls_over_100ms": hold_stalls, "hold_stalls_over_100ms_count": len(hold_stalls),
+        "hold_long_frames_over_50ms": {"count": len(hold_long), "max_ms": max((h["interval_ms"] for h in hold_long), default=None), "list": hold_long[:40],
+                                       "note": "停格中（前後兩格都是停格：畫面靜止）預先建下一個景的長格；不算播放中卡頓"},
         "criteria_v12_24_5": {"p95_le_34ms": (pct(ivp, 95) or 99) <= 34, "stalls_le_2": len(stalls_play) <= 2,
                               "no_stall_in_dialog_or_reveal": not any(s["in_dialog"] or s["in_reveal"] for s in stalls_play),
                               "heat_test_30min_idle_40min_show": "未驗證（本次只跑一次完整演出，沒有待機 30 分鐘）"},
@@ -610,38 +730,53 @@ def index(out, packs, show, A, P, C, E, F, G, N):
          "- 未驗證：學校筆電效能（待探針換算）、實際投影、聽感、實機休眠與斷網、待機 30 分鐘＋演出 40 分鐘耐熱測試。", ""]
     L += ["## 檔案", "", "| 項目 | 檔案 |", "|---|---|",
           "| 目前建置時間軸 | show_timeline.json |",
-          "| (a) 九段彙整、響度、時長 | packs/show_table.json、packs/loudness_show.json |",
-          "| (b) 即時播放效能 | live/perf.json、live/frametime_plot.png、live/memory_plot.png、live/live_raw.json |",
+          "| (a) 九段彙整、響度、時長 | packs/show_table.json、packs/loudness_show.json、packs/segment_hashes.json（段落指紋）、packs/isolated/（舊包補算的孤立單格亮度比） |",
+          "| (b) 即時播放效能 | live/perf.json、live/frametime_plot.png、live/memory_plot.png、live/live_raw.json、live/stall_frames.json、live/stall_frames/ |",
           "| (c) 段落接縫 | seams/seams.json、seams/seams_all.jpg、seams/seam_<前>_<後>.jpg、seams/<前>_<後>/flash_playback.json |",
           "| (d) 離線 | live/network.json |",
           "| (e) 操作 | ops/ops.json、ops/ops_show.json、ops/engine_test.log |",
           "| (f) 署名卡 | attribution/attribution.json、attribution/attribution.jpg、attribution/title_start.png、attribution/title_end.png |",
           "| (g) 八題 | quiz/quiz.json |",
+          "| (h) 交付包 | delivery/delivery_smoke.json、delivery/delivery_smoke.md（tools/delivery_smoke.mjs 產生；沒有跑就不列） |",
           "| 摘要（機器可讀） | summary.json |", ""]
     if A:
         d = A["duration"]
         lo = A["loudness"]
         L += ["## (a) 九段驗收包彙整", "",
-              f"- 驗收包與目前建置 cue 長度一致：{A['packs_matching_build']}／{A['packs_total']} 段。",
-              f"- 光敏（16×9 與 fine_32x18 的明暗、紅色每秒 ≤ 3）全部通過：{fmt(A['flash_all_pass'])}；字幕時間差全部在範圍內：{fmt(A['subtitle_sync_all_pass'])}。",
+              f"- 驗收包與目前建置一致（段落 sha1，去掉 checkpoint 欄；packs/segment_hashes.json）：{A['packs_matching_build']}／{A['packs_total']} 段"
+              f"；指紋不同：{'、'.join(A.get('packs_hash_mismatch') or []) or '無'}；舊包沒有指紋（要重產）：{'、'.join(A.get('packs_without_hash') or []) or '無'}"
+              f"；app/dist 不是用目前段落檔建的：{'、'.join(A.get('dist_not_built_from_source') or []) or '無'}。"
+              f"（參考：沒有指紋的包裡，解析後時間軸〔timeline.json cues，不含 initialState 站位與鏡位〕與目前建置相同：{'、'.join(A.get('packs_without_hash_timeline_match') or []) or '無'}；cue 長度一致 {A.get('packs_cue_lengths_match', '—')}／{A['packs_total']} 段）",
+              f"- 光敏（16×9 與 fine_32x18 的明暗、紅色每秒 ≤ 3；孤立單格全畫面亮度比 ≤ 1.2）全部通過：{fmt(A['flash_all_pass'])}；字幕時間差全部在範圍內：{fmt(A['subtitle_sync_all_pass'])}。",
               f"- 段落響度：中位數 {fmt(lo['median_I_LUFS'])} LUFS、最大偏差 {fmt(lo['max_abs_dev_LU'])} LU、最大−最小 {fmt(lo['spread_LU'])} LU；±1 LU：{fmt(lo['pass_pm1'])}（超過：{'、'.join(lo['segments_over_1LU']) or '無'}）。"
               f"對白響度中位數 {fmt(lo['dialog_median_LUFS'])} LUFS、最大偏差 {fmt(lo['dialog_max_abs_dev_LU'])} LU。九段接起來 {fmt((lo.get('show_concat') or {}).get('I_LUFS'))} LUFS、真峰值 {fmt((lo.get('show_concat') or {}).get('TP_dBTP'))} dBTP。",
               f"- 時長：目前建置 cue 長度合計 {fmt(d['cue_sum_current_build_sec'])} 秒＋換景預捲 {fmt(d['preroll_sum_sec'])} 秒＝播放 {fmt(d['playback_current_build_sec'])} 秒（{mmss(d['playback_current_build_sec'])}）；驗收包合計 {fmt(d['playback_from_packs_sec'])} 秒；時長估算 v03 預錄 {fmt(d['estimate_recorded_sec'])} 秒。"
               f"教師時間 {fmt(d['teacher']['teacher_sec'])} 秒（{d['teacher']['source']}"
               + (f"；講稿自己的總長 {fmt(d['teacher'].get('script_total_sec'))} 秒、預錄 {fmt(d['teacher'].get('script_playback_level0_sec'))} 秒、教師講述 {fmt(d['teacher'].get('script_teacher_speaking_sec'))} 秒、按鍵與換景 {fmt(d['teacher'].get('script_press_and_scene_sec'))} 秒" if d['teacher'].get('script_total_sec') else "")
               + f"）。合計 {fmt(d['total_sec'])} 秒＝{fmt(d['total_min'], 2)} 分；≤ 38 分：{fmt(d['pass_le_38min'])}（餘 {fmt(d['margin_sec'])} 秒）。", "",
-              "| 段 | 驗收包時間 | 與建置一致 | cue 長度（包） | 建置 | 預算差 | I LUFS | 偏差 LU | 對白 LUFS | 真峰值 | 削波 | 光敏 16×9 | 光敏 32×18 | 光敏判定 | 字幕時間差 | 線到頭部 px | 線經過兒童 | 台詞≠劇本 |",
-              "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+              "| 段 | 驗收包時間 | 與建置一致（sha1） | cue 長度（包） | 建置 | 預算差 | I LUFS | 偏差 LU | 對白 LUFS | 真峰值 | 削波 | 光敏 16×9 | 光敏 32×18 | 孤立亮度比 | 光敏判定 | 字幕時間差 | 線到頭部 px | 線經過兒童 | 台詞≠劇本 |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
         for r in A["segments"]:
             if not r.get("exists"):
-                L.append(f"| {r['act']} | 沒有驗收包 | — | — | {fmt(r['current_build']['cue_total_sec'])} | — | — | — | — | — | — | — | — | — | — | — | — | — |")
+                L.append(f"| {r['act']} | 沒有驗收包 | — | — | {fmt(r['current_build']['cue_total_sec'])} | — | — | — | — | — | — | — | — | — | — | — | — | — | — |")
                 continue
             lo_, fl_, ss_, sa_, du_ = r.get("loudness") or {}, r.get("flash") or {}, r.get("subtitle_sync") or {}, r.get("safety") or {}, r.get("durations") or {}
             g = lambda m: f"{m.get('luma')}／{m.get('red')}" if m else "—"
-            L.append(f"| {r['act']} | {r.get('pack_generated')} | {fmt(r.get('matches_current_build'))} | {fmt(du_.get('act_total_sec'))} | {fmt(r['current_build']['cue_total_sec'])} | {fmt(du_.get('diff_vs_budget_sec'))} | "
+            hm = r.get("matches_current_build")
+            tlm = r.get("timeline_match_fallback")
+            L.append(f"| {r['act']} | {r.get('pack_generated')} | {('沒有指紋' + ('（時間軸相同）' if tlm else '（時間軸不同）' if tlm is False else '')) if hm is None else fmt(hm)} | {fmt(du_.get('act_total_sec'))} | {fmt(r['current_build']['cue_total_sec'])} | {fmt(du_.get('diff_vs_budget_sec'))} | "
                      f"{fmt(lo_.get('I_LUFS'))} | {fmt(lo_.get('dev_from_median_LU'))} | {fmt(lo_.get('dialog_median_mix_I_LUFS'))} | {fmt(lo_.get('TP_dBTP'))} | {lo_.get('clipped_samples', '—')} | "
-                     f"{g(fl_.get('grid16x9'))} | {g(fl_.get('fine32x18'))} | {'通過' if fl_.get('pass') else ('不通過' if fl_.get('pass') is False else '—')} | "
+                     f"{g(fl_.get('grid16x9'))} | {g(fl_.get('fine32x18'))} | {fmt(fl_.get('isolated_max_ratio'), 3)} | {'通過' if fl_.get('pass') else ('不通過' if fl_.get('pass') is False else '—')} | "
                      f"{ss_.get('pass', '—')}／{ss_.get('pages', '—')} | {fmt(sa_.get('min_dist_to_head_px'))} | {sa_.get('string_through_child_frames', '—')} | {sa_.get('lines_differ_from_script', '—')} |")
+        iso_bad = [(r["act"], (r.get("flash") or {}).get("isolated_over_limit")) for r in A["segments"] if (r.get("flash") or {}).get("isolated_over_limit")]
+        if iso_bad:
+            L.append("")
+            for a, cs in iso_bad:
+                L.append(f"- {a} 孤立單格亮度比 > 1.2：" + "、".join(f"{c.get('cue')} {c.get('cue_t')} 秒 ×{c.get('ratio')}" for c in cs[:8]))
+        srcs = sorted({(r.get("flash") or {}).get("isolated_source") or "" for r in A["segments"] if r.get("exists")} - {""})
+        if any("補算" in x for x in srcs):
+            L.append("")
+            L.append("- 孤立單格亮度比來源：" + "；".join(f"{r['act']} {(r.get('flash') or {}).get('isolated_source')}" for r in A["segments"] if "補算" in ((r.get("flash") or {}).get("isolated_source") or "")) + "（packs/isolated/）。")
         diffs = [(r["act"], r["duration_diffs_vs_build"]) for r in A["segments"] if r.get("duration_diffs_vs_build")]
         if diffs:
             L.append("")
@@ -657,8 +792,16 @@ def index(out, packs, show, A, P, C, E, F, G, N):
               f"- 載入：開頁到「準備播放」可按 {ld.get('ready_button_ms')} ms；按「準備播放」到片頭待機 {ld.get('ready_click_to_title_ms')} ms（預熱 {fmt(ld.get('warm_ms'), 0)} ms）；開頁到片頭待機合計 {ld.get('open_to_title_idle_ms')} ms。",
               f"- 影格時間（播放中 {f_['playing']} 格）：p50 {fmt(f_['p50_ms_playing'], 2)} ms、p95 {fmt(f_['p95_ms_playing'], 2)} ms、p99 {fmt(f_['p99_ms_playing'], 2)} ms、最大 {fmt(f_['max_ms_playing'])} ms；平均 {fmt(f_['mean_fps_playing'])} fps；"
               f"> 34 ms {f_['over_34ms_playing']} 格、> 50 ms {f_['over_50ms_playing']} 格；開演後全部格 p95 {fmt(f_['p95_ms_all'], 2)} ms。",
-              f"- > 100 ms 卡頓：開演後 {P['stalls_over_100ms_count']} 次（播放中 {P['stalls_over_100ms_playing_count']} 次，其中在對白或揭答中 {P['stalls_in_dialog_or_reveal']} 次、在換景後新景漸亮期間 {P.get('stalls_during_set_fade_in', '—')} 次）。"
-              + ("發生在：" + "、".join(f"{s['cue']} {s['cueTime']} 秒（{s['interval_ms']} ms{'，對白' if s['in_dialog'] else ''}{'，揭答' if s['in_reveal'] else ''}{'，換景漸亮中' if s.get('during_set_fade_in') else ''}）" for s in P["stalls_over_100ms"][:12]) if P["stalls_over_100ms"] else ""),
+              f"- 播放中／停格的分法：{P.get('frame_classification', '—')}。",
+              f"- > 100 ms 卡頓：開演後 {P['stalls_over_100ms_count']} 次（播放中 {P['stalls_over_100ms_playing_count']} 次、停格中 {P.get('hold_stalls_over_100ms_count', '—')} 次）；"
+              f"播放中的卡頓：在 fade 黑格內（卡住與卡完的畫面全畫面亮度都 < {FADE_BLACK}）{P.get('stalls_in_fade_black', '—')} 次、不在黑格內 {P.get('stalls_not_in_fade_black', '—')} 次、沒量到 {P.get('stalls_luma_unmeasured', '—')} 次；"
+              f"在對白或揭答中 {P['stalls_in_dialog_or_reveal']} 次。"
+              + ("發生在：" + "、".join(f"{s['cue']} {s['cueTime']} 秒（{s['interval_ms']} ms；亮度 {fmt(s.get('luma_before'), 3)}→{fmt(s.get('luma_after'), 3)}"
+                                         f"{'，黑格內' if s.get('in_fade_black') else ('，不在黑格內' if s.get('in_fade_black') is False else '')}{'，對白' if s['in_dialog'] else ''}{'，揭答' if s['in_reveal'] else ''}）"
+                                         for s in P["stalls_over_100ms"][:12]) if P["stalls_over_100ms"] else ""),
+              f"- 停格中（畫面靜止，預先建下一個景）的長格：> 50 ms {(P.get('hold_long_frames_over_50ms') or {}).get('count', '—')} 格、最長 {fmt((P.get('hold_long_frames_over_50ms') or {}).get('max_ms'))} ms"
+              + ("（" + "、".join(f"{h['cue']} {h['interval_ms']} ms" for h in (P.get('hold_long_frames_over_50ms') or {}).get('list', [])[:10]) + "）" if (P.get('hold_long_frames_over_50ms') or {}).get('list') else "")
+              + "；不算播放中卡頓。",
               f"- v1.2 第 24 節第 5 項：p95 ≤ 34 ms {fmt(cr['p95_le_34ms'])}；卡頓 ≤ 2 次 {fmt(cr['stalls_le_2'])}；不在對白或揭答中 {fmt(cr['no_stall_in_dialog_or_reveal'])}；耐熱測試 {cr['heat_test_30min_idle_40min_show']}。",
               f"- 長動畫格（LoAF ≥ 50 ms）：{P['long_animation_frames']['count']} 個，> 100 ms {P['long_animation_frames']['over_100ms']} 個。",
               f"- 記憶體：JS heap {fmt(P['memory']['js_heap_used_MB']['min'])}–{fmt(P['memory']['js_heap_used_MB']['max'])} MB（開演第一次 {fmt(P['memory']['js_heap_used_MB']['first_play'])}、最後 {fmt(P['memory']['js_heap_used_MB']['last_play'])}；"
@@ -713,6 +856,27 @@ def index(out, packs, show, A, P, C, E, F, G, N):
         for r in G["rows"]:
             L.append(f"| {r['qid']} | {r['cue']} | {r['answer_expected']}／{r['answer_cue_data']}／{r['answer_doc']} | {' '.join(r['stamp_classes'])} | {fmt(r['text_matches_doc'])} | {fmt(r['no_auto_reveal'])}（等 {r['no_auto_reveal_after_sec']} 秒） | "
                      f"{r['lamp_lit_after']} | {(r['continued_to'] or {}).get('cue')} | {fmt(r['pass'])} |")
+        L.append("")
+    # (h) 交付包（tools/delivery_smoke.mjs 的結果；主線把 app/dist 複製進交付資料夾後跑，寫在 <out>/delivery/）
+    D = load(out / "delivery" / "delivery_smoke.json")
+    if D:
+        L += ["## (h) 交付包與建置一致（tools/delivery_smoke.mjs）", "",
+              f"- 測試時間 {D.get('generated')}；對照建置 `{D.get('ref')}`；整體 {'通過' if D.get('pass') else '不通過'}（delivery/delivery_smoke.md）。", "",
+              "| 交付資料夾 | 逐檔相同（diff 0） | 不加參數載入全劇 | 配音齊全 | 署名卡兩端 | 八題 | 外部請求 0 | 頁面錯誤 0 |", "|---|---|---|---|---|---|---|---|"]
+        w = lambda c: "—" if not c else ("通過" if c.get("ok") else "不通過")
+        for t in D.get("targets", []):
+            c = t.get("checks", {})
+            diff = t.get("diff") or {}
+            L.append(f"| {t['target']} | {w(c.get('identical_to_build'))}（不同 {len(diff.get('different', []))}、缺 {len(diff.get('missing', []))}、多 {len(diff.get('extra', []))}） | {w(c.get('loads_show_without_params'))} | "
+                     f"{w(c.get('audio_complete'))} | {w(c.get('attribution_both_ends'))} | {w(c.get('quiz_order_answers'))} | {w(c.get('zero_external_requests'))} | {w(c.get('no_page_errors'))} |")
+        try:
+            gen = datetime.fromisoformat(D["generated"].replace("Z", "+00:00")).timestamp()
+            js = ROOT / "app/dist/app.js"
+            if js.exists() and js.stat().st_mtime > gen:
+                L.append("")
+                L.append("- 注意：app/dist 在這次交付冒煙測試之後又重建過，請重新複製交付包並重跑 tools/delivery_smoke.mjs。")
+        except (KeyError, ValueError):
+            pass
         L.append("")
     (out / "INDEX.md").write_text("\n".join(L) + "\n", encoding="utf-8")
 

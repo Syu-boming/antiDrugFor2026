@@ -23,11 +23,14 @@
 //   durations.json    各 cue 長度與 時長估算_v03.md 預算對照
 //   safety_data.json  操偶線扣點、線到頭部框距離、線是否經過兒童、必要旁白一字不差、字幕排版、隱私
 //   timeline.json     解析後的時間軸與播放排程（教師按鍵間隔假設）
+//   segment_hash.json 段落指紋（G6 修正）：段落檔 sha1（去掉 checkpoint 欄）、app/dist 合併後這一段的 sha1、建置是否用目前段落檔（tools/seg_fingerprint.mjs）
+//   isolated_cuts.json 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變，比值 > 1.2 判光敏不通過）
 import { createRequire } from 'node:module';
 import { spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { packTimelineCues, segmentFingerprints } from './seg_fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(join(ROOT, 'app/package.json'));
@@ -71,6 +74,8 @@ const MUSIC_LEVEL = Function(`return (${/const MUSIC_LEVEL[^=]*=\s*(\{[^}]*\})/.
 const PREROLL = Number(/export const PREROLL_SEC = ([\d.]+)/.exec(engineSrc)[1]);
 const timelines = buildTimelines(show, (id) => manifest.audio[id]?.duration ?? undefined);
 const byId = new Map(timelines.map((t) => [t.cue.id, t]));
+// G6 修正：段落指紋（本包量的是 app/dist 合併後的這一版；sha1 都去掉 checkpoint 欄）
+const fingerprints = await segmentFingerprints();
 
 async function openPage(browser) {
   const page = await browser.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 1 });
@@ -157,17 +162,7 @@ for (const act of ACTS) {
     note: '由 app/src/cues/timeline.ts 的 buildTimelines 解析（與引擎相同），全劇 cue 集取自 app/dist/data/cues_show.js，音檔長度取自 manifest.js。schedule：start＝該 cue 第 0 秒在播放錄製中的秒數（前面是換景漸暗預捲 preroll）；hold＝教師按鍵間隔假設（秒）。',
     act, title: seg.title, segmentFile: `app/cues/show/${seg.file}`,
     musicLevelDefaults: MUSIC_LEVEL, prerollSec: PREROLL,
-    cues: order.map((t) => ({
-      id: t.cue.id, kind: t.cue.kind, title: t.cue.title, duration: r3(t.duration), autoAdvance: !!t.cue.autoAdvance, set: t.set, enterFade: t.enterFade,
-      audioId: t.cue.audioId ?? null, musicLoop: t.cue.musicLoop ?? true, musicLevel: t.cue.musicLevel ?? MUSIC_LEVEL[t.cue.kind] ?? 0.6,
-      compression: t.cue.compression, lamp: t.cue.lamp ?? null, quiz: t.quiz ?? null,
-      lines: t.lines.map((l) => ({ id: l.line.id, speaker: l.line.speaker, text: l.line.text, audioId: l.audioId, start: r3(l.start), end: r3(l.end), duration: r3(l.duration), placeholder: l.placeholder, pages: l.pages.map((p) => ({ start: r3(p.start), end: r3(p.end), rows: p.rows })) })),
-      sfx: t.sfx.map((s) => ({ ...s, at: r3(s.at) })),
-      music: t.music.map((m) => ({ ...m, at: r3(m.at) })),
-      anims: t.anims.map((a) => ({ name: a.name, target: a.target ?? null, start: r3(a.start), end: r3(a.end), params: a.params })),
-      strings: Object.fromEntries(Object.entries(t.cue.initialState.characters ?? {}).filter(([, c]) => c.strings?.length).map(([id, c]) => [id, c.strings])),
-      stringAnims: t.anims.filter((a) => a.name.startsWith('strings.')).map((a) => ({ target: a.target ?? null, name: a.name, anchors: a.params.anchors ?? null })),
-    })),
+    cues: packTimelineCues(order, MUSIC_LEVEL),
     schedule,
     totalPlaybackSec: r3(gt),
     audio: audioSrc,
@@ -186,6 +181,11 @@ for (const act of ACTS) {
     tlOut.audio = Object.fromEntries(Object.entries(audioSrc).filter(([id]) => used.has(id)));
     tlOut.audioNote = 'audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）';
   }
+  const fp = fingerprints.segments[act] ?? null;
+  tlOut.segmentHash = fp ? { source: fp.source, built: fp.built, sourceMerged: fp.sourceMerged, builtFromSource: fp.builtFromSource } : null;
+  writeFileSync(join(OUT, 'segment_hash.json'), JSON.stringify({ note: '本包量的段落版本（G6 修正第 1 輪起）。show_review_pack 以 built 比對目前 app/dist（與建置一致）、以 source 比對目前段落檔。',
+    act, method: fingerprints.method, distBuiltAt: fingerprints.distBuiltAt, generatedAt: new Date().toISOString(), ...fp }, null, 1));
+  if (fp && !fp.builtFromSource) log(`注意：app/dist 不是用目前的 ${fp.file} 建的（built ${fp.built?.slice(0, 10)} ≠ 段落檔合併 ${fp.sourceMerged?.slice(0, 10)}）；本包量的是 app/dist 那一版，請先 npm run build 再重產`);
   writeFileSync(join(OUT, 'timeline.json'), JSON.stringify(tlOut, null, 1));
 
   // ---------------------------------------------------------------- 3. Python：投影模擬、G4 並排、混音與響度、播放光敏、影片、長度、安全
@@ -193,6 +193,16 @@ for (const act of ACTS) {
   if (!has('--skip-asr')) {
     log('配音逐字稿（faster-whisper small＋large-v3-turbo）');
     run(VENV_PY, [join(ROOT, 'tools/act_review_pack.py'), 'transcripts', OUT]);
+  }
+  // 擷取期間 app/dist 若被重建（多個代理同時 build），包裡的畫面可能混到新版：結束時再算一次，不同就記下來（INDEX 會列出）
+  {
+    const end = (await segmentFingerprints()).segments[act] ?? null;
+    const shPath = join(OUT, 'segment_hash.json');
+    const sh = JSON.parse(readFileSync(shPath, 'utf8'));
+    sh.builtAtEnd = end?.built ?? null;
+    sh.distChangedDuringRun = !!end && end.built !== sh.built;
+    writeFileSync(shPath, JSON.stringify(sh, null, 1));
+    if (sh.distChangedDuringRun) log(`注意：產生這個包的期間 app/dist 的 ${act} 被重建過（${sh.built?.slice(0, 10)} → ${end.built?.slice(0, 10)}），請重產`);
   }
   run(PYTHON, [join(ROOT, 'tools/act_review_pack.py'), 'index', OUT]);
   if (!has('--keep-work')) rmSync(WORK, { recursive: true, force: true });

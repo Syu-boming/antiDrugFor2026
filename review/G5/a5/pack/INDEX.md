@@ -1,7 +1,8 @@
 # a5 驗收包（第五幕：找得到的幫手）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T04:23Z）；段落檔 `app/cues/show/a5.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T10:41Z）；段落檔 `app/cues/show/a5.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e`；app/dist 合併後這一段 `226a678519043e1762cc5f82036e2882c5cd241b`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,17 +14,18 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png、compare_g4/compare_g4_02.png |
 | 播放錄製（30 格／秒＋混音） | a5_playback.mp4 |
 | 混音與響度 | audio/a5_mix.wav、audio/loudness.json、audio/a5_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
-- 本段 cue 總長 179.1 秒＋換景漸暗預捲 1.2 秒；時長估算_v03.md 預錄合計 171.0 秒；差 9.3 秒；逐 cue 估計合計 171.0 秒。
-- 播放錄製（含教師按鍵間隔假設）205.8 秒。
+- 本段 cue 總長 175.6 秒＋換景漸暗預捲 1.2 秒；時長估算_v03.md 預錄合計 171.0 秒；差 5.8 秒；逐 cue 估計合計 171.0 秒。
+- 播放錄製（含教師按鍵間隔假設）202.3 秒。
 
 | cue | 種類 | 長度 | 預捲 | 估計 | 差 | 台詞秒 | 句數 |
 |---|---|---|---|---|---|---|---|
@@ -31,18 +33,19 @@
 | a5_c002 | quiz | 23.6 | 0 | 21.5 | 2.1 | 18.82 | 5 |
 | a5_c003 | reveal | 7.0 | 0 | 7.5 | -0.5 | 5.02 | 1 |
 | a5_c004 | lamp | 6.2 | 0 | 6.0 | 0.2 | 2.02 | 1 |
-| a5_c005 | scene | 21.2 | 0 | 22.0 | -0.8 | 12.25 | 3 |
+| a5_c005 | scene | 17.8 | 0 | 22.0 | -4.2 | 12.25 | 3 |
 | a5_c006 | scene | 31.2 | 0 | 30.2 | 1.0 | 27.93 | 5 |
 | a5_c007 | scene | 24.1 | 0 | 21.2 | 2.9 | 9.37 | 2 |
 | a5_c008 | scene | 27.4 | 0.6 | 27.8 | -0.4 | 23.16 | 5 |
 
 ## 光敏（任一區域明暗或飽和紅色每秒變化 ≤ 3 次）
 
-- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 3、紅色 3；超標 0；接近上限（2–3 次）148；分析 6173 格。
-- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 72。
+- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 3、紅色 3；超標 0；接近上限（2–3 次）148；分析 6070 格。
+- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 73。
 - proj_16x9：每秒最多 明暗 2、紅色 0；超標 0；3 次 0。
-- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 25。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
+- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 24。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.141（a5_c001 37.6333 秒，播放錄製第 38.233 秒，0.3123→0.3565）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 3}}
 - cue 接縫全畫面亮度差最大 0.022；區域亮度差最大 0.682。
 
@@ -69,7 +72,7 @@
 | a5_c002_05 | 旁白 | -18.0 | -15.0 | 55.0 |
 | a5_c003_01 | 旁白 | -18.0 | -15.0 | 55.0 |
 | a5_c004_01 | 折折 | -18.0 | -15.0 | 27.1 |
-| a5_c005_01 | 小宇 | -18.0 | -14.9 | 18.2 |
+| a5_c005_01 | 小宇 | -18.0 | -14.8 | 14.3 |
 | a5_c005_02 | 小晴 | -18.1 | -15.0 | 17.9 |
 | a5_c005_03 | 小宇 | -18.0 | -14.9 | 16.7 |
 | a5_c006_01 | 執勤人員 | -18.0 | -15.0 | 22.0 |
@@ -100,7 +103,7 @@
 ## 安全量測
 
 - 操偶線扣點：elbow、knee、wrist（只限 wrist／elbow／knee：True）；有操偶線的角色：ale。
-- 有操偶線的量測格 1691；線到頭部框最短 10.4 px（只算頭部框在畫面內的格；畫面外略過 1755 條）；線經過兒童立牌外框 0 格。
+- 有操偶線的量測格 1652；線到頭部框最短 10.4 px（只算頭部框在畫面內的格；畫面外略過 1515 條）；線經過兒童立牌外框 0 格。
 - 必要旁白：本段沒有必要旁白。
 - 台詞與劇本 v03 逐字不同：0 句（共 28 句）。
 - 字幕：每行最多 16 字、每頁最多 2 行。
@@ -109,5 +112,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a5_c001": 0.6, "a5_c008": 0.6}；景：a5_gate、a5_hospital；景的建立／釋放 {"active": "a5_hospital", "built": 4, "disposed": 3, "lastBuildMs": 64, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a5_c001": 0.6, "a5_c008": 0.6}；景：a5_gate、a5_hospital；景的建立／釋放 {"active": "a5_hospital", "built": 6, "disposed": 4, "lastBuildMs": 62, "liveSetGroups": 1, "lastSwapMs": 0.6, "preparedHits": 2, "prepared": [{"name": "a6_square_night", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

@@ -11,8 +11,29 @@
     "preroll_sec": 0.6,
     "lines": 17
    },
-   "pack_generated": "2026-10-22 12:23",
+   "pack_generated": "2026-10-22 19:42",
+   "segment_hash": {
+    "file": "app/cues/show/a0.json",
+    "current": {
+     "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
+     "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
+     "sourceMerged": "a865ba7d336f088ed4cca68052127ef721a57a29",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
+     "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
+     "generatedAt": "2026-10-22T11:39:21.456Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -25,7 +46,7 @@
    },
    "loudness": {
     "I_LUFS": -16.5,
-    "LRA_LU": 13.9,
+    "LRA_LU": 14.0,
     "TP_dBTP": -1.2,
     "sample_peak_dBFS": -1.2,
     "clipped_samples": 0,
@@ -48,6 +69,10 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.136,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 124,
     "frames": 3874
@@ -97,8 +122,29 @@
     "preroll_sec": 0.6,
     "lines": 27
    },
-   "pack_generated": "2026-10-22 12:38",
+   "pack_generated": "2026-10-22 19:33",
+   "segment_hash": {
+    "file": "app/cues/show/a1.json",
+    "current": {
+     "source": "55fd8363a2d8c8a22b8e115b2d3f87be64185f4b",
+     "built": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+     "sourceMerged": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "55fd8363a2d8c8a22b8e115b2d3f87be64185f4b",
+     "built": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+     "generatedAt": "2026-10-22T11:28:30.433Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -111,7 +157,7 @@
    },
    "loudness": {
     "I_LUFS": -16.3,
-    "LRA_LU": 17.0,
+    "LRA_LU": 16.6,
     "TP_dBTP": -1.2,
     "sample_peak_dBFS": -1.21,
     "clipped_samples": 0,
@@ -134,6 +180,10 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.122,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 136,
     "frames": 5414
@@ -180,20 +230,41 @@
    "cues": 13,
    "current_build": {
     "cue_total_sec": 260.57,
-    "preroll_sec": 3.0,
+    "preroll_sec": 1.8,
     "lines": 38
    },
-   "pack_generated": "2026-10-22 16:01",
+   "pack_generated": "2026-10-22 19:44",
+   "segment_hash": {
+    "file": "app/cues/show/a2.json",
+    "current": {
+     "source": "39fd12c7b3f98772f45de21dd4fbfc2c08a0022c",
+     "built": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+     "sourceMerged": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "39fd12c7b3f98772f45de21dd4fbfc2c08a0022c",
+     "built": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+     "generatedAt": "2026-10-22T11:35:43.302Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
     "act_total_sec": 260.6,
-    "act_preroll_total_sec": 3.0,
+    "act_preroll_total_sec": 1.8,
     "act_budget_recorded_sec": 255.0,
-    "diff_vs_budget_sec": 8.6,
+    "diff_vs_budget_sec": 7.4,
     "estimate_sum_sec": 255.2,
-    "playback_with_holds_sec": 304.07
+    "playback_with_holds_sec": 302.87
    },
    "loudness": {
     "I_LUFS": -15.9,
@@ -220,9 +291,13 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.121,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 148,
-    "frames": 9122
+    "frames": 9086
    },
    "subtitle_sync": {
     "pages": 43,
@@ -284,8 +359,29 @@
     "preroll_sec": 2.4,
     "lines": 23
    },
-   "pack_generated": "2026-10-22 12:34",
+   "pack_generated": "2026-10-22 18:39",
+   "segment_hash": {
+    "file": "app/cues/show/a3.json",
+    "current": {
+     "source": "3e71fbce63ac96f28d8330bf56b96fb619482d49",
+     "built": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+     "sourceMerged": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "3e71fbce63ac96f28d8330bf56b96fb619482d49",
+     "built": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+     "generatedAt": "2026-10-22T10:34:58.471Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -321,6 +417,10 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.142,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 157,
     "frames": 5242
@@ -366,25 +466,46 @@
    "exists": true,
    "cues": 13,
    "current_build": {
-    "cue_total_sec": 217.09,
+    "cue_total_sec": 217.04,
     "preroll_sec": 1.2,
     "lines": 33
    },
-   "pack_generated": "2026-10-22 12:34",
+   "pack_generated": "2026-10-22 18:58",
+   "segment_hash": {
+    "file": "app/cues/show/a4.json",
+    "current": {
+     "source": "e2ea0db5057008f528b89a63b40446417b712fdf",
+     "built": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+     "sourceMerged": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "e2ea0db5057008f528b89a63b40446417b712fdf",
+     "built": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+     "generatedAt": "2026-10-22T10:51:11.228Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 217.1,
+    "act_total_sec": 217.0,
     "act_preroll_total_sec": 1.2,
     "act_budget_recorded_sec": 224.0,
-    "diff_vs_budget_sec": -5.7,
+    "diff_vs_budget_sec": -5.8,
     "estimate_sum_sec": 224.0,
-    "playback_with_holds_sec": 258.79
+    "playback_with_holds_sec": 258.74
    },
    "loudness": {
     "I_LUFS": -15.8,
-    "LRA_LU": 14.7,
+    "LRA_LU": 14.8,
     "TP_dBTP": -0.9,
     "sample_peak_dBFS": -0.87,
     "clipped_samples": 0,
@@ -399,7 +520,7 @@
    "flash": {
     "grid16x9": {
      "luma": 3,
-     "red": 2
+     "red": 3
     },
     "fine32x18": {
      "luma": 3,
@@ -407,9 +528,13 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.159,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
-    "near_limit_total": 146,
-    "frames": 7763
+    "near_limit_total": 147,
+    "frames": 7762
    },
    "subtitle_sync": {
     "pages": 34,
@@ -456,25 +581,46 @@
    "exists": true,
    "cues": 8,
    "current_build": {
-    "cue_total_sec": 179.08,
+    "cue_total_sec": 175.63,
     "preroll_sec": 1.2,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 12:23",
+   "pack_generated": "2026-10-22 18:41",
+   "segment_hash": {
+    "file": "app/cues/show/a5.json",
+    "current": {
+     "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
+     "built": "226a678519043e1762cc5f82036e2882c5cd241b",
+     "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
+     "built": "226a678519043e1762cc5f82036e2882c5cd241b",
+     "generatedAt": "2026-10-22T10:35:56.859Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
-    "act_total_sec": 179.1,
+    "act_total_sec": 175.6,
     "act_preroll_total_sec": 1.2,
     "act_budget_recorded_sec": 171.0,
-    "diff_vs_budget_sec": 9.3,
+    "diff_vs_budget_sec": 5.8,
     "estimate_sum_sec": 171.0,
-    "playback_with_holds_sec": 205.78
+    "playback_with_holds_sec": 202.33
    },
    "loudness": {
     "I_LUFS": -15.8,
-    "LRA_LU": 13.1,
+    "LRA_LU": 11.5,
     "TP_dBTP": -1.1,
     "sample_peak_dBFS": -1.11,
     "clipped_samples": 0,
@@ -497,9 +643,13 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.141,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 148,
-    "frames": 6173
+    "frames": 6070
    },
    "subtitle_sync": {
     "pages": 28,
@@ -550,8 +700,29 @@
     "preroll_sec": 1.8,
     "lines": 28
    },
-   "pack_generated": "2026-10-22 15:55",
+   "pack_generated": "2026-10-22 18:57",
+   "segment_hash": {
+    "file": "app/cues/show/a6.json",
+    "current": {
+     "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
+     "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+     "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
+     "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+     "generatedAt": "2026-10-22T10:51:46.824Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -563,8 +734,8 @@
     "playback_with_holds_sec": 215.89
    },
    "loudness": {
-    "I_LUFS": -16.2,
-    "LRA_LU": 14.1,
+    "I_LUFS": -16.1,
+    "LRA_LU": 14.2,
     "TP_dBTP": -1.2,
     "sample_peak_dBFS": -1.19,
     "clipped_samples": 0,
@@ -573,7 +744,7 @@
     "momentary_max_LUFS": -8.9,
     "music_sfx_only_max_LUFS": -17.3,
     "freeze_holds_pass": "6/6",
-    "dev_from_median_LU": -0.1,
+    "dev_from_median_LU": 0.0,
     "dialog_dev_from_median_LU": 0.0
    },
    "flash": {
@@ -587,8 +758,12 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.137,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
-    "near_limit_total": 131,
+    "near_limit_total": 133,
     "frames": 6477
    },
    "subtitle_sync": {
@@ -640,8 +815,29 @@
     "preroll_sec": 0.6,
     "lines": 6
    },
-   "pack_generated": "2026-10-22 16:05",
+   "pack_generated": "2026-10-22 19:01",
+   "segment_hash": {
+    "file": "app/cues/show/a7.json",
+    "current": {
+     "source": "2b96d32c4ce752a26629bb5197d6b3996e16be2f",
+     "built": "d58767e3faced5c27da3728b178fccc232f1379d",
+     "sourceMerged": "d58767e3faced5c27da3728b178fccc232f1379d",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "2b96d32c4ce752a26629bb5197d6b3996e16be2f",
+     "built": "d58767e3faced5c27da3728b178fccc232f1379d",
+     "generatedAt": "2026-10-22T11:00:20.339Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -677,6 +873,10 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.141,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
     "near_limit_total": 113,
     "frames": 1755
@@ -726,8 +926,29 @@
     "preroll_sec": 0.6,
     "lines": 1
    },
-   "pack_generated": "2026-10-22 15:57",
+   "pack_generated": "2026-10-22 19:09",
+   "segment_hash": {
+    "file": "app/cues/show/a8.json",
+    "current": {
+     "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
+     "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+     "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+     "builtFromSource": true
+    },
+    "pack": {
+     "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
+     "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+     "generatedAt": "2026-10-22T11:08:23.168Z"
+    },
+    "builtMatch": true,
+    "sourceMatch": true,
+    "distChangedDuringRun": false,
+    "timelineMatch": true
+   },
    "matches_current_build": true,
+   "matches_by": "段落 sha1",
+   "timeline_match_fallback": true,
+   "cue_lengths_match": true,
    "duration_diffs_vs_build": [],
    "cues_missing_in_pack": [],
    "durations": {
@@ -739,18 +960,18 @@
     "playback_with_holds_sec": 30.9
    },
    "loudness": {
-    "I_LUFS": -19.4,
-    "LRA_LU": 7.5,
-    "TP_dBTP": -2.1,
-    "sample_peak_dBFS": -2.14,
+    "I_LUFS": -18.2,
+    "LRA_LU": 6.6,
+    "TP_dBTP": -2.0,
+    "sample_peak_dBFS": -1.97,
     "clipped_samples": 0,
-    "dialog_median_mix_I_LUFS": -14.7,
+    "dialog_median_mix_I_LUFS": -14.5,
     "line_mix_I_spread_LU": 0.0,
-    "momentary_max_LUFS": -12.4,
+    "momentary_max_LUFS": -12.3,
     "music_sfx_only_max_LUFS": -15.7,
     "freeze_holds_pass": "1/1",
-    "dev_from_median_LU": -3.3,
-    "dialog_dev_from_median_LU": 0.2
+    "dev_from_median_LU": -2.1,
+    "dialog_dev_from_median_LU": 0.4
    },
    "flash": {
     "grid16x9": {
@@ -763,8 +984,12 @@
     },
     "pass16x9": true,
     "passFine": true,
+    "isolated_max_ratio": 1.128,
+    "isolated_over_limit": [],
+    "isolated_source": "驗收包 isolated_cuts.json",
+    "passIsolated": true,
     "pass": true,
-    "near_limit_total": 106,
+    "near_limit_total": 91,
     "frames": 927
    },
    "subtitle_sync": {
@@ -805,14 +1030,14 @@
  "loudness": {
   "rule": "v1.2 第 24 節第 7 項：各段響度差 ±1 LU。基準＝九段整合響度（act_review_pack 播放錄製混音，含教師停格假設）的中位數；另列各段對白（混音中各句）響度中位數的差。",
   "median_I_LUFS": -16.1,
-  "max_abs_dev_LU": 3.3,
-  "spread_LU": 3.6,
+  "max_abs_dev_LU": 2.1,
+  "spread_LU": 2.4,
   "pass_pm1": false,
   "segments_over_1LU": [
    "a8"
   ],
   "dialog_median_LUFS": -14.9,
-  "dialog_max_abs_dev_LU": 0.2,
+  "dialog_max_abs_dev_LU": 0.4,
   "dialog_pass_pm1": true,
   "show_concat": {
    "I_LUFS": -16.1,
@@ -831,22 +1056,22 @@
   }
  },
  "duration": {
-  "cue_sum_current_build_sec": 1325.8,
-  "preroll_sum_sec": 12.0,
-  "playback_current_build_sec": 1337.8,
-  "playback_current_build_min": 22.3,
-  "playback_from_packs_sec": 1337.8,
+  "cue_sum_current_build_sec": 1322.3,
+  "preroll_sum_sec": 10.8,
+  "playback_current_build_sec": 1333.1,
+  "playback_current_build_min": 22.22,
+  "playback_from_packs_sec": 1333.0,
   "estimate_recorded_sec": 1313.0,
   "teacher": {
-   "teacher_sec": 824.2,
+   "teacher_sec": 822.7,
    "includes_preroll": true,
    "source": "teacher/data/timing.json",
-   "script_total_sec": 2150,
-   "script_playback_level0_sec": 1325.8,
+   "script_total_sec": 2145,
+   "script_playback_level0_sec": 1322.3,
    "script_teacher_speaking_sec": 706,
-   "script_press_and_scene_sec": 118.2,
-   "script_generated": "2026/10/22 17:06:23",
-   "script_cue_hash": "713e22e2ee",
+   "script_press_and_scene_sec": 116.7,
+   "script_generated": "2026/10/22 20:03:03",
+   "script_cue_hash": "0f6f4055f3",
    "estimate_v03": {
     "default_scenario_sec": 2118.0,
     "recorded_sec": 1313.0,
@@ -868,15 +1093,21 @@
    },
    "note": "教師時間＝講稿 totalSec − 預錄播放 level0（教師講述＋按鍵反應＋換景漸暗）"
   },
-  "total_sec": 2150.0,
-  "total_min": 35.83,
+  "total_sec": 2145.0,
+  "total_min": 35.75,
   "limit_min": 38.0,
   "pass_le_38min": true,
-  "margin_sec": 130.0,
+  "margin_sec": 135.0,
   "rule": "v1.3 第 8 節：以講稿估計的教師時間＋播放時間 ≤ 38 分；合計＝目前建置全部 cue 長度＋換景漸暗預捲＋教師時間（講稿：教師講述＋按鍵反應）"
  },
  "packs_matching_build": 9,
  "packs_total": 9,
+ "packs_matching_rule": "驗收包記下的段落指紋（app/dist 合併後這一段的 sha1，去掉 checkpoint 欄）＝目前 app/dist；packs/segment_hashes.json",
+ "packs_without_hash": [],
+ "packs_hash_mismatch": [],
+ "packs_cue_lengths_match": 9,
+ "packs_without_hash_timeline_match": [],
+ "dist_not_built_from_source": [],
  "flash_all_pass": true,
  "subtitle_sync_all_pass": true
 }

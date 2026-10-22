@@ -1,7 +1,8 @@
 # a3 驗收包（第三幕：我可以說不要）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T04:34Z）；段落檔 `app/cues/show/a3.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T10:39Z）；段落檔 `app/cues/show/a3.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `3e71fbce63ac96f28d8330bf56b96fb619482d49`；app/dist 合併後這一段 `3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,12 +14,13 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png、compare_g4/compare_g4_02.png |
 | 播放錄製（30 格／秒＋混音） | a3_playback.mp4 |
 | 混音與響度 | audio/a3_mix.wav、audio/loudness.json、audio/a3_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
@@ -41,8 +43,9 @@
 - 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 3、紅色 3；超標 0；接近上限（2–3 次）157；分析 5242 格。
 - fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 71。
 - proj_16x9：每秒最多 明暗 3、紅色 0；超標 0；3 次 2。
-- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 29。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
+- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 28。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.142（a3_c001 10.3 秒，播放錄製第 10.9 秒，0.4601→0.403）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 3}}
 - cue 接縫全畫面亮度差最大 0.039；區域亮度差最大 0.509。
 
@@ -104,5 +107,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a3_c001": 0.6, "a3_c003": 0.6, "a3_c004": 0.6, "a3_c008": 0.6}；景：a3_arcade、a3_card、a3_classroom、a3_gate；景的建立／釋放 {"active": "a3_classroom", "built": 6, "disposed": 5, "lastBuildMs": 28, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a3_c001": 0.6, "a3_c003": 0.6, "a3_c004": 0.6, "a3_c008": 0.6}；景：a3_arcade、a3_card、a3_classroom、a3_gate；景的建立／釋放 {"active": "a3_classroom", "built": 8, "disposed": 6, "lastBuildMs": 74, "liveSetGroups": 1, "lastSwapMs": 0.7, "preparedHits": 4, "prepared": [{"name": "gate", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

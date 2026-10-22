@@ -13,24 +13,29 @@
 //   --gap 0.8             即時播放時，每段播完停住後隔幾秒按下一步（教師停格用短間隔）
 //   --quiz-wait 1.6       出題畫面停住後等幾秒才按（同時確認不會自動揭答）
 //   --headed              用有視窗的 Chrome 跑即時播放（預設無頭；兩者都用 Apple M4 GPU）
-//   --index-only          只重跑 Python 彙整與 INDEX.md
+//   --perf-only           只跑即時播放效能（＋卡頓那幾格的擷取），其他各節沿用上次的結果，再重產 INDEX.md
+//   --index-only          只重跑段落指紋比對、Python 彙整與 INDEX.md
 //
 // 產出（INDEX.md 只列數字與檔案）：
 //   show_timeline.json         目前建置的全劇時間軸（buildTimelines，與引擎相同）
-//   (a) packs/                 九段驗收包彙整：長度、響度（段落響度差 ±1 LU）、光敏通過判定、字幕時間差、安全量測；全劇時長＋教師時間 ≤ 38 分
-//   (b) live/                  即時播放效能：影格時間第 95 百分位、>100 ms 卡頓（發生的 cue、是否在對白或揭答中）、JS heap／程序記憶體走勢、
+//   (a) packs/                 九段驗收包彙整：與建置一致（段落 sha1，去掉 checkpoint 欄：packs/segment_hashes.json）、長度、響度（段落響度差 ±1 LU）、
+//                              光敏通過判定（含孤立單格亮度比 ≤ 1.2）、字幕時間差、安全量測；全劇時長＋教師時間 ≤ 38 分
+//   (b) live/                  即時播放效能：影格時間第 95 百分位、>100 ms 卡頓（發生的 cue、是否在對白或揭答中、是否在 fade 黑格內〔全畫面亮度 < 0.05，
+//                              live/stall_frames/ 用擷取模式重畫卡頓前後那一格〕）、播放中／停格（逐格記錄 cueTime ≥ cue 長度＝停格）、JS heap／程序記憶體走勢、
 //                              開頁到片頭待機的載入時間、字幕與語音時間差（voiceSync）、嘴型、網路紀錄
 //   (c) seams/                 段落接縫（a0→a1 … a7→a8）：前段最後一格｜後段第一格｜後段第一個全亮格並排、亮度差、接縫 30 格／秒光敏
 //   (d) live/network.json      離線：所有請求，外部請求數
 //   (e) ops/                   操作：engine-test 引用結果＋全劇模式補測（連按、長按、上一步、暫停、重播、頁面隱藏、凍結、休眠）
 //   (f) attribution/           署名卡：片頭與片尾的 DOM 文字與截圖
 //   (g) quiz/                  八題：逐題出題→揭答→等待→續演、答案與題卡核對
+//   (h) delivery/              交付包冒煙測試結果（tools/delivery_smoke.mjs 另外跑、寫在這裡；INDEX.md 有結果才列）
 import { createRequire } from 'node:module';
 import { execFileSync, spawnSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { loadavg } from 'node:os';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { packTimelineCues, segmentFingerprints, timelineSha1 } from './seg_fingerprint.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const require = createRequire(join(ROOT, 'app/package.json'));
@@ -60,7 +65,6 @@ const r3 = (x) => Math.round(x * 1000) / 1000;
 const isExternal = (u) => !/^(file|data|blob|about|chrome|chrome-extension|devtools):/.test(u);
 const runPy = (...a) => { const r = spawnSync(PYTHON, [join(ROOT, 'tools/show_review_pack.py'), ...a], { stdio: 'inherit', cwd: ROOT }); if (r.status !== 0) { console.error('[g6pack] Python 彙整失敗'); process.exit(r.status ?? 1); } };
 
-if (has('--index-only')) { runPy(OUT, PACKS); process.exit(0); }
 
 // ---------------------------------------------------------------- 0. 目前建置的全劇時間軸（與引擎、act_review_pack.mjs 同一個 buildTimelines）
 const readPack = (file, id) => JSON.parse(readFileSync(join(ROOT, 'app/dist/data', file), 'utf8').replace(new RegExp(`^[\\s\\S]*?window\\.__pack\\(${JSON.stringify(id).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')},`), '').replace(/\);\s*$/, ''));
@@ -73,6 +77,7 @@ const bundle = async (rel) => {
 const { buildTimelines } = await bundle('app/src/cues/timeline.ts');
 const engineSrc = readFileSync(join(ROOT, 'app/src/engine/engine.ts'), 'utf8');
 const PREROLL = Number(/export const PREROLL_SEC = ([\d.]+)/.exec(engineSrc)[1]);
+const MUSIC_LEVEL = Function(`return (${/const MUSIC_LEVEL[^=]*=\s*(\{[^}]*\})/.exec(engineSrc)[1]})`)();
 const WAIT_GUARD_MS = Number(/WAIT_GUARD_MS\s*=\s*(\d+)/.exec(engineSrc)?.[1] ?? 350);
 const timelines = buildTimelines(show, (id) => manifest.audio[id]?.duration ?? undefined);
 const segOf = new Map(show.segments.flatMap((s) => s.cueIds.map((id) => [id, s.id])));
@@ -87,6 +92,41 @@ const showTl = {
     lines: t.lines.map((l) => ({ id: l.line.id, speaker: l.line.speaker, text: l.line.text, actorIds: l.actorIds ?? (l.actorId ? [l.actorId] : []), start: r3(l.start), end: r3(l.end) })),
   })),
 };
+// ---------------------------------------------------------------- (a) 段落指紋：驗收包記下的 sha1 與目前段落檔、app/dist 比對（G6 修正：不再只比 cue 長度）
+async function writeSegmentHashes() {
+  const fp = await segmentFingerprints();
+  const rows = {};
+  for (const [seg, cur] of Object.entries(fp.segments)) {
+    const p = join(PACKS, seg, 'pack', 'segment_hash.json');
+    const pk = existsSync(p) ? JSON.parse(readFileSync(p, 'utf8')) : null;
+    // 後備（舊包沒有指紋時參考）：包裡 timeline.json 的解析後時間軸＝目前建置解析後的時間軸（不含 initialState 的站位與鏡位）
+    const ptl = join(PACKS, seg, 'pack', 'timeline.json');
+    const segInfo = show.segments.find((x) => x.id === seg);
+    let timelineMatch = null;
+    if (existsSync(ptl) && segInfo) {
+      const packCues = JSON.parse(readFileSync(ptl, 'utf8')).cues ?? [];
+      const curCues = packTimelineCues(segInfo.cueIds.map((id) => timelines.find((t) => t.cue.id === id)).filter(Boolean), MUSIC_LEVEL);
+      timelineMatch = timelineSha1(packCues) === timelineSha1(curCues);
+    }
+    rows[seg] = {
+      file: cur.file, current: { source: cur.source, built: cur.built, sourceMerged: cur.sourceMerged, builtFromSource: cur.builtFromSource },
+      pack: pk ? { source: pk.source ?? null, built: pk.built ?? null, generatedAt: pk.generatedAt ?? null } : null,
+      // 產生期間 app/dist 被重建過（distChangedDuringRun）的包不算一致
+      builtMatch: pk && pk.built ? pk.built === cur.built && !pk.distChangedDuringRun : null, sourceMatch: pk && pk.source ? pk.source === cur.source : null,
+      distChangedDuringRun: pk ? !!pk.distChangedDuringRun : null,
+      timelineMatch,
+    };
+  }
+  writeFileSync(join(OUT, 'packs', 'segment_hashes.json'), JSON.stringify({
+    note: '與建置一致＝驗收包記下的 built（量的那一版 app/dist 合併後的段落）＝目前 app/dist 的 built；sourceMatch＝段落檔 sha1 相同；builtFromSource＝目前 app/dist 是用目前段落檔建的。pack＝null：舊版工具產生的包沒有記錄（要重產）；timelineMatch＝後備參考：包裡解析後的時間軸（timeline.json cues）與目前建置相同（不含 initialState 的站位與鏡位）。',
+    method: fp.method, distBuiltAt: fp.distBuiltAt, sourceValid: fp.sourceValid, segments: rows,
+  }, null, 1));
+  const ok = Object.values(rows).filter((r) => r.builtMatch).length;
+  log(`段落指紋：驗收包與目前建置一致 ${ok}／${Object.keys(rows).length} 段${Object.values(rows).some((r) => !r.current.builtFromSource) ? '；注意：app/dist 有段落不是用目前段落檔建的' : ''}`);
+}
+await writeSegmentHashes();
+// --index-only：沿用上次的 show_timeline.json（即時播放量測的 cue 序號對的是那一版），只重比段落指紋與重產 INDEX.md
+if (has('--index-only')) { runPy(OUT, PACKS); process.exit(0); }
 writeFileSync(join(OUT, 'show_timeline.json'), JSON.stringify(showTl, null, 1));
 log(`全劇時間軸：${timelines.length} 個 cue、${show.segments.length} 段`);
 
@@ -117,8 +157,17 @@ async function liveRun() {
   // 影格時間：獨立的 requestAnimationFrame 迴圈記下每一格的時間戳（引擎那一格做太久，下一格就會晚到）；長動畫格（long-animation-frame）；
   // 每 200 ms 記一次引擎狀態（cue、階段、cue 內秒數、發聲中的對白、暫停、字幕、題卡、fps），說話時另記嘴型
   await context.addInitScript(() => {
-    const R = (window.__perfRec = { ts: [], samples: [], loaf: [], faces: [] });
-    const f = (t) => { R.ts.push(t); requestAnimationFrame(f); };
+    const R = (window.__perfRec = { ts: [], samples: [], loaf: [], faces: [], fs: [] });
+    // 逐格狀態（G6 修正）：每一格開頭記下引擎上一格做完後的狀態 [時間戳, cue 序號, cue 內秒數, 模式(1 播放／2 停住／0 其他), 調暗, 預捲秒數, 暫停]；
+    // 卡頓（第 k−1 格到第 k 格的間隔）前後的畫面＝第 k−1 格與第 k 格記下的狀態；cueTime ≥ cue 長度＝停格（不再用每 200 ms 取樣推測）
+    const f = (t) => {
+      R.ts.push(t);
+      const e = window.__engine;
+      if (e && e.ready()) {
+        try { const s = e.getState(); R.fs.push([Math.round(t * 100) / 100, s.cueIndex, s.cueTime, s.mode === 'playing' ? 1 : s.mode === 'waiting' ? 2 : 0, s.dim, s.prerollSec, s.paused ? 1 : 0]); } catch { /* 載入中 */ }
+      }
+      requestAnimationFrame(f);
+    };
     requestAnimationFrame(f);
     try {
       new PerformanceObserver((l) => { for (const e of l.getEntries()) R.loaf.push([e.startTime, e.duration, e.blockingDuration ?? 0]); }).observe({ type: 'long-animation-frame', buffered: true });
@@ -143,10 +192,10 @@ async function liveRun() {
   page.on('request', (r) => net.requests.push({ url: r.url().startsWith('file:') ? r.url().replace(pathToFileURL(ROOT).href, '<ROOT>') : r.url(), type: r.resourceType(), external: isExternal(r.url()) }));
   page.on('requestfailed', (r) => net.failed.push({ url: r.url().replace(pathToFileURL(ROOT).href, '<ROOT>'), error: r.failure()?.errorText ?? '' }));
 
-  const raw = { ts: [], samples: [], loaf: [], faces: [], memory: [], voiceSync: [], visits: [], quiz: [], attribution: {}, load: {}, system: {}, presses: [] };
+  const raw = { ts: [], fs: [], samples: [], loaf: [], faces: [], memory: [], voiceSync: [], visits: [], quiz: [], attribution: {}, load: {}, system: {}, presses: [] };
   const drain = async () => {
-    const d = await page.evaluate(() => { const r = window.__perfRec; return r ? { ts: r.ts.splice(0), samples: r.samples.splice(0), loaf: r.loaf.splice(0), faces: r.faces.splice(0) } : null; });
-    if (d) { raw.ts.push(...d.ts.map((x) => Math.round(x * 100) / 100)); raw.samples.push(...d.samples); raw.loaf.push(...d.loaf); raw.faces.push(...d.faces); }
+    const d = await page.evaluate(() => { const r = window.__perfRec; return r ? { ts: r.ts.splice(0), fs: r.fs.splice(0), samples: r.samples.splice(0), loaf: r.loaf.splice(0), faces: r.faces.splice(0) } : null; });
+    if (d) { raw.ts.push(...d.ts.map((x) => Math.round(x * 100) / 100)); for (const x of d.fs) raw.fs.push(x); raw.samples.push(...d.samples); raw.loaf.push(...d.loaf); raw.faces.push(...d.faces); }
   };
   const procMem = async () => {
     try {
@@ -256,12 +305,72 @@ async function liveRun() {
   await drain();
   raw.errors = errors;
   raw.net = net;
+  raw.fsNote = 'fs：逐格狀態 [rAF 時間戳 ms, cue 序號（show_timeline.json cues 的索引）, cue 內秒數, 模式 1 播放／2 停住／0 其他, 調暗, 預捲秒數, 暫停]，每一格開頭記下引擎上一格做完後的狀態。';
   raw.cdpNote = 'jsHeapUsedMB＝CDP Performance.getMetrics JSHeapUsedSize；perfMemoryUsedMB＝performance.memory（--enable-precise-memory-info）；processRssMB＝SystemInfo.getProcessInfo 的各程序 ps RSS（macOS，依程序類型加總，MB）。';
   await browser.close();
   writeFileSync(join(OUT, 'live', 'live_raw.json'), JSON.stringify(raw));
   writeFileSync(join(OUT, 'live', 'network.json'), JSON.stringify({ requests: net.requests.length, external: net.requests.filter((r) => r.external), failed: net.failed,
     byType: net.requests.reduce((m, r) => ((m[r.type] = (m[r.type] ?? 0) + 1), m), {}), list: net.requests }, null, 1));
   log(`即時播放完成：${raw.visits.length} 段、${raw.ts.length} 格、最後 ${raw.end.cueId} ${raw.end.phase}、${(raw.end.wall_ms / 60000).toFixed(1)} 分`);
+}
+
+// ---------------------------------------------------------------- (b) 卡頓那幾格：用擷取模式重畫卡頓前、後的畫面（量全畫面亮度，分「在 fade 黑格內／不在」）
+// 第 k−1 格到第 k 格的間隔 > 100 ms：卡住時畫面上是第 k−1 格記下的狀態（before），卡完換成第 k 格的狀態（after）。
+// 預捲（cueTime 0、prerollSec > 0、離按鍵 < 預捲秒數）重畫成上一個 cue 漸暗中的那一格（seek 負秒數）；停格重畫成 cue 最後一格。
+const STALL_MS = 100;
+const MAX_STALL_SHOTS = 60;
+async function stallFrames() {
+  const rawPath = join(OUT, 'live', 'live_raw.json');
+  if (!existsSync(rawPath)) return;
+  const raw = JSON.parse(readFileSync(rawPath, 'utf8'));
+  const fsr = raw.fs ?? [];
+  const pressT = (raw.presses ?? []).map((p) => p.t).sort((a, b) => a - b);
+  const dir = join(OUT, 'live', 'stall_frames');
+  rmSync(dir, { recursive: true, force: true });
+  mkdirSync(dir, { recursive: true });
+  const target = (r) => {
+    const c = showTl.cues[r[1]];
+    if (!c) return null;
+    const [t, , cueTime, mode, dim, pre] = r;
+    let seekT = cueTime;
+    let kind = 'play';
+    if (mode !== 1 || cueTime >= c.duration - 1e-3) { seekT = c.duration + 0.001; kind = 'hold'; }
+    else if (cueTime <= 1e-6 && pre > 0) {
+      const p = [...pressT].reverse().find((x) => x <= t);
+      const el = p === undefined ? pre : (t - p) / 1000;
+      if (el < pre) { seekT = -pre + el; kind = 'preroll'; }
+    }
+    return { cue: c.id, cueTime, mode, dim, seekT: r3(seekT), kind };
+  };
+  const list = [];
+  const tFirst = pressT[0] ?? -Infinity; // 開演（第一次按下一步）之後才算，和 show_review_pack.py 相同
+  for (let k = 1; k < fsr.length; k++) {
+    const iv = fsr[k][0] - fsr[k - 1][0];
+    if (iv > STALL_MS && fsr[k][0] >= tFirst) list.push({ k, t: fsr[k][0], interval_ms: r3(iv), before: target(fsr[k - 1]), after: target(fsr[k]) });
+  }
+  const shots = list.slice(0, MAX_STALL_SHOTS);
+  if (shots.length) {
+    const browser = await chromium.launch({ channel: 'chrome', headless: true, args: LAUNCH_ARGS });
+    const { page } = await newPage(browser, `capture=1&cues=show&q=${raw.system?.quality ?? 'A'}&step=${FPS}`, null);
+    await page.waitForFunction(() => window.__engine && window.__engine.ready() && window.__engine.getState().mode === 'waiting', null, { timeout: 300000 });
+    for (const s of shots) {
+      for (const side of ['before', 'after']) {
+        const x = s[side];
+        if (!x) continue;
+        await page.evaluate((id) => window.__engine.gotoCue(id, { mode: 'before' }), x.cue);
+        await page.evaluate((id) => window.__engine.capture.playCue(id), x.cue);
+        await page.evaluate((t) => window.__engine.capture.seek(t), x.seekT);
+        x.file = `stall_frames/k${s.k}_${side}.jpg`;
+        await page.screenshot({ path: join(OUT, 'live', x.file), type: 'jpeg', quality: 92 });
+      }
+    }
+    await browser.close();
+  }
+  writeFileSync(join(OUT, 'live', 'stall_frames.json'), JSON.stringify({
+    note: `逐格狀態（live_raw.json fs）裡間隔 > ${STALL_MS} ms 的卡頓；before／after＝卡住時與卡完的畫面，用擷取模式（?capture=1，同畫質）重畫，最多 ${MAX_STALL_SHOTS} 個。kind：play＝播放中、preroll＝換景漸暗預捲、hold＝停格（cueTime ≥ cue 長度或停住等老師）。`,
+    stalls: list.length, shots: shots.length, list,
+  }, null, 1));
+  log(`卡頓擷取：> ${STALL_MS} ms ${list.length} 次，重畫 ${shots.length} 組前後畫面`);
 }
 
 // ---------------------------------------------------------------- (c) 段落接縫（擷取模式，固定步長）
@@ -487,8 +596,9 @@ async function opsShow() {
 }
 
 // ---------------------------------------------------------------- 執行
-if (!has('--skip-ops')) await opsShow();
-if (!has('--skip-engine-test')) {
+const PERF_ONLY = has('--perf-only');
+if (!has('--skip-ops') && !PERF_ONLY) await opsShow();
+if (!has('--skip-engine-test') && !PERF_ONLY) {
   const given = opt('--engine-test-log', '');
   if (given) writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# 引用：${given}\n` + readFileSync(resolve(ROOT, given), 'utf8'));
   else {
@@ -497,8 +607,9 @@ if (!has('--skip-engine-test')) {
     writeFileSync(join(OUT, 'ops', 'engine_test.log'), `# node tools/engine-test.mjs（${new Date().toISOString()}，結束碼 ${r.status}）\n${r.stdout}\n${r.stderr}`);
   }
 }
-if (!has('--skip-seams')) await seams();
-if (!has('--skip-live')) await liveRun();
+if (!has('--skip-seams') && !PERF_ONLY) await seams();
+if (!has('--skip-live') || PERF_ONLY) { await liveRun(); await stallFrames(); }
+else if (!existsSync(join(OUT, 'live', 'stall_frames.json'))) await stallFrames();
 runPy(OUT, PACKS);
 rmSync(join(OUT, 'seams', '_work'), { recursive: true, force: true });
 log(`完成 → ${join(OUT, 'INDEX.md')}`);

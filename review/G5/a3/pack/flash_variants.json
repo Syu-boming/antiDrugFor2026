@@ -1310,20 +1310,6 @@
     },
     {
      "type": "luma",
-     "region": "x27_y10",
-     "px": [
-      1620,
-      600,
-      1680,
-      660
-     ],
-     "count_per_sec": 3,
-     "window_start": 169.5667,
-     "cue": "a3_c008",
-     "cue_t": 35.0333
-    },
-    {
-     "type": "luma",
      "region": "x17_y11",
      "px": [
       1020,
@@ -1478,7 +1464,7 @@
     }
    ],
    "near_limit_total": 575,
-   "near_limit_3_total": 29
+   "near_limit_3_total": 28
   }
  }
 }

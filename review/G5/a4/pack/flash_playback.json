@@ -2,14 +2,42 @@
  "ok": true,
  "rule": "任一區域明暗或飽和紅色每秒變化 ≤ 3 次（不採面積豁免）",
  "method": "播放錄製的連續逐格（30 格／秒，含 cue 之間的接縫與停住格）；16×9 區域＋全畫面；亮度門檻 0.1（較暗端 < 0.8）；紅色門檻 20.0（R/(R+G+B) ≥ 0.8）",
- "frames_analyzed": 7763,
- "duration_sec": 258.767,
+ "frames_analyzed": 7762,
+ "duration_sec": 258.733,
  "max_changes_per_sec": {
   "luma": 3,
-  "red": 2
+  "red": 3
  },
  "flagged": [],
  "near_limit": [
+  {
+   "type": "red",
+   "region": "x8_y3",
+   "px": [
+    960,
+    360,
+    1080,
+    480
+   ],
+   "count_per_sec": 3,
+   "window_start": 42.9,
+   "cue": "a4_c002",
+   "cue_t": 14.2667
+  },
+  {
+   "type": "luma",
+   "region": "x7_y0",
+   "px": [
+    840,
+    0,
+    960,
+    120
+   ],
+   "count_per_sec": 3,
+   "window_start": 43.0667,
+   "cue": "a4_c002",
+   "cue_t": 14.4333
+  },
   {
    "type": "luma",
    "region": "x10_y7",
@@ -20,7 +48,7 @@
     960
    ],
    "count_per_sec": 3,
-   "window_start": 70.9333,
+   "window_start": 70.8667,
    "cue": "a4_c004",
    "cue_t": 0.9333
   },
@@ -34,7 +62,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -48,7 +76,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -62,7 +90,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -76,7 +104,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -90,7 +118,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -104,7 +132,7 @@
     840
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -118,7 +146,7 @@
     960
    ],
    "count_per_sec": 3,
-   "window_start": 70.9667,
+   "window_start": 70.9,
    "cue": "a4_c004",
    "cue_t": 0.9667
   },
@@ -132,7 +160,7 @@
     720
    ],
    "count_per_sec": 3,
-   "window_start": 244.6333,
+   "window_start": 244.6,
    "cue": "a4_c013",
    "cue_t": 14.1
   },
@@ -146,7 +174,7 @@
     600
    ],
    "count_per_sec": 3,
-   "window_start": 244.7,
+   "window_start": 244.6667,
    "cue": "a4_c013",
    "cue_t": 14.1667
   },
@@ -160,7 +188,7 @@
     720
    ],
    "count_per_sec": 3,
-   "window_start": 245.7667,
+   "window_start": 245.7333,
    "cue": "a4_c013",
    "cue_t": 15.2333
   },
@@ -174,7 +202,7 @@
     600
    ],
    "count_per_sec": 3,
-   "window_start": 245.8,
+   "window_start": 245.7667,
    "cue": "a4_c013",
    "cue_t": 15.2667
   },
@@ -188,7 +216,7 @@
     360
    ],
    "count_per_sec": 3,
-   "window_start": 245.8333,
+   "window_start": 245.8,
    "cue": "a4_c013",
    "cue_t": 15.3
   },
@@ -283,20 +311,6 @@
     720,
     0,
     840,
-    120
-   ],
-   "count_per_sec": 2,
-   "window_start": 0.1,
-   "cue": "a4_c001",
-   "cue_t": -0.5
-  },
-  {
-   "type": "luma",
-   "region": "x7_y0",
-   "px": [
-    840,
-    0,
-    960,
     120
    ],
    "count_per_sec": 2,
@@ -1952,9 +1966,9 @@
     1080
    ],
    "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
+   "window_start": 60.3667,
+   "cue": "a4_c003",
+   "cue_t": 9.4333
   },
   {
    "type": "luma",
@@ -1966,23 +1980,9 @@
     1080
    ],
    "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
-  },
-  {
-   "type": "luma",
-   "region": "x2_y8",
-   "px": [
-    240,
-    960,
-    360,
-    1080
-   ],
-   "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
+   "window_start": 70.0333,
+   "cue": "a4_c004",
+   "cue_t": 0.1
   },
   {
    "type": "luma",
@@ -1994,9 +1994,9 @@
     1080
    ],
    "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
+   "window_start": 70.0667,
+   "cue": "a4_c004",
+   "cue_t": 0.1333
   },
   {
    "type": "luma",
@@ -2008,9 +2008,9 @@
     1080
    ],
    "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
+   "window_start": 70.9,
+   "cue": "a4_c004",
+   "cue_t": 0.9667
   },
   {
    "type": "luma",
@@ -2022,9 +2022,23 @@
     1080
    ],
    "count_per_sec": 2,
-   "window_start": 44.1333,
-   "cue": "a4_c002",
-   "cue_t": 15.5
+   "window_start": 70.9,
+   "cue": "a4_c004",
+   "cue_t": 0.9667
+  },
+  {
+   "type": "luma",
+   "region": "x2_y8",
+   "px": [
+    240,
+    960,
+    360,
+    1080
+   ],
+   "count_per_sec": 2,
+   "window_start": 147.9,
+   "cue": "a4_c009",
+   "cue_t": 0.3333
   },
   {
    "type": "red",
@@ -2036,7 +2050,7 @@
     720
    ],
    "count_per_sec": 2,
-   "window_start": 201.8333,
+   "window_start": 201.8,
    "cue": "a4_c012",
    "cue_t": 5.8667
   },
@@ -2050,12 +2064,12 @@
     720
    ],
    "count_per_sec": 2,
-   "window_start": 205.4,
+   "window_start": 205.3667,
    "cue": "a4_c012",
    "cue_t": 9.4333
   }
  ],
- "near_limit_total": 146,
+ "near_limit_total": 147,
  "cue_seams": [
   {
    "from": "a4_c001",
@@ -2068,7 +2082,7 @@
   {
    "from": "a4_c002",
    "to": "a4_c003",
-   "t": 50.9667,
+   "t": 50.9333,
    "mean_luma_before": 0.4245,
    "mean_luma_after": 0.4245,
    "max_region_luma_delta": 0.0
@@ -2076,7 +2090,7 @@
   {
    "from": "a4_c003",
    "to": "a4_c004",
-   "t": 70.0,
+   "t": 69.9333,
    "mean_luma_before": 0.3673,
    "mean_luma_after": 0.3673,
    "max_region_luma_delta": 0.0
@@ -2084,7 +2098,7 @@
   {
    "from": "a4_c004",
    "to": "a4_c005",
-   "t": 88.8,
+   "t": 88.7333,
    "mean_luma_before": 0.5531,
    "mean_luma_after": 0.5531,
    "max_region_luma_delta": 0.0
@@ -2092,7 +2106,7 @@
   {
    "from": "a4_c005",
    "to": "a4_c006",
-   "t": 111.3667,
+   "t": 111.3333,
    "mean_luma_before": 0.4357,
    "mean_luma_after": 0.4356,
    "max_region_luma_delta": 0.0014
@@ -2100,7 +2114,7 @@
   {
    "from": "a4_c006",
    "to": "a4_c007",
-   "t": 120.1333,
+   "t": 120.0667,
    "mean_luma_before": 0.4297,
    "mean_luma_after": 0.4356,
    "max_region_luma_delta": 0.1894
@@ -2108,7 +2122,7 @@
   {
    "from": "a4_c007",
    "to": "a4_c008",
-   "t": 129.8,
+   "t": 129.7333,
    "mean_luma_before": 0.4844,
    "mean_luma_after": 0.4843,
    "max_region_luma_delta": 0.0138
@@ -2116,7 +2130,7 @@
   {
    "from": "a4_c008",
    "to": "a4_c009",
-   "t": 147.6333,
+   "t": 147.5667,
    "mean_luma_before": 0.5164,
    "mean_luma_after": 0.5165,
    "max_region_luma_delta": 0.0148
@@ -2124,7 +2138,7 @@
   {
    "from": "a4_c009",
    "to": "a4_c010",
-   "t": 177.2333,
+   "t": 177.1667,
    "mean_luma_before": 0.4711,
    "mean_luma_after": 0.4711,
    "max_region_luma_delta": 0.0001
@@ -2132,7 +2146,7 @@
   {
    "from": "a4_c010",
    "to": "a4_c011",
-   "t": 187.0667,
+   "t": 187.0,
    "mean_luma_before": 0.4708,
    "mean_luma_after": 0.4711,
    "max_region_luma_delta": 0.1992
@@ -2140,7 +2154,7 @@
   {
    "from": "a4_c011",
    "to": "a4_c012",
-   "t": 195.9667,
+   "t": 195.9333,
    "mean_luma_before": 0.5158,
    "mean_luma_after": 0.5148,
    "max_region_luma_delta": 0.0507
@@ -2148,7 +2162,7 @@
   {
    "from": "a4_c012",
    "to": "a4_c013",
-   "t": 230.5333,
+   "t": 230.5,
    "mean_luma_before": 0.5221,
    "mean_luma_after": 0.4846,
    "max_region_luma_delta": 0.5937

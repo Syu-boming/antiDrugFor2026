@@ -5,8 +5,8 @@
  "sample_peak_dBFS": -1.19,
  "clipped_samples": 0,
  "full_playback": {
-  "I_LUFS": -16.2,
-  "LRA_LU": 14.1,
+  "I_LUFS": -16.1,
+  "LRA_LU": 14.2,
   "TP_dBTP": -1.2
  },
  "per_cue": {
@@ -51,9 +51,9 @@
    "TP_dBTP": -1.8
   },
   "a6_c009": {
-   "I_LUFS": -15.6,
-   "LRA_LU": 7.0,
-   "TP_dBTP": -1.4
+   "I_LUFS": -15.4,
+   "LRA_LU": 7.2,
+   "TP_dBTP": -1.5
   }
  },
  "lines": [
@@ -402,10 +402,10 @@
    "vo_file": "audio/vo/vo_a6_c009_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.1,
-   "mix_I_LUFS": -14.8,
+   "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -31.5,
-   "vo_minus_background_LU": 16.6
+   "background_I_LUFS": -34.0,
+   "vo_minus_background_LU": 19.1
   },
   {
    "id": "a6_c009_02",
@@ -416,10 +416,10 @@
    "vo_file": "audio/vo/vo_a6_c009_02_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -2.7,
-   "mix_I_LUFS": -15.0,
+   "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -30.0,
-   "vo_minus_background_LU": 15.1
+   "background_I_LUFS": -31.6,
+   "vo_minus_background_LU": 16.7
   },
   {
    "id": "a6_c009_03",
@@ -432,8 +432,8 @@
    "vo_file_TP_dBTP": -1.9,
    "mix_I_LUFS": -15.2,
    "vo_in_mix_I_LUFS": -15.2,
-   "background_I_LUFS": -29.8,
-   "vo_minus_background_LU": 14.6
+   "background_I_LUFS": -32.0,
+   "vo_minus_background_LU": 16.8
   },
   {
    "id": "a6_c009_04",
@@ -446,8 +446,8 @@
    "vo_file_TP_dBTP": -1.9,
    "mix_I_LUFS": -15.1,
    "vo_in_mix_I_LUFS": -15.2,
-   "background_I_LUFS": -32.5,
-   "vo_minus_background_LU": 17.3
+   "background_I_LUFS": -35.0,
+   "vo_minus_background_LU": 19.8
   }
  ],
  "line_vo_file_I_spread_LU": 0.4,
@@ -478,7 +478,7 @@
    "cue_t": 0.33
   },
   "true_peak_dBTP": -9.9,
-  "I_LUFS": -28.3,
+  "I_LUFS": -28.6,
   "g4_reference": {
    "max_LUFS": -15.7,
    "max_rise_within_1s_LU": 34.8,
@@ -527,7 +527,7 @@
    "cue": "a6_c009",
    "hold_from_sec": 212.39,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -45.5,
+   "momentary_max_after_3s_LUFS": -48.0,
    "pass_le_-35": true
   }
  ],

@@ -6,6 +6,8 @@
 //      a2_c013_01 開始後小窗立起 → 一隻手（剪影）捧著同樣的盒子從左邊伸進來 → a2_c013_02 時阿樂叔叔的手（剪影）從右下慢慢伸過去，
 //      在碰到之前（「伸手接過的那一刻」）小窗就收起（0.35 秒）。不出現打開或使用。
 //   3. 筆記本特寫：x=30 的獨立小台；cue 用 camera.cut 切到 a2_win_note 時（前後各漸暗漸亮 0.6 秒），0.7 秒後在第一個問號旁邊畫出第二個問號（1.4 秒）。
+//      G6 修正第 1 輪：筆記本（MeshBasic，原本不受舞台燈影響）改成跟著舞台燈：亮度×min(1, light/0.88)（這一幕筆記本出現時燈是 0.88，畫面不變），
+//      cue 用 light.dim 把切進來那一格壓暗、再 0.6 秒恢復，切出去前鏡頭不動時先調暗，前後都不再經過全黑（亮度比 ≤1.2）。
 //   4. 開著的店門（G5 修正第 1 輪）：店面圖的門洞上蓋一張暖光門口（門板往裡打開、店內暖黃燈光），孩子站在門前
 //      （兒童身後投影亮度 ≥ 0.50；傍晚外牆在投影後太暗）。不受舞台燈影響、不閃。
 //   接盒子的剪影手 v02：五指分開的手掌剪影（build_a2_art.py sil_ale_hand_v2），指尖停在盒子右緣外約 28 px 就收起小窗。
@@ -244,6 +246,9 @@ export const A2_WINDOW: SetEntry = {
           drawInset(lerp(-600, 40, slide), hand);
         }
       } else insetHinge.visible = false;
+      // 3a. 筆記本跟著舞台燈（G6 修正第 1 輪；燈 0.88 時＝原本的亮度）
+      const noteShade = clamp((o.world?.light ?? 1) / 0.88);
+      if (noteMat.color.r !== noteShade) noteMat.color.setScalar(noteShade);
       // 3. 筆記本：切到 a2_win_note 之後 0.7 秒開始畫（修正第 2 輪：切進來時漸亮 0.6 秒，筆畫等漸亮完成才開始，同一秒不疊明暗變化）
       const cut = tl.anims.find((a) => (a.name === 'camera.cut' || a.name === 'camera.move') && a.params.to === 'a2_win_note');
       if (cut) {

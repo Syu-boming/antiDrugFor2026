@@ -27,8 +27,8 @@
   "sample_peak_dBFS": -1.19,
   "clipped_samples": 0,
   "full_playback": {
-   "I_LUFS": -16.2,
-   "LRA_LU": 14.1,
+   "I_LUFS": -16.1,
+   "LRA_LU": 14.2,
    "TP_dBTP": -1.2
   },
   "line_vo_file_I_spread_LU": 0.4,
@@ -59,7 +59,7 @@
     "cue_t": 0.33
    },
    "true_peak_dBTP": -9.9,
-   "I_LUFS": -28.3,
+   "I_LUFS": -28.6,
    "g4_reference": {
     "max_LUFS": -15.7,
     "max_rise_within_1s_LU": 34.8,
@@ -108,7 +108,7 @@
     "cue": "a6_c009",
     "hold_from_sec": 212.39,
     "hold_sec": 3.5,
-    "momentary_max_after_3s_LUFS": -45.5,
+    "momentary_max_after_3s_LUFS": -48.0,
     "pass_le_-35": true
    }
   ],
@@ -130,7 +130,7 @@
    "luma": 2,
    "red": 2
   },
-  "near_limit_total": 131,
+  "near_limit_total": 133,
   "frames_analyzed": 6477
  },
  "flash_variants": {
@@ -198,9 +198,15 @@
    ],
    "format": {
     "duration": "215.890000",
-    "size": "80175487"
+    "size": "80349418"
    }
   }
+ },
+ "isolated_cuts": {
+  "frames": 6476,
+  "max_ratio": 1.137,
+  "over_limit_count": 0,
+  "pass": true
  },
  "durations": {
   "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
@@ -416,7 +422,7 @@
    "a3_c007": 5.88,
    "a3_c008": 36.69,
    "a4_c001": 23.92,
-   "a4_c002": 18.86,
+   "a4_c002": 18.81,
    "a4_c003": 15.52,
    "a4_c004": 15.3,
    "a4_c005": 19.57,
@@ -432,7 +438,7 @@
    "a5_c002": 23.62,
    "a5_c003": 7.02,
    "a5_c004": 6.2,
-   "a5_c005": 21.25,
+   "a5_c005": 17.8,
    "a5_c006": 31.18,
    "a5_c007": 24.08,
    "a5_c008": 27.41,
@@ -455,10 +461,13 @@
   "errors": [],
   "sets": {
    "active": "a6_shop",
-   "built": 5,
-   "disposed": 4,
-   "lastBuildMs": 30,
-   "liveSetGroups": 1
+   "built": 6,
+   "disposed": 5,
+   "lastBuildMs": 29,
+   "liveSetGroups": 1,
+   "lastSwapMs": 0.3,
+   "preparedHits": 3,
+   "prepared": []
   }
  }
 }

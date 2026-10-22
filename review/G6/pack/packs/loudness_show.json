@@ -1,14 +1,14 @@
 {
  "rule": "v1.2 第 24 節第 7 項：各段響度差 ±1 LU。基準＝九段整合響度（act_review_pack 播放錄製混音，含教師停格假設）的中位數；另列各段對白（混音中各句）響度中位數的差。",
  "median_I_LUFS": -16.1,
- "max_abs_dev_LU": 3.3,
- "spread_LU": 3.6,
+ "max_abs_dev_LU": 2.1,
+ "spread_LU": 2.4,
  "pass_pm1": false,
  "segments_over_1LU": [
   "a8"
  ],
  "dialog_median_LUFS": -14.9,
- "dialog_max_abs_dev_LU": 0.2,
+ "dialog_max_abs_dev_LU": 0.4,
  "dialog_pass_pm1": true,
  "show_concat": {
   "I_LUFS": -16.1,

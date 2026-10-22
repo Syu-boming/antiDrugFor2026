@@ -1,0 +1,49 @@
+{
+ "rule": "孤立單格全畫面亮度比：相鄰兩格全畫面平均線性亮度比 > 1.2，且前一格與後一格的變化都 < 該跳變的 25%（前後格不動、只有一格跳變）→ 不通過；兩格都 ≤ 0.05 不算",
+ "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
+ "limit_ratio": 1.2,
+ "file": "a8_playback.mp4",
+ "frames": 927,
+ "max_ratio": 1.128,
+ "max_at": {
+  "frame": 333,
+  "t": 11.1,
+  "before": 0.4449,
+  "after": 0.5018,
+  "ratio": 1.128,
+  "direction": "變亮",
+  "prev_delta": -0.0002,
+  "next_delta": -0.0002,
+  "cue": "a8_c001",
+  "cue_t": 10.5
+ },
+ "over_limit": [],
+ "over_limit_count": 0,
+ "isolated_ge_1.06": [
+  {
+   "frame": 333,
+   "t": 11.1,
+   "before": 0.4449,
+   "after": 0.5018,
+   "ratio": 1.128,
+   "direction": "變亮",
+   "prev_delta": -0.0002,
+   "next_delta": -0.0002,
+   "cue": "a8_c001",
+   "cue_t": 10.5
+  },
+  {
+   "frame": 428,
+   "t": 14.267,
+   "before": 0.4764,
+   "after": 0.4459,
+   "ratio": 1.068,
+   "direction": "變暗",
+   "prev_delta": -0.0001,
+   "next_delta": 0.0001,
+   "cue": "a8_c001",
+   "cue_t": 13.6667
+  }
+ ],
+ "pass": true
+}

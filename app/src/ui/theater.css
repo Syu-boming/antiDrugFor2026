@@ -146,6 +146,8 @@ body.show-cursor, body.capture { cursor: default; }
   border: 0; background: #e8b04a; color: #2a1a08; cursor: pointer;
 }
 .ready-btn:disabled { background: #5a4c3c; color: #a89880; cursor: default; }
+.ready-btn.confirm { background: #f0c27a; font-size: clamp(18px, 3.2vh, 30px); }
+.ready-msg.warn { color: #ffd2a8; font-size: clamp(15px, 2.4vh, 22px); line-height: 1.5; }
 .ready-msg { margin-top: 14px; color: #b9a587; font-size: clamp(13px, 2vh, 18px); }
 .lost-title { font-size: clamp(28px, 6vh, 56px); font-weight: 800; color: #f3e6cf; margin-bottom: 12px; }
 .lost-text { font-size: clamp(18px, 3vh, 30px); color: #e8dccb; line-height: 1.5; }

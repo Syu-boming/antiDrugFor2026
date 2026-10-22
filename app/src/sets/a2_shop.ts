@@ -7,7 +7,10 @@
 //   3. 手部近景（a2_c008）：x＝INSERT_X 的獨立小台（鏡頭 camera.cut 過去）：阿樂叔叔的雙手（分件手臂圖＋白紙芯外框）想把燈籠紙對摺 →
 //      右手腕背側的操偶線（引擎同款紙繩與紙環，只扣腕背）一頓一頓把手拉開（3 下，每下 0.3 秒、間隔 ≥ 0.4 秒）→ 紙皺成一團落到桌上。
 //   4. 求助站（a2_c012）：assets/final/sets/a2_helpdesk/layout.json 建在 x＝HELP_X（同一個景裡），從求助站回店裡用鏡頭直接切
-//      （不再第二次漸暗）；去求助站仍是漸暗換場。
+//      （不再第二次漸暗）；去求助站仍是漸暗換場（G6 修正第 1 輪試過直接切：兩個孩子往右走出店的那 1 秒會讓右側細格每秒明暗 4 次，維持漸暗）。
+//   5. 回想小台（a2_c003，G6 修正第 1 輪）：assets/final/sets/a2_memory/layout.json（同一間店的背牆、地板＋兩張回想紙卡）建在 x＝MEM_X，
+//      紙卡開合、翻面用 a2_memory.ts 的 memoryCardsUpdater（畫面同 a2_memory 景）；a2_c002→a2_c003→a2_c004 都在這個景裡，
+//      鏡頭直接切（亮度差 ≤20%），不再每次按鍵都換景經過全黑。主光影子只涵蓋主舞台，回想小台和求助站一樣沒有主光投影（接觸陰影照常）。
 // update 只依（cue、cue 內秒數）決定畫面＝時間的純函式；動作時間錨在台詞上（配音長度改了會跟著移）。
 import {
   BufferAttribute, CanvasTexture, DoubleSide, Group, LinearMipmapLinearFilter, Matrix4, Mesh, MeshBasicMaterial, MeshStandardMaterial,
@@ -18,6 +21,7 @@ import { PaperString, RING_DIAMETER } from '../stage/strings';
 import { finishTexture, makeCanvas } from '../stage/paper';
 import { LAYER, type CameraPreset } from '../stage/layers';
 import { buildImageSet, readLayout } from './imageSet';
+import { A2_MEMORY_CAMERAS, memoryCardsUpdater } from './a2_memory';
 import { clamp, ease, seeded, smoothstep } from '../util/math';
 import type { CueTimeline } from '../cues/timeline';
 import type { BuiltSet, SetEntry } from './types';
@@ -26,12 +30,17 @@ type V3 = [number, number, number];
 /** 手部近景小台、求助站的世界 x（主舞台鏡頭看不到） */
 export const INSERT_X = -40;
 export const HELP_X = 40;
+/** 回想小台（a2_c003）的世界 x */
+export const MEM_X = -80;
 const C = (pos: V3, target: V3, fov = 20): CameraPreset => ({ pos, target, fov });
 export const A2_SHOP_CAMERAS: Record<string, CameraPreset> = {
   /** 手部近景（雙手＋燈籠紙） */
   a2s_hands: C([INSERT_X, 0.55, 4.6], [INSERT_X, 0.5, 0]),
   /** 求助站中景（同 a2_helpdesk 的 a2_help_mid，平移到 HELP_X） */
   a2s_help_mid: C([0.9 + HELP_X, 1.9, 17.5], [0.9 + HELP_X, 1.72, 0]),
+  /** 回想小台：小晴近景（同 a2_memory 的 a2_memory_cu，平移到 MEM_X） */
+  a2s_memory_cu: C([A2_MEMORY_CAMERAS.a2_memory_cu.pos[0] + MEM_X, A2_MEMORY_CAMERAS.a2_memory_cu.pos[1], A2_MEMORY_CAMERAS.a2_memory_cu.pos[2]],
+    [A2_MEMORY_CAMERAS.a2_memory_cu.target[0] + MEM_X, A2_MEMORY_CAMERAS.a2_memory_cu.target[1], A2_MEMORY_CAMERAS.a2_memory_cu.target[2]], A2_MEMORY_CAMERAS.a2_memory_cu.fov),
 };
 
 /** 母版像素 → 世界單位（阿樂叔叔分件紙偶：站姿高 3.55 ≈ 1610 px） */
@@ -340,6 +349,21 @@ export const A2_SHOP: SetEntry = {
       report.push(...(help.report ?? []));
     } else report.push('景 a2_shop：缺 sets/a2_helpdesk/layout，求助站不顯示');
 
+    // ---- 5. 回想小台（a2_c003）
+    const ml = readLayout(ctx, 'a2_memory');
+    let mem: BuiltSet | null = null;
+    let memUpdate: ReturnType<typeof memoryCardsUpdater> | null = null;
+    if (ml) {
+      mem = buildImageSet({ ...ctx, name: 'a2_memory' }, ml);
+      mem.group.position.x = MEM_X;
+      mem.group.visible = false;
+      mem.group.traverse((o) => { (o as Mesh).castShadow = false; });
+      group.add(mem.group);
+      setMats.push(...(mem.materials ?? []));
+      report.push(...(mem.report ?? []));
+      memUpdate = memoryCardsUpdater(mem.group);
+    } else report.push('景 a2_shop：缺 sets/a2_memory/layout，回想小台不顯示');
+
     // ---- 1. L1 短線：引擎畫的腕線（cast 群組裡 37×2 頂點的紙繩網格）
     let patched: { mesh: Mesh; mat: MeshBasicMaterial } | null = null;
     const unpatch = (): void => {
@@ -429,6 +453,12 @@ export const A2_SHOP: SetEntry = {
 
       // 4：求助站（a2_c012）
       if (help) help.group.visible = id === 'a2_c012';
+
+      // 5：回想小台（a2_c003）
+      if (mem) {
+        mem.group.visible = id === 'a2_c003';
+        if (mem.group.visible) memUpdate?.({ tl, t });
+      }
     };
 
     return {

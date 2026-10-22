@@ -1,0 +1,97 @@
+{
+ "rule": "孤立單格全畫面亮度比：相鄰兩格全畫面平均線性亮度比 > 1.2，且前一格與後一格的變化都 < 該跳變的 25%（前後格不動、只有一格跳變）→ 不通過；兩格都 ≤ 0.05 不算",
+ "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
+ "limit_ratio": 1.2,
+ "file": "a7_playback.mp4",
+ "frames": 1755,
+ "max_ratio": 1.141,
+ "max_at": {
+  "frame": 362,
+  "t": 12.067,
+  "before": 0.3874,
+  "after": 0.3396,
+  "ratio": 1.141,
+  "direction": "變暗",
+  "prev_delta": -0.0011,
+  "next_delta": -0.0013,
+  "cue": "a7_c001",
+  "cue_t": 11.4667
+ },
+ "over_limit": [],
+ "over_limit_count": 0,
+ "isolated_ge_1.06": [
+  {
+   "frame": 84,
+   "t": 2.8,
+   "before": 0.3897,
+   "after": 0.345,
+   "ratio": 1.129,
+   "direction": "變暗",
+   "prev_delta": -0.001,
+   "next_delta": -0.0012,
+   "cue": "a7_c001",
+   "cue_t": 2.2
+  },
+  {
+   "frame": 233,
+   "t": 7.767,
+   "before": 0.3195,
+   "after": 0.3627,
+   "ratio": 1.135,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": -0.0,
+   "cue": "a7_c001",
+   "cue_t": 7.1667
+  },
+  {
+   "frame": 362,
+   "t": 12.067,
+   "before": 0.3874,
+   "after": 0.3396,
+   "ratio": 1.141,
+   "direction": "變暗",
+   "prev_delta": -0.0011,
+   "next_delta": -0.0013,
+   "cue": "a7_c001",
+   "cue_t": 11.4667
+  },
+  {
+   "frame": 730,
+   "t": 24.333,
+   "before": 0.3294,
+   "after": 0.3507,
+   "ratio": 1.064,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": 0.0,
+   "cue": "a7_c001",
+   "cue_t": 23.7333
+  },
+  {
+   "frame": 1531,
+   "t": 51.033,
+   "before": 0.3831,
+   "after": 0.3581,
+   "ratio": 1.07,
+   "direction": "變暗",
+   "prev_delta": 0.0001,
+   "next_delta": 0.0,
+   "cue": "a7_c003",
+   "cue_t": 10.0333
+  },
+  {
+   "frame": 1636,
+   "t": 54.533,
+   "before": 0.3581,
+   "after": 0.3833,
+   "ratio": 1.07,
+   "direction": "變亮",
+   "prev_delta": -0.0,
+   "next_delta": -0.0,
+   "cue": "a7_c003",
+   "cue_t": 13.5333
+  }
+ ],
+ "pass": true
+}

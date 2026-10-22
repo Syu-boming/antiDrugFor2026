@@ -6,12 +6,12 @@
  "clipped_samples": 0,
  "full_playback": {
   "I_LUFS": -16.3,
-  "LRA_LU": 17.0,
+  "LRA_LU": 16.6,
   "TP_dBTP": -1.2
  },
  "per_cue": {
   "a1_c001": {
-   "I_LUFS": -16.9,
+   "I_LUFS": -17.0,
    "LRA_LU": 9.1,
    "TP_dBTP": -1.2
   },
@@ -63,8 +63,8 @@
    "vo_file_TP_dBTP": -7.1,
    "mix_I_LUFS": -14.8,
    "vo_in_mix_I_LUFS": -14.9,
-   "background_I_LUFS": -30.2,
-   "vo_minus_background_LU": 15.3
+   "background_I_LUFS": -30.3,
+   "vo_minus_background_LU": 15.4
   },
   {
    "id": "a1_c001_02",
@@ -117,10 +117,10 @@
    "vo_file": "audio/vo/vo_a1_c001_05_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -3.2,
-   "mix_I_LUFS": -14.8,
+   "mix_I_LUFS": -14.9,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -29.7,
-   "vo_minus_background_LU": 14.7
+   "background_I_LUFS": -31.9,
+   "vo_minus_background_LU": 16.9
   },
   {
    "id": "a1_c002_01",
@@ -450,7 +450,7 @@
    "cue": "a1_c006",
    "cue_t": 0.41
   },
-  "max_rise_within_1s_LU": 42.2,
+  "max_rise_within_1s_LU": 42.0,
   "max_rise_within_1s_at_sec": 1.6,
   "sample_peak_dBFS": -9.91,
   "sample_peak_at_sec": 110.19,
@@ -473,7 +473,7 @@
    "cue": "a1_c001",
    "hold_from_sec": 28.35,
    "hold_sec": 3.5,
-   "momentary_max_after_3s_LUFS": -40.2,
+   "momentary_max_after_3s_LUFS": -41.9,
    "pass_le_-35": true
   },
   {

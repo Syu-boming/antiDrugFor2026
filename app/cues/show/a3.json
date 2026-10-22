@@ -1665,6 +1665,20 @@
      }
     },
     {
+     "name": "light.dim",
+     "start": "a3_c008_04.end+3.6",
+     "duration": 0,
+     "params": {
+      "to": 0.72
+     },
+     "_note": "G6 修正第 1 輪（S1）：切到 a3_cls_end 那一格同時把舞台燈壓到 0.72，全畫面亮度比 ≤1.2，之後 1.2 秒慢慢恢復"
+    },
+    {
+     "name": "light.restore",
+     "start": "a3_c008_04.end+3.8",
+     "duration": 1.2
+    },
+    {
      "name": "puppet.pose",
      "start": "a3_c008_04.end+4.6",
      "target": "xiaoqing",

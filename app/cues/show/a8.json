@@ -200,8 +200,8 @@
     },
     {
      "name": "puppet.move",
-     "start": 5.6,
-     "duration": 3.8,
+     "start": 5.0,
+     "duration": 3.4,
      "target": "ye",
      "ease": "sine",
      "params": {
@@ -270,7 +270,7 @@
     },
     {
      "name": "puppet.nod",
-     "start": 9.6,
+     "start": 8.75,
      "duration": 1.5,
      "target": "ye",
      "params": {
@@ -282,7 +282,7 @@
     },
     {
      "name": "puppet.face",
-     "start": 9.5,
+     "start": 9.85,
      "target": "ale",
      "params": {
       "emotion": "greet"
@@ -290,7 +290,7 @@
     },
     {
      "name": "puppet.sit",
-     "start": 9.7,
+     "start": 10.0,
      "duration": 1.0,
      "target": "ale",
      "params": {
@@ -299,28 +299,16 @@
     },
     {
      "name": "puppet.chest",
-     "start": 10.5,
-     "duration": 0.8,
+     "start": 10.75,
+     "duration": 0.7,
      "target": "ale",
      "params": {
       "to": 1.0
      }
     },
     {
-     "name": "puppet.nod",
-     "start": 11.3,
-     "duration": 1.5,
-     "target": "ale",
-     "params": {
-      "depth": 0,
-      "bow": 27,
-      "bowHead": 11,
-      "ramp": 0.6
-     }
-    },
-    {
      "name": "puppet.face",
-     "start": 12.9,
+     "start": 13.1,
      "target": "ale",
      "params": {
       "emotion": "smile"
@@ -336,8 +324,8 @@
     },
     {
      "name": "zhezhe.hopTo",
-     "start": 12.6,
-     "duration": 0.8,
+     "start": 13.0,
+     "duration": 0.6,
      "target": "zhezhe",
      "params": {
       "pos": [
@@ -378,9 +366,9 @@
      "duration": 1.5,
      "target": "chen",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -412,9 +400,9 @@
      "duration": 1.5,
      "target": "lin",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -446,9 +434,9 @@
      "duration": 1.5,
      "target": "pinan",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -480,9 +468,9 @@
      "duration": 1.5,
      "target": "xiaoyu",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -514,9 +502,9 @@
      "duration": 1.5,
      "target": "xiaoqing",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -548,9 +536,9 @@
      "duration": 1.5,
      "target": "ye",
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -582,9 +570,9 @@
      "duration": 1.5,
      "target": "ale",
      "params": {
-      "depth": 0,
-      "bow": 27,
-      "bowHead": 11,
+      "depth": 0.8,
+      "bow": 32,
+      "bowHead": 12,
       "ramp": 0.6
      }
     },
@@ -642,6 +630,55 @@
      "target": "zhezhe",
      "params": {
       "emotion": "happy"
+     }
+    },
+    {
+     "name": "puppet.chest",
+     "start": 11.25,
+     "duration": 2.35,
+     "target": "ale",
+     "params": {
+      "to": 1,
+      "lift": 35,
+      "liftFore": -75,
+      "ramp": 0.55
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": 11.95,
+     "duration": 1.0,
+     "target": "ale",
+     "params": {
+      "depth": 1.2
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 10.5,
+     "duration": 0,
+     "params": {
+      "to": {
+       "pos": [
+        -2.2,
+        1.5,
+        16.2
+       ],
+       "target": [
+        -2.2,
+        1.33,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
+     "name": "camera.cut",
+     "start": 13.65,
+     "duration": 0,
+     "params": {
+      "to": "show_mid"
      }
     }
    ],
@@ -745,9 +782,9 @@
       "duration": 1.5,
       "target": "chen",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -757,9 +794,9 @@
       "duration": 1.5,
       "target": "lin",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -769,9 +806,9 @@
       "duration": 1.5,
       "target": "pinan",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -781,9 +818,9 @@
       "duration": 1.5,
       "target": "xiaoyu",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -793,9 +830,9 @@
       "duration": 1.5,
       "target": "xiaoqing",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -805,9 +842,9 @@
       "duration": 1.5,
       "target": "ye",
       "params": {
-       "depth": 0,
-       "bow": 8,
-       "squash": 0.14,
+       "depth": 1,
+       "bow": 12,
+       "squash": 0.12,
        "ramp": 0.6
       }
      },
@@ -817,7 +854,10 @@
       "duration": 1.7,
       "target": "ale",
       "params": {
-       "depth": 2.2
+       "depth": 0.8,
+       "bow": 32,
+       "bowHead": 12,
+       "ramp": 0.6
       }
      },
      {
@@ -829,7 +869,8 @@
    },
    "musicLoop": false,
    "music": [],
-   "sfx": []
+   "sfx": [],
+   "musicLevel": 1.07
   },
   {
    "id": "a8_c002",
@@ -994,7 +1035,7 @@
    "teacherNote": "結束：停在署名卡，不自動重播、不跳網站。閉幕曲接著播完（署名卡出現時主題句進入，約 10 秒自然淡出），所以這一格保留配樂音量。",
    "checkpoint": {
     "label": "停在署名卡（之後教師結語）",
-    "atMinute": 35.08
+    "atMinute": 35
    },
    "minDuration": 1.4,
    "musicLevel": 0.8

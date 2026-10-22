@@ -939,7 +939,19 @@
      "start": 5.5,
      "end": 5.5,
      "params": {
-      "to": "a5_pov_a"
+      "to": {
+       "pos": [
+        -3.4,
+        1.95,
+        15.5
+       ],
+       "target": [
+        -4,
+        1.72,
+        0.6
+       ],
+       "fov": 18
+      }
      }
     },
     {
@@ -983,7 +995,7 @@
    "id": "a5_c005",
    "kind": "scene",
    "title": "分頭求助",
-   "duration": 21.25,
+   "duration": 17.8,
    "autoAdvance": false,
    "set": "a5_gate",
    "enterFade": 0,
@@ -999,14 +1011,14 @@
      "speaker": "小宇",
      "text": "陳伯伯——！",
      "audioId": "vo_a5_c005_01",
-     "start": 4.05,
-     "end": 5.41,
+     "start": 0.85,
+     "end": 2.21,
      "duration": 1.36,
      "placeholder": false,
      "pages": [
       {
-       "start": 4.05,
-       "end": 5.41,
+       "start": 0.85,
+       "end": 2.21,
        "rows": [
         "陳伯伯——！"
        ]
@@ -1018,14 +1030,14 @@
      "speaker": "小晴",
      "text": "我去辦公室找林老師！你待在門裡面，不要過去。",
      "audioId": "vo_a5_c005_02",
-     "start": 6.71,
-     "end": 12.31,
+     "start": 3.26,
+     "end": 8.86,
      "duration": 5.6,
      "placeholder": false,
      "pages": [
       {
-       "start": 6.71,
-       "end": 12.31,
+       "start": 3.26,
+       "end": 8.86,
        "rows": [
         "我去辦公室找林老師！",
         "你待在門裡面，不要過去。"
@@ -1038,14 +1050,14 @@
      "speaker": "小宇",
      "text": "陳伯伯聽不到，林老師還沒出來……我來打 119。",
      "audioId": "vo_a5_c005_03",
-     "start": 14.96,
-     "end": 20.25,
+     "start": 11.51,
+     "end": 16.8,
      "duration": 5.29,
      "placeholder": false,
      "pages": [
       {
-       "start": 14.96,
-       "end": 20.25,
+       "start": 11.51,
+       "end": 16.8,
        "rows": [
         "陳伯伯聽不到，林老師還沒出來……",
         "我來打 119。"
@@ -1062,19 +1074,19 @@
     },
     {
      "id": "sfx_gust",
-     "at": 3,
-     "gain": 0.7
+     "at": 2.31,
+     "gain": 0.5
     },
     {
      "id": "sfx_footsteps",
-     "at": 12.61,
+     "at": 9.16,
      "gain": 0.4
     }
    ],
    "music": [
     {
      "id": "music_courage",
-     "at": 6.71,
+     "at": 3.26,
      "loop": true,
      "fade": 2,
      "gain": 0.8,
@@ -1101,28 +1113,31 @@
      }
     },
     {
-     "name": "camera.cut",
-     "target": null,
-     "start": 1.15,
-     "end": 1.15,
-     "params": {
-      "to": "a5_pov_b0"
-     }
-    },
-    {
      "name": "camera.move",
      "target": null,
-     "start": 1.7,
-     "end": 3.9,
+     "start": 0.3,
+     "end": 2.5,
      "params": {
-      "to": "a5_pov_b"
+      "to": {
+       "pos": [
+        -3.65,
+        1.95,
+        15.5
+       ],
+       "target": [
+        -4.25,
+        1.72,
+        0.6
+       ],
+       "fov": 18
+      }
      }
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 6.46,
-     "end": 6.46,
+     "start": 2.96,
+     "end": 2.96,
      "params": {
       "to": "a5_kids"
      }
@@ -1130,8 +1145,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoqing",
-     "start": 7.41,
-     "end": 7.65,
+     "start": 3.96,
+     "end": 4.2,
      "params": {
       "pose": "stand"
      }
@@ -1139,8 +1154,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoqing",
-     "start": 7.46,
-     "end": 7.46,
+     "start": 4.01,
+     "end": 4.01,
      "params": {
       "emotion": "neutral"
      }
@@ -1148,8 +1163,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 12.56,
-     "end": 12.56,
+     "start": 9.11,
+     "end": 9.11,
      "params": {
       "to": "a5_wide"
      }
@@ -1157,8 +1172,8 @@
     {
      "name": "puppet.move",
      "target": "xiaoqing",
-     "start": 12.61,
-     "end": 14.91,
+     "start": 9.16,
+     "end": 11.46,
      "params": {
       "dx": 4.2
      }
@@ -1166,8 +1181,8 @@
     {
      "name": "camera.cut",
      "target": null,
-     "start": 14.71,
-     "end": 14.71,
+     "start": 11.26,
+     "end": 11.26,
      "params": {
       "to": "a5_xy"
      }
@@ -1175,8 +1190,8 @@
     {
      "name": "puppet.pose",
      "target": "xiaoyu",
-     "start": 18.21,
-     "end": 18.45,
+     "start": 14.76,
+     "end": 15,
      "params": {
       "pose": "dial"
      }
@@ -1184,8 +1199,8 @@
     {
      "name": "puppet.face",
      "target": "xiaoyu",
-     "start": 18.46,
-     "end": 18.46,
+     "start": 15.01,
+     "end": 15.01,
      "params": {
       "emotion": "neutral"
      }
@@ -2046,7 +2061,7 @@
    "kind": "scene",
    "preroll": 0,
    "start": 87.26,
-   "duration": 21.25,
+   "duration": 17.8,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "a5_gate",
@@ -2056,7 +2071,7 @@
    "id": "a5_c006",
    "kind": "scene",
    "preroll": 0,
-   "start": 112.01,
+   "start": 108.56,
    "duration": 31.18,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2067,7 +2082,7 @@
    "id": "a5_c007",
    "kind": "scene",
    "preroll": 0,
-   "start": 146.69,
+   "start": 143.24,
    "duration": 24.08,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2078,7 +2093,7 @@
    "id": "a5_c008",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 174.87,
+   "start": 171.42,
    "duration": 27.41,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2086,7 +2101,7 @@
    "enterFade": 1.2
   }
  ],
- "totalPlaybackSec": 205.78,
+ "totalPlaybackSec": 202.33,
  "audio": {
   "vo_a5_c001_01": {
    "source": "audio/vo/vo_a5_c001_01_v04.wav",
@@ -2290,5 +2305,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "74eed2e1fe1ff54b5c22f6f8eeb08bbc41e8652e",
+  "built": "226a678519043e1762cc5f82036e2882c5cd241b",
+  "sourceMerged": "226a678519043e1762cc5f82036e2882c5cd241b",
+  "builtFromSource": true
+ }
 }

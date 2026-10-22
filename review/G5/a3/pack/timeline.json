@@ -1732,6 +1732,22 @@
      }
     },
     {
+     "name": "light.dim",
+     "target": null,
+     "start": 34.54,
+     "end": 34.54,
+     "params": {
+      "to": 0.72
+     }
+    },
+    {
+     "name": "light.restore",
+     "target": null,
+     "start": 34.74,
+     "end": 35.94,
+     "params": {}
+    },
+    {
      "name": "puppet.pose",
      "target": "xiaoqing",
      "start": 35.54,
@@ -2024,5 +2040,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "3e71fbce63ac96f28d8330bf56b96fb619482d49",
+  "built": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+  "sourceMerged": "3a5fcd7a7c6894a663864e63c2a3c0f1e11ee0db",
+  "builtFromSource": true
+ }
 }

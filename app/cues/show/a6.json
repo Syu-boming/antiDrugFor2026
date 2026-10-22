@@ -1005,7 +1005,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q8 點燈收聲後",
-    "atMinute": 31.48,
+    "atMinute": 31.42,
     "escalate": {
      "behindSec": 150,
      "level": 2
@@ -1394,15 +1394,15 @@
       "z": 0.75,
       "facing": 1,
       "emotion": "smile",
-      "pose": "standwatch"
+      "pose": "standwatch_m"
      },
      "pinan": {
       "visible": true,
       "x": 0.0,
       "z": 1.0,
       "facing": 1,
-      "emotion": "smile",
-      "pose": "stand"
+      "emotion": "neutral",
+      "pose": "stand_m"
      },
      "lin": {
       "visible": true,
@@ -1477,6 +1477,56 @@
      "ease": "sine",
      "params": {
       "to": "a6_glow"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a6_c007_01.end+6.4",
+     "duration": 0.24,
+     "target": "xiaoqing",
+     "params": {
+      "pose": "watch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a6_c007_01.end+6.6",
+     "duration": 0.24,
+     "target": "xiaoyu",
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "start": "a6_c007_01.end+6.8",
+     "duration": 0.24,
+     "target": "pinan",
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "start": "a6_c007_01.end+7.2",
+     "target": "pinan",
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "start": "a6_c007_01.end+7.4",
+     "duration": 1.0,
+     "target": "pinan"
+    },
+    {
+     "name": "puppet.nod",
+     "start": "a6_c007_01.end+7.75",
+     "duration": 1.0,
+     "target": "xiaoqing",
+     "params": {
+      "depth": 0.8
      }
     }
    ],
@@ -2460,7 +2510,8 @@
      "at": "a6_c009_04.end+0.35",
      "gain": 0.6
     }
-   ]
+   ],
+   "musicLevel": 0.6
   }
  ]
 }

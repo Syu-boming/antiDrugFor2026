@@ -925,12 +925,12 @@
     {
      "id": "sfx_windchime",
      "at": 0.15,
-     "gain": 0.7
+     "gain": 0.5
     },
     {
      "id": "sfx_footsteps",
      "at": 0.45,
-     "gain": 0.4
+     "gain": 0.28
     },
     {
      "id": "sfx_fold",
@@ -1659,5 +1659,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "903b40533f34d58cb2e88c4901e59fc48c39e4d1",
+  "built": "a865ba7d336f088ed4cca68052127ef721a57a29",
+  "sourceMerged": "a865ba7d336f088ed4cca68052127ef721a57a29",
+  "builtFromSource": true
+ }
 }

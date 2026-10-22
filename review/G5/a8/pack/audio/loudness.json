@@ -2,18 +2,18 @@
  "note": "依 timeline.json 的 cue 時間與教師按鍵間隔假設（含換景漸暗預捲），照引擎混音規則（tools/g4_review_pack.py mix()：三條匯流排、配樂基準音量、對白避讓、教師停格降配樂、交叉淡入淡出、換 cue 停台詞與音效）以 48 kHz 離線混音；總音量 1.0；開頭靜音 0 ms。",
  "file": "audio/a8_mix.wav",
  "duration_sec": 30.9,
- "sample_peak_dBFS": -2.14,
+ "sample_peak_dBFS": -1.97,
  "clipped_samples": 0,
  "full_playback": {
-  "I_LUFS": -19.4,
-  "LRA_LU": 7.5,
-  "TP_dBTP": -2.1
+  "I_LUFS": -18.2,
+  "LRA_LU": 6.6,
+  "TP_dBTP": -2.0
  },
  "per_cue": {
   "a8_c001": {
-   "I_LUFS": -19.4,
-   "LRA_LU": 7.2,
-   "TP_dBTP": -2.1
+   "I_LUFS": -17.9,
+   "LRA_LU": 5.0,
+   "TP_dBTP": -2.0
   },
   "a8_c002": {
    "I_LUFS": -17.8,
@@ -36,15 +36,15 @@
    "vo_file": "audio/vo/vo_a8_c001_01_v04.wav",
    "vo_file_I_LUFS": -18.0,
    "vo_file_TP_dBTP": -2.6,
-   "mix_I_LUFS": -14.7,
+   "mix_I_LUFS": -14.5,
    "vo_in_mix_I_LUFS": -15.0,
-   "background_I_LUFS": -26.7,
-   "vo_minus_background_LU": 11.7
+   "background_I_LUFS": -24.2,
+   "vo_minus_background_LU": 9.2
   }
  ],
  "line_vo_file_I_spread_LU": 0.0,
  "line_mix_I_spread_LU": 0.0,
- "momentary_max_LUFS": -12.4,
+ "momentary_max_LUFS": -12.3,
  "momentary_max_rise_within_1s_LU": 54.0,
  "momentary_max_rise_per_100ms_LU": 29.0,
  "momentary_note": "瞬間響度（BS.1770 K 加權，400 ms 窗，每 100 ms）；上升量以 −70 LUFS 為下限計算。momentary_* 是總混音（含配音：句首起音會被算成上升）；music_sfx_only 是不含配音的配樂＋音效分軌（含配樂基準音量、對白避讓、教師停格降配樂）。",
@@ -63,14 +63,14 @@
   },
   "max_rise_within_1s_LU": 54.0,
   "max_rise_within_1s_at_sec": 26.4,
-  "sample_peak_dBFS": -7.31,
+  "sample_peak_dBFS": -7.04,
   "sample_peak_at_sec": 26.21,
   "sample_peak_at": {
    "cue": "a8_c002",
    "cue_t": 4.11
   },
-  "true_peak_dBTP": -7.3,
-  "I_LUFS": -21.3,
+  "true_peak_dBTP": -7.0,
+  "I_LUFS": -19.7,
   "g4_reference": {
    "max_LUFS": -15.7,
    "max_rise_within_1s_LU": 34.8,

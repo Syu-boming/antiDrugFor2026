@@ -1377,6 +1377,58 @@
      "params": {
       "to": "a6_glow"
      }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoqing",
+     "start": 11.92,
+     "end": 12.16,
+     "params": {
+      "pose": "watch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "xiaoyu",
+     "start": 12.12,
+     "end": 12.36,
+     "params": {
+      "pose": "standwatch"
+     }
+    },
+    {
+     "name": "puppet.pose",
+     "target": "pinan",
+     "start": 12.32,
+     "end": 12.56,
+     "params": {
+      "pose": "stand"
+     }
+    },
+    {
+     "name": "puppet.face",
+     "target": "pinan",
+     "start": 12.72,
+     "end": 12.72,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "puppet.nod",
+     "target": "pinan",
+     "start": 12.92,
+     "end": 13.92,
+     "params": {}
+    },
+    {
+     "name": "puppet.nod",
+     "target": "xiaoqing",
+     "start": 13.27,
+     "end": 14.27,
+     "params": {
+      "depth": 0.8
+     }
     }
    ],
    "strings": {},
@@ -1718,7 +1770,7 @@
    "enterFade": 0.8,
    "audioId": "music_recovery",
    "musicLoop": true,
-   "musicLevel": 0.8,
+   "musicLevel": 0.6,
    "compression": 0,
    "lamp": null,
    "quiz": null,
@@ -2476,5 +2528,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "c838063a1761413e1b4c58e7b8df7e0dd2b15a82",
+  "built": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+  "sourceMerged": "be679a7c3ac3cfcdf7c10c82f4f9813768c59c76",
+  "builtFromSource": true
+ }
 }

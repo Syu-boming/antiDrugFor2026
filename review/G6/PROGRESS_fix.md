@@ -1,0 +1,16 @@
+- 10-22 18:01 [工具代理 FIX1-T] 開工：act_review_pack 孤立單格亮度比＋段落 sha1、show_review_pack 比 sha1／卡頓分類／--perf-only、引擎缺配音二次確認、tools/delivery_smoke.mjs（不改 cue 檔與景）
+- 10-22 18:02 [段落代理 FIX1-A（a0–a4）] 開工：a3_c008 S1 硬切、a2 黑場（≤8、a2_c013 第二次全黑）、a4_c002 天空鏡頭與摺平過程、a0_c004_01／a1_c001_05 音效壓低；只動 app/cues/show/a0–a4.json 與其景
+- 10-22 18:06 [工具代理 FIX1-T] 引擎：全劇缺配音時「準備播放」要按第二次（顯示「缺 N 句配音」，0.8 秒內連按視為誤觸；擷取／autostart 不問；控制台 ack confirm-vo）；engine-test 加 4 項（符號連結暫存資料夾拿掉 vo_a1_c001_01），私人建置試跑 4/4；tsc 通過
+- 10-22 18:06 [FIX1-A] a3_c008：切到 a3_cls_end 那一格同時 light.dim 0.72、0.2 秒後 1.2 秒 light.restore；私人建置量得孤立單格亮度比 1.300→1.101
+- [a5–a8 修正代理] 10-22 18:06 開工：讀 G6 三份報告中分派的 a5_c005、a6_c007、a6_c009_01、a7_c002、a8_c001 五項；私人建置放 scratchpad
+- 10-22 18:09 [FIX1-A] a4_c002：拿掉 a4_up 天空鏡頭與第二次全黑；紙飛機飛出孩子鏡頭→一次 fade.out→a4_map_top 漸亮看小屋從地圖立起（set.popup 2.4 秒）→推到 a4_map；cue 18.86→18.81 秒
+- 10-22 18:17 [工具代理 FIX1-T] act_review_pack：孤立單格亮度比（isolated_cuts.json，>1.2 進 INDEX 光敏「整段」判定；舊 a3 包測出 a3_c008 34.57 秒 ×1.304）＋段落指紋 segment_hash.json（tools/seg_fingerprint.mjs）；show_review_pack：(a) 改比 sha1（舊包列「沒有指紋」＋解析後時間軸後備參考）、孤立亮度比補算、逐格狀態判停格、卡頓前後重畫量亮度分 fade 黑格、--perf-only；scratch 試跑 --index-only 與合成卡頓（預捲黑格／亮處／停格）分類正確
+- 10-22 18:20 [FIX1-A] a2：a2_c003 回想小台搬進 a2_shop（MEM_X −80，a2_memory.ts 抽出 memoryCardsUpdater）、段落景改 a2_shop＋a2_c002 setFade 0.8（＝原本的自動漸亮，a2_c002 逐像素不變）→ c002→c003→c004 直接切（亮度比 1.11／1.06）；a2_c012 去求助站直接切（1.08）；a2_c013 筆記本跟著舞台燈（a2_window.ts），窗景→筆記本、筆記本→孩子都用 light.dim 拉近再切（1.12／1.03）；預計 a2 黑場 12→8
+- [a5–a8 修正代理] 10-22 18:20 私人建置試完並套用：a5_c005 環顧縮成一個鏡頭（街角＋導護旗＋長椅上的阿樂叔叔，2.96 秒）、a6_c007 三個孩子轉頭看主燈＋品安微笑點頭＋主燈亮度加大、a6_c009 musicLevel 0.6、a7_c002 口訣卡拿掉句尾句號、a8_c001 阿樂叔叔站起來舉燈致意＋全體鞠躬前傾＋musicLevel 1.07
+- 10-22 18:21 [FIX1-A] 混音：a0_c004 sfx_footsteps 0.4→0.28、sfx_windchime 0.7→0.5；a1_c001 sfx_crowd_far 0.22→0.156、sfx_footsteps 0.35→0.25、sfx_paper_rustle 提前 1 秒（在 a1_c001_05 開口前結束）
+- 10-22 18:22 [工具代理 FIX1-T] tools/delivery_smoke.mjs 完成（逐檔 diff、file:// 不加參數載入 71 cue、配音齊全、零外部請求、署名卡兩端、八題印章 2、3、1、1、3、2、3、2、Electron 外殼＝app/electron）；私人建置試跑除 diff 外全通過、舊 交付/browser 測出 diff 13 與預設 demo；show_review_pack INDEX 加 (h) 交付包節（有 delivery/delivery_smoke.json 才列）
+- 10-22 18:35 [工具代理 FIX1-T] 收尾：npm run build（18:2x）、engine-test 138／138；act_review_pack --acts a8,a7 --skip-asr（--out scratch，我沒改段落）：孤立單格亮度比 a7 最大 1.141、a8 1.059（ffmpeg 獨立重算相同），a7 光敏整段通過；**a8 光敏整段不通過**：16×9 明暗 5、fine_32x18 明暗 7（超標 92 格，a8_c001 約 10.1–14.0 秒、畫面右上 x11–15／y2–3），建置 10:22:57Z 含 a5–a8 代理 18:20 的 a8_c001（舉燈致意、主燈）與 a6_shop.ts 改動，請該代理重產 a8 包確認
+- [a5–a8 修正代理] 10-22 19:06 a5、a6、a7 驗收包整段光敏通過；a8 推近／拉回鏡頭讓右邊窗格掃過細格（fine 明暗 7）→ 改成同景直接切（10.5 秒切近、13.65 秒切回 show_mid，亮度比 1.13／1.07），重產 a8 包
+- [a5–a8 修正代理] 10-22 19:13 收尾：npm run build → engine-test 138／138 → act_review_pack --acts a5,a6,a7,a8（a8 改切鏡後重產）：四段 INDEX 光敏「整段 通過」；孤立單格亮度比 a5 1.141、a6 1.137、a7 1.141、a8 1.128（ffmpeg 獨立重算相同，全部 ≤1.2）；主奏段 開幕 −19.6／謝幕 −19.3／閉幕 −17.8 LUFS（差 1.8 LU）；a5 總長 −3.45 秒，其餘不變；私人建置與暫存影格已刪
+- 10-22 19:21 [FIX1-A] a2 驗收包：黑場 12→7、孤立亮度比最大 1.121，但 a2_c012 去求助站直接切後兩個孩子走出店那 1 秒右側細格明暗 4 次（fine_32x18 不通過）→ a2_c012 還原成原本的漸暗換場（預計黑場 8），重產 a2 包
+- 10-22 19:51 [FIX1-A] 完成：build→engine-test 138／138（第一次 137／138 是 g4 暫停後繼續的牆鐘計時在負載下不穩，重跑全過）→ act_review_pack a0–a4 --skip-asr：五段 INDEX 光敏都「整段 通過」，孤立單格亮度比最大 a0 1.136、a1 1.122、a2 1.121、a3 1.142（a3_c008 1.295→1.105）、a4 1.159，>1.2 共 0；黑場 a2 12→8、a4 9→8；對白−背景 a1_c001_05 14.7→16.9 LU、a0_c004_01 15.3→15.4 LU；cue 合計 −0.05 秒、換景預捲 −2 次；段落指紋五段都＝包內紀錄；未 commit

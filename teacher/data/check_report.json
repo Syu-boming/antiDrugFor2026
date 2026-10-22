@@ -1,15 +1,15 @@
 {
- "generatedAt": "2026/10/22 17:06:23",
- "cueHash": "713e22e2ee",
+ "generatedAt": "2026/10/22 20:03:03",
+ "cueHash": "0f6f4055f3",
  "fingerprint": {
-  "atGen": "713e22e2ee",
-  "inScript": "713e22e2ee",
-  "now": "713e22e2ee"
+  "atGen": "0f6f4055f3",
+  "inScript": "0f6f4055f3",
+  "now": "0f6f4055f3"
  },
  "dist": {
   "exists": true,
   "same": true,
-  "mtime": "2026-10-22T09:04:25.016Z"
+  "mtime": "2026-10-22T12:00:04.311Z"
  },
  "backupVideo": {
   "mode": "auto",
@@ -31,26 +31,26 @@
   {
    "cueId": "a2_c011",
    "label": "Q3 點燈收聲後",
-   "atMinute": 13.27,
-   "target": "13:16"
+   "atMinute": 13.25,
+   "target": "13:15"
   },
   {
    "cueId": "a4_c011",
    "label": "Q6 點燈收聲後",
-   "atMinute": 23.82,
-   "target": "23:49"
+   "atMinute": 23.8,
+   "target": "23:48"
   },
   {
    "cueId": "a6_c005",
    "label": "Q8 點燈收聲後",
-   "atMinute": 31.48,
-   "target": "31:29"
+   "atMinute": 31.42,
+   "target": "31:25"
   },
   {
    "cueId": "a8_c003",
    "label": "停在署名卡（之後教師結語）",
-   "atMinute": 35.08,
-   "target": "35:05"
+   "atMinute": 35,
+   "target": "35:00"
   }
  ],
  "eightTeacherFacing": [
@@ -74,8 +74,8 @@
   "afterText": "這一晚，小燈鎮的燈都亮了。"
  },
  "timing": {
-  "total": "35:50",
-  "bufferSec": 130,
+  "total": "35:45",
+  "bufferSec": 135,
   "withinLimit": true
  },
  "quizCheckOk": true,
@@ -361,7 +361,7 @@
     ]
    },
    {
-    "name": "查核點時間一律用 cue 的 atMinute（a2_c011 13.27＝13:16、a4_c011 23.82＝23:49、a6_c005 31.48＝31:29、a8_c003 35.08＝35:05）：講稿、一頁操作卡、成果紀錄範本",
+    "name": "查核點時間一律用 cue 的 atMinute（a2_c011 13.25＝13:15、a4_c011 23.8＝23:48、a6_c005 31.42＝31:25、a8_c003 35＝35:00）：講稿、一頁操作卡、成果紀錄範本",
     "ok": true,
     "detail": "全部寫的是 cue 的目標時間"
    },
@@ -388,7 +388,7 @@
     }
    },
    {
-    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 713e22e2ee、講稿上 713e22e2ee、目前 713e22e2ee；不排除任何欄位）",
+    "name": "講稿產生時的 cue 指紋＝目前 app/cues/show 的指紋（產生用 0f6f4055f3、講稿上 0f6f4055f3、目前 0f6f4055f3；不排除任何欄位）",
     "ok": true,
     "detail": null
    },

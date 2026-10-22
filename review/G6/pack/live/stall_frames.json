@@ -1,0 +1,6 @@
+{
+ "note": "逐格狀態（live_raw.json fs）裡間隔 > 100 ms 的卡頓；before／after＝卡住時與卡完的畫面，用擷取模式（?capture=1，同畫質）重畫，最多 60 個。kind：play＝播放中、preroll＝換景漸暗預捲、hold＝停格（cueTime ≥ cue 長度或停住等老師）。",
+ "stalls": 0,
+ "shots": 0,
+ "list": []
+}

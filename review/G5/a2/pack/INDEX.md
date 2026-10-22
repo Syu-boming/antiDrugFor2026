@@ -1,7 +1,8 @@
 # a2 驗收包（第二幕：看不見的操偶線）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T08:01Z）；段落檔 `app/cues/show/a2.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T11:44Z）；段落檔 `app/cues/show/a2.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `39fd12c7b3f98772f45de21dd4fbfc2c08a0022c`；app/dist 合併後這一段 `642675baa4e6a8880708c47c0a364210fe2b9b55`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,24 +14,25 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png、compare_g4/compare_g4_02.png、compare_g4/compare_g4_03.png |
 | 播放錄製（30 格／秒＋混音） | a2_playback.mp4 |
 | 混音與響度 | audio/a2_mix.wav、audio/loudness.json、audio/a2_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
-- 本段 cue 總長 260.6 秒＋換景漸暗預捲 3.0 秒；時長估算_v03.md 預錄合計 255.0 秒；差 8.6 秒；逐 cue 估計合計 255.2 秒。
-- 播放錄製（含教師按鍵間隔假設）304.1 秒。
+- 本段 cue 總長 260.6 秒＋換景漸暗預捲 1.8 秒；時長估算_v03.md 預錄合計 255.0 秒；差 7.4 秒；逐 cue 估計合計 255.2 秒。
+- 播放錄製（含教師按鍵間隔假設）302.9 秒。
 
 | cue | 種類 | 長度 | 預捲 | 估計 | 差 | 台詞秒 | 句數 |
 |---|---|---|---|---|---|---|---|
 | a2_c001 | scene | 17.8 | 0.6 | 22.8 | -5.0 | 12.51 | 3 |
 | a2_c002 | scene | 25.2 | 0.6 | 27.5 | -2.3 | 7.73 | 2 |
-| a2_c003 | scene | 15.3 | 0.6 | 17.8 | -2.5 | 11.60 | 2 |
-| a2_c004 | scene | 21.9 | 0.6 | 22.0 | -0.1 | 18.66 | 2 |
+| a2_c003 | scene | 15.3 | 0 | 17.8 | -2.5 | 11.60 | 2 |
+| a2_c004 | scene | 21.9 | 0 | 22.0 | -0.1 | 18.66 | 2 |
 | a2_c005 | quiz | 23.9 | 0 | 22.0 | 1.9 | 19.11 | 5 |
 | a2_c006 | reveal | 7.2 | 0 | 8.0 | -0.8 | 4.96 | 1 |
 | a2_c007 | lamp | 9.2 | 0 | 9.8 | -0.6 | 5.47 | 1 |
@@ -43,13 +45,14 @@
 
 ## 光敏（任一區域明暗或飽和紅色每秒變化 ≤ 3 次）
 
-- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 2、紅色 2；超標 0；接近上限（2–3 次）148；分析 9122 格。
-- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 29。
-- proj_16x9：每秒最多 明暗 3、紅色 0；超標 0；3 次 1。
-- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 14。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
-- capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 2}}
-- cue 接縫全畫面亮度差最大 0.022；區域亮度差最大 0.417。
+- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 2、紅色 2；超標 0；接近上限（2–3 次）148；分析 9086 格。
+- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 30。
+- proj_16x9：每秒最多 明暗 2、紅色 0；超標 0；3 次 0。
+- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 15。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.121（a2_c013 20.7667 秒，播放錄製第 286.0 秒，0.2723→0.3052）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
+- capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 2, "red": 2}}
+- cue 接縫全畫面亮度差最大 0.061；區域亮度差最大 0.488。
 
 ## 聲音
 
@@ -68,7 +71,7 @@
 | a2_c002_02 | 小晴 | -18.0 | -15.0 | 17.5 |
 | a2_c003_01 | 旁白 | -18.0 | -14.9 | 23.5 |
 | a2_c003_02 | 旁白 | -17.8 | -14.8 | 23.3 |
-| a2_c004_01 | 旁白 | -18.0 | -15.0 | 17.5 |
+| a2_c004_01 | 旁白 | -18.0 | -15.0 | 17.4 |
 | a2_c004_02 | 旁白 | -17.9 | -14.9 | 16.5 |
 | a2_c005_01 | 折折 | -18.0 | -15.0 | 17.2 |
 | a2_c005_02 | 旁白 | -18.0 | -14.9 | 9.0 |
@@ -115,7 +118,7 @@
 ## 安全量測
 
 - 操偶線扣點：elbow、knee、wrist（只限 wrist／elbow／knee：True）；有操偶線的角色：ale。
-- 有操偶線的量測格 2692；線到頭部框最短 17.2 px（只算頭部框在畫面內的格；畫面外略過 645 條）；線經過兒童立牌外框 0 格。
+- 有操偶線的量測格 2692；線到頭部框最短 17.2 px（只算頭部框在畫面內的格；畫面外略過 648 條）；線經過兒童立牌外框 0 格。
 - 必要旁白：{"a2_c004_02": {"cue＝劇本": true, "劇本＝CLAUDE.md": true, "說話者": "旁白"}, "a2_c008_05": {"cue＝劇本": true, "劇本＝CLAUDE.md": true, "說話者": "旁白"}}。
 - 台詞與劇本 v03 逐字不同：0 句（共 38 句）。
 - 字幕：每行最多 16 字、每頁最多 2 行。
@@ -124,5 +127,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a2_c001": 0.6, "a2_c002": 0.6, "a2_c003": 0.6, "a2_c004": 0.6, "a2_c013": 0.6}；景：a2_memory、a2_shop、a2_window、workshop_g4；景的建立／釋放 {"active": "a2_window", "built": 7, "disposed": 6, "lastBuildMs": 55, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a2_c001": 0.6, "a2_c002": 0.6, "a2_c013": 0.6}；景：a2_shop、a2_window；景的建立／釋放 {"active": "a2_window", "built": 6, "disposed": 4, "lastBuildMs": 47, "liveSetGroups": 1, "lastSwapMs": 0.8, "preparedHits": 2, "prepared": [{"name": "a3_arcade", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

@@ -101,6 +101,10 @@ export function makeLamp(tex: CanvasTexture, w: number, order: number, mats: Mat
 
 // ───────────────────────────── 主燈：大摺紙貓燈籠 ─────────────────────────────
 const N_RING = 10;
+/** G6 修正第 1 輪：主燈亮起的幅度加大（紙面自發光 0.1→0.1＋GLOW_GAIN、泛光透明度上限 HALO_MAX、泛光範圍放大）；
+ *  仍是 a6_c007 的一次單向 2.6 秒正弦漸亮（不閃）。原值 0.95／0.38、泛光 7.2×6.8 */
+const GLOW_GAIN = 1.5;
+const HALO_MAX = 0.6;
 const PAPER = '#f4c494';
 const INK = '#4e3e33';
 
@@ -242,7 +246,7 @@ function buildCatLantern(mats: Material[], haloTex: CanvasTexture): CatLantern {
   for (const e of ears) { strip(e[0], e[2], 0.04); strip(e[1], e[2], 0.04); }
   // 泛光（主燈後方，加法混色；透明度只隨 glow 慢慢變）
   const halo = new Sprite(new SpriteMaterial({ map: haloTex, color: '#ffbf7a', transparent: true, opacity: 0, depthWrite: false, blending: AdditiveBlending }));
-  halo.scale.set(7.2, 6.8, 1);
+  halo.scale.set(8.6, 8.0, 1);
   halo.position.set(0, cy + 0.2, -0.3);
   halo.renderOrder = LAYER.mid.order + 38;
   group.add(halo);
@@ -264,9 +268,9 @@ function buildCatLantern(mats: Material[], haloTex: CanvasTexture): CatLantern {
         pn.mat.opacity = u;
         pn.mat.transparent = u < 0.999;
         pn.mat.depthWrite = u > 0.5;
-        pn.mat.emissiveIntensity = 0.1 + 0.95 * glow;
+        pn.mat.emissiveIntensity = 0.1 + GLOW_GAIN * glow;
       });
-      (halo.material as SpriteMaterial).opacity = 0.38 * glow;
+      (halo.material as SpriteMaterial).opacity = HALO_MAX * glow;
       halo.visible = glow > 0.002;
     },
   };

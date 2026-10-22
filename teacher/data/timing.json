@@ -1,6 +1,6 @@
 {
- "generatedAt": "2026/10/22 17:06:23",
- "cueHash": "713e22e2ee",
+ "generatedAt": "2026/10/22 20:03:03",
+ "cueHash": "0f6f4055f3",
  "prerollSec": 0.6,
  "teacherTime": {
   "greeting": 30,
@@ -56,155 +56,155 @@
   "reasonL1": 8
  },
  "playback": {
-  "level0": 1325.8,
-  "level1": 1302,
-  "level2": 1270.1
+  "level0": 1322.3,
+  "level1": 1298.5,
+  "level2": 1266.6
  },
- "totalSec": 2150,
- "total": "35:50",
+ "totalSec": 2145,
+ "total": "35:45",
  "limit": "38:00",
  "withinLimit": true,
- "bufferSec": 130,
+ "bufferSec": 135,
  "variants": {
   "l1": {
-   "total": "33:45",
-   "totalSec": 2025,
+   "total": "33:40",
+   "totalSec": 2020,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:16",
-     "actual": "12:10",
+     "planned": "13:15",
+     "actual": "12:09",
      "behind": -66,
      "level": 1
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:49",
-     "actual": "22:17",
+     "planned": "23:48",
+     "actual": "22:15",
      "behind": -93,
      "level": 1
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "31:29",
-     "actual": "29:28",
-     "behind": -121,
+     "planned": "31:25",
+     "actual": "29:24",
+     "behind": -122,
      "level": 1
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "35:05",
-     "actual": "33:00",
+     "planned": "35:00",
+     "actual": "32:55",
      "behind": -125,
      "level": 1
     }
    ]
   },
   "l2": {
-   "total": "32:58",
-   "totalSec": 1978,
+   "total": "32:53",
+   "totalSec": 1973,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:16",
-     "actual": "12:10",
+     "planned": "13:15",
+     "actual": "12:09",
      "behind": -66,
      "level": 2
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:49",
-     "actual": "22:17",
+     "planned": "23:48",
+     "actual": "22:15",
      "behind": -93,
      "level": 2
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "31:29",
-     "actual": "29:28",
-     "behind": -121,
+     "planned": "31:25",
+     "actual": "29:24",
+     "behind": -122,
      "level": 2
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "35:05",
-     "actual": "32:28",
+     "planned": "35:00",
+     "actual": "32:23",
      "behind": -157,
      "level": 2
     }
    ]
   },
   "stress": {
-   "total": "39:04",
-   "totalSec": 2344,
+   "total": "38:59",
+   "totalSec": 2339,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:16",
-     "actual": "14:40",
+     "planned": "13:15",
+     "actual": "14:39",
      "behind": 84,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:49",
-     "actual": "26:22",
+     "planned": "23:48",
+     "actual": "26:21",
      "behind": 153,
      "level": 0
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "31:29",
-     "actual": "34:43",
-     "behind": 194,
+     "planned": "31:25",
+     "actual": "34:39",
+     "behind": 193,
      "level": 0
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "35:05",
-     "actual": "38:19",
+     "planned": "35:00",
+     "actual": "38:14",
      "behind": 194,
      "level": 0
     }
    ]
   },
   "stressDyn": {
-   "total": "37:43",
-   "totalSec": 2263,
+   "total": "37:38",
+   "totalSec": 2258,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:16",
-     "actual": "14:40",
+     "planned": "13:15",
+     "actual": "14:39",
      "behind": 84,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:49",
-     "actual": "26:22",
+     "planned": "23:48",
+     "actual": "26:21",
      "behind": 153,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "觸發 1 級",
-     "planned": "23:49",
-     "actual": "26:22",
+     "planned": "23:48",
+     "actual": "26:21",
      "behind": 153,
      "level": 1,
      "trigger": true
@@ -212,63 +212,63 @@
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "31:29",
-     "actual": "34:13",
-     "behind": 164,
+     "planned": "31:25",
+     "actual": "34:09",
+     "behind": 163,
      "level": 1
     },
     {
      "cueId": "a6_c005",
      "label": "觸發 2 級",
-     "planned": "31:29",
-     "actual": "34:13",
-     "behind": 164,
+     "planned": "31:25",
+     "actual": "34:09",
+     "behind": 163,
      "level": 2,
      "trigger": true
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "35:05",
-     "actual": "37:13",
+     "planned": "35:00",
+     "actual": "37:08",
      "behind": 128,
      "level": 2
     }
    ]
   },
   "optional": {
-   "total": "36:10",
-   "totalSec": 2170,
+   "total": "36:05",
+   "totalSec": 2165,
    "events": [
     {
      "cueId": "a2_c011",
      "label": "Q3 點燈收聲後",
-     "planned": "13:16",
-     "actual": "13:36",
+     "planned": "13:15",
+     "actual": "13:35",
      "behind": 20,
      "level": 0
     },
     {
      "cueId": "a4_c011",
      "label": "Q6 點燈收聲後",
-     "planned": "23:49",
-     "actual": "24:09",
+     "planned": "23:48",
+     "actual": "24:08",
      "behind": 20,
      "level": 0
     },
     {
      "cueId": "a6_c005",
      "label": "Q8 點燈收聲後",
-     "planned": "31:29",
-     "actual": "31:49",
-     "behind": 21,
+     "planned": "31:25",
+     "actual": "31:45",
+     "behind": 20,
      "level": 0
     },
     {
      "cueId": "a8_c003",
      "label": "停在署名卡（之後教師結語）",
-     "planned": "35:05",
-     "actual": "35:25",
+     "planned": "35:00",
+     "actual": "35:20",
      "behind": 20,
      "level": 0
     }
@@ -279,29 +279,29 @@
   {
    "cueId": "a2_c011",
    "label": "Q3 點燈收聲後",
-   "planned": "13:16",
-   "estimated": "13:16",
+   "planned": "13:15",
+   "estimated": "13:15",
    "behindSec": 0
   },
   {
    "cueId": "a4_c011",
    "label": "Q6 點燈收聲後",
-   "planned": "23:49",
-   "estimated": "23:49",
+   "planned": "23:48",
+   "estimated": "23:48",
    "behindSec": 0
   },
   {
    "cueId": "a6_c005",
    "label": "Q8 點燈收聲後",
-   "planned": "31:29",
-   "estimated": "31:29",
-   "behindSec": 1
+   "planned": "31:25",
+   "estimated": "31:25",
+   "behindSec": 0
   },
   {
    "cueId": "a8_c003",
    "label": "停在署名卡（之後教師結語）",
-   "planned": "35:05",
-   "estimated": "35:05",
+   "planned": "35:00",
+   "estimated": "35:00",
    "behindSec": 0
   }
  ],
@@ -483,7 +483,7 @@
    "id": "a2_c003",
    "kind": "scene",
    "start": "09:00",
-   "startSec": 540.5,
+   "startSec": 539.9,
    "playSec": 15.3,
    "teacherSec": 0,
    "teacher": []
@@ -491,8 +491,8 @@
   {
    "id": "a2_c004",
    "kind": "scene",
-   "start": "09:17",
-   "startSec": 557.5,
+   "start": "09:16",
+   "startSec": 556.3,
    "playSec": 21.91,
    "teacherSec": 0,
    "teacher": []
@@ -500,8 +500,8 @@
   {
    "id": "a2_c005",
    "kind": "quiz",
-   "start": "09:40",
-   "startSec": 580.5,
+   "start": "09:39",
+   "startSec": 579.3,
    "playSec": 23.86,
    "teacherSec": 15,
    "teacher": [
@@ -511,8 +511,8 @@
   {
    "id": "a2_c006",
    "kind": "reveal",
-   "start": "10:20",
-   "startSec": 620.4,
+   "start": "10:19",
+   "startSec": 619.2,
    "playSec": 7.16,
    "teacherSec": 29,
    "teacher": [
@@ -522,8 +522,8 @@
   {
    "id": "a2_c007",
    "kind": "lamp",
-   "start": "10:58",
-   "startSec": 657.7,
+   "start": "10:56",
+   "startSec": 656.5,
    "playSec": 9.17,
    "teacherSec": 3,
    "teacher": [
@@ -533,8 +533,8 @@
   {
    "id": "a2_c008",
    "kind": "scene",
-   "start": "11:11",
-   "startSec": 671,
+   "start": "11:10",
+   "startSec": 669.8,
    "playSec": 39.4,
    "teacherSec": 0,
    "teacher": []
@@ -542,8 +542,8 @@
   {
    "id": "a2_c009",
    "kind": "quiz",
-   "start": "11:51",
-   "startSec": 711.5,
+   "start": "11:50",
+   "startSec": 710.3,
    "playSec": 22.31,
    "teacherSec": 15,
    "teacher": [
@@ -553,8 +553,8 @@
   {
    "id": "a2_c010",
    "kind": "reveal",
-   "start": "12:30",
-   "startSec": 749.9,
+   "start": "12:29",
+   "startSec": 748.7,
    "playSec": 6.49,
    "teacherSec": 29,
    "teacher": [
@@ -564,8 +564,8 @@
   {
    "id": "a2_c011",
    "kind": "lamp",
-   "start": "13:06",
-   "startSec": 786.5,
+   "start": "13:05",
+   "startSec": 785.3,
    "playSec": 5.57,
    "teacherSec": 3,
    "teacher": [
@@ -575,8 +575,8 @@
   {
    "id": "a2_c012",
    "kind": "scene",
-   "start": "13:16",
-   "startSec": 796.1,
+   "start": "13:15",
+   "startSec": 794.9,
    "playSec": 32.32,
    "teacherSec": 0,
    "teacher": []
@@ -584,8 +584,8 @@
   {
    "id": "a2_c013",
    "kind": "scene",
-   "start": "13:50",
-   "startSec": 830.1,
+   "start": "13:49",
+   "startSec": 828.9,
    "playSec": 34.14,
    "teacherSec": 0,
    "teacher": []
@@ -593,8 +593,8 @@
   {
    "id": "a3_c001",
    "kind": "scene",
-   "start": "14:26",
-   "startSec": 866,
+   "start": "14:25",
+   "startSec": 864.8,
    "playSec": 21.5,
    "teacherSec": 0,
    "teacher": []
@@ -602,8 +602,8 @@
   {
    "id": "a3_c002",
    "kind": "scene",
-   "start": "14:49",
-   "startSec": 888.6,
+   "start": "14:47",
+   "startSec": 887.4,
    "playSec": 13.23,
    "teacherSec": 0,
    "teacher": []
@@ -611,8 +611,8 @@
   {
    "id": "a3_c003",
    "kind": "scene",
-   "start": "15:04",
-   "startSec": 903.5,
+   "start": "15:02",
+   "startSec": 902.3,
    "playSec": 23.55,
    "teacherSec": 0,
    "teacher": []
@@ -620,8 +620,8 @@
   {
    "id": "a3_c004",
    "kind": "scene",
-   "start": "15:29",
-   "startSec": 928.8,
+   "start": "15:28",
+   "startSec": 927.6,
    "playSec": 14.82,
    "teacherSec": 90,
    "teacher": [
@@ -631,8 +631,8 @@
   {
    "id": "a3_c005",
    "kind": "quiz",
-   "start": "17:15",
-   "startSec": 1034.7,
+   "start": "17:13",
+   "startSec": 1033.5,
    "playSec": 23.71,
    "teacherSec": 15,
    "teacher": [
@@ -642,8 +642,8 @@
   {
    "id": "a3_c006",
    "kind": "reveal",
-   "start": "17:54",
-   "startSec": 1074.5,
+   "start": "17:53",
+   "startSec": 1073.3,
    "playSec": 7.44,
    "teacherSec": 29,
    "teacher": [
@@ -653,8 +653,8 @@
   {
    "id": "a3_c007",
    "kind": "lamp",
-   "start": "18:32",
-   "startSec": 1112,
+   "start": "18:31",
+   "startSec": 1110.8,
    "playSec": 5.88,
    "teacherSec": 3,
    "teacher": [
@@ -664,8 +664,8 @@
   {
    "id": "a3_c008",
    "kind": "scene",
-   "start": "18:43",
-   "startSec": 1122.6,
+   "start": "18:41",
+   "startSec": 1121.4,
    "playSec": 36.69,
    "teacherSec": 0,
    "teacher": []
@@ -673,8 +673,8 @@
   {
    "id": "a4_c001",
    "kind": "scene",
-   "start": "19:21",
-   "startSec": 1161,
+   "start": "19:20",
+   "startSec": 1159.8,
    "playSec": 23.92,
    "teacherSec": 0,
    "teacher": []
@@ -682,17 +682,17 @@
   {
    "id": "a4_c002",
    "kind": "scene",
-   "start": "19:47",
-   "startSec": 1186.6,
-   "playSec": 18.86,
+   "start": "19:45",
+   "startSec": 1185.4,
+   "playSec": 18.81,
    "teacherSec": 0,
    "teacher": []
   },
   {
    "id": "a4_c003",
    "kind": "scene",
-   "start": "20:07",
-   "startSec": 1206.6,
+   "start": "20:05",
+   "startSec": 1205.3,
    "playSec": 15.52,
    "teacherSec": 0,
    "teacher": []
@@ -700,8 +700,8 @@
   {
    "id": "a4_c004",
    "kind": "scene",
-   "start": "20:23",
-   "startSec": 1223.2,
+   "start": "20:22",
+   "startSec": 1221.9,
    "playSec": 15.3,
    "teacherSec": 0,
    "teacher": []
@@ -709,8 +709,8 @@
   {
    "id": "a4_c005",
    "kind": "quiz",
-   "start": "20:40",
-   "startSec": 1239.6,
+   "start": "20:38",
+   "startSec": 1238.3,
    "playSec": 19.57,
    "teacherSec": 15,
    "teacher": [
@@ -720,8 +720,8 @@
   {
    "id": "a4_c006",
    "kind": "reveal",
-   "start": "21:15",
-   "startSec": 1275.3,
+   "start": "21:14",
+   "startSec": 1274,
    "playSec": 6.26,
    "teacherSec": 29,
    "teacher": [
@@ -731,8 +731,8 @@
   {
    "id": "a4_c007",
    "kind": "lamp",
-   "start": "21:52",
-   "startSec": 1311.6,
+   "start": "21:50",
+   "startSec": 1310.4,
    "playSec": 7.16,
    "teacherSec": 3,
    "teacher": [
@@ -742,8 +742,8 @@
   {
    "id": "a4_c008",
    "kind": "scene",
-   "start": "22:03",
-   "startSec": 1322.9,
+   "start": "22:02",
+   "startSec": 1321.6,
    "playSec": 14.33,
    "teacherSec": 0,
    "teacher": []
@@ -751,8 +751,8 @@
   {
    "id": "a4_c009",
    "kind": "quiz",
-   "start": "22:18",
-   "startSec": 1338.3,
+   "start": "22:17",
+   "startSec": 1337.1,
    "playSec": 26.61,
    "teacherSec": 15,
    "teacher": [
@@ -762,8 +762,8 @@
   {
    "id": "a4_c010",
    "kind": "reveal",
-   "start": "23:01",
-   "startSec": 1381,
+   "start": "23:00",
+   "startSec": 1379.8,
    "playSec": 7.32,
    "teacherSec": 29,
    "teacher": [
@@ -773,8 +773,8 @@
   {
    "id": "a4_c011",
    "kind": "lamp",
-   "start": "23:38",
-   "startSec": 1418.4,
+   "start": "23:37",
+   "startSec": 1417.2,
    "playSec": 6.42,
    "teacherSec": 3,
    "teacher": [
@@ -784,8 +784,8 @@
   {
    "id": "a4_c012",
    "kind": "scene",
-   "start": "23:49",
-   "startSec": 1429,
+   "start": "23:48",
+   "startSec": 1427.7,
    "playSec": 31.07,
    "teacherSec": 0,
    "teacher": []
@@ -793,8 +793,8 @@
   {
    "id": "a4_c013",
    "kind": "scene",
-   "start": "24:21",
-   "startSec": 1461.1,
+   "start": "24:20",
+   "startSec": 1459.9,
    "playSec": 24.75,
    "teacherSec": 30,
    "teacher": [
@@ -804,8 +804,8 @@
   {
    "id": "a5_c001",
    "kind": "scene",
-   "start": "25:18",
-   "startSec": 1517.6,
+   "start": "25:16",
+   "startSec": 1516.3,
    "playSec": 38.32,
    "teacherSec": 0,
    "teacher": []
@@ -813,8 +813,8 @@
   {
    "id": "a5_c002",
    "kind": "quiz",
-   "start": "25:57",
-   "startSec": 1557,
+   "start": "25:56",
+   "startSec": 1555.8,
    "playSec": 23.62,
    "teacherSec": 15,
    "teacher": [
@@ -824,8 +824,8 @@
   {
    "id": "a5_c003",
    "kind": "reveal",
-   "start": "26:37",
-   "startSec": 1596.7,
+   "start": "26:35",
+   "startSec": 1595.5,
    "playSec": 7.02,
    "teacherSec": 29,
    "teacher": [
@@ -835,8 +835,8 @@
   {
    "id": "a5_c004",
    "kind": "lamp",
-   "start": "27:14",
-   "startSec": 1633.8,
+   "start": "27:13",
+   "startSec": 1632.6,
    "playSec": 6.2,
    "teacherSec": 3,
    "teacher": [
@@ -846,17 +846,17 @@
   {
    "id": "a5_c005",
    "kind": "scene",
-   "start": "27:24",
-   "startSec": 1644.1,
-   "playSec": 21.25,
+   "start": "27:23",
+   "startSec": 1642.9,
+   "playSec": 17.8,
    "teacherSec": 0,
    "teacher": []
   },
   {
    "id": "a5_c006",
    "kind": "scene",
-   "start": "27:46",
-   "startSec": 1666.5,
+   "start": "27:42",
+   "startSec": 1661.8,
    "playSec": 31.18,
    "teacherSec": 0,
    "teacher": []
@@ -864,8 +864,8 @@
   {
    "id": "a5_c007",
    "kind": "scene",
-   "start": "28:19",
-   "startSec": 1698.8,
+   "start": "28:14",
+   "startSec": 1694.1,
    "playSec": 24.08,
    "teacherSec": 0,
    "teacher": []
@@ -873,8 +873,8 @@
   {
    "id": "a5_c008",
    "kind": "scene",
-   "start": "28:45",
-   "startSec": 1724.6,
+   "start": "28:40",
+   "startSec": 1719.9,
    "playSec": 27.41,
    "teacherSec": 0,
    "teacher": []
@@ -882,8 +882,8 @@
   {
    "id": "a6_c001",
    "kind": "scene",
-   "start": "29:14",
-   "startSec": 1753.7,
+   "start": "29:09",
+   "startSec": 1749,
    "playSec": 13.68,
    "teacherSec": 0,
    "teacher": []
@@ -891,8 +891,8 @@
   {
    "id": "a6_c002",
    "kind": "scene",
-   "start": "29:28",
-   "startSec": 1768.4,
+   "start": "29:24",
+   "startSec": 1763.7,
    "playSec": 31.81,
    "teacherSec": 0,
    "teacher": []
@@ -900,8 +900,8 @@
   {
    "id": "a6_c003",
    "kind": "quiz",
-   "start": "30:01",
-   "startSec": 1801.4,
+   "start": "29:57",
+   "startSec": 1796.7,
    "playSec": 23.9,
    "teacherSec": 15,
    "teacher": [
@@ -911,8 +911,8 @@
   {
    "id": "a6_c004",
    "kind": "reveal",
-   "start": "30:41",
-   "startSec": 1841.4,
+   "start": "30:37",
+   "startSec": 1836.7,
    "playSec": 6.94,
    "teacherSec": 29,
    "teacher": [
@@ -922,8 +922,8 @@
   {
    "id": "a6_c005",
    "kind": "lamp",
-   "start": "31:18",
-   "startSec": 1878.4,
+   "start": "31:14",
+   "startSec": 1873.7,
    "playSec": 7.07,
    "teacherSec": 3,
    "teacher": [
@@ -933,8 +933,8 @@
   {
    "id": "a6_c006",
    "kind": "scene",
-   "start": "31:30",
-   "startSec": 1889.6,
+   "start": "31:25",
+   "startSec": 1884.9,
    "playSec": 35.26,
    "teacherSec": 0,
    "teacher": []
@@ -942,8 +942,8 @@
   {
    "id": "a6_c007",
    "kind": "scene",
-   "start": "32:06",
-   "startSec": 1925.9,
+   "start": "32:01",
+   "startSec": 1921.2,
    "playSec": 21.05,
    "teacherSec": 0,
    "teacher": []
@@ -951,8 +951,8 @@
   {
    "id": "a6_c008",
    "kind": "scene",
-   "start": "32:29",
-   "startSec": 1948.7,
+   "start": "32:24",
+   "startSec": 1944,
    "playSec": 19.57,
    "teacherSec": 0,
    "teacher": []
@@ -960,8 +960,8 @@
   {
    "id": "a6_c009",
    "kind": "scene",
-   "start": "32:50",
-   "startSec": 1969.9,
+   "start": "32:45",
+   "startSec": 1965.2,
    "playSec": 25.81,
    "teacherSec": 0,
    "teacher": []
@@ -969,8 +969,8 @@
   {
    "id": "a7_c001",
    "kind": "scene",
-   "start": "33:17",
-   "startSec": 1997.5,
+   "start": "33:13",
+   "startSec": 1992.8,
    "playSec": 25.32,
    "teacherSec": 0,
    "teacher": []
@@ -978,8 +978,8 @@
   {
    "id": "a7_c002",
    "kind": "scene",
-   "start": "33:44",
-   "startSec": 2023.9,
+   "start": "33:39",
+   "startSec": 2019.2,
    "playSec": 8.08,
    "teacherSec": 30,
    "teacher": [
@@ -989,8 +989,8 @@
   {
    "id": "a7_c003",
    "kind": "scene",
-   "start": "34:23",
-   "startSec": 2063.1,
+   "start": "34:18",
+   "startSec": 2058.4,
    "playSec": 14.01,
    "teacherSec": 0,
    "teacher": []
@@ -998,8 +998,8 @@
   {
    "id": "a8_c001",
    "kind": "scene",
-   "start": "34:39",
-   "startSec": 2078.8,
+   "start": "34:34",
+   "startSec": 2074.1,
    "playSec": 18,
    "teacherSec": 0,
    "teacher": []
@@ -1007,8 +1007,8 @@
   {
    "id": "a8_c002",
    "kind": "curtain",
-   "start": "34:58",
-   "startSec": 2097.9,
+   "start": "34:53",
+   "startSec": 2093.2,
    "playSec": 5.4,
    "teacherSec": 0,
    "teacher": []
@@ -1016,8 +1016,8 @@
   {
    "id": "a8_c003",
    "kind": "title",
-   "start": "35:03",
-   "startSec": 2103.4,
+   "start": "34:59",
+   "startSec": 2098.7,
    "playSec": 1.4,
    "teacherSec": 45,
    "teacher": [

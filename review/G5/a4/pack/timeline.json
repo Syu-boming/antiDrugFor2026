@@ -298,7 +298,7 @@
    "id": "a4_c002",
    "kind": "scene",
    "title": "不對勁",
-   "duration": 18.86,
+   "duration": 18.81,
    "autoAdvance": false,
    "set": "gate",
    "enterFade": 0.6,
@@ -376,17 +376,17 @@
     },
     {
      "id": "sfx_plane_whoosh",
-     "at": 14.21,
+     "at": 14.01,
      "gain": 0.8
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 16.06,
+     "at": 15.46,
      "gain": 0.7
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 16.91,
+     "at": 16.21,
      "gain": 0.8
     }
    ],
@@ -460,42 +460,10 @@
      }
     },
     {
-     "name": "fade.out",
-     "target": null,
-     "start": 13.01,
-     "end": 13.61,
-     "params": {}
-    },
-    {
-     "name": "camera.cut",
-     "target": null,
-     "start": 13.63,
-     "end": 13.63,
-     "params": {
-      "to": "a4_up"
-     }
-    },
-    {
-     "name": "light.dim",
-     "target": null,
-     "start": 13.63,
-     "end": 13.63,
-     "params": {
-      "to": 0.55
-     }
-    },
-    {
-     "name": "fade.in",
-     "target": null,
-     "start": 13.66,
-     "end": 14.26,
-     "params": {}
-    },
-    {
      "name": "zhezhe.flyTo",
      "target": "zhezhe",
      "start": 13.91,
-     "end": 15.91,
+     "end": 15.51,
      "params": {
       "pos": [
        -0.5,
@@ -508,15 +476,15 @@
     {
      "name": "fade.out",
      "target": null,
-     "start": 15.36,
-     "end": 15.96,
+     "start": 14.71,
+     "end": 15.31,
      "params": {}
     },
     {
      "name": "set.swap",
      "target": null,
-     "start": 15.98,
-     "end": 15.98,
+     "start": 15.33,
+     "end": 15.33,
      "params": {
       "set": "a4_roadmap"
      }
@@ -524,39 +492,41 @@
     {
      "name": "set.fold",
      "target": null,
-     "start": 15.98,
-     "end": 15.98,
+     "start": 15.33,
+     "end": 15.33,
      "params": {}
     },
     {
      "name": "camera.cut",
      "target": null,
-     "start": 15.98,
-     "end": 15.98,
+     "start": 15.33,
+     "end": 15.33,
      "params": {
-      "to": "a4_map"
+      "to": "a4_map_top"
      }
-    },
-    {
-     "name": "light.restore",
-     "target": null,
-     "start": 15.98,
-     "end": 15.98,
-     "params": {}
     },
     {
      "name": "fade.in",
      "target": null,
-     "start": 16.01,
-     "end": 16.61,
+     "start": 15.36,
+     "end": 15.96,
      "params": {}
     },
     {
      "name": "set.popup",
      "target": null,
-     "start": 16.86,
-     "end": 18.86,
+     "start": 15.61,
+     "end": 18.01,
      "params": {}
+    },
+    {
+     "name": "camera.move",
+     "target": null,
+     "start": 16.81,
+     "end": 18.81,
+     "params": {
+      "to": "a4_map"
+     }
     }
    ],
    "strings": {},
@@ -2567,7 +2537,7 @@
    "kind": "scene",
    "preroll": 0.6,
    "start": 28.62,
-   "duration": 18.86,
+   "duration": 18.81,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "gate",
@@ -2577,7 +2547,7 @@
    "id": "a4_c003",
    "kind": "scene",
    "preroll": 0,
-   "start": 50.98,
+   "start": 50.93,
    "duration": 15.52,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2588,7 +2558,7 @@
    "id": "a4_c004",
    "kind": "scene",
    "preroll": 0,
-   "start": 70,
+   "start": 69.95,
    "duration": 15.3,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2599,7 +2569,7 @@
    "id": "a4_c005",
    "kind": "quiz",
    "preroll": 0,
-   "start": 88.8,
+   "start": 88.75,
    "duration": 19.57,
    "hold": 3,
    "autoAdvance": false,
@@ -2610,7 +2580,7 @@
    "id": "a4_c006",
    "kind": "reveal",
    "preroll": 0,
-   "start": 111.37,
+   "start": 111.32,
    "duration": 6.26,
    "hold": 2.5,
    "autoAdvance": false,
@@ -2621,7 +2591,7 @@
    "id": "a4_c007",
    "kind": "lamp",
    "preroll": 0,
-   "start": 120.13,
+   "start": 120.08,
    "duration": 7.16,
    "hold": 2.5,
    "autoAdvance": false,
@@ -2632,7 +2602,7 @@
    "id": "a4_c008",
    "kind": "scene",
    "preroll": 0,
-   "start": 129.79,
+   "start": 129.74,
    "duration": 14.33,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2643,7 +2613,7 @@
    "id": "a4_c009",
    "kind": "quiz",
    "preroll": 0,
-   "start": 147.62,
+   "start": 147.57,
    "duration": 26.61,
    "hold": 3,
    "autoAdvance": false,
@@ -2654,7 +2624,7 @@
    "id": "a4_c010",
    "kind": "reveal",
    "preroll": 0,
-   "start": 177.23,
+   "start": 177.18,
    "duration": 7.32,
    "hold": 2.5,
    "autoAdvance": false,
@@ -2665,7 +2635,7 @@
    "id": "a4_c011",
    "kind": "lamp",
    "preroll": 0,
-   "start": 187.05,
+   "start": 187,
    "duration": 6.42,
    "hold": 2.5,
    "autoAdvance": false,
@@ -2676,7 +2646,7 @@
    "id": "a4_c012",
    "kind": "scene",
    "preroll": 0,
-   "start": 195.97,
+   "start": 195.92,
    "duration": 31.07,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2687,7 +2657,7 @@
    "id": "a4_c013",
    "kind": "scene",
    "preroll": 0,
-   "start": 230.54,
+   "start": 230.49,
    "duration": 24.75,
    "hold": 3.5,
    "autoAdvance": false,
@@ -2695,7 +2665,7 @@
    "enterFade": 0
   }
  ],
- "totalPlaybackSec": 258.79,
+ "totalPlaybackSec": 258.74,
  "audio": {
   "vo_a4_c001_01": {
    "source": "audio/vo/vo_a4_c001_01_v04.wav",
@@ -2944,5 +2914,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "e2ea0db5057008f528b89a63b40446417b712fdf",
+  "built": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+  "sourceMerged": "22a6955154c56b7308af0f50b9458974e5c23bc4",
+  "builtFromSource": true
+ }
 }

@@ -4,12 +4,14 @@
   /opt/anaconda3/bin/python3 tools/act_review_pack.py analyze <驗收包資料夾>
   tools/.venv/bin/python     tools/act_review_pack.py transcripts <驗收包資料夾>
   /opt/anaconda3/bin/python3 tools/act_review_pack.py index <驗收包資料夾>
+  /opt/anaconda3/bin/python3 tools/act_review_pack.py isolated <驗收包資料夾>   （只重算孤立單格亮度比，舊包補算）
 
 analyze 沿用 tools/g4_review_pack.py 的函式（投影模擬、混音、光敏、字幕時間差），只把 G4 專用的部分換成通用版：
   1. 關鍵影格投影模擬 v2（proj/）
   2. 與 G4 代表鏡頭同尺寸並排的對照格（compare_g4/）
   3. 依 timeline.json 照引擎規則混音：整段、各 cue、各句對白響度、瞬間響度、教師停格配樂（audio/）
   4. 播放錄製（含換景漸暗預捲）30 格／秒光敏分析（flash_playback.json、flash_variants.json）
+     G6 修正：孤立單格全畫面亮度比（isolated_cuts.json；前後格不動、只有一格跳變的比值 > 1.2 判光敏不通過）
   5. 影片 <段>_playback.mp4、字幕與語音時間差（subtitle_sync.json）
   6. 長度對照 時長估算_v03.md 預算（durations.json）、安全量測（safety_data.json）
 transcripts：配音（v04）逐句 faster-whisper 逐字稿與劇本差異（方法同 tools/g4_transcripts.py，用 tools/vo_lib.py）。
@@ -317,6 +319,93 @@ def make_video(out: Path, seq, act: str):
     return {"file": mp4.name, "frames": len(seq), "ffprobe": pr}
 
 
+# ====================================================================== 孤立單格全畫面亮度比（G6 修正第 1 輪）
+# 官方光敏只數「每秒變化次數」，抓不到單次硬切（G6 技術 QA S1：a3_c008 一格亮度跳 1.30 倍）。
+# 規則（主線裁定：全畫面平均亮度相差 > 約 20% 不得一格硬切）：某一格與下一格的全畫面平均線性亮度比 > 1.2，
+# 而且前一格與後一格的變化都 < 這次跳變的 25%（前後格不動、只有一格跳變，不是漸暗漸亮）→ 光敏不通過。
+# 兩格都 ≤ 0.05（接近全黑）不算。方法同 review/G6/qa/tech/indep_cuts.py（ffmpeg 解播放錄製、128×72 area 縮圖、sRGB→線性、Rec.709 係數）。
+ISO_RATIO_LIMIT = 1.2
+ISO_NEIGHBOR_FRAC = 0.25
+ISO_DARK_FLOOR = 0.05
+ISO_REPORT_MIN = 1.06
+ISO_RULE = (f"孤立單格全畫面亮度比：相鄰兩格全畫面平均線性亮度比 > {ISO_RATIO_LIMIT}，且前一格與後一格的變化都 < 該跳變的 {int(ISO_NEIGHBOR_FRAC * 100)}%"
+            f"（前後格不動、只有一格跳變）→ 不通過；兩格都 ≤ {ISO_DARK_FLOOR} 不算")
+ISO_METHOD = "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）"
+
+
+def luma_series_mp4(mp4: Path, w: int = 128, h: int = 72):
+    """播放錄製逐格全畫面平均線性亮度"""
+    import numpy as np
+    p = subprocess.Popen(["ffmpeg", "-v", "error", "-i", str(mp4), "-vf", f"scale={w}:{h}:flags=area", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"], stdout=subprocess.PIPE)
+    n = w * h * 3
+    out = []
+    while True:
+        b = p.stdout.read(n)
+        if len(b) < n:
+            break
+        x = np.frombuffer(b, np.uint8).reshape(h, w, 3).astype(np.float32) / 255
+        x = np.where(x <= 0.04045, x / 12.92, ((x + 0.055) / 1.055) ** 2.4)
+        out.append(float((0.2126 * x[..., 0] + 0.7152 * x[..., 1] + 0.0722 * x[..., 2]).mean()))
+    p.wait()
+    return np.array(out)
+
+
+def _isolated(m):
+    """[(第幾格, 前一格亮度, 這一格亮度, 比值)]：前後格不動（變化都 < 這次跳變的 25%）、兩格不都 ≤ 0.05 的單格跳變"""
+    import numpy as np
+    m = np.asarray(m, dtype=np.float64)
+    d = np.diff(m)
+    out = []
+    for i in range(1, len(d) - 1):
+        a, b = float(m[i]), float(m[i + 1])
+        hi, lo = max(a, b), min(a, b)
+        j = abs(d[i])
+        if hi <= ISO_DARK_FLOOR or j <= 0:
+            continue
+        if abs(d[i - 1]) < ISO_NEIGHBOR_FRAC * j and abs(d[i + 1]) < ISO_NEIGHBOR_FRAC * j:
+            out.append((i, a, b, hi / max(lo, 1e-3), float(d[i - 1]), float(d[i + 1])))
+    return out
+
+
+def isolated_cuts(m, where=None):
+    """m：逐格全畫面平均線性亮度；where(k)：第 k 格（0 起）在哪個 cue 的第幾秒。回傳比值 ≥ ISO_REPORT_MIN 的孤立單格跳變"""
+    cuts = []
+    for i, a, b, ratio, dp, dn in _isolated(m):
+        if ratio < ISO_REPORT_MIN:
+            continue
+        rec = {"frame": i + 1, "t": round((i + 1) / FPS, 3), "before": round(a, 4), "after": round(b, 4), "ratio": round(ratio, 3),
+               "direction": "變亮" if b > a else "變暗", "prev_delta": round(dp, 4), "next_delta": round(dn, 4)}
+        if where:
+            rec.update(where(i + 1) or {})
+        cuts.append(rec)
+    return cuts
+
+
+def isolated_report(mp4: Path, where=None):
+    m = luma_series_mp4(mp4)
+    allc = _isolated(m)
+    cuts = isolated_cuts(m, where)
+    over = [c for c in cuts if c["ratio"] > ISO_RATIO_LIMIT]
+    top = max(cuts, key=lambda c: c["ratio"]) if cuts else None
+    mx = max((c[3] for c in allc), default=1.0)
+    return {"rule": ISO_RULE, "method": ISO_METHOD, "limit_ratio": ISO_RATIO_LIMIT, "file": mp4.name, "frames": int(len(m)),
+            "max_ratio": round(mx, 3), "max_at": top, "over_limit": over, "over_limit_count": len(over),
+            "isolated_ge_%.2f" % ISO_REPORT_MIN: cuts, "pass": len(over) == 0 and len(m) > 0}
+
+
+def schedule_where(tl: dict):
+    """用 timeline.json 的播放排程把播放錄製的第 k 格對到 cue 與 cue 內秒數（給沒有逐格清單時用）"""
+    rows = [(s["start"] - s.get("preroll", 0), s["start"] + s["duration"] + s["hold"], s) for s in tl.get("schedule", [])]
+
+    def where(k):
+        t = k / FPS
+        for a, b, s in rows:
+            if a - 1e-6 <= t < b - 1e-6:
+                return {"cue": s["id"], "cue_t": round(min(t - s["start"], s["duration"]), 3)}
+        return {}
+    return where
+
+
 # ====================================================================== 長度對照預算
 def durations(out: Path, tl: dict):
     text = (ROOT / "script/時長估算_v03.md").read_text(encoding="utf-8")
@@ -531,6 +620,10 @@ def analyze(out: Path):
     res["subtitle_sync"] = {k: v for k, v in subtitle_sync_g5(out, tl).items() if k != "rows"}
     print("[actpack.py] 影片")
     res["video"] = make_video(out, seq, act)
+    print("[actpack.py] 孤立單格全畫面亮度比（播放錄製）")
+    iso = isolated_report(out / f"{act}_playback.mp4", lambda k: {"cue": seq[k][2], "cue_t": seq[k][3]} if k < len(seq) else {})
+    (out / "isolated_cuts.json").write_text(json.dumps(iso, ensure_ascii=False, indent=1), encoding="utf-8")
+    res["isolated_cuts"] = {k: iso[k] for k in ("frames", "max_ratio", "over_limit_count", "pass")}
     res["durations"] = durations(out, tl)
     res["safety"] = {k: v for k, v in safety_data(out, tl).items() if k not in ("subtitles",)}
     meta = load(out, "_work/frames_meta.json") or {}
@@ -606,10 +699,19 @@ def index(out: Path):
     cap = load(out, "capture/capture.json") or {}
     cflash = load(out, "capture/flash_report.json") or {}
     pr = load(out, "capture/probe_report.json")
+    iso = load(out, "isolated_cuts.json")
+    sh = load(out, "segment_hash.json")
     act = tl.get("act", "?")
     L = [f"# {act} 驗收包（{tl.get('title', '')}）", "",
          f"- 產生：tools/act_review_pack.mjs（{datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ')}）；段落檔 `{tl.get('segmentFile')}`；本檔只列數字與檔案。",
-         "- 聽感、實際投影、學校硬體：未驗證。", ""]
+         "- 聽感、實際投影、學校硬體：未驗證。"]
+    if sh:
+        L.append(f"- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `{sh.get('source')}`；app/dist 合併後這一段 `{sh.get('built')}`；"
+                 f"建置用的是目前段落檔：{'是' if sh.get('builtFromSource') else '否（app/dist 比段落檔舊或新，本包量的是 app/dist 那一版）'}"
+                 + ("；**產生期間 app/dist 被重建過，這個包可能混到兩版，要重產**" if sh.get("distChangedDuringRun") else "") + "。")
+    else:
+        L.append("- 段落指紋：— （舊版工具產生，沒有記錄）")
+    L.append("")
     L += ["## 檔案", "",
           "| 項目 | 檔案 |", "|---|---|",
           "| 關鍵影格（每個 cue 前／中／後，1920×1080） | capture/keyframes/、capture/contact_keyframes.png |",
@@ -618,12 +720,13 @@ def index(out: Path):
           f"| 與 G4 同尺寸並排 | {'、'.join((a.get('compare_g4') or {}).get('sheets', [])) or '—'} |",
           f"| 播放錄製（30 格／秒＋混音） | {act}_playback.mp4 |",
           f"| 混音與響度 | audio/{act}_mix.wav、audio/loudness.json、audio/{act}_mix_plot.png |",
-          "| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |",
+          "| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |",
           "| 字幕與語音時間差 | subtitle_sync.json |",
           "| 逐字稿 | transcripts.md、transcripts.json |",
           "| 長度對照預算 | durations.json |",
           "| 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |",
-          "| 時間軸與排程 | timeline.json |", ""]
+          "| 時間軸與排程 | timeline.json |",
+          "| 段落指紋 | segment_hash.json |", ""]
     L += ["## 長度", "",
           f"- 本段 cue 總長 {fmt(du.get('act_total_sec'))} 秒＋換景漸暗預捲 {fmt(du.get('act_preroll_total_sec'))} 秒；時長估算_v03.md 預錄合計 {fmt(du.get('act_budget_recorded_sec'))} 秒；差 {fmt(du.get('diff_vs_budget_sec'))} 秒；逐 cue 估計合計 {fmt(du.get('estimate_sum_sec'))} 秒。",
           f"- 播放錄製（含教師按鍵間隔假設）{fmt(tl.get('totalPlaybackSec'))} 秒。", "",
@@ -641,9 +744,20 @@ def index(out: Path):
     fine = (fv.get("variants") or {}).get("fine_32x18") or {}
     pfine = _pass(fine.get("max_changes_per_sec"))
     word = lambda b: "—" if b is None else ("通過" if b else "不通過")
-    L.append(f"- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 {word(p169)}；fine_32x18 {word(pfine)}"
+    piso = None if not iso else bool(iso.get("pass"))
+    if iso:
+        top = iso.get("max_at") or {}
+        L.append(f"- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> {iso.get('limit_ratio', 1.2)} 判不通過；isolated_cuts.json）：最大 {fmt(iso.get('max_ratio'), 3)}"
+                 + (f"（{top.get('cue')} {top.get('cue_t')} 秒，播放錄製第 {top.get('t')} 秒，{top.get('before')}→{top.get('after')}）" if top else "")
+                 + f"；> {iso.get('limit_ratio', 1.2)} 共 {iso.get('over_limit_count', 0)} 處"
+                 + ("：" + "、".join(f"{c.get('cue')} {c.get('cue_t')} 秒 ×{c['ratio']}" for c in iso.get("over_limit", [])[:8]) if iso.get("over_limit") else "") + "。")
+    else:
+        L.append("- 孤立單格全畫面亮度比：未產生（舊版工具）。")
+    L.append(f"- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 {word(p169)}；fine_32x18 {word(pfine)}"
              + (f"（明暗 {fine['max_changes_per_sec']['luma']}、紅色 {fine['max_changes_per_sec']['red']}；超標格 {len(fine.get('flagged', []))}"
-                + (f"，最早 {fine['flagged'][0].get('cue')} {fine['flagged'][0].get('cue_t')} 秒" if fine.get('flagged') else "") + "）" if fine else "") + "；整段 " + word(None if p169 is None or pfine is None else (p169 and pfine)) + "。")
+                + (f"，最早 {fine['flagged'][0].get('cue')} {fine['flagged'][0].get('cue_t')} 秒" if fine.get('flagged') else "") + "）" if fine else "")
+             + f"；孤立單格亮度比 {word(piso)}"
+             + "；整段 " + word(None if p169 is None or pfine is None or piso is None else (p169 and pfine and piso)) + "。")
     L.append(f"- capture.mjs 逐 cue（{cap.get('analysisFps', '—')} 格／秒）：{json.dumps({k: cflash.get(k) for k in ('ok', 'max_changes_per_sec')}, ensure_ascii=False) if cflash else '—'}")
     seams = fl.get("cue_seams", [])
     if seams:
@@ -702,6 +816,14 @@ def index(out: Path):
     print(f"[actpack.py] → {out / 'INDEX.md'}")
 
 
+def isolated(out: Path):
+    """只重算孤立單格亮度比（沿用包裡的播放錄製與 timeline.json 排程；舊包補算用），寫 isolated_cuts.json"""
+    tl = json.loads((out / "timeline.json").read_text(encoding="utf-8"))
+    iso = isolated_report(out / f"{tl['act']}_playback.mp4", schedule_where(tl))
+    (out / "isolated_cuts.json").write_text(json.dumps(iso, ensure_ascii=False, indent=1), encoding="utf-8")
+    print(f"[actpack.py] 孤立單格亮度比：最大 {iso['max_ratio']}、> {ISO_RATIO_LIMIT} {iso['over_limit_count']} 處 → {out / 'isolated_cuts.json'}")
+
+
 if __name__ == "__main__":
     cmd, out = sys.argv[1], Path(sys.argv[2]).resolve()
-    {"analyze": analyze, "transcripts": transcripts, "index": index}[cmd](out)
+    {"analyze": analyze, "transcripts": transcripts, "index": index, "isolated": isolated}[cmd](out)

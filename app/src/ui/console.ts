@@ -22,6 +22,7 @@ const EFFECT_TEXT: Record<string, string> = {
   advanced: '已推進', back: '已回到上一個穩定節點', replayed: '重播目前段落', paused: '已暫停', resumed: '已繼續',
   ignored: '播放中或剛停住，這一下已忽略（不會跳段）', none: '沒有變化', starting: '準備播放中（啟用聲音）',
   'need-gesture': '瀏覽器規定：請在投影畫面上按「準備播放」', 'not-ready': '舞台還在載入', 'not-preparing': '已經準備好了',
+  'confirm-vo': '缺配音檔（舞台畫面列出缺幾句）：確定仍要開演，請再按一次「準備播放」',
   jumped: '已跳到該段之前的停住畫面', 'goto-failed': '無法跳到這一段', recovering: '重新建立畫面中', unknown: '無法執行',
 };
 

@@ -864,7 +864,7 @@
    "title": "線落下來（代表鏡頭）",
    "duration": 25.18,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8,
    "preroll": 0.6,
    "quiz": null,
@@ -899,9 +899,9 @@
    "title": "那個小盒子",
    "duration": 15.3,
    "autoAdvance": false,
-   "set": "a2_memory",
-   "enterFade": 0.8,
-   "preroll": 0.6,
+   "set": "a2_shop",
+   "enterFade": 0,
+   "preroll": 0,
    "quiz": null,
    "lamp": null,
    "lines": [
@@ -931,8 +931,8 @@
    "duration": 21.91,
    "autoAdvance": false,
    "set": "a2_shop",
-   "enterFade": 0.8,
-   "preroll": 0.6,
+   "enterFade": 0,
+   "preroll": 0,
    "quiz": null,
    "lamp": null,
    "lines": [
@@ -1817,7 +1817,7 @@
    "segment": "a4",
    "kind": "scene",
    "title": "不對勁",
-   "duration": 18.86,
+   "duration": 18.81,
    "autoAdvance": false,
    "set": "gate",
    "enterFade": 0.6,
@@ -2549,7 +2549,7 @@
    "segment": "a5",
    "kind": "scene",
    "title": "分頭求助",
-   "duration": 21.25,
+   "duration": 17.8,
    "autoAdvance": false,
    "set": "a5_gate",
    "enterFade": 0,
@@ -2564,8 +2564,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 4.05,
-     "end": 5.41
+     "start": 0.85,
+     "end": 2.21
     },
     {
      "id": "a5_c005_02",
@@ -2574,8 +2574,8 @@
      "actorIds": [
       "xiaoqing"
      ],
-     "start": 6.71,
-     "end": 12.31
+     "start": 3.26,
+     "end": 8.86
     },
     {
      "id": "a5_c005_03",
@@ -2584,8 +2584,8 @@
      "actorIds": [
       "xiaoyu"
      ],
-     "start": 14.96,
-     "end": 20.25
+     "start": 11.51,
+     "end": 16.8
     }
    ]
   },

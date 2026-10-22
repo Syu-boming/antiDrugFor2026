@@ -146,7 +146,7 @@
     "luma": 3,
     "red": 0
    },
-   "near_limit_3_total": 29
+   "near_limit_3_total": 28
   }
  },
  "subtitle_sync": {
@@ -191,9 +191,15 @@
    ],
    "format": {
     "duration": "174.720000",
-    "size": "56852799"
+    "size": "57183397"
    }
   }
+ },
+ "isolated_cuts": {
+  "frames": 5241,
+  "max_ratio": 1.142,
+  "over_limit_count": 0,
+  "pass": true
  },
  "durations": {
   "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
@@ -375,7 +381,7 @@
    "a3_c007": 5.88,
    "a3_c008": 36.69,
    "a4_c001": 23.92,
-   "a4_c002": 18.86,
+   "a4_c002": 18.81,
    "a4_c003": 15.52,
    "a4_c004": 15.3,
    "a4_c005": 19.57,
@@ -391,7 +397,7 @@
    "a5_c002": 23.62,
    "a5_c003": 7.02,
    "a5_c004": 6.2,
-   "a5_c005": 21.25,
+   "a5_c005": 17.8,
    "a5_c006": 31.18,
    "a5_c007": 24.08,
    "a5_c008": 27.41,
@@ -414,10 +420,19 @@
   "errors": [],
   "sets": {
    "active": "a3_classroom",
-   "built": 6,
-   "disposed": 5,
-   "lastBuildMs": 28,
-   "liveSetGroups": 1
+   "built": 8,
+   "disposed": 6,
+   "lastBuildMs": 74,
+   "liveSetGroups": 1,
+   "lastSwapMs": 0.7,
+   "preparedHits": 4,
+   "prepared": [
+    {
+     "name": "gate",
+     "pending": 0,
+     "compiled": true
+    }
+   ]
   }
  }
 }

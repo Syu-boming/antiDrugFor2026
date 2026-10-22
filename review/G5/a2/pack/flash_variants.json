@@ -44,6 +44,20 @@
     },
     {
      "type": "luma",
+     "region": "x23_y5",
+     "px": [
+      1380,
+      300,
+      1440,
+      360
+     ],
+     "count_per_sec": 3,
+     "window_start": 286.0,
+     "cue": "a2_c013",
+     "cue_t": 20.7667
+    },
+    {
+     "type": "luma",
      "region": "x24_y5",
      "px": [
       1440,
@@ -86,6 +100,20 @@
     },
     {
      "type": "luma",
+     "region": "x23_y6",
+     "px": [
+      1380,
+      360,
+      1440,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 286.0,
+     "cue": "a2_c013",
+     "cue_t": 20.7667
+    },
+    {
+     "type": "luma",
      "region": "x19_y7",
      "px": [
       1140,
@@ -94,7 +122,7 @@
       480
      ],
      "count_per_sec": 3,
-     "window_start": 161.6,
+     "window_start": 160.4,
      "cue": "a2_c008",
      "cue_t": 16.8667
     },
@@ -108,7 +136,7 @@
       480
      ],
      "count_per_sec": 3,
-     "window_start": 244.4667,
+     "window_start": 243.2667,
      "cue": "a2_c012",
      "cue_t": 14.4667
     },
@@ -122,9 +150,23 @@
       540
      ],
      "count_per_sec": 3,
-     "window_start": 60.6667,
+     "window_start": 60.0667,
      "cue": "a2_c003",
      "cue_t": 8.9333
+    },
+    {
+     "type": "luma",
+     "region": "x24_y8",
+     "px": [
+      1440,
+      480,
+      1500,
+      540
+     ],
+     "count_per_sec": 3,
+     "window_start": 285.8,
+     "cue": "a2_c013",
+     "cue_t": 20.5667
     },
     {
      "type": "luma",
@@ -136,7 +178,7 @@
       600
      ],
      "count_per_sec": 3,
-     "window_start": 53.3333,
+     "window_start": 52.7333,
      "cue": "a2_c003",
      "cue_t": 1.6
     },
@@ -150,7 +192,7 @@
       600
      ],
      "count_per_sec": 3,
-     "window_start": 141.1,
+     "window_start": 139.9,
      "cue": "a2_c007",
      "cue_t": 8.0333
     },
@@ -164,7 +206,7 @@
       600
      ],
      "count_per_sec": 3,
-     "window_start": 161.6,
+     "window_start": 160.4,
      "cue": "a2_c008",
      "cue_t": 16.8667
     },
@@ -178,7 +220,7 @@
       600
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -192,7 +234,7 @@
       660
      ],
      "count_per_sec": 3,
-     "window_start": 53.2667,
+     "window_start": 52.6667,
      "cue": "a2_c003",
      "cue_t": 1.5333
     },
@@ -206,7 +248,7 @@
       660
      ],
      "count_per_sec": 3,
-     "window_start": 161.6,
+     "window_start": 160.4,
      "cue": "a2_c008",
      "cue_t": 16.8667
     },
@@ -220,7 +262,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 53.2667,
+     "window_start": 52.6667,
      "cue": "a2_c003",
      "cue_t": 1.5333
     },
@@ -234,7 +276,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -248,7 +290,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -262,7 +304,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -276,7 +318,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -290,7 +332,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -304,7 +346,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 161.6,
+     "window_start": 160.4,
      "cue": "a2_c008",
      "cue_t": 16.8667
     },
@@ -318,7 +360,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -332,7 +374,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -346,7 +388,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -360,7 +402,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -374,23 +416,9 @@
       780
      ],
      "count_per_sec": 3,
-     "window_start": 53.2333,
+     "window_start": 52.6333,
      "cue": "a2_c003",
      "cue_t": 1.5
-    },
-    {
-     "type": "luma",
-     "region": "x15_y12",
-     "px": [
-      900,
-      720,
-      960,
-      780
-     ],
-     "count_per_sec": 3,
-     "window_start": 149.0667,
-     "cue": "a2_c008",
-     "cue_t": 4.3333
     },
     {
      "type": "red",
@@ -402,27 +430,13 @@
       780
      ],
      "count_per_sec": 3,
-     "window_start": 161.6,
+     "window_start": 160.4,
      "cue": "a2_c008",
      "cue_t": 16.8667
-    },
-    {
-     "type": "luma",
-     "region": "x15_y14",
-     "px": [
-      900,
-      840,
-      960,
-      900
-     ],
-     "count_per_sec": 3,
-     "window_start": 149.0667,
-     "cue": "a2_c008",
-     "cue_t": 4.3333
     }
    ],
-   "near_limit_total": 605,
-   "near_limit_3_total": 29
+   "near_limit_total": 603,
+   "near_limit_3_total": 30
   },
   "proj_16x9": {
    "grid": [
@@ -431,29 +445,14 @@
    ],
    "projector_v2": true,
    "max_changes_per_sec": {
-    "luma": 3,
+    "luma": 2,
     "red": 0
    },
    "full_frame_luma_max_per_sec": 2,
    "flagged": [],
-   "near_limit_3": [
-    {
-     "type": "luma",
-     "region": "x11_y7",
-     "px": [
-      1320,
-      840,
-      1440,
-      960
-     ],
-     "count_per_sec": 3,
-     "window_start": 71.0667,
-     "cue": "a2_c004",
-     "cue_t": -0.0667
-    }
-   ],
-   "near_limit_total": 144,
-   "near_limit_3_total": 1
+   "near_limit_3": [],
+   "near_limit_total": 143,
+   "near_limit_3_total": 0
   },
   "proj_32x18": {
    "grid": [
@@ -498,6 +497,20 @@
     },
     {
      "type": "luma",
+     "region": "x16_y6",
+     "px": [
+      960,
+      360,
+      1020,
+      420
+     ],
+     "count_per_sec": 3,
+     "window_start": 95.3333,
+     "cue": "a2_c005",
+     "cue_t": 0.0
+    },
+    {
+     "type": "luma",
      "region": "x24_y6",
      "px": [
       1440,
@@ -520,7 +533,7 @@
       540
      ],
      "count_per_sec": 3,
-     "window_start": 231.0333,
+     "window_start": 229.8333,
      "cue": "a2_c012",
      "cue_t": 1.0333
     },
@@ -534,7 +547,7 @@
       600
      ],
      "count_per_sec": 3,
-     "window_start": 141.1,
+     "window_start": 139.9,
      "cue": "a2_c007",
      "cue_t": 8.0333
     },
@@ -576,7 +589,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -590,7 +603,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -604,7 +617,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     },
@@ -618,7 +631,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -632,7 +645,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -646,7 +659,7 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0667,
+     "window_start": 139.8667,
      "cue": "a2_c007",
      "cue_t": 8.0
     },
@@ -660,13 +673,13 @@
       720
      ],
      "count_per_sec": 3,
-     "window_start": 141.0333,
+     "window_start": 139.8333,
      "cue": "a2_c007",
      "cue_t": 7.9667
     }
    ],
-   "near_limit_total": 576,
-   "near_limit_3_total": 14
+   "near_limit_total": 575,
+   "near_limit_3_total": 15
   }
  }
 }

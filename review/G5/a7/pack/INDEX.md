@@ -1,7 +1,8 @@
 # a7 驗收包（複習與收束）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T08:05Z）；段落檔 `app/cues/show/a7.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T11:01Z）；段落檔 `app/cues/show/a7.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `2b96d32c4ce752a26629bb5197d6b3996e16be2f`；app/dist 合併後這一段 `d58767e3faced5c27da3728b178fccc232f1379d`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,12 +14,13 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png |
 | 播放錄製（30 格／秒＋混音） | a7_playback.mp4 |
 | 混音與響度 | audio/a7_mix.wav、audio/loudness.json、audio/a7_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
@@ -37,7 +39,8 @@
 - fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 43。
 - proj_16x9：每秒最多 明暗 3、紅色 0；超標 0；3 次 4。
 - proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 39。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.141（a7_c001 11.4667 秒，播放錄製第 12.067 秒，0.3874→0.3396）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 2}}
 - cue 接縫全畫面亮度差最大 0.000；區域亮度差最大 0.017。
 
@@ -82,5 +85,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a7_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 2, "disposed": 1, "lastBuildMs": 8, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a7_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 3, "disposed": 2, "lastBuildMs": 9, "liveSetGroups": 1, "lastSwapMs": 9, "preparedHits": 0, "prepared": []}。
 - 逐格擷取時的頁面錯誤 0 則。

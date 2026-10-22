@@ -446,20 +446,20 @@
    },
    "animation": [
     {
+     "name": "camera.cut",
+     "start": "a4_c002_02.start-0.25",
+     "duration": 0,
+     "params": {
+      "to": "a4_kids_z2"
+     }
+    },
+    {
      "name": "puppet.tilt",
      "start": "a4_c002_01.start+0.2",
      "duration": 0.6,
      "target": "xiaoyu",
      "params": {
       "to": 0.03
-     }
-    },
-    {
-     "name": "camera.cut",
-     "start": "a4_c002_02.start-0.25",
-     "duration": 0,
-     "params": {
-      "to": "a4_kids_z2"
      }
     },
     {
@@ -501,35 +501,9 @@
      }
     },
     {
-     "name": "fade.out",
-     "start": "a4_c002_03.end+0.1",
-     "duration": 0.6
-    },
-    {
-     "name": "camera.cut",
-     "start": "a4_c002_03.end+0.72",
-     "duration": 0,
-     "params": {
-      "to": "a4_up"
-     }
-    },
-    {
-     "name": "light.dim",
-     "start": "a4_c002_03.end+0.72",
-     "duration": 0,
-     "params": {
-      "to": 0.55
-     }
-    },
-    {
-     "name": "fade.in",
-     "start": "a4_c002_03.end+0.75",
-     "duration": 0.6
-    },
-    {
      "name": "zhezhe.flyTo",
      "start": "a4_c002_03.end+1.0",
-     "duration": 2.0,
+     "duration": 1.6,
      "target": "zhezhe",
      "params": {
       "pos": [
@@ -542,12 +516,13 @@
     },
     {
      "name": "fade.out",
-     "start": "a4_c002_03.end+2.45",
-     "duration": 0.6
+     "start": "a4_c002_03.end+1.8",
+     "duration": 0.6,
+     "_note": "G6 修正第 1 輪：拿掉 a4_up 天空鏡頭（原本兩次全黑），紙飛機飛出孩子鏡頭後只漸暗一次；全暗時換成摺平的地圖，在 a4_map_top 漸亮、看著小屋與樹從地圖上立起來，再慢慢推到 a4_map（a4_c003 起點）"
     },
     {
      "name": "set.swap",
-     "start": "a4_c002_03.end+3.07",
+     "start": "a4_c002_03.end+2.42",
      "duration": 0,
      "params": {
       "set": "a4_roadmap"
@@ -555,31 +530,34 @@
     },
     {
      "name": "set.fold",
-     "start": "a4_c002_03.end+3.07",
+     "start": "a4_c002_03.end+2.42",
      "duration": 0
     },
     {
      "name": "camera.cut",
-     "start": "a4_c002_03.end+3.07",
+     "start": "a4_c002_03.end+2.42",
      "duration": 0,
      "params": {
-      "to": "a4_map"
+      "to": "a4_map_top"
      }
     },
     {
-     "name": "light.restore",
-     "start": "a4_c002_03.end+3.07",
-     "duration": 0
-    },
-    {
      "name": "fade.in",
-     "start": "a4_c002_03.end+3.1",
+     "start": "a4_c002_03.end+2.45",
      "duration": 0.6
     },
     {
      "name": "set.popup",
-     "start": "a4_c002_03.end+3.95",
-     "duration": 2.0
+     "start": "a4_c002_03.end+2.7",
+     "duration": 2.4
+    },
+    {
+     "name": "camera.move",
+     "start": "a4_c002_03.end+3.9",
+     "duration": 2.0,
+     "params": {
+      "to": "a4_map"
+     }
     }
    ],
    "audioId": null,
@@ -644,17 +622,17 @@
     },
     {
      "id": "sfx_plane_whoosh",
-     "at": "a4_c002_03.end+1.3",
+     "at": "a4_c002_03.end+1.1",
      "gain": 0.8
     },
     {
      "id": "sfx_paper_rustle",
-     "at": "a4_c002_03.end+3.15",
+     "at": "a4_c002_03.end+2.55",
      "gain": 0.7
     },
     {
      "id": "sfx_paper_rustle",
-     "at": "a4_c002_03.end+4.0",
+     "at": "a4_c002_03.end+3.3",
      "gain": 0.8
     }
    ],
@@ -2533,7 +2511,7 @@
    "teacherNote": "燈亮後做安靜手勢，等全場安靜再按下一步。",
    "checkpoint": {
     "label": "Q6 點燈收聲後",
-    "atMinute": 23.82,
+    "atMinute": 23.8,
     "escalate": {
      "behindSec": 120,
      "level": 1

@@ -1,0 +1,121 @@
+{
+ "rule": "孤立單格全畫面亮度比：相鄰兩格全畫面平均線性亮度比 > 1.2，且前一格與後一格的變化都 < 該跳變的 25%（前後格不動、只有一格跳變）→ 不通過；兩格都 ≤ 0.05 不算",
+ "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
+ "limit_ratio": 1.2,
+ "file": "a0_playback.mp4",
+ "frames": 3874,
+ "max_ratio": 1.136,
+ "max_at": {
+  "frame": 3268,
+  "t": 108.933,
+  "before": 0.3757,
+  "after": 0.3307,
+  "ratio": 1.136,
+  "direction": "變暗",
+  "prev_delta": -0.0,
+  "next_delta": -0.0,
+  "cue": "a0_c005",
+  "cue_t": 5.3333
+ },
+ "over_limit": [],
+ "over_limit_count": 0,
+ "isolated_ge_1.06": [
+  {
+   "frame": 443,
+   "t": 14.767,
+   "before": 0.5353,
+   "after": 0.568,
+   "ratio": 1.061,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": -0.0,
+   "cue": "a0_c001",
+   "cue_t": 12.7667
+  },
+  {
+   "frame": 530,
+   "t": 17.667,
+   "before": 0.5679,
+   "after": 0.6106,
+   "ratio": 1.075,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": 0.0,
+   "cue": "a0_c002",
+   "cue_t": 0.0
+  },
+  {
+   "frame": 971,
+   "t": 32.367,
+   "before": 0.562,
+   "after": 0.5961,
+   "ratio": 1.061,
+   "direction": "變亮",
+   "prev_delta": -0.0021,
+   "next_delta": -0.0017,
+   "cue": "a0_c002",
+   "cue_t": 14.7
+  },
+  {
+   "frame": 1357,
+   "t": 45.233,
+   "before": 0.6354,
+   "after": 0.5915,
+   "ratio": 1.074,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": -0.0,
+   "cue": "a0_c003",
+   "cue_t": 1.1667
+  },
+  {
+   "frame": 1697,
+   "t": 56.567,
+   "before": 0.5636,
+   "after": 0.6128,
+   "ratio": 1.087,
+   "direction": "變亮",
+   "prev_delta": -0.0057,
+   "next_delta": -0.0003,
+   "cue": "a0_c003",
+   "cue_t": 12.5
+  },
+  {
+   "frame": 2301,
+   "t": 76.7,
+   "before": 0.5831,
+   "after": 0.5364,
+   "ratio": 1.087,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": 0.0001,
+   "cue": "a0_c004",
+   "cue_t": 5.2
+  },
+  {
+   "frame": 3268,
+   "t": 108.933,
+   "before": 0.3757,
+   "after": 0.3307,
+   "ratio": 1.136,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": -0.0,
+   "cue": "a0_c005",
+   "cue_t": 5.3333
+  },
+  {
+   "frame": 3713,
+   "t": 123.767,
+   "before": 0.3545,
+   "after": 0.376,
+   "ratio": 1.061,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": 0.0,
+   "cue": "a0_c005",
+   "cue_t": 20.1667
+  }
+ ],
+ "pass": true
+}

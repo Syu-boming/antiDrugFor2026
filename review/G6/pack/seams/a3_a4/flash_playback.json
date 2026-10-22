@@ -26,12 +26,12 @@
   },
   {
    "type": "luma",
-   "region": "x13_y5",
+   "region": "x12_y4",
    "px": [
+    1440,
+    480,
     1560,
-    600,
-    1680,
-    720
+    600
    ],
    "count_per_sec": 2,
    "window_start": 2.067,
@@ -586,12 +586,12 @@
   },
   {
    "type": "luma",
-   "region": "x0_y6",
+   "region": "x13_y5",
    "px": [
-    0,
-    720,
-    120,
-    840
+    1560,
+    600,
+    1680,
+    720
    ],
    "count_per_sec": 2,
    "window_start": 2.1,
@@ -600,11 +600,11 @@
   },
   {
    "type": "luma",
-   "region": "x14_y6",
+   "region": "x0_y6",
    "px": [
-    1680,
+    0,
     720,
-    1800,
+    120,
     840
    ],
    "count_per_sec": 2,
@@ -1398,6 +1398,20 @@
   },
   {
    "type": "luma",
+   "region": "x14_y6",
+   "px": [
+    1680,
+    720,
+    1800,
+    840
+   ],
+   "count_per_sec": 2,
+   "window_start": 2.133,
+   "cue": "a4_c001",
+   "cue_t": -0.467
+  },
+  {
+   "type": "luma",
    "region": "x0_y7",
    "px": [
     0,
@@ -1630,9 +1644,9 @@
     960
    ],
    "count_per_sec": 2,
-   "window_start": 2.3,
+   "window_start": 2.333,
    "cue": "a4_c001",
-   "cue_t": -0.3
+   "cue_t": -0.267
   },
   {
    "type": "luma",
@@ -1719,7 +1733,7 @@
    "cue_t": 0.467
   }
  ],
- "near_limit_total": 122,
+ "near_limit_total": 123,
  "cue_seams": [
   {
    "from": "a3_c008",
@@ -1732,7 +1746,7 @@
  ],
  "mean_luma_range": [
   0.0026,
-  0.5523
+  0.544
  ],
  "max_sat_red_ratio": 0.01684
 }

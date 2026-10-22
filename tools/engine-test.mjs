@@ -2,7 +2,7 @@
 // 驗證 v1.2 第 19.1 節的規則（連按、長按、上一步、暫停、重播、題目恢復未揭答、播放中不跳段），
 // 以及 F5／Esc 攔截、頁面隱藏才暫停、GPU 中斷重建，與「有正式音檔」時的音訊排程與切換停止。
 // 三、G4 代表鏡頭 cue 集（g4）的流程、WAIT_GUARD；四、虛擬時鐘下的確定性（重播一致）、布幕與署名卡時間、
-// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出；六、字幕斷行與對白避讓的純函式測試；
+// 開幕後角色不瞬間出現、操偶線落下與線寬、眨眼與嘴型；五、缺檔照常演出（全劇缺配音要按第二次確認）；六、字幕斷行與對白避讓的純函式測試；
 // 七、G4 正式配音的操作測試（必要旁白播放中按上一步、R、暫停後繼續、系統停掉 AudioContext 後恢復、開頭靜音）：
 // 對白聲音 ≤ 1、字幕與語音時間差 ≤ 50 ms（G4 修正第 29 項）。
 // 八、G5 全劇（?cues=show，app/cues/show/）：201 句配音都在且都是 v04、八題順序與答案、題目→揭答→等待→續演、八盞燈、
@@ -13,7 +13,7 @@
 //
 // 用法：node tools/engine-test.mjs [--headed]
 import { createRequire } from 'node:module';
-import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -518,6 +518,51 @@ console.log('\n五、配樂與音效缺檔時照常演出（暫存資料夾）')
     await waitFor(() => window.__engine.getState().cueTime > 3.0, null, 10000);
     s = await st();
     check('缺檔下開幕照常播放（不當機）', s.cueId === 'a0_c001' && s.phase === 'playing' && errors.length === 0, errors.slice(0, 2).join(' | '));
+    await page.close();
+  } finally {
+    rmSync(tmp, { recursive: true, force: true });
+  }
+}
+// G6 修正：全劇模式缺配音 → 「準備播放」要按第二次確認（顯示「缺 N 句配音」）。
+// 暫存資料夾：app/dist/data 每個檔用符號連結（不複製 400 MB），只有 manifest.js 改寫成少一個配音檔（等於重新打包時 audio/vo 少了那一檔）
+{
+  const tmp = mkdtempSync(join(tmpdir(), 'antidrug-engine-missingvo-'));
+  try {
+    copyFileSync(join(DIST, 'index.html'), join(tmp, 'index.html'));
+    copyFileSync(join(DIST, 'app.js'), join(tmp, 'app.js'));
+    mkdirSync(join(tmp, 'data'));
+    const src = readFileSync(join(DIST, 'data', 'manifest.js'), 'utf8');
+    const m = /window\.__pack\("manifest",([\s\S]*)\);\s*$/.exec(src);
+    const man = JSON.parse(m[1]);
+    const dropped = Object.keys(man.audio).find((id) => id.startsWith('vo_a1_'));
+    const voPack = man.audio[dropped].file;
+    delete man.audio[dropped];
+    for (const f of readdirSync(join(DIST, 'data'))) if (f !== 'manifest.js' && f !== voPack) symlinkSync(join(DIST, 'data', f), join(tmp, 'data', f));
+    writeFileSync(join(tmp, 'data', 'manifest.js'), `window.__pack("manifest",${JSON.stringify(man)});\n`);
+    // 同一個 cue 的其他句子還在：那個資料包只拿掉這一句
+    writeFileSync(join(tmp, 'data', voPack), readFileSync(join(DIST, 'data', voPack), 'utf8').split('\n').filter((l) => !l.startsWith(`window.__pack(${JSON.stringify(`audio:${dropped}`)},`)).join('\n'));
+    const lineId = dropped.slice(3);
+    const { page, st, waitPhase, errors } = await open(join(tmp, 'index.html'), 'nofs=1&cues=show');
+    await page.waitForFunction(() => window.__engine.getState().mode === 'preparing' && !document.querySelector('.ready-btn').disabled, null, { timeout: 120000 });
+    let s = await st();
+    const listText = await page.textContent('.ready-list');
+    check(`全劇缺 1 個配音檔（${dropped}）：準備畫面列出「缺 1 句配音」`, s.missingVo.length === 1 && s.missingVo[0] === lineId && listText.includes('缺 1 句配音') && s.missingAudio.length === 0,
+      `missingVo ${JSON.stringify(s.missingVo)}；缺配樂音效 ${s.missingAudio.length}`);
+    await page.click('.ready-btn');
+    await sleep(250);
+    s = await st();
+    const btn1 = await page.textContent('.ready-btn');
+    const msg1 = await page.textContent('.ready-msg');
+    check('第一次按「準備播放」：不開演，按鈕與說明改成「缺 1 句配音」、要再按一次確認', s.mode === 'preparing' && s.voConfirmPending && btn1.includes('缺 1 句配音') && msg1.includes('再按一次'), `${s.mode}；按鈕「${btn1}」`);
+    await page.click('.ready-btn');
+    await sleep(150);
+    s = await st();
+    check('確認前 0.8 秒內連按：視為誤觸、仍停在準備畫面', s.mode === 'preparing' && s.voConfirmPending, s.mode);
+    await sleep(800);
+    await page.keyboard.press('PageDown');
+    await waitPhase('title_idle', 60000);
+    s = await st();
+    check('再按一次（簡報筆「下一步」）：確認後開演，停在片頭署名卡', s.phase === 'title_idle' && s.cueId === 'a0_c000' && !(await page.isHidden('#title-card')) && errors.length === 0, errors.slice(0, 2).join(' | '));
     await page.close();
   } finally {
     rmSync(tmp, { recursive: true, force: true });

@@ -2,8 +2,8 @@
  "ok": true,
  "rule": "任一區域明暗或飽和紅色每秒變化 ≤ 3 次（不採面積豁免）",
  "method": "播放錄製的連續逐格（30 格／秒，含 cue 之間的接縫與停住格）；16×9 區域＋全畫面；亮度門檻 0.1（較暗端 < 0.8）；紅色門檻 20.0（R/(R+G+B) ≥ 0.8）",
- "frames_analyzed": 9122,
- "duration_sec": 304.067,
+ "frames_analyzed": 9086,
+ "duration_sec": 302.867,
  "max_changes_per_sec": {
   "luma": 2,
   "red": 2
@@ -2013,34 +2013,6 @@
    "cue_t": 9.4
   },
   {
-   "type": "luma",
-   "region": "x4_y3",
-   "px": [
-    480,
-    360,
-    600,
-    480
-   ],
-   "count_per_sec": 2,
-   "window_start": 51.3,
-   "cue": "a2_c003",
-   "cue_t": -0.4333
-  },
-  {
-   "type": "luma",
-   "region": "x4_y4",
-   "px": [
-    480,
-    480,
-    600,
-    600
-   ],
-   "count_per_sec": 2,
-   "window_start": 51.3333,
-   "cue": "a2_c003",
-   "cue_t": -0.4
-  },
-  {
    "type": "red",
    "region": "x10_y5",
    "px": [
@@ -2050,7 +2022,7 @@
     720
    ],
    "count_per_sec": 2,
-   "window_start": 161.6,
+   "window_start": 160.4,
    "cue": "a2_c008",
    "cue_t": 16.8667
   },
@@ -2064,7 +2036,7 @@
     840
    ],
    "count_per_sec": 2,
-   "window_start": 161.6,
+   "window_start": 160.4,
    "cue": "a2_c008",
    "cue_t": 16.8667
   },
@@ -2078,9 +2050,37 @@
     840
    ],
    "count_per_sec": 2,
-   "window_start": 161.6,
+   "window_start": 160.4,
    "cue": "a2_c008",
    "cue_t": 16.8667
+  },
+  {
+   "type": "luma",
+   "region": "x4_y3",
+   "px": [
+    480,
+    360,
+    600,
+    480
+   ],
+   "count_per_sec": 2,
+   "window_start": 225.2,
+   "cue": "a2_c011",
+   "cue_t": 4.4667
+  },
+  {
+   "type": "luma",
+   "region": "x4_y4",
+   "px": [
+    480,
+    480,
+    600,
+    600
+   ],
+   "count_per_sec": 2,
+   "window_start": 286.0,
+   "cue": "a2_c013",
+   "cue_t": 20.7667
   }
  ],
  "near_limit_total": 148,
@@ -2098,21 +2098,21 @@
    "to": "a2_c003",
    "t": 51.1333,
    "mean_luma_before": 0.521,
-   "mean_luma_after": 0.521,
-   "max_region_luma_delta": 0.0
+   "mean_luma_after": 0.5818,
+   "max_region_luma_delta": 0.488
   },
   {
    "from": "a2_c003",
    "to": "a2_c004",
-   "t": 70.5333,
-   "mean_luma_before": 0.5512,
-   "mean_luma_after": 0.5512,
-   "max_region_luma_delta": 0.0
+   "t": 69.9333,
+   "mean_luma_before": 0.5515,
+   "mean_luma_after": 0.521,
+   "max_region_luma_delta": 0.4862
   },
   {
    "from": "a2_c004",
    "to": "a2_c005",
-   "t": 96.5333,
+   "t": 95.3333,
    "mean_luma_before": 0.5233,
    "mean_luma_after": 0.523,
    "max_region_luma_delta": 0.0109
@@ -2120,7 +2120,7 @@
   {
    "from": "a2_c005",
    "to": "a2_c006",
-   "t": 123.4,
+   "t": 122.2,
    "mean_luma_before": 0.4262,
    "mean_luma_after": 0.4262,
    "max_region_luma_delta": 0.0015
@@ -2128,7 +2128,7 @@
   {
    "from": "a2_c006",
    "to": "a2_c007",
-   "t": 133.0667,
+   "t": 131.8667,
    "mean_luma_before": 0.4295,
    "mean_luma_after": 0.4262,
    "max_region_luma_delta": 0.1894
@@ -2136,7 +2136,7 @@
   {
    "from": "a2_c007",
    "to": "a2_c008",
-   "t": 144.7333,
+   "t": 143.5333,
    "mean_luma_before": 0.5415,
    "mean_luma_after": 0.519,
    "max_region_luma_delta": 0.4169
@@ -2144,7 +2144,7 @@
   {
    "from": "a2_c008",
    "to": "a2_c009",
-   "t": 187.6333,
+   "t": 186.4333,
    "mean_luma_before": 0.5144,
    "mean_luma_after": 0.5144,
    "max_region_luma_delta": 0.015
@@ -2152,7 +2152,7 @@
   {
    "from": "a2_c009",
    "to": "a2_c010",
-   "t": 212.9333,
+   "t": 211.7333,
    "mean_luma_before": 0.4423,
    "mean_luma_after": 0.4423,
    "max_region_luma_delta": 0.0016
@@ -2160,7 +2160,7 @@
   {
    "from": "a2_c010",
    "to": "a2_c011",
-   "t": 221.9333,
+   "t": 220.7333,
    "mean_luma_before": 0.4387,
    "mean_luma_after": 0.4423,
    "max_region_luma_delta": 0.1484
@@ -2168,7 +2168,7 @@
   {
    "from": "a2_c011",
    "to": "a2_c012",
-   "t": 230.0,
+   "t": 228.8,
    "mean_luma_before": 0.5143,
    "mean_luma_after": 0.5144,
    "max_region_luma_delta": 0.0371
@@ -2176,7 +2176,7 @@
   {
    "from": "a2_c012",
    "to": "a2_c013",
-   "t": 265.8333,
+   "t": 264.6333,
    "mean_luma_before": 0.5096,
    "mean_luma_after": 0.5096,
    "max_region_luma_delta": 0.0

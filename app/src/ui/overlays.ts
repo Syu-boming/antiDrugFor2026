@@ -58,6 +58,15 @@ export class ReadyScreen {
     if (ready) this.btn.focus();
   }
 
+  /** 全劇缺配音：第一次按「準備播放」後改成確認按鈕（再按一次才開演） */
+  confirmMissingVo(n: number): void {
+    this.btn.textContent = `仍要播放（缺 ${n} 句配音）`;
+    this.btn.classList.add('confirm');
+    this.msg.textContent = `缺 ${n} 句配音：這些句子只有字幕、沒有聲音。請先確認交付資料夾是否完整複製；確定仍要開演，請再按一次「準備播放」（簡報筆按「下一步」也可以）。`;
+    this.msg.classList.add('warn');
+    this.btn.focus();
+  }
+
   show(on: boolean): void { this.el.hidden = !on; document.body.classList.toggle('show-cursor', on); }
   get visible(): boolean { return !this.el.hidden; }
 }

@@ -1,7 +1,8 @@
 # a8 驗收包（閉幕）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T07:57Z）；段落檔 `app/cues/show/a8.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T11:09Z）；段落檔 `app/cues/show/a8.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `3fc48e344e24120a672608aabd1b8879298c8b31`；app/dist 合併後這一段 `7316245cf5b2e1fd7745f567e700d7847016cd80`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,12 +14,13 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png |
 | 播放錄製（30 格／秒＋混音） | a8_playback.mp4 |
 | 混音與響度 | audio/a8_mix.wav、audio/loudness.json、audio/a8_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
@@ -33,25 +35,26 @@
 
 ## 光敏（任一區域明暗或飽和紅色每秒變化 ≤ 3 次）
 
-- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 2、紅色 2；超標 0；接近上限（2–3 次）106；分析 927 格。
-- fine_32x18：每秒最多 明暗 3、紅色 2；超標 0；3 次 8。
+- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 2、紅色 2；超標 0；接近上限（2–3 次）91；分析 927 格。
+- fine_32x18：每秒最多 明暗 3、紅色 2；超標 0；3 次 13。
 - proj_16x9：每秒最多 明暗 2、紅色 0；超標 0；3 次 0。
-- proj_32x18：每秒最多 明暗 2、紅色 0；超標 0；3 次 0。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 2；超標格 0）；整段 通過。
+- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 3。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.128（a8_c001 10.5 秒，播放錄製第 11.1 秒，0.4449→0.5018）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 2；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 2, "red": 2}}
 - cue 接縫全畫面亮度差最大 0.004；區域亮度差最大 0.070。
 
 ## 聲音
 
-- 整段：-19.4 LUFS、真峰值 -2.1 dBTP、取樣峰值 -2.14 dBFS、削波 0 個。
+- 整段：-18.2 LUFS、真峰值 -2.0 dBTP、取樣峰值 -1.97 dBFS、削波 0 個。
 - 各句對白：配音檔響度差 0.00 LU、混音中響度差 0.00 LU。
-- 瞬間響度最大 -12.4 LUFS；1 秒內最大上升 54.0 LU；100 ms 最大上升 29.0 LU。
+- 瞬間響度最大 -12.3 LUFS；1 秒內最大上升 54.0 LU；100 ms 最大上升 29.0 LU。
 - 教師停格 3 秒後配樂 ≤ −35 LUFS：1／1 段通過。
-- 只有配樂與音效（不含配音）：瞬間響度最大 -15.7 LUFS（a8_c002 4.4 秒）；100 ms 最大上升 29.0 LU（a8_c002 3.4 秒）；1 秒內最大上升 54.0 LU；取樣峰值 -7.31 dBFS（a8_c002 4.11 秒）、真峰值 -7.3 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
+- 只有配樂與音效（不含配音）：瞬間響度最大 -15.7 LUFS（a8_c002 4.4 秒）；100 ms 最大上升 29.0 LU（a8_c002 3.4 秒）；1 秒內最大上升 54.0 LU；取樣峰值 -7.04 dBFS（a8_c002 4.11 秒）、真峰值 -7.0 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
 
 | 台詞 | 說話者 | 配音檔 LUFS | 混音中 LUFS | 對白−背景 LU |
 |---|---|---|---|---|
-| a8_c001_01 | 折折 | -18.0 | -14.7 | 11.7 |
+| a8_c001_01 | 折折 | -18.0 | -14.5 | 9.2 |
 
 ## 字幕與語音時間差（字幕頁起點 − 語音起點，範圍 −0.8～+0.1 秒）
 
@@ -77,5 +80,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a8_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 2, "disposed": 1, "lastBuildMs": 8, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a8_c001": 0.6}；景：a6_shop；景的建立／釋放 {"active": "a6_shop", "built": 3, "disposed": 2, "lastBuildMs": 10, "liveSetGroups": 1, "lastSwapMs": 9.9, "preparedHits": 0, "prepared": []}。
 - 逐格擷取時的頁面錯誤 0 則。

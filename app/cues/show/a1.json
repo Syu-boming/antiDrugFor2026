@@ -394,12 +394,12 @@
     {
      "id": "sfx_crowd_far",
      "at": 0.3,
-     "gain": 0.22
+     "gain": 0.156
     },
     {
      "id": "sfx_footsteps",
      "at": 0.6,
-     "gain": 0.35
+     "gain": 0.25
     },
     {
      "id": "sfx_fold",
@@ -408,7 +408,7 @@
     },
     {
      "id": "sfx_paper_rustle",
-     "at": "a1_c001_04.end+2.10",
+     "at": "a1_c001_04.end+1.10",
      "gain": 0.35
     },
     {
@@ -416,7 +416,8 @@
      "at": "a1_c001_05.end+2.08",
      "gain": 0.6
     }
-   ]
+   ],
+   "_note_g6": "G6 修正第 1 輪：a1_c001_05「青蛙燈」混音中被蓋住的跡象 → sfx_crowd_far 0.22→0.156、sfx_footsteps 0.35→0.25（各約 −3 dB）；sfx_paper_rustle 提前 1 秒（跟著折折起跳），在 a1_c001_05 開口前結束"
   },
   {
    "id": "a1_c002",

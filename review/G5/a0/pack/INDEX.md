@@ -1,7 +1,8 @@
 # a0 驗收包（開場：主燈骨架不見了）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T04:23Z）；段落檔 `app/cues/show/a0.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T11:42Z）；段落檔 `app/cues/show/a0.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `903b40533f34d58cb2e88c4901e59fc48c39e4d1`；app/dist 合併後這一段 `a865ba7d336f088ed4cca68052127ef721a57a29`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,12 +14,13 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png |
 | 播放錄製（30 格／秒＋混音） | a0_playback.mp4 |
 | 混音與響度 | audio/a0_mix.wav、audio/loudness.json、audio/a0_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
@@ -40,7 +42,8 @@
 - fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 99。
 - proj_16x9：每秒最多 明暗 3、紅色 0；超標 0；3 次 2。
 - proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 34。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.136（a0_c005 5.3333 秒，播放錄製第 108.933 秒，0.3757→0.3307）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
 - capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 2}}
 - cue 接縫全畫面亮度差最大 0.042；區域亮度差最大 0.608。
 
@@ -62,7 +65,7 @@
 | a0_c003_02 | 折折 | -18.1 | -15.2 | 17.4 |
 | a0_c003_03 | 阿樂叔叔 | -18.2 | -15.4 | 15.5 |
 | a0_c003_04 | 折折 | -18.0 | -14.9 | 15.5 |
-| a0_c004_01 | 小宇 | -18.1 | -15.1 | 15.3 |
+| a0_c004_01 | 小宇 | -18.1 | -15.1 | 15.4 |
 | a0_c004_02 | 小晴 | -18.0 | -15.1 | 17.7 |
 | a0_c004_03 | 折折 | -18.0 | -14.9 | 12.6 |
 | a0_c004_04 | 小宇 | -18.1 | -15.1 | 14.5 |
@@ -96,5 +99,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a0_c003": 0.6}；景：workshop_a0、workshop_g4；景的建立／釋放 {"active": "workshop_a0", "built": 2, "disposed": 1, "lastBuildMs": 4, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a0_c003": 0.6}；景：workshop_a0、workshop_g4；景的建立／釋放 {"active": "workshop_a0", "built": 3, "disposed": 1, "lastBuildMs": 52, "liveSetGroups": 1, "lastSwapMs": 0.5, "preparedHits": 1, "prepared": [{"name": "square_a1", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

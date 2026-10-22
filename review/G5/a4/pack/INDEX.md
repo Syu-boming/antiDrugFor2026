@@ -1,7 +1,8 @@
 # a4 驗收包（第四幕：危險會跑到路上）
 
-- 產生：tools/act_review_pack.mjs（2026-10-22T04:34Z）；段落檔 `app/cues/show/a4.json`；本檔只列數字與檔案。
+- 產生：tools/act_review_pack.mjs（2026-10-22T10:58Z）；段落檔 `app/cues/show/a4.json`；本檔只列數字與檔案。
 - 聽感、實際投影、學校硬體：未驗證。
+- 段落指紋（sha1，去掉 checkpoint 欄；tools/seg_fingerprint.mjs）：段落檔 `e2ea0db5057008f528b89a63b40446417b712fdf`；app/dist 合併後這一段 `22a6955154c56b7308af0f50b9458974e5c23bc4`；建置用的是目前段落檔：是。
 
 ## 檔案
 
@@ -13,22 +14,23 @@
 | 與 G4 同尺寸並排 | compare_g4/compare_g4_01.png、compare_g4/compare_g4_02.png、compare_g4/compare_g4_03.png |
 | 播放錄製（30 格／秒＋混音） | a4_playback.mp4 |
 | 混音與響度 | audio/a4_mix.wav、audio/loudness.json、audio/a4_mix_plot.png |
-| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json |
+| 光敏 | flash_playback.json、flash_playback_plot.png、flash_variants.json、capture/flash_report.json、isolated_cuts.json（孤立單格亮度比） |
 | 字幕與語音時間差 | subtitle_sync.json |
 | 逐字稿 | transcripts.md、transcripts.json |
 | 長度對照預算 | durations.json |
 | 安全量測 | safety_data.json、probe_dense.json、capture/probe.json、capture/probe_report.json |
 | 時間軸與排程 | timeline.json |
+| 段落指紋 | segment_hash.json |
 
 ## 長度
 
-- 本段 cue 總長 217.1 秒＋換景漸暗預捲 1.2 秒；時長估算_v03.md 預錄合計 224.0 秒；差 -5.7 秒；逐 cue 估計合計 224.0 秒。
-- 播放錄製（含教師按鍵間隔假設）258.8 秒。
+- 本段 cue 總長 217.0 秒＋換景漸暗預捲 1.2 秒；時長估算_v03.md 預錄合計 224.0 秒；差 -5.8 秒；逐 cue 估計合計 224.0 秒。
+- 播放錄製（含教師按鍵間隔假設）258.7 秒。
 
 | cue | 種類 | 長度 | 預捲 | 估計 | 差 | 台詞秒 | 句數 |
 |---|---|---|---|---|---|---|---|
 | a4_c001 | scene | 23.9 | 0.6 | 27.5 | -3.6 | 19.07 | 2 |
-| a4_c002 | scene | 18.9 | 0.6 | 20.0 | -1.1 | 10.56 | 3 |
+| a4_c002 | scene | 18.8 | 0.6 | 20.0 | -1.2 | 10.56 | 3 |
 | a4_c003 | scene | 15.5 | 0 | 23.8 | -8.3 | 10.87 | 2 |
 | a4_c004 | scene | 15.3 | 0 | 18.2 | -2.9 | 7.95 | 2 |
 | a4_c005 | quiz | 19.6 | 0 | 17.5 | 2.1 | 14.47 | 5 |
@@ -43,21 +45,22 @@
 
 ## 光敏（任一區域明暗或飽和紅色每秒變化 ≤ 3 次）
 
-- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 3、紅色 2；超標 0；接近上限（2–3 次）146；分析 7763 格。
-- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 121。
+- 播放錄製 30 格／秒（16×9 區域＋全畫面，含換景預捲與停住格）：每秒最多 明暗 3、紅色 3；超標 0；接近上限（2–3 次）147；分析 7762 格。
+- fine_32x18：每秒最多 明暗 3、紅色 3；超標 0；3 次 146。
 - proj_16x9：每秒最多 明暗 3、紅色 0；超標 0；3 次 5。
-- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 56。
-- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；整段 通過。
-- capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 2}}
+- proj_32x18：每秒最多 明暗 3、紅色 0；超標 0；3 次 66。
+- 孤立單格全畫面亮度比（G6 修正：前後格不動、只有一格跳變；> 1.2 判不通過；isolated_cuts.json）：最大 1.159（a4_c001 6.7 秒，播放錄製第 7.3 秒，0.4088→0.3527）；> 1.2 共 0 處。
+- **通過判定**（主線裁定 1：16×9 與 fine_32x18 的明暗、紅色每秒都 ≤ 3；G6 起加孤立單格亮度比 ≤ 1.2）：16×9 通過；fine_32x18 通過（明暗 3、紅色 3；超標格 0）；孤立單格亮度比 通過；整段 通過。
+- capture.mjs 逐 cue（30 格／秒）：{"ok": true, "max_changes_per_sec": {"luma": 3, "red": 3}}
 - cue 接縫全畫面亮度差最大 0.038；區域亮度差最大 0.594。
 
 ## 聲音
 
 - 整段：-15.8 LUFS、真峰值 -0.9 dBTP、取樣峰值 -0.87 dBFS、削波 0 個。
 - 各句對白：配音檔響度差 0.30 LU、混音中響度差 0.40 LU。
-- 瞬間響度最大 -8.4 LUFS；1 秒內最大上升 58.7 LU；100 ms 最大上升 55.1 LU。
+- 瞬間響度最大 -8.4 LUFS；1 秒內最大上升 58.7 LU；100 ms 最大上升 58.0 LU。
 - 教師停格 3 秒後配樂 ≤ −35 LUFS：7／7 段通過。
-- 只有配樂與音效（不含配音）：瞬間響度最大 -16.9 LUFS（a4_c009 0.98 秒）；100 ms 最大上升 43.7 LU（a4_c011 0.35 秒）；1 秒內最大上升 52.8 LU；取樣峰值 -8.54 dBFS（a4_c002 14.07 秒）、真峰值 -8.5 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
+- 只有配樂與音效（不含配音）：瞬間響度最大 -16.9 LUFS（a4_c007 0.72 秒）；100 ms 最大上升 46.9 LU（a4_c011 0.4 秒）；1 秒內最大上升 53.0 LU；取樣峰值 -8.47 dBFS（a4_c002 14.07 秒）、真峰值 -8.4 dBTP（G4 基準：瞬間最大 -15.7 LUFS、100 ms 上升 18.6 LU；不高於 G4 最大值：True）。
 
 | 台詞 | 說話者 | 配音檔 LUFS | 混音中 LUFS | 對白−背景 LU |
 |---|---|---|---|---|
@@ -119,5 +122,5 @@
 
 ## 其他
 
-- 換景漸暗預捲：{"a4_c001": 0.6, "a4_c002": 0.6}；景：a4_roadmap、gate；景的建立／釋放 {"active": "gate", "built": 5, "disposed": 4, "lastBuildMs": 86, "liveSetGroups": 1}。
+- 換景漸暗預捲：{"a4_c001": 0.6, "a4_c002": 0.6}；景：a4_roadmap、gate；景的建立／釋放 {"active": "gate", "built": 7, "disposed": 5, "lastBuildMs": 100, "liveSetGroups": 1, "lastSwapMs": 0.5, "preparedHits": 3, "prepared": [{"name": "a5_gate", "pending": 0, "compiled": true}]}。
 - 逐格擷取時的頁面錯誤 0 則。

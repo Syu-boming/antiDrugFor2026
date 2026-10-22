@@ -1607,14 +1607,14 @@
    "from": "a7_c002",
    "to": "a7_c003",
    "t": 41.0,
-   "mean_luma_before": 0.5499,
+   "mean_luma_before": 0.55,
    "mean_luma_after": 0.5498,
    "max_region_luma_delta": 0.0172
   }
  ],
  "mean_luma_range": [
   0.0026,
-  0.5729
+  0.573
  ],
  "max_sat_red_ratio": 0.0241
 }

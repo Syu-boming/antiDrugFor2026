@@ -20,6 +20,9 @@
 //     包絡：ramp 秒（預設 0.6）正弦緩入 → 停住 → ramp 秒緩出（共 duration 秒）。引擎自己的 puppet.nod（depth）照常疊加（這裡都給 0）。
 //   - puppet.move 的 params.dz＝往台前（+z）走 dz 單位（引擎只讀 dx；緩動照 ease）。
 //   - a6_c009／a8_c001：小折折燈跟著阿樂叔叔 B 側手（hand_l 樞紐的世界座標）走：puppet.chest 舉到胸前＝捧在手上。
+//   - G6 修正第 1 輪：puppet.chest 的 params.lift／liftFore＝把手上的東西舉起來（a8_c001 謝幕致意）：B 側上臂繞肩再轉 lift 度、
+//     前臂繞肘再轉 liftFore 度（正＝逆時針；lift 35、liftFore −75＝手肘往外、前臂朝上，手到肩膀高度，小折折燈跟著手）；
+//     包絡同鞠躬（ramp 秒緩入 → 停住 → ramp 秒緩出，共 duration 秒）。引擎只讀 to（同一個值不會改變引擎的姿勢）。
 import {
   AdditiveBlending, CanvasTexture, DoubleSide, Group, Mesh, MeshStandardMaterial, PlaneGeometry, Sprite, SpriteMaterial, Vector3, type Material, type Object3D,
 } from 'three';
@@ -93,10 +96,15 @@ const ROT_PART = 0.2;
 /** 本 cue 的鞠躬／往前走（引擎不讀的參數），直接加在引擎擺好的姿勢上 */
 function applyActorExtras(scene: Object3D, tl: CueTimeline, t: number): void {
   restoreScaled();
-  const bows = new Map<string, number[]>(), steps = new Map<string, number>();
+  const bows = new Map<string, number[]>(), steps = new Map<string, number>(), lifts = new Map<string, number[]>();
   for (const a of tl.anims) {
     if (!a.target) continue;
-    if (a.name === 'puppet.nod' && a.params.bow !== undefined) {
+    if (a.name === 'puppet.chest' && a.params.lift !== undefined) {
+      const k = bowEnv(t, a.start, a.duration, Number(a.params.ramp ?? 0.5));
+      if (k <= 0) continue;
+      const cur = lifts.get(a.target) ?? [0, 0];
+      lifts.set(a.target, [cur[0] + Number(a.params.lift) * DEG * k, cur[1] + Number(a.params.liftFore ?? 0) * DEG * k]);
+    } else if (a.name === 'puppet.nod' && a.params.bow !== undefined) {
       const k = bowEnv(t, a.start, a.duration, Number(a.params.ramp ?? 0.6));
       if (k <= 0) continue;
       const cur = bows.get(a.target) ?? [0, 0, 0];
@@ -112,9 +120,16 @@ function applyActorExtras(scene: Object3D, tl: CueTimeline, t: number): void {
     o.scale.y *= Math.cos(th) / Math.cos(ROT_PART * th);
     scaled.add(o);
   };
-  for (const id of new Set([...bows.keys(), ...steps.keys()])) {
+  for (const id of new Set([...bows.keys(), ...steps.keys(), ...lifts.keys()])) {
     const root = findActor(scene, id);
     if (!root) continue;
+    const lf = id === 'ale' ? lifts.get(id) : undefined;
+    if (lf) {
+      // 舉起手上的東西（G6 修正第 1 輪，a8_c001 謝幕致意）：B 側上臂繞肩、前臂繞肘再轉一點（引擎每格重設旋轉，這裡只加上去）
+      const ua = root.getObjectByName('upper_arm_l'), fa = root.getObjectByName('forearm_l');
+      if (ua) ua.rotation.z += lf[0];
+      if (fa) fa.rotation.z += lf[1];
+    }
     const dz = steps.get(id) ?? 0;
     if (dz) root.position.z += dz;
     const b = bows.get(id);
@@ -199,14 +214,16 @@ function mnemonicTexture(img: HTMLImageElement | undefined): CanvasTexture {
   g.fillStyle = '#3c2e24';
   g.textAlign = 'center';
   g.textBaseline = 'middle';
-  // 「不碰、不試；先離開，找大人」：每格下面一個動作，標點緊跟在字後面
-  const punct = ['、', '；', '，', '。'];
+  // 「不碰、不試；先離開，找大人」：每格下面一個動作，標點緊跟在字後面。
+  // G6 修正第 1 輪：拿掉句尾句號（和 a3 練習卡一致；原本最後的「。」超出卡片右緣被切掉一半）
+  const punct = ['、', '；', '，', ''];
   MNEMO_LABELS.forEach((s, i) => {
     const cx = W * (0.125 + i * 0.25);
     g.font = `bold 92px ${FONT}`;
     const w = g.measureText(s).width;
     g.textAlign = 'center';
     g.fillText(s, cx, H * 0.83);
+    if (!punct[i]) return;
     g.font = `bold 76px ${FONT}`;
     g.textAlign = 'left';
     g.fillText(punct[i], cx + w / 2 - 4, H * 0.85);

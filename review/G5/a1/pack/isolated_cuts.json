@@ -1,0 +1,133 @@
+{
+ "rule": "孤立單格全畫面亮度比：相鄰兩格全畫面平均線性亮度比 > 1.2，且前一格與後一格的變化都 < 該跳變的 25%（前後格不動、只有一格跳變）→ 不通過；兩格都 ≤ 0.05 不算",
+ "method": "ffmpeg 解播放錄製 <段>_playback.mp4 → 128×72（area）→ sRGB 轉線性 → Rec.709 亮度平均（同 review/G6/qa/tech/indep_cuts.py）",
+ "limit_ratio": 1.2,
+ "file": "a1_playback.mp4",
+ "frames": 5413,
+ "max_ratio": 1.122,
+ "max_at": {
+  "frame": 4781,
+  "t": 159.367,
+  "before": 0.3627,
+  "after": 0.4071,
+  "ratio": 1.122,
+  "direction": "變亮",
+  "prev_delta": -0.0001,
+  "next_delta": -0.0,
+  "cue": "a1_c008",
+  "cue_t": 9.2
+ },
+ "over_limit": [],
+ "over_limit_count": 0,
+ "isolated_ge_1.06": [
+  {
+   "frame": 680,
+   "t": 22.667,
+   "before": 0.43,
+   "after": 0.3844,
+   "ratio": 1.119,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": 0.0002,
+   "cue": "a1_c001",
+   "cue_t": 22.0667
+  },
+  {
+   "frame": 782,
+   "t": 26.067,
+   "before": 0.3843,
+   "after": 0.43,
+   "ratio": 1.119,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": 0.0001,
+   "cue": "a1_c001",
+   "cue_t": 25.4667
+  },
+  {
+   "frame": 1950,
+   "t": 65.0,
+   "before": 0.4016,
+   "after": 0.4376,
+   "ratio": 1.09,
+   "direction": "變亮",
+   "prev_delta": 0.0,
+   "next_delta": 0.0001,
+   "cue": "a1_c003",
+   "cue_t": 15.1333
+  },
+  {
+   "frame": 2187,
+   "t": 72.9,
+   "before": 0.4175,
+   "after": 0.3867,
+   "ratio": 1.08,
+   "direction": "變暗",
+   "prev_delta": -0.0004,
+   "next_delta": -0.0007,
+   "cue": "a1_c004",
+   "cue_t": 1.0
+  },
+  {
+   "frame": 2721,
+   "t": 90.7,
+   "before": 0.4055,
+   "after": 0.3808,
+   "ratio": 1.065,
+   "direction": "變暗",
+   "prev_delta": -0.0004,
+   "next_delta": -0.0013,
+   "cue": "a1_c004",
+   "cue_t": 18.8
+  },
+  {
+   "frame": 2966,
+   "t": 98.867,
+   "before": 0.4037,
+   "after": 0.3755,
+   "ratio": 1.075,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": 0.0001,
+   "cue": "a1_c004",
+   "cue_t": 26.9667
+  },
+  {
+   "frame": 4644,
+   "t": 154.8,
+   "before": 0.4269,
+   "after": 0.3991,
+   "ratio": 1.07,
+   "direction": "變暗",
+   "prev_delta": -0.0,
+   "next_delta": 0.0002,
+   "cue": "a1_c008",
+   "cue_t": 4.6333
+  },
+  {
+   "frame": 4662,
+   "t": 155.4,
+   "before": 0.399,
+   "after": 0.3624,
+   "ratio": 1.101,
+   "direction": "變暗",
+   "prev_delta": 0.0002,
+   "next_delta": -0.0001,
+   "cue": "a1_c008",
+   "cue_t": 5.2333
+  },
+  {
+   "frame": 4781,
+   "t": 159.367,
+   "before": 0.3627,
+   "after": 0.4071,
+   "ratio": 1.122,
+   "direction": "變亮",
+   "prev_delta": -0.0001,
+   "next_delta": -0.0,
+   "cue": "a1_c008",
+   "cue_t": 9.2
+  }
+ ],
+ "pass": true
+}

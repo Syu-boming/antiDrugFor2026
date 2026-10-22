@@ -24,7 +24,7 @@
    "enterFade": 1,
    "audioId": "music_bows",
    "musicLoop": false,
-   "musicLevel": 0.8,
+   "musicLevel": 1.07,
    "compression": 2,
    "lamp": null,
    "quiz": null,
@@ -133,8 +133,8 @@
     {
      "name": "puppet.move",
      "target": "ye",
-     "start": 5.6,
-     "end": 9.4,
+     "start": 5,
+     "end": 8.4,
      "params": {
       "dx": -3.6
      }
@@ -176,19 +176,10 @@
      }
     },
     {
-     "name": "puppet.face",
-     "target": "ale",
-     "start": 9.5,
-     "end": 9.5,
-     "params": {
-      "emotion": "greet"
-     }
-    },
-    {
      "name": "puppet.nod",
      "target": "ye",
-     "start": 9.6,
-     "end": 11.1,
+     "start": 8.75,
+     "end": 10.25,
      "params": {
       "depth": 0,
       "bow": 8,
@@ -197,40 +188,79 @@
      }
     },
     {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 9.85,
+     "end": 9.85,
+     "params": {
+      "emotion": "greet"
+     }
+    },
+    {
      "name": "puppet.sit",
      "target": "ale",
-     "start": 9.7,
-     "end": 10.7,
+     "start": 10,
+     "end": 11,
      "params": {
       "to": 0
      }
     },
     {
+     "name": "camera.cut",
+     "target": null,
+     "start": 10.5,
+     "end": 10.5,
+     "params": {
+      "to": {
+       "pos": [
+        -2.2,
+        1.5,
+        16.2
+       ],
+       "target": [
+        -2.2,
+        1.33,
+        0
+       ],
+       "fov": 20
+      }
+     }
+    },
+    {
      "name": "puppet.chest",
      "target": "ale",
-     "start": 10.5,
-     "end": 11.3,
+     "start": 10.75,
+     "end": 11.45,
      "params": {
       "to": 1
      }
     },
     {
+     "name": "puppet.chest",
+     "target": "ale",
+     "start": 11.25,
+     "end": 13.6,
+     "params": {
+      "to": 1,
+      "lift": 35,
+      "liftFore": -75,
+      "ramp": 0.55
+     }
+    },
+    {
      "name": "puppet.nod",
      "target": "ale",
-     "start": 11.3,
-     "end": 12.8,
+     "start": 11.95,
+     "end": 12.95,
      "params": {
-      "depth": 0,
-      "bow": 27,
-      "bowHead": 11,
-      "ramp": 0.6
+      "depth": 1.2
      }
     },
     {
      "name": "zhezhe.hopTo",
      "target": "zhezhe",
-     "start": 12.6,
-     "end": 13.4,
+     "start": 13,
+     "end": 13.6,
      "params": {
       "pos": [
        -0.6,
@@ -241,20 +271,29 @@
      }
     },
     {
-     "name": "puppet.face",
-     "target": "ale",
-     "start": 12.9,
-     "end": 12.9,
-     "params": {
-      "emotion": "smile"
-     }
-    },
-    {
      "name": "zhezhe.hush",
      "target": "zhezhe",
      "start": 13,
      "end": 14,
      "params": {}
+    },
+    {
+     "name": "puppet.face",
+     "target": "ale",
+     "start": 13.1,
+     "end": 13.1,
+     "params": {
+      "emotion": "smile"
+     }
+    },
+    {
+     "name": "camera.cut",
+     "target": null,
+     "start": 13.65,
+     "end": 13.65,
+     "params": {
+      "to": "show_mid"
+     }
     },
     {
      "name": "zhezhe.emote",
@@ -341,9 +380,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -353,9 +392,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -365,9 +404,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -377,9 +416,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -389,9 +428,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -401,9 +440,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 8,
-      "squash": 0.14,
+      "depth": 1,
+      "bow": 12,
+      "squash": 0.12,
       "ramp": 0.6
      }
     },
@@ -413,9 +452,9 @@
      "start": 15,
      "end": 16.5,
      "params": {
-      "depth": 0,
-      "bow": 27,
-      "bowHead": 11,
+      "depth": 0.8,
+      "bow": 32,
+      "bowHead": 12,
       "ramp": 0.6
      }
     },
@@ -722,5 +761,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "3fc48e344e24120a672608aabd1b8879298c8b31",
+  "built": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+  "sourceMerged": "7316245cf5b2e1fd7745f567e700d7847016cd80",
+  "builtFromSource": true
+ }
 }

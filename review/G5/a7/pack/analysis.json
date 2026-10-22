@@ -176,9 +176,15 @@
    ],
    "format": {
     "duration": "58.500000",
-    "size": "14060287"
+    "size": "14056101"
    }
   }
+ },
+ "isolated_cuts": {
+  "frames": 1755,
+  "max_ratio": 1.141,
+  "over_limit_count": 0,
+  "pass": true
  },
  "durations": {
   "source": "script/時長估算_v03.md 第 2 節逐 cue「估計」與第 3 節「預錄合計」；本段長度＝引擎時間軸（實際配音長度）",
@@ -300,7 +306,7 @@
    "a3_c007": 5.88,
    "a3_c008": 36.69,
    "a4_c001": 23.92,
-   "a4_c002": 18.86,
+   "a4_c002": 18.81,
    "a4_c003": 15.52,
    "a4_c004": 15.3,
    "a4_c005": 19.57,
@@ -316,7 +322,7 @@
    "a5_c002": 23.62,
    "a5_c003": 7.02,
    "a5_c004": 6.2,
-   "a5_c005": 21.25,
+   "a5_c005": 17.8,
    "a5_c006": 31.18,
    "a5_c007": 24.08,
    "a5_c008": 27.41,
@@ -339,10 +345,13 @@
   "errors": [],
   "sets": {
    "active": "a6_shop",
-   "built": 2,
-   "disposed": 1,
-   "lastBuildMs": 8,
-   "liveSetGroups": 1
+   "built": 3,
+   "disposed": 2,
+   "lastBuildMs": 9,
+   "liveSetGroups": 1,
+   "lastSwapMs": 9,
+   "preparedHits": 0,
+   "prepared": []
   }
  }
 }

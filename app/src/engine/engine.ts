@@ -79,6 +79,8 @@ export const PHASE_LABEL: Record<Phase, string> = {
 
 /** 進入等待後這段時間內的「下一步」視為連按誤觸（毫秒；擷取模式不適用） */
 const WAIT_GUARD_MS = 350;
+/** 全劇缺配音時「準備播放」要按第二次確認；第一次之後這段時間內再按視為連按誤觸（毫秒） */
+const VO_CONFIRM_GUARD_MS = 800;
 /** 換景預先準備：停格時每格最多花這麼久（毫秒；建一個景本身不切開，一格最多建一個） */
 const PREFETCH_BUDGET_MS = 6;
 
@@ -98,6 +100,8 @@ export interface EngineState {
   /** G5 全劇：段落、章節名、壓縮級別、建議級別、開演後秒數、這段的換景漸亮秒數、目前的預捲秒數、舞台調暗 */
   segment: string | null; chapter: string; compression: CompressionLevel; suggestedCompression: CompressionLevel;
   showElapsedSec: number | null; enterFade: number; prerollSec: number; dim: number;
+  /** G6：缺配音的台詞編號（用暫代音訊）；全劇模式缺配音時「準備播放」要按第二次確認（voConfirmPending＝已按第一次、等確認） */
+  missingVo: string[]; voConfirmPending: boolean;
 }
 
 export class Engine {
@@ -124,6 +128,10 @@ export class Engine {
   readonly assets = new AssetStore();
   /** 配樂與音效缺檔（照常演出，準備畫面列出） */
   missingAudio: string[] = [];
+  /** 缺配音的台詞（暫代音訊）；全劇模式要老師再按一次「準備播放」確認 */
+  missingVo: string[] = [];
+  /** 缺配音確認：第一次按「準備播放」的時間（0＝還沒按） */
+  private voConfirmAt = 0;
   validation: ValidationResult | null = null;
   errors: string[] = [];
   avOffsetMs: number;
@@ -224,12 +232,17 @@ export class Engine {
       this.lampsCache.clear();
       const voTotal = file.cues.reduce((n, c) => n + c.lines.length, 0);
       const voReal = this.timelines.reduce((n, t) => n + t.lines.filter((l) => !l.placeholder).length, 0);
+      this.missingVo = this.timelines.flatMap((t) => t.lines.filter((l) => l.placeholder).map((l) => l.line.id));
+      this.voConfirmAt = 0;
+      const voConfirm = this.needsVoConfirm();
       this.index = 0;
       this.mode = 'preparing';
       this.renderNow(performance.now());
       this.ui.ready.setStatus([
         { label: 'cue 檔', value: `${file.title}（${file.cues.length} 個 cue）`, ok: true },
-        { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊`, ok: voReal === voTotal ? true : null },
+        voConfirm
+          ? { label: '配音', value: `缺 ${voTotal - voReal} 句配音（這些句子只有字幕、沒有聲音）：${this.missingVo.slice(0, 6).join('、')}${this.missingVo.length > 6 ? '…' : ''}`, ok: false }
+          : { label: '配音', value: voReal === voTotal ? `${voReal} 句全部就緒` : `${voReal}／${voTotal} 句有音檔，其餘用暫代音訊`, ok: voReal === voTotal ? true : null },
         { label: '音訊', value: this.mixer.available ? `可用（已解碼 ${decoded} 個音檔）` : '無法建立音訊（只顯示字幕）', ok: this.mixer.available },
         { label: '配樂音效', value: this.missingAudio.length ? `缺 ${this.missingAudio.length} 個檔（照常演出、該處無聲）：${this.missingAudio.join('、')}` : '全部就緒', ok: this.missingAudio.length ? null : true },
         ...(file.segments?.length ? [{ label: '全劇', value: `${file.segments.length} 段：${file.segments.map((sg) => sg.title).join('、')}；景 ${[...new Set(this.timelines.map((t) => t.set))].join('、')}`, ok: true }] : []),
@@ -251,6 +264,13 @@ export class Engine {
   /** 「準備播放」：啟用聲音、確認全螢幕、預先編譯，然後停在署名卡 */
   async start(): Promise<void> {
     if (this.mode !== 'preparing') return;
+    // 全劇缺配音（例如複製交付資料夾時漏了檔、重新打包時少了音檔）：第一次按只顯示「缺 N 句配音」，再按一次才開演；
+    // 配樂、音效缺檔照常演出（只列在準備畫面）
+    if (this.needsVoConfirm()) {
+      const now = performance.now();
+      if (!this.voConfirmAt) { this.voConfirmAt = now; this.ui.ready.confirmMissingVo(this.missingVo.length); return; }
+      if (now - this.voConfirmAt < VO_CONFIRM_GUARD_MS) { this.ignoredInputs++; return; }
+    }
     this.mode = 'loading';
     // 全螢幕必須在使用者操作的當下呼叫
     if (!this.cfg.noFullscreen && !document.fullscreenElement) {
@@ -272,6 +292,11 @@ export class Engine {
     this.warmUp();
     this.ui.ready.show(false);
     this.enterWaiting(0);
+  }
+
+  /** 全劇模式（?cues=show）缺任何配音時要老師確認；擷取與自動開始（工具、測試）不問 */
+  private needsVoConfirm(): boolean {
+    return this.cfg.cues === 'show' && !this.cfg.capture && !this.cfg.autostart && this.missingVo.length > 0;
   }
 
   // ---------------------------------------------------------------- 老師操作
@@ -705,6 +730,7 @@ export class Engine {
       showElapsedSec: this.showStartMs === null ? null : Math.round((performance.now() - this.showStartMs) / 100) / 10,
       enterFade: tl?.enterFade ?? 0, prerollSec: this.trans?.kind === 'preroll' && this.mode === 'playing' ? this.trans.out : 0,
       dim: w ? Math.round(w.dim * 1000) / 1000 : 0,
+      missingVo: [...this.missingVo], voConfirmPending: this.mode === 'preparing' && this.voConfirmAt > 0,
     };
   }
 

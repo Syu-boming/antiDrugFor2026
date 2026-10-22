@@ -1,0 +1,12 @@
+{
+ "note": "本包量的段落版本（G6 修正第 1 輪起）。show_review_pack 以 built 比對目前 app/dist（與建置一致）、以 source 比對目前段落檔。",
+ "act": "a1",
+ "method": "sha1（拿掉所有 checkpoint 欄位、JSON 鍵排序後序列化）；source＝app/cues/show/<段>.json；built＝app/dist/data/cues_show.js 合併後的這一段（段落資訊＋cue）；sourceMerged＝目前段落檔照建置方式合併後的這一段",
+ "distBuiltAt": "2026-10-22T10:22:57.504Z",
+ "generatedAt": "2026-10-22T11:28:30.433Z",
+ "file": "app/cues/show/a1.json",
+ "source": "55fd8363a2d8c8a22b8e115b2d3f87be64185f4b",
+ "built": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+ "sourceMerged": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+ "builtFromSource": true
+}

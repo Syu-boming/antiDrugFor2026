@@ -129,12 +129,12 @@
     {
      "id": "sfx_crowd_far",
      "at": 0.3,
-     "gain": 0.22
+     "gain": 0.156
     },
     {
      "id": "sfx_footsteps",
      "at": 0.6,
-     "gain": 0.35
+     "gain": 0.25
     },
     {
      "id": "sfx_fold",
@@ -143,7 +143,7 @@
     },
     {
      "id": "sfx_paper_rustle",
-     "at": 21.91,
+     "at": 20.91,
      "gain": 0.35
     },
     {
@@ -2502,5 +2502,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "55fd8363a2d8c8a22b8e115b2d3f87be64185f4b",
+  "built": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+  "sourceMerged": "2d4632c0587f7e9a61e7b4459f7e7cf326d822a4",
+  "builtFromSource": true
+ }
 }

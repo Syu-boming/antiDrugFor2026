@@ -244,7 +244,7 @@
    "title": "線落下來（代表鏡頭）",
    "duration": 25.18,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8,
    "audioId": null,
    "musicLoop": true,
@@ -496,8 +496,8 @@
    "title": "那個小盒子",
    "duration": 15.3,
    "autoAdvance": false,
-   "set": "a2_memory",
-   "enterFade": 0.8,
+   "set": "a2_shop",
+   "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
    "musicLevel": 0.7,
@@ -601,7 +601,7 @@
    "duration": 21.91,
    "autoAdvance": false,
    "set": "a2_shop",
-   "enterFade": 0.8,
+   "enterFade": 0,
    "audioId": null,
    "musicLoop": true,
    "musicLevel": 0.8,
@@ -2880,15 +2880,6 @@
      }
     },
     {
-     "name": "fade.out",
-     "target": null,
-     "start": 20.13,
-     "end": 20.73,
-     "params": {
-      "to": 1
-     }
-    },
-    {
      "name": "camera.cut",
      "target": null,
      "start": 20.75,
@@ -2898,19 +2889,30 @@
      }
     },
     {
-     "name": "fade.in",
+     "name": "light.dim",
+     "target": null,
+     "start": 20.75,
+     "end": 20.75,
+     "params": {
+      "to": 0.38
+     }
+    },
+    {
+     "name": "light.dim",
      "target": null,
      "start": 20.77,
      "end": 21.37,
-     "params": {}
+     "params": {
+      "to": 0.88
+     }
     },
     {
-     "name": "fade.out",
+     "name": "light.dim",
      "target": null,
-     "start": 22.93,
-     "end": 23.53,
+     "start": 22.88,
+     "end": 23.5,
      "params": {
-      "to": 1
+      "to": 0.45
      }
     },
     {
@@ -2923,11 +2925,13 @@
      }
     },
     {
-     "name": "fade.in",
+     "name": "light.dim",
      "target": null,
-     "start": 23.57,
-     "end": 24.17,
-     "params": {}
+     "start": 23.55,
+     "end": 23.55,
+     "params": {
+      "to": 0.88
+     }
     },
     {
      "name": "zhezhe.look",
@@ -2995,36 +2999,36 @@
    "duration": 25.18,
    "hold": 3.5,
    "autoAdvance": false,
-   "set": "workshop_g4",
+   "set": "a2_shop",
    "enterFade": 0.8
   },
   {
    "id": "a2_c003",
    "kind": "scene",
-   "preroll": 0.6,
-   "start": 51.74,
+   "preroll": 0,
+   "start": 51.14,
    "duration": 15.3,
    "hold": 3.5,
    "autoAdvance": false,
-   "set": "a2_memory",
-   "enterFade": 0.8
+   "set": "a2_shop",
+   "enterFade": 0
   },
   {
    "id": "a2_c004",
    "kind": "scene",
-   "preroll": 0.6,
-   "start": 71.14,
+   "preroll": 0,
+   "start": 69.94,
    "duration": 21.91,
    "hold": 3.5,
    "autoAdvance": false,
    "set": "a2_shop",
-   "enterFade": 0.8
+   "enterFade": 0
   },
   {
    "id": "a2_c005",
    "kind": "quiz",
    "preroll": 0,
-   "start": 96.55,
+   "start": 95.35,
    "duration": 23.86,
    "hold": 3,
    "autoAdvance": false,
@@ -3035,7 +3039,7 @@
    "id": "a2_c006",
    "kind": "reveal",
    "preroll": 0,
-   "start": 123.41,
+   "start": 122.21,
    "duration": 7.16,
    "hold": 2.5,
    "autoAdvance": false,
@@ -3046,7 +3050,7 @@
    "id": "a2_c007",
    "kind": "lamp",
    "preroll": 0,
-   "start": 133.07,
+   "start": 131.87,
    "duration": 9.17,
    "hold": 2.5,
    "autoAdvance": false,
@@ -3057,7 +3061,7 @@
    "id": "a2_c008",
    "kind": "scene",
    "preroll": 0,
-   "start": 144.74,
+   "start": 143.54,
    "duration": 39.4,
    "hold": 3.5,
    "autoAdvance": false,
@@ -3068,7 +3072,7 @@
    "id": "a2_c009",
    "kind": "quiz",
    "preroll": 0,
-   "start": 187.64,
+   "start": 186.44,
    "duration": 22.31,
    "hold": 3,
    "autoAdvance": false,
@@ -3079,7 +3083,7 @@
    "id": "a2_c010",
    "kind": "reveal",
    "preroll": 0,
-   "start": 212.95,
+   "start": 211.75,
    "duration": 6.49,
    "hold": 2.5,
    "autoAdvance": false,
@@ -3090,7 +3094,7 @@
    "id": "a2_c011",
    "kind": "lamp",
    "preroll": 0,
-   "start": 221.94,
+   "start": 220.74,
    "duration": 5.57,
    "hold": 2.5,
    "autoAdvance": false,
@@ -3101,7 +3105,7 @@
    "id": "a2_c012",
    "kind": "scene",
    "preroll": 0,
-   "start": 230.01,
+   "start": 228.81,
    "duration": 32.32,
    "hold": 3.5,
    "autoAdvance": false,
@@ -3112,7 +3116,7 @@
    "id": "a2_c013",
    "kind": "scene",
    "preroll": 0.6,
-   "start": 266.43,
+   "start": 265.23,
    "duration": 34.14,
    "hold": 3.5,
    "autoAdvance": false,
@@ -3120,7 +3124,7 @@
    "enterFade": 0.8
   }
  ],
- "totalPlaybackSec": 304.07,
+ "totalPlaybackSec": 302.87,
  "audio": {
   "vo_a2_c001_01": {
    "source": "audio/vo/vo_a2_c001_01_v04.wav",
@@ -3399,5 +3403,11 @@
   }
  },
  "fps": 30,
- "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）"
+ "audioNote": "audio 只列本段 cue 用到的音檔（G6 精修起；以前是整個資料包的音檔表）",
+ "segmentHash": {
+  "source": "39fd12c7b3f98772f45de21dd4fbfc2c08a0022c",
+  "built": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+  "sourceMerged": "642675baa4e6a8880708c47c0a364210fe2b9b55",
+  "builtFromSource": true
+ }
 }
